@@ -1,12 +1,15 @@
 name: Update CSV From PDF
 
 on:
+  schedule:
+    - cron: "17 6 * * *"
+  workflow_dispatch:
   push:
     paths:
-      - "*.pdf"
+      - ".github/workflows/update-csv-from-pdf.yml"
       - "convert_pdf_to_csv.py"
+      - "fetch_latest_pdf.py"
       - "requirements.txt"
-  workflow_dispatch:
 
 permissions:
   contents: write
@@ -18,8 +21,6 @@ jobs:
     steps:
       - name: Check out repository
         uses: actions/checkout@v4
-        with:
-          fetch-depth: 0
 
       - name: Set up Python
         uses: actions/setup-python@v5
@@ -29,55 +30,32 @@ jobs:
       - name: Install dependencies
         run: pip install -r requirements.txt
 
-      - name: Find source PDF
-        id: pdf
+      - name: Download latest PDF from WordPress
+        run: python fetch_latest_pdf.py latest-bass-directory.pdf
+
+      - name: Remove older PDF files
         shell: bash
         run: |
           shopt -s nullglob
-          pdfs=( *.pdf )
-
-          if [ "${#pdfs[@]}" -eq 0 ]; then
-            echo "No PDF file found in the repo root."
-            exit 1
-          fi
-
-          latest_pdf=""
-
-          if [ "${{ github.event_name }}" = "push" ]; then
-            mapfile -t changed_pdfs < <(git diff --name-only "${{ github.event.before }}" "${{ github.sha }}" -- '*.pdf')
-            if [ "${#changed_pdfs[@]}" -gt 0 ]; then
-              latest_pdf="${changed_pdfs[-1]}"
-            fi
-          fi
-
-          if [ -z "$latest_pdf" ]; then
-            latest_pdf="${pdfs[0]}"
-          fi
-
-          echo "Using latest PDF: $latest_pdf"
-
-          for pdf in "${pdfs[@]}"; do
-            if [ "$pdf" != "$latest_pdf" ]; then
-              echo "Removing old PDF: $pdf"
+          for pdf in *.pdf; do
+            if [ "$pdf" != "latest-bass-directory.pdf" ]; then
               rm -f "$pdf"
             fi
           done
 
-          echo "pdf_path=$latest_pdf" >> "$GITHUB_OUTPUT"
-
       - name: Generate pubs.csv
-        run: python convert_pdf_to_csv.py "${{ steps.pdf.outputs.pdf_path }}" pubs.csv
+        run: python convert_pdf_to_csv.py latest-bass-directory.pdf pubs.csv
 
-      - name: Commit updated CSV and PDF cleanup
+      - name: Commit refreshed PDF and CSV
         shell: bash
         run: |
           if git diff --quiet -- '*.pdf' pubs.csv; then
-            echo "No PDF cleanup or CSV update was needed."
+            echo "No PDF or CSV changes detected."
             exit 0
           fi
 
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git add -A '*.pdf' pubs.csv
-          git commit -m "Update latest PDF and pubs.csv"
+          git commit -m "Refresh latest PDF and pubs.csv"
           git push

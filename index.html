@@ -6,7 +6,7 @@
   <title>Draught Bass Directory Map</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Instrument+Sans:wght@400;500;600;700;800&family=Newsreader:opsz,wght@6..72,500;600;700&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
   <link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster@1.5.3/dist/MarkerCluster.css" />
   <link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster@1.5.3/dist/MarkerCluster.Default.css" />
@@ -31,7 +31,7 @@
     html, body {
       margin: 0;
       height: 100%;
-      font-family: "Manrope", Inter, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      font-family: "Instrument Sans", Inter, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
       background:
         radial-gradient(circle at top left, rgba(238,76,60,0.12), transparent 26%),
         radial-gradient(circle at top right, rgba(206,152,52,0.12), transparent 24%),
@@ -87,10 +87,11 @@
     }
     h1 {
       margin: 0;
-      font-family: "Space Grotesk", "Manrope", sans-serif;
-      font-size: clamp(2.4rem, 3.8vw, 4.15rem);
-      line-height: 0.98;
-      letter-spacing: -0.04em;
+      font-family: "Newsreader", Georgia, serif;
+      font-size: clamp(2.25rem, 3.55vw, 3.85rem);
+      font-weight: 600;
+      line-height: 0.94;
+      letter-spacing: -0.03em;
       max-width: 20ch;
       text-wrap: balance;
     }
@@ -131,10 +132,11 @@
     .stat::before { display: none; }
     .stat strong {
       display: inline;
-      font-family: "Space Grotesk", "Manrope", sans-serif;
-      font-size: 1.24rem;
+      font-family: "Instrument Sans", Inter, sans-serif;
+      font-size: 1.16rem;
+      font-weight: 700;
       line-height: 1;
-      letter-spacing: -0.04em;
+      letter-spacing: -0.03em;
       color: var(--text);
     }
     .layout {
@@ -265,8 +267,11 @@
     }
     .splash-card h2 {
       margin: 0 0 8px;
-      font-size: 1.35rem;
-      line-height: 1.15;
+      font-family: "Newsreader", Georgia, serif;
+      font-size: 1.55rem;
+      font-weight: 600;
+      line-height: 1.02;
+      letter-spacing: -0.02em;
     }
     .splash-copy {
       color: var(--muted);

@@ -45,7 +45,7 @@
     }
     .title-row {
       display: block;
-      padding: 20px 28px 18px;
+      padding: 18px 30px 18px;
       background: linear-gradient(180deg, rgba(255,255,255,0.96), rgba(252,247,243,0.94));
       border: 1px solid var(--border);
       border-radius: 28px;
@@ -57,47 +57,48 @@
     .title-row::before {
       content: "";
       position: absolute;
-      width: 260px;
-      height: 260px;
-      right: -70px;
-      top: -110px;
-      border-radius: 50%;
-      background: radial-gradient(circle, rgba(238,76,60,0.18), rgba(238,76,60,0));
+      right: 34px;
+      top: 50%;
+      width: min(24vw, 360px);
+      height: min(16vw, 230px);
+      transform: translateY(-50%);
+      background: url("bass-logo.svg") no-repeat center / contain;
+      opacity: 0.08;
       z-index: -1;
     }
     .title-row::after {
       content: "";
       position: absolute;
-      width: 220px;
-      height: 220px;
+      width: 260px;
+      height: 260px;
       left: -80px;
-      bottom: -130px;
+      bottom: -160px;
       border-radius: 50%;
       background: radial-gradient(circle, rgba(206,152,52,0.14), rgba(206,152,52,0));
       z-index: -1;
     }
-    .brand-row { display: flex; align-items: center; gap: 28px; min-width: 0; }
+    .brand-row { display: flex; align-items: center; gap: 34px; min-width: 0; }
     .brand-lockup {
       display: flex;
       flex: 1 1 auto;
       flex-direction: column;
       min-width: 0;
-      max-width: 960px;
+      max-width: none;
     }
     h1 {
       margin: 0;
       font-family: "Space Grotesk", "Manrope", sans-serif;
-      font-size: clamp(2rem, 3vw, 3rem);
+      font-size: clamp(2.4rem, 3.8vw, 4.15rem);
       line-height: 0.98;
       letter-spacing: -0.04em;
-      max-width: 15ch;
+      max-width: 20ch;
       text-wrap: balance;
     }
     .sub {
       color: var(--muted);
       margin-top: 12px;
-      max-width: 72ch;
-      font-size: 1rem;
+      max-width: 86ch;
+      font-size: 1.02rem;
       line-height: 1.42;
     }
     .stats {
@@ -105,7 +106,7 @@
       flex-wrap: wrap;
       gap: 0;
       min-width: 0;
-      margin-top: 14px;
+      margin-top: 12px;
     }
     .stat {
       display: inline-flex;
@@ -250,9 +251,9 @@
       height: 96px;
     }
     .topbar .bass-logo {
-      width: 218px;
-      height: 150px;
-      margin-top: -2px;
+      width: 258px;
+      height: 178px;
+      margin-top: -4px;
     }
     .splash-kicker {
       font-size: 0.8rem;

@@ -17,6 +17,13 @@ permissions:
 jobs:
   update-csv:
     runs-on: ubuntu-latest
+    env:
+      SMTP_HOST: ${{ secrets.SMTP_HOST }}
+      SMTP_PORT: ${{ secrets.SMTP_PORT }}
+      SMTP_USERNAME: ${{ secrets.SMTP_USERNAME }}
+      SMTP_PASSWORD: ${{ secrets.SMTP_PASSWORD }}
+      ALERT_TO: aaron.george.smart@gmail.com
+      ALERT_FROM: ${{ secrets.ALERT_FROM }}
 
     steps:
       - name: Check out repository
@@ -43,8 +50,27 @@ jobs:
             fi
           done
 
-      - name: Generate pubs.csv
-        run: python convert_pdf_to_csv.py latest-bass-directory.pdf pubs.csv
+      - name: Generate candidate CSV
+        run: python convert_pdf_to_csv.py latest-bass-directory.pdf candidate-pubs.csv
+
+      - name: Validate candidate CSV
+        id: validate
+        continue-on-error: true
+        run: python validate_csv.py candidate-pubs.csv --previous pubs.csv --report validation-report.json
+
+      - name: Email validation failure
+        if: steps.validate.outcome == 'failure' && env.SMTP_HOST != '' && env.SMTP_USERNAME != '' && env.SMTP_PASSWORD != '' && env.ALERT_TO != ''
+        run: python send_alert_email.py --subject "BassBeerMap update rejected" --report validation-report.json
+
+      - name: Fail workflow after rejected validation
+        if: steps.validate.outcome == 'failure'
+        run: |
+          echo "Candidate CSV failed validation. See validation-report.json for details."
+          exit 1
+
+      - name: Publish validated CSV
+        shell: bash
+        run: mv candidate-pubs.csv pubs.csv
 
       - name: Commit refreshed PDF and CSV
         shell: bash

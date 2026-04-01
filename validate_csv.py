@@ -1,0 +1,115 @@
+import argparse
+import csv
+import json
+from collections import Counter
+from pathlib import Path
+
+
+REQUIRED_FIELDS = ("country", "pub_name", "place_name", "postcode", "pg", "last", "dispense")
+MAX_ROW_DELTA_RATIO = 0.08
+MAX_BLANK_RATIO = 0.02
+MAX_COUNTRY_DELTA = 0.2
+
+
+def load_rows(path: Path) -> list[dict[str, str]]:
+    with path.open(encoding="utf-8", newline="") as handle:
+        return list(csv.DictReader(handle))
+
+
+def blank_ratio(rows: list[dict[str, str]], field: str) -> float:
+    if not rows:
+        return 1.0
+    blanks = sum(1 for row in rows if not str(row.get(field, "")).strip())
+    return blanks / len(rows)
+
+
+def country_counts(rows: list[dict[str, str]]) -> Counter[str]:
+    return Counter(str(row.get("country", "")).strip() for row in rows if str(row.get("country", "")).strip())
+
+
+def validate(previous_rows: list[dict[str, str]], candidate_rows: list[dict[str, str]]) -> tuple[bool, list[str], dict]:
+    errors: list[str] = []
+    summary = {
+        "previous_row_count": len(previous_rows),
+        "candidate_row_count": len(candidate_rows),
+        "field_blank_ratios": {},
+        "country_deltas": {},
+    }
+
+    if not candidate_rows:
+        errors.append("Candidate CSV has no rows.")
+        return False, errors, summary
+
+    for field in REQUIRED_FIELDS:
+        ratio = blank_ratio(candidate_rows, field)
+        summary["field_blank_ratios"][field] = ratio
+        if ratio > MAX_BLANK_RATIO:
+            errors.append(f"Field '{field}' is blank in {ratio:.1%} of candidate rows.")
+
+    if previous_rows:
+        previous_count = len(previous_rows)
+        candidate_count = len(candidate_rows)
+        delta_ratio = abs(candidate_count - previous_count) / previous_count
+        summary["row_delta_ratio"] = delta_ratio
+        if delta_ratio > MAX_ROW_DELTA_RATIO:
+            errors.append(
+                f"Row count changed too much: previous {previous_count}, candidate {candidate_count} ({delta_ratio:.1%} delta)."
+            )
+
+        previous_countries = country_counts(previous_rows)
+        candidate_countries = country_counts(candidate_rows)
+        all_countries = sorted(set(previous_countries) | set(candidate_countries))
+        for country in all_countries:
+            previous_value = previous_countries.get(country, 0)
+            candidate_value = candidate_countries.get(country, 0)
+            summary["country_deltas"][country] = {
+                "previous": previous_value,
+                "candidate": candidate_value,
+            }
+            if previous_value == 0:
+                continue
+            delta_ratio = abs(candidate_value - previous_value) / previous_value
+            if delta_ratio > MAX_COUNTRY_DELTA:
+                errors.append(
+                    f"Country count changed too much for {country}: previous {previous_value}, candidate {candidate_value} ({delta_ratio:.1%} delta)."
+                )
+
+    return not errors, errors, summary
+
+
+def main() -> None:
+    parser = argparse.ArgumentParser(description="Validate a candidate pubs.csv against the current version.")
+    parser.add_argument("candidate", help="Path to the candidate CSV.")
+    parser.add_argument("--previous", default="pubs.csv", help="Path to the current CSV.")
+    parser.add_argument(
+        "--report",
+        default="validation-report.json",
+        help="Path to write the validation report JSON.",
+    )
+    args = parser.parse_args()
+
+    candidate_path = Path(args.candidate)
+    previous_path = Path(args.previous)
+    report_path = Path(args.report)
+
+    previous_rows = load_rows(previous_path) if previous_path.exists() else []
+    candidate_rows = load_rows(candidate_path)
+
+    is_valid, errors, summary = validate(previous_rows, candidate_rows)
+    report = {
+        "valid": is_valid,
+        "errors": errors,
+        "summary": summary,
+    }
+    report_path.write_text(json.dumps(report, indent=2), encoding="utf-8")
+
+    if not is_valid:
+        for error in errors:
+            print(error)
+        raise SystemExit(1)
+
+    print("CSV validation passed.")
+
+
+if __name__ == "__main__":
+    main()

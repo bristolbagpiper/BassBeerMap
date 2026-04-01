@@ -6,9 +6,12 @@ on:
   workflow_dispatch:
   push:
     paths:
+      - "*.pdf"
       - ".github/workflows/update-csv-from-pdf.yml"
       - "convert_pdf_to_csv.py"
       - "fetch_latest_pdf.py"
+      - "send_alert_email.py"
+      - "validate_csv.py"
       - "requirements.txt"
 
 permissions:
@@ -16,6 +19,7 @@ permissions:
 
 jobs:
   update-csv:
+    if: github.actor != 'github-actions[bot]'
     runs-on: ubuntu-latest
     env:
       SMTP_HOST: ${{ secrets.SMTP_HOST }}
@@ -37,8 +41,41 @@ jobs:
       - name: Install dependencies
         run: pip install -r requirements.txt
 
+      - name: Resolve latest PDF source
+        id: pdf_source
+        shell: bash
+        run: |
+          shopt -s nullglob
+          latest_pdf=""
+
+          if [ "${{ github.event_name }}" = "push" ]; then
+            mapfile -t changed_pdfs < <(git diff --name-only "${{ github.event.before }}" "${{ github.sha }}" -- '*.pdf')
+            if [ "${#changed_pdfs[@]}" -gt 0 ]; then
+              latest_pdf="${changed_pdfs[-1]}"
+            fi
+          fi
+
+          if [ -n "$latest_pdf" ]; then
+            echo "mode=uploaded" >> "$GITHUB_OUTPUT"
+            echo "uploaded_pdf=$latest_pdf" >> "$GITHUB_OUTPUT"
+            exit 0
+          fi
+
+          echo "mode=wordpress" >> "$GITHUB_OUTPUT"
+
       - name: Download latest PDF from WordPress
+        if: steps.pdf_source.outputs.mode == 'wordpress'
         run: python fetch_latest_pdf.py latest-bass-directory.pdf
+
+      - name: Normalise uploaded PDF
+        if: steps.pdf_source.outputs.mode == 'uploaded'
+        shell: bash
+        run: |
+          uploaded_pdf="${{ steps.pdf_source.outputs.uploaded_pdf }}"
+          if [ "$uploaded_pdf" != "latest-bass-directory.pdf" ]; then
+            rm -f latest-bass-directory.pdf
+            mv "$uploaded_pdf" latest-bass-directory.pdf
+          fi
 
       - name: Remove older PDF files
         shell: bash

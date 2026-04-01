@@ -110,20 +110,6 @@
       line-height: 1.5;
       margin-bottom: 14px;
     }
-    .splash-meta {
-      display: flex;
-      gap: 8px;
-      flex-wrap: wrap;
-      margin-bottom: 14px;
-    }
-    .splash-pill {
-      border: 1px solid rgba(255,255,255,0.08);
-      background: rgba(255,255,255,0.05);
-      color: var(--muted);
-      padding: 6px 10px;
-      border-radius: 999px;
-      font-size: 0.78rem;
-    }
     .splash-status {
       margin-bottom: 10px;
     }
@@ -272,11 +258,6 @@
       <div class="splash-kicker">Bass Directory Map</div>
       <h2>Loading the latest listings</h2>
       <div class="splash-copy">The map is preparing the CSV data and postcode lookups. The first load can take a few seconds.</div>
-      <div class="splash-meta">
-        <div class="splash-pill">CSV-backed data</div>
-        <div class="splash-pill">Postcode clustering</div>
-        <div class="splash-pill">Mobile-friendly map</div>
-      </div>
       <div id="splashStatusText" class="status splash-status">Preparing postcode lookups…</div>
       <div class="loading-bar"><div id="splashLoadingFill"></div></div>
     </div>
@@ -343,7 +324,6 @@
         <div class="status">
           <div id="statusText">Preparing postcode lookups…</div>
           <div class="loading-bar"><div id="loadingFill"></div></div>
-          <div class="footer-note">This map uses CARTO basemap tiles and the free postcodes.io API for postcode-to-coordinate lookup. The first load takes longer because the browser caches the results.</div>
         </div>
       </div>
 

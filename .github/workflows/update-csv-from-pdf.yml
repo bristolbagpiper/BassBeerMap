@@ -41,27 +41,43 @@ jobs:
             exit 1
           fi
 
-          if [ "${#pdfs[@]}" -ne 1 ]; then
-            echo "Expected exactly one PDF file in the repo root, found ${#pdfs[@]}."
-            printf '%s\n' "${pdfs[@]}"
-            exit 1
+          latest_pdf=""
+
+          if [ "${{ github.event_name }}" = "push" ]; then
+            mapfile -t changed_pdfs < <(git diff --name-only "${{ github.event.before }}" "${{ github.sha }}" -- '*.pdf')
+            if [ "${#changed_pdfs[@]}" -gt 0 ]; then
+              latest_pdf="${changed_pdfs[-1]}"
+            fi
           fi
 
-          echo "pdf_path=${pdfs[0]}" >> "$GITHUB_OUTPUT"
+          if [ -z "$latest_pdf" ]; then
+            latest_pdf="${pdfs[0]}"
+          fi
+
+          echo "Using latest PDF: $latest_pdf"
+
+          for pdf in "${pdfs[@]}"; do
+            if [ "$pdf" != "$latest_pdf" ]; then
+              echo "Removing old PDF: $pdf"
+              rm -f "$pdf"
+            fi
+          done
+
+          echo "pdf_path=$latest_pdf" >> "$GITHUB_OUTPUT"
 
       - name: Generate pubs.csv
         run: python convert_pdf_to_csv.py "${{ steps.pdf.outputs.pdf_path }}" pubs.csv
 
-      - name: Commit updated CSV
+      - name: Commit updated CSV and PDF cleanup
         shell: bash
         run: |
-          if git diff --quiet -- pubs.csv; then
-            echo "pubs.csv is already up to date."
+          if git diff --quiet -- '*.pdf' pubs.csv; then
+            echo "No PDF cleanup or CSV update was needed."
             exit 0
           fi
 
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add pubs.csv
-          git commit -m "Update pubs.csv from PDF"
+          git add -A '*.pdf' pubs.csv
+          git commit -m "Update latest PDF and pubs.csv"
           git push

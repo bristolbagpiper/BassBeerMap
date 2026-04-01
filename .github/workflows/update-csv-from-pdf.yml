@@ -48,9 +48,14 @@ jobs:
         run: |
           shopt -s nullglob
           latest_pdf=""
+          echo "GitHub event: ${{ github.event_name }}"
+          echo "PDF files currently in repo root:"
+          ls -1 *.pdf 2>/dev/null || echo "None"
 
           if [ "${{ github.event_name }}" = "push" ]; then
             mapfile -t changed_pdfs < <(git diff --name-only "${{ github.event.before }}" "${{ github.sha }}" -- '*.pdf')
+            echo "Changed PDFs in this push:"
+            printf '%s\n' "${changed_pdfs[@]}"
             if [ "${#changed_pdfs[@]}" -gt 0 ]; then
               latest_pdf="${changed_pdfs[-1]}"
             fi
@@ -95,6 +100,27 @@ jobs:
         id: validate
         continue-on-error: true
         run: python validate_csv.py candidate-pubs.csv --previous pubs.csv --report validation-report.json
+
+      - name: Show validation report
+        if: always()
+        shell: bash
+        run: |
+          if [ -f validation-report.json ]; then
+            cat validation-report.json
+          else
+            echo "validation-report.json was not created."
+          fi
+
+      - name: Upload validation artifacts
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: update-csv-debug
+          path: |
+            validation-report.json
+            candidate-pubs.csv
+            latest-bass-directory.pdf
+          if-no-files-found: warn
 
       - name: Check email config
         if: always() && steps.validate.outcome == 'failure'

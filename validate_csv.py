@@ -11,6 +11,14 @@ MAX_BLANK_RATIO = 0.02
 MAX_COUNTRY_DELTA = 0.2
 
 
+def quarter_key(value: str) -> tuple[int, int]:
+    value = str(value).strip()
+    if not value:
+        return (0, 0)
+    year_text, quarter_text = value.split()
+    return (int(year_text), int(quarter_text.replace("Q", "")))
+
+
 def load_rows(path: Path) -> list[dict[str, str]]:
     with path.open(encoding="utf-8", newline="") as handle:
         return list(csv.DictReader(handle))
@@ -73,6 +81,20 @@ def validate(previous_rows: list[dict[str, str]], candidate_rows: list[dict[str,
                 errors.append(
                     f"Country count changed too much for {country}: previous {previous_value}, candidate {candidate_value} ({delta_ratio:.1%} delta)."
                 )
+
+        previous_last_values = [row.get("last", "").strip() for row in previous_rows if row.get("last", "").strip()]
+        candidate_last_values = [row.get("last", "").strip() for row in candidate_rows if row.get("last", "").strip()]
+        previous_latest = max(previous_last_values, key=quarter_key) if previous_last_values else ""
+        candidate_latest = max(candidate_last_values, key=quarter_key) if candidate_last_values else ""
+        summary["latest_last"] = {
+            "previous": previous_latest,
+            "candidate": candidate_latest,
+        }
+
+        if previous_latest and candidate_latest and quarter_key(candidate_latest) < quarter_key(previous_latest):
+            errors.append(
+                f"Candidate data appears older than the current CSV: previous latest '{previous_latest}', candidate latest '{candidate_latest}'."
+            )
 
     return not errors, errors, summary
 

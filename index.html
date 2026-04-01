@@ -170,10 +170,11 @@
       margin-bottom: 18px;
     }
     .group h2 {
-      font-size: 0.76rem;
+      font-size: 0.7rem;
       color: var(--muted);
       text-transform: uppercase;
-      letter-spacing: 0.16em;
+      letter-spacing: 0.11em;
+      font-weight: 700;
       margin: 0 0 12px;
     }
     .controls { display: grid; gap: 12px; }
@@ -186,6 +187,8 @@
       color: var(--text);
       padding: 12px 13px;
       font: inherit;
+      font-size: 0.96rem;
+      font-weight: 500;
     }
     input::placeholder { color: #9a8b83; }
     button { cursor: pointer; transition: transform 0.12s ease, border-color 0.12s ease, background 0.12s ease, box-shadow 0.12s ease; }
@@ -200,7 +203,7 @@
       background: linear-gradient(180deg, #e94136, #c71c22);
       color: #fff7ef;
       border: none;
-      font-weight: 700;
+      font-weight: 600;
       box-shadow: 0 12px 28px rgba(199,28,34,0.22);
     }
     .secondary {
@@ -287,7 +290,12 @@
     }
     .tiny { font-size: 0.83rem; color: var(--muted); }
     .list-header { display: flex; justify-content: space-between; align-items: center; gap: 10px; margin-bottom: 10px; }
-    .count { font-size: 0.95rem; color: var(--muted); }
+    .list-header h2 { margin: 0; }
+    .count {
+      font-size: 0.86rem;
+      color: var(--muted);
+      font-weight: 500;
+    }
     .results { display: grid; gap: 10px; }
     .card {
       border: 1px solid var(--border);
@@ -316,7 +324,12 @@
       background: rgba(255,255,255,0.94);
       transform: translateY(-2px);
     }
-    .card-title { font-weight: 700; margin-bottom: 6px; font-size: 1rem; }
+    .card-title {
+      font-weight: 600;
+      margin-bottom: 6px;
+      font-size: 0.98rem;
+      letter-spacing: -0.01em;
+    }
     .meta { color: var(--muted); font-size: 0.9rem; line-height: 1.4; }
     .chips { display: flex; gap: 6px; flex-wrap: wrap; margin-top: 10px; }
     .chip {

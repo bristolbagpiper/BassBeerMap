@@ -45,6 +45,95 @@
     .primary { background: linear-gradient(180deg, #d7ab57, #bb8e3d); color: #17120a; border: none; font-weight: 700; }
     .secondary { background: var(--panel-2); }
     .status { border: 1px solid var(--border); background: rgba(255,255,255,0.025); border-radius: var(--radius); padding: 12px; color: var(--muted); font-size: 0.92rem; line-height: 1.45; }
+    .splash-screen {
+      position: fixed;
+      inset: 0;
+      z-index: 2000;
+      display: grid;
+      place-items: center;
+      padding: 24px;
+      background:
+        radial-gradient(circle at top, rgba(208,162,75,0.18), transparent 34%),
+        radial-gradient(circle at bottom right, rgba(142,197,255,0.12), transparent 30%),
+        linear-gradient(180deg, rgba(10,12,16,0.96), rgba(15,17,21,0.98));
+      transition: opacity 0.4s ease, visibility 0.4s ease;
+    }
+    .splash-screen.hidden {
+      opacity: 0;
+      visibility: hidden;
+      pointer-events: none;
+    }
+    .splash-card {
+      width: min(100%, 460px);
+      padding: 28px;
+      border-radius: 22px;
+      border: 1px solid var(--border);
+      background:
+        linear-gradient(180deg, rgba(255,255,255,0.05), rgba(255,255,255,0.015)),
+        rgba(23,26,33,0.92);
+      box-shadow: 0 20px 60px rgba(0,0,0,0.4);
+      backdrop-filter: blur(10px);
+    }
+    .splash-mark {
+      width: 62px;
+      height: 62px;
+      border-radius: 18px;
+      display: grid;
+      place-items: center;
+      margin-bottom: 16px;
+      background:
+        linear-gradient(145deg, rgba(215,171,87,0.96), rgba(187,142,61,0.96));
+      color: #17120a;
+      box-shadow:
+        0 14px 32px rgba(187,142,61,0.28),
+        inset 0 1px 0 rgba(255,255,255,0.28);
+      font-size: 1.7rem;
+      font-weight: 800;
+      letter-spacing: 0.04em;
+    }
+    .splash-kicker {
+      font-size: 0.8rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--accent);
+      font-weight: 700;
+      margin-bottom: 10px;
+    }
+    .splash-card h2 {
+      margin: 0 0 8px;
+      font-size: 1.35rem;
+      line-height: 1.15;
+    }
+    .splash-copy {
+      color: var(--muted);
+      font-size: 0.95rem;
+      line-height: 1.5;
+      margin-bottom: 14px;
+    }
+    .splash-meta {
+      display: flex;
+      gap: 8px;
+      flex-wrap: wrap;
+      margin-bottom: 14px;
+    }
+    .splash-pill {
+      border: 1px solid rgba(255,255,255,0.08);
+      background: rgba(255,255,255,0.05);
+      color: var(--muted);
+      padding: 6px 10px;
+      border-radius: 999px;
+      font-size: 0.78rem;
+    }
+    .splash-status {
+      margin-bottom: 10px;
+    }
+    .splash-screen.ready .splash-mark {
+      background: linear-gradient(145deg, rgba(113,200,126,0.96), rgba(70,155,92,0.96));
+      color: #08130c;
+    }
+    .splash-screen.ready .splash-kicker {
+      color: #9be0a6;
+    }
     .tiny { font-size: 0.83rem; color: var(--muted); }
     .list-header { display: flex; justify-content: space-between; align-items: center; gap: 10px; margin-bottom: 10px; }
     .count { font-size: 0.95rem; color: var(--muted); }
@@ -177,6 +266,22 @@
   </style>
 </head>
 <body>
+  <div id="loadingSplash" class="splash-screen">
+    <div class="splash-card">
+      <div id="splashMark" class="splash-mark">B</div>
+      <div class="splash-kicker">Bass Directory Map</div>
+      <h2>Loading the latest listings</h2>
+      <div class="splash-copy">The map is preparing the CSV data and postcode lookups. The first load can take a few seconds.</div>
+      <div class="splash-meta">
+        <div class="splash-pill">CSV-backed data</div>
+        <div class="splash-pill">Postcode clustering</div>
+        <div class="splash-pill">Mobile-friendly map</div>
+      </div>
+      <div id="splashStatusText" class="status splash-status">Preparing postcode lookups…</div>
+      <div class="loading-bar"><div id="splashLoadingFill"></div></div>
+    </div>
+  </div>
+
   <div class="topbar">
     <div class="title-row">
       <div>
@@ -300,6 +405,10 @@
       moreNotice: document.getElementById('moreNotice'),
       statusText: document.getElementById('statusText'),
       loadingFill: document.getElementById('loadingFill'),
+      splash: document.getElementById('loadingSplash'),
+      splashMark: document.getElementById('splashMark'),
+      splashStatusText: document.getElementById('splashStatusText'),
+      splashLoadingFill: document.getElementById('splashLoadingFill'),
       openPanelBtn: document.getElementById('openPanelBtn'),
       closePanelBtn: document.getElementById('closePanelBtn'),
       helpLegend: document.getElementById('helpLegend'),
@@ -431,7 +540,21 @@
 
     function setStatus(text, pct = null) {
       els.statusText.textContent = text;
+      els.splashStatusText.textContent = text;
       if (pct !== null) els.loadingFill.style.width = `${pct}%`;
+      if (pct !== null) els.splashLoadingFill.style.width = `${pct}%`;
+    }
+
+    function setSplashVisible(visible) {
+      els.splash.classList.toggle('hidden', !visible);
+    }
+
+    function completeSplash() {
+      els.splash.classList.add('ready');
+      els.splashMark.textContent = 'OK';
+      els.splashStatusText.textContent = 'Map ready. Opening the latest directory.';
+      els.splashLoadingFill.style.width = '100%';
+      window.setTimeout(() => setSplashVisible(false), 450);
     }
 
     function dispenseLabel(code) {
@@ -709,7 +832,10 @@
         fillAreaOptions();
         return geocodePostcodes();
       })
-      .then(() => applyFilters(true))
+      .then(() => {
+        applyFilters(true);
+        completeSplash();
+      })
       .catch(err => {
         console.error(err);
         setStatus('Could not load pubs.csv or complete postcode lookups. Check the CSV file and connection, then reload.', 100);

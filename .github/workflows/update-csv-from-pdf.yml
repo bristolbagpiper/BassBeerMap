@@ -101,7 +101,13 @@ jobs:
           done
 
       - name: Generate candidate CSV
-        run: python convert_pdf_to_csv.py latest-bass-directory.pdf candidate-pubs.csv
+        shell: bash
+        run: |
+          if [ "${{ steps.pdf_source.outputs.mode }}" = "uploaded" ] && [ -n "${{ steps.pdf_source.outputs.uploaded_pdf }}" ]; then
+            python convert_pdf_to_csv.py latest-bass-directory.pdf candidate-pubs.csv --metadata candidate-directory-meta.json --source-name "${{ steps.pdf_source.outputs.uploaded_pdf }}"
+          else
+            python convert_pdf_to_csv.py latest-bass-directory.pdf candidate-pubs.csv --metadata candidate-directory-meta.json
+          fi
 
       - name: Validate candidate CSV
         id: validate
@@ -126,6 +132,7 @@ jobs:
           path: |
             validation-report.json
             candidate-pubs.csv
+            candidate-directory-meta.json
             latest-bass-directory.pdf
           if-no-files-found: warn
 
@@ -191,18 +198,20 @@ jobs:
 
       - name: Publish validated CSV
         shell: bash
-        run: mv candidate-pubs.csv pubs.csv
+        run: |
+          mv candidate-pubs.csv pubs.csv
+          mv candidate-directory-meta.json directory-meta.json
 
       - name: Commit refreshed PDF and CSV
         shell: bash
         run: |
-          if git diff --quiet -- '*.pdf' pubs.csv; then
-            echo "No PDF or CSV changes detected."
+          if git diff --quiet -- '*.pdf' pubs.csv directory-meta.json; then
+            echo "No PDF, CSV, or metadata changes detected."
             exit 0
           fi
 
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add -A '*.pdf' pubs.csv
-          git commit -m "Refresh latest PDF and pubs.csv"
+          git add -A '*.pdf' pubs.csv directory-meta.json
+          git commit -m "Refresh latest PDF, pubs.csv, and directory metadata"
           git push

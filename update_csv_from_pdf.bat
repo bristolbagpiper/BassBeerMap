@@ -23,7 +23,7 @@ if not "%PDF_COUNT%"=="1" (
 
 for /f "delims=" %%I in ('powershell -NoProfile -Command "(Get-ChildItem -LiteralPath '.' -Filter '*.pdf').Name"') do set PDF_NAME=%%I
 
-echo Converting "%PDF_NAME%" to pubs.csv...
+echo Converting "%PDF_NAME%" to pubs.csv and directory-meta.json...
 python convert_pdf_to_csv.py "%PDF_NAME%" "pubs.csv"
 
 if errorlevel 1 (
@@ -34,5 +34,5 @@ if errorlevel 1 (
 )
 
 echo.
-echo pubs.csv has been updated.
+echo pubs.csv and directory-meta.json have been updated.
 pause

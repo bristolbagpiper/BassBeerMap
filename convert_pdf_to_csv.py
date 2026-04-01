@@ -1,5 +1,6 @@
 import argparse
 import csv
+import json
 import re
 from pathlib import Path
 
@@ -31,6 +32,33 @@ CSV_COLUMNS = [
     "dispense",
     "notes",
 ]
+
+MONTH_NAMES = {
+    "jan": "January",
+    "feb": "February",
+    "mar": "March",
+    "apr": "April",
+    "may": "May",
+    "jun": "June",
+    "jul": "July",
+    "aug": "August",
+    "sep": "September",
+    "oct": "October",
+    "nov": "November",
+    "dec": "December",
+}
+
+MONTH_YEAR_RE = re.compile(
+    r"(?P<month>jan(?:uary)?|feb(?:ruary)?|mar(?:ch)?|apr(?:il)?|may|jun(?:e)?|jul(?:y)?|aug(?:ust)?|"
+    r"sep(?:t(?:ember)?)?|oct(?:ober)?|nov(?:ember)?|dec(?:ember)?)[-_ ]+(?P<year>20\d{2})",
+    re.IGNORECASE,
+)
+YEAR_MONTH_RE = re.compile(
+    r"(?P<year>20\d{2})[-_ ]+(?P<month>jan(?:uary)?|feb(?:ruary)?|mar(?:ch)?|apr(?:il)?|may|jun(?:e)?|"
+    r"jul(?:y)?|aug(?:ust)?|sep(?:t(?:ember)?)?|oct(?:ober)?|nov(?:ember)?|dec(?:ember)?)",
+    re.IGNORECASE,
+)
+CREATION_DATE_RE = re.compile(r"D:(?P<year>\d{4})(?P<month>\d{2})")
 
 SKIP_PREFIXES = (
     "UK Area",
@@ -64,8 +92,7 @@ SKIP_CONTAINS = ("facebook.com/groups/nationalbassday",)
 SKIP_EXACT = {"not"}
 
 
-def parse_pdf_rows(pdf_path: Path) -> list[dict[str, str]]:
-    reader = PdfReader(str(pdf_path))
+def parse_pdf_rows(reader: PdfReader) -> list[dict[str, str]]:
     items: list[dict[str, float | str]] = []
 
     for page_number, page in enumerate(reader.pages, start=1):
@@ -198,6 +225,61 @@ def write_csv(rows: list[dict[str, str]], output_path: Path) -> None:
         writer.writerows(rows)
 
 
+def normalise_month_name(raw: str) -> str | None:
+    key = raw.strip().lower()[:3]
+    return MONTH_NAMES.get(key)
+
+
+def extract_month_year(value: str) -> str | None:
+    for pattern in (MONTH_YEAR_RE, YEAR_MONTH_RE):
+        match = pattern.search(value)
+        if match:
+            month_name = normalise_month_name(match.group("month"))
+            year = match.group("year")
+            if month_name:
+                return f"{month_name} {year}"
+    return None
+
+
+def month_year_from_creation_date(value: str) -> str | None:
+    match = CREATION_DATE_RE.search(value)
+    if not match:
+        return None
+
+    month_number = int(match.group("month"))
+    if not 1 <= month_number <= 12:
+        return None
+
+    month_name = list(MONTH_NAMES.values())[month_number - 1]
+    return f"{month_name} {match.group('year')}"
+
+
+def extract_directory_metadata(pdf_path: Path, reader: PdfReader, source_name: str | None = None) -> dict[str, str]:
+    month_year = None
+    for candidate in (source_name or "", pdf_path.name, pdf_path.stem):
+        if not candidate:
+            continue
+        month_year = extract_month_year(candidate)
+        if month_year:
+            break
+
+    if not month_year:
+        creation_date = str((reader.metadata or {}).get("/CreationDate", "")).strip()
+        month_year = month_year_from_creation_date(creation_date)
+
+    directory_label = f"{month_year} Bass directory" if month_year else "latest Bass directory"
+    return {
+        "directory_label": directory_label,
+        "directory_month_year": month_year or "",
+        "source_pdf": pdf_path.name,
+        "source_name_hint": source_name or "",
+    }
+
+
+def write_metadata(metadata: dict[str, str], output_path: Path) -> None:
+    output_path.write_text(json.dumps(metadata, indent=2), encoding="utf-8")
+
+
 def main() -> None:
     parser = argparse.ArgumentParser(description="Convert the Bass directory PDF into pubs.csv.")
     parser.add_argument(
@@ -212,14 +294,29 @@ def main() -> None:
         default="pubs.csv",
         help="Path to the output CSV.",
     )
+    parser.add_argument(
+        "--metadata",
+        default="directory-meta.json",
+        help="Path to the output metadata JSON.",
+    )
+    parser.add_argument(
+        "--source-name",
+        default="",
+        help="Original source PDF name used to derive the directory label.",
+    )
     args = parser.parse_args()
 
     pdf_path = Path(args.pdf)
     csv_path = Path(args.csv)
+    metadata_path = Path(args.metadata)
 
-    rows = parse_pdf_rows(pdf_path)
+    reader = PdfReader(str(pdf_path))
+    rows = parse_pdf_rows(reader)
+    metadata = extract_directory_metadata(pdf_path, reader, args.source_name or None)
     write_csv(rows, csv_path)
+    write_metadata(metadata, metadata_path)
     print(f"Wrote {len(rows):,} rows to {csv_path}")
+    print(f"Wrote directory metadata to {metadata_path}")
 
 
 if __name__ == "__main__":

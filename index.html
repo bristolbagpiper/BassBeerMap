@@ -87,12 +87,8 @@
       width: 86px;
       height: 56px;
       flex: 0 0 auto;
+      object-fit: contain;
       filter: drop-shadow(0 10px 18px rgba(0,0,0,0.26));
-    }
-    .bass-logo text {
-      font-family: Georgia, "Times New Roman", serif;
-      font-weight: 700;
-      letter-spacing: 0.08em;
     }
     .splash-kicker {
       font-size: 0.8rem;
@@ -255,11 +251,7 @@
 <body>
   <div id="loadingSplash" class="splash-screen">
     <div class="splash-card">
-      <svg class="bass-logo" viewBox="0 0 180 120" aria-hidden="true">
-        <polygon points="90,8 172,108 8,108" fill="#b11f26"></polygon>
-        <polygon points="90,26 152,102 28,102" fill="#f0dfb2"></polygon>
-        <text x="90" y="90" text-anchor="middle" font-size="44" fill="#9a1318">BASS</text>
-      </svg>
+      <img class="bass-logo" src="bass-logo.svg" alt="Bass logo" />
       <div class="splash-kicker">Bass Directory Map</div>
       <h2>Loading the latest listings</h2>
       <div class="splash-copy">The map is preparing the CSV data and postcode lookups. The first load can take a few seconds.</div>
@@ -271,11 +263,7 @@
   <div class="topbar">
     <div class="title-row">
       <div class="brand-row">
-        <svg class="bass-logo" viewBox="0 0 180 120" aria-hidden="true">
-          <polygon points="90,8 172,108 8,108" fill="#b11f26"></polygon>
-          <polygon points="90,26 152,102 28,102" fill="#f0dfb2"></polygon>
-          <text x="90" y="90" text-anchor="middle" font-size="44" fill="#9a1318">BASS</text>
-        </svg>
+        <img class="bass-logo" src="bass-logo.svg" alt="Bass logo" />
         <div class="brand-lockup">
         <h1>Draught Bass Directory Interactive Map</h1>
         <div class="sub">Search, filter and browse the current listings from the April 2026 Bass directory. Removed pubs are excluded. First load will take a few seconds.</div>

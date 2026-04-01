@@ -197,14 +197,14 @@
       .stats {
         margin-top: 8px;
         gap: 6px;
-        display: grid;
-        grid-template-columns: 1fr;
+        display: flex;
+        flex-wrap: wrap;
       }
       .stat {
         padding: 6px 10px;
         font-size: 0.78rem;
-        width: fit-content;
-        max-width: 100%;
+        width: auto;
+        max-width: calc(50% - 3px);
       }
       .layout { grid-template-columns: 1fr; grid-template-rows: 1fr; position: relative; }
       .map-wrap { min-height: 0; height: 100%; }

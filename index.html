@@ -623,14 +623,6 @@
       </div>
 
       <div class="group">
-        <h2>Map status</h2>
-        <div class="status">
-          <div id="statusText">Preparing postcode lookups…</div>
-          <div class="loading-bar"><div id="loadingFill"></div></div>
-        </div>
-      </div>
-
-      <div class="group">
         <div class="list-header">
           <h2 style="margin:0">Results</h2>
           <div id="resultCount" class="count"></div>
@@ -686,8 +678,6 @@
       results: document.getElementById('results'),
       resultCount: document.getElementById('resultCount'),
       moreNotice: document.getElementById('moreNotice'),
-      statusText: document.getElementById('statusText'),
-      loadingFill: document.getElementById('loadingFill'),
       splash: document.getElementById('loadingSplash'),
       splashStatusText: document.getElementById('splashStatusText'),
       splashLoadingFill: document.getElementById('splashLoadingFill'),
@@ -821,9 +811,7 @@
     }
 
     function setStatus(text, pct = null) {
-      els.statusText.textContent = text;
       els.splashStatusText.textContent = text;
-      if (pct !== null) els.loadingFill.style.width = `${pct}%`;
       if (pct !== null) els.splashLoadingFill.style.width = `${pct}%`;
     }
 

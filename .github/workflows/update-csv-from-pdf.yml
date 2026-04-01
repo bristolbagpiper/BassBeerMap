@@ -95,9 +95,59 @@ jobs:
         continue-on-error: true
         run: python validate_csv.py candidate-pubs.csv --previous pubs.csv --report validation-report.json
 
+      - name: Check email config
+        if: always() && steps.validate.outcome == 'failure'
+        shell: bash
+        run: |
+          [ -n "${SMTP_HOST}" ] || echo "Missing SMTP_HOST"
+          [ -n "${SMTP_USERNAME}" ] || echo "Missing SMTP_USERNAME"
+          [ -n "${SMTP_PASSWORD}" ] || echo "Missing SMTP_PASSWORD"
+          [ -n "${ALERT_TO}" ] || echo "Missing ALERT_TO"
+
       - name: Email validation failure
-        if: steps.validate.outcome == 'failure' && env.SMTP_HOST != '' && env.SMTP_USERNAME != '' && env.SMTP_PASSWORD != '' && env.ALERT_TO != ''
+        if: always() && steps.validate.outcome == 'failure' && env.SMTP_HOST != '' && env.SMTP_USERNAME != '' && env.SMTP_PASSWORD != '' && env.ALERT_TO != ''
         run: python send_alert_email.py --subject "BassBeerMap update rejected" --report validation-report.json
+
+      - name: Create GitHub issue fallback alert
+        if: always() && steps.validate.outcome == 'failure'
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const fs = require('fs');
+            const report = JSON.parse(fs.readFileSync('validation-report.json', 'utf8'));
+            const errors = (report.errors || []).map(error => `- ${error}`).join('\n');
+            const title = 'BassBeerMap update rejected';
+            const body = [
+              'The automated PDF-to-CSV update was rejected.',
+              '',
+              'Validation errors:',
+              errors || '- No validation errors were recorded.',
+              '',
+              `Workflow run: https://github.com/${context.repo.owner}/${context.repo.repo}/actions/runs/${context.runId}`
+            ].join('\n');
+
+            const { data: issues } = await github.rest.issues.listForRepo({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              state: 'open'
+            });
+
+            const existing = issues.find(issue => issue.title === title);
+            if (existing) {
+              await github.rest.issues.createComment({
+                owner: context.repo.owner,
+                repo: context.repo.repo,
+                issue_number: existing.number,
+                body
+              });
+            } else {
+              await github.rest.issues.create({
+                owner: context.repo.owner,
+                repo: context.repo.repo,
+                title,
+                body
+              });
+            }
 
       - name: Fail workflow after rejected validation
         if: steps.validate.outcome == 'failure'

@@ -44,10 +44,7 @@
       background: transparent;
     }
     .title-row {
-      display: grid;
-      grid-template-columns: minmax(0, 1.2fr) minmax(280px, 420px);
-      gap: 22px;
-      align-items: end;
+      display: block;
       padding: 24px 24px 22px;
       background: linear-gradient(180deg, rgba(255,255,255,0.96), rgba(252,247,243,0.94));
       border: 1px solid var(--border);
@@ -79,8 +76,8 @@
       background: radial-gradient(circle, rgba(206,152,52,0.14), rgba(206,152,52,0));
       z-index: -1;
     }
-    .brand-row { display: flex; align-items: flex-start; gap: 18px; min-width: 0; }
-    .brand-lockup { display: flex; flex-direction: column; }
+    .brand-row { display: flex; align-items: flex-start; gap: 24px; min-width: 0; }
+    .brand-lockup { display: flex; flex-direction: column; min-width: 0; }
     h1 {
       margin: 0;
       font-family: "Space Grotesk", "Manrope", sans-serif;
@@ -98,40 +95,37 @@
       line-height: 1.42;
     }
     .stats {
-      display: grid;
-      grid-template-columns: repeat(3, minmax(0, 1fr));
-      gap: 10px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0;
       min-width: 0;
-      align-self: stretch;
+      margin-top: 18px;
     }
     .stat {
-      display: grid;
-      gap: 4px;
-      min-height: 88px;
-      align-content: start;
-      background: rgba(255,255,255,0.72);
-      border: 1px solid rgba(58,34,25,0.08);
-      border-radius: 16px;
-      padding: 12px 14px;
+      display: inline-flex;
+      align-items: baseline;
+      gap: 7px;
+      min-height: 0;
+      background: transparent;
+      border: none;
+      border-radius: 0;
+      padding: 0 20px 0 0;
       color: var(--muted);
-      font-size: 0.82rem;
-      line-height: 1.2;
-      position: relative;
-      overflow: hidden;
-      box-shadow: 0 8px 24px rgba(72,42,26,0.05);
+      font-size: 0.92rem;
+      line-height: 1.3;
+      position: static;
+      overflow: visible;
+      box-shadow: none;
     }
-    .stat::before {
-      content: "";
-      position: absolute;
-      inset: 0 0 auto;
-      height: 3px;
-      background: linear-gradient(90deg, #e33a31, #d1a244);
-      opacity: 0.9;
+    .stat + .stat {
+      border-left: 1px solid var(--border-strong);
+      padding-left: 20px;
     }
+    .stat::before { display: none; }
     .stat strong {
-      display: block;
+      display: inline;
       font-family: "Space Grotesk", "Manrope", sans-serif;
-      font-size: 1.45rem;
+      font-size: 1.18rem;
       line-height: 1;
       letter-spacing: -0.04em;
       color: var(--text);
@@ -241,11 +235,18 @@
       backdrop-filter: blur(10px);
     }
     .bass-logo {
-      width: 140px;
-      height: 96px;
       flex: 0 0 auto;
       object-fit: contain;
       filter: drop-shadow(0 10px 18px rgba(0,0,0,0.26));
+    }
+    .splash-card .bass-logo {
+      width: 140px;
+      height: 96px;
+    }
+    .topbar .bass-logo {
+      width: 178px;
+      height: 124px;
+      margin-top: -4px;
     }
     .splash-kicker {
       font-size: 0.8rem;
@@ -439,8 +440,6 @@
     @media (max-width: 980px) {
       .topbar { padding: 10px 10px 6px; }
       .title-row {
-        grid-template-columns: 1fr;
-        gap: 8px;
         padding: 14px 14px 12px;
         border-radius: 20px;
       }
@@ -469,7 +468,13 @@
         min-height: 0;
         width: auto;
         border-radius: 999px;
+        background: rgba(255,255,255,0.72);
+        border: 1px solid rgba(58,34,25,0.08);
         box-shadow: none;
+      }
+      .stat + .stat {
+        border-left: none;
+        padding-left: 8px;
       }
       .stat::before { display: none; }
       .stat strong {
@@ -514,7 +519,7 @@
         margin-bottom: 14px;
       }
       .mobile-open-btn { display: block; }
-      .bass-logo { width: 58px; height: 42px; margin-top: 1px; }
+      .topbar .bass-logo { width: 58px; height: 42px; margin-top: 1px; }
       .control-row, .button-row { grid-template-columns: 1fr; }
       .legend {
         right: 10px;
@@ -553,12 +558,12 @@
         <div class="brand-lockup">
           <h1>Draught Bass Directory Interactive Map</h1>
           <div class="sub">Search, filter and browse the current listings from the April 2026 Bass directory. Removed pubs are excluded. First load will take a few seconds.</div>
+          <div class="stats">
+            <div class="stat"><strong id="stat-total">Loading...</strong> current entries</div>
+            <div class="stat"><strong id="stat-postcodes">Loading...</strong> unique postcodes</div>
+            <div class="stat"><strong id="stat-countries">Loading...</strong> country / territory groups</div>
+          </div>
         </div>
-      </div>
-      <div class="stats">
-        <div class="stat"><strong id="stat-total">Loading...</strong> current entries</div>
-        <div class="stat"><strong id="stat-postcodes">Loading...</strong> unique postcodes</div>
-        <div class="stat"><strong id="stat-countries">Loading...</strong> country / territory groups</div>
       </div>
     </div>
   </div>

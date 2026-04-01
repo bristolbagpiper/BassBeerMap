@@ -437,31 +437,47 @@
     .mobile-close-btn { border-radius: 999px; }
     body.mobile-panel-open { overflow: hidden; }
     @media (max-width: 980px) {
-      .topbar { padding: 12px 12px 8px; }
+      .topbar { padding: 10px 10px 6px; }
       .title-row {
         grid-template-columns: 1fr;
-        gap: 12px;
-        padding: 18px 16px 16px;
-        border-radius: 22px;
+        gap: 8px;
+        padding: 14px 14px 12px;
+        border-radius: 20px;
       }
-      .brand-row { align-items: flex-start; gap: 10px; }
+      .brand-row { align-items: flex-start; gap: 8px; }
       .brand-lockup { min-width: 0; }
-      h1 { font-size: 1.1rem; line-height: 1.04; max-width: none; }
-      .sub { font-size: 0.8rem; line-height: 1.28; margin-top: 4px; max-width: none; }
+      h1 { font-size: 0.98rem; line-height: 1.02; max-width: none; }
+      .sub {
+        font-size: 0.72rem;
+        line-height: 1.24;
+        margin-top: 3px;
+        max-width: none;
+      }
       .stats {
         min-width: 0;
         margin-top: 0;
         gap: 6px;
-        grid-template-columns: repeat(2, minmax(0, 1fr));
+        display: flex;
+        flex-wrap: wrap;
       }
       .stat {
-        padding: 6px 10px;
-        font-size: 0.78rem;
+        display: inline-flex;
+        align-items: baseline;
+        gap: 4px;
+        padding: 5px 8px;
+        font-size: 0.66rem;
         min-height: 0;
+        width: auto;
+        border-radius: 999px;
+        box-shadow: none;
       }
+      .stat::before { display: none; }
       .stat strong {
-        font-size: 1.05rem;
+        display: inline;
+        font-size: 0.88rem;
+        line-height: 1;
       }
+      .stat br { display: none; }
       .layout { grid-template-columns: 1fr; grid-template-rows: 1fr; position: relative; }
       .map-wrap { min-height: 0; height: 100%; }
       .sidebar {
@@ -498,7 +514,7 @@
         margin-bottom: 14px;
       }
       .mobile-open-btn { display: block; }
-      .bass-logo { width: 72px; height: 52px; margin-top: 2px; }
+      .bass-logo { width: 58px; height: 42px; margin-top: 1px; }
       .control-row, .button-row { grid-template-columns: 1fr; }
       .legend {
         right: 10px;

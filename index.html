@@ -562,6 +562,39 @@
       .leaflet-control-zoom { margin-top: 10px !important; }
       .layout { padding: 0 12px 12px; }
     }
+    @media (max-width: 640px) {
+      .topbar { padding: 8px 8px 4px; }
+      .title-row {
+        padding: 10px 12px;
+        border-radius: 18px;
+      }
+      .title-row::before,
+      .title-row::after { display: none; }
+      .brand-row {
+        gap: 6px;
+        align-items: flex-start;
+      }
+      .topbar .bass-logo {
+        width: 44px;
+        height: 32px;
+        margin-top: 0;
+      }
+      h1 {
+        font-size: 0.92rem;
+        line-height: 1.02;
+      }
+      .sub {
+        margin-top: 2px;
+        font-size: 0.66rem;
+        line-height: 1.18;
+        max-width: 34ch;
+        display: -webkit-box;
+        -webkit-box-orient: vertical;
+        -webkit-line-clamp: 2;
+        overflow: hidden;
+      }
+      .stats { display: none; }
+    }
   </style>
 </head>
 <body>

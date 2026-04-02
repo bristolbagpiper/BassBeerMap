@@ -567,32 +567,24 @@
       .title-row {
         padding: 10px 12px;
         border-radius: 18px;
+        overflow: visible;
       }
       .title-row::before,
       .title-row::after { display: none; }
       .brand-row {
         gap: 6px;
-        align-items: flex-start;
+        align-items: center;
       }
       .topbar .bass-logo {
-        width: 44px;
-        height: 32px;
+        width: 42px;
+        height: auto;
         margin-top: 0;
       }
       h1 {
-        font-size: 0.92rem;
-        line-height: 1.02;
+        font-size: 0.94rem;
+        line-height: 1.08;
       }
-      .sub {
-        margin-top: 2px;
-        font-size: 0.66rem;
-        line-height: 1.18;
-        max-width: 34ch;
-        display: -webkit-box;
-        -webkit-box-orient: vertical;
-        -webkit-line-clamp: 2;
-        overflow: hidden;
-      }
+      .sub { display: none; }
       .stats { display: none; }
     }
   </style>

@@ -588,33 +588,37 @@
       }
       .sub { display: none; }
       .stats {
-        display: grid;
-        grid-template-columns: repeat(3, minmax(0, 1fr));
-        gap: 3px;
-        margin-top: 6px;
-        width: 100%;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 2px 10px;
+        margin-top: 5px;
+        width: auto;
       }
       .stat {
-        display: grid;
-        align-content: start;
-        gap: 2px;
+        display: inline-flex;
+        align-items: baseline;
+        gap: 3px;
         min-width: 0;
-        padding: 5px 6px;
-        font-size: 0.58rem;
-        line-height: 1.12;
-        white-space: normal;
+        padding: 0;
+        font-size: 0.6rem;
+        line-height: 1.2;
+        background: transparent;
+        border: none;
+        border-radius: 0;
+        box-shadow: none;
       }
       .stat strong {
-        display: block;
-        font-size: 0.74rem;
+        display: inline;
+        font-size: 0.76rem;
         line-height: 1;
       }
       .stat-label {
-        display: block;
+        display: inline;
         min-width: 0;
       }
       .stat + .stat {
         padding-left: 0;
+        border-left: none;
       }
     }
   </style>

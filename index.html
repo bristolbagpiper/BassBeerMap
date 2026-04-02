@@ -484,8 +484,26 @@
       color: rgba(255,241,220,0.88);
       margin-top: 2px;
     }
+    .mobile-reset-btn {
+      display: none;
+      position: absolute;
+      top: 12px;
+      right: 12px;
+      z-index: 800;
+      width: auto;
+      padding: 10px 14px;
+      border-radius: 999px;
+      border: 1px solid rgba(255,255,255,0.18);
+      background: rgba(44,26,24,0.92);
+      color: #fff8f1;
+      font-weight: 700;
+      box-shadow: 0 16px 34px rgba(44,26,24,0.18);
+      backdrop-filter: blur(10px);
+    }
+    .mobile-reset-btn.visible { display: inline-flex; }
     .mobile-close-row { display: none; }
     .mobile-close-btn { border-radius: 999px; }
+    body.mobile-panel-open .mobile-reset-btn { display: none; }
     body.mobile-panel-open { overflow: hidden; }
     @media (max-width: 1600px), (max-height: 980px) {
       .topbar {
@@ -684,6 +702,12 @@
         margin-bottom: 14px;
       }
       .mobile-open-btn { display: block; }
+      .mobile-reset-btn {
+        top: 10px;
+        right: 10px;
+        padding: 10px 13px;
+        font-size: 0.84rem;
+      }
       .topbar .bass-logo { width: 58px; height: 42px; margin-top: 1px; }
       .control-row, .button-row { grid-template-columns: 1fr; }
       .legend {
@@ -851,6 +875,7 @@
 
     <main class="map-wrap">
       <button id="openPanelBtn" class="mobile-open-btn">Filters & results<span class="small">Search, narrow down, then jump back to the map</span></button>
+      <button id="mobileResetBtn" class="mobile-reset-btn" type="button">Reset filters</button>
       <div id="map"></div>
       <div id="helpLegend" class="legend">
         <div class="legend-header">
@@ -906,6 +931,7 @@
       splashStatusText: document.getElementById('splashStatusText'),
       splashLoadingFill: document.getElementById('splashLoadingFill'),
       openPanelBtn: document.getElementById('openPanelBtn'),
+      mobileResetBtn: document.getElementById('mobileResetBtn'),
       closePanelBtn: document.getElementById('closePanelBtn'),
       helpLegend: document.getElementById('helpLegend'),
       hideHelpBtn: document.getElementById('hideHelpBtn'),
@@ -1133,6 +1159,15 @@
       };
     }
 
+    function hasActiveFilters() {
+      const { query, country, area, type, dispense } = getActiveFilters();
+      return Boolean(query || country || area || type || dispense);
+    }
+
+    function updateMobileResetButton() {
+      els.mobileResetBtn.classList.toggle('visible', isMobileView() && hasActiveFilters());
+    }
+
     function hasCoordinates(item) {
       return Number.isFinite(item.lat) && Number.isFinite(item.lng);
     }
@@ -1205,6 +1240,7 @@
     function applyFilters(fit = false) {
       const filtered = pubData.filter(matchesFilters);
       renderResults(filtered);
+      updateMobileResetButton();
       const withCoords = getItemsWithCoordinates(filtered);
       if (fit && withCoords.length) {
         const bounds = L.latLngBounds(withCoords.map(item => [item.lat, item.lng]));
@@ -1318,12 +1354,14 @@
     }
 
     els.openPanelBtn.addEventListener('click', openMobilePanel);
+    els.mobileResetBtn.addEventListener('click', resetFilters);
     els.closePanelBtn.addEventListener('click', closeMobilePanel);
     els.hideHelpBtn.addEventListener('click', () => setHelpVisible(false));
     els.showHelpBtn.addEventListener('click', () => setHelpVisible(true));
 
     window.addEventListener('resize', () => {
       if (!isMobileView()) closeMobilePanel();
+      updateMobileResetButton();
       setTimeout(() => map.invalidateSize(), 80);
     });
 

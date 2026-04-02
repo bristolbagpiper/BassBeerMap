@@ -813,7 +813,6 @@
           <div class="stats">
             <div class="stat"><strong id="stat-total">Loading...</strong><span class="stat-label">current entries</span></div>
             <div class="stat"><strong id="stat-postcodes">Loading...</strong><span class="stat-label">unique postcodes</span></div>
-            <div class="stat"><strong id="stat-countries">Loading...</strong><span class="stat-label">country / territory groups</span></div>
           </div>
           <div class="credit-line">Thanks to <a href="https://nationalbassdirectory.wordpress.com/" target="_blank" rel="noopener noreferrer">Quinno of UK National Bass Directory</a> for compiling the PDF directory this map is based on.</div>
         </div>
@@ -937,8 +936,7 @@
       hideHelpBtn: document.getElementById('hideHelpBtn'),
       showHelpBtn: document.getElementById('showHelpBtn'),
       statTotal: document.getElementById('stat-total'),
-      statPostcodes: document.getElementById('stat-postcodes'),
-      statCountries: document.getElementById('stat-countries')
+      statPostcodes: document.getElementById('stat-postcodes')
     };
 
     const MAX_RESULT_CARDS = 200;
@@ -1037,11 +1035,9 @@
 
     function updateStats() {
       const uniquePostcodes = new Set(pubData.map(item => item.postcode).filter(Boolean));
-      const countryGroupCount = Object.keys(countryCounts).length;
 
       els.statTotal.textContent = pubData.length.toLocaleString();
       els.statPostcodes.textContent = uniquePostcodes.size.toLocaleString();
-      els.statCountries.textContent = countryGroupCount.toLocaleString();
     }
 
     function applyDirectoryMetadata(metadata) {

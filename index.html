@@ -140,6 +140,21 @@
       color: var(--text);
     }
     .stat-label { display: inline; }
+    .credit-line {
+      margin-top: clamp(6px, 0.7vw, 10px);
+      max-width: 72ch;
+      color: var(--muted);
+      font-size: clamp(0.8rem, 0.75rem + 0.08vw, 0.86rem);
+      line-height: 1.35;
+    }
+    .credit-line a {
+      color: var(--accent-2);
+      font-weight: 600;
+      text-decoration: none;
+    }
+    .credit-line a:hover {
+      text-decoration: underline;
+    }
     .layout {
       display: grid;
       grid-template-columns: clamp(280px, 22vw, 340px) 1fr;
@@ -495,6 +510,10 @@
       .stats {
         margin-top: 8px;
       }
+      .credit-line {
+        margin-top: 6px;
+        font-size: 0.78rem;
+      }
       .stat {
         padding-right: 14px;
         font-size: 0.84rem;
@@ -574,6 +593,12 @@
         font-size: 0.72rem;
         line-height: 1.24;
         margin-top: 3px;
+        max-width: none;
+      }
+      .credit-line {
+        font-size: 0.68rem;
+        line-height: 1.25;
+        margin-top: 5px;
         max-width: none;
       }
       .stats {
@@ -745,6 +770,7 @@
             <div class="stat"><strong id="stat-postcodes">Loading...</strong><span class="stat-label">unique postcodes</span></div>
             <div class="stat"><strong id="stat-countries">Loading...</strong><span class="stat-label">country / territory groups</span></div>
           </div>
+          <div class="credit-line">Thanks to <a href="https://nationalbassdirectory.wordpress.com/" target="_blank" rel="noopener noreferrer">Quinno at UK National Bass Directory</a> for compiling the PDF directory this map is based on.</div>
         </div>
       </div>
     </div>

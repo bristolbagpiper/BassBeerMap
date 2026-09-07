@@ -9,6 +9,11 @@ REQUIRED_FIELDS = ("country", "pub_name", "place_name", "postcode", "pg", "last"
 MAX_ROW_DELTA_RATIO = 0.08
 MAX_BLANK_RATIO = 0.02
 MAX_COUNTRY_DELTA = 0.2
+# Percentage-only checks are overly sensitive for countries with only a few
+# listings: a change of two entries is 22.2% when the previous total is nine.
+# Keep the relative guard for material changes, while accepting small absolute
+# variations that are expected as the directory is refreshed.
+MAX_COUNTRY_ABSOLUTE_DELTA = 2
 
 
 def quarter_key(value: str) -> tuple[int, int]:
@@ -76,10 +81,12 @@ def validate(previous_rows: list[dict[str, str]], candidate_rows: list[dict[str,
             }
             if previous_value == 0:
                 continue
-            delta_ratio = abs(candidate_value - previous_value) / previous_value
-            if delta_ratio > MAX_COUNTRY_DELTA:
+            absolute_delta = abs(candidate_value - previous_value)
+            delta_ratio = absolute_delta / previous_value
+            if delta_ratio > MAX_COUNTRY_DELTA and absolute_delta > MAX_COUNTRY_ABSOLUTE_DELTA:
                 errors.append(
-                    f"Country count changed too much for {country}: previous {previous_value}, candidate {candidate_value} ({delta_ratio:.1%} delta)."
+                    f"Country count changed too much for {country}: previous {previous_value}, candidate {candidate_value} "
+                    f"({delta_ratio:.1%}, {absolute_delta} rows delta)."
                 )
 
         previous_last_values = [row.get("last", "").strip() for row in previous_rows if row.get("last", "").strip()]

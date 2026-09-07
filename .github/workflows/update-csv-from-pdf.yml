@@ -4,6 +4,12 @@ on:
   schedule:
     - cron: "17 6 * * *"
   workflow_dispatch:
+    inputs:
+      backfill_legacy_venues:
+        description: "Resolve all existing listings without precise venue coordinates (one-time, up to one hour)"
+        required: false
+        default: false
+        type: boolean
   push:
     paths:
       - "*.pdf"
@@ -140,7 +146,13 @@ jobs:
 
       - name: Resolve precise coordinates for new venues
         if: steps.validate.outcome == 'success'
-        run: python resolve_venue_coordinates.py candidate-pubs.csv candidate-venue-coordinates.json --existing venue-coordinates.json --previous pubs.csv
+        shell: bash
+        run: |
+          if [ "${{ inputs.backfill_legacy_venues }}" = "true" ]; then
+            python resolve_venue_coordinates.py candidate-pubs.csv candidate-venue-coordinates.json --existing venue-coordinates.json
+          else
+            python resolve_venue_coordinates.py candidate-pubs.csv candidate-venue-coordinates.json --existing venue-coordinates.json --previous pubs.csv
+          fi
 
       - name: Show validation report
         if: always()

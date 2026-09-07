@@ -1,6 +1,7 @@
 import argparse
 import csv
 import json
+import re
 from collections import Counter
 from pathlib import Path
 
@@ -14,6 +15,9 @@ MAX_COUNTRY_DELTA = 0.2
 # Keep the relative guard for material changes, while accepting small absolute
 # variations that are expected as the directory is refreshed.
 MAX_COUNTRY_ABSOLUTE_DELTA = 2
+POSTCODE_RE = re.compile(r"^[A-Z]{1,2}\d[A-Z\d]? \d[A-Z]{2}$")
+LAST_RE = re.compile(r"^20\d{2} Q[1-4]$")
+DISPENSE_RE = re.compile(r"^[HGEJBP](?:/[HGEJBP])*$")
 
 
 def quarter_key(value: str) -> tuple[int, int]:
@@ -58,6 +62,20 @@ def validate(previous_rows: list[dict[str, str]], candidate_rows: list[dict[str,
         summary["field_blank_ratios"][field] = ratio
         if ratio > MAX_BLANK_RATIO:
             errors.append(f"Field '{field}' is blank in {ratio:.1%} of candidate rows.")
+
+    for index, row in enumerate(candidate_rows, start=2):
+        postcode = row.get("postcode", "").strip().upper()
+        if not POSTCODE_RE.match(postcode):
+            errors.append(f"Row {index} has an invalid postcode: '{postcode}'.")
+        if row.get("pg", "").strip() not in {"Perm", "Guest"}:
+            errors.append(f"Row {index} has an invalid P/G value.")
+        if not LAST_RE.match(row.get("last", "").strip()):
+            errors.append(f"Row {index} has an invalid last-verified quarter.")
+        if not DISPENSE_RE.match(row.get("dispense", "").strip()):
+            errors.append(f"Row {index} has an invalid dispense value.")
+        if len(errors) >= 25:
+            errors.append("Further row-level validation errors omitted.")
+            break
 
     if previous_rows:
         previous_count = len(previous_rows)

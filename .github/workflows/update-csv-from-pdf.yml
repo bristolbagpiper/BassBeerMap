@@ -12,24 +12,22 @@ on:
       - "fetch_latest_pdf.py"
       - "send_alert_email.py"
       - "validate_csv.py"
+      - "build_coordinates.py"
+      - "postcode-overrides.json"
       - "requirements.txt"
 
 permissions:
   contents: write
   issues: write
 
+concurrency:
+  group: update-csv-from-pdf
+  cancel-in-progress: false
+
 jobs:
   update-csv:
     if: github.actor != 'github-actions[bot]'
     runs-on: ubuntu-latest
-    env:
-      SMTP_HOST: ${{ secrets.SMTP_HOST }}
-      SMTP_PORT: ${{ secrets.SMTP_PORT }}
-      SMTP_USERNAME: ${{ secrets.SMTP_USERNAME }}
-      SMTP_PASSWORD: ${{ secrets.SMTP_PASSWORD }}
-      ALERT_TO: ${{ secrets.ALERT_TO }}
-      ALERT_FROM: ${{ secrets.ALERT_FROM }}
-
     steps:
       - name: Check out repository
         uses: actions/checkout@v4
@@ -114,6 +112,10 @@ jobs:
         continue-on-error: true
         run: python validate_csv.py candidate-pubs.csv --previous pubs.csv --report validation-report.json
 
+      - name: Build candidate coordinates
+        if: steps.validate.outcome == 'success'
+        run: python build_coordinates.py candidate-pubs.csv candidate-pub-coordinates.json --overrides postcode-overrides.json
+
       - name: Show validation report
         if: always()
         shell: bash
@@ -133,29 +135,47 @@ jobs:
             validation-report.json
             candidate-pubs.csv
             candidate-directory-meta.json
+            candidate-pub-coordinates.json
             latest-bass-directory.pdf
           if-no-files-found: warn
 
       - name: Check email config
+        id: email_config
         if: always() && steps.validate.outcome == 'failure'
         shell: bash
+        env:
+          SMTP_HOST: ${{ secrets.SMTP_HOST }}
+          SMTP_USERNAME: ${{ secrets.SMTP_USERNAME }}
+          SMTP_PASSWORD: ${{ secrets.SMTP_PASSWORD }}
+          ALERT_TO: ${{ secrets.ALERT_TO }}
         run: |
-          [ -n "${SMTP_HOST}" ] || echo "Missing SMTP_HOST"
-          [ -n "${SMTP_USERNAME}" ] || echo "Missing SMTP_USERNAME"
-          [ -n "${SMTP_PASSWORD}" ] || echo "Missing SMTP_PASSWORD"
-          [ -n "${ALERT_TO}" ] || echo "Missing ALERT_TO"
+          if [ -n "${SMTP_HOST}" ] && [ -n "${SMTP_USERNAME}" ] && [ -n "${SMTP_PASSWORD}" ] && [ -n "${ALERT_TO}" ]; then
+            echo "configured=true" >> "$GITHUB_OUTPUT"
+          else
+            echo "configured=false" >> "$GITHUB_OUTPUT"
+            echo "SMTP alert is not configured; GitHub issue fallback will be used."
+          fi
 
       - name: Email validation failure
-        if: always() && steps.validate.outcome == 'failure' && env.SMTP_HOST != '' && env.SMTP_USERNAME != '' && env.SMTP_PASSWORD != '' && env.ALERT_TO != ''
+        if: always() && steps.validate.outcome == 'failure' && steps.email_config.outputs.configured == 'true'
+        env:
+          SMTP_HOST: ${{ secrets.SMTP_HOST }}
+          SMTP_PORT: ${{ secrets.SMTP_PORT }}
+          SMTP_USERNAME: ${{ secrets.SMTP_USERNAME }}
+          SMTP_PASSWORD: ${{ secrets.SMTP_PASSWORD }}
+          ALERT_TO: ${{ secrets.ALERT_TO }}
+          ALERT_FROM: ${{ secrets.ALERT_FROM }}
         run: python send_alert_email.py --subject "BassBeerMap update rejected" --report validation-report.json
 
       - name: Create GitHub issue fallback alert
-        if: always() && steps.validate.outcome == 'failure'
+        if: always() && (steps.validate.outcome == 'failure' || failure())
         uses: actions/github-script@v7
         with:
           script: |
             const fs = require('fs');
-            const report = JSON.parse(fs.readFileSync('validation-report.json', 'utf8'));
+            const report = fs.existsSync('validation-report.json')
+              ? JSON.parse(fs.readFileSync('validation-report.json', 'utf8'))
+              : { errors: ['The workflow failed before validation could produce a report.'] };
             const errors = (report.errors || []).map(error => `- ${error}`).join('\n');
             const title = 'BassBeerMap update rejected';
             const body = [
@@ -201,17 +221,18 @@ jobs:
         run: |
           mv candidate-pubs.csv pubs.csv
           mv candidate-directory-meta.json directory-meta.json
+          mv candidate-pub-coordinates.json pub-coordinates.json
 
       - name: Commit refreshed PDF and CSV
         shell: bash
         run: |
-          if git diff --quiet -- '*.pdf' pubs.csv directory-meta.json; then
+          if git diff --quiet -- '*.pdf' pubs.csv directory-meta.json pub-coordinates.json; then
             echo "No PDF, CSV, or metadata changes detected."
             exit 0
           fi
 
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add -A '*.pdf' pubs.csv directory-meta.json
-          git commit -m "Refresh latest PDF, pubs.csv, and directory metadata"
+          git add -A '*.pdf' pubs.csv directory-meta.json pub-coordinates.json
+          git commit -m "Refresh latest PDF, CSV, and coordinates"
           git push

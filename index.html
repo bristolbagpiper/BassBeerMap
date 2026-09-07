@@ -4,6 +4,8 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Draught Bass Directory Map</title>
+  <meta name="description" content="Find pubs and clubs listed as serving draught Bass, with map locations, distance sorting and directory verification dates." />
+  <link rel="canonical" href="https://bassbeermap.com/" />
   <link rel="icon" type="image/png" href="credit-link-icon.png" />
   <link rel="shortcut icon" href="credit-link-icon.png" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -205,6 +207,8 @@
       margin: 0 0 12px;
     }
     .controls { display: grid; gap: 12px; }
+    .sr-only { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0, 0, 0, 0); white-space: nowrap; border: 0; }
+    .location-status { min-height: 1.2em; font-size: 0.82rem; color: var(--muted); }
     .control-row { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
     input, select, button {
       width: 100%;
@@ -334,6 +338,7 @@
       position: relative;
       overflow: hidden;
       box-shadow: 0 8px 22px rgba(72,42,26,0.04);
+      text-align: left;
     }
     .card::before {
       content: "";
@@ -369,6 +374,8 @@
     }
     .chip.perm { background: rgba(112, 176, 117, 0.12); color: #2f6b39; }
     .chip.guest { background: rgba(206,152,52,0.15); color: #8b6120; }
+    .card-actions { display: flex; gap: 10px; margin-top: 10px; }
+    .card-actions a { color: var(--accent-2); font-size: 0.84rem; font-weight: 700; }
     .leaflet-popup-content-wrapper, .leaflet-popup-tip {
       background: rgba(255,255,255,0.96);
       color: var(--text);
@@ -811,7 +818,7 @@
         <img class="bass-logo" src="bass-logo.svg" alt="Bass logo" />
         <div class="brand-lockup">
           <h1>Draught Bass Directory Interactive Map</h1>
-          <div class="sub">Search, filter and browse the current listings from the <span id="directoryLabel">latest Bass directory</span>. Removed pubs are excluded. First load will take a few seconds.</div>
+          <div class="sub">Find draught Bass near you or search the <span id="directoryLabel">latest Bass directory</span>. Guest listings are occasional: check before travelling.</div>
           <div class="stats">
             <div class="stat"><strong id="stat-total">Loading...</strong><span class="stat-label">current entries</span></div>
             <div class="stat"><strong id="stat-postcodes">Loading...</strong><span class="stat-label">unique postcodes</span></div>
@@ -836,18 +843,21 @@
       <div class="group">
         <h2>Filters</h2>
         <div class="controls">
-          <input id="searchBox" type="text" placeholder="Search pub, place, postcode or note" />
+          <label class="sr-only" for="searchBox">Search listings</label>
+          <input id="searchBox" type="search" placeholder="Search pub, place or postcode" />
+          <button id="nearMeBtn" class="primary" type="button">Use my location</button>
+          <div id="locationStatus" class="location-status" aria-live="polite"></div>
           <div class="control-row">
-            <select id="countryFilter"></select>
-            <select id="areaFilter"></select>
+            <label class="sr-only" for="countryFilter">Country or territory</label><select id="countryFilter"></select>
+            <label class="sr-only" for="areaFilter">Area</label><select id="areaFilter"></select>
           </div>
           <div class="control-row">
-            <select id="typeFilter">
+            <label class="sr-only" for="typeFilter">Bass availability type</label><select id="typeFilter">
               <option value="">All types</option>
               <option value="Perm">Permanent</option>
               <option value="Guest">Guest</option>
             </select>
-            <select id="dispenseFilter">
+            <label class="sr-only" for="dispenseFilter">Dispense method</label><select id="dispenseFilter">
               <option value="">All dispense</option>
               <option value="H">Handpump</option>
               <option value="G">Gravity</option>
@@ -867,7 +877,7 @@
       <div class="group">
         <div class="list-header">
           <h2 style="margin:0">Results</h2>
-          <div id="resultCount" class="count"></div>
+          <div id="resultCount" class="count" aria-live="polite"></div>
         </div>
         <div id="results" class="results"></div>
         <div id="moreNotice" class="footer-note"></div>
@@ -875,7 +885,7 @@
     </aside>
 
     <main class="map-wrap">
-      <button id="openPanelBtn" class="mobile-open-btn">Filters & results<span class="small">Search, narrow down, then jump back to the map</span></button>
+          <button id="openPanelBtn" class="mobile-open-btn" aria-controls="sidebarPanel">Filters & results<span class="small">Search, narrow down, then jump back to the map</span></button>
       <button id="mobileResetBtn" class="mobile-reset-btn" type="button">Reset filters</button>
       <div id="map"></div>
       <div id="helpLegend" class="legend">
@@ -883,14 +893,14 @@
           <strong>How to use</strong>
           <button id="hideHelpBtn" class="legend-close" type="button" aria-label="Hide help">×</button>
         </div>
-        <div class="tiny">Type in the search box, filter by country / area / type, then click any result or marker cluster. Multiple pubs can share one postcode, so nearby entries may sit on the same spot until you zoom in.</div>
+        <div class="tiny">Use “my location” to sort nearby pubs. Guest means Bass is occasional, not guaranteed today. Check before travelling.</div>
       </div>
       <button id="showHelpBtn" class="help-reopen-btn" type="button">Show help</button>
     </main>
   </div>
 
   <footer class="page-footer">
-    <div class="footer-disclaimer">Independent, unofficial fan-made map. Not affiliated with, endorsed by, or sponsored by AB InBev or Bass.</div>
+    <div class="footer-disclaimer">Independent, unofficial fan-made map. Directory information can change—especially Guest listings—so check before travelling. Not affiliated with AB InBev or Bass.</div>
   </footer>
 
   <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
@@ -898,8 +908,10 @@
   <script>
     let pubData = [];
     let countryCounts = {};
+    let userLocation = null;
     const CSV_URL = './pubs.csv';
     const DIRECTORY_METADATA_URL = './directory-meta.json';
+    const COORDINATES_URL = './pub-coordinates.json';
     let activeDirectoryLabel = 'latest Bass directory';
     const map = L.map('map', { zoomControl: true, preferCanvas: true }).setView([54.5, -2.5], 6);
     L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
@@ -937,11 +949,13 @@
       hideHelpBtn: document.getElementById('hideHelpBtn'),
       showHelpBtn: document.getElementById('showHelpBtn'),
       statTotal: document.getElementById('stat-total'),
-      statPostcodes: document.getElementById('stat-postcodes')
+      statPostcodes: document.getElementById('stat-postcodes'),
+      nearMeBtn: document.getElementById('nearMeBtn'),
+      locationStatus: document.getElementById('locationStatus'),
+      sidebarPanel: document.getElementById('sidebarPanel')
     };
 
     const MAX_RESULT_CARDS = 200;
-    const POSTCODE_CACHE_KEY = 'bass_directory_postcode_cache_v1';
     const HELP_HIDDEN_KEY = 'bass_directory_help_hidden_v1';
     const CSV_COLUMNS = ['country', 'area', 'pub_name', 'place_name', 'postcode', 'pg', 'last', 'dispense', 'notes'];
     const DISPENSE_LABELS = {
@@ -1021,7 +1035,7 @@
           normalised.area,
           normalised.country,
           normalised.notes
-        ].join(' ').toLowerCase();
+        ].join(' ').toLowerCase().replace(/[^a-z0-9]/g, '');
 
         return normalised;
       });
@@ -1077,6 +1091,28 @@
       updateStats();
     }
 
+    async function loadCoordinates() {
+      setStatus('Loading venue locations…', 35);
+      const response = await fetch(COORDINATES_URL, { cache: 'no-store' });
+      if (!response.ok) throw new Error(`Coordinate load failed with status ${response.status}`);
+      const payload = await response.json();
+      const coordinates = payload.coordinates || {};
+      pubData.forEach(item => {
+        const coords = coordinates[item.postcode];
+        if (coords && Number.isFinite(coords.lat) && Number.isFinite(coords.lng)) {
+          item.lat = coords.lat;
+          item.lng = coords.lng;
+          item.marker = L.marker([item.lat, item.lng]).bindPopup(makePopup(item));
+        } else {
+          item.lat = null;
+          item.lng = null;
+          item.marker = null;
+        }
+      });
+      const located = pubData.filter(hasCoordinates).length;
+      setStatus(`Ready. Located ${located.toLocaleString()} of ${pubData.length.toLocaleString()} listings.`, 100);
+    }
+
     function setStatus(text, pct = null) {
       els.splashStatusText.textContent = text;
       if (pct !== null) els.splashLoadingFill.style.width = `${pct}%`;
@@ -1107,6 +1143,7 @@
     }
 
     function makePopup(item) {
+      const directions = `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(`${item.pub_name}, ${item.place_name}, ${item.postcode}`)}`;
       return `
         <div class="popup">
           <h3>${escapeHtml(item.pub_name)}</h3>
@@ -1115,6 +1152,7 @@
           <p><strong>Area:</strong> ${escapeHtml(item.area || '—')} | <strong>Country:</strong> ${escapeHtml(item.country)}</p>
           <p><strong>Status:</strong> ${escapeHtml(item.pg)} | <strong>Last verified:</strong> ${escapeHtml(item.last)} | <strong>Dispense:</strong> ${escapeHtml(dispenseLabel(item.dispense))}</p>
           ${item.notes ? `<p><strong>Notes:</strong> ${escapeHtml(item.notes)}</p>` : ''}
+          <p><a href="${directions}" target="_blank" rel="noopener noreferrer">Get directions</a></p>
         </div>
       `;
     }
@@ -1148,7 +1186,7 @@
 
     function getActiveFilters() {
       return {
-        query: els.searchBox.value.trim().toLowerCase(),
+        query: els.searchBox.value.trim().toLowerCase().replace(/[^a-z0-9]/g, ''),
         country: els.countryFilter.value,
         area: els.areaFilter.value,
         type: els.typeFilter.value,
@@ -1191,24 +1229,50 @@
       return true;
     }
 
+    function distanceMiles(item) {
+      if (!userLocation || !hasCoordinates(item)) return null;
+      const rad = value => value * Math.PI / 180;
+      const earthMiles = 3958.8;
+      const dLat = rad(item.lat - userLocation.lat);
+      const dLng = rad(item.lng - userLocation.lng);
+      const a = Math.sin(dLat / 2) ** 2 + Math.cos(rad(userLocation.lat)) * Math.cos(rad(item.lat)) * Math.sin(dLng / 2) ** 2;
+      return earthMiles * 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1 - a));
+    }
+
+    function sortResults(items) {
+      return [...items].sort((a, b) => {
+        const aDistance = distanceMiles(a);
+        const bDistance = distanceMiles(b);
+        if (aDistance !== null && bDistance !== null && aDistance !== bDistance) return aDistance - bDistance;
+        if (aDistance !== null) return -1;
+        if (bDistance !== null) return 1;
+        if (a.pg !== b.pg) return a.pg === 'Perm' ? -1 : 1;
+        return a.pub_name.localeCompare(b.pub_name);
+      });
+    }
+
     function createResultCard(item) {
-      const card = document.createElement('div');
+      const card = document.createElement('button');
+      card.type = 'button';
       card.className = 'card';
       card.innerHTML = `
         <div class="card-title">${escapeHtml(item.pub_name)}</div>
         <div class="meta">${escapeHtml(item.place_name)} · ${escapeHtml(item.postcode)}<br>${escapeHtml(item.area || '—')} · ${escapeHtml(item.country)}</div>
         <div class="chips">
-          <span class="chip ${item.pg === 'Perm' ? 'perm' : 'guest'}">${item.pg === 'Perm' ? 'Perm' : 'Guest'}</span>
+          <span class="chip ${item.pg === 'Perm' ? 'perm' : 'guest'}">${item.pg === 'Perm' ? 'Permanent' : 'Guest / occasional'}</span>
           <span class="chip">${escapeHtml(item.last)}</span>
           <span class="chip">${escapeHtml(dispenseLabel(item.dispense))}</span>
         </div>
+        ${distanceMiles(item) !== null ? `<div class="footer-note">${distanceMiles(item).toFixed(1)} miles away</div>` : ''}
+        ${!item.marker ? '<div class="footer-note">Location unavailable on the map.</div>' : ''}
         ${item.notes ? `<div class="footer-note">${escapeHtml(item.notes)}</div>` : ''}
       `;
       card.addEventListener('click', () => {
         if (!item.marker) return;
-
-        map.setView([item.lat, item.lng], Math.max(map.getZoom(), 14));
-        item.marker.openPopup();
+        markerLayer.zoomToShowLayer(item.marker, () => {
+          map.setView([item.lat, item.lng], Math.max(map.getZoom(), 14));
+          item.marker.openPopup();
+        });
         if (isMobileView()) closeMobilePanel();
       });
 
@@ -1219,13 +1283,14 @@
       markerLayer.clearLayers();
       els.results.innerHTML = '';
 
-      const withCoords = getItemsWithCoordinates(filtered);
+      const ordered = sortResults(filtered);
+      const withCoords = getItemsWithCoordinates(ordered);
       withCoords.forEach(item => {
         if (item.marker) markerLayer.addLayer(item.marker);
       });
 
       els.resultCount.textContent = `${filtered.length.toLocaleString()} matches`;
-      filtered
+      ordered
         .slice(0, MAX_RESULT_CARDS)
         .forEach(item => els.results.appendChild(createResultCard(item)));
 
@@ -1241,73 +1306,11 @@
       const withCoords = getItemsWithCoordinates(filtered);
       if (fit && withCoords.length) {
         const bounds = L.latLngBounds(withCoords.map(item => [item.lat, item.lng]));
-        map.fitBounds(bounds.pad(0.08));
+        map.fitBounds(bounds.pad(0.08), { maxZoom: 15 });
         if (isMobileView()) closeMobilePanel();
       }
     }
 
-    function getCachedCoords() {
-      try {
-        return JSON.parse(localStorage.getItem(POSTCODE_CACHE_KEY) || '{}');
-      } catch {
-        return {};
-      }
-    }
-
-    function saveCachedCoords(cache) {
-      try {
-        localStorage.setItem(POSTCODE_CACHE_KEY, JSON.stringify(cache));
-      } catch {}
-    }
-
-    async function geocodePostcodes() {
-      const cache = getCachedCoords();
-      const uniquePostcodes = [...new Set(pubData.map(item => item.postcode))];
-      const missing = uniquePostcodes.filter(pc => !cache[pc]);
-
-      let processed = uniquePostcodes.length - missing.length;
-      setStatus(`Loaded ${processed.toLocaleString()} cached postcode lookups.`, uniquePostcodes.length ? (processed / uniquePostcodes.length) * 100 : 100);
-
-      const chunkSize = 100;
-      for (let i = 0; i < missing.length; i += chunkSize) {
-        const chunk = missing.slice(i, i + chunkSize);
-        setStatus(`Looking up postcodes ${(i + 1).toLocaleString()}–${Math.min(i + chunk.length, missing.length).toLocaleString()} of ${missing.length.toLocaleString()}…`, ((processed + i) / uniquePostcodes.length) * 100);
-        const response = await fetch('https://api.postcodes.io/postcodes', {
-          method: 'POST',
-          headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify({ postcodes: chunk })
-        });
-        const payload = await response.json();
-        (payload.result || []).forEach(entry => {
-          if (entry && entry.query && entry.result) {
-            cache[entry.query] = { lat: entry.result.latitude, lng: entry.result.longitude };
-          } else if (entry && entry.query) {
-            cache[entry.query] = null;
-          }
-        });
-        processed += chunk.length;
-        saveCachedCoords(cache);
-        setStatus(`Looked up ${processed.toLocaleString()} of ${uniquePostcodes.length.toLocaleString()} unique postcodes.`, (processed / uniquePostcodes.length) * 100);
-      }
-
-      let geocodedEntries = 0;
-      pubData.forEach(item => {
-        const coords = cache[item.postcode];
-        if (coords && hasCoordinates(coords)) {
-          item.lat = coords.lat;
-          item.lng = coords.lng;
-          geocodedEntries += 1;
-          item.marker = L.marker([item.lat, item.lng]).bindPopup(makePopup(item));
-        } else {
-          item.lat = null;
-          item.lng = null;
-          item.marker = null;
-        }
-      });
-
-      const geocodedPostcodes = uniquePostcodes.filter(pc => cache[pc] && Number.isFinite(cache[pc].lat)).length;
-      setStatus(`Ready. Geocoded ${geocodedEntries.toLocaleString()} entries across ${geocodedPostcodes.toLocaleString()} postcodes.`, 100);
-    }
 
 
     function isMobileView() {
@@ -1316,10 +1319,15 @@
 
     function openMobilePanel() {
       document.body.classList.add('mobile-panel-open');
+      els.openPanelBtn.setAttribute('aria-expanded', 'true');
+      els.sidebarPanel.removeAttribute('inert');
+      window.setTimeout(() => els.searchBox.focus(), 250);
     }
 
     function closeMobilePanel() {
       document.body.classList.remove('mobile-panel-open');
+      els.openPanelBtn.setAttribute('aria-expanded', 'false');
+      if (isMobileView()) els.sidebarPanel.setAttribute('inert', '');
     }
 
     function setHelpVisible(visible, persist = true) {
@@ -1350,14 +1358,42 @@
       applyFilters(true);
     }
 
+    function requestUserLocation() {
+      if (!navigator.geolocation) {
+        els.locationStatus.textContent = 'Location is not supported by this browser.';
+        return;
+      }
+      els.locationStatus.textContent = 'Finding your location…';
+      navigator.geolocation.getCurrentPosition(position => {
+        userLocation = { lat: position.coords.latitude, lng: position.coords.longitude };
+        els.locationStatus.textContent = 'Results are now sorted by distance.';
+        map.setView([userLocation.lat, userLocation.lng], 11);
+        applyFilters(false);
+      }, () => {
+        els.locationStatus.textContent = 'Location was not shared. Search by town or postcode instead.';
+      }, { enableHighAccuracy: false, timeout: 10000, maximumAge: 300000 });
+    }
+
     els.openPanelBtn.addEventListener('click', openMobilePanel);
+    els.nearMeBtn.addEventListener('click', requestUserLocation);
     els.mobileResetBtn.addEventListener('click', resetFilters);
     els.closePanelBtn.addEventListener('click', closeMobilePanel);
     els.hideHelpBtn.addEventListener('click', () => setHelpVisible(false));
     els.showHelpBtn.addEventListener('click', () => setHelpVisible(true));
+    window.addEventListener('keydown', event => {
+      if (event.key === 'Escape' && isMobileView() && document.body.classList.contains('mobile-panel-open')) {
+        closeMobilePanel();
+        els.openPanelBtn.focus();
+      }
+    });
 
     window.addEventListener('resize', () => {
-      if (!isMobileView()) closeMobilePanel();
+      if (!isMobileView()) {
+        closeMobilePanel();
+        els.sidebarPanel.removeAttribute('inert');
+      } else if (!document.body.classList.contains('mobile-panel-open')) {
+        els.sidebarPanel.setAttribute('inert', '');
+      }
       updateMobileResetButton();
       setTimeout(() => map.invalidateSize(), 80);
     });
@@ -1369,16 +1405,22 @@
     els.areaFilter.addEventListener('change', () => applyFilters(true));
     els.typeFilter.addEventListener('change', () => applyFilters(true));
     els.dispenseFilter.addEventListener('change', () => applyFilters(true));
-    els.searchBox.addEventListener('input', () => applyFilters(false));
+    let searchTimer;
+    els.searchBox.addEventListener('input', () => {
+      window.clearTimeout(searchTimer);
+      searchTimer = window.setTimeout(() => applyFilters(false), 120);
+    });
     els.resetBtn.addEventListener('click', resetFilters);
     els.fitBtn.addEventListener('click', () => applyFilters(true));
 
     initialiseHelpVisibility();
+    if (isMobileView()) els.sidebarPanel.setAttribute('inert', '');
+    els.openPanelBtn.setAttribute('aria-expanded', 'false');
     Promise.all([loadDirectoryMetadata(), loadPubData()])
       .then(() => {
         fillCountryOptions();
         fillAreaOptions();
-        return geocodePostcodes();
+        return loadCoordinates();
       })
       .then(() => {
         applyFilters(true);
@@ -1386,8 +1428,9 @@
       })
       .catch(err => {
         console.error(err);
-        setStatus('Could not load pubs.csv or complete postcode lookups. Check the CSV file and connection, then reload.', 100);
+        setStatus('Could not load all map locations. You can still search the directory.', 100);
         applyFilters(false);
+        completeSplash();
       });
   </script>
 </body>

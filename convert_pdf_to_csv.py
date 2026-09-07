@@ -225,6 +225,17 @@ def write_csv(rows: list[dict[str, str]], output_path: Path) -> None:
         writer.writerows(rows)
 
 
+def apply_postcode_overrides(rows: list[dict[str, str]], overrides_path: Path) -> None:
+    """Apply documented source corrections before publishing the CSV."""
+    if not overrides_path.exists():
+        return
+    overrides = json.loads(overrides_path.read_text(encoding="utf-8"))
+    for row in rows:
+        override = overrides.get(row["postcode"])
+        if override and override.get("postcode"):
+            row["postcode"] = str(override["postcode"]).upper()
+
+
 def normalise_month_name(raw: str) -> str | None:
     key = raw.strip().lower()[:3]
     return MONTH_NAMES.get(key)
@@ -289,6 +300,11 @@ def main() -> None:
         help="Path to the source PDF.",
     )
     parser.add_argument(
+        "--postcode-overrides",
+        default="postcode-overrides.json",
+        help="JSON file containing documented postcode corrections.",
+    )
+    parser.add_argument(
         "csv",
         nargs="?",
         default="pubs.csv",
@@ -312,6 +328,7 @@ def main() -> None:
 
     reader = PdfReader(str(pdf_path))
     rows = parse_pdf_rows(reader)
+    apply_postcode_overrides(rows, Path(args.postcode_overrides))
     metadata = extract_directory_metadata(pdf_path, reader, args.source_name or None)
     write_csv(rows, csv_path)
     write_metadata(metadata, metadata_path)

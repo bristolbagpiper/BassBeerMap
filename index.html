@@ -350,7 +350,7 @@
       background: rgba(255,255,255,0.78);
       border-radius: 16px;
       padding: 14px;
-      cursor: pointer;
+      cursor: default;
       transition: transform 0.14s ease, border-color 0.14s ease, background 0.14s ease;
       position: relative;
       overflow: hidden;
@@ -392,8 +392,24 @@
     .chip.perm { background: rgba(112, 176, 117, 0.12); color: #2f6b39; }
     .chip.guest { background: rgba(206,152,52,0.15); color: #8b6120; }
     .chip.older { background: rgba(204,32,36,0.1); color: #9d2427; }
-    .card-actions { display: flex; gap: 10px; margin-top: 10px; }
-    .card-actions a { color: var(--accent-2); font-size: 0.84rem; font-weight: 700; }
+    .card-actions { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; margin-top: 12px; }
+    .card-actions button, .card-actions a {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-width: 0;
+      padding: 9px 10px;
+      border-radius: 11px;
+      font-size: 0.82rem;
+      font-weight: 700;
+      text-align: center;
+    }
+    .card-actions a {
+      border: 1px solid var(--border);
+      background: rgba(255,255,255,0.88);
+      color: var(--accent-2);
+      text-decoration: none;
+    }
     .leaflet-popup-content-wrapper, .leaflet-popup-tip {
       background: rgba(255,255,255,0.96);
       color: var(--text);
@@ -928,7 +944,7 @@
           <strong>How to use</strong>
           <button id="hideHelpBtn" class="legend-close" type="button" aria-label="Hide help">×</button>
         </div>
-        <div class="tiny">Use “my location” to sort nearby pubs. Guest means Bass is occasional, not guaranteed today. Check before travelling.</div>
+        <div class="tiny">Use “my location” to sort nearby pubs. Pins show postcode-level locations. Guest means Bass is occasional, not guaranteed today. Check before travelling.</div>
       </div>
       <button id="showHelpBtn" class="help-reopen-btn" type="button">Show help</button>
     </main>
@@ -1193,8 +1209,12 @@
         .replaceAll("'", '&#39;');
     }
 
+    function directionsUrl(item) {
+      return `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(`${item.pub_name}, ${item.place_name}, ${item.postcode}`)}`;
+    }
+
     function makePopup(item) {
-      const directions = `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(`${item.pub_name}, ${item.place_name}, ${item.postcode}`)}`;
+      const directions = directionsUrl(item);
       return `
         <div class="popup">
           <h3>${escapeHtml(item.pub_name)}</h3>
@@ -1307,8 +1327,7 @@
     }
 
     function createResultCard(item) {
-      const card = document.createElement('button');
-      card.type = 'button';
+      const card = document.createElement('article');
       card.className = 'card';
       card.innerHTML = `
         <div class="card-title">${escapeHtml(item.pub_name)}</div>
@@ -1321,9 +1340,13 @@
         ${distanceMiles(item) !== null ? `<div class="footer-note">${distanceMiles(item).toFixed(1)} miles away</div>` : ''}
         ${!item.marker ? '<div class="footer-note">Location unavailable on the map.</div>' : ''}
         ${item.notes ? `<div class="footer-note">${escapeHtml(item.notes)}</div>` : ''}
+        <div class="card-actions">
+          ${item.marker ? '<button class="secondary card-map-button" type="button">View on map</button>' : ''}
+          <a href="${directionsUrl(item)}" target="_blank" rel="noopener noreferrer">Directions</a>
+        </div>
       `;
-      card.addEventListener('click', () => {
-        if (!item.marker) return;
+      const mapButton = card.querySelector('.card-map-button');
+      mapButton?.addEventListener('click', () => {
         markerLayer.zoomToShowLayer(item.marker, () => {
           map.setView([item.lat, item.lng], Math.max(map.getZoom(), 14));
           item.marker.openPopup();

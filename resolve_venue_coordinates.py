@@ -17,25 +17,44 @@ def key(row):
 
 
 def normalise(value):
-    value = re.sub(r"^the\s+", "", value.strip().lower())
+    value = re.sub(r"^the\s+", "", value.strip().lower()).replace("&", " and ")
     return re.sub(r"[^a-z0-9]", "", value)
 
 
+def name_variants(name):
+    variants = [name]
+    if re.search(r"\band\b", name, flags=re.IGNORECASE):
+        variants.append(re.sub(r"\band\b", "&", name, flags=re.IGNORECASE))
+    if name.lower().startswith("the "):
+        variants.append(name[4:])
+    return list(dict.fromkeys(variants))
+
+
 def resolve(row):
-    query = f"{row['pub_name']}, {row['place_name']}, {row['postcode']}, United Kingdom"
-    url = f"{API_URL}?{urlencode({'q': query, 'format': 'jsonv2', 'addressdetails': 1, 'limit': 5, 'countrycodes': 'gb,im,je'})}"
-    request = Request(url, headers={"User-Agent": USER_AGENT, "Accept": "application/json"})
-    with urlopen(request, timeout=30) as response:
-        candidates = json.loads(response.read())
     wanted = normalise(row["pub_name"])
-    for candidate in candidates:
-        if normalise(candidate.get("name", "")) == wanted and candidate.get("type") in {"pub", "bar", "social_club", "club"}:
-            return {"lat": float(candidate["lat"]), "lng": float(candidate["lon"]), "source": "openstreetmap"}
+    for index, pub_name in enumerate(name_variants(row["pub_name"])):
+        if index:
+            time.sleep(1.1)
+        query = f"{pub_name}, {row['place_name']}, {row['postcode']}, United Kingdom"
+        url = f"{API_URL}?{urlencode({'q': query, 'format': 'jsonv2', 'addressdetails': 1, 'limit': 5, 'countrycodes': 'gb,im,je'})}"
+        request = Request(url, headers={"User-Agent": USER_AGENT, "Accept": "application/json"})
+        with urlopen(request, timeout=30) as response:
+            candidates = json.loads(response.read())
+        for candidate in candidates:
+            if normalise(candidate.get("name", "")) == wanted and candidate.get("type") in {"pub", "bar", "social_club", "club"}:
+                return {"lat": float(candidate["lat"]), "lng": float(candidate["lon"]), "source": "openstreetmap"}
     return None
 
 
 def read_rows(path):
     return list(csv.DictReader(Path(path).open(encoding="utf-8", newline="")))
+
+
+def write_output(path, venues, unresolved):
+    Path(path).write_text(
+        json.dumps({"venues": venues, "unresolved_venues": unresolved}, separators=(",", ":")),
+        encoding="utf-8",
+    )
 
 
 def main():
@@ -68,10 +87,11 @@ def main():
             unresolved.append(venue_key)
             print(f"{index}: lookup failed for {row['pub_name']}: {error}")
         print(f"{index}/{len(candidates)}: {row['pub_name']} {'matched' if match else 'not matched'}")
+        write_output(args.output, venues, unresolved)
         if index < len(candidates):
             time.sleep(1.1)
 
-    Path(args.output).write_text(json.dumps({"venues": venues, "unresolved_venues": unresolved}, separators=(",", ":")), encoding="utf-8")
+    write_output(args.output, venues, unresolved)
     print(f"Wrote {len(venues):,} precise venue coordinates; {len(unresolved):,} new listings need review.")
 
 

@@ -209,6 +209,8 @@
     .controls { display: grid; gap: 12px; }
     .sr-only { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0, 0, 0, 0); white-space: nowrap; border: 0; }
     .location-status { min-height: 1.2em; font-size: 0.82rem; color: var(--muted); }
+    .location-inputs { display: grid; grid-template-columns: 1fr auto; gap: 8px; }
+    .location-inputs button { width: auto; white-space: nowrap; }
     .control-row { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
     input, select, button {
       width: 100%;
@@ -719,6 +721,8 @@
       }
       .topbar .bass-logo { width: 58px; height: 42px; margin-top: 1px; }
       .control-row, .button-row { grid-template-columns: 1fr; }
+      .location-inputs { grid-template-columns: 1fr; }
+      .location-inputs button { width: 100%; }
       .legend {
         right: 10px;
         left: 10px;
@@ -846,11 +850,24 @@
           <label class="sr-only" for="searchBox">Search listings</label>
           <input id="searchBox" type="search" placeholder="Search pub, place or postcode" />
           <button id="nearMeBtn" class="primary" type="button">Use my location</button>
+          <div class="location-inputs">
+            <label class="sr-only" for="locationPostcode">Your postcode</label>
+            <input id="locationPostcode" type="text" inputmode="text" autocomplete="postal-code" placeholder="Or enter your postcode" />
+            <button id="findPostcodeBtn" class="secondary" type="button">Find nearby</button>
+          </div>
           <div id="locationStatus" class="location-status" aria-live="polite"></div>
           <div class="control-row">
             <label class="sr-only" for="countryFilter">Country or territory</label><select id="countryFilter"></select>
             <label class="sr-only" for="areaFilter">Area</label><select id="areaFilter"></select>
           </div>
+          <label class="sr-only" for="radiusFilter">Search radius</label>
+          <select id="radiusFilter" disabled>
+            <option value="">Any distance</option>
+            <option value="5">Within 5 miles</option>
+            <option value="10">Within 10 miles</option>
+            <option value="25">Within 25 miles</option>
+            <option value="50">Within 50 miles</option>
+          </select>
           <div class="control-row">
             <label class="sr-only" for="typeFilter">Bass availability type</label><select id="typeFilter">
               <option value="">All types</option>
@@ -909,6 +926,7 @@
     let pubData = [];
     let countryCounts = {};
     let userLocation = null;
+    let userMarker = null;
     const CSV_URL = './pubs.csv';
     const DIRECTORY_METADATA_URL = './directory-meta.json';
     const COORDINATES_URL = './pub-coordinates.json';
@@ -952,6 +970,9 @@
       statPostcodes: document.getElementById('stat-postcodes'),
       nearMeBtn: document.getElementById('nearMeBtn'),
       locationStatus: document.getElementById('locationStatus'),
+      locationPostcode: document.getElementById('locationPostcode'),
+      findPostcodeBtn: document.getElementById('findPostcodeBtn'),
+      radiusFilter: document.getElementById('radiusFilter'),
       sidebarPanel: document.getElementById('sidebarPanel')
     };
 
@@ -1190,13 +1211,14 @@
         country: els.countryFilter.value,
         area: els.areaFilter.value,
         type: els.typeFilter.value,
-        dispense: els.dispenseFilter.value
+        dispense: els.dispenseFilter.value,
+        radius: Number(els.radiusFilter.value) || 0
       };
     }
 
     function hasActiveFilters() {
-      const { query, country, area, type, dispense } = getActiveFilters();
-      return Boolean(query || country || area || type || dispense);
+      const { query, country, area, type, dispense, radius } = getActiveFilters();
+      return Boolean(query || country || area || type || dispense || radius);
     }
 
     function updateMobileResetButton() {
@@ -1217,7 +1239,8 @@
         country,
         area,
         type,
-        dispense
+        dispense,
+        radius
       } = getActiveFilters();
 
       if (country && item.country !== country) return false;
@@ -1225,6 +1248,7 @@
       if (type && item.pg !== type) return false;
       if (dispense && !item.dispense.includes(dispense)) return false;
       if (query && !item.searchText.includes(query)) return false;
+      if (radius && (!userLocation || distanceMiles(item) === null || distanceMiles(item) > radius)) return false;
 
       return true;
     }
@@ -1355,7 +1379,33 @@
       els.areaFilter.value = '';
       els.typeFilter.value = '';
       els.dispenseFilter.value = '';
+      els.radiusFilter.value = '';
+      els.radiusFilter.disabled = true;
+      els.locationPostcode.value = '';
+      userLocation = null;
+      if (userMarker) map.removeLayer(userMarker);
+      userMarker = null;
+      els.locationStatus.textContent = '';
       applyFilters(true);
+    }
+
+    function setUserLocation(lat, lng, label) {
+      userLocation = { lat, lng };
+      if (userMarker) map.removeLayer(userMarker);
+      userMarker = L.circleMarker([lat, lng], {
+        radius: 8,
+        color: '#ffffff',
+        weight: 3,
+        fillColor: '#1769aa',
+        fillOpacity: 1
+      }).bindTooltip('Your location');
+      userMarker.addTo(map);
+      els.radiusFilter.disabled = false;
+      if (!els.radiusFilter.value) els.radiusFilter.value = '25';
+      els.locationStatus.textContent = `${label}. Showing closest listings within ${els.radiusFilter.value} miles.`;
+      map.setView([lat, lng], 11);
+      applyFilters(true);
+      if (isMobileView()) closeMobilePanel();
     }
 
     function requestUserLocation() {
@@ -1365,17 +1415,39 @@
       }
       els.locationStatus.textContent = 'Finding your location…';
       navigator.geolocation.getCurrentPosition(position => {
-        userLocation = { lat: position.coords.latitude, lng: position.coords.longitude };
-        els.locationStatus.textContent = 'Results are now sorted by distance.';
-        map.setView([userLocation.lat, userLocation.lng], 11);
-        applyFilters(false);
+        setUserLocation(position.coords.latitude, position.coords.longitude, 'Location found');
       }, () => {
         els.locationStatus.textContent = 'Location was not shared. Search by town or postcode instead.';
       }, { enableHighAccuracy: false, timeout: 10000, maximumAge: 300000 });
     }
 
+    async function findNearbyFromPostcode() {
+      const postcode = els.locationPostcode.value.trim().toUpperCase();
+      if (!postcode) {
+        els.locationStatus.textContent = 'Enter a postcode first.';
+        els.locationPostcode.focus();
+        return;
+      }
+      els.locationStatus.textContent = 'Finding that postcode…';
+      try {
+        const response = await fetch(`https://api.postcodes.io/postcodes/${encodeURIComponent(postcode)}`);
+        if (!response.ok) throw new Error('Postcode lookup failed');
+        const payload = await response.json();
+        if (!payload.result || !Number.isFinite(payload.result.latitude) || !Number.isFinite(payload.result.longitude)) {
+          throw new Error('Postcode has no map location');
+        }
+        setUserLocation(payload.result.latitude, payload.result.longitude, `Nearby ${payload.result.postcode}`);
+      } catch {
+        els.locationStatus.textContent = 'That postcode could not be located. Try a full UK postcode.';
+      }
+    }
+
     els.openPanelBtn.addEventListener('click', openMobilePanel);
     els.nearMeBtn.addEventListener('click', requestUserLocation);
+    els.findPostcodeBtn.addEventListener('click', findNearbyFromPostcode);
+    els.locationPostcode.addEventListener('keydown', event => {
+      if (event.key === 'Enter') findNearbyFromPostcode();
+    });
     els.mobileResetBtn.addEventListener('click', resetFilters);
     els.closePanelBtn.addEventListener('click', closeMobilePanel);
     els.hideHelpBtn.addEventListener('click', () => setHelpVisible(false));
@@ -1405,6 +1477,7 @@
     els.areaFilter.addEventListener('change', () => applyFilters(true));
     els.typeFilter.addEventListener('change', () => applyFilters(true));
     els.dispenseFilter.addEventListener('change', () => applyFilters(true));
+    els.radiusFilter.addEventListener('change', () => applyFilters(true));
     let searchTimer;
     els.searchBox.addEventListener('input', () => {
       window.clearTimeout(searchTimer);

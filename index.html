@@ -902,11 +902,10 @@
     const DIRECTORY_METADATA_URL = './directory-meta.json';
     let activeDirectoryLabel = 'latest Bass directory';
     const map = L.map('map', { zoomControl: true, preferCanvas: true }).setView([54.5, -2.5], 6);
-    L.tileLayer('https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png', {
-      subdomains: 'abcd',
-      maxZoom: 20,
+    L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
+      maxZoom: 19,
       crossOrigin: true,
-      attribution: '&copy; OpenStreetMap contributors &copy; CARTO'
+      attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
     }).addTo(map);
 
     const markerLayer = L.markerClusterGroup({

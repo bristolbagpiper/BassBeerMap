@@ -8,18 +8,25 @@ from urllib.request import Request, urlopen
 
 HOME_URL = "https://nationalbassdirectory.wordpress.com/"
 USER_AGENT = "BassBeerMapBot/1.0"
+TIMEOUT_SECONDS = 30
 
 
 def fetch_text(url: str) -> str:
     request = Request(url, headers={"User-Agent": USER_AGENT})
-    with urlopen(request) as response:
+    with urlopen(request, timeout=TIMEOUT_SECONDS) as response:
         return response.read().decode("utf-8", errors="replace")
 
 
 def fetch_bytes(url: str) -> bytes:
     request = Request(url, headers={"User-Agent": USER_AGENT})
-    with urlopen(request) as response:
-        return response.read()
+    with urlopen(request, timeout=TIMEOUT_SECONDS) as response:
+        content_type = response.headers.get_content_type()
+        payload = response.read()
+    if content_type != "application/pdf":
+        raise RuntimeError(f"Expected a PDF download but received '{content_type}'.")
+    if not payload.startswith(b"%PDF-"):
+        raise RuntimeError("Downloaded file does not have a valid PDF signature.")
+    return payload
 
 
 def find_latest_post_url(home_html: str) -> str:

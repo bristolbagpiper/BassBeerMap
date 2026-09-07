@@ -22,7 +22,7 @@ DISPENSE_RE = re.compile(r"^[HGEJBP](?:/[HGEJBP])*$")
 
 def quarter_key(value: str) -> tuple[int, int]:
     value = str(value).strip()
-    if not value:
+    if not LAST_RE.match(value):
         return (0, 0)
     year_text, quarter_text = value.split()
     return (int(year_text), int(quarter_text.replace("Q", "")))
@@ -107,8 +107,8 @@ def validate(previous_rows: list[dict[str, str]], candidate_rows: list[dict[str,
                     f"({delta_ratio:.1%}, {absolute_delta} rows delta)."
                 )
 
-        previous_last_values = [row.get("last", "").strip() for row in previous_rows if row.get("last", "").strip()]
-        candidate_last_values = [row.get("last", "").strip() for row in candidate_rows if row.get("last", "").strip()]
+        previous_last_values = [row.get("last", "").strip() for row in previous_rows if LAST_RE.match(row.get("last", "").strip())]
+        candidate_last_values = [row.get("last", "").strip() for row in candidate_rows if LAST_RE.match(row.get("last", "").strip())]
         previous_latest = max(previous_last_values, key=quarter_key) if previous_last_values else ""
         candidate_latest = max(candidate_last_values, key=quarter_key) if candidate_last_values else ""
         summary["latest_last"] = {

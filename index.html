@@ -987,6 +987,7 @@
     const CSV_URL = './pubs.csv';
     const DIRECTORY_METADATA_URL = './directory-meta.json';
     const COORDINATES_URL = './pub-coordinates.json';
+    const DATA_FETCH_OPTIONS = { cache: 'no-cache' };
     let activeDirectoryLabel = 'latest Bass directory';
     const map = L.map('map', { zoomControl: true, preferCanvas: true }).setView([54.5, -2.5], 6);
     L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
@@ -1155,7 +1156,7 @@
 
     async function loadDirectoryMetadata() {
       try {
-        const response = await fetch(DIRECTORY_METADATA_URL, { cache: 'no-store' });
+        const response = await fetch(DIRECTORY_METADATA_URL, DATA_FETCH_OPTIONS);
         if (!response.ok) return;
 
         const metadata = await response.json();
@@ -1168,7 +1169,7 @@
     async function loadPubData() {
       setStatus('Loading listings from pubs.csv...', 6);
 
-      const response = await fetch(CSV_URL, { cache: 'no-store' });
+      const response = await fetch(CSV_URL, DATA_FETCH_OPTIONS);
       if (!response.ok) {
         throw new Error(`CSV load failed with status ${response.status}`);
       }
@@ -1183,7 +1184,7 @@
 
     async function loadCoordinates() {
       setStatus('Loading venue locations…', 35);
-      const response = await fetch(COORDINATES_URL, { cache: 'no-store' });
+      const response = await fetch(COORDINATES_URL, DATA_FETCH_OPTIONS);
       if (!response.ok) throw new Error(`Coordinate load failed with status ${response.status}`);
       const payload = await response.json();
       const coordinates = payload.coordinates || {};

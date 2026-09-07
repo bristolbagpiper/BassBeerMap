@@ -2,8 +2,10 @@ import json
 import tempfile
 import unittest
 from pathlib import Path
+from unittest.mock import patch
 
 from convert_pdf_to_csv import apply_postcode_overrides
+from fetch_latest_pdf import download_latest_pdf
 from validate_csv import validate
 
 
@@ -43,6 +45,20 @@ class ValidationTests(unittest.TestCase):
             path.write_text(json.dumps({"DE4 4RF": {"postcode": "DE4 4FR"}}), encoding="utf-8")
             apply_postcode_overrides(rows, path)
         self.assertEqual(rows[0]["postcode"], "DE4 4FR")
+
+    def test_pdf_download_replaces_existing_file_only_after_a_valid_download(self):
+        home_page = '<h2><a href="https://example.test/latest">Latest</a></h2>'
+        post_page = '<a href="https://example.test/directory.pdf">Download</a>'
+        with tempfile.TemporaryDirectory() as directory:
+            destination = Path(directory) / "latest-bass-directory.pdf"
+            destination.write_bytes(b"old PDF")
+            with patch("fetch_latest_pdf.fetch_text", side_effect=[home_page, post_page]), patch(
+                "fetch_latest_pdf.fetch_bytes", return_value=b"%PDF-new"
+            ):
+                download_latest_pdf(destination)
+
+            self.assertEqual(destination.read_bytes(), b"%PDF-new")
+            self.assertFalse((Path(directory) / ".latest-bass-directory.pdf.download").exists())
 
 
 if __name__ == "__main__":

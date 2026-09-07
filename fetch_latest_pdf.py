@@ -50,7 +50,13 @@ def download_latest_pdf(output_path: Path) -> None:
     pdf_url = find_pdf_url(post_html, post_url)
     pdf_bytes = fetch_bytes(pdf_url)
 
-    output_path.write_bytes(pdf_bytes)
+    output_path.parent.mkdir(parents=True, exist_ok=True)
+    temporary_path = output_path.with_name(f".{output_path.name}.download")
+    try:
+        temporary_path.write_bytes(pdf_bytes)
+        temporary_path.replace(output_path)
+    finally:
+        temporary_path.unlink(missing_ok=True)
     print(f"Downloaded latest PDF from {pdf_url} to {output_path}")
 
 

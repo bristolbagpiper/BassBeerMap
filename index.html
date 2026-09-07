@@ -1191,9 +1191,14 @@
         fetch(VENUE_COORDINATE_OVERRIDES_URL, DATA_FETCH_OPTIONS)
       ]);
       const venues = {};
-      if (venueResponse.ok) Object.assign(venues, (await venueResponse.json()).venues || {});
+      const unresolved = new Set();
+      if (venueResponse.ok) {
+        const payload = await venueResponse.json();
+        Object.assign(venues, payload.venues || {});
+        (payload.unresolved_venues || []).forEach(venue => unresolved.add(venue));
+      }
       if (overrideResponse.ok) Object.assign(venues, (await overrideResponse.json()).venues || {});
-      return venues;
+      return { venues, unresolved };
     }
 
     async function loadCoordinates() {
@@ -1203,13 +1208,18 @@
       const payload = await response.json();
       const coordinates = payload.coordinates || {};
       let venueCoordinates = {};
+      let unresolvedVenues = new Set();
       try {
-        venueCoordinates = await loadVenueCoordinates();
+        const venueData = await loadVenueCoordinates();
+        venueCoordinates = venueData.venues;
+        unresolvedVenues = venueData.unresolved;
       } catch (error) {
         console.warn('Could not load precise venue locations; using postcode locations.', error);
       }
       pubData.forEach(item => {
-        const coords = venueCoordinates[venueKey(item)] || coordinates[item.postcode];
+        const itemVenueKey = venueKey(item);
+        const coords = venueCoordinates[itemVenueKey]
+          || (unresolvedVenues.has(itemVenueKey) ? null : coordinates[item.postcode]);
         if (coords && Number.isFinite(coords.lat) && Number.isFinite(coords.lng)) {
           item.lat = coords.lat;
           item.lng = coords.lng;

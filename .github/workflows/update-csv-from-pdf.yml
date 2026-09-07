@@ -13,7 +13,9 @@ on:
       - "send_alert_email.py"
       - "validate_csv.py"
       - "build_coordinates.py"
+      - "resolve_venue_coordinates.py"
       - "postcode-overrides.json"
+      - "venue-coordinates.json"
       - "requirements.txt"
       - "tests/**"
 
@@ -125,6 +127,10 @@ jobs:
         if: steps.validate.outcome == 'success'
         run: python build_coordinates.py candidate-pubs.csv candidate-pub-coordinates.json --overrides postcode-overrides.json
 
+      - name: Resolve precise coordinates for new venues
+        if: steps.validate.outcome == 'success'
+        run: python resolve_venue_coordinates.py candidate-pubs.csv candidate-venue-coordinates.json --existing venue-coordinates.json --previous pubs.csv
+
       - name: Show validation report
         if: always()
         shell: bash
@@ -145,6 +151,7 @@ jobs:
             candidate-pubs.csv
             candidate-directory-meta.json
             candidate-pub-coordinates.json
+            candidate-venue-coordinates.json
             latest-bass-directory.pdf
           if-no-files-found: warn
 
@@ -231,17 +238,18 @@ jobs:
           mv candidate-pubs.csv pubs.csv
           mv candidate-directory-meta.json directory-meta.json
           mv candidate-pub-coordinates.json pub-coordinates.json
+          mv candidate-venue-coordinates.json venue-coordinates.json
 
       - name: Commit refreshed PDF and CSV
         shell: bash
         run: |
-          if git diff --quiet -- '*.pdf' pubs.csv directory-meta.json pub-coordinates.json; then
+          if git diff --quiet -- '*.pdf' pubs.csv directory-meta.json pub-coordinates.json venue-coordinates.json; then
             echo "No PDF, CSV, or metadata changes detected."
             exit 0
           fi
 
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add -A '*.pdf' pubs.csv directory-meta.json pub-coordinates.json
+          git add -A '*.pdf' pubs.csv directory-meta.json pub-coordinates.json venue-coordinates.json
           git commit -m "Refresh latest PDF, CSV, and coordinates"
           git push

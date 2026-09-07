@@ -240,8 +240,6 @@
     .controls { display: grid; gap: 12px; }
     .sr-only { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0, 0, 0, 0); white-space: nowrap; border: 0; }
     .location-status { min-height: 1.2em; font-size: 0.82rem; color: var(--muted); }
-    .location-inputs { display: grid; grid-template-columns: 1fr auto; gap: 8px; }
-    .location-inputs button { width: auto; white-space: nowrap; }
     .control-row { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
     input, select, button {
       width: 100%;
@@ -781,8 +779,6 @@
       }
       .topbar .bass-logo { width: 58px; height: 42px; margin-top: 1px; }
       .control-row, .button-row { grid-template-columns: 1fr; }
-      .location-inputs { grid-template-columns: 1fr; }
-      .location-inputs button { width: 100%; }
       .legend {
         right: 10px;
         left: 10px;
@@ -909,13 +905,8 @@
         <h2>Filters</h2>
         <div class="controls">
           <label class="sr-only" for="searchBox">Search listings</label>
-          <input id="searchBox" type="search" placeholder="Search pub, place or postcode" />
+          <input id="searchBox" type="search" placeholder="Search pub or place — or enter postcode + Enter" />
           <button id="nearMeBtn" class="primary" type="button">Use my location</button>
-          <div class="location-inputs">
-            <label class="sr-only" for="locationPostcode">Your postcode</label>
-            <input id="locationPostcode" type="text" inputmode="text" autocomplete="postal-code" placeholder="Or enter your postcode" />
-            <button id="findPostcodeBtn" class="secondary" type="button">Find nearby</button>
-          </div>
           <div id="locationStatus" class="location-status" aria-live="polite"></div>
           <div class="control-row">
             <label class="sr-only" for="countryFilter">Country or territory</label><select id="countryFilter"></select>
@@ -1034,8 +1025,6 @@
       statPostcodes: document.getElementById('stat-postcodes'),
       nearMeBtn: document.getElementById('nearMeBtn'),
       locationStatus: document.getElementById('locationStatus'),
-      locationPostcode: document.getElementById('locationPostcode'),
-      findPostcodeBtn: document.getElementById('findPostcodeBtn'),
       radiusFilter: document.getElementById('radiusFilter'),
       sidebarPanel: document.getElementById('sidebarPanel'),
       mapNotice: document.getElementById('mapNotice')
@@ -1513,7 +1502,6 @@
       els.dispenseFilter.value = '';
       els.radiusFilter.value = '';
       els.radiusFilter.disabled = true;
-      els.locationPostcode.value = '';
       userLocation = null;
       if (userMarker) map.removeLayer(userMarker);
       userMarker = null;
@@ -1555,10 +1543,10 @@
     }
 
     async function findNearbyFromPostcode() {
-      const postcode = els.locationPostcode.value.trim().toUpperCase();
+      const postcode = els.searchBox.value.trim().toUpperCase();
       if (!postcode) {
         els.locationStatus.textContent = 'Enter a postcode first.';
-        els.locationPostcode.focus();
+        els.searchBox.focus();
         return;
       }
       els.locationStatus.textContent = 'Finding that postcode…';
@@ -1569,6 +1557,7 @@
         if (!payload.result || !Number.isFinite(payload.result.latitude) || !Number.isFinite(payload.result.longitude)) {
           throw new Error('Postcode has no map location');
         }
+        els.searchBox.value = '';
         setUserLocation(payload.result.latitude, payload.result.longitude, `Nearby ${payload.result.postcode}`);
       } catch {
         els.locationStatus.textContent = 'That postcode could not be located. Try a full UK postcode.';
@@ -1577,10 +1566,6 @@
 
     els.openPanelBtn.addEventListener('click', openMobilePanel);
     els.nearMeBtn.addEventListener('click', requestUserLocation);
-    els.findPostcodeBtn.addEventListener('click', findNearbyFromPostcode);
-    els.locationPostcode.addEventListener('keydown', event => {
-      if (event.key === 'Enter') findNearbyFromPostcode();
-    });
     els.mobileResetBtn.addEventListener('click', resetFilters);
     els.closePanelBtn.addEventListener('click', closeMobilePanel);
     els.hideHelpBtn.addEventListener('click', () => setHelpVisible(false));
@@ -1631,6 +1616,14 @@
     els.searchBox.addEventListener('input', () => {
       window.clearTimeout(searchTimer);
       searchTimer = window.setTimeout(() => applyFilters(false), 120);
+    });
+    els.searchBox.addEventListener('keydown', event => {
+      if (event.key !== 'Enter') return;
+      const value = els.searchBox.value.trim();
+      if (/^[A-Z]{1,2}\d[A-Z\d]?\s?\d[A-Z]{2}$/i.test(value)) {
+        event.preventDefault();
+        findNearbyFromPostcode();
+      }
     });
     els.resetBtn.addEventListener('click', resetFilters);
     els.fitBtn.addEventListener('click', () => applyFilters(true));

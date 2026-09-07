@@ -6,6 +6,10 @@
   <title>Draught Bass Directory Map</title>
   <meta name="description" content="Find pubs and clubs listed as serving draught Bass, with map locations, distance sorting and directory verification dates." />
   <link rel="canonical" href="https://bassbeermap.com/" />
+  <meta property="og:title" content="Draught Bass Directory Map" />
+  <meta property="og:description" content="Find pubs and clubs listed as serving draught Bass near you." />
+  <meta property="og:url" content="https://bassbeermap.com/" />
+  <meta property="og:type" content="website" />
   <link rel="icon" type="image/png" href="credit-link-icon.png" />
   <link rel="shortcut icon" href="credit-link-icon.png" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -594,6 +598,7 @@
       .button-row {
         gap: 8px;
       }
+      .control-row { grid-template-columns: 1fr; }
       input, select, button {
         padding: 10px 11px;
         font-size: 0.91rem;
@@ -805,6 +810,7 @@
   </style>
 </head>
 <body>
+  <noscript><div class="status" style="margin:16px">This directory needs JavaScript for the map. You can still download the <a href="pubs.csv">CSV listings</a> or <a href="latest-bass-directory.pdf">source directory PDF</a>.</div></noscript>
   <div id="loadingSplash" class="splash-screen">
     <div class="splash-card">
       <img class="bass-logo" src="bass-logo.svg" alt="Bass logo" />
@@ -827,14 +833,14 @@
             <div class="stat"><strong id="stat-total">Loading...</strong><span class="stat-label">current entries</span></div>
             <div class="stat"><strong id="stat-postcodes">Loading...</strong><span class="stat-label">unique postcodes</span></div>
           </div>
-          <div class="credit-line">Thanks to <a href="https://nationalbassdirectory.wordpress.com/" target="_blank" rel="noopener noreferrer">Quinno of UK National Bass Directory</a> for compiling the PDF directory this map is based on.</div>
+          <div class="credit-line">Thanks to <a href="https://nationalbassdirectory.wordpress.com/" target="_blank" rel="noopener noreferrer">Quinno of UK National Bass Directory</a> for compiling the PDF directory this map is based on. <a href="https://www.facebook.com/groups/nationalbassday" target="_blank" rel="noopener noreferrer">Report a listing</a>.</div>
         </div>
       </div>
     </div>
   </div>
 
   <div class="layout">
-    <aside class="sidebar" id="sidebarPanel">
+    <aside class="sidebar" id="sidebarPanel" aria-label="Filters and results">
       <div class="sidebar-inner">
         <div class="sheet-handle"></div>
         <div class="mobile-close-row">
@@ -976,7 +982,7 @@
       sidebarPanel: document.getElementById('sidebarPanel')
     };
 
-    const MAX_RESULT_CARDS = 200;
+    const MAX_RESULT_CARDS = 100;
     const HELP_HIDDEN_KEY = 'bass_directory_help_hidden_v1';
     const CSV_COLUMNS = ['country', 'area', 'pub_name', 'place_name', 'postcode', 'pg', 'last', 'dispense', 'notes'];
     const DISPENSE_LABELS = {
@@ -1345,12 +1351,16 @@
       document.body.classList.add('mobile-panel-open');
       els.openPanelBtn.setAttribute('aria-expanded', 'true');
       els.sidebarPanel.removeAttribute('inert');
+      els.sidebarPanel.setAttribute('role', 'dialog');
+      els.sidebarPanel.setAttribute('aria-modal', 'true');
       window.setTimeout(() => els.searchBox.focus(), 250);
     }
 
     function closeMobilePanel() {
       document.body.classList.remove('mobile-panel-open');
       els.openPanelBtn.setAttribute('aria-expanded', 'false');
+      els.sidebarPanel.removeAttribute('role');
+      els.sidebarPanel.removeAttribute('aria-modal');
       if (isMobileView()) els.sidebarPanel.setAttribute('inert', '');
     }
 
@@ -1365,9 +1375,10 @@
     }
 
     function initialiseHelpVisibility() {
-      let hidden = false;
+      let hidden = isMobileView();
       try {
-        hidden = localStorage.getItem(HELP_HIDDEN_KEY) === '1';
+        const stored = localStorage.getItem(HELP_HIDDEN_KEY);
+        if (stored !== null) hidden = stored === '1';
       } catch {}
       setHelpVisible(!hidden, false);
     }
@@ -1453,9 +1464,25 @@
     els.hideHelpBtn.addEventListener('click', () => setHelpVisible(false));
     els.showHelpBtn.addEventListener('click', () => setHelpVisible(true));
     window.addEventListener('keydown', event => {
-      if (event.key === 'Escape' && isMobileView() && document.body.classList.contains('mobile-panel-open')) {
+      if (!isMobileView() || !document.body.classList.contains('mobile-panel-open')) return;
+      if (event.key === 'Escape') {
         closeMobilePanel();
         els.openPanelBtn.focus();
+        return;
+      }
+      if (event.key === 'Tab') {
+        const focusable = [...els.sidebarPanel.querySelectorAll('a[href], button:not([disabled]), input:not([disabled]), select:not([disabled])')]
+          .filter(element => element.offsetParent !== null);
+        if (!focusable.length) return;
+        const first = focusable[0];
+        const last = focusable[focusable.length - 1];
+        if (event.shiftKey && document.activeElement === first) {
+          event.preventDefault();
+          last.focus();
+        } else if (!event.shiftKey && document.activeElement === last) {
+          event.preventDefault();
+          first.focus();
+        }
       }
     });
 

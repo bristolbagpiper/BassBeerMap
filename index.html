@@ -391,6 +391,7 @@
     }
     .chip.perm { background: rgba(112, 176, 117, 0.12); color: #2f6b39; }
     .chip.guest { background: rgba(206,152,52,0.15); color: #8b6120; }
+    .chip.older { background: rgba(204,32,36,0.1); color: #9d2427; }
     .card-actions { display: flex; gap: 10px; margin-top: 10px; }
     .card-actions a { color: var(--accent-2); font-size: 0.84rem; font-weight: 700; }
     .leaflet-popup-content-wrapper, .leaflet-popup-tip {
@@ -942,6 +943,7 @@
   <script>
     let pubData = [];
     let countryCounts = {};
+    let latestVerificationQuarter = 0;
     let userLocation = null;
     let userMarker = null;
     const CSV_URL = './pubs.csv';
@@ -1088,9 +1090,20 @@
 
     function updateStats() {
       const uniquePostcodes = new Set(pubData.map(item => item.postcode).filter(Boolean));
+      latestVerificationQuarter = Math.max(0, ...pubData.map(item => quarterKey(item.last)));
 
       els.statTotal.textContent = pubData.length.toLocaleString();
       els.statPostcodes.textContent = uniquePostcodes.size.toLocaleString();
+    }
+
+    function quarterKey(value) {
+      const match = /^(\d{4}) Q([1-4])$/.exec(value);
+      return match ? Number(match[1]) * 4 + Number(match[2]) : 0;
+    }
+
+    function isOlderListing(item) {
+      const verifiedQuarter = quarterKey(item.last);
+      return verifiedQuarter > 0 && latestVerificationQuarter - verifiedQuarter >= 2;
     }
 
     function applyDirectoryMetadata(metadata) {
@@ -1188,7 +1201,7 @@
           <p><strong>Place:</strong> ${escapeHtml(item.place_name)}</p>
           <p><strong>Postcode:</strong> ${escapeHtml(item.postcode)}</p>
           <p><strong>Area:</strong> ${escapeHtml(item.area || '—')} | <strong>Country:</strong> ${escapeHtml(item.country)}</p>
-          <p><strong>Status:</strong> ${escapeHtml(item.pg)} | <strong>Last verified:</strong> ${escapeHtml(item.last)} | <strong>Dispense:</strong> ${escapeHtml(dispenseLabel(item.dispense))}</p>
+          <p><strong>Status:</strong> ${escapeHtml(item.pg)} | <strong>Last confirmed:</strong> ${escapeHtml(item.last)} | <strong>Dispense:</strong> ${escapeHtml(dispenseLabel(item.dispense))}</p>
           ${item.notes ? `<p><strong>Notes:</strong> ${escapeHtml(item.notes)}</p>` : ''}
           <p><a href="${directions}" target="_blank" rel="noopener noreferrer">Get directions</a></p>
         </div>
@@ -1302,7 +1315,7 @@
         <div class="meta">${escapeHtml(item.place_name)} · ${escapeHtml(item.postcode)}<br>${escapeHtml(item.area || '—')} · ${escapeHtml(item.country)}</div>
         <div class="chips">
           <span class="chip ${item.pg === 'Perm' ? 'perm' : 'guest'}">${item.pg === 'Perm' ? 'Permanent' : 'Guest / occasional'}</span>
-          <span class="chip">${escapeHtml(item.last)}</span>
+          <span class="chip ${isOlderListing(item) ? 'older' : ''}">Last confirmed ${escapeHtml(item.last)}</span>
           <span class="chip">${escapeHtml(dispenseLabel(item.dispense))}</span>
         </div>
         ${distanceMiles(item) !== null ? `<div class="footer-note">${distanceMiles(item).toFixed(1)} miles away</div>` : ''}

@@ -199,6 +199,27 @@
       text-align: center;
     }
     #map { width: 100%; height: 100%; }
+    .map-notice {
+      position: absolute;
+      z-index: 600;
+      top: 14px;
+      left: 14px;
+      right: 14px;
+      max-width: 460px;
+      padding: 12px 14px;
+      border: 1px solid rgba(157,36,39,0.22);
+      border-radius: 14px;
+      background: rgba(255,250,247,0.96);
+      color: #6d292a;
+      box-shadow: var(--shadow-lg);
+      font-size: 0.88rem;
+      line-height: 1.45;
+    }
+    .map-notice a { color: var(--accent-2); font-weight: 700; }
+    .map-notice.hidden { display: none; }
+    @media (max-width: 980px) {
+      .map-notice { top: 64px; }
+    }
     .group {
       margin-bottom: 18px;
     }
@@ -939,6 +960,7 @@
           <button id="openPanelBtn" class="mobile-open-btn" aria-controls="sidebarPanel">Filters & results<span class="small">Search, narrow down, then jump back to the map</span></button>
       <button id="mobileResetBtn" class="mobile-reset-btn" type="button">Reset filters</button>
       <div id="map"></div>
+      <div id="mapNotice" class="map-notice hidden" role="status"></div>
       <div id="helpLegend" class="legend">
         <div class="legend-header">
           <strong>How to use</strong>
@@ -1008,7 +1030,8 @@
       locationPostcode: document.getElementById('locationPostcode'),
       findPostcodeBtn: document.getElementById('findPostcodeBtn'),
       radiusFilter: document.getElementById('radiusFilter'),
-      sidebarPanel: document.getElementById('sidebarPanel')
+      sidebarPanel: document.getElementById('sidebarPanel'),
+      mapNotice: document.getElementById('mapNotice')
     };
 
     const MAX_RESULT_CARDS = 100;
@@ -1187,6 +1210,11 @@
 
     function setSplashVisible(visible) {
       els.splash.classList.toggle('hidden', !visible);
+    }
+
+    function showMapNotice(message) {
+      els.mapNotice.innerHTML = message;
+      els.mapNotice.classList.remove('hidden');
     }
 
     function completeSplash() {
@@ -1614,7 +1642,11 @@
       })
       .catch(err => {
         console.error(err);
-        setStatus('Could not load all map locations. You can still search the directory.', 100);
+        const hasDirectory = pubData.length > 0;
+        setStatus(hasDirectory ? 'Map locations could not be loaded. You can still browse the directory.' : 'The directory could not be loaded.', 100);
+        showMapNotice(hasDirectory
+          ? 'Map locations are temporarily unavailable. You can still browse the listings and use Directions links.'
+          : 'The directory could not be loaded. Please try again shortly, or use the <a href="pubs.csv">CSV listings</a> or <a href="latest-bass-directory.pdf">source PDF</a>.');
         applyFilters(false);
         completeSplash();
       });

@@ -984,6 +984,8 @@
     const CSV_URL = './pubs.csv';
     const DIRECTORY_METADATA_URL = './directory-meta.json';
     const COORDINATES_URL = './pub-coordinates.json';
+    const VENUE_COORDINATES_URL = './venue-coordinates.json';
+    const VENUE_COORDINATE_OVERRIDES_URL = './venue-coordinate-overrides.json';
     const DATA_FETCH_OPTIONS = { cache: 'no-cache' };
     let activeDirectoryLabel = 'latest Bass directory';
     const map = L.map('map', { zoomControl: true, preferCanvas: true }).setView([54.5, -2.5], 6);
@@ -1177,14 +1179,37 @@
       updateStats();
     }
 
+    function venueKey(item) {
+      return [item.pub_name, item.place_name, item.postcode]
+        .map(value => String(value || '').trim().toLowerCase())
+        .join('|');
+    }
+
+    async function loadVenueCoordinates() {
+      const [venueResponse, overrideResponse] = await Promise.all([
+        fetch(VENUE_COORDINATES_URL, DATA_FETCH_OPTIONS),
+        fetch(VENUE_COORDINATE_OVERRIDES_URL, DATA_FETCH_OPTIONS)
+      ]);
+      const venues = {};
+      if (venueResponse.ok) Object.assign(venues, (await venueResponse.json()).venues || {});
+      if (overrideResponse.ok) Object.assign(venues, (await overrideResponse.json()).venues || {});
+      return venues;
+    }
+
     async function loadCoordinates() {
       setStatus('Loading venue locations…', 35);
       const response = await fetch(COORDINATES_URL, DATA_FETCH_OPTIONS);
       if (!response.ok) throw new Error(`Coordinate load failed with status ${response.status}`);
       const payload = await response.json();
       const coordinates = payload.coordinates || {};
+      let venueCoordinates = {};
+      try {
+        venueCoordinates = await loadVenueCoordinates();
+      } catch (error) {
+        console.warn('Could not load precise venue locations; using postcode locations.', error);
+      }
       pubData.forEach(item => {
-        const coords = coordinates[item.postcode];
+        const coords = venueCoordinates[venueKey(item)] || coordinates[item.postcode];
         if (coords && Number.isFinite(coords.lat) && Number.isFinite(coords.lng)) {
           item.lat = coords.lat;
           item.lng = coords.lng;

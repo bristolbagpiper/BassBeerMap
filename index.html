@@ -334,6 +334,17 @@
       font-weight: 500;
     }
     .results { display: grid; gap: 10px; }
+    .empty-results {
+      border: 1px dashed var(--border-strong);
+      border-radius: 16px;
+      padding: 16px;
+      background: rgba(255,255,255,0.58);
+      color: var(--muted);
+      font-size: 0.9rem;
+      line-height: 1.45;
+    }
+    .empty-results strong { color: var(--text); }
+    .empty-results button { margin-top: 12px; }
     .card {
       border: 1px solid var(--border);
       background: rgba(255,255,255,0.78);
@@ -1224,7 +1235,7 @@
 
     function hasActiveFilters() {
       const { query, country, area, type, dispense, radius } = getActiveFilters();
-      return Boolean(query || country || area || type || dispense || radius);
+      return Boolean(query || country || area || type || dispense || radius || userLocation);
     }
 
     function updateMobileResetButton() {
@@ -1239,7 +1250,8 @@
       return items.filter(hasCoordinates);
     }
 
-    function matchesFilters(item) {
+    function matchesFilters(item, options = {}) {
+      const ignoreRadius = options.ignoreRadius === true;
       const {
         query,
         country,
@@ -1254,7 +1266,7 @@
       if (type && item.pg !== type) return false;
       if (dispense && !item.dispense.includes(dispense)) return false;
       if (query && !item.searchText.includes(query)) return false;
-      if (radius && (!userLocation || distanceMiles(item) === null || distanceMiles(item) > radius)) return false;
+      if (!ignoreRadius && radius && (!userLocation || distanceMiles(item) === null || distanceMiles(item) > radius)) return false;
 
       return true;
     }
@@ -1320,6 +1332,9 @@
       });
 
       els.resultCount.textContent = `${filtered.length.toLocaleString()} matches`;
+      if (!filtered.length) {
+        renderEmptyState();
+      }
       ordered
         .slice(0, MAX_RESULT_CARDS)
         .forEach(item => els.results.appendChild(createResultCard(item)));
@@ -1327,6 +1342,41 @@
       els.moreNotice.textContent = filtered.length > MAX_RESULT_CARDS
         ? `Showing the first ${MAX_RESULT_CARDS} cards in the sidebar. The map still shows all ${filtered.length.toLocaleString()} matching entries with coordinates.`
         : '';
+    }
+
+    function renderEmptyState() {
+      const filters = getActiveFilters();
+      const emptyState = document.createElement('div');
+      emptyState.className = 'empty-results';
+
+      if (userLocation && filters.radius) {
+        const nearest = sortResults(pubData.filter(item => matchesFilters(item, { ignoreRadius: true }) && hasCoordinates(item)))[0];
+        if (nearest) {
+          const distance = distanceMiles(nearest).toFixed(1);
+          emptyState.innerHTML = `<strong>Nothing within ${filters.radius} miles.</strong><br>The nearest matching listing is ${escapeHtml(nearest.pub_name)} in ${escapeHtml(nearest.place_name)}, ${distance} miles away.`;
+          const expandButton = document.createElement('button');
+          expandButton.type = 'button';
+          expandButton.className = 'secondary';
+          expandButton.textContent = 'Show closest listings';
+          expandButton.addEventListener('click', () => {
+            els.radiusFilter.value = '';
+            applyFilters(true);
+          });
+          emptyState.appendChild(expandButton);
+        }
+      }
+
+      if (!emptyState.innerHTML) {
+        emptyState.innerHTML = '<strong>No listings match these filters.</strong><br>Try broadening the search or clearing the filters.';
+        const resetButton = document.createElement('button');
+        resetButton.type = 'button';
+        resetButton.className = 'secondary';
+        resetButton.textContent = 'Clear filters';
+        resetButton.addEventListener('click', resetFilters);
+        emptyState.appendChild(resetButton);
+      }
+
+      els.results.appendChild(emptyState);
     }
 
     function applyFilters(fit = false) {

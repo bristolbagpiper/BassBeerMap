@@ -71,7 +71,11 @@ def main():
     existing_path = Path(args.existing)
     existing = json.loads(existing_path.read_text(encoding="utf-8")) if existing_path.exists() else {"venues": {}}
     venues = {venue_key: value for venue_key, value in existing.get("venues", {}).items() if venue_key in listing_keys}
-    unresolved = []
+    unresolved = {
+        venue_key
+        for venue_key in existing.get("unresolved_venues", [])
+        if venue_key in listing_keys and venue_key not in venues
+    }
     candidates = [row for row in rows if key(row) not in previous_keys and key(row) not in venues]
 
     for index, row in enumerate(candidates, start=1):
@@ -82,16 +86,16 @@ def main():
             if match:
                 venues[venue_key] = match
             else:
-                unresolved.append(venue_key)
+                unresolved.add(venue_key)
         except Exception as error:
-            unresolved.append(venue_key)
+            unresolved.add(venue_key)
             print(f"{index}: lookup failed for {row['pub_name']}: {error}")
         print(f"{index}/{len(candidates)}: {row['pub_name']} {'matched' if match else 'not matched'}")
-        write_output(args.output, venues, unresolved)
+        write_output(args.output, venues, sorted(unresolved))
         if index < len(candidates):
             time.sleep(1.1)
 
-    write_output(args.output, venues, unresolved)
+    write_output(args.output, venues, sorted(unresolved))
     print(f"Wrote {len(venues):,} precise venue coordinates; {len(unresolved):,} new listings need review.")
 
 

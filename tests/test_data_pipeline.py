@@ -5,6 +5,7 @@ from pathlib import Path
 from unittest.mock import patch
 
 from convert_pdf_to_csv import apply_postcode_overrides
+from build_change_report import build_report
 from fetch_latest_pdf import download_latest_pdf
 from validate_csv import validate
 
@@ -45,6 +46,18 @@ class ValidationTests(unittest.TestCase):
             path.write_text(json.dumps({"DE4 4RF": {"postcode": "DE4 4FR"}}), encoding="utf-8")
             apply_postcode_overrides(rows, path)
         self.assertEqual(rows[0]["postcode"], "DE4 4FR")
+
+    def test_change_report_lists_additions_removals_and_field_updates(self):
+        previous = [row(), row(pub_name="Old Inn", postcode="BS1 1AB")]
+        candidate = [row(pg="Guest"), row(pub_name="New Inn", postcode="BS1 1AC")]
+
+        report = build_report(previous, candidate)
+
+        self.assertTrue(report["summary"]["has_changes"])
+        self.assertEqual(report["summary"]["added_count"], 1)
+        self.assertEqual(report["summary"]["removed_count"], 1)
+        self.assertEqual(report["summary"]["updated_count"], 1)
+        self.assertEqual(report["updated"][0]["changes"]["pg"], {"previous": "Perm", "candidate": "Guest"})
 
     def test_pdf_download_replaces_existing_file_only_after_a_valid_download(self):
         home_page = '<h2><a href="https://example.test/latest">Latest</a></h2>'

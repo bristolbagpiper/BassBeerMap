@@ -285,6 +285,11 @@ jobs:
       - name: Publish validated CSV
         shell: bash
         run: |
+          # A code-only push deliberately skips the expensive OSM pass. Keep
+          # the already published precise coordinates in that case.
+          if [ ! -f candidate-venue-coordinates.json ]; then
+            cp venue-coordinates.json candidate-venue-coordinates.json
+          fi
           mv candidate-pubs.csv pubs.csv
           mv candidate-directory-meta.json directory-meta.json
           mv candidate-pub-coordinates.json pub-coordinates.json

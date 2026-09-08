@@ -27,12 +27,14 @@ def distance_km(left, right):
     )
 
 
-def tags_to_dict(tags):
-    return {tag.k: tag.v for tag in tags}
-
-
 def read_osm_venues(path):
-    """Return amenity venues from an OSM PBF, including mapped building ways."""
+    """Return mapped venue nodes from an OSM PBF.
+
+    Filtering happens in libosmium before Python sees an object.  Walking every
+    UK building and its member nodes made the initial full-country job exceed
+    GitHub Actions' limit; OSM venue nodes are exact coordinates and are the
+    large majority of usable pub POIs.
+    """
     try:
         import osmium
     except ImportError as error:
@@ -41,31 +43,25 @@ def read_osm_venues(path):
     venues = []
 
     class Handler(osmium.SimpleHandler):
-        def add(self, tags, lat, lng):
-            values = tags_to_dict(tags)
-            if values.get("amenity") not in VENUE_AMENITIES or not values.get("name"):
+        def node(self, node):
+            amenity = node.tags.get("amenity")
+            name = node.tags.get("name")
+            if amenity not in VENUE_AMENITIES or not name or not node.location.valid():
                 return
             venues.append(
                 {
-                    "name": values["name"],
-                    "lat": lat,
-                    "lng": lng,
-                    "postcode": values.get("addr:postcode", ""),
-                    "place": " ".join(values.get(field, "") for field in ("addr:city", "addr:town", "addr:village", "addr:hamlet")),
+                    "name": name,
+                    "lat": node.location.lat,
+                    "lng": node.location.lon,
+                    "postcode": node.tags.get("addr:postcode", ""),
+                    "place": " ".join(node.tags.get(field, "") for field in ("addr:city", "addr:town", "addr:village", "addr:hamlet")),
                 }
             )
 
-        def node(self, node):
-            if node.location.valid():
-                self.add(node.tags, node.location.lat, node.location.lon)
-
-        def way(self, way):
-            points = [node.location for node in way.nodes if node.location.valid()]
-            if points:
-                self.add(way.tags, sum(point.lat for point in points) / len(points), sum(point.lon for point in points) / len(points))
-
     handler = Handler()
-    handler.apply_file(str(path), locations=True)
+    reader = osmium.io.Reader(str(path), osmium.osm.NODE)
+    amenity_filter = osmium.filter.KeyFilter("amenity").enable_for(osmium.osm.NODE)
+    osmium.apply(reader, amenity_filter, handler)
     return venues
 
 

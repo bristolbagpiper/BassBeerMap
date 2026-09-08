@@ -1125,8 +1125,12 @@
       padding: 16px;
       overflow: auto;
       scrollbar-width: thin;
-      scrollbar-color: #bbb5ae transparent;
+      scrollbar-color: var(--accent-2) #f6e8e9;
     }
+    .sidebar-inner::-webkit-scrollbar { width: 10px; }
+    .sidebar-inner::-webkit-scrollbar-track { background: #f6e8e9; }
+    .sidebar-inner::-webkit-scrollbar-thumb { border: 2px solid #f6e8e9; border-radius: 999px; background: var(--accent-2); }
+    .sidebar-inner::-webkit-scrollbar-thumb:hover { background: #aa1721; }
     .group { margin: 0; }
     .group:first-of-type {
       margin-bottom: 16px;

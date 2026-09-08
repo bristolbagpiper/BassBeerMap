@@ -123,6 +123,7 @@ class ValidationTests(unittest.TestCase):
         self.assertEqual(match["source"], "food-standards-agency-fhrs")
         self.assertEqual(match["fhrs_id"], 1874361)
         self.assertTrue(fhrs_names_match("The Rad (was St Radegund)", "The Rad"))
+        self.assertTrue(fhrs_names_match("Harbour Pool Club (PMC)", "Harbour Pool and Billiards Club"))
 
     def test_no_change_report_is_still_suitable_for_a_manual_update_email(self):
         report = build_report([row()], [row()])

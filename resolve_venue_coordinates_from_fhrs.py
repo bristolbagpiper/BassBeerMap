@@ -17,7 +17,7 @@ from resolve_venue_coordinates import key, name_variants, normalise
 
 API_URL = "https://api.ratings.food.gov.uk/Establishments"
 USER_AGENT = "BassBeerMap coordinate resolver (github.com/bristolbagpiper/BassBeerMap)"
-GENERIC_SUFFIXES = {"arms", "inn", "hotel", "tavern", "pub", "bar", "club", "lounge"}
+GENERIC_SUFFIXES = {"arms", "inn", "hotel", "tavern", "pub", "bar", "club", "lounge", "ltd", "limited", "the", "and"}
 REQUEST_INTERVAL_SECONDS = 1
 last_request_started_at = 0.0
 
@@ -43,6 +43,13 @@ def names_match(listing_name, business_name):
         for suffix in GENERIC_SUFFIXES:
             if candidate == wanted + suffix or wanted == candidate + suffix:
                 return True
+        wanted_tokens = {token for token in re.findall(r"[a-z0-9]+", variant.lower()) if token not in GENERIC_SUFFIXES and token != "pmc"}
+        candidate_tokens = {token for token in re.findall(r"[a-z0-9]+", business_name.lower()) if token not in GENERIC_SUFFIXES}
+        # A venue such as "Harbour Pool (PMC)" can appear in official records
+        # as "Harbour Pool and Billiards Club". Two or more distinctive name
+        # words, all present at the exact postcode, are sufficient evidence.
+        if len(wanted_tokens) >= 2 and wanted_tokens <= candidate_tokens:
+            return True
     return False
 
 

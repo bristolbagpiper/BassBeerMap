@@ -8,6 +8,7 @@ import argparse
 import csv
 import json
 import re
+import time
 from pathlib import Path
 from urllib.parse import urlencode
 from urllib.request import Request, urlopen
@@ -17,10 +18,15 @@ from resolve_venue_coordinates import key, name_variants, normalise
 API_URL = "https://api.ratings.food.gov.uk/Establishments"
 USER_AGENT = "BassBeerMap coordinate resolver (github.com/bristolbagpiper/BassBeerMap)"
 GENERIC_SUFFIXES = {"arms", "inn", "hotel", "tavern", "pub", "bar", "club", "lounge"}
+REQUEST_INTERVAL_SECONDS = 1
+last_request_started_at = 0.0
 
 
 def listing_name_variants(name):
     variants = name_variants(name)
+    renamed = re.search(r"\(\s*was\s+([^)]*)\)", name, flags=re.IGNORECASE)
+    if renamed:
+        variants.extend(name_variants(renamed.group(1).strip()))
     stripped = re.sub(r"\s*\((?:PMC|was\s+[^)]*)\)\s*", "", name, flags=re.IGNORECASE).strip()
     if stripped:
         variants.extend(name_variants(stripped))
@@ -40,18 +46,29 @@ def names_match(listing_name, business_name):
     return False
 
 
-def search(row):
+def search(row, include_name=True):
+    global last_request_started_at
     params = urlencode({
-        "name": re.sub(r"\s*\([^)]*\)", "", row["pub_name"]).strip(),
         "address": row["postcode"],
         "pageNumber": 1,
         "pageSize": 20,
     })
+    if include_name:
+        params = urlencode({
+            "name": re.sub(r"\s*\([^)]*\)", "", row["pub_name"]).strip(),
+            "address": row["postcode"],
+            "pageNumber": 1,
+            "pageSize": 20,
+        })
     request = Request(API_URL + "?" + params, headers={
         "User-Agent": USER_AGENT,
         "Accept": "application/json",
         "x-api-version": "2",
     })
+    wait_seconds = REQUEST_INTERVAL_SECONDS - (time.monotonic() - last_request_started_at)
+    if wait_seconds > 0:
+        time.sleep(wait_seconds)
+    last_request_started_at = time.monotonic()
     with urlopen(request, timeout=20) as response:
         return json.loads(response.read()).get("establishments", [])
 
@@ -104,7 +121,15 @@ def main():
     matched = 0
     for index, row in enumerate(pending, start=1):
         try:
-            match = choose_match(row, search(row))
+            candidates = search(row)
+            match = choose_match(row, candidates)
+            # Directory and FSA business names can differ after a rename. If
+            # the named lookup cannot prove a match, inspect the small set of
+            # businesses registered at the exact postcode too.
+            if not match:
+                candidates.extend(search(row, include_name=False))
+                candidates = list({candidate.get("FHRSID"): candidate for candidate in candidates}.values())
+                match = choose_match(row, candidates)
         except Exception as error:
             print(f"{index}/{len(pending)}: {row['pub_name']} lookup failed: {error}")
             continue

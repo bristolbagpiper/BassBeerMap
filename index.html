@@ -1056,6 +1056,36 @@
       color: #fff;
       text-decoration: none;
     }
+    .report-problem-btn {
+      min-height: 34px;
+      padding: 7px 12px;
+      border: 1px solid var(--border-strong);
+      border-radius: 9px;
+      background: #fff;
+      color: var(--text);
+      box-shadow: none;
+      font-size: 0.75rem;
+      font-weight: 800;
+      text-align: left;
+    }
+    .report-problem-btn:hover { border-color: var(--accent-2); color: var(--accent-2); }
+    .report-dialog { position: fixed; z-index: 2000; inset: 0; display: grid; place-items: center; padding: 20px; background: rgba(31, 25, 22, 0.48); }
+    .report-dialog[hidden] { display: none; }
+    .report-dialog-card { width: min(100%, 520px); padding: 24px; border: 1px solid var(--border); border-radius: 16px; background: #fff; box-shadow: var(--shadow-lg); }
+    .report-dialog-head { display: flex; align-items: start; justify-content: space-between; gap: 16px; }
+    .report-dialog h2 { margin: 0; font-family: "Newsreader", Georgia, serif; font-size: 1.7rem; line-height: 1; }
+    .report-dialog-copy { margin: 8px 0 18px; color: var(--muted); font-size: 0.88rem; line-height: 1.45; }
+    .report-close-btn { width: 36px; min-width: 36px; min-height: 36px; padding: 0; font-size: 1.3rem; }
+    .report-form { display: grid; gap: 12px; }
+    .report-form label { display: grid; gap: 5px; color: var(--text); font-size: 0.8rem; font-weight: 800; }
+    .report-form textarea { min-height: 112px; resize: vertical; }
+    .report-form input, .report-form textarea { width: 100%; box-sizing: border-box; }
+    .report-form-actions { display: flex; justify-content: end; gap: 9px; margin-top: 4px; }
+    .report-form-actions button { width: auto; }
+    .report-status { min-height: 1.25em; margin: 0; color: var(--muted); font-size: 0.82rem; line-height: 1.35; }
+    .report-status.error { color: #a51e28; }
+    .report-status.success { color: #356d3f; }
+    .report-honeypot { position: absolute; left: -10000px; }
 
     .layout {
       position: relative;
@@ -1386,6 +1416,7 @@
               <div class="stat"><strong id="stat-postcodes">Loading...</strong><span class="stat-label">unique postcodes</span></div>
             </div>
             <a class="report-listing-link" href="https://www.facebook.com/groups/nationalbassday" target="_blank" rel="noopener noreferrer">Report a listing<span>Help keep the map current</span></a>
+            <button id="openProblemReportBtn" class="report-problem-btn" type="button">Report a problem</button>
           </div>
           <div class="credit-line">Thanks to <a href="https://nationalbassdirectory.wordpress.com/" target="_blank" rel="noopener noreferrer">Quinno of UK National Bass Directory</a> for compiling the PDF directory this map is based on.</div>
         </div>
@@ -1476,6 +1507,27 @@
     <div class="footer-disclaimer">Independent, unofficial fan-made map. Directory information can change—especially Guest listings—so check before travelling. Not affiliated with AB InBev or Bass.</div>
   </footer>
 
+  <div id="reportDialog" class="report-dialog" hidden aria-hidden="true">
+    <div class="report-dialog-card" role="dialog" aria-modal="true" aria-labelledby="reportDialogTitle">
+      <div class="report-dialog-head">
+        <div>
+          <h2 id="reportDialogTitle">Report a problem</h2>
+          <p class="report-dialog-copy">Tell us what is wrong and we’ll receive it privately. Your email address is never displayed on the map.</p>
+        </div>
+        <button id="closeProblemReportBtn" class="secondary report-close-btn" type="button" aria-label="Close report form">&times;</button>
+      </div>
+      <form id="problemReportForm" class="report-form">
+        <label>Venue or page involved (optional)<input id="problemVenue" name="venue" maxlength="160" autocomplete="off" /></label>
+        <label>What’s the problem?<textarea id="problemMessage" name="message" maxlength="4000" required></textarea></label>
+        <label>Your email, if you’d like a reply (optional)<input id="problemContact" name="contact" type="email" maxlength="254" autocomplete="email" /></label>
+        <label class="report-honeypot" aria-hidden="true">Leave this blank<input id="problemWebsite" name="website" tabindex="-1" autocomplete="off" /></label>
+        <div id="turnstileWidget" aria-label="Spam protection"></div>
+        <p id="problemReportStatus" class="report-status" aria-live="polite"></p>
+        <div class="report-form-actions"><button id="cancelProblemReportBtn" class="secondary" type="button">Cancel</button><button id="submitProblemReportBtn" class="primary" type="submit">Send report</button></div>
+      </form>
+    </div>
+  </div>
+
   <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha384-cxOPjt7s7Iz04uaHJceBmS+qpjv2JkIHNVcuOrM+YHwZOmJGBXI00mdUXEq65HTH" crossorigin="anonymous"></script>
   <script src="https://unpkg.com/leaflet.markercluster@1.5.3/dist/leaflet.markercluster.js" integrity="sha384-eXVCORTRlv4FUUgS/xmOyr66XBVraen8ATNLMESp92FKXLAMiKkerixTiBvXriZr" crossorigin="anonymous"></script>
   <script>
@@ -1539,11 +1591,26 @@
       locationStatus: document.getElementById('locationStatus'),
       radiusFilter: document.getElementById('radiusFilter'),
       sidebarPanel: document.getElementById('sidebarPanel'),
-      mapNotice: document.getElementById('mapNotice')
+      mapNotice: document.getElementById('mapNotice'),
+      reportDialog: document.getElementById('reportDialog'),
+      openProblemReportBtn: document.getElementById('openProblemReportBtn'),
+      closeProblemReportBtn: document.getElementById('closeProblemReportBtn'),
+      cancelProblemReportBtn: document.getElementById('cancelProblemReportBtn'),
+      problemReportForm: document.getElementById('problemReportForm'),
+      problemReportStatus: document.getElementById('problemReportStatus'),
+      problemVenue: document.getElementById('problemVenue'),
+      problemMessage: document.getElementById('problemMessage'),
+      problemContact: document.getElementById('problemContact'),
+      problemWebsite: document.getElementById('problemWebsite'),
+      submitProblemReportBtn: document.getElementById('submitProblemReportBtn'),
+      turnstileWidget: document.getElementById('turnstileWidget')
     };
 
     const MAX_RESULT_CARDS = 100;
     const HELP_HIDDEN_KEY = 'bass_directory_help_hidden_v1';
+    const REPORT_PROBLEM_ENDPOINT = '/api/report-problem';
+    let problemReportTurnstileToken = '';
+    let turnstileWidgetId = null;
     const CSV_COLUMNS = ['country', 'area', 'pub_name', 'place_name', 'postcode', 'pg', 'last', 'dispense', 'notes'];
     const DISPENSE_LABELS = {
       H: 'Handpump',
@@ -2152,6 +2219,98 @@
       }
       updateMobileResetButton();
       setTimeout(() => map.invalidateSize(), 80);
+    });
+
+    function setProblemReportStatus(message, state = '') {
+      els.problemReportStatus.textContent = message;
+      els.problemReportStatus.className = `report-status ${state}`.trim();
+    }
+
+    async function loadTurnstile() {
+      const response = await fetch(`${REPORT_PROBLEM_ENDPOINT}?config=1`, { credentials: 'omit' });
+      if (!response.ok) throw new Error('The report service is not available yet.');
+      const { turnstileSiteKey } = await response.json();
+      if (!turnstileSiteKey) throw new Error('Spam protection is not configured yet.');
+      if (!window.turnstile) {
+        await new Promise((resolve, reject) => {
+          const script = document.createElement('script');
+          script.src = 'https://challenges.cloudflare.com/turnstile/v0/api.js?render=explicit';
+          script.async = true;
+          script.onload = resolve;
+          script.onerror = () => reject(new Error('Spam protection could not load.'));
+          document.head.appendChild(script);
+        });
+      }
+      if (turnstileWidgetId === null) {
+        turnstileWidgetId = window.turnstile.render(els.turnstileWidget, {
+          sitekey: turnstileSiteKey,
+          callback: token => { problemReportTurnstileToken = token; setProblemReportStatus(''); },
+          'expired-callback': () => { problemReportTurnstileToken = ''; },
+          'error-callback': () => setProblemReportStatus('Spam protection could not load. Please try again.', 'error')
+        });
+      }
+    }
+
+    async function openProblemReport() {
+      els.reportDialog.hidden = false;
+      els.reportDialog.setAttribute('aria-hidden', 'false');
+      els.problemMessage.focus();
+      setProblemReportStatus('Loading spam protection…');
+      try {
+        await loadTurnstile();
+        setProblemReportStatus('');
+      } catch (error) {
+        setProblemReportStatus(error.message, 'error');
+      }
+    }
+
+    function closeProblemReport() {
+      els.reportDialog.hidden = true;
+      els.reportDialog.setAttribute('aria-hidden', 'true');
+      els.openProblemReportBtn.focus();
+    }
+
+    els.openProblemReportBtn.addEventListener('click', openProblemReport);
+    els.closeProblemReportBtn.addEventListener('click', closeProblemReport);
+    els.cancelProblemReportBtn.addEventListener('click', closeProblemReport);
+    els.reportDialog.addEventListener('click', event => {
+      if (event.target === els.reportDialog) closeProblemReport();
+    });
+    document.addEventListener('keydown', event => {
+      if (event.key === 'Escape' && !els.reportDialog.hidden) closeProblemReport();
+    });
+    els.problemReportForm.addEventListener('submit', async event => {
+      event.preventDefault();
+      if (!problemReportTurnstileToken) {
+        setProblemReportStatus('Please complete the spam-protection check first.', 'error');
+        return;
+      }
+      els.submitProblemReportBtn.disabled = true;
+      setProblemReportStatus('Sending report…');
+      try {
+        const response = await fetch(REPORT_PROBLEM_ENDPOINT, {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({
+            venue: els.problemVenue.value.trim(),
+            message: els.problemMessage.value.trim(),
+            contact: els.problemContact.value.trim(),
+            website: els.problemWebsite.value,
+            turnstileToken: problemReportTurnstileToken,
+            page: location.href
+          })
+        });
+        const result = await response.json().catch(() => ({}));
+        if (!response.ok) throw new Error(result.error || 'Your report could not be sent. Please try again.');
+        els.problemReportForm.reset();
+        problemReportTurnstileToken = '';
+        if (window.turnstile && turnstileWidgetId !== null) window.turnstile.reset(turnstileWidgetId);
+        setProblemReportStatus('Thanks — your report has been sent privately.', 'success');
+      } catch (error) {
+        setProblemReportStatus(error.message, 'error');
+      } finally {
+        els.submitProblemReportBtn.disabled = false;
+      }
     });
 
     els.countryFilter.addEventListener('change', () => {

@@ -442,6 +442,21 @@
     }
     .popup h3 { margin: 0 0 6px; font-size: 1rem; }
     .popup p { margin: 4px 0; color: var(--muted); }
+    .popup .approximate-location { color: #7a4d11; font-weight: 600; }
+    .approximate-marker {
+      background: transparent;
+      border: 0;
+    }
+    .approximate-marker span {
+      display: block;
+      width: 18px;
+      height: 18px;
+      box-sizing: border-box;
+      border: 3px solid #ffffff;
+      border-radius: 50%;
+      background: #8a641f;
+      box-shadow: 0 2px 7px rgba(58,34,25,0.42);
+    }
     .legend {
       position: absolute;
       right: 14px;
@@ -963,7 +978,7 @@
           <strong>How to use</strong>
           <button id="hideHelpBtn" class="legend-close" type="button" aria-label="Hide help">×</button>
         </div>
-        <div class="tiny">Use “my location” to sort nearby pubs. Pins show postcode-level locations. Guest means Bass is occasional, not guaranteed today. Check before travelling.</div>
+        <div class="tiny">Blue pins are verified venue locations. Brown circles are approximate postcode areas. Guest means Bass is occasional, not guaranteed today. Check before travelling.</div>
       </div>
       <button id="showHelpBtn" class="help-reopen-btn" type="button">Show help</button>
     </main>
@@ -994,6 +1009,13 @@
       crossOrigin: true,
       attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
     }).addTo(map);
+    const approximatePostcodeIcon = L.divIcon({
+      className: 'approximate-marker',
+      html: '<span aria-hidden="true"></span>',
+      iconSize: [18, 18],
+      iconAnchor: [9, 9],
+      popupAnchor: [0, -9]
+    });
 
     const markerLayer = L.markerClusterGroup({
       maxClusterRadius: 50,
@@ -1208,25 +1230,28 @@
       const payload = await response.json();
       const coordinates = payload.coordinates || {};
       let venueCoordinates = {};
-      let unresolvedVenues = new Set();
       try {
         const venueData = await loadVenueCoordinates();
         venueCoordinates = venueData.venues;
-        unresolvedVenues = venueData.unresolved;
       } catch (error) {
         console.warn('Could not load precise venue locations; using postcode locations.', error);
       }
       pubData.forEach(item => {
         const itemVenueKey = venueKey(item);
-        const coords = venueCoordinates[itemVenueKey]
-          || (unresolvedVenues.has(itemVenueKey) ? null : coordinates[item.postcode]);
+        const preciseVenueCoordinates = venueCoordinates[itemVenueKey];
+        const coords = preciseVenueCoordinates || coordinates[item.postcode];
         if (coords && Number.isFinite(coords.lat) && Number.isFinite(coords.lng)) {
           item.lat = coords.lat;
           item.lng = coords.lng;
-          item.marker = L.marker([item.lat, item.lng]).bindPopup(makePopup(item));
+          item.locationPrecision = preciseVenueCoordinates ? 'venue' : 'postcode';
+          item.marker = L.marker([item.lat, item.lng], item.locationPrecision === 'postcode'
+            ? { icon: approximatePostcodeIcon, title: 'Approximate postcode location' }
+            : undefined
+          ).bindPopup(makePopup(item));
         } else {
           item.lat = null;
           item.lng = null;
+          item.locationPrecision = null;
           item.marker = null;
         }
       });
@@ -1279,6 +1304,7 @@
           <h3>${escapeHtml(item.pub_name)}</h3>
           <p><strong>Place:</strong> ${escapeHtml(item.place_name)}</p>
           <p><strong>Postcode:</strong> ${escapeHtml(item.postcode)}</p>
+          ${item.locationPrecision === 'postcode' ? '<p class="approximate-location"><strong>Map location:</strong> Approximate postcode area — not the exact venue.</p>' : ''}
           <p><strong>Area:</strong> ${escapeHtml(item.area || '—')} | <strong>Country:</strong> ${escapeHtml(item.country)}</p>
           <p><strong>Status:</strong> ${escapeHtml(item.pg)} | <strong>Last confirmed:</strong> ${escapeHtml(item.last)} | <strong>Dispense:</strong> ${escapeHtml(dispenseLabel(item.dispense))}</p>
           ${item.notes ? `<p><strong>Notes:</strong> ${escapeHtml(item.notes)}</p>` : ''}
@@ -1397,6 +1423,7 @@
           <span class="chip">${escapeHtml(dispenseLabel(item.dispense))}</span>
         </div>
         ${distanceMiles(item) !== null ? `<div class="footer-note">${distanceMiles(item).toFixed(1)} miles away</div>` : ''}
+        ${item.locationPrecision === 'postcode' ? '<div class="footer-note">Map pin shows the approximate postcode area.</div>' : ''}
         ${!item.marker ? '<div class="footer-note">Location unavailable on the map.</div>' : ''}
         ${item.notes ? `<div class="footer-note">${escapeHtml(item.notes)}</div>` : ''}
         <div class="card-actions">

@@ -1139,12 +1139,11 @@
       scrollbar-color: #bbb5ae transparent;
     }
     .group { margin: 0; }
-    .group:first-of-type {
-      margin-bottom: 16px;
-      padding-bottom: 16px;
-      border-bottom: 1px solid var(--border);
+    .group + .group {
+      margin-top: 18px;
+      padding-top: 14px;
+      border-top: 1px solid var(--border);
     }
-    .group:first-of-type + .group { padding-top: 8px; }
     .group h2 {
       margin: 0 0 9px;
       color: #817873;

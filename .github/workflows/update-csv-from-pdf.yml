@@ -17,6 +17,7 @@ on:
       - "build_coordinate_review_queue.py"
       - "resolve_venue_coordinates.py"
       - "resolve_venue_coordinates_from_osm.py"
+      - "resolve_venue_coordinates_from_fhrs.py"
       - "send_change_report_email.py"
       - "postcode-overrides.json"
       - "venue-coordinates.json"
@@ -158,6 +159,13 @@ jobs:
           python resolve_venue_coordinates_from_osm.py great-britain-latest.osm.pbf candidate-pubs.csv candidate-venue-coordinates.json --existing venue-coordinates.json | tee coordinate-resolution.log
           tail -n 1 coordinate-resolution.log >> "$GITHUB_STEP_SUMMARY"
 
+      - name: Resolve remaining venues against official food-business records
+        if: steps.validate.outcome == 'success' && (steps.changes.outputs.has_changes == 'true' || github.event_name != 'push')
+        shell: bash
+        run: |
+          python resolve_venue_coordinates_from_fhrs.py candidate-pubs.csv candidate-venue-coordinates.json --existing candidate-venue-coordinates.json | tee fhrs-coordinate-resolution.log
+          tail -n 1 fhrs-coordinate-resolution.log >> "$GITHUB_STEP_SUMMARY"
+
       - name: Build manual coordinate review queue
         if: steps.validate.outcome == 'success'
         shell: bash
@@ -192,6 +200,7 @@ jobs:
             candidate-pub-coordinates.json
             candidate-venue-coordinates.json
             coordinate-resolution.log
+            fhrs-coordinate-resolution.log
             coordinate-review-queue.csv
             change-report.json
             latest-bass-directory.pdf

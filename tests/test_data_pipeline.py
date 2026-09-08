@@ -11,6 +11,7 @@ from fetch_latest_pdf import download_latest_pdf
 from resolve_venue_coordinates import normalise, select_backfill_candidates
 from resolve_venue_coordinates_from_osm import choose_match, listing_name_variants, read_osm_venues
 from build_coordinate_review_queue import build_queue
+from resolve_venue_coordinates_from_fhrs import choose_match as choose_fhrs_match, names_match as fhrs_names_match
 from validate_csv import validate
 
 
@@ -112,6 +113,16 @@ class ValidationTests(unittest.TestCase):
         self.assertEqual(len(queue), 1)
         self.assertEqual(queue[0]["venue_key"], "needs review|bristol|bs1 1ac")
         self.assertIn("Needs+Review", queue[0]["openstreetmap_search"])
+
+    def test_fhrs_match_requires_same_postcode_and_one_coordinate(self):
+        candidate = {
+            "BusinessName": "Farmers Arms", "PostCode": "CW12 1JY",
+            "geocode": {"latitude": "53.1646445", "longitude": "-2.2203405"}, "FHRSID": 1874361,
+        }
+        match = choose_fhrs_match(row(pub_name="Farmers", postcode="CW12 1JY"), [candidate])
+        self.assertEqual(match["source"], "food-standards-agency-fhrs")
+        self.assertEqual(match["fhrs_id"], 1874361)
+        self.assertTrue(fhrs_names_match("The Rad (was St Radegund)", "The Rad"))
 
     def test_no_change_report_is_still_suitable_for_a_manual_update_email(self):
         report = build_report([row()], [row()])

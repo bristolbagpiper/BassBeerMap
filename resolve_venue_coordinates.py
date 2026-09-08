@@ -9,6 +9,7 @@ from urllib.parse import urlencode
 from urllib.request import Request, urlopen
 
 API_URL = "https://nominatim.openstreetmap.org/search"
+OVERPASS_API_URL = "https://overpass-api.de/api/interpreter"
 USER_AGENT = "BassBeerMap venue-coordinate resolver (github.com/bristolbagpiper/BassBeerMap)"
 
 
@@ -30,7 +31,38 @@ def name_variants(name):
     return list(dict.fromkeys(variants))
 
 
-def resolve(row):
+def resolve_overpass(row, postcode_coordinates):
+    postcode = postcode_coordinates.get(row["postcode"])
+    if not postcode:
+        return None
+    query = """
+[out:json][timeout:30];
+(
+  nwr["amenity"~"^(pub|bar|social_club|club)$"](around:5000,{lat},{lng});
+);
+out center tags;
+""".format(lat=postcode["lat"], lng=postcode["lng"])
+    request = Request(
+        OVERPASS_API_URL,
+        data=query.encode(),
+        headers={"User-Agent": USER_AGENT, "Content-Type": "text/plain", "Accept": "application/json"},
+    )
+    with urlopen(request, timeout=60) as response:
+        elements = json.loads(response.read()).get("elements", [])
+    wanted = normalise(row["pub_name"])
+    matches = []
+    for element in elements:
+        if normalise(element.get("tags", {}).get("name", "")) != wanted:
+            continue
+        point = element.get("center", element)
+        if point.get("lat") is not None and point.get("lon") is not None:
+            matches.append(point)
+    if len(matches) != 1:
+        return None
+    return {"lat": float(matches[0]["lat"]), "lng": float(matches[0]["lon"]), "source": "openstreetmap-overpass"}
+
+
+def resolve(row, postcode_coordinates):
     wanted = normalise(row["pub_name"])
     for index, pub_name in enumerate(name_variants(row["pub_name"])):
         if index:
@@ -43,7 +75,8 @@ def resolve(row):
         for candidate in candidates:
             if normalise(candidate.get("name", "")) == wanted and candidate.get("type") in {"pub", "bar", "social_club", "club"}:
                 return {"lat": float(candidate["lat"]), "lng": float(candidate["lon"]), "source": "openstreetmap"}
-    return None
+    time.sleep(1.1)
+    return resolve_overpass(row, postcode_coordinates)
 
 
 def read_rows(path):
@@ -63,6 +96,7 @@ def main():
     parser.add_argument("output", nargs="?", default="venue-coordinates.json")
     parser.add_argument("--existing", default="venue-coordinates.json")
     parser.add_argument("--previous", help="Only resolve listings not present in this CSV.")
+    parser.add_argument("--postcode-coordinates", default="pub-coordinates.json")
     args = parser.parse_args()
 
     rows = read_rows(args.csv_path)
@@ -70,6 +104,7 @@ def main():
     previous_keys = {key(row) for row in read_rows(args.previous)} if args.previous else set()
     existing_path = Path(args.existing)
     existing = json.loads(existing_path.read_text(encoding="utf-8")) if existing_path.exists() else {"venues": {}}
+    postcode_coordinates = json.loads(Path(args.postcode_coordinates).read_text(encoding="utf-8")).get("coordinates", {})
     venues = {venue_key: value for venue_key, value in existing.get("venues", {}).items() if venue_key in listing_keys}
     unresolved = {
         venue_key
@@ -82,7 +117,7 @@ def main():
         venue_key = key(row)
         match = None
         try:
-            match = resolve(row)
+            match = resolve(row, postcode_coordinates)
             if match:
                 venues[venue_key] = match
             else:

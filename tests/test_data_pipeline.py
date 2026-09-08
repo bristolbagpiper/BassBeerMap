@@ -8,7 +8,7 @@ from convert_pdf_to_csv import apply_postcode_overrides
 from build_change_report import build_report
 from send_change_report_email import format_report
 from fetch_latest_pdf import download_latest_pdf
-from resolve_venue_coordinates import normalise
+from resolve_venue_coordinates import normalise, select_backfill_candidates
 from validate_csv import validate
 
 
@@ -63,6 +63,19 @@ class ValidationTests(unittest.TestCase):
 
     def test_free_resolver_normalises_common_pub_name_variants(self):
         self.assertEqual(normalise("The Crown and Anchor"), normalise("Crown & Anchor"))
+
+    def test_legacy_backfill_resumes_after_the_last_processed_listing(self):
+        rows = [
+            row(pub_name="First Inn", postcode="BS1 1AA"),
+            row(pub_name="Second Inn", postcode="BS1 1AB"),
+            row(pub_name="Third Inn", postcode="BS1 1AC"),
+        ]
+        existing = {"first inn|bristol|bs1 1aa": {"lat": 51.45, "lng": -2.59}}
+
+        selected, next_cursor = select_backfill_candidates(rows, existing, cursor=0, limit=2)
+
+        self.assertEqual([item[1]["pub_name"] for item in selected], ["Second Inn", "Third Inn"])
+        self.assertEqual(next_cursor, 0)
 
     def test_no_change_report_is_still_suitable_for_a_manual_update_email(self):
         report = build_report([row()], [row()])

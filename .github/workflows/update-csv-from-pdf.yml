@@ -6,7 +6,7 @@ on:
   workflow_dispatch:
     inputs:
       backfill_legacy_venues:
-        description: "Resolve up to 50 existing listings without precise venue coordinates (one-time batch)"
+        description: "Resolve the next 8 existing postcode-only listings now"
         required: false
         default: false
         type: boolean
@@ -145,12 +145,12 @@ jobs:
           has_changes=$(python -c "import json; print(str(json.load(open('change-report.json'))['summary']['has_changes']).lower())")
           echo "has_changes=${has_changes}" >> "$GITHUB_OUTPUT"
 
-      - name: Resolve precise coordinates for new venues
+      - name: Resolve precise coordinates for new and legacy venues
         if: steps.validate.outcome == 'success'
         shell: bash
         run: |
-          if [ "${{ inputs.backfill_legacy_venues }}" = "true" ]; then
-            python resolve_venue_coordinates.py candidate-pubs.csv candidate-venue-coordinates.json --existing venue-coordinates.json --max-venues 50
+          if [ "${{ inputs.backfill_legacy_venues }}" = "true" ] || [ "${{ github.event_name }}" = "schedule" ] || [ "${{ github.event_name }}" = "push" ]; then
+            python resolve_venue_coordinates.py candidate-pubs.csv candidate-venue-coordinates.json --existing venue-coordinates.json --backfill --max-venues 8
           else
             python resolve_venue_coordinates.py candidate-pubs.csv candidate-venue-coordinates.json --existing venue-coordinates.json --previous pubs.csv
           fi

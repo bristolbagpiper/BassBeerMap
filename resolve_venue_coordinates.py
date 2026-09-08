@@ -14,6 +14,10 @@ OVERPASS_API_URL = "https://overpass-api.de/api/interpreter"
 USER_AGENT = "BassBeerMap venue-coordinate resolver (github.com/bristolbagpiper/BassBeerMap)"
 NOMINATIM_TIMEOUT_SECONDS = 12
 OVERPASS_TIMEOUT_SECONDS = 20
+# The public Nominatim service restricts scripts that run repeatedly to four
+# requests per minute. Keep every external lookup below that limit.
+REQUEST_INTERVAL_SECONDS = 16
+last_request_started_at = 0.0
 
 
 def key(row):
@@ -34,6 +38,15 @@ def name_variants(name):
     return list(dict.fromkeys(variants))
 
 
+def throttled_urlopen(request, timeout):
+    global last_request_started_at
+    wait_seconds = REQUEST_INTERVAL_SECONDS - (time.monotonic() - last_request_started_at)
+    if wait_seconds > 0:
+        time.sleep(wait_seconds)
+    last_request_started_at = time.monotonic()
+    return urlopen(request, timeout=timeout)
+
+
 def resolve_overpass(row, postcode_coordinates):
     postcode = postcode_coordinates.get(row["postcode"])
     if not postcode:
@@ -50,7 +63,7 @@ out center tags;
         data=query.encode(),
         headers={"User-Agent": USER_AGENT, "Content-Type": "text/plain", "Accept": "application/json"},
     )
-    with urlopen(request, timeout=OVERPASS_TIMEOUT_SECONDS) as response:
+    with throttled_urlopen(request, timeout=OVERPASS_TIMEOUT_SECONDS) as response:
         elements = json.loads(response.read()).get("elements", [])
     wanted = normalise(row["pub_name"])
     matches = []
@@ -67,18 +80,15 @@ out center tags;
 
 def resolve(row, postcode_coordinates):
     wanted = normalise(row["pub_name"])
-    for index, pub_name in enumerate(name_variants(row["pub_name"])):
-        if index:
-            time.sleep(1.1)
+    for pub_name in name_variants(row["pub_name"]):
         query = f"{pub_name}, {row['place_name']}, {row['postcode']}, United Kingdom"
         url = f"{API_URL}?{urlencode({'q': query, 'format': 'jsonv2', 'addressdetails': 1, 'limit': 5, 'countrycodes': 'gb,im,je'})}"
         request = Request(url, headers={"User-Agent": USER_AGENT, "Accept": "application/json"})
-        with urlopen(request, timeout=NOMINATIM_TIMEOUT_SECONDS) as response:
+        with throttled_urlopen(request, timeout=NOMINATIM_TIMEOUT_SECONDS) as response:
             candidates = json.loads(response.read())
         for candidate in candidates:
             if normalise(candidate.get("name", "")) == wanted and candidate.get("type") in {"pub", "bar", "social_club", "club"}:
                 return {"lat": float(candidate["lat"]), "lng": float(candidate["lon"]), "source": "openstreetmap"}
-    time.sleep(1.1)
     return resolve_overpass(row, postcode_coordinates)
 
 
@@ -86,11 +96,35 @@ def read_rows(path):
     return list(csv.DictReader(Path(path).open(encoding="utf-8", newline="")))
 
 
-def write_output(path, venues, unresolved):
+def write_output(path, venues, unresolved, backfill_cursor):
     Path(path).write_text(
-        json.dumps({"venues": venues, "unresolved_venues": unresolved}, separators=(",", ":")),
+        json.dumps(
+            {
+                "venues": venues,
+                "unresolved_venues": unresolved,
+                "backfill_cursor": backfill_cursor,
+            },
+            separators=(",", ":"),
+        ),
         encoding="utf-8",
     )
+
+
+def select_backfill_candidates(rows, venues, cursor, limit):
+    if not rows or limit <= 0:
+        return [], cursor
+
+    selected = []
+    row_count = len(rows)
+    scanned = 0
+    while scanned < row_count and len(selected) < limit:
+        row_index = (cursor + scanned) % row_count
+        row = rows[row_index]
+        scanned += 1
+        if key(row) not in venues:
+            selected.append((row_index, row))
+
+    return selected, (cursor + scanned) % row_count
 
 
 def main():
@@ -100,7 +134,8 @@ def main():
     parser.add_argument("--existing", default="venue-coordinates.json")
     parser.add_argument("--previous", help="Only resolve listings not present in this CSV.")
     parser.add_argument("--postcode-coordinates", default="pub-coordinates.json")
-    parser.add_argument("--max-venues", type=int, default=0, help="Stop after this many lookups (0 means no limit).")
+    parser.add_argument("--backfill", action="store_true", help="Resume resolving legacy postcode-only listings.")
+    parser.add_argument("--max-venues", type=int, default=0, help="Maximum venues in a backfill batch (0 means no limit).")
     parser.add_argument(
         "--max-consecutive-request-errors",
         type=int,
@@ -114,6 +149,7 @@ def main():
     previous_keys = {key(row) for row in read_rows(args.previous)} if args.previous else set()
     existing_path = Path(args.existing)
     existing = json.loads(existing_path.read_text(encoding="utf-8")) if existing_path.exists() else {"venues": {}}
+    backfill_cursor = int(existing.get("backfill_cursor", 0))
     postcode_coordinates = json.loads(Path(args.postcode_coordinates).read_text(encoding="utf-8")).get("coordinates", {})
     venues = {venue_key: value for venue_key, value in existing.get("venues", {}).items() if venue_key in listing_keys}
     unresolved = {
@@ -121,12 +157,14 @@ def main():
         for venue_key in existing.get("unresolved_venues", [])
         if venue_key in listing_keys and venue_key not in venues
     }
-    candidates = [row for row in rows if key(row) not in previous_keys and key(row) not in venues]
-    if args.max_venues > 0:
-        candidates = candidates[:args.max_venues]
+    if args.backfill:
+        max_venues = args.max_venues or len(rows)
+        candidates, _ = select_backfill_candidates(rows, venues, backfill_cursor, max_venues)
+    else:
+        candidates = [(index, row) for index, row in enumerate(rows) if key(row) not in previous_keys and key(row) not in venues]
 
     consecutive_request_errors = 0
-    for index, row in enumerate(candidates, start=1):
+    for index, (row_index, row) in enumerate(candidates, start=1):
         venue_key = key(row)
         match = None
         try:
@@ -146,17 +184,16 @@ def main():
         else:
             consecutive_request_errors = 0
         print(f"{index}/{len(candidates)}: {row['pub_name']} {'matched' if match else 'not matched'}")
-        write_output(args.output, venues, sorted(unresolved))
+        if args.backfill:
+            backfill_cursor = (row_index + 1) % len(rows)
+        write_output(args.output, venues, sorted(unresolved), backfill_cursor)
         if consecutive_request_errors >= args.max_consecutive_request_errors:
             print(
                 f"Stopping after {consecutive_request_errors} consecutive request errors; "
                 "the coordinate service is unavailable or rate-limiting requests."
             )
             break
-        if index < len(candidates):
-            time.sleep(1.1)
-
-    write_output(args.output, venues, sorted(unresolved))
+    write_output(args.output, venues, sorted(unresolved), backfill_cursor)
     print(f"Wrote {len(venues):,} precise venue coordinates; {len(unresolved):,} new listings need review.")
 
 

@@ -1,4 +1,9 @@
-const JSON_HEADERS = { 'content-type': 'application/json; charset=utf-8' };
+const JSON_HEADERS = {
+  'content-type': 'application/json; charset=utf-8',
+  'access-control-allow-origin': 'https://bassbeermap.com',
+  'access-control-allow-methods': 'GET, POST, OPTIONS',
+  'access-control-allow-headers': 'content-type'
+};
 
 function response(body, status = 200) {
   return new Response(JSON.stringify(body), { status, headers: JSON_HEADERS });
@@ -27,6 +32,7 @@ export default {
   async fetch(request, env) {
     const url = new URL(request.url);
     const origin = request.headers.get('Origin');
+    if (request.method === 'OPTIONS') return new Response(null, { status: 204, headers: JSON_HEADERS });
     if (origin && origin !== env.ALLOWED_ORIGIN) return response({ error: 'Invalid origin.' }, 403);
 
     if (request.method === 'GET' && url.pathname === '/api/report-problem' && url.searchParams.has('config')) {

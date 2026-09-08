@@ -25,9 +25,9 @@ included in the static site.
 
    `ALLOWED_ORIGIN` must be exactly `https://bassbeermap.com`. `REPORT_FROM`
    must be a verified Resend sender, e.g. `Bass Map <reports@bassbeermap.com>`.
-5. In the Cloudflare Worker dashboard, add the route
-   `bassbeermap.com/api/report-problem*` to this Worker.
+5. In the Cloudflare Worker dashboard, add `reports.bassbeermap.com` as a
+   **Custom Domain** for this Worker. Cloudflare creates the required DNS
+   record automatically.
 
-The public site calls `/api/report-problem`; Cloudflare serves that path while
-GitHub Pages continues serving the rest of the site. Test a report after setup
-and confirm it reaches `REPORT_TO`.
+The public site calls `https://reports.bassbeermap.com/api/report-problem`.
+Test a report after setup and confirm it reaches `REPORT_TO`.

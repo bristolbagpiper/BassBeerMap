@@ -10,6 +10,7 @@ from send_change_report_email import format_report
 from fetch_latest_pdf import download_latest_pdf
 from resolve_venue_coordinates import normalise, select_backfill_candidates
 from resolve_venue_coordinates_from_osm import choose_match, listing_name_variants, read_osm_venues
+from build_coordinate_review_queue import build_queue
 from validate_csv import validate
 
 
@@ -100,6 +101,17 @@ class ValidationTests(unittest.TestCase):
 
     def test_offline_osm_variants_remove_directory_pmc_suffix(self):
         self.assertIn("Barton Rovers Social Club", listing_name_variants("Barton Rovers Social (PMC)"))
+
+    def test_coordinate_review_queue_excludes_automated_and_manual_coordinates(self):
+        rows = [row(pub_name="Mapped Inn"), row(pub_name="Reviewed Inn", postcode="BS1 1AB"), row(pub_name="Needs Review", postcode="BS1 1AC")]
+        venues = {"mapped inn|bristol|bs1 1aa": {"lat": 51.45, "lng": -2.59}}
+        overrides = {"reviewed inn|bristol|bs1 1ab": {"lat": 51.46, "lng": -2.58}}
+
+        queue = build_queue(rows, venues, overrides)
+
+        self.assertEqual(len(queue), 1)
+        self.assertEqual(queue[0]["venue_key"], "needs review|bristol|bs1 1ac")
+        self.assertIn("Needs+Review", queue[0]["openstreetmap_search"])
 
     def test_no_change_report_is_still_suitable_for_a_manual_update_email(self):
         report = build_report([row()], [row()])

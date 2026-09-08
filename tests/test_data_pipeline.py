@@ -9,6 +9,7 @@ from build_change_report import build_report
 from send_change_report_email import format_report
 from fetch_latest_pdf import download_latest_pdf
 from resolve_venue_coordinates import normalise, select_backfill_candidates
+from resolve_venue_coordinates_from_osm import choose_match
 from validate_csv import validate
 
 
@@ -76,6 +77,16 @@ class ValidationTests(unittest.TestCase):
 
         self.assertEqual([item[1]["pub_name"] for item in selected], ["Second Inn", "Third Inn"])
         self.assertEqual(next_cursor, 0)
+
+    def test_offline_osm_match_requires_local_evidence_for_duplicate_names(self):
+        postcode_coordinates = {"BS1 1AA": {"lat": 51.45, "lng": -2.59}}
+        candidates = [
+            {"name": "Crown", "lat": 51.451, "lng": -2.591, "postcode": "", "place": ""},
+            {"name": "Crown", "lat": 53.0, "lng": -1.0, "postcode": "", "place": ""},
+        ]
+        match = choose_match(row(pub_name="Crown"), candidates, postcode_coordinates)
+        self.assertEqual(match["source"], "openstreetmap-gb-extract")
+        self.assertAlmostEqual(match["lat"], 51.451)
 
     def test_no_change_report_is_still_suitable_for_a_manual_update_email(self):
         report = build_report([row()], [row()])

@@ -2,14 +2,8 @@ name: Update CSV From PDF
 
 on:
   schedule:
-    - cron: "17 6 * * *"
+    - cron: "17 6 1 * *"
   workflow_dispatch:
-    inputs:
-      backfill_legacy_venues:
-        description: "Resolve the next 25 existing postcode-only listings now"
-        required: false
-        default: false
-        type: boolean
   push:
     paths:
       - "*.pdf"
@@ -21,6 +15,7 @@ on:
       - "build_coordinates.py"
       - "build_change_report.py"
       - "resolve_venue_coordinates.py"
+      - "resolve_venue_coordinates_from_osm.py"
       - "send_change_report_email.py"
       - "postcode-overrides.json"
       - "venue-coordinates.json"
@@ -39,7 +34,7 @@ jobs:
   update-csv:
     if: github.actor != 'github-actions[bot]'
     runs-on: ubuntu-latest
-    timeout-minutes: 30
+    timeout-minutes: 50
     steps:
       - name: Check out repository
         uses: actions/checkout@v4
@@ -145,15 +140,16 @@ jobs:
           has_changes=$(python -c "import json; print(str(json.load(open('change-report.json'))['summary']['has_changes']).lower())")
           echo "has_changes=${has_changes}" >> "$GITHUB_OUTPUT"
 
-      - name: Resolve precise coordinates for new and legacy venues
-        if: steps.validate.outcome == 'success'
+      - name: Download current Great Britain OpenStreetMap extract
+        if: steps.validate.outcome == 'success' && (steps.changes.outputs.has_changes == 'true' || github.event_name != 'push')
         shell: bash
         run: |
-          if [ "${{ inputs.backfill_legacy_venues }}" = "true" ] || [ "${{ github.event_name }}" = "schedule" ] || [ "${{ github.event_name }}" = "push" ]; then
-            python resolve_venue_coordinates.py candidate-pubs.csv candidate-venue-coordinates.json --existing venue-coordinates.json --backfill --max-venues 25
-          else
-            python resolve_venue_coordinates.py candidate-pubs.csv candidate-venue-coordinates.json --existing venue-coordinates.json --previous pubs.csv
-          fi
+          curl --fail --location --retry 3 --retry-delay 15 --output great-britain-latest.osm.pbf \
+            https://download.geofabrik.de/europe/great-britain-latest.osm.pbf
+
+      - name: Resolve precise coordinates against the offline OSM extract
+        if: steps.validate.outcome == 'success' && (steps.changes.outputs.has_changes == 'true' || github.event_name != 'push')
+        run: python resolve_venue_coordinates_from_osm.py great-britain-latest.osm.pbf candidate-pubs.csv candidate-venue-coordinates.json --existing venue-coordinates.json
 
       - name: Show validation report
         if: always()

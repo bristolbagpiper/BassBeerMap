@@ -6,7 +6,7 @@ on:
   workflow_dispatch:
     inputs:
       backfill_legacy_venues:
-        description: "Resolve the next 8 existing postcode-only listings now"
+        description: "Resolve the next 25 existing postcode-only listings now"
         required: false
         default: false
         type: boolean
@@ -150,7 +150,7 @@ jobs:
         shell: bash
         run: |
           if [ "${{ inputs.backfill_legacy_venues }}" = "true" ] || [ "${{ github.event_name }}" = "schedule" ] || [ "${{ github.event_name }}" = "push" ]; then
-            python resolve_venue_coordinates.py candidate-pubs.csv candidate-venue-coordinates.json --existing venue-coordinates.json --backfill --max-venues 8
+            python resolve_venue_coordinates.py candidate-pubs.csv candidate-venue-coordinates.json --existing venue-coordinates.json --backfill --max-venues 25
           else
             python resolve_venue_coordinates.py candidate-pubs.csv candidate-venue-coordinates.json --existing venue-coordinates.json --previous pubs.csv
           fi

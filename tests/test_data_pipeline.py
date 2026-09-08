@@ -9,7 +9,7 @@ from build_change_report import build_report
 from send_change_report_email import format_report
 from fetch_latest_pdf import download_latest_pdf
 from resolve_venue_coordinates import normalise, select_backfill_candidates
-from resolve_venue_coordinates_from_osm import choose_match
+from resolve_venue_coordinates_from_osm import choose_match, read_osm_venues
 from validate_csv import validate
 
 
@@ -87,6 +87,16 @@ class ValidationTests(unittest.TestCase):
         match = choose_match(row(pub_name="Crown"), candidates, postcode_coordinates)
         self.assertEqual(match["source"], "openstreetmap-gb-extract")
         self.assertAlmostEqual(match["lat"], 51.451)
+
+    def test_offline_osm_reader_uses_the_centroid_of_a_mapped_pub_building(self):
+        xml = """<osm version=\"0.6\"><node id=\"1\" lat=\"51.0\" lon=\"-2.0\"/><node id=\"2\" lat=\"51.002\" lon=\"-2.002\"/><way id=\"3\"><nd ref=\"1\"/><nd ref=\"2\"/><tag k=\"amenity\" v=\"pub\"/><tag k=\"name\" v=\"Outline Inn\"/></way></osm>"""
+        with tempfile.TemporaryDirectory() as directory:
+            path = Path(directory) / "mini.osm"
+            path.write_text(xml, encoding="utf-8")
+            venues = read_osm_venues(path)
+        self.assertEqual(venues[0]["name"], "Outline Inn")
+        self.assertAlmostEqual(venues[0]["lat"], 51.001)
+        self.assertAlmostEqual(venues[0]["lng"], -2.001)
 
     def test_no_change_report_is_still_suitable_for_a_manual_update_email(self):
         report = build_report([row()], [row()])

@@ -28,40 +28,71 @@ def distance_km(left, right):
 
 
 def read_osm_venues(path):
-    """Return mapped venue nodes from an OSM PBF.
+    """Return mapped venue points and building outlines from an OSM PBF.
 
     Filtering happens in libosmium before Python sees an object.  Walking every
-    UK building and its member nodes made the initial full-country job exceed
-    GitHub Actions' limit; OSM venue nodes are exact coordinates and are the
-    large majority of usable pub POIs.
+    UK building made the initial full-country job exceed GitHub Actions' limit.
+    This keeps that native filtering but follows the node references of actual
+    pub-building ways in a second, targeted pass.
     """
     try:
         import osmium
     except ImportError as error:
         raise SystemExit("Install dependencies with: pip install -r requirements.txt") from error
 
-    venues = []
+    venues, venue_ways = [], []
+
+    def metadata(tags):
+        amenity = tags.get("amenity")
+        name = tags.get("name")
+        if amenity not in VENUE_AMENITIES or not name:
+            return None
+        return {
+            "name": name,
+            "postcode": tags.get("addr:postcode", ""),
+            "place": " ".join(tags.get(field, "") for field in ("addr:city", "addr:town", "addr:village", "addr:hamlet")),
+        }
 
     class Handler(osmium.SimpleHandler):
         def node(self, node):
-            amenity = node.tags.get("amenity")
-            name = node.tags.get("name")
-            if amenity not in VENUE_AMENITIES or not name or not node.location.valid():
+            venue = metadata(node.tags)
+            if not venue or not node.location.valid():
                 return
-            venues.append(
-                {
-                    "name": name,
-                    "lat": node.location.lat,
-                    "lng": node.location.lon,
-                    "postcode": node.tags.get("addr:postcode", ""),
-                    "place": " ".join(node.tags.get(field, "") for field in ("addr:city", "addr:town", "addr:village", "addr:hamlet")),
-                }
-            )
+            venue.update({"lat": node.location.lat, "lng": node.location.lon})
+            venues.append(venue)
+
+        def way(self, way):
+            venue = metadata(way.tags)
+            refs = [int(node.ref) for node in way.nodes]
+            if venue and refs:
+                venue_ways.append((venue, refs))
 
     handler = Handler()
-    reader = osmium.io.Reader(str(path), osmium.osm.NODE)
-    amenity_filter = osmium.filter.KeyFilter("amenity").enable_for(osmium.osm.NODE)
+    entity_types = osmium.osm.NODE | osmium.osm.WAY
+    reader = osmium.io.Reader(str(path), entity_types)
+    amenity_filter = osmium.filter.KeyFilter("amenity").enable_for(entity_types)
     osmium.apply(reader, amenity_filter, handler)
+
+    wanted_node_ids = {ref for _, refs in venue_ways for ref in refs}
+    locations = {}
+
+    class LocationHandler(osmium.SimpleHandler):
+        def node(self, node):
+            if node.location.valid():
+                locations[int(node.id)] = (node.location.lat, node.location.lon)
+
+    if wanted_node_ids:
+        reader = osmium.io.Reader(str(path), osmium.osm.NODE)
+        wanted_filter = osmium.filter.IdFilter(wanted_node_ids).enable_for(osmium.osm.NODE)
+        osmium.apply(reader, wanted_filter, LocationHandler())
+    for venue, refs in venue_ways:
+        points = [locations[ref] for ref in refs if ref in locations]
+        if points:
+            venue.update({
+                "lat": sum(point[0] for point in points) / len(points),
+                "lng": sum(point[1] for point in points) / len(points),
+            })
+            venues.append(venue)
     return venues
 
 

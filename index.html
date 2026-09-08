@@ -1059,15 +1059,15 @@
 
     .layout {
       position: relative;
-      display: block;
+      display: grid;
+      grid-template-columns: clamp(280px, 22vw, 340px) minmax(0, 1fr);
       width: 100%;
       height: 100%;
       min-height: 0;
       padding: 0;
     }
     .map-wrap {
-      position: absolute;
-      inset: 0;
+      position: relative;
       min-height: 0;
       border: 0;
       border-radius: 0;
@@ -1075,19 +1075,20 @@
       box-shadow: none;
     }
     .sidebar {
-      position: absolute;
-      z-index: 800;
-      top: 14px;
-      bottom: 14px;
-      left: 14px;
-      width: 356px;
+      position: relative;
+      z-index: 1;
+      top: auto;
+      bottom: auto;
+      left: auto;
+      width: auto;
       padding: 0;
       overflow: hidden;
-      border: 1px solid rgba(52, 44, 40, 0.16);
-      border-radius: 14px;
-      background: rgba(255, 255, 255, 0.97);
-      box-shadow: var(--shadow-lg);
-      backdrop-filter: blur(10px);
+      border: 0;
+      border-right: 1px solid rgba(52, 44, 40, 0.16);
+      border-radius: 0;
+      background: #fff;
+      box-shadow: none;
+      backdrop-filter: none;
     }
     .sidebar-inner {
       height: 100%;

@@ -25,9 +25,7 @@ included in the static site.
 
    `ALLOWED_ORIGIN` must be exactly `https://bassbeermap.com`. `REPORT_FROM`
    must be a verified Resend sender, e.g. `Bass Map <reports@bassbeermap.com>`.
-5. In the Cloudflare Worker dashboard, add `reports.bassbeermap.com` as a
-   **Custom Domain** for this Worker. Cloudflare creates the required DNS
-   record automatically.
-
-The public site calls `https://reports.bassbeermap.com/api/report-problem`.
-Test a report after setup and confirm it reaches `REPORT_TO`.
+The public site calls the Worker directly at its `workers.dev` URL. That URL
+contains no secret and the Worker accepts requests only from
+`https://bassbeermap.com`. Test a report after setup and confirm it reaches
+`REPORT_TO`.

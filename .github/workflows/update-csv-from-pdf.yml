@@ -28,7 +28,9 @@ permissions:
 
 concurrency:
   group: update-csv-from-pdf
-  cancel-in-progress: true
+  # A full offline OSM match can take a while. Queue a later refresh rather
+  # than cancelling it because someone has changed the site in the meantime.
+  cancel-in-progress: false
 
 jobs:
   update-csv:

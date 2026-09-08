@@ -6,7 +6,7 @@ on:
   workflow_dispatch:
     inputs:
       backfill_legacy_venues:
-        description: "Resolve all existing listings without precise venue coordinates (one-time, up to one hour)"
+        description: "Resolve up to 50 existing listings without precise venue coordinates (one-time batch)"
         required: false
         default: false
         type: boolean
@@ -33,12 +33,13 @@ permissions:
 
 concurrency:
   group: update-csv-from-pdf
-  cancel-in-progress: false
+  cancel-in-progress: true
 
 jobs:
   update-csv:
     if: github.actor != 'github-actions[bot]'
     runs-on: ubuntu-latest
+    timeout-minutes: 30
     steps:
       - name: Check out repository
         uses: actions/checkout@v4
@@ -149,7 +150,7 @@ jobs:
         shell: bash
         run: |
           if [ "${{ inputs.backfill_legacy_venues }}" = "true" ]; then
-            python resolve_venue_coordinates.py candidate-pubs.csv candidate-venue-coordinates.json --existing venue-coordinates.json
+            python resolve_venue_coordinates.py candidate-pubs.csv candidate-venue-coordinates.json --existing venue-coordinates.json --max-venues 50
           else
             python resolve_venue_coordinates.py candidate-pubs.csv candidate-venue-coordinates.json --existing venue-coordinates.json --previous pubs.csv
           fi
@@ -222,7 +223,6 @@ jobs:
           CHANGE_REPORT_TO: ${{ secrets.CHANGE_REPORT_TO }}
           ALERT_FROM: ${{ secrets.ALERT_FROM }}
         run: python send_change_report_email.py --report change-report.json
-          fi
 
       - name: Email validation failure
         if: always() && steps.validate.outcome == 'failure' && steps.email_config.outputs.configured == 'true'

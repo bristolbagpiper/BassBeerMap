@@ -5,12 +5,15 @@ import json
 import re
 import time
 from pathlib import Path
+from urllib.error import HTTPError, URLError
 from urllib.parse import urlencode
 from urllib.request import Request, urlopen
 
 API_URL = "https://nominatim.openstreetmap.org/search"
 OVERPASS_API_URL = "https://overpass-api.de/api/interpreter"
 USER_AGENT = "BassBeerMap venue-coordinate resolver (github.com/bristolbagpiper/BassBeerMap)"
+NOMINATIM_TIMEOUT_SECONDS = 12
+OVERPASS_TIMEOUT_SECONDS = 20
 
 
 def key(row):
@@ -47,7 +50,7 @@ out center tags;
         data=query.encode(),
         headers={"User-Agent": USER_AGENT, "Content-Type": "text/plain", "Accept": "application/json"},
     )
-    with urlopen(request, timeout=60) as response:
+    with urlopen(request, timeout=OVERPASS_TIMEOUT_SECONDS) as response:
         elements = json.loads(response.read()).get("elements", [])
     wanted = normalise(row["pub_name"])
     matches = []
@@ -70,7 +73,7 @@ def resolve(row, postcode_coordinates):
         query = f"{pub_name}, {row['place_name']}, {row['postcode']}, United Kingdom"
         url = f"{API_URL}?{urlencode({'q': query, 'format': 'jsonv2', 'addressdetails': 1, 'limit': 5, 'countrycodes': 'gb,im,je'})}"
         request = Request(url, headers={"User-Agent": USER_AGENT, "Accept": "application/json"})
-        with urlopen(request, timeout=30) as response:
+        with urlopen(request, timeout=NOMINATIM_TIMEOUT_SECONDS) as response:
             candidates = json.loads(response.read())
         for candidate in candidates:
             if normalise(candidate.get("name", "")) == wanted and candidate.get("type") in {"pub", "bar", "social_club", "club"}:
@@ -97,6 +100,13 @@ def main():
     parser.add_argument("--existing", default="venue-coordinates.json")
     parser.add_argument("--previous", help="Only resolve listings not present in this CSV.")
     parser.add_argument("--postcode-coordinates", default="pub-coordinates.json")
+    parser.add_argument("--max-venues", type=int, default=0, help="Stop after this many lookups (0 means no limit).")
+    parser.add_argument(
+        "--max-consecutive-request-errors",
+        type=int,
+        default=5,
+        help="Stop after repeated external-service failures instead of continuing a broken run.",
+    )
     args = parser.parse_args()
 
     rows = read_rows(args.csv_path)
@@ -112,7 +122,10 @@ def main():
         if venue_key in listing_keys and venue_key not in venues
     }
     candidates = [row for row in rows if key(row) not in previous_keys and key(row) not in venues]
+    if args.max_venues > 0:
+        candidates = candidates[:args.max_venues]
 
+    consecutive_request_errors = 0
     for index, row in enumerate(candidates, start=1):
         venue_key = key(row)
         match = None
@@ -122,11 +135,24 @@ def main():
                 venues[venue_key] = match
             else:
                 unresolved.add(venue_key)
+        except (HTTPError, URLError, TimeoutError) as error:
+            unresolved.add(venue_key)
+            print(f"{index}: lookup failed for {row['pub_name']}: {error}")
+            consecutive_request_errors += 1
         except Exception as error:
             unresolved.add(venue_key)
             print(f"{index}: lookup failed for {row['pub_name']}: {error}")
+            consecutive_request_errors += 1
+        else:
+            consecutive_request_errors = 0
         print(f"{index}/{len(candidates)}: {row['pub_name']} {'matched' if match else 'not matched'}")
         write_output(args.output, venues, sorted(unresolved))
+        if consecutive_request_errors >= args.max_consecutive_request_errors:
+            print(
+                f"Stopping after {consecutive_request_errors} consecutive request errors; "
+                "the coordinate service is unavailable or rate-limiting requests."
+            )
+            break
         if index < len(candidates):
             time.sleep(1.1)
 

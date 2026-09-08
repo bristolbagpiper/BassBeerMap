@@ -452,10 +452,21 @@
       width: 18px;
       height: 18px;
       box-sizing: border-box;
-      border: 3px solid #ffffff;
-      border-radius: 50%;
+      border: 2px solid #ffffff;
+      border-radius: 50% 50% 50% 0;
       background: #8a641f;
       box-shadow: 0 2px 7px rgba(58,34,25,0.42);
+      transform: rotate(-45deg);
+    }
+    .approximate-marker span::after {
+      content: '';
+      display: block;
+      width: 6px;
+      height: 6px;
+      margin: 4px;
+      border-radius: 50%;
+      background: #ffffff;
+      transform: rotate(45deg);
     }
     .legend {
       position: absolute;
@@ -1012,9 +1023,9 @@
     const approximatePostcodeIcon = L.divIcon({
       className: 'approximate-marker',
       html: '<span aria-hidden="true"></span>',
-      iconSize: [18, 18],
-      iconAnchor: [9, 9],
-      popupAnchor: [0, -9]
+      iconSize: [22, 26],
+      iconAnchor: [11, 25],
+      popupAnchor: [0, -24]
     });
 
     const markerLayer = L.markerClusterGroup({

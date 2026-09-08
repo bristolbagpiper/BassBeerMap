@@ -42,7 +42,11 @@ def main():
     smtp_password = os.environ["SMTP_PASSWORD"]
     recipient = os.environ["CHANGE_REPORT_TO"]
     message = EmailMessage()
-    message["Subject"] = "Bass directory update: validated changes"
+    message["Subject"] = (
+        "Bass directory update: validated changes"
+        if report["summary"]["has_changes"]
+        else "Bass directory update: no listing changes"
+    )
     message["From"] = os.environ.get("ALERT_FROM", smtp_username)
     message["To"] = recipient
     message.set_content(format_report(report))

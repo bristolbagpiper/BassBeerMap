@@ -6,7 +6,7 @@ from unittest.mock import patch
 
 from convert_pdf_to_csv import apply_postcode_overrides
 from build_change_report import build_report
-from ai_venue_resolver import listing_key as venue_listing_key
+from send_change_report_email import format_report
 from fetch_latest_pdf import download_latest_pdf
 from resolve_venue_coordinates import normalise
 from validate_csv import validate
@@ -61,11 +61,13 @@ class ValidationTests(unittest.TestCase):
         self.assertEqual(report["summary"]["updated_count"], 1)
         self.assertEqual(report["updated"][0]["changes"]["pg"], {"previous": "Perm", "candidate": "Guest"})
 
-    def test_ai_resolver_uses_the_same_stable_venue_identity(self):
-        self.assertEqual(venue_listing_key(row(pub_name="The New Inn", place_name="Town", postcode="AB1 2CD")), "the new inn|town|ab1 2cd")
-
     def test_free_resolver_normalises_common_pub_name_variants(self):
         self.assertEqual(normalise("The Crown and Anchor"), normalise("Crown & Anchor"))
+
+    def test_no_change_report_is_still_suitable_for_a_manual_update_email(self):
+        report = build_report([row()], [row()])
+        self.assertFalse(report["summary"]["has_changes"])
+        self.assertIn("Added: 0 | Removed: 0 | Updated: 0", format_report(report))
 
     def test_pdf_download_replaces_existing_file_only_after_a_valid_download(self):
         home_page = '<h2><a href="https://example.test/latest">Latest</a></h2>'

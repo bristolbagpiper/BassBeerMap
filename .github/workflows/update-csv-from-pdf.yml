@@ -10,11 +10,6 @@ on:
         required: false
         default: false
         type: boolean
-      ai_review_unresolved:
-        description: "Create AI-assisted, source-backed review suggestions for unresolved venues"
-        required: false
-        default: false
-        type: boolean
   push:
     paths:
       - "*.pdf"
@@ -25,7 +20,6 @@ on:
       - "validate_csv.py"
       - "build_coordinates.py"
       - "build_change_report.py"
-      - "ai_venue_resolver.py"
       - "resolve_venue_coordinates.py"
       - "send_change_report_email.py"
       - "postcode-overrides.json"
@@ -160,19 +154,6 @@ jobs:
             python resolve_venue_coordinates.py candidate-pubs.csv candidate-venue-coordinates.json --existing venue-coordinates.json --previous pubs.csv
           fi
 
-      - name: Create AI-assisted venue review queue
-        if: steps.validate.outcome == 'success' && inputs.ai_review_unresolved == true
-        env:
-          OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
-          OPENAI_RESOLVER_MODEL: ${{ vars.OPENAI_RESOLVER_MODEL }}
-        shell: bash
-        run: |
-          if [ -z "${OPENAI_API_KEY}" ]; then
-            echo "OPENAI_API_KEY must be configured before running AI venue review."
-            exit 1
-          fi
-          python ai_venue_resolver.py candidate-pubs.csv --coordinates candidate-venue-coordinates.json --output ai-venue-review.json --limit 25
-
       - name: Show validation report
         if: always()
         shell: bash
@@ -194,7 +175,6 @@ jobs:
             candidate-directory-meta.json
             candidate-pub-coordinates.json
             candidate-venue-coordinates.json
-            ai-venue-review.json
             change-report.json
             latest-bass-directory.pdf
           if-no-files-found: warn
@@ -217,7 +197,7 @@ jobs:
 
       - name: Check change-report email config
         id: change_report_email_config
-        if: steps.validate.outcome == 'success' && steps.changes.outputs.has_changes == 'true'
+        if: steps.validate.outcome == 'success' && (steps.changes.outputs.has_changes == 'true' || github.event_name == 'workflow_dispatch')
         shell: bash
         env:
           SMTP_HOST: ${{ secrets.SMTP_HOST }}
@@ -233,7 +213,7 @@ jobs:
           fi
 
       - name: Email validated change report
-        if: steps.validate.outcome == 'success' && steps.changes.outputs.has_changes == 'true' && steps.change_report_email_config.outputs.configured == 'true'
+        if: steps.validate.outcome == 'success' && (steps.changes.outputs.has_changes == 'true' || github.event_name == 'workflow_dispatch') && steps.change_report_email_config.outputs.configured == 'true'
         env:
           SMTP_HOST: ${{ secrets.SMTP_HOST }}
           SMTP_PORT: ${{ secrets.SMTP_PORT }}

@@ -9,7 +9,7 @@ from build_change_report import build_report
 from send_change_report_email import format_report
 from fetch_latest_pdf import download_latest_pdf
 from resolve_venue_coordinates import normalise, select_backfill_candidates
-from resolve_venue_coordinates_from_osm import choose_match, read_osm_venues
+from resolve_venue_coordinates_from_osm import choose_match, listing_name_variants, read_osm_venues
 from validate_csv import validate
 
 
@@ -97,6 +97,9 @@ class ValidationTests(unittest.TestCase):
         self.assertEqual(venues[0]["name"], "Outline Inn")
         self.assertAlmostEqual(venues[0]["lat"], 51.001)
         self.assertAlmostEqual(venues[0]["lng"], -2.001)
+
+    def test_offline_osm_variants_remove_directory_pmc_suffix(self):
+        self.assertIn("Barton Rovers Social Club", listing_name_variants("Barton Rovers Social (PMC)"))
 
     def test_no_change_report_is_still_suitable_for_a_manual_update_email(self):
         report = build_report([row()], [row()])

@@ -13,6 +13,19 @@ from pathlib import Path
 from resolve_venue_coordinates import key, name_variants, normalise
 
 VENUE_AMENITIES = {"pub", "bar", "social_club", "club"}
+RELATED_AMENITIES = {"restaurant", "cafe", "community_centre", "nightclub", "theatre", "arts_centre"}
+RELATED_LEISURE = {"golf_course", "sports_centre", "stadium", "bowling_alley"}
+
+
+def listing_name_variants(name):
+    """Directory labels contain suffixes that are normally absent from OSM."""
+    variants = name_variants(name)
+    stripped = re.sub(r"\s*\((?:PMC|was\s+[^)]*)\)\s*", "", name, flags=re.IGNORECASE).strip()
+    if stripped:
+        variants.extend(name_variants(stripped))
+    if re.search(r"\bsocial\b", stripped, flags=re.IGNORECASE) and not re.search(r"\bsocial\s+club\b", stripped, flags=re.IGNORECASE):
+        variants.append(re.sub(r"\bsocial\b", "Social Club", stripped, flags=re.IGNORECASE))
+    return list(dict.fromkeys(variants))
 
 
 def compact_postcode(value):
@@ -44,8 +57,16 @@ def read_osm_venues(path):
 
     def metadata(tags):
         amenity = tags.get("amenity")
+        leisure = tags.get("leisure")
+        tourism = tags.get("tourism")
         name = tags.get("name")
-        if amenity not in VENUE_AMENITIES or not name:
+        is_related_venue = (
+            amenity in VENUE_AMENITIES
+            or amenity in RELATED_AMENITIES
+            or leisure in RELATED_LEISURE
+            or tourism == "hotel"
+        )
+        if not is_related_venue or not name:
             return None
         return {
             "name": name,
@@ -70,8 +91,8 @@ def read_osm_venues(path):
     handler = Handler()
     entity_types = osmium.osm.NODE | osmium.osm.WAY
     reader = osmium.io.Reader(str(path), entity_types)
-    amenity_filter = osmium.filter.KeyFilter("amenity").enable_for(entity_types)
-    osmium.apply(reader, amenity_filter, handler)
+    venue_filter = osmium.filter.KeyFilter("amenity", "leisure", "tourism").enable_for(entity_types)
+    osmium.apply(reader, venue_filter, handler)
 
     wanted_node_ids = {ref for _, refs in venue_ways for ref in refs}
     locations = {}
@@ -168,7 +189,7 @@ def main():
     for row in rows:
         venue_key = key(row)
         candidates = []
-        for name in name_variants(row["pub_name"]):
+        for name in listing_name_variants(row["pub_name"]):
             candidates.extend(indexed.get(normalise(name), []))
         # A venue can match two name variants; retain one copy for ranking.
         candidates = list({(item["name"], item["lat"], item["lng"]): item for item in candidates}.values())

@@ -1104,6 +1104,17 @@
       background: #d9e5e7;
       box-shadow: none;
     }
+    .map-wrap::after {
+      content: "";
+      position: absolute;
+      z-index: 900;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      width: 4px;
+      background: var(--accent-2);
+      pointer-events: none;
+    }
     .sidebar {
       position: relative;
       z-index: 1;
@@ -1114,7 +1125,7 @@
       padding: 0;
       overflow: hidden;
       border: 0;
-      border-right: 4px solid var(--accent-2);
+      border-right: 1px solid rgba(52, 44, 40, 0.16);
       border-radius: 0;
       background: #fff;
       box-shadow: none;

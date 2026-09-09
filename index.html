@@ -1352,7 +1352,7 @@
       .map-wrap { height: 100%; border-radius: 0; }
       .sidebar {
         position: fixed;
-        inset: 142px 0 0;
+        inset: var(--header-height) 0 0;
         z-index: 1300;
         width: auto;
         height: auto;
@@ -1389,7 +1389,9 @@
     }
 
     @media (max-width: 640px) {
+      body { --header-height: 164px; }
       .sub { display: block; }
+      .credit-line { display: none; }
       .header-actions { grid-row: 1 / 4; }
       .control-row,
       .button-row { grid-template-columns: 1fr; }

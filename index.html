@@ -1343,7 +1343,12 @@
       .stat { min-width: 76px; padding: 6px 8px; font-size: 0.57rem; }
       .stat strong { font-size: 0.78rem; }
       .stat + .stat { display: none; }
-      .layout { position: relative; padding: 0; }
+      .layout {
+        position: relative;
+        grid-template-columns: minmax(0, 1fr);
+        grid-template-rows: minmax(0, 1fr);
+        padding: 0;
+      }
       .map-wrap { height: 100%; border-radius: 0; }
       .sidebar {
         position: fixed;

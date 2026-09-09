@@ -1388,6 +1388,23 @@
       .help-reopen-btn { right: 10px; bottom: 70px; }
     }
 
+    /* A short desktop viewport still keeps its sidebar, but needs compact
+       header chrome so the map is not covered by the attribution copy. */
+    @media (min-width: 981px) and (max-width: 1100px),
+           (min-width: 981px) and (max-height: 700px) {
+      :root { --header-height: 146px; }
+      .title-row { padding: 8px 16px; }
+      .brand-row { gap: 12px; }
+      .topbar .bass-logo { width: 76px; height: 96px; }
+      .brand-lockup { grid-template-columns: minmax(0, 1fr) auto; column-gap: 16px; }
+      h1 { font-size: 1.65rem; line-height: 1; }
+      .sub { margin-top: 4px; font-size: 0.8rem; line-height: 1.28; }
+      .credit-line { margin-top: 5px; font-size: 0.65rem; line-height: 1.25; }
+      .header-actions { min-width: 236px; gap: 6px; }
+      .stat, .stat + .stat { min-width: 104px; padding: 8px 10px; }
+      .report-listing-link { min-height: 44px; }
+    }
+
     @media (max-width: 640px) {
       body { --header-height: 164px; }
       .sub { display: block; }

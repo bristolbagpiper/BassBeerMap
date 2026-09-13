@@ -1567,6 +1567,7 @@
     const COORDINATES_URL = './pub-coordinates.json';
     const VENUE_COORDINATES_URL = './venue-coordinates.json';
     const VENUE_COORDINATE_OVERRIDES_URL = './venue-coordinate-overrides.json';
+    const COORDINATE_VERIFICATION_URL = './coordinate-verification.json';
     const DATA_FETCH_OPTIONS = { cache: 'no-cache' };
     let activeDirectoryLabel = 'latest Bass directory';
     const map = L.map('map', { zoomControl: true, preferCanvas: true }).setView([54.5, -2.5], 6);
@@ -1789,9 +1790,10 @@
     }
 
     async function loadVenueCoordinates() {
-      const [venueResponse, overrideResponse] = await Promise.all([
+      const [venueResponse, overrideResponse, verificationResponse] = await Promise.all([
         fetch(VENUE_COORDINATES_URL, DATA_FETCH_OPTIONS),
-        fetch(VENUE_COORDINATE_OVERRIDES_URL, DATA_FETCH_OPTIONS)
+        fetch(VENUE_COORDINATE_OVERRIDES_URL, DATA_FETCH_OPTIONS),
+        fetch(COORDINATE_VERIFICATION_URL, DATA_FETCH_OPTIONS)
       ]);
       const venues = {};
       const unresolved = new Set();
@@ -1801,7 +1803,16 @@
         (payload.unresolved_venues || []).forEach(venue => unresolved.add(venue));
       }
       if (overrideResponse.ok) Object.assign(venues, (await overrideResponse.json()).venues || {});
-      return { venues, unresolved };
+      if (!verificationResponse.ok) {
+        console.warn('Coordinate verification ledger unavailable; failing closed to postcode pins.');
+        return { venues: {}, unresolved };
+      }
+      const verification = (await verificationResponse.json()).records || {};
+      const verifiedVenues = Object.fromEntries(Object.entries(venues).filter(([key]) =>
+        verification[key]?.status === 'verified_venue'
+        && verification[key]?.display_precision === 'venue'
+      ));
+      return { venues: verifiedVenues, unresolved };
     }
 
     async function loadCoordinates() {

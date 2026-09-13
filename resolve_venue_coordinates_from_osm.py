@@ -133,6 +133,10 @@ def choose_match(row, candidates, postcode_coordinates):
     for candidate in candidates:
         score = 200  # exact normalised pub name (the index guarantees this)
         candidate_postcode = compact_postcode(candidate["postcode"])
+        # A known conflicting address is contradictory evidence, not merely
+        # a missing ranking bonus. Nearby same-name pubs are common.
+        if candidate_postcode and candidate_postcode != expected_postcode:
+            continue
         if candidate_postcode == expected_postcode:
             score += 1000
         if place and place in normalise(candidate["place"]):
@@ -154,7 +158,10 @@ def choose_match(row, candidates, postcode_coordinates):
     # Exact address postcode is decisive. Otherwise accept only a nearby unique
     # same-name match; duplicate pub names must remain on their postcode pin.
     if compact_postcode(best["postcode"]) == expected_postcode:
-        pass
+        same_address = [item[2] for item in ranked
+                        if compact_postcode(item[2]["postcode"]) == expected_postcode]
+        if any(distance_km(best, other) > 0.05 for other in same_address):
+            return None
     elif best_distance <= 5 and (not runner_up or runner_up[1] - best_distance >= 1):
         pass
     elif best_score >= 300 and best_distance <= 15 and (not runner_up or best_score - runner_up[0] >= 100):

@@ -1036,9 +1036,11 @@
       align-items: flex-start;
       min-height: 48px;
       padding: 8px 12px;
+      border: 0;
       border-radius: 9px;
       background: var(--accent-2);
       color: #fff;
+      cursor: pointer;
       box-shadow: 0 9px 19px rgba(198, 32, 43, 0.28), inset 0 1px 0 rgba(255, 255, 255, 0.18);
       font-size: 0.82rem;
       font-weight: 800;
@@ -1056,19 +1058,6 @@
       color: #fff;
       text-decoration: none;
     }
-    .report-problem-btn {
-      min-height: 34px;
-      padding: 7px 12px;
-      border: 1px solid var(--border-strong);
-      border-radius: 9px;
-      background: #fff;
-      color: var(--text);
-      box-shadow: none;
-      font-size: 0.75rem;
-      font-weight: 800;
-      text-align: left;
-    }
-    .report-problem-btn:hover { border-color: var(--accent-2); color: var(--accent-2); }
     .report-dialog { position: fixed; z-index: 2000; inset: 0; display: grid; place-items: center; padding: 20px; background: rgba(31, 25, 22, 0.48); }
     .report-dialog[hidden] { display: none; }
     .report-dialog-card { width: min(100%, 520px); padding: 24px; border: 1px solid var(--border); border-radius: 16px; background: #fff; box-shadow: var(--shadow-lg); }
@@ -1441,8 +1430,7 @@
               <div class="stat"><strong id="stat-total">Loading...</strong><span class="stat-label">current entries</span></div>
               <div class="stat"><strong id="stat-postcodes">Loading...</strong><span class="stat-label">unique postcodes</span></div>
             </div>
-            <a class="report-listing-link" href="https://www.facebook.com/groups/nationalbassday" target="_blank" rel="noopener noreferrer">Report a listing<span>Help keep the map current</span></a>
-            <button id="openProblemReportBtn" class="report-problem-btn" type="button">Report a problem</button>
+            <button id="openProblemReportBtn" class="report-listing-link" type="button">Report a listing<span>Send a private email</span></button>
           </div>
           <div class="credit-line">Thanks to <a href="https://nationalbassdirectory.wordpress.com/" target="_blank" rel="noopener noreferrer">Quinno of UK National Bass Directory</a> for compiling the PDF directory this map is based on.</div>
         </div>
@@ -1537,7 +1525,7 @@
     <div class="report-dialog-card" role="dialog" aria-modal="true" aria-labelledby="reportDialogTitle">
       <div class="report-dialog-head">
         <div>
-          <h2 id="reportDialogTitle">Report a problem</h2>
+          <h2 id="reportDialogTitle">Report a listing</h2>
           <p class="report-dialog-copy">Tell us what is wrong and we’ll receive it privately. Your email address is never displayed on the map.</p>
         </div>
         <button id="closeProblemReportBtn" class="secondary report-close-btn" type="button" aria-label="Close report form">&times;</button>

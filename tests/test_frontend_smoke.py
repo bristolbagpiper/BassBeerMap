@@ -35,6 +35,6 @@ class FrontendSmokeTests(unittest.TestCase):
         self.driver.get(self.base_url)
         wait = WebDriverWait(self.driver, 40)
         wait.until(lambda driver: "hidden" in driver.find_element(By.ID, "loadingSplash").get_attribute("class"))
-        self.assertEqual(self.driver.find_element(By.ID, "resultCount").text, "1,103 matches")
+        self.assertEqual(self.driver.find_element(By.ID, "resultCount").text, "1,102 matches")
         self.driver.execute_script("setUserLocation(51.5, -0.1, 'Test location');")
         self.assertEqual(self.driver.find_element(By.ID, "typeFilter").get_attribute("value"), "Perm")

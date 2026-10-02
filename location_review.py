@@ -80,11 +80,13 @@ def format_report(report):
                   f"ID: {identifier} | First seen: {record['first_seen']} | Last checked: {record.get('last_checked') or 'not checked'}",
                   *[f"- {reason}" for reason in record['reasons']]]
         for source, check in record.get('source_checks', {}).items():
-            lines.append(f"- {source.upper()}: {check.get('status', 'unknown')} {check.get('url', '')}".strip())
+            lines.append(f"- Automatic verification {source.upper()}: {check.get('status', 'unknown')} {check.get('url', '')}".strip())
         if record.get('source_error'):
             lines.append(f"- Lookup error: {record['source_error']}")
         research = record.get('research', {})
         proposals = research.get('proposals', [])
+        if research and record['unverified']:
+            lines.append(f"- Independent CAMRA research: {research.get('status')}; checked {research.get('checked_at', 'unknown')}")
         if proposals and record['unverified']:
             lines.append('Candidates only: check the named address and map before approving. Post comments as the repository owner in issue #5.')
             for proposal in proposals:

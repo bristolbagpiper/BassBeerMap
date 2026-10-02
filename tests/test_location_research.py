@@ -72,6 +72,22 @@ class ResearchAndApprovalTests(unittest.TestCase):
         self.assertEqual(rows[0]['venue_id'], self.identifier)
         self.assertNotIn('metadata_issue', registry['venues'][self.identifier]['verified_pin'])
 
+    def test_owner_can_review_recorded_full_source_name_variant(self):
+        source = dict(self.source, name='Example Inn Rose Lane, Bristol - Local Pub')
+        self.registry['venues'][self.identifier]['location_research'] = {'proposals': [dict(source, url=self.url)]}
+        write_release(self.root, [self.listing], self.registry, {}, {'BS1 1AA': {'lat': 51.45, 'lng': -2.59}})
+        with patch('approve_location.fetch_text'), patch('approve_location.parse_camra', return_value=source):
+            approve(self.root, self.stage, self.event, 'owner')
+        self.assertEqual(read_json(self.stage / 'location-review.json')['unverified_count'], 0)
+
+    def test_changed_candidate_coordinate_requires_research_again(self):
+        self.registry['venues'][self.identifier]['location_research'] = {'proposals': [dict(self.source, url=self.url)]}
+        write_release(self.root, [self.listing], self.registry, {}, {'BS1 1AA': {'lat': 51.45, 'lng': -2.59}})
+        with patch('approve_location.fetch_text'), patch('approve_location.parse_camra', return_value=dict(self.source, lat=51.451)):
+            with self.assertRaisesRegex(ValueError, 'changed since research'):
+                approve(self.root, self.stage, self.event, 'owner')
+        self.assertFalse((self.stage / 'directory-release.json').exists())
+
     def test_fsa_outage_does_not_prevent_independent_candidate_research(self):
         candidate = dict(self.source, url=self.url, town='Bristol')
         with patch('research_locations.resolve_new_pin', side_effect=TimeoutError()), patch('research_locations.discover', return_value=([candidate], {'complete': True})) as lookup, patch('research_locations.time.sleep'):

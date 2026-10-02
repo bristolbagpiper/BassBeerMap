@@ -1,5 +1,36 @@
 {
-  "unresolved_venues": [],
+  "unresolved_venues": [
+    "golden pheasant|biggleswade|sg18 0jh",
+    "engineers arms|henlow|sg16 6aa",
+    "whillows|hartford|cw8 1ql",
+    "old red lion|holmes chapel|cw4 7aq",
+    "malt|aston on trent|de72 2aa",
+    "marquis of ormonde|crosshill|de5 9sp",
+    "black cat|bristol: bedminster|bs3 3lh",
+    "duke of york|bristol: st werburghs|bs2 9rs",
+    "borough street bar|castle donington|de74 2la",
+    "cross keys|newbold|le67 8pj",
+    "gelsmoor|newbold|le67 8hp",
+    "nottingham house|cleethorpes|dn35 8eu",
+    "barley mow|marylebone w1u|w1u 6qw",
+    "coal hole|strand wc2r|wc2r 0dw",
+    "station|didsbury|m20 2dn",
+    "angel inn|liverpool: central|l1 4hy",
+    "george|upton|ox11 9jj",
+    "new inn|witney|ox28 6au",
+    "red lion|cheswardine|tf9 2rs",
+    "wharf tavern|cheswardine|tf9 2lp",
+    "black lion|oswestry|sy11 2rj",
+    "railway|halmerend|st7 8ag",
+    "tame otter|hopwas|b78 3ab",
+    "valiant|leek|st13 5hg",
+    "jolly carter|stoke: burslem|st6 3qj",
+    "cock inn|wishaw|b76 9ql",
+    "fieldhouse|solihull|b91 3ju",
+    "track & sleeper|knaresborough|hg5 9aa",
+    "brookhouse mill|denbigh|ll16 4rd",
+    "earl haig club|cardiff: whitchurch|cf14 2aa"
+  ],
   "venues": {
     "1852 brewery co|leicester: south wigston|le18 2dh": {
       "lat": 52.581962,
@@ -10,11 +41,6 @@
       "lat": 53.0093065,
       "lng": -2.2165397,
       "source": "google-maps-named-place"
-    },
-    "acorn|rough hay|de13 9px": {
-      "lat": 52.8124,
-      "lng": -1.6975,
-      "source": "camra-pubs-location-audit"
     },
     "adelphi|leeds: central|ls10 1jq": {
       "lat": 53.7933039,
@@ -31,11 +57,6 @@
       "lng": -1.5199173,
       "source": "food-standards-agency-fhrs"
     },
-    "alder|sheffield: central|s3 8bt": {
-      "lat": 53.3919404,
-      "lng": -1.4761471,
-      "source": "openstreetmap-gb-extract"
-    },
     "alestones|tardebigge|b97 6qw": {
       "lat": 52.317959896445,
       "lng": -1.99702470444,
@@ -50,11 +71,6 @@
       "lat": 52.9541,
       "lng": -1.48871,
       "source": "camra-pubs-location-audit"
-    },
-    "alma|melbourne|de73 8fe": {
-      "lat": 52.8251817,
-      "lng": -1.4296282,
-      "source": "food-standards-agency-fhrs"
     },
     "amber hotel|ripley: oakerthorpe|de55 7ll": {
       "lat": 53.1085816,
@@ -91,11 +107,6 @@
       "lng": -1.5642784153846152,
       "source": "openstreetmap-gb-extract"
     },
-    "anchor|plungar|ng13 0jj": {
-      "lat": 52.8989,
-      "lng": -0.860321,
-      "source": "camra-pubs-location-audit"
-    },
     "anchor|teanford|st10 4ew": {
       "lat": 52.9615093,
       "lng": -1.9910616,
@@ -129,11 +140,6 @@
     "apple tree|quorn|le12 8bu": {
       "lat": 52.7452116,
       "lng": -1.1662869,
-      "source": "openstreetmap-gb-extract"
-    },
-    "aqueduct inn|froncysyllte|ll20 7py": {
-      "lat": 52.96387882222222,
-      "lng": -3.0871566555555554,
       "source": "openstreetmap-gb-extract"
     },
     "aqueduct|froncysyllt|ll20 7py": {
@@ -261,16 +267,6 @@
       "lng": -3.4228589,
       "source": "openstreetmap-gb-extract"
     },
-    "bear and blacksmith|chillington|tq7 2ld": {
-      "lat": 50.272830855555554,
-      "lng": -3.695771911111111,
-      "source": "openstreetmap-gb-extract"
-    },
-    "bear and staff|leicester square wc2h|wc2h 7ax": {
-      "lat": 51.510844025,
-      "lng": -0.1286616625,
-      "source": "openstreetmap-gb-extract"
-    },
     "bear inn|alderwasley|de56 2rd": {
       "lat": 53.07103980714286,
       "lng": -1.5326794428571429,
@@ -289,16 +285,6 @@
     "beech tree|kirk ella|hu10 7ls": {
       "lat": 53.74876998285714,
       "lng": -0.4413647514285714,
-      "source": "openstreetmap-gb-extract"
-    },
-    "beehive|grantham|ng31 6se": {
-      "lat": 52.912267,
-      "lng": -0.640678,
-      "source": "food-standards-agency-fhrs"
-    },
-    "beehive|reigate|rh2 8eg": {
-      "lat": 51.2197126,
-      "lng": -0.2009453,
       "source": "openstreetmap-gb-extract"
     },
     "beer box|bamber bridge|pr5 6la": {
@@ -324,11 +310,6 @@
     "bell inn|whittington|ws14 9jr": {
       "lat": 52.673573777777776,
       "lng": -1.762090477777778,
-      "source": "openstreetmap-gb-extract"
-    },
-    "bell|aston clinton|hp22 5hp": {
-      "lat": 51.799481,
-      "lng": -0.721151,
       "source": "openstreetmap-gb-extract"
     },
     "bell|eccleshall|st21 6bz": {
@@ -381,11 +362,6 @@
       "lng": -1.544656,
       "source": "google-maps-named-place"
     },
-    "birch brewhouse|cardiff: birchgrove|cf14 4ae": {
-      "lat": 51.5104515,
-      "lng": -3.2000277,
-      "source": "food-standards-agency-fhrs"
-    },
     "bird in hand|austrey|cv9 3ee": {
       "lat": 52.6531183,
       "lng": -1.5630947545454545,
@@ -399,11 +375,6 @@
     "black bull|godmanchester|pe29 2aq": {
       "lat": 52.322297,
       "lng": -0.1757504,
-      "source": "openstreetmap-gb-extract"
-    },
-    "black bull|tockholes|bb3 0ll": {
-      "lat": 53.7179057,
-      "lng": -2.5064245,
       "source": "openstreetmap-gb-extract"
     },
     "black cat bar|liverpool: central|l1 4jn": {
@@ -706,12 +677,7 @@
       "lng": -2.0308322,
       "source": "food-standards-agency-fhrs"
     },
-    "britannia|oxford: headington|ox3 7aa": {
-      "lat": 51.758995,
-      "lng": -1.214021,
-      "source": "food-standards-agency-fhrs"
-    },
-    "britannia|rowley regis|b91 3ju": {
+    "britannia|rowley regis|b65 9at": {
       "lat": 52.481201171875,
       "lng": -2.0424299240112,
       "source": "reviewed-camra-correction"
@@ -754,11 +720,6 @@
     "brownlow inn|congleton|cw12 4th": {
       "lat": 53.14399581428571,
       "lng": -2.257655442857143,
-      "source": "openstreetmap-gb-extract"
-    },
-    "brunel|bristol: bedminster|bs3 5az": {
-      "lat": 51.4356744625,
-      "lng": -2.5948471250000003,
       "source": "openstreetmap-gb-extract"
     },
     "brunswick|derby: central|de1 2ru": {
@@ -874,16 +835,6 @@
     "butchers arms|chester-le-street|dh3 3qd": {
       "lat": 54.8556907,
       "lng": -1.5731902,
-      "source": "openstreetmap-gb-extract"
-    },
-    "butchers arms|yatton|bs49 4jd": {
-      "lat": 51.3851315,
-      "lng": -2.8163079,
-      "source": "openstreetmap-gb-extract"
-    },
-    "butchers dog|wimborne|bh21 1ds": {
-      "lat": 50.7985747,
-      "lng": -1.9865513,
       "source": "openstreetmap-gb-extract"
     },
     "cap and stocking|kegworth|de74 2ff": {
@@ -1056,16 +1007,6 @@
       "lng": -0.1402551,
       "source": "openstreetmap-gb-extract"
     },
-    "claremont|bognor regis: central|po21 1uh": {
-      "lat": 50.7824211120605,
-      "lng": -0.68010801076889,
-      "source": "food-standards-agency-fhrs"
-    },
-    "clarence house|portishead|bs20 6py": {
-      "lat": 51.47873597,
-      "lng": -2.76793782,
-      "source": "openstreetmap-gb-extract"
-    },
     "clarendon arms|kenilworth|cv8 1nb": {
       "lat": 52.348839500000004,
       "lng": -1.5897321875000001,
@@ -1181,16 +1122,6 @@
       "lng": -1.9392243,
       "source": "food-standards-agency-fhrs"
     },
-    "commercial|mossley|ol5 0aa": {
-      "lat": 53.5145508,
-      "lng": -2.0411448,
-      "source": "openstreetmap-gb-extract"
-    },
-    "compamigos (was boardwalk)|willington|de65 6dw": {
-      "lat": 52.8612955,
-      "lng": -1.5543534,
-      "source": "food-standards-agency-fhrs"
-    },
     "compton arms|islington n1|n1 2xd": {
       "lat": 51.5436556,
       "lng": -0.1020128,
@@ -1255,11 +1186,6 @@
       "lat": 50.1906177,
       "lng": -5.410173411111111,
       "source": "openstreetmap-gb-extract"
-    },
-    "corsham club (pmc)|corsham|sn13 0bh": {
-      "lat": 51.43206,
-      "lng": -2.187507,
-      "source": "camra-pubs-location-audit"
     },
     "corvus|st clears|sa33 4bg": {
       "lat": 51.820427,
@@ -1326,11 +1252,6 @@
       "lng": 0.6481404428571428,
       "source": "openstreetmap-gb-extract"
     },
-    "crooked tap|york: acomb|yo26 5ll": {
-      "lat": 53.9555,
-      "lng": -1.13045,
-      "source": "camra-pubs-location-audit"
-    },
     "cross foxes|shrewsbury: coleham|sy3 7de": {
       "lat": 52.7042947,
       "lng": -2.7464265,
@@ -1365,11 +1286,6 @@
       "lat": 53.0230428,
       "lng": -1.4789811,
       "source": "openstreetmap-gb-extract"
-    },
-    "cross keys|newbold coleorton|le67 8pj": {
-      "lat": 52.7709,
-      "lng": -1.4062,
-      "source": "camra-pubs-location-audit"
     },
     "cross keys|penrhynside|ll30 3dd": {
       "lat": 53.31756,
@@ -1414,11 +1330,6 @@
     "crown and crossed swords|shotley bridge|dh8 0hu": {
       "lat": 54.8697426,
       "lng": -1.8587961,
-      "source": "openstreetmap-gb-extract"
-    },
-    "crown and horseshoe|bristol: oldland common|bs30 8tu": {
-      "lat": 51.44481036,
-      "lng": -2.4743838400000002,
       "source": "openstreetmap-gb-extract"
     },
     "crown and thistle|kidsgrove|st7 4ey": {
@@ -1546,11 +1457,6 @@
       "lng": -0.57235232548828,
       "source": "camra-pubs-location-audit"
     },
-    "deacon brodies tavern|edinburgh: central|eh1 2nt": {
-      "lat": 55.9495349,
-      "lng": -3.1929486,
-      "source": "openstreetmap-gb-extract"
-    },
     "deacons|salisbury|sp2 7qt": {
       "lat": 51.0704984375,
       "lng": -1.802273025,
@@ -1656,11 +1562,6 @@
       "lng": -4.13472509384155,
       "source": "food-standards-agency-fhrs"
     },
-    "dolphin|sydenham se26|se26 5hb": {
-      "lat": 51.425960241666665,
-      "lng": -0.048486,
-      "source": "openstreetmap-gb-extract"
-    },
     "donington arms|donington le heath|le67 2ge": {
       "lat": 52.7066,
       "lng": -1.37599,
@@ -1674,11 +1575,6 @@
     "dragon|willington|de65 6bp": {
       "lat": 52.85419741333333,
       "lng": -1.5640064066666668,
-      "source": "openstreetmap-gb-extract"
-    },
-    "drayton arms|kensington sw5|sw5 0lj": {
-      "lat": 51.49063706875,
-      "lng": -0.1833828125,
       "source": "openstreetmap-gb-extract"
     },
     "drum and monkey|castle gresley|de11 9lh": {
@@ -1781,11 +1677,6 @@
       "lng": -2.9850017285714285,
       "source": "openstreetmap-gb-extract"
     },
-    "exchange|bradford|bd1 1lh": {
-      "lat": 53.7942384,
-      "lng": -1.7522669,
-      "source": "openstreetmap-gb-extract"
-    },
     "express tavern|brentford tw8|tw8 0ew": {
       "lat": 51.489106514285716,
       "lng": -0.2879025142857143,
@@ -1796,20 +1687,10 @@
       "lng": -2.9931954,
       "source": "openstreetmap-gb-extract"
     },
-    "farmers|congleton|cw12 1jy": {
-      "lat": 53.1645897,
-      "lng": -2.2203819,
-      "source": "manual-openstreetmap-review"
-    },
     "fat cat|norwich|nr2 4na": {
       "lat": 52.63511662,
       "lng": 1.27556932,
       "source": "openstreetmap-gb-extract"
-    },
-    "ferryboat|shaldon|tq14 0dl": {
-      "lat": 50.54039,
-      "lng": -3.50399,
-      "source": "camra-pubs-location-audit"
     },
     "final whistle|southwell|ng25 0et": {
       "lat": 53.081907377777775,
@@ -1829,11 +1710,6 @@
     "five bells|bassingham|ln5 9jz": {
       "lat": 53.1305037,
       "lng": -0.6383974,
-      "source": "openstreetmap-gb-extract"
-    },
-    "five bells|royal wootton bassett|sn4 7bd": {
-      "lat": 51.541811457142856,
-      "lng": -1.9061567285714285,
       "source": "openstreetmap-gb-extract"
     },
     "five horseshoes|barholm|pe9 4ra": {
@@ -1870,11 +1746,6 @@
       "lat": 53.17555,
       "lng": -1.64561,
       "source": "camra-pubs-location-audit"
-    },
-    "foresters|sheffield: central|s1 4ge": {
-      "lat": 53.37968578,
-      "lng": -1.47509499,
-      "source": "openstreetmap-gb-extract"
     },
     "fountain inn|leek|st13 6jr": {
       "lat": 53.10578884,
@@ -1966,11 +1837,6 @@
       "lng": -1.522227,
       "source": "food-standards-agency-fhrs"
     },
-    "gelsmoor|newbold coleorton|le67 8hp": {
-      "lat": 52.761627847673,
-      "lng": -1.402242960358,
-      "source": "camra-pubs-location-audit"
-    },
     "general havelock|ilkeston|de7 5fw": {
       "lat": 52.9665671,
       "lng": -1.30711571875,
@@ -2025,11 +1891,6 @@
       "lat": 53.1762642,
       "lng": -1.684656,
       "source": "google-maps-named-place"
-    },
-    "gerrard arms|colyton|ex24 6jn": {
-      "lat": 50.7420657,
-      "lng": -3.0703105,
-      "source": "openstreetmap-gb-extract"
     },
     "gipsy moth|greenwich se10|se10 9bl": {
       "lat": 51.4822685,
@@ -2276,11 +2137,6 @@
       "lng": -1.3938103263157895,
       "source": "openstreetmap-gb-extract"
     },
-    "harry cook free house|cheltenham|gl50 1sd": {
-      "lat": 51.895216,
-      "lng": -2.08251,
-      "source": "camra-pubs-location-audit"
-    },
     "hat and beaver|atherstone|cv9 1af": {
       "lat": 52.57659895,
       "lng": -1.543588725,
@@ -2411,11 +2267,6 @@
       "lng": -1.8306773,
       "source": "openstreetmap-gb-extract"
     },
-    "horse and jockey|northwood|sy4 5nn": {
-      "lat": 52.89466668181819,
-      "lng": -2.7974178636363636,
-      "source": "openstreetmap-gb-extract"
-    },
     "horse and jockey|selston|ng16 6fb": {
       "lat": 53.0808592,
       "lng": -1.30951,
@@ -2470,11 +2321,6 @@
       "lat": 55.034795160892,
       "lng": -1.4739452866012,
       "source": "camra-pubs-location-audit"
-    },
-    "h|angel inn|l1 4hy": {
-      "lat": 53.4027146,
-      "lng": -2.9777435,
-      "source": "google-maps-named-place"
     },
     "iford bridge|bournemouth: iford|bh6 5rg": {
       "lat": 50.740913,
@@ -2539,16 +2385,6 @@
     "joiners arms|morpeth|ne61 1xz": {
       "lat": 55.1659511,
       "lng": -1.6871195,
-      "source": "openstreetmap-gb-extract"
-    },
-    "jolly carter|stoke: middleport|st6 3qj": {
-      "lat": 53.043195,
-      "lng": -2.204984,
-      "source": "food-standards-agency-fhrs"
-    },
-    "jolly colliers|heanor|de75 7ql": {
-      "lat": 53.01273368571429,
-      "lng": -1.3622932928571427,
       "source": "openstreetmap-gb-extract"
     },
     "jolly potters|castle donington|de74 2nh": {
@@ -2926,30 +2762,15 @@
       "lng": -2.175439,
       "source": "food-standards-agency-fhrs"
     },
-    "marquis|codnor|de5 9sp": {
-      "lat": 53.0327458,
-      "lng": -1.3798038,
-      "source": "openstreetmap-gb-extract"
-    },
     "martins arms|colston bassett|ng12 3fd": {
       "lat": 52.8905,
       "lng": -0.964109,
       "source": "camra-and-fsa-location-audit"
     },
-    "martlet inn|langford budville|ta21 0qz": {
-      "lat": 50.99730061176471,
-      "lng": -3.268621782352941,
-      "source": "openstreetmap-gb-extract"
-    },
     "masham|hartburn|ts18 5dr": {
       "lat": 54.5541815,
       "lng": -1.3400298,
       "source": "openstreetmap-gb-extract"
-    },
-    "mason brewing taproom|threemilestone|tr4 9ld": {
-      "lat": 50.2622391,
-      "lng": -5.1247196,
-      "source": "google-maps-named-place"
     },
     "melbourne inn|melbourne|de73 8gj": {
       "lat": 52.8227794625,
@@ -2999,11 +2820,6 @@
     "miners arms|church gresley|de11 9nt": {
       "lat": 52.760389610000004,
       "lng": -1.5679968800000001,
-      "source": "openstreetmap-gb-extract"
-    },
-    "miners arms|meliden|ll19 8la": {
-      "lat": 53.31716198947369,
-      "lng": -3.408864205263158,
       "source": "openstreetmap-gb-extract"
     },
     "miners arms|nuneaton: whittleford|cv10 9hu": {
@@ -3115,11 +2931,6 @@
       "lat": 52.91897086666667,
       "lng": -1.475284411111111,
       "source": "openstreetmap-gb-extract"
-    },
-    "netherseal sports club (pmc)|netherseal|de12 8db": {
-      "lat": 52.7131016,
-      "lng": -1.5763189,
-      "source": "food-standards-agency-fhrs"
     },
     "new baron|hinckley|le10 0az": {
       "lat": 52.540943145752,
@@ -3241,11 +3052,6 @@
       "lng": -0.911061,
       "source": "camra-pubs-location-audit"
     },
-    "observatory|greenwich north se10|se10 0dy": {
-      "lat": 51.504131372727265,
-      "lng": 0.0033915272727272727,
-      "source": "openstreetmap-gb-extract"
-    },
     "office at warton|warton|b79 0jn": {
       "lat": 52.6300627,
       "lng": -1.5836351,
@@ -3299,11 +3105,6 @@
     "old inn|littlethorpe|le19 2hx": {
       "lat": 52.5678324,
       "lng": -1.2023056,
-      "source": "openstreetmap-gb-extract"
-    },
-    "old inn|st breward|pl30 4pp": {
-      "lat": 50.56420075555556,
-      "lng": -4.688365872222223,
       "source": "openstreetmap-gb-extract"
     },
     "old kings head|belper: central|de56 1np": {
@@ -3386,16 +3187,6 @@
       "lng": -0.003904,
       "source": "food-standards-agency-fhrs"
     },
-    "open arms|coventry: cheylesmore|cv3 5dp": {
-      "lat": 52.3917001,
-      "lng": -1.5140943833333333,
-      "source": "openstreetmap-gb-extract"
-    },
-    "paddys|bangor|ll57 2he": {
-      "lat": 53.2282206,
-      "lng": -4.1346757,
-      "source": "google-maps-named-place"
-    },
     "palmerston arms|peterborough|pe2 9pa": {
       "lat": 52.5655126,
       "lng": -0.2500597,
@@ -3404,11 +3195,6 @@
     "park inn|stoke: dresden|st3 4en": {
       "lat": 52.9774816,
       "lng": -2.1366462,
-      "source": "openstreetmap-gb-extract"
-    },
-    "park tavern|eltham se9|se9 5da": {
-      "lat": 51.44974435,
-      "lng": 0.054378975,
       "source": "openstreetmap-gb-extract"
     },
     "pavilion|ashbourne|de6 1ej": {
@@ -3466,11 +3252,6 @@
       "lng": -2.1168364,
       "source": "food-standards-agency-fhrs"
     },
-    "pied horse|bristol: st george|bs5 8js": {
-      "lat": 51.459478,
-      "lng": -2.536867,
-      "source": "food-standards-agency-fhrs"
-    },
     "pig and pump|chesterfield: central|s41 7tj": {
       "lat": 53.23594368571428,
       "lng": -1.4237670857142857,
@@ -3485,11 +3266,6 @@
       "lat": 53.071344,
       "lng": -1.22241,
       "source": "camra-pubs-location-audit"
-    },
-    "pleasant retreat|lostock hall|pr5 5ru": {
-      "lat": 53.7260786,
-      "lng": -2.6924564,
-      "source": "google-maps-named-place"
     },
     "plough and harrow|fazeley|b78 3rf": {
       "lat": 52.61399421111111,
@@ -3519,11 +3295,6 @@
     "plough|endon|st9 9be": {
       "lat": 53.07882295454545,
       "lng": -2.1085675545454547,
-      "source": "openstreetmap-gb-extract"
-    },
-    "plough|heaton moor|sk4 4nz": {
-      "lat": 53.423363800000004,
-      "lng": -2.18328576,
       "source": "openstreetmap-gb-extract"
     },
     "plough|kidsgrove|st7 4ew": {
@@ -3631,20 +3402,10 @@
       "lng": -1.6314492454545453,
       "source": "openstreetmap-gb-extract"
     },
-    "queens|horton|tf6 6dw": {
-      "lat": 52.728458977871,
-      "lng": -2.47480361475,
-      "source": "camra-pubs-location-audit"
-    },
     "queslett|streetly|b74 2ey": {
       "lat": 52.56594377777778,
       "lng": -1.8860381333333334,
       "source": "openstreetmap-gb-extract"
-    },
-    "r and rs sports bar|chellaston|de73 5sa": {
-      "lat": 52.8690371,
-      "lng": -1.4379227,
-      "source": "google-maps-named-place"
     },
     "raddle|hollington|st10 4hq": {
       "lat": 52.9543056878,
@@ -3655,11 +3416,6 @@
       "lat": 50.530374,
       "lng": -3.5996462,
       "source": "food-standards-agency-fhrs"
-    },
-    "railway inn|kidsgrove|st7 1ea": {
-      "lat": 53.0872448,
-      "lng": -2.24317968,
-      "source": "openstreetmap-gb-extract"
     },
     "railway inn|moira|de12 6dj": {
       "lat": 52.7376,
@@ -3676,16 +3432,6 @@
       "lng": -1.475177320098,
       "source": "camra-pubs-location-audit"
     },
-    "railway tavern|newtown/y drenewydd|sy16 1bh": {
-      "lat": 52.51336228,
-      "lng": -3.3107303000000003,
-      "source": "openstreetmap-gb-extract"
-    },
-    "railway tavern|richmond tw9|tw9 1dn": {
-      "lat": 51.462573866666666,
-      "lng": -0.30239875,
-      "source": "openstreetmap-gb-extract"
-    },
     "railway|blackheath se3|se3 9le": {
       "lat": 51.46542478571428,
       "lng": 0.008900742857142858,
@@ -3701,11 +3447,6 @@
       "lng": -1.199921,
       "source": "camra-pubs-location-audit"
     },
-    "railway|halmer end|st7 8ag": {
-      "lat": 53.039074175456,
-      "lng": -2.306187605171,
-      "source": "camra-pubs-location-audit"
-    },
     "railway|streatham sw16|sw16 5sd": {
       "lat": 51.418370616666664,
       "lng": -0.13468905,
@@ -3714,11 +3455,6 @@
     "rainbow inn|allesley|cv5 9gt": {
       "lat": 52.422902769230774,
       "lng": -1.5592147692307692,
-      "source": "openstreetmap-gb-extract"
-    },
-    "rake|london bridge se1|se1 9ag": {
-      "lat": 51.50619508571429,
-      "lng": -0.09125877142857143,
       "source": "openstreetmap-gb-extract"
     },
     "rams head|lowton|wa3 2ey": {
@@ -3740,16 +3476,6 @@
       "lat": 52.95324888571429,
       "lng": -1.4837916142857142,
       "source": "openstreetmap-gb-extract"
-    },
-    "red cow|werrington|st9 0dt": {
-      "lat": 53.025661,
-      "lng": -2.0825834,
-      "source": "camra-pubs-location-audit"
-    },
-    "red lion aka romping cat|dayhills|st15 8ru": {
-      "lat": 52.893105,
-      "lng": -2.063052,
-      "source": "camra-pubs-location-audit"
     },
     "red lion|baddesley ensor|cv9 2bt": {
       "lat": 52.582426076207,
@@ -3780,6 +3506,11 @@
       "lat": 53.0692798625,
       "lng": -2.0420049000000002,
       "source": "openstreetmap-gb-extract"
+    },
+    "red lion|dayhills|st15 8ru": {
+      "lat": 52.893105,
+      "lng": -2.063052,
+      "source": "camra-pubs-location-audit"
     },
     "red lion|earl shilton|le9 7lq": {
       "lat": 52.576,
@@ -3826,11 +3557,6 @@
       "lng": -1.7992807,
       "source": "openstreetmap"
     },
-    "red lion|old colwyn|ll29 9pl": {
-      "lat": 53.2895136,
-      "lng": -3.6994564,
-      "source": "openstreetmap-gb-extract"
-    },
     "red lion|penderyn|cf44 9jr": {
       "lat": 51.765700900000006,
       "lng": -3.5297038411764707,
@@ -3854,11 +3580,6 @@
     "red lion|stoke: hartshill|st4 6es": {
       "lat": 53.01134648,
       "lng": -2.2115259800000002,
-      "source": "openstreetmap-gb-extract"
-    },
-    "red lion|thornby|nn6 8sj": {
-      "lat": 52.3749257,
-      "lng": -1.0166067,
       "source": "openstreetmap-gb-extract"
     },
     "red lion|thurgarton|ng14 7gp": {
@@ -3891,11 +3612,6 @@
       "lng": -1.355046425,
       "source": "openstreetmap-gb-extract"
     },
-    "remarkable hare|matlock|de4 3lt": {
-      "lat": 53.1364061,
-      "lng": -1.5554185,
-      "source": "openstreetmap-gb-extract"
-    },
     "ring o bells|bath|ba2 4jt": {
       "lat": 51.376324175,
       "lng": -2.35408925,
@@ -3911,11 +3627,6 @@
       "lng": -1.564267,
       "source": "openstreetmap-gb-extract"
     },
-    "rising sun|epsom|kt18 5dx": {
-      "lat": 51.3307962,
-      "lng": -0.263292,
-      "source": "openstreetmap-gb-extract"
-    },
     "rising sun|middleton by wirksworth|de4 4ls": {
       "lat": 53.094412675,
       "lng": -1.5844436833333333,
@@ -3925,11 +3636,6 @@
       "lat": 52.656954715384614,
       "lng": -1.4472888846153846,
       "source": "openstreetmap-gb-extract"
-    },
-    "roadhouse bar and bottles|rotherham: broom|s60 3pt": {
-      "lat": 53.418474032818,
-      "lng": -1.322624087334,
-      "source": "camra-pubs-location-audit"
     },
     "roaring meg|biddulph|st8 7ea": {
       "lat": 53.1211384,
@@ -4021,11 +3727,6 @@
       "lng": -1.6961053,
       "source": "google-maps-named-place"
     },
-    "royal alfred|st helens|wa10 1dh": {
-      "lat": 53.45288480909091,
-      "lng": -2.7310148272727273,
-      "source": "openstreetmap-gb-extract"
-    },
     "royal british legion (pmc)|bristol: whitchurch|bs14 0qf": {
       "lat": 51.406302,
       "lng": -2.555913,
@@ -4064,11 +3765,6 @@
     "royal oak|chesterfield: central|s40 1px": {
       "lat": 53.235398383333326,
       "lng": -1.4277388666666668,
-      "source": "openstreetmap-gb-extract"
-    },
-    "royal oak|coventry: earlsdon|cv5 6ej": {
-      "lat": 52.39936064444444,
-      "lng": -1.5319574333333332,
       "source": "openstreetmap-gb-extract"
     },
     "royal oak|harriseahead|st7 4jt": {
@@ -4141,11 +3837,6 @@
       "lng": -1.2323141,
       "source": "openstreetmap-gb-extract"
     },
-    "royal|st martin, jersey|je3 6ug": {
-      "lat": 49.217922,
-      "lng": -2.050394,
-      "source": "camra-pubs-location-audit"
-    },
     "rushden historic transport society|rushden|nn10 0aw": {
       "lat": 52.2943013,
       "lng": -0.5980484,
@@ -4180,11 +3871,6 @@
       "lat": 52.88545944285715,
       "lng": -1.2858576285714285,
       "source": "openstreetmap-gb-extract"
-    },
-    "scartho bowling club (pmc)|scartho|dn33 2nd": {
-      "lat": 53.536101554982,
-      "lng": -0.091888576363,
-      "source": "camra-pubs-location-audit"
     },
     "seabridge|newcastle-u-l: clayton|st5 3ha": {
       "lat": 52.9904,
@@ -4376,11 +4062,6 @@
       "lng": -1.6508469,
       "source": "openstreetmap-gb-extract"
     },
-    "squirrel|rugby|cv21 3pu": {
-      "lat": 52.37249672222222,
-      "lng": -1.2589317222222223,
-      "source": "openstreetmap-gb-extract"
-    },
     "st john inn|st john|pl11 3aw": {
       "lat": 50.36064,
       "lng": -4.23872,
@@ -4409,11 +4090,6 @@
     "staffordshire knot|gillow heath|st8 6rg": {
       "lat": 53.1267029,
       "lng": -2.17672524,
-      "source": "openstreetmap-gb-extract"
-    },
-    "stag and pheasant|carmarthen|sa31 1jq": {
-      "lat": 51.85698505384615,
-      "lng": -4.3041469153846155,
       "source": "openstreetmap-gb-extract"
     },
     "stag and scotch|newport|tf10 7au": {
@@ -4464,11 +4140,6 @@
     "star inn|whitby|yo21 3pp": {
       "lat": 54.48772372222223,
       "lng": -0.6148863666666666,
-      "source": "openstreetmap-gb-extract"
-    },
-    "star|burntwood green|ws7 0hj": {
-      "lat": 52.6755338,
-      "lng": -1.901283,
       "source": "openstreetmap-gb-extract"
     },
     "star|church leigh|st10 4pt": {
@@ -4551,11 +4222,6 @@
       "lng": -1.6246,
       "source": "camra-pubs-location-audit"
     },
-    "strugglers|lincoln|ln1 3bg": {
-      "lat": 53.2361715,
-      "lng": -0.5425016,
-      "source": "food-standards-agency-fhrs"
-    },
     "sun inn|blackpool: south shore|fy1 6aa": {
       "lat": 53.799326,
       "lng": -3.054237,
@@ -4616,16 +4282,6 @@
       "lng": -1.7697,
       "source": "camra-pubs-location-audit"
     },
-    "swan|hammersmith w6|w6 0dz": {
-      "lat": 51.4930712875,
-      "lng": -0.2250107375,
-      "source": "openstreetmap-gb-extract"
-    },
-    "swan|ullesthorpe|le17 5bt": {
-      "lat": 52.485147,
-      "lng": -1.257309,
-      "source": "camra-pubs-location-audit"
-    },
     "sycamore inn|matlock|de4 3hz": {
       "lat": 53.1441276,
       "lng": -1.5586567,
@@ -4664,11 +4320,6 @@
     "tavern|hatton|de65 5eh": {
       "lat": 52.8725101,
       "lng": -1.6789110307692308,
-      "source": "openstreetmap-gb-extract"
-    },
-    "tawny|ossett|wf5 8af": {
-      "lat": 53.6788469,
-      "lng": -1.5784645,
       "source": "openstreetmap-gb-extract"
     },
     "tempest arms|coleby|ln5 0ag": {
@@ -4816,11 +4467,6 @@
       "lng": -2.91763,
       "source": "camra-pubs-location-audit"
     },
-    "trafalgar hotel|ramsey|im8 1dw": {
-      "lat": 54.3219539,
-      "lng": -4.381877,
-      "source": "manual-openstreetmap-review"
-    },
     "travellers rest|stanley|st9 9lx": {
       "lat": 53.0676234,
       "lng": -2.1028492,
@@ -4850,11 +4496,6 @@
       "lat": 52.7455259,
       "lng": -1.9190594,
       "source": "food-standards-agency-fhrs"
-    },
-    "tuppeny|swindon|sn1 4bd": {
-      "lat": 51.5519217,
-      "lng": -1.77723,
-      "source": "google-maps-named-place"
     },
     "turks head (stuffed dog)|tynemouth|ne30 4dz": {
       "lat": 55.0177454,
@@ -4924,11 +4565,6 @@
     "vat and fiddle|nottingham: central|ng2 1nb": {
       "lat": 52.94570816,
       "lng": -1.14834298,
-      "source": "openstreetmap-gb-extract"
-    },
-    "vaults|uppingham|le15 9qh": {
-      "lat": 52.5875688,
-      "lng": -0.7221169,
       "source": "openstreetmap-gb-extract"
     },
     "vaults|uttoxeter|st14 8hp": {
@@ -5001,11 +4637,6 @@
       "lng": -2.218690961971,
       "source": "camra-pubs-location-audit"
     },
-    "village tavern|stoke: hanley|st1 3er": {
-      "lat": 53.0176,
-      "lng": -2.16703,
-      "source": "camra-and-fsa-location-audit"
-    },
     "village/conservative club (pmc)|derby: spondon|de21 7jp": {
       "lat": 52.921261,
       "lng": -1.404047,
@@ -5061,11 +4692,6 @@
       "lng": -2.2339421,
       "source": "openstreetmap-gb-extract"
     },
-    "wardley|gateshead|ne10 0tt": {
-      "lat": 54.95796908,
-      "lng": -1.5373867799999998,
-      "source": "openstreetmap-gb-extract"
-    },
     "washington|belsize park nw3|nw3 4ue": {
       "lat": 51.54570215454546,
       "lng": -0.16280246363636364,
@@ -5084,11 +4710,6 @@
     "waterloo|burton u-t: winshill|de15 0lq": {
       "lat": 52.80401945814,
       "lng": -1.605987347221,
-      "source": "camra-pubs-location-audit"
-    },
-    "watermill (toby carvery)|sutton in ashfield: central|ng17 4ne": {
-      "lat": 53.125942255076,
-      "lng": -1.23983502388,
       "source": "camra-pubs-location-audit"
     },
     "waveney|lowestoft: oulton broad|nr32 3ln": {
@@ -5271,11 +4892,6 @@
       "lng": -1.2556627,
       "source": "openstreetmap-gb-extract"
     },
-    "white horse|stoke: tunstall|st6 4ju": {
-      "lat": 53.0544542,
-      "lng": -2.2107358,
-      "source": "openstreetmap-gb-extract"
-    },
     "white lion|rempstone|le12 6rh": {
       "lat": 52.8131329,
       "lng": -1.1451818,
@@ -5361,11 +4977,6 @@
       "lng": -0.14085838333333334,
       "source": "openstreetmap-gb-extract"
     },
-    "windmill inn|redmile|ng13 0ga": {
-      "lat": 52.91067,
-      "lng": -0.8145794,
-      "source": "openstreetmap-gb-extract"
-    },
     "windmill|breadsall|de21 4fy": {
       "lat": 52.94963111304348,
       "lng": -1.4422192260869566,
@@ -5406,11 +5017,6 @@
       "lng": -1.8868214,
       "source": "openstreetmap-gb-extract"
     },
-    "woodman|ruislip|ha4 7se": {
-      "lat": 51.585530340000005,
-      "lng": -0.44129102,
-      "source": "openstreetmap-gb-extract"
-    },
     "woodman|shrewsbury: coton hill|sy1 2dz": {
       "lat": 52.7161722,
       "lng": -2.7532835,
@@ -5431,11 +5037,6 @@
       "lng": -1.008255775,
       "source": "openstreetmap-gb-extract"
     },
-    "wulstan|newcastle-u-l: wolstanton|st5 8bu": {
-      "lat": 53.031708,
-      "lng": -2.224121,
-      "source": "food-standards-agency-fhrs"
-    },
     "wyggeston hotel|burton u-t: central|de13 0un": {
       "lat": 52.8207,
       "lng": -1.6495,
@@ -5449,11 +5050,6 @@
     "yacht inn|penzance|tr18 4au": {
       "lat": 50.1157603,
       "lng": -5.532796,
-      "source": "openstreetmap-gb-extract"
-    },
-    "yarborough hunt|brigg|dn20 8ns": {
-      "lat": 53.55152245,
-      "lng": -0.4954730666666667,
       "source": "openstreetmap-gb-extract"
     },
     "ye old elm tree|durham|dh1 4ps": {
@@ -5490,11 +5086,6 @@
       "lat": 52.898052203935,
       "lng": -1.864610433578,
       "source": "camra-pubs-location-audit"
-    },
-    "ye olde vic|stockport|sk3 9ed": {
-      "lat": 53.4042601,
-      "lng": -2.1651632,
-      "source": "openstreetmap-gb-extract"
     },
     "ye olde watling|st pauls|ec4m 9br": {
       "lat": 51.51290628,

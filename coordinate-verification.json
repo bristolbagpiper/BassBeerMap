@@ -1,7 +1,7 @@
 {
   "counts": {
-    "postcode_approximate": 30,
-    "verified_venue": 1014
+    "postcode_approximate": 19,
+    "verified_venue": 1025
   },
   "generated_at": "2026-10-02",
   "policy": {
@@ -497,13 +497,39 @@
       "venue_id": "v-3520911e-cb85-50dc-9c8f-6fcabd27ec3d"
     },
     "angel inn|liverpool: central|l1 4hy": {
-      "coordinate_source": "postcode",
-      "display_precision": "postcode",
-      "evidence": [],
+      "coordinate_source": "camra-and-fhrs",
+      "display_precision": "venue",
+      "evidence": [
+        {
+          "checked_at": "2026-10-02",
+          "match": "unique_name_and_full_postcode",
+          "reference_coordinate": {
+            "lat": 53.4026854,
+            "lng": -2.9777399
+          },
+          "reference_postcode": "L1 4HY",
+          "source": "food-standards-agency-fhrs",
+          "url": "https://ratings.food.gov.uk/business/1981821"
+        },
+        {
+          "checked_at": "2026-10-02",
+          "match": "named_venue_full_postcode_and_independent_fsa_agreement",
+          "reference_coordinate": {
+            "lat": 53.4025,
+            "lng": -2.97745
+          },
+          "reference_name": "Angel Inn, Liverpool",
+          "reference_postcode": "L1 4HY",
+          "source": "camra",
+          "url": "https://camra.org.uk/pubs/200304"
+        }
+      ],
+      "lat": 53.4025,
+      "lng": -2.97745,
       "place_name": "Liverpool: Central",
       "postcode": "L1 4HY",
       "pub_name": "Angel Inn",
-      "status": "postcode_approximate",
+      "status": "verified_venue",
       "venue_id": "v-0c3ec54b-16fe-56d8-9a41-dd9fa99f26f7"
     },
     "anglesey arms|stretton|de13 0eq": {
@@ -1112,13 +1138,39 @@
       "venue_id": "v-a033241e-ec7b-5435-b083-caa54dcd0db0"
     },
     "barley mow|marylebone w1u|w1u 6qw": {
-      "coordinate_source": "postcode",
-      "display_precision": "postcode",
-      "evidence": [],
+      "coordinate_source": "camra-and-fhrs",
+      "display_precision": "venue",
+      "evidence": [
+        {
+          "checked_at": "2026-10-02",
+          "match": "unique_name_and_full_postcode",
+          "reference_coordinate": {
+            "lat": 51.5197114,
+            "lng": -0.1556475
+          },
+          "reference_postcode": "W1U 6QW",
+          "source": "food-standards-agency-fhrs",
+          "url": "https://ratings.food.gov.uk/business/412895"
+        },
+        {
+          "checked_at": "2026-10-02",
+          "match": "named_venue_full_postcode_and_independent_fsa_agreement",
+          "reference_coordinate": {
+            "lat": 51.519675125735,
+            "lng": -0.155660131283
+          },
+          "reference_name": "Barley Mow, Marylebone, London - Grade II Listed",
+          "reference_postcode": "W1U 6QW",
+          "source": "camra",
+          "url": "https://camra.org.uk/pubs/129395"
+        }
+      ],
+      "lat": 51.519675125735,
+      "lng": -0.155660131283,
       "place_name": "Marylebone W1U",
       "postcode": "W1U 6QW",
       "pub_name": "Barley Mow",
-      "status": "postcode_approximate",
+      "status": "verified_venue",
       "venue_id": "v-39e372db-cd57-5382-b4a5-0d7f92fd9cf8"
     },
     "barley mow|warrington|wa1 1qb": {
@@ -2446,13 +2498,39 @@
       "venue_id": "v-32cdcd84-bedf-56cb-b73f-dbb1b819d7ca"
     },
     "black lion|oswestry|sy11 2rj": {
-      "coordinate_source": "postcode",
-      "display_precision": "postcode",
-      "evidence": [],
+      "coordinate_source": "camra-and-fhrs",
+      "display_precision": "venue",
+      "evidence": [
+        {
+          "checked_at": "2026-10-02",
+          "match": "unique_name_and_full_postcode",
+          "reference_coordinate": {
+            "lat": 52.8567994,
+            "lng": -3.0510431
+          },
+          "reference_postcode": "SY11 2RJ",
+          "source": "food-standards-agency-fhrs",
+          "url": "https://ratings.food.gov.uk/business/1723716"
+        },
+        {
+          "checked_at": "2026-10-02",
+          "match": "named_venue_full_postcode_and_independent_fsa_agreement",
+          "reference_coordinate": {
+            "lat": 52.85682,
+            "lng": -3.05094
+          },
+          "reference_name": "Black Lion, Oswestry - Real Ale Pub with Beer Garden",
+          "reference_postcode": "SY11 2RJ",
+          "source": "camra",
+          "url": "https://camra.org.uk/pubs/144652"
+        }
+      ],
+      "lat": 52.85682,
+      "lng": -3.05094,
       "place_name": "Oswestry",
       "postcode": "SY11 2RJ",
       "pub_name": "Black Lion",
-      "status": "postcode_approximate",
+      "status": "verified_venue",
       "venue_id": "v-a53a96f3-3672-5b95-a6f6-c15ee1b976eb"
     },
     "black swan|shepshed|le12 9dl": {
@@ -3175,13 +3253,39 @@
       "venue_id": "v-f2b57ecf-7a41-5d9e-9368-d8722132e3b1"
     },
     "borough street bar|castle donington|de74 2la": {
-      "coordinate_source": "postcode",
-      "display_precision": "postcode",
-      "evidence": [],
+      "coordinate_source": "camra-and-fhrs",
+      "display_precision": "venue",
+      "evidence": [
+        {
+          "checked_at": "2026-10-02",
+          "match": "unique_name_and_full_postcode",
+          "reference_coordinate": {
+            "lat": 52.842166,
+            "lng": -1.338476
+          },
+          "reference_postcode": "DE74 2LA",
+          "source": "food-standards-agency-fhrs",
+          "url": "https://ratings.food.gov.uk/business/1765840"
+        },
+        {
+          "checked_at": "2026-10-02",
+          "match": "named_venue_full_postcode_and_independent_fsa_agreement",
+          "reference_coordinate": {
+            "lat": 52.8419,
+            "lng": -1.3383
+          },
+          "reference_name": "Borough Street Bar, Castle Donington - Cask Ales",
+          "reference_postcode": "DE74 2LA",
+          "source": "camra",
+          "url": "https://camra.org.uk/pubs/171283"
+        }
+      ],
+      "lat": 52.8419,
+      "lng": -1.3383,
       "place_name": "Castle Donington",
       "postcode": "DE74 2LA",
       "pub_name": "Borough Street Bar",
-      "status": "postcode_approximate",
+      "status": "verified_venue",
       "venue_id": "v-ee7d0ee2-cbc1-50cc-b108-7412c6245ced"
     },
     "botanical arms|sheffield: ecclesall road|s11 8pr": {
@@ -5780,13 +5884,39 @@
       "venue_id": "v-17d7e29a-030e-543d-890d-631c1396137f"
     },
     "coal hole|strand wc2r|wc2r 0dw": {
-      "coordinate_source": "postcode",
-      "display_precision": "postcode",
-      "evidence": [],
+      "coordinate_source": "camra-and-fhrs",
+      "display_precision": "venue",
+      "evidence": [
+        {
+          "checked_at": "2026-10-02",
+          "match": "unique_name_and_full_postcode",
+          "reference_coordinate": {
+            "lat": 51.510307,
+            "lng": -0.1211379
+          },
+          "reference_postcode": "WC2R 0DW",
+          "source": "food-standards-agency-fhrs",
+          "url": "https://ratings.food.gov.uk/business/1852705"
+        },
+        {
+          "checked_at": "2026-10-02",
+          "match": "named_venue_full_postcode_and_independent_fsa_agreement",
+          "reference_coordinate": {
+            "lat": 51.51043,
+            "lng": -0.121301
+          },
+          "reference_name": "Coal Hole, London - Grade II Listed Interior",
+          "reference_postcode": "WC2R 0DW",
+          "source": "camra",
+          "url": "https://camra.org.uk/pubs/128691"
+        }
+      ],
+      "lat": 51.51043,
+      "lng": -0.121301,
       "place_name": "Strand WC2R",
       "postcode": "WC2R 0DW",
       "pub_name": "Coal Hole",
-      "status": "postcode_approximate",
+      "status": "verified_venue",
       "venue_id": "v-ca9d397b-4b8c-5e4b-8abe-ce419b87b80e"
     },
     "cobblers|leek|st13 5jf": {
@@ -6924,13 +7054,39 @@
       "venue_id": "v-da368401-dfbb-5300-8382-e75e3237f5db"
     },
     "cross keys|newbold|le67 8pj": {
-      "coordinate_source": "postcode",
-      "display_precision": "postcode",
-      "evidence": [],
+      "coordinate_source": "camra-and-fhrs",
+      "display_precision": "venue",
+      "evidence": [
+        {
+          "checked_at": "2026-10-02",
+          "match": "unique_name_and_full_postcode",
+          "reference_coordinate": {
+            "lat": 52.770671,
+            "lng": -1.406364
+          },
+          "reference_postcode": "LE67 8PJ",
+          "source": "food-standards-agency-fhrs",
+          "url": "https://ratings.food.gov.uk/business/720517"
+        },
+        {
+          "checked_at": "2026-10-02",
+          "match": "named_venue_full_postcode_and_independent_fsa_agreement",
+          "reference_coordinate": {
+            "lat": 52.7709,
+            "lng": -1.4062
+          },
+          "reference_name": "Cross Keys, Newbold Coleorton - Village Pub with B&B",
+          "reference_postcode": "LE67 8PJ",
+          "source": "camra",
+          "url": "https://camra.org.uk/pubs/171213"
+        }
+      ],
+      "lat": 52.7709,
+      "lng": -1.4062,
       "place_name": "Newbold",
       "postcode": "LE67 8PJ",
       "pub_name": "Cross Keys",
-      "status": "postcode_approximate",
+      "status": "verified_venue",
       "venue_id": "v-8627142a-ac1d-5f2d-9602-8a2777baa6b9"
     },
     "cross keys|penrhynside|ll30 3dd": {
@@ -8809,13 +8965,39 @@
       "venue_id": "v-6b6d13f7-e246-54b9-9f62-2070c4bdaad8"
     },
     "duke of york|bristol: st werburghs|bs2 9rs": {
-      "coordinate_source": "postcode",
-      "display_precision": "postcode",
-      "evidence": [],
+      "coordinate_source": "camra-and-fhrs",
+      "display_precision": "venue",
+      "evidence": [
+        {
+          "checked_at": "2026-10-02",
+          "match": "unique_name_and_full_postcode",
+          "reference_coordinate": {
+            "lat": 51.467567,
+            "lng": -2.575645
+          },
+          "reference_postcode": "BS2 9RS",
+          "source": "food-standards-agency-fhrs",
+          "url": "https://ratings.food.gov.uk/business/312913"
+        },
+        {
+          "checked_at": "2026-10-02",
+          "match": "named_venue_full_postcode_and_independent_fsa_agreement",
+          "reference_coordinate": {
+            "lat": 51.467248,
+            "lng": -2.575742
+          },
+          "reference_name": "Duke of York, Bristol - Skittle Alley & Chang",
+          "reference_postcode": "BS2 9RS",
+          "source": "camra",
+          "url": "https://camra.org.uk/pubs/113858"
+        }
+      ],
+      "lat": 51.467248,
+      "lng": -2.575742,
       "place_name": "Bristol: St Werburghs",
       "postcode": "BS2 9RS",
       "pub_name": "Duke of York",
-      "status": "postcode_approximate",
+      "status": "verified_venue",
       "venue_id": "v-6dd3f8f8-bdf6-565c-b21a-ce49d9faa503"
     },
     "dun cow|dunchurch|cv22 6nj": {
@@ -13080,13 +13262,39 @@
       "venue_id": "v-616d4c5c-be34-59fb-b716-0ce10d322ac5"
     },
     "jolly carter|stoke: burslem|st6 3qj": {
-      "coordinate_source": "postcode",
-      "display_precision": "postcode",
-      "evidence": [],
+      "coordinate_source": "camra-and-fhrs",
+      "display_precision": "venue",
+      "evidence": [
+        {
+          "checked_at": "2026-10-02",
+          "match": "unique_name_and_full_postcode",
+          "reference_coordinate": {
+            "lat": 53.043195,
+            "lng": -2.204984
+          },
+          "reference_postcode": "ST6 3QJ",
+          "source": "food-standards-agency-fhrs",
+          "url": "https://ratings.food.gov.uk/business/534270"
+        },
+        {
+          "checked_at": "2026-10-02",
+          "match": "named_venue_full_postcode_and_independent_fsa_agreement",
+          "reference_coordinate": {
+            "lat": 53.0431,
+            "lng": -2.20498
+          },
+          "reference_name": "Jolly Carter, Stoke-on-trent - Bass & Darts",
+          "reference_postcode": "ST6 3QJ",
+          "source": "camra",
+          "url": "https://camra.org.uk/pubs/122938"
+        }
+      ],
+      "lat": 53.0431,
+      "lng": -2.20498,
       "place_name": "Stoke: Burslem",
       "postcode": "ST6 3QJ",
       "pub_name": "Jolly Carter",
-      "status": "postcode_approximate",
+      "status": "verified_venue",
       "venue_id": "v-5840e7d1-6ac4-5d2f-b0b8-9875ccbde7dc"
     },
     "jolly potters|castle donington|de74 2nh": {
@@ -16702,13 +16910,39 @@
       "venue_id": "v-74dbf71c-c14e-5864-b00a-8517cff77270"
     },
     "nottingham house|cleethorpes|dn35 8eu": {
-      "coordinate_source": "postcode",
-      "display_precision": "postcode",
-      "evidence": [],
+      "coordinate_source": "camra-and-fhrs",
+      "display_precision": "venue",
+      "evidence": [
+        {
+          "checked_at": "2026-10-02",
+          "match": "unique_name_and_full_postcode",
+          "reference_coordinate": {
+            "lat": 53.5576352,
+            "lng": -0.0250027
+          },
+          "reference_postcode": "DN35 8EU",
+          "source": "food-standards-agency-fhrs",
+          "url": "https://ratings.food.gov.uk/business/1725521"
+        },
+        {
+          "checked_at": "2026-10-02",
+          "match": "named_venue_full_postcode_and_independent_fsa_agreement",
+          "reference_coordinate": {
+            "lat": 53.557686,
+            "lng": -0.025062
+          },
+          "reference_name": "Nottingham House, Cleethorpes",
+          "reference_postcode": "DN35 8EU",
+          "source": "camra",
+          "url": "https://camra.org.uk/pubs/173041"
+        }
+      ],
+      "lat": 53.557686,
+      "lng": -0.025062,
       "place_name": "Cleethorpes",
       "postcode": "DN35 8EU",
       "pub_name": "Nottingham House",
-      "status": "postcode_approximate",
+      "status": "verified_venue",
       "venue_id": "v-f35c2f32-d38e-56cf-8c04-dda1b9fc7f08"
     },
     "nova scotia|bristol: cumberland basin|bs1 6xj": {
@@ -23036,13 +23270,39 @@
       "venue_id": "v-1d20ec43-7322-51f1-87f4-86272f796d0c"
     },
     "station|didsbury|m20 2dn": {
-      "coordinate_source": "postcode",
-      "display_precision": "postcode",
-      "evidence": [],
+      "coordinate_source": "camra-and-fhrs",
+      "display_precision": "venue",
+      "evidence": [
+        {
+          "checked_at": "2026-10-02",
+          "match": "unique_name_and_full_postcode",
+          "reference_coordinate": {
+            "lat": 53.418869,
+            "lng": -2.232203
+          },
+          "reference_postcode": "M20 2DN",
+          "source": "food-standards-agency-fhrs",
+          "url": "https://ratings.food.gov.uk/business/1819072"
+        },
+        {
+          "checked_at": "2026-10-02",
+          "match": "named_venue_full_postcode_and_independent_fsa_agreement",
+          "reference_coordinate": {
+            "lat": 53.418560028076,
+            "lng": -2.2320160865784
+          },
+          "reference_name": "Station Hotel, Didsbury, Old-fashioned Local wit",
+          "reference_postcode": "M20 2DN",
+          "source": "camra",
+          "url": "https://camra.org.uk/pubs/167678"
+        }
+      ],
+      "lat": 53.418560028076,
+      "lng": -2.2320160865784,
       "place_name": "Didsbury",
       "postcode": "M20 2DN",
       "pub_name": "Station",
-      "status": "postcode_approximate",
+      "status": "verified_venue",
       "venue_id": "v-49e1b16b-7b7c-5cbf-95c0-d8b426401a37"
     },
     "staunton arms|staunton in the vale|ng13 9pe": {
@@ -25239,13 +25499,39 @@
       "venue_id": "v-6e0bdde8-3789-5828-b375-0f79ec63f9e4"
     },
     "valiant|leek|st13 5hg": {
-      "coordinate_source": "postcode",
-      "display_precision": "postcode",
-      "evidence": [],
+      "coordinate_source": "camra-and-fhrs",
+      "display_precision": "venue",
+      "evidence": [
+        {
+          "checked_at": "2026-10-02",
+          "match": "unique_name_and_full_postcode",
+          "reference_coordinate": {
+            "lat": 53.1057439,
+            "lng": -2.0256633
+          },
+          "reference_postcode": "ST13 5HG",
+          "source": "food-standards-agency-fhrs",
+          "url": "https://ratings.food.gov.uk/business/850102"
+        },
+        {
+          "checked_at": "2026-10-02",
+          "match": "named_venue_full_postcode_and_independent_fsa_agreement",
+          "reference_coordinate": {
+            "lat": 53.105788,
+            "lng": -2.02568
+          },
+          "reference_name": "Valiant, Leek - Marston's Pub with Beer Garden",
+          "reference_postcode": "ST13 5HG",
+          "source": "camra",
+          "url": "https://camra.org.uk/pubs/143914"
+        }
+      ],
+      "lat": 53.105788,
+      "lng": -2.02568,
       "place_name": "Leek",
       "postcode": "ST13 5HG",
       "pub_name": "Valiant",
-      "status": "postcode_approximate",
+      "status": "verified_venue",
       "venue_id": "v-de3aa949-1b8d-570b-b6c2-a27e7db5964e"
     },
     "vat and fiddle|nottingham: central|ng2 1nb": {

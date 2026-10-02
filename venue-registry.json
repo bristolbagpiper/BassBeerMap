@@ -33566,27 +33566,28 @@
       "verified_pin": {
         "evidence": [
           {
-            "checked_at": "2026-09-11",
-            "difference_metres": 2.0,
-            "match": "venue_name_and_coordinate; listing_postcode_conflicts",
+            "checked_at": "2026-10-02",
+            "match": "reviewed_name_address_and_coordinate",
+            "reference_address": "18 Rowley Village B4171",
             "reference_coordinate": {
-              "lat": 52.4737713,
-              "lng": -2.0418834
+              "lat": 52.481201171875,
+              "lng": -2.0424299240112
             },
-            "reference_postcode": "B65 0ES",
+            "reference_name": "Britannia Inn, Rowley Regis - Cask Ales & Live Music",
+            "reference_postcode": "B65 9AT",
             "source": "camra",
-            "url": "https://camra.org.uk/pubs/146446"
+            "url": "https://camra.org.uk/pubs/britannia-inn-rowley-regis-146821"
           }
         ],
-        "lat": 52.4737713,
-        "lng": -2.0418834,
+        "lat": 52.481201171875,
+        "lng": -2.0424299240112,
         "metadata_issue": {
           "field": "postcode",
           "listed": "B91 3JU",
-          "reference": "B65 0ES",
-          "source_url": "https://camra.org.uk/pubs/146446"
+          "reference": "B65 9AT",
+          "source_url": "https://camra.org.uk/pubs/britannia-inn-rowley-regis-146821"
         },
-        "source": "openstreetmap"
+        "source": "reviewed-camra-correction"
       }
     },
     "v-cb5ee8c1-df24-54c2-9ba6-2a919ee2d15a": {

@@ -165,11 +165,13 @@ def reconcile(rows, registry, decisions):
             entry['aliases'].append(key)
             entry['identity_reviews'] = entry.get('identity_reviews', []) + [copy.deepcopy(decision)]
             # A reviewed correction to listing metadata is not a coordinate move.
-            if entry.get('verified_pin'):
+            if entry.get('verified_pin') and row['postcode'] != decision['reference_postcode']:
                 entry['verified_pin']['metadata_issue'] = {
                     'field': 'postcode', 'listed': row['postcode'],
                     'reference': decision['reference_postcode'], 'source_url': decision['source_url'],
                 }
+            if entry.get('verified_pin') and row['postcode'] == decision['reference_postcode']:
+                entry['verified_pin'].pop('metadata_issue', None)
         if identifier is None:
             similar = []
             for old_id, entry in registry['venues'].items():

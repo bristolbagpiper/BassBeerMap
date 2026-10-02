@@ -1,21 +1,51 @@
 {
-  "schema_version": 1,
-  "identity_aliases": {
-    "gj muckers|macclesfield|sk11 7ne": {
-      "previous_key": "gj muckers|macclesfield|sk11 6jl",
-      "reference_postcode": "SK11 6JL",
-      "source_url": "https://camra.org.uk/pubs/gj-muckers-macclesfield-197659",
-      "checked_at": "2026-10-02",
-      "reason": "CAMRA's named venue at 36-38 Sunderland Street still has the reviewed coordinate 53.25777,-2.12237 and postcode SK11 6JL. Retain the physical venue identity; flag SK11 7NE from the PDF as conflicting metadata, not evidence of relocation."
-    }
-  },
   "duplicate_resolutions": {
     "black lion|blackfordby|de11 8ab": {
-      "accepted": {"country": "England", "area": "Derbyshire", "pg": "Guest", "last": "2026 Q3", "dispense": "H", "notes": ""},
-      "rejected": [{"country": "England", "area": "Staffordshire", "pg": "Perm", "last": "2026 Q2", "dispense": "H", "notes": ""}],
-      "source_url": "https://nationalbassdirectory.wordpress.com/wp-content/uploads/2026/10/bass-master-directory-september-2026.pdf",
+      "accepted": {
+        "area": "Derbyshire",
+        "country": "England",
+        "dispense": "H",
+        "last": "2026 Q3",
+        "notes": "",
+        "pg": "Guest"
+      },
       "checked_at": "2026-10-02",
-      "reason": "Both rows identify the same named pub at DE11 8AB. Retain the more recently checked Q3 listing and the existing guest classification; the contradictory Q2 permanent listing must not override it. Exception only applies to these exact conflicting fields."
+      "reason": "Both rows identify the same named pub at DE11 8AB. Retain the more recently checked Q3 listing and the existing guest classification; the contradictory Q2 permanent listing must not override it. Exception only applies to these exact conflicting fields.",
+      "rejected": [
+        {
+          "area": "Staffordshire",
+          "country": "England",
+          "dispense": "H",
+          "last": "2026 Q2",
+          "notes": "",
+          "pg": "Perm"
+        }
+      ],
+      "source_url": "https://nationalbassdirectory.wordpress.com/wp-content/uploads/2026/10/bass-master-directory-september-2026.pdf"
     }
-  }
+  },
+  "identity_aliases": {
+    "britannia|rowley regis|b65 9at": {
+      "checked_at": "2026-10-02",
+      "previous_key": "britannia|rowley regis|b91 3ju",
+      "reason": "October PDF identifies Britannia Inn at 18 Rowley Village. Previous listing and audit attached a different Britannia at B65 0ES. Reviewed correction to physical pin committed separately.",
+      "reference_postcode": "B65 9AT",
+      "source_url": "https://camra.org.uk/pubs/britannia-inn-rowley-regis-146821"
+    },
+    "gj muckers|macclesfield|sk11 7ne": {
+      "checked_at": "2026-10-02",
+      "previous_key": "gj muckers|macclesfield|sk11 6jl",
+      "reason": "CAMRA's named venue at 36-38 Sunderland Street still has the reviewed coordinate 53.25777,-2.12237 and postcode SK11 6JL. Retain the physical venue identity; flag SK11 7NE from the PDF as conflicting metadata, not evidence of relocation.",
+      "reference_postcode": "SK11 6JL",
+      "source_url": "https://camra.org.uk/pubs/gj-muckers-macclesfield-197659"
+    },
+    "red lion|dayhills|st15 8ru": {
+      "checked_at": "2026-10-02",
+      "previous_key": "red lion aka romping cat|dayhills|st15 8ru",
+      "reason": "Same named pub, full address and exact mapped point. PDF moved aka Romping Cat into notes.",
+      "reference_postcode": "ST15 8RU",
+      "source_url": "https://camra.org.uk/pubs/red-lion-dayhills-145933"
+    }
+  },
+  "schema_version": 1
 }

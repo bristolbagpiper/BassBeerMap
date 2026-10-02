@@ -49,6 +49,9 @@ jobs:
     steps:
       - name: Check out repository
         uses: actions/checkout@v4
+        with:
+          # Queued jobs must include preceding health/notification bot commits.
+          ref: main
 
       - name: Set up Python
         uses: actions/setup-python@v5

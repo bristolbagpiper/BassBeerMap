@@ -20,27 +20,17 @@
       "verified_pin": {
         "evidence": [
           {
-            "checked_at": "2026-09-11",
+            "checked_at": "2026-10-02",
             "difference_metres": 0.0,
             "match": "venue_name_and_full_postcode",
+            "reference_address": "1 Gallowstree Lane",
             "reference_coordinate": {
               "lat": 53.0038,
               "lng": -2.24873
             },
+            "reference_name": "Dick Turpin, Newcastle-under-lyme - Food-led Pub",
             "reference_postcode": "ST5 2QS",
             "source": "camra",
-            "url": "https://camra.org.uk/pubs/123061"
-          },
-          {
-            "checked_at": "2026-09-11",
-            "difference_metres": 0,
-            "match": "camra_and_fsa_agree_within_50m_current_pin_does_not",
-            "reference_coordinate": {
-              "lat": 53.0038,
-              "lng": -2.24873
-            },
-            "reference_postcode": "ST5 2QS",
-            "source": "camra-and-fsa-location-audit",
             "url": "https://camra.org.uk/pubs/123061"
           }
         ],
@@ -68,27 +58,17 @@
       "verified_pin": {
         "evidence": [
           {
-            "checked_at": "2026-09-11",
+            "checked_at": "2026-10-02",
             "difference_metres": 0.0,
             "match": "venue_name_and_full_postcode",
+            "reference_address": "81 Castle Street",
             "reference_coordinate": {
               "lat": 52.542078,
               "lng": -1.368474
             },
+            "reference_name": "Pestle & Mortar, Hinckley Micropub with 15-22 Ciders",
             "reference_postcode": "LE10 1DA",
             "source": "camra",
-            "url": "https://camra.org.uk/pubs/181743"
-          },
-          {
-            "checked_at": "2026-09-11",
-            "difference_metres": 0,
-            "match": "existing_pin_over_50m_from_matching_venue",
-            "reference_coordinate": {
-              "lat": 52.542078,
-              "lng": -1.368474
-            },
-            "reference_postcode": "LE10 1DA",
-            "source": "camra-pubs-location-audit",
             "url": "https://camra.org.uk/pubs/181743"
           }
         ],
@@ -116,13 +96,15 @@
       "verified_pin": {
         "evidence": [
           {
-            "checked_at": "2026-09-11",
+            "checked_at": "2026-10-02",
             "difference_metres": 4.2,
             "match": "venue_name_and_full_postcode",
+            "reference_address": "16 St Mary's Gate",
             "reference_coordinate": {
-              "lat": 53.23594368571428,
-              "lng": -1.4237670857142857
+              "lat": 53.235932652422,
+              "lng": -1.423827115039
             },
+            "reference_name": "Pig & Pump, Chesterfield - Up to 9 Cask Ales",
             "reference_postcode": "S41 7TJ",
             "source": "camra",
             "url": "https://camra.org.uk/pubs/134942"
@@ -152,27 +134,17 @@
       "verified_pin": {
         "evidence": [
           {
-            "checked_at": "2026-09-11",
+            "checked_at": "2026-10-02",
             "difference_metres": 0.0,
             "match": "venue_name_and_full_postcode",
+            "reference_address": "The Common",
             "reference_coordinate": {
               "lat": 52.582426076207,
               "lng": -1.597803119049
             },
+            "reference_name": "Red Lion, Baddesley Ensor - Traditional Village Pub",
             "reference_postcode": "CV9 2BT",
             "source": "camra",
-            "url": "https://camra.org.uk/pubs/131750"
-          },
-          {
-            "checked_at": "2026-09-11",
-            "difference_metres": 0,
-            "match": "existing_pin_over_250m_from_matching_venue",
-            "reference_coordinate": {
-              "lat": 52.582426076207,
-              "lng": -1.597803119049
-            },
-            "reference_postcode": "CV9 2BT",
-            "source": "camra-pubs-location-audit",
             "url": "https://camra.org.uk/pubs/131750"
           }
         ],
@@ -200,13 +172,15 @@
       "verified_pin": {
         "evidence": [
           {
-            "checked_at": "2026-09-11",
+            "checked_at": "2026-10-02",
             "difference_metres": 6.4,
             "match": "venue_name_and_full_postcode",
+            "reference_address": "59-61 Bridge Street",
             "reference_coordinate": {
-              "lat": 55.7685565,
-              "lng": -2.005518
+              "lat": 55.768598856945,
+              "lng": -2.0054487884045
             },
+            "reference_name": "Barrels Ale House, Berwick upon Tweed",
             "reference_postcode": "TD15 1ES",
             "source": "camra",
             "url": "https://camra.org.uk/pubs/193154"
@@ -250,6 +224,8 @@
         ],
         "lat": 53.3784743,
         "lng": -2.9166268,
+        "review_reason": "Reference venue name changed",
+        "review_required": true,
         "source": "openstreetmap-gb-extract"
       }
     },
@@ -308,13 +284,15 @@
       "verified_pin": {
         "evidence": [
           {
-            "checked_at": "2026-09-11",
+            "checked_at": "2026-10-02",
             "difference_metres": 3.3,
             "match": "venue_name_and_full_postcode",
+            "reference_address": "176-178 Tamworth Road",
             "reference_coordinate": {
-              "lat": 52.88545944285715,
-              "lng": -1.2858576285714285
+              "lat": 52.885489,
+              "lng": -1.285848
             },
+            "reference_name": "Sawley Junction, Sawley Micropub by Long Eaton",
             "reference_postcode": "NG10 3JU",
             "source": "camra",
             "url": "https://camra.org.uk/pubs/161482"
@@ -344,13 +322,15 @@
       "verified_pin": {
         "evidence": [
           {
-            "checked_at": "2026-09-11",
+            "checked_at": "2026-10-02",
             "difference_metres": 15.2,
             "match": "venue_name_and_full_postcode",
+            "reference_address": "2 St Edmund's Close",
             "reference_coordinate": {
-              "lat": 52.95324888571429,
-              "lng": -1.4837916142857142
+              "lat": 52.95331,
+              "lng": -1.483994
             },
+            "reference_name": "Red Cow, Allestree, Derby Multi-roomed Pub",
             "reference_postcode": "DE22 2DZ",
             "source": "camra",
             "url": "https://camra.org.uk/pubs/143405"
@@ -416,13 +396,15 @@
       "verified_pin": {
         "evidence": [
           {
-            "checked_at": "2026-09-11",
+            "checked_at": "2026-10-02",
             "difference_metres": 5.6,
             "match": "venue_name_and_full_postcode",
+            "reference_address": "40 Wilford Road",
             "reference_coordinate": {
-              "lat": 52.89462053333333,
-              "lng": -1.1497236555555554
+              "lat": 52.894618,
+              "lng": -1.149807
             },
+            "reference_name": "Victoria Tavern, Ruddington - Village Local wit",
             "reference_postcode": "NG11 6EQ",
             "source": "camra",
             "url": "https://camra.org.uk/pubs/162893"
@@ -452,13 +434,15 @@
       "verified_pin": {
         "evidence": [
           {
-            "checked_at": "2026-09-11",
+            "checked_at": "2026-10-02",
             "difference_metres": 45.2,
             "match": "venue_name_and_full_postcode",
+            "reference_address": "29 George Street",
             "reference_coordinate": {
-              "lat": 53.012404,
-              "lng": -2.216598
+              "lat": 53.012405648055,
+              "lng": -2.21727335103
             },
+            "reference_name": "Museum, Newcastle-under-lyme - Traditional Two-",
             "reference_postcode": "ST5 1JU",
             "source": "camra",
             "url": "https://camra.org.uk/pubs/123070"
@@ -488,27 +472,17 @@
       "verified_pin": {
         "evidence": [
           {
-            "checked_at": "2026-09-11",
+            "checked_at": "2026-10-02",
             "difference_metres": 0.0,
             "match": "venue_name_and_full_postcode",
+            "reference_address": "Sunnyholme, 10 Trusthorpe Road",
             "reference_coordinate": {
               "lat": 53.315897671283,
               "lng": 0.281833705696
             },
+            "reference_name": "Sutton Social Club, Sutton on Sea",
             "reference_postcode": "LN12 2LT",
             "source": "camra",
-            "url": "https://camra.org.uk/pubs/172439"
-          },
-          {
-            "checked_at": "2026-09-11",
-            "difference_metres": 0,
-            "match": "existing_pin_over_50m_from_matching_venue",
-            "reference_coordinate": {
-              "lat": 53.315897671283,
-              "lng": 0.281833705696
-            },
-            "reference_postcode": "LN12 2LT",
-            "source": "camra-pubs-location-audit",
             "url": "https://camra.org.uk/pubs/172439"
           }
         ],
@@ -536,13 +510,15 @@
       "verified_pin": {
         "evidence": [
           {
-            "checked_at": "2026-09-11",
+            "checked_at": "2026-10-02",
             "difference_metres": 14.0,
             "match": "venue_name_and_full_postcode",
+            "reference_address": "Compton Acres",
             "reference_coordinate": {
-              "lat": 52.91281487142857,
-              "lng": -1.1530167761904762
+              "lat": 52.912691,
+              "lng": -1.153056
             },
+            "reference_name": "Apple Tree, West Bridgford - Five Changing Ales",
             "reference_postcode": "NG2 7PA",
             "source": "camra",
             "url": "https://camra.org.uk/pubs/162832"
@@ -572,13 +548,15 @@
       "verified_pin": {
         "evidence": [
           {
-            "checked_at": "2026-09-11",
+            "checked_at": "2026-10-02",
             "difference_metres": 5.7,
             "match": "venue_name_and_full_postcode",
+            "reference_address": "Swarkestone Road",
             "reference_coordinate": {
-              "lat": 52.8684146,
-              "lng": -1.4385424
+              "lat": 52.868392,
+              "lng": -1.438466
             },
+            "reference_name": "New Pin, Chellaston, Derby - Garden & Cask Ales",
             "reference_postcode": "DE73 5UA",
             "source": "camra",
             "url": "https://camra.org.uk/pubs/143605"
@@ -608,13 +586,15 @@
       "verified_pin": {
         "evidence": [
           {
-            "checked_at": "2026-09-11",
+            "checked_at": "2026-10-02",
             "difference_metres": 19.3,
             "match": "venue_name_and_full_postcode",
+            "reference_address": "16 High Street",
             "reference_coordinate": {
-              "lat": 52.8598092,
-              "lng": -2.2527497
+              "lat": 52.859664916992,
+              "lng": -2.2529089450836
             },
+            "reference_name": "Bell Inn, Eccleshall - Former Coaching Inn & Beer ",
             "reference_postcode": "ST21 6BZ",
             "source": "camra",
             "url": "https://camra.org.uk/pubs/145882"
@@ -644,27 +624,17 @@
       "verified_pin": {
         "evidence": [
           {
-            "checked_at": "2026-09-11",
+            "checked_at": "2026-10-02",
             "difference_metres": 0.0,
             "match": "venue_name_and_full_postcode",
+            "reference_address": "36 Hillside",
             "reference_coordinate": {
               "lat": 52.8437,
               "lng": -1.3373
             },
+            "reference_name": "Jolly Potters, Castle Donington - Traditional Pub",
             "reference_postcode": "DE74 2NH",
             "source": "camra",
-            "url": "https://camra.org.uk/pubs/171357"
-          },
-          {
-            "checked_at": "2026-09-11",
-            "difference_metres": 0,
-            "match": "camra_and_fsa_agree_within_50m_current_pin_does_not",
-            "reference_coordinate": {
-              "lat": 52.8437,
-              "lng": -1.3373
-            },
-            "reference_postcode": "DE74 2NH",
-            "source": "camra-and-fsa-location-audit",
             "url": "https://camra.org.uk/pubs/171357"
           }
         ],
@@ -754,6 +724,8 @@
         ],
         "lat": 52.868266642857144,
         "lng": -1.3382396714285714,
+        "review_reason": "Reference venue name changed",
+        "review_required": true,
         "source": "openstreetmap-gb-extract"
       }
     },
@@ -812,13 +784,15 @@
       "verified_pin": {
         "evidence": [
           {
-            "checked_at": "2026-09-11",
+            "checked_at": "2026-10-02",
             "difference_metres": 13.1,
             "match": "venue_name_and_full_postcode",
+            "reference_address": "86 Church Street",
             "reference_coordinate": {
-              "lat": 53.016884354545454,
-              "lng": -2.269186627272727
+              "lat": 53.016997,
+              "lng": -2.269129
             },
+            "reference_name": "Roebuck, Silverdale, Single-room Pub with Garden",
             "reference_postcode": "ST5 6JH",
             "source": "camra",
             "url": "https://camra.org.uk/pubs/123054"
@@ -848,13 +822,15 @@
       "verified_pin": {
         "evidence": [
           {
-            "checked_at": "2026-09-11",
+            "checked_at": "2026-10-02",
             "difference_metres": 4.4,
             "match": "venue_name_and_full_postcode",
+            "reference_address": "48 Watling St",
             "reference_coordinate": {
-              "lat": 51.9988918,
-              "lng": -0.7166152
+              "lat": 51.998925963194,
+              "lng": -0.716646763229
             },
+            "reference_name": "Chequers, Milton Keynes - 17th-century Pub with C",
             "reference_postcode": "MK2 2BY",
             "source": "camra",
             "url": "https://camra.org.uk/pubs/130748"
@@ -884,13 +860,15 @@
       "verified_pin": {
         "evidence": [
           {
-            "checked_at": "2026-09-11",
+            "checked_at": "2026-10-02",
             "difference_metres": 6.4,
             "match": "venue_name_and_full_postcode",
+            "reference_address": "24 Fore Street",
             "reference_coordinate": {
-              "lat": 50.9776666625,
-              "lng": -3.22836445
+              "lat": 50.977722167969,
+              "lng": -3.2283909320831
             },
+            "reference_name": "Vintage Inn, Wellington - Traditional Pub with 3 R",
             "reference_postcode": "TA21 8AQ",
             "source": "camra",
             "url": "https://camra.org.uk/pubs/134501"
@@ -920,13 +898,15 @@
       "verified_pin": {
         "evidence": [
           {
-            "checked_at": "2026-09-11",
+            "checked_at": "2026-10-02",
             "difference_metres": 9.8,
             "match": "venue_name_and_full_postcode",
+            "reference_address": "118 Fisherton Street",
             "reference_coordinate": {
-              "lat": 51.0704984375,
-              "lng": -1.802273025
+              "lat": 51.07046,
+              "lng": -1.8024
             },
+            "reference_name": "Deacons, Salisbury - Independent Free House Near",
             "reference_postcode": "SP2 7QT",
             "source": "camra",
             "url": "https://camra.org.uk/pubs/192193"

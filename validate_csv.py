@@ -77,6 +77,10 @@ def validate(previous_rows: list[dict[str, str]], candidate_rows: list[dict[str,
             errors.append("Further row-level validation errors omitted.")
             break
 
+    identities = [(row.get('pub_name', '').strip().casefold(), row.get('place_name', '').strip().casefold(), row.get('postcode', '').strip().casefold()) for row in candidate_rows]
+    if len(identities) != len(set(identities)):
+        errors.append('Candidate CSV contains duplicate venue identities; reconcile them before publication.')
+
     if previous_rows:
         previous_count = len(previous_rows)
         candidate_count = len(candidate_rows)

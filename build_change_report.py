@@ -6,7 +6,7 @@ from pathlib import Path
 
 
 DISPLAY_FIELDS = ("country", "area", "pub_name", "place_name", "postcode", "pg", "last", "dispense", "notes")
-COMPARE_FIELDS = ("country", "area", "pg", "last", "dispense", "notes")
+COMPARE_FIELDS = DISPLAY_FIELDS
 
 
 def read_rows(path):
@@ -15,6 +15,8 @@ def read_rows(path):
 
 
 def listing_key(row):
+    if row.get('venue_id'):
+        return row['venue_id']
     return "|".join(str(row.get(field, "")).strip().casefold() for field in ("pub_name", "place_name", "postcode"))
 
 
@@ -23,6 +25,9 @@ def public_row(row):
 
 
 def build_report(previous_rows, candidate_rows):
+    # Bootstrap reports can compare a legacy CSV to its first ID-bearing import.
+    if not all(row.get('venue_id') for row in previous_rows):
+        candidate_rows = [dict(row, venue_id='') for row in candidate_rows]
     previous = {listing_key(row): row for row in previous_rows}
     candidate = {listing_key(row): row for row in candidate_rows}
     added = [public_row(candidate[key]) for key in sorted(candidate.keys() - previous.keys())]

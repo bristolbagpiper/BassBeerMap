@@ -1,0 +1,69 @@
+name: Weekly map validation
+
+on:
+  schedule:
+    - cron: '47 6 * * 1'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  issues: write
+
+concurrency:
+  group: directory-data
+  cancel-in-progress: false
+
+jobs:
+  map-health:
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.13'
+      - name: Validate all committed map assets
+        run: python validate_directory_release.py --allow-expired-evidence
+      - name: Check the live map and rotate 30 external venue checks
+        run: python audit_map_health.py --limit 30
+      - name: Upload health report and candidate artifacts
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: map-health-review
+          path: candidate-health/
+          if-no-files-found: warn
+      - name: Publish confirmed checks and quarantine disputed pins
+        run: |
+          python validate_directory_release.py --root candidate-health --previous . --allow-review-downgrades
+          python -c "from pathlib import Path; from shutil import copyfile; from directory_release import RELEASE_FILES; [copyfile(Path('candidate-health') / name, name) for name in RELEASE_FILES + ['coordinate-health-state.json']]"
+          python validate_directory_release.py
+          if git diff --quiet -- pubs.csv directory-meta.json pub-coordinates.json venue-coordinates.json coordinate-verification.json venue-registry.json directory-release.json coordinate-health-state.json; then
+            exit 0
+          fi
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add pubs.csv directory-meta.json pub-coordinates.json venue-coordinates.json coordinate-verification.json venue-registry.json directory-release.json coordinate-health-state.json
+          git commit -m 'Refresh coordinate evidence and map health'
+          git push
+      - name: Notify only on a changed actionable report or failed audit
+        if: always()
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const fs = require('fs');
+            const path = 'candidate-health/health-report.json';
+            const report = fs.existsSync(path) ? JSON.parse(fs.readFileSync(path, 'utf8')) : {valid:false, errors:['Audit failed before producing its report.']};
+            const failed = '${{ job.status }}' === 'failure' || !report.valid;
+            if (!failed && !report.notify) return;
+            const title = 'BassBeerMap coordinate review';
+            const items = [...(report.errors || []), ...(report.issues || [])];
+            const { data: issues } = await github.rest.issues.listForRepo({...context.repo, state:'open'});
+            const existing = issues.find(i => i.title === title);
+            const body = [...items.map(i => `- ${i}`), '', `Run: https://github.com/${context.repo.owner}/${context.repo.repo}/actions/runs/${context.runId}`].join('\n');
+            if (items.length || failed) {
+              if (existing) await github.rest.issues.update({...context.repo, issue_number:existing.number, body});
+              else await github.rest.issues.create({...context.repo, title, body});
+            } else if (existing) {
+              await github.rest.issues.update({...context.repo, issue_number:existing.number, state:'closed', state_reason:'completed'});
+            }

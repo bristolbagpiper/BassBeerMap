@@ -22,9 +22,11 @@ def distance_metres(left, right):
 
 
 def validate(root=ROOT, require_all_verified=False, max_evidence_age_days=None):
-    rows = list(csv.DictReader((root / "pubs.csv").open(encoding="utf-8", newline="")))
+    with (root / "pubs.csv").open(encoding="utf-8", newline="") as handle:
+        rows = list(csv.DictReader(handle))
     venues = json.loads((root / "venue-coordinates.json").read_text(encoding="utf-8")).get("venues", {})
-    overrides = json.loads((root / "venue-coordinate-overrides.json").read_text(encoding="utf-8")).get("venues", {})
+    overrides_path = root / "venue-coordinate-overrides.json"
+    overrides = json.loads(overrides_path.read_text(encoding="utf-8")).get("venues", {}) if overrides_path.exists() else {}
     postcodes = json.loads((root / "pub-coordinates.json").read_text(encoding="utf-8")).get("coordinates", {})
     ledger = json.loads((root / "coordinate-verification.json").read_text(encoding="utf-8"))
     records = ledger.get("records", {})

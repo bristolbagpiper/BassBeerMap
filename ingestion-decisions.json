@@ -1,0 +1,21 @@
+{
+  "schema_version": 1,
+  "identity_aliases": {
+    "gj muckers|macclesfield|sk11 7ne": {
+      "previous_key": "gj muckers|macclesfield|sk11 6jl",
+      "reference_postcode": "SK11 6JL",
+      "source_url": "https://camra.org.uk/pubs/gj-muckers-macclesfield-197659",
+      "checked_at": "2026-10-02",
+      "reason": "CAMRA's named venue at 36-38 Sunderland Street still has the reviewed coordinate 53.25777,-2.12237 and postcode SK11 6JL. Retain the physical venue identity; flag SK11 7NE from the PDF as conflicting metadata, not evidence of relocation."
+    }
+  },
+  "duplicate_resolutions": {
+    "black lion|blackfordby|de11 8ab": {
+      "accepted": {"country": "England", "area": "Derbyshire", "pg": "Guest", "last": "2026 Q3", "dispense": "H", "notes": ""},
+      "rejected": [{"country": "England", "area": "Staffordshire", "pg": "Perm", "last": "2026 Q2", "dispense": "H", "notes": ""}],
+      "source_url": "https://nationalbassdirectory.wordpress.com/wp-content/uploads/2026/10/bass-master-directory-september-2026.pdf",
+      "checked_at": "2026-10-02",
+      "reason": "Both rows identify the same named pub at DE11 8AB. Retain the more recently checked Q3 listing and the existing guest classification; the contradictory Q2 permanent listing must not override it. Exception only applies to these exact conflicting fields."
+    }
+  }
+}

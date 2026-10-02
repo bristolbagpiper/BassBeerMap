@@ -77,7 +77,10 @@ def search(row, include_name=True):
         time.sleep(wait_seconds)
     last_request_started_at = time.monotonic()
     with urlopen(request, timeout=20) as response:
-        return json.loads(response.read()).get("establishments", [])
+        payload = json.loads(response.read())
+        if payload.get('meta', {}).get('totalPages', 1) > 1:
+            raise RuntimeError('FSA postcode results are paginated; cannot prove an unambiguous venue from a partial response')
+        return payload.get("establishments", [])
 
 
 def choose_match(row, candidates):

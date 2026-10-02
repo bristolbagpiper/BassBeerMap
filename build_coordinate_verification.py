@@ -127,6 +127,12 @@ def main():
     parser.add_argument("--root", type=Path, default=ROOT)
     args = parser.parse_args()
     root = args.root
+    if (root / 'venue-registry.json').exists():
+        from directory_release import build_ledger, read_rows, write_json
+        ledger = build_ledger(read_rows(root / 'pubs.csv'), load_json(root / 'venue-registry.json'))
+        write_json(root / 'coordinate-verification.json', ledger)
+        print(f"Rebuilt registry verification ledger: {ledger['counts']}")
+        return
     rows = list(csv.DictReader((root / "pubs.csv").open(encoding="utf-8", newline="")))
     venues = load_json(root / "venue-coordinates.json").get("venues", {})
     overrides = load_json(root / "venue-coordinate-overrides.json").get("venues", {})

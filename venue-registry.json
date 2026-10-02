@@ -210,22 +210,23 @@
       "verified_pin": {
         "evidence": [
           {
-            "checked_at": "2026-09-11",
+            "checked_at": "2026-10-02",
             "difference_metres": 6.2,
             "match": "venue_name_and_full_postcode",
+            "reference_address": "102 Rose Lane",
             "reference_coordinate": {
-              "lat": 53.3784743,
-              "lng": -2.9166268
+              "lat": 53.378427,
+              "lng": -2.916676
             },
+            "reference_name": "Black Cat Rose Lane, Liverpool - 3 Rotating Ales",
             "reference_postcode": "L18 8AG",
+            "review_reason": "Human review: CAMRA includes locality/street in the same venue name; exact named address and mapped point agree.",
             "source": "camra",
             "url": "https://camra.org.uk/pubs/166207"
           }
         ],
         "lat": 53.3784743,
         "lng": -2.9166268,
-        "review_reason": "Reference venue name changed",
-        "review_required": true,
         "source": "openstreetmap-gb-extract"
       }
     },
@@ -710,22 +711,23 @@
       "verified_pin": {
         "evidence": [
           {
-            "checked_at": "2026-09-11",
+            "checked_at": "2026-10-02",
             "difference_metres": 6.1,
             "match": "venue_name_and_full_postcode",
+            "reference_address": "Shardlow Marina, London Road",
             "reference_coordinate": {
-              "lat": 52.868266642857144,
-              "lng": -1.3382396714285714
+              "lat": 52.868212,
+              "lng": -1.338237
             },
+            "reference_name": "Boathouse Shardlow, Shardlow - Marina Pub with Food",
             "reference_postcode": "DE72 2GL",
+            "review_reason": "Human review: CAMRA includes locality/street in the same venue name; exact named address and mapped point agree.",
             "source": "camra",
             "url": "https://camra.org.uk/pubs/143288"
           }
         ],
         "lat": 52.868266642857144,
         "lng": -1.3382396714285714,
-        "review_reason": "Reference venue name changed",
-        "review_required": true,
         "source": "openstreetmap-gb-extract"
       }
     },

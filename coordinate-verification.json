@@ -1,8 +1,7 @@
 {
   "counts": {
     "postcode_approximate": 30,
-    "venue_coordinate_requires_review": 2,
-    "verified_venue": 1012
+    "verified_venue": 1014
   },
   "generated_at": "2026-10-02",
   "policy": {
@@ -1978,17 +1977,20 @@
     },
     "black cat|liverpool: mossley hill|l18 8ag": {
       "coordinate_source": "openstreetmap-gb-extract",
-      "display_precision": "postcode",
+      "display_precision": "venue",
       "evidence": [
         {
-          "checked_at": "2026-09-11",
+          "checked_at": "2026-10-02",
           "difference_metres": 6.2,
           "match": "venue_name_and_full_postcode",
+          "reference_address": "102 Rose Lane",
           "reference_coordinate": {
-            "lat": 53.3784743,
-            "lng": -2.9166268
+            "lat": 53.378427,
+            "lng": -2.916676
           },
+          "reference_name": "Black Cat Rose Lane, Liverpool - 3 Rotating Ales",
           "reference_postcode": "L18 8AG",
+          "review_reason": "Human review: CAMRA includes locality/street in the same venue name; exact named address and mapped point agree.",
           "source": "camra",
           "url": "https://camra.org.uk/pubs/166207"
         }
@@ -1998,7 +2000,7 @@
       "place_name": "Liverpool: Mossley Hill",
       "postcode": "L18 8AG",
       "pub_name": "Black Cat",
-      "status": "venue_coordinate_requires_review",
+      "status": "verified_venue",
       "venue_id": "v-01386b13-1f71-5e2b-ac42-1431c3dacb83"
     },
     "black cat|weston-super-mare|bs23 1hn": {
@@ -2966,17 +2968,20 @@
     },
     "boathouse|shardlow|de72 2gl": {
       "coordinate_source": "openstreetmap-gb-extract",
-      "display_precision": "postcode",
+      "display_precision": "venue",
       "evidence": [
         {
-          "checked_at": "2026-09-11",
+          "checked_at": "2026-10-02",
           "difference_metres": 6.1,
           "match": "venue_name_and_full_postcode",
+          "reference_address": "Shardlow Marina, London Road",
           "reference_coordinate": {
-            "lat": 52.868266642857144,
-            "lng": -1.3382396714285714
+            "lat": 52.868212,
+            "lng": -1.338237
           },
+          "reference_name": "Boathouse Shardlow, Shardlow - Marina Pub with Food",
           "reference_postcode": "DE72 2GL",
+          "review_reason": "Human review: CAMRA includes locality/street in the same venue name; exact named address and mapped point agree.",
           "source": "camra",
           "url": "https://camra.org.uk/pubs/143288"
         }
@@ -2986,7 +2991,7 @@
       "place_name": "Shardlow",
       "postcode": "DE72 2GL",
       "pub_name": "Boathouse",
-      "status": "venue_coordinate_requires_review",
+      "status": "verified_venue",
       "venue_id": "v-03e2d759-5c7f-57ff-82a5-a8b8905e4281"
     },
     "boat|cromford|de4 3qf": {

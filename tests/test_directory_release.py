@@ -186,6 +186,16 @@ class ReleaseGateTests(unittest.TestCase):
 
 
 class SourceEvidenceTests(unittest.TestCase):
+    def test_reviewed_reference_name_can_include_street_but_cannot_drift(self):
+        reviewed = pin()
+        reviewed['evidence'][0]['reference_name'] = 'Example Inn Rose Lane, Bristol'
+        observed = dict(lat=51.45, lng=-2.59, postcode='BS1 1AA', address='Rose Lane',
+                        name='Example Inn Rose Lane, Bristol')
+        with patch('coordinate_sources.parse_camra', return_value=observed), patch('coordinate_sources.fetch_text'):
+            self.assertEqual(recheck_pin(row(), reviewed)['status'], 'confirmed')
+            observed['name'] = 'Example Inn Other Branch, Bristol'
+            self.assertEqual(recheck_pin(row(), reviewed)['status'], 'conflict')
+
     def test_harmless_reference_name_variations_do_not_quarantine_correct_pins(self):
         self.assertTrue(name_matches('Pig and Pump', 'Pig & Pump, Chesterfield - Pub'))
         self.assertTrue(name_matches('Pestle and Mortar', 'Pestle & Mortar, Hinckley'))

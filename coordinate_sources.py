@@ -52,7 +52,8 @@ def recheck_pin(row, pin):
     item = next((e for e in evidence if e.get('url', '').startswith('https://camra.org.uk/pubs/')), None)
     if item:
         observed = parse_camra(fetch_text(item['url']))
-        if not name_matches(row['pub_name'], observed['name']):
+        reviewed_name = item.get('reference_name', '')
+        if not name_matches(row['pub_name'], observed['name']) and observed['name'] != reviewed_name:
             return {'status': 'conflict', 'reason': 'Reference venue name changed', 'source_url': item['url']}
         expected_postcode = item.get('reference_postcode') or pin.get('metadata_issue', {}).get('reference') or row['postcode']
         compact = lambda value: re.sub(r'\s+', '', value).upper()

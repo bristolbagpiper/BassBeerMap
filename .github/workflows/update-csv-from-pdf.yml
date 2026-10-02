@@ -146,14 +146,25 @@ jobs:
           echo "has_changes=${has_changes}" >> "$GITHUB_OUTPUT"
 
       - name: Download current Great Britain OpenStreetMap extract
+        id: osm_download
         if: steps.validate.outcome == 'success' && (steps.changes.outputs.has_changes == 'true' || github.event_name != 'push')
         shell: bash
         run: |
-          curl --fail --location --retry 3 --retry-delay 15 --output great-britain-latest.osm.pbf \
-            https://download.geofabrik.de/europe/great-britain-latest.osm.pbf
+          if curl --fail --location --max-redirs 10 --connect-timeout 20 --max-time 900 \
+            --retry 2 --retry-delay 15 --output great-britain-latest.osm.pbf \
+            https://download.geofabrik.de/europe/great-britain-latest.osm.pbf; then
+            echo "available=true" >> "$GITHUB_OUTPUT"
+          else
+            download_status=$?
+            rm -f great-britain-latest.osm.pbf
+            cp venue-coordinates.json candidate-venue-coordinates.json
+            echo "available=false" >> "$GITHUB_OUTPUT"
+            echo "::warning::OSM download failed (curl exit ${download_status}); retaining existing coordinates and continuing with FHRS and manual review."
+            echo "OSM download unavailable (curl exit ${download_status}). Existing coordinates retained; FHRS will check unresolved venues and remaining entries will appear in the manual review queue." >> "$GITHUB_STEP_SUMMARY"
+          fi
 
       - name: Resolve precise coordinates against the offline OSM extract
-        if: steps.validate.outcome == 'success' && (steps.changes.outputs.has_changes == 'true' || github.event_name != 'push')
+        if: steps.validate.outcome == 'success' && steps.osm_download.outputs.available == 'true'
         shell: bash
         run: |
           python resolve_venue_coordinates_from_osm.py great-britain-latest.osm.pbf candidate-pubs.csv candidate-venue-coordinates.json --existing venue-coordinates.json | tee coordinate-resolution.log

@@ -1,3 +1,4 @@
+import csv
 import os
 import threading
 import unittest
@@ -35,6 +36,8 @@ class FrontendSmokeTests(unittest.TestCase):
         self.driver.get(self.base_url)
         wait = WebDriverWait(self.driver, 40)
         wait.until(lambda driver: "hidden" in driver.find_element(By.ID, "loadingSplash").get_attribute("class"))
-        self.assertEqual(self.driver.find_element(By.ID, "resultCount").text, "1,102 matches")
+        with Path("pubs.csv").open(encoding="utf-8", newline="") as handle:
+            expected_count = sum(1 for _ in csv.DictReader(handle))
+        self.assertEqual(self.driver.find_element(By.ID, "resultCount").text, f"{expected_count:,} matches")
         self.driver.execute_script("setUserLocation(51.5, -0.1, 'Test location');")
         self.assertEqual(self.driver.find_element(By.ID, "typeFilter").get_attribute("value"), "Perm")

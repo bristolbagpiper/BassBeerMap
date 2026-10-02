@@ -1,0 +1,48 @@
+name: Research unverified locations
+
+on:
+  schedule:
+    - cron: '17 8 * * 2'
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths: ['research_locations.py', '.github/workflows/research-locations.yml']
+
+permissions:
+  contents: write
+
+concurrency:
+  group: directory-data
+  cancel-in-progress: false
+
+jobs:
+  research:
+    if: github.actor != 'github-actions[bot]'
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.13'
+      - name: Research up to 30 unresolved venue locations
+        run: python research_locations.py --limit 30
+      - name: Validate and publish research and independently verified pins
+        run: |
+          python validate_directory_release.py --root candidate-research --previous .
+          python -c "from pathlib import Path; from shutil import copyfile; from directory_release import RELEASE_FILES; [copyfile(Path('candidate-research') / name, name) for name in RELEASE_FILES]"
+          python validate_directory_release.py
+          git add pubs.csv directory-meta.json pub-coordinates.json venue-coordinates.json coordinate-verification.json venue-registry.json directory-release.json location-review.json
+          if git diff --cached --quiet; then exit 0; fi
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git commit -m 'Research unresolved locations and record review candidates'
+          git push
+      - name: Retain research evidence
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: location-research
+          path: candidate-research/

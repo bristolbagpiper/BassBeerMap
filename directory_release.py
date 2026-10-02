@@ -196,6 +196,13 @@ def reconcile(rows, registry, decisions):
             changes.append({'venue_id': identifier, 'type': 'identity_change', 'previous_key': entry['current_key'], 'venue_key': key})
         entry['current_key'] = key
         entry['listing'] = copy.deepcopy(row)
+        issue = (entry.get('verified_pin') or {}).get('metadata_issue')
+        if issue:
+            compact = lambda value: str(value).replace(' ', '').upper()
+            if compact(row['postcode']) == compact(issue.get('reference')):
+                entry['verified_pin'].pop('metadata_issue', None)
+            else:
+                issue['listed'] = row['postcode']
         row['venue_id'] = identifier
     return selected, registry, {'errors': errors, 'changes': changes, 'duplicate_resolutions': ignored}
 

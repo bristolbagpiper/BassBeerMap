@@ -42,6 +42,7 @@ def build_review(rows, registry, ledger):
                                   first_seen=previous.get('first_seen', today), status=status, reasons=reasons,
                                   last_checked=attempt.get('checked_at') or max((e.get('checked_at', '') for e in pin.get('evidence', [])), default=None), source_checks=attempt.get('sources', {}),
                                   source_error=attempt.get('error'), reference=issue, history=history)
+        records[identifier]['research'] = entry.get('location_research', {})
     active_ids = {row['venue_id'] for row in rows}
     for identifier, record in records.items():
         if identifier not in active_ids and record.get('status') != 'removed':
@@ -56,6 +57,15 @@ def fingerprint(report):
     # Check dates and repeated identical attempts do not create repeated emails.
     active = {identifier: {k: r.get(k) for k in ('pub_name', 'place_name', 'postcode', 'status', 'reasons')}
               for identifier, r in report['records'].items() if r['active']}
+    for identifier, record in report['records'].items():
+        if identifier not in active:
+            continue
+        research = record.get('research', {})
+        if research.get('proposals'):
+            active[identifier]['proposals'] = [{k: p.get(k) for k in ('name', 'postcode', 'address', 'url', 'lat', 'lng')}
+                                               for p in research['proposals']]
+        if research.get('status') == 'unavailable':
+            active[identifier]['research_error'] = research.get('error')
     return hashlib.sha256(json.dumps(active, sort_keys=True).encode()).hexdigest()
 
 
@@ -73,6 +83,18 @@ def format_report(report):
             lines.append(f"- {source.upper()}: {check.get('status', 'unknown')} {check.get('url', '')}".strip())
         if record.get('source_error'):
             lines.append(f"- Lookup error: {record['source_error']}")
+        research = record.get('research', {})
+        proposals = research.get('proposals', [])
+        if proposals and record['unverified']:
+            lines.append('Candidates only: check the named address and map before approving. Post comments as the repository owner in issue #5.')
+            for proposal in proposals:
+                lines += [f"- Candidate: {proposal['name']} — {proposal['address']}, {proposal.get('town', '')} ({proposal['postcode']})",
+                          f"  Source: {proposal['url']}",
+                          f"  Approval command: /verify-location {identifier} {proposal['url']}"]
+        if research.get('coverage', {}).get('complete') is False:
+            lines.append('- CAMRA discovery returned incomplete results; absence of a candidate is inconclusive.')
+        if research.get('status') == 'unavailable':
+            lines.append(f"- Candidate research source unavailable: {research.get('error', 'unknown error')}")
         lines.append('')
     lines += ['Review queue: https://github.com/bristolbagpiper/BassBeerMap/issues/5',
               'Full history: https://github.com/bristolbagpiper/BassBeerMap/blob/main/location-review.json']

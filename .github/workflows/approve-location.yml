@@ -1,0 +1,57 @@
+name: Apply reviewed location
+
+on:
+  issue_comment:
+    types: [created]
+
+permissions:
+  contents: write
+  issues: write
+
+jobs:
+  approve:
+    if: github.event.issue.number == 5 && github.event.comment.user.login == github.repository_owner && github.event.comment.user.type == 'User' && startsWith(github.event.comment.body, '/verify-location ')
+    concurrency:
+      group: directory-data
+      cancel-in-progress: false
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.13'
+      - run: pip install -r requirements.txt
+      - name: Fetch fresh evidence and stage the owner-reviewed location
+        run: python approve_location.py
+      - name: Test the candidate map before publication
+        env:
+          RUN_BROWSER_TESTS: '1'
+          DIRECTORY_TEST_ROOT: candidate-approval
+        run: python -m unittest discover -s tests -p test_frontend_smoke.py -v
+      - name: Publish the validated review
+        run: |
+          python validate_directory_release.py --root candidate-approval --previous .
+          python -c "from pathlib import Path; from shutil import copyfile; from directory_release import RELEASE_FILES; [copyfile(Path('candidate-approval') / name, name) for name in RELEASE_FILES]"
+          python validate_directory_release.py
+          git add pubs.csv directory-meta.json pub-coordinates.json venue-coordinates.json coordinate-verification.json venue-registry.json directory-release.json location-review.json
+          if git diff --cached --quiet; then exit 0; fi
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git commit -m 'Publish owner-reviewed venue location'
+          git push
+      - name: Report approval result in the review issue
+        if: always()
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const result = '${{ job.status }}' === 'success' ? 'Approved location published after fresh evidence checks and browser tests.' : 'Approval rejected; the existing published map was retained. Inspect the failed step for the reason.';
+            await github.rest.issues.createComment({...context.repo, issue_number:5, body:`${result}\n\nRun: https://github.com/${context.repo.owner}/${context.repo.repo}/actions/runs/${context.runId}`});
+      - name: Retain approval evidence
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: location-approval
+          path: candidate-approval/

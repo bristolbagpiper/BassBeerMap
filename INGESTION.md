@@ -77,6 +77,31 @@ an exception or refused recipient leaves delivery unacknowledged for retry.
 Notification failures fail visibly and open a separate GitHub issue. Successful
 recovery closes that issue. SMTP acceptance does not prove inbox delivery.
 
+## Fixing brown pins without AI
+
+`Research unverified locations` runs Tuesdays at 08:17 UTC and supports manual
+dispatch. It retries strong FSA/CAMRA verification and independently searches
+CAMRA around the listed postcode even when FSA matching fails. It rotates through
+up to 30 unverified venues, retaining up to three possible named-address matches
+per venue. Name variants and spelling similarities are suggestions only. Source
+outages retain earlier candidates; incomplete searches are explicitly marked.
+Research results and candidate changes appear in the existing review issue and
+email alerts. No AI model or API key is used.
+
+For an exception, the repository owner checks the candidate's named address and
+map, then posts the report's `/verify-location <venue-id> <CAMRA-url>` command in
+issue #5. Several commands can be submitted together, one per venue per line.
+`Apply reviewed location` accepts only commands from the human repository owner.
+It fetches fresh structured source evidence, rejects unrelated/distant/changed
+candidates and verified relocations, stages the correction, validates all assets,
+runs browser tests and publishes the reviewed location. It records the approval
+comment, actor, source, date and previous pin against the same permanent venue ID.
+Later source disagreements quarantine the location again and trigger an alert.
+
+This is a human address/map review, not a colour-change button. A pub more than
+6 km from the listed area or a relocation of an already precise pin requires a
+dedicated review rather than bypassing the normal safeguards.
+
 ## Local checks
 
 ```

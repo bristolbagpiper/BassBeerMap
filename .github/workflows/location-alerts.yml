@@ -2,7 +2,7 @@ name: Location review notifications
 
 on:
   workflow_run:
-    workflows: ['Update CSV From PDF', 'Weekly map validation']
+    workflows: ['Update CSV From PDF', 'Weekly map validation', 'Research unverified locations', 'Apply reviewed location']
     types: [completed]
     branches: [main]
   workflow_dispatch:

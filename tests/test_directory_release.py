@@ -174,7 +174,10 @@ class ReleaseGateTests(unittest.TestCase):
         with patch('audit_map_health.recheck_pin', side_effect=TimeoutError('offline')), patch('audit_map_health.time.sleep'):
             report = health_audit(self.root, self.stage, limit=1, check_live=False)
         self.assertTrue(report['valid'])
-        self.assertEqual(read_json(self.stage / 'venue-registry.json'), self.registry)
+        after = read_json(self.stage / 'venue-registry.json')
+        for identifier, entry in self.registry['venues'].items():
+            self.assertEqual(after['venues'][identifier]['verified_pin'], entry['verified_pin'])
+        self.assertTrue(after['location_review']['active_count'])
         self.assertTrue(report['source_warnings'])
 
     def test_successful_unchanged_audit_stays_quiet(self):

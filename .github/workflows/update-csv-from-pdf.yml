@@ -23,6 +23,7 @@ on:
       - "venue-coordinates.json"
       - "venue-coordinate-overrides.json"
       - "directory_release.py"
+      - "location_review.py"
       - "ingest_directory.py"
       - "coordinate_sources.py"
       - "validate_directory_release.py"
@@ -158,13 +159,13 @@ jobs:
           python validate_directory_release.py --root candidate-release --previous .
           python -c "from pathlib import Path; from shutil import copyfile; from directory_release import RELEASE_FILES; [copyfile(Path('candidate-release') / name, name) for name in RELEASE_FILES]"
           python validate_directory_release.py
-          if git diff --quiet -- '*.pdf' pubs.csv directory-meta.json pub-coordinates.json venue-coordinates.json coordinate-verification.json venue-registry.json directory-release.json; then
+          if git diff --quiet -- '*.pdf' pubs.csv directory-meta.json pub-coordinates.json venue-coordinates.json coordinate-verification.json venue-registry.json directory-release.json location-review.json; then
             echo "No directory changes detected."
             exit 0
           fi
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add -A '*.pdf' pubs.csv directory-meta.json pub-coordinates.json venue-coordinates.json coordinate-verification.json venue-registry.json directory-release.json
+          git add -A '*.pdf' pubs.csv directory-meta.json pub-coordinates.json venue-coordinates.json coordinate-verification.json venue-registry.json directory-release.json location-review.json
           git commit -m "Publish validated directory release"
           git push
 

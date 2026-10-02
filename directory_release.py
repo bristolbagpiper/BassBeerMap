@@ -21,7 +21,7 @@ MAX_EVIDENCE_AGE_DAYS = 400
 FIELDS = ['country', 'area', 'pub_name', 'place_name', 'postcode', 'pg', 'last', 'dispense', 'notes']
 RELEASE_FILES = ['pubs.csv', 'directory-meta.json', 'pub-coordinates.json',
                  'venue-coordinates.json', 'coordinate-verification.json',
-                 'venue-registry.json', 'directory-release.json', 'latest-bass-directory.pdf']
+                 'venue-registry.json', 'directory-release.json', 'location-review.json', 'latest-bass-directory.pdf']
 
 
 def read_json(path, default=None):
@@ -253,6 +253,9 @@ def write_release(root, rows, registry, metadata, postcodes):
     root = Path(root)
     root.mkdir(parents=True, exist_ok=True)
     ledger = build_ledger(rows, registry)
+    from location_review import build_review
+    registry['location_review'] = build_review(rows, registry, ledger)
+    write_json(root / 'location-review.json', registry['location_review'])
     venues = {venue_key(row): {k: v for k, v in registry['venues'][row['venue_id']]['verified_pin'].items() if k in ('lat', 'lng', 'source')}
               for row in rows if registry['venues'][row['venue_id']].get('verified_pin')}
     write_rows(root / 'pubs.csv', rows)
@@ -274,6 +277,14 @@ def validate_release(root, previous_root=None, allow_review_downgrades=False, al
     ledger = read_json(root / 'coordinate-verification.json')
     bundle = read_json(root / 'directory-release.json')
     errors = []
+    review = read_json(root / 'location-review.json')
+    if review != registry.get('location_review') or review is None:
+        errors.append('Location review register is missing or disagrees with the registry')
+    elif not allow_expired:
+        expected = {record['venue_id'] for record in ledger['records'].values() if record['display_precision'] != 'venue'}
+        tracked = {identifier for identifier, record in review['records'].items() if record['active'] and record['unverified']}
+        if expected != tracked:
+            errors.append('Unverified locations are missing from the active review register')
     ids = [row.get('venue_id') for row in rows]
     if not all(ids) or len(ids) != len(set(ids)):
         errors.append('Permanent venue IDs are missing or duplicated')

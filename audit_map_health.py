@@ -70,7 +70,11 @@ def health_audit(root, staging, limit=30, check_live=True):
                 result = recheck_pin(row, entry['verified_pin'])
                 apply_check(entry, result)
             else:
-                pin = resolve_new_pin(row)
+                attempt = {}
+                try:
+                    pin = resolve_new_pin(row, attempt)
+                finally:
+                    entry['verification_attempt'] = attempt
                 result = {'status': 'confirmed' if pin else 'unresolved'}
                 if pin:
                     entry['verified_pin'] = pin
@@ -78,6 +82,10 @@ def health_audit(root, staging, limit=30, check_live=True):
             result = {'status': 'unavailable', 'reason': type(error).__name__}
             report['source_warnings'].append(f'{identifier}: {type(error).__name__}; last verified pin retained')
         state['checks'][identifier] = dict(result, attempted_at=date.today().isoformat())
+        if entry.get('verified_pin'):
+            sources = {e['source']: {'status': result['status'], 'url': e['url']}
+                       for e in entry['verified_pin'].get('evidence', [])}
+            entry['verification_attempt'] = dict(result, checked_at=date.today().isoformat(), sources=sources)
         report['checked'].append({'venue_id': identifier, 'pub_name': row['pub_name'], 'status': result['status']})
         time.sleep(1)
     for row in rows:

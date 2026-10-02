@@ -38,15 +38,15 @@ jobs:
           python validate_directory_release.py --root candidate-health --previous . --allow-review-downgrades
           python -c "from pathlib import Path; from shutil import copyfile; from directory_release import RELEASE_FILES; [copyfile(Path('candidate-health') / name, name) for name in RELEASE_FILES + ['coordinate-health-state.json']]"
           python validate_directory_release.py
-          if git diff --quiet -- pubs.csv directory-meta.json pub-coordinates.json venue-coordinates.json coordinate-verification.json venue-registry.json directory-release.json coordinate-health-state.json; then
+          if git diff --quiet -- pubs.csv directory-meta.json pub-coordinates.json venue-coordinates.json coordinate-verification.json venue-registry.json directory-release.json location-review.json coordinate-health-state.json; then
             exit 0
           fi
           git config user.name 'github-actions[bot]'
           git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
-          git add pubs.csv directory-meta.json pub-coordinates.json venue-coordinates.json coordinate-verification.json venue-registry.json directory-release.json coordinate-health-state.json
+          git add pubs.csv directory-meta.json pub-coordinates.json venue-coordinates.json coordinate-verification.json venue-registry.json directory-release.json location-review.json coordinate-health-state.json
           git commit -m 'Refresh coordinate evidence and map health'
           git push
-      - name: Notify only on a changed actionable report or failed audit
+      - name: Report failed audit
         if: always()
         uses: actions/github-script@v7
         with:
@@ -55,7 +55,7 @@ jobs:
             const path = 'candidate-health/health-report.json';
             const report = fs.existsSync(path) ? JSON.parse(fs.readFileSync(path, 'utf8')) : {valid:false, errors:['Audit failed before producing its report.']};
             const failed = '${{ job.status }}' === 'failure' || !report.valid;
-            if (!failed && !report.notify) return;
+            if (!failed) return; // Successful reports are delivered by Location review notifications.
             const title = 'BassBeerMap coordinate review';
             const items = [...(report.errors || []), ...(report.issues || [])];
             const { data: issues } = await github.rest.issues.listForRepo({...context.repo, state:'open'});

@@ -58,6 +58,25 @@ updated on meaningful changes and closed when resolved. Reports and staged
 assets are retained as workflow artifacts. Monthly change-report email remains
 available when SMTP secrets are configured.
 
+## Location tracking and alerts
+
+Every release includes `location-review.json`: permanent venue ID, name, place,
+postcode, first-seen date, last-check date, FSA/CAMRA results, specific failure
+reason, reference source and status history. Resolved and removed records remain
+in the register. The candidate gate requires every approximate pin to appear in
+the active register. Lookup failures never mean a source has no listing unless
+that source was actually searched.
+
+`Location review notifications` runs after imports and weekly audits, including
+failed runs, and can be dispatched manually. It updates the GitHub review issue
+and emails the configured `ALERT_TO` recipient using existing SMTP secrets.
+The initial report includes all outstanding locations; later emails cover new
+locations, changed failure reasons and resolutions. Identical outstanding reports
+remain quiet. `location-alert-state.json` records successful SMTP acceptance only;
+an exception or refused recipient leaves delivery unacknowledged for retry.
+Notification failures fail visibly and open a separate GitHub issue. Successful
+recovery closes that issue. SMTP acceptance does not prove inbox delivery.
+
 ## Local checks
 
 ```

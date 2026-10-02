@@ -1,0 +1,104 @@
+name: Location review notifications
+
+on:
+  workflow_run:
+    workflows: ['Update CSV From PDF', 'Weekly map validation']
+    types: [completed]
+    branches: [main]
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths: ['.github/workflows/location-alerts.yml', 'notify_location_review.py', 'location_review.py']
+
+permissions:
+  contents: write
+  issues: write
+
+concurrency:
+  group: directory-data
+  cancel-in-progress: false
+
+jobs:
+  notify:
+    if: github.actor != 'github-actions[bot]' || github.event_name == 'workflow_run'
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.13'
+      - name: Validate the location register
+        run: python validate_directory_release.py --allow-expired-evidence
+      - name: Write the complete review queue
+        run: python -c "from directory_release import read_json; from location_review import format_report; from pathlib import Path; Path('location-review-report.md').write_text(format_report(read_json('location-review.json')), encoding='utf-8')"
+      - name: Update the persistent GitHub review issue
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const fs = require('fs');
+            const report = JSON.parse(fs.readFileSync('location-review.json', 'utf8'));
+            const title = 'BassBeerMap coordinate review';
+            const source = context.payload.workflow_run;
+            const failed = source && source.conclusion !== 'success';
+            const body = (failed ? `Import or audit failed: ${source.html_url}\n\n` : '') + fs.readFileSync('location-review-report.md', 'utf8');
+            const issues = await github.paginate(github.rest.issues.listForRepo, {...context.repo, state:'open', per_page:100});
+            const existing = issues.find(i => !i.pull_request && i.title === title);
+            if (report.active_count || failed) {
+              if (!existing) await github.rest.issues.create({...context.repo, title, body});
+              else if (existing.body !== body) await github.rest.issues.update({...context.repo, issue_number:existing.number, body});
+            } else if (existing) {
+              await github.rest.issues.update({...context.repo, issue_number:existing.number, state:'closed', state_reason:'completed'});
+            }
+      - name: Email changed unverified locations and failed checks
+        env:
+          SMTP_HOST: ${{ secrets.SMTP_HOST }}
+          SMTP_PORT: ${{ secrets.SMTP_PORT }}
+          SMTP_USERNAME: ${{ secrets.SMTP_USERNAME }}
+          SMTP_PASSWORD: ${{ secrets.SMTP_PASSWORD }}
+          ALERT_TO: ${{ secrets.ALERT_TO }}
+          ALERT_FROM: ${{ secrets.ALERT_FROM }}
+          SOURCE_CONCLUSION: ${{ github.event.workflow_run.conclusion }}
+          SOURCE_RUN_URL: ${{ github.event.workflow_run.html_url }}
+        run: |
+          if [ -n "$SOURCE_CONCLUSION" ] && [ "$SOURCE_CONCLUSION" != 'success' ]; then
+            python notify_location_review.py --failure-url "$SOURCE_RUN_URL"
+          else
+            python notify_location_review.py
+          fi
+      - name: Commit successful email acknowledgement
+        run: |
+          if [ ! -f location-alert-state.json ]; then exit 0; fi
+          git add location-alert-state.json
+          if git diff --cached --quiet; then exit 0; fi
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git commit -m 'Record successful location alert delivery'
+          git push
+      - name: Upload review report
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: location-review-report
+          path: location-review-report.md
+      - name: Make notification failures visible
+        if: failure()
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const title = 'BassBeerMap location notification failed';
+            const body = `Location alert delivery did not complete. Check the failed step and SMTP configuration. Delivery will be retried on the next import, weekly audit or manual notification run.\n\nRun: https://github.com/${context.repo.owner}/${context.repo.repo}/actions/runs/${context.runId}`;
+            const issues = await github.paginate(github.rest.issues.listForRepo, {...context.repo, state:'open'});
+            const existing = issues.find(i => i.title === title);
+            if (existing) await github.rest.issues.update({...context.repo, issue_number:existing.number, body});
+            else await github.rest.issues.create({...context.repo, title, body});
+      - name: Close recovered notification failures
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const issues = await github.paginate(github.rest.issues.listForRepo, {...context.repo, state:'open'});
+            for (const issue of issues.filter(i => i.title === 'BassBeerMap location notification failed')) {
+              await github.rest.issues.update({...context.repo, issue_number:issue.number, state:'closed', state_reason:'completed'});
+            }

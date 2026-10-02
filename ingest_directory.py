@@ -54,12 +54,15 @@ def stage_import(candidate, root, staging, check_sources=True):
                 entry = registry['venues'][row['venue_id']]
                 if entry.get('verified_pin'):
                     continue
+                attempt = {}
                 try:
-                    pin = resolve_new_pin(row)
+                    pin = resolve_new_pin(row, attempt)
                     if pin:
                         entry['verified_pin'] = pin
                 except Exception as error:
-                    report['source_warnings'].append(f'{venue_key(row)}: FSA lookup unavailable: {error}')
+                    attempt['error'] = type(error).__name__
+                    report['source_warnings'].append(f'{venue_key(row)}: location lookup unavailable: {type(error).__name__}')
+                entry['verification_attempt'] = attempt
         metadata = read_json(root / 'candidate-directory-meta.json', read_json(root / 'directory-meta.json', {}))
         ledger = write_release(staging, rows, registry, metadata, coordinates)
         pdf = root / 'latest-bass-directory.pdf'

@@ -7,6 +7,7 @@ from unittest.mock import patch
 from approve_location import approve, approved_commands
 from directory_release import permanent_id, read_json, reconcile, venue_key, write_release
 from research_locations import candidate_score, research
+from coordinate_sources import camra_reference
 from tests.test_directory_release import row
 
 
@@ -86,3 +87,16 @@ class ResearchAndApprovalTests(unittest.TestCase):
         self.assertEqual(candidate_score('Black Cat', 'Black Cat Rose Lane'), 2)
         self.assertEqual(candidate_score('Example Inn', ''), 0)
         self.assertEqual(candidate_score('Red Lion', 'Blue Boar'), 0)
+
+    def test_omitted_map_postcode_uses_named_page_address_instead_of_failing_match(self):
+        map_venue = dict(Name='Example Inn', IncID=123, Latitude=51.45, Longitude=-2.59, Postcode=None)
+        with patch('audit.fetch_camra.fetch', return_value={'venues': [map_venue]}), patch('coordinate_sources.camra_page', return_value=self.source):
+            match = camra_reference(self.listing, {'lat': 51.45, 'lng': -2.59})
+        self.assertIsNotNone(match)
+        self.assertEqual(match['postcode'], 'BS1 1AA')
+        self.assertEqual(match['address'], '1 High Street')
+
+    def test_missing_map_postcode_cannot_override_an_actual_page_address_conflict(self):
+        map_venue = dict(Name='Example Inn', IncID=123, Latitude=51.45, Longitude=-2.59, Postcode=None)
+        with patch('audit.fetch_camra.fetch', return_value={'venues': [map_venue]}), patch('coordinate_sources.camra_page', return_value=dict(self.source, postcode='BS1 1AB')):
+            self.assertIsNone(camra_reference(self.listing, {'lat': 51.45, 'lng': -2.59}))

@@ -8,7 +8,7 @@ from datetime import date
 from difflib import SequenceMatcher
 from pathlib import Path
 
-from coordinate_sources import name_matches, resolve_new_pin
+from coordinate_sources import camra_page, name_matches, resolve_new_pin
 from directory_release import (RELEASE_FILES, distance_metres, point_valid, read_json,
                                read_rows, validate_release, write_json, write_release)
 
@@ -47,7 +47,21 @@ def discover(row, centre):
                               distance_from_postcode_metres=round(distance_metres(centre, point))))
     proposals = list({p['url']: p for p in proposals}.values())
     proposals.sort(key=lambda p: (-p['score'], not p['postcode_agrees'], p['distance_from_postcode_metres'], p['url']))
-    return proposals[:3], {'records_returned': len(result['venues']), 'reported_total': result.get('total'),
+    detailed = []
+    for proposal in proposals[:3]:
+        try:
+            source = camra_page(proposal['url'])
+            if not candidate_score(row['pub_name'], source['name']) or distance_metres(centre, source) > 6000:
+                continue
+            proposal.update(source)
+            proposal['postcode_agrees'] = source['postcode'].replace(' ', '').upper() == row['postcode'].replace(' ', '').upper()
+            proposal['distance_from_postcode_metres'] = round(distance_metres(centre, source))
+            proposal['source_status'] = 'named_page_checked'
+        except Exception as error:
+            proposal['source_status'] = 'page_unavailable'
+            proposal['source_error'] = type(error).__name__
+        detailed.append(proposal)
+    return detailed, {'records_returned': len(result['venues']), 'reported_total': result.get('total'),
                            'complete': result.get('total', len(result['venues'])) <= len(result['venues'])}
 
 

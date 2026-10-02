@@ -12,6 +12,8 @@ from location_review import fingerprint, format_report
 
 
 def notify(report, state_path, failure_url='', smtp_factory=smtplib.SMTP):
+    if os.environ.get('SOURCE_CONCLUSION') == 'cancelled':
+        failure_url = ''  # A deliberately/superseded canceled run is not a failed import.
     state = read_json(state_path, {})
     digest = fingerprint(report)
     if not failure_url and (state.get('email_fingerprint') == digest or (not report['active_count'] and not state)):

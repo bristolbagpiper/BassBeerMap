@@ -13,6 +13,7 @@ jobs:
     if: github.event.issue.number == 5 && github.event.comment.user.login == github.repository_owner && github.event.comment.user.type == 'User' && startsWith(github.event.comment.body, '/verify-location ')
     concurrency:
       group: directory-data
+      queue: max
       cancel-in-progress: false
     runs-on: ubuntu-latest
     timeout-minutes: 15

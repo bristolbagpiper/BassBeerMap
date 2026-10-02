@@ -3,6 +3,7 @@ import html
 import json
 import re
 from datetime import date
+from functools import lru_cache
 from urllib.request import Request, urlopen
 
 from directory_release import distance_metres, point_valid
@@ -32,6 +33,13 @@ def parse_camra(text):
         raise ValueError('Source coordinate is invalid or outside the directory region')
     return dict(point, name=entity['name'], postcode=entity.get('address', {}).get('postalCode', ''),
                 address=entity.get('address', {}).get('streetAddress', ''))
+
+
+@lru_cache(maxsize=300)
+def camra_page(url):
+    # The map API can omit street/postcode fields. Read the named venue's
+    # structured address instead of treating that omission as no address match.
+    return parse_camra(fetch_text(url))
 
 
 def name_matches(listing, reference):
@@ -134,13 +142,20 @@ def camra_reference(row, point, diagnostics=None):
     for candidate in candidates:
         if candidate.get('PremisesStatus') == 'X' or not name_matches(row['pub_name'], candidate.get('Name', '')):
             continue
+        url = f"https://camra.org.uk/pubs/{candidate['IncID']}"
+        if not candidate.get('Postcode'):
+            observed = camra_page(url)
+            if not name_matches(row['pub_name'], observed['name']):
+                continue
+            candidate = dict(candidate, Name=observed['name'], Postcode=observed['postcode'],
+                             Street=observed['address'], Latitude=observed['lat'], Longitude=observed['lng'])
         if compact(candidate.get('Postcode')) != compact(row['postcode']):
             continue
         try:
             location = {'lat': float(candidate['Latitude']), 'lng': float(candidate['Longitude'])}
             if point_valid(location):
                 matches.append(dict(location, name=candidate['Name'], postcode=candidate['Postcode'],
-                                    url=f"https://camra.org.uk/pubs/{candidate['IncID']}"))
+                                    address=candidate.get('Street') or '', url=url))
         except (KeyError, TypeError, ValueError):
             continue
     if not matches:

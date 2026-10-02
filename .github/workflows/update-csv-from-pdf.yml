@@ -37,6 +37,7 @@ permissions:
 
 concurrency:
   group: directory-data
+  queue: max
   # Imports and health checks publish the same release assets. Queue them
   # so their commits cannot overwrite one another.
   cancel-in-progress: false

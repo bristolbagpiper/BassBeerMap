@@ -16,6 +16,7 @@ permissions:
 
 concurrency:
   group: directory-data
+  queue: max
   cancel-in-progress: false
 
 jobs:
@@ -42,7 +43,7 @@ jobs:
             const report = JSON.parse(fs.readFileSync('location-review.json', 'utf8'));
             const title = 'BassBeerMap coordinate review';
             const source = context.payload.workflow_run;
-            const failed = source && source.conclusion !== 'success';
+            const failed = source && ['failure', 'timed_out', 'action_required'].includes(source.conclusion);
             const body = (failed ? `Import or audit failed: ${source.html_url}\n\n` : '') + fs.readFileSync('location-review-report.md', 'utf8');
             const issues = await github.paginate(github.rest.issues.listForRepo, {...context.repo, state:'open', per_page:100});
             const existing = issues.find(i => !i.pull_request && i.title === title);
@@ -63,7 +64,7 @@ jobs:
           SOURCE_CONCLUSION: ${{ github.event.workflow_run.conclusion }}
           SOURCE_RUN_URL: ${{ github.event.workflow_run.html_url }}
         run: |
-          if [ -n "$SOURCE_CONCLUSION" ] && [ "$SOURCE_CONCLUSION" != 'success' ]; then
+          if [ "$SOURCE_CONCLUSION" = 'failure' ] || [ "$SOURCE_CONCLUSION" = 'timed_out' ] || [ "$SOURCE_CONCLUSION" = 'action_required' ]; then
             python notify_location_review.py --failure-url "$SOURCE_RUN_URL"
           else
             python notify_location_review.py

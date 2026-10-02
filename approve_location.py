@@ -51,9 +51,9 @@ def approve(root, staging, event, owner):
         proposals = entry.get('location_research', {}).get('proposals', [])
         proposed = next((p for p in proposals if p['url'] == url), None)
         if not name_matches(row['pub_name'], source['name']):
-            if not proposed or not name_matches(proposed['name'], source['name']):
+            if not proposed or not (proposed['name'] == source['name'] or name_matches(proposed['name'], source['name'])):
                 raise ValueError('Source name does not identify this pub or a recorded research candidate')
-        if proposed and (distance_metres(source, proposed) > 50 or source['postcode'] != proposed['postcode']):
+        if proposed and (distance_metres(source, proposed) > 50 or (proposed['postcode'] and source['postcode'] != proposed['postcode'])):
             raise ValueError('Source address/coordinate changed since research; refresh the candidate before approving')
         centre = read_json(root / 'pub-coordinates.json')['coordinates'][row['postcode']]
         if distance_metres(source, centre) > 6000:

@@ -1,5 +1,5 @@
 {
-  "active_count": 49,
+  "active_count": 48,
   "records": {
     "v-082c00f2-cff9-55ca-ac80-fb375cbc5f78": {
       "active": true,
@@ -2025,7 +2025,7 @@
       "venue_id": "v-b2a1d45e-8e0b-5274-acf9-fa3a099ee5dc"
     },
     "v-b81d683f-d115-5e3b-bfce-7cf833ef9e75": {
-      "active": true,
+      "active": false,
       "first_seen": "2026-10-02",
       "history": [
         {
@@ -2041,15 +2041,18 @@
             "FSA businesses at the postcode do not match the pub name; CAMRA not checked"
           ],
           "status": "unverified"
+        },
+        {
+          "date": "2026-10-06",
+          "reasons": [],
+          "status": "resolved"
         }
       ],
       "last_checked": "2026-10-06",
       "place_name": "Biggleswade",
       "postcode": "SG18 0JH",
       "pub_name": "Golden Pheasant",
-      "reasons": [
-        "FSA businesses at the postcode do not match the pub name; CAMRA not checked"
-      ],
+      "reasons": [],
       "reference": {},
       "research": {
         "checked_at": "2026-10-06",
@@ -2075,20 +2078,10 @@
         ],
         "status": "candidates_found"
       },
-      "source_checks": {
-        "camra": {
-          "status": "not_checked"
-        },
-        "fsa": {
-          "name_matches": 0,
-          "postcode_matches": 5,
-          "records_returned": 5,
-          "status": "no_name_match"
-        }
-      },
+      "source_checks": {},
       "source_error": null,
-      "status": "unverified",
-      "unverified": true,
+      "status": "resolved",
+      "unverified": false,
       "venue_id": "v-b81d683f-d115-5e3b-bfce-7cf833ef9e75"
     },
     "v-baef8a0f-c094-5f52-a9c2-3a37df4ca657": {
@@ -3371,5 +3364,5 @@
     }
   },
   "schema_version": 1,
-  "unverified_count": 14
+  "unverified_count": 13
 }

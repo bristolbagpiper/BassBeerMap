@@ -1,8 +1,8 @@
 {
   "counts": {
-    "postcode_approximate": 12,
+    "postcode_approximate": 11,
     "venue_coordinate_requires_review": 2,
-    "verified_venue": 1030
+    "verified_venue": 1031
   },
   "generated_at": "2026-10-06",
   "policy": {
@@ -11019,13 +11019,34 @@
       "venue_id": "v-516c81ec-e064-5ab2-878d-c8025355bebf"
     },
     "golden pheasant|biggleswade|sg18 0jh": {
-      "coordinate_source": "postcode",
-      "display_precision": "postcode",
-      "evidence": [],
+      "coordinate_source": "owner-reviewed-map",
+      "display_precision": "venue",
+      "evidence": [
+        {
+          "checked_at": "2026-10-06",
+          "match": "owner_approved_corrected_named_pub_frontage_and_operator_address",
+          "reference_address": "71 High Street, Biggleswade",
+          "reference_coordinate": {
+            "lat": 52.0870521,
+            "lng": -0.2626077
+          },
+          "reference_name": "Golden Pheasant",
+          "reference_postcode": "SG18 0JH",
+          "reviewed_by": "bristolbagpiper",
+          "source": "manual_named_place_map",
+          "supporting_address_urls": [
+            "https://goldenpheasantbiggleswade.co.uk/",
+            "https://historicengland.org.uk/listing/the-list/list-entry/1114488"
+          ],
+          "url": "https://www.google.com/maps/place/Golden+Pheasant/@52.0869663,-0.2627139,21z/data=!3m5!1s0x4877cc3fb633d10d:0xd232de50860f8ee8!8m2!3d52.0870521!4d-0.2626077!16s%2Fg%2F1tgps3s3"
+        }
+      ],
+      "lat": 52.0870521,
+      "lng": -0.2626077,
       "place_name": "Biggleswade",
       "postcode": "SG18 0JH",
       "pub_name": "Golden Pheasant",
-      "status": "postcode_approximate",
+      "status": "verified_venue",
       "venue_id": "v-b81d683f-d115-5e3b-bfce-7cf833ef9e75"
     },
     "goodmanham arms|goodmanham|yo43 3ja": {

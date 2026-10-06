@@ -1,6 +1,6 @@
 {
   "location_review": {
-    "active_count": 49,
+    "active_count": 48,
     "records": {
       "v-082c00f2-cff9-55ca-ac80-fb375cbc5f78": {
         "active": true,
@@ -2026,7 +2026,7 @@
         "venue_id": "v-b2a1d45e-8e0b-5274-acf9-fa3a099ee5dc"
       },
       "v-b81d683f-d115-5e3b-bfce-7cf833ef9e75": {
-        "active": true,
+        "active": false,
         "first_seen": "2026-10-02",
         "history": [
           {
@@ -2042,15 +2042,18 @@
               "FSA businesses at the postcode do not match the pub name; CAMRA not checked"
             ],
             "status": "unverified"
+          },
+          {
+            "date": "2026-10-06",
+            "reasons": [],
+            "status": "resolved"
           }
         ],
         "last_checked": "2026-10-06",
         "place_name": "Biggleswade",
         "postcode": "SG18 0JH",
         "pub_name": "Golden Pheasant",
-        "reasons": [
-          "FSA businesses at the postcode do not match the pub name; CAMRA not checked"
-        ],
+        "reasons": [],
         "reference": {},
         "research": {
           "checked_at": "2026-10-06",
@@ -2076,20 +2079,10 @@
           ],
           "status": "candidates_found"
         },
-        "source_checks": {
-          "camra": {
-            "status": "not_checked"
-          },
-          "fsa": {
-            "name_matches": 0,
-            "postcode_matches": 5,
-            "records_returned": 5,
-            "status": "no_name_match"
-          }
-        },
+        "source_checks": {},
         "source_error": null,
-        "status": "unverified",
-        "unverified": true,
+        "status": "resolved",
+        "unverified": false,
         "venue_id": "v-b81d683f-d115-5e3b-bfce-7cf833ef9e75"
       },
       "v-baef8a0f-c094-5f52-a9c2-3a37df4ca657": {
@@ -3372,7 +3365,7 @@
       }
     },
     "schema_version": 1,
-    "unverified_count": 14
+    "unverified_count": 13
   },
   "schema_version": 1,
   "venues": {
@@ -35839,6 +35832,26 @@
         "postcode": "SG18 0JH",
         "pub_name": "Golden Pheasant"
       },
+      "location_approvals": [
+        {
+          "approved_coordinate": {
+            "lat": 52.0870521,
+            "lng": -0.2626077
+          },
+          "checked_at": "2026-10-06",
+          "owner_instruction": "correct",
+          "previous_pin": null,
+          "rejected_camra": {
+            "lat": 52.0869177,
+            "lng": -0.2628172,
+            "reason": "Owner rejected road point as close but no cigar; approved pub frontage point about 21 metres northeast.",
+            "url": "https://camra.org.uk/pubs/117185"
+          },
+          "review_method": "Owner rejected CAMRA road point, then explicitly approved the corrected named pub frontage point in Codex. Named map venue and official operator address checked before approval.",
+          "reviewed_by": "bristolbagpiper",
+          "source_url": "https://www.google.com/maps/place/Golden+Pheasant/@52.0869663,-0.2627139,21z/data=!3m5!1s0x4877cc3fb633d10d:0xd232de50860f8ee8!8m2!3d52.0870521!4d-0.2626077!16s%2Fg%2F1tgps3s3"
+        }
+      ],
       "location_research": {
         "checked_at": "2026-10-06",
         "coverage": {
@@ -35865,20 +35878,35 @@
       },
       "verification_attempt": {
         "checked_at": "2026-10-06",
-        "reason": "FSA businesses at the postcode do not match the pub name; CAMRA not checked",
-        "sources": {
-          "camra": {
-            "status": "not_checked"
-          },
-          "fsa": {
-            "name_matches": 0,
-            "postcode_matches": 5,
-            "records_returned": 5,
-            "status": "no_name_match"
-          }
-        }
+        "reason": "Owner-approved pub frontage correction; CAMRA road coordinate rejected.",
+        "sources": {},
+        "status": "manual_review"
       },
-      "verified_pin": null
+      "verified_pin": {
+        "evidence": [
+          {
+            "checked_at": "2026-10-06",
+            "match": "owner_approved_corrected_named_pub_frontage_and_operator_address",
+            "reference_address": "71 High Street, Biggleswade",
+            "reference_coordinate": {
+              "lat": 52.0870521,
+              "lng": -0.2626077
+            },
+            "reference_name": "Golden Pheasant",
+            "reference_postcode": "SG18 0JH",
+            "reviewed_by": "bristolbagpiper",
+            "source": "manual_named_place_map",
+            "supporting_address_urls": [
+              "https://goldenpheasantbiggleswade.co.uk/",
+              "https://historicengland.org.uk/listing/the-list/list-entry/1114488"
+            ],
+            "url": "https://www.google.com/maps/place/Golden+Pheasant/@52.0869663,-0.2627139,21z/data=!3m5!1s0x4877cc3fb633d10d:0xd232de50860f8ee8!8m2!3d52.0870521!4d-0.2626077!16s%2Fg%2F1tgps3s3"
+          }
+        ],
+        "lat": 52.0870521,
+        "lng": -0.2626077,
+        "source": "owner-reviewed-map"
+      }
     },
     "v-b89a416f-f3fd-5773-b692-0a6c06497864": {
       "aliases": [

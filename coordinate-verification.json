@@ -1,8 +1,8 @@
 {
   "counts": {
-    "postcode_approximate": 14,
+    "postcode_approximate": 13,
     "venue_coordinate_requires_review": 2,
-    "verified_venue": 1028
+    "verified_venue": 1029
   },
   "generated_at": "2026-10-06",
   "policy": {
@@ -9562,13 +9562,38 @@
       "venue_id": "v-282b4121-c19d-51ad-bb24-ee3aa2de5f0d"
     },
     "fieldhouse|solihull|b91 3ju": {
-      "coordinate_source": "postcode",
-      "display_precision": "postcode",
-      "evidence": [],
+      "coordinate_source": "owner-reviewed-map",
+      "display_precision": "venue",
+      "evidence": [
+        {
+          "checked_at": "2026-10-06",
+          "match": "owner_corrected_point_with_named_map_address_and_building_check",
+          "owner_supplied_coordinate": {
+            "lat": 52.396806,
+            "lng": -1.786167
+          },
+          "reference_address": "10 Knightcote Drive, Solihull",
+          "reference_coordinate": {
+            "lat": 52.3967912,
+            "lng": -1.7864017
+          },
+          "reference_name": "The Fieldhouse",
+          "reference_postcode": "B91 3JU",
+          "reviewed_by": "bristolbagpiper",
+          "source": "manual_named_place_map",
+          "supporting_address_urls": [
+            "https://ratings.food.gov.uk/business/1528449/the-fieldhouse-ember-inn-hillfield",
+            "https://www.emberinns.co.uk/nationalsearch/eastandwestmidlands/the-fieldhouse-solihull"
+          ],
+          "url": "https://www.google.com/maps/place/The+Fieldhouse/@52.3967912,-1.7889766,17z/data=!3m1!4b1!4m6!3m5!1s0x4870b9d1e29f7895:0x5556bca0ee375d51!8m2!3d52.3967912!4d-1.7864017!16s%2Fg%2F1tjfg8kp"
+        }
+      ],
+      "lat": 52.396806,
+      "lng": -1.786167,
       "place_name": "Solihull",
       "postcode": "B91 3JU",
       "pub_name": "Fieldhouse",
-      "status": "postcode_approximate",
+      "status": "verified_venue",
       "venue_id": "v-8437cb49-dd3e-5c8c-a924-f3ca32bcd323"
     },
     "final whistle|southwell|ng25 0et": {

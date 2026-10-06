@@ -1,5 +1,5 @@
 {
-  "active_count": 51,
+  "active_count": 50,
   "records": {
     "v-082c00f2-cff9-55ca-ac80-fb375cbc5f78": {
       "active": true,
@@ -1429,7 +1429,7 @@
       "venue_id": "v-7ecdc061-3850-5388-865f-f697462bbc10"
     },
     "v-8437cb49-dd3e-5c8c-a924-f3ca32bcd323": {
-      "active": true,
+      "active": false,
       "first_seen": "2026-10-02",
       "history": [
         {
@@ -1445,15 +1445,18 @@
             "FSA businesses at the postcode do not match the pub name; CAMRA not checked"
           ],
           "status": "unverified"
+        },
+        {
+          "date": "2026-10-06",
+          "reasons": [],
+          "status": "resolved"
         }
       ],
       "last_checked": "2026-10-06",
       "place_name": "Solihull",
       "postcode": "B91 3JU",
       "pub_name": "Fieldhouse",
-      "reasons": [
-        "FSA businesses at the postcode do not match the pub name; CAMRA not checked"
-      ],
+      "reasons": [],
       "reference": {},
       "research": {
         "checked_at": "2026-10-06",
@@ -1479,20 +1482,10 @@
         ],
         "status": "candidates_found"
       },
-      "source_checks": {
-        "camra": {
-          "status": "not_checked"
-        },
-        "fsa": {
-          "name_matches": 0,
-          "postcode_matches": 1,
-          "records_returned": 1,
-          "status": "no_name_match"
-        }
-      },
+      "source_checks": {},
       "source_error": null,
-      "status": "unverified",
-      "unverified": true,
+      "status": "resolved",
+      "unverified": false,
       "venue_id": "v-8437cb49-dd3e-5c8c-a924-f3ca32bcd323"
     },
     "v-8627142a-ac1d-5f2d-9602-8a2777baa6b9": {
@@ -3375,5 +3368,5 @@
     }
   },
   "schema_version": 1,
-  "unverified_count": 16
+  "unverified_count": 15
 }

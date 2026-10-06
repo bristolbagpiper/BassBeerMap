@@ -1,6 +1,6 @@
 {
   "location_review": {
-    "active_count": 51,
+    "active_count": 50,
     "records": {
       "v-082c00f2-cff9-55ca-ac80-fb375cbc5f78": {
         "active": true,
@@ -1430,7 +1430,7 @@
         "venue_id": "v-7ecdc061-3850-5388-865f-f697462bbc10"
       },
       "v-8437cb49-dd3e-5c8c-a924-f3ca32bcd323": {
-        "active": true,
+        "active": false,
         "first_seen": "2026-10-02",
         "history": [
           {
@@ -1446,15 +1446,18 @@
               "FSA businesses at the postcode do not match the pub name; CAMRA not checked"
             ],
             "status": "unverified"
+          },
+          {
+            "date": "2026-10-06",
+            "reasons": [],
+            "status": "resolved"
           }
         ],
         "last_checked": "2026-10-06",
         "place_name": "Solihull",
         "postcode": "B91 3JU",
         "pub_name": "Fieldhouse",
-        "reasons": [
-          "FSA businesses at the postcode do not match the pub name; CAMRA not checked"
-        ],
+        "reasons": [],
         "reference": {},
         "research": {
           "checked_at": "2026-10-06",
@@ -1480,20 +1483,10 @@
           ],
           "status": "candidates_found"
         },
-        "source_checks": {
-          "camra": {
-            "status": "not_checked"
-          },
-          "fsa": {
-            "name_matches": 0,
-            "postcode_matches": 1,
-            "records_returned": 1,
-            "status": "no_name_match"
-          }
-        },
+        "source_checks": {},
         "source_error": null,
-        "status": "unverified",
-        "unverified": true,
+        "status": "resolved",
+        "unverified": false,
         "venue_id": "v-8437cb49-dd3e-5c8c-a924-f3ca32bcd323"
       },
       "v-8627142a-ac1d-5f2d-9602-8a2777baa6b9": {
@@ -3376,7 +3369,7 @@
       }
     },
     "schema_version": 1,
-    "unverified_count": 16
+    "unverified_count": 15
   },
   "schema_version": 1,
   "venues": {
@@ -26580,6 +26573,22 @@
         "postcode": "B91 3JU",
         "pub_name": "Fieldhouse"
       },
+      "location_approvals": [
+        {
+          "checked_at": "2026-10-06",
+          "owner_instruction": "no this is better 52°23'48.5\"N 1°47'10.2\"W but double check before",
+          "previous_pin": null,
+          "rejected_camra": {
+            "lat": 52.3969,
+            "lng": -1.7881,
+            "reason": "CAMRA point is about 131 metres west of the owner-reviewed pub location.",
+            "url": "https://camra.org.uk/pubs/147121"
+          },
+          "review_method": "Owner supplied corrected DMS point in Codex; independently checked named Google Maps venue, building footprint and FSA address before publishing.",
+          "reviewed_by": "bristolbagpiper",
+          "source_url": "https://www.google.com/maps/place/The+Fieldhouse/@52.3967912,-1.7889766,17z/data=!3m1!4b1!4m6!3m5!1s0x4870b9d1e29f7895:0x5556bca0ee375d51!8m2!3d52.3967912!4d-1.7864017!16s%2Fg%2F1tjfg8kp"
+        }
+      ],
       "location_research": {
         "checked_at": "2026-10-06",
         "coverage": {
@@ -26606,20 +26615,39 @@
       },
       "verification_attempt": {
         "checked_at": "2026-10-06",
-        "reason": "FSA businesses at the postcode do not match the pub name; CAMRA not checked",
-        "sources": {
-          "camra": {
-            "status": "not_checked"
-          },
-          "fsa": {
-            "name_matches": 0,
-            "postcode_matches": 1,
-            "records_returned": 1,
-            "status": "no_name_match"
-          }
-        }
+        "reason": "Owner-reviewed map correction; CAMRA coordinate rejected.",
+        "sources": {},
+        "status": "manual_review"
       },
-      "verified_pin": null
+      "verified_pin": {
+        "evidence": [
+          {
+            "checked_at": "2026-10-06",
+            "match": "owner_corrected_point_with_named_map_address_and_building_check",
+            "owner_supplied_coordinate": {
+              "lat": 52.396806,
+              "lng": -1.786167
+            },
+            "reference_address": "10 Knightcote Drive, Solihull",
+            "reference_coordinate": {
+              "lat": 52.3967912,
+              "lng": -1.7864017
+            },
+            "reference_name": "The Fieldhouse",
+            "reference_postcode": "B91 3JU",
+            "reviewed_by": "bristolbagpiper",
+            "source": "manual_named_place_map",
+            "supporting_address_urls": [
+              "https://ratings.food.gov.uk/business/1528449/the-fieldhouse-ember-inn-hillfield",
+              "https://www.emberinns.co.uk/nationalsearch/eastandwestmidlands/the-fieldhouse-solihull"
+            ],
+            "url": "https://www.google.com/maps/place/The+Fieldhouse/@52.3967912,-1.7889766,17z/data=!3m1!4b1!4m6!3m5!1s0x4870b9d1e29f7895:0x5556bca0ee375d51!8m2!3d52.3967912!4d-1.7864017!16s%2Fg%2F1tjfg8kp"
+          }
+        ],
+        "lat": 52.396806,
+        "lng": -1.786167,
+        "source": "owner-reviewed-map"
+      }
     },
     "v-84cdc7ac-376d-5172-a8f8-6b618c1597cc": {
       "aliases": [

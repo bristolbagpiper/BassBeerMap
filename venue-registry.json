@@ -1,6 +1,6 @@
 {
   "location_review": {
-    "active_count": 55,
+    "active_count": 54,
     "records": {
       "v-082c00f2-cff9-55ca-ac80-fb375cbc5f78": {
         "active": true,
@@ -3282,7 +3282,7 @@
         "venue_id": "v-f92270dc-d910-5cd5-bb78-2607ed97659b"
       },
       "v-fb304b3f-2aa0-5fa6-9cca-5b4af6a1bb02": {
-        "active": true,
+        "active": false,
         "first_seen": "2026-10-02",
         "history": [
           {
@@ -3305,15 +3305,18 @@
               "CAMRA venue found, but its coordinate is 99.4 metres from FSA (maximum 50)"
             ],
             "status": "unverified"
+          },
+          {
+            "date": "2026-10-06",
+            "reasons": [],
+            "status": "resolved"
           }
         ],
         "last_checked": "2026-10-06",
         "place_name": "Henlow",
         "postcode": "SG16 6AA",
         "pub_name": "Engineers Arms",
-        "reasons": [
-          "CAMRA venue found, but its coordinate is 99.4 metres from FSA (maximum 50)"
-        ],
+        "reasons": [],
         "reference": {},
         "research": {
           "checked_at": "2026-10-06",
@@ -3358,13 +3361,13 @@
           }
         },
         "source_error": null,
-        "status": "unverified",
-        "unverified": true,
+        "status": "resolved",
+        "unverified": false,
         "venue_id": "v-fb304b3f-2aa0-5fa6-9cca-5b4af6a1bb02"
       }
     },
     "schema_version": 1,
-    "unverified_count": 20
+    "unverified_count": 19
   },
   "schema_version": 1,
   "venues": {
@@ -47731,6 +47734,16 @@
         "postcode": "SG16 6AA",
         "pub_name": "Engineers Arms"
       },
+      "location_approvals": [
+        {
+          "checked_at": "2026-10-06",
+          "comment_id": 6020979684,
+          "previous_pin": null,
+          "review_url": "https://github.com/bristolbagpiper/BassBeerMap/issues/5#issuecomment-6020979684",
+          "reviewed_by": "bristolbagpiper",
+          "source_url": "https://camra.org.uk/pubs/117202"
+        }
+      ],
       "location_research": {
         "checked_at": "2026-10-06",
         "coverage": {
@@ -47777,7 +47790,28 @@
           }
         }
       },
-      "verified_pin": null
+      "verified_pin": {
+        "evidence": [
+          {
+            "checked_at": "2026-10-06",
+            "match": "owner_reviewed_named_address_and_map",
+            "reference_address": "68 High Street",
+            "reference_coordinate": {
+              "lat": 52.0318638,
+              "lng": -0.2857571
+            },
+            "reference_name": "Engineers Arms, Henlow - Traditional Pub with 10 H",
+            "reference_postcode": "SG16 6AA",
+            "review_url": "https://github.com/bristolbagpiper/BassBeerMap/issues/5#issuecomment-6020979684",
+            "reviewed_by": "bristolbagpiper",
+            "source": "camra",
+            "url": "https://camra.org.uk/pubs/117202"
+          }
+        ],
+        "lat": 52.0318638,
+        "lng": -0.2857571,
+        "source": "owner-reviewed-camra"
+      }
     },
     "v-fb33af27-f124-54bc-a72a-73b8a4e7f888": {
       "aliases": [

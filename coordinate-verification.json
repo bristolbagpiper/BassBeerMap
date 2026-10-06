@@ -1,8 +1,8 @@
 {
   "counts": {
-    "postcode_approximate": 18,
+    "postcode_approximate": 17,
     "venue_coordinate_requires_review": 2,
-    "verified_venue": 1024
+    "verified_venue": 1025
   },
   "generated_at": "2026-10-06",
   "policy": {
@@ -9349,13 +9349,31 @@
       "venue_id": "v-96c69280-8350-5291-9fb1-4267938024b9"
     },
     "engineers arms|henlow|sg16 6aa": {
-      "coordinate_source": "postcode",
-      "display_precision": "postcode",
-      "evidence": [],
+      "coordinate_source": "owner-reviewed-camra",
+      "display_precision": "venue",
+      "evidence": [
+        {
+          "checked_at": "2026-10-06",
+          "match": "owner_reviewed_named_address_and_map",
+          "reference_address": "68 High Street",
+          "reference_coordinate": {
+            "lat": 52.0318638,
+            "lng": -0.2857571
+          },
+          "reference_name": "Engineers Arms, Henlow - Traditional Pub with 10 H",
+          "reference_postcode": "SG16 6AA",
+          "review_url": "https://github.com/bristolbagpiper/BassBeerMap/issues/5#issuecomment-6020979684",
+          "reviewed_by": "bristolbagpiper",
+          "source": "camra",
+          "url": "https://camra.org.uk/pubs/117202"
+        }
+      ],
+      "lat": 52.0318638,
+      "lng": -0.2857571,
       "place_name": "Henlow",
       "postcode": "SG16 6AA",
       "pub_name": "Engineers Arms",
-      "status": "postcode_approximate",
+      "status": "verified_venue",
       "venue_id": "v-fb304b3f-2aa0-5fa6-9cca-5b4af6a1bb02"
     },
     "essex arms|watford: cassiobury|wd17 3eg": {

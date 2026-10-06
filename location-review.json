@@ -1,5 +1,5 @@
 {
-  "active_count": 55,
+  "active_count": 54,
   "records": {
     "v-082c00f2-cff9-55ca-ac80-fb375cbc5f78": {
       "active": true,
@@ -3281,7 +3281,7 @@
       "venue_id": "v-f92270dc-d910-5cd5-bb78-2607ed97659b"
     },
     "v-fb304b3f-2aa0-5fa6-9cca-5b4af6a1bb02": {
-      "active": true,
+      "active": false,
       "first_seen": "2026-10-02",
       "history": [
         {
@@ -3304,15 +3304,18 @@
             "CAMRA venue found, but its coordinate is 99.4 metres from FSA (maximum 50)"
           ],
           "status": "unverified"
+        },
+        {
+          "date": "2026-10-06",
+          "reasons": [],
+          "status": "resolved"
         }
       ],
       "last_checked": "2026-10-06",
       "place_name": "Henlow",
       "postcode": "SG16 6AA",
       "pub_name": "Engineers Arms",
-      "reasons": [
-        "CAMRA venue found, but its coordinate is 99.4 metres from FSA (maximum 50)"
-      ],
+      "reasons": [],
       "reference": {},
       "research": {
         "checked_at": "2026-10-06",
@@ -3357,11 +3360,11 @@
         }
       },
       "source_error": null,
-      "status": "unverified",
-      "unverified": true,
+      "status": "resolved",
+      "unverified": false,
       "venue_id": "v-fb304b3f-2aa0-5fa6-9cca-5b4af6a1bb02"
     }
   },
   "schema_version": 1,
-  "unverified_count": 20
+  "unverified_count": 19
 }

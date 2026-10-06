@@ -1,8 +1,8 @@
 {
   "counts": {
-    "postcode_approximate": 17,
+    "postcode_approximate": 16,
     "venue_coordinate_requires_review": 2,
-    "verified_venue": 1025
+    "verified_venue": 1026
   },
   "generated_at": "2026-10-06",
   "policy": {
@@ -2027,13 +2027,31 @@
       "venue_id": "v-152d1ab1-df05-55e1-a620-e4f9d08cdfd6"
     },
     "black cat|bristol: bedminster|bs3 3lh": {
-      "coordinate_source": "postcode",
-      "display_precision": "postcode",
-      "evidence": [],
+      "coordinate_source": "owner-reviewed-camra",
+      "display_precision": "venue",
+      "evidence": [
+        {
+          "checked_at": "2026-10-06",
+          "match": "owner_reviewed_named_address_and_map",
+          "reference_address": "26 West Street",
+          "reference_coordinate": {
+            "lat": 51.439399719238,
+            "lng": -2.6019699573517
+          },
+          "reference_name": "Black Cat, Bedminster, Bristol - Street Corner Local",
+          "reference_postcode": "BS3 3LH",
+          "review_url": "https://github.com/bristolbagpiper/BassBeerMap/issues/5#issuecomment-6021036206",
+          "reviewed_by": "bristolbagpiper",
+          "source": "camra",
+          "url": "https://camra.org.uk/pubs/113976"
+        }
+      ],
+      "lat": 51.439399719238,
+      "lng": -2.6019699573517,
       "place_name": "Bristol: Bedminster",
       "postcode": "BS3 3LH",
       "pub_name": "Black Cat",
-      "status": "postcode_approximate",
+      "status": "verified_venue",
       "venue_id": "v-e7af2655-33ef-50e0-beb2-9f67fcbfb565"
     },
     "black cat|liverpool: mossley hill|l18 8ag": {

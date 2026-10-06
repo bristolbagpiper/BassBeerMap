@@ -1,6 +1,6 @@
 {
   "location_review": {
-    "active_count": 54,
+    "active_count": 53,
     "records": {
       "v-082c00f2-cff9-55ca-ac80-fb375cbc5f78": {
         "active": true,
@@ -2934,7 +2934,7 @@
         "venue_id": "v-e5b5b588-c46c-5c56-bd76-758f3c2cf5a8"
       },
       "v-e7af2655-33ef-50e0-beb2-9f67fcbfb565": {
-        "active": true,
+        "active": false,
         "first_seen": "2026-10-02",
         "history": [
           {
@@ -2950,15 +2950,18 @@
               "FSA businesses at the postcode do not match the pub name; CAMRA not checked"
             ],
             "status": "unverified"
+          },
+          {
+            "date": "2026-10-06",
+            "reasons": [],
+            "status": "resolved"
           }
         ],
         "last_checked": "2026-10-06",
         "place_name": "Bristol: Bedminster",
         "postcode": "BS3 3LH",
         "pub_name": "Black Cat",
-        "reasons": [
-          "FSA businesses at the postcode do not match the pub name; CAMRA not checked"
-        ],
+        "reasons": [],
         "reference": {},
         "research": {
           "checked_at": "2026-10-06",
@@ -2996,8 +2999,8 @@
           }
         },
         "source_error": null,
-        "status": "unverified",
-        "unverified": true,
+        "status": "resolved",
+        "unverified": false,
         "venue_id": "v-e7af2655-33ef-50e0-beb2-9f67fcbfb565"
       },
       "v-ee7d0ee2-cbc1-50cc-b108-7412c6245ced": {
@@ -3367,7 +3370,7 @@
       }
     },
     "schema_version": 1,
-    "unverified_count": 19
+    "unverified_count": 18
   },
   "schema_version": 1,
   "venues": {
@@ -43982,6 +43985,16 @@
         "postcode": "BS3 3LH",
         "pub_name": "Black Cat"
       },
+      "location_approvals": [
+        {
+          "checked_at": "2026-10-06",
+          "comment_id": 6021036206,
+          "previous_pin": null,
+          "review_url": "https://github.com/bristolbagpiper/BassBeerMap/issues/5#issuecomment-6021036206",
+          "reviewed_by": "bristolbagpiper",
+          "source_url": "https://camra.org.uk/pubs/113976"
+        }
+      ],
       "location_research": {
         "checked_at": "2026-10-06",
         "coverage": {
@@ -44021,7 +44034,28 @@
           }
         }
       },
-      "verified_pin": null
+      "verified_pin": {
+        "evidence": [
+          {
+            "checked_at": "2026-10-06",
+            "match": "owner_reviewed_named_address_and_map",
+            "reference_address": "26 West Street",
+            "reference_coordinate": {
+              "lat": 51.439399719238,
+              "lng": -2.6019699573517
+            },
+            "reference_name": "Black Cat, Bedminster, Bristol - Street Corner Local",
+            "reference_postcode": "BS3 3LH",
+            "review_url": "https://github.com/bristolbagpiper/BassBeerMap/issues/5#issuecomment-6021036206",
+            "reviewed_by": "bristolbagpiper",
+            "source": "camra",
+            "url": "https://camra.org.uk/pubs/113976"
+          }
+        ],
+        "lat": 51.439399719238,
+        "lng": -2.6019699573517,
+        "source": "owner-reviewed-camra"
+      }
     },
     "v-e7bad941-21fe-54ea-ac10-8e31c62bd593": {
       "aliases": [

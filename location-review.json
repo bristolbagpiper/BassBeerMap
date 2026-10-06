@@ -1,5 +1,5 @@
 {
-  "active_count": 54,
+  "active_count": 53,
   "records": {
     "v-082c00f2-cff9-55ca-ac80-fb375cbc5f78": {
       "active": true,
@@ -2933,7 +2933,7 @@
       "venue_id": "v-e5b5b588-c46c-5c56-bd76-758f3c2cf5a8"
     },
     "v-e7af2655-33ef-50e0-beb2-9f67fcbfb565": {
-      "active": true,
+      "active": false,
       "first_seen": "2026-10-02",
       "history": [
         {
@@ -2949,15 +2949,18 @@
             "FSA businesses at the postcode do not match the pub name; CAMRA not checked"
           ],
           "status": "unverified"
+        },
+        {
+          "date": "2026-10-06",
+          "reasons": [],
+          "status": "resolved"
         }
       ],
       "last_checked": "2026-10-06",
       "place_name": "Bristol: Bedminster",
       "postcode": "BS3 3LH",
       "pub_name": "Black Cat",
-      "reasons": [
-        "FSA businesses at the postcode do not match the pub name; CAMRA not checked"
-      ],
+      "reasons": [],
       "reference": {},
       "research": {
         "checked_at": "2026-10-06",
@@ -2995,8 +2998,8 @@
         }
       },
       "source_error": null,
-      "status": "unverified",
-      "unverified": true,
+      "status": "resolved",
+      "unverified": false,
       "venue_id": "v-e7af2655-33ef-50e0-beb2-9f67fcbfb565"
     },
     "v-ee7d0ee2-cbc1-50cc-b108-7412c6245ced": {
@@ -3366,5 +3369,5 @@
     }
   },
   "schema_version": 1,
-  "unverified_count": 19
+  "unverified_count": 18
 }

@@ -1,8 +1,8 @@
 {
   "counts": {
-    "postcode_approximate": 13,
+    "postcode_approximate": 12,
     "venue_coordinate_requires_review": 2,
-    "verified_venue": 1029
+    "verified_venue": 1030
   },
   "generated_at": "2026-10-06",
   "policy": {
@@ -10640,13 +10640,31 @@
       "venue_id": "v-8131d496-39be-5f8f-a17d-b58660aeda1b"
     },
     "george|upton|ox11 9jj": {
-      "coordinate_source": "postcode",
-      "display_precision": "postcode",
-      "evidence": [],
+      "coordinate_source": "owner-reviewed-camra",
+      "display_precision": "venue",
+      "evidence": [
+        {
+          "checked_at": "2026-10-06",
+          "match": "owner_reviewed_named_address_and_map",
+          "reference_address": "Reading Road",
+          "reference_coordinate": {
+            "lat": 51.576951,
+            "lng": -1.263203
+          },
+          "reference_name": "George at Upton, Upton - Real Ale Pub with Larg",
+          "reference_postcode": "OX11 9JJ",
+          "review_url": "https://github.com/bristolbagpiper/BassBeerMap/issues/5#issuecomment-6021377902",
+          "reviewed_by": "bristolbagpiper",
+          "source": "camra",
+          "url": "https://camra.org.uk/pubs/143719"
+        }
+      ],
+      "lat": 51.576951,
+      "lng": -1.263203,
       "place_name": "Upton",
       "postcode": "OX11 9JJ",
       "pub_name": "George",
-      "status": "postcode_approximate",
+      "status": "verified_venue",
       "venue_id": "v-2451def0-aade-5ca9-921b-dd1733d901a4"
     },
     "george|youlgrave|de45 1uw": {

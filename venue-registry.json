@@ -1,6 +1,6 @@
 {
   "location_review": {
-    "active_count": 50,
+    "active_count": 49,
     "records": {
       "v-082c00f2-cff9-55ca-ac80-fb375cbc5f78": {
         "active": true,
@@ -306,7 +306,7 @@
         "venue_id": "v-175a24db-4014-523b-b0fc-54194c96e3d7"
       },
       "v-2451def0-aade-5ca9-921b-dd1733d901a4": {
-        "active": true,
+        "active": false,
         "first_seen": "2026-10-02",
         "history": [
           {
@@ -322,15 +322,18 @@
               "FSA businesses at the postcode do not match the pub name; CAMRA not checked"
             ],
             "status": "unverified"
+          },
+          {
+            "date": "2026-10-06",
+            "reasons": [],
+            "status": "resolved"
           }
         ],
         "last_checked": "2026-10-06",
         "place_name": "Upton",
         "postcode": "OX11 9JJ",
         "pub_name": "George",
-        "reasons": [
-          "FSA businesses at the postcode do not match the pub name; CAMRA not checked"
-        ],
+        "reasons": [],
         "reference": {},
         "research": {
           "checked_at": "2026-10-06",
@@ -368,8 +371,8 @@
           }
         },
         "source_error": null,
-        "status": "unverified",
-        "unverified": true,
+        "status": "resolved",
+        "unverified": false,
         "venue_id": "v-2451def0-aade-5ca9-921b-dd1733d901a4"
       },
       "v-24865350-c8b8-5220-878f-27452e3d1a13": {
@@ -3369,7 +3372,7 @@
       }
     },
     "schema_version": 1,
-    "unverified_count": 15
+    "unverified_count": 14
   },
   "schema_version": 1,
   "venues": {
@@ -10064,7 +10067,8 @@
     },
     "v-2451def0-aade-5ca9-921b-dd1733d901a4": {
       "aliases": [
-        "george|upton|ox11 9jj"
+        "george|upton|ox11 9jj",
+        "george at upton|upton|ox11 9jj"
       ],
       "current_key": "george|upton|ox11 9jj",
       "listing": {
@@ -10078,6 +10082,16 @@
         "postcode": "OX11 9JJ",
         "pub_name": "George"
       },
+      "location_approvals": [
+        {
+          "checked_at": "2026-10-06",
+          "comment_id": 6021377902,
+          "previous_pin": null,
+          "review_url": "https://github.com/bristolbagpiper/BassBeerMap/issues/5#issuecomment-6021377902",
+          "reviewed_by": "bristolbagpiper",
+          "source_url": "https://camra.org.uk/pubs/143719"
+        }
+      ],
       "location_research": {
         "checked_at": "2026-10-06",
         "coverage": {
@@ -10117,7 +10131,28 @@
           }
         }
       },
-      "verified_pin": null
+      "verified_pin": {
+        "evidence": [
+          {
+            "checked_at": "2026-10-06",
+            "match": "owner_reviewed_named_address_and_map",
+            "reference_address": "Reading Road",
+            "reference_coordinate": {
+              "lat": 51.576951,
+              "lng": -1.263203
+            },
+            "reference_name": "George at Upton, Upton - Real Ale Pub with Larg",
+            "reference_postcode": "OX11 9JJ",
+            "review_url": "https://github.com/bristolbagpiper/BassBeerMap/issues/5#issuecomment-6021377902",
+            "reviewed_by": "bristolbagpiper",
+            "source": "camra",
+            "url": "https://camra.org.uk/pubs/143719"
+          }
+        ],
+        "lat": 51.576951,
+        "lng": -1.263203,
+        "source": "owner-reviewed-camra"
+      }
     },
     "v-2464a15c-36d6-5352-a32a-fb781a6437e5": {
       "aliases": [

@@ -1,5 +1,5 @@
 {
-  "active_count": 50,
+  "active_count": 49,
   "records": {
     "v-082c00f2-cff9-55ca-ac80-fb375cbc5f78": {
       "active": true,
@@ -305,7 +305,7 @@
       "venue_id": "v-175a24db-4014-523b-b0fc-54194c96e3d7"
     },
     "v-2451def0-aade-5ca9-921b-dd1733d901a4": {
-      "active": true,
+      "active": false,
       "first_seen": "2026-10-02",
       "history": [
         {
@@ -321,15 +321,18 @@
             "FSA businesses at the postcode do not match the pub name; CAMRA not checked"
           ],
           "status": "unverified"
+        },
+        {
+          "date": "2026-10-06",
+          "reasons": [],
+          "status": "resolved"
         }
       ],
       "last_checked": "2026-10-06",
       "place_name": "Upton",
       "postcode": "OX11 9JJ",
       "pub_name": "George",
-      "reasons": [
-        "FSA businesses at the postcode do not match the pub name; CAMRA not checked"
-      ],
+      "reasons": [],
       "reference": {},
       "research": {
         "checked_at": "2026-10-06",
@@ -367,8 +370,8 @@
         }
       },
       "source_error": null,
-      "status": "unverified",
-      "unverified": true,
+      "status": "resolved",
+      "unverified": false,
       "venue_id": "v-2451def0-aade-5ca9-921b-dd1733d901a4"
     },
     "v-24865350-c8b8-5220-878f-27452e3d1a13": {
@@ -3368,5 +3371,5 @@
     }
   },
   "schema_version": 1,
-  "unverified_count": 15
+  "unverified_count": 14
 }

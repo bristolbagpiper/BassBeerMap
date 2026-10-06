@@ -53,7 +53,30 @@
         "Reference venue name changed"
       ],
       "reference": {},
-      "research": {},
+      "research": {
+        "checked_at": "2026-10-06",
+        "coverage": {
+          "complete": false,
+          "records_returned": 250,
+          "reported_total": 593
+        },
+        "proposals": [
+          {
+            "address": "12 Litherland Road.",
+            "distance_from_postcode_metres": 3,
+            "lat": 53.4493,
+            "lng": -2.98685,
+            "name": "Jawbone Tavern, Bootle Est. 1802",
+            "postcode": "L20 3BZ",
+            "postcode_agrees": true,
+            "score": 2,
+            "source_status": "named_page_checked",
+            "town": "Liverpool",
+            "url": "https://camra.org.uk/pubs/165886"
+          }
+        ],
+        "status": "candidates_found"
+      },
       "source_checks": {
         "camra": {
           "status": "conflict",
@@ -85,7 +108,16 @@
         "Reference venue name changed"
       ],
       "reference": {},
-      "research": {},
+      "research": {
+        "checked_at": "2026-10-06",
+        "coverage": {
+          "complete": true,
+          "records_returned": 500,
+          "reported_total": 439
+        },
+        "proposals": [],
+        "status": "no_candidate"
+      },
       "source_checks": {
         "camra": {
           "status": "conflict",
@@ -291,7 +323,7 @@
           "status": "unverified"
         }
       ],
-      "last_checked": "2026-10-05",
+      "last_checked": "2026-10-06",
       "place_name": "Upton",
       "postcode": "OX11 9JJ",
       "pub_name": "George",
@@ -300,10 +332,10 @@
       ],
       "reference": {},
       "research": {
-        "checked_at": "2026-10-02",
+        "checked_at": "2026-10-06",
         "coverage": {
           "complete": true,
-          "records_returned": 272,
+          "records_returned": 293,
           "reported_total": 43
         },
         "proposals": [
@@ -390,7 +422,7 @@
           "status": "unverified"
         }
       ],
-      "last_checked": "2026-10-05",
+      "last_checked": "2026-10-06",
       "place_name": "Cheswardine",
       "postcode": "TF9 2RS",
       "pub_name": "Red Lion",
@@ -399,7 +431,7 @@
       ],
       "reference": {},
       "research": {
-        "checked_at": "2026-10-02",
+        "checked_at": "2026-10-06",
         "coverage": {
           "complete": true,
           "records_returned": 81,
@@ -969,7 +1001,7 @@
           "status": "unverified"
         }
       ],
-      "last_checked": "2026-10-05",
+      "last_checked": "2026-10-06",
       "place_name": "Newbold",
       "postcode": "LE67 8HP",
       "pub_name": "Gelsmoor",
@@ -978,7 +1010,7 @@
       ],
       "reference": {},
       "research": {
-        "checked_at": "2026-10-02",
+        "checked_at": "2026-10-06",
         "coverage": {
           "complete": true,
           "records_returned": 70,
@@ -1182,7 +1214,7 @@
           "status": "unverified"
         }
       ],
-      "last_checked": "2026-10-02",
+      "last_checked": "2026-10-06",
       "place_name": "Wishaw",
       "postcode": "B76 9QL",
       "pub_name": "Cock Inn",
@@ -1191,10 +1223,10 @@
       ],
       "reference": {},
       "research": {
-        "checked_at": "2026-10-02",
+        "checked_at": "2026-10-06",
         "coverage": {
           "complete": true,
-          "records_returned": 361,
+          "records_returned": 181,
           "reported_total": 111
         },
         "proposals": [
@@ -1409,7 +1441,7 @@
           "status": "unverified"
         }
       ],
-      "last_checked": "2026-10-02",
+      "last_checked": "2026-10-06",
       "place_name": "Solihull",
       "postcode": "B91 3JU",
       "pub_name": "Fieldhouse",
@@ -1418,7 +1450,7 @@
       ],
       "reference": {},
       "research": {
-        "checked_at": "2026-10-02",
+        "checked_at": "2026-10-06",
         "coverage": {
           "complete": true,
           "records_returned": 228,
@@ -1551,7 +1583,7 @@
           "status": "unverified"
         }
       ],
-      "last_checked": "2026-10-02",
+      "last_checked": "2026-10-06",
       "place_name": "Hartford",
       "postcode": "CW8 1QL",
       "pub_name": "Whillows",
@@ -1560,10 +1592,10 @@
       ],
       "reference": {},
       "research": {
-        "checked_at": "2026-10-02",
+        "checked_at": "2026-10-06",
         "coverage": {
           "complete": true,
-          "records_returned": 130,
+          "records_returned": 241,
           "reported_total": 124
         },
         "proposals": [
@@ -1650,7 +1682,7 @@
           "status": "unverified"
         }
       ],
-      "last_checked": "2026-10-02",
+      "last_checked": "2026-10-06",
       "place_name": "Cardiff: Whitchurch",
       "postcode": "CF14 2AA",
       "pub_name": "Earl Haig Club",
@@ -1659,7 +1691,7 @@
       ],
       "reference": {},
       "research": {
-        "checked_at": "2026-10-02",
+        "checked_at": "2026-10-06",
         "coverage": {
           "complete": false,
           "records_returned": 250,
@@ -1670,7 +1702,7 @@
       },
       "source_checks": {
         "camra": {
-          "records_returned": 43,
+          "records_returned": 159,
           "status": "unmatched"
         },
         "fsa": {
@@ -1811,7 +1843,7 @@
           "status": "unverified"
         }
       ],
-      "last_checked": "2026-10-02",
+      "last_checked": "2026-10-06",
       "place_name": "Witney",
       "postcode": "OX28 6AU",
       "pub_name": "New Inn",
@@ -1820,10 +1852,10 @@
       ],
       "reference": {},
       "research": {
-        "checked_at": "2026-10-02",
+        "checked_at": "2026-10-06",
         "coverage": {
           "complete": true,
-          "records_returned": 94,
+          "records_returned": 302,
           "reported_total": 52
         },
         "proposals": [
@@ -1910,7 +1942,7 @@
           "status": "unverified"
         }
       ],
-      "last_checked": "2026-10-02",
+      "last_checked": "2026-10-06",
       "place_name": "Holmes Chapel",
       "postcode": "CW4 7AQ",
       "pub_name": "Old Red Lion",
@@ -1919,7 +1951,7 @@
       ],
       "reference": {},
       "research": {
-        "checked_at": "2026-10-02",
+        "checked_at": "2026-10-06",
         "coverage": {
           "complete": true,
           "records_returned": 77,
@@ -2009,7 +2041,7 @@
           "status": "unverified"
         }
       ],
-      "last_checked": "2026-10-02",
+      "last_checked": "2026-10-06",
       "place_name": "Biggleswade",
       "postcode": "SG18 0JH",
       "pub_name": "Golden Pheasant",
@@ -2018,7 +2050,7 @@
       ],
       "reference": {},
       "research": {
-        "checked_at": "2026-10-02",
+        "checked_at": "2026-10-06",
         "coverage": {
           "complete": true,
           "records_returned": 92,
@@ -2108,7 +2140,7 @@
           "status": "unverified"
         }
       ],
-      "last_checked": "2026-10-02",
+      "last_checked": "2026-10-06",
       "place_name": "Halmerend",
       "postcode": "ST7 8AG",
       "pub_name": "Railway",
@@ -2117,7 +2149,7 @@
       ],
       "reference": {},
       "research": {
-        "checked_at": "2026-10-02",
+        "checked_at": "2026-10-06",
         "coverage": {
           "complete": true,
           "records_returned": 179,
@@ -2239,7 +2271,7 @@
           "status": "unverified"
         }
       ],
-      "last_checked": "2026-10-02",
+      "last_checked": "2026-10-06",
       "place_name": "Aston on Trent",
       "postcode": "DE72 2AA",
       "pub_name": "Malt",
@@ -2248,7 +2280,7 @@
       ],
       "reference": {},
       "research": {
-        "checked_at": "2026-10-02",
+        "checked_at": "2026-10-06",
         "coverage": {
           "complete": true,
           "records_returned": 221,
@@ -2413,7 +2445,7 @@
           "status": "unverified"
         }
       ],
-      "last_checked": "2026-10-05",
+      "last_checked": "2026-10-06",
       "place_name": "Knaresborough",
       "postcode": "HG5 9AA",
       "pub_name": "Track & Sleeper",
@@ -2422,10 +2454,10 @@
       ],
       "reference": {},
       "research": {
-        "checked_at": "2026-10-02",
+        "checked_at": "2026-10-06",
         "coverage": {
           "complete": true,
-          "records_returned": 416,
+          "records_returned": 275,
           "reported_total": 166
         },
         "proposals": [
@@ -2512,7 +2544,7 @@
           "status": "unverified"
         }
       ],
-      "last_checked": "2026-10-05",
+      "last_checked": "2026-10-06",
       "place_name": "Crosshill",
       "postcode": "DE5 9SP",
       "pub_name": "Marquis of Ormonde",
@@ -2521,7 +2553,7 @@
       ],
       "reference": {},
       "research": {
-        "checked_at": "2026-10-02",
+        "checked_at": "2026-10-06",
         "coverage": {
           "complete": true,
           "records_returned": 354,
@@ -2579,7 +2611,7 @@
           "status": "unverified"
         }
       ],
-      "last_checked": "2026-10-05",
+      "last_checked": "2026-10-06",
       "place_name": "Cheswardine",
       "postcode": "TF9 2LP",
       "pub_name": "Wharf Tavern",
@@ -2588,7 +2620,7 @@
       ],
       "reference": {},
       "research": {
-        "checked_at": "2026-10-02",
+        "checked_at": "2026-10-06",
         "coverage": {
           "complete": true,
           "records_returned": 224,
@@ -2817,7 +2849,7 @@
           "status": "unverified"
         }
       ],
-      "last_checked": "2026-10-05",
+      "last_checked": "2026-10-06",
       "place_name": "Denbigh",
       "postcode": "LL16 4RD",
       "pub_name": "Brookhouse Mill",
@@ -2826,10 +2858,10 @@
       ],
       "reference": {},
       "research": {
-        "checked_at": "2026-10-02",
+        "checked_at": "2026-10-06",
         "coverage": {
           "complete": true,
-          "records_returned": 79,
+          "records_returned": 69,
           "reported_total": 33
         },
         "proposals": [
@@ -2916,7 +2948,7 @@
           "status": "unverified"
         }
       ],
-      "last_checked": "2026-10-05",
+      "last_checked": "2026-10-06",
       "place_name": "Bristol: Bedminster",
       "postcode": "BS3 3LH",
       "pub_name": "Black Cat",
@@ -2925,7 +2957,7 @@
       ],
       "reference": {},
       "research": {
-        "checked_at": "2026-10-02",
+        "checked_at": "2026-10-06",
         "coverage": {
           "complete": false,
           "records_returned": 283,
@@ -3165,7 +3197,7 @@
           "status": "unverified"
         }
       ],
-      "last_checked": "2026-10-05",
+      "last_checked": "2026-10-06",
       "place_name": "Hopwas",
       "postcode": "B78 3AB",
       "pub_name": "Tame Otter",
@@ -3174,10 +3206,10 @@
       ],
       "reference": {},
       "research": {
-        "checked_at": "2026-10-02",
+        "checked_at": "2026-10-06",
         "coverage": {
           "complete": true,
-          "records_returned": 142,
+          "records_returned": 342,
           "reported_total": 92
         },
         "proposals": [
@@ -3271,7 +3303,7 @@
           "status": "unverified"
         }
       ],
-      "last_checked": "2026-10-05",
+      "last_checked": "2026-10-06",
       "place_name": "Henlow",
       "postcode": "SG16 6AA",
       "pub_name": "Engineers Arms",
@@ -3280,7 +3312,7 @@
       ],
       "reference": {},
       "research": {
-        "checked_at": "2026-10-02",
+        "checked_at": "2026-10-06",
         "coverage": {
           "complete": true,
           "records_returned": 52,

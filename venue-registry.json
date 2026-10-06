@@ -1,6 +1,6 @@
 {
   "location_review": {
-    "active_count": 48,
+    "active_count": 47,
     "records": {
       "v-082c00f2-cff9-55ca-ac80-fb375cbc5f78": {
         "active": true,
@@ -35,7 +35,7 @@
         "venue_id": "v-082c00f2-cff9-55ca-ac80-fb375cbc5f78"
       },
       "v-0a1afb42-ef83-5d3a-ac66-0f68788a05b3": {
-        "active": true,
+        "active": false,
         "first_seen": "2026-10-05",
         "history": [
           {
@@ -44,15 +44,18 @@
               "Reference venue name changed"
             ],
             "status": "unverified"
+          },
+          {
+            "date": "2026-10-06",
+            "reasons": [],
+            "status": "resolved"
           }
         ],
-        "last_checked": "2026-10-05",
+        "last_checked": "2026-10-06",
         "place_name": "Liverpool: Bootle",
         "postcode": "L20 3BZ",
         "pub_name": "Jawbone",
-        "reasons": [
-          "Reference venue name changed"
-        ],
+        "reasons": [],
         "reference": {},
         "research": {
           "checked_at": "2026-10-06",
@@ -78,15 +81,10 @@
           ],
           "status": "candidates_found"
         },
-        "source_checks": {
-          "camra": {
-            "status": "conflict",
-            "url": "https://camra.org.uk/pubs/165886"
-          }
-        },
+        "source_checks": {},
         "source_error": null,
-        "status": "unverified",
-        "unverified": true,
+        "status": "resolved",
+        "unverified": false,
         "venue_id": "v-0a1afb42-ef83-5d3a-ac66-0f68788a05b3"
       },
       "v-0bf6d728-dc07-530e-9784-fbd9a3bb00f0": {
@@ -3365,7 +3363,7 @@
       }
     },
     "schema_version": 1,
-    "unverified_count": 13
+    "unverified_count": 12
   },
   "schema_version": 1,
   "venues": {
@@ -5409,6 +5407,46 @@
         "postcode": "L20 3BZ",
         "pub_name": "Jawbone"
       },
+      "location_approvals": [
+        {
+          "approved_coordinate": {
+            "lat": 53.4493667,
+            "lng": -2.9869622
+          },
+          "checked_at": "2026-10-06",
+          "owner_instruction": "yes",
+          "previous_pin": {
+            "evidence": [
+              {
+                "checked_at": "2026-09-11",
+                "difference_metres": 10.6,
+                "match": "venue_name_and_full_postcode",
+                "reference_coordinate": {
+                  "lat": 53.4493907,
+                  "lng": -2.9868996
+                },
+                "reference_postcode": "L20 3BZ",
+                "source": "camra",
+                "url": "https://camra.org.uk/pubs/165886"
+              }
+            ],
+            "lat": 53.4493907,
+            "lng": -2.9868996,
+            "review_reason": "Reference venue name changed",
+            "review_required": true,
+            "source": "food-standards-agency-fhrs"
+          },
+          "rejected_camra": {
+            "lat": 53.4493,
+            "lng": -2.98685,
+            "reason": "Owner rejected neighbouring building southeast of the pub; approved corrected point about 10.5 metres northwest.",
+            "url": "https://camra.org.uk/pubs/165886"
+          },
+          "review_method": "Owner identified CAMRA point on the neighbouring building, then explicitly approved the corrected pub building point in Codex. Named map venue and official operator address checked before approval.",
+          "reviewed_by": "bristolbagpiper",
+          "source_url": "https://www.google.com/maps/place/The+Jawbone+Tavern/@53.4493667,-2.9895371,17z/data=!3m1!4b1!4m6!3m5!1s0x487b23e56c84de15:0xc2fb03b31180b28c!8m2!3d53.4493667!4d-2.9869622!16s%2Fg%2F1tgz9x44"
+        }
+      ],
       "location_research": {
         "checked_at": "2026-10-06",
         "coverage": {
@@ -5434,37 +5472,34 @@
         "status": "candidates_found"
       },
       "verification_attempt": {
-        "checked_at": "2026-10-05",
-        "reason": "Reference venue name changed",
-        "source_url": "https://camra.org.uk/pubs/165886",
-        "sources": {
-          "camra": {
-            "status": "conflict",
-            "url": "https://camra.org.uk/pubs/165886"
-          }
-        },
-        "status": "conflict"
+        "checked_at": "2026-10-06",
+        "reason": "Owner-approved pub building correction; neighbouring CAMRA point rejected.",
+        "sources": {},
+        "status": "manual_review"
       },
       "verified_pin": {
         "evidence": [
           {
-            "checked_at": "2026-09-11",
-            "difference_metres": 10.6,
-            "match": "venue_name_and_full_postcode",
+            "checked_at": "2026-10-06",
+            "match": "owner_approved_corrected_named_pub_building_and_operator_address",
+            "reference_address": "12 Litherland Road, Bootle",
             "reference_coordinate": {
-              "lat": 53.4493907,
-              "lng": -2.9868996
+              "lat": 53.4493667,
+              "lng": -2.9869622
             },
+            "reference_name": "Jawbone",
             "reference_postcode": "L20 3BZ",
-            "source": "camra",
-            "url": "https://camra.org.uk/pubs/165886"
+            "reviewed_by": "bristolbagpiper",
+            "source": "manual_named_place_map",
+            "supporting_address_urls": [
+              "https://thejawbonebootle.co.uk/contact-us/"
+            ],
+            "url": "https://www.google.com/maps/place/The+Jawbone+Tavern/@53.4493667,-2.9895371,17z/data=!3m1!4b1!4m6!3m5!1s0x487b23e56c84de15:0xc2fb03b31180b28c!8m2!3d53.4493667!4d-2.9869622!16s%2Fg%2F1tgz9x44"
           }
         ],
-        "lat": 53.4493907,
-        "lng": -2.9868996,
-        "review_reason": "Reference venue name changed",
-        "review_required": true,
-        "source": "food-standards-agency-fhrs"
+        "lat": 53.4493667,
+        "lng": -2.9869622,
+        "source": "owner-reviewed-map"
       }
     },
     "v-0a26f0a0-2101-5970-b83b-849414286df2": {

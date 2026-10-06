@@ -1,8 +1,8 @@
 {
   "counts": {
     "postcode_approximate": 11,
-    "venue_coordinate_requires_review": 2,
-    "verified_venue": 1031
+    "venue_coordinate_requires_review": 1,
+    "verified_venue": 1032
   },
   "generated_at": "2026-10-06",
   "policy": {
@@ -13313,28 +13313,33 @@
       "venue_id": "v-94f8ab82-2c06-58c9-8f82-839909efc207"
     },
     "jawbone|liverpool: bootle|l20 3bz": {
-      "coordinate_source": "food-standards-agency-fhrs",
-      "display_precision": "postcode",
+      "coordinate_source": "owner-reviewed-map",
+      "display_precision": "venue",
       "evidence": [
         {
-          "checked_at": "2026-09-11",
-          "difference_metres": 10.6,
-          "match": "venue_name_and_full_postcode",
+          "checked_at": "2026-10-06",
+          "match": "owner_approved_corrected_named_pub_building_and_operator_address",
+          "reference_address": "12 Litherland Road, Bootle",
           "reference_coordinate": {
-            "lat": 53.4493907,
-            "lng": -2.9868996
+            "lat": 53.4493667,
+            "lng": -2.9869622
           },
+          "reference_name": "Jawbone",
           "reference_postcode": "L20 3BZ",
-          "source": "camra",
-          "url": "https://camra.org.uk/pubs/165886"
+          "reviewed_by": "bristolbagpiper",
+          "source": "manual_named_place_map",
+          "supporting_address_urls": [
+            "https://thejawbonebootle.co.uk/contact-us/"
+          ],
+          "url": "https://www.google.com/maps/place/The+Jawbone+Tavern/@53.4493667,-2.9895371,17z/data=!3m1!4b1!4m6!3m5!1s0x487b23e56c84de15:0xc2fb03b31180b28c!8m2!3d53.4493667!4d-2.9869622!16s%2Fg%2F1tgz9x44"
         }
       ],
-      "lat": 53.4493907,
-      "lng": -2.9868996,
+      "lat": 53.4493667,
+      "lng": -2.9869622,
       "place_name": "Liverpool: Bootle",
       "postcode": "L20 3BZ",
       "pub_name": "Jawbone",
-      "status": "venue_coordinate_requires_review",
+      "status": "verified_venue",
       "venue_id": "v-0a1afb42-ef83-5d3a-ac66-0f68788a05b3"
     },
     "john marston|stoke: blurton|st3 2nq": {

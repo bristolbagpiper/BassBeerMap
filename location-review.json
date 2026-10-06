@@ -1,5 +1,5 @@
 {
-  "active_count": 48,
+  "active_count": 47,
   "records": {
     "v-082c00f2-cff9-55ca-ac80-fb375cbc5f78": {
       "active": true,
@@ -34,7 +34,7 @@
       "venue_id": "v-082c00f2-cff9-55ca-ac80-fb375cbc5f78"
     },
     "v-0a1afb42-ef83-5d3a-ac66-0f68788a05b3": {
-      "active": true,
+      "active": false,
       "first_seen": "2026-10-05",
       "history": [
         {
@@ -43,15 +43,18 @@
             "Reference venue name changed"
           ],
           "status": "unverified"
+        },
+        {
+          "date": "2026-10-06",
+          "reasons": [],
+          "status": "resolved"
         }
       ],
-      "last_checked": "2026-10-05",
+      "last_checked": "2026-10-06",
       "place_name": "Liverpool: Bootle",
       "postcode": "L20 3BZ",
       "pub_name": "Jawbone",
-      "reasons": [
-        "Reference venue name changed"
-      ],
+      "reasons": [],
       "reference": {},
       "research": {
         "checked_at": "2026-10-06",
@@ -77,15 +80,10 @@
         ],
         "status": "candidates_found"
       },
-      "source_checks": {
-        "camra": {
-          "status": "conflict",
-          "url": "https://camra.org.uk/pubs/165886"
-        }
-      },
+      "source_checks": {},
       "source_error": null,
-      "status": "unverified",
-      "unverified": true,
+      "status": "resolved",
+      "unverified": false,
       "venue_id": "v-0a1afb42-ef83-5d3a-ac66-0f68788a05b3"
     },
     "v-0bf6d728-dc07-530e-9784-fbd9a3bb00f0": {
@@ -3364,5 +3362,5 @@
     }
   },
   "schema_version": 1,
-  "unverified_count": 13
+  "unverified_count": 12
 }

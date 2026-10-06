@@ -1,6 +1,6 @@
 {
   "location_review": {
-    "active_count": 47,
+    "active_count": 46,
     "records": {
       "v-082c00f2-cff9-55ca-ac80-fb375cbc5f78": {
         "active": true,
@@ -2247,7 +2247,7 @@
         "venue_id": "v-c44530d3-b3ce-5bf5-a7dc-3a6275809182"
       },
       "v-c593e9bc-9520-503e-8267-a8896f8d375e": {
-        "active": true,
+        "active": false,
         "first_seen": "2026-10-02",
         "history": [
           {
@@ -2263,15 +2263,18 @@
               "FSA matching business coordinates are missing or disagree; CAMRA not checked"
             ],
             "status": "unverified"
+          },
+          {
+            "date": "2026-10-06",
+            "reasons": [],
+            "status": "resolved"
           }
         ],
         "last_checked": "2026-10-06",
         "place_name": "Aston on Trent",
         "postcode": "DE72 2AA",
         "pub_name": "Malt",
-        "reasons": [
-          "FSA matching business coordinates are missing or disagree; CAMRA not checked"
-        ],
+        "reasons": [],
         "reference": {},
         "research": {
           "checked_at": "2026-10-06",
@@ -2297,20 +2300,10 @@
           ],
           "status": "candidates_found"
         },
-        "source_checks": {
-          "camra": {
-            "status": "not_checked"
-          },
-          "fsa": {
-            "name_matches": 1,
-            "postcode_matches": 1,
-            "records_returned": 1,
-            "status": "missing_or_ambiguous_coordinates"
-          }
-        },
+        "source_checks": {},
         "source_error": null,
-        "status": "unverified",
-        "unverified": true,
+        "status": "resolved",
+        "unverified": false,
         "venue_id": "v-c593e9bc-9520-503e-8267-a8896f8d375e"
       },
       "v-c7575fb2-9a9e-5c73-aaad-76dfb8c5ba4b": {
@@ -3363,7 +3356,7 @@
       }
     },
     "schema_version": 1,
-    "unverified_count": 12
+    "unverified_count": 11
   },
   "schema_version": 1,
   "venues": {
@@ -38108,6 +38101,26 @@
         "postcode": "DE72 2AA",
         "pub_name": "Malt"
       },
+      "location_approvals": [
+        {
+          "approved_coordinate": {
+            "lat": 52.8615895,
+            "lng": -1.3842784
+          },
+          "checked_at": "2026-10-06",
+          "owner_instruction": "yes",
+          "previous_pin": null,
+          "rejected_camra": {
+            "lat": 52.861499,
+            "lng": -1.384398,
+            "reason": "CAMRA point appears on number 12; owner approved corrected pub point at number 14 to the northeast.",
+            "url": "https://camra.org.uk/pubs/143247"
+          },
+          "review_method": "Owner explicitly approved the corrected named pub building point in Codex after being shown that CAMRA placed the pin on number 12 rather than number 14. Named map venue and official operator address checked before approval.",
+          "reviewed_by": "bristolbagpiper",
+          "source_url": "https://www.google.com/maps/place/The+Malt/@52.861499,-1.3848325,20z/data=!3m5!1s0x4879e559ee847337:0x79d9e0b2314d1656!8m2!3d52.8615895!4d-1.3842784!16s%2Fg%2F1tlbj2cs"
+        }
+      ],
       "location_research": {
         "checked_at": "2026-10-06",
         "coverage": {
@@ -38134,20 +38147,34 @@
       },
       "verification_attempt": {
         "checked_at": "2026-10-06",
-        "reason": "FSA matching business coordinates are missing or disagree; CAMRA not checked",
-        "sources": {
-          "camra": {
-            "status": "not_checked"
-          },
-          "fsa": {
-            "name_matches": 1,
-            "postcode_matches": 1,
-            "records_returned": 1,
-            "status": "missing_or_ambiguous_coordinates"
-          }
-        }
+        "reason": "Owner-approved pub building correction; CAMRA point on number 12 rejected.",
+        "sources": {},
+        "status": "manual_review"
       },
-      "verified_pin": null
+      "verified_pin": {
+        "evidence": [
+          {
+            "checked_at": "2026-10-06",
+            "match": "owner_approved_corrected_named_pub_building_and_operator_address",
+            "reference_address": "14 The Green, Aston-on-Trent",
+            "reference_coordinate": {
+              "lat": 52.8615895,
+              "lng": -1.3842784
+            },
+            "reference_name": "Malt",
+            "reference_postcode": "DE72 2AA",
+            "reviewed_by": "bristolbagpiper",
+            "source": "manual_named_place_map",
+            "supporting_address_urls": [
+              "https://themaltataston.co.uk/contact/"
+            ],
+            "url": "https://www.google.com/maps/place/The+Malt/@52.861499,-1.3848325,20z/data=!3m5!1s0x4879e559ee847337:0x79d9e0b2314d1656!8m2!3d52.8615895!4d-1.3842784!16s%2Fg%2F1tlbj2cs"
+          }
+        ],
+        "lat": 52.8615895,
+        "lng": -1.3842784,
+        "source": "owner-reviewed-map"
+      }
     },
     "v-c60b06d1-3fa4-572f-b64c-d009ca792a1b": {
       "aliases": [

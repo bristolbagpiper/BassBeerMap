@@ -1,8 +1,8 @@
 {
   "counts": {
-    "postcode_approximate": 11,
+    "postcode_approximate": 10,
     "venue_coordinate_requires_review": 1,
-    "verified_venue": 1032
+    "verified_venue": 1033
   },
   "generated_at": "2026-10-06",
   "policy": {
@@ -15219,13 +15219,33 @@
       "venue_id": "v-bce902a8-ea2b-5c24-86c9-3c7c4f5dd04f"
     },
     "malt|aston on trent|de72 2aa": {
-      "coordinate_source": "postcode",
-      "display_precision": "postcode",
-      "evidence": [],
+      "coordinate_source": "owner-reviewed-map",
+      "display_precision": "venue",
+      "evidence": [
+        {
+          "checked_at": "2026-10-06",
+          "match": "owner_approved_corrected_named_pub_building_and_operator_address",
+          "reference_address": "14 The Green, Aston-on-Trent",
+          "reference_coordinate": {
+            "lat": 52.8615895,
+            "lng": -1.3842784
+          },
+          "reference_name": "Malt",
+          "reference_postcode": "DE72 2AA",
+          "reviewed_by": "bristolbagpiper",
+          "source": "manual_named_place_map",
+          "supporting_address_urls": [
+            "https://themaltataston.co.uk/contact/"
+          ],
+          "url": "https://www.google.com/maps/place/The+Malt/@52.861499,-1.3848325,20z/data=!3m5!1s0x4879e559ee847337:0x79d9e0b2314d1656!8m2!3d52.8615895!4d-1.3842784!16s%2Fg%2F1tlbj2cs"
+        }
+      ],
+      "lat": 52.8615895,
+      "lng": -1.3842784,
       "place_name": "Aston on Trent",
       "postcode": "DE72 2AA",
       "pub_name": "Malt",
-      "status": "postcode_approximate",
+      "status": "verified_venue",
       "venue_id": "v-c593e9bc-9520-503e-8267-a8896f8d375e"
     },
     "man in space|stoke: trentham|st4 8pz": {

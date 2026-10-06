@@ -1,5 +1,5 @@
 {
-  "active_count": 47,
+  "active_count": 46,
   "records": {
     "v-082c00f2-cff9-55ca-ac80-fb375cbc5f78": {
       "active": true,
@@ -2246,7 +2246,7 @@
       "venue_id": "v-c44530d3-b3ce-5bf5-a7dc-3a6275809182"
     },
     "v-c593e9bc-9520-503e-8267-a8896f8d375e": {
-      "active": true,
+      "active": false,
       "first_seen": "2026-10-02",
       "history": [
         {
@@ -2262,15 +2262,18 @@
             "FSA matching business coordinates are missing or disagree; CAMRA not checked"
           ],
           "status": "unverified"
+        },
+        {
+          "date": "2026-10-06",
+          "reasons": [],
+          "status": "resolved"
         }
       ],
       "last_checked": "2026-10-06",
       "place_name": "Aston on Trent",
       "postcode": "DE72 2AA",
       "pub_name": "Malt",
-      "reasons": [
-        "FSA matching business coordinates are missing or disagree; CAMRA not checked"
-      ],
+      "reasons": [],
       "reference": {},
       "research": {
         "checked_at": "2026-10-06",
@@ -2296,20 +2299,10 @@
         ],
         "status": "candidates_found"
       },
-      "source_checks": {
-        "camra": {
-          "status": "not_checked"
-        },
-        "fsa": {
-          "name_matches": 1,
-          "postcode_matches": 1,
-          "records_returned": 1,
-          "status": "missing_or_ambiguous_coordinates"
-        }
-      },
+      "source_checks": {},
       "source_error": null,
-      "status": "unverified",
-      "unverified": true,
+      "status": "resolved",
+      "unverified": false,
       "venue_id": "v-c593e9bc-9520-503e-8267-a8896f8d375e"
     },
     "v-c7575fb2-9a9e-5c73-aaad-76dfb8c5ba4b": {
@@ -3362,5 +3355,5 @@
     }
   },
   "schema_version": 1,
-  "unverified_count": 12
+  "unverified_count": 11
 }

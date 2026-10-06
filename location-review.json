@@ -1,5 +1,5 @@
 {
-  "active_count": 44,
+  "active_count": 43,
   "records": {
     "v-082c00f2-cff9-55ca-ac80-fb375cbc5f78": {
       "active": true,
@@ -1917,7 +1917,7 @@
       "venue_id": "v-ab01088f-5062-5b84-b768-e5727529aaab"
     },
     "v-af9b1483-3f9b-5b3f-bc8d-248d7927867f": {
-      "active": true,
+      "active": false,
       "first_seen": "2026-10-02",
       "history": [
         {
@@ -1933,15 +1933,18 @@
             "FSA matching business coordinates are missing or disagree; CAMRA not checked"
           ],
           "status": "unverified"
+        },
+        {
+          "date": "2026-10-06",
+          "reasons": [],
+          "status": "resolved"
         }
       ],
       "last_checked": "2026-10-06",
       "place_name": "Holmes Chapel",
       "postcode": "CW4 7AQ",
       "pub_name": "Old Red Lion",
-      "reasons": [
-        "FSA matching business coordinates are missing or disagree; CAMRA not checked"
-      ],
+      "reasons": [],
       "reference": {},
       "research": {
         "checked_at": "2026-10-06",
@@ -1979,8 +1982,8 @@
         }
       },
       "source_error": null,
-      "status": "unverified",
-      "unverified": true,
+      "status": "resolved",
+      "unverified": false,
       "venue_id": "v-af9b1483-3f9b-5b3f-bc8d-248d7927867f"
     },
     "v-b2a1d45e-8e0b-5274-acf9-fa3a099ee5dc": {
@@ -3351,5 +3354,5 @@
     }
   },
   "schema_version": 1,
-  "unverified_count": 9
+  "unverified_count": 8
 }

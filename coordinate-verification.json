@@ -1,8 +1,8 @@
 {
   "counts": {
-    "postcode_approximate": 8,
+    "postcode_approximate": 7,
     "venue_coordinate_requires_review": 1,
-    "verified_venue": 1035
+    "verified_venue": 1036
   },
   "generated_at": "2026-10-06",
   "policy": {
@@ -17625,13 +17625,31 @@
       "venue_id": "v-9c760e20-4078-55f6-b4c4-84dd7452638a"
     },
     "old red lion|holmes chapel|cw4 7aq": {
-      "coordinate_source": "postcode",
-      "display_precision": "postcode",
-      "evidence": [],
+      "coordinate_source": "owner-reviewed-camra",
+      "display_precision": "venue",
+      "evidence": [
+        {
+          "checked_at": "2026-10-06",
+          "match": "owner_reviewed_named_address_and_map",
+          "reference_address": "19 London Road",
+          "reference_coordinate": {
+            "lat": 53.20174989,
+            "lng": -2.357275009
+          },
+          "reference_name": "Old Red Lion, Holmes Chapel Historic Pub",
+          "reference_postcode": "CW4 7AQ",
+          "review_url": "https://github.com/bristolbagpiper/BassBeerMap/issues/5#issuecomment-6021811796",
+          "reviewed_by": "bristolbagpiper",
+          "source": "camra",
+          "url": "https://camra.org.uk/pubs/173616"
+        }
+      ],
+      "lat": 53.20174989,
+      "lng": -2.357275009,
       "place_name": "Holmes Chapel",
       "postcode": "CW4 7AQ",
       "pub_name": "Old Red Lion",
-      "status": "postcode_approximate",
+      "status": "verified_venue",
       "venue_id": "v-af9b1483-3f9b-5b3f-bc8d-248d7927867f"
     },
     "old red lion|ipstones|st10 2na": {

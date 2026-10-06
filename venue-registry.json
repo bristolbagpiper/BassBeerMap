@@ -1,6 +1,6 @@
 {
   "location_review": {
-    "active_count": 52,
+    "active_count": 51,
     "records": {
       "v-082c00f2-cff9-55ca-ac80-fb375cbc5f78": {
         "active": true,
@@ -1200,7 +1200,7 @@
         "venue_id": "v-6f77cbc4-dc76-59ba-a8ab-1c135bf8ce8d"
       },
       "v-738a0c0c-b9c3-511f-a6d0-a367e87bcd9f": {
-        "active": true,
+        "active": false,
         "first_seen": "2026-10-02",
         "history": [
           {
@@ -1216,15 +1216,18 @@
               "FSA returned no businesses at the listed full postcode; CAMRA not checked"
             ],
             "status": "unverified"
+          },
+          {
+            "date": "2026-10-06",
+            "reasons": [],
+            "status": "resolved"
           }
         ],
         "last_checked": "2026-10-06",
         "place_name": "Wishaw",
         "postcode": "B76 9QL",
         "pub_name": "Cock Inn",
-        "reasons": [
-          "FSA returned no businesses at the listed full postcode; CAMRA not checked"
-        ],
+        "reasons": [],
         "reference": {},
         "research": {
           "checked_at": "2026-10-06",
@@ -1262,8 +1265,8 @@
           }
         },
         "source_error": null,
-        "status": "unverified",
-        "unverified": true,
+        "status": "resolved",
+        "unverified": false,
         "venue_id": "v-738a0c0c-b9c3-511f-a6d0-a367e87bcd9f"
       },
       "v-77bfd415-1ea1-52ef-8f2d-e150d84689bf": {
@@ -3373,7 +3376,7 @@
       }
     },
     "schema_version": 1,
-    "unverified_count": 17
+    "unverified_count": 16
   },
   "schema_version": 1,
   "venues": {
@@ -23525,6 +23528,16 @@
         "postcode": "B76 9QL",
         "pub_name": "Cock Inn"
       },
+      "location_approvals": [
+        {
+          "checked_at": "2026-10-06",
+          "comment_id": 6021143009,
+          "previous_pin": null,
+          "review_url": "https://github.com/bristolbagpiper/BassBeerMap/issues/5#issuecomment-6021143009",
+          "reviewed_by": "bristolbagpiper",
+          "source_url": "https://camra.org.uk/pubs/131745"
+        }
+      ],
       "location_research": {
         "checked_at": "2026-10-06",
         "coverage": {
@@ -23564,7 +23577,28 @@
           }
         }
       },
-      "verified_pin": null
+      "verified_pin": {
+        "evidence": [
+          {
+            "checked_at": "2026-10-06",
+            "match": "owner_reviewed_named_address_and_map",
+            "reference_address": "Bulls Lane",
+            "reference_coordinate": {
+              "lat": 52.5458,
+              "lng": -1.753646559525
+            },
+            "reference_name": "Cock Inn, Wishaw, Country Pub Dating from 1827",
+            "reference_postcode": "B76 9QL",
+            "review_url": "https://github.com/bristolbagpiper/BassBeerMap/issues/5#issuecomment-6021143009",
+            "reviewed_by": "bristolbagpiper",
+            "source": "camra",
+            "url": "https://camra.org.uk/pubs/131745"
+          }
+        ],
+        "lat": 52.5458,
+        "lng": -1.753646559525,
+        "source": "owner-reviewed-camra"
+      }
     },
     "v-73be82e0-fefe-5a10-8477-292bbe39ae23": {
       "aliases": [

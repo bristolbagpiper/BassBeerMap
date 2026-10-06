@@ -1,6 +1,6 @@
 {
   "location_review": {
-    "active_count": 53,
+    "active_count": 52,
     "records": {
       "v-082c00f2-cff9-55ca-ac80-fb375cbc5f78": {
         "active": true,
@@ -2835,7 +2835,7 @@
         "venue_id": "v-ded2483d-e3d6-5fcb-b861-5cdf3b53b664"
       },
       "v-dee50cac-ac0c-5801-a3aa-d5cb9fc35bfd": {
-        "active": true,
+        "active": false,
         "first_seen": "2026-10-02",
         "history": [
           {
@@ -2851,15 +2851,18 @@
               "FSA returned no businesses at the listed full postcode; CAMRA not checked"
             ],
             "status": "unverified"
+          },
+          {
+            "date": "2026-10-06",
+            "reasons": [],
+            "status": "resolved"
           }
         ],
         "last_checked": "2026-10-06",
         "place_name": "Denbigh",
         "postcode": "LL16 4RD",
         "pub_name": "Brookhouse Mill",
-        "reasons": [
-          "FSA returned no businesses at the listed full postcode; CAMRA not checked"
-        ],
+        "reasons": [],
         "reference": {},
         "research": {
           "checked_at": "2026-10-06",
@@ -2897,8 +2900,8 @@
           }
         },
         "source_error": null,
-        "status": "unverified",
-        "unverified": true,
+        "status": "resolved",
+        "unverified": false,
         "venue_id": "v-dee50cac-ac0c-5801-a3aa-d5cb9fc35bfd"
       },
       "v-e5b5b588-c46c-5c56-bd76-758f3c2cf5a8": {
@@ -3370,7 +3373,7 @@
       }
     },
     "schema_version": 1,
-    "unverified_count": 18
+    "unverified_count": 17
   },
   "schema_version": 1,
   "venues": {
@@ -42662,6 +42665,16 @@
         "postcode": "LL16 4RD",
         "pub_name": "Brookhouse Mill"
       },
+      "location_approvals": [
+        {
+          "checked_at": "2026-10-06",
+          "comment_id": 6021099499,
+          "previous_pin": null,
+          "review_url": "https://github.com/bristolbagpiper/BassBeerMap/issues/5#issuecomment-6021099499",
+          "reviewed_by": "bristolbagpiper",
+          "source_url": "https://camra.org.uk/pubs/136589"
+        }
+      ],
       "location_research": {
         "checked_at": "2026-10-06",
         "coverage": {
@@ -42701,7 +42714,28 @@
           }
         }
       },
-      "verified_pin": null
+      "verified_pin": {
+        "evidence": [
+          {
+            "checked_at": "2026-10-06",
+            "match": "owner_reviewed_named_address_and_map",
+            "reference_address": "Ruthin Road",
+            "reference_coordinate": {
+              "lat": 53.180941,
+              "lng": -3.390542
+            },
+            "reference_name": "Brookhouse Mill, Denbigh",
+            "reference_postcode": "LL16 4RD",
+            "review_url": "https://github.com/bristolbagpiper/BassBeerMap/issues/5#issuecomment-6021099499",
+            "reviewed_by": "bristolbagpiper",
+            "source": "camra",
+            "url": "https://camra.org.uk/pubs/136589"
+          }
+        ],
+        "lat": 53.180941,
+        "lng": -3.390542,
+        "source": "owner-reviewed-camra"
+      }
     },
     "v-df417cf2-1194-5613-8414-8dbc8b7760e4": {
       "aliases": [

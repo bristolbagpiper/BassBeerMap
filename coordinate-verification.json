@@ -1,8 +1,8 @@
 {
   "counts": {
-    "postcode_approximate": 16,
+    "postcode_approximate": 15,
     "venue_coordinate_requires_review": 2,
-    "verified_venue": 1026
+    "verified_venue": 1027
   },
   "generated_at": "2026-10-06",
   "policy": {
@@ -3933,13 +3933,31 @@
       "venue_id": "v-606ed382-96eb-537b-b81c-c995f62186e7"
     },
     "brookhouse mill|denbigh|ll16 4rd": {
-      "coordinate_source": "postcode",
-      "display_precision": "postcode",
-      "evidence": [],
+      "coordinate_source": "owner-reviewed-camra",
+      "display_precision": "venue",
+      "evidence": [
+        {
+          "checked_at": "2026-10-06",
+          "match": "owner_reviewed_named_address_and_map",
+          "reference_address": "Ruthin Road",
+          "reference_coordinate": {
+            "lat": 53.180941,
+            "lng": -3.390542
+          },
+          "reference_name": "Brookhouse Mill, Denbigh",
+          "reference_postcode": "LL16 4RD",
+          "review_url": "https://github.com/bristolbagpiper/BassBeerMap/issues/5#issuecomment-6021099499",
+          "reviewed_by": "bristolbagpiper",
+          "source": "camra",
+          "url": "https://camra.org.uk/pubs/136589"
+        }
+      ],
+      "lat": 53.180941,
+      "lng": -3.390542,
       "place_name": "Denbigh",
       "postcode": "LL16 4RD",
       "pub_name": "Brookhouse Mill",
-      "status": "postcode_approximate",
+      "status": "verified_venue",
       "venue_id": "v-dee50cac-ac0c-5801-a3aa-d5cb9fc35bfd"
     },
     "brothers arms|sheffield: heeley|s8 9tz": {

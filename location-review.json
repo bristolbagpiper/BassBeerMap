@@ -1,5 +1,5 @@
 {
-  "active_count": 53,
+  "active_count": 52,
   "records": {
     "v-082c00f2-cff9-55ca-ac80-fb375cbc5f78": {
       "active": true,
@@ -2834,7 +2834,7 @@
       "venue_id": "v-ded2483d-e3d6-5fcb-b861-5cdf3b53b664"
     },
     "v-dee50cac-ac0c-5801-a3aa-d5cb9fc35bfd": {
-      "active": true,
+      "active": false,
       "first_seen": "2026-10-02",
       "history": [
         {
@@ -2850,15 +2850,18 @@
             "FSA returned no businesses at the listed full postcode; CAMRA not checked"
           ],
           "status": "unverified"
+        },
+        {
+          "date": "2026-10-06",
+          "reasons": [],
+          "status": "resolved"
         }
       ],
       "last_checked": "2026-10-06",
       "place_name": "Denbigh",
       "postcode": "LL16 4RD",
       "pub_name": "Brookhouse Mill",
-      "reasons": [
-        "FSA returned no businesses at the listed full postcode; CAMRA not checked"
-      ],
+      "reasons": [],
       "reference": {},
       "research": {
         "checked_at": "2026-10-06",
@@ -2896,8 +2899,8 @@
         }
       },
       "source_error": null,
-      "status": "unverified",
-      "unverified": true,
+      "status": "resolved",
+      "unverified": false,
       "venue_id": "v-dee50cac-ac0c-5801-a3aa-d5cb9fc35bfd"
     },
     "v-e5b5b588-c46c-5c56-bd76-758f3c2cf5a8": {
@@ -3369,5 +3372,5 @@
     }
   },
   "schema_version": 1,
-  "unverified_count": 18
+  "unverified_count": 17
 }

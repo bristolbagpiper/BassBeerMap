@@ -1,8 +1,8 @@
 {
   "counts": {
-    "postcode_approximate": 9,
+    "postcode_approximate": 8,
     "venue_coordinate_requires_review": 1,
-    "verified_venue": 1034
+    "verified_venue": 1035
   },
   "generated_at": "2026-10-06",
   "policy": {
@@ -16801,13 +16801,33 @@
       "venue_id": "v-fa521ab0-a824-5979-9f85-b6ea884f185a"
     },
     "new inn|witney|ox28 6au": {
-      "coordinate_source": "postcode",
-      "display_precision": "postcode",
-      "evidence": [],
+      "coordinate_source": "owner-reviewed-map",
+      "display_precision": "venue",
+      "evidence": [
+        {
+          "checked_at": "2026-10-06",
+          "match": "owner_approved_corrected_named_pub_building_and_historic_england_address",
+          "reference_address": "111 Corn Street, Witney",
+          "reference_coordinate": {
+            "lat": 51.7844139,
+            "lng": -1.4921222
+          },
+          "reference_name": "New Inn",
+          "reference_postcode": "OX28 6AU",
+          "reviewed_by": "bristolbagpiper",
+          "source": "manual_named_place_map",
+          "supporting_address_urls": [
+            "https://historicengland.org.uk/listing/the-list/list-entry/1212943"
+          ],
+          "url": "https://www.google.com/maps/place/The+New+Inn/@51.7843,-1.4925345,20z/data=!3m5!1s0x4876ccf5e3980fa7:0xc361c280adbaacfa!8m2!3d51.7844139!4d-1.4921222!16s%2Fg%2F1tjdqv64"
+        }
+      ],
+      "lat": 51.7844139,
+      "lng": -1.4921222,
       "place_name": "Witney",
       "postcode": "OX28 6AU",
       "pub_name": "New Inn",
-      "status": "postcode_approximate",
+      "status": "verified_venue",
       "venue_id": "v-a77b7a83-4e63-5bea-9561-4e596c904bd9"
     },
     "new oxford|salford|m3 6db": {

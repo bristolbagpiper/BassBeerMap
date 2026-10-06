@@ -1,5 +1,5 @@
 {
-  "active_count": 45,
+  "active_count": 44,
   "records": {
     "v-082c00f2-cff9-55ca-ac80-fb375cbc5f78": {
       "active": true,
@@ -1825,7 +1825,7 @@
       "venue_id": "v-a53a96f3-3672-5b95-a6f6-c15ee1b976eb"
     },
     "v-a77b7a83-4e63-5bea-9561-4e596c904bd9": {
-      "active": true,
+      "active": false,
       "first_seen": "2026-10-02",
       "history": [
         {
@@ -1841,15 +1841,18 @@
             "FSA returned no businesses at the listed full postcode; CAMRA not checked"
           ],
           "status": "unverified"
+        },
+        {
+          "date": "2026-10-06",
+          "reasons": [],
+          "status": "resolved"
         }
       ],
       "last_checked": "2026-10-06",
       "place_name": "Witney",
       "postcode": "OX28 6AU",
       "pub_name": "New Inn",
-      "reasons": [
-        "FSA returned no businesses at the listed full postcode; CAMRA not checked"
-      ],
+      "reasons": [],
       "reference": {},
       "research": {
         "checked_at": "2026-10-06",
@@ -1875,20 +1878,10 @@
         ],
         "status": "candidates_found"
       },
-      "source_checks": {
-        "camra": {
-          "status": "not_checked"
-        },
-        "fsa": {
-          "name_matches": 0,
-          "postcode_matches": 0,
-          "records_returned": 0,
-          "status": "no_postcode_match"
-        }
-      },
+      "source_checks": {},
       "source_error": null,
-      "status": "unverified",
-      "unverified": true,
+      "status": "resolved",
+      "unverified": false,
       "venue_id": "v-a77b7a83-4e63-5bea-9561-4e596c904bd9"
     },
     "v-ab01088f-5062-5b84-b768-e5727529aaab": {
@@ -3358,5 +3351,5 @@
     }
   },
   "schema_version": 1,
-  "unverified_count": 10
+  "unverified_count": 9
 }

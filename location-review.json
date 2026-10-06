@@ -1,5 +1,5 @@
 {
-  "active_count": 56,
+  "active_count": 55,
   "records": {
     "v-082c00f2-cff9-55ca-ac80-fb375cbc5f78": {
       "active": true,
@@ -976,7 +976,7 @@
       "venue_id": "v-6312a106-c5ed-5161-86b8-ef30d0350f84"
     },
     "v-6af2f717-350a-53d0-a01f-9df032b46a49": {
-      "active": true,
+      "active": false,
       "first_seen": "2026-10-02",
       "history": [
         {
@@ -999,15 +999,18 @@
             "CAMRA venue found, but its coordinate is 474.3 metres from FSA (maximum 50)"
           ],
           "status": "unverified"
+        },
+        {
+          "date": "2026-10-06",
+          "reasons": [],
+          "status": "resolved"
         }
       ],
       "last_checked": "2026-10-06",
       "place_name": "Newbold",
       "postcode": "LE67 8HP",
       "pub_name": "Gelsmoor",
-      "reasons": [
-        "CAMRA venue found, but its coordinate is 474.3 metres from FSA (maximum 50)"
-      ],
+      "reasons": [],
       "reference": {},
       "research": {
         "checked_at": "2026-10-06",
@@ -1052,8 +1055,8 @@
         }
       },
       "source_error": null,
-      "status": "unverified",
-      "unverified": true,
+      "status": "resolved",
+      "unverified": false,
       "venue_id": "v-6af2f717-350a-53d0-a01f-9df032b46a49"
     },
     "v-6bd49cd0-7be5-52b0-a714-be39cb377356": {
@@ -3360,5 +3363,5 @@
     }
   },
   "schema_version": 1,
-  "unverified_count": 21
+  "unverified_count": 20
 }

@@ -1,10 +1,10 @@
 {
   "counts": {
-    "postcode_approximate": 19,
+    "postcode_approximate": 18,
     "venue_coordinate_requires_review": 2,
-    "verified_venue": 1023
+    "verified_venue": 1024
   },
-  "generated_at": "2026-10-05",
+  "generated_at": "2026-10-06",
   "policy": {
     "max_evidence_age_days": 400,
     "venue_pin": "Evidence-backed venue coordinates; unresolved venues use explicitly approximate postcode pins."
@@ -10261,13 +10261,31 @@
       "venue_id": "v-79e75ee7-d08c-5954-8c2e-4abe4061a8bd"
     },
     "gelsmoor|newbold|le67 8hp": {
-      "coordinate_source": "postcode",
-      "display_precision": "postcode",
-      "evidence": [],
+      "coordinate_source": "owner-reviewed-camra",
+      "display_precision": "venue",
+      "evidence": [
+        {
+          "checked_at": "2026-10-06",
+          "match": "owner_reviewed_named_address_and_map",
+          "reference_address": "Rempstone Road",
+          "reference_coordinate": {
+            "lat": 52.761627847673,
+            "lng": -1.402242960358
+          },
+          "reference_name": "Gelsmoor, Griffydam - Stone-baked Pizzas",
+          "reference_postcode": "LE67 8HP",
+          "review_url": "https://github.com/bristolbagpiper/BassBeerMap/issues/5#issuecomment-6020906178",
+          "reviewed_by": "bristolbagpiper",
+          "source": "camra",
+          "url": "https://camra.org.uk/pubs/171379"
+        }
+      ],
+      "lat": 52.761627847673,
+      "lng": -1.402242960358,
       "place_name": "Newbold",
       "postcode": "LE67 8HP",
       "pub_name": "Gelsmoor",
-      "status": "postcode_approximate",
+      "status": "verified_venue",
       "venue_id": "v-6af2f717-350a-53d0-a01f-9df032b46a49"
     },
     "general havelock|ilkeston|de7 5fw": {

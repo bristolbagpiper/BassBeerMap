@@ -1,6 +1,6 @@
 {
   "location_review": {
-    "active_count": 56,
+    "active_count": 55,
     "records": {
       "v-082c00f2-cff9-55ca-ac80-fb375cbc5f78": {
         "active": true,
@@ -977,7 +977,7 @@
         "venue_id": "v-6312a106-c5ed-5161-86b8-ef30d0350f84"
       },
       "v-6af2f717-350a-53d0-a01f-9df032b46a49": {
-        "active": true,
+        "active": false,
         "first_seen": "2026-10-02",
         "history": [
           {
@@ -1000,15 +1000,18 @@
               "CAMRA venue found, but its coordinate is 474.3 metres from FSA (maximum 50)"
             ],
             "status": "unverified"
+          },
+          {
+            "date": "2026-10-06",
+            "reasons": [],
+            "status": "resolved"
           }
         ],
         "last_checked": "2026-10-06",
         "place_name": "Newbold",
         "postcode": "LE67 8HP",
         "pub_name": "Gelsmoor",
-        "reasons": [
-          "CAMRA venue found, but its coordinate is 474.3 metres from FSA (maximum 50)"
-        ],
+        "reasons": [],
         "reference": {},
         "research": {
           "checked_at": "2026-10-06",
@@ -1053,8 +1056,8 @@
           }
         },
         "source_error": null,
-        "status": "unverified",
-        "unverified": true,
+        "status": "resolved",
+        "unverified": false,
         "venue_id": "v-6af2f717-350a-53d0-a01f-9df032b46a49"
       },
       "v-6bd49cd0-7be5-52b0-a714-be39cb377356": {
@@ -3361,7 +3364,7 @@
       }
     },
     "schema_version": 1,
-    "unverified_count": 21
+    "unverified_count": 20
   },
   "schema_version": 1,
   "venues": {
@@ -21767,6 +21770,16 @@
         "postcode": "LE67 8HP",
         "pub_name": "Gelsmoor"
       },
+      "location_approvals": [
+        {
+          "checked_at": "2026-10-06",
+          "comment_id": 6020906178,
+          "previous_pin": null,
+          "review_url": "https://github.com/bristolbagpiper/BassBeerMap/issues/5#issuecomment-6020906178",
+          "reviewed_by": "bristolbagpiper",
+          "source_url": "https://camra.org.uk/pubs/171379"
+        }
+      ],
       "location_research": {
         "checked_at": "2026-10-06",
         "coverage": {
@@ -21813,7 +21826,28 @@
           }
         }
       },
-      "verified_pin": null
+      "verified_pin": {
+        "evidence": [
+          {
+            "checked_at": "2026-10-06",
+            "match": "owner_reviewed_named_address_and_map",
+            "reference_address": "Rempstone Road",
+            "reference_coordinate": {
+              "lat": 52.761627847673,
+              "lng": -1.402242960358
+            },
+            "reference_name": "Gelsmoor, Griffydam - Stone-baked Pizzas",
+            "reference_postcode": "LE67 8HP",
+            "review_url": "https://github.com/bristolbagpiper/BassBeerMap/issues/5#issuecomment-6020906178",
+            "reviewed_by": "bristolbagpiper",
+            "source": "camra",
+            "url": "https://camra.org.uk/pubs/171379"
+          }
+        ],
+        "lat": 52.761627847673,
+        "lng": -1.402242960358,
+        "source": "owner-reviewed-camra"
+      }
     },
     "v-6b125009-409e-5ffd-9ebe-965459e8880e": {
       "aliases": [

@@ -1,6 +1,6 @@
 {
   "location_review": {
-    "active_count": 46,
+    "active_count": 45,
     "records": {
       "v-082c00f2-cff9-55ca-ac80-fb375cbc5f78": {
         "active": true,
@@ -2513,7 +2513,7 @@
         "venue_id": "v-cd9c571f-ae55-5d76-9afd-6c4ee3724019"
       },
       "v-d5b15256-e5b1-54a6-a3ec-0f839d4d90ff": {
-        "active": true,
+        "active": false,
         "first_seen": "2026-10-02",
         "history": [
           {
@@ -2529,15 +2529,18 @@
               "FSA businesses at the postcode do not match the pub name; CAMRA not checked"
             ],
             "status": "unverified"
+          },
+          {
+            "date": "2026-10-06",
+            "reasons": [],
+            "status": "resolved"
           }
         ],
         "last_checked": "2026-10-06",
         "place_name": "Crosshill",
         "postcode": "DE5 9SP",
         "pub_name": "Marquis of Ormonde",
-        "reasons": [
-          "FSA businesses at the postcode do not match the pub name; CAMRA not checked"
-        ],
+        "reasons": [],
         "reference": {},
         "research": {
           "checked_at": "2026-10-06",
@@ -2575,8 +2578,8 @@
           }
         },
         "source_error": null,
-        "status": "unverified",
-        "unverified": true,
+        "status": "resolved",
+        "unverified": false,
         "venue_id": "v-d5b15256-e5b1-54a6-a3ec-0f839d4d90ff"
       },
       "v-d95368c0-934f-5633-8229-7c363143a41c": {
@@ -3356,7 +3359,7 @@
       }
     },
     "schema_version": 1,
-    "unverified_count": 11
+    "unverified_count": 10
   },
   "schema_version": 1,
   "venues": {
@@ -41063,6 +41066,16 @@
         "postcode": "DE5 9SP",
         "pub_name": "Marquis of Ormonde"
       },
+      "location_approvals": [
+        {
+          "checked_at": "2026-10-06",
+          "comment_id": 6021709859,
+          "previous_pin": null,
+          "review_url": "https://github.com/bristolbagpiper/BassBeerMap/issues/5#issuecomment-6021709859",
+          "reviewed_by": "bristolbagpiper",
+          "source_url": "https://camra.org.uk/pubs/113347"
+        }
+      ],
       "location_research": {
         "checked_at": "2026-10-06",
         "coverage": {
@@ -41102,7 +41115,28 @@
           }
         }
       },
-      "verified_pin": null
+      "verified_pin": {
+        "evidence": [
+          {
+            "checked_at": "2026-10-06",
+            "match": "owner_reviewed_named_address_and_map",
+            "reference_address": "35 Codnor Denby Lane",
+            "reference_coordinate": {
+              "lat": 53.032725,
+              "lng": -1.379822
+            },
+            "reference_name": "Marquis of Ormonde, Crosshill - Reopened 2024",
+            "reference_postcode": "DE5 9SP",
+            "review_url": "https://github.com/bristolbagpiper/BassBeerMap/issues/5#issuecomment-6021709859",
+            "reviewed_by": "bristolbagpiper",
+            "source": "camra",
+            "url": "https://camra.org.uk/pubs/113347"
+          }
+        ],
+        "lat": 53.032725,
+        "lng": -1.379822,
+        "source": "owner-reviewed-camra"
+      }
     },
     "v-d5bba08a-9618-5a95-a5be-b61edae08a42": {
       "aliases": [

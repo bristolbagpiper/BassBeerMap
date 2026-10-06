@@ -1,8 +1,8 @@
 {
   "counts": {
-    "postcode_approximate": 10,
+    "postcode_approximate": 9,
     "venue_coordinate_requires_review": 1,
-    "verified_venue": 1033
+    "verified_venue": 1034
   },
   "generated_at": "2026-10-06",
   "policy": {
@@ -15523,13 +15523,31 @@
       "venue_id": "v-7f5d556a-433d-5732-af75-9cee3078da77"
     },
     "marquis of ormonde|crosshill|de5 9sp": {
-      "coordinate_source": "postcode",
-      "display_precision": "postcode",
-      "evidence": [],
+      "coordinate_source": "owner-reviewed-camra",
+      "display_precision": "venue",
+      "evidence": [
+        {
+          "checked_at": "2026-10-06",
+          "match": "owner_reviewed_named_address_and_map",
+          "reference_address": "35 Codnor Denby Lane",
+          "reference_coordinate": {
+            "lat": 53.032725,
+            "lng": -1.379822
+          },
+          "reference_name": "Marquis of Ormonde, Crosshill - Reopened 2024",
+          "reference_postcode": "DE5 9SP",
+          "review_url": "https://github.com/bristolbagpiper/BassBeerMap/issues/5#issuecomment-6021709859",
+          "reviewed_by": "bristolbagpiper",
+          "source": "camra",
+          "url": "https://camra.org.uk/pubs/113347"
+        }
+      ],
+      "lat": 53.032725,
+      "lng": -1.379822,
       "place_name": "Crosshill",
       "postcode": "DE5 9SP",
       "pub_name": "Marquis of Ormonde",
-      "status": "postcode_approximate",
+      "status": "verified_venue",
       "venue_id": "v-d5b15256-e5b1-54a6-a3ec-0f839d4d90ff"
     },
     "martins arms|colston bassett|ng12 3fd": {

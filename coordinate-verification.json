@@ -1,8 +1,8 @@
 {
   "counts": {
-    "postcode_approximate": 4,
+    "postcode_approximate": 3,
     "venue_coordinate_requires_review": 1,
-    "verified_venue": 1039
+    "verified_venue": 1040
   },
   "generated_at": "2026-10-09",
   "policy": {
@@ -25254,13 +25254,31 @@
       "venue_id": "v-e7bad941-21fe-54ea-ac10-8e31c62bd593"
     },
     "track & sleeper|knaresborough|hg5 9aa": {
-      "coordinate_source": "postcode",
-      "display_precision": "postcode",
-      "evidence": [],
+      "coordinate_source": "owner-reviewed-camra",
+      "display_precision": "venue",
+      "evidence": [
+        {
+          "checked_at": "2026-10-09",
+          "match": "owner_reviewed_named_address_and_map",
+          "reference_address": "Platform 2, Knaresborough Station",
+          "reference_coordinate": {
+            "lat": 54.009161293231,
+            "lng": -1.470227493796
+          },
+          "reference_name": "Track & Sleeper, Knaresborough",
+          "reference_postcode": "HG5 9AA",
+          "review_url": "https://github.com/bristolbagpiper/BassBeerMap/issues/5#issuecomment-6085093564",
+          "reviewed_by": "bristolbagpiper",
+          "source": "camra",
+          "url": "https://camra.org.uk/pubs/194581"
+        }
+      ],
+      "lat": 54.009161293231,
+      "lng": -1.470227493796,
       "place_name": "Knaresborough",
       "postcode": "HG5 9AA",
       "pub_name": "Track & Sleeper",
-      "status": "postcode_approximate",
+      "status": "verified_venue",
       "venue_id": "v-cca464cf-dad2-5a7b-b9f3-336afb873ad1"
     },
     "travellers rest|stanley|st9 9lx": {

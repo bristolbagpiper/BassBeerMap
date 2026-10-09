@@ -1,5 +1,5 @@
 {
-  "active_count": 41,
+  "active_count": 40,
   "records": {
     "v-082c00f2-cff9-55ca-ac80-fb375cbc5f78": {
       "active": true,
@@ -2405,7 +2405,7 @@
       "venue_id": "v-ca9d397b-4b8c-5e4b-8abe-ce419b87b80e"
     },
     "v-cca464cf-dad2-5a7b-b9f3-336afb873ad1": {
-      "active": true,
+      "active": false,
       "first_seen": "2026-10-02",
       "history": [
         {
@@ -2421,15 +2421,18 @@
             "FSA businesses at the postcode do not match the pub name; CAMRA not checked"
           ],
           "status": "unverified"
+        },
+        {
+          "date": "2026-10-09",
+          "reasons": [],
+          "status": "resolved"
         }
       ],
       "last_checked": "2026-10-09",
       "place_name": "Knaresborough",
       "postcode": "HG5 9AA",
       "pub_name": "Track & Sleeper",
-      "reasons": [
-        "FSA businesses at the postcode do not match the pub name; CAMRA not checked"
-      ],
+      "reasons": [],
       "reference": {},
       "research": {
         "checked_at": "2026-10-06",
@@ -2467,8 +2470,8 @@
         }
       },
       "source_error": null,
-      "status": "unverified",
-      "unverified": true,
+      "status": "resolved",
+      "unverified": false,
       "venue_id": "v-cca464cf-dad2-5a7b-b9f3-336afb873ad1"
     },
     "v-cd9c571f-ae55-5d76-9afd-6c4ee3724019": {
@@ -3362,5 +3365,5 @@
     }
   },
   "schema_version": 1,
-  "unverified_count": 5
+  "unverified_count": 4
 }

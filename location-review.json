@@ -1,5 +1,5 @@
 {
-  "active_count": 40,
+  "active_count": 39,
   "records": {
     "v-082c00f2-cff9-55ca-ac80-fb375cbc5f78": {
       "active": true,
@@ -2577,7 +2577,7 @@
       "venue_id": "v-d5b15256-e5b1-54a6-a3ec-0f839d4d90ff"
     },
     "v-d95368c0-934f-5633-8229-7c363143a41c": {
-      "active": true,
+      "active": false,
       "first_seen": "2026-10-02",
       "history": [
         {
@@ -2593,15 +2593,18 @@
             "FSA matching business coordinates are missing or disagree; CAMRA not checked"
           ],
           "status": "unverified"
+        },
+        {
+          "date": "2026-10-09",
+          "reasons": [],
+          "status": "resolved"
         }
       ],
       "last_checked": "2026-10-09",
       "place_name": "Cheswardine",
       "postcode": "TF9 2LP",
       "pub_name": "Wharf Tavern",
-      "reasons": [
-        "FSA matching business coordinates are missing or disagree; CAMRA not checked"
-      ],
+      "reasons": [],
       "reference": {},
       "research": {
         "checked_at": "2026-10-06",
@@ -2627,20 +2630,10 @@
         ],
         "status": "candidates_found"
       },
-      "source_checks": {
-        "camra": {
-          "status": "not_checked"
-        },
-        "fsa": {
-          "name_matches": 1,
-          "postcode_matches": 1,
-          "records_returned": 1,
-          "status": "missing_or_ambiguous_coordinates"
-        }
-      },
+      "source_checks": {},
       "source_error": null,
-      "status": "unverified",
-      "unverified": true,
+      "status": "resolved",
+      "unverified": false,
       "venue_id": "v-d95368c0-934f-5633-8229-7c363143a41c"
     },
     "v-d9e0eb61-f9f5-5a93-8e14-a75dc459b5d9": {
@@ -3365,5 +3358,5 @@
     }
   },
   "schema_version": 1,
-  "unverified_count": 4
+  "unverified_count": 3
 }

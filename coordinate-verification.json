@@ -1,8 +1,8 @@
 {
   "counts": {
-    "postcode_approximate": 3,
+    "postcode_approximate": 2,
     "venue_coordinate_requires_review": 1,
-    "verified_venue": 1040
+    "verified_venue": 1041
   },
   "generated_at": "2026-10-09",
   "policy": {
@@ -26986,13 +26986,35 @@
       "venue_id": "v-d63ce0bc-e06c-5cae-a586-ef5e0978d05a"
     },
     "wharf tavern|cheswardine|tf9 2lp": {
-      "coordinate_source": "postcode",
-      "display_precision": "postcode",
-      "evidence": [],
+      "coordinate_source": "owner-reviewed-map",
+      "display_precision": "venue",
+      "evidence": [
+        {
+          "checked_at": "2026-10-09",
+          "match": "owner_approved_pub_building_operator_address_and_phone",
+          "reference_address": "Goldstone, Market Drayton, Shropshire",
+          "reference_coordinate": {
+            "lat": 52.862185198558,
+            "lng": -2.43927164418
+          },
+          "reference_name": "Wharf Tavern",
+          "reference_postcode": "TF9 2LP",
+          "review_map_url": "https://www.google.com/maps?q=52.862185198558,-2.43927164418",
+          "reviewed_by": "bristolbagpiper",
+          "source": "manual_named_place_map",
+          "supporting_address_urls": [
+            "https://wharfgoldstone.co.uk/contact-us/",
+            "https://camra.org.uk/pubs/168664"
+          ],
+          "url": "https://www.google.com/maps?q=52.862185198558,-2.43927164418"
+        }
+      ],
+      "lat": 52.862185198558,
+      "lng": -2.43927164418,
       "place_name": "Cheswardine",
       "postcode": "TF9 2LP",
       "pub_name": "Wharf Tavern",
-      "status": "postcode_approximate",
+      "status": "verified_venue",
       "venue_id": "v-d95368c0-934f-5633-8229-7c363143a41c"
     },
     "wheatsheaf hotel|whitchurch|sy13 1ad": {

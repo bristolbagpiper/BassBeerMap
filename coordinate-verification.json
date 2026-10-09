@@ -1,10 +1,10 @@
 {
   "counts": {
-    "postcode_approximate": 7,
+    "postcode_approximate": 6,
     "venue_coordinate_requires_review": 1,
-    "verified_venue": 1036
+    "verified_venue": 1037
   },
-  "generated_at": "2026-10-06",
+  "generated_at": "2026-10-09",
   "policy": {
     "max_evidence_age_days": 400,
     "venue_pin": "Evidence-backed venue coordinates; unresolved venues use explicitly approximate postcode pins."
@@ -19502,13 +19502,31 @@
       "venue_id": "v-b48e22cf-70bc-5642-97c1-91fc1f7d693f"
     },
     "railway|halmerend|st7 8ag": {
-      "coordinate_source": "postcode",
-      "display_precision": "postcode",
-      "evidence": [],
+      "coordinate_source": "owner-reviewed-camra",
+      "display_precision": "venue",
+      "evidence": [
+        {
+          "checked_at": "2026-10-09",
+          "match": "owner_reviewed_named_address_and_map",
+          "reference_address": "High Street",
+          "reference_coordinate": {
+            "lat": 53.039074175456,
+            "lng": -2.306187605171
+          },
+          "reference_name": "Railway, Halmerend - Village Local with Open Fire",
+          "reference_postcode": "ST7 8AG",
+          "review_url": "https://github.com/bristolbagpiper/BassBeerMap/issues/5#issuecomment-6083800523",
+          "reviewed_by": "bristolbagpiper",
+          "source": "camra",
+          "url": "https://camra.org.uk/pubs/123016"
+        }
+      ],
+      "lat": 53.039074175456,
+      "lng": -2.306187605171,
       "place_name": "Halmerend",
       "postcode": "ST7 8AG",
       "pub_name": "Railway",
-      "status": "postcode_approximate",
+      "status": "verified_venue",
       "venue_id": "v-bdbe38ba-c071-5e80-aa38-d3fcba481aa7"
     },
     "railway|streatham sw16|sw16 5sd": {

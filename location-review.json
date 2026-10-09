@@ -1,5 +1,5 @@
 {
-  "active_count": 43,
+  "active_count": 42,
   "records": {
     "v-082c00f2-cff9-55ca-ac80-fb375cbc5f78": {
       "active": true,
@@ -2111,7 +2111,7 @@
       "venue_id": "v-baef8a0f-c094-5f52-a9c2-3a37df4ca657"
     },
     "v-bdbe38ba-c071-5e80-aa38-d3fcba481aa7": {
-      "active": true,
+      "active": false,
       "first_seen": "2026-10-02",
       "history": [
         {
@@ -2127,15 +2127,18 @@
             "FSA businesses at the postcode do not match the pub name; CAMRA not checked"
           ],
           "status": "unverified"
+        },
+        {
+          "date": "2026-10-09",
+          "reasons": [],
+          "status": "resolved"
         }
       ],
       "last_checked": "2026-10-06",
       "place_name": "Halmerend",
       "postcode": "ST7 8AG",
       "pub_name": "Railway",
-      "reasons": [
-        "FSA businesses at the postcode do not match the pub name; CAMRA not checked"
-      ],
+      "reasons": [],
       "reference": {},
       "research": {
         "checked_at": "2026-10-06",
@@ -2173,8 +2176,8 @@
         }
       },
       "source_error": null,
-      "status": "unverified",
-      "unverified": true,
+      "status": "resolved",
+      "unverified": false,
       "venue_id": "v-bdbe38ba-c071-5e80-aa38-d3fcba481aa7"
     },
     "v-c42a1691-cc71-5fac-a7fa-2b3c2112ec0e": {
@@ -3354,5 +3357,5 @@
     }
   },
   "schema_version": 1,
-  "unverified_count": 8
+  "unverified_count": 7
 }

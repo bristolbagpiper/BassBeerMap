@@ -1,0 +1,56 @@
+name: Independent location audit
+
+on:
+  schedule:
+    - cron: '17 4 * * *'
+  workflow_dispatch:
+    inputs:
+      full:
+        description: 'Compare every current location (otherwise rotate 45)'
+        type: boolean
+        default: false
+
+permissions:
+  contents: write
+
+concurrency:
+  group: directory-data
+  queue: max
+  cancel-in-progress: false
+
+jobs:
+  independent-audit:
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.13'
+      - name: Compare named official addresses without changing coordinates
+        env:
+          FULL_AUDIT: ${{ inputs.full }}
+        run: |
+          if [ "$FULL_AUDIT" = 'true' ]; then
+            python -u full_location_audit.py --publish
+          else
+            python -u full_location_audit.py --limit 45 --publish
+          fi
+      - name: Upload complete audit and review ordering
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: independent-location-audit
+          path: candidate-independent/
+          if-no-files-found: warn
+      - name: Publish report and review flags
+        run: |
+          python validate_directory_release.py
+          git add venue-registry.json location-review.json independent-audit-state.json audit/full-location-audit.json audit/full-location-audit.csv audit/full-location-audit.md
+          if git diff --cached --quiet; then exit 0; fi
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git commit -m 'Refresh independent location audit and review queue'
+          git push

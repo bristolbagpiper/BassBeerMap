@@ -1,8 +1,8 @@
-name: Weekly map validation
+name: Daily map validation
 
 on:
   schedule:
-    - cron: '47 6 * * 1'
+    - cron: '47 6 * * *'
   workflow_dispatch:
 
 permissions:
@@ -27,8 +27,8 @@ jobs:
           python-version: '3.13'
       - name: Validate all committed map assets
         run: python validate_directory_release.py --allow-expired-evidence
-      - name: Check the live map and rotate 30 external venue checks
-        run: python audit_map_health.py --limit 30
+      - name: Check the live map and rotate 45 external venue checks
+        run: python audit_map_health.py --limit 45
       - name: Upload health report and candidate artifacts
         if: always()
         uses: actions/upload-artifact@v4

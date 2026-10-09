@@ -2,7 +2,7 @@ name: Location review notifications
 
 on:
   workflow_run:
-    workflows: ['Update CSV From PDF', 'Weekly map validation', 'Research unverified locations', 'Apply reviewed location']
+    workflows: ['Update CSV From PDF', 'Weekly map validation', 'Daily map validation', 'Independent location audit', 'Research unverified locations', 'Apply reviewed location']
     types: [completed]
     branches: [main]
   workflow_dispatch:
@@ -44,7 +44,8 @@ jobs:
             const title = 'BassBeerMap coordinate review';
             const source = context.payload.workflow_run;
             const failed = source && ['failure', 'timed_out', 'action_required'].includes(source.conclusion);
-            const body = (failed ? `Import or audit failed: ${source.html_url}\n\n` : '') + fs.readFileSync('location-review-report.md', 'utf8');
+            const fullBody = (failed ? `Import or audit failed: ${source.html_url}\n\n` : '') + fs.readFileSync('location-review-report.md', 'utf8');
+            const body = fullBody.length > 60000 ? fullBody.slice(0, 58000) + '\n\nReport shortened for GitHub. Full audit: https://github.com/bristolbagpiper/BassBeerMap/blob/main/audit/full-location-audit.md' : fullBody;
             const issues = await github.paginate(github.rest.issues.listForRepo, {...context.repo, state:'open', per_page:100});
             const existing = issues.find(i => !i.pull_request && i.title === title);
             if (report.active_count || failed) {

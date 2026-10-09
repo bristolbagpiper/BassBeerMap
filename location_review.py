@@ -29,6 +29,12 @@ def build_review(rows, registry, ledger):
             latest = max((e.get('checked_at', '') for e in pin.get('evidence', [])), default='')
             if latest and (date.today() - date.fromisoformat(latest)).days >= 180:
                 reasons.append('Manual location evidence needs a fresh address/map check')
+        independent = entry.get('independent_location_check', {})
+        if independent.get('pin') == {key: pin.get(key) for key in ('lat', 'lng')}:
+            if independent.get('status') == 'coordinate_disagreement':
+                reasons.extend(independent.get('reasons', []))
+            elif independent.get('status') == 'unavailable':
+                reasons.append('Independent FSA comparison unavailable; last accepted pin retained')
         active = bool(reasons)
         if not active and identifier not in records:
             continue
@@ -99,5 +105,6 @@ def format_report(report):
             lines.append(f"- Candidate research source unavailable: {research.get('error', 'unknown error')}")
         lines.append('')
     lines += ['Review queue: https://github.com/bristolbagpiper/BassBeerMap/issues/5',
-              'Full history: https://github.com/bristolbagpiper/BassBeerMap/blob/main/location-review.json']
+              'Full history: https://github.com/bristolbagpiper/BassBeerMap/blob/main/location-review.json',
+              'Full independent audit: https://github.com/bristolbagpiper/BassBeerMap/blob/main/audit/full-location-audit.md']
     return '\n'.join(lines)

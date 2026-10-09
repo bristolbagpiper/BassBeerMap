@@ -9,6 +9,7 @@ import csv
 import json
 import re
 import time
+import threading
 from pathlib import Path
 from urllib.parse import urlencode
 from urllib.request import Request, urlopen
@@ -20,6 +21,7 @@ USER_AGENT = "BassBeerMap coordinate resolver (github.com/bristolbagpiper/BassBe
 GENERIC_SUFFIXES = {"arms", "inn", "hotel", "tavern", "pub", "bar", "club", "lounge", "ltd", "limited", "the", "and"}
 REQUEST_INTERVAL_SECONDS = 1
 last_request_started_at = 0.0
+request_lock = threading.Lock()
 
 
 def listing_name_variants(name):
@@ -72,10 +74,11 @@ def search(row, include_name=True):
         "Accept": "application/json",
         "x-api-version": "2",
     })
-    wait_seconds = REQUEST_INTERVAL_SECONDS - (time.monotonic() - last_request_started_at)
-    if wait_seconds > 0:
-        time.sleep(wait_seconds)
-    last_request_started_at = time.monotonic()
+    with request_lock:
+        wait_seconds = REQUEST_INTERVAL_SECONDS - (time.monotonic() - last_request_started_at)
+        if wait_seconds > 0:
+            time.sleep(wait_seconds)
+        last_request_started_at = time.monotonic()
     with urlopen(request, timeout=20) as response:
         payload = json.loads(response.read())
         if payload.get('meta', {}).get('totalPages', 1) > 1:

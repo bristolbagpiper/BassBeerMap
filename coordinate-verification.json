@@ -1,8 +1,8 @@
 {
   "counts": {
-    "postcode_approximate": 2,
+    "postcode_approximate": 1,
     "venue_coordinate_requires_review": 1,
-    "verified_venue": 1041
+    "verified_venue": 1042
   },
   "generated_at": "2026-10-09",
   "policy": {
@@ -27195,13 +27195,35 @@
       "venue_id": "v-0a05f37e-5e08-5a3c-acc9-d33d38fd4e49"
     },
     "whillows|hartford|cw8 1ql": {
-      "coordinate_source": "postcode",
-      "display_precision": "postcode",
-      "evidence": [],
+      "coordinate_source": "owner-reviewed-map",
+      "display_precision": "venue",
+      "evidence": [
+        {
+          "checked_at": "2026-10-09",
+          "match": "owner_approved_corrected_named_pub_building_operator_address",
+          "reference_address": "279 Chester Road, Hartford",
+          "reference_coordinate": {
+            "lat": 53.2452741,
+            "lng": -2.5452632
+          },
+          "reference_name": "Whillows",
+          "reference_postcode": "CW8 1QL",
+          "review_map_url": "https://www.google.com/maps?q=53.2452741,-2.5452632",
+          "reviewed_by": "bristolbagpiper",
+          "source": "manual_named_place_map",
+          "supporting_address_urls": [
+            "https://www.whillows.co.uk/",
+            "https://camra.org.uk/pubs/137907"
+          ],
+          "url": "https://www.google.com/maps?q=53.2452741,-2.5452632"
+        }
+      ],
+      "lat": 53.2452741,
+      "lng": -2.5452632,
       "place_name": "Hartford",
       "postcode": "CW8 1QL",
       "pub_name": "Whillows",
-      "status": "postcode_approximate",
+      "status": "verified_venue",
       "venue_id": "v-8b78ec45-eb22-5e68-9f4a-11fe9120e26f"
     },
     "whippet inn|newcastle-u-l: wolstanton|st5 0en": {

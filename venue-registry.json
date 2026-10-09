@@ -1,6 +1,6 @@
 {
   "location_review": {
-    "active_count": 39,
+    "active_count": 38,
     "records": {
       "v-082c00f2-cff9-55ca-ac80-fb375cbc5f78": {
         "active": true,
@@ -1559,7 +1559,7 @@
         "venue_id": "v-8627142a-ac1d-5f2d-9602-8a2777baa6b9"
       },
       "v-8b78ec45-eb22-5e68-9f4a-11fe9120e26f": {
-        "active": true,
+        "active": false,
         "first_seen": "2026-10-02",
         "history": [
           {
@@ -1575,15 +1575,18 @@
               "FSA businesses at the postcode do not match the pub name; CAMRA not checked"
             ],
             "status": "unverified"
+          },
+          {
+            "date": "2026-10-09",
+            "reasons": [],
+            "status": "resolved"
           }
         ],
         "last_checked": "2026-10-09",
         "place_name": "Hartford",
         "postcode": "CW8 1QL",
         "pub_name": "Whillows",
-        "reasons": [
-          "FSA businesses at the postcode do not match the pub name; CAMRA not checked"
-        ],
+        "reasons": [],
         "reference": {},
         "research": {
           "checked_at": "2026-10-06",
@@ -1609,20 +1612,10 @@
           ],
           "status": "candidates_found"
         },
-        "source_checks": {
-          "camra": {
-            "status": "not_checked"
-          },
-          "fsa": {
-            "name_matches": 0,
-            "postcode_matches": 7,
-            "records_returned": 7,
-            "status": "no_name_match"
-          }
-        },
+        "source_checks": {},
         "source_error": null,
-        "status": "unverified",
-        "unverified": true,
+        "status": "resolved",
+        "unverified": false,
         "venue_id": "v-8b78ec45-eb22-5e68-9f4a-11fe9120e26f"
       },
       "v-97a6ff26-33a9-521e-8875-2fa9a26e5f68": {
@@ -3359,7 +3352,7 @@
       }
     },
     "schema_version": 1,
-    "unverified_count": 3
+    "unverified_count": 2
   },
   "schema_version": 1,
   "venues": {
@@ -28031,6 +28024,30 @@
         "postcode": "CW8 1QL",
         "pub_name": "Whillows"
       },
+      "location_approvals": [
+        {
+          "approved_coordinate": {
+            "lat": 53.2452741,
+            "lng": -2.5452632
+          },
+          "checked_at": "2026-10-09",
+          "owner_instruction": "correct",
+          "previous_pin": null,
+          "rejected_camra": {
+            "lat": 53.244938,
+            "lng": -2.545728,
+            "reason": "Point appears at number 295, approximately 49 metres southwest of named Whillows venue at 279 Chester Road.",
+            "url": "https://camra.org.uk/pubs/137907"
+          },
+          "review_method": "Owner explicitly approved the corrected named Google Maps venue point after reviewing its building and decimal/DMS coordinates in Codex. Operator website and CAMRA confirm 279 Chester Road, Hartford, CW8 1QL. CAMRA coordinate approximately 49 metres southwest appears at number 295 and is rejected.",
+          "reviewed_by": "bristolbagpiper",
+          "source_url": "https://www.google.com/maps?q=53.2452741,-2.5452632",
+          "supporting_address_urls": [
+            "https://www.whillows.co.uk/",
+            "https://camra.org.uk/pubs/137907"
+          ]
+        }
+      ],
       "location_research": {
         "checked_at": "2026-10-06",
         "coverage": {
@@ -28057,20 +28074,36 @@
       },
       "verification_attempt": {
         "checked_at": "2026-10-09",
-        "reason": "FSA businesses at the postcode do not match the pub name; CAMRA not checked",
-        "sources": {
-          "camra": {
-            "status": "not_checked"
-          },
-          "fsa": {
-            "name_matches": 0,
-            "postcode_matches": 7,
-            "records_returned": 7,
-            "status": "no_name_match"
-          }
-        }
+        "reason": "Owner approved corrected named pub-building point; CAMRA point at number 295 rejected. Operator address corroborated.",
+        "sources": {},
+        "status": "manual_review"
       },
-      "verified_pin": null
+      "verified_pin": {
+        "evidence": [
+          {
+            "checked_at": "2026-10-09",
+            "match": "owner_approved_corrected_named_pub_building_operator_address",
+            "reference_address": "279 Chester Road, Hartford",
+            "reference_coordinate": {
+              "lat": 53.2452741,
+              "lng": -2.5452632
+            },
+            "reference_name": "Whillows",
+            "reference_postcode": "CW8 1QL",
+            "review_map_url": "https://www.google.com/maps?q=53.2452741,-2.5452632",
+            "reviewed_by": "bristolbagpiper",
+            "source": "manual_named_place_map",
+            "supporting_address_urls": [
+              "https://www.whillows.co.uk/",
+              "https://camra.org.uk/pubs/137907"
+            ],
+            "url": "https://www.google.com/maps?q=53.2452741,-2.5452632"
+          }
+        ],
+        "lat": 53.2452741,
+        "lng": -2.5452632,
+        "source": "owner-reviewed-map"
+      }
     },
     "v-8b99896d-af7b-5f1d-a6aa-6abc98b1ae60": {
       "aliases": [

@@ -1,5 +1,5 @@
 {
-  "active_count": 39,
+  "active_count": 38,
   "records": {
     "v-082c00f2-cff9-55ca-ac80-fb375cbc5f78": {
       "active": true,
@@ -1558,7 +1558,7 @@
       "venue_id": "v-8627142a-ac1d-5f2d-9602-8a2777baa6b9"
     },
     "v-8b78ec45-eb22-5e68-9f4a-11fe9120e26f": {
-      "active": true,
+      "active": false,
       "first_seen": "2026-10-02",
       "history": [
         {
@@ -1574,15 +1574,18 @@
             "FSA businesses at the postcode do not match the pub name; CAMRA not checked"
           ],
           "status": "unverified"
+        },
+        {
+          "date": "2026-10-09",
+          "reasons": [],
+          "status": "resolved"
         }
       ],
       "last_checked": "2026-10-09",
       "place_name": "Hartford",
       "postcode": "CW8 1QL",
       "pub_name": "Whillows",
-      "reasons": [
-        "FSA businesses at the postcode do not match the pub name; CAMRA not checked"
-      ],
+      "reasons": [],
       "reference": {},
       "research": {
         "checked_at": "2026-10-06",
@@ -1608,20 +1611,10 @@
         ],
         "status": "candidates_found"
       },
-      "source_checks": {
-        "camra": {
-          "status": "not_checked"
-        },
-        "fsa": {
-          "name_matches": 0,
-          "postcode_matches": 7,
-          "records_returned": 7,
-          "status": "no_name_match"
-        }
-      },
+      "source_checks": {},
       "source_error": null,
-      "status": "unverified",
-      "unverified": true,
+      "status": "resolved",
+      "unverified": false,
       "venue_id": "v-8b78ec45-eb22-5e68-9f4a-11fe9120e26f"
     },
     "v-97a6ff26-33a9-521e-8875-2fa9a26e5f68": {
@@ -3358,5 +3351,5 @@
     }
   },
   "schema_version": 1,
-  "unverified_count": 3
+  "unverified_count": 2
 }

@@ -1,6 +1,6 @@
 {
   "location_review": {
-    "active_count": 37,
+    "active_count": 36,
     "records": {
       "v-082c00f2-cff9-55ca-ac80-fb375cbc5f78": {
         "active": true,
@@ -88,7 +88,7 @@
         "venue_id": "v-0a1afb42-ef83-5d3a-ac66-0f68788a05b3"
       },
       "v-0bf6d728-dc07-530e-9784-fbd9a3bb00f0": {
-        "active": true,
+        "active": false,
         "first_seen": "2026-10-05",
         "history": [
           {
@@ -97,15 +97,18 @@
               "Reference venue name changed"
             ],
             "status": "unverified"
+          },
+          {
+            "date": "2026-10-09",
+            "reasons": [],
+            "status": "resolved"
           }
         ],
-        "last_checked": "2026-10-05",
+        "last_checked": "2026-10-09",
         "place_name": "Bristol: Whitchurch",
         "postcode": "BS14 0QF",
         "pub_name": "Royal British Legion (PMC)",
-        "reasons": [
-          "Reference venue name changed"
-        ],
+        "reasons": [],
         "reference": {},
         "research": {
           "checked_at": "2026-10-06",
@@ -117,19 +120,10 @@
           "proposals": [],
           "status": "no_candidate"
         },
-        "source_checks": {
-          "camra": {
-            "status": "conflict",
-            "url": "https://camra.org.uk/pubs/114783"
-          },
-          "camra-pubs-location-audit": {
-            "status": "conflict",
-            "url": "https://camra.org.uk/pubs/114783"
-          }
-        },
+        "source_checks": {},
         "source_error": null,
-        "status": "unverified",
-        "unverified": true,
+        "status": "resolved",
+        "unverified": false,
         "venue_id": "v-0bf6d728-dc07-530e-9784-fbd9a3bb00f0"
       },
       "v-0c3ec54b-16fe-56d8-9a41-dd9fa99f26f7": {
@@ -3344,7 +3338,7 @@
       }
     },
     "schema_version": 1,
-    "unverified_count": 1
+    "unverified_count": 0
   },
   "schema_version": 1,
   "venues": {
@@ -6093,6 +6087,62 @@
         "postcode": "BS14 0QF",
         "pub_name": "Royal British Legion (PMC)"
       },
+      "location_approvals": [
+        {
+          "approved_coordinate": {
+            "lat": 51.4061728,
+            "lng": -2.5560591
+          },
+          "checked_at": "2026-10-09",
+          "owner_instruction": "yes",
+          "previous_pin": {
+            "evidence": [
+              {
+                "checked_at": "2026-09-11",
+                "difference_metres": 0.0,
+                "match": "venue_name_and_full_postcode",
+                "reference_coordinate": {
+                  "lat": 51.406302,
+                  "lng": -2.555913
+                },
+                "reference_postcode": "BS14 0QF",
+                "source": "camra",
+                "url": "https://camra.org.uk/pubs/114783"
+              },
+              {
+                "checked_at": "2026-09-11",
+                "difference_metres": 0,
+                "match": "existing_pin_over_50m_from_matching_venue",
+                "reference_coordinate": {
+                  "lat": 51.406302,
+                  "lng": -2.555913
+                },
+                "reference_postcode": "BS14 0QF",
+                "source": "camra-pubs-location-audit",
+                "url": "https://camra.org.uk/pubs/114783"
+              }
+            ],
+            "lat": 51.406302,
+            "lng": -2.555913,
+            "review_reason": "Reference venue name changed",
+            "review_required": true,
+            "source": "camra-pubs-location-audit"
+          },
+          "review_method": "Owner explicitly approved the named Google Maps club-building point after reviewing its map and decimal/DMS coordinates in Codex. Operator website, Royal British Legion branch website, CAMRA and named map venue agree on Staunton Lane, Whitchurch, Bristol, BS14 0QF. Named map phone 01275 832345 matches operator. CAMRA point approximately 18 metres northeast is outside the building. The changed reference name Royal British Legion Whitchurch & Pensford refers to this same club.",
+          "reviewed_by": "bristolbagpiper",
+          "source_url": "https://www.google.com/maps?q=51.4061728,-2.5560591",
+          "superseded_camra": {
+            "lat": 51.406302,
+            "lng": -2.555913,
+            "reason": "CAMRA frontage point approximately 18 metres northeast is outside the building; owner approved named map point inside the club building.",
+            "url": "https://camra.org.uk/pubs/114783"
+          },
+          "supporting_address_urls": [
+            "https://www.whitchurchrbl.co.uk/contact-us",
+            "https://camra.org.uk/pubs/114783"
+          ]
+        }
+      ],
       "location_research": {
         "checked_at": "2026-10-06",
         "coverage": {
@@ -6104,53 +6154,36 @@
         "status": "no_candidate"
       },
       "verification_attempt": {
-        "checked_at": "2026-10-05",
-        "reason": "Reference venue name changed",
-        "source_url": "https://camra.org.uk/pubs/114783",
-        "sources": {
-          "camra": {
-            "status": "conflict",
-            "url": "https://camra.org.uk/pubs/114783"
-          },
-          "camra-pubs-location-audit": {
-            "status": "conflict",
-            "url": "https://camra.org.uk/pubs/114783"
-          }
-        },
-        "status": "conflict"
+        "checked_at": "2026-10-09",
+        "reason": "Owner approved named club-building point. Reference name change reviewed as same club; operator address and phone corroborated.",
+        "sources": {},
+        "status": "manual_review"
       },
       "verified_pin": {
         "evidence": [
           {
-            "checked_at": "2026-09-11",
-            "difference_metres": 0.0,
-            "match": "venue_name_and_full_postcode",
+            "checked_at": "2026-10-09",
+            "match": "owner_approved_corrected_named_pub_building_operator_address",
+            "reference_address": "Staunton Lane, Whitchurch, Bristol",
             "reference_coordinate": {
-              "lat": 51.406302,
-              "lng": -2.555913
+              "lat": 51.4061728,
+              "lng": -2.5560591
             },
+            "reference_name": "Royal British Legion (PMC)",
             "reference_postcode": "BS14 0QF",
-            "source": "camra",
-            "url": "https://camra.org.uk/pubs/114783"
-          },
-          {
-            "checked_at": "2026-09-11",
-            "difference_metres": 0,
-            "match": "existing_pin_over_50m_from_matching_venue",
-            "reference_coordinate": {
-              "lat": 51.406302,
-              "lng": -2.555913
-            },
-            "reference_postcode": "BS14 0QF",
-            "source": "camra-pubs-location-audit",
-            "url": "https://camra.org.uk/pubs/114783"
+            "review_map_url": "https://www.google.com/maps?q=51.4061728,-2.5560591",
+            "reviewed_by": "bristolbagpiper",
+            "source": "manual_named_place_map",
+            "supporting_address_urls": [
+              "https://www.whitchurchrbl.co.uk/contact-us",
+              "https://camra.org.uk/pubs/114783"
+            ],
+            "url": "https://www.google.com/maps?q=51.4061728,-2.5560591"
           }
         ],
-        "lat": 51.406302,
-        "lng": -2.555913,
-        "review_reason": "Reference venue name changed",
-        "review_required": true,
-        "source": "camra-pubs-location-audit"
+        "lat": 51.4061728,
+        "lng": -2.5560591,
+        "source": "owner-reviewed-map"
       }
     },
     "v-0c3ec54b-16fe-56d8-9a41-dd9fa99f26f7": {

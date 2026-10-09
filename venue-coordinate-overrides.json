@@ -2312,16 +2312,25 @@
       "source_url": "https://www.google.com/maps/search/?api=1&query=RAFA+Club+Yeadon+LS19+7NA"
     },
     "royal british legion (pmc)|bristol: whitchurch|bs14 0qf": {
-      "audit_reason": "existing_pin_over_50m_from_matching_venue",
-      "checked_at": "2026-09-11",
-      "lat": 51.406302,
-      "lng": -2.555913,
-      "previous_difference_metres": 68.8,
-      "previous_lat": 51.406325,
-      "previous_lng": -2.556904,
-      "previous_source": "food-standards-agency-fhrs",
-      "source": "camra-pubs-location-audit",
-      "source_url": "https://camra.org.uk/pubs/114783"
+      "audit_reason": "Owner approved named club building; supersedes CAMRA frontage override",
+      "checked_at": "2026-10-09",
+      "lat": 51.4061728,
+      "lng": -2.5560591,
+      "previous_override": {
+        "audit_reason": "existing_pin_over_50m_from_matching_venue",
+        "checked_at": "2026-09-11",
+        "lat": 51.406302,
+        "lng": -2.555913,
+        "previous_difference_metres": 68.8,
+        "previous_lat": 51.406325,
+        "previous_lng": -2.556904,
+        "previous_source": "food-standards-agency-fhrs",
+        "source": "camra-pubs-location-audit",
+        "source_url": "https://camra.org.uk/pubs/114783"
+      },
+      "reviewed_by": "bristolbagpiper",
+      "source": "owner-reviewed-map",
+      "source_url": "https://www.google.com/maps?q=51.4061728,-2.5560591"
     },
     "royal oak (the tiddly)|ellerdine heath|tf6 6rl": {
       "audit_reason": "postcode_fallback_replaced",
@@ -3152,7 +3161,7 @@
       "source": "camra-pubs-location-audit",
       "source_url": "https://camra.org.uk/pubs/123954"
     },
-    "y sgw\u00e2r (was ivy bush)|newcastle emlyn|sa38 9bg": {
+    "y sgwâr (was ivy bush)|newcastle emlyn|sa38 9bg": {
       "audit_reason": "postcode_fallback_replaced",
       "checked_at": "2026-09-11",
       "lat": 52.037091,

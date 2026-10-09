@@ -1,7 +1,6 @@
 {
   "counts": {
-    "venue_coordinate_requires_review": 1,
-    "verified_venue": 1043
+    "verified_venue": 1044
   },
   "generated_at": "2026-10-09",
   "policy": {
@@ -21117,40 +21116,35 @@
       "venue_id": "v-bc43f548-fb67-5c9d-bf77-fe3ad6e512d9"
     },
     "royal british legion (pmc)|bristol: whitchurch|bs14 0qf": {
-      "coordinate_source": "camra-pubs-location-audit",
-      "display_precision": "postcode",
+      "coordinate_source": "owner-reviewed-map",
+      "display_precision": "venue",
       "evidence": [
         {
-          "checked_at": "2026-09-11",
-          "difference_metres": 0.0,
-          "match": "venue_name_and_full_postcode",
+          "checked_at": "2026-10-09",
+          "match": "owner_approved_corrected_named_pub_building_operator_address",
+          "reference_address": "Staunton Lane, Whitchurch, Bristol",
           "reference_coordinate": {
-            "lat": 51.406302,
-            "lng": -2.555913
+            "lat": 51.4061728,
+            "lng": -2.5560591
           },
+          "reference_name": "Royal British Legion (PMC)",
           "reference_postcode": "BS14 0QF",
-          "source": "camra",
-          "url": "https://camra.org.uk/pubs/114783"
-        },
-        {
-          "checked_at": "2026-09-11",
-          "difference_metres": 0,
-          "match": "existing_pin_over_50m_from_matching_venue",
-          "reference_coordinate": {
-            "lat": 51.406302,
-            "lng": -2.555913
-          },
-          "reference_postcode": "BS14 0QF",
-          "source": "camra-pubs-location-audit",
-          "url": "https://camra.org.uk/pubs/114783"
+          "review_map_url": "https://www.google.com/maps?q=51.4061728,-2.5560591",
+          "reviewed_by": "bristolbagpiper",
+          "source": "manual_named_place_map",
+          "supporting_address_urls": [
+            "https://www.whitchurchrbl.co.uk/contact-us",
+            "https://camra.org.uk/pubs/114783"
+          ],
+          "url": "https://www.google.com/maps?q=51.4061728,-2.5560591"
         }
       ],
-      "lat": 51.406302,
-      "lng": -2.555913,
+      "lat": 51.4061728,
+      "lng": -2.5560591,
       "place_name": "Bristol: Whitchurch",
       "postcode": "BS14 0QF",
       "pub_name": "Royal British Legion (PMC)",
-      "status": "venue_coordinate_requires_review",
+      "status": "verified_venue",
       "venue_id": "v-0bf6d728-dc07-530e-9784-fbd9a3bb00f0"
     },
     "royal british legion|oadby|le2 5qa": {

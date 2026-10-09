@@ -1,6 +1,6 @@
 {
   "location_review": {
-    "active_count": 42,
+    "active_count": 41,
     "records": {
       "v-082c00f2-cff9-55ca-ac80-fb375cbc5f78": {
         "active": true,
@@ -406,7 +406,7 @@
         "venue_id": "v-24865350-c8b8-5220-878f-27452e3d1a13"
       },
       "v-2d8ce97a-2eba-59a3-a754-09e4143894b4": {
-        "active": true,
+        "active": false,
         "first_seen": "2026-10-02",
         "history": [
           {
@@ -422,15 +422,18 @@
               "FSA businesses at the postcode do not match the pub name; CAMRA not checked"
             ],
             "status": "unverified"
+          },
+          {
+            "date": "2026-10-09",
+            "reasons": [],
+            "status": "resolved"
           }
         ],
-        "last_checked": "2026-10-06",
+        "last_checked": "2026-10-09",
         "place_name": "Cheswardine",
         "postcode": "TF9 2RS",
         "pub_name": "Red Lion",
-        "reasons": [
-          "FSA businesses at the postcode do not match the pub name; CAMRA not checked"
-        ],
+        "reasons": [],
         "reference": {},
         "research": {
           "checked_at": "2026-10-06",
@@ -456,20 +459,10 @@
           ],
           "status": "candidates_found"
         },
-        "source_checks": {
-          "camra": {
-            "status": "not_checked"
-          },
-          "fsa": {
-            "name_matches": 0,
-            "postcode_matches": 1,
-            "records_returned": 1,
-            "status": "no_name_match"
-          }
-        },
+        "source_checks": {},
         "source_error": null,
-        "status": "unverified",
-        "unverified": true,
+        "status": "resolved",
+        "unverified": false,
         "venue_id": "v-2d8ce97a-2eba-59a3-a754-09e4143894b4"
       },
       "v-2f5fa0c4-f889-5bd4-add9-86ce087a2f02": {
@@ -3358,7 +3351,7 @@
       }
     },
     "schema_version": 1,
-    "unverified_count": 7
+    "unverified_count": 6
   },
   "schema_version": 1,
   "venues": {
@@ -11687,6 +11680,26 @@
         "postcode": "TF9 2RS",
         "pub_name": "Red Lion"
       },
+      "location_approvals": [
+        {
+          "approved_coordinate": {
+            "lat": 52.8645548,
+            "lng": -2.4180051
+          },
+          "checked_at": "2026-10-09",
+          "owner_instruction": "correction is correct",
+          "previous_pin": null,
+          "rejected_camra": {
+            "lat": 52.863998413086,
+            "lng": -2.4177000522613,
+            "reason": "CAMRA point appears on a different building approximately 65 metres southeast of the named pub beside The Orchards.",
+            "url": "https://camra.org.uk/pubs/168667"
+          },
+          "review_method": "Owner explicitly approved the corrected named pub building point in Codex after being shown that CAMRA placed the pin on a different building approximately 65 metres southeast. Named map venue address and phone matched CAMRA before approval.",
+          "reviewed_by": "bristolbagpiper",
+          "source_url": "https://www.google.com/maps/place/Red+Lion/@52.8645548,-2.4184396,20z/data=!3m1!5s0x487a62a7230b545d:0x7e144f87554b6f79!4m6!3m5!1s0x487a62a72209613b:0x981f3ca6bb97906e!8m2!3d52.8645548!4d-2.4180051!16s%2Fg%2F1hc12jt1x"
+        }
+      ],
       "location_research": {
         "checked_at": "2026-10-06",
         "coverage": {
@@ -11712,21 +11725,35 @@
         "status": "candidates_found"
       },
       "verification_attempt": {
-        "checked_at": "2026-10-06",
-        "reason": "FSA businesses at the postcode do not match the pub name; CAMRA not checked",
-        "sources": {
-          "camra": {
-            "status": "not_checked"
-          },
-          "fsa": {
-            "name_matches": 0,
-            "postcode_matches": 1,
-            "records_returned": 1,
-            "status": "no_name_match"
-          }
-        }
+        "checked_at": "2026-10-09",
+        "reason": "Owner-approved pub building correction; CAMRA point on a different building rejected.",
+        "sources": {},
+        "status": "manual_review"
       },
-      "verified_pin": null
+      "verified_pin": {
+        "evidence": [
+          {
+            "checked_at": "2026-10-09",
+            "match": "owner_approved_corrected_named_pub_building_address_and_phone",
+            "reference_address": "High Street, Cheswardine",
+            "reference_coordinate": {
+              "lat": 52.8645548,
+              "lng": -2.4180051
+            },
+            "reference_name": "Red Lion",
+            "reference_postcode": "TF9 2RS",
+            "reviewed_by": "bristolbagpiper",
+            "source": "manual_named_place_map",
+            "supporting_address_urls": [
+              "https://camra.org.uk/pubs/168667"
+            ],
+            "url": "https://www.google.com/maps/place/Red+Lion/@52.8645548,-2.4184396,20z/data=!3m1!5s0x487a62a7230b545d:0x7e144f87554b6f79!4m6!3m5!1s0x487a62a72209613b:0x981f3ca6bb97906e!8m2!3d52.8645548!4d-2.4180051!16s%2Fg%2F1hc12jt1x"
+          }
+        ],
+        "lat": 52.8645548,
+        "lng": -2.4180051,
+        "source": "owner-reviewed-map"
+      }
     },
     "v-2dc8cf4e-3a7e-5a08-b3da-10bfb7180ca5": {
       "aliases": [

@@ -1,8 +1,8 @@
 {
   "counts": {
-    "postcode_approximate": 6,
+    "postcode_approximate": 5,
     "venue_coordinate_requires_review": 1,
-    "verified_venue": 1037
+    "verified_venue": 1038
   },
   "generated_at": "2026-10-09",
   "policy": {
@@ -19852,13 +19852,33 @@
       "venue_id": "v-6fea27f6-7647-5469-a118-d1f310b732be"
     },
     "red lion|cheswardine|tf9 2rs": {
-      "coordinate_source": "postcode",
-      "display_precision": "postcode",
-      "evidence": [],
+      "coordinate_source": "owner-reviewed-map",
+      "display_precision": "venue",
+      "evidence": [
+        {
+          "checked_at": "2026-10-09",
+          "match": "owner_approved_corrected_named_pub_building_address_and_phone",
+          "reference_address": "High Street, Cheswardine",
+          "reference_coordinate": {
+            "lat": 52.8645548,
+            "lng": -2.4180051
+          },
+          "reference_name": "Red Lion",
+          "reference_postcode": "TF9 2RS",
+          "reviewed_by": "bristolbagpiper",
+          "source": "manual_named_place_map",
+          "supporting_address_urls": [
+            "https://camra.org.uk/pubs/168667"
+          ],
+          "url": "https://www.google.com/maps/place/Red+Lion/@52.8645548,-2.4184396,20z/data=!3m1!5s0x487a62a7230b545d:0x7e144f87554b6f79!4m6!3m5!1s0x487a62a72209613b:0x981f3ca6bb97906e!8m2!3d52.8645548!4d-2.4180051!16s%2Fg%2F1hc12jt1x"
+        }
+      ],
+      "lat": 52.8645548,
+      "lng": -2.4180051,
       "place_name": "Cheswardine",
       "postcode": "TF9 2RS",
       "pub_name": "Red Lion",
-      "status": "postcode_approximate",
+      "status": "verified_venue",
       "venue_id": "v-2d8ce97a-2eba-59a3-a754-09e4143894b4"
     },
     "red lion|dayhills|st15 8ru": {

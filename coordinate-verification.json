@@ -1,8 +1,7 @@
 {
   "counts": {
-    "postcode_approximate": 1,
     "venue_coordinate_requires_review": 1,
-    "verified_venue": 1042
+    "verified_venue": 1043
   },
   "generated_at": "2026-10-09",
   "policy": {
@@ -9207,13 +9206,35 @@
       "venue_id": "v-757bf4c4-3609-55ed-ba19-2e554e8bea29"
     },
     "earl haig club|cardiff: whitchurch|cf14 2aa": {
-      "coordinate_source": "postcode",
-      "display_precision": "postcode",
-      "evidence": [],
+      "coordinate_source": "owner-reviewed-map",
+      "display_precision": "venue",
+      "evidence": [
+        {
+          "checked_at": "2026-10-09",
+          "match": "owner_approved_corrected_named_pub_building_operator_address",
+          "reference_address": "23-25 Penlline Road, Cardiff",
+          "reference_coordinate": {
+            "lat": 51.5142173,
+            "lng": -3.2209024
+          },
+          "reference_name": "Earl Haig Club",
+          "reference_postcode": "CF14 2AA",
+          "review_map_url": "https://www.google.com/maps?q=51.5142173,-3.2209024",
+          "reviewed_by": "bristolbagpiper",
+          "source": "manual_named_place_map",
+          "supporting_address_urls": [
+            "https://earlhaigclub.com/",
+            "https://camra.org.uk/pubs/133038"
+          ],
+          "url": "https://www.google.com/maps?q=51.5142173,-3.2209024"
+        }
+      ],
+      "lat": 51.5142173,
+      "lng": -3.2209024,
       "place_name": "Cardiff: Whitchurch",
       "postcode": "CF14 2AA",
       "pub_name": "Earl Haig Club",
-      "status": "postcode_approximate",
+      "status": "verified_venue",
       "venue_id": "v-9a79cf57-994d-5621-9d2d-800516e98833"
     },
     "earl of chesterfield arms|shelford|ng12 1eq": {

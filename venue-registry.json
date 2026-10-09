@@ -1,6 +1,6 @@
 {
   "location_review": {
-    "active_count": 38,
+    "active_count": 37,
     "records": {
       "v-082c00f2-cff9-55ca-ac80-fb375cbc5f78": {
         "active": true,
@@ -1651,7 +1651,7 @@
         "venue_id": "v-97a6ff26-33a9-521e-8875-2fa9a26e5f68"
       },
       "v-9a79cf57-994d-5621-9d2d-800516e98833": {
-        "active": true,
+        "active": false,
         "first_seen": "2026-10-02",
         "history": [
           {
@@ -1667,15 +1667,18 @@
               "CAMRA search returned no same-name/full-postcode venue"
             ],
             "status": "unverified"
+          },
+          {
+            "date": "2026-10-09",
+            "reasons": [],
+            "status": "resolved"
           }
         ],
         "last_checked": "2026-10-09",
         "place_name": "Cardiff: Whitchurch",
         "postcode": "CF14 2AA",
         "pub_name": "Earl Haig Club",
-        "reasons": [
-          "CAMRA search returned no same-name/full-postcode venue"
-        ],
+        "reasons": [],
         "reference": {},
         "research": {
           "checked_at": "2026-10-06",
@@ -1687,21 +1690,10 @@
           "proposals": [],
           "status": "no_candidate"
         },
-        "source_checks": {
-          "camra": {
-            "records_returned": 35,
-            "status": "unmatched"
-          },
-          "fsa": {
-            "lat": 51.5141735,
-            "lng": -3.2210228,
-            "status": "matched",
-            "url": "https://ratings.food.gov.uk/business/968673"
-          }
-        },
+        "source_checks": {},
         "source_error": null,
-        "status": "unverified",
-        "unverified": true,
+        "status": "resolved",
+        "unverified": false,
         "venue_id": "v-9a79cf57-994d-5621-9d2d-800516e98833"
       },
       "v-9b0214b5-0b89-530a-9485-b8662012f510": {
@@ -3352,7 +3344,7 @@
       }
     },
     "schema_version": 1,
-    "unverified_count": 2
+    "unverified_count": 1
   },
   "schema_version": 1,
   "venues": {
@@ -30731,6 +30723,30 @@
         "postcode": "CF14 2AA",
         "pub_name": "Earl Haig Club"
       },
+      "location_approvals": [
+        {
+          "approved_coordinate": {
+            "lat": 51.5142173,
+            "lng": -3.2209024
+          },
+          "checked_at": "2026-10-09",
+          "owner_instruction": "correct",
+          "previous_pin": null,
+          "rejected_camra": {
+            "lat": 51.514347381073,
+            "lng": -3.22212280898,
+            "reason": "Point lies in Penlline Road approximately 86 metres west-northwest of the named club building.",
+            "url": "https://camra.org.uk/pubs/133038"
+          },
+          "review_method": "Owner explicitly approved the corrected named Google Maps venue point after reviewing its building and decimal/DMS coordinates in Codex. Operator website and CAMRA confirm 23-25 Penlline Road, Cardiff, CF14 2AA. CAMRA coordinate approximately 86 metres west-northwest is in Penlline Road and is rejected.",
+          "reviewed_by": "bristolbagpiper",
+          "source_url": "https://www.google.com/maps?q=51.5142173,-3.2209024",
+          "supporting_address_urls": [
+            "https://earlhaigclub.com/",
+            "https://camra.org.uk/pubs/133038"
+          ]
+        }
+      ],
       "location_research": {
         "checked_at": "2026-10-06",
         "coverage": {
@@ -30743,21 +30759,36 @@
       },
       "verification_attempt": {
         "checked_at": "2026-10-09",
-        "reason": "CAMRA search returned no same-name/full-postcode venue",
-        "sources": {
-          "camra": {
-            "records_returned": 35,
-            "status": "unmatched"
-          },
-          "fsa": {
-            "lat": 51.5141735,
-            "lng": -3.2210228,
-            "status": "matched",
-            "url": "https://ratings.food.gov.uk/business/968673"
-          }
-        }
+        "reason": "Owner approved corrected named pub-building point; CAMRA road point rejected. Operator address corroborated.",
+        "sources": {},
+        "status": "manual_review"
       },
-      "verified_pin": null
+      "verified_pin": {
+        "evidence": [
+          {
+            "checked_at": "2026-10-09",
+            "match": "owner_approved_corrected_named_pub_building_operator_address",
+            "reference_address": "23-25 Penlline Road, Cardiff",
+            "reference_coordinate": {
+              "lat": 51.5142173,
+              "lng": -3.2209024
+            },
+            "reference_name": "Earl Haig Club",
+            "reference_postcode": "CF14 2AA",
+            "review_map_url": "https://www.google.com/maps?q=51.5142173,-3.2209024",
+            "reviewed_by": "bristolbagpiper",
+            "source": "manual_named_place_map",
+            "supporting_address_urls": [
+              "https://earlhaigclub.com/",
+              "https://camra.org.uk/pubs/133038"
+            ],
+            "url": "https://www.google.com/maps?q=51.5142173,-3.2209024"
+          }
+        ],
+        "lat": 51.5142173,
+        "lng": -3.2209024,
+        "source": "owner-reviewed-map"
+      }
     },
     "v-9a7d4d41-8bd3-505a-9f1c-42e359c305ef": {
       "aliases": [

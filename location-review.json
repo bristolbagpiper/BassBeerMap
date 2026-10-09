@@ -1,5 +1,5 @@
 {
-  "active_count": 38,
+  "active_count": 37,
   "records": {
     "v-082c00f2-cff9-55ca-ac80-fb375cbc5f78": {
       "active": true,
@@ -1650,7 +1650,7 @@
       "venue_id": "v-97a6ff26-33a9-521e-8875-2fa9a26e5f68"
     },
     "v-9a79cf57-994d-5621-9d2d-800516e98833": {
-      "active": true,
+      "active": false,
       "first_seen": "2026-10-02",
       "history": [
         {
@@ -1666,15 +1666,18 @@
             "CAMRA search returned no same-name/full-postcode venue"
           ],
           "status": "unverified"
+        },
+        {
+          "date": "2026-10-09",
+          "reasons": [],
+          "status": "resolved"
         }
       ],
       "last_checked": "2026-10-09",
       "place_name": "Cardiff: Whitchurch",
       "postcode": "CF14 2AA",
       "pub_name": "Earl Haig Club",
-      "reasons": [
-        "CAMRA search returned no same-name/full-postcode venue"
-      ],
+      "reasons": [],
       "reference": {},
       "research": {
         "checked_at": "2026-10-06",
@@ -1686,21 +1689,10 @@
         "proposals": [],
         "status": "no_candidate"
       },
-      "source_checks": {
-        "camra": {
-          "records_returned": 35,
-          "status": "unmatched"
-        },
-        "fsa": {
-          "lat": 51.5141735,
-          "lng": -3.2210228,
-          "status": "matched",
-          "url": "https://ratings.food.gov.uk/business/968673"
-        }
-      },
+      "source_checks": {},
       "source_error": null,
-      "status": "unverified",
-      "unverified": true,
+      "status": "resolved",
+      "unverified": false,
       "venue_id": "v-9a79cf57-994d-5621-9d2d-800516e98833"
     },
     "v-9b0214b5-0b89-530a-9485-b8662012f510": {
@@ -3351,5 +3343,5 @@
     }
   },
   "schema_version": 1,
-  "unverified_count": 2
+  "unverified_count": 1
 }

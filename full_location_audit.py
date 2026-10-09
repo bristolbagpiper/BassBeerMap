@@ -44,11 +44,11 @@ def compare(row, pin, candidates):
 def assess(row, entry, lookup=search):
     pin = entry.get('verified_pin') or {}
     if not point_valid(pin):
-        return dict(checked_at=date.today().isoformat(), pin=pin_signature(pin), listing=listing_signature(row),
+        return classify(dict(checked_at=date.today().isoformat(), pin=pin_signature(pin), listing=listing_signature(row),
                     status='no_accepted_pin', confidence='existing_evidence_needs_corroboration',
                     owner_reviewed=bool(entry.get('location_approvals')), independent_of_pin=False,
                     comparisons=[], reference={}, priority=0,
-                    reasons=['No accepted venue coordinate yet; postcode pin remains approximate'])
+                    reasons=['No accepted venue coordinate yet; postcode pin remains approximate']), pin)
     reference = pin.get('metadata_issue', {}).get('reference')
     postcodes = list(dict.fromkeys([row['postcode']] + ([reference] if reference else [])))
     comparisons = []
@@ -67,19 +67,31 @@ def assess(row, entry, lookup=search):
     confidence = ('owner_reviewed' if owner_reviewed else
                   'independent_coordinate_agreement' if result['status'] == 'coordinate_agreement' and independent_of_pin else
                   'existing_evidence_needs_corroboration')
-    reasons = []
-    if reference:
+    check = dict(checked_at=date.today().isoformat(), pin=pin_signature(pin), listing=listing_signature(row), status=result['status'],
+                 confidence=confidence, owner_reviewed=owner_reviewed, independent_of_pin=independent_of_pin,
+                 comparisons=comparisons, reference=result)
+    return classify(check, pin)
+
+
+def classify(check, pin):
+    """Reclassify stored observations without querying or changing source evidence."""
+    reasons, warnings = [], []
+    if pin.get('metadata_issue', {}).get('reference'):
         reasons.append('Directory postcode differs from reviewed reference postcode')
-    if result['status'] == 'coordinate_disagreement':
-        reasons.append(f"FSA named-address coordinate is {result['difference_metres']}m from the displayed pin; geocode may be approximate")
-    elif result['status'] == 'nearby':
-        reasons.append('FSA coordinate is 25-50m away; building-level review recommended')
-    elif result['status'] not in ('coordinate_agreement',):
-        reasons.append('Independent address/coordinate comparison is inconclusive')
-    return dict(checked_at=date.today().isoformat(), pin=pin_signature(pin), listing=listing_signature(row), status=result['status'],
-                confidence=confidence, owner_reviewed=owner_reviewed, independent_of_pin=independent_of_pin,
-                comparisons=comparisons, reasons=reasons, reference=result,
-                priority=0 if reference else 1 if result['status'] == 'coordinate_disagreement' else 2 if reasons else 3)
+    status = check['status']
+    if status == 'no_accepted_pin':
+        reasons.append('No accepted venue coordinate yet; postcode pin remains approximate')
+    elif status == 'unavailable':
+        reasons.append('Independent FSA comparison unavailable; last accepted pin retained')
+    elif status == 'coordinate_disagreement':
+        warnings.append(f"FSA coordinate is {check['reference']['difference_metres']}m from the accepted pin; informational only because the FSA geocode may be approximate")
+    elif status == 'nearby':
+        warnings.append('FSA coordinate is 25-50m away; informational only')
+    elif status != 'coordinate_agreement':
+        warnings.append('FSA comparison is inconclusive; absence of a match does not contradict accepted evidence')
+    check.update(reasons=reasons, warnings=warnings, actionable=bool(reasons),
+                 priority=0 if reasons else 2 if warnings else 3)
+    return check
 
 
 def select_rows(rows, registry, checks, limit):
@@ -100,34 +112,38 @@ def report(rows, registry, checks, output):
         entry = registry['venues'][row['venue_id']]
         check = checks.get(row['venue_id'], {})
         if check.get('pin') != pin_signature(entry.get('verified_pin') or {}) or check.get('listing') != listing_signature(row):
-            check = {'status': 'not_checked', 'priority': 0, 'reasons': ['Current pin has not been independently compared']}
+            check = {'status': 'not_checked', 'priority': 0, 'actionable': False, 'reasons': [], 'warnings': ['Current pin has not been independently compared']}
         records.append(dict(row, **check))
     records.sort(key=lambda r: (r['priority'], r['pub_name'], r['venue_id']))
     summary = dict(total=len(rows), counts=dict(Counter(r['status'] for r in records)),
                    confidence_counts=dict(Counter(r.get('confidence', 'not_checked') for r in records)),
+                   actionable_count=sum(bool(r.get('actionable')) for r in records),
+                   informational_count=sum(bool(r.get('warnings')) for r in records),
                    limitations=['Coordinate agreement does not prove the correct building or current Bass availability.',
+                                'Owner-approved coordinates take priority; CAMRA remains the primary automated reference.',
+                                'FSA coordinate differences alone are informational and do not create location review alerts.',
                                 'FSA geocodes may be postcode centres. Missing matches and outages are inconclusive.',
                                 'No coordinates or owner approvals are changed by this audit.'])
     write_json(output / 'full-location-audit.json', dict(schema_version=1, summary=summary, records=records))
-    fields = ['venue_id', 'pub_name', 'place_name', 'postcode', 'priority', 'status', 'confidence', 'checked_at', 'reasons']
+    fields = ['venue_id', 'pub_name', 'place_name', 'postcode', 'priority', 'status', 'confidence', 'checked_at', 'actionable', 'reasons', 'warnings']
     with (output / 'full-location-audit.csv').open('w', encoding='utf-8', newline='') as stream:
         writer = csv.DictWriter(stream, fieldnames=fields, extrasaction='ignore')
         writer.writeheader()
-        writer.writerows(dict(r, reasons='; '.join(r.get('reasons', []))) for r in records)
-    lines = ['# Full location audit', '', f"Locations: {len(rows)}", '', '## Results', '',
+        writer.writerows(dict(r, reasons='; '.join(r.get('reasons', [])), warnings='; '.join(r.get('warnings', []))) for r in records)
+    lines = ['# Full location audit', '', f"Locations: {len(rows)}", '', f"Actionable findings: {summary['actionable_count']}", f"Locations with informational observations: {summary['informational_count']} (may also have an actionable finding)", '', '## Results', '',
              *[f'- {k}: {v}' for k, v in summary['counts'].items()], '', '## Confidence', '',
              *[f'- {k}: {v}' for k, v in summary['confidence_counts'].items()], '', '## Limits', '',
-             *[f'- {value}' for value in summary['limitations']], '', '## Review order', '',
-             '| Pub | Place | Postcode | Result | Reason |', '|---|---|---|---|---|']
+             *[f'- {value}' for value in summary['limitations']], '', '## Actionable findings and informational observations', '',
+             '| Pub | Place | Postcode | Result | Classification | Detail |', '|---|---|---|---|---|---|']
     for r in records:
         if r['priority'] < 3:
             clean = lambda value: str(value).replace('|', '/').replace('\n', ' ')
-            lines.append('| ' + ' | '.join(map(clean, [r['pub_name'], r['place_name'], r['postcode'], r['status'], '; '.join(r.get('reasons', []))])) + ' |')
+            lines.append('| ' + ' | '.join(map(clean, [r['pub_name'], r['place_name'], r['postcode'], r['status'], 'Actionable' if r.get('actionable') else 'Informational', '; '.join(r.get('reasons', []) + r.get('warnings', []))])) + ' |')
     (output / 'full-location-audit.md').write_text('\n'.join(lines) + '\n', encoding='utf-8')
     return summary
 
 
-def run(root, output, limit=0, publish=False, resume=False):
+def run(root, output, limit=0, publish=False, resume=False, reports_only=False):
     root, output = Path(root), Path(output)
     errors = validate_release(root)
     assert not errors, errors
@@ -137,7 +153,7 @@ def run(root, output, limit=0, publish=False, resume=False):
     checks = read_json(root / 'independent-audit-state.json', {}).get('checks', {})
     if resume:
         checks.update(read_json(output / 'independent-audit-state.json', {}).get('checks', {}))
-    selected = select_rows(rows, registry, checks, limit)
+    selected = [] if reports_only else select_rows(rows, registry, checks, limit)
     from concurrent.futures import ThreadPoolExecutor, as_completed
     pending = [row for row in selected if not (resume and checks.get(row['venue_id'], {}).get('checked_at') == date.today().isoformat() and checks.get(row['venue_id'], {}).get('pin') == pin_signature(registry['venues'][row['venue_id']].get('verified_pin') or {}) and checks.get(row['venue_id'], {}).get('listing') == listing_signature(row))]
     completed = len(selected) - len(pending)
@@ -161,7 +177,7 @@ def run(root, output, limit=0, publish=False, resume=False):
         check['independent_of_pin'] = independent
         check['owner_reviewed'] = bool(entry.get('location_approvals'))
         check['confidence'] = ('owner_reviewed' if check['owner_reviewed'] else 'independent_coordinate_agreement' if check['status'] == 'coordinate_agreement' and independent else 'existing_evidence_needs_corroboration')
-        check['reasons'] = [reason.replace('25\ufffd50m', '25-50m') for reason in check.get('reasons', [])]
+        classify(check, entry.get('verified_pin') or {})
     checkpoint(output / 'independent-audit-state.json', checks)
     summary = report(rows, registry, checks, output)
     if publish:
@@ -194,7 +210,8 @@ if __name__ == '__main__':
     parser.add_argument('--limit', type=int, default=0)
     parser.add_argument('--publish', action='store_true')
     parser.add_argument('--resume', action='store_true')
+    parser.add_argument('--reports-only', action='store_true', help='Reclassify existing observations without making source requests or refreshing check dates')
     args = parser.parse_args()
     if args.limit < 0:
         parser.error('--limit must be nonnegative')
-    run(args.root, args.output, args.limit, args.publish, args.resume)
+    run(args.root, args.output, args.limit, args.publish, args.resume, args.reports_only)

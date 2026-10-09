@@ -33,9 +33,8 @@ def build_review(rows, registry, ledger):
         independent_current = (independent.get('pin') == {key: pin.get(key) for key in ('lat', 'lng')}
                                and independent.get('listing') == {key: row.get(key) for key in ('pub_name', 'postcode')})
         if independent_current:
-            if independent.get('status') == 'coordinate_disagreement':
-                reasons.extend(independent.get('reasons', []))
-            elif independent.get('status') == 'unavailable':
+            # FSA coordinate differences alone cannot invalidate accepted evidence.
+            if independent.get('status') == 'unavailable':
                 reasons.append('Independent FSA comparison unavailable; last accepted pin retained')
         active = bool(reasons)
         if not active and identifier not in records:

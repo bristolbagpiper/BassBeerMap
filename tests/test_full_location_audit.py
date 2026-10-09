@@ -29,7 +29,9 @@ class IndependentAuditTests(unittest.TestCase):
         entry['independent_location_check'] = check
         review = build_review([listing], registry, build_ledger([listing], registry))
         self.assertEqual(review['unverified_count'], 0)
-        self.assertEqual(review['active_count'], 1)
+        self.assertEqual(review['active_count'], 0)
+        self.assertFalse(check['actionable'])
+        self.assertTrue(check['warnings'])
         self.assertEqual(entry['verified_pin'], before['verified_pin'])
 
     def test_no_match_outage_and_ambiguous_points_are_inconclusive(self):
@@ -94,7 +96,7 @@ class IndependentAuditTests(unittest.TestCase):
                 run(root, output, publish=True)
             self.assertEqual(read_json(root/'directory-release.json'), before)
             self.assertEqual(len(read_json(root/'audit/full-location-audit.json')['records']), 2)
-            self.assertEqual(read_json(root/'location-review.json')['active_count'], 2)
+            self.assertEqual(read_json(root/'location-review.json')['active_count'], 0)
             self.assertEqual(read_json(root/'location-review.json')['unverified_count'], 0)
             self.assertEqual(validate_release(root), [])
 
@@ -112,3 +114,43 @@ class IndependentAuditTests(unittest.TestCase):
         lookup.assert_not_called()
         self.assertEqual(check['status'], 'no_accepted_pin')
         self.assertEqual(check['priority'], 0)
+
+    def test_reclassification_resolves_coordinate_only_alert_and_keeps_history(self):
+        listing = row()
+        registry = registry_for([listing])
+        identifier = listing['venue_id']
+        entry = registry['venues'][identifier]
+        entry['independent_location_check'] = assess(listing, entry, lambda *a, **k: [business(lat=51.46)])
+        registry['location_review'] = {'records': {identifier: dict(active=True, history=[dict(date='2026-10-08', status='review_needed', reasons=['FSA coordinate differs'])])}}
+        review = build_review([listing], registry, build_ledger([listing], registry))
+        self.assertEqual(review['active_count'], 0)
+        self.assertEqual(len(review['records'][identifier]['history']), 2)
+        self.assertEqual(review['records'][identifier]['status'], 'resolved')
+
+    def test_postcode_conflict_remains_actionable_despite_coordinate_agreement(self):
+        listing = row()
+        registry = registry_for([listing])
+        entry = registry['venues'][listing['venue_id']]
+        entry['verified_pin']['metadata_issue'] = dict(listed='BS1 1AA', reference='BS1 1AB')
+        check = assess(listing, entry, lambda query, **k: [business(postcode=query['postcode'])])
+        self.assertTrue(check['actionable'])
+        entry['independent_location_check'] = check
+        self.assertEqual(build_review([listing], registry, build_ledger([listing], registry))['active_count'], 1)
+
+    def test_reports_only_never_queries_sources_or_refreshes_dates(self):
+        rows = [row()]
+        registry = registry_for(rows)
+        check = assess(rows[0], registry['venues'][rows[0]['venue_id']], lambda *a, **k: [business(lat=51.46)])
+        check['checked_at'] = '2026-10-08'
+        with tempfile.TemporaryDirectory() as directory:
+            root, output = Path(directory)/'root', Path(directory)/'output'
+            write_release(root, rows, registry, {}, {'BS1 1AA': {'lat': 51.46, 'lng': -2.58}})
+            from directory_release import write_json
+            write_json(root/'independent-audit-state.json', {'checks': {rows[0]['venue_id']: check}})
+            with patch('full_location_audit.assess') as lookup:
+                run(root, output, reports_only=True)
+            lookup.assert_not_called()
+            saved = read_json(output/'independent-audit-state.json')['checks'][rows[0]['venue_id']]
+            self.assertEqual(saved['checked_at'], '2026-10-08')
+            self.assertFalse(saved['actionable'])
+            self.assertTrue(saved['warnings'])

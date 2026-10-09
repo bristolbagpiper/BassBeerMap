@@ -63,7 +63,7 @@ class IndependentAuditTests(unittest.TestCase):
         rows = [row('One'), row('Two'), row('Three')]
         registry = registry_for(rows)
         registry['venues'][rows[0]['venue_id']]['verified_pin']['metadata_issue'] = {'reference': 'BS1 1AB'}
-        checks = {rows[0]['venue_id']: {'checked_at': '2026-10-09'}}
+        checks = {rows[0]['venue_id']: {'checked_at': '2026-10-09', 'pin': {'lat':51.45,'lng':-2.59}, 'listing': {'pub_name':'One','postcode':'BS1 1AA'}}}
         selected = select_rows(rows, registry, checks, 2)
         self.assertNotIn(rows[0], selected)
 
@@ -97,3 +97,18 @@ class IndependentAuditTests(unittest.TestCase):
             self.assertEqual(read_json(root/'location-review.json')['active_count'], 2)
             self.assertEqual(read_json(root/'location-review.json')['unverified_count'], 0)
             self.assertEqual(validate_release(root), [])
+
+    def test_identity_change_invalidates_old_comparison(self):
+        listing = row()
+        registry = registry_for([listing])
+        entry = registry['venues'][listing['venue_id']]
+        entry['independent_location_check'] = assess(listing, entry, lambda *a, **k: [business(lat=51.46)])
+        entry['independent_location_check']['listing']['pub_name'] = 'Old Name'
+        self.assertEqual(build_review([listing], registry, build_ledger([listing], registry))['active_count'], 0)
+
+    def test_missing_pin_is_not_misreported_as_source_outage(self):
+        with patch('full_location_audit.search') as lookup:
+            check = assess(row(), {'verified_pin': None}, lookup)
+        lookup.assert_not_called()
+        self.assertEqual(check['status'], 'no_accepted_pin')
+        self.assertEqual(check['priority'], 0)

@@ -8,8 +8,18 @@ from collections import Counter
 from datetime import date
 from pathlib import Path
 
-from directory_release import RELEASE_FILES, distance_metres, read_json, read_rows, validate_release, write_json, write_release
+from directory_release import RELEASE_FILES, distance_metres, point_valid, read_json, read_rows, validate_release, write_json, write_release
 from resolve_venue_coordinates_from_fhrs import search, choose_match, names_match
+
+
+def checkpoint(path, checks):
+    temporary = path.with_suffix('.json.tmp')
+    write_json(temporary, {'checks': checks})
+    temporary.replace(path)
+
+
+def listing_signature(row):
+    return {key: row.get(key) for key in ('pub_name', 'postcode')}
 
 
 def pin_signature(pin):
@@ -33,6 +43,12 @@ def compare(row, pin, candidates):
 
 def assess(row, entry, lookup=search):
     pin = entry.get('verified_pin') or {}
+    if not point_valid(pin):
+        return dict(checked_at=date.today().isoformat(), pin=pin_signature(pin), listing=listing_signature(row),
+                    status='no_accepted_pin', confidence='existing_evidence_needs_corroboration',
+                    owner_reviewed=bool(entry.get('location_approvals')), independent_of_pin=False,
+                    comparisons=[], reference={}, priority=0,
+                    reasons=['No accepted venue coordinate yet; postcode pin remains approximate'])
     reference = pin.get('metadata_issue', {}).get('reference')
     postcodes = list(dict.fromkeys([row['postcode']] + ([reference] if reference else [])))
     comparisons = []
@@ -60,7 +76,7 @@ def assess(row, entry, lookup=search):
         reasons.append('FSA coordinate is 25-50m away; building-level review recommended')
     elif result['status'] not in ('coordinate_agreement',):
         reasons.append('Independent address/coordinate comparison is inconclusive')
-    return dict(checked_at=date.today().isoformat(), pin=pin_signature(pin), status=result['status'],
+    return dict(checked_at=date.today().isoformat(), pin=pin_signature(pin), listing=listing_signature(row), status=result['status'],
                 confidence=confidence, owner_reviewed=owner_reviewed, independent_of_pin=independent_of_pin,
                 comparisons=comparisons, reasons=reasons, reference=result,
                 priority=0 if reference else 1 if result['status'] == 'coordinate_disagreement' else 2 if reasons else 3)
@@ -69,7 +85,10 @@ def assess(row, entry, lookup=search):
 def select_rows(rows, registry, checks, limit):
     def priority(row):
         prior = checks.get(row['venue_id'], {})
-        issue = (registry['venues'][row['venue_id']].get('verified_pin') or {}).get('metadata_issue')
+        current_pin = registry['venues'][row['venue_id']].get('verified_pin') or {}
+        if prior.get('pin') != pin_signature(current_pin) or prior.get('listing') != listing_signature(row):
+            prior = {}
+        issue = current_pin.get('metadata_issue')
         return (prior.get('checked_at', ''), not bool(issue), row['venue_id'])
     ordered = sorted(rows, key=priority)
     return ordered[:limit] if limit else ordered
@@ -80,7 +99,7 @@ def report(rows, registry, checks, output):
     for row in rows:
         entry = registry['venues'][row['venue_id']]
         check = checks.get(row['venue_id'], {})
-        if check.get('pin') != pin_signature(entry.get('verified_pin') or {}):
+        if check.get('pin') != pin_signature(entry.get('verified_pin') or {}) or check.get('listing') != listing_signature(row):
             check = {'status': 'not_checked', 'priority': 0, 'reasons': ['Current pin has not been independently compared']}
         records.append(dict(row, **check))
     records.sort(key=lambda r: (r['priority'], r['pub_name'], r['venue_id']))
@@ -120,14 +139,14 @@ def run(root, output, limit=0, publish=False, resume=False):
         checks.update(read_json(output / 'independent-audit-state.json', {}).get('checks', {}))
     selected = select_rows(rows, registry, checks, limit)
     from concurrent.futures import ThreadPoolExecutor, as_completed
-    pending = [row for row in selected if not (resume and checks.get(row['venue_id'], {}).get('checked_at') == date.today().isoformat() and checks.get(row['venue_id'], {}).get('pin') == pin_signature(registry['venues'][row['venue_id']].get('verified_pin') or {}))]
+    pending = [row for row in selected if not (resume and checks.get(row['venue_id'], {}).get('checked_at') == date.today().isoformat() and checks.get(row['venue_id'], {}).get('pin') == pin_signature(registry['venues'][row['venue_id']].get('verified_pin') or {}) and checks.get(row['venue_id'], {}).get('listing') == listing_signature(row))]
     completed = len(selected) - len(pending)
     with ThreadPoolExecutor(max_workers=4) as pool:
         futures = {pool.submit(assess, row, registry['venues'][row['venue_id']]): row['venue_id'] for row in pending}
         for future in as_completed(futures):
             checks[futures[future]] = future.result()
             completed += 1
-            write_json(output / 'independent-audit-state.json', {'checks': checks})
+            checkpoint(output / 'independent-audit-state.json', checks)
             if completed % 25 == 0 or completed == len(selected):
                 print(f'{completed}/{len(selected)} compared', flush=True)
     # Refresh derived confidence after resuming a report created by older code.
@@ -143,7 +162,7 @@ def run(root, output, limit=0, publish=False, resume=False):
         check['owner_reviewed'] = bool(entry.get('location_approvals'))
         check['confidence'] = ('owner_reviewed' if check['owner_reviewed'] else 'independent_coordinate_agreement' if check['status'] == 'coordinate_agreement' and independent else 'existing_evidence_needs_corroboration')
         check['reasons'] = [reason.replace('25\ufffd50m', '25-50m') for reason in check.get('reasons', [])]
-    write_json(output / 'independent-audit-state.json', {'checks': checks})
+    checkpoint(output / 'independent-audit-state.json', checks)
     summary = report(rows, registry, checks, output)
     if publish:
         for row in rows:

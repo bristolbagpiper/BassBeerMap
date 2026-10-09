@@ -30,7 +30,9 @@ def build_review(rows, registry, ledger):
             if latest and (date.today() - date.fromisoformat(latest)).days >= 180:
                 reasons.append('Manual location evidence needs a fresh address/map check')
         independent = entry.get('independent_location_check', {})
-        if independent.get('pin') == {key: pin.get(key) for key in ('lat', 'lng')}:
+        independent_current = (independent.get('pin') == {key: pin.get(key) for key in ('lat', 'lng')}
+                               and independent.get('listing') == {key: row.get(key) for key in ('pub_name', 'postcode')})
+        if independent_current:
             if independent.get('status') == 'coordinate_disagreement':
                 reasons.extend(independent.get('reasons', []))
             elif independent.get('status') == 'unavailable':
@@ -46,7 +48,8 @@ def build_review(rows, registry, ledger):
         records[identifier] = dict(venue_id=identifier, pub_name=row['pub_name'], place_name=row['place_name'],
                                   postcode=row['postcode'], active=active, unverified=unverified,
                                   first_seen=previous.get('first_seen', today), status=status, reasons=reasons,
-                                  last_checked=attempt.get('checked_at') or max((e.get('checked_at', '') for e in pin.get('evidence', [])), default=None), source_checks=attempt.get('sources', {}),
+                                  last_checked=max([attempt.get('checked_at') or '', independent.get('checked_at', '') if independent_current else '', *[e.get('checked_at', '') for e in pin.get('evidence', [])]]) or None,
+                                  source_checks=dict(attempt.get('sources', {}), **({'fsa_independent': dict(status=independent['status'], url=independent.get('reference', {}).get('url', ''))} if independent_current else {})),
                                   source_error=attempt.get('error'), reference=issue, history=history)
         records[identifier]['research'] = entry.get('location_research', {})
     active_ids = {row['venue_id'] for row in rows}

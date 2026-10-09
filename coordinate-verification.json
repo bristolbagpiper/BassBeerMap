@@ -1,8 +1,8 @@
 {
   "counts": {
-    "postcode_approximate": 5,
+    "postcode_approximate": 4,
     "venue_coordinate_requires_review": 1,
-    "verified_venue": 1038
+    "verified_venue": 1039
   },
   "generated_at": "2026-10-09",
   "policy": {
@@ -24310,13 +24310,37 @@
       "venue_id": "v-8e8169e0-9128-5873-ba4a-f3ee4c8fb109"
     },
     "tame otter|hopwas|b78 3ab": {
-      "coordinate_source": "postcode",
-      "display_precision": "postcode",
-      "evidence": [],
+      "coordinate_source": "owner-reviewed-camra",
+      "display_precision": "venue",
+      "evidence": [
+        {
+          "checked_at": "2026-10-09",
+          "match": "owner_reviewed_named_address_and_map",
+          "reference_address": "Lichfield Road",
+          "reference_coordinate": {
+            "lat": 52.643088,
+            "lng": -1.736479
+          },
+          "reference_name": "Tame Otter, Hopwas - 5-star Cask Marque Pub",
+          "reference_postcode": "B78 3AF",
+          "review_url": "https://github.com/bristolbagpiper/BassBeerMap/issues/5#issuecomment-6084230179",
+          "reviewed_by": "bristolbagpiper",
+          "source": "camra",
+          "url": "https://camra.org.uk/pubs/131641"
+        }
+      ],
+      "lat": 52.643088,
+      "lng": -1.736479,
+      "metadata_issue": {
+        "field": "postcode",
+        "listed": "B78 3AB",
+        "reference": "B78 3AF",
+        "source_url": "https://camra.org.uk/pubs/131641"
+      },
       "place_name": "Hopwas",
       "postcode": "B78 3AB",
       "pub_name": "Tame Otter",
-      "status": "postcode_approximate",
+      "status": "verified_venue",
       "venue_id": "v-f5205b00-aadb-5928-870d-674117dbffab"
     },
     "tap house|smisby|le65 2ta": {

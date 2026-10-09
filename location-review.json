@@ -3182,6 +3182,13 @@
             "FSA businesses at the postcode do not match the pub name; CAMRA not checked"
           ],
           "status": "unverified"
+        },
+        {
+          "date": "2026-10-09",
+          "reasons": [
+            "Directory postcode B78 3AB conflicts with reference address B78 3AF"
+          ],
+          "status": "review_needed"
         }
       ],
       "last_checked": "2026-10-09",
@@ -3189,9 +3196,14 @@
       "postcode": "B78 3AB",
       "pub_name": "Tame Otter",
       "reasons": [
-        "FSA businesses at the postcode do not match the pub name; CAMRA not checked"
+        "Directory postcode B78 3AB conflicts with reference address B78 3AF"
       ],
-      "reference": {},
+      "reference": {
+        "field": "postcode",
+        "listed": "B78 3AB",
+        "reference": "B78 3AF",
+        "source_url": "https://camra.org.uk/pubs/131641"
+      },
       "research": {
         "checked_at": "2026-10-06",
         "coverage": {
@@ -3228,8 +3240,8 @@
         }
       },
       "source_error": null,
-      "status": "unverified",
-      "unverified": true,
+      "status": "review_needed",
+      "unverified": false,
       "venue_id": "v-f5205b00-aadb-5928-870d-674117dbffab"
     },
     "v-f92270dc-d910-5cd5-bb78-2607ed97659b": {
@@ -3350,5 +3362,5 @@
     }
   },
   "schema_version": 1,
-  "unverified_count": 6
+  "unverified_count": 5
 }

@@ -3183,6 +3183,13 @@
               "FSA businesses at the postcode do not match the pub name; CAMRA not checked"
             ],
             "status": "unverified"
+          },
+          {
+            "date": "2026-10-09",
+            "reasons": [
+              "Directory postcode B78 3AB conflicts with reference address B78 3AF"
+            ],
+            "status": "review_needed"
           }
         ],
         "last_checked": "2026-10-09",
@@ -3190,9 +3197,14 @@
         "postcode": "B78 3AB",
         "pub_name": "Tame Otter",
         "reasons": [
-          "FSA businesses at the postcode do not match the pub name; CAMRA not checked"
+          "Directory postcode B78 3AB conflicts with reference address B78 3AF"
         ],
-        "reference": {},
+        "reference": {
+          "field": "postcode",
+          "listed": "B78 3AB",
+          "reference": "B78 3AF",
+          "source_url": "https://camra.org.uk/pubs/131641"
+        },
         "research": {
           "checked_at": "2026-10-06",
           "coverage": {
@@ -3229,8 +3241,8 @@
           }
         },
         "source_error": null,
-        "status": "unverified",
-        "unverified": true,
+        "status": "review_needed",
+        "unverified": false,
         "venue_id": "v-f5205b00-aadb-5928-870d-674117dbffab"
       },
       "v-f92270dc-d910-5cd5-bb78-2607ed97659b": {
@@ -3351,7 +3363,7 @@
       }
     },
     "schema_version": 1,
-    "unverified_count": 6
+    "unverified_count": 5
   },
   "schema_version": 1,
   "venues": {
@@ -46916,7 +46928,8 @@
     },
     "v-f5205b00-aadb-5928-870d-674117dbffab": {
       "aliases": [
-        "tame otter|hopwas|b78 3ab"
+        "tame otter|hopwas|b78 3ab",
+        "tame otter|hopwas|b78 3af"
       ],
       "current_key": "tame otter|hopwas|b78 3ab",
       "listing": {
@@ -46930,6 +46943,16 @@
         "postcode": "B78 3AB",
         "pub_name": "Tame Otter"
       },
+      "location_approvals": [
+        {
+          "checked_at": "2026-10-09",
+          "comment_id": 6084230179,
+          "previous_pin": null,
+          "review_url": "https://github.com/bristolbagpiper/BassBeerMap/issues/5#issuecomment-6084230179",
+          "reviewed_by": "bristolbagpiper",
+          "source_url": "https://camra.org.uk/pubs/131641"
+        }
+      ],
       "location_research": {
         "checked_at": "2026-10-06",
         "coverage": {
@@ -46969,7 +46992,34 @@
           }
         }
       },
-      "verified_pin": null
+      "verified_pin": {
+        "evidence": [
+          {
+            "checked_at": "2026-10-09",
+            "match": "owner_reviewed_named_address_and_map",
+            "reference_address": "Lichfield Road",
+            "reference_coordinate": {
+              "lat": 52.643088,
+              "lng": -1.736479
+            },
+            "reference_name": "Tame Otter, Hopwas - 5-star Cask Marque Pub",
+            "reference_postcode": "B78 3AF",
+            "review_url": "https://github.com/bristolbagpiper/BassBeerMap/issues/5#issuecomment-6084230179",
+            "reviewed_by": "bristolbagpiper",
+            "source": "camra",
+            "url": "https://camra.org.uk/pubs/131641"
+          }
+        ],
+        "lat": 52.643088,
+        "lng": -1.736479,
+        "metadata_issue": {
+          "field": "postcode",
+          "listed": "B78 3AB",
+          "reference": "B78 3AF",
+          "source_url": "https://camra.org.uk/pubs/131641"
+        },
+        "source": "owner-reviewed-camra"
+      }
     },
     "v-f5a285ad-dab2-5bd0-acb6-3a520fd42c8d": {
       "aliases": [

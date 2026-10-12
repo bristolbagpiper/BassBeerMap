@@ -8,10 +8,10 @@ Locations with informational observations: 585 (may also have an actionable find
 ## Results
 
 - coordinate_agreement: 459
-- coordinate_disagreement: 240
+- coordinate_disagreement: 241
 - no_name_match: 179
 - nearby: 102
-- ambiguous_or_missing_coordinates: 64
+- ambiguous_or_missing_coordinates: 63
 
 ## Confidence
 
@@ -508,7 +508,7 @@ Locations with informational observations: 585 (may also have an actionable find
 | Ship | Monument EC3V | EC3V 0BP | no_name_match | Informational | FSA comparison is inconclusive; absence of a match does not contradict accepted evidence |
 | Ship Inn | Portishead | BS20 8JT | no_name_match | Informational | FSA comparison is inconclusive; absence of a match does not contradict accepted evidence |
 | Ship Inn | Red Wharf Bay | LL75 8RJ | coordinate_disagreement | Informational | FSA coordinate is 128.9m from the accepted pin; informational only because the FSA geocode may be approximate |
-| Shoulder of Mutton | Foxton | LE16 7RB | ambiguous_or_missing_coordinates | Informational | FSA comparison is inconclusive; absence of a match does not contradict accepted evidence |
+| Shoulder of Mutton | Foxton | LE16 7RB | coordinate_disagreement | Informational | FSA coordinate is 105.0m from the accepted pin; informational only because the FSA geocode may be approximate |
 | Shoulder of Mutton | Osmaston | DE6 1LW | nearby | Informational | FSA coordinate is 25-50m away; informational only |
 | Shoulder of Mutton | Barton-under-Needwood | DE13 8AA | coordinate_disagreement | Informational | FSA coordinate is 154.5m from the accepted pin; informational only because the FSA geocode may be approximate |
 | Shrewsbury Arms | Kingstone | ST14 8QH | no_name_match | Informational | FSA comparison is inconclusive; absence of a match does not contradict accepted evidence |

@@ -636,7 +636,7 @@
             "status": "resolved"
           }
         ],
-        "last_checked": "2026-10-09",
+        "last_checked": "2026-10-12",
         "place_name": "Liverpool: Central",
         "postcode": "L1 4HY",
         "pub_name": "Angel Inn",
@@ -708,7 +708,7 @@
             "status": "resolved"
           }
         ],
-        "last_checked": "2026-10-09",
+        "last_checked": "2026-10-12",
         "place_name": "Heaton Chapel",
         "postcode": "SK4 5DE",
         "pub_name": "Heaton Hops",
@@ -747,7 +747,7 @@
             "status": "resolved"
           }
         ],
-        "last_checked": "2026-10-10",
+        "last_checked": "2026-10-12",
         "place_name": "Hesketh Bank",
         "postcode": "PR4 6SN",
         "pub_name": "Hive",
@@ -781,7 +781,7 @@
             "status": "unverified"
           }
         ],
-        "last_checked": "2026-10-10",
+        "last_checked": "2026-10-12",
         "place_name": "Blackpool: Stanley Park",
         "postcode": "FY3 9EQ",
         "pub_name": "Cricket Club",
@@ -826,7 +826,7 @@
             "status": "resolved"
           }
         ],
-        "last_checked": "2026-10-10",
+        "last_checked": "2026-10-12",
         "place_name": "Ibstock",
         "postcode": "LE67 6LA",
         "pub_name": "Waggon and Horses",
@@ -865,7 +865,7 @@
             "status": "resolved"
           }
         ],
-        "last_checked": "2026-10-10",
+        "last_checked": "2026-10-12",
         "place_name": "Grimsby",
         "postcode": "DN31 1NH",
         "pub_name": "Barge",
@@ -899,7 +899,7 @@
             "status": "unverified"
           }
         ],
-        "last_checked": "2026-10-10",
+        "last_checked": "2026-10-12",
         "place_name": "Stoke: Fenton",
         "postcode": "ST4 2PT",
         "pub_name": "Ye Olde Manor Inn",
@@ -940,7 +940,7 @@
             "status": "resolved"
           }
         ],
-        "last_checked": "2026-10-10",
+        "last_checked": "2026-10-12",
         "place_name": "Barholm",
         "postcode": "PE9 4RA",
         "pub_name": "Five Horseshoes",
@@ -979,7 +979,7 @@
             "status": "resolved"
           }
         ],
-        "last_checked": "2026-10-10",
+        "last_checked": "2026-10-12",
         "place_name": "Bramhall",
         "postcode": "SK7 2NP",
         "pub_name": "Ladybrook",
@@ -1013,7 +1013,7 @@
             "status": "unverified"
           }
         ],
-        "last_checked": "2026-10-10",
+        "last_checked": "2026-10-12",
         "place_name": "Tynemouth",
         "postcode": "NE30 4DX",
         "pub_name": "Tynemouth WMC/Social Club (PMC)",
@@ -1058,7 +1058,7 @@
             "status": "resolved"
           }
         ],
-        "last_checked": "2026-10-10",
+        "last_checked": "2026-10-12",
         "place_name": "Fazeley",
         "postcode": "B78 3RF",
         "pub_name": "Plough and Harrow",
@@ -1184,7 +1184,7 @@
             "status": "resolved"
           }
         ],
-        "last_checked": "2026-10-10",
+        "last_checked": "2026-10-12",
         "place_name": "Peterborough",
         "postcode": "PE2 9PA",
         "pub_name": "Palmerston Arms",
@@ -1218,7 +1218,7 @@
             "status": "unverified"
           }
         ],
-        "last_checked": "2026-10-10",
+        "last_checked": "2026-10-12",
         "place_name": "Liverpool: Central",
         "postcode": "L1 4JN",
         "pub_name": "Black Cat Bar",
@@ -1263,7 +1263,7 @@
             "status": "resolved"
           }
         ],
-        "last_checked": "2026-10-10",
+        "last_checked": "2026-10-12",
         "place_name": "Bedworth Heath",
         "postcode": "CV12 0LG",
         "pub_name": "Plough",
@@ -17420,7 +17420,7 @@
       "current_key": "angel inn|liverpool: central|l1 4hy",
       "independent_location_check": {
         "actionable": false,
-        "checked_at": "2026-10-09",
+        "checked_at": "2026-10-12",
         "comparisons": [
           {
             "address": "90 Bold Street, , Liverpool",
@@ -17556,7 +17556,7 @@
       "current_key": "lord hop|nuneaton: central|cv11 5jx",
       "independent_location_check": {
         "actionable": false,
-        "checked_at": "2026-10-09",
+        "checked_at": "2026-10-12",
         "comparisons": [
           {
             "address": "38 Queens Road, , Nuneaton",
@@ -17661,13 +17661,18 @@
       "current_key": "shoulder of mutton|foxton|le16 7rb",
       "independent_location_check": {
         "actionable": false,
-        "checked_at": "2026-10-09",
+        "checked_at": "2026-10-12",
         "comparisons": [
           {
-            "name_matches": 1,
-            "postcode_matches": 2,
+            "address": "60 Main Street, Foxton, Leicestershire",
+            "difference_metres": 105.0,
+            "lat": 52.504336,
+            "lng": -0.968567,
+            "name": "Shoulder Of Mutton",
+            "postcode": "LE16 7RB",
             "queried_postcode": "LE16 7RB",
-            "status": "ambiguous_or_missing_coordinates"
+            "status": "coordinate_disagreement",
+            "url": "https://ratings.food.gov.uk/business/1986368"
           }
         ],
         "confidence": "existing_evidence_needs_corroboration",
@@ -17684,14 +17689,19 @@
         "priority": 2,
         "reasons": [],
         "reference": {
-          "name_matches": 1,
-          "postcode_matches": 2,
+          "address": "60 Main Street, Foxton, Leicestershire",
+          "difference_metres": 105.0,
+          "lat": 52.504336,
+          "lng": -0.968567,
+          "name": "Shoulder Of Mutton",
+          "postcode": "LE16 7RB",
           "queried_postcode": "LE16 7RB",
-          "status": "ambiguous_or_missing_coordinates"
+          "status": "coordinate_disagreement",
+          "url": "https://ratings.food.gov.uk/business/1986368"
         },
-        "status": "ambiguous_or_missing_coordinates",
+        "status": "coordinate_disagreement",
         "warnings": [
-          "FSA comparison is inconclusive; absence of a match does not contradict accepted evidence"
+          "FSA coordinate is 105.0m from the accepted pin; informational only because the FSA geocode may be approximate"
         ]
       },
       "listing": {
@@ -17758,7 +17768,7 @@
       "current_key": "rising sun|bury st edmunds|ip33 3aa",
       "independent_location_check": {
         "actionable": false,
-        "checked_at": "2026-10-09",
+        "checked_at": "2026-10-12",
         "comparisons": [
           {
             "name_matches": 0,
@@ -17855,7 +17865,7 @@
       "current_key": "heaton hops|heaton chapel|sk4 5de",
       "independent_location_check": {
         "actionable": false,
-        "checked_at": "2026-10-09",
+        "checked_at": "2026-10-12",
         "comparisons": [
           {
             "address": "7 School Lane, Heaton Chapel, Stockport",
@@ -17962,7 +17972,7 @@
       "current_key": "loaf and cheese|burton u-t: central|de14 2nf",
       "independent_location_check": {
         "actionable": false,
-        "checked_at": "2026-10-09",
+        "checked_at": "2026-10-12",
         "comparisons": [
           {
             "name_matches": 0,
@@ -18101,7 +18111,7 @@
       "current_key": "grouse inn|darley dale|de4 2ft",
       "independent_location_check": {
         "actionable": false,
-        "checked_at": "2026-10-09",
+        "checked_at": "2026-10-12",
         "comparisons": [
           {
             "address": "Dale Road North, Darley Dale, Derbyshire",
@@ -18208,7 +18218,7 @@
       "current_key": "snowdonia parc|waunfawr|ll55 4aq",
       "independent_location_check": {
         "actionable": false,
-        "checked_at": "2026-10-09",
+        "checked_at": "2026-10-12",
         "comparisons": [
           {
             "address": "Snowdonia Park Hotel, , Waunfawr, Gwynedd",
@@ -18313,7 +18323,7 @@
       "current_key": "benks|leek|st13 6dh",
       "independent_location_check": {
         "actionable": false,
-        "checked_at": "2026-10-09",
+        "checked_at": "2026-10-12",
         "comparisons": [
           {
             "name_matches": 0,
@@ -18410,7 +18420,7 @@
       "current_key": "vernon arms|liverpool: central|l2 2hj",
       "independent_location_check": {
         "actionable": false,
-        "checked_at": "2026-10-09",
+        "checked_at": "2026-10-12",
         "comparisons": [
           {
             "address": "69 Dale Street, , Liverpool",
@@ -18515,7 +18525,7 @@
       "current_key": "hive|hesketh bank|pr4 6sn",
       "independent_location_check": {
         "actionable": false,
-        "checked_at": "2026-10-09",
+        "checked_at": "2026-10-12",
         "comparisons": [
           {
             "address": "21 Station Road, Hesketh Bank, Lancashire",
@@ -18622,7 +18632,7 @@
       "current_key": "white hart|stanley|de7 6ex",
       "independent_location_check": {
         "actionable": false,
-        "checked_at": "2026-10-09",
+        "checked_at": "2026-10-12",
         "comparisons": [
           {
             "address": "Derby Road, , Stanley",
@@ -18727,7 +18737,7 @@
       "current_key": "green dragon|little stretton|sy6 6re",
       "independent_location_check": {
         "actionable": false,
-        "checked_at": "2026-10-09",
+        "checked_at": "2026-10-12",
         "comparisons": [
           {
             "address": "Green Dragon Inn Ludlow Road, , Little Stretton, Shropshire",
@@ -18832,7 +18842,7 @@
       "current_key": "llanover arms|pontypridd|cf37 4pe",
       "independent_location_check": {
         "actionable": false,
-        "checked_at": "2026-10-09",
+        "checked_at": "2026-10-12",
         "comparisons": [
           {
             "name_matches": 0,
@@ -18929,7 +18939,7 @@
       "current_key": "bank of conwy|conwy|ll32 8ht",
       "independent_location_check": {
         "actionable": false,
-        "checked_at": "2026-10-09",
+        "checked_at": "2026-10-12",
         "comparisons": [
           {
             "address": "1 Lancaster Square, , Conwy",
@@ -19034,7 +19044,7 @@
       "current_key": "cricket club|blackpool: stanley park|fy3 9eq",
       "independent_location_check": {
         "actionable": false,
-        "checked_at": "2026-10-09",
+        "checked_at": "2026-10-12",
         "comparisons": [
           {
             "name_matches": 0,
@@ -19135,7 +19145,7 @@
       "current_key": "crafty local ale house|skegness|pe25 2ah",
       "independent_location_check": {
         "actionable": false,
-        "checked_at": "2026-10-09",
+        "checked_at": "2026-10-12",
         "comparisons": [
           {
             "address": "7 Lumley Avenue, Skegness",
@@ -19240,7 +19250,7 @@
       "current_key": "white lion|westbury on trym|bs9 3hn",
       "independent_location_check": {
         "actionable": false,
-        "checked_at": "2026-10-09",
+        "checked_at": "2026-10-12",
         "comparisons": [
           {
             "address": "The White Lion, Passage Road, Westbury, Bristol",
@@ -19347,7 +19357,7 @@
       "current_key": "horse and jockey|lichfield|ws13 6qa",
       "independent_location_check": {
         "actionable": false,
-        "checked_at": "2026-10-09",
+        "checked_at": "2026-10-12",
         "comparisons": [
           {
             "address": "10 Sandford Street, Lichfield, Staffordshire",
@@ -19454,7 +19464,7 @@
       "current_key": "waggon and horses|ibstock|le67 6la",
       "independent_location_check": {
         "actionable": false,
-        "checked_at": "2026-10-09",
+        "checked_at": "2026-10-12",
         "comparisons": [
           {
             "address": "Wagon And Horses, 71 Curzon Street, Ibstock, Coalville",
@@ -19561,7 +19571,7 @@
       "current_key": "barge|grimsby|dn31 1nh",
       "independent_location_check": {
         "actionable": false,
-        "checked_at": "2026-10-09",
+        "checked_at": "2026-10-12",
         "comparisons": [
           {
             "address": "Riverhead Centre, Victoria Street, , Grimsby",
@@ -19668,7 +19678,7 @@
       "current_key": "robin hood|swannington|le67 8qq",
       "independent_location_check": {
         "actionable": false,
-        "checked_at": "2026-10-09",
+        "checked_at": "2026-10-12",
         "comparisons": [
           {
             "name_matches": 0,
@@ -19765,7 +19775,7 @@
       "current_key": "hourglass|tutbury|de13 9lp",
       "independent_location_check": {
         "actionable": false,
-        "checked_at": "2026-10-09",
+        "checked_at": "2026-10-12",
         "comparisons": [
           {
             "address": "6A High Street, Tutbury, Burton upon Trent",
@@ -19870,7 +19880,7 @@
       "current_key": "ye olde manor inn|stoke: fenton|st4 2pt",
       "independent_location_check": {
         "actionable": false,
-        "checked_at": "2026-10-09",
+        "checked_at": "2026-10-12",
         "comparisons": [
           {
             "address": "13a Manor Street, Fenton, Stoke-On-Trent",
@@ -19963,7 +19973,7 @@
       "current_key": "wheatsheaf|wirksworth|de4 4ds",
       "independent_location_check": {
         "actionable": false,
-        "checked_at": "2026-10-09",
+        "checked_at": "2026-10-12",
         "comparisons": [
           {
             "name_matches": 0,
@@ -20060,7 +20070,7 @@
       "current_key": "five horseshoes|barholm|pe9 4ra",
       "independent_location_check": {
         "actionable": false,
-        "checked_at": "2026-10-09",
+        "checked_at": "2026-10-12",
         "comparisons": [
           {
             "address": "Five Horse Shoes Inn, Horse Shoe Lane, Barholm, Lincolnshire",
@@ -20167,7 +20177,7 @@
       "current_key": "shoulder of mutton|osmaston|de6 1lw",
       "independent_location_check": {
         "actionable": false,
-        "checked_at": "2026-10-09",
+        "checked_at": "2026-10-12",
         "comparisons": [
           {
             "address": "Moor Lane, Osmaston, Derbyshire",
@@ -20274,7 +20284,7 @@
       "current_key": "rockcliffe arms|whitley bay|ne26 2dt",
       "independent_location_check": {
         "actionable": false,
-        "checked_at": "2026-10-09",
+        "checked_at": "2026-10-12",
         "comparisons": [
           {
             "address": "Algernon Place, Whitley Bay, Tyne And Wear",
@@ -20379,7 +20389,7 @@
       "current_key": "ladybrook|bramhall|sk7 2np",
       "independent_location_check": {
         "actionable": false,
-        "checked_at": "2026-10-09",
+        "checked_at": "2026-10-12",
         "comparisons": [
           {
             "address": "18 Fir Road, Bramhall, Stockport",
@@ -20486,7 +20496,7 @@
       "current_key": "black friar|blackfriars ec4v|ec4v 4eg",
       "independent_location_check": {
         "actionable": false,
-        "checked_at": "2026-10-09",
+        "checked_at": "2026-10-12",
         "comparisons": [
           {
             "address": "Blackfriars Tavern, 174 Queen Victoria Street, London",
@@ -20591,7 +20601,7 @@
       "current_key": "tynemouth wmc/social club (pmc)|tynemouth|ne30 4dx",
       "independent_location_check": {
         "actionable": false,
-        "checked_at": "2026-10-09",
+        "checked_at": "2026-10-12",
         "comparisons": [
           {
             "name_matches": 0,
@@ -20692,7 +20702,7 @@
       "current_key": "plough and harrow|fazeley|b78 3rf",
       "independent_location_check": {
         "actionable": false,
-        "checked_at": "2026-10-09",
+        "checked_at": "2026-10-12",
         "comparisons": [
           {
             "address": "Atherstone Street, Fazeley, Tamworth, Staffordshire",
@@ -21003,7 +21013,7 @@
       "current_key": "old down inn|emborough|ba3 4sa",
       "independent_location_check": {
         "actionable": false,
-        "checked_at": "2026-10-09",
+        "checked_at": "2026-10-12",
         "comparisons": [
           {
             "name_matches": 1,
@@ -21100,7 +21110,7 @@
       "current_key": "bankers draught|leek|st13 5jn",
       "independent_location_check": {
         "actionable": false,
-        "checked_at": "2026-10-09",
+        "checked_at": "2026-10-12",
         "comparisons": [
           {
             "address": "83 Haywood Street, Leek, Staffordshire",
@@ -21205,7 +21215,7 @@
       "current_key": "queens head hotel|congleton|cw12 3de",
       "independent_location_check": {
         "actionable": false,
-        "checked_at": "2026-10-09",
+        "checked_at": "2026-10-12",
         "comparisons": [
           {
             "name_matches": 1,
@@ -21338,7 +21348,7 @@
       "current_key": "corvus|st clears|sa33 4bg",
       "independent_location_check": {
         "actionable": false,
-        "checked_at": "2026-10-09",
+        "checked_at": "2026-10-12",
         "comparisons": [
           {
             "address": "Corvus Inn, Station Road, St Clears, Carmarthen",
@@ -21443,7 +21453,7 @@
       "current_key": "palmerston arms|peterborough|pe2 9pa",
       "independent_location_check": {
         "actionable": false,
-        "checked_at": "2026-10-09",
+        "checked_at": "2026-10-12",
         "comparisons": [
           {
             "address": "82 Oundle Road, Woodston, Peterborough",
@@ -21550,7 +21560,7 @@
       "current_key": "bank tavern|bristol: central|bs1 2hr",
       "independent_location_check": {
         "actionable": false,
-        "checked_at": "2026-10-09",
+        "checked_at": "2026-10-12",
         "comparisons": [
           {
             "address": "The Bank Tavern, 8 John Street, City Centre, Bristol",
@@ -21655,7 +21665,7 @@
       "current_key": "dambusters|scampton|ln1 2sd",
       "independent_location_check": {
         "actionable": false,
-        "checked_at": "2026-10-09",
+        "checked_at": "2026-10-12",
         "comparisons": [
           {
             "name_matches": 0,
@@ -21752,7 +21762,7 @@
       "current_key": "black cat bar|liverpool: central|l1 4jn",
       "independent_location_check": {
         "actionable": false,
-        "checked_at": "2026-10-09",
+        "checked_at": "2026-10-12",
         "comparisons": [
           {
             "name_matches": 1,
@@ -21853,7 +21863,7 @@
       "current_key": "social club (pmc)|rolleston-on-dove|de13 9dn",
       "independent_location_check": {
         "actionable": false,
-        "checked_at": "2026-10-09",
+        "checked_at": "2026-10-12",
         "comparisons": [
           {
             "name_matches": 0,
@@ -21924,7 +21934,7 @@
       "current_key": "plough|bedworth heath|cv12 0lg",
       "independent_location_check": {
         "actionable": false,
-        "checked_at": "2026-10-09",
+        "checked_at": "2026-10-12",
         "comparisons": [
           {
             "address": "The Plough Inn, Smorrall Lane, , Bedworth",
@@ -22031,7 +22041,7 @@
       "current_key": "stag|rotherham: broom|s60 4jn",
       "independent_location_check": {
         "actionable": false,
-        "checked_at": "2026-10-09",
+        "checked_at": "2026-10-12",
         "comparisons": [
           {
             "name_matches": 0,
@@ -22128,7 +22138,7 @@
       "current_key": "bluebell|farnah green|de56 2up",
       "independent_location_check": {
         "actionable": false,
-        "checked_at": "2026-10-09",
+        "checked_at": "2026-10-12",
         "comparisons": [
           {
             "name_matches": 0,
@@ -22225,7 +22235,7 @@
       "current_key": "two pigs|barton-under-needwood|de13 8aa",
       "independent_location_check": {
         "actionable": false,
-        "checked_at": "2026-10-09",
+        "checked_at": "2026-10-12",
         "comparisons": [
           {
             "address": "47 Main Street, Barton under Needwood, Burton upon Trent",

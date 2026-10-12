@@ -2315,7 +2315,7 @@
     },
     "v-0c3ec54b-16fe-56d8-9a41-dd9fa99f26f7": {
       "actionable": false,
-      "checked_at": "2026-10-09",
+      "checked_at": "2026-10-12",
       "comparisons": [
         {
           "address": "90 Bold Street, , Liverpool",
@@ -2360,7 +2360,7 @@
     },
     "v-0ccc8e04-08da-58a5-a6b5-293d225871db": {
       "actionable": false,
-      "checked_at": "2026-10-09",
+      "checked_at": "2026-10-12",
       "comparisons": [
         {
           "address": "38 Queens Road, , Nuneaton",
@@ -2403,13 +2403,18 @@
     },
     "v-0ce3e50d-74cd-57eb-9f44-9c7e9fb7d6bd": {
       "actionable": false,
-      "checked_at": "2026-10-09",
+      "checked_at": "2026-10-12",
       "comparisons": [
         {
-          "name_matches": 1,
-          "postcode_matches": 2,
+          "address": "60 Main Street, Foxton, Leicestershire",
+          "difference_metres": 105.0,
+          "lat": 52.504336,
+          "lng": -0.968567,
+          "name": "Shoulder Of Mutton",
+          "postcode": "LE16 7RB",
           "queried_postcode": "LE16 7RB",
-          "status": "ambiguous_or_missing_coordinates"
+          "status": "coordinate_disagreement",
+          "url": "https://ratings.food.gov.uk/business/1986368"
         }
       ],
       "confidence": "existing_evidence_needs_corroboration",
@@ -2426,19 +2431,24 @@
       "priority": 2,
       "reasons": [],
       "reference": {
-        "name_matches": 1,
-        "postcode_matches": 2,
+        "address": "60 Main Street, Foxton, Leicestershire",
+        "difference_metres": 105.0,
+        "lat": 52.504336,
+        "lng": -0.968567,
+        "name": "Shoulder Of Mutton",
+        "postcode": "LE16 7RB",
         "queried_postcode": "LE16 7RB",
-        "status": "ambiguous_or_missing_coordinates"
+        "status": "coordinate_disagreement",
+        "url": "https://ratings.food.gov.uk/business/1986368"
       },
-      "status": "ambiguous_or_missing_coordinates",
+      "status": "coordinate_disagreement",
       "warnings": [
-        "FSA comparison is inconclusive; absence of a match does not contradict accepted evidence"
+        "FSA coordinate is 105.0m from the accepted pin; informational only because the FSA geocode may be approximate"
       ]
     },
     "v-0d01d59b-c408-5111-b2be-e3764c7fa27d": {
       "actionable": false,
-      "checked_at": "2026-10-09",
+      "checked_at": "2026-10-12",
       "comparisons": [
         {
           "name_matches": 0,
@@ -2473,7 +2483,7 @@
     },
     "v-0d158b4e-ec82-5f08-9ed0-6913ee6c4c29": {
       "actionable": false,
-      "checked_at": "2026-10-09",
+      "checked_at": "2026-10-12",
       "comparisons": [
         {
           "address": "7 School Lane, Heaton Chapel, Stockport",
@@ -2518,7 +2528,7 @@
     },
     "v-0d2ba138-4392-55a3-9048-fe1b9734be97": {
       "actionable": false,
-      "checked_at": "2026-10-09",
+      "checked_at": "2026-10-12",
       "comparisons": [
         {
           "name_matches": 0,
@@ -2553,7 +2563,7 @@
     },
     "v-0d4203e8-3483-5683-893a-ef4bd63e6c15": {
       "actionable": false,
-      "checked_at": "2026-10-09",
+      "checked_at": "2026-10-12",
       "comparisons": [
         {
           "address": "Dale Road North, Darley Dale, Derbyshire",
@@ -2598,7 +2608,7 @@
     },
     "v-0d6e06da-2598-5e42-abdb-11cebca8ba46": {
       "actionable": false,
-      "checked_at": "2026-10-09",
+      "checked_at": "2026-10-12",
       "comparisons": [
         {
           "address": "Snowdonia Park Hotel, , Waunfawr, Gwynedd",
@@ -2641,7 +2651,7 @@
     },
     "v-0da9e4de-4fa6-55d2-95aa-1c1dddc89d0b": {
       "actionable": false,
-      "checked_at": "2026-10-09",
+      "checked_at": "2026-10-12",
       "comparisons": [
         {
           "name_matches": 0,
@@ -2676,7 +2686,7 @@
     },
     "v-0e1ce8ac-6976-55a6-82ba-b865efc19eac": {
       "actionable": false,
-      "checked_at": "2026-10-09",
+      "checked_at": "2026-10-12",
       "comparisons": [
         {
           "address": "69 Dale Street, , Liverpool",
@@ -2719,7 +2729,7 @@
     },
     "v-0e203d6f-5b71-5bfa-815b-76bf8b65cc7e": {
       "actionable": false,
-      "checked_at": "2026-10-09",
+      "checked_at": "2026-10-12",
       "comparisons": [
         {
           "address": "21 Station Road, Hesketh Bank, Lancashire",
@@ -2764,7 +2774,7 @@
     },
     "v-0e76b9e4-8cad-5e08-9cf0-b4b79a820e2e": {
       "actionable": false,
-      "checked_at": "2026-10-09",
+      "checked_at": "2026-10-12",
       "comparisons": [
         {
           "address": "Derby Road, , Stanley",
@@ -2807,7 +2817,7 @@
     },
     "v-0ea4ff2b-6cc3-5c90-964b-7ec2d97e82e3": {
       "actionable": false,
-      "checked_at": "2026-10-09",
+      "checked_at": "2026-10-12",
       "comparisons": [
         {
           "address": "Green Dragon Inn Ludlow Road, , Little Stretton, Shropshire",
@@ -2850,7 +2860,7 @@
     },
     "v-0fdce0e7-a3db-5be3-a64c-3a805a0b1781": {
       "actionable": false,
-      "checked_at": "2026-10-09",
+      "checked_at": "2026-10-12",
       "comparisons": [
         {
           "name_matches": 0,
@@ -2885,7 +2895,7 @@
     },
     "v-0fddad34-e2db-51e3-91eb-01751a963f38": {
       "actionable": false,
-      "checked_at": "2026-10-09",
+      "checked_at": "2026-10-12",
       "comparisons": [
         {
           "address": "1 Lancaster Square, , Conwy",
@@ -2928,7 +2938,7 @@
     },
     "v-101e22ce-2e15-5d8d-8f40-64e6ead91ee8": {
       "actionable": false,
-      "checked_at": "2026-10-09",
+      "checked_at": "2026-10-12",
       "comparisons": [
         {
           "name_matches": 0,
@@ -2963,7 +2973,7 @@
     },
     "v-1099e58b-6e60-5619-b6b7-d5943139f761": {
       "actionable": false,
-      "checked_at": "2026-10-09",
+      "checked_at": "2026-10-12",
       "comparisons": [
         {
           "address": "7 Lumley Avenue, Skegness",
@@ -3006,7 +3016,7 @@
     },
     "v-11077285-835a-5a9b-a349-b53ae45f7f52": {
       "actionable": false,
-      "checked_at": "2026-10-09",
+      "checked_at": "2026-10-12",
       "comparisons": [
         {
           "address": "The White Lion, Passage Road, Westbury, Bristol",
@@ -3051,7 +3061,7 @@
     },
     "v-11484c5e-8bfd-549a-a94e-1f3365eee08d": {
       "actionable": false,
-      "checked_at": "2026-10-09",
+      "checked_at": "2026-10-12",
       "comparisons": [
         {
           "address": "10 Sandford Street, Lichfield, Staffordshire",
@@ -3096,7 +3106,7 @@
     },
     "v-1180d481-648a-5e00-bc95-6b4c0e4693f0": {
       "actionable": false,
-      "checked_at": "2026-10-09",
+      "checked_at": "2026-10-12",
       "comparisons": [
         {
           "address": "Wagon And Horses, 71 Curzon Street, Ibstock, Coalville",
@@ -3141,7 +3151,7 @@
     },
     "v-11bc49a7-dcc1-599f-90cf-8a904dfde143": {
       "actionable": false,
-      "checked_at": "2026-10-09",
+      "checked_at": "2026-10-12",
       "comparisons": [
         {
           "address": "Riverhead Centre, Victoria Street, , Grimsby",
@@ -3186,7 +3196,7 @@
     },
     "v-12016874-b271-5032-9ed9-e7c2669740f3": {
       "actionable": false,
-      "checked_at": "2026-10-09",
+      "checked_at": "2026-10-12",
       "comparisons": [
         {
           "name_matches": 0,
@@ -3221,7 +3231,7 @@
     },
     "v-12224361-c352-56ce-914a-4df8cc9b38d2": {
       "actionable": false,
-      "checked_at": "2026-10-09",
+      "checked_at": "2026-10-12",
       "comparisons": [
         {
           "address": "6A High Street, Tutbury, Burton upon Trent",
@@ -3264,7 +3274,7 @@
     },
     "v-1259d276-decd-56b7-8b71-12dfc9a13efd": {
       "actionable": false,
-      "checked_at": "2026-10-09",
+      "checked_at": "2026-10-12",
       "comparisons": [
         {
           "address": "13a Manor Street, Fenton, Stoke-On-Trent",
@@ -3307,7 +3317,7 @@
     },
     "v-126daf8a-4846-5d52-8a19-8f91497a3e88": {
       "actionable": false,
-      "checked_at": "2026-10-09",
+      "checked_at": "2026-10-12",
       "comparisons": [
         {
           "name_matches": 0,
@@ -3342,7 +3352,7 @@
     },
     "v-127772d1-4ac7-5386-bf8a-8dae262bbc03": {
       "actionable": false,
-      "checked_at": "2026-10-09",
+      "checked_at": "2026-10-12",
       "comparisons": [
         {
           "address": "Five Horse Shoes Inn, Horse Shoe Lane, Barholm, Lincolnshire",
@@ -3387,7 +3397,7 @@
     },
     "v-12e7c15f-af85-5060-a657-046b316d29a0": {
       "actionable": false,
-      "checked_at": "2026-10-09",
+      "checked_at": "2026-10-12",
       "comparisons": [
         {
           "address": "Moor Lane, Osmaston, Derbyshire",
@@ -3432,7 +3442,7 @@
     },
     "v-1317a9d6-3297-5920-aa3b-fb04e14b4fdc": {
       "actionable": false,
-      "checked_at": "2026-10-09",
+      "checked_at": "2026-10-12",
       "comparisons": [
         {
           "address": "Algernon Place, Whitley Bay, Tyne And Wear",
@@ -3475,7 +3485,7 @@
     },
     "v-135ca874-2542-5da4-a0b9-7c783ceb513e": {
       "actionable": false,
-      "checked_at": "2026-10-09",
+      "checked_at": "2026-10-12",
       "comparisons": [
         {
           "address": "18 Fir Road, Bramhall, Stockport",
@@ -3520,7 +3530,7 @@
     },
     "v-135d3035-b596-53c6-8c4d-0414770ab49f": {
       "actionable": false,
-      "checked_at": "2026-10-09",
+      "checked_at": "2026-10-12",
       "comparisons": [
         {
           "address": "Blackfriars Tavern, 174 Queen Victoria Street, London",
@@ -3563,7 +3573,7 @@
     },
     "v-13a2ad1c-e050-5c7a-944e-064bff66e040": {
       "actionable": false,
-      "checked_at": "2026-10-09",
+      "checked_at": "2026-10-12",
       "comparisons": [
         {
           "name_matches": 0,
@@ -3598,7 +3608,7 @@
     },
     "v-13b39b8a-0c4b-5514-8c6a-8f4ceaf7dc89": {
       "actionable": false,
-      "checked_at": "2026-10-09",
+      "checked_at": "2026-10-12",
       "comparisons": [
         {
           "address": "Atherstone Street, Fazeley, Tamworth, Staffordshire",
@@ -3737,7 +3747,7 @@
     },
     "v-14061bf4-822e-5fad-af95-e998a3002dba": {
       "actionable": false,
-      "checked_at": "2026-10-09",
+      "checked_at": "2026-10-12",
       "comparisons": [
         {
           "name_matches": 1,
@@ -3772,7 +3782,7 @@
     },
     "v-140ec987-9599-51af-b83f-ed7b6c6f81fa": {
       "actionable": false,
-      "checked_at": "2026-10-09",
+      "checked_at": "2026-10-12",
       "comparisons": [
         {
           "address": "83 Haywood Street, Leek, Staffordshire",
@@ -3815,7 +3825,7 @@
     },
     "v-14167d8a-1571-5e7b-b69d-8bdf89455ff5": {
       "actionable": false,
-      "checked_at": "2026-10-09",
+      "checked_at": "2026-10-12",
       "comparisons": [
         {
           "name_matches": 1,
@@ -3850,7 +3860,7 @@
     },
     "v-14878e49-19a6-51cc-8a27-e2ffe107d761": {
       "actionable": false,
-      "checked_at": "2026-10-09",
+      "checked_at": "2026-10-12",
       "comparisons": [
         {
           "address": "Corvus Inn, Station Road, St Clears, Carmarthen",
@@ -3893,7 +3903,7 @@
     },
     "v-1488af46-baed-520b-89f3-b68543720635": {
       "actionable": false,
-      "checked_at": "2026-10-09",
+      "checked_at": "2026-10-12",
       "comparisons": [
         {
           "address": "82 Oundle Road, Woodston, Peterborough",
@@ -3938,7 +3948,7 @@
     },
     "v-14f09ec5-7f12-5bf8-8fde-2ba3821e38c4": {
       "actionable": false,
-      "checked_at": "2026-10-09",
+      "checked_at": "2026-10-12",
       "comparisons": [
         {
           "address": "The Bank Tavern, 8 John Street, City Centre, Bristol",
@@ -3981,7 +3991,7 @@
     },
     "v-151c6a0f-d18e-5884-868f-b95b6d6c6f14": {
       "actionable": false,
-      "checked_at": "2026-10-09",
+      "checked_at": "2026-10-12",
       "comparisons": [
         {
           "name_matches": 0,
@@ -4016,7 +4026,7 @@
     },
     "v-152d1ab1-df05-55e1-a620-e4f9d08cdfd6": {
       "actionable": false,
-      "checked_at": "2026-10-09",
+      "checked_at": "2026-10-12",
       "comparisons": [
         {
           "name_matches": 1,
@@ -4051,7 +4061,7 @@
     },
     "v-1554353b-6a48-561c-9f59-331364ce09dd": {
       "actionable": false,
-      "checked_at": "2026-10-09",
+      "checked_at": "2026-10-12",
       "comparisons": [
         {
           "name_matches": 0,
@@ -4086,7 +4096,7 @@
     },
     "v-155ff10f-4111-5b96-975b-cf3c9827be4a": {
       "actionable": false,
-      "checked_at": "2026-10-09",
+      "checked_at": "2026-10-12",
       "comparisons": [
         {
           "address": "The Plough Inn, Smorrall Lane, , Bedworth",
@@ -4131,7 +4141,7 @@
     },
     "v-15ca7fc6-6d97-5ffd-aa39-eec40b4d5a0e": {
       "actionable": false,
-      "checked_at": "2026-10-09",
+      "checked_at": "2026-10-12",
       "comparisons": [
         {
           "name_matches": 0,
@@ -4166,7 +4176,7 @@
     },
     "v-15d0db44-4cbb-5e63-8d45-873665894ada": {
       "actionable": false,
-      "checked_at": "2026-10-09",
+      "checked_at": "2026-10-12",
       "comparisons": [
         {
           "name_matches": 0,
@@ -4201,7 +4211,7 @@
     },
     "v-1609cb4c-f51b-5a94-a5bc-6f1636395521": {
       "actionable": false,
-      "checked_at": "2026-10-09",
+      "checked_at": "2026-10-12",
       "comparisons": [
         {
           "address": "47 Main Street, Barton under Needwood, Burton upon Trent",

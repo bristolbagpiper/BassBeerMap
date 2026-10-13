@@ -2,22 +2,22 @@
 
 Locations: 1044
 
-Actionable findings: 33
+Actionable findings: 32
 Locations with informational observations: 586 (may also have an actionable finding)
 
 ## Results
 
-- no_name_match: 179
 - coordinate_agreement: 459
+- no_name_match: 179
 - nearby: 102
 - coordinate_disagreement: 241
 - ambiguous_or_missing_coordinates: 63
 
 ## Confidence
 
-- existing_evidence_needs_corroboration: 578
 - independent_coordinate_agreement: 442
-- owner_reviewed: 24
+- existing_evidence_needs_corroboration: 577
+- owner_reviewed: 25
 
 ## Limits
 
@@ -31,7 +31,6 @@ Locations with informational observations: 586 (may also have an actionable find
 
 | Pub | Place | Postcode | Result | Classification | Detail |
 |---|---|---|---|---|---|
-| Bird in Hand | Austrey | CV9 3EE | no_name_match | Actionable | Directory postcode differs from reviewed reference postcode; FSA comparison is inconclusive; absence of a match does not contradict accepted evidence |
 | Blue Dog | Sewstern | NG33 5RG | coordinate_agreement | Actionable | Directory postcode differs from reviewed reference postcode |
 | Bucknall Bowling & Recreation Club | Stoke: Bucknall | ST2 7AB | no_name_match | Actionable | Directory postcode differs from reviewed reference postcode; FSA comparison is inconclusive; absence of a match does not contradict accepted evidence |
 | Bulls Head | Nailstone | CV13 0QE | nearby | Actionable | Directory postcode differs from reviewed reference postcode; FSA coordinate is 25-50m away; informational only |
@@ -105,6 +104,7 @@ Locations with informational observations: 586 (may also have an actionable find
 | Benks | Leek | ST13 6DH | no_name_match | Informational | FSA comparison is inconclusive; absence of a match does not contradict accepted evidence |
 | Berkeley Arms | Purton | GL13 9HU | ambiguous_or_missing_coordinates | Informational | FSA comparison is inconclusive; absence of a match does not contradict accepted evidence |
 | Binary | Mickleover | DE3 0GR | no_name_match | Informational | Owner reviewed this postcode discrepancy and confirmed the displayed pub building; listing postcode retained for provenance; FSA comparison is inconclusive; absence of a match does not contradict accepted evidence |
+| Bird in Hand | Austrey | CV9 3EE | no_name_match | Informational | Owner reviewed this postcode discrepancy and confirmed the displayed pub building; listing postcode retained for provenance; FSA comparison is inconclusive; absence of a match does not contradict accepted evidence |
 | Black Cat | Liverpool: Mossley Hill | L18 8AG | no_name_match | Informational | FSA comparison is inconclusive; absence of a match does not contradict accepted evidence |
 | Black Cat | Bristol: Bedminster | BS3 3LH | no_name_match | Informational | FSA comparison is inconclusive; absence of a match does not contradict accepted evidence |
 | Black Cat Bar | Liverpool: Central | L1 4JN | ambiguous_or_missing_coordinates | Informational | FSA comparison is inconclusive; absence of a match does not contradict accepted evidence |

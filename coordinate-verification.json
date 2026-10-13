@@ -2023,6 +2023,22 @@
           "reference_postcode": "CV9 3EB",
           "source": "camra",
           "url": "https://camra.org.uk/pubs/181770"
+        },
+        {
+          "checked_at": "2026-10-13",
+          "match": "owner_confirmed_existing_pub_building",
+          "reference_coordinate": {
+            "lat": 52.6531183,
+            "lng": -1.5630947545454545
+          },
+          "reference_name": "Bird in Hand",
+          "reference_postcode": "CV9 3EB",
+          "reviewed_by": "bristolbagpiper",
+          "source": "manual_named_place_map",
+          "supporting_address_urls": [
+            "https://birdinhandaustrey.co.uk/book-a-table/"
+          ],
+          "url": "https://www.google.com/maps/search/?api=1&query=52.6531183%2C-1.5630947545454545"
         }
       ],
       "lat": 52.6531183,
@@ -2030,6 +2046,24 @@
       "metadata_issue": {
         "field": "postcode",
         "listed": "CV9 3EE",
+        "owner_review": {
+          "approved_coordinate": {
+            "lat": 52.6531183,
+            "lng": -1.5630947545454545
+          },
+          "checked_at": "2026-10-13",
+          "conclusion": "Owner visually confirmed the current Bird in Hand building at Main Road, Austrey. Retain the pin. Operator and CAMRA use CV9 3EB; preserve PDF postcode CV9 3EE as source data. Location discrepancy reviewed; postal delivery postcode not independently proven.",
+          "listed": "CV9 3EE",
+          "owner_instruction": "yes",
+          "pub_name": "Bird in Hand",
+          "reference": "CV9 3EB",
+          "review_map_url": "https://www.google.com/maps/search/?api=1&query=52.6531183%2C-1.5630947545454545",
+          "reviewed_by": "bristolbagpiper",
+          "source_url": "https://camra.org.uk/pubs/181770",
+          "supporting_address_urls": [
+            "https://birdinhandaustrey.co.uk/book-a-table/"
+          ]
+        },
         "reference": "CV9 3EB",
         "source_url": "https://camra.org.uk/pubs/181770"
       },

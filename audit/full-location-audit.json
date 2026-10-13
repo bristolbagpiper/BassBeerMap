@@ -2,59 +2,6 @@
   "records": [
     {
       "actionable": true,
-      "area": "Warwickshire",
-      "checked_at": "2026-10-10",
-      "comparisons": [
-        {
-          "name_matches": 0,
-          "postcode_matches": 0,
-          "queried_postcode": "CV9 3EE",
-          "status": "no_name_match"
-        },
-        {
-          "name_matches": 1,
-          "postcode_matches": 1,
-          "queried_postcode": "CV9 3EB",
-          "status": "ambiguous_or_missing_coordinates"
-        }
-      ],
-      "confidence": "existing_evidence_needs_corroboration",
-      "country": "England",
-      "dispense": "H",
-      "independent_of_pin": true,
-      "last": "2026 Q3",
-      "listing": {
-        "postcode": "CV9 3EE",
-        "pub_name": "Bird in Hand"
-      },
-      "notes": "",
-      "owner_reviewed": false,
-      "pg": "Guest",
-      "pin": {
-        "lat": 52.6531183,
-        "lng": -1.5630947545454545
-      },
-      "place_name": "Austrey",
-      "postcode": "CV9 3EE",
-      "priority": 0,
-      "pub_name": "Bird in Hand",
-      "reasons": [
-        "Directory postcode differs from reviewed reference postcode"
-      ],
-      "reference": {
-        "name_matches": 0,
-        "postcode_matches": 0,
-        "queried_postcode": "CV9 3EE",
-        "status": "no_name_match"
-      },
-      "status": "no_name_match",
-      "venue_id": "v-c42a1691-cc71-5fac-a7fa-2b3c2112ec0e",
-      "warnings": [
-        "FSA comparison is inconclusive; absence of a match does not contradict accepted evidence"
-      ]
-    },
-    {
-      "actionable": true,
       "area": "Leicestershire",
       "checked_at": "2026-10-10",
       "comparisons": [
@@ -4033,6 +3980,58 @@
       },
       "status": "no_name_match",
       "venue_id": "v-4ac48ba1-f454-50cb-a1e9-a069589c6d0c",
+      "warnings": [
+        "Owner reviewed this postcode discrepancy and confirmed the displayed pub building; listing postcode retained for provenance",
+        "FSA comparison is inconclusive; absence of a match does not contradict accepted evidence"
+      ]
+    },
+    {
+      "actionable": false,
+      "area": "Warwickshire",
+      "checked_at": "2026-10-10",
+      "comparisons": [
+        {
+          "name_matches": 0,
+          "postcode_matches": 0,
+          "queried_postcode": "CV9 3EE",
+          "status": "no_name_match"
+        },
+        {
+          "name_matches": 1,
+          "postcode_matches": 1,
+          "queried_postcode": "CV9 3EB",
+          "status": "ambiguous_or_missing_coordinates"
+        }
+      ],
+      "confidence": "owner_reviewed",
+      "country": "England",
+      "dispense": "H",
+      "independent_of_pin": true,
+      "last": "2026 Q3",
+      "listing": {
+        "postcode": "CV9 3EE",
+        "pub_name": "Bird in Hand"
+      },
+      "notes": "",
+      "owner_reviewed": true,
+      "pg": "Guest",
+      "pin": {
+        "lat": 52.6531183,
+        "lng": -1.5630947545454545
+      },
+      "place_name": "Austrey",
+      "postcode": "CV9 3EE",
+      "priority": 2,
+      "pub_name": "Bird in Hand",
+      "reasons": [],
+      "reference": {
+        "name_matches": 0,
+        "postcode_matches": 0,
+        "queried_postcode": "CV9 3EE",
+        "status": "no_name_match"
+      },
+      "status": "no_name_match",
+      "venue_id": "v-c42a1691-cc71-5fac-a7fa-2b3c2112ec0e",
       "warnings": [
         "Owner reviewed this postcode discrepancy and confirmed the displayed pub building; listing postcode retained for provenance",
         "FSA comparison is inconclusive; absence of a match does not contradict accepted evidence"
@@ -54371,11 +54370,11 @@
   ],
   "schema_version": 1,
   "summary": {
-    "actionable_count": 33,
+    "actionable_count": 32,
     "confidence_counts": {
-      "existing_evidence_needs_corroboration": 578,
+      "existing_evidence_needs_corroboration": 577,
       "independent_coordinate_agreement": 442,
-      "owner_reviewed": 24
+      "owner_reviewed": 25
     },
     "counts": {
       "ambiguous_or_missing_coordinates": 63,

@@ -4897,18 +4897,44 @@
             "Directory postcode SK11 6DY conflicts with reference address SK11 6DZ"
           ],
           "status": "review_needed"
+        },
+        {
+          "date": "2026-10-13",
+          "reasons": [
+            "Trading status needs review: CAMRA reports closed long term from 10 July 2026, while the pub website advertises opening hours; current trading and Bass availability unconfirmed"
+          ],
+          "status": "review_needed"
         }
       ],
-      "last_checked": "2026-10-10",
+      "last_checked": "2026-10-13",
       "place_name": "Macclesfield",
       "postcode": "SK11 6DY",
       "pub_name": "Charles Roe",
       "reasons": [
-        "Directory postcode SK11 6DY conflicts with reference address SK11 6DZ"
+        "Trading status needs review: CAMRA reports closed long term from 10 July 2026, while the pub website advertises opening hours; current trading and Bass availability unconfirmed"
       ],
       "reference": {
         "field": "postcode",
         "listed": "SK11 6DY",
+        "owner_review": {
+          "accepted_postcode": "SK11 6DY",
+          "approved_coordinate": {
+            "lat": 53.2608242,
+            "lng": -2.128478
+          },
+          "checked_at": "2026-10-13",
+          "conclusion": "Owner accepted the existing Charles Roe pin as near enough. Retain coordinates; do not substitute the nearby named Google marker. Operator address supports PDF postcode SK11 6DY; retain conflicting CAMRA postcode SK11 6DZ as provenance. Approval covers location only; trading status remains unresolved.",
+          "listed": "SK11 6DY",
+          "owner_instruction": "yes near enough",
+          "pub_name": "Charles Roe",
+          "reference": "SK11 6DZ",
+          "review_map_url": "https://www.google.com/maps/search/?api=1&query=53.2608242%2C-2.128478",
+          "reviewed_by": "bristolbagpiper",
+          "source_url": "https://camra.org.uk/pubs/199589",
+          "supporting_address_urls": [
+            "https://www.thecharlesroepub.co.uk/"
+          ]
+        },
         "reference": "SK11 6DZ",
         "source_url": "https://camra.org.uk/pubs/199589"
       },
@@ -4921,6 +4947,23 @@
       },
       "source_error": null,
       "status": "review_needed",
+      "trading_status_review": {
+        "checked_at": "2026-10-13",
+        "evidence": [
+          {
+            "claim": "Closed long term from 10 July 2026; listing updated 18 September 2026",
+            "source": "camra",
+            "url": "https://camra.org.uk/pubs/charles-roe-macclesfield-199589"
+          },
+          {
+            "claim": "Website advertises opening hours; website alone does not establish current trading",
+            "source": "operator",
+            "url": "https://www.thecharlesroepub.co.uk/"
+          }
+        ],
+        "reason": "CAMRA reports closed long term from 10 July 2026, while the pub website advertises opening hours; current trading and Bass availability unconfirmed",
+        "status": "needs_review"
+      },
       "unverified": false,
       "venue_id": "v-5b7a8e74-1d57-5edf-a58b-f3445daf1ea1"
     },

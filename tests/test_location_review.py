@@ -118,3 +118,25 @@ class LocationTrackingTests(unittest.TestCase):
         from directory_release import venue_key
         entry['current_key'] = venue_key(listing)
         self.assertEqual(active(), 1)
+
+    def test_building_approval_does_not_resolve_trading_status_conflict(self):
+        listing, registry, identifier = self.fixture()
+        entry = registry['venues'][identifier]
+        entry['verified_pin'] = pin()
+        entry['location_approvals'] = [{'owner_instruction':'yes near enough'}]
+        entry['trading_status_review'] = dict(status='needs_review', reason='CAMRA reports closed; operator advertises opening hours',
+                                            evidence=[dict(claim='Closed long term',url='https://camra.org.uk/pubs/123')])
+        ledger = build_ledger([listing], registry)
+        before = copy.deepcopy(ledger)
+        report = build_review([listing], registry, ledger)
+        self.assertEqual(report['active_count'], 1)
+        self.assertEqual(report['unverified_count'], 0)
+        self.assertIn('Trading status needs review', report['records'][identifier]['reasons'][0])
+        self.assertIn('https://camra.org.uk/pubs/123', format_report(report))
+        self.assertEqual(ledger, before)
+        registry['location_review'] = report
+        entry['trading_status_review']['status'] = 'resolved'
+        resolved = build_review([listing], registry, ledger)
+        self.assertEqual(resolved['active_count'], 0)
+        self.assertEqual(resolved['records'][identifier]['status'], 'resolved')
+        self.assertNotEqual(fingerprint(report), fingerprint(resolved))

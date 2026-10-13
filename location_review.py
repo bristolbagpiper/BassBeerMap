@@ -49,6 +49,9 @@ def build_review(rows, registry, ledger):
             # FSA coordinate differences alone cannot invalidate accepted evidence.
             if independent.get('status') == 'unavailable':
                 reasons.append('Independent FSA comparison unavailable; last accepted pin retained')
+        trading = entry.get('trading_status_review') or {}
+        if trading.get('status') == 'needs_review':
+            reasons.append('Trading status needs review: ' + trading.get('reason', 'conflicting opening or closure information'))
         active = bool(reasons)
         if not active and identifier not in records:
             continue
@@ -64,6 +67,8 @@ def build_review(rows, registry, ledger):
                                   source_checks=dict(attempt.get('sources', {}), **({'fsa_independent': dict(status=independent['status'], url=independent.get('reference', {}).get('url', ''))} if independent_current else {})),
                                   source_error=attempt.get('error'), reference=issue, history=history)
         records[identifier]['research'] = entry.get('location_research', {})
+        if trading:
+            records[identifier]['trading_status_review'] = copy.deepcopy(trading)
     active_ids = {row['venue_id'] for row in rows}
     for identifier, record in records.items():
         if identifier not in active_ids and record.get('status') != 'removed':
@@ -102,6 +107,10 @@ def format_report(report):
                   *[f"- {reason}" for reason in record['reasons']]]
         for source, check in record.get('source_checks', {}).items():
             lines.append(f"- Automatic verification {source.upper()}: {check.get('status', 'unknown')} {check.get('url', '')}".strip())
+        trading = record.get('trading_status_review', {})
+        if trading.get('status') == 'needs_review':
+            for evidence in trading.get('evidence', []):
+                lines.append(f"- Trading status evidence: {evidence.get('claim', '')} {evidence.get('url', '')}")
         if record.get('source_error'):
             lines.append(f"- Lookup error: {record['source_error']}")
         research = record.get('research', {})

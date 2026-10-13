@@ -2,67 +2,6 @@
   "records": [
     {
       "actionable": true,
-      "area": "Cheshire",
-      "checked_at": "2026-10-10",
-      "comparisons": [
-        {
-          "address": "60-62 Chestergate, Macclesfield",
-          "difference_metres": 2.9,
-          "lat": 53.2608246,
-          "lng": -2.1284347,
-          "name": "The Charles Roe Pub",
-          "postcode": "SK11 6DY",
-          "queried_postcode": "SK11 6DY",
-          "status": "coordinate_agreement",
-          "url": "https://ratings.food.gov.uk/business/1909081"
-        },
-        {
-          "name_matches": 0,
-          "postcode_matches": 0,
-          "queried_postcode": "SK11 6DZ",
-          "status": "no_name_match"
-        }
-      ],
-      "confidence": "independent_coordinate_agreement",
-      "country": "England",
-      "dispense": "H",
-      "independent_of_pin": true,
-      "last": "2026 Q2",
-      "listing": {
-        "postcode": "SK11 6DY",
-        "pub_name": "Charles Roe"
-      },
-      "notes": "",
-      "owner_reviewed": false,
-      "pg": "Perm",
-      "pin": {
-        "lat": 53.2608242,
-        "lng": -2.128478
-      },
-      "place_name": "Macclesfield",
-      "postcode": "SK11 6DY",
-      "priority": 0,
-      "pub_name": "Charles Roe",
-      "reasons": [
-        "Directory postcode differs from reviewed reference postcode"
-      ],
-      "reference": {
-        "address": "60-62 Chestergate, Macclesfield",
-        "difference_metres": 2.9,
-        "lat": 53.2608246,
-        "lng": -2.1284347,
-        "name": "The Charles Roe Pub",
-        "postcode": "SK11 6DY",
-        "queried_postcode": "SK11 6DY",
-        "status": "coordinate_agreement",
-        "url": "https://ratings.food.gov.uk/business/1909081"
-      },
-      "status": "coordinate_agreement",
-      "venue_id": "v-5b7a8e74-1d57-5edf-a58b-f3445daf1ea1",
-      "warnings": []
-    },
-    {
-      "actionable": true,
       "area": "Staffordshire",
       "checked_at": "2026-10-10",
       "comparisons": [
@@ -7052,6 +6991,67 @@
       "venue_id": "v-5f2024a2-7c58-56fd-9a94-3f1066e9ccc1",
       "warnings": [
         "FSA comparison is inconclusive; absence of a match does not contradict accepted evidence"
+      ]
+    },
+    {
+      "actionable": false,
+      "area": "Cheshire",
+      "checked_at": "2026-10-10",
+      "comparisons": [
+        {
+          "address": "60-62 Chestergate, Macclesfield",
+          "difference_metres": 2.9,
+          "lat": 53.2608246,
+          "lng": -2.1284347,
+          "name": "The Charles Roe Pub",
+          "postcode": "SK11 6DY",
+          "queried_postcode": "SK11 6DY",
+          "status": "coordinate_agreement",
+          "url": "https://ratings.food.gov.uk/business/1909081"
+        },
+        {
+          "name_matches": 0,
+          "postcode_matches": 0,
+          "queried_postcode": "SK11 6DZ",
+          "status": "no_name_match"
+        }
+      ],
+      "confidence": "owner_reviewed",
+      "country": "England",
+      "dispense": "H",
+      "independent_of_pin": true,
+      "last": "2026 Q2",
+      "listing": {
+        "postcode": "SK11 6DY",
+        "pub_name": "Charles Roe"
+      },
+      "notes": "",
+      "owner_reviewed": true,
+      "pg": "Perm",
+      "pin": {
+        "lat": 53.2608242,
+        "lng": -2.128478
+      },
+      "place_name": "Macclesfield",
+      "postcode": "SK11 6DY",
+      "priority": 2,
+      "pub_name": "Charles Roe",
+      "reasons": [],
+      "reference": {
+        "address": "60-62 Chestergate, Macclesfield",
+        "difference_metres": 2.9,
+        "lat": 53.2608246,
+        "lng": -2.1284347,
+        "name": "The Charles Roe Pub",
+        "postcode": "SK11 6DY",
+        "queried_postcode": "SK11 6DY",
+        "status": "coordinate_agreement",
+        "url": "https://ratings.food.gov.uk/business/1909081"
+      },
+      "status": "coordinate_agreement",
+      "venue_id": "v-5b7a8e74-1d57-5edf-a58b-f3445daf1ea1",
+      "warnings": [
+        "Owner reviewed this postcode discrepancy and confirmed the displayed pub building; listing postcode retained for provenance"
       ]
     },
     {
@@ -54367,11 +54367,11 @@
   ],
   "schema_version": 1,
   "summary": {
-    "actionable_count": 28,
+    "actionable_count": 27,
     "confidence_counts": {
       "existing_evidence_needs_corroboration": 574,
-      "independent_coordinate_agreement": 441,
-      "owner_reviewed": 29
+      "independent_coordinate_agreement": 440,
+      "owner_reviewed": 30
     },
     "counts": {
       "ambiguous_or_missing_coordinates": 63,
@@ -54380,7 +54380,7 @@
       "nearby": 102,
       "no_name_match": 179
     },
-    "informational_count": 587,
+    "informational_count": 588,
     "limitations": [
       "Coordinate agreement does not prove the correct building or current Bass availability.",
       "Owner-approved coordinates take priority; CAMRA remains the primary automated reference.",

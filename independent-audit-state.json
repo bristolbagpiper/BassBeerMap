@@ -15002,7 +15002,7 @@
       ]
     },
     "v-5b7a8e74-1d57-5edf-a58b-f3445daf1ea1": {
-      "actionable": true,
+      "actionable": false,
       "checked_at": "2026-10-10",
       "comparisons": [
         {
@@ -15023,21 +15023,19 @@
           "status": "no_name_match"
         }
       ],
-      "confidence": "independent_coordinate_agreement",
+      "confidence": "owner_reviewed",
       "independent_of_pin": true,
       "listing": {
         "postcode": "SK11 6DY",
         "pub_name": "Charles Roe"
       },
-      "owner_reviewed": false,
+      "owner_reviewed": true,
       "pin": {
         "lat": 53.2608242,
         "lng": -2.128478
       },
-      "priority": 0,
-      "reasons": [
-        "Directory postcode differs from reviewed reference postcode"
-      ],
+      "priority": 2,
+      "reasons": [],
       "reference": {
         "address": "60-62 Chestergate, Macclesfield",
         "difference_metres": 2.9,
@@ -15050,7 +15048,9 @@
         "url": "https://ratings.food.gov.uk/business/1909081"
       },
       "status": "coordinate_agreement",
-      "warnings": []
+      "warnings": [
+        "Owner reviewed this postcode discrepancy and confirmed the displayed pub building; listing postcode retained for provenance"
+      ]
     },
     "v-5ba8d7df-e13a-5b21-b51d-4eb8fe434688": {
       "actionable": false,

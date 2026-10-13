@@ -5419,6 +5419,22 @@
           "reference_postcode": "SK11 6DZ",
           "source": "camra",
           "url": "https://camra.org.uk/pubs/199589"
+        },
+        {
+          "checked_at": "2026-10-13",
+          "match": "owner_accepted_existing_pin_near_enough",
+          "reference_coordinate": {
+            "lat": 53.2608242,
+            "lng": -2.128478
+          },
+          "reference_name": "Charles Roe",
+          "reference_postcode": "SK11 6DY",
+          "reviewed_by": "bristolbagpiper",
+          "source": "manual_named_place_map",
+          "supporting_address_urls": [
+            "https://www.thecharlesroepub.co.uk/"
+          ],
+          "url": "https://www.google.com/maps/search/?api=1&query=53.2608242%2C-2.128478"
         }
       ],
       "lat": 53.2608242,
@@ -5426,6 +5442,25 @@
       "metadata_issue": {
         "field": "postcode",
         "listed": "SK11 6DY",
+        "owner_review": {
+          "accepted_postcode": "SK11 6DY",
+          "approved_coordinate": {
+            "lat": 53.2608242,
+            "lng": -2.128478
+          },
+          "checked_at": "2026-10-13",
+          "conclusion": "Owner accepted the existing Charles Roe pin as near enough. Retain coordinates; do not substitute the nearby named Google marker. Operator address supports PDF postcode SK11 6DY; retain conflicting CAMRA postcode SK11 6DZ as provenance. Approval covers location only; trading status remains unresolved.",
+          "listed": "SK11 6DY",
+          "owner_instruction": "yes near enough",
+          "pub_name": "Charles Roe",
+          "reference": "SK11 6DZ",
+          "review_map_url": "https://www.google.com/maps/search/?api=1&query=53.2608242%2C-2.128478",
+          "reviewed_by": "bristolbagpiper",
+          "source_url": "https://camra.org.uk/pubs/199589",
+          "supporting_address_urls": [
+            "https://www.thecharlesroepub.co.uk/"
+          ]
+        },
         "reference": "SK11 6DZ",
         "source_url": "https://camra.org.uk/pubs/199589"
       },

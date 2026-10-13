@@ -2,22 +2,22 @@
 
 Locations: 1044
 
-Actionable findings: 28
-Locations with informational observations: 587 (may also have an actionable finding)
+Actionable findings: 27
+Locations with informational observations: 588 (may also have an actionable finding)
 
 ## Results
 
-- coordinate_agreement: 459
 - no_name_match: 179
+- coordinate_agreement: 459
 - coordinate_disagreement: 241
 - nearby: 102
 - ambiguous_or_missing_coordinates: 63
 
 ## Confidence
 
-- independent_coordinate_agreement: 441
 - existing_evidence_needs_corroboration: 574
-- owner_reviewed: 29
+- independent_coordinate_agreement: 440
+- owner_reviewed: 30
 
 ## Limits
 
@@ -31,7 +31,6 @@ Locations with informational observations: 587 (may also have an actionable find
 
 | Pub | Place | Postcode | Result | Classification | Detail |
 |---|---|---|---|---|---|
-| Charles Roe | Macclesfield | SK11 6DY | coordinate_agreement | Actionable | Directory postcode differs from reviewed reference postcode |
 | Crossways (Bottlecraft) | Newcastle-U-L: Central | ST5 1RW | no_name_match | Actionable | Directory postcode differs from reviewed reference postcode; FSA comparison is inconclusive; absence of a match does not contradict accepted evidence |
 | Dead Dove | Worcester: Central | WR1 2LT | no_name_match | Actionable | Directory postcode differs from reviewed reference postcode; FSA comparison is inconclusive; absence of a match does not contradict accepted evidence |
 | Drunken Dog | Heanor | DE75 7EF | coordinate_agreement | Actionable | Directory postcode differs from reviewed reference postcode |
@@ -165,6 +164,7 @@ Locations with informational observations: 587 (may also have an actionable find
 | Chaddesen Park Social Club (PMC) | Derby: Chaddesden | DE21 6PD | no_name_match | Informational | FSA comparison is inconclusive; absence of a match does not contradict accepted evidence |
 | Chadwick Arms | Hill Ridware | WS15 3QX | no_name_match | Informational | FSA comparison is inconclusive; absence of a match does not contradict accepted evidence |
 | Chandlers | Shearsby | LE17 6PL | ambiguous_or_missing_coordinates | Informational | FSA comparison is inconclusive; absence of a match does not contradict accepted evidence |
+| Charles Roe | Macclesfield | SK11 6DY | coordinate_agreement | Informational | Owner reviewed this postcode discrepancy and confirmed the displayed pub building; listing postcode retained for provenance |
 | Chequers | Fenny Stratford | MK2 2BY | coordinate_disagreement | Informational | FSA coordinate is 85.8m from the accepted pin; informational only because the FSA geocode may be approximate |
 | Cherry Tree | Leicester: Central | LE1 4SX | nearby | Informational | FSA coordinate is 25-50m away; informational only |
 | Cheshire Cheese | Stoke: Hanley | ST1 6BA | coordinate_disagreement | Informational | FSA coordinate is 63.1m from the accepted pin; informational only because the FSA geocode may be approximate |

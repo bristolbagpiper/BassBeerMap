@@ -3666,12 +3666,31 @@
       "precision": "venue"
     },
     "v-5b7a8e74-1d57-5edf-a58b-f3445daf1ea1": {
-      "checked_at": "2026-09-11",
+      "checked_at": "2026-10-13",
       "lat": 53.2608242,
       "lng": -2.128478,
       "metadata_issue": {
         "field": "postcode",
         "listed": "SK11 6DY",
+        "owner_review": {
+          "accepted_postcode": "SK11 6DY",
+          "approved_coordinate": {
+            "lat": 53.2608242,
+            "lng": -2.128478
+          },
+          "checked_at": "2026-10-13",
+          "conclusion": "Owner accepted the existing Charles Roe pin as near enough. Retain coordinates; do not substitute the nearby named Google marker. Operator address supports PDF postcode SK11 6DY; retain conflicting CAMRA postcode SK11 6DZ as provenance. Approval covers location only; trading status remains unresolved.",
+          "listed": "SK11 6DY",
+          "owner_instruction": "yes near enough",
+          "pub_name": "Charles Roe",
+          "reference": "SK11 6DZ",
+          "review_map_url": "https://www.google.com/maps/search/?api=1&query=53.2608242%2C-2.128478",
+          "reviewed_by": "bristolbagpiper",
+          "source_url": "https://camra.org.uk/pubs/199589",
+          "supporting_address_urls": [
+            "https://www.thecharlesroepub.co.uk/"
+          ]
+        },
         "reference": "SK11 6DZ",
         "source_url": "https://camra.org.uk/pubs/199589"
       },
@@ -10796,7 +10815,7 @@
     "source_name_hint": "",
     "source_pdf": "latest-bass-directory.pdf"
   },
-  "release_id": "c42533024a851aface7a3c23f9354e1402e2d062aed6cd47cac5318177fef4a8",
+  "release_id": "67bcb12cce61db51a11265aa1ff4ca10b7e0bc25fe261b2f042acfb00f299f87",
   "rows": [
     {
       "area": "Bedfordshire",

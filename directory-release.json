@@ -874,12 +874,32 @@
       "precision": "venue"
     },
     "v-13f74f7e-8175-550d-b8b3-ca94a57e5233": {
-      "checked_at": "2026-09-13",
+      "checked_at": "2026-10-13",
       "lat": 52.7893745,
       "lng": -1.6834532,
       "metadata_issue": {
         "field": "postcode",
         "listed": "DE13 9FF",
+        "owner_review": {
+          "accepted_postcode": "DE13 9FF",
+          "approved_coordinate": {
+            "lat": 52.7893745,
+            "lng": -1.6834532
+          },
+          "checked_at": "2026-10-13",
+          "conclusion": "Owner visually confirmed the existing Burton Rugby Club building on Battlestead Croft, Branston Road, Tatenhill. Retain the pin and PDF postcode DE13 9FF, supported by the club website and Staffordshire RFU address. CAMRA lists DE14 3EZ; preserve that conflicting source value as provenance rather than substituting it for the club address.",
+          "listed": "DE13 9FF",
+          "owner_instruction": "yes",
+          "pub_name": "Burton Rugby Club",
+          "reference": "DE14 3EZ",
+          "review_map_url": "https://www.google.com/maps/search/?api=1&query=52.7893745%2C-1.6834532",
+          "reviewed_by": "bristolbagpiper",
+          "source_url": "https://camra.org.uk/pubs/196798",
+          "supporting_address_urls": [
+            "https://www.pitchero.com/clubs/burton/contact",
+            "https://staffsrfu.com/clubs/burton-rugby-football-club/"
+          ]
+        },
         "reference": "DE14 3EZ",
         "source_url": "https://camra.org.uk/pubs/196798"
       },
@@ -10776,7 +10796,7 @@
     "source_name_hint": "",
     "source_pdf": "latest-bass-directory.pdf"
   },
-  "release_id": "99ba836ed0f1cc0220b45b16fd05d6881e5f856eb783142c1db619b2101ab174",
+  "release_id": "c42533024a851aface7a3c23f9354e1402e2d062aed6cd47cac5318177fef4a8",
   "rows": [
     {
       "area": "Bedfordshire",

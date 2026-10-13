@@ -4784,6 +4784,23 @@
           "reference_postcode": "DE13 9FF",
           "source": "google-maps-named-place",
           "url": "https://www.google.com/maps/search/?api=1&query=Burton+Rugby+Football+Club+DE13+9FF"
+        },
+        {
+          "checked_at": "2026-10-13",
+          "match": "owner_confirmed_existing_pub_building_operator_postcode",
+          "reference_coordinate": {
+            "lat": 52.7893745,
+            "lng": -1.6834532
+          },
+          "reference_name": "Burton Rugby Club",
+          "reference_postcode": "DE13 9FF",
+          "reviewed_by": "bristolbagpiper",
+          "source": "manual_named_place_map",
+          "supporting_address_urls": [
+            "https://www.pitchero.com/clubs/burton/contact",
+            "https://staffsrfu.com/clubs/burton-rugby-football-club/"
+          ],
+          "url": "https://www.google.com/maps/search/?api=1&query=52.7893745%2C-1.6834532"
         }
       ],
       "lat": 52.7893745,
@@ -4791,6 +4808,26 @@
       "metadata_issue": {
         "field": "postcode",
         "listed": "DE13 9FF",
+        "owner_review": {
+          "accepted_postcode": "DE13 9FF",
+          "approved_coordinate": {
+            "lat": 52.7893745,
+            "lng": -1.6834532
+          },
+          "checked_at": "2026-10-13",
+          "conclusion": "Owner visually confirmed the existing Burton Rugby Club building on Battlestead Croft, Branston Road, Tatenhill. Retain the pin and PDF postcode DE13 9FF, supported by the club website and Staffordshire RFU address. CAMRA lists DE14 3EZ; preserve that conflicting source value as provenance rather than substituting it for the club address.",
+          "listed": "DE13 9FF",
+          "owner_instruction": "yes",
+          "pub_name": "Burton Rugby Club",
+          "reference": "DE14 3EZ",
+          "review_map_url": "https://www.google.com/maps/search/?api=1&query=52.7893745%2C-1.6834532",
+          "reviewed_by": "bristolbagpiper",
+          "source_url": "https://camra.org.uk/pubs/196798",
+          "supporting_address_urls": [
+            "https://www.pitchero.com/clubs/burton/contact",
+            "https://staffsrfu.com/clubs/burton-rugby-football-club/"
+          ]
+        },
         "reference": "DE14 3EZ",
         "source_url": "https://camra.org.uk/pubs/196798"
       },

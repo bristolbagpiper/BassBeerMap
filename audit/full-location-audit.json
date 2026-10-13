@@ -2,59 +2,6 @@
   "records": [
     {
       "actionable": true,
-      "area": "Staffordshire",
-      "checked_at": "2026-10-10",
-      "comparisons": [
-        {
-          "name_matches": 0,
-          "postcode_matches": 0,
-          "queried_postcode": "DE13 9FF",
-          "status": "no_name_match"
-        },
-        {
-          "name_matches": 0,
-          "postcode_matches": 1,
-          "queried_postcode": "DE14 3EZ",
-          "status": "no_name_match"
-        }
-      ],
-      "confidence": "existing_evidence_needs_corroboration",
-      "country": "England",
-      "dispense": "H",
-      "independent_of_pin": true,
-      "last": "2026 Q2",
-      "listing": {
-        "postcode": "DE13 9FF",
-        "pub_name": "Burton Rugby Club"
-      },
-      "notes": "Confirmed not a PMC (Oct 25)",
-      "owner_reviewed": false,
-      "pg": "Perm",
-      "pin": {
-        "lat": 52.7893745,
-        "lng": -1.6834532
-      },
-      "place_name": "Burton U-T: Branston",
-      "postcode": "DE13 9FF",
-      "priority": 0,
-      "pub_name": "Burton Rugby Club",
-      "reasons": [
-        "Directory postcode differs from reviewed reference postcode"
-      ],
-      "reference": {
-        "name_matches": 0,
-        "postcode_matches": 0,
-        "queried_postcode": "DE13 9FF",
-        "status": "no_name_match"
-      },
-      "status": "no_name_match",
-      "venue_id": "v-13f74f7e-8175-550d-b8b3-ca94a57e5233",
-      "warnings": [
-        "FSA comparison is inconclusive; absence of a match does not contradict accepted evidence"
-      ]
-    },
-    {
-      "actionable": true,
       "area": "Cheshire",
       "checked_at": "2026-10-10",
       "comparisons": [
@@ -6618,6 +6565,58 @@
       "venue_id": "v-8427c0da-bdf7-5db8-9be9-0a7d5981de31",
       "warnings": [
         "FSA coordinate is 74.5m from the accepted pin; informational only because the FSA geocode may be approximate"
+      ]
+    },
+    {
+      "actionable": false,
+      "area": "Staffordshire",
+      "checked_at": "2026-10-10",
+      "comparisons": [
+        {
+          "name_matches": 0,
+          "postcode_matches": 0,
+          "queried_postcode": "DE13 9FF",
+          "status": "no_name_match"
+        },
+        {
+          "name_matches": 0,
+          "postcode_matches": 1,
+          "queried_postcode": "DE14 3EZ",
+          "status": "no_name_match"
+        }
+      ],
+      "confidence": "owner_reviewed",
+      "country": "England",
+      "dispense": "H",
+      "independent_of_pin": true,
+      "last": "2026 Q2",
+      "listing": {
+        "postcode": "DE13 9FF",
+        "pub_name": "Burton Rugby Club"
+      },
+      "notes": "Confirmed not a PMC (Oct 25)",
+      "owner_reviewed": true,
+      "pg": "Perm",
+      "pin": {
+        "lat": 52.7893745,
+        "lng": -1.6834532
+      },
+      "place_name": "Burton U-T: Branston",
+      "postcode": "DE13 9FF",
+      "priority": 2,
+      "pub_name": "Burton Rugby Club",
+      "reasons": [],
+      "reference": {
+        "name_matches": 0,
+        "postcode_matches": 0,
+        "queried_postcode": "DE13 9FF",
+        "status": "no_name_match"
+      },
+      "status": "no_name_match",
+      "venue_id": "v-13f74f7e-8175-550d-b8b3-ca94a57e5233",
+      "warnings": [
+        "Owner reviewed this postcode discrepancy and confirmed the displayed pub building; listing postcode retained for provenance",
+        "FSA comparison is inconclusive; absence of a match does not contradict accepted evidence"
       ]
     },
     {
@@ -54368,11 +54367,11 @@
   ],
   "schema_version": 1,
   "summary": {
-    "actionable_count": 29,
+    "actionable_count": 28,
     "confidence_counts": {
-      "existing_evidence_needs_corroboration": 575,
+      "existing_evidence_needs_corroboration": 574,
       "independent_coordinate_agreement": 441,
-      "owner_reviewed": 28
+      "owner_reviewed": 29
     },
     "counts": {
       "ambiguous_or_missing_coordinates": 63,

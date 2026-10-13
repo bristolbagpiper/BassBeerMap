@@ -2,22 +2,22 @@
 
 Locations: 1044
 
-Actionable findings: 29
+Actionable findings: 28
 Locations with informational observations: 587 (may also have an actionable finding)
 
 ## Results
 
-- no_name_match: 179
 - coordinate_agreement: 459
+- no_name_match: 179
 - coordinate_disagreement: 241
 - nearby: 102
 - ambiguous_or_missing_coordinates: 63
 
 ## Confidence
 
-- existing_evidence_needs_corroboration: 575
 - independent_coordinate_agreement: 441
-- owner_reviewed: 28
+- existing_evidence_needs_corroboration: 574
+- owner_reviewed: 29
 
 ## Limits
 
@@ -31,7 +31,6 @@ Locations with informational observations: 587 (may also have an actionable find
 
 | Pub | Place | Postcode | Result | Classification | Detail |
 |---|---|---|---|---|---|
-| Burton Rugby Club | Burton U-T: Branston | DE13 9FF | no_name_match | Actionable | Directory postcode differs from reviewed reference postcode; FSA comparison is inconclusive; absence of a match does not contradict accepted evidence |
 | Charles Roe | Macclesfield | SK11 6DY | coordinate_agreement | Actionable | Directory postcode differs from reviewed reference postcode |
 | Crossways (Bottlecraft) | Newcastle-U-L: Central | ST5 1RW | no_name_match | Actionable | Directory postcode differs from reviewed reference postcode; FSA comparison is inconclusive; absence of a match does not contradict accepted evidence |
 | Dead Dove | Worcester: Central | WR1 2LT | no_name_match | Actionable | Directory postcode differs from reviewed reference postcode; FSA comparison is inconclusive; absence of a match does not contradict accepted evidence |
@@ -156,6 +155,7 @@ Locations with informational observations: 587 (may also have an actionable find
 | Bulls Head | Beaumaris | LL58 8AP | no_name_match | Informational | FSA comparison is inconclusive; absence of a match does not contradict accepted evidence |
 | Burton Albion FC (Fan zone) | Burton U-T: Central | DE13 0AR | no_name_match | Informational | FSA comparison is inconclusive; absence of a match does not contradict accepted evidence |
 | Burton Golf Club (PMC) | Bretby | DE15 0PS | coordinate_disagreement | Informational | FSA coordinate is 74.5m from the accepted pin; informational only because the FSA geocode may be approximate |
+| Burton Rugby Club | Burton U-T: Branston | DE13 9FF | no_name_match | Informational | Owner reviewed this postcode discrepancy and confirmed the displayed pub building; listing postcode retained for provenance; FSA comparison is inconclusive; absence of a match does not contradict accepted evidence |
 | Burton Tennis and Squash Club (PMC) | Burton U-T: Stapenhill | DE15 0LQ | no_name_match | Informational | FSA comparison is inconclusive; absence of a match does not contradict accepted evidence |
 | Butchers Arms | Bramshall | ST14 5BG | coordinate_disagreement | Informational | FSA coordinate is 140.1m from the accepted pin; informational only because the FSA geocode may be approximate |
 | Carpenters Arms | Ilsington | TQ13 9RG | no_name_match | Informational | FSA comparison is inconclusive; absence of a match does not contradict accepted evidence |

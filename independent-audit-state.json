@@ -20042,7 +20042,7 @@
       ]
     },
     "v-77bfd415-1ea1-52ef-8f2d-e150d84689bf": {
-      "actionable": true,
+      "actionable": false,
       "checked_at": "2026-10-10",
       "comparisons": [
         {
@@ -20063,21 +20063,19 @@
           "url": "https://ratings.food.gov.uk/business/1959805"
         }
       ],
-      "confidence": "independent_coordinate_agreement",
+      "confidence": "owner_reviewed",
       "independent_of_pin": true,
       "listing": {
         "postcode": "WV16 4ER",
         "pub_name": "Bear Inn"
       },
-      "owner_reviewed": false,
+      "owner_reviewed": true,
       "pin": {
         "lat": 52.537224,
         "lng": -2.420888
       },
-      "priority": 0,
-      "reasons": [
-        "Directory postcode differs from reviewed reference postcode"
-      ],
+      "priority": 2,
+      "reasons": [],
       "reference": {
         "address": "24 North Gate, , Bridgnorth, Shropshire",
         "difference_metres": 1.1,
@@ -20090,7 +20088,9 @@
         "url": "https://ratings.food.gov.uk/business/1959805"
       },
       "status": "coordinate_agreement",
-      "warnings": []
+      "warnings": [
+        "Owner reviewed this postcode discrepancy and confirmed the displayed pub building; listing postcode retained for provenance"
+      ]
     },
     "v-77c88bf5-cdfa-5f69-9a85-6d9500e5b776": {
       "actionable": false,

@@ -1410,6 +1410,22 @@
           "reference_postcode": "WV16 4ER",
           "source": "google-maps-and-official-address",
           "url": "https://www.google.com/maps/search/?api=1&query=Bear+24+Northgate+Bridgnorth"
+        },
+        {
+          "checked_at": "2026-10-13",
+          "match": "owner_confirmed_existing_pub_building",
+          "reference_coordinate": {
+            "lat": 52.537224,
+            "lng": -2.420888
+          },
+          "reference_name": "Bear Inn",
+          "reference_postcode": "WV16 4ET",
+          "reviewed_by": "bristolbagpiper",
+          "source": "manual_named_place_map",
+          "supporting_address_urls": [
+            "https://www.craftunionpubs.com/pubs/bear-inn-bridgnorth/contact"
+          ],
+          "url": "https://www.google.com/maps/search/?api=1&query=52.537224%2C-2.420888"
         }
       ],
       "lat": 52.537224,
@@ -1417,6 +1433,24 @@
       "metadata_issue": {
         "field": "postcode",
         "listed": "WV16 4ER",
+        "owner_review": {
+          "approved_coordinate": {
+            "lat": 52.537224,
+            "lng": -2.420888
+          },
+          "checked_at": "2026-10-13",
+          "conclusion": "Owner visually confirmed the current Bear Inn building at 24 Northgate. Retain the pin. Operator and CAMRA use WV16 4ET; preserve PDF postcode WV16 4ER as source data. Location discrepancy reviewed; postal delivery postcode not independently proven.",
+          "listed": "WV16 4ER",
+          "owner_instruction": "yes",
+          "pub_name": "Bear Inn",
+          "reference": "WV16 4ET",
+          "review_map_url": "https://www.google.com/maps/search/?api=1&query=52.537224%2C-2.420888",
+          "reviewed_by": "bristolbagpiper",
+          "source_url": "https://camra.org.uk/pubs/122176",
+          "supporting_address_urls": [
+            "https://www.craftunionpubs.com/pubs/bear-inn-bridgnorth/contact"
+          ]
+        },
         "reference": "WV16 4ET",
         "source_url": "https://camra.org.uk/pubs/122176"
       },

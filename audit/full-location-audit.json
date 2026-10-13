@@ -2,67 +2,6 @@
   "records": [
     {
       "actionable": true,
-      "area": "Shropshire",
-      "checked_at": "2026-10-10",
-      "comparisons": [
-        {
-          "name_matches": 0,
-          "postcode_matches": 1,
-          "queried_postcode": "WV16 4ER",
-          "status": "no_name_match"
-        },
-        {
-          "address": "24 North Gate, , Bridgnorth, Shropshire",
-          "difference_metres": 1.1,
-          "lat": 52.5372216,
-          "lng": -2.4209037,
-          "name": "The Bear",
-          "postcode": "WV16 4ET",
-          "queried_postcode": "WV16 4ET",
-          "status": "coordinate_agreement",
-          "url": "https://ratings.food.gov.uk/business/1959805"
-        }
-      ],
-      "confidence": "independent_coordinate_agreement",
-      "country": "England",
-      "dispense": "H",
-      "independent_of_pin": true,
-      "last": "2026 Q2",
-      "listing": {
-        "postcode": "WV16 4ER",
-        "pub_name": "Bear Inn"
-      },
-      "notes": "",
-      "owner_reviewed": false,
-      "pg": "Guest",
-      "pin": {
-        "lat": 52.537224,
-        "lng": -2.420888
-      },
-      "place_name": "Bridgnorth",
-      "postcode": "WV16 4ER",
-      "priority": 0,
-      "pub_name": "Bear Inn",
-      "reasons": [
-        "Directory postcode differs from reviewed reference postcode"
-      ],
-      "reference": {
-        "address": "24 North Gate, , Bridgnorth, Shropshire",
-        "difference_metres": 1.1,
-        "lat": 52.5372216,
-        "lng": -2.4209037,
-        "name": "The Bear",
-        "postcode": "WV16 4ET",
-        "queried_postcode": "WV16 4ET",
-        "status": "coordinate_agreement",
-        "url": "https://ratings.food.gov.uk/business/1959805"
-      },
-      "status": "coordinate_agreement",
-      "venue_id": "v-77bfd415-1ea1-52ef-8f2d-e150d84689bf",
-      "warnings": []
-    },
-    {
-      "actionable": true,
       "area": "Derbyshire",
       "checked_at": "2026-10-10",
       "comparisons": [
@@ -3420,6 +3359,67 @@
       "venue_id": "v-0ac1d35e-94cb-567a-8a1c-6aea34d6be01",
       "warnings": [
         "FSA comparison is inconclusive; absence of a match does not contradict accepted evidence"
+      ]
+    },
+    {
+      "actionable": false,
+      "area": "Shropshire",
+      "checked_at": "2026-10-10",
+      "comparisons": [
+        {
+          "name_matches": 0,
+          "postcode_matches": 1,
+          "queried_postcode": "WV16 4ER",
+          "status": "no_name_match"
+        },
+        {
+          "address": "24 North Gate, , Bridgnorth, Shropshire",
+          "difference_metres": 1.1,
+          "lat": 52.5372216,
+          "lng": -2.4209037,
+          "name": "The Bear",
+          "postcode": "WV16 4ET",
+          "queried_postcode": "WV16 4ET",
+          "status": "coordinate_agreement",
+          "url": "https://ratings.food.gov.uk/business/1959805"
+        }
+      ],
+      "confidence": "owner_reviewed",
+      "country": "England",
+      "dispense": "H",
+      "independent_of_pin": true,
+      "last": "2026 Q2",
+      "listing": {
+        "postcode": "WV16 4ER",
+        "pub_name": "Bear Inn"
+      },
+      "notes": "",
+      "owner_reviewed": true,
+      "pg": "Guest",
+      "pin": {
+        "lat": 52.537224,
+        "lng": -2.420888
+      },
+      "place_name": "Bridgnorth",
+      "postcode": "WV16 4ER",
+      "priority": 2,
+      "pub_name": "Bear Inn",
+      "reasons": [],
+      "reference": {
+        "address": "24 North Gate, , Bridgnorth, Shropshire",
+        "difference_metres": 1.1,
+        "lat": 52.5372216,
+        "lng": -2.4209037,
+        "name": "The Bear",
+        "postcode": "WV16 4ET",
+        "queried_postcode": "WV16 4ET",
+        "status": "coordinate_agreement",
+        "url": "https://ratings.food.gov.uk/business/1959805"
+      },
+      "status": "coordinate_agreement",
+      "venue_id": "v-77bfd415-1ea1-52ef-8f2d-e150d84689bf",
+      "warnings": [
+        "Owner reviewed this postcode discrepancy and confirmed the displayed pub building; listing postcode retained for provenance"
       ]
     },
     {
@@ -54372,11 +54372,11 @@
   ],
   "schema_version": 1,
   "summary": {
-    "actionable_count": 35,
+    "actionable_count": 34,
     "confidence_counts": {
       "existing_evidence_needs_corroboration": 579,
-      "independent_coordinate_agreement": 443,
-      "owner_reviewed": 22
+      "independent_coordinate_agreement": 442,
+      "owner_reviewed": 23
     },
     "counts": {
       "ambiguous_or_missing_coordinates": 63,
@@ -54385,7 +54385,7 @@
       "nearby": 102,
       "no_name_match": 179
     },
-    "informational_count": 585,
+    "informational_count": 586,
     "limitations": [
       "Coordinate agreement does not prove the correct building or current Bass availability.",
       "Owner-approved coordinates take priority; CAMRA remains the primary automated reference.",

@@ -2,22 +2,22 @@
 
 Locations: 1044
 
-Actionable findings: 35
-Locations with informational observations: 585 (may also have an actionable finding)
+Actionable findings: 34
+Locations with informational observations: 586 (may also have an actionable finding)
 
 ## Results
 
-- coordinate_agreement: 459
 - no_name_match: 179
+- coordinate_agreement: 459
 - nearby: 102
 - coordinate_disagreement: 241
 - ambiguous_or_missing_coordinates: 63
 
 ## Confidence
 
-- independent_coordinate_agreement: 443
 - existing_evidence_needs_corroboration: 579
-- owner_reviewed: 22
+- independent_coordinate_agreement: 442
+- owner_reviewed: 23
 
 ## Limits
 
@@ -31,7 +31,6 @@ Locations with informational observations: 585 (may also have an actionable find
 
 | Pub | Place | Postcode | Result | Classification | Detail |
 |---|---|---|---|---|---|
-| Bear Inn | Bridgnorth | WV16 4ER | coordinate_agreement | Actionable | Directory postcode differs from reviewed reference postcode |
 | Binary | Mickleover | DE3 0GR | no_name_match | Actionable | Directory postcode differs from reviewed reference postcode; FSA comparison is inconclusive; absence of a match does not contradict accepted evidence |
 | Bird in Hand | Austrey | CV9 3EE | no_name_match | Actionable | Directory postcode differs from reviewed reference postcode; FSA comparison is inconclusive; absence of a match does not contradict accepted evidence |
 | Blue Dog | Sewstern | NG33 5RG | coordinate_agreement | Actionable | Directory postcode differs from reviewed reference postcode |
@@ -93,6 +92,7 @@ Locations with informational observations: 585 (may also have an actionable find
 | Barton Rovers Social (PMC) | Barton le Clay | MK45 4SD | no_name_match | Informational | FSA comparison is inconclusive; absence of a match does not contradict accepted evidence |
 | Beach Bar | Sutton-on-Sea | LN12 2ET | no_name_match | Informational | FSA comparison is inconclusive; absence of a match does not contradict accepted evidence |
 | Bear Inn | Alderwasley | DE56 2RD | no_name_match | Informational | FSA comparison is inconclusive; absence of a match does not contradict accepted evidence |
+| Bear Inn | Bridgnorth | WV16 4ER | coordinate_agreement | Informational | Owner reviewed this postcode discrepancy and confirmed the displayed pub building; listing postcode retained for provenance |
 | Beaufort Arms | Mumbles | SA3 5TF | coordinate_disagreement | Informational | FSA coordinate is 80.9m from the accepted pin; informational only because the FSA geocode may be approximate |
 | Beech Tree | Kirk Ella | HU10 7LS | coordinate_disagreement | Informational | FSA coordinate is 259.8m from the accepted pin; informational only because the FSA geocode may be approximate |
 | Beer Box | Bamber Bridge | PR5 6LA | nearby | Informational | FSA coordinate is 25-50m away; informational only |

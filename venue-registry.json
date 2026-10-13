@@ -789,7 +789,16 @@
           "Reference venue name changed"
         ],
         "reference": {},
-        "research": {},
+        "research": {
+          "checked_at": "2026-10-13",
+          "coverage": {
+            "complete": true,
+            "records_returned": 250,
+            "reported_total": 250
+          },
+          "proposals": [],
+          "status": "no_candidate"
+        },
         "source_checks": {
           "camra": {
             "status": "conflict",
@@ -907,7 +916,16 @@
           "Reference venue name changed"
         ],
         "reference": {},
-        "research": {},
+        "research": {
+          "checked_at": "2026-10-13",
+          "coverage": {
+            "complete": true,
+            "records_returned": 500,
+            "reported_total": 312
+          },
+          "proposals": [],
+          "status": "no_candidate"
+        },
         "source_checks": {
           "camra": {
             "status": "conflict",
@@ -1021,7 +1039,16 @@
           "Reference venue name changed"
         ],
         "reference": {},
-        "research": {},
+        "research": {
+          "checked_at": "2026-10-13",
+          "coverage": {
+            "complete": true,
+            "records_returned": 461,
+            "reported_total": 211
+          },
+          "proposals": [],
+          "status": "no_candidate"
+        },
         "source_checks": {
           "camra": {
             "status": "conflict",
@@ -1151,7 +1178,30 @@
           "reference": "LE10 0QA",
           "source_url": "https://camra.org.uk/pubs/181808"
         },
-        "research": {},
+        "research": {
+          "checked_at": "2026-10-13",
+          "coverage": {
+            "complete": true,
+            "records_returned": 317,
+            "reported_total": 106
+          },
+          "proposals": [
+            {
+              "address": "5-7 Regent Street",
+              "distance_from_postcode_metres": 37,
+              "lat": 52.54112,
+              "lng": -1.37392,
+              "name": "New Baron Hinckley, Hinckley - Elmesthorpe Ales",
+              "postcode": "LE10 0QA",
+              "postcode_agrees": false,
+              "score": 2,
+              "source_status": "named_page_checked",
+              "town": "Hinckley",
+              "url": "https://camra.org.uk/pubs/181808"
+            }
+          ],
+          "status": "candidates_found"
+        },
         "source_checks": {
           "camra": {
             "status": "conflict",
@@ -1226,7 +1276,16 @@
           "Reference venue name changed"
         ],
         "reference": {},
-        "research": {},
+        "research": {
+          "checked_at": "2026-10-13",
+          "coverage": {
+            "complete": false,
+            "records_returned": 356,
+            "reported_total": 945
+          },
+          "proposals": [],
+          "status": "no_candidate"
+        },
         "source_checks": {
           "camra": {
             "status": "conflict",
@@ -1344,7 +1403,16 @@
           "Reference venue name changed"
         ],
         "reference": {},
-        "research": {},
+        "research": {
+          "checked_at": "2026-10-13",
+          "coverage": {
+            "complete": true,
+            "records_returned": 382,
+            "reported_total": 132
+          },
+          "proposals": [],
+          "status": "no_candidate"
+        },
         "source_checks": {
           "camra": {
             "status": "conflict",
@@ -1554,7 +1622,16 @@
           "Reference venue name changed"
         ],
         "reference": {},
-        "research": {},
+        "research": {
+          "checked_at": "2026-10-13",
+          "coverage": {
+            "complete": true,
+            "records_returned": 186,
+            "reported_total": 54
+          },
+          "proposals": [],
+          "status": "no_candidate"
+        },
         "source_checks": {
           "camra": {
             "status": "conflict",
@@ -1606,7 +1683,43 @@
           "Reference venue name changed"
         ],
         "reference": {},
-        "research": {},
+        "research": {
+          "checked_at": "2026-10-13",
+          "coverage": {
+            "complete": true,
+            "records_returned": 102,
+            "reported_total": 48
+          },
+          "proposals": [
+            {
+              "address": "Main Street",
+              "distance_from_postcode_metres": 2712,
+              "lat": 53.052381,
+              "lng": -1.65146,
+              "name": "Red Lion Inn, Hognaston - Village Pub with Rooms",
+              "postcode": "DE6 1PR",
+              "postcode_agrees": false,
+              "score": 3,
+              "source_status": "named_page_checked",
+              "town": "Hognaston",
+              "url": "https://camra.org.uk/pubs/112758"
+            },
+            {
+              "address": "Main Street",
+              "distance_from_postcode_metres": 91,
+              "lat": 53.048602,
+              "lng": -1.692458,
+              "name": "Red Lion at Kniveton, Kniveton - Cider-led Pub",
+              "postcode": "DE6 1JH",
+              "postcode_agrees": true,
+              "score": 2,
+              "source_status": "named_page_checked",
+              "town": "Kniveton",
+              "url": "https://camra.org.uk/pubs/112757"
+            }
+          ],
+          "status": "candidates_found"
+        },
         "source_checks": {
           "camra": {
             "status": "conflict",
@@ -1685,7 +1798,30 @@
           "Reference venue name changed"
         ],
         "reference": {},
-        "research": {},
+        "research": {
+          "checked_at": "2026-10-13",
+          "coverage": {
+            "complete": true,
+            "records_returned": 115,
+            "reported_total": 67
+          },
+          "proposals": [
+            {
+              "address": "37 Carlton Hill",
+              "distance_from_postcode_metres": 5464,
+              "lat": 52.966133,
+              "lng": -1.092179,
+              "name": "Earl Of Chesterfield, Carlton",
+              "postcode": "NG4 1BG",
+              "postcode_agrees": false,
+              "score": 2,
+              "source_status": "named_page_checked",
+              "town": "Carlton",
+              "url": "https://camra.org.uk/pubs/162765"
+            }
+          ],
+          "status": "candidates_found"
+        },
         "source_checks": {
           "camra": {
             "status": "conflict",
@@ -1725,7 +1861,16 @@
           "FSA no longer provides an unambiguous agreeing venue"
         ],
         "reference": {},
-        "research": {},
+        "research": {
+          "checked_at": "2026-10-13",
+          "coverage": {
+            "complete": true,
+            "records_returned": 102,
+            "reported_total": 35
+          },
+          "proposals": [],
+          "status": "no_candidate"
+        },
         "source_checks": {
           "food_standards_agency": {
             "status": "conflict",
@@ -2126,7 +2271,16 @@
           "Reference venue name changed"
         ],
         "reference": {},
-        "research": {},
+        "research": {
+          "checked_at": "2026-10-13",
+          "coverage": {
+            "complete": true,
+            "records_returned": 51,
+            "reported_total": 16
+          },
+          "proposals": [],
+          "status": "no_candidate"
+        },
         "source_checks": {
           "camra": {
             "status": "conflict",
@@ -2689,7 +2843,16 @@
           "Reference venue name changed"
         ],
         "reference": {},
-        "research": {},
+        "research": {
+          "checked_at": "2026-10-13",
+          "coverage": {
+            "complete": true,
+            "records_returned": 24,
+            "reported_total": 8
+          },
+          "proposals": [],
+          "status": "no_candidate"
+        },
         "source_checks": {
           "camra": {
             "status": "conflict",
@@ -2976,7 +3139,16 @@
           "Reference venue name changed"
         ],
         "reference": {},
-        "research": {},
+        "research": {
+          "checked_at": "2026-10-13",
+          "coverage": {
+            "complete": true,
+            "records_returned": 47,
+            "reported_total": 39
+          },
+          "proposals": [],
+          "status": "no_candidate"
+        },
         "source_checks": {
           "camra": {
             "status": "conflict",
@@ -19292,6 +19464,16 @@
         "postcode": "FY3 9EQ",
         "pub_name": "Cricket Club"
       },
+      "location_research": {
+        "checked_at": "2026-10-13",
+        "coverage": {
+          "complete": true,
+          "records_returned": 250,
+          "reported_total": 250
+        },
+        "proposals": [],
+        "status": "no_candidate"
+      },
       "verification_attempt": {
         "checked_at": "2026-10-10",
         "reason": "Reference venue name changed",
@@ -20136,6 +20318,16 @@
         "postcode": "ST4 2PT",
         "pub_name": "Ye Olde Manor Inn"
       },
+      "location_research": {
+        "checked_at": "2026-10-13",
+        "coverage": {
+          "complete": true,
+          "records_returned": 500,
+          "reported_total": 312
+        },
+        "proposals": [],
+        "status": "no_candidate"
+      },
       "verification_attempt": {
         "checked_at": "2026-10-10",
         "reason": "Reference venue name changed",
@@ -20849,6 +21041,16 @@
         "postcode": "NE30 4DX",
         "pub_name": "Tynemouth WMC/Social Club (PMC)"
       },
+      "location_research": {
+        "checked_at": "2026-10-13",
+        "coverage": {
+          "complete": true,
+          "records_returned": 461,
+          "reported_total": 211
+        },
+        "proposals": [],
+        "status": "no_candidate"
+      },
       "verification_attempt": {
         "checked_at": "2026-10-10",
         "reason": "Reference venue name changed",
@@ -21169,6 +21371,30 @@
         "place_name": "Hinckley",
         "postcode": "LE10 0AZ",
         "pub_name": "New Baron"
+      },
+      "location_research": {
+        "checked_at": "2026-10-13",
+        "coverage": {
+          "complete": true,
+          "records_returned": 317,
+          "reported_total": 106
+        },
+        "proposals": [
+          {
+            "address": "5-7 Regent Street",
+            "distance_from_postcode_metres": 37,
+            "lat": 52.54112,
+            "lng": -1.37392,
+            "name": "New Baron Hinckley, Hinckley - Elmesthorpe Ales",
+            "postcode": "LE10 0QA",
+            "postcode_agrees": false,
+            "score": 2,
+            "source_status": "named_page_checked",
+            "town": "Hinckley",
+            "url": "https://camra.org.uk/pubs/181808"
+          }
+        ],
+        "status": "candidates_found"
       },
       "verification_attempt": {
         "checked_at": "2026-10-10",
@@ -22009,6 +22235,16 @@
         "place_name": "Liverpool: Central",
         "postcode": "L1 4JN",
         "pub_name": "Black Cat Bar"
+      },
+      "location_research": {
+        "checked_at": "2026-10-13",
+        "coverage": {
+          "complete": false,
+          "records_returned": 356,
+          "reported_total": 945
+        },
+        "proposals": [],
+        "status": "no_candidate"
       },
       "verification_attempt": {
         "checked_at": "2026-10-10",
@@ -22862,6 +23098,16 @@
         "place_name": "Milford",
         "postcode": "DE56 0QH",
         "pub_name": "Milford Sunshine Social Club (PMC)"
+      },
+      "location_research": {
+        "checked_at": "2026-10-13",
+        "coverage": {
+          "complete": true,
+          "records_returned": 382,
+          "reported_total": 132
+        },
+        "proposals": [],
+        "status": "no_candidate"
       },
       "verification_attempt": {
         "checked_at": "2026-10-10",
@@ -23828,6 +24074,16 @@
         "postcode": "ST13 8TY",
         "pub_name": "Ye Olde Rock"
       },
+      "location_research": {
+        "checked_at": "2026-10-13",
+        "coverage": {
+          "complete": true,
+          "records_returned": 186,
+          "reported_total": 54
+        },
+        "proposals": [],
+        "status": "no_candidate"
+      },
       "verification_attempt": {
         "checked_at": "2026-10-11",
         "reason": "Reference venue name changed",
@@ -24253,6 +24509,43 @@
         "place_name": "Kniveton",
         "postcode": "DE6 1JH",
         "pub_name": "Red Lion"
+      },
+      "location_research": {
+        "checked_at": "2026-10-13",
+        "coverage": {
+          "complete": true,
+          "records_returned": 102,
+          "reported_total": 48
+        },
+        "proposals": [
+          {
+            "address": "Main Street",
+            "distance_from_postcode_metres": 2712,
+            "lat": 53.052381,
+            "lng": -1.65146,
+            "name": "Red Lion Inn, Hognaston - Village Pub with Rooms",
+            "postcode": "DE6 1PR",
+            "postcode_agrees": false,
+            "score": 3,
+            "source_status": "named_page_checked",
+            "town": "Hognaston",
+            "url": "https://camra.org.uk/pubs/112758"
+          },
+          {
+            "address": "Main Street",
+            "distance_from_postcode_metres": 91,
+            "lat": 53.048602,
+            "lng": -1.692458,
+            "name": "Red Lion at Kniveton, Kniveton - Cider-led Pub",
+            "postcode": "DE6 1JH",
+            "postcode_agrees": true,
+            "score": 2,
+            "source_status": "named_page_checked",
+            "town": "Kniveton",
+            "url": "https://camra.org.uk/pubs/112757"
+          }
+        ],
+        "status": "candidates_found"
       },
       "verification_attempt": {
         "checked_at": "2026-10-11",
@@ -25104,6 +25397,30 @@
         "postcode": "NG12 1EQ",
         "pub_name": "Earl of Chesterfield Arms"
       },
+      "location_research": {
+        "checked_at": "2026-10-13",
+        "coverage": {
+          "complete": true,
+          "records_returned": 115,
+          "reported_total": 67
+        },
+        "proposals": [
+          {
+            "address": "37 Carlton Hill",
+            "distance_from_postcode_metres": 5464,
+            "lat": 52.966133,
+            "lng": -1.092179,
+            "name": "Earl Of Chesterfield, Carlton",
+            "postcode": "NG4 1BG",
+            "postcode_agrees": false,
+            "score": 2,
+            "source_status": "named_page_checked",
+            "town": "Carlton",
+            "url": "https://camra.org.uk/pubs/162765"
+          }
+        ],
+        "status": "candidates_found"
+      },
       "verification_attempt": {
         "checked_at": "2026-10-11",
         "reason": "Reference venue name changed",
@@ -25794,6 +26111,16 @@
         "place_name": "Baldwins Gate",
         "postcode": "ST5 5BU",
         "pub_name": "Sheet Anchor"
+      },
+      "location_research": {
+        "checked_at": "2026-10-13",
+        "coverage": {
+          "complete": true,
+          "records_returned": 102,
+          "reported_total": 35
+        },
+        "proposals": [],
+        "status": "no_candidate"
       },
       "verification_attempt": {
         "checked_at": "2026-10-11",
@@ -30515,6 +30842,16 @@
         "postcode": "ST10 3HL",
         "pub_name": "Ye Olde Crown Hotel"
       },
+      "location_research": {
+        "checked_at": "2026-10-13",
+        "coverage": {
+          "complete": true,
+          "records_returned": 51,
+          "reported_total": 16
+        },
+        "proposals": [],
+        "status": "no_candidate"
+      },
       "verification_attempt": {
         "checked_at": "2026-10-12",
         "reason": "Reference venue name changed",
@@ -34994,6 +35331,16 @@
         "postcode": "TF6 6RL",
         "pub_name": "Royal Oak (The Tiddly)"
       },
+      "location_research": {
+        "checked_at": "2026-10-13",
+        "coverage": {
+          "complete": true,
+          "records_returned": 24,
+          "reported_total": 8
+        },
+        "proposals": [],
+        "status": "no_candidate"
+      },
       "verification_attempt": {
         "checked_at": "2026-10-13",
         "reason": "Reference venue name changed",
@@ -37021,6 +37368,16 @@
         "place_name": "Porthcawl",
         "postcode": "CF36 3DT",
         "pub_name": "Rock Inn"
+      },
+      "location_research": {
+        "checked_at": "2026-10-13",
+        "coverage": {
+          "complete": true,
+          "records_returned": 47,
+          "reported_total": 39
+        },
+        "proposals": [],
+        "status": "no_candidate"
       },
       "verification_attempt": {
         "checked_at": "2026-10-13",

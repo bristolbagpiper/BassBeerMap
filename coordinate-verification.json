@@ -4297,6 +4297,22 @@
           "reference_postcode": "ST2 7AB",
           "source": "google-maps-named-place",
           "url": "https://www.google.com/maps/search/?api=1&query=Bucknall+Bowling+Recreation+Club"
+        },
+        {
+          "checked_at": "2026-10-13",
+          "match": "owner_confirmed_existing_pub_building",
+          "reference_coordinate": {
+            "lat": 53.0241582,
+            "lng": -2.1317236
+          },
+          "reference_name": "Bucknall Bowling & Recreation Club",
+          "reference_postcode": "ST2 9AB",
+          "reviewed_by": "bristolbagpiper",
+          "source": "manual_named_place_map",
+          "supporting_address_urls": [
+            "https://bucknallbowlingclub.org/contact-us/"
+          ],
+          "url": "https://www.google.com/maps/search/?api=1&query=53.0241582%2C-2.1317236"
         }
       ],
       "lat": 53.0241582,
@@ -4304,6 +4320,24 @@
       "metadata_issue": {
         "field": "postcode",
         "listed": "ST2 7AB",
+        "owner_review": {
+          "approved_coordinate": {
+            "lat": 53.0241582,
+            "lng": -2.1317236
+          },
+          "checked_at": "2026-10-13",
+          "conclusion": "Owner visually confirmed the current Bucknall Bowling & Recreation Club building at 430 Werrington Road, Bucknall. Retain the pin. The club website uses ST2 9AB; preserve PDF postcode ST2 7AB as source data. Location discrepancy reviewed; postal delivery postcode not independently proven.",
+          "listed": "ST2 7AB",
+          "owner_instruction": "yes",
+          "pub_name": "Bucknall Bowling & Recreation Club",
+          "reference": "ST2 9AB",
+          "review_map_url": "https://www.google.com/maps/search/?api=1&query=53.0241582%2C-2.1317236",
+          "reviewed_by": "bristolbagpiper",
+          "source_url": "https://www.google.com/maps/search/?api=1&query=Bucknall+Bowling+Recreation+Club",
+          "supporting_address_urls": [
+            "https://bucknallbowlingclub.org/contact-us/"
+          ]
+        },
         "reference": "ST2 9AB",
         "source_url": "https://www.google.com/maps/search/?api=1&query=Bucknall+Bowling+Recreation+Club"
       },

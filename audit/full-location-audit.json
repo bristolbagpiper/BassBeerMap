@@ -2,59 +2,6 @@
   "records": [
     {
       "actionable": true,
-      "area": "Staffordshire",
-      "checked_at": "2026-10-10",
-      "comparisons": [
-        {
-          "name_matches": 0,
-          "postcode_matches": 1,
-          "queried_postcode": "ST2 7AB",
-          "status": "no_name_match"
-        },
-        {
-          "name_matches": 0,
-          "postcode_matches": 2,
-          "queried_postcode": "ST2 9AB",
-          "status": "no_name_match"
-        }
-      ],
-      "confidence": "existing_evidence_needs_corroboration",
-      "country": "England",
-      "dispense": "H",
-      "independent_of_pin": true,
-      "last": "2026 Q2",
-      "listing": {
-        "postcode": "ST2 7AB",
-        "pub_name": "Bucknall Bowling & Recreation Club"
-      },
-      "notes": "",
-      "owner_reviewed": false,
-      "pg": "Perm",
-      "pin": {
-        "lat": 53.0241582,
-        "lng": -2.1317236
-      },
-      "place_name": "Stoke: Bucknall",
-      "postcode": "ST2 7AB",
-      "priority": 0,
-      "pub_name": "Bucknall Bowling & Recreation Club",
-      "reasons": [
-        "Directory postcode differs from reviewed reference postcode"
-      ],
-      "reference": {
-        "name_matches": 0,
-        "postcode_matches": 1,
-        "queried_postcode": "ST2 7AB",
-        "status": "no_name_match"
-      },
-      "status": "no_name_match",
-      "venue_id": "v-2f5fa0c4-f889-5bd4-add9-86ce087a2f02",
-      "warnings": [
-        "FSA comparison is inconclusive; absence of a match does not contradict accepted evidence"
-      ]
-    },
-    {
-      "actionable": true,
       "area": "Warwickshire",
       "checked_at": "2026-10-10",
       "comparisons": [
@@ -6330,6 +6277,58 @@
       "venue_id": "v-9baa0fd2-1959-52b9-91ed-97f0fb74ec0b",
       "warnings": [
         "FSA coordinate is 25-50m away; informational only"
+      ]
+    },
+    {
+      "actionable": false,
+      "area": "Staffordshire",
+      "checked_at": "2026-10-10",
+      "comparisons": [
+        {
+          "name_matches": 0,
+          "postcode_matches": 1,
+          "queried_postcode": "ST2 7AB",
+          "status": "no_name_match"
+        },
+        {
+          "name_matches": 0,
+          "postcode_matches": 2,
+          "queried_postcode": "ST2 9AB",
+          "status": "no_name_match"
+        }
+      ],
+      "confidence": "owner_reviewed",
+      "country": "England",
+      "dispense": "H",
+      "independent_of_pin": true,
+      "last": "2026 Q2",
+      "listing": {
+        "postcode": "ST2 7AB",
+        "pub_name": "Bucknall Bowling & Recreation Club"
+      },
+      "notes": "",
+      "owner_reviewed": true,
+      "pg": "Perm",
+      "pin": {
+        "lat": 53.0241582,
+        "lng": -2.1317236
+      },
+      "place_name": "Stoke: Bucknall",
+      "postcode": "ST2 7AB",
+      "priority": 2,
+      "pub_name": "Bucknall Bowling & Recreation Club",
+      "reasons": [],
+      "reference": {
+        "name_matches": 0,
+        "postcode_matches": 1,
+        "queried_postcode": "ST2 7AB",
+        "status": "no_name_match"
+      },
+      "status": "no_name_match",
+      "venue_id": "v-2f5fa0c4-f889-5bd4-add9-86ce087a2f02",
+      "warnings": [
+        "Owner reviewed this postcode discrepancy and confirmed the displayed pub building; listing postcode retained for provenance",
+        "FSA comparison is inconclusive; absence of a match does not contradict accepted evidence"
       ]
     },
     {
@@ -54370,11 +54369,11 @@
   ],
   "schema_version": 1,
   "summary": {
-    "actionable_count": 31,
+    "actionable_count": 30,
     "confidence_counts": {
-      "existing_evidence_needs_corroboration": 577,
+      "existing_evidence_needs_corroboration": 576,
       "independent_coordinate_agreement": 441,
-      "owner_reviewed": 26
+      "owner_reviewed": 27
     },
     "counts": {
       "ambiguous_or_missing_coordinates": 63,

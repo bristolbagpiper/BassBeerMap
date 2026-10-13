@@ -1900,12 +1900,30 @@
       "precision": "venue"
     },
     "v-2f5fa0c4-f889-5bd4-add9-86ce087a2f02": {
-      "checked_at": "2026-09-13",
+      "checked_at": "2026-10-13",
       "lat": 53.0241582,
       "lng": -2.1317236,
       "metadata_issue": {
         "field": "postcode",
         "listed": "ST2 7AB",
+        "owner_review": {
+          "approved_coordinate": {
+            "lat": 53.0241582,
+            "lng": -2.1317236
+          },
+          "checked_at": "2026-10-13",
+          "conclusion": "Owner visually confirmed the current Bucknall Bowling & Recreation Club building at 430 Werrington Road, Bucknall. Retain the pin. The club website uses ST2 9AB; preserve PDF postcode ST2 7AB as source data. Location discrepancy reviewed; postal delivery postcode not independently proven.",
+          "listed": "ST2 7AB",
+          "owner_instruction": "yes",
+          "pub_name": "Bucknall Bowling & Recreation Club",
+          "reference": "ST2 9AB",
+          "review_map_url": "https://www.google.com/maps/search/?api=1&query=53.0241582%2C-2.1317236",
+          "reviewed_by": "bristolbagpiper",
+          "source_url": "https://www.google.com/maps/search/?api=1&query=Bucknall+Bowling+Recreation+Club",
+          "supporting_address_urls": [
+            "https://bucknallbowlingclub.org/contact-us/"
+          ]
+        },
         "reference": "ST2 9AB",
         "source_url": "https://www.google.com/maps/search/?api=1&query=Bucknall+Bowling+Recreation+Club"
       },
@@ -10740,7 +10758,7 @@
     "source_name_hint": "",
     "source_pdf": "latest-bass-directory.pdf"
   },
-  "release_id": "892e192a261d83475061963dbf4adf6f5e78b45178e2ab7056c242455e9efe93",
+  "release_id": "c116f6cb242abfc31c84ecafb0e4807d82178be58e8b5383f770f78401762be1",
   "rows": [
     {
       "area": "Bedfordshire",

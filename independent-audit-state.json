@@ -7881,7 +7881,7 @@
       ]
     },
     "v-2f5fa0c4-f889-5bd4-add9-86ce087a2f02": {
-      "actionable": true,
+      "actionable": false,
       "checked_at": "2026-10-10",
       "comparisons": [
         {
@@ -7897,21 +7897,19 @@
           "status": "no_name_match"
         }
       ],
-      "confidence": "existing_evidence_needs_corroboration",
+      "confidence": "owner_reviewed",
       "independent_of_pin": true,
       "listing": {
         "postcode": "ST2 7AB",
         "pub_name": "Bucknall Bowling & Recreation Club"
       },
-      "owner_reviewed": false,
+      "owner_reviewed": true,
       "pin": {
         "lat": 53.0241582,
         "lng": -2.1317236
       },
-      "priority": 0,
-      "reasons": [
-        "Directory postcode differs from reviewed reference postcode"
-      ],
+      "priority": 2,
+      "reasons": [],
       "reference": {
         "name_matches": 0,
         "postcode_matches": 1,
@@ -7920,6 +7918,7 @@
       },
       "status": "no_name_match",
       "warnings": [
+        "Owner reviewed this postcode discrepancy and confirmed the displayed pub building; listing postcode retained for provenance",
         "FSA comparison is inconclusive; absence of a match does not contradict accepted evidence"
       ]
     },

@@ -2,22 +2,22 @@
 
 Locations: 1044
 
-Actionable findings: 31
+Actionable findings: 30
 Locations with informational observations: 587 (may also have an actionable finding)
 
 ## Results
 
-- no_name_match: 179
 - nearby: 102
+- no_name_match: 179
 - coordinate_agreement: 459
 - coordinate_disagreement: 241
 - ambiguous_or_missing_coordinates: 63
 
 ## Confidence
 
-- existing_evidence_needs_corroboration: 577
+- existing_evidence_needs_corroboration: 576
 - independent_coordinate_agreement: 441
-- owner_reviewed: 26
+- owner_reviewed: 27
 
 ## Limits
 
@@ -31,7 +31,6 @@ Locations with informational observations: 587 (may also have an actionable find
 
 | Pub | Place | Postcode | Result | Classification | Detail |
 |---|---|---|---|---|---|
-| Bucknall Bowling & Recreation Club | Stoke: Bucknall | ST2 7AB | no_name_match | Actionable | Directory postcode differs from reviewed reference postcode; FSA comparison is inconclusive; absence of a match does not contradict accepted evidence |
 | Bulls Head | Nailstone | CV13 0QE | nearby | Actionable | Directory postcode differs from reviewed reference postcode; FSA coordinate is 25-50m away; informational only |
 | Burton Rugby Club | Burton U-T: Branston | DE13 9FF | no_name_match | Actionable | Directory postcode differs from reviewed reference postcode; FSA comparison is inconclusive; absence of a match does not contradict accepted evidence |
 | Charles Roe | Macclesfield | SK11 6DY | coordinate_agreement | Actionable | Directory postcode differs from reviewed reference postcode |
@@ -150,6 +149,7 @@ Locations with informational observations: 587 (may also have an actionable find
 | Brothers Arms | Sheffield: Heeley | S8 9TZ | coordinate_disagreement | Informational | FSA coordinate is 68.7m from the accepted pin; informational only because the FSA geocode may be approximate |
 | Brownlow Inn | Congleton | CW12 4TH | ambiguous_or_missing_coordinates | Informational | FSA comparison is inconclusive; absence of a match does not contradict accepted evidence |
 | Brushmakers Arms | Oulton | ST15 8UW | nearby | Informational | FSA coordinate is 25-50m away; informational only |
+| Bucknall Bowling & Recreation Club | Stoke: Bucknall | ST2 7AB | no_name_match | Informational | Owner reviewed this postcode discrepancy and confirmed the displayed pub building; listing postcode retained for provenance; FSA comparison is inconclusive; absence of a match does not contradict accepted evidence |
 | Bull | Poulton-le-Fylde | FY6 7DH | coordinate_disagreement | Informational | FSA coordinate is 93.7m from the accepted pin; informational only because the FSA geocode may be approximate |
 | Bull and Butcher | Corley Moor | CV7 8AQ | ambiguous_or_missing_coordinates | Informational | FSA comparison is inconclusive; absence of a match does not contradict accepted evidence |
 | Bulls Head | Wilson | DE73 8AE | ambiguous_or_missing_coordinates | Informational | FSA comparison is inconclusive; absence of a match does not contradict accepted evidence |

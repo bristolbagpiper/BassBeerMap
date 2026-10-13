@@ -21253,7 +21253,7 @@
       ]
     },
     "v-7df916fa-bd2e-5f55-a3bb-5c3e589f3014": {
-      "actionable": true,
+      "actionable": false,
       "checked_at": "2026-10-10",
       "comparisons": [
         {
@@ -21274,21 +21274,19 @@
           "url": "https://ratings.food.gov.uk/business/1887993"
         }
       ],
-      "confidence": "existing_evidence_needs_corroboration",
+      "confidence": "owner_reviewed",
       "independent_of_pin": true,
       "listing": {
         "postcode": "CV13 0QE",
         "pub_name": "Bulls Head"
       },
-      "owner_reviewed": false,
+      "owner_reviewed": true,
       "pin": {
         "lat": 52.65975373333333,
         "lng": -1.3862997166666666
       },
-      "priority": 0,
-      "reasons": [
-        "Directory postcode differs from reviewed reference postcode"
-      ],
+      "priority": 2,
+      "reasons": [],
       "reference": {
         "address": "88 Main Street, Nailstone, Nuneaton, Leicestershire",
         "difference_metres": 27.9,
@@ -21302,6 +21300,7 @@
       },
       "status": "nearby",
       "warnings": [
+        "Owner reviewed this postcode discrepancy and confirmed the displayed pub building; listing postcode retained for provenance",
         "FSA coordinate is 25-50m away; informational only"
       ]
     },

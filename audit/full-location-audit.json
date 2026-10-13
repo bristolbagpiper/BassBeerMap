@@ -2,69 +2,6 @@
   "records": [
     {
       "actionable": true,
-      "area": "Warwickshire",
-      "checked_at": "2026-10-10",
-      "comparisons": [
-        {
-          "name_matches": 0,
-          "postcode_matches": 0,
-          "queried_postcode": "CV13 0QE",
-          "status": "no_name_match"
-        },
-        {
-          "address": "88 Main Street, Nailstone, Nuneaton, Leicestershire",
-          "difference_metres": 27.9,
-          "lat": 52.659626,
-          "lng": -1.385943,
-          "name": "The Bulls Head",
-          "postcode": "CV13 0QB",
-          "queried_postcode": "CV13 0QB",
-          "status": "nearby",
-          "url": "https://ratings.food.gov.uk/business/1887993"
-        }
-      ],
-      "confidence": "existing_evidence_needs_corroboration",
-      "country": "England",
-      "dispense": "H",
-      "independent_of_pin": true,
-      "last": "2026 Q2",
-      "listing": {
-        "postcode": "CV13 0QE",
-        "pub_name": "Bulls Head"
-      },
-      "notes": "",
-      "owner_reviewed": false,
-      "pg": "Guest",
-      "pin": {
-        "lat": 52.65975373333333,
-        "lng": -1.3862997166666666
-      },
-      "place_name": "Nailstone",
-      "postcode": "CV13 0QE",
-      "priority": 0,
-      "pub_name": "Bulls Head",
-      "reasons": [
-        "Directory postcode differs from reviewed reference postcode"
-      ],
-      "reference": {
-        "address": "88 Main Street, Nailstone, Nuneaton, Leicestershire",
-        "difference_metres": 27.9,
-        "lat": 52.659626,
-        "lng": -1.385943,
-        "name": "The Bulls Head",
-        "postcode": "CV13 0QB",
-        "queried_postcode": "CV13 0QB",
-        "status": "nearby",
-        "url": "https://ratings.food.gov.uk/business/1887993"
-      },
-      "status": "nearby",
-      "venue_id": "v-7df916fa-bd2e-5f55-a3bb-5c3e589f3014",
-      "warnings": [
-        "FSA coordinate is 25-50m away; informational only"
-      ]
-    },
-    {
-      "actionable": true,
       "area": "Staffordshire",
       "checked_at": "2026-10-10",
       "comparisons": [
@@ -6429,6 +6366,68 @@
       "venue_id": "v-3a3f005b-c2bf-5c67-9592-d8c3a428a2d1",
       "warnings": [
         "FSA comparison is inconclusive; absence of a match does not contradict accepted evidence"
+      ]
+    },
+    {
+      "actionable": false,
+      "area": "Warwickshire",
+      "checked_at": "2026-10-10",
+      "comparisons": [
+        {
+          "name_matches": 0,
+          "postcode_matches": 0,
+          "queried_postcode": "CV13 0QE",
+          "status": "no_name_match"
+        },
+        {
+          "address": "88 Main Street, Nailstone, Nuneaton, Leicestershire",
+          "difference_metres": 27.9,
+          "lat": 52.659626,
+          "lng": -1.385943,
+          "name": "The Bulls Head",
+          "postcode": "CV13 0QB",
+          "queried_postcode": "CV13 0QB",
+          "status": "nearby",
+          "url": "https://ratings.food.gov.uk/business/1887993"
+        }
+      ],
+      "confidence": "owner_reviewed",
+      "country": "England",
+      "dispense": "H",
+      "independent_of_pin": true,
+      "last": "2026 Q2",
+      "listing": {
+        "postcode": "CV13 0QE",
+        "pub_name": "Bulls Head"
+      },
+      "notes": "",
+      "owner_reviewed": true,
+      "pg": "Guest",
+      "pin": {
+        "lat": 52.65975373333333,
+        "lng": -1.3862997166666666
+      },
+      "place_name": "Nailstone",
+      "postcode": "CV13 0QE",
+      "priority": 2,
+      "pub_name": "Bulls Head",
+      "reasons": [],
+      "reference": {
+        "address": "88 Main Street, Nailstone, Nuneaton, Leicestershire",
+        "difference_metres": 27.9,
+        "lat": 52.659626,
+        "lng": -1.385943,
+        "name": "The Bulls Head",
+        "postcode": "CV13 0QB",
+        "queried_postcode": "CV13 0QB",
+        "status": "nearby",
+        "url": "https://ratings.food.gov.uk/business/1887993"
+      },
+      "status": "nearby",
+      "venue_id": "v-7df916fa-bd2e-5f55-a3bb-5c3e589f3014",
+      "warnings": [
+        "Owner reviewed this postcode discrepancy and confirmed the displayed pub building; listing postcode retained for provenance",
+        "FSA coordinate is 25-50m away; informational only"
       ]
     },
     {
@@ -54369,11 +54368,11 @@
   ],
   "schema_version": 1,
   "summary": {
-    "actionable_count": 30,
+    "actionable_count": 29,
     "confidence_counts": {
-      "existing_evidence_needs_corroboration": 576,
+      "existing_evidence_needs_corroboration": 575,
       "independent_coordinate_agreement": 441,
-      "owner_reviewed": 27
+      "owner_reviewed": 28
     },
     "counts": {
       "ambiguous_or_missing_coordinates": 63,

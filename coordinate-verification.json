@@ -4439,6 +4439,22 @@
           "reference_postcode": "CV13 0QB",
           "source": "camra",
           "url": "https://camra.org.uk/pubs/181822"
+        },
+        {
+          "checked_at": "2026-10-13",
+          "match": "owner_confirmed_existing_pub_building",
+          "reference_coordinate": {
+            "lat": 52.65975373333333,
+            "lng": -1.3862997166666666
+          },
+          "reference_name": "Bulls Head",
+          "reference_postcode": "CV13 0QB",
+          "reviewed_by": "bristolbagpiper",
+          "source": "manual_named_place_map",
+          "supporting_address_urls": [
+            "https://hinckleyandbosworth.camra.org.uk/viewnode.php?id=32502"
+          ],
+          "url": "https://www.google.com/maps/search/?api=1&query=52.65975373333333%2C-1.3862997166666666"
         }
       ],
       "lat": 52.65975373333333,
@@ -4446,6 +4462,24 @@
       "metadata_issue": {
         "field": "postcode",
         "listed": "CV13 0QE",
+        "owner_review": {
+          "approved_coordinate": {
+            "lat": 52.65975373333333,
+            "lng": -1.3862997166666666
+          },
+          "checked_at": "2026-10-13",
+          "conclusion": "Owner visually confirmed the current Bulls Head building at 88 Main Street, Nailstone. Retain the pin. CAMRA and the council address use CV13 0QB; preserve PDF postcode CV13 0QE as source data. Location discrepancy reviewed; postal delivery postcode not independently proven.",
+          "listed": "CV13 0QE",
+          "owner_instruction": "yes",
+          "pub_name": "Bulls Head",
+          "reference": "CV13 0QB",
+          "review_map_url": "https://www.google.com/maps/search/?api=1&query=52.65975373333333%2C-1.3862997166666666",
+          "reviewed_by": "bristolbagpiper",
+          "source_url": "https://camra.org.uk/pubs/181822",
+          "supporting_address_urls": [
+            "https://hinckleyandbosworth.camra.org.uk/viewnode.php?id=32502"
+          ]
+        },
         "reference": "CV13 0QB",
         "source_url": "https://camra.org.uk/pubs/181822"
       },

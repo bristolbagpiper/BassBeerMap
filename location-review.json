@@ -1,5 +1,5 @@
 {
-  "active_count": 42,
+  "active_count": 41,
   "records": {
     "v-00a08839-2b8a-5782-b6c7-0bdce4cddb2f": {
       "active": false,
@@ -6518,7 +6518,7 @@
       "venue_id": "v-7d99face-a438-502c-88f7-bb85dfbf8434"
     },
     "v-7df916fa-bd2e-5f55-a3bb-5c3e589f3014": {
-      "active": true,
+      "active": false,
       "first_seen": "2026-10-02",
       "history": [
         {
@@ -6527,18 +6527,39 @@
             "Directory postcode CV13 0QE conflicts with reference address CV13 0QB"
           ],
           "status": "review_needed"
+        },
+        {
+          "date": "2026-10-13",
+          "reasons": [],
+          "status": "resolved"
         }
       ],
-      "last_checked": "2026-10-10",
+      "last_checked": "2026-10-13",
       "place_name": "Nailstone",
       "postcode": "CV13 0QE",
       "pub_name": "Bulls Head",
-      "reasons": [
-        "Directory postcode CV13 0QE conflicts with reference address CV13 0QB"
-      ],
+      "reasons": [],
       "reference": {
         "field": "postcode",
         "listed": "CV13 0QE",
+        "owner_review": {
+          "approved_coordinate": {
+            "lat": 52.65975373333333,
+            "lng": -1.3862997166666666
+          },
+          "checked_at": "2026-10-13",
+          "conclusion": "Owner visually confirmed the current Bulls Head building at 88 Main Street, Nailstone. Retain the pin. CAMRA and the council address use CV13 0QB; preserve PDF postcode CV13 0QE as source data. Location discrepancy reviewed; postal delivery postcode not independently proven.",
+          "listed": "CV13 0QE",
+          "owner_instruction": "yes",
+          "pub_name": "Bulls Head",
+          "reference": "CV13 0QB",
+          "review_map_url": "https://www.google.com/maps/search/?api=1&query=52.65975373333333%2C-1.3862997166666666",
+          "reviewed_by": "bristolbagpiper",
+          "source_url": "https://camra.org.uk/pubs/181822",
+          "supporting_address_urls": [
+            "https://hinckleyandbosworth.camra.org.uk/viewnode.php?id=32502"
+          ]
+        },
         "reference": "CV13 0QB",
         "source_url": "https://camra.org.uk/pubs/181822"
       },
@@ -6550,7 +6571,7 @@
         }
       },
       "source_error": null,
-      "status": "review_needed",
+      "status": "resolved",
       "unverified": false,
       "venue_id": "v-7df916fa-bd2e-5f55-a3bb-5c3e589f3014"
     },

@@ -41704,7 +41704,7 @@
       "warnings": []
     },
     "v-f3fbb260-c795-5928-b0fe-47d33f48ea87": {
-      "actionable": true,
+      "actionable": false,
       "checked_at": "2026-10-10",
       "comparisons": [
         {
@@ -41725,21 +41725,19 @@
           "url": "https://ratings.food.gov.uk/business/1681293"
         }
       ],
-      "confidence": "independent_coordinate_agreement",
+      "confidence": "owner_reviewed",
       "independent_of_pin": true,
       "listing": {
         "postcode": "NG33 5RG",
         "pub_name": "Blue Dog"
       },
-      "owner_reviewed": false,
+      "owner_reviewed": true,
       "pin": {
         "lat": 52.7862037,
         "lng": -0.6840474
       },
-      "priority": 0,
-      "reasons": [
-        "Directory postcode differs from reviewed reference postcode"
-      ],
+      "priority": 2,
+      "reasons": [],
       "reference": {
         "address": "46 Main Street, Sewstern, Grantham",
         "difference_metres": 19.4,
@@ -41752,7 +41750,9 @@
         "url": "https://ratings.food.gov.uk/business/1681293"
       },
       "status": "coordinate_agreement",
-      "warnings": []
+      "warnings": [
+        "Owner reviewed this postcode discrepancy and confirmed the displayed pub building; listing postcode retained for provenance"
+      ]
     },
     "v-f418e771-24bc-5543-a2b6-1293dbce7ce8": {
       "actionable": false,

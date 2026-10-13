@@ -2,22 +2,22 @@
 
 Locations: 1044
 
-Actionable findings: 32
-Locations with informational observations: 586 (may also have an actionable finding)
+Actionable findings: 31
+Locations with informational observations: 587 (may also have an actionable finding)
 
 ## Results
 
-- coordinate_agreement: 459
 - no_name_match: 179
 - nearby: 102
+- coordinate_agreement: 459
 - coordinate_disagreement: 241
 - ambiguous_or_missing_coordinates: 63
 
 ## Confidence
 
-- independent_coordinate_agreement: 442
 - existing_evidence_needs_corroboration: 577
-- owner_reviewed: 25
+- independent_coordinate_agreement: 441
+- owner_reviewed: 26
 
 ## Limits
 
@@ -31,7 +31,6 @@ Locations with informational observations: 586 (may also have an actionable find
 
 | Pub | Place | Postcode | Result | Classification | Detail |
 |---|---|---|---|---|---|
-| Blue Dog | Sewstern | NG33 5RG | coordinate_agreement | Actionable | Directory postcode differs from reviewed reference postcode |
 | Bucknall Bowling & Recreation Club | Stoke: Bucknall | ST2 7AB | no_name_match | Actionable | Directory postcode differs from reviewed reference postcode; FSA comparison is inconclusive; absence of a match does not contradict accepted evidence |
 | Bulls Head | Nailstone | CV13 0QE | nearby | Actionable | Directory postcode differs from reviewed reference postcode; FSA coordinate is 25-50m away; informational only |
 | Burton Rugby Club | Burton U-T: Branston | DE13 9FF | no_name_match | Actionable | Directory postcode differs from reviewed reference postcode; FSA comparison is inconclusive; absence of a match does not contradict accepted evidence |
@@ -125,6 +124,7 @@ Locations with informational observations: 586 (may also have an actionable find
 | Blacksmiths | Burton U-T: Branston | DE14 3EY | coordinate_disagreement | Informational | FSA coordinate is 236.3m from the accepted pin; informational only because the FSA geocode may be approximate |
 | Blue Bell | Sandiacre | NG10 5DF | coordinate_disagreement | Informational | FSA coordinate is 120.3m from the accepted pin; informational only because the FSA geocode may be approximate |
 | Blue Bell | Helpston | PE6 7ED | coordinate_disagreement | Informational | FSA coordinate is 52.1m from the accepted pin; informational only because the FSA geocode may be approximate |
+| Blue Dog | Sewstern | NG33 5RG | coordinate_agreement | Informational | Owner reviewed this postcode discrepancy and confirmed the displayed pub building; listing postcode retained for provenance |
 | Bluebell | Farnah Green | DE56 2UP | no_name_match | Informational | FSA comparison is inconclusive; absence of a match does not contradict accepted evidence |
 | Boar | Moddershall | ST15 8TG | coordinate_disagreement | Informational | FSA coordinate is 158.1m from the accepted pin; informational only because the FSA geocode may be approximate |
 | Boars Head | Louth | LN11 9HH | no_name_match | Informational | FSA comparison is inconclusive; absence of a match does not contradict accepted evidence |

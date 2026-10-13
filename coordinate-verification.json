@@ -2977,6 +2977,22 @@
           "reference_postcode": "NG33 5RG",
           "source": "google-maps-named-place",
           "url": "https://www.google.com/maps/search/?api=1&query=Blue+Dog+Sewstern"
+        },
+        {
+          "checked_at": "2026-10-13",
+          "match": "owner_confirmed_existing_pub_building",
+          "reference_coordinate": {
+            "lat": 52.7862037,
+            "lng": -0.6840474
+          },
+          "reference_name": "Blue Dog",
+          "reference_postcode": "NG33 5RQ",
+          "reviewed_by": "bristolbagpiper",
+          "source": "manual_named_place_map",
+          "supporting_address_urls": [
+            "https://camra.org.uk/pubs/blue-dog-sewstern-192236"
+          ],
+          "url": "https://www.google.com/maps/search/?api=1&query=52.7862037%2C-0.6840474"
         }
       ],
       "lat": 52.7862037,
@@ -2984,6 +3000,24 @@
       "metadata_issue": {
         "field": "postcode",
         "listed": "NG33 5RG",
+        "owner_review": {
+          "approved_coordinate": {
+            "lat": 52.7862037,
+            "lng": -0.6840474
+          },
+          "checked_at": "2026-10-13",
+          "conclusion": "Owner visually confirmed the current Blue Dog building at 46 Main Street, Sewstern. Retain the pin. CAMRA and the FSA named address use NG33 5RQ; preserve PDF postcode NG33 5RG as source data. Location discrepancy reviewed; postal delivery postcode not independently proven.",
+          "listed": "NG33 5RG",
+          "owner_instruction": "yes",
+          "pub_name": "Blue Dog",
+          "reference": "NG33 5RQ",
+          "review_map_url": "https://www.google.com/maps/search/?api=1&query=52.7862037%2C-0.6840474",
+          "reviewed_by": "bristolbagpiper",
+          "source_url": "https://www.google.com/maps/search/?api=1&query=Blue+Dog+Sewstern",
+          "supporting_address_urls": [
+            "https://camra.org.uk/pubs/blue-dog-sewstern-192236"
+          ]
+        },
         "reference": "NG33 5RQ",
         "source_url": "https://www.google.com/maps/search/?api=1&query=Blue+Dog+Sewstern"
       },

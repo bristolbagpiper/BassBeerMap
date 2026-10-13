@@ -2,67 +2,6 @@
   "records": [
     {
       "actionable": true,
-      "area": "Leicestershire",
-      "checked_at": "2026-10-10",
-      "comparisons": [
-        {
-          "name_matches": 0,
-          "postcode_matches": 0,
-          "queried_postcode": "NG33 5RG",
-          "status": "no_name_match"
-        },
-        {
-          "address": "46 Main Street, Sewstern, Grantham",
-          "difference_metres": 19.4,
-          "lat": 52.7863375,
-          "lng": -0.6838626,
-          "name": "The Blue Dog Inn",
-          "postcode": "NG33 5RQ",
-          "queried_postcode": "NG33 5RQ",
-          "status": "coordinate_agreement",
-          "url": "https://ratings.food.gov.uk/business/1681293"
-        }
-      ],
-      "confidence": "independent_coordinate_agreement",
-      "country": "England",
-      "dispense": "H",
-      "independent_of_pin": true,
-      "last": "2026 Q3",
-      "listing": {
-        "postcode": "NG33 5RG",
-        "pub_name": "Blue Dog"
-      },
-      "notes": "",
-      "owner_reviewed": false,
-      "pg": "Perm",
-      "pin": {
-        "lat": 52.7862037,
-        "lng": -0.6840474
-      },
-      "place_name": "Sewstern",
-      "postcode": "NG33 5RG",
-      "priority": 0,
-      "pub_name": "Blue Dog",
-      "reasons": [
-        "Directory postcode differs from reviewed reference postcode"
-      ],
-      "reference": {
-        "address": "46 Main Street, Sewstern, Grantham",
-        "difference_metres": 19.4,
-        "lat": 52.7863375,
-        "lng": -0.6838626,
-        "name": "The Blue Dog Inn",
-        "postcode": "NG33 5RQ",
-        "queried_postcode": "NG33 5RQ",
-        "status": "coordinate_agreement",
-        "url": "https://ratings.food.gov.uk/business/1681293"
-      },
-      "status": "coordinate_agreement",
-      "venue_id": "v-f3fbb260-c795-5928-b0fe-47d33f48ea87",
-      "warnings": []
-    },
-    {
-      "actionable": true,
       "area": "Staffordshire",
       "checked_at": "2026-10-10",
       "comparisons": [
@@ -5065,6 +5004,67 @@
       "venue_id": "v-532b1388-63e1-5b1d-b72b-8f72b038b744",
       "warnings": [
         "FSA coordinate is 52.1m from the accepted pin; informational only because the FSA geocode may be approximate"
+      ]
+    },
+    {
+      "actionable": false,
+      "area": "Leicestershire",
+      "checked_at": "2026-10-10",
+      "comparisons": [
+        {
+          "name_matches": 0,
+          "postcode_matches": 0,
+          "queried_postcode": "NG33 5RG",
+          "status": "no_name_match"
+        },
+        {
+          "address": "46 Main Street, Sewstern, Grantham",
+          "difference_metres": 19.4,
+          "lat": 52.7863375,
+          "lng": -0.6838626,
+          "name": "The Blue Dog Inn",
+          "postcode": "NG33 5RQ",
+          "queried_postcode": "NG33 5RQ",
+          "status": "coordinate_agreement",
+          "url": "https://ratings.food.gov.uk/business/1681293"
+        }
+      ],
+      "confidence": "owner_reviewed",
+      "country": "England",
+      "dispense": "H",
+      "independent_of_pin": true,
+      "last": "2026 Q3",
+      "listing": {
+        "postcode": "NG33 5RG",
+        "pub_name": "Blue Dog"
+      },
+      "notes": "",
+      "owner_reviewed": true,
+      "pg": "Perm",
+      "pin": {
+        "lat": 52.7862037,
+        "lng": -0.6840474
+      },
+      "place_name": "Sewstern",
+      "postcode": "NG33 5RG",
+      "priority": 2,
+      "pub_name": "Blue Dog",
+      "reasons": [],
+      "reference": {
+        "address": "46 Main Street, Sewstern, Grantham",
+        "difference_metres": 19.4,
+        "lat": 52.7863375,
+        "lng": -0.6838626,
+        "name": "The Blue Dog Inn",
+        "postcode": "NG33 5RQ",
+        "queried_postcode": "NG33 5RQ",
+        "status": "coordinate_agreement",
+        "url": "https://ratings.food.gov.uk/business/1681293"
+      },
+      "status": "coordinate_agreement",
+      "venue_id": "v-f3fbb260-c795-5928-b0fe-47d33f48ea87",
+      "warnings": [
+        "Owner reviewed this postcode discrepancy and confirmed the displayed pub building; listing postcode retained for provenance"
       ]
     },
     {
@@ -54370,11 +54370,11 @@
   ],
   "schema_version": 1,
   "summary": {
-    "actionable_count": 32,
+    "actionable_count": 31,
     "confidence_counts": {
       "existing_evidence_needs_corroboration": 577,
-      "independent_coordinate_agreement": 442,
-      "owner_reviewed": 25
+      "independent_coordinate_agreement": 441,
+      "owner_reviewed": 26
     },
     "counts": {
       "ambiguous_or_missing_coordinates": 63,
@@ -54383,7 +54383,7 @@
       "nearby": 102,
       "no_name_match": 179
     },
-    "informational_count": 586,
+    "informational_count": 587,
     "limitations": [
       "Coordinate agreement does not prove the correct building or current Bass availability.",
       "Owner-approved coordinates take priority; CAMRA remains the primary automated reference.",

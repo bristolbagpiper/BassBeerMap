@@ -10177,12 +10177,30 @@
       "precision": "venue"
     },
     "v-f3fbb260-c795-5928-b0fe-47d33f48ea87": {
-      "checked_at": "2026-09-13",
+      "checked_at": "2026-10-13",
       "lat": 52.7862037,
       "lng": -0.6840474,
       "metadata_issue": {
         "field": "postcode",
         "listed": "NG33 5RG",
+        "owner_review": {
+          "approved_coordinate": {
+            "lat": 52.7862037,
+            "lng": -0.6840474
+          },
+          "checked_at": "2026-10-13",
+          "conclusion": "Owner visually confirmed the current Blue Dog building at 46 Main Street, Sewstern. Retain the pin. CAMRA and the FSA named address use NG33 5RQ; preserve PDF postcode NG33 5RG as source data. Location discrepancy reviewed; postal delivery postcode not independently proven.",
+          "listed": "NG33 5RG",
+          "owner_instruction": "yes",
+          "pub_name": "Blue Dog",
+          "reference": "NG33 5RQ",
+          "review_map_url": "https://www.google.com/maps/search/?api=1&query=52.7862037%2C-0.6840474",
+          "reviewed_by": "bristolbagpiper",
+          "source_url": "https://www.google.com/maps/search/?api=1&query=Blue+Dog+Sewstern",
+          "supporting_address_urls": [
+            "https://camra.org.uk/pubs/blue-dog-sewstern-192236"
+          ]
+        },
         "reference": "NG33 5RQ",
         "source_url": "https://www.google.com/maps/search/?api=1&query=Blue+Dog+Sewstern"
       },
@@ -10722,7 +10740,7 @@
     "source_name_hint": "",
     "source_pdf": "latest-bass-directory.pdf"
   },
-  "release_id": "3d09a7dc75bfa17f7b9ceab14dcb1ee83ccd1142bf455d44e8b80f265873ef43",
+  "release_id": "892e192a261d83475061963dbf4adf6f5e78b45178e2ab7056c242455e9efe93",
   "rows": [
     {
       "area": "Bedfordshire",

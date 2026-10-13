@@ -5,6 +5,18 @@ import json
 from datetime import date
 
 
+def postcode_issue_reviewed(issue, pin, pub_name):
+    """A human decision covers only the exact postcode pair, venue and point."""
+    review = issue.get('owner_review') or {}
+    compact = lambda value: str(value or '').replace(' ', '').upper()
+    return bool(review.get('checked_at') and review.get('reviewed_by') and review.get('owner_instruction')
+                and review.get('pub_name') == pub_name
+                and compact(review.get('listed')) == compact(issue.get('listed'))
+                and compact(review.get('reference')) == compact(issue.get('reference'))
+                and review.get('source_url') == issue.get('source_url')
+                and review.get('approved_coordinate') == {key: pin.get(key) for key in ('lat', 'lng')})
+
+
 def build_review(rows, registry, ledger):
     today = date.today().isoformat()
     records = copy.deepcopy(registry.get('location_review', {}).get('records', {}))
@@ -21,7 +33,8 @@ def build_review(rows, registry, ledger):
         if unverified:
             reasons.append(pin.get('review_reason') or attempt.get('reason') or 'Location has not yet been independently verified')
         issue = pin.get('metadata_issue') or {}
-        if issue.get('listed', '').replace(' ', '').upper() != issue.get('reference', '').replace(' ', '').upper():
+        if (issue.get('listed', '').replace(' ', '').upper() != issue.get('reference', '').replace(' ', '').upper()
+                and not postcode_issue_reviewed(issue, pin, row['pub_name'])):
             reasons.append(f"Directory postcode {issue.get('listed')} conflicts with reference address {issue.get('reference')}")
         if attempt.get('status') == 'unavailable':
             reasons.append(f"Verification source unavailable: {attempt.get('reason', 'unknown error')}")

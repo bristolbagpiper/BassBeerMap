@@ -30,3 +30,5 @@ The independent audit never moves or recolours a pin. It records all observation
 This writes a resumable checkpoint and full report under `candidate-independent/`, without changing the map. `--limit 45` rotates a smaller batch. `--publish --resume` updates reports and review flags after validating that every displayed location is unchanged. The reports are based on factual source comparisons, not an assertion that every building has been visually inspected.
 
 `python -u full_location_audit.py --reports-only --publish` rebuilds classifications and reports from saved comparisons, without querying sources or updating their check dates. Existing review history is retained when coordinate-only flags are resolved.
+
+An owner can resolve location review of a postcode discrepancy by confirming the pub building. The source postcode and reference postcode remain recorded; this does not assert that the postal delivery postcode was independently proven. The decision covers the exact pub name, postcode pair, reference URL and coordinate. Any change to these reopens review.

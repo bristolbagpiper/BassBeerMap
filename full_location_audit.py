@@ -10,6 +10,7 @@ from pathlib import Path
 
 from directory_release import RELEASE_FILES, distance_metres, point_valid, read_json, read_rows, validate_release, write_json, write_release
 from resolve_venue_coordinates_from_fhrs import search, choose_match, names_match
+from location_review import postcode_issue_reviewed
 
 
 def checkpoint(path, checks):
@@ -76,8 +77,12 @@ def assess(row, entry, lookup=search):
 def classify(check, pin):
     """Reclassify stored observations without querying or changing source evidence."""
     reasons, warnings = [], []
-    if pin.get('metadata_issue', {}).get('reference'):
-        reasons.append('Directory postcode differs from reviewed reference postcode')
+    issue = pin.get('metadata_issue', {})
+    if issue.get('reference'):
+        if postcode_issue_reviewed(issue, pin, check.get('listing', {}).get('pub_name')):
+            warnings.append('Owner reviewed this postcode discrepancy and confirmed the displayed pub building; listing postcode retained for provenance')
+        else:
+            reasons.append('Directory postcode differs from reviewed reference postcode')
     status = check['status']
     if status == 'no_accepted_pin':
         reasons.append('No accepted venue coordinate yet; postcode pin remains approximate')
@@ -127,7 +132,7 @@ def report(rows, registry, checks, output):
     write_json(output / 'full-location-audit.json', dict(schema_version=1, summary=summary, records=records))
     fields = ['venue_id', 'pub_name', 'place_name', 'postcode', 'priority', 'status', 'confidence', 'checked_at', 'actionable', 'reasons', 'warnings']
     with (output / 'full-location-audit.csv').open('w', encoding='utf-8', newline='') as stream:
-        writer = csv.DictWriter(stream, fieldnames=fields, extrasaction='ignore')
+        writer = csv.DictWriter(stream, fieldnames=fields, extrasaction='ignore', lineterminator='\n')
         writer.writeheader()
         writer.writerows(dict(r, reasons='; '.join(r.get('reasons', [])), warnings='; '.join(r.get('warnings', []))) for r in records)
     lines = ['# Full location audit', '', f"Locations: {len(rows)}", '', f"Actionable findings: {summary['actionable_count']}", f"Locations with informational observations: {summary['informational_count']} (may also have an actionable finding)", '', '## Results', '',

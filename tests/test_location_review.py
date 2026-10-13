@@ -89,3 +89,32 @@ class LocationTrackingTests(unittest.TestCase):
             with self.assertRaisesRegex(RuntimeError, 'missing'):
                 notify(review, state)
             self.assertFalse(state.exists())
+
+    def test_owner_postcode_review_resolves_only_exact_approved_case(self):
+        listing, registry, identifier = self.fixture()
+        entry = registry['venues'][identifier]
+        entry['verified_pin'] = pin()
+        issue = dict(listed=listing['postcode'], reference='BS1 1AB', source_url='https://camra.org.uk/pubs/123')
+        issue['owner_review'] = dict(checked_at='2026-10-13', reviewed_by='bristolbagpiper', owner_instruction='yes',
+                                    pub_name=listing['pub_name'], listed=issue['listed'], reference=issue['reference'],
+                                    source_url=issue['source_url'], approved_coordinate={'lat':51.45,'lng':-2.59})
+        entry['verified_pin']['metadata_issue'] = issue
+        def active():
+            return build_review([listing], registry, build_ledger([listing], registry))['active_count']
+        self.assertEqual(active(), 0)
+        from full_location_audit import classify
+        check = classify(dict(status='coordinate_agreement', listing={'pub_name':listing['pub_name']}), entry['verified_pin'])
+        self.assertFalse(check['actionable'])
+        self.assertTrue(check['warnings'])
+        before = copy.deepcopy(issue)
+        for key, value in [('listed','BS1 1AC'), ('reference','BS1 1AD'), ('source_url','https://camra.org.uk/pubs/456')]:
+            issue[key] = value
+            self.assertEqual(active(), 1)
+            issue.update(copy.deepcopy(before))
+        entry['verified_pin']['lat'] = 51.4501
+        self.assertEqual(active(), 1)
+        entry['verified_pin']['lat'] = 51.45
+        listing['pub_name'] = 'Renamed Pub'
+        from directory_release import venue_key
+        entry['current_key'] = venue_key(listing)
+        self.assertEqual(active(), 1)

@@ -1,5 +1,5 @@
 {
-  "active_count": 48,
+  "active_count": 47,
   "records": {
     "v-00a08839-2b8a-5782-b6c7-0bdce4cddb2f": {
       "active": false,
@@ -6578,7 +6578,7 @@
       "venue_id": "v-7e9b8405-bcad-56e8-b09f-6bb18b7f4648"
     },
     "v-7ecdc061-3850-5388-865f-f697462bbc10": {
-      "active": true,
+      "active": false,
       "first_seen": "2026-10-02",
       "history": [
         {
@@ -6603,18 +6603,36 @@
             "Directory postcode PE23 5NY conflicts with reference address PE23 5PA"
           ],
           "status": "review_needed"
+        },
+        {
+          "date": "2026-10-13",
+          "reasons": [],
+          "status": "resolved"
         }
       ],
-      "last_checked": "2026-10-10",
+      "last_checked": "2026-10-13",
       "place_name": "Halton Holegate",
       "postcode": "PE23 5NY",
       "pub_name": "Bell",
-      "reasons": [
-        "Directory postcode PE23 5NY conflicts with reference address PE23 5PA"
-      ],
+      "reasons": [],
       "reference": {
         "field": "postcode",
         "listed": "PE23 5NY",
+        "owner_review": {
+          "approved_coordinate": {
+            "lat": 53.1652169,
+            "lng": 0.1178604
+          },
+          "checked_at": "2026-10-13",
+          "conclusion": "Owner visually confirmed the current Bell Inn building. Retain the pin and CAMRA reference postcode PE23 5PA; preserve PDF postcode PE23 5NY as source data. This resolves location review of the discrepancy, not proof of the postal delivery postcode.",
+          "listed": "PE23 5NY",
+          "owner_instruction": "yes",
+          "pub_name": "Bell",
+          "reference": "PE23 5PA",
+          "review_map_url": "https://www.google.com/maps/search/?api=1&query=53.1652169%2C0.1178604",
+          "reviewed_by": "bristolbagpiper",
+          "source_url": "https://camra.org.uk/pubs/167970"
+        },
         "reference": "PE23 5PA",
         "source_url": "https://camra.org.uk/pubs/167970"
       },
@@ -6626,7 +6644,7 @@
         }
       },
       "source_error": null,
-      "status": "review_needed",
+      "status": "resolved",
       "unverified": false,
       "venue_id": "v-7ecdc061-3850-5388-865f-f697462bbc10"
     },

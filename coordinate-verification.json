@@ -1649,6 +1649,19 @@
           "reference_postcode": "PE23 5PA",
           "source": "camra",
           "url": "https://camra.org.uk/pubs/167970"
+        },
+        {
+          "checked_at": "2026-10-13",
+          "match": "owner_confirmed_existing_pub_building",
+          "reference_coordinate": {
+            "lat": 53.1652169,
+            "lng": 0.1178604
+          },
+          "reference_name": "Bell Inn",
+          "reference_postcode": "PE23 5PA",
+          "reviewed_by": "bristolbagpiper",
+          "source": "manual_named_place_map",
+          "url": "https://www.google.com/maps/search/?api=1&query=53.1652169%2C0.1178604"
         }
       ],
       "lat": 53.1652169,
@@ -1656,6 +1669,21 @@
       "metadata_issue": {
         "field": "postcode",
         "listed": "PE23 5NY",
+        "owner_review": {
+          "approved_coordinate": {
+            "lat": 53.1652169,
+            "lng": 0.1178604
+          },
+          "checked_at": "2026-10-13",
+          "conclusion": "Owner visually confirmed the current Bell Inn building. Retain the pin and CAMRA reference postcode PE23 5PA; preserve PDF postcode PE23 5NY as source data. This resolves location review of the discrepancy, not proof of the postal delivery postcode.",
+          "listed": "PE23 5NY",
+          "owner_instruction": "yes",
+          "pub_name": "Bell",
+          "reference": "PE23 5PA",
+          "review_map_url": "https://www.google.com/maps/search/?api=1&query=53.1652169%2C0.1178604",
+          "reviewed_by": "bristolbagpiper",
+          "source_url": "https://camra.org.uk/pubs/167970"
+        },
         "reference": "PE23 5PA",
         "source_url": "https://camra.org.uk/pubs/167970"
       },

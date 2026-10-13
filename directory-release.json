@@ -5222,12 +5222,27 @@
       "precision": "venue"
     },
     "v-7ecdc061-3850-5388-865f-f697462bbc10": {
-      "checked_at": "2026-09-11",
+      "checked_at": "2026-10-13",
       "lat": 53.1652169,
       "lng": 0.1178604,
       "metadata_issue": {
         "field": "postcode",
         "listed": "PE23 5NY",
+        "owner_review": {
+          "approved_coordinate": {
+            "lat": 53.1652169,
+            "lng": 0.1178604
+          },
+          "checked_at": "2026-10-13",
+          "conclusion": "Owner visually confirmed the current Bell Inn building. Retain the pin and CAMRA reference postcode PE23 5PA; preserve PDF postcode PE23 5NY as source data. This resolves location review of the discrepancy, not proof of the postal delivery postcode.",
+          "listed": "PE23 5NY",
+          "owner_instruction": "yes",
+          "pub_name": "Bell",
+          "reference": "PE23 5PA",
+          "review_map_url": "https://www.google.com/maps/search/?api=1&query=53.1652169%2C0.1178604",
+          "reviewed_by": "bristolbagpiper",
+          "source_url": "https://camra.org.uk/pubs/167970"
+        },
         "reference": "PE23 5PA",
         "source_url": "https://camra.org.uk/pubs/167970"
       },
@@ -10651,7 +10666,7 @@
     "source_name_hint": "",
     "source_pdf": "latest-bass-directory.pdf"
   },
-  "release_id": "818622266578f3c75d56629dd5603f0be62de131008b0c9041a052442caa2586",
+  "release_id": "9f9e5478dc927d6656a2860d0126f7ec1085747b3d5ee1272a4cc54b2cadf36b",
   "rows": [
     {
       "area": "Bedfordshire",

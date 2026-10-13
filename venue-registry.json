@@ -1,6 +1,6 @@
 {
   "location_review": {
-    "active_count": 46,
+    "active_count": 45,
     "records": {
       "v-00a08839-2b8a-5782-b6c7-0bdce4cddb2f": {
         "active": false,
@@ -3899,7 +3899,7 @@
         "venue_id": "v-49e5bab4-0603-5ddd-940c-69508f07866c"
       },
       "v-4ac48ba1-f454-50cb-a1e9-a069589c6d0c": {
-        "active": true,
+        "active": false,
         "first_seen": "2026-10-02",
         "history": [
           {
@@ -3908,18 +3908,41 @@
               "Directory postcode DE3 0GR conflicts with reference address DE3 0BZ"
             ],
             "status": "review_needed"
+          },
+          {
+            "date": "2026-10-13",
+            "reasons": [],
+            "status": "resolved"
           }
         ],
-        "last_checked": "2026-10-10",
+        "last_checked": "2026-10-13",
         "place_name": "Mickleover",
         "postcode": "DE3 0GR",
         "pub_name": "Binary",
-        "reasons": [
-          "Directory postcode DE3 0GR conflicts with reference address DE3 0BZ"
-        ],
+        "reasons": [],
         "reference": {
           "field": "postcode",
           "listed": "DE3 0GR",
+          "owner_review": {
+            "accepted_postcode": "DE3 0GR",
+            "approved_coordinate": {
+              "lat": 52.9040166,
+              "lng": -1.544656
+            },
+            "checked_at": "2026-10-13",
+            "conclusion": "Owner visually confirmed the existing Binary building on Limes Avenue. Retain the pin and PDF postcode DE3 0GR, supported by the operator website and FSA named address. CAMRA lists DE3 0BZ; preserve that conflicting source value as provenance rather than substituting it for the operator address.",
+            "listed": "DE3 0GR",
+            "owner_instruction": "yes",
+            "pub_name": "Binary",
+            "reference": "DE3 0BZ",
+            "review_map_url": "https://www.google.com/maps/search/?api=1&query=52.9040166%2C-1.544656",
+            "reviewed_by": "bristolbagpiper",
+            "source_url": "https://camra.org.uk/pubs/196347",
+            "supporting_address_urls": [
+              "https://binarybarandrestaurant.co.uk/",
+              "https://ratings.food.gov.uk/business/1489317/binary-bar-and-restaurant-derby"
+            ]
+          },
           "reference": "DE3 0BZ",
           "source_url": "https://camra.org.uk/pubs/196347"
         },
@@ -3931,7 +3954,7 @@
           }
         },
         "source_error": null,
-        "status": "review_needed",
+        "status": "resolved",
         "unverified": false,
         "venue_id": "v-4ac48ba1-f454-50cb-a1e9-a069589c6d0c"
       },
@@ -42030,7 +42053,7 @@
       ],
       "current_key": "binary|mickleover|de3 0gr",
       "independent_location_check": {
-        "actionable": true,
+        "actionable": false,
         "checked_at": "2026-10-10",
         "comparisons": [
           {
@@ -42046,21 +42069,19 @@
             "status": "no_name_match"
           }
         ],
-        "confidence": "existing_evidence_needs_corroboration",
+        "confidence": "owner_reviewed",
         "independent_of_pin": true,
         "listing": {
           "postcode": "DE3 0GR",
           "pub_name": "Binary"
         },
-        "owner_reviewed": false,
+        "owner_reviewed": true,
         "pin": {
           "lat": 52.9040166,
           "lng": -1.544656
         },
-        "priority": 0,
-        "reasons": [
-          "Directory postcode differs from reviewed reference postcode"
-        ],
+        "priority": 2,
+        "reasons": [],
         "reference": {
           "name_matches": 0,
           "postcode_matches": 1,
@@ -42069,6 +42090,7 @@
         },
         "status": "no_name_match",
         "warnings": [
+          "Owner reviewed this postcode discrepancy and confirmed the displayed pub building; listing postcode retained for provenance",
           "FSA comparison is inconclusive; absence of a match does not contradict accepted evidence"
         ]
       },
@@ -42083,6 +42105,28 @@
         "postcode": "DE3 0GR",
         "pub_name": "Binary"
       },
+      "location_approvals": [
+        {
+          "accepted_postcode": "DE3 0GR",
+          "approved_coordinate": {
+            "lat": 52.9040166,
+            "lng": -1.544656
+          },
+          "checked_at": "2026-10-13",
+          "conclusion": "Owner visually confirmed the existing Binary building on Limes Avenue. Retain the pin and PDF postcode DE3 0GR, supported by the operator website and FSA named address. CAMRA lists DE3 0BZ; preserve that conflicting source value as provenance rather than substituting it for the operator address.",
+          "listed": "DE3 0GR",
+          "owner_instruction": "yes",
+          "pub_name": "Binary",
+          "reference": "DE3 0BZ",
+          "review_map_url": "https://www.google.com/maps/search/?api=1&query=52.9040166%2C-1.544656",
+          "reviewed_by": "bristolbagpiper",
+          "source_url": "https://camra.org.uk/pubs/196347",
+          "supporting_address_urls": [
+            "https://binarybarandrestaurant.co.uk/",
+            "https://ratings.food.gov.uk/business/1489317/binary-bar-and-restaurant-derby"
+          ]
+        }
+      ],
       "verified_pin": {
         "evidence": [
           {
@@ -42108,6 +42152,23 @@
             "reference_postcode": "DE3 0GR",
             "source": "google-maps-named-place",
             "url": "https://www.google.com/maps/search/?api=1&query=Binary+Mickleover+DE3+0GR"
+          },
+          {
+            "checked_at": "2026-10-13",
+            "match": "owner_confirmed_existing_pub_building_operator_postcode",
+            "reference_coordinate": {
+              "lat": 52.9040166,
+              "lng": -1.544656
+            },
+            "reference_name": "Binary",
+            "reference_postcode": "DE3 0GR",
+            "reviewed_by": "bristolbagpiper",
+            "source": "manual_named_place_map",
+            "supporting_address_urls": [
+              "https://binarybarandrestaurant.co.uk/",
+              "https://ratings.food.gov.uk/business/1489317/binary-bar-and-restaurant-derby"
+            ],
+            "url": "https://www.google.com/maps/search/?api=1&query=52.9040166%2C-1.544656"
           }
         ],
         "lat": 52.9040166,
@@ -42115,6 +42176,26 @@
         "metadata_issue": {
           "field": "postcode",
           "listed": "DE3 0GR",
+          "owner_review": {
+            "accepted_postcode": "DE3 0GR",
+            "approved_coordinate": {
+              "lat": 52.9040166,
+              "lng": -1.544656
+            },
+            "checked_at": "2026-10-13",
+            "conclusion": "Owner visually confirmed the existing Binary building on Limes Avenue. Retain the pin and PDF postcode DE3 0GR, supported by the operator website and FSA named address. CAMRA lists DE3 0BZ; preserve that conflicting source value as provenance rather than substituting it for the operator address.",
+            "listed": "DE3 0GR",
+            "owner_instruction": "yes",
+            "pub_name": "Binary",
+            "reference": "DE3 0BZ",
+            "review_map_url": "https://www.google.com/maps/search/?api=1&query=52.9040166%2C-1.544656",
+            "reviewed_by": "bristolbagpiper",
+            "source_url": "https://camra.org.uk/pubs/196347",
+            "supporting_address_urls": [
+              "https://binarybarandrestaurant.co.uk/",
+              "https://ratings.food.gov.uk/business/1489317/binary-bar-and-restaurant-derby"
+            ]
+          },
           "reference": "DE3 0BZ",
           "source_url": "https://camra.org.uk/pubs/196347"
         },

@@ -2,7 +2,7 @@
 
 Locations: 1044
 
-Actionable findings: 34
+Actionable findings: 33
 Locations with informational observations: 586 (may also have an actionable finding)
 
 ## Results
@@ -15,9 +15,9 @@ Locations with informational observations: 586 (may also have an actionable find
 
 ## Confidence
 
-- existing_evidence_needs_corroboration: 579
+- existing_evidence_needs_corroboration: 578
 - independent_coordinate_agreement: 442
-- owner_reviewed: 23
+- owner_reviewed: 24
 
 ## Limits
 
@@ -31,7 +31,6 @@ Locations with informational observations: 586 (may also have an actionable find
 
 | Pub | Place | Postcode | Result | Classification | Detail |
 |---|---|---|---|---|---|
-| Binary | Mickleover | DE3 0GR | no_name_match | Actionable | Directory postcode differs from reviewed reference postcode; FSA comparison is inconclusive; absence of a match does not contradict accepted evidence |
 | Bird in Hand | Austrey | CV9 3EE | no_name_match | Actionable | Directory postcode differs from reviewed reference postcode; FSA comparison is inconclusive; absence of a match does not contradict accepted evidence |
 | Blue Dog | Sewstern | NG33 5RG | coordinate_agreement | Actionable | Directory postcode differs from reviewed reference postcode |
 | Bucknall Bowling & Recreation Club | Stoke: Bucknall | ST2 7AB | no_name_match | Actionable | Directory postcode differs from reviewed reference postcode; FSA comparison is inconclusive; absence of a match does not contradict accepted evidence |
@@ -105,6 +104,7 @@ Locations with informational observations: 586 (may also have an actionable find
 | Belper House | Belper: Central | DE56 1EY | no_name_match | Informational | FSA comparison is inconclusive; absence of a match does not contradict accepted evidence |
 | Benks | Leek | ST13 6DH | no_name_match | Informational | FSA comparison is inconclusive; absence of a match does not contradict accepted evidence |
 | Berkeley Arms | Purton | GL13 9HU | ambiguous_or_missing_coordinates | Informational | FSA comparison is inconclusive; absence of a match does not contradict accepted evidence |
+| Binary | Mickleover | DE3 0GR | no_name_match | Informational | Owner reviewed this postcode discrepancy and confirmed the displayed pub building; listing postcode retained for provenance; FSA comparison is inconclusive; absence of a match does not contradict accepted evidence |
 | Black Cat | Liverpool: Mossley Hill | L18 8AG | no_name_match | Informational | FSA comparison is inconclusive; absence of a match does not contradict accepted evidence |
 | Black Cat | Bristol: Bedminster | BS3 3LH | no_name_match | Informational | FSA comparison is inconclusive; absence of a match does not contradict accepted evidence |
 | Black Cat Bar | Liverpool: Central | L1 4JN | ambiguous_or_missing_coordinates | Informational | FSA comparison is inconclusive; absence of a match does not contradict accepted evidence |

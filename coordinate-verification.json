@@ -1955,6 +1955,23 @@
           "reference_postcode": "DE3 0GR",
           "source": "google-maps-named-place",
           "url": "https://www.google.com/maps/search/?api=1&query=Binary+Mickleover+DE3+0GR"
+        },
+        {
+          "checked_at": "2026-10-13",
+          "match": "owner_confirmed_existing_pub_building_operator_postcode",
+          "reference_coordinate": {
+            "lat": 52.9040166,
+            "lng": -1.544656
+          },
+          "reference_name": "Binary",
+          "reference_postcode": "DE3 0GR",
+          "reviewed_by": "bristolbagpiper",
+          "source": "manual_named_place_map",
+          "supporting_address_urls": [
+            "https://binarybarandrestaurant.co.uk/",
+            "https://ratings.food.gov.uk/business/1489317/binary-bar-and-restaurant-derby"
+          ],
+          "url": "https://www.google.com/maps/search/?api=1&query=52.9040166%2C-1.544656"
         }
       ],
       "lat": 52.9040166,
@@ -1962,6 +1979,26 @@
       "metadata_issue": {
         "field": "postcode",
         "listed": "DE3 0GR",
+        "owner_review": {
+          "accepted_postcode": "DE3 0GR",
+          "approved_coordinate": {
+            "lat": 52.9040166,
+            "lng": -1.544656
+          },
+          "checked_at": "2026-10-13",
+          "conclusion": "Owner visually confirmed the existing Binary building on Limes Avenue. Retain the pin and PDF postcode DE3 0GR, supported by the operator website and FSA named address. CAMRA lists DE3 0BZ; preserve that conflicting source value as provenance rather than substituting it for the operator address.",
+          "listed": "DE3 0GR",
+          "owner_instruction": "yes",
+          "pub_name": "Binary",
+          "reference": "DE3 0BZ",
+          "review_map_url": "https://www.google.com/maps/search/?api=1&query=52.9040166%2C-1.544656",
+          "reviewed_by": "bristolbagpiper",
+          "source_url": "https://camra.org.uk/pubs/196347",
+          "supporting_address_urls": [
+            "https://binarybarandrestaurant.co.uk/",
+            "https://ratings.food.gov.uk/business/1489317/binary-bar-and-restaurant-derby"
+          ]
+        },
         "reference": "DE3 0BZ",
         "source_url": "https://camra.org.uk/pubs/196347"
       },

@@ -2,69 +2,6 @@
   "records": [
     {
       "actionable": true,
-      "area": "Derbyshire",
-      "checked_at": "2026-10-10",
-      "comparisons": [
-        {
-          "name_matches": 0,
-          "postcode_matches": 1,
-          "queried_postcode": "DE45 1UW",
-          "status": "no_name_match"
-        },
-        {
-          "address": "Alport Lane, Youlgrave, Derbyshire",
-          "difference_metres": 189.6,
-          "lat": 53.177127,
-          "lng": -1.682203,
-          "name": "The George Hotel",
-          "postcode": "DE45 1WN",
-          "queried_postcode": "DE45 1WN",
-          "status": "coordinate_disagreement",
-          "url": "https://ratings.food.gov.uk/business/1669443"
-        }
-      ],
-      "confidence": "existing_evidence_needs_corroboration",
-      "country": "England",
-      "dispense": "H",
-      "independent_of_pin": true,
-      "last": "2026 Q2",
-      "listing": {
-        "postcode": "DE45 1UW",
-        "pub_name": "George"
-      },
-      "notes": "",
-      "owner_reviewed": false,
-      "pg": "Guest",
-      "pin": {
-        "lat": 53.1762642,
-        "lng": -1.684656
-      },
-      "place_name": "Youlgrave",
-      "postcode": "DE45 1UW",
-      "priority": 0,
-      "pub_name": "George",
-      "reasons": [
-        "Directory postcode differs from reviewed reference postcode"
-      ],
-      "reference": {
-        "address": "Alport Lane, Youlgrave, Derbyshire",
-        "difference_metres": 189.6,
-        "lat": 53.177127,
-        "lng": -1.682203,
-        "name": "The George Hotel",
-        "postcode": "DE45 1WN",
-        "queried_postcode": "DE45 1WN",
-        "status": "coordinate_disagreement",
-        "url": "https://ratings.food.gov.uk/business/1669443"
-      },
-      "status": "coordinate_disagreement",
-      "venue_id": "v-dad6e94b-cfa7-5d07-8d8e-4143a122d2a1",
-      "warnings": [
-        "FSA coordinate is 189.6m from the accepted pin; informational only because the FSA geocode may be approximate"
-      ]
-    },
-    {
-      "actionable": true,
       "area": "Durham",
       "checked_at": "2026-10-10",
       "comparisons": [
@@ -12764,6 +12701,68 @@
       "venue_id": "v-8131d496-39be-5f8f-a17d-b58660aeda1b",
       "warnings": [
         "FSA comparison is inconclusive; absence of a match does not contradict accepted evidence"
+      ]
+    },
+    {
+      "actionable": false,
+      "area": "Derbyshire",
+      "checked_at": "2026-10-10",
+      "comparisons": [
+        {
+          "name_matches": 0,
+          "postcode_matches": 1,
+          "queried_postcode": "DE45 1UW",
+          "status": "no_name_match"
+        },
+        {
+          "address": "Alport Lane, Youlgrave, Derbyshire",
+          "difference_metres": 189.6,
+          "lat": 53.177127,
+          "lng": -1.682203,
+          "name": "The George Hotel",
+          "postcode": "DE45 1WN",
+          "queried_postcode": "DE45 1WN",
+          "status": "coordinate_disagreement",
+          "url": "https://ratings.food.gov.uk/business/1669443"
+        }
+      ],
+      "confidence": "owner_reviewed",
+      "country": "England",
+      "dispense": "H",
+      "independent_of_pin": true,
+      "last": "2026 Q2",
+      "listing": {
+        "postcode": "DE45 1UW",
+        "pub_name": "George"
+      },
+      "notes": "",
+      "owner_reviewed": true,
+      "pg": "Guest",
+      "pin": {
+        "lat": 53.1762642,
+        "lng": -1.684656
+      },
+      "place_name": "Youlgrave",
+      "postcode": "DE45 1UW",
+      "priority": 2,
+      "pub_name": "George",
+      "reasons": [],
+      "reference": {
+        "address": "Alport Lane, Youlgrave, Derbyshire",
+        "difference_metres": 189.6,
+        "lat": 53.177127,
+        "lng": -1.682203,
+        "name": "The George Hotel",
+        "postcode": "DE45 1WN",
+        "queried_postcode": "DE45 1WN",
+        "status": "coordinate_disagreement",
+        "url": "https://ratings.food.gov.uk/business/1669443"
+      },
+      "status": "coordinate_disagreement",
+      "venue_id": "v-dad6e94b-cfa7-5d07-8d8e-4143a122d2a1",
+      "warnings": [
+        "Owner reviewed this postcode discrepancy and confirmed the displayed pub building; listing postcode retained for provenance",
+        "FSA coordinate is 189.6m from the accepted pin; informational only because the FSA geocode may be approximate"
       ]
     },
     {
@@ -54364,11 +54363,11 @@
   ],
   "schema_version": 1,
   "summary": {
-    "actionable_count": 21,
+    "actionable_count": 20,
     "confidence_counts": {
-      "existing_evidence_needs_corroboration": 571,
+      "existing_evidence_needs_corroboration": 570,
       "independent_coordinate_agreement": 437,
-      "owner_reviewed": 36
+      "owner_reviewed": 37
     },
     "counts": {
       "ambiguous_or_missing_coordinates": 63,

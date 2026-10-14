@@ -1,6 +1,6 @@
 {
   "location_review": {
-    "active_count": 34,
+    "active_count": 33,
     "records": {
       "v-00a08839-2b8a-5782-b6c7-0bdce4cddb2f": {
         "active": false,
@@ -11123,7 +11123,7 @@
         "venue_id": "v-d9e0eb61-f9f5-5a93-8e14-a75dc459b5d9"
       },
       "v-dad6e94b-cfa7-5d07-8d8e-4143a122d2a1": {
-        "active": true,
+        "active": false,
         "first_seen": "2026-10-02",
         "history": [
           {
@@ -11148,18 +11148,39 @@
               "Directory postcode DE45 1UW conflicts with reference address DE45 1WN"
             ],
             "status": "review_needed"
+          },
+          {
+            "date": "2026-10-14",
+            "reasons": [],
+            "status": "resolved"
           }
         ],
-        "last_checked": "2026-10-10",
+        "last_checked": "2026-10-14",
         "place_name": "Youlgrave",
         "postcode": "DE45 1UW",
         "pub_name": "George",
-        "reasons": [
-          "Directory postcode DE45 1UW conflicts with reference address DE45 1WN"
-        ],
+        "reasons": [],
         "reference": {
           "field": "postcode",
           "listed": "DE45 1UW",
+          "owner_review": {
+            "approved_coordinate": {
+              "lat": 53.1762642,
+              "lng": -1.684656
+            },
+            "checked_at": "2026-10-14",
+            "conclusion": "Owner visually confirmed the current George Hotel building at Alport Lane, Youlgrave. Retain the pin. Operator and CAMRA use DE45 1WN; preserve PDF postcode DE45 1UW as source data. Location discrepancy reviewed; postal delivery postcode not independently proven.",
+            "listed": "DE45 1UW",
+            "owner_instruction": "yes",
+            "pub_name": "George",
+            "reference": "DE45 1WN",
+            "review_map_url": "https://www.google.com/maps/search/?api=1&query=53.1762642%2C-1.684656",
+            "reviewed_by": "bristolbagpiper",
+            "source_url": "https://camra.org.uk/pubs/134940",
+            "supporting_address_urls": [
+              "https://georgehotelyoulgrave.co.uk/contact-times/"
+            ]
+          },
           "reference": "DE45 1WN",
           "source_url": "https://camra.org.uk/pubs/134940"
         },
@@ -11171,7 +11192,7 @@
           }
         },
         "source_error": null,
-        "status": "review_needed",
+        "status": "resolved",
         "unverified": false,
         "venue_id": "v-dad6e94b-cfa7-5d07-8d8e-4143a122d2a1"
       },
@@ -94506,7 +94527,7 @@
       ],
       "current_key": "george|youlgrave|de45 1uw",
       "independent_location_check": {
-        "actionable": true,
+        "actionable": false,
         "checked_at": "2026-10-10",
         "comparisons": [
           {
@@ -94527,21 +94548,19 @@
             "url": "https://ratings.food.gov.uk/business/1669443"
           }
         ],
-        "confidence": "existing_evidence_needs_corroboration",
+        "confidence": "owner_reviewed",
         "independent_of_pin": true,
         "listing": {
           "postcode": "DE45 1UW",
           "pub_name": "George"
         },
-        "owner_reviewed": false,
+        "owner_reviewed": true,
         "pin": {
           "lat": 53.1762642,
           "lng": -1.684656
         },
-        "priority": 0,
-        "reasons": [
-          "Directory postcode differs from reviewed reference postcode"
-        ],
+        "priority": 2,
+        "reasons": [],
         "reference": {
           "address": "Alport Lane, Youlgrave, Derbyshire",
           "difference_metres": 189.6,
@@ -94555,6 +94574,7 @@
         },
         "status": "coordinate_disagreement",
         "warnings": [
+          "Owner reviewed this postcode discrepancy and confirmed the displayed pub building; listing postcode retained for provenance",
           "FSA coordinate is 189.6m from the accepted pin; informational only because the FSA geocode may be approximate"
         ]
       },
@@ -94569,6 +94589,26 @@
         "postcode": "DE45 1UW",
         "pub_name": "George"
       },
+      "location_approvals": [
+        {
+          "approved_coordinate": {
+            "lat": 53.1762642,
+            "lng": -1.684656
+          },
+          "checked_at": "2026-10-14",
+          "conclusion": "Owner visually confirmed the current George Hotel building at Alport Lane, Youlgrave. Retain the pin. Operator and CAMRA use DE45 1WN; preserve PDF postcode DE45 1UW as source data. Location discrepancy reviewed; postal delivery postcode not independently proven.",
+          "listed": "DE45 1UW",
+          "owner_instruction": "yes",
+          "pub_name": "George",
+          "reference": "DE45 1WN",
+          "review_map_url": "https://www.google.com/maps/search/?api=1&query=53.1762642%2C-1.684656",
+          "reviewed_by": "bristolbagpiper",
+          "source_url": "https://camra.org.uk/pubs/134940",
+          "supporting_address_urls": [
+            "https://georgehotelyoulgrave.co.uk/contact-times/"
+          ]
+        }
+      ],
       "verified_pin": {
         "evidence": [
           {
@@ -94594,6 +94634,22 @@
             "reference_postcode": "DE45 1UW",
             "source": "google-maps-named-place",
             "url": "https://www.google.com/maps/search/?api=1&query=George+Hotel+Youlgreave"
+          },
+          {
+            "checked_at": "2026-10-14",
+            "match": "owner_confirmed_existing_pub_building",
+            "reference_coordinate": {
+              "lat": 53.1762642,
+              "lng": -1.684656
+            },
+            "reference_name": "George Hotel",
+            "reference_postcode": "DE45 1WN",
+            "reviewed_by": "bristolbagpiper",
+            "source": "manual_named_place_map",
+            "supporting_address_urls": [
+              "https://georgehotelyoulgrave.co.uk/contact-times/"
+            ],
+            "url": "https://www.google.com/maps/search/?api=1&query=53.1762642%2C-1.684656"
           }
         ],
         "lat": 53.1762642,
@@ -94601,6 +94657,24 @@
         "metadata_issue": {
           "field": "postcode",
           "listed": "DE45 1UW",
+          "owner_review": {
+            "approved_coordinate": {
+              "lat": 53.1762642,
+              "lng": -1.684656
+            },
+            "checked_at": "2026-10-14",
+            "conclusion": "Owner visually confirmed the current George Hotel building at Alport Lane, Youlgrave. Retain the pin. Operator and CAMRA use DE45 1WN; preserve PDF postcode DE45 1UW as source data. Location discrepancy reviewed; postal delivery postcode not independently proven.",
+            "listed": "DE45 1UW",
+            "owner_instruction": "yes",
+            "pub_name": "George",
+            "reference": "DE45 1WN",
+            "review_map_url": "https://www.google.com/maps/search/?api=1&query=53.1762642%2C-1.684656",
+            "reviewed_by": "bristolbagpiper",
+            "source_url": "https://camra.org.uk/pubs/134940",
+            "supporting_address_urls": [
+              "https://georgehotelyoulgrave.co.uk/contact-times/"
+            ]
+          },
           "reference": "DE45 1WN",
           "source_url": "https://camra.org.uk/pubs/134940"
         },

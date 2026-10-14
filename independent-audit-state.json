@@ -37372,7 +37372,7 @@
       ]
     },
     "v-dad6e94b-cfa7-5d07-8d8e-4143a122d2a1": {
-      "actionable": true,
+      "actionable": false,
       "checked_at": "2026-10-10",
       "comparisons": [
         {
@@ -37393,21 +37393,19 @@
           "url": "https://ratings.food.gov.uk/business/1669443"
         }
       ],
-      "confidence": "existing_evidence_needs_corroboration",
+      "confidence": "owner_reviewed",
       "independent_of_pin": true,
       "listing": {
         "postcode": "DE45 1UW",
         "pub_name": "George"
       },
-      "owner_reviewed": false,
+      "owner_reviewed": true,
       "pin": {
         "lat": 53.1762642,
         "lng": -1.684656
       },
-      "priority": 0,
-      "reasons": [
-        "Directory postcode differs from reviewed reference postcode"
-      ],
+      "priority": 2,
+      "reasons": [],
       "reference": {
         "address": "Alport Lane, Youlgrave, Derbyshire",
         "difference_metres": 189.6,
@@ -37421,6 +37419,7 @@
       },
       "status": "coordinate_disagreement",
       "warnings": [
+        "Owner reviewed this postcode discrepancy and confirmed the displayed pub building; listing postcode retained for provenance",
         "FSA coordinate is 189.6m from the accepted pin; informational only because the FSA geocode may be approximate"
       ]
     },

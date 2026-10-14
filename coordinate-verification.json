@@ -11218,6 +11218,22 @@
           "reference_postcode": "DE45 1UW",
           "source": "google-maps-named-place",
           "url": "https://www.google.com/maps/search/?api=1&query=George+Hotel+Youlgreave"
+        },
+        {
+          "checked_at": "2026-10-14",
+          "match": "owner_confirmed_existing_pub_building",
+          "reference_coordinate": {
+            "lat": 53.1762642,
+            "lng": -1.684656
+          },
+          "reference_name": "George Hotel",
+          "reference_postcode": "DE45 1WN",
+          "reviewed_by": "bristolbagpiper",
+          "source": "manual_named_place_map",
+          "supporting_address_urls": [
+            "https://georgehotelyoulgrave.co.uk/contact-times/"
+          ],
+          "url": "https://www.google.com/maps/search/?api=1&query=53.1762642%2C-1.684656"
         }
       ],
       "lat": 53.1762642,
@@ -11225,6 +11241,24 @@
       "metadata_issue": {
         "field": "postcode",
         "listed": "DE45 1UW",
+        "owner_review": {
+          "approved_coordinate": {
+            "lat": 53.1762642,
+            "lng": -1.684656
+          },
+          "checked_at": "2026-10-14",
+          "conclusion": "Owner visually confirmed the current George Hotel building at Alport Lane, Youlgrave. Retain the pin. Operator and CAMRA use DE45 1WN; preserve PDF postcode DE45 1UW as source data. Location discrepancy reviewed; postal delivery postcode not independently proven.",
+          "listed": "DE45 1UW",
+          "owner_instruction": "yes",
+          "pub_name": "George",
+          "reference": "DE45 1WN",
+          "review_map_url": "https://www.google.com/maps/search/?api=1&query=53.1762642%2C-1.684656",
+          "reviewed_by": "bristolbagpiper",
+          "source_url": "https://camra.org.uk/pubs/134940",
+          "supporting_address_urls": [
+            "https://georgehotelyoulgrave.co.uk/contact-times/"
+          ]
+        },
         "reference": "DE45 1WN",
         "source_url": "https://camra.org.uk/pubs/134940"
       },

@@ -33516,7 +33516,7 @@
       ]
     },
     "v-c44530d3-b3ce-5bf5-a7dc-3a6275809182": {
-      "actionable": true,
+      "actionable": false,
       "checked_at": "2026-10-10",
       "comparisons": [
         {
@@ -33537,21 +33537,19 @@
           "url": "https://ratings.food.gov.uk/business/1923440"
         }
       ],
-      "confidence": "independent_coordinate_agreement",
+      "confidence": "owner_reviewed",
       "independent_of_pin": true,
       "listing": {
         "postcode": "CV21 3AW",
         "pub_name": "Merchants"
       },
-      "owner_reviewed": false,
+      "owner_reviewed": true,
       "pin": {
         "lat": 52.3713166,
         "lng": -1.2614392
       },
-      "priority": 0,
-      "reasons": [
-        "Directory postcode differs from reviewed reference postcode"
-      ],
+      "priority": 2,
+      "reasons": [],
       "reference": {
         "address": "5A      Little Church Street, Rugby, , Warwickshire",
         "difference_metres": 8.9,
@@ -33564,7 +33562,9 @@
         "url": "https://ratings.food.gov.uk/business/1923440"
       },
       "status": "coordinate_agreement",
-      "warnings": []
+      "warnings": [
+        "Owner reviewed this postcode discrepancy and confirmed the displayed pub building; listing postcode retained for provenance"
+      ]
     },
     "v-c56b8efe-2045-5f80-b918-bce5f4ec32c0": {
       "actionable": false,

@@ -2,67 +2,6 @@
   "records": [
     {
       "actionable": true,
-      "area": "Warwickshire",
-      "checked_at": "2026-10-10",
-      "comparisons": [
-        {
-          "name_matches": 0,
-          "postcode_matches": 3,
-          "queried_postcode": "CV21 3AW",
-          "status": "no_name_match"
-        },
-        {
-          "address": "5A      Little Church Street, Rugby, , Warwickshire",
-          "difference_metres": 8.9,
-          "lat": 52.3713014,
-          "lng": -1.2615683,
-          "name": "The Merchants Inn",
-          "postcode": "CV21 3AN",
-          "queried_postcode": "CV21 3AN",
-          "status": "coordinate_agreement",
-          "url": "https://ratings.food.gov.uk/business/1923440"
-        }
-      ],
-      "confidence": "independent_coordinate_agreement",
-      "country": "England",
-      "dispense": "H",
-      "independent_of_pin": true,
-      "last": "2026 Q1",
-      "listing": {
-        "postcode": "CV21 3AW",
-        "pub_name": "Merchants"
-      },
-      "notes": "",
-      "owner_reviewed": false,
-      "pg": "Guest",
-      "pin": {
-        "lat": 52.3713166,
-        "lng": -1.2614392
-      },
-      "place_name": "Rugby",
-      "postcode": "CV21 3AW",
-      "priority": 0,
-      "pub_name": "Merchants",
-      "reasons": [
-        "Directory postcode differs from reviewed reference postcode"
-      ],
-      "reference": {
-        "address": "5A      Little Church Street, Rugby, , Warwickshire",
-        "difference_metres": 8.9,
-        "lat": 52.3713014,
-        "lng": -1.2615683,
-        "name": "The Merchants Inn",
-        "postcode": "CV21 3AN",
-        "queried_postcode": "CV21 3AN",
-        "status": "coordinate_agreement",
-        "url": "https://ratings.food.gov.uk/business/1923440"
-      },
-      "status": "coordinate_agreement",
-      "venue_id": "v-c44530d3-b3ce-5bf5-a7dc-3a6275809182",
-      "warnings": []
-    },
-    {
-      "actionable": true,
       "area": "Derbyshire",
       "checked_at": "2026-10-10",
       "comparisons": [
@@ -17597,6 +17536,67 @@
       "venue_id": "v-266abb0a-a295-51bf-a246-e258c7af258a",
       "warnings": [
         "FSA coordinate is 25-50m away; informational only"
+      ]
+    },
+    {
+      "actionable": false,
+      "area": "Warwickshire",
+      "checked_at": "2026-10-10",
+      "comparisons": [
+        {
+          "name_matches": 0,
+          "postcode_matches": 3,
+          "queried_postcode": "CV21 3AW",
+          "status": "no_name_match"
+        },
+        {
+          "address": "5A      Little Church Street, Rugby, , Warwickshire",
+          "difference_metres": 8.9,
+          "lat": 52.3713014,
+          "lng": -1.2615683,
+          "name": "The Merchants Inn",
+          "postcode": "CV21 3AN",
+          "queried_postcode": "CV21 3AN",
+          "status": "coordinate_agreement",
+          "url": "https://ratings.food.gov.uk/business/1923440"
+        }
+      ],
+      "confidence": "owner_reviewed",
+      "country": "England",
+      "dispense": "H",
+      "independent_of_pin": true,
+      "last": "2026 Q1",
+      "listing": {
+        "postcode": "CV21 3AW",
+        "pub_name": "Merchants"
+      },
+      "notes": "",
+      "owner_reviewed": true,
+      "pg": "Guest",
+      "pin": {
+        "lat": 52.3713166,
+        "lng": -1.2614392
+      },
+      "place_name": "Rugby",
+      "postcode": "CV21 3AW",
+      "priority": 2,
+      "pub_name": "Merchants",
+      "reasons": [],
+      "reference": {
+        "address": "5A      Little Church Street, Rugby, , Warwickshire",
+        "difference_metres": 8.9,
+        "lat": 52.3713014,
+        "lng": -1.2615683,
+        "name": "The Merchants Inn",
+        "postcode": "CV21 3AN",
+        "queried_postcode": "CV21 3AN",
+        "status": "coordinate_agreement",
+        "url": "https://ratings.food.gov.uk/business/1923440"
+      },
+      "status": "coordinate_agreement",
+      "venue_id": "v-c44530d3-b3ce-5bf5-a7dc-3a6275809182",
+      "warnings": [
+        "Owner reviewed this postcode discrepancy and confirmed the displayed pub building; listing postcode retained for provenance"
       ]
     },
     {
@@ -54362,11 +54362,11 @@
   ],
   "schema_version": 1,
   "summary": {
-    "actionable_count": 17,
+    "actionable_count": 16,
     "confidence_counts": {
       "existing_evidence_needs_corroboration": 569,
-      "independent_coordinate_agreement": 435,
-      "owner_reviewed": 40
+      "independent_coordinate_agreement": 434,
+      "owner_reviewed": 41
     },
     "counts": {
       "ambiguous_or_missing_coordinates": 63,
@@ -54375,7 +54375,7 @@
       "nearby": 102,
       "no_name_match": 179
     },
-    "informational_count": 593,
+    "informational_count": 594,
     "limitations": [
       "Coordinate agreement does not prove the correct building or current Bass availability.",
       "Owner-approved coordinates take priority; CAMRA remains the primary automated reference.",

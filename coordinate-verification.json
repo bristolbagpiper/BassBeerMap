@@ -16370,6 +16370,22 @@
           "reference_postcode": "CV21 3AW",
           "source": "google-maps-named-place",
           "url": "https://www.google.com/maps/search/?api=1&query=Merchants+Inn+Rugby+CV21+3AW"
+        },
+        {
+          "checked_at": "2026-10-14",
+          "match": "owner_confirmed_existing_pub_building",
+          "reference_coordinate": {
+            "lat": 52.3713166,
+            "lng": -1.2614392
+          },
+          "reference_name": "Merchants Inn",
+          "reference_postcode": "CV21 3AN",
+          "reviewed_by": "bristolbagpiper",
+          "source": "manual_named_place_map",
+          "supporting_address_urls": [
+            "https://rugby.camra.org.uk/viewnode.php?id=82936"
+          ],
+          "url": "https://www.google.com/maps/search/?api=1&query=52.3713166%2C-1.2614392"
         }
       ],
       "lat": 52.3713166,
@@ -16377,6 +16393,24 @@
       "metadata_issue": {
         "field": "postcode",
         "listed": "CV21 3AW",
+        "owner_review": {
+          "approved_coordinate": {
+            "lat": 52.3713166,
+            "lng": -1.2614392
+          },
+          "checked_at": "2026-10-14",
+          "conclusion": "Owner visually confirmed the current Merchants Inn building at 5-7 Little Church Street, Rugby. Retain the pin. CAMRA and the FSA named address use CV21 3AN; preserve PDF postcode CV21 3AW as source data. Location discrepancy reviewed; postal delivery postcode not independently proven.",
+          "listed": "CV21 3AW",
+          "owner_instruction": "yes",
+          "pub_name": "Merchants",
+          "reference": "CV21 3AN",
+          "review_map_url": "https://www.google.com/maps/search/?api=1&query=52.3713166%2C-1.2614392",
+          "reviewed_by": "bristolbagpiper",
+          "source_url": "https://camra.org.uk/pubs/148458",
+          "supporting_address_urls": [
+            "https://rugby.camra.org.uk/viewnode.php?id=82936"
+          ]
+        },
         "reference": "CV21 3AN",
         "source_url": "https://camra.org.uk/pubs/148458"
       },

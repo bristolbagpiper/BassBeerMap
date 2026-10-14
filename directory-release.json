@@ -8386,12 +8386,30 @@
       "precision": "venue"
     },
     "v-c44530d3-b3ce-5bf5-a7dc-3a6275809182": {
-      "checked_at": "2026-09-13",
+      "checked_at": "2026-10-14",
       "lat": 52.3713166,
       "lng": -1.2614392,
       "metadata_issue": {
         "field": "postcode",
         "listed": "CV21 3AW",
+        "owner_review": {
+          "approved_coordinate": {
+            "lat": 52.3713166,
+            "lng": -1.2614392
+          },
+          "checked_at": "2026-10-14",
+          "conclusion": "Owner visually confirmed the current Merchants Inn building at 5-7 Little Church Street, Rugby. Retain the pin. CAMRA and the FSA named address use CV21 3AN; preserve PDF postcode CV21 3AW as source data. Location discrepancy reviewed; postal delivery postcode not independently proven.",
+          "listed": "CV21 3AW",
+          "owner_instruction": "yes",
+          "pub_name": "Merchants",
+          "reference": "CV21 3AN",
+          "review_map_url": "https://www.google.com/maps/search/?api=1&query=52.3713166%2C-1.2614392",
+          "reviewed_by": "bristolbagpiper",
+          "source_url": "https://camra.org.uk/pubs/148458",
+          "supporting_address_urls": [
+            "https://rugby.camra.org.uk/viewnode.php?id=82936"
+          ]
+        },
         "reference": "CV21 3AN",
         "source_url": "https://camra.org.uk/pubs/148458"
       },
@@ -10995,7 +11013,7 @@
     "source_name_hint": "",
     "source_pdf": "latest-bass-directory.pdf"
   },
-  "release_id": "0606e136447ba45a1f0d00caee25a3c141aeaa3714918a56e398e2e022644505",
+  "release_id": "eebe728de391b78db6bb9d40c1dcc6106b03edaf19857771d946bcf85742e206",
   "rows": [
     {
       "area": "Bedfordshire",

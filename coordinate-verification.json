@@ -16864,6 +16864,23 @@
           "reference_postcode": "DE11 9JE",
           "source": "google-maps-named-place",
           "url": "https://www.google.com/maps/search/?api=1&query=Mount+Pleasant+Inn+DE11+9JE"
+        },
+        {
+          "checked_at": "2026-10-14",
+          "match": "owner_confirmed_existing_pub_building_operator_postcode",
+          "reference_coordinate": {
+            "lat": 52.7498761,
+            "lng": -1.5737433
+          },
+          "reference_name": "Mount Pleasant Inn",
+          "reference_postcode": "DE11 9JE",
+          "reviewed_by": "bristolbagpiper",
+          "source": "manual_named_place_map",
+          "supporting_address_urls": [
+            "https://www.southderbyshire.gov.uk/assets/attach/12336/REDACTED-Premises-Licence-Variation-2024.pdf",
+            "https://ratings.food.gov.uk/business/241288/mount-pleasant-inn-swadlincote"
+          ],
+          "url": "https://www.google.com/maps/search/?api=1&query=52.7498761%2C-1.5737433"
         }
       ],
       "lat": 52.7498761,
@@ -16871,6 +16888,26 @@
       "metadata_issue": {
         "field": "postcode",
         "listed": "DE11 9JE",
+        "owner_review": {
+          "accepted_postcode": "DE11 9JE",
+          "approved_coordinate": {
+            "lat": 52.7498761,
+            "lng": -1.5737433
+          },
+          "checked_at": "2026-10-14",
+          "conclusion": "Owner visually confirmed the existing Mount Pleasant Inn building on 109 Mount Pleasant Road, Castle Gresley. Retain the pin and PDF postcode DE11 9JE, supported by the premises licence application and FSA named address. CAMRA lists DE11 9JJ; preserve that conflicting source value as provenance rather than substituting it for the licence application address.",
+          "listed": "DE11 9JE",
+          "owner_instruction": "yes",
+          "pub_name": "Mount Pleasant Inn",
+          "reference": "DE11 9JJ",
+          "review_map_url": "https://www.google.com/maps/search/?api=1&query=52.7498761%2C-1.5737433",
+          "reviewed_by": "bristolbagpiper",
+          "source_url": "https://camra.org.uk/pubs/124016",
+          "supporting_address_urls": [
+            "https://www.southderbyshire.gov.uk/assets/attach/12336/REDACTED-Premises-Licence-Variation-2024.pdf",
+            "https://ratings.food.gov.uk/business/241288/mount-pleasant-inn-swadlincote"
+          ]
+        },
         "reference": "DE11 9JJ",
         "source_url": "https://camra.org.uk/pubs/124016"
       },

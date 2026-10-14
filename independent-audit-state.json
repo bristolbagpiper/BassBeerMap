@@ -17987,7 +17987,7 @@
       "warnings": []
     },
     "v-6bd49cd0-7be5-52b0-a714-be39cb377356": {
-      "actionable": true,
+      "actionable": false,
       "checked_at": "2026-10-10",
       "comparisons": [
         {
@@ -18003,21 +18003,19 @@
           "status": "no_name_match"
         }
       ],
-      "confidence": "existing_evidence_needs_corroboration",
+      "confidence": "owner_reviewed",
       "independent_of_pin": true,
       "listing": {
         "postcode": "DE11 9JE",
         "pub_name": "Mount Pleasant Inn"
       },
-      "owner_reviewed": false,
+      "owner_reviewed": true,
       "pin": {
         "lat": 52.7498761,
         "lng": -1.5737433
       },
-      "priority": 0,
-      "reasons": [
-        "Directory postcode differs from reviewed reference postcode"
-      ],
+      "priority": 2,
+      "reasons": [],
       "reference": {
         "name_matches": 1,
         "postcode_matches": 1,
@@ -18026,6 +18024,7 @@
       },
       "status": "ambiguous_or_missing_coordinates",
       "warnings": [
+        "Owner reviewed this postcode discrepancy and confirmed the displayed pub building; listing postcode retained for provenance",
         "FSA comparison is inconclusive; absence of a match does not contradict accepted evidence"
       ]
     },

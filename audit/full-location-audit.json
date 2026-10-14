@@ -6,59 +6,6 @@
       "checked_at": "2026-10-10",
       "comparisons": [
         {
-          "name_matches": 1,
-          "postcode_matches": 1,
-          "queried_postcode": "DE11 9JE",
-          "status": "ambiguous_or_missing_coordinates"
-        },
-        {
-          "name_matches": 0,
-          "postcode_matches": 0,
-          "queried_postcode": "DE11 9JJ",
-          "status": "no_name_match"
-        }
-      ],
-      "confidence": "existing_evidence_needs_corroboration",
-      "country": "England",
-      "dispense": "H",
-      "independent_of_pin": true,
-      "last": "2026 Q3",
-      "listing": {
-        "postcode": "DE11 9JE",
-        "pub_name": "Mount Pleasant Inn"
-      },
-      "notes": "",
-      "owner_reviewed": false,
-      "pg": "Perm",
-      "pin": {
-        "lat": 52.7498761,
-        "lng": -1.5737433
-      },
-      "place_name": "Castle Gresley",
-      "postcode": "DE11 9JE",
-      "priority": 0,
-      "pub_name": "Mount Pleasant Inn",
-      "reasons": [
-        "Directory postcode differs from reviewed reference postcode"
-      ],
-      "reference": {
-        "name_matches": 1,
-        "postcode_matches": 1,
-        "queried_postcode": "DE11 9JE",
-        "status": "ambiguous_or_missing_coordinates"
-      },
-      "status": "ambiguous_or_missing_coordinates",
-      "venue_id": "v-6bd49cd0-7be5-52b0-a714-be39cb377356",
-      "warnings": [
-        "FSA comparison is inconclusive; absence of a match does not contradict accepted evidence"
-      ]
-    },
-    {
-      "actionable": true,
-      "area": "Derbyshire",
-      "checked_at": "2026-10-10",
-      "comparisons": [
-        {
           "name_matches": 0,
           "postcode_matches": 4,
           "queried_postcode": "DE72 2WA",
@@ -18151,6 +18098,58 @@
       "status": "no_name_match",
       "venue_id": "v-321e705c-fdd1-5270-90ca-c39a73cd374a",
       "warnings": [
+        "FSA comparison is inconclusive; absence of a match does not contradict accepted evidence"
+      ]
+    },
+    {
+      "actionable": false,
+      "area": "Derbyshire",
+      "checked_at": "2026-10-10",
+      "comparisons": [
+        {
+          "name_matches": 1,
+          "postcode_matches": 1,
+          "queried_postcode": "DE11 9JE",
+          "status": "ambiguous_or_missing_coordinates"
+        },
+        {
+          "name_matches": 0,
+          "postcode_matches": 0,
+          "queried_postcode": "DE11 9JJ",
+          "status": "no_name_match"
+        }
+      ],
+      "confidence": "owner_reviewed",
+      "country": "England",
+      "dispense": "H",
+      "independent_of_pin": true,
+      "last": "2026 Q3",
+      "listing": {
+        "postcode": "DE11 9JE",
+        "pub_name": "Mount Pleasant Inn"
+      },
+      "notes": "",
+      "owner_reviewed": true,
+      "pg": "Perm",
+      "pin": {
+        "lat": 52.7498761,
+        "lng": -1.5737433
+      },
+      "place_name": "Castle Gresley",
+      "postcode": "DE11 9JE",
+      "priority": 2,
+      "pub_name": "Mount Pleasant Inn",
+      "reasons": [],
+      "reference": {
+        "name_matches": 1,
+        "postcode_matches": 1,
+        "queried_postcode": "DE11 9JE",
+        "status": "ambiguous_or_missing_coordinates"
+      },
+      "status": "ambiguous_or_missing_coordinates",
+      "venue_id": "v-6bd49cd0-7be5-52b0-a714-be39cb377356",
+      "warnings": [
+        "Owner reviewed this postcode discrepancy and confirmed the displayed pub building; listing postcode retained for provenance",
         "FSA comparison is inconclusive; absence of a match does not contradict accepted evidence"
       ]
     },
@@ -54362,11 +54361,11 @@
   ],
   "schema_version": 1,
   "summary": {
-    "actionable_count": 16,
+    "actionable_count": 15,
     "confidence_counts": {
-      "existing_evidence_needs_corroboration": 569,
+      "existing_evidence_needs_corroboration": 568,
       "independent_coordinate_agreement": 434,
-      "owner_reviewed": 41
+      "owner_reviewed": 42
     },
     "counts": {
       "ambiguous_or_missing_coordinates": 63,

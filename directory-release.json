@@ -4523,12 +4523,32 @@
       "precision": "venue"
     },
     "v-6bd49cd0-7be5-52b0-a714-be39cb377356": {
-      "checked_at": "2026-09-13",
+      "checked_at": "2026-10-14",
       "lat": 52.7498761,
       "lng": -1.5737433,
       "metadata_issue": {
         "field": "postcode",
         "listed": "DE11 9JE",
+        "owner_review": {
+          "accepted_postcode": "DE11 9JE",
+          "approved_coordinate": {
+            "lat": 52.7498761,
+            "lng": -1.5737433
+          },
+          "checked_at": "2026-10-14",
+          "conclusion": "Owner visually confirmed the existing Mount Pleasant Inn building on 109 Mount Pleasant Road, Castle Gresley. Retain the pin and PDF postcode DE11 9JE, supported by the premises licence application and FSA named address. CAMRA lists DE11 9JJ; preserve that conflicting source value as provenance rather than substituting it for the licence application address.",
+          "listed": "DE11 9JE",
+          "owner_instruction": "yes",
+          "pub_name": "Mount Pleasant Inn",
+          "reference": "DE11 9JJ",
+          "review_map_url": "https://www.google.com/maps/search/?api=1&query=52.7498761%2C-1.5737433",
+          "reviewed_by": "bristolbagpiper",
+          "source_url": "https://camra.org.uk/pubs/124016",
+          "supporting_address_urls": [
+            "https://www.southderbyshire.gov.uk/assets/attach/12336/REDACTED-Premises-Licence-Variation-2024.pdf",
+            "https://ratings.food.gov.uk/business/241288/mount-pleasant-inn-swadlincote"
+          ]
+        },
         "reference": "DE11 9JJ",
         "source_url": "https://camra.org.uk/pubs/124016"
       },
@@ -11013,7 +11033,7 @@
     "source_name_hint": "",
     "source_pdf": "latest-bass-directory.pdf"
   },
-  "release_id": "eebe728de391b78db6bb9d40c1dcc6106b03edaf19857771d946bcf85742e206",
+  "release_id": "57047ccdddc682a0639107a3cd6c06a27abf389b9cd247cf9220d607ab2c8de8",
   "rows": [
     {
       "area": "Bedfordshire",

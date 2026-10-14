@@ -2,22 +2,22 @@
 
 Locations: 1044
 
-Actionable findings: 16
+Actionable findings: 15
 Locations with informational observations: 594 (may also have an actionable finding)
 
 ## Results
 
-- ambiguous_or_missing_coordinates: 63
 - coordinate_agreement: 459
 - nearby: 102
 - coordinate_disagreement: 241
 - no_name_match: 179
+- ambiguous_or_missing_coordinates: 63
 
 ## Confidence
 
-- existing_evidence_needs_corroboration: 569
 - independent_coordinate_agreement: 434
-- owner_reviewed: 41
+- existing_evidence_needs_corroboration: 568
+- owner_reviewed: 42
 
 ## Limits
 
@@ -31,7 +31,6 @@ Locations with informational observations: 594 (may also have an actionable find
 
 | Pub | Place | Postcode | Result | Classification | Detail |
 |---|---|---|---|---|---|
-| Mount Pleasant Inn | Castle Gresley | DE11 9JE | ambiguous_or_missing_coordinates | Actionable | Directory postcode differs from reviewed reference postcode; FSA comparison is inconclusive; absence of a match does not contradict accepted evidence |
 | Navigation | Shardlow | DE72 2WA | coordinate_agreement | Actionable | Directory postcode differs from reviewed reference postcode |
 | Needle and Pin | Loughborough | LE11 5BG | coordinate_agreement | Actionable | Directory postcode differs from reviewed reference postcode |
 | Nelson Inn | Brown Lees | ST8 6PH | nearby | Actionable | Directory postcode differs from reviewed reference postcode; FSA coordinate is 25-50m away; informational only |
@@ -384,6 +383,7 @@ Locations with informational observations: 594 (may also have an actionable find
 | Monro | Liverpool: Central | L1 5AG | coordinate_disagreement | Informational | FSA coordinate is 57.2m from the accepted pin; informational only because the FSA geocode may be approximate |
 | Moorland Inn | Stoke: Burslem | ST6 1JP | nearby | Informational | FSA coordinate is 25-50m away; informational only |
 | Mount Inn | Llanidloes | SY18 6AB | no_name_match | Informational | FSA comparison is inconclusive; absence of a match does not contradict accepted evidence |
+| Mount Pleasant Inn | Castle Gresley | DE11 9JE | ambiguous_or_missing_coordinates | Informational | Owner reviewed this postcode discrepancy and confirmed the displayed pub building; listing postcode retained for provenance; FSA comparison is inconclusive; absence of a match does not contradict accepted evidence |
 | Mushroom Hall | Albert Village | DE11 8EN | coordinate_disagreement | Informational | FSA coordinate is 216.5m from the accepted pin; informational only because the FSA geocode may be approximate |
 | Nags Head | East Leake | LE12 6PG | no_name_match | Informational | FSA comparison is inconclusive; absence of a match does not contradict accepted evidence |
 | Nags Head | Keelby | DN41 8EF | no_name_match | Informational | FSA comparison is inconclusive; absence of a match does not contradict accepted evidence |

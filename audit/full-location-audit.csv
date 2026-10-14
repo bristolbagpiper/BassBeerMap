@@ -1,5 +1,4 @@
 venue_id,pub_name,place_name,postcode,priority,status,confidence,checked_at,actionable,reasons,warnings
-v-97a6ff26-33a9-521e-8875-2fa9a26e5f68,Grey Horse,Consett,DH8 6NF,0,coordinate_agreement,independent_coordinate_agreement,2026-10-10,True,Directory postcode differs from reviewed reference postcode,
 v-7cf2d126-509d-589d-9dee-d89d58765eff,Guest House,Southport: Central,PR9 0QF,0,coordinate_agreement,independent_coordinate_agreement,2026-10-10,True,Directory postcode differs from reviewed reference postcode,
 v-446b9fc7-c4e0-5040-91f3-8dbe02bb46a1,Mall,Bristol: Clifton,BS8 4DR,0,nearby,existing_evidence_needs_corroboration,2026-10-10,True,Directory postcode differs from reviewed reference postcode,FSA coordinate is 25-50m away; informational only
 v-c44530d3-b3ce-5bf5-a7dc-3a6275809182,Merchants,Rugby,CV21 3AW,0,coordinate_agreement,independent_coordinate_agreement,2026-10-10,True,Directory postcode differs from reviewed reference postcode,
@@ -260,6 +259,7 @@ v-33da9387-2aa7-5bdf-b0bb-3e369659eb47,Great Western,Deppers Bridge,CV47 2ST,2,c
 v-d0199650-f7c0-5287-bb86-dda903baae89,Green House,Mere Green,B74 2UD,2,coordinate_disagreement,existing_evidence_needs_corroboration,2026-10-09,False,,FSA coordinate is 106.2m from the accepted pin; informational only because the FSA geocode may be approximate
 v-7ae10979-fa76-53b3-bdc3-51d091c60752,Green Man,Clifton Campville,B79 0AX,2,coordinate_disagreement,existing_evidence_needs_corroboration,2026-10-09,False,,FSA coordinate is 111.7m from the accepted pin; informational only because the FSA geocode may be approximate
 v-8842f4ca-7548-55fc-8210-5671f0439035,Green Man,Stamford,PE9 2YQ,2,nearby,existing_evidence_needs_corroboration,2026-10-09,False,,FSA coordinate is 25-50m away; informational only
+v-97a6ff26-33a9-521e-8875-2fa9a26e5f68,Grey Horse,Consett,DH8 6NF,2,coordinate_agreement,owner_reviewed,2026-10-10,False,,Owner reviewed this postcode discrepancy and confirmed the displayed pub building; listing postcode retained for provenance
 v-c31ee814-63f4-513d-8d38-fad12edad41f,Greyhound,Woodville,DE11 7BU,2,ambiguous_or_missing_coordinates,existing_evidence_needs_corroboration,2026-10-09,False,,FSA comparison is inconclusive; absence of a match does not contradict accepted evidence
 v-d704b3a8-33c3-553f-b067-e1ed747652da,Greyhound Inn,Warslow,SK17 0JN,2,nearby,existing_evidence_needs_corroboration,2026-10-09,False,,FSA coordinate is 25-50m away; informational only
 v-a64a77c0-2805-54fd-b81b-bdfcee98f7ee,Griffin,Shustoke,B46 2LB,2,ambiguous_or_missing_coordinates,existing_evidence_needs_corroboration,2026-10-09,False,,FSA comparison is inconclusive; absence of a match does not contradict accepted evidence

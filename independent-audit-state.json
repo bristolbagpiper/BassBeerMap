@@ -25797,7 +25797,7 @@
       ]
     },
     "v-97a6ff26-33a9-521e-8875-2fa9a26e5f68": {
-      "actionable": true,
+      "actionable": false,
       "checked_at": "2026-10-10",
       "comparisons": [
         {
@@ -25818,21 +25818,19 @@
           "url": "https://ratings.food.gov.uk/business/1104097"
         }
       ],
-      "confidence": "independent_coordinate_agreement",
+      "confidence": "owner_reviewed",
       "independent_of_pin": true,
       "listing": {
         "postcode": "DH8 6NF",
         "pub_name": "Grey Horse"
       },
-      "owner_reviewed": false,
+      "owner_reviewed": true,
       "pin": {
         "lat": 54.8544235,
         "lng": -1.824519
       },
-      "priority": 0,
-      "reasons": [
-        "Directory postcode differs from reviewed reference postcode"
-      ],
+      "priority": 2,
+      "reasons": [],
       "reference": {
         "address": "115 SHERBURN TERRACE, , CONSETT",
         "difference_metres": 0.2,
@@ -25845,7 +25843,9 @@
         "url": "https://ratings.food.gov.uk/business/1104097"
       },
       "status": "coordinate_agreement",
-      "warnings": []
+      "warnings": [
+        "Owner reviewed this postcode discrepancy and confirmed the displayed pub building; listing postcode retained for provenance"
+      ]
     },
     "v-97eec8ed-44c6-5087-bbba-d95dc4a624e2": {
       "actionable": false,

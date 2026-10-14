@@ -2,67 +2,6 @@
   "records": [
     {
       "actionable": true,
-      "area": "Durham",
-      "checked_at": "2026-10-10",
-      "comparisons": [
-        {
-          "name_matches": 0,
-          "postcode_matches": 0,
-          "queried_postcode": "DH8 6NF",
-          "status": "no_name_match"
-        },
-        {
-          "address": "115 SHERBURN TERRACE, , CONSETT",
-          "difference_metres": 0.2,
-          "lat": 54.854422,
-          "lng": -1.8245208,
-          "name": "The Grey Horse",
-          "postcode": "DH8 6NE",
-          "queried_postcode": "DH8 6NE",
-          "status": "coordinate_agreement",
-          "url": "https://ratings.food.gov.uk/business/1104097"
-        }
-      ],
-      "confidence": "independent_coordinate_agreement",
-      "country": "England",
-      "dispense": "H",
-      "independent_of_pin": true,
-      "last": "2026 Q2",
-      "listing": {
-        "postcode": "DH8 6NF",
-        "pub_name": "Grey Horse"
-      },
-      "notes": "",
-      "owner_reviewed": false,
-      "pg": "Guest",
-      "pin": {
-        "lat": 54.8544235,
-        "lng": -1.824519
-      },
-      "place_name": "Consett",
-      "postcode": "DH8 6NF",
-      "priority": 0,
-      "pub_name": "Grey Horse",
-      "reasons": [
-        "Directory postcode differs from reviewed reference postcode"
-      ],
-      "reference": {
-        "address": "115 SHERBURN TERRACE, , CONSETT",
-        "difference_metres": 0.2,
-        "lat": 54.854422,
-        "lng": -1.8245208,
-        "name": "The Grey Horse",
-        "postcode": "DH8 6NE",
-        "queried_postcode": "DH8 6NE",
-        "status": "coordinate_agreement",
-        "url": "https://ratings.food.gov.uk/business/1104097"
-      },
-      "status": "coordinate_agreement",
-      "venue_id": "v-97a6ff26-33a9-521e-8875-2fa9a26e5f68",
-      "warnings": []
-    },
-    {
-      "actionable": true,
       "area": "Merseyside",
       "checked_at": "2026-10-10",
       "comparisons": [
@@ -13493,6 +13432,67 @@
       "venue_id": "v-8842f4ca-7548-55fc-8210-5671f0439035",
       "warnings": [
         "FSA coordinate is 25-50m away; informational only"
+      ]
+    },
+    {
+      "actionable": false,
+      "area": "Durham",
+      "checked_at": "2026-10-10",
+      "comparisons": [
+        {
+          "name_matches": 0,
+          "postcode_matches": 0,
+          "queried_postcode": "DH8 6NF",
+          "status": "no_name_match"
+        },
+        {
+          "address": "115 SHERBURN TERRACE, , CONSETT",
+          "difference_metres": 0.2,
+          "lat": 54.854422,
+          "lng": -1.8245208,
+          "name": "The Grey Horse",
+          "postcode": "DH8 6NE",
+          "queried_postcode": "DH8 6NE",
+          "status": "coordinate_agreement",
+          "url": "https://ratings.food.gov.uk/business/1104097"
+        }
+      ],
+      "confidence": "owner_reviewed",
+      "country": "England",
+      "dispense": "H",
+      "independent_of_pin": true,
+      "last": "2026 Q2",
+      "listing": {
+        "postcode": "DH8 6NF",
+        "pub_name": "Grey Horse"
+      },
+      "notes": "",
+      "owner_reviewed": true,
+      "pg": "Guest",
+      "pin": {
+        "lat": 54.8544235,
+        "lng": -1.824519
+      },
+      "place_name": "Consett",
+      "postcode": "DH8 6NF",
+      "priority": 2,
+      "pub_name": "Grey Horse",
+      "reasons": [],
+      "reference": {
+        "address": "115 SHERBURN TERRACE, , CONSETT",
+        "difference_metres": 0.2,
+        "lat": 54.854422,
+        "lng": -1.8245208,
+        "name": "The Grey Horse",
+        "postcode": "DH8 6NE",
+        "queried_postcode": "DH8 6NE",
+        "status": "coordinate_agreement",
+        "url": "https://ratings.food.gov.uk/business/1104097"
+      },
+      "status": "coordinate_agreement",
+      "venue_id": "v-97a6ff26-33a9-521e-8875-2fa9a26e5f68",
+      "warnings": [
+        "Owner reviewed this postcode discrepancy and confirmed the displayed pub building; listing postcode retained for provenance"
       ]
     },
     {
@@ -54363,11 +54363,11 @@
   ],
   "schema_version": 1,
   "summary": {
-    "actionable_count": 20,
+    "actionable_count": 19,
     "confidence_counts": {
       "existing_evidence_needs_corroboration": 570,
-      "independent_coordinate_agreement": 437,
-      "owner_reviewed": 37
+      "independent_coordinate_agreement": 436,
+      "owner_reviewed": 38
     },
     "counts": {
       "ambiguous_or_missing_coordinates": 63,
@@ -54376,7 +54376,7 @@
       "nearby": 102,
       "no_name_match": 179
     },
-    "informational_count": 591,
+    "informational_count": 592,
     "limitations": [
       "Coordinate agreement does not prove the correct building or current Bass availability.",
       "Owner-approved coordinates take priority; CAMRA remains the primary automated reference.",

@@ -2,8 +2,8 @@
 
 Locations: 1044
 
-Actionable findings: 20
-Locations with informational observations: 591 (may also have an actionable finding)
+Actionable findings: 19
+Locations with informational observations: 592 (may also have an actionable finding)
 
 ## Results
 
@@ -15,9 +15,9 @@ Locations with informational observations: 591 (may also have an actionable find
 
 ## Confidence
 
-- independent_coordinate_agreement: 437
+- independent_coordinate_agreement: 436
 - existing_evidence_needs_corroboration: 570
-- owner_reviewed: 37
+- owner_reviewed: 38
 
 ## Limits
 
@@ -31,7 +31,6 @@ Locations with informational observations: 591 (may also have an actionable find
 
 | Pub | Place | Postcode | Result | Classification | Detail |
 |---|---|---|---|---|---|
-| Grey Horse | Consett | DH8 6NF | coordinate_agreement | Actionable | Directory postcode differs from reviewed reference postcode |
 | Guest House | Southport: Central | PR9 0QF | coordinate_agreement | Actionable | Directory postcode differs from reviewed reference postcode |
 | Mall | Bristol: Clifton | BS8 4DR | nearby | Actionable | Directory postcode differs from reviewed reference postcode; FSA coordinate is 25-50m away; informational only |
 | Merchants | Rugby | CV21 3AW | coordinate_agreement | Actionable | Directory postcode differs from reviewed reference postcode |
@@ -292,6 +291,7 @@ Locations with informational observations: 591 (may also have an actionable find
 | Green House | Mere Green | B74 2UD | coordinate_disagreement | Informational | FSA coordinate is 106.2m from the accepted pin; informational only because the FSA geocode may be approximate |
 | Green Man | Clifton Campville | B79 0AX | coordinate_disagreement | Informational | FSA coordinate is 111.7m from the accepted pin; informational only because the FSA geocode may be approximate |
 | Green Man | Stamford | PE9 2YQ | nearby | Informational | FSA coordinate is 25-50m away; informational only |
+| Grey Horse | Consett | DH8 6NF | coordinate_agreement | Informational | Owner reviewed this postcode discrepancy and confirmed the displayed pub building; listing postcode retained for provenance |
 | Greyhound | Woodville | DE11 7BU | ambiguous_or_missing_coordinates | Informational | FSA comparison is inconclusive; absence of a match does not contradict accepted evidence |
 | Greyhound Inn | Warslow | SK17 0JN | nearby | Informational | FSA coordinate is 25-50m away; informational only |
 | Griffin | Shustoke | B46 2LB | ambiguous_or_missing_coordinates | Informational | FSA comparison is inconclusive; absence of a match does not contradict accepted evidence |

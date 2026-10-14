@@ -1,6 +1,6 @@
 {
   "location_review": {
-    "active_count": 33,
+    "active_count": 32,
     "records": {
       "v-00a08839-2b8a-5782-b6c7-0bdce4cddb2f": {
         "active": false,
@@ -7900,7 +7900,7 @@
         "venue_id": "v-96c69280-8350-5291-9fb1-4267938024b9"
       },
       "v-97a6ff26-33a9-521e-8875-2fa9a26e5f68": {
-        "active": true,
+        "active": false,
         "first_seen": "2026-10-02",
         "history": [
           {
@@ -7909,18 +7909,39 @@
               "Directory postcode DH8 6NF conflicts with reference address DH8 6NE"
             ],
             "status": "review_needed"
+          },
+          {
+            "date": "2026-10-14",
+            "reasons": [],
+            "status": "resolved"
           }
         ],
-        "last_checked": "2026-10-10",
+        "last_checked": "2026-10-14",
         "place_name": "Consett",
         "postcode": "DH8 6NF",
         "pub_name": "Grey Horse",
-        "reasons": [
-          "Directory postcode DH8 6NF conflicts with reference address DH8 6NE"
-        ],
+        "reasons": [],
         "reference": {
           "field": "postcode",
           "listed": "DH8 6NF",
+          "owner_review": {
+            "approved_coordinate": {
+              "lat": 54.8544235,
+              "lng": -1.824519
+            },
+            "checked_at": "2026-10-14",
+            "conclusion": "Owner visually confirmed the current Grey Horse building at 115 Sherburn Terrace, Consett. Retain the pin. CAMRA and the FSA named address use DH8 6NE; preserve PDF postcode DH8 6NF as source data. Location discrepancy reviewed; postal delivery postcode not independently proven.",
+            "listed": "DH8 6NF",
+            "owner_instruction": "yes",
+            "pub_name": "Grey Horse",
+            "reference": "DH8 6NE",
+            "review_map_url": "https://www.google.com/maps/search/?api=1&query=54.8544235%2C-1.824519",
+            "reviewed_by": "bristolbagpiper",
+            "source_url": "https://camra.org.uk/pubs/186917",
+            "supporting_address_urls": [
+              "https://camra.org.uk/pubs/grey-horse-consett-186917"
+            ]
+          },
           "reference": "DH8 6NE",
           "source_url": "https://camra.org.uk/pubs/186917"
         },
@@ -7932,7 +7953,7 @@
           }
         },
         "source_error": null,
-        "status": "review_needed",
+        "status": "resolved",
         "unverified": false,
         "venue_id": "v-97a6ff26-33a9-521e-8875-2fa9a26e5f68"
       },
@@ -70568,7 +70589,7 @@
       ],
       "current_key": "grey horse|consett|dh8 6nf",
       "independent_location_check": {
-        "actionable": true,
+        "actionable": false,
         "checked_at": "2026-10-10",
         "comparisons": [
           {
@@ -70589,21 +70610,19 @@
             "url": "https://ratings.food.gov.uk/business/1104097"
           }
         ],
-        "confidence": "independent_coordinate_agreement",
+        "confidence": "owner_reviewed",
         "independent_of_pin": true,
         "listing": {
           "postcode": "DH8 6NF",
           "pub_name": "Grey Horse"
         },
-        "owner_reviewed": false,
+        "owner_reviewed": true,
         "pin": {
           "lat": 54.8544235,
           "lng": -1.824519
         },
-        "priority": 0,
-        "reasons": [
-          "Directory postcode differs from reviewed reference postcode"
-        ],
+        "priority": 2,
+        "reasons": [],
         "reference": {
           "address": "115 SHERBURN TERRACE, , CONSETT",
           "difference_metres": 0.2,
@@ -70616,7 +70635,9 @@
           "url": "https://ratings.food.gov.uk/business/1104097"
         },
         "status": "coordinate_agreement",
-        "warnings": []
+        "warnings": [
+          "Owner reviewed this postcode discrepancy and confirmed the displayed pub building; listing postcode retained for provenance"
+        ]
       },
       "listing": {
         "area": "Durham",
@@ -70629,6 +70650,26 @@
         "postcode": "DH8 6NF",
         "pub_name": "Grey Horse"
       },
+      "location_approvals": [
+        {
+          "approved_coordinate": {
+            "lat": 54.8544235,
+            "lng": -1.824519
+          },
+          "checked_at": "2026-10-14",
+          "conclusion": "Owner visually confirmed the current Grey Horse building at 115 Sherburn Terrace, Consett. Retain the pin. CAMRA and the FSA named address use DH8 6NE; preserve PDF postcode DH8 6NF as source data. Location discrepancy reviewed; postal delivery postcode not independently proven.",
+          "listed": "DH8 6NF",
+          "owner_instruction": "yes",
+          "pub_name": "Grey Horse",
+          "reference": "DH8 6NE",
+          "review_map_url": "https://www.google.com/maps/search/?api=1&query=54.8544235%2C-1.824519",
+          "reviewed_by": "bristolbagpiper",
+          "source_url": "https://camra.org.uk/pubs/186917",
+          "supporting_address_urls": [
+            "https://camra.org.uk/pubs/grey-horse-consett-186917"
+          ]
+        }
+      ],
       "verified_pin": {
         "evidence": [
           {
@@ -70642,6 +70683,22 @@
             "reference_postcode": "DH8 6NE",
             "source": "camra",
             "url": "https://camra.org.uk/pubs/186917"
+          },
+          {
+            "checked_at": "2026-10-14",
+            "match": "owner_confirmed_existing_pub_building",
+            "reference_coordinate": {
+              "lat": 54.8544235,
+              "lng": -1.824519
+            },
+            "reference_name": "Grey Horse",
+            "reference_postcode": "DH8 6NE",
+            "reviewed_by": "bristolbagpiper",
+            "source": "manual_named_place_map",
+            "supporting_address_urls": [
+              "https://camra.org.uk/pubs/grey-horse-consett-186917"
+            ],
+            "url": "https://www.google.com/maps/search/?api=1&query=54.8544235%2C-1.824519"
           }
         ],
         "lat": 54.8544235,
@@ -70649,6 +70706,24 @@
         "metadata_issue": {
           "field": "postcode",
           "listed": "DH8 6NF",
+          "owner_review": {
+            "approved_coordinate": {
+              "lat": 54.8544235,
+              "lng": -1.824519
+            },
+            "checked_at": "2026-10-14",
+            "conclusion": "Owner visually confirmed the current Grey Horse building at 115 Sherburn Terrace, Consett. Retain the pin. CAMRA and the FSA named address use DH8 6NE; preserve PDF postcode DH8 6NF as source data. Location discrepancy reviewed; postal delivery postcode not independently proven.",
+            "listed": "DH8 6NF",
+            "owner_instruction": "yes",
+            "pub_name": "Grey Horse",
+            "reference": "DH8 6NE",
+            "review_map_url": "https://www.google.com/maps/search/?api=1&query=54.8544235%2C-1.824519",
+            "reviewed_by": "bristolbagpiper",
+            "source_url": "https://camra.org.uk/pubs/186917",
+            "supporting_address_urls": [
+              "https://camra.org.uk/pubs/grey-horse-consett-186917"
+            ]
+          },
           "reference": "DH8 6NE",
           "source_url": "https://camra.org.uk/pubs/186917"
         },

@@ -3478,12 +3478,30 @@
       "precision": "venue"
     },
     "v-573bbf31-9cce-52ea-aac7-85a05e14a682": {
-      "checked_at": "2026-10-02",
+      "checked_at": "2026-10-14",
       "lat": 53.25777,
       "lng": -2.12237,
       "metadata_issue": {
         "field": "postcode",
         "listed": "SK11 7NE",
+        "owner_review": {
+          "approved_coordinate": {
+            "lat": 53.25777,
+            "lng": -2.12237
+          },
+          "checked_at": "2026-10-14",
+          "conclusion": "Owner visually confirmed the current GJ Muckers building at 36-38 Sunderland Street, Macclesfield. Retain the pin. CAMRA uses SK11 6JL; preserve PDF postcode SK11 7NE as source data. Location discrepancy reviewed; postal delivery postcode not independently proven.",
+          "listed": "SK11 7NE",
+          "owner_instruction": "yes",
+          "pub_name": "GJ Muckers",
+          "reference": "SK11 6JL",
+          "review_map_url": "https://www.google.com/maps/search/?api=1&query=53.25777%2C-2.12237",
+          "reviewed_by": "bristolbagpiper",
+          "source_url": "https://camra.org.uk/pubs/gj-muckers-macclesfield-197659",
+          "supporting_address_urls": [
+            "https://camra.org.uk/pubs/gj-muckers-macclesfield-197659"
+          ]
+        },
         "reference": "SK11 6JL",
         "source_url": "https://camra.org.uk/pubs/gj-muckers-macclesfield-197659"
       },
@@ -10905,7 +10923,7 @@
     "source_name_hint": "",
     "source_pdf": "latest-bass-directory.pdf"
   },
-  "release_id": "484f04bb7ea10ee8b5ea2ca654659a075c8220975603ff8940077ee62abfa726",
+  "release_id": "7f58a36055f5f367f0723af05afb1108baa9ebb69c9d968f4ed9adfa2e5adc15",
   "rows": [
     {
       "area": "Bedfordshire",

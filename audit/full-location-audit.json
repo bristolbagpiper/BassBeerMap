@@ -2,59 +2,6 @@
   "records": [
     {
       "actionable": true,
-      "area": "Cheshire",
-      "checked_at": "2026-10-10",
-      "comparisons": [
-        {
-          "name_matches": 0,
-          "postcode_matches": 1,
-          "queried_postcode": "SK11 7NE",
-          "status": "no_name_match"
-        },
-        {
-          "name_matches": 0,
-          "postcode_matches": 6,
-          "queried_postcode": "SK11 6JL",
-          "status": "no_name_match"
-        }
-      ],
-      "confidence": "existing_evidence_needs_corroboration",
-      "country": "England",
-      "dispense": "H",
-      "independent_of_pin": true,
-      "last": "2026 Q3",
-      "listing": {
-        "postcode": "SK11 7NE",
-        "pub_name": "GJ Muckers"
-      },
-      "notes": "",
-      "owner_reviewed": false,
-      "pg": "Perm",
-      "pin": {
-        "lat": 53.25777,
-        "lng": -2.12237
-      },
-      "place_name": "Macclesfield",
-      "postcode": "SK11 7NE",
-      "priority": 0,
-      "pub_name": "GJ Muckers",
-      "reasons": [
-        "Directory postcode differs from reviewed reference postcode"
-      ],
-      "reference": {
-        "name_matches": 0,
-        "postcode_matches": 1,
-        "queried_postcode": "SK11 7NE",
-        "status": "no_name_match"
-      },
-      "status": "no_name_match",
-      "venue_id": "v-573bbf31-9cce-52ea-aac7-85a05e14a682",
-      "warnings": [
-        "FSA comparison is inconclusive; absence of a match does not contradict accepted evidence"
-      ]
-    },
-    {
-      "actionable": true,
       "area": "Derbyshire",
       "checked_at": "2026-10-10",
       "comparisons": [
@@ -12199,6 +12146,58 @@
       "status": "no_name_match",
       "venue_id": "v-79e55486-096e-540b-8cdc-ac76e94f6f9c",
       "warnings": [
+        "FSA comparison is inconclusive; absence of a match does not contradict accepted evidence"
+      ]
+    },
+    {
+      "actionable": false,
+      "area": "Cheshire",
+      "checked_at": "2026-10-10",
+      "comparisons": [
+        {
+          "name_matches": 0,
+          "postcode_matches": 1,
+          "queried_postcode": "SK11 7NE",
+          "status": "no_name_match"
+        },
+        {
+          "name_matches": 0,
+          "postcode_matches": 6,
+          "queried_postcode": "SK11 6JL",
+          "status": "no_name_match"
+        }
+      ],
+      "confidence": "owner_reviewed",
+      "country": "England",
+      "dispense": "H",
+      "independent_of_pin": true,
+      "last": "2026 Q3",
+      "listing": {
+        "postcode": "SK11 7NE",
+        "pub_name": "GJ Muckers"
+      },
+      "notes": "",
+      "owner_reviewed": true,
+      "pg": "Perm",
+      "pin": {
+        "lat": 53.25777,
+        "lng": -2.12237
+      },
+      "place_name": "Macclesfield",
+      "postcode": "SK11 7NE",
+      "priority": 2,
+      "pub_name": "GJ Muckers",
+      "reasons": [],
+      "reference": {
+        "name_matches": 0,
+        "postcode_matches": 1,
+        "queried_postcode": "SK11 7NE",
+        "status": "no_name_match"
+      },
+      "status": "no_name_match",
+      "venue_id": "v-573bbf31-9cce-52ea-aac7-85a05e14a682",
+      "warnings": [
+        "Owner reviewed this postcode discrepancy and confirmed the displayed pub building; listing postcode retained for provenance",
         "FSA comparison is inconclusive; absence of a match does not contradict accepted evidence"
       ]
     },
@@ -54365,11 +54364,11 @@
   ],
   "schema_version": 1,
   "summary": {
-    "actionable_count": 22,
+    "actionable_count": 21,
     "confidence_counts": {
-      "existing_evidence_needs_corroboration": 572,
+      "existing_evidence_needs_corroboration": 571,
       "independent_coordinate_agreement": 437,
-      "owner_reviewed": 35
+      "owner_reviewed": 36
     },
     "counts": {
       "ambiguous_or_missing_coordinates": 63,

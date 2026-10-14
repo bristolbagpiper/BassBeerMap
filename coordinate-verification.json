@@ -11276,6 +11276,22 @@
           "reference_postcode": "SK11 6JL",
           "source": "manual-camra-review",
           "url": "https://camra.org.uk/pubs/gj-muckers-macclesfield-197659"
+        },
+        {
+          "checked_at": "2026-10-14",
+          "match": "owner_confirmed_existing_pub_building",
+          "reference_coordinate": {
+            "lat": 53.25777,
+            "lng": -2.12237
+          },
+          "reference_name": "GJ Muckers",
+          "reference_postcode": "SK11 6JL",
+          "reviewed_by": "bristolbagpiper",
+          "source": "manual_named_place_map",
+          "supporting_address_urls": [
+            "https://camra.org.uk/pubs/gj-muckers-macclesfield-197659"
+          ],
+          "url": "https://www.google.com/maps/search/?api=1&query=53.25777%2C-2.12237"
         }
       ],
       "lat": 53.25777,
@@ -11283,6 +11299,24 @@
       "metadata_issue": {
         "field": "postcode",
         "listed": "SK11 7NE",
+        "owner_review": {
+          "approved_coordinate": {
+            "lat": 53.25777,
+            "lng": -2.12237
+          },
+          "checked_at": "2026-10-14",
+          "conclusion": "Owner visually confirmed the current GJ Muckers building at 36-38 Sunderland Street, Macclesfield. Retain the pin. CAMRA uses SK11 6JL; preserve PDF postcode SK11 7NE as source data. Location discrepancy reviewed; postal delivery postcode not independently proven.",
+          "listed": "SK11 7NE",
+          "owner_instruction": "yes",
+          "pub_name": "GJ Muckers",
+          "reference": "SK11 6JL",
+          "review_map_url": "https://www.google.com/maps/search/?api=1&query=53.25777%2C-2.12237",
+          "reviewed_by": "bristolbagpiper",
+          "source_url": "https://camra.org.uk/pubs/gj-muckers-macclesfield-197659",
+          "supporting_address_urls": [
+            "https://camra.org.uk/pubs/gj-muckers-macclesfield-197659"
+          ]
+        },
         "reference": "SK11 6JL",
         "source_url": "https://camra.org.uk/pubs/gj-muckers-macclesfield-197659"
       },

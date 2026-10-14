@@ -2,22 +2,22 @@
 
 Locations: 1044
 
-Actionable findings: 22
+Actionable findings: 21
 Locations with informational observations: 591 (may also have an actionable finding)
 
 ## Results
 
-- no_name_match: 179
 - coordinate_disagreement: 241
 - coordinate_agreement: 459
 - nearby: 102
 - ambiguous_or_missing_coordinates: 63
+- no_name_match: 179
 
 ## Confidence
 
-- existing_evidence_needs_corroboration: 572
+- existing_evidence_needs_corroboration: 571
 - independent_coordinate_agreement: 437
-- owner_reviewed: 35
+- owner_reviewed: 36
 
 ## Limits
 
@@ -31,7 +31,6 @@ Locations with informational observations: 591 (may also have an actionable find
 
 | Pub | Place | Postcode | Result | Classification | Detail |
 |---|---|---|---|---|---|
-| GJ Muckers | Macclesfield | SK11 7NE | no_name_match | Actionable | Directory postcode differs from reviewed reference postcode; FSA comparison is inconclusive; absence of a match does not contradict accepted evidence |
 | George | Youlgrave | DE45 1UW | coordinate_disagreement | Actionable | Directory postcode differs from reviewed reference postcode; FSA coordinate is 189.6m from the accepted pin; informational only because the FSA geocode may be approximate |
 | Grey Horse | Consett | DH8 6NF | coordinate_agreement | Actionable | Directory postcode differs from reviewed reference postcode |
 | Guest House | Southport: Central | PR9 0QF | coordinate_agreement | Actionable | Directory postcode differs from reviewed reference postcode |
@@ -267,6 +266,7 @@ Locations with informational observations: 591 (may also have an actionable find
 | Fox | Lutterworth | LE17 4BN | nearby | Informational | FSA coordinate is 25-50m away; informational only |
 | Fox and Goose | Foxt | ST10 2HN | coordinate_disagreement | Informational | FSA coordinate is 90.5m from the accepted pin; informational only because the FSA geocode may be approximate |
 | Fox and Hounds | Reepham | LN3 4DN | no_name_match | Informational | FSA comparison is inconclusive; absence of a match does not contradict accepted evidence |
+| GJ Muckers | Macclesfield | SK11 7NE | no_name_match | Informational | Owner reviewed this postcode discrepancy and confirmed the displayed pub building; listing postcode retained for provenance; FSA comparison is inconclusive; absence of a match does not contradict accepted evidence |
 | Garden House | Norwich | NR2 3HD | coordinate_disagreement | Informational | FSA coordinate is 118.9m from the accepted pin; informational only because the FSA geocode may be approximate |
 | Garibaldi | Redhill | RH1 6PA | no_name_match | Informational | FSA comparison is inconclusive; absence of a match does not contradict accepted evidence |
 | Gate Hangs Well | Carlton | CV13 0DB | coordinate_disagreement | Informational | FSA coordinate is 97.5m from the accepted pin; informational only because the FSA geocode may be approximate |

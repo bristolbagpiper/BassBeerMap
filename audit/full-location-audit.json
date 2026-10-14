@@ -2,67 +2,6 @@
   "records": [
     {
       "actionable": true,
-      "area": "Staffordshire",
-      "checked_at": "2026-10-10",
-      "comparisons": [
-        {
-          "name_matches": 0,
-          "postcode_matches": 0,
-          "queried_postcode": "ST13 8JZ",
-          "status": "no_name_match"
-        },
-        {
-          "address": "3 Macclesfield Road, Leek, Staffordshire",
-          "difference_metres": 2.5,
-          "lat": 53.1095255,
-          "lng": -2.0362122,
-          "name": "Dyers Arms",
-          "postcode": "ST13 8LD",
-          "queried_postcode": "ST13 8LD",
-          "status": "coordinate_agreement",
-          "url": "https://ratings.food.gov.uk/business/1559526"
-        }
-      ],
-      "confidence": "independent_coordinate_agreement",
-      "country": "England",
-      "dispense": "H",
-      "independent_of_pin": true,
-      "last": "2026 Q2",
-      "listing": {
-        "postcode": "ST13 8JZ",
-        "pub_name": "Dyers Arms"
-      },
-      "notes": "",
-      "owner_reviewed": false,
-      "pg": "Perm",
-      "pin": {
-        "lat": 53.1095142,
-        "lng": -2.0362443
-      },
-      "place_name": "Leek",
-      "postcode": "ST13 8JZ",
-      "priority": 0,
-      "pub_name": "Dyers Arms",
-      "reasons": [
-        "Directory postcode differs from reviewed reference postcode"
-      ],
-      "reference": {
-        "address": "3 Macclesfield Road, Leek, Staffordshire",
-        "difference_metres": 2.5,
-        "lat": 53.1095255,
-        "lng": -2.0362122,
-        "name": "Dyers Arms",
-        "postcode": "ST13 8LD",
-        "queried_postcode": "ST13 8LD",
-        "status": "coordinate_agreement",
-        "url": "https://ratings.food.gov.uk/business/1559526"
-      },
-      "status": "coordinate_agreement",
-      "venue_id": "v-6312a106-c5ed-5161-86b8-ef30d0350f84",
-      "warnings": []
-    },
-    {
-      "actionable": true,
       "area": "Lancashire",
       "checked_at": "2026-10-10",
       "comparisons": [
@@ -11205,6 +11144,67 @@
       "venue_id": "v-6dd3f8f8-bdf6-565c-b21a-ce49d9faa503",
       "warnings": [
         "FSA coordinate is 25-50m away; informational only"
+      ]
+    },
+    {
+      "actionable": false,
+      "area": "Staffordshire",
+      "checked_at": "2026-10-10",
+      "comparisons": [
+        {
+          "name_matches": 0,
+          "postcode_matches": 0,
+          "queried_postcode": "ST13 8JZ",
+          "status": "no_name_match"
+        },
+        {
+          "address": "3 Macclesfield Road, Leek, Staffordshire",
+          "difference_metres": 2.5,
+          "lat": 53.1095255,
+          "lng": -2.0362122,
+          "name": "Dyers Arms",
+          "postcode": "ST13 8LD",
+          "queried_postcode": "ST13 8LD",
+          "status": "coordinate_agreement",
+          "url": "https://ratings.food.gov.uk/business/1559526"
+        }
+      ],
+      "confidence": "owner_reviewed",
+      "country": "England",
+      "dispense": "H",
+      "independent_of_pin": true,
+      "last": "2026 Q2",
+      "listing": {
+        "postcode": "ST13 8JZ",
+        "pub_name": "Dyers Arms"
+      },
+      "notes": "",
+      "owner_reviewed": true,
+      "pg": "Perm",
+      "pin": {
+        "lat": 53.1095142,
+        "lng": -2.0362443
+      },
+      "place_name": "Leek",
+      "postcode": "ST13 8JZ",
+      "priority": 2,
+      "pub_name": "Dyers Arms",
+      "reasons": [],
+      "reference": {
+        "address": "3 Macclesfield Road, Leek, Staffordshire",
+        "difference_metres": 2.5,
+        "lat": 53.1095255,
+        "lng": -2.0362122,
+        "name": "Dyers Arms",
+        "postcode": "ST13 8LD",
+        "queried_postcode": "ST13 8LD",
+        "status": "coordinate_agreement",
+        "url": "https://ratings.food.gov.uk/business/1559526"
+      },
+      "status": "coordinate_agreement",
+      "venue_id": "v-6312a106-c5ed-5161-86b8-ef30d0350f84",
+      "warnings": [
+        "Owner reviewed this postcode discrepancy and confirmed the displayed pub building; listing postcode retained for provenance"
       ]
     },
     {
@@ -54365,11 +54365,11 @@
   ],
   "schema_version": 1,
   "summary": {
-    "actionable_count": 24,
+    "actionable_count": 23,
     "confidence_counts": {
       "existing_evidence_needs_corroboration": 572,
-      "independent_coordinate_agreement": 439,
-      "owner_reviewed": 33
+      "independent_coordinate_agreement": 438,
+      "owner_reviewed": 34
     },
     "counts": {
       "ambiguous_or_missing_coordinates": 63,
@@ -54378,7 +54378,7 @@
       "nearby": 102,
       "no_name_match": 179
     },
-    "informational_count": 589,
+    "informational_count": 590,
     "limitations": [
       "Coordinate agreement does not prove the correct building or current Bass availability.",
       "Owner-approved coordinates take priority; CAMRA remains the primary automated reference.",

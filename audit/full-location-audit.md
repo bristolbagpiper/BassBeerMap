@@ -2,8 +2,8 @@
 
 Locations: 1044
 
-Actionable findings: 24
-Locations with informational observations: 589 (may also have an actionable finding)
+Actionable findings: 23
+Locations with informational observations: 590 (may also have an actionable finding)
 
 ## Results
 
@@ -15,9 +15,9 @@ Locations with informational observations: 589 (may also have an actionable find
 
 ## Confidence
 
-- independent_coordinate_agreement: 439
+- independent_coordinate_agreement: 438
 - existing_evidence_needs_corroboration: 572
-- owner_reviewed: 33
+- owner_reviewed: 34
 
 ## Limits
 
@@ -31,7 +31,6 @@ Locations with informational observations: 589 (may also have an actionable find
 
 | Pub | Place | Postcode | Result | Classification | Detail |
 |---|---|---|---|---|---|
-| Dyers Arms | Leek | ST13 8JZ | coordinate_agreement | Actionable | Directory postcode differs from reviewed reference postcode |
 | Fairhaven | Lytham St Annes | FY8 1YD | coordinate_agreement | Actionable | Directory postcode differs from reviewed reference postcode |
 | GJ Muckers | Macclesfield | SK11 7NE | no_name_match | Actionable | Directory postcode differs from reviewed reference postcode; FSA comparison is inconclusive; absence of a match does not contradict accepted evidence |
 | George | Youlgrave | DE45 1UW | coordinate_disagreement | Actionable | Directory postcode differs from reviewed reference postcode; FSA coordinate is 189.6m from the accepted pin; informational only because the FSA geocode may be approximate |
@@ -248,6 +247,7 @@ Locations with informational observations: 589 (may also have an actionable find
 | Duchess | Stamford Brook | W6 0XF | no_name_match | Informational | FSA comparison is inconclusive; absence of a match does not contradict accepted evidence |
 | Duke of Wellington | Grimsby | DN31 1QD | ambiguous_or_missing_coordinates | Informational | FSA comparison is inconclusive; absence of a match does not contradict accepted evidence |
 | Duke of York | Bristol: St Werburghs | BS2 9RS | nearby | Informational | FSA coordinate is 25-50m away; informational only |
+| Dyers Arms | Leek | ST13 8JZ | coordinate_agreement | Informational | Owner reviewed this postcode discrepancy and confirmed the displayed pub building; listing postcode retained for provenance |
 | Dyffryn Arms | Pontfaen | SA65 9SE | coordinate_disagreement | Informational | FSA coordinate is 431.1m from the accepted pin; informational only because the FSA geocode may be approximate |
 | Eagle Tavern | Heage | DE56 2HU | coordinate_disagreement | Informational | FSA coordinate is 298.5m from the accepted pin; informational only because the FSA geocode may be approximate |
 | Earl of Chesterfield Arms | Shelford | NG12 1EQ | nearby | Informational | FSA coordinate is 25-50m away; informational only |

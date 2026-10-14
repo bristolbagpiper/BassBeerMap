@@ -1,6 +1,6 @@
 {
   "location_review": {
-    "active_count": 37,
+    "active_count": 36,
     "records": {
       "v-00a08839-2b8a-5782-b6c7-0bdce4cddb2f": {
         "active": false,
@@ -5202,7 +5202,7 @@
         "venue_id": "v-62c1c92b-14d0-5967-801f-35f03d3cb24f"
       },
       "v-6312a106-c5ed-5161-86b8-ef30d0350f84": {
-        "active": true,
+        "active": false,
         "first_seen": "2026-10-02",
         "history": [
           {
@@ -5211,18 +5211,39 @@
               "Directory postcode ST13 8JZ conflicts with reference address ST13 8LD"
             ],
             "status": "review_needed"
+          },
+          {
+            "date": "2026-10-14",
+            "reasons": [],
+            "status": "resolved"
           }
         ],
-        "last_checked": "2026-10-10",
+        "last_checked": "2026-10-14",
         "place_name": "Leek",
         "postcode": "ST13 8JZ",
         "pub_name": "Dyers Arms",
-        "reasons": [
-          "Directory postcode ST13 8JZ conflicts with reference address ST13 8LD"
-        ],
+        "reasons": [],
         "reference": {
           "field": "postcode",
           "listed": "ST13 8JZ",
+          "owner_review": {
+            "approved_coordinate": {
+              "lat": 53.1095142,
+              "lng": -2.0362443
+            },
+            "checked_at": "2026-10-14",
+            "conclusion": "Owner visually confirmed the current Dyers Arms building at 3 Macclesfield Road, Leek. Retain the pin. CAMRA and the FSA named address use ST13 8LD; preserve PDF postcode ST13 8JZ as source data. Location discrepancy reviewed; postal delivery postcode not independently proven.",
+            "listed": "ST13 8JZ",
+            "owner_instruction": "yes",
+            "pub_name": "Dyers Arms",
+            "reference": "ST13 8LD",
+            "review_map_url": "https://www.google.com/maps/search/?api=1&query=53.1095142%2C-2.0362443",
+            "reviewed_by": "bristolbagpiper",
+            "source_url": "https://camra.org.uk/pubs/143903",
+            "supporting_address_urls": [
+              "https://camra.org.uk/pubs/143903"
+            ]
+          },
           "reference": "ST13 8LD",
           "source_url": "https://camra.org.uk/pubs/143903"
         },
@@ -5234,7 +5255,7 @@
           }
         },
         "source_error": null,
-        "status": "review_needed",
+        "status": "resolved",
         "unverified": false,
         "venue_id": "v-6312a106-c5ed-5161-86b8-ef30d0350f84"
       },
@@ -51548,7 +51569,7 @@
       ],
       "current_key": "dyers arms|leek|st13 8jz",
       "independent_location_check": {
-        "actionable": true,
+        "actionable": false,
         "checked_at": "2026-10-10",
         "comparisons": [
           {
@@ -51569,21 +51590,19 @@
             "url": "https://ratings.food.gov.uk/business/1559526"
           }
         ],
-        "confidence": "independent_coordinate_agreement",
+        "confidence": "owner_reviewed",
         "independent_of_pin": true,
         "listing": {
           "postcode": "ST13 8JZ",
           "pub_name": "Dyers Arms"
         },
-        "owner_reviewed": false,
+        "owner_reviewed": true,
         "pin": {
           "lat": 53.1095142,
           "lng": -2.0362443
         },
-        "priority": 0,
-        "reasons": [
-          "Directory postcode differs from reviewed reference postcode"
-        ],
+        "priority": 2,
+        "reasons": [],
         "reference": {
           "address": "3 Macclesfield Road, Leek, Staffordshire",
           "difference_metres": 2.5,
@@ -51596,7 +51615,9 @@
           "url": "https://ratings.food.gov.uk/business/1559526"
         },
         "status": "coordinate_agreement",
-        "warnings": []
+        "warnings": [
+          "Owner reviewed this postcode discrepancy and confirmed the displayed pub building; listing postcode retained for provenance"
+        ]
       },
       "listing": {
         "area": "Staffordshire",
@@ -51609,6 +51630,26 @@
         "postcode": "ST13 8JZ",
         "pub_name": "Dyers Arms"
       },
+      "location_approvals": [
+        {
+          "approved_coordinate": {
+            "lat": 53.1095142,
+            "lng": -2.0362443
+          },
+          "checked_at": "2026-10-14",
+          "conclusion": "Owner visually confirmed the current Dyers Arms building at 3 Macclesfield Road, Leek. Retain the pin. CAMRA and the FSA named address use ST13 8LD; preserve PDF postcode ST13 8JZ as source data. Location discrepancy reviewed; postal delivery postcode not independently proven.",
+          "listed": "ST13 8JZ",
+          "owner_instruction": "yes",
+          "pub_name": "Dyers Arms",
+          "reference": "ST13 8LD",
+          "review_map_url": "https://www.google.com/maps/search/?api=1&query=53.1095142%2C-2.0362443",
+          "reviewed_by": "bristolbagpiper",
+          "source_url": "https://camra.org.uk/pubs/143903",
+          "supporting_address_urls": [
+            "https://camra.org.uk/pubs/143903"
+          ]
+        }
+      ],
       "verified_pin": {
         "evidence": [
           {
@@ -51634,6 +51675,22 @@
             "reference_postcode": "ST13 8JZ",
             "source": "google-maps-named-place",
             "url": "https://www.google.com/maps/search/?api=1&query=Dyers+Arms+Leek+ST13+8JZ"
+          },
+          {
+            "checked_at": "2026-10-14",
+            "match": "owner_confirmed_existing_pub_building",
+            "reference_coordinate": {
+              "lat": 53.1095142,
+              "lng": -2.0362443
+            },
+            "reference_name": "Dyers Arms",
+            "reference_postcode": "ST13 8LD",
+            "reviewed_by": "bristolbagpiper",
+            "source": "manual_named_place_map",
+            "supporting_address_urls": [
+              "https://camra.org.uk/pubs/143903"
+            ],
+            "url": "https://www.google.com/maps/search/?api=1&query=53.1095142%2C-2.0362443"
           }
         ],
         "lat": 53.1095142,
@@ -51641,6 +51698,24 @@
         "metadata_issue": {
           "field": "postcode",
           "listed": "ST13 8JZ",
+          "owner_review": {
+            "approved_coordinate": {
+              "lat": 53.1095142,
+              "lng": -2.0362443
+            },
+            "checked_at": "2026-10-14",
+            "conclusion": "Owner visually confirmed the current Dyers Arms building at 3 Macclesfield Road, Leek. Retain the pin. CAMRA and the FSA named address use ST13 8LD; preserve PDF postcode ST13 8JZ as source data. Location discrepancy reviewed; postal delivery postcode not independently proven.",
+            "listed": "ST13 8JZ",
+            "owner_instruction": "yes",
+            "pub_name": "Dyers Arms",
+            "reference": "ST13 8LD",
+            "review_map_url": "https://www.google.com/maps/search/?api=1&query=53.1095142%2C-2.0362443",
+            "reviewed_by": "bristolbagpiper",
+            "source_url": "https://camra.org.uk/pubs/143903",
+            "supporting_address_urls": [
+              "https://camra.org.uk/pubs/143903"
+            ]
+          },
           "reference": "ST13 8LD",
           "source_url": "https://camra.org.uk/pubs/143903"
         },

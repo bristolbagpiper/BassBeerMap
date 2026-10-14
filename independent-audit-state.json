@@ -16538,7 +16538,7 @@
       ]
     },
     "v-6312a106-c5ed-5161-86b8-ef30d0350f84": {
-      "actionable": true,
+      "actionable": false,
       "checked_at": "2026-10-10",
       "comparisons": [
         {
@@ -16559,21 +16559,19 @@
           "url": "https://ratings.food.gov.uk/business/1559526"
         }
       ],
-      "confidence": "independent_coordinate_agreement",
+      "confidence": "owner_reviewed",
       "independent_of_pin": true,
       "listing": {
         "postcode": "ST13 8JZ",
         "pub_name": "Dyers Arms"
       },
-      "owner_reviewed": false,
+      "owner_reviewed": true,
       "pin": {
         "lat": 53.1095142,
         "lng": -2.0362443
       },
-      "priority": 0,
-      "reasons": [
-        "Directory postcode differs from reviewed reference postcode"
-      ],
+      "priority": 2,
+      "reasons": [],
       "reference": {
         "address": "3 Macclesfield Road, Leek, Staffordshire",
         "difference_metres": 2.5,
@@ -16586,7 +16584,9 @@
         "url": "https://ratings.food.gov.uk/business/1559526"
       },
       "status": "coordinate_agreement",
-      "warnings": []
+      "warnings": [
+        "Owner reviewed this postcode discrepancy and confirmed the displayed pub building; listing postcode retained for provenance"
+      ]
     },
     "v-637a846e-2e98-5d5c-9c88-c43a158f3b27": {
       "actionable": false,

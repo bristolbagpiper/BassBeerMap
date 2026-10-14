@@ -2,22 +2,22 @@
 
 Locations: 1044
 
-Actionable findings: 26
+Actionable findings: 25
 Locations with informational observations: 588 (may also have an actionable finding)
 
 ## Results
 
-- no_name_match: 179
 - coordinate_agreement: 459
+- no_name_match: 179
 - coordinate_disagreement: 241
 - nearby: 102
 - ambiguous_or_missing_coordinates: 63
 
 ## Confidence
 
-- existing_evidence_needs_corroboration: 573
 - independent_coordinate_agreement: 440
-- owner_reviewed: 31
+- existing_evidence_needs_corroboration: 572
+- owner_reviewed: 32
 
 ## Limits
 
@@ -31,7 +31,6 @@ Locations with informational observations: 588 (may also have an actionable find
 
 | Pub | Place | Postcode | Result | Classification | Detail |
 |---|---|---|---|---|---|
-| Dead Dove | Worcester: Central | WR1 2LT | no_name_match | Actionable | Directory postcode differs from reviewed reference postcode; FSA comparison is inconclusive; absence of a match does not contradict accepted evidence |
 | Drunken Dog | Heanor | DE75 7EF | coordinate_agreement | Actionable | Directory postcode differs from reviewed reference postcode |
 | Dyers Arms | Leek | ST13 8JZ | coordinate_agreement | Actionable | Directory postcode differs from reviewed reference postcode |
 | Fairhaven | Lytham St Annes | FY8 1YD | coordinate_agreement | Actionable | Directory postcode differs from reviewed reference postcode |
@@ -231,6 +230,7 @@ Locations with informational observations: 588 (may also have an actionable find
 | Crown and Thistle | Kidsgrove | ST7 4EY | nearby | Informational | FSA coordinate is 25-50m away; informational only |
 | Dambusters | Scampton | LN1 2SD | no_name_match | Informational | FSA comparison is inconclusive; absence of a match does not contradict accepted evidence |
 | Deacons | Salisbury | SP2 7QT | no_name_match | Informational | FSA comparison is inconclusive; absence of a match does not contradict accepted evidence |
+| Dead Dove | Worcester: Central | WR1 2LT | no_name_match | Informational | Owner reviewed this postcode discrepancy and confirmed the displayed pub building; listing postcode retained for provenance; FSA comparison is inconclusive; absence of a match does not contradict accepted evidence |
 | Dead Poets Inn | Holbrook | DE56 0TQ | coordinate_disagreement | Informational | FSA coordinate is 83.7m from the accepted pin; informational only because the FSA geocode may be approximate |
 | Devonshire Arms | Blackpool: North Shore | FY2 0TL | nearby | Informational | FSA coordinate is 25-50m away; informational only |
 | Devonshire Arms | Somercotes | DE55 4HX | coordinate_disagreement | Informational | FSA coordinate is 94.9m from the accepted pin; informational only because the FSA geocode may be approximate |

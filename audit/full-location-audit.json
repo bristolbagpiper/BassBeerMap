@@ -2,59 +2,6 @@
   "records": [
     {
       "actionable": true,
-      "area": "Worcestershire",
-      "checked_at": "2026-10-10",
-      "comparisons": [
-        {
-          "name_matches": 0,
-          "postcode_matches": 0,
-          "queried_postcode": "WR1 2LT",
-          "status": "no_name_match"
-        },
-        {
-          "name_matches": 0,
-          "postcode_matches": 1,
-          "queried_postcode": "WR1 2LS",
-          "status": "no_name_match"
-        }
-      ],
-      "confidence": "existing_evidence_needs_corroboration",
-      "country": "England",
-      "dispense": "H",
-      "independent_of_pin": true,
-      "last": "2026 Q2",
-      "listing": {
-        "postcode": "WR1 2LT",
-        "pub_name": "Dead Dove"
-      },
-      "notes": "",
-      "owner_reviewed": false,
-      "pg": "Perm",
-      "pin": {
-        "lat": 52.1886066,
-        "lng": -2.2190526
-      },
-      "place_name": "Worcester: Central",
-      "postcode": "WR1 2LT",
-      "priority": 0,
-      "pub_name": "Dead Dove",
-      "reasons": [
-        "Directory postcode differs from reviewed reference postcode"
-      ],
-      "reference": {
-        "name_matches": 0,
-        "postcode_matches": 0,
-        "queried_postcode": "WR1 2LT",
-        "status": "no_name_match"
-      },
-      "status": "no_name_match",
-      "venue_id": "v-f92270dc-d910-5cd5-bb78-2607ed97659b",
-      "warnings": [
-        "FSA comparison is inconclusive; absence of a match does not contradict accepted evidence"
-      ]
-    },
-    {
-      "actionable": true,
       "area": "Derbyshire",
       "checked_at": "2026-10-10",
       "comparisons": [
@@ -10350,6 +10297,58 @@
       "status": "no_name_match",
       "venue_id": "v-04e5fdfe-ce2e-52b5-a1fe-56066beb577c",
       "warnings": [
+        "FSA comparison is inconclusive; absence of a match does not contradict accepted evidence"
+      ]
+    },
+    {
+      "actionable": false,
+      "area": "Worcestershire",
+      "checked_at": "2026-10-10",
+      "comparisons": [
+        {
+          "name_matches": 0,
+          "postcode_matches": 0,
+          "queried_postcode": "WR1 2LT",
+          "status": "no_name_match"
+        },
+        {
+          "name_matches": 0,
+          "postcode_matches": 1,
+          "queried_postcode": "WR1 2LS",
+          "status": "no_name_match"
+        }
+      ],
+      "confidence": "owner_reviewed",
+      "country": "England",
+      "dispense": "H",
+      "independent_of_pin": true,
+      "last": "2026 Q2",
+      "listing": {
+        "postcode": "WR1 2LT",
+        "pub_name": "Dead Dove"
+      },
+      "notes": "",
+      "owner_reviewed": true,
+      "pg": "Perm",
+      "pin": {
+        "lat": 52.1886066,
+        "lng": -2.2190526
+      },
+      "place_name": "Worcester: Central",
+      "postcode": "WR1 2LT",
+      "priority": 2,
+      "pub_name": "Dead Dove",
+      "reasons": [],
+      "reference": {
+        "name_matches": 0,
+        "postcode_matches": 0,
+        "queried_postcode": "WR1 2LT",
+        "status": "no_name_match"
+      },
+      "status": "no_name_match",
+      "venue_id": "v-f92270dc-d910-5cd5-bb78-2607ed97659b",
+      "warnings": [
+        "Owner reviewed this postcode discrepancy and confirmed the displayed pub building; listing postcode retained for provenance",
         "FSA comparison is inconclusive; absence of a match does not contradict accepted evidence"
       ]
     },
@@ -54366,11 +54365,11 @@
   ],
   "schema_version": 1,
   "summary": {
-    "actionable_count": 26,
+    "actionable_count": 25,
     "confidence_counts": {
-      "existing_evidence_needs_corroboration": 573,
+      "existing_evidence_needs_corroboration": 572,
       "independent_coordinate_agreement": 440,
-      "owner_reviewed": 31
+      "owner_reviewed": 32
     },
     "counts": {
       "ambiguous_or_missing_coordinates": 63,

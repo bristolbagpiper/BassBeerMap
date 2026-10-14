@@ -1,6 +1,6 @@
 {
   "location_review": {
-    "active_count": 39,
+    "active_count": 38,
     "records": {
       "v-00a08839-2b8a-5782-b6c7-0bdce4cddb2f": {
         "active": false,
@@ -12548,7 +12548,7 @@
         "venue_id": "v-f919086c-3b90-501a-a57e-9531ef1f8805"
       },
       "v-f92270dc-d910-5cd5-bb78-2607ed97659b": {
-        "active": true,
+        "active": false,
         "first_seen": "2026-10-02",
         "history": [
           {
@@ -12557,18 +12557,39 @@
               "Directory postcode WR1 2LT conflicts with reference address WR1 2LS"
             ],
             "status": "review_needed"
+          },
+          {
+            "date": "2026-10-14",
+            "reasons": [],
+            "status": "resolved"
           }
         ],
-        "last_checked": "2026-10-10",
+        "last_checked": "2026-10-14",
         "place_name": "Worcester: Central",
         "postcode": "WR1 2LT",
         "pub_name": "Dead Dove",
-        "reasons": [
-          "Directory postcode WR1 2LT conflicts with reference address WR1 2LS"
-        ],
+        "reasons": [],
         "reference": {
           "field": "postcode",
           "listed": "WR1 2LT",
+          "owner_review": {
+            "approved_coordinate": {
+              "lat": 52.1886066,
+              "lng": -2.2190526
+            },
+            "checked_at": "2026-10-14",
+            "conclusion": "Owner visually confirmed the current Dead Dove building at 25 College Street, Worcester. Retain the pin. CAMRA and Worcester Music Festival use WR1 2LS; preserve PDF postcode WR1 2LT as source data. Location discrepancy reviewed; postal delivery postcode not independently proven.",
+            "listed": "WR1 2LT",
+            "owner_instruction": "yes",
+            "pub_name": "Dead Dove",
+            "reference": "WR1 2LS",
+            "review_map_url": "https://www.google.com/maps/search/?api=1&query=52.1886066%2C-2.2190526",
+            "reviewed_by": "bristolbagpiper",
+            "source_url": "https://camra.org.uk/pubs/111424",
+            "supporting_address_urls": [
+              "https://www.worcestermusicfestival.co.uk/venues/the-dead-dove/"
+            ]
+          },
           "reference": "WR1 2LS",
           "source_url": "https://camra.org.uk/pubs/111424"
         },
@@ -12580,7 +12601,7 @@
           }
         },
         "source_error": null,
-        "status": "review_needed",
+        "status": "resolved",
         "unverified": false,
         "venue_id": "v-f92270dc-d910-5cd5-bb78-2607ed97659b"
       },
@@ -105059,7 +105080,7 @@
       ],
       "current_key": "dead dove|worcester: central|wr1 2lt",
       "independent_location_check": {
-        "actionable": true,
+        "actionable": false,
         "checked_at": "2026-10-10",
         "comparisons": [
           {
@@ -105075,21 +105096,19 @@
             "status": "no_name_match"
           }
         ],
-        "confidence": "existing_evidence_needs_corroboration",
+        "confidence": "owner_reviewed",
         "independent_of_pin": true,
         "listing": {
           "postcode": "WR1 2LT",
           "pub_name": "Dead Dove"
         },
-        "owner_reviewed": false,
+        "owner_reviewed": true,
         "pin": {
           "lat": 52.1886066,
           "lng": -2.2190526
         },
-        "priority": 0,
-        "reasons": [
-          "Directory postcode differs from reviewed reference postcode"
-        ],
+        "priority": 2,
+        "reasons": [],
         "reference": {
           "name_matches": 0,
           "postcode_matches": 0,
@@ -105098,6 +105117,7 @@
         },
         "status": "no_name_match",
         "warnings": [
+          "Owner reviewed this postcode discrepancy and confirmed the displayed pub building; listing postcode retained for provenance",
           "FSA comparison is inconclusive; absence of a match does not contradict accepted evidence"
         ]
       },
@@ -105112,6 +105132,26 @@
         "postcode": "WR1 2LT",
         "pub_name": "Dead Dove"
       },
+      "location_approvals": [
+        {
+          "approved_coordinate": {
+            "lat": 52.1886066,
+            "lng": -2.2190526
+          },
+          "checked_at": "2026-10-14",
+          "conclusion": "Owner visually confirmed the current Dead Dove building at 25 College Street, Worcester. Retain the pin. CAMRA and Worcester Music Festival use WR1 2LS; preserve PDF postcode WR1 2LT as source data. Location discrepancy reviewed; postal delivery postcode not independently proven.",
+          "listed": "WR1 2LT",
+          "owner_instruction": "yes",
+          "pub_name": "Dead Dove",
+          "reference": "WR1 2LS",
+          "review_map_url": "https://www.google.com/maps/search/?api=1&query=52.1886066%2C-2.2190526",
+          "reviewed_by": "bristolbagpiper",
+          "source_url": "https://camra.org.uk/pubs/111424",
+          "supporting_address_urls": [
+            "https://www.worcestermusicfestival.co.uk/venues/the-dead-dove/"
+          ]
+        }
+      ],
       "verified_pin": {
         "evidence": [
           {
@@ -105137,6 +105177,22 @@
             "reference_postcode": "WR1 2LT",
             "source": "google-maps-named-place",
             "url": "https://www.google.com/maps/search/?api=1&query=The+Dead+Dove+Worcester+WR1+2LT"
+          },
+          {
+            "checked_at": "2026-10-14",
+            "match": "owner_confirmed_existing_pub_building",
+            "reference_coordinate": {
+              "lat": 52.1886066,
+              "lng": -2.2190526
+            },
+            "reference_name": "Dead Dove",
+            "reference_postcode": "WR1 2LS",
+            "reviewed_by": "bristolbagpiper",
+            "source": "manual_named_place_map",
+            "supporting_address_urls": [
+              "https://www.worcestermusicfestival.co.uk/venues/the-dead-dove/"
+            ],
+            "url": "https://www.google.com/maps/search/?api=1&query=52.1886066%2C-2.2190526"
           }
         ],
         "lat": 52.1886066,
@@ -105144,6 +105200,24 @@
         "metadata_issue": {
           "field": "postcode",
           "listed": "WR1 2LT",
+          "owner_review": {
+            "approved_coordinate": {
+              "lat": 52.1886066,
+              "lng": -2.2190526
+            },
+            "checked_at": "2026-10-14",
+            "conclusion": "Owner visually confirmed the current Dead Dove building at 25 College Street, Worcester. Retain the pin. CAMRA and Worcester Music Festival use WR1 2LS; preserve PDF postcode WR1 2LT as source data. Location discrepancy reviewed; postal delivery postcode not independently proven.",
+            "listed": "WR1 2LT",
+            "owner_instruction": "yes",
+            "pub_name": "Dead Dove",
+            "reference": "WR1 2LS",
+            "review_map_url": "https://www.google.com/maps/search/?api=1&query=52.1886066%2C-2.2190526",
+            "reviewed_by": "bristolbagpiper",
+            "source_url": "https://camra.org.uk/pubs/111424",
+            "supporting_address_urls": [
+              "https://www.worcestermusicfestival.co.uk/venues/the-dead-dove/"
+            ]
+          },
           "reference": "WR1 2LS",
           "source_url": "https://camra.org.uk/pubs/111424"
         },

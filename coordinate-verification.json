@@ -8560,6 +8560,22 @@
           "reference_postcode": "WR1 2LT",
           "source": "google-maps-named-place",
           "url": "https://www.google.com/maps/search/?api=1&query=The+Dead+Dove+Worcester+WR1+2LT"
+        },
+        {
+          "checked_at": "2026-10-14",
+          "match": "owner_confirmed_existing_pub_building",
+          "reference_coordinate": {
+            "lat": 52.1886066,
+            "lng": -2.2190526
+          },
+          "reference_name": "Dead Dove",
+          "reference_postcode": "WR1 2LS",
+          "reviewed_by": "bristolbagpiper",
+          "source": "manual_named_place_map",
+          "supporting_address_urls": [
+            "https://www.worcestermusicfestival.co.uk/venues/the-dead-dove/"
+          ],
+          "url": "https://www.google.com/maps/search/?api=1&query=52.1886066%2C-2.2190526"
         }
       ],
       "lat": 52.1886066,
@@ -8567,6 +8583,24 @@
       "metadata_issue": {
         "field": "postcode",
         "listed": "WR1 2LT",
+        "owner_review": {
+          "approved_coordinate": {
+            "lat": 52.1886066,
+            "lng": -2.2190526
+          },
+          "checked_at": "2026-10-14",
+          "conclusion": "Owner visually confirmed the current Dead Dove building at 25 College Street, Worcester. Retain the pin. CAMRA and Worcester Music Festival use WR1 2LS; preserve PDF postcode WR1 2LT as source data. Location discrepancy reviewed; postal delivery postcode not independently proven.",
+          "listed": "WR1 2LT",
+          "owner_instruction": "yes",
+          "pub_name": "Dead Dove",
+          "reference": "WR1 2LS",
+          "review_map_url": "https://www.google.com/maps/search/?api=1&query=52.1886066%2C-2.2190526",
+          "reviewed_by": "bristolbagpiper",
+          "source_url": "https://camra.org.uk/pubs/111424",
+          "supporting_address_urls": [
+            "https://www.worcestermusicfestival.co.uk/venues/the-dead-dove/"
+          ]
+        },
         "reference": "WR1 2LS",
         "source_url": "https://camra.org.uk/pubs/111424"
       },

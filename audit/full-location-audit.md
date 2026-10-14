@@ -2,22 +2,22 @@
 
 Locations: 1044
 
-Actionable findings: 23
-Locations with informational observations: 590 (may also have an actionable finding)
+Actionable findings: 22
+Locations with informational observations: 591 (may also have an actionable finding)
 
 ## Results
 
-- coordinate_agreement: 459
 - no_name_match: 179
 - coordinate_disagreement: 241
+- coordinate_agreement: 459
 - nearby: 102
 - ambiguous_or_missing_coordinates: 63
 
 ## Confidence
 
-- independent_coordinate_agreement: 438
 - existing_evidence_needs_corroboration: 572
-- owner_reviewed: 34
+- independent_coordinate_agreement: 437
+- owner_reviewed: 35
 
 ## Limits
 
@@ -31,7 +31,6 @@ Locations with informational observations: 590 (may also have an actionable find
 
 | Pub | Place | Postcode | Result | Classification | Detail |
 |---|---|---|---|---|---|
-| Fairhaven | Lytham St Annes | FY8 1YD | coordinate_agreement | Actionable | Directory postcode differs from reviewed reference postcode |
 | GJ Muckers | Macclesfield | SK11 7NE | no_name_match | Actionable | Directory postcode differs from reviewed reference postcode; FSA comparison is inconclusive; absence of a match does not contradict accepted evidence |
 | George | Youlgrave | DE45 1UW | coordinate_disagreement | Actionable | Directory postcode differs from reviewed reference postcode; FSA coordinate is 189.6m from the accepted pin; informational only because the FSA geocode may be approximate |
 | Grey Horse | Consett | DH8 6NF | coordinate_agreement | Actionable | Directory postcode differs from reviewed reference postcode |
@@ -256,6 +255,7 @@ Locations with informational observations: 590 (may also have an actionable find
 | Engine Inn | Kenilworth | CV8 2HP | coordinate_disagreement | Informational | FSA coordinate is 79.0m from the accepted pin; informational only because the FSA geocode may be approximate |
 | Engineers Arms | Henlow | SG16 6AA | coordinate_disagreement | Informational | FSA coordinate is 99.4m from the accepted pin; informational only because the FSA geocode may be approximate |
 | Essex Arms | Watford: Cassiobury | WD17 3EG | coordinate_disagreement | Informational | FSA coordinate is 69.8m from the accepted pin; informational only because the FSA geocode may be approximate |
+| Fairhaven | Lytham St Annes | FY8 1YD | coordinate_agreement | Informational | Owner reviewed this postcode discrepancy and confirmed the displayed pub building; listing postcode retained for provenance |
 | Fieldhouse | Solihull | B91 3JU | no_name_match | Informational | FSA comparison is inconclusive; absence of a match does not contradict accepted evidence |
 | Final Whistle | Southwell | NG25 0ET | nearby | Informational | FSA coordinate is 25-50m away; informational only |
 | Firefly | Worcester: Central | WR1 2SE | nearby | Informational | FSA coordinate is 25-50m away; informational only |

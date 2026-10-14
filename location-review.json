@@ -1,5 +1,5 @@
 {
-  "active_count": 36,
+  "active_count": 35,
   "records": {
     "v-00a08839-2b8a-5782-b6c7-0bdce4cddb2f": {
       "active": false,
@@ -1533,7 +1533,7 @@
       "venue_id": "v-1700cddf-e989-5ee9-be6f-6a249550e1bb"
     },
     "v-175a24db-4014-523b-b0fc-54194c96e3d7": {
-      "active": true,
+      "active": false,
       "first_seen": "2026-10-02",
       "history": [
         {
@@ -1542,18 +1542,39 @@
             "Directory postcode FY8 1YD conflicts with reference address FY8 1AU"
           ],
           "status": "review_needed"
+        },
+        {
+          "date": "2026-10-14",
+          "reasons": [],
+          "status": "resolved"
         }
       ],
-      "last_checked": "2026-10-10",
+      "last_checked": "2026-10-14",
       "place_name": "Lytham St Annes",
       "postcode": "FY8 1YD",
       "pub_name": "Fairhaven",
-      "reasons": [
-        "Directory postcode FY8 1YD conflicts with reference address FY8 1AU"
-      ],
+      "reasons": [],
       "reference": {
         "field": "postcode",
         "listed": "FY8 1YD",
+        "owner_review": {
+          "approved_coordinate": {
+            "lat": 53.7391155,
+            "lng": -2.9931954
+          },
+          "checked_at": "2026-10-14",
+          "conclusion": "Owner visually confirmed the current Fairhaven building at 1 Marine Drive, Lytham St Annes. Retain the pin. Operator and CAMRA use FY8 1AU; preserve PDF postcode FY8 1YD as source data. Location discrepancy reviewed; postal delivery postcode not independently proven.",
+          "listed": "FY8 1YD",
+          "owner_instruction": "yes",
+          "pub_name": "Fairhaven",
+          "reference": "FY8 1AU",
+          "review_map_url": "https://www.google.com/maps/search/?api=1&query=53.7391155%2C-2.9931954",
+          "reviewed_by": "bristolbagpiper",
+          "source_url": "https://camra.org.uk/pubs/120359",
+          "supporting_address_urls": [
+            "https://www.heritagepubs.co.uk/pubs/fairhaven-lytham-st-annes/contact"
+          ]
+        },
         "reference": "FY8 1AU",
         "source_url": "https://camra.org.uk/pubs/120359"
       },
@@ -1569,7 +1590,7 @@
         }
       },
       "source_error": null,
-      "status": "review_needed",
+      "status": "resolved",
       "unverified": false,
       "venue_id": "v-175a24db-4014-523b-b0fc-54194c96e3d7"
     },

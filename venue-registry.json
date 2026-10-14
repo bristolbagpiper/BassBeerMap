@@ -1,6 +1,6 @@
 {
   "location_review": {
-    "active_count": 36,
+    "active_count": 35,
     "records": {
       "v-00a08839-2b8a-5782-b6c7-0bdce4cddb2f": {
         "active": false,
@@ -1534,7 +1534,7 @@
         "venue_id": "v-1700cddf-e989-5ee9-be6f-6a249550e1bb"
       },
       "v-175a24db-4014-523b-b0fc-54194c96e3d7": {
-        "active": true,
+        "active": false,
         "first_seen": "2026-10-02",
         "history": [
           {
@@ -1543,18 +1543,39 @@
               "Directory postcode FY8 1YD conflicts with reference address FY8 1AU"
             ],
             "status": "review_needed"
+          },
+          {
+            "date": "2026-10-14",
+            "reasons": [],
+            "status": "resolved"
           }
         ],
-        "last_checked": "2026-10-10",
+        "last_checked": "2026-10-14",
         "place_name": "Lytham St Annes",
         "postcode": "FY8 1YD",
         "pub_name": "Fairhaven",
-        "reasons": [
-          "Directory postcode FY8 1YD conflicts with reference address FY8 1AU"
-        ],
+        "reasons": [],
         "reference": {
           "field": "postcode",
           "listed": "FY8 1YD",
+          "owner_review": {
+            "approved_coordinate": {
+              "lat": 53.7391155,
+              "lng": -2.9931954
+            },
+            "checked_at": "2026-10-14",
+            "conclusion": "Owner visually confirmed the current Fairhaven building at 1 Marine Drive, Lytham St Annes. Retain the pin. Operator and CAMRA use FY8 1AU; preserve PDF postcode FY8 1YD as source data. Location discrepancy reviewed; postal delivery postcode not independently proven.",
+            "listed": "FY8 1YD",
+            "owner_instruction": "yes",
+            "pub_name": "Fairhaven",
+            "reference": "FY8 1AU",
+            "review_map_url": "https://www.google.com/maps/search/?api=1&query=53.7391155%2C-2.9931954",
+            "reviewed_by": "bristolbagpiper",
+            "source_url": "https://camra.org.uk/pubs/120359",
+            "supporting_address_urls": [
+              "https://www.heritagepubs.co.uk/pubs/fairhaven-lytham-st-annes/contact"
+            ]
+          },
           "reference": "FY8 1AU",
           "source_url": "https://camra.org.uk/pubs/120359"
         },
@@ -1570,7 +1591,7 @@
           }
         },
         "source_error": null,
-        "status": "review_needed",
+        "status": "resolved",
         "unverified": false,
         "venue_id": "v-175a24db-4014-523b-b0fc-54194c96e3d7"
       },
@@ -23838,7 +23859,7 @@
       ],
       "current_key": "fairhaven|lytham st annes|fy8 1yd",
       "independent_location_check": {
-        "actionable": true,
+        "actionable": false,
         "checked_at": "2026-10-10",
         "comparisons": [
           {
@@ -23859,21 +23880,19 @@
             "url": "https://ratings.food.gov.uk/business/201755"
           }
         ],
-        "confidence": "independent_coordinate_agreement",
+        "confidence": "owner_reviewed",
         "independent_of_pin": true,
         "listing": {
           "postcode": "FY8 1YD",
           "pub_name": "Fairhaven"
         },
-        "owner_reviewed": false,
+        "owner_reviewed": true,
         "pin": {
           "lat": 53.7391155,
           "lng": -2.9931954
         },
-        "priority": 0,
-        "reasons": [
-          "Directory postcode differs from reviewed reference postcode"
-        ],
+        "priority": 2,
+        "reasons": [],
         "reference": {
           "address": "The Fairhaven 1 Marine Drive, , Lytham St Annes, Lancashire",
           "difference_metres": 11.6,
@@ -23886,7 +23905,9 @@
           "url": "https://ratings.food.gov.uk/business/201755"
         },
         "status": "coordinate_agreement",
-        "warnings": []
+        "warnings": [
+          "Owner reviewed this postcode discrepancy and confirmed the displayed pub building; listing postcode retained for provenance"
+        ]
       },
       "listing": {
         "area": "Lancashire",
@@ -23899,6 +23920,26 @@
         "postcode": "FY8 1YD",
         "pub_name": "Fairhaven"
       },
+      "location_approvals": [
+        {
+          "approved_coordinate": {
+            "lat": 53.7391155,
+            "lng": -2.9931954
+          },
+          "checked_at": "2026-10-14",
+          "conclusion": "Owner visually confirmed the current Fairhaven building at 1 Marine Drive, Lytham St Annes. Retain the pin. Operator and CAMRA use FY8 1AU; preserve PDF postcode FY8 1YD as source data. Location discrepancy reviewed; postal delivery postcode not independently proven.",
+          "listed": "FY8 1YD",
+          "owner_instruction": "yes",
+          "pub_name": "Fairhaven",
+          "reference": "FY8 1AU",
+          "review_map_url": "https://www.google.com/maps/search/?api=1&query=53.7391155%2C-2.9931954",
+          "reviewed_by": "bristolbagpiper",
+          "source_url": "https://camra.org.uk/pubs/120359",
+          "supporting_address_urls": [
+            "https://www.heritagepubs.co.uk/pubs/fairhaven-lytham-st-annes/contact"
+          ]
+        }
+      ],
       "verification_attempt": {
         "checked_at": "2026-10-10",
         "evidence": {
@@ -23938,6 +23979,22 @@
             "reference_postcode": "FY8 1AU",
             "source": "camra",
             "url": "https://camra.org.uk/pubs/120359"
+          },
+          {
+            "checked_at": "2026-10-14",
+            "match": "owner_confirmed_existing_pub_building",
+            "reference_coordinate": {
+              "lat": 53.7391155,
+              "lng": -2.9931954
+            },
+            "reference_name": "Fairhaven",
+            "reference_postcode": "FY8 1AU",
+            "reviewed_by": "bristolbagpiper",
+            "source": "manual_named_place_map",
+            "supporting_address_urls": [
+              "https://www.heritagepubs.co.uk/pubs/fairhaven-lytham-st-annes/contact"
+            ],
+            "url": "https://www.google.com/maps/search/?api=1&query=53.7391155%2C-2.9931954"
           }
         ],
         "lat": 53.7391155,
@@ -23945,6 +24002,24 @@
         "metadata_issue": {
           "field": "postcode",
           "listed": "FY8 1YD",
+          "owner_review": {
+            "approved_coordinate": {
+              "lat": 53.7391155,
+              "lng": -2.9931954
+            },
+            "checked_at": "2026-10-14",
+            "conclusion": "Owner visually confirmed the current Fairhaven building at 1 Marine Drive, Lytham St Annes. Retain the pin. Operator and CAMRA use FY8 1AU; preserve PDF postcode FY8 1YD as source data. Location discrepancy reviewed; postal delivery postcode not independently proven.",
+            "listed": "FY8 1YD",
+            "owner_instruction": "yes",
+            "pub_name": "Fairhaven",
+            "reference": "FY8 1AU",
+            "review_map_url": "https://www.google.com/maps/search/?api=1&query=53.7391155%2C-2.9931954",
+            "reviewed_by": "bristolbagpiper",
+            "source_url": "https://camra.org.uk/pubs/120359",
+            "supporting_address_urls": [
+              "https://www.heritagepubs.co.uk/pubs/fairhaven-lytham-st-annes/contact"
+            ]
+          },
           "reference": "FY8 1AU",
           "source_url": "https://camra.org.uk/pubs/120359"
         },

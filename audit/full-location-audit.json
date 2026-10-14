@@ -2,67 +2,6 @@
   "records": [
     {
       "actionable": true,
-      "area": "Lancashire",
-      "checked_at": "2026-10-10",
-      "comparisons": [
-        {
-          "name_matches": 0,
-          "postcode_matches": 1,
-          "queried_postcode": "FY8 1YD",
-          "status": "no_name_match"
-        },
-        {
-          "address": "The Fairhaven 1 Marine Drive, , Lytham St Annes, Lancashire",
-          "difference_metres": 11.6,
-          "lat": 53.7390115,
-          "lng": -2.9931856,
-          "name": "Fairhaven pub",
-          "postcode": "FY8 1AU",
-          "queried_postcode": "FY8 1AU",
-          "status": "coordinate_agreement",
-          "url": "https://ratings.food.gov.uk/business/201755"
-        }
-      ],
-      "confidence": "independent_coordinate_agreement",
-      "country": "England",
-      "dispense": "H",
-      "independent_of_pin": true,
-      "last": "2026 Q1",
-      "listing": {
-        "postcode": "FY8 1YD",
-        "pub_name": "Fairhaven"
-      },
-      "notes": "",
-      "owner_reviewed": false,
-      "pg": "Guest",
-      "pin": {
-        "lat": 53.7391155,
-        "lng": -2.9931954
-      },
-      "place_name": "Lytham St Annes",
-      "postcode": "FY8 1YD",
-      "priority": 0,
-      "pub_name": "Fairhaven",
-      "reasons": [
-        "Directory postcode differs from reviewed reference postcode"
-      ],
-      "reference": {
-        "address": "The Fairhaven 1 Marine Drive, , Lytham St Annes, Lancashire",
-        "difference_metres": 11.6,
-        "lat": 53.7390115,
-        "lng": -2.9931856,
-        "name": "Fairhaven pub",
-        "postcode": "FY8 1AU",
-        "queried_postcode": "FY8 1AU",
-        "status": "coordinate_agreement",
-        "url": "https://ratings.food.gov.uk/business/201755"
-      },
-      "status": "coordinate_agreement",
-      "venue_id": "v-175a24db-4014-523b-b0fc-54194c96e3d7",
-      "warnings": []
-    },
-    {
-      "actionable": true,
       "area": "Cheshire",
       "checked_at": "2026-10-10",
       "comparisons": [
@@ -11625,6 +11564,67 @@
       "venue_id": "v-27db8714-ffd3-5660-a96b-cc3f55e0193d",
       "warnings": [
         "FSA coordinate is 69.8m from the accepted pin; informational only because the FSA geocode may be approximate"
+      ]
+    },
+    {
+      "actionable": false,
+      "area": "Lancashire",
+      "checked_at": "2026-10-10",
+      "comparisons": [
+        {
+          "name_matches": 0,
+          "postcode_matches": 1,
+          "queried_postcode": "FY8 1YD",
+          "status": "no_name_match"
+        },
+        {
+          "address": "The Fairhaven 1 Marine Drive, , Lytham St Annes, Lancashire",
+          "difference_metres": 11.6,
+          "lat": 53.7390115,
+          "lng": -2.9931856,
+          "name": "Fairhaven pub",
+          "postcode": "FY8 1AU",
+          "queried_postcode": "FY8 1AU",
+          "status": "coordinate_agreement",
+          "url": "https://ratings.food.gov.uk/business/201755"
+        }
+      ],
+      "confidence": "owner_reviewed",
+      "country": "England",
+      "dispense": "H",
+      "independent_of_pin": true,
+      "last": "2026 Q1",
+      "listing": {
+        "postcode": "FY8 1YD",
+        "pub_name": "Fairhaven"
+      },
+      "notes": "",
+      "owner_reviewed": true,
+      "pg": "Guest",
+      "pin": {
+        "lat": 53.7391155,
+        "lng": -2.9931954
+      },
+      "place_name": "Lytham St Annes",
+      "postcode": "FY8 1YD",
+      "priority": 2,
+      "pub_name": "Fairhaven",
+      "reasons": [],
+      "reference": {
+        "address": "The Fairhaven 1 Marine Drive, , Lytham St Annes, Lancashire",
+        "difference_metres": 11.6,
+        "lat": 53.7390115,
+        "lng": -2.9931856,
+        "name": "Fairhaven pub",
+        "postcode": "FY8 1AU",
+        "queried_postcode": "FY8 1AU",
+        "status": "coordinate_agreement",
+        "url": "https://ratings.food.gov.uk/business/201755"
+      },
+      "status": "coordinate_agreement",
+      "venue_id": "v-175a24db-4014-523b-b0fc-54194c96e3d7",
+      "warnings": [
+        "Owner reviewed this postcode discrepancy and confirmed the displayed pub building; listing postcode retained for provenance"
       ]
     },
     {
@@ -54365,11 +54365,11 @@
   ],
   "schema_version": 1,
   "summary": {
-    "actionable_count": 23,
+    "actionable_count": 22,
     "confidence_counts": {
       "existing_evidence_needs_corroboration": 572,
-      "independent_coordinate_agreement": 438,
-      "owner_reviewed": 34
+      "independent_coordinate_agreement": 437,
+      "owner_reviewed": 35
     },
     "counts": {
       "ambiguous_or_missing_coordinates": 63,
@@ -54378,7 +54378,7 @@
       "nearby": 102,
       "no_name_match": 179
     },
-    "informational_count": 590,
+    "informational_count": 591,
     "limitations": [
       "Coordinate agreement does not prove the correct building or current Bass availability.",
       "Owner-approved coordinates take priority; CAMRA remains the primary automated reference.",

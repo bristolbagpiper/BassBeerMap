@@ -4535,7 +4535,7 @@
       ]
     },
     "v-175a24db-4014-523b-b0fc-54194c96e3d7": {
-      "actionable": true,
+      "actionable": false,
       "checked_at": "2026-10-10",
       "comparisons": [
         {
@@ -4556,21 +4556,19 @@
           "url": "https://ratings.food.gov.uk/business/201755"
         }
       ],
-      "confidence": "independent_coordinate_agreement",
+      "confidence": "owner_reviewed",
       "independent_of_pin": true,
       "listing": {
         "postcode": "FY8 1YD",
         "pub_name": "Fairhaven"
       },
-      "owner_reviewed": false,
+      "owner_reviewed": true,
       "pin": {
         "lat": 53.7391155,
         "lng": -2.9931954
       },
-      "priority": 0,
-      "reasons": [
-        "Directory postcode differs from reviewed reference postcode"
-      ],
+      "priority": 2,
+      "reasons": [],
       "reference": {
         "address": "The Fairhaven 1 Marine Drive, , Lytham St Annes, Lancashire",
         "difference_metres": 11.6,
@@ -4583,7 +4581,9 @@
         "url": "https://ratings.food.gov.uk/business/201755"
       },
       "status": "coordinate_agreement",
-      "warnings": []
+      "warnings": [
+        "Owner reviewed this postcode discrepancy and confirmed the displayed pub building; listing postcode retained for provenance"
+      ]
     },
     "v-178e9924-7d6e-5be4-a7f6-8602ed509683": {
       "actionable": false,

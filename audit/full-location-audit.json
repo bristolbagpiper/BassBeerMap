@@ -2,59 +2,6 @@
   "records": [
     {
       "actionable": true,
-      "area": "Staffordshire",
-      "checked_at": "2026-10-10",
-      "comparisons": [
-        {
-          "name_matches": 0,
-          "postcode_matches": 5,
-          "queried_postcode": "ST5 1RW",
-          "status": "no_name_match"
-        },
-        {
-          "name_matches": 0,
-          "postcode_matches": 1,
-          "queried_postcode": "ST5 1RP",
-          "status": "no_name_match"
-        }
-      ],
-      "confidence": "existing_evidence_needs_corroboration",
-      "country": "England",
-      "dispense": "H",
-      "independent_of_pin": true,
-      "last": "2026 Q3",
-      "listing": {
-        "postcode": "ST5 1RW",
-        "pub_name": "Crossways (Bottlecraft)"
-      },
-      "notes": "",
-      "owner_reviewed": false,
-      "pg": "Perm",
-      "pin": {
-        "lat": 53.0127842,
-        "lng": -2.2245969
-      },
-      "place_name": "Newcastle-U-L: Central",
-      "postcode": "ST5 1RW",
-      "priority": 0,
-      "pub_name": "Crossways (Bottlecraft)",
-      "reasons": [
-        "Directory postcode differs from reviewed reference postcode"
-      ],
-      "reference": {
-        "name_matches": 0,
-        "postcode_matches": 5,
-        "queried_postcode": "ST5 1RW",
-        "status": "no_name_match"
-      },
-      "status": "no_name_match",
-      "venue_id": "v-c7575fb2-9a9e-5c73-aaad-76dfb8c5ba4b",
-      "warnings": [
-        "FSA comparison is inconclusive; absence of a match does not contradict accepted evidence"
-      ]
-    },
-    {
-      "actionable": true,
       "area": "Worcestershire",
       "checked_at": "2026-10-10",
       "comparisons": [
@@ -9396,6 +9343,58 @@
       "status": "no_name_match",
       "venue_id": "v-e134de4c-f72e-5e95-b15b-76b3d65b224a",
       "warnings": [
+        "FSA comparison is inconclusive; absence of a match does not contradict accepted evidence"
+      ]
+    },
+    {
+      "actionable": false,
+      "area": "Staffordshire",
+      "checked_at": "2026-10-10",
+      "comparisons": [
+        {
+          "name_matches": 0,
+          "postcode_matches": 5,
+          "queried_postcode": "ST5 1RW",
+          "status": "no_name_match"
+        },
+        {
+          "name_matches": 0,
+          "postcode_matches": 1,
+          "queried_postcode": "ST5 1RP",
+          "status": "no_name_match"
+        }
+      ],
+      "confidence": "owner_reviewed",
+      "country": "England",
+      "dispense": "H",
+      "independent_of_pin": true,
+      "last": "2026 Q3",
+      "listing": {
+        "postcode": "ST5 1RW",
+        "pub_name": "Crossways (Bottlecraft)"
+      },
+      "notes": "",
+      "owner_reviewed": true,
+      "pg": "Perm",
+      "pin": {
+        "lat": 53.0127842,
+        "lng": -2.2245969
+      },
+      "place_name": "Newcastle-U-L: Central",
+      "postcode": "ST5 1RW",
+      "priority": 2,
+      "pub_name": "Crossways (Bottlecraft)",
+      "reasons": [],
+      "reference": {
+        "name_matches": 0,
+        "postcode_matches": 5,
+        "queried_postcode": "ST5 1RW",
+        "status": "no_name_match"
+      },
+      "status": "no_name_match",
+      "venue_id": "v-c7575fb2-9a9e-5c73-aaad-76dfb8c5ba4b",
+      "warnings": [
+        "Owner reviewed this postcode discrepancy and confirmed the displayed pub building; listing postcode retained for provenance",
         "FSA comparison is inconclusive; absence of a match does not contradict accepted evidence"
       ]
     },
@@ -54367,11 +54366,11 @@
   ],
   "schema_version": 1,
   "summary": {
-    "actionable_count": 27,
+    "actionable_count": 26,
     "confidence_counts": {
-      "existing_evidence_needs_corroboration": 574,
+      "existing_evidence_needs_corroboration": 573,
       "independent_coordinate_agreement": 440,
-      "owner_reviewed": 30
+      "owner_reviewed": 31
     },
     "counts": {
       "ambiguous_or_missing_coordinates": 63,

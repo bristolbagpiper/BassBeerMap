@@ -2,7 +2,7 @@
 
 Locations: 1044
 
-Actionable findings: 27
+Actionable findings: 26
 Locations with informational observations: 588 (may also have an actionable finding)
 
 ## Results
@@ -15,9 +15,9 @@ Locations with informational observations: 588 (may also have an actionable find
 
 ## Confidence
 
-- existing_evidence_needs_corroboration: 574
+- existing_evidence_needs_corroboration: 573
 - independent_coordinate_agreement: 440
-- owner_reviewed: 30
+- owner_reviewed: 31
 
 ## Limits
 
@@ -31,7 +31,6 @@ Locations with informational observations: 588 (may also have an actionable find
 
 | Pub | Place | Postcode | Result | Classification | Detail |
 |---|---|---|---|---|---|
-| Crossways (Bottlecraft) | Newcastle-U-L: Central | ST5 1RW | no_name_match | Actionable | Directory postcode differs from reviewed reference postcode; FSA comparison is inconclusive; absence of a match does not contradict accepted evidence |
 | Dead Dove | Worcester: Central | WR1 2LT | no_name_match | Actionable | Directory postcode differs from reviewed reference postcode; FSA comparison is inconclusive; absence of a match does not contradict accepted evidence |
 | Drunken Dog | Heanor | DE75 7EF | coordinate_agreement | Actionable | Directory postcode differs from reviewed reference postcode |
 | Dyers Arms | Leek | ST13 8JZ | coordinate_agreement | Actionable | Directory postcode differs from reviewed reference postcode |
@@ -212,6 +211,7 @@ Locations with informational observations: 588 (may also have an actionable find
 | Cross Keys | Newbold | LE67 8PJ | nearby | Informational | FSA coordinate is 25-50m away; informational only |
 | Cross Keys | Belper: Central | DE56 1FZ | nearby | Informational | FSA coordinate is 25-50m away; informational only |
 | Crossbar | Chellaston | DE73 6TQ | no_name_match | Informational | FSA comparison is inconclusive; absence of a match does not contradict accepted evidence |
+| Crossways (Bottlecraft) | Newcastle-U-L: Central | ST5 1RW | no_name_match | Informational | Owner reviewed this postcode discrepancy and confirmed the displayed pub building; listing postcode retained for provenance; FSA comparison is inconclusive; absence of a match does not contradict accepted evidence |
 | Crown | Llandegla | LL11 3AD | ambiguous_or_missing_coordinates | Informational | FSA comparison is inconclusive; absence of a match does not contradict accepted evidence |
 | Crown | Stockport | SK4 1AR | coordinate_disagreement | Informational | FSA coordinate is 56.9m from the accepted pin; informational only because the FSA geocode may be approximate |
 | Crown | Kemerton | GL20 7HP | nearby | Informational | FSA coordinate is 25-50m away; informational only |

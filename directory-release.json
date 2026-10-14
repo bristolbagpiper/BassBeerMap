@@ -5261,12 +5261,30 @@
       "precision": "venue"
     },
     "v-7cf2d126-509d-589d-9dee-d89d58765eff": {
-      "checked_at": "2026-09-11",
+      "checked_at": "2026-10-14",
       "lat": 53.6505819,
       "lng": -2.9994951,
       "metadata_issue": {
         "field": "postcode",
         "listed": "PR9 0QF",
+        "owner_review": {
+          "approved_coordinate": {
+            "lat": 53.6505819,
+            "lng": -2.9994951
+          },
+          "checked_at": "2026-10-14",
+          "conclusion": "Owner visually confirmed the current Guest House building at 14-16 Union Street, Southport. Retain the pin. CAMRA and Historic England use PR9 0QE; preserve PDF postcode PR9 0QF as source data. Location discrepancy reviewed; postal delivery postcode not independently proven.",
+          "listed": "PR9 0QF",
+          "owner_instruction": "yes",
+          "pub_name": "Guest House",
+          "reference": "PR9 0QE",
+          "review_map_url": "https://www.google.com/maps/search/?api=1&query=53.6505819%2C-2.9994951",
+          "reviewed_by": "bristolbagpiper",
+          "source_url": "https://camra.org.uk/pubs/147054",
+          "supporting_address_urls": [
+            "https://historicengland.org.uk/listing/the-list/list-entry/1426314"
+          ]
+        },
         "reference": "PR9 0QE",
         "source_url": "https://camra.org.uk/pubs/147054"
       },
@@ -10959,7 +10977,7 @@
     "source_name_hint": "",
     "source_pdf": "latest-bass-directory.pdf"
   },
-  "release_id": "e25cf5462ec5c1074a81163ebdedc38a19c122bc4acaf75d147d18be967b291f",
+  "release_id": "9098bf77db5d582c3c027735bd64034a8e05b5b92e55d0ba4fdd4fcf17b65511",
   "rows": [
     {
       "area": "Bedfordshire",

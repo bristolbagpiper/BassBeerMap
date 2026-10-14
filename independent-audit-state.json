@@ -21022,7 +21022,7 @@
       "warnings": []
     },
     "v-7cf2d126-509d-589d-9dee-d89d58765eff": {
-      "actionable": true,
+      "actionable": false,
       "checked_at": "2026-10-10",
       "comparisons": [
         {
@@ -21043,21 +21043,19 @@
           "url": "https://ratings.food.gov.uk/business/132024"
         }
       ],
-      "confidence": "independent_coordinate_agreement",
+      "confidence": "owner_reviewed",
       "independent_of_pin": true,
       "listing": {
         "postcode": "PR9 0QF",
         "pub_name": "Guest House"
       },
-      "owner_reviewed": false,
+      "owner_reviewed": true,
       "pin": {
         "lat": 53.6505819,
         "lng": -2.9994951
       },
-      "priority": 0,
-      "reasons": [
-        "Directory postcode differs from reviewed reference postcode"
-      ],
+      "priority": 2,
+      "reasons": [],
       "reference": {
         "address": "14-16 Union Street, Southport, Merseyside",
         "difference_metres": 14.9,
@@ -21070,7 +21068,9 @@
         "url": "https://ratings.food.gov.uk/business/132024"
       },
       "status": "coordinate_agreement",
-      "warnings": []
+      "warnings": [
+        "Owner reviewed this postcode discrepancy and confirmed the displayed pub building; listing postcode retained for provenance"
+      ]
     },
     "v-7d14bf86-375e-557a-b241-ef5aee6794f8": {
       "actionable": false,

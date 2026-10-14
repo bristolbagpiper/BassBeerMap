@@ -1,6 +1,6 @@
 {
   "location_review": {
-    "active_count": 32,
+    "active_count": 31,
     "records": {
       "v-00a08839-2b8a-5782-b6c7-0bdce4cddb2f": {
         "active": false,
@@ -6562,7 +6562,7 @@
         "venue_id": "v-7ae10979-fa76-53b3-bdc3-51d091c60752"
       },
       "v-7cf2d126-509d-589d-9dee-d89d58765eff": {
-        "active": true,
+        "active": false,
         "first_seen": "2026-10-02",
         "history": [
           {
@@ -6571,18 +6571,39 @@
               "Directory postcode PR9 0QF conflicts with reference address PR9 0QE"
             ],
             "status": "review_needed"
+          },
+          {
+            "date": "2026-10-14",
+            "reasons": [],
+            "status": "resolved"
           }
         ],
-        "last_checked": "2026-10-10",
+        "last_checked": "2026-10-14",
         "place_name": "Southport: Central",
         "postcode": "PR9 0QF",
         "pub_name": "Guest House",
-        "reasons": [
-          "Directory postcode PR9 0QF conflicts with reference address PR9 0QE"
-        ],
+        "reasons": [],
         "reference": {
           "field": "postcode",
           "listed": "PR9 0QF",
+          "owner_review": {
+            "approved_coordinate": {
+              "lat": 53.6505819,
+              "lng": -2.9994951
+            },
+            "checked_at": "2026-10-14",
+            "conclusion": "Owner visually confirmed the current Guest House building at 14-16 Union Street, Southport. Retain the pin. CAMRA and Historic England use PR9 0QE; preserve PDF postcode PR9 0QF as source data. Location discrepancy reviewed; postal delivery postcode not independently proven.",
+            "listed": "PR9 0QF",
+            "owner_instruction": "yes",
+            "pub_name": "Guest House",
+            "reference": "PR9 0QE",
+            "review_map_url": "https://www.google.com/maps/search/?api=1&query=53.6505819%2C-2.9994951",
+            "reviewed_by": "bristolbagpiper",
+            "source_url": "https://camra.org.uk/pubs/147054",
+            "supporting_address_urls": [
+              "https://historicengland.org.uk/listing/the-list/list-entry/1426314"
+            ]
+          },
           "reference": "PR9 0QE",
           "source_url": "https://camra.org.uk/pubs/147054"
         },
@@ -6594,7 +6615,7 @@
           }
         },
         "source_error": null,
-        "status": "review_needed",
+        "status": "resolved",
         "unverified": false,
         "venue_id": "v-7cf2d126-509d-589d-9dee-d89d58765eff"
       },
@@ -60869,7 +60890,7 @@
       ],
       "current_key": "guest house|southport: central|pr9 0qf",
       "independent_location_check": {
-        "actionable": true,
+        "actionable": false,
         "checked_at": "2026-10-10",
         "comparisons": [
           {
@@ -60890,21 +60911,19 @@
             "url": "https://ratings.food.gov.uk/business/132024"
           }
         ],
-        "confidence": "independent_coordinate_agreement",
+        "confidence": "owner_reviewed",
         "independent_of_pin": true,
         "listing": {
           "postcode": "PR9 0QF",
           "pub_name": "Guest House"
         },
-        "owner_reviewed": false,
+        "owner_reviewed": true,
         "pin": {
           "lat": 53.6505819,
           "lng": -2.9994951
         },
-        "priority": 0,
-        "reasons": [
-          "Directory postcode differs from reviewed reference postcode"
-        ],
+        "priority": 2,
+        "reasons": [],
         "reference": {
           "address": "14-16 Union Street, Southport, Merseyside",
           "difference_metres": 14.9,
@@ -60917,7 +60936,9 @@
           "url": "https://ratings.food.gov.uk/business/132024"
         },
         "status": "coordinate_agreement",
-        "warnings": []
+        "warnings": [
+          "Owner reviewed this postcode discrepancy and confirmed the displayed pub building; listing postcode retained for provenance"
+        ]
       },
       "listing": {
         "area": "Merseyside",
@@ -60930,6 +60951,26 @@
         "postcode": "PR9 0QF",
         "pub_name": "Guest House"
       },
+      "location_approvals": [
+        {
+          "approved_coordinate": {
+            "lat": 53.6505819,
+            "lng": -2.9994951
+          },
+          "checked_at": "2026-10-14",
+          "conclusion": "Owner visually confirmed the current Guest House building at 14-16 Union Street, Southport. Retain the pin. CAMRA and Historic England use PR9 0QE; preserve PDF postcode PR9 0QF as source data. Location discrepancy reviewed; postal delivery postcode not independently proven.",
+          "listed": "PR9 0QF",
+          "owner_instruction": "yes",
+          "pub_name": "Guest House",
+          "reference": "PR9 0QE",
+          "review_map_url": "https://www.google.com/maps/search/?api=1&query=53.6505819%2C-2.9994951",
+          "reviewed_by": "bristolbagpiper",
+          "source_url": "https://camra.org.uk/pubs/147054",
+          "supporting_address_urls": [
+            "https://historicengland.org.uk/listing/the-list/list-entry/1426314"
+          ]
+        }
+      ],
       "verified_pin": {
         "evidence": [
           {
@@ -60943,6 +60984,22 @@
             "reference_postcode": "PR9 0QE",
             "source": "camra",
             "url": "https://camra.org.uk/pubs/147054"
+          },
+          {
+            "checked_at": "2026-10-14",
+            "match": "owner_confirmed_existing_pub_building",
+            "reference_coordinate": {
+              "lat": 53.6505819,
+              "lng": -2.9994951
+            },
+            "reference_name": "Guest House",
+            "reference_postcode": "PR9 0QE",
+            "reviewed_by": "bristolbagpiper",
+            "source": "manual_named_place_map",
+            "supporting_address_urls": [
+              "https://historicengland.org.uk/listing/the-list/list-entry/1426314"
+            ],
+            "url": "https://www.google.com/maps/search/?api=1&query=53.6505819%2C-2.9994951"
           }
         ],
         "lat": 53.6505819,
@@ -60950,6 +61007,24 @@
         "metadata_issue": {
           "field": "postcode",
           "listed": "PR9 0QF",
+          "owner_review": {
+            "approved_coordinate": {
+              "lat": 53.6505819,
+              "lng": -2.9994951
+            },
+            "checked_at": "2026-10-14",
+            "conclusion": "Owner visually confirmed the current Guest House building at 14-16 Union Street, Southport. Retain the pin. CAMRA and Historic England use PR9 0QE; preserve PDF postcode PR9 0QF as source data. Location discrepancy reviewed; postal delivery postcode not independently proven.",
+            "listed": "PR9 0QF",
+            "owner_instruction": "yes",
+            "pub_name": "Guest House",
+            "reference": "PR9 0QE",
+            "review_map_url": "https://www.google.com/maps/search/?api=1&query=53.6505819%2C-2.9994951",
+            "reviewed_by": "bristolbagpiper",
+            "source_url": "https://camra.org.uk/pubs/147054",
+            "supporting_address_urls": [
+              "https://historicengland.org.uk/listing/the-list/list-entry/1426314"
+            ]
+          },
           "reference": "PR9 0QE",
           "source_url": "https://camra.org.uk/pubs/147054"
         },

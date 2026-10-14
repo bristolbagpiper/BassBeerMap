@@ -2,67 +2,6 @@
   "records": [
     {
       "actionable": true,
-      "area": "Merseyside",
-      "checked_at": "2026-10-10",
-      "comparisons": [
-        {
-          "name_matches": 0,
-          "postcode_matches": 4,
-          "queried_postcode": "PR9 0QF",
-          "status": "no_name_match"
-        },
-        {
-          "address": "14-16 Union Street, Southport, Merseyside",
-          "difference_metres": 14.9,
-          "lat": 53.650543,
-          "lng": -2.999278,
-          "name": "Guest House",
-          "postcode": "PR9 0QE",
-          "queried_postcode": "PR9 0QE",
-          "status": "coordinate_agreement",
-          "url": "https://ratings.food.gov.uk/business/132024"
-        }
-      ],
-      "confidence": "independent_coordinate_agreement",
-      "country": "England",
-      "dispense": "H",
-      "independent_of_pin": true,
-      "last": "2026 Q3",
-      "listing": {
-        "postcode": "PR9 0QF",
-        "pub_name": "Guest House"
-      },
-      "notes": "",
-      "owner_reviewed": false,
-      "pg": "Guest",
-      "pin": {
-        "lat": 53.6505819,
-        "lng": -2.9994951
-      },
-      "place_name": "Southport: Central",
-      "postcode": "PR9 0QF",
-      "priority": 0,
-      "pub_name": "Guest House",
-      "reasons": [
-        "Directory postcode differs from reviewed reference postcode"
-      ],
-      "reference": {
-        "address": "14-16 Union Street, Southport, Merseyside",
-        "difference_metres": 14.9,
-        "lat": 53.650543,
-        "lng": -2.999278,
-        "name": "Guest House",
-        "postcode": "PR9 0QE",
-        "queried_postcode": "PR9 0QE",
-        "status": "coordinate_agreement",
-        "url": "https://ratings.food.gov.uk/business/132024"
-      },
-      "status": "coordinate_agreement",
-      "venue_id": "v-7cf2d126-509d-589d-9dee-d89d58765eff",
-      "warnings": []
-    },
-    {
-      "actionable": true,
       "area": "Gloucs & Bristol",
       "checked_at": "2026-10-10",
       "comparisons": [
@@ -13693,6 +13632,67 @@
       "venue_id": "v-0d4203e8-3483-5683-893a-ef4bd63e6c15",
       "warnings": [
         "FSA coordinate is 25-50m away; informational only"
+      ]
+    },
+    {
+      "actionable": false,
+      "area": "Merseyside",
+      "checked_at": "2026-10-10",
+      "comparisons": [
+        {
+          "name_matches": 0,
+          "postcode_matches": 4,
+          "queried_postcode": "PR9 0QF",
+          "status": "no_name_match"
+        },
+        {
+          "address": "14-16 Union Street, Southport, Merseyside",
+          "difference_metres": 14.9,
+          "lat": 53.650543,
+          "lng": -2.999278,
+          "name": "Guest House",
+          "postcode": "PR9 0QE",
+          "queried_postcode": "PR9 0QE",
+          "status": "coordinate_agreement",
+          "url": "https://ratings.food.gov.uk/business/132024"
+        }
+      ],
+      "confidence": "owner_reviewed",
+      "country": "England",
+      "dispense": "H",
+      "independent_of_pin": true,
+      "last": "2026 Q3",
+      "listing": {
+        "postcode": "PR9 0QF",
+        "pub_name": "Guest House"
+      },
+      "notes": "",
+      "owner_reviewed": true,
+      "pg": "Guest",
+      "pin": {
+        "lat": 53.6505819,
+        "lng": -2.9994951
+      },
+      "place_name": "Southport: Central",
+      "postcode": "PR9 0QF",
+      "priority": 2,
+      "pub_name": "Guest House",
+      "reasons": [],
+      "reference": {
+        "address": "14-16 Union Street, Southport, Merseyside",
+        "difference_metres": 14.9,
+        "lat": 53.650543,
+        "lng": -2.999278,
+        "name": "Guest House",
+        "postcode": "PR9 0QE",
+        "queried_postcode": "PR9 0QE",
+        "status": "coordinate_agreement",
+        "url": "https://ratings.food.gov.uk/business/132024"
+      },
+      "status": "coordinate_agreement",
+      "venue_id": "v-7cf2d126-509d-589d-9dee-d89d58765eff",
+      "warnings": [
+        "Owner reviewed this postcode discrepancy and confirmed the displayed pub building; listing postcode retained for provenance"
       ]
     },
     {
@@ -54363,11 +54363,11 @@
   ],
   "schema_version": 1,
   "summary": {
-    "actionable_count": 19,
+    "actionable_count": 18,
     "confidence_counts": {
       "existing_evidence_needs_corroboration": 570,
-      "independent_coordinate_agreement": 436,
-      "owner_reviewed": 38
+      "independent_coordinate_agreement": 435,
+      "owner_reviewed": 39
     },
     "counts": {
       "ambiguous_or_missing_coordinates": 63,
@@ -54376,7 +54376,7 @@
       "nearby": 102,
       "no_name_match": 179
     },
-    "informational_count": 592,
+    "informational_count": 593,
     "limitations": [
       "Coordinate agreement does not prove the correct building or current Bass availability.",
       "Owner-approved coordinates take priority; CAMRA remains the primary automated reference.",

@@ -2,22 +2,22 @@
 
 Locations: 1044
 
-Actionable findings: 19
-Locations with informational observations: 592 (may also have an actionable finding)
+Actionable findings: 18
+Locations with informational observations: 593 (may also have an actionable finding)
 
 ## Results
 
-- coordinate_agreement: 459
 - nearby: 102
+- coordinate_agreement: 459
 - ambiguous_or_missing_coordinates: 63
 - coordinate_disagreement: 241
 - no_name_match: 179
 
 ## Confidence
 
-- independent_coordinate_agreement: 436
 - existing_evidence_needs_corroboration: 570
-- owner_reviewed: 38
+- independent_coordinate_agreement: 435
+- owner_reviewed: 39
 
 ## Limits
 
@@ -31,7 +31,6 @@ Locations with informational observations: 592 (may also have an actionable find
 
 | Pub | Place | Postcode | Result | Classification | Detail |
 |---|---|---|---|---|---|
-| Guest House | Southport: Central | PR9 0QF | coordinate_agreement | Actionable | Directory postcode differs from reviewed reference postcode |
 | Mall | Bristol: Clifton | BS8 4DR | nearby | Actionable | Directory postcode differs from reviewed reference postcode; FSA coordinate is 25-50m away; informational only |
 | Merchants | Rugby | CV21 3AW | coordinate_agreement | Actionable | Directory postcode differs from reviewed reference postcode |
 | Mount Pleasant Inn | Castle Gresley | DE11 9JE | ambiguous_or_missing_coordinates | Actionable | Directory postcode differs from reviewed reference postcode; FSA comparison is inconclusive; absence of a match does not contradict accepted evidence |
@@ -296,6 +295,7 @@ Locations with informational observations: 592 (may also have an actionable find
 | Greyhound Inn | Warslow | SK17 0JN | nearby | Informational | FSA coordinate is 25-50m away; informational only |
 | Griffin | Shustoke | B46 2LB | ambiguous_or_missing_coordinates | Informational | FSA comparison is inconclusive; absence of a match does not contradict accepted evidence |
 | Grouse Inn | Darley Dale | DE4 2FT | nearby | Informational | FSA coordinate is 25-50m away; informational only |
+| Guest House | Southport: Central | PR9 0QF | coordinate_agreement | Informational | Owner reviewed this postcode discrepancy and confirmed the displayed pub building; listing postcode retained for provenance |
 | HQ Pencadlys | Prestatyn | LL19 9DT | coordinate_disagreement | Informational | FSA coordinate is 58.3m from the accepted pin; informational only because the FSA geocode may be approximate |
 | Hales Bar | Harrogate | HG1 2RS | coordinate_disagreement | Informational | FSA coordinate is 71.1m from the accepted pin; informational only because the FSA geocode may be approximate |
 | Halfway House | Donisthorpe | DE12 7PX | coordinate_disagreement | Informational | FSA coordinate is 382.3m from the accepted pin; informational only because the FSA geocode may be approximate |

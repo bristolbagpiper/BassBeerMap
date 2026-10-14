@@ -30939,7 +30939,7 @@
       ]
     },
     "v-b2a1d45e-8e0b-5274-acf9-fa3a099ee5dc": {
-      "actionable": true,
+      "actionable": false,
       "checked_at": "2026-10-10",
       "comparisons": [
         {
@@ -30960,21 +30960,19 @@
           "url": "https://ratings.food.gov.uk/business/850829"
         }
       ],
-      "confidence": "independent_coordinate_agreement",
+      "confidence": "owner_reviewed",
       "independent_of_pin": true,
       "listing": {
         "postcode": "LE11 5BG",
         "pub_name": "Needle and Pin"
       },
-      "owner_reviewed": false,
+      "owner_reviewed": true,
       "pin": {
         "lat": 52.7734147,
         "lng": -1.2096309
       },
-      "priority": 0,
-      "reasons": [
-        "Directory postcode differs from reviewed reference postcode"
-      ],
+      "priority": 2,
+      "reasons": [],
       "reference": {
         "address": "15 The Rushes, , Loughborough",
         "difference_metres": 17.8,
@@ -30987,7 +30985,9 @@
         "url": "https://ratings.food.gov.uk/business/850829"
       },
       "status": "coordinate_agreement",
-      "warnings": []
+      "warnings": [
+        "Owner reviewed this postcode discrepancy and confirmed the displayed pub building; listing postcode retained for provenance"
+      ]
     },
     "v-b2eb57e3-3693-55c6-b7f0-35c5d430b11d": {
       "actionable": false,

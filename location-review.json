@@ -1,5 +1,5 @@
 {
-  "active_count": 27,
+  "active_count": 26,
   "records": {
     "v-00a08839-2b8a-5782-b6c7-0bdce4cddb2f": {
       "active": false,
@@ -9347,7 +9347,7 @@
       "venue_id": "v-b1ed2bf8-2858-5ace-80c6-3c5ae0e5d74c"
     },
     "v-b2a1d45e-8e0b-5274-acf9-fa3a099ee5dc": {
-      "active": true,
+      "active": false,
       "first_seen": "2026-10-02",
       "history": [
         {
@@ -9356,18 +9356,39 @@
             "Directory postcode LE11 5BG conflicts with reference address LE11 5BE"
           ],
           "status": "review_needed"
+        },
+        {
+          "date": "2026-10-14",
+          "reasons": [],
+          "status": "resolved"
         }
       ],
-      "last_checked": "2026-10-10",
+      "last_checked": "2026-10-14",
       "place_name": "Loughborough",
       "postcode": "LE11 5BG",
       "pub_name": "Needle and Pin",
-      "reasons": [
-        "Directory postcode LE11 5BG conflicts with reference address LE11 5BE"
-      ],
+      "reasons": [],
       "reference": {
         "field": "postcode",
         "listed": "LE11 5BG",
+        "owner_review": {
+          "approved_coordinate": {
+            "lat": 52.7734147,
+            "lng": -1.2096309
+          },
+          "checked_at": "2026-10-14",
+          "conclusion": "Owner visually confirmed the current Needle and Pin building at 15 The Rushes, Loughborough. Retain the pin. CAMRA and the FSA named address use LE11 5BE; preserve PDF postcode LE11 5BG as source data. Location discrepancy reviewed; postal delivery postcode not independently proven.",
+          "listed": "LE11 5BG",
+          "owner_instruction": "yes",
+          "pub_name": "Needle and Pin",
+          "reference": "LE11 5BE",
+          "review_map_url": "https://www.google.com/maps/search/?api=1&query=52.7734147%2C-1.2096309",
+          "reviewed_by": "bristolbagpiper",
+          "source_url": "https://camra.org.uk/pubs/171296",
+          "supporting_address_urls": [
+            "https://camra.org.uk/pubs/needle-pin-loughborough-171296"
+          ]
+        },
         "reference": "LE11 5BE",
         "source_url": "https://camra.org.uk/pubs/171296"
       },
@@ -9379,7 +9400,7 @@
         }
       },
       "source_error": null,
-      "status": "review_needed",
+      "status": "resolved",
       "unverified": false,
       "venue_id": "v-b2a1d45e-8e0b-5274-acf9-fa3a099ee5dc"
     },

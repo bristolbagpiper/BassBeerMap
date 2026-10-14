@@ -17276,6 +17276,22 @@
           "reference_postcode": "LE11 5BG",
           "source": "google-maps-named-place",
           "url": "https://www.google.com/maps/search/?api=1&query=Needle+and+Pin+Loughborough+LE11+5BG"
+        },
+        {
+          "checked_at": "2026-10-14",
+          "match": "owner_confirmed_existing_pub_building",
+          "reference_coordinate": {
+            "lat": 52.7734147,
+            "lng": -1.2096309
+          },
+          "reference_name": "Needle and Pin",
+          "reference_postcode": "LE11 5BE",
+          "reviewed_by": "bristolbagpiper",
+          "source": "manual_named_place_map",
+          "supporting_address_urls": [
+            "https://camra.org.uk/pubs/needle-pin-loughborough-171296"
+          ],
+          "url": "https://www.google.com/maps/search/?api=1&query=52.7734147%2C-1.2096309"
         }
       ],
       "lat": 52.7734147,
@@ -17283,6 +17299,24 @@
       "metadata_issue": {
         "field": "postcode",
         "listed": "LE11 5BG",
+        "owner_review": {
+          "approved_coordinate": {
+            "lat": 52.7734147,
+            "lng": -1.2096309
+          },
+          "checked_at": "2026-10-14",
+          "conclusion": "Owner visually confirmed the current Needle and Pin building at 15 The Rushes, Loughborough. Retain the pin. CAMRA and the FSA named address use LE11 5BE; preserve PDF postcode LE11 5BG as source data. Location discrepancy reviewed; postal delivery postcode not independently proven.",
+          "listed": "LE11 5BG",
+          "owner_instruction": "yes",
+          "pub_name": "Needle and Pin",
+          "reference": "LE11 5BE",
+          "review_map_url": "https://www.google.com/maps/search/?api=1&query=52.7734147%2C-1.2096309",
+          "reviewed_by": "bristolbagpiper",
+          "source_url": "https://camra.org.uk/pubs/171296",
+          "supporting_address_urls": [
+            "https://camra.org.uk/pubs/needle-pin-loughborough-171296"
+          ]
+        },
         "reference": "LE11 5BE",
         "source_url": "https://camra.org.uk/pubs/171296"
       },

@@ -2,67 +2,6 @@
   "records": [
     {
       "actionable": true,
-      "area": "Leicestershire",
-      "checked_at": "2026-10-10",
-      "comparisons": [
-        {
-          "name_matches": 0,
-          "postcode_matches": 4,
-          "queried_postcode": "LE11 5BG",
-          "status": "no_name_match"
-        },
-        {
-          "address": "15 The Rushes, , Loughborough",
-          "difference_metres": 17.8,
-          "lat": 52.773299,
-          "lng": -1.209447,
-          "name": "The Needle and Pin",
-          "postcode": "LE11 5BE",
-          "queried_postcode": "LE11 5BE",
-          "status": "coordinate_agreement",
-          "url": "https://ratings.food.gov.uk/business/850829"
-        }
-      ],
-      "confidence": "independent_coordinate_agreement",
-      "country": "England",
-      "dispense": "H",
-      "independent_of_pin": true,
-      "last": "2026 Q3",
-      "listing": {
-        "postcode": "LE11 5BG",
-        "pub_name": "Needle and Pin"
-      },
-      "notes": "\"Once every couple of months\" (July 2026)",
-      "owner_reviewed": false,
-      "pg": "Guest",
-      "pin": {
-        "lat": 52.7734147,
-        "lng": -1.2096309
-      },
-      "place_name": "Loughborough",
-      "postcode": "LE11 5BG",
-      "priority": 0,
-      "pub_name": "Needle and Pin",
-      "reasons": [
-        "Directory postcode differs from reviewed reference postcode"
-      ],
-      "reference": {
-        "address": "15 The Rushes, , Loughborough",
-        "difference_metres": 17.8,
-        "lat": 52.773299,
-        "lng": -1.209447,
-        "name": "The Needle and Pin",
-        "postcode": "LE11 5BE",
-        "queried_postcode": "LE11 5BE",
-        "status": "coordinate_agreement",
-        "url": "https://ratings.food.gov.uk/business/850829"
-      },
-      "status": "coordinate_agreement",
-      "venue_id": "v-b2a1d45e-8e0b-5274-acf9-fa3a099ee5dc",
-      "warnings": []
-    },
-    {
-      "actionable": true,
       "area": "Staffordshire",
       "checked_at": "2026-10-10",
       "comparisons": [
@@ -18449,6 +18388,67 @@
       },
       "status": "coordinate_agreement",
       "venue_id": "v-9b0214b5-0b89-530a-9485-b8662012f510",
+      "warnings": [
+        "Owner reviewed this postcode discrepancy and confirmed the displayed pub building; listing postcode retained for provenance"
+      ]
+    },
+    {
+      "actionable": false,
+      "area": "Leicestershire",
+      "checked_at": "2026-10-10",
+      "comparisons": [
+        {
+          "name_matches": 0,
+          "postcode_matches": 4,
+          "queried_postcode": "LE11 5BG",
+          "status": "no_name_match"
+        },
+        {
+          "address": "15 The Rushes, , Loughborough",
+          "difference_metres": 17.8,
+          "lat": 52.773299,
+          "lng": -1.209447,
+          "name": "The Needle and Pin",
+          "postcode": "LE11 5BE",
+          "queried_postcode": "LE11 5BE",
+          "status": "coordinate_agreement",
+          "url": "https://ratings.food.gov.uk/business/850829"
+        }
+      ],
+      "confidence": "owner_reviewed",
+      "country": "England",
+      "dispense": "H",
+      "independent_of_pin": true,
+      "last": "2026 Q3",
+      "listing": {
+        "postcode": "LE11 5BG",
+        "pub_name": "Needle and Pin"
+      },
+      "notes": "\"Once every couple of months\" (July 2026)",
+      "owner_reviewed": true,
+      "pg": "Guest",
+      "pin": {
+        "lat": 52.7734147,
+        "lng": -1.2096309
+      },
+      "place_name": "Loughborough",
+      "postcode": "LE11 5BG",
+      "priority": 2,
+      "pub_name": "Needle and Pin",
+      "reasons": [],
+      "reference": {
+        "address": "15 The Rushes, , Loughborough",
+        "difference_metres": 17.8,
+        "lat": 52.773299,
+        "lng": -1.209447,
+        "name": "The Needle and Pin",
+        "postcode": "LE11 5BE",
+        "queried_postcode": "LE11 5BE",
+        "status": "coordinate_agreement",
+        "url": "https://ratings.food.gov.uk/business/850829"
+      },
+      "status": "coordinate_agreement",
+      "venue_id": "v-b2a1d45e-8e0b-5274-acf9-fa3a099ee5dc",
       "warnings": [
         "Owner reviewed this postcode discrepancy and confirmed the displayed pub building; listing postcode retained for provenance"
       ]
@@ -54361,11 +54361,11 @@
   ],
   "schema_version": 1,
   "summary": {
-    "actionable_count": 14,
+    "actionable_count": 13,
     "confidence_counts": {
       "existing_evidence_needs_corroboration": 568,
-      "independent_coordinate_agreement": 433,
-      "owner_reviewed": 43
+      "independent_coordinate_agreement": 432,
+      "owner_reviewed": 44
     },
     "counts": {
       "ambiguous_or_missing_coordinates": 63,
@@ -54374,7 +54374,7 @@
       "nearby": 102,
       "no_name_match": 179
     },
-    "informational_count": 595,
+    "informational_count": 596,
     "limitations": [
       "Coordinate agreement does not prove the correct building or current Bass availability.",
       "Owner-approved coordinates take priority; CAMRA remains the primary automated reference.",

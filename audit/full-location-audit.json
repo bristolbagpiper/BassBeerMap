@@ -2,67 +2,6 @@
   "records": [
     {
       "actionable": true,
-      "area": "Derbyshire",
-      "checked_at": "2026-10-10",
-      "comparisons": [
-        {
-          "name_matches": 0,
-          "postcode_matches": 1,
-          "queried_postcode": "DE75 7EF",
-          "status": "no_name_match"
-        },
-        {
-          "address": "Unit 2 38 Market Place Heanor Derbyshire",
-          "difference_metres": 8.6,
-          "lat": 53.0133549,
-          "lng": -1.3527846,
-          "name": "The Drunken Dog",
-          "postcode": "DE75 7EG",
-          "queried_postcode": "DE75 7EG",
-          "status": "coordinate_agreement",
-          "url": "https://ratings.food.gov.uk/business/21340"
-        }
-      ],
-      "confidence": "independent_coordinate_agreement",
-      "country": "England",
-      "dispense": "H",
-      "independent_of_pin": true,
-      "last": "2026 Q3",
-      "listing": {
-        "postcode": "DE75 7EF",
-        "pub_name": "Drunken Dog"
-      },
-      "notes": "",
-      "owner_reviewed": false,
-      "pg": "Guest",
-      "pin": {
-        "lat": 53.013306,
-        "lng": -1.3528839
-      },
-      "place_name": "Heanor",
-      "postcode": "DE75 7EF",
-      "priority": 0,
-      "pub_name": "Drunken Dog",
-      "reasons": [
-        "Directory postcode differs from reviewed reference postcode"
-      ],
-      "reference": {
-        "address": "Unit 2 38 Market Place Heanor Derbyshire",
-        "difference_metres": 8.6,
-        "lat": 53.0133549,
-        "lng": -1.3527846,
-        "name": "The Drunken Dog",
-        "postcode": "DE75 7EG",
-        "queried_postcode": "DE75 7EG",
-        "status": "coordinate_agreement",
-        "url": "https://ratings.food.gov.uk/business/21340"
-      },
-      "status": "coordinate_agreement",
-      "venue_id": "v-62c1c92b-14d0-5967-801f-35f03d3cb24f",
-      "warnings": []
-    },
-    {
-      "actionable": true,
       "area": "Staffordshire",
       "checked_at": "2026-10-10",
       "comparisons": [
@@ -11060,6 +10999,67 @@
       "venue_id": "v-5f8dfaaa-7830-5af0-807f-d03a9b69c6d2",
       "warnings": [
         "FSA comparison is inconclusive; absence of a match does not contradict accepted evidence"
+      ]
+    },
+    {
+      "actionable": false,
+      "area": "Derbyshire",
+      "checked_at": "2026-10-10",
+      "comparisons": [
+        {
+          "name_matches": 0,
+          "postcode_matches": 1,
+          "queried_postcode": "DE75 7EF",
+          "status": "no_name_match"
+        },
+        {
+          "address": "Unit 2 38 Market Place Heanor Derbyshire",
+          "difference_metres": 8.6,
+          "lat": 53.0133549,
+          "lng": -1.3527846,
+          "name": "The Drunken Dog",
+          "postcode": "DE75 7EG",
+          "queried_postcode": "DE75 7EG",
+          "status": "coordinate_agreement",
+          "url": "https://ratings.food.gov.uk/business/21340"
+        }
+      ],
+      "confidence": "owner_reviewed",
+      "country": "England",
+      "dispense": "H",
+      "independent_of_pin": true,
+      "last": "2026 Q3",
+      "listing": {
+        "postcode": "DE75 7EF",
+        "pub_name": "Drunken Dog"
+      },
+      "notes": "",
+      "owner_reviewed": true,
+      "pg": "Guest",
+      "pin": {
+        "lat": 53.013306,
+        "lng": -1.3528839
+      },
+      "place_name": "Heanor",
+      "postcode": "DE75 7EF",
+      "priority": 2,
+      "pub_name": "Drunken Dog",
+      "reasons": [],
+      "reference": {
+        "address": "Unit 2 38 Market Place Heanor Derbyshire",
+        "difference_metres": 8.6,
+        "lat": 53.0133549,
+        "lng": -1.3527846,
+        "name": "The Drunken Dog",
+        "postcode": "DE75 7EG",
+        "queried_postcode": "DE75 7EG",
+        "status": "coordinate_agreement",
+        "url": "https://ratings.food.gov.uk/business/21340"
+      },
+      "status": "coordinate_agreement",
+      "venue_id": "v-62c1c92b-14d0-5967-801f-35f03d3cb24f",
+      "warnings": [
+        "Owner reviewed this postcode discrepancy and confirmed the displayed pub building; listing postcode retained for provenance"
       ]
     },
     {
@@ -54365,11 +54365,11 @@
   ],
   "schema_version": 1,
   "summary": {
-    "actionable_count": 25,
+    "actionable_count": 24,
     "confidence_counts": {
       "existing_evidence_needs_corroboration": 572,
-      "independent_coordinate_agreement": 440,
-      "owner_reviewed": 32
+      "independent_coordinate_agreement": 439,
+      "owner_reviewed": 33
     },
     "counts": {
       "ambiguous_or_missing_coordinates": 63,
@@ -54378,7 +54378,7 @@
       "nearby": 102,
       "no_name_match": 179
     },
-    "informational_count": 588,
+    "informational_count": 589,
     "limitations": [
       "Coordinate agreement does not prove the correct building or current Bass availability.",
       "Owner-approved coordinates take priority; CAMRA remains the primary automated reference.",

@@ -4061,12 +4061,30 @@
       "precision": "venue"
     },
     "v-62c1c92b-14d0-5967-801f-35f03d3cb24f": {
-      "checked_at": "2026-09-11",
+      "checked_at": "2026-10-14",
       "lat": 53.013306,
       "lng": -1.3528839,
       "metadata_issue": {
         "field": "postcode",
         "listed": "DE75 7EF",
+        "owner_review": {
+          "approved_coordinate": {
+            "lat": 53.013306,
+            "lng": -1.3528839
+          },
+          "checked_at": "2026-10-14",
+          "conclusion": "Owner visually confirmed the current Drunken Dog building at Unit 2, 38 Market Place, Heanor. Retain the pin. CAMRA and the FSA named address use DE75 7EG; preserve PDF postcode DE75 7EF as source data. Location discrepancy reviewed; postal delivery postcode not independently proven.",
+          "listed": "DE75 7EF",
+          "owner_instruction": "yes",
+          "pub_name": "Drunken Dog",
+          "reference": "DE75 7EG",
+          "review_map_url": "https://www.google.com/maps/search/?api=1&query=53.013306%2C-1.3528839",
+          "reviewed_by": "bristolbagpiper",
+          "source_url": "https://camra.org.uk/pubs/200257",
+          "supporting_address_urls": [
+            "https://camra.org.uk/pubs/drunken-dog-heanor-200257"
+          ]
+        },
         "reference": "DE75 7EG",
         "source_url": "https://camra.org.uk/pubs/200257"
       },
@@ -10851,7 +10869,7 @@
     "source_name_hint": "",
     "source_pdf": "latest-bass-directory.pdf"
   },
-  "release_id": "13fb4cb2cfa8707330ca0aa95fa31cdecfc9b10f68cadc3a0674874dcb7d8c82",
+  "release_id": "779f649ee6e783e3d1d99eee5457875328206ec51fc90f9326c96a44acb5225b",
   "rows": [
     {
       "area": "Bedfordshire",

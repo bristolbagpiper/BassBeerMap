@@ -2,8 +2,8 @@
 
 Locations: 1044
 
-Actionable findings: 25
-Locations with informational observations: 588 (may also have an actionable finding)
+Actionable findings: 24
+Locations with informational observations: 589 (may also have an actionable finding)
 
 ## Results
 
@@ -15,9 +15,9 @@ Locations with informational observations: 588 (may also have an actionable find
 
 ## Confidence
 
-- independent_coordinate_agreement: 440
+- independent_coordinate_agreement: 439
 - existing_evidence_needs_corroboration: 572
-- owner_reviewed: 32
+- owner_reviewed: 33
 
 ## Limits
 
@@ -31,7 +31,6 @@ Locations with informational observations: 588 (may also have an actionable find
 
 | Pub | Place | Postcode | Result | Classification | Detail |
 |---|---|---|---|---|---|
-| Drunken Dog | Heanor | DE75 7EF | coordinate_agreement | Actionable | Directory postcode differs from reviewed reference postcode |
 | Dyers Arms | Leek | ST13 8JZ | coordinate_agreement | Actionable | Directory postcode differs from reviewed reference postcode |
 | Fairhaven | Lytham St Annes | FY8 1YD | coordinate_agreement | Actionable | Directory postcode differs from reviewed reference postcode |
 | GJ Muckers | Macclesfield | SK11 7NE | no_name_match | Actionable | Directory postcode differs from reviewed reference postcode; FSA comparison is inconclusive; absence of a match does not contradict accepted evidence |
@@ -245,6 +244,7 @@ Locations with informational observations: 588 (may also have an actionable find
 | Drum Inn | Cockington | TQ2 6XA | ambiguous_or_missing_coordinates | Informational | FSA comparison is inconclusive; absence of a match does not contradict accepted evidence |
 | Drum and Monkey | Glasgow: Central | G2 5TF | nearby | Informational | FSA coordinate is 25-50m away; informational only |
 | Drum and Monkey | Castle Gresley | DE11 9LH | ambiguous_or_missing_coordinates | Informational | FSA comparison is inconclusive; absence of a match does not contradict accepted evidence |
+| Drunken Dog | Heanor | DE75 7EF | coordinate_agreement | Informational | Owner reviewed this postcode discrepancy and confirmed the displayed pub building; listing postcode retained for provenance |
 | Duchess | Stamford Brook | W6 0XF | no_name_match | Informational | FSA comparison is inconclusive; absence of a match does not contradict accepted evidence |
 | Duke of Wellington | Grimsby | DN31 1QD | ambiguous_or_missing_coordinates | Informational | FSA comparison is inconclusive; absence of a match does not contradict accepted evidence |
 | Duke of York | Bristol: St Werburghs | BS2 9RS | nearby | Informational | FSA coordinate is 25-50m away; informational only |

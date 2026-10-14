@@ -16487,7 +16487,7 @@
       ]
     },
     "v-62c1c92b-14d0-5967-801f-35f03d3cb24f": {
-      "actionable": true,
+      "actionable": false,
       "checked_at": "2026-10-10",
       "comparisons": [
         {
@@ -16508,21 +16508,19 @@
           "url": "https://ratings.food.gov.uk/business/21340"
         }
       ],
-      "confidence": "independent_coordinate_agreement",
+      "confidence": "owner_reviewed",
       "independent_of_pin": true,
       "listing": {
         "postcode": "DE75 7EF",
         "pub_name": "Drunken Dog"
       },
-      "owner_reviewed": false,
+      "owner_reviewed": true,
       "pin": {
         "lat": 53.013306,
         "lng": -1.3528839
       },
-      "priority": 0,
-      "reasons": [
-        "Directory postcode differs from reviewed reference postcode"
-      ],
+      "priority": 2,
+      "reasons": [],
       "reference": {
         "address": "Unit 2 38 Market Place Heanor Derbyshire",
         "difference_metres": 8.6,
@@ -16535,7 +16533,9 @@
         "url": "https://ratings.food.gov.uk/business/21340"
       },
       "status": "coordinate_agreement",
-      "warnings": []
+      "warnings": [
+        "Owner reviewed this postcode discrepancy and confirmed the displayed pub building; listing postcode retained for provenance"
+      ]
     },
     "v-6312a106-c5ed-5161-86b8-ef30d0350f84": {
       "actionable": true,

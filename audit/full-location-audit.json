@@ -2,67 +2,6 @@
   "records": [
     {
       "actionable": true,
-      "area": "Derbyshire",
-      "checked_at": "2026-10-10",
-      "comparisons": [
-        {
-          "name_matches": 0,
-          "postcode_matches": 4,
-          "queried_postcode": "DE72 2WA",
-          "status": "no_name_match"
-        },
-        {
-          "address": "NAVIGATION INN 143 LONDON ROAD, SHARDLOW, DERBY",
-          "difference_metres": 6.9,
-          "lat": 52.868053,
-          "lng": -1.3425196,
-          "name": "Navigation Inn",
-          "postcode": "DE72 2HA",
-          "queried_postcode": "DE72 2HA",
-          "status": "coordinate_agreement",
-          "url": "https://ratings.food.gov.uk/business/241271"
-        }
-      ],
-      "confidence": "independent_coordinate_agreement",
-      "country": "England",
-      "dispense": "H",
-      "independent_of_pin": true,
-      "last": "2026 Q3",
-      "listing": {
-        "postcode": "DE72 2WA",
-        "pub_name": "Navigation"
-      },
-      "notes": "No longer selling from gravity June 2026",
-      "owner_reviewed": false,
-      "pg": "Perm",
-      "pin": {
-        "lat": 52.868029,
-        "lng": -1.342615
-      },
-      "place_name": "Shardlow",
-      "postcode": "DE72 2WA",
-      "priority": 0,
-      "pub_name": "Navigation",
-      "reasons": [
-        "Directory postcode differs from reviewed reference postcode"
-      ],
-      "reference": {
-        "address": "NAVIGATION INN 143 LONDON ROAD, SHARDLOW, DERBY",
-        "difference_metres": 6.9,
-        "lat": 52.868053,
-        "lng": -1.3425196,
-        "name": "Navigation Inn",
-        "postcode": "DE72 2HA",
-        "queried_postcode": "DE72 2HA",
-        "status": "coordinate_agreement",
-        "url": "https://ratings.food.gov.uk/business/241271"
-      },
-      "status": "coordinate_agreement",
-      "venue_id": "v-9b0214b5-0b89-530a-9485-b8662012f510",
-      "warnings": []
-    },
-    {
-      "actionable": true,
       "area": "Leicestershire",
       "checked_at": "2026-10-10",
       "comparisons": [
@@ -18451,6 +18390,67 @@
       "venue_id": "v-7c5832aa-d803-5bf0-811f-2fc6d351f330",
       "warnings": [
         "FSA comparison is inconclusive; absence of a match does not contradict accepted evidence"
+      ]
+    },
+    {
+      "actionable": false,
+      "area": "Derbyshire",
+      "checked_at": "2026-10-10",
+      "comparisons": [
+        {
+          "name_matches": 0,
+          "postcode_matches": 4,
+          "queried_postcode": "DE72 2WA",
+          "status": "no_name_match"
+        },
+        {
+          "address": "NAVIGATION INN 143 LONDON ROAD, SHARDLOW, DERBY",
+          "difference_metres": 6.9,
+          "lat": 52.868053,
+          "lng": -1.3425196,
+          "name": "Navigation Inn",
+          "postcode": "DE72 2HA",
+          "queried_postcode": "DE72 2HA",
+          "status": "coordinate_agreement",
+          "url": "https://ratings.food.gov.uk/business/241271"
+        }
+      ],
+      "confidence": "owner_reviewed",
+      "country": "England",
+      "dispense": "H",
+      "independent_of_pin": true,
+      "last": "2026 Q3",
+      "listing": {
+        "postcode": "DE72 2WA",
+        "pub_name": "Navigation"
+      },
+      "notes": "No longer selling from gravity June 2026",
+      "owner_reviewed": true,
+      "pg": "Perm",
+      "pin": {
+        "lat": 52.868029,
+        "lng": -1.342615
+      },
+      "place_name": "Shardlow",
+      "postcode": "DE72 2WA",
+      "priority": 2,
+      "pub_name": "Navigation",
+      "reasons": [],
+      "reference": {
+        "address": "NAVIGATION INN 143 LONDON ROAD, SHARDLOW, DERBY",
+        "difference_metres": 6.9,
+        "lat": 52.868053,
+        "lng": -1.3425196,
+        "name": "Navigation Inn",
+        "postcode": "DE72 2HA",
+        "queried_postcode": "DE72 2HA",
+        "status": "coordinate_agreement",
+        "url": "https://ratings.food.gov.uk/business/241271"
+      },
+      "status": "coordinate_agreement",
+      "venue_id": "v-9b0214b5-0b89-530a-9485-b8662012f510",
+      "warnings": [
+        "Owner reviewed this postcode discrepancy and confirmed the displayed pub building; listing postcode retained for provenance"
       ]
     },
     {
@@ -54361,11 +54361,11 @@
   ],
   "schema_version": 1,
   "summary": {
-    "actionable_count": 15,
+    "actionable_count": 14,
     "confidence_counts": {
       "existing_evidence_needs_corroboration": 568,
-      "independent_coordinate_agreement": 434,
-      "owner_reviewed": 42
+      "independent_coordinate_agreement": 433,
+      "owner_reviewed": 43
     },
     "counts": {
       "ambiguous_or_missing_coordinates": 63,
@@ -54374,7 +54374,7 @@
       "nearby": 102,
       "no_name_match": 179
     },
-    "informational_count": 594,
+    "informational_count": 595,
     "limitations": [
       "Coordinate agreement does not prove the correct building or current Bass availability.",
       "Owner-approved coordinates take priority; CAMRA remains the primary automated reference.",

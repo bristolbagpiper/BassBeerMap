@@ -1,5 +1,5 @@
 {
-  "active_count": 28,
+  "active_count": 27,
   "records": {
     "v-00a08839-2b8a-5782-b6c7-0bdce4cddb2f": {
       "active": false,
@@ -8213,7 +8213,7 @@
       "venue_id": "v-9acf6cbe-1e88-5904-af35-f28c20b53738"
     },
     "v-9b0214b5-0b89-530a-9485-b8662012f510": {
-      "active": true,
+      "active": false,
       "first_seen": "2026-10-02",
       "history": [
         {
@@ -8222,18 +8222,39 @@
             "Directory postcode DE72 2WA conflicts with reference address DE72 2HA"
           ],
           "status": "review_needed"
+        },
+        {
+          "date": "2026-10-14",
+          "reasons": [],
+          "status": "resolved"
         }
       ],
-      "last_checked": "2026-10-10",
+      "last_checked": "2026-10-14",
       "place_name": "Shardlow",
       "postcode": "DE72 2WA",
       "pub_name": "Navigation",
-      "reasons": [
-        "Directory postcode DE72 2WA conflicts with reference address DE72 2HA"
-      ],
+      "reasons": [],
       "reference": {
         "field": "postcode",
         "listed": "DE72 2WA",
+        "owner_review": {
+          "approved_coordinate": {
+            "lat": 52.868029,
+            "lng": -1.342615
+          },
+          "checked_at": "2026-10-14",
+          "conclusion": "Owner visually confirmed the current Navigation Inn building at 143 London Road, Shardlow. Retain the pin. Operator and CAMRA use DE72 2HA; preserve PDF postcode DE72 2WA as source data. Location discrepancy reviewed; postal delivery postcode not independently proven.",
+          "listed": "DE72 2WA",
+          "owner_instruction": "yes",
+          "pub_name": "Navigation",
+          "reference": "DE72 2HA",
+          "review_map_url": "https://www.google.com/maps/search/?api=1&query=52.868029%2C-1.342615",
+          "reviewed_by": "bristolbagpiper",
+          "source_url": "https://camra.org.uk/pubs/143265",
+          "supporting_address_urls": [
+            "https://navigationinnshardlow.com/our-menus"
+          ]
+        },
         "reference": "DE72 2HA",
         "source_url": "https://camra.org.uk/pubs/143265"
       },
@@ -8245,7 +8266,7 @@
         }
       },
       "source_error": null,
-      "status": "review_needed",
+      "status": "resolved",
       "unverified": false,
       "venue_id": "v-9b0214b5-0b89-530a-9485-b8662012f510"
     },

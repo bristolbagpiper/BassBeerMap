@@ -26598,7 +26598,7 @@
       ]
     },
     "v-9b0214b5-0b89-530a-9485-b8662012f510": {
-      "actionable": true,
+      "actionable": false,
       "checked_at": "2026-10-10",
       "comparisons": [
         {
@@ -26619,21 +26619,19 @@
           "url": "https://ratings.food.gov.uk/business/241271"
         }
       ],
-      "confidence": "independent_coordinate_agreement",
+      "confidence": "owner_reviewed",
       "independent_of_pin": true,
       "listing": {
         "postcode": "DE72 2WA",
         "pub_name": "Navigation"
       },
-      "owner_reviewed": false,
+      "owner_reviewed": true,
       "pin": {
         "lat": 52.868029,
         "lng": -1.342615
       },
-      "priority": 0,
-      "reasons": [
-        "Directory postcode differs from reviewed reference postcode"
-      ],
+      "priority": 2,
+      "reasons": [],
       "reference": {
         "address": "NAVIGATION INN 143 LONDON ROAD, SHARDLOW, DERBY",
         "difference_metres": 6.9,
@@ -26646,7 +26644,9 @@
         "url": "https://ratings.food.gov.uk/business/241271"
       },
       "status": "coordinate_agreement",
-      "warnings": []
+      "warnings": [
+        "Owner reviewed this postcode discrepancy and confirmed the displayed pub building; listing postcode retained for provenance"
+      ]
     },
     "v-9b9623ec-19a3-5912-987b-13ad5a1babe8": {
       "actionable": false,

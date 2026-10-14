@@ -1,6 +1,6 @@
 {
   "location_review": {
-    "active_count": 28,
+    "active_count": 27,
     "records": {
       "v-00a08839-2b8a-5782-b6c7-0bdce4cddb2f": {
         "active": false,
@@ -8214,7 +8214,7 @@
         "venue_id": "v-9acf6cbe-1e88-5904-af35-f28c20b53738"
       },
       "v-9b0214b5-0b89-530a-9485-b8662012f510": {
-        "active": true,
+        "active": false,
         "first_seen": "2026-10-02",
         "history": [
           {
@@ -8223,18 +8223,39 @@
               "Directory postcode DE72 2WA conflicts with reference address DE72 2HA"
             ],
             "status": "review_needed"
+          },
+          {
+            "date": "2026-10-14",
+            "reasons": [],
+            "status": "resolved"
           }
         ],
-        "last_checked": "2026-10-10",
+        "last_checked": "2026-10-14",
         "place_name": "Shardlow",
         "postcode": "DE72 2WA",
         "pub_name": "Navigation",
-        "reasons": [
-          "Directory postcode DE72 2WA conflicts with reference address DE72 2HA"
-        ],
+        "reasons": [],
         "reference": {
           "field": "postcode",
           "listed": "DE72 2WA",
+          "owner_review": {
+            "approved_coordinate": {
+              "lat": 52.868029,
+              "lng": -1.342615
+            },
+            "checked_at": "2026-10-14",
+            "conclusion": "Owner visually confirmed the current Navigation Inn building at 143 London Road, Shardlow. Retain the pin. Operator and CAMRA use DE72 2HA; preserve PDF postcode DE72 2WA as source data. Location discrepancy reviewed; postal delivery postcode not independently proven.",
+            "listed": "DE72 2WA",
+            "owner_instruction": "yes",
+            "pub_name": "Navigation",
+            "reference": "DE72 2HA",
+            "review_map_url": "https://www.google.com/maps/search/?api=1&query=52.868029%2C-1.342615",
+            "reviewed_by": "bristolbagpiper",
+            "source_url": "https://camra.org.uk/pubs/143265",
+            "supporting_address_urls": [
+              "https://navigationinnshardlow.com/our-menus"
+            ]
+          },
           "reference": "DE72 2HA",
           "source_url": "https://camra.org.uk/pubs/143265"
         },
@@ -8246,7 +8267,7 @@
           }
         },
         "source_error": null,
-        "status": "review_needed",
+        "status": "resolved",
         "unverified": false,
         "venue_id": "v-9b0214b5-0b89-530a-9485-b8662012f510"
       },
@@ -72518,7 +72539,7 @@
       ],
       "current_key": "navigation|shardlow|de72 2wa",
       "independent_location_check": {
-        "actionable": true,
+        "actionable": false,
         "checked_at": "2026-10-10",
         "comparisons": [
           {
@@ -72539,21 +72560,19 @@
             "url": "https://ratings.food.gov.uk/business/241271"
           }
         ],
-        "confidence": "independent_coordinate_agreement",
+        "confidence": "owner_reviewed",
         "independent_of_pin": true,
         "listing": {
           "postcode": "DE72 2WA",
           "pub_name": "Navigation"
         },
-        "owner_reviewed": false,
+        "owner_reviewed": true,
         "pin": {
           "lat": 52.868029,
           "lng": -1.342615
         },
-        "priority": 0,
-        "reasons": [
-          "Directory postcode differs from reviewed reference postcode"
-        ],
+        "priority": 2,
+        "reasons": [],
         "reference": {
           "address": "NAVIGATION INN 143 LONDON ROAD, SHARDLOW, DERBY",
           "difference_metres": 6.9,
@@ -72566,7 +72585,9 @@
           "url": "https://ratings.food.gov.uk/business/241271"
         },
         "status": "coordinate_agreement",
-        "warnings": []
+        "warnings": [
+          "Owner reviewed this postcode discrepancy and confirmed the displayed pub building; listing postcode retained for provenance"
+        ]
       },
       "listing": {
         "area": "Derbyshire",
@@ -72579,6 +72600,26 @@
         "postcode": "DE72 2WA",
         "pub_name": "Navigation"
       },
+      "location_approvals": [
+        {
+          "approved_coordinate": {
+            "lat": 52.868029,
+            "lng": -1.342615
+          },
+          "checked_at": "2026-10-14",
+          "conclusion": "Owner visually confirmed the current Navigation Inn building at 143 London Road, Shardlow. Retain the pin. Operator and CAMRA use DE72 2HA; preserve PDF postcode DE72 2WA as source data. Location discrepancy reviewed; postal delivery postcode not independently proven.",
+          "listed": "DE72 2WA",
+          "owner_instruction": "yes",
+          "pub_name": "Navigation",
+          "reference": "DE72 2HA",
+          "review_map_url": "https://www.google.com/maps/search/?api=1&query=52.868029%2C-1.342615",
+          "reviewed_by": "bristolbagpiper",
+          "source_url": "https://camra.org.uk/pubs/143265",
+          "supporting_address_urls": [
+            "https://navigationinnshardlow.com/our-menus"
+          ]
+        }
+      ],
       "verified_pin": {
         "evidence": [
           {
@@ -72604,6 +72645,22 @@
             "reference_postcode": "DE72 2WA",
             "source": "camra-and-official-address",
             "url": "https://camra.org.uk/pubs/navigation-inn-shardlow-143265"
+          },
+          {
+            "checked_at": "2026-10-14",
+            "match": "owner_confirmed_existing_pub_building",
+            "reference_coordinate": {
+              "lat": 52.868029,
+              "lng": -1.342615
+            },
+            "reference_name": "Navigation Inn",
+            "reference_postcode": "DE72 2HA",
+            "reviewed_by": "bristolbagpiper",
+            "source": "manual_named_place_map",
+            "supporting_address_urls": [
+              "https://navigationinnshardlow.com/our-menus"
+            ],
+            "url": "https://www.google.com/maps/search/?api=1&query=52.868029%2C-1.342615"
           }
         ],
         "lat": 52.868029,
@@ -72611,6 +72668,24 @@
         "metadata_issue": {
           "field": "postcode",
           "listed": "DE72 2WA",
+          "owner_review": {
+            "approved_coordinate": {
+              "lat": 52.868029,
+              "lng": -1.342615
+            },
+            "checked_at": "2026-10-14",
+            "conclusion": "Owner visually confirmed the current Navigation Inn building at 143 London Road, Shardlow. Retain the pin. Operator and CAMRA use DE72 2HA; preserve PDF postcode DE72 2WA as source data. Location discrepancy reviewed; postal delivery postcode not independently proven.",
+            "listed": "DE72 2WA",
+            "owner_instruction": "yes",
+            "pub_name": "Navigation",
+            "reference": "DE72 2HA",
+            "review_map_url": "https://www.google.com/maps/search/?api=1&query=52.868029%2C-1.342615",
+            "reviewed_by": "bristolbagpiper",
+            "source_url": "https://camra.org.uk/pubs/143265",
+            "supporting_address_urls": [
+              "https://navigationinnshardlow.com/our-menus"
+            ]
+          },
           "reference": "DE72 2HA",
           "source_url": "https://camra.org.uk/pubs/143265"
         },

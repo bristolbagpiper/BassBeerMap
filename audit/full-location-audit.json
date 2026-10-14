@@ -2,69 +2,6 @@
   "records": [
     {
       "actionable": true,
-      "area": "Gloucs & Bristol",
-      "checked_at": "2026-10-10",
-      "comparisons": [
-        {
-          "name_matches": 0,
-          "postcode_matches": 3,
-          "queried_postcode": "BS8 4DR",
-          "status": "no_name_match"
-        },
-        {
-          "address": "The Mall Public House, 66 The Mall, Clifton, Bristol",
-          "difference_metres": 49.6,
-          "lat": 51.455958,
-          "lng": -2.621367,
-          "name": "The Mall",
-          "postcode": "BS8 4JG",
-          "queried_postcode": "BS8 4JG",
-          "status": "nearby",
-          "url": "https://ratings.food.gov.uk/business/312118"
-        }
-      ],
-      "confidence": "existing_evidence_needs_corroboration",
-      "country": "England",
-      "dispense": "H",
-      "independent_of_pin": true,
-      "last": "2026 Q1",
-      "listing": {
-        "postcode": "BS8 4DR",
-        "pub_name": "Mall"
-      },
-      "notes": "",
-      "owner_reviewed": false,
-      "pg": "Guest",
-      "pin": {
-        "lat": 51.45637530833333,
-        "lng": -2.621618991666667
-      },
-      "place_name": "Bristol: Clifton",
-      "postcode": "BS8 4DR",
-      "priority": 0,
-      "pub_name": "Mall",
-      "reasons": [
-        "Directory postcode differs from reviewed reference postcode"
-      ],
-      "reference": {
-        "address": "The Mall Public House, 66 The Mall, Clifton, Bristol",
-        "difference_metres": 49.6,
-        "lat": 51.455958,
-        "lng": -2.621367,
-        "name": "The Mall",
-        "postcode": "BS8 4JG",
-        "queried_postcode": "BS8 4JG",
-        "status": "nearby",
-        "url": "https://ratings.food.gov.uk/business/312118"
-      },
-      "status": "nearby",
-      "venue_id": "v-446b9fc7-c4e0-5040-91f3-8dbe02bb46a1",
-      "warnings": [
-        "FSA coordinate is 25-50m away; informational only"
-      ]
-    },
-    {
-      "actionable": true,
       "area": "Warwickshire",
       "checked_at": "2026-10-10",
       "comparisons": [
@@ -17078,6 +17015,68 @@
       "venue_id": "v-1eeb9ca3-ff17-56b1-8201-b90e0123d8d2",
       "warnings": [
         "FSA comparison is inconclusive; absence of a match does not contradict accepted evidence"
+      ]
+    },
+    {
+      "actionable": false,
+      "area": "Gloucs & Bristol",
+      "checked_at": "2026-10-10",
+      "comparisons": [
+        {
+          "name_matches": 0,
+          "postcode_matches": 3,
+          "queried_postcode": "BS8 4DR",
+          "status": "no_name_match"
+        },
+        {
+          "address": "The Mall Public House, 66 The Mall, Clifton, Bristol",
+          "difference_metres": 49.6,
+          "lat": 51.455958,
+          "lng": -2.621367,
+          "name": "The Mall",
+          "postcode": "BS8 4JG",
+          "queried_postcode": "BS8 4JG",
+          "status": "nearby",
+          "url": "https://ratings.food.gov.uk/business/312118"
+        }
+      ],
+      "confidence": "owner_reviewed",
+      "country": "England",
+      "dispense": "H",
+      "independent_of_pin": true,
+      "last": "2026 Q1",
+      "listing": {
+        "postcode": "BS8 4DR",
+        "pub_name": "Mall"
+      },
+      "notes": "",
+      "owner_reviewed": true,
+      "pg": "Guest",
+      "pin": {
+        "lat": 51.45637530833333,
+        "lng": -2.621618991666667
+      },
+      "place_name": "Bristol: Clifton",
+      "postcode": "BS8 4DR",
+      "priority": 2,
+      "pub_name": "Mall",
+      "reasons": [],
+      "reference": {
+        "address": "The Mall Public House, 66 The Mall, Clifton, Bristol",
+        "difference_metres": 49.6,
+        "lat": 51.455958,
+        "lng": -2.621367,
+        "name": "The Mall",
+        "postcode": "BS8 4JG",
+        "queried_postcode": "BS8 4JG",
+        "status": "nearby",
+        "url": "https://ratings.food.gov.uk/business/312118"
+      },
+      "status": "nearby",
+      "venue_id": "v-446b9fc7-c4e0-5040-91f3-8dbe02bb46a1",
+      "warnings": [
+        "Owner reviewed this postcode discrepancy and confirmed the displayed pub building; listing postcode retained for provenance",
+        "FSA coordinate is 25-50m away; informational only"
       ]
     },
     {
@@ -54363,11 +54362,11 @@
   ],
   "schema_version": 1,
   "summary": {
-    "actionable_count": 18,
+    "actionable_count": 17,
     "confidence_counts": {
-      "existing_evidence_needs_corroboration": 570,
+      "existing_evidence_needs_corroboration": 569,
       "independent_coordinate_agreement": 435,
-      "owner_reviewed": 39
+      "owner_reviewed": 40
     },
     "counts": {
       "ambiguous_or_missing_coordinates": 63,

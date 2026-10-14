@@ -2,22 +2,22 @@
 
 Locations: 1044
 
-Actionable findings: 18
+Actionable findings: 17
 Locations with informational observations: 593 (may also have an actionable finding)
 
 ## Results
 
-- nearby: 102
 - coordinate_agreement: 459
 - ambiguous_or_missing_coordinates: 63
+- nearby: 102
 - coordinate_disagreement: 241
 - no_name_match: 179
 
 ## Confidence
 
-- existing_evidence_needs_corroboration: 570
 - independent_coordinate_agreement: 435
-- owner_reviewed: 39
+- existing_evidence_needs_corroboration: 569
+- owner_reviewed: 40
 
 ## Limits
 
@@ -31,7 +31,6 @@ Locations with informational observations: 593 (may also have an actionable find
 
 | Pub | Place | Postcode | Result | Classification | Detail |
 |---|---|---|---|---|---|
-| Mall | Bristol: Clifton | BS8 4DR | nearby | Actionable | Directory postcode differs from reviewed reference postcode; FSA coordinate is 25-50m away; informational only |
 | Merchants | Rugby | CV21 3AW | coordinate_agreement | Actionable | Directory postcode differs from reviewed reference postcode |
 | Mount Pleasant Inn | Castle Gresley | DE11 9JE | ambiguous_or_missing_coordinates | Actionable | Directory postcode differs from reviewed reference postcode; FSA comparison is inconclusive; absence of a match does not contradict accepted evidence |
 | Navigation | Shardlow | DE72 2WA | coordinate_agreement | Actionable | Directory postcode differs from reviewed reference postcode |
@@ -363,6 +362,7 @@ Locations with informational observations: 593 (may also have an actionable find
 | Lyppard Grange | Worcester: Lyppard Grange | WR4 0DZ | coordinate_disagreement | Informational | FSA coordinate is 52.4m from the accepted pin; informational only because the FSA geocode may be approximate |
 | Lyric | Soho W1D | W1D 7LT | no_name_match | Informational | FSA comparison is inconclusive; absence of a match does not contradict accepted evidence |
 | Lytham Cricket Sports Club (PMC) | Lytham St Annes | FY8 5QD | no_name_match | Informational | FSA comparison is inconclusive; absence of a match does not contradict accepted evidence |
+| Mall | Bristol: Clifton | BS8 4DR | nearby | Informational | Owner reviewed this postcode discrepancy and confirmed the displayed pub building; listing postcode retained for provenance; FSA coordinate is 25-50m away; informational only |
 | Mall Tavern | Kensington W8 | W8 4RU | nearby | Informational | FSA coordinate is 25-50m away; informational only |
 | Malt | Aston on Trent | DE72 2AA | ambiguous_or_missing_coordinates | Informational | FSA comparison is inconclusive; absence of a match does not contradict accepted evidence |
 | Malt Shovel | Northampton | NN1 1QF | coordinate_disagreement | Informational | FSA coordinate is 78.4m from the accepted pin; informational only because the FSA geocode may be approximate |

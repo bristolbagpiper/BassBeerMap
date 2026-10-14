@@ -11209,7 +11209,7 @@
       "warnings": []
     },
     "v-446b9fc7-c4e0-5040-91f3-8dbe02bb46a1": {
-      "actionable": true,
+      "actionable": false,
       "checked_at": "2026-10-10",
       "comparisons": [
         {
@@ -11230,21 +11230,19 @@
           "url": "https://ratings.food.gov.uk/business/312118"
         }
       ],
-      "confidence": "existing_evidence_needs_corroboration",
+      "confidence": "owner_reviewed",
       "independent_of_pin": true,
       "listing": {
         "postcode": "BS8 4DR",
         "pub_name": "Mall"
       },
-      "owner_reviewed": false,
+      "owner_reviewed": true,
       "pin": {
         "lat": 51.45637530833333,
         "lng": -2.621618991666667
       },
-      "priority": 0,
-      "reasons": [
-        "Directory postcode differs from reviewed reference postcode"
-      ],
+      "priority": 2,
+      "reasons": [],
       "reference": {
         "address": "The Mall Public House, 66 The Mall, Clifton, Bristol",
         "difference_metres": 49.6,
@@ -11258,6 +11256,7 @@
       },
       "status": "nearby",
       "warnings": [
+        "Owner reviewed this postcode discrepancy and confirmed the displayed pub building; listing postcode retained for provenance",
         "FSA coordinate is 25-50m away; informational only"
       ]
     },

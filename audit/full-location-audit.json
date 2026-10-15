@@ -1076,7 +1076,7 @@
     {
       "actionable": false,
       "area": "Staffordshire",
-      "checked_at": "2026-10-09",
+      "checked_at": "2026-10-15",
       "comparisons": [
         {
           "name_matches": 0,
@@ -2529,7 +2529,7 @@
     {
       "actionable": false,
       "area": "Derbyshire",
-      "checked_at": "2026-10-09",
+      "checked_at": "2026-10-15",
       "comparisons": [
         {
           "address": "Alfreton Road, , Little Eaton",
@@ -3403,7 +3403,7 @@
     {
       "actionable": false,
       "area": "Bedfordshire",
-      "checked_at": "2026-10-09",
+      "checked_at": "2026-10-15",
       "comparisons": [
         {
           "address": "20 High Street, Leighton Buzzard",
@@ -3623,7 +3623,7 @@
     {
       "actionable": false,
       "area": "Staffordshire",
-      "checked_at": "2026-10-09",
+      "checked_at": "2026-10-15",
       "comparisons": [
         {
           "address": "Black Swan Inn, 4 Market Street, Uttoxeter",
@@ -5386,7 +5386,7 @@
     {
       "actionable": false,
       "area": "Warwickshire",
-      "checked_at": "2026-10-09",
+      "checked_at": "2026-10-15",
       "comparisons": [
         {
           "name_matches": 1,
@@ -5935,7 +5935,7 @@
     {
       "actionable": false,
       "area": "Derbyshire",
-      "checked_at": "2026-10-09",
+      "checked_at": "2026-10-15",
       "comparisons": [
         {
           "address": "Castle Street, Castleton, Hope Valley Derbyshire",
@@ -6816,13 +6816,18 @@
     {
       "actionable": false,
       "area": "Leicestershire",
-      "checked_at": "2026-10-09",
+      "checked_at": "2026-10-15",
       "comparisons": [
         {
-          "name_matches": 1,
-          "postcode_matches": 1,
+          "address": "Coach And Horses, 2 Leicester Road, Kibworth Harcourt, Leicestershire",
+          "difference_metres": 231.2,
+          "lat": 52.542711,
+          "lng": -0.996319,
+          "name": "The Coach And Horses Kibworth",
+          "postcode": "LE8 0NN",
           "queried_postcode": "LE8 0NN",
-          "status": "ambiguous_or_missing_coordinates"
+          "status": "coordinate_disagreement",
+          "url": "https://ratings.food.gov.uk/business/1999625"
         }
       ],
       "confidence": "existing_evidence_needs_corroboration",
@@ -6847,15 +6852,20 @@
       "pub_name": "Coach and Horses",
       "reasons": [],
       "reference": {
-        "name_matches": 1,
-        "postcode_matches": 1,
+        "address": "Coach And Horses, 2 Leicester Road, Kibworth Harcourt, Leicestershire",
+        "difference_metres": 231.2,
+        "lat": 52.542711,
+        "lng": -0.996319,
+        "name": "The Coach And Horses Kibworth",
+        "postcode": "LE8 0NN",
         "queried_postcode": "LE8 0NN",
-        "status": "ambiguous_or_missing_coordinates"
+        "status": "coordinate_disagreement",
+        "url": "https://ratings.food.gov.uk/business/1999625"
       },
-      "status": "ambiguous_or_missing_coordinates",
+      "status": "coordinate_disagreement",
       "venue_id": "v-34d0ad6f-212b-560b-a6c2-59b434c9eb31",
       "warnings": [
-        "FSA comparison is inconclusive; absence of a match does not contradict accepted evidence"
+        "FSA coordinate is 231.2m from the accepted pin; informational only because the FSA geocode may be approximate"
       ]
     },
     {
@@ -8276,7 +8286,7 @@
     {
       "actionable": false,
       "area": "Essex",
-      "checked_at": "2026-10-09",
+      "checked_at": "2026-10-15",
       "comparisons": [
         {
           "address": "The Crooked Billet, 51 High Street, Leigh-On-Sea, Essex",
@@ -8376,7 +8386,7 @@
     {
       "actionable": false,
       "area": "North Wales",
-      "checked_at": "2026-10-09",
+      "checked_at": "2026-10-15",
       "comparisons": [
         {
           "name_matches": 1,
@@ -11820,7 +11830,7 @@
     {
       "actionable": false,
       "area": "Leicestershire",
-      "checked_at": "2026-10-09",
+      "checked_at": "2026-10-15",
       "comparisons": [
         {
           "address": "Barton Road, Carlton, Nuneaton, Leicestershire",
@@ -12857,7 +12867,7 @@
     {
       "actionable": false,
       "area": "Warwickshire",
-      "checked_at": "2026-10-09",
+      "checked_at": "2026-10-15",
       "comparisons": [
         {
           "address": "Great Western Hotel, Bishops Itchington, Southam",
@@ -14009,7 +14019,7 @@
     {
       "actionable": false,
       "area": "Lincolnshire",
-      "checked_at": "2026-10-09",
+      "checked_at": "2026-10-15",
       "comparisons": [
         {
           "address": "148 Victoria Street, , Grimsby",
@@ -14574,7 +14584,7 @@
     {
       "actionable": false,
       "area": "Derbyshire",
-      "checked_at": "2026-10-09",
+      "checked_at": "2026-10-15",
       "comparisons": [
         {
           "address": "33 St John Street, Ashbourne, Derbyshire",
@@ -15339,7 +15349,7 @@
     {
       "actionable": false,
       "area": "Isle of Wight",
-      "checked_at": "2026-10-09",
+      "checked_at": "2026-10-15",
       "comparisons": [
         {
           "address": "2 Esplanade, Ryde, Isle Of Wight",
@@ -16104,7 +16114,7 @@
     {
       "actionable": false,
       "area": "Derbyshire",
-      "checked_at": "2026-10-09",
+      "checked_at": "2026-10-15",
       "comparisons": [
         {
           "address": "Cromford Road, Wirksworth, Derbyshire",
@@ -17937,7 +17947,7 @@
     {
       "actionable": false,
       "area": "Mid Wales",
-      "checked_at": "2026-10-09",
+      "checked_at": "2026-10-15",
       "comparisons": [
         {
           "name_matches": 0,
@@ -19166,7 +19176,7 @@
     {
       "actionable": false,
       "area": "Leicestershire",
-      "checked_at": "2026-10-09",
+      "checked_at": "2026-10-15",
       "comparisons": [
         {
           "address": "134 Main Street, , Woodhouse Eaves",
@@ -21246,7 +21256,7 @@
     {
       "actionable": false,
       "area": "Leicestershire",
-      "checked_at": "2026-10-09",
+      "checked_at": "2026-10-15",
       "comparisons": [
         {
           "name_matches": 0,
@@ -22376,7 +22386,7 @@
     {
       "actionable": false,
       "area": "Gloucs & Bristol",
-      "checked_at": "2026-10-09",
+      "checked_at": "2026-10-15",
       "comparisons": [
         {
           "name_matches": 0,
@@ -23506,7 +23516,7 @@
     {
       "actionable": false,
       "area": "West Midlands",
-      "checked_at": "2026-10-09",
+      "checked_at": "2026-10-15",
       "comparisons": [
         {
           "address": "The Royal Oak Public House, 70 Compton Road, Wolverhampton, West Midlands",
@@ -23891,7 +23901,7 @@
     {
       "actionable": false,
       "area": "Shropshire",
-      "checked_at": "2026-10-09",
+      "checked_at": "2026-10-15",
       "comparisons": [
         {
           "name_matches": 0,
@@ -24956,7 +24966,7 @@
     {
       "actionable": false,
       "area": "Staffordshire",
-      "checked_at": "2026-10-09",
+      "checked_at": "2026-10-15",
       "comparisons": [
         {
           "address": "Spread Eagle Hotel, Church Road, Rolleston on Dove, Burton upon Trent",
@@ -30141,7 +30151,7 @@
     {
       "actionable": false,
       "area": "Nottinghamshire",
-      "checked_at": "2026-10-09",
+      "checked_at": "2026-10-15",
       "comparisons": [
         {
           "address": "Woodlark Inn, Church Street, Lambley, Nottinghamshire",
@@ -31094,7 +31104,7 @@
     {
       "actionable": false,
       "area": "Mid Wales",
-      "checked_at": "2026-10-09",
+      "checked_at": "2026-10-15",
       "comparisons": [
         {
           "address": "Brecon Road, Penycae, Swansea",
@@ -31412,7 +31422,7 @@
     {
       "actionable": false,
       "area": "Leicestershire",
-      "checked_at": "2026-10-09",
+      "checked_at": "2026-10-15",
       "comparisons": [
         {
           "address": "The Ashby Tavern, 62 Ashby Road, Hinckley, Leicestershire",
@@ -31783,7 +31793,7 @@
     {
       "actionable": false,
       "area": "Greater London",
-      "checked_at": "2026-10-09",
+      "checked_at": "2026-10-15",
       "comparisons": [
         {
           "address": "BARLEY MOW 8 DORSET STREET, , LONDON",
@@ -32101,7 +32111,7 @@
     {
       "actionable": false,
       "area": "Staffordshire",
-      "checked_at": "2026-10-09",
+      "checked_at": "2026-10-15",
       "comparisons": [
         {
           "address": "27 Main Street, Whittington, Lichfield, Staffordshire",
@@ -32313,7 +32323,7 @@
     {
       "actionable": false,
       "area": "Cambridgeshire",
-      "checked_at": "2026-10-09",
+      "checked_at": "2026-10-15",
       "comparisons": [
         {
           "address": "Public House The Black Bull 32 Post Street, , Godmanchester, Cambridgeshire",
@@ -32790,7 +32800,7 @@
     {
       "actionable": false,
       "area": "Leicestershire",
-      "checked_at": "2026-10-09",
+      "checked_at": "2026-10-15",
       "comparisons": [
         {
           "address": "The Blue Bell, 23 The Callis, Ashby De La Zouch, Leicestershire",
@@ -33373,7 +33383,7 @@
     {
       "actionable": false,
       "area": "Durham",
-      "checked_at": "2026-10-09",
+      "checked_at": "2026-10-15",
       "comparisons": [
         {
           "address": "Britannia Inn, 1 Archer Street, DARLINGTON",
@@ -35970,7 +35980,7 @@
     {
       "actionable": false,
       "area": "Staffordshire",
-      "checked_at": "2026-10-09",
+      "checked_at": "2026-10-15",
       "comparisons": [
         {
           "address": "Coopers Tavern, 43 Cross Street, Burton upon Trent",
@@ -37772,7 +37782,7 @@
     {
       "actionable": false,
       "area": "Greater London",
-      "checked_at": "2026-10-09",
+      "checked_at": "2026-10-15",
       "comparisons": [
         {
           "address": "15 Highgate Road, , London",
@@ -41959,7 +41969,7 @@
     {
       "actionable": false,
       "area": "Derbyshire",
-      "checked_at": "2026-10-09",
+      "checked_at": "2026-10-15",
       "comparisons": [
         {
           "address": "Lea Main Road Lea Matlock Derbyshire",
@@ -42701,7 +42711,7 @@
     {
       "actionable": false,
       "area": "Nottinghamshire",
-      "checked_at": "2026-10-09",
+      "checked_at": "2026-10-15",
       "comparisons": [
         {
           "address": "11 Stodman Street, Newark On Trent",
@@ -43178,7 +43188,7 @@
     {
       "actionable": false,
       "area": "Warwickshire",
-      "checked_at": "2026-10-09",
+      "checked_at": "2026-10-15",
       "comparisons": [
         {
           "address": "83 Coleshill Road, , Atherstone, Warwickshire",
@@ -44450,7 +44460,7 @@
     {
       "actionable": false,
       "area": "Isle of Wight",
-      "checked_at": "2026-10-09",
+      "checked_at": "2026-10-15",
       "comparisons": [
         {
           "address": "24A Holyrood Street, Newport, Isle Of Wight",
@@ -45669,7 +45679,7 @@
     {
       "actionable": false,
       "area": "Merseyside",
-      "checked_at": "2026-10-09",
+      "checked_at": "2026-10-15",
       "comparisons": [
         {
           "address": "34 Hope Street, , Liverpool",
@@ -47206,7 +47216,7 @@
     {
       "actionable": false,
       "area": "South Wales",
-      "checked_at": "2026-10-09",
+      "checked_at": "2026-10-15",
       "comparisons": [
         {
           "address": "Rock Inn 98 John Street, , Porthcawl, Bridgend",
@@ -47312,7 +47322,7 @@
     {
       "actionable": false,
       "area": "Warwickshire",
-      "checked_at": "2026-10-09",
+      "checked_at": "2026-10-15",
       "comparisons": [
         {
           "address": "Roebuck Inn, 57 Smith Street, , Warwick",
@@ -47365,7 +47375,7 @@
     {
       "actionable": false,
       "area": "East Yorkshire",
-      "checked_at": "2026-10-09",
+      "checked_at": "2026-10-15",
       "comparisons": [
         {
           "address": "High Street, Flamborough, Bridlington",
@@ -47524,7 +47534,7 @@
     {
       "actionable": false,
       "area": "Warwickshire",
-      "checked_at": "2026-10-09",
+      "checked_at": "2026-10-15",
       "comparisons": [
         {
           "address": "The Royal Oak, 4 The Square, , Nuneaton",
@@ -47948,7 +47958,7 @@
     {
       "actionable": false,
       "area": "Derbyshire",
-      "checked_at": "2026-10-09",
+      "checked_at": "2026-10-15",
       "comparisons": [
         {
           "address": "Rutland Cottage, 162 Heanor Road, , Ilkeston",
@@ -48213,7 +48223,7 @@
     {
       "actionable": false,
       "area": "Derbyshire",
-      "checked_at": "2026-10-09",
+      "checked_at": "2026-10-15",
       "comparisons": [
         {
           "address": "THE SHAKESPEARE INN 117 LONDON ROAD, SHARDLOW, DERBY",
@@ -52188,7 +52198,7 @@
     {
       "actionable": false,
       "area": "Staffordshire",
-      "checked_at": "2026-10-09",
+      "checked_at": "2026-10-15",
       "comparisons": [
         {
           "address": "89 High Street, Wolstanton, Newcastle Under Lyme",
@@ -53884,7 +53894,7 @@
     {
       "actionable": false,
       "area": "Greater London",
-      "checked_at": "2026-10-09",
+      "checked_at": "2026-10-15",
       "comparisons": [
         {
           "address": "206 Archway Road, Hornsey, London",
@@ -54368,9 +54378,9 @@
       "owner_reviewed": 44
     },
     "counts": {
-      "ambiguous_or_missing_coordinates": 63,
+      "ambiguous_or_missing_coordinates": 62,
       "coordinate_agreement": 459,
-      "coordinate_disagreement": 241,
+      "coordinate_disagreement": 242,
       "nearby": 102,
       "no_name_match": 179
     },

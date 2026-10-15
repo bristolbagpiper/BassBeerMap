@@ -9,9 +9,9 @@ Locations with informational observations: 596 (may also have an actionable find
 
 - nearby: 102
 - coordinate_agreement: 459
-- coordinate_disagreement: 241
+- coordinate_disagreement: 242
 - no_name_match: 179
-- ambiguous_or_missing_coordinates: 63
+- ambiguous_or_missing_coordinates: 62
 
 ## Confidence
 
@@ -162,7 +162,7 @@ Locations with informational observations: 596 (may also have an actionable find
 | Cleveland Bay | Eaglescliffe | TS16 0JE | nearby | Informational | FSA coordinate is 25-50m away; informational only |
 | Cliff Inn | Crich | DE4 5DP | coordinate_disagreement | Informational | FSA coordinate is 80.0m from the accepted pin; informational only because the FSA geocode may be approximate |
 | Clifford Arms | Great Haywood | ST18 0SR | no_name_match | Informational | FSA comparison is inconclusive; absence of a match does not contradict accepted evidence |
-| Coach and Horses | Kibworth Harcourt | LE8 0NN | ambiguous_or_missing_coordinates | Informational | FSA comparison is inconclusive; absence of a match does not contradict accepted evidence |
+| Coach and Horses | Kibworth Harcourt | LE8 0NN | coordinate_disagreement | Informational | FSA coordinate is 231.2m from the accepted pin; informational only because the FSA geocode may be approximate |
 | Coach and Horses | Derby: Chester Green | DE1 3RF | ambiguous_or_missing_coordinates | Informational | FSA comparison is inconclusive; absence of a match does not contradict accepted evidence |
 | Coach and Horses | Horsley | DE21 5BQ | coordinate_disagreement | Informational | FSA coordinate is 165.4m from the accepted pin; informational only because the FSA geocode may be approximate |
 | Coach and Horses | Timbersbrook | CW12 3PL | ambiguous_or_missing_coordinates | Informational | FSA comparison is inconclusive; absence of a match does not contradict accepted evidence |

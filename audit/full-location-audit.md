@@ -9,8 +9,8 @@ Locations with informational observations: 596 (may also have an actionable find
 
 - nearby: 102
 - coordinate_agreement: 459
-- coordinate_disagreement: 242
-- no_name_match: 179
+- coordinate_disagreement: 241
+- no_name_match: 180
 - ambiguous_or_missing_coordinates: 62
 
 ## Confidence
@@ -597,7 +597,7 @@ Locations with informational observations: 596 (may also have an actionable find
 | Wheatsheaf | Louth | LN11 9YD | coordinate_disagreement | Informational | FSA coordinate is 53.1m from the accepted pin; informational only because the FSA geocode may be approximate |
 | Wheel Inn | Ashbourne | DE6 1BX | coordinate_disagreement | Informational | FSA coordinate is 71.2m from the accepted pin; informational only because the FSA geocode may be approximate |
 | Whillows | Hartford | CW8 1QL | no_name_match | Informational | FSA comparison is inconclusive; absence of a match does not contradict accepted evidence |
-| White Bear | Middlewich | CW10 9AG | coordinate_disagreement | Informational | FSA coordinate is 110.6m from the accepted pin; informational only because the FSA geocode may be approximate |
+| White Bear | Middlewich | CW10 9AG | no_name_match | Informational | FSA comparison is inconclusive; absence of a match does not contradict accepted evidence |
 | White Cross | Guiseley | LS20 8LY | coordinate_disagreement | Informational | FSA coordinate is 99.4m from the accepted pin; informational only because the FSA geocode may be approximate |
 | White Hart | Belper: Bargate | DE56 0JA | nearby | Informational | FSA coordinate is 25-50m away; informational only |
 | White Hart | Stoke: Smallthorne | ST6 1NT | coordinate_disagreement | Informational | FSA coordinate is 107.7m from the accepted pin; informational only because the FSA geocode may be approximate |

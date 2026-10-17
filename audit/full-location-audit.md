@@ -7,11 +7,11 @@ Locations with informational observations: 596 (may also have an actionable find
 
 ## Results
 
-- nearby: 102
+- nearby: 103
 - coordinate_agreement: 459
 - coordinate_disagreement: 241
 - no_name_match: 180
-- ambiguous_or_missing_coordinates: 62
+- ambiguous_or_missing_coordinates: 61
 
 ## Confidence
 
@@ -445,7 +445,7 @@ Locations with informational observations: 596 (may also have an actionable find
 | Raddle | Hollington | ST10 4HQ | coordinate_disagreement | Informational | FSA coordinate is 224.2m from the accepted pin; informational only because the FSA geocode may be approximate |
 | Railway | Blackheath SE3 | SE3 9LE | nearby | Informational | FSA coordinate is 25-50m away; informational only |
 | Railway | Countesthorpe | LE8 5TD | no_name_match | Informational | FSA comparison is inconclusive; absence of a match does not contradict accepted evidence |
-| Railway | Streatham SW16 | SW16 5SD | ambiguous_or_missing_coordinates | Informational | FSA comparison is inconclusive; absence of a match does not contradict accepted evidence |
+| Railway | Streatham SW16 | SW16 5SD | nearby | Informational | FSA coordinate is 25-50m away; informational only |
 | Railway | Halmerend | ST7 8AG | no_name_match | Informational | FSA comparison is inconclusive; absence of a match does not contradict accepted evidence |
 | Railway Inn | Thorpe on the Hill | LN6 9BS | coordinate_disagreement | Informational | FSA coordinate is 171.6m from the accepted pin; informational only because the FSA geocode may be approximate |
 | Railway Tavern | Ashby-de-la-Zouch | LE65 2PW | coordinate_disagreement | Informational | FSA coordinate is 68.5m from the accepted pin; informational only because the FSA geocode may be approximate |

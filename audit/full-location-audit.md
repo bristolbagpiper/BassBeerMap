@@ -9,8 +9,8 @@ Locations with informational observations: 596 (may also have an actionable find
 
 - nearby: 103
 - coordinate_agreement: 459
-- coordinate_disagreement: 241
-- no_name_match: 180
+- coordinate_disagreement: 242
+- no_name_match: 179
 - ambiguous_or_missing_coordinates: 61
 
 ## Confidence
@@ -118,7 +118,7 @@ Locations with informational observations: 596 (may also have an actionable find
 | Boot | Melbourne | DE73 8FE | no_name_match | Informational | FSA comparison is inconclusive; absence of a match does not contradict accepted evidence |
 | Borough Street Bar | Castle Donington | DE74 2LA | nearby | Informational | FSA coordinate is 25-50m away; informational only |
 | Botanical Arms | Sheffield: Ecclesall Road | S11 8PR | coordinate_disagreement | Informational | FSA coordinate is 57.5m from the accepted pin; informational only because the FSA geocode may be approximate |
-| Bottle and Glass | Normanby | LN8 2HE | no_name_match | Informational | FSA comparison is inconclusive; absence of a match does not contradict accepted evidence |
+| Bottle and Glass | Normanby | LN8 2HE | coordinate_disagreement | Informational | FSA coordinate is 114.9m from the accepted pin; informational only because the FSA geocode may be approximate |
 | Bowls Club (PMC) | Barton-under-Needwood | DE13 8AX | no_name_match | Informational | FSA comparison is inconclusive; absence of a match does not contradict accepted evidence |
 | Bradwell Working Mens Club (PMC) | Newcastle-U-L: Bradwell | ST5 8JA | coordinate_disagreement | Informational | FSA coordinate is 50.5m from the accepted pin; informational only because the FSA geocode may be approximate |
 | Branston Golf & Country Club | Burton U-T: Branston | DE14 3DP | coordinate_disagreement | Informational | FSA coordinate is 484.8m from the accepted pin; informational only because the FSA geocode may be approximate |

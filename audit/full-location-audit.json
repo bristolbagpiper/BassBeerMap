@@ -1641,7 +1641,7 @@
     {
       "actionable": false,
       "area": "Gloucs & Bristol",
-      "checked_at": "2026-10-09",
+      "checked_at": "2026-10-19",
       "comparisons": [
         {
           "address": "185-187 Coronation Road, Southville, Bristol",
@@ -2367,7 +2367,7 @@
     {
       "actionable": false,
       "area": "North Yorkshire",
-      "checked_at": "2026-10-09",
+      "checked_at": "2026-10-19",
       "comparisons": [
         {
           "address": "1 Albert Street, , , Skipton",
@@ -3058,7 +3058,7 @@
     {
       "actionable": false,
       "area": "Leicestershire",
-      "checked_at": "2026-10-09",
+      "checked_at": "2026-10-19",
       "comparisons": [
         {
           "name_matches": 0,
@@ -3103,7 +3103,7 @@
     {
       "actionable": false,
       "area": "Leicestershire",
-      "checked_at": "2026-10-09",
+      "checked_at": "2026-10-19",
       "comparisons": [
         {
           "address": "3 Main Street, Grimston, Melton Mowbray",
@@ -3458,7 +3458,7 @@
     {
       "actionable": false,
       "area": "Staffordshire",
-      "checked_at": "2026-10-09",
+      "checked_at": "2026-10-19",
       "comparisons": [
         {
           "address": "Consall Forge, Consall, Wetley Rocks Stoke-On-Trent",
@@ -4114,7 +4114,7 @@
     {
       "actionable": false,
       "area": "Lincolnshire",
-      "checked_at": "2026-10-09",
+      "checked_at": "2026-10-19",
       "comparisons": [
         {
           "name_matches": 0,
@@ -4159,7 +4159,7 @@
     {
       "actionable": false,
       "area": "Derbyshire",
-      "checked_at": "2026-10-09",
+      "checked_at": "2026-10-19",
       "comparisons": [
         {
           "address": "Scarthin, Cromford, Derbyshire",
@@ -4579,13 +4579,18 @@
     {
       "actionable": false,
       "area": "Lincolnshire",
-      "checked_at": "2026-10-09",
+      "checked_at": "2026-10-19",
       "comparisons": [
         {
-          "name_matches": 0,
-          "postcode_matches": 0,
+          "address": "The Bottle And Glass, 46 Main Street, , Normanby-By-Spital",
+          "difference_metres": 114.9,
+          "lat": 53.380079,
+          "lng": -0.4963099,
+          "name": "The Bottle And Glass",
+          "postcode": "LN8 2HE",
           "queried_postcode": "LN8 2HE",
-          "status": "no_name_match"
+          "status": "coordinate_disagreement",
+          "url": "https://ratings.food.gov.uk/business/234645"
         }
       ],
       "confidence": "existing_evidence_needs_corroboration",
@@ -4610,15 +4615,20 @@
       "pub_name": "Bottle and Glass",
       "reasons": [],
       "reference": {
-        "name_matches": 0,
-        "postcode_matches": 0,
+        "address": "The Bottle And Glass, 46 Main Street, , Normanby-By-Spital",
+        "difference_metres": 114.9,
+        "lat": 53.380079,
+        "lng": -0.4963099,
+        "name": "The Bottle And Glass",
+        "postcode": "LN8 2HE",
         "queried_postcode": "LN8 2HE",
-        "status": "no_name_match"
+        "status": "coordinate_disagreement",
+        "url": "https://ratings.food.gov.uk/business/234645"
       },
-      "status": "no_name_match",
+      "status": "coordinate_disagreement",
       "venue_id": "v-6ac38966-0828-5ba1-b8cb-c2edab36afa1",
       "warnings": [
-        "FSA comparison is inconclusive; absence of a match does not contradict accepted evidence"
+        "FSA coordinate is 114.9m from the accepted pin; informational only because the FSA geocode may be approximate"
       ]
     },
     {
@@ -5034,7 +5044,7 @@
     {
       "actionable": false,
       "area": "Derbyshire",
-      "checked_at": "2026-10-09",
+      "checked_at": "2026-10-19",
       "comparisons": [
         {
           "name_matches": 1,
@@ -5179,7 +5189,7 @@
     {
       "actionable": false,
       "area": "Cheshire",
-      "checked_at": "2026-10-09",
+      "checked_at": "2026-10-19",
       "comparisons": [
         {
           "name_matches": 1,
@@ -5583,7 +5593,7 @@
     {
       "actionable": false,
       "area": "Staffordshire",
-      "checked_at": "2026-10-09",
+      "checked_at": "2026-10-19",
       "comparisons": [
         {
           "name_matches": 0,
@@ -6341,7 +6351,7 @@
     {
       "actionable": false,
       "area": "Staffordshire",
-      "checked_at": "2026-10-09",
+      "checked_at": "2026-10-19",
       "comparisons": [
         {
           "address": "Cheshire Cheese, 48 Chell Street, Hanley, Stoke-On-Trent",
@@ -6561,7 +6571,7 @@
     {
       "actionable": false,
       "area": "Greater London",
-      "checked_at": "2026-10-09",
+      "checked_at": "2026-10-19",
       "comparisons": [
         {
           "name_matches": 0,
@@ -8241,7 +8251,7 @@
     {
       "actionable": false,
       "area": "Staffordshire",
-      "checked_at": "2026-10-09",
+      "checked_at": "2026-10-19",
       "comparisons": [
         {
           "name_matches": 0,
@@ -9348,7 +9358,7 @@
     {
       "actionable": false,
       "area": "Lincolnshire",
-      "checked_at": "2026-10-09",
+      "checked_at": "2026-10-19",
       "comparisons": [
         {
           "address": "Crown And Anchor, Tetney Lock Road, Tetney Lock Grimsby",
@@ -10832,7 +10842,7 @@
     {
       "actionable": false,
       "area": "Staffordshire",
-      "checked_at": "2026-10-09",
+      "checked_at": "2026-10-19",
       "comparisons": [
         {
           "name_matches": 0,
@@ -11785,7 +11795,7 @@
     {
       "actionable": false,
       "area": "Surrey",
-      "checked_at": "2026-10-09",
+      "checked_at": "2026-10-19",
       "comparisons": [
         {
           "name_matches": 0,
@@ -12040,7 +12050,7 @@
     {
       "actionable": false,
       "area": "Leicestershire",
-      "checked_at": "2026-10-09",
+      "checked_at": "2026-10-19",
       "comparisons": [
         {
           "address": "Gelsmour Inn, Rempstone Road, Griffydam, Coalville",
@@ -12557,7 +12567,7 @@
     {
       "actionable": false,
       "area": "Derbyshire",
-      "checked_at": "2026-10-09",
+      "checked_at": "2026-10-19",
       "comparisons": [
         {
           "address": "The Globe Inn, 6 Main Street, Snarestone, Swadlincote",
@@ -13974,7 +13984,7 @@
     {
       "actionable": false,
       "area": "Derbyshire",
-      "checked_at": "2026-10-09",
+      "checked_at": "2026-10-19",
       "comparisons": [
         {
           "name_matches": 1,
@@ -15149,7 +15159,7 @@
     {
       "actionable": false,
       "area": "Warwickshire",
-      "checked_at": "2026-10-09",
+      "checked_at": "2026-10-19",
       "comparisons": [
         {
           "name_matches": 0,
@@ -15724,7 +15734,7 @@
     {
       "actionable": false,
       "area": "Staffordshire",
-      "checked_at": "2026-10-09",
+      "checked_at": "2026-10-19",
       "comparisons": [
         {
           "name_matches": 0,
@@ -18044,7 +18054,7 @@
     {
       "actionable": false,
       "area": "Leicestershire",
-      "checked_at": "2026-10-09",
+      "checked_at": "2026-10-19",
       "comparisons": [
         {
           "address": "Mushroom Hall, Main Street, Albert Village, Swadlincote",
@@ -18976,7 +18986,7 @@
     {
       "actionable": false,
       "area": "Gloucs & Bristol",
-      "checked_at": "2026-10-09",
+      "checked_at": "2026-10-19",
       "comparisons": [
         {
           "name_matches": 0,
@@ -20846,7 +20856,7 @@
     {
       "actionable": false,
       "area": "Derbyshire",
-      "checked_at": "2026-10-09",
+      "checked_at": "2026-10-19",
       "comparisons": [
         {
           "address": "1 Market Place, Wirksworth, Derbyshire",
@@ -22951,7 +22961,7 @@
     {
       "actionable": false,
       "area": "Staffordshire",
-      "checked_at": "2026-10-09",
+      "checked_at": "2026-10-19",
       "comparisons": [
         {
           "address": "86 Church Street, Silverdale, Newcastle Under Lyme",
@@ -24421,7 +24431,7 @@
     {
       "actionable": false,
       "area": "Greater London",
-      "checked_at": "2026-10-09",
+      "checked_at": "2026-10-19",
       "comparisons": [
         {
           "name_matches": 0,
@@ -24776,7 +24786,7 @@
     {
       "actionable": false,
       "area": "Lincolnshire",
-      "checked_at": "2026-10-09",
+      "checked_at": "2026-10-19",
       "comparisons": [
         {
           "address": "Miniture Railway Kings Road, , Cleethorpes",
@@ -26746,7 +26756,7 @@
     {
       "actionable": false,
       "area": "Gloucs & Bristol",
-      "checked_at": "2026-10-09",
+      "checked_at": "2026-10-19",
       "comparisons": [
         {
           "address": "Bradley Stoke District Centre, Bradley Stoke, South Gloucestershire",
@@ -26801,7 +26811,7 @@
     {
       "actionable": false,
       "area": "Tyne and Wear",
-      "checked_at": "2026-10-09",
+      "checked_at": "2026-10-19",
       "comparisons": [
         {
           "name_matches": 0,
@@ -27311,7 +27321,7 @@
     {
       "actionable": false,
       "area": "North Yorkshire",
-      "checked_at": "2026-10-09",
+      "checked_at": "2026-10-19",
       "comparisons": [
         {
           "address": "Whitby Road, Easington",
@@ -28436,7 +28446,7 @@
     {
       "actionable": false,
       "area": "Derbyshire",
-      "checked_at": "2026-10-09",
+      "checked_at": "2026-10-19",
       "comparisons": [
         {
           "address": "Main Street, Biggin, Buxton, Derbyshire",
@@ -30451,7 +30461,7 @@
     {
       "actionable": false,
       "area": "Derbyshire",
-      "checked_at": "2026-10-09",
+      "checked_at": "2026-10-19",
       "comparisons": [
         {
           "name_matches": 0,
@@ -32376,7 +32386,7 @@
     {
       "actionable": false,
       "area": "Somerset",
-      "checked_at": "2026-10-09",
+      "checked_at": "2026-10-19",
       "comparisons": [
         {
           "address": "135 High Street, Weston-Super-Mare",
@@ -32482,7 +32492,7 @@
     {
       "actionable": false,
       "area": "Staffordshire",
-      "checked_at": "2026-10-09",
+      "checked_at": "2026-10-19",
       "comparisons": [
         {
           "address": "Leek Road, Endon, Stoke On Trent",
@@ -33012,7 +33022,7 @@
     {
       "actionable": false,
       "area": "West Yorkshire",
-      "checked_at": "2026-10-09",
+      "checked_at": "2026-10-19",
       "comparisons": [
         {
           "address": "6 Queen Street, Horbury, Wakefield",
@@ -35662,7 +35672,7 @@
     {
       "actionable": false,
       "area": "Staffordshire",
-      "checked_at": "2026-10-09",
+      "checked_at": "2026-10-19",
       "comparisons": [
         {
           "address": "Cock Inn, Newport Road, Woodseaves, Stafford",
@@ -41492,7 +41502,7 @@
     {
       "actionable": false,
       "area": "Staffordshire",
-      "checked_at": "2026-10-09",
+      "checked_at": "2026-10-19",
       "comparisons": [
         {
           "address": "Market Street, Leek, Staffordshire",
@@ -41545,7 +41555,7 @@
     {
       "actionable": false,
       "area": "Merseyside",
-      "checked_at": "2026-10-09",
+      "checked_at": "2026-10-19",
       "comparisons": [
         {
           "address": "174 - 176 Mill Lane, , Greasby, Wirral",
@@ -41704,7 +41714,7 @@
     {
       "actionable": false,
       "area": "Northumberland",
-      "checked_at": "2026-10-09",
+      "checked_at": "2026-10-19",
       "comparisons": [
         {
           "address": "Wansbeck Street, Morpeth, Northumberland",
@@ -44407,7 +44417,7 @@
     {
       "actionable": false,
       "area": "Staffordshire",
-      "checked_at": "2026-10-09",
+      "checked_at": "2026-10-19",
       "comparisons": [
         {
           "address": "81 High Green, , Cannock",
@@ -48700,7 +48710,7 @@
     {
       "actionable": false,
       "area": "Merseyside",
-      "checked_at": "2026-10-09",
+      "checked_at": "2026-10-19",
       "comparisons": [
         {
           "address": "589 Lord Street, Southport, Merseyside",
@@ -49177,7 +49187,7 @@
     {
       "actionable": false,
       "area": "Derbyshire",
-      "checked_at": "2026-10-09",
+      "checked_at": "2026-10-19",
       "comparisons": [
         {
           "address": "28 MAIN STREET, ETWALL, DERBY",
@@ -50926,7 +50936,7 @@
     {
       "actionable": false,
       "area": "Greater London",
-      "checked_at": "2026-10-09",
+      "checked_at": "2026-10-19",
       "comparisons": [
         {
           "address": "Eden Park Hotel 422 Upper Elmers End Road, , Beckenham",
@@ -52516,7 +52526,7 @@
     {
       "actionable": false,
       "area": "Greater London",
-      "checked_at": "2026-10-09",
+      "checked_at": "2026-10-19",
       "comparisons": [
         {
           "address": "50 England's Lane, , London",
@@ -54380,9 +54390,9 @@
     "counts": {
       "ambiguous_or_missing_coordinates": 61,
       "coordinate_agreement": 459,
-      "coordinate_disagreement": 241,
+      "coordinate_disagreement": 242,
       "nearby": 103,
-      "no_name_match": 180
+      "no_name_match": 179
     },
     "informational_count": 596,
     "limitations": [

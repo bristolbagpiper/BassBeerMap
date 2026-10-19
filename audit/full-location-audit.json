@@ -542,69 +542,6 @@
       ]
     },
     {
-      "actionable": true,
-      "area": "Staffordshire",
-      "checked_at": "2026-10-10",
-      "comparisons": [
-        {
-          "name_matches": 0,
-          "postcode_matches": 0,
-          "queried_postcode": "ST10 4DZ",
-          "status": "no_name_match"
-        },
-        {
-          "address": "High Street, Upper Tean, Stoke On Trent",
-          "difference_metres": 105.4,
-          "lat": 52.9536247253418,
-          "lng": -1.98671102523804,
-          "name": "The White Hart",
-          "postcode": "ST10 4DY",
-          "queried_postcode": "ST10 4DY",
-          "status": "coordinate_disagreement",
-          "url": "https://ratings.food.gov.uk/business/1903687"
-        }
-      ],
-      "confidence": "existing_evidence_needs_corroboration",
-      "country": "England",
-      "dispense": "H",
-      "independent_of_pin": true,
-      "last": "2026 Q3",
-      "listing": {
-        "postcode": "ST10 4DZ",
-        "pub_name": "White Hart"
-      },
-      "notes": "",
-      "owner_reviewed": false,
-      "pg": "Perm",
-      "pin": {
-        "lat": 52.9537639,
-        "lng": -1.988268
-      },
-      "place_name": "Tean",
-      "postcode": "ST10 4DZ",
-      "priority": 0,
-      "pub_name": "White Hart",
-      "reasons": [
-        "Directory postcode differs from reviewed reference postcode"
-      ],
-      "reference": {
-        "address": "High Street, Upper Tean, Stoke On Trent",
-        "difference_metres": 105.4,
-        "lat": 52.9536247253418,
-        "lng": -1.98671102523804,
-        "name": "The White Hart",
-        "postcode": "ST10 4DY",
-        "queried_postcode": "ST10 4DY",
-        "status": "coordinate_disagreement",
-        "url": "https://ratings.food.gov.uk/business/1903687"
-      },
-      "status": "coordinate_disagreement",
-      "venue_id": "v-7e863132-ef0a-56a7-b5ff-8c1a74015d3c",
-      "warnings": [
-        "FSA coordinate is 105.4m from the accepted pin; informational only because the FSA geocode may be approximate"
-      ]
-    },
-    {
       "actionable": false,
       "area": "Leicestershire",
       "checked_at": "2026-10-09",
@@ -29253,6 +29190,68 @@
     {
       "actionable": false,
       "area": "Staffordshire",
+      "checked_at": "2026-10-10",
+      "comparisons": [
+        {
+          "name_matches": 0,
+          "postcode_matches": 0,
+          "queried_postcode": "ST10 4DZ",
+          "status": "no_name_match"
+        },
+        {
+          "address": "High Street, Upper Tean, Stoke On Trent",
+          "difference_metres": 105.4,
+          "lat": 52.9536247253418,
+          "lng": -1.98671102523804,
+          "name": "The White Hart",
+          "postcode": "ST10 4DY",
+          "queried_postcode": "ST10 4DY",
+          "status": "coordinate_disagreement",
+          "url": "https://ratings.food.gov.uk/business/1903687"
+        }
+      ],
+      "confidence": "owner_reviewed",
+      "country": "England",
+      "dispense": "H",
+      "independent_of_pin": true,
+      "last": "2026 Q3",
+      "listing": {
+        "postcode": "ST10 4DZ",
+        "pub_name": "White Hart"
+      },
+      "notes": "",
+      "owner_reviewed": true,
+      "pg": "Perm",
+      "pin": {
+        "lat": 52.9537639,
+        "lng": -1.988268
+      },
+      "place_name": "Tean",
+      "postcode": "ST10 4DZ",
+      "priority": 2,
+      "pub_name": "White Hart",
+      "reasons": [],
+      "reference": {
+        "address": "High Street, Upper Tean, Stoke On Trent",
+        "difference_metres": 105.4,
+        "lat": 52.9536247253418,
+        "lng": -1.98671102523804,
+        "name": "The White Hart",
+        "postcode": "ST10 4DY",
+        "queried_postcode": "ST10 4DY",
+        "status": "coordinate_disagreement",
+        "url": "https://ratings.food.gov.uk/business/1903687"
+      },
+      "status": "coordinate_disagreement",
+      "venue_id": "v-7e863132-ef0a-56a7-b5ff-8c1a74015d3c",
+      "warnings": [
+        "Owner reviewed this postcode discrepancy and confirmed the displayed pub building; listing postcode retained for provenance",
+        "FSA coordinate is 105.4m from the accepted pin; informational only because the FSA geocode may be approximate"
+      ]
+    },
+    {
+      "actionable": false,
+      "area": "Staffordshire",
       "checked_at": "2026-10-09",
       "comparisons": [
         {
@@ -54378,11 +54377,11 @@
   ],
   "schema_version": 1,
   "summary": {
-    "actionable_count": 10,
+    "actionable_count": 9,
     "confidence_counts": {
-      "existing_evidence_needs_corroboration": 565,
+      "existing_evidence_needs_corroboration": 564,
       "independent_coordinate_agreement": 432,
-      "owner_reviewed": 47
+      "owner_reviewed": 48
     },
     "counts": {
       "ambiguous_or_missing_coordinates": 61,

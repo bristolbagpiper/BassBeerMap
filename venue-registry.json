@@ -1,6 +1,6 @@
 {
   "location_review": {
-    "active_count": 48,
+    "active_count": 47,
     "records": {
       "v-00a08839-2b8a-5782-b6c7-0bdce4cddb2f": {
         "active": false,
@@ -7791,7 +7791,7 @@
         "venue_id": "v-7df916fa-bd2e-5f55-a3bb-5c3e589f3014"
       },
       "v-7e863132-ef0a-56a7-b5ff-8c1a74015d3c": {
-        "active": true,
+        "active": false,
         "first_seen": "2026-10-02",
         "history": [
           {
@@ -7816,18 +7816,39 @@
               "Directory postcode ST10 4DZ conflicts with reference address ST10 4DY"
             ],
             "status": "review_needed"
+          },
+          {
+            "date": "2026-10-19",
+            "reasons": [],
+            "status": "resolved"
           }
         ],
         "last_checked": "2026-10-19",
         "place_name": "Tean",
         "postcode": "ST10 4DZ",
         "pub_name": "White Hart",
-        "reasons": [
-          "Directory postcode ST10 4DZ conflicts with reference address ST10 4DY"
-        ],
+        "reasons": [],
         "reference": {
           "field": "postcode",
           "listed": "ST10 4DZ",
+          "owner_review": {
+            "approved_coordinate": {
+              "lat": 52.9537639,
+              "lng": -1.988268
+            },
+            "checked_at": "2026-10-19",
+            "conclusion": "Owner visually confirmed the existing White Hart, Tean building in the Google satellite view. Retain the pin. CAMRA lists ST10 4DY; the Bass directory lists ST10 4DZ. Preserve both source values; visual building confirmation does not establish which postcode serves postal delivery.",
+            "listed": "ST10 4DZ",
+            "owner_instruction": "correct",
+            "pub_name": "White Hart",
+            "reference": "ST10 4DY",
+            "review_map_url": "https://www.google.com/maps/place/52%C2%B057%2713.6%22N+1%C2%B059%2717.8%22W/@52.9537639,-1.988268,20z/data=!3m1!1e3",
+            "reviewed_by": "bristolbagpiper",
+            "source_url": "https://camra.org.uk/pubs/128019",
+            "supporting_address_urls": [
+              "https://camra.org.uk/pubs/white-hart-tean-128019"
+            ]
+          },
           "reference": "ST10 4DY",
           "source_url": "https://camra.org.uk/pubs/128019"
         },
@@ -7843,7 +7864,7 @@
           }
         },
         "source_error": null,
-        "status": "review_needed",
+        "status": "resolved",
         "unverified": false,
         "venue_id": "v-7e863132-ef0a-56a7-b5ff-8c1a74015d3c"
       },
@@ -68976,7 +68997,7 @@
       ],
       "current_key": "white hart|tean|st10 4dz",
       "independent_location_check": {
-        "actionable": true,
+        "actionable": false,
         "checked_at": "2026-10-10",
         "comparisons": [
           {
@@ -68997,21 +69018,19 @@
             "url": "https://ratings.food.gov.uk/business/1903687"
           }
         ],
-        "confidence": "existing_evidence_needs_corroboration",
+        "confidence": "owner_reviewed",
         "independent_of_pin": true,
         "listing": {
           "postcode": "ST10 4DZ",
           "pub_name": "White Hart"
         },
-        "owner_reviewed": false,
+        "owner_reviewed": true,
         "pin": {
           "lat": 52.9537639,
           "lng": -1.988268
         },
-        "priority": 0,
-        "reasons": [
-          "Directory postcode differs from reviewed reference postcode"
-        ],
+        "priority": 2,
+        "reasons": [],
         "reference": {
           "address": "High Street, Upper Tean, Stoke On Trent",
           "difference_metres": 105.4,
@@ -69025,6 +69044,7 @@
         },
         "status": "coordinate_disagreement",
         "warnings": [
+          "Owner reviewed this postcode discrepancy and confirmed the displayed pub building; listing postcode retained for provenance",
           "FSA coordinate is 105.4m from the accepted pin; informational only because the FSA geocode may be approximate"
         ]
       },
@@ -69039,6 +69059,26 @@
         "postcode": "ST10 4DZ",
         "pub_name": "White Hart"
       },
+      "location_approvals": [
+        {
+          "approved_coordinate": {
+            "lat": 52.9537639,
+            "lng": -1.988268
+          },
+          "checked_at": "2026-10-19",
+          "conclusion": "Owner visually confirmed the existing White Hart, Tean building in the Google satellite view. Retain the pin. CAMRA lists ST10 4DY; the Bass directory lists ST10 4DZ. Preserve both source values; visual building confirmation does not establish which postcode serves postal delivery.",
+          "listed": "ST10 4DZ",
+          "owner_instruction": "correct",
+          "pub_name": "White Hart",
+          "reference": "ST10 4DY",
+          "review_map_url": "https://www.google.com/maps/place/52%C2%B057%2713.6%22N+1%C2%B059%2717.8%22W/@52.9537639,-1.988268,20z/data=!3m1!1e3",
+          "reviewed_by": "bristolbagpiper",
+          "source_url": "https://camra.org.uk/pubs/128019",
+          "supporting_address_urls": [
+            "https://camra.org.uk/pubs/white-hart-tean-128019"
+          ]
+        }
+      ],
       "verification_attempt": {
         "checked_at": "2026-10-19",
         "evidence": {
@@ -69078,6 +69118,22 @@
             "reference_postcode": "ST10 4DY",
             "source": "camra",
             "url": "https://camra.org.uk/pubs/128019"
+          },
+          {
+            "checked_at": "2026-10-19",
+            "match": "owner_confirmed_existing_pub_building",
+            "reference_coordinate": {
+              "lat": 52.9537639,
+              "lng": -1.988268
+            },
+            "reference_name": "White Hart, Tean",
+            "reference_postcode": "ST10 4DY",
+            "reviewed_by": "bristolbagpiper",
+            "source": "manual_named_place_map",
+            "supporting_address_urls": [
+              "https://camra.org.uk/pubs/white-hart-tean-128019"
+            ],
+            "url": "https://www.google.com/maps/place/52%C2%B057%2713.6%22N+1%C2%B059%2717.8%22W/@52.9537639,-1.988268,20z/data=!3m1!1e3"
           }
         ],
         "lat": 52.9537639,
@@ -69085,6 +69141,24 @@
         "metadata_issue": {
           "field": "postcode",
           "listed": "ST10 4DZ",
+          "owner_review": {
+            "approved_coordinate": {
+              "lat": 52.9537639,
+              "lng": -1.988268
+            },
+            "checked_at": "2026-10-19",
+            "conclusion": "Owner visually confirmed the existing White Hart, Tean building in the Google satellite view. Retain the pin. CAMRA lists ST10 4DY; the Bass directory lists ST10 4DZ. Preserve both source values; visual building confirmation does not establish which postcode serves postal delivery.",
+            "listed": "ST10 4DZ",
+            "owner_instruction": "correct",
+            "pub_name": "White Hart",
+            "reference": "ST10 4DY",
+            "review_map_url": "https://www.google.com/maps/place/52%C2%B057%2713.6%22N+1%C2%B059%2717.8%22W/@52.9537639,-1.988268,20z/data=!3m1!1e3",
+            "reviewed_by": "bristolbagpiper",
+            "source_url": "https://camra.org.uk/pubs/128019",
+            "supporting_address_urls": [
+              "https://camra.org.uk/pubs/white-hart-tean-128019"
+            ]
+          },
           "reference": "ST10 4DY",
           "source_url": "https://camra.org.uk/pubs/128019"
         },

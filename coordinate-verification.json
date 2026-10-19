@@ -28548,6 +28548,22 @@
           "reference_postcode": "ST10 4DY",
           "source": "camra",
           "url": "https://camra.org.uk/pubs/128019"
+        },
+        {
+          "checked_at": "2026-10-19",
+          "match": "owner_confirmed_existing_pub_building",
+          "reference_coordinate": {
+            "lat": 52.9537639,
+            "lng": -1.988268
+          },
+          "reference_name": "White Hart, Tean",
+          "reference_postcode": "ST10 4DY",
+          "reviewed_by": "bristolbagpiper",
+          "source": "manual_named_place_map",
+          "supporting_address_urls": [
+            "https://camra.org.uk/pubs/white-hart-tean-128019"
+          ],
+          "url": "https://www.google.com/maps/place/52%C2%B057%2713.6%22N+1%C2%B059%2717.8%22W/@52.9537639,-1.988268,20z/data=!3m1!1e3"
         }
       ],
       "lat": 52.9537639,
@@ -28555,6 +28571,24 @@
       "metadata_issue": {
         "field": "postcode",
         "listed": "ST10 4DZ",
+        "owner_review": {
+          "approved_coordinate": {
+            "lat": 52.9537639,
+            "lng": -1.988268
+          },
+          "checked_at": "2026-10-19",
+          "conclusion": "Owner visually confirmed the existing White Hart, Tean building in the Google satellite view. Retain the pin. CAMRA lists ST10 4DY; the Bass directory lists ST10 4DZ. Preserve both source values; visual building confirmation does not establish which postcode serves postal delivery.",
+          "listed": "ST10 4DZ",
+          "owner_instruction": "correct",
+          "pub_name": "White Hart",
+          "reference": "ST10 4DY",
+          "review_map_url": "https://www.google.com/maps/place/52%C2%B057%2713.6%22N+1%C2%B059%2717.8%22W/@52.9537639,-1.988268,20z/data=!3m1!1e3",
+          "reviewed_by": "bristolbagpiper",
+          "source_url": "https://camra.org.uk/pubs/128019",
+          "supporting_address_urls": [
+            "https://camra.org.uk/pubs/white-hart-tean-128019"
+          ]
+        },
         "reference": "ST10 4DY",
         "source_url": "https://camra.org.uk/pubs/128019"
       },

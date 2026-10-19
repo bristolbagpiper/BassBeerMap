@@ -2,7 +2,7 @@
 
 Locations: 1044
 
-Actionable findings: 10
+Actionable findings: 9
 Locations with informational observations: 596 (may also have an actionable finding)
 
 ## Results
@@ -16,8 +16,8 @@ Locations with informational observations: 596 (may also have an actionable find
 ## Confidence
 
 - independent_coordinate_agreement: 432
-- existing_evidence_needs_corroboration: 565
-- owner_reviewed: 47
+- existing_evidence_needs_corroboration: 564
+- owner_reviewed: 48
 
 ## Limits
 
@@ -40,7 +40,6 @@ Locations with informational observations: 596 (may also have an actionable find
 | Stella Taps | Mansfield | NG18 4AL | coordinate_agreement | Actionable | Directory postcode differs from reviewed reference postcode |
 | Tame Otter | Hopwas | B78 3AB | coordinate_disagreement | Actionable | Directory postcode differs from reviewed reference postcode; FSA coordinate is 179.9m from the accepted pin; informational only because the FSA geocode may be approximate |
 | Waterfront | Barton-under-Needwood | DE13 8AS | no_name_match | Actionable | Directory postcode differs from reviewed reference postcode; FSA comparison is inconclusive; absence of a match does not contradict accepted evidence |
-| White Hart | Tean | ST10 4DZ | coordinate_disagreement | Actionable | Directory postcode differs from reviewed reference postcode; FSA coordinate is 105.4m from the accepted pin; informational only because the FSA geocode may be approximate |
 | 1852 Brewery Co | Leicester: South Wigston | LE18 2DH | no_name_match | Informational | FSA comparison is inconclusive; absence of a match does not contradict accepted evidence |
 | 45 Club (PMC) | Newcastle-U-L: Central | ST5 1DS | no_name_match | Informational | FSA comparison is inconclusive; absence of a match does not contradict accepted evidence |
 | Adelphi | Leeds: Central | LS10 1JQ | coordinate_disagreement | Informational | FSA coordinate is 158.8m from the accepted pin; informational only because the FSA geocode may be approximate |
@@ -600,6 +599,7 @@ Locations with informational observations: 596 (may also have an actionable find
 | White Bear | Middlewich | CW10 9AG | no_name_match | Informational | FSA comparison is inconclusive; absence of a match does not contradict accepted evidence |
 | White Cross | Guiseley | LS20 8LY | coordinate_disagreement | Informational | FSA coordinate is 99.4m from the accepted pin; informational only because the FSA geocode may be approximate |
 | White Hart | Belper: Bargate | DE56 0JA | nearby | Informational | FSA coordinate is 25-50m away; informational only |
+| White Hart | Tean | ST10 4DZ | coordinate_disagreement | Informational | Owner reviewed this postcode discrepancy and confirmed the displayed pub building; listing postcode retained for provenance; FSA coordinate is 105.4m from the accepted pin; informational only because the FSA geocode may be approximate |
 | White Hart | Stoke: Smallthorne | ST6 1NT | coordinate_disagreement | Informational | FSA coordinate is 107.7m from the accepted pin; informational only because the FSA geocode may be approximate |
 | White Hart | Loughborough | LE11 1UD | coordinate_disagreement | Informational | FSA coordinate is 68.5m from the accepted pin; informational only because the FSA geocode may be approximate |
 | White Horse Inn | Louth | LN11 8EG | coordinate_disagreement | Informational | FSA coordinate is 87.9m from the accepted pin; informational only because the FSA geocode may be approximate |

@@ -21441,7 +21441,7 @@
       ]
     },
     "v-7e863132-ef0a-56a7-b5ff-8c1a74015d3c": {
-      "actionable": true,
+      "actionable": false,
       "checked_at": "2026-10-10",
       "comparisons": [
         {
@@ -21462,21 +21462,19 @@
           "url": "https://ratings.food.gov.uk/business/1903687"
         }
       ],
-      "confidence": "existing_evidence_needs_corroboration",
+      "confidence": "owner_reviewed",
       "independent_of_pin": true,
       "listing": {
         "postcode": "ST10 4DZ",
         "pub_name": "White Hart"
       },
-      "owner_reviewed": false,
+      "owner_reviewed": true,
       "pin": {
         "lat": 52.9537639,
         "lng": -1.988268
       },
-      "priority": 0,
-      "reasons": [
-        "Directory postcode differs from reviewed reference postcode"
-      ],
+      "priority": 2,
+      "reasons": [],
       "reference": {
         "address": "High Street, Upper Tean, Stoke On Trent",
         "difference_metres": 105.4,
@@ -21490,6 +21488,7 @@
       },
       "status": "coordinate_disagreement",
       "warnings": [
+        "Owner reviewed this postcode discrepancy and confirmed the displayed pub building; listing postcode retained for provenance",
         "FSA coordinate is 105.4m from the accepted pin; informational only because the FSA geocode may be approximate"
       ]
     },

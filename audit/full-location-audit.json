@@ -6334,7 +6334,7 @@
           "url": "https://ratings.food.gov.uk/business/831"
         }
       ],
-      "confidence": "existing_evidence_needs_corroboration",
+      "confidence": "owner_reviewed",
       "country": "England",
       "dispense": "H",
       "independent_of_pin": true,
@@ -6344,11 +6344,11 @@
         "pub_name": "Coach and Horses"
       },
       "notes": "",
-      "owner_reviewed": false,
+      "owner_reviewed": true,
       "pg": "Perm",
       "pin": {
-        "lat": 52.99653110833333,
-        "lng": -1.4333234500000003
+        "lat": 52.9965278,
+        "lng": -1.4333222
       },
       "place_name": "Horsley",
       "postcode": "DE21 5BQ",
@@ -54375,9 +54375,9 @@
   "summary": {
     "actionable_count": 3,
     "confidence_counts": {
-      "existing_evidence_needs_corroboration": 557,
+      "existing_evidence_needs_corroboration": 556,
       "independent_coordinate_agreement": 430,
-      "owner_reviewed": 57
+      "owner_reviewed": 58
     },
     "counts": {
       "ambiguous_or_missing_coordinates": 61,

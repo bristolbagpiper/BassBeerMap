@@ -1,7 +1,7 @@
 {
   "counts": {
-    "venue_coordinate_requires_review": 34,
-    "verified_venue": 1010
+    "venue_coordinate_requires_review": 33,
+    "verified_venue": 1011
   },
   "generated_at": "2026-10-19",
   "policy": {
@@ -6147,8 +6147,8 @@
       "venue_id": "v-8b64d7db-7ac9-5869-b948-483a60a39650"
     },
     "coach and horses|horsley|de21 5bq": {
-      "coordinate_source": "openstreetmap-gb-extract",
-      "display_precision": "postcode",
+      "coordinate_source": "manual_named_place_map",
+      "display_precision": "venue",
       "evidence": [
         {
           "checked_at": "2026-09-11",
@@ -6161,14 +6161,27 @@
           "reference_postcode": "DE21 5BQ",
           "source": "camra",
           "url": "https://camra.org.uk/pubs/143601"
+        },
+        {
+          "checked_at": "2026-10-19",
+          "match": "owner_approved_existing_venue_building",
+          "reference_coordinate": {
+            "lat": 52.9965278,
+            "lng": -1.4333222
+          },
+          "reference_name": "The Coach & Horses",
+          "reference_postcode": "DE21 5BQ",
+          "reviewed_by": "bristolbagpiper",
+          "source": "manual_named_place_map",
+          "url": "https://www.google.com/maps/place/52%C2%B059'47.5%22N+1%C2%B025'60.0%22W/@52.9964376,-1.4336631,106m/data=!3m1!1e3!4m4!3m3!8m2!3d52.9965278!4d-1.4333222?entry=ttu&g_ep=EgoyMDI2MTAxMy4wIKXMDSoASAFQAw%3D%3D"
         }
       ],
-      "lat": 52.99653110833333,
-      "lng": -1.4333234500000003,
+      "lat": 52.9965278,
+      "lng": -1.4333222,
       "place_name": "Horsley",
       "postcode": "DE21 5BQ",
       "pub_name": "Coach and Horses",
-      "status": "venue_coordinate_requires_review",
+      "status": "verified_venue",
       "venue_id": "v-5743485b-71dc-57b2-a6be-e986697bd4cd"
     },
     "coach and horses|kibworth harcourt|le8 0nn": {

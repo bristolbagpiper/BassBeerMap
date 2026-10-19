@@ -1,5 +1,5 @@
 {
-  "active_count": 38,
+  "active_count": 37,
   "records": {
     "v-00a08839-2b8a-5782-b6c7-0bdce4cddb2f": {
       "active": false,
@@ -5017,7 +5017,7 @@
       "venue_id": "v-573bbf31-9cce-52ea-aac7-85a05e14a682"
     },
     "v-5743485b-71dc-57b2-a6be-e986697bd4cd": {
-      "active": true,
+      "active": false,
       "first_seen": "2026-10-09",
       "history": [
         {
@@ -5038,15 +5038,18 @@
             "Reference venue name changed"
           ],
           "status": "unverified"
+        },
+        {
+          "date": "2026-10-19",
+          "reasons": [],
+          "status": "resolved"
         }
       ],
-      "last_checked": "2026-10-18",
+      "last_checked": "2026-10-19",
       "place_name": "Horsley",
       "postcode": "DE21 5BQ",
       "pub_name": "Coach and Horses",
-      "reasons": [
-        "Reference venue name changed"
-      ],
+      "reasons": [],
       "reference": {},
       "research": {},
       "source_checks": {
@@ -5060,8 +5063,8 @@
         }
       },
       "source_error": null,
-      "status": "unverified",
-      "unverified": true,
+      "status": "resolved",
+      "unverified": false,
       "venue_id": "v-5743485b-71dc-57b2-a6be-e986697bd4cd"
     },
     "v-5840e7d1-6ac4-5d2f-b0b8-9875ccbde7dc": {
@@ -14504,5 +14507,5 @@
     }
   },
   "schema_version": 1,
-  "unverified_count": 34
+  "unverified_count": 33
 }

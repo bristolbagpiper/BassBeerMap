@@ -2,7 +2,7 @@
 
 Locations: 1044
 
-Actionable findings: 11
+Actionable findings: 10
 Locations with informational observations: 596 (may also have an actionable finding)
 
 ## Results
@@ -16,8 +16,8 @@ Locations with informational observations: 596 (may also have an actionable find
 ## Confidence
 
 - independent_coordinate_agreement: 432
-- existing_evidence_needs_corroboration: 566
-- owner_reviewed: 46
+- existing_evidence_needs_corroboration: 565
+- owner_reviewed: 47
 
 ## Limits
 
@@ -34,7 +34,6 @@ Locations with informational observations: 596 (may also have an actionable find
 | Nelson Inn | Brown Lees | ST8 6PH | coordinate_agreement | Actionable | Directory postcode differs from reviewed reference postcode |
 | New Baron | Hinckley | LE10 0AZ | nearby | Actionable | Directory postcode differs from reviewed reference postcode; FSA coordinate is 25-50m away; informational only |
 | Old Black Swan | Crich | DE4 5DD | coordinate_disagreement | Actionable | Directory postcode differs from reviewed reference postcode; FSA coordinate is 96.9m from the accepted pin; informational only because the FSA geocode may be approximate |
-| Red Lion | Hollington | DE6 3HA | coordinate_disagreement | Actionable | Directory postcode differs from reviewed reference postcode; FSA coordinate is 189.6m from the accepted pin; informational only because the FSA geocode may be approximate |
 | Rising Sun | Church Gresley | DE11 9LY | coordinate_agreement | Actionable | Directory postcode differs from reviewed reference postcode |
 | Royal | Broughton Astley | LE9 6QB | no_name_match | Actionable | Directory postcode differs from reviewed reference postcode; FSA comparison is inconclusive; absence of a match does not contradict accepted evidence |
 | Somerset and Dorset | Burnham-on-Sea | TA8 1NZ | nearby | Actionable | Directory postcode differs from reviewed reference postcode; FSA coordinate is 25-50m away; informational only |
@@ -458,6 +457,7 @@ Locations with informational observations: 596 (may also have an actionable find
 | Red Lion | Matlock | DE4 3BT | nearby | Informational | FSA coordinate is 25-50m away; informational only |
 | Red Lion | Cheswardine | TF9 2RS | no_name_match | Informational | FSA comparison is inconclusive; absence of a match does not contradict accepted evidence |
 | Red Lion | Hunningham | CV33 9DY | coordinate_disagreement | Informational | FSA coordinate is 164.6m from the accepted pin; informational only because the FSA geocode may be approximate |
+| Red Lion | Hollington | DE6 3HA | coordinate_disagreement | Informational | Owner reviewed this postcode discrepancy and confirmed the displayed pub building; listing postcode retained for provenance; FSA coordinate is 189.6m from the accepted pin; informational only because the FSA geocode may be approximate |
 | Red Lion | Boundary | ST10 2NU | coordinate_disagreement | Informational | FSA coordinate is 901.7m from the accepted pin; informational only because the FSA geocode may be approximate |
 | Red Lion | Kegworth | DE74 2DA | nearby | Informational | FSA coordinate is 25-50m away; informational only |
 | Red Lion | Stoke: Hartshill | ST4 6ES | coordinate_disagreement | Informational | FSA coordinate is 81.3m from the accepted pin; informational only because the FSA geocode may be approximate |

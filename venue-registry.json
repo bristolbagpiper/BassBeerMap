@@ -1,6 +1,6 @@
 {
   "location_review": {
-    "active_count": 49,
+    "active_count": 48,
     "records": {
       "v-00a08839-2b8a-5782-b6c7-0bdce4cddb2f": {
         "active": false,
@@ -3475,7 +3475,7 @@
         "venue_id": "v-3fdf96eb-2028-598b-86d5-17c5ab5252af"
       },
       "v-40c30c47-e75b-5792-822e-294c324271fb": {
-        "active": true,
+        "active": false,
         "first_seen": "2026-10-02",
         "history": [
           {
@@ -3500,18 +3500,40 @@
               "Directory postcode DE6 3HA conflicts with reference address DE6 3AG"
             ],
             "status": "review_needed"
+          },
+          {
+            "date": "2026-10-19",
+            "reasons": [],
+            "status": "resolved"
           }
         ],
-        "last_checked": "2026-10-13",
+        "last_checked": "2026-10-19",
         "place_name": "Hollington",
         "postcode": "DE6 3HA",
         "pub_name": "Red Lion",
-        "reasons": [
-          "Directory postcode DE6 3HA conflicts with reference address DE6 3AG"
-        ],
+        "reasons": [],
         "reference": {
           "field": "postcode",
           "listed": "DE6 3HA",
+          "owner_review": {
+            "approved_coordinate": {
+              "lat": 52.952454585714285,
+              "lng": -1.661919557142857
+            },
+            "checked_at": "2026-10-19",
+            "conclusion": "Owner visually confirmed the existing Red Lion, Hollington building in the Google satellite view. Retain the pin. CAMRA lists DE6 3AG; the Bass directory and the pub's menu PDF list DE6 3HA. Preserve both source values; visual building confirmation does not establish which postcode serves postal delivery.",
+            "listed": "DE6 3HA",
+            "owner_instruction": "correct",
+            "pub_name": "Red Lion",
+            "reference": "DE6 3AG",
+            "review_map_url": "https://www.google.com/maps/place/52%C2%B057'08.8%22N+1%C2%B039'42.9%22W/@52.9524546,-1.6619196,75m/data=!3m1!1e3!4m4!3m3!8m2!3d52.9524444!4d-1.6619167?entry=ttu&g_ep=EgoyMDI2MTAxMy4wIKXMDSoASAFQAw%3D%3D",
+            "reviewed_by": "bristolbagpiper",
+            "source_url": "https://camra.org.uk/pubs/112759",
+            "supporting_address_urls": [
+              "https://camra.org.uk/pubs/red-lion-hollington-112759",
+              "https://www.theredlionhollington.co.uk/red-lion-menu.pdf"
+            ]
+          },
           "reference": "DE6 3AG",
           "source_url": "https://camra.org.uk/pubs/112759"
         },
@@ -3527,7 +3549,7 @@
           }
         },
         "source_error": null,
-        "status": "review_needed",
+        "status": "resolved",
         "unverified": false,
         "venue_id": "v-40c30c47-e75b-5792-822e-294c324271fb"
       },
@@ -40637,7 +40659,7 @@
       ],
       "current_key": "red lion|hollington|de6 3ha",
       "independent_location_check": {
-        "actionable": true,
+        "actionable": false,
         "checked_at": "2026-10-10",
         "comparisons": [
           {
@@ -40658,21 +40680,19 @@
             "status": "no_name_match"
           }
         ],
-        "confidence": "existing_evidence_needs_corroboration",
+        "confidence": "owner_reviewed",
         "independent_of_pin": true,
         "listing": {
           "postcode": "DE6 3HA",
           "pub_name": "Red Lion"
         },
-        "owner_reviewed": false,
+        "owner_reviewed": true,
         "pin": {
           "lat": 52.952454585714285,
           "lng": -1.661919557142857
         },
-        "priority": 0,
-        "reasons": [
-          "Directory postcode differs from reviewed reference postcode"
-        ],
+        "priority": 2,
+        "reasons": [],
         "reference": {
           "address": "Main Street, Hollington, Derbyshire",
           "difference_metres": 189.6,
@@ -40686,6 +40706,7 @@
         },
         "status": "coordinate_disagreement",
         "warnings": [
+          "Owner reviewed this postcode discrepancy and confirmed the displayed pub building; listing postcode retained for provenance",
           "FSA coordinate is 189.6m from the accepted pin; informational only because the FSA geocode may be approximate"
         ]
       },
@@ -40700,6 +40721,27 @@
         "postcode": "DE6 3HA",
         "pub_name": "Red Lion"
       },
+      "location_approvals": [
+        {
+          "approved_coordinate": {
+            "lat": 52.952454585714285,
+            "lng": -1.661919557142857
+          },
+          "checked_at": "2026-10-19",
+          "conclusion": "Owner visually confirmed the existing Red Lion, Hollington building in the Google satellite view. Retain the pin. CAMRA lists DE6 3AG; the Bass directory and the pub's menu PDF list DE6 3HA. Preserve both source values; visual building confirmation does not establish which postcode serves postal delivery.",
+          "listed": "DE6 3HA",
+          "owner_instruction": "correct",
+          "pub_name": "Red Lion",
+          "reference": "DE6 3AG",
+          "review_map_url": "https://www.google.com/maps/place/52%C2%B057'08.8%22N+1%C2%B039'42.9%22W/@52.9524546,-1.6619196,75m/data=!3m1!1e3!4m4!3m3!8m2!3d52.9524444!4d-1.6619167?entry=ttu&g_ep=EgoyMDI2MTAxMy4wIKXMDSoASAFQAw%3D%3D",
+          "reviewed_by": "bristolbagpiper",
+          "source_url": "https://camra.org.uk/pubs/112759",
+          "supporting_address_urls": [
+            "https://camra.org.uk/pubs/red-lion-hollington-112759",
+            "https://www.theredlionhollington.co.uk/red-lion-menu.pdf"
+          ]
+        }
+      ],
       "verification_attempt": {
         "checked_at": "2026-10-13",
         "evidence": {
@@ -40739,6 +40781,23 @@
             "reference_postcode": "DE6 3AG",
             "source": "camra",
             "url": "https://camra.org.uk/pubs/112759"
+          },
+          {
+            "checked_at": "2026-10-19",
+            "match": "owner_confirmed_existing_pub_building",
+            "reference_coordinate": {
+              "lat": 52.952454585714285,
+              "lng": -1.661919557142857
+            },
+            "reference_name": "Red Lion, Hollington",
+            "reference_postcode": "DE6 3AG",
+            "reviewed_by": "bristolbagpiper",
+            "source": "manual_named_place_map",
+            "supporting_address_urls": [
+              "https://camra.org.uk/pubs/red-lion-hollington-112759",
+              "https://www.theredlionhollington.co.uk/red-lion-menu.pdf"
+            ],
+            "url": "https://www.google.com/maps/place/52%C2%B057'08.8%22N+1%C2%B039'42.9%22W/@52.9524546,-1.6619196,75m/data=!3m1!1e3!4m4!3m3!8m2!3d52.9524444!4d-1.6619167?entry=ttu&g_ep=EgoyMDI2MTAxMy4wIKXMDSoASAFQAw%3D%3D"
           }
         ],
         "lat": 52.952454585714285,
@@ -40746,6 +40805,25 @@
         "metadata_issue": {
           "field": "postcode",
           "listed": "DE6 3HA",
+          "owner_review": {
+            "approved_coordinate": {
+              "lat": 52.952454585714285,
+              "lng": -1.661919557142857
+            },
+            "checked_at": "2026-10-19",
+            "conclusion": "Owner visually confirmed the existing Red Lion, Hollington building in the Google satellite view. Retain the pin. CAMRA lists DE6 3AG; the Bass directory and the pub's menu PDF list DE6 3HA. Preserve both source values; visual building confirmation does not establish which postcode serves postal delivery.",
+            "listed": "DE6 3HA",
+            "owner_instruction": "correct",
+            "pub_name": "Red Lion",
+            "reference": "DE6 3AG",
+            "review_map_url": "https://www.google.com/maps/place/52%C2%B057'08.8%22N+1%C2%B039'42.9%22W/@52.9524546,-1.6619196,75m/data=!3m1!1e3!4m4!3m3!8m2!3d52.9524444!4d-1.6619167?entry=ttu&g_ep=EgoyMDI2MTAxMy4wIKXMDSoASAFQAw%3D%3D",
+            "reviewed_by": "bristolbagpiper",
+            "source_url": "https://camra.org.uk/pubs/112759",
+            "supporting_address_urls": [
+              "https://camra.org.uk/pubs/red-lion-hollington-112759",
+              "https://www.theredlionhollington.co.uk/red-lion-menu.pdf"
+            ]
+          },
           "reference": "DE6 3AG",
           "source_url": "https://camra.org.uk/pubs/112759"
         },

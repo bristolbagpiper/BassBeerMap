@@ -2609,12 +2609,31 @@
       "precision": "venue"
     },
     "v-40c30c47-e75b-5792-822e-294c324271fb": {
-      "checked_at": "2026-10-13",
+      "checked_at": "2026-10-19",
       "lat": 52.952454585714285,
       "lng": -1.661919557142857,
       "metadata_issue": {
         "field": "postcode",
         "listed": "DE6 3HA",
+        "owner_review": {
+          "approved_coordinate": {
+            "lat": 52.952454585714285,
+            "lng": -1.661919557142857
+          },
+          "checked_at": "2026-10-19",
+          "conclusion": "Owner visually confirmed the existing Red Lion, Hollington building in the Google satellite view. Retain the pin. CAMRA lists DE6 3AG; the Bass directory and the pub's menu PDF list DE6 3HA. Preserve both source values; visual building confirmation does not establish which postcode serves postal delivery.",
+          "listed": "DE6 3HA",
+          "owner_instruction": "correct",
+          "pub_name": "Red Lion",
+          "reference": "DE6 3AG",
+          "review_map_url": "https://www.google.com/maps/place/52%C2%B057'08.8%22N+1%C2%B039'42.9%22W/@52.9524546,-1.6619196,75m/data=!3m1!1e3!4m4!3m3!8m2!3d52.9524444!4d-1.6619167?entry=ttu&g_ep=EgoyMDI2MTAxMy4wIKXMDSoASAFQAw%3D%3D",
+          "reviewed_by": "bristolbagpiper",
+          "source_url": "https://camra.org.uk/pubs/112759",
+          "supporting_address_urls": [
+            "https://camra.org.uk/pubs/red-lion-hollington-112759",
+            "https://www.theredlionhollington.co.uk/red-lion-menu.pdf"
+          ]
+        },
         "reference": "DE6 3AG",
         "source_url": "https://camra.org.uk/pubs/112759"
       },
@@ -11083,7 +11102,7 @@
     "source_name_hint": "",
     "source_pdf": "latest-bass-directory.pdf"
   },
-  "release_id": "4c94541f3cabcf6e9083218fa7e6a1b27d51012a6f956cdbefea0851dd3bb917",
+  "release_id": "039ae68ab5a1cd7fb3ef6d8a41d41d5084ac6df058be533bc1ab18389b0a137d",
   "rows": [
     {
       "area": "Bedfordshire",

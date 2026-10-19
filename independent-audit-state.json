@@ -10486,7 +10486,7 @@
       "warnings": []
     },
     "v-40c30c47-e75b-5792-822e-294c324271fb": {
-      "actionable": true,
+      "actionable": false,
       "checked_at": "2026-10-10",
       "comparisons": [
         {
@@ -10507,21 +10507,19 @@
           "status": "no_name_match"
         }
       ],
-      "confidence": "existing_evidence_needs_corroboration",
+      "confidence": "owner_reviewed",
       "independent_of_pin": true,
       "listing": {
         "postcode": "DE6 3HA",
         "pub_name": "Red Lion"
       },
-      "owner_reviewed": false,
+      "owner_reviewed": true,
       "pin": {
         "lat": 52.952454585714285,
         "lng": -1.661919557142857
       },
-      "priority": 0,
-      "reasons": [
-        "Directory postcode differs from reviewed reference postcode"
-      ],
+      "priority": 2,
+      "reasons": [],
       "reference": {
         "address": "Main Street, Hollington, Derbyshire",
         "difference_metres": 189.6,
@@ -10535,6 +10533,7 @@
       },
       "status": "coordinate_disagreement",
       "warnings": [
+        "Owner reviewed this postcode discrepancy and confirmed the displayed pub building; listing postcode retained for provenance",
         "FSA coordinate is 189.6m from the accepted pin; informational only because the FSA geocode may be approximate"
       ]
     },

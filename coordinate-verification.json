@@ -1,7 +1,7 @@
 {
   "counts": {
-    "venue_coordinate_requires_review": 30,
-    "verified_venue": 1014
+    "venue_coordinate_requires_review": 29,
+    "verified_venue": 1015
   },
   "generated_at": "2026-10-19",
   "policy": {
@@ -3321,28 +3321,31 @@
       "venue_id": "v-68fdd6da-3328-5d9a-9b1c-91e7f0444b97"
     },
     "boons|horbury|wf4 6lp": {
-      "coordinate_source": "openstreetmap-gb-extract",
-      "display_precision": "postcode",
+      "coordinate_source": "owner-reviewed-camra",
+      "display_precision": "venue",
       "evidence": [
         {
-          "checked_at": "2026-09-11",
-          "difference_metres": 7.6,
-          "match": "venue_name_and_full_postcode",
+          "checked_at": "2026-10-19",
+          "match": "owner_reviewed_named_address_and_map",
+          "reference_address": "6 Queen Street",
           "reference_coordinate": {
-            "lat": 53.65965,
-            "lng": -1.555008
+            "lat": 53.659654,
+            "lng": -1.555123
           },
+          "reference_name": "Boons Horbury, Horbury",
           "reference_postcode": "WF4 6LP",
+          "review_url": "https://github.com/bristolbagpiper/BassBeerMap/issues/5#issuecomment-6275914004",
+          "reviewed_by": "bristolbagpiper",
           "source": "camra",
           "url": "https://camra.org.uk/pubs/135211"
         }
       ],
-      "lat": 53.65965,
-      "lng": -1.555008,
+      "lat": 53.659654,
+      "lng": -1.555123,
       "place_name": "Horbury",
       "postcode": "WF4 6LP",
       "pub_name": "Boons",
-      "status": "venue_coordinate_requires_review",
+      "status": "verified_venue",
       "venue_id": "v-67971303-be87-57be-b71c-7594fc2db50e"
     },
     "boot inn|repton|de65 6ft": {

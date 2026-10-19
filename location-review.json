@@ -1,5 +1,5 @@
 {
-  "active_count": 34,
+  "active_count": 33,
   "records": {
     "v-00a08839-2b8a-5782-b6c7-0bdce4cddb2f": {
       "active": false,
@@ -6232,7 +6232,7 @@
       "venue_id": "v-671e9e71-677b-5e94-b837-e50d3484667c"
     },
     "v-67971303-be87-57be-b71c-7594fc2db50e": {
-      "active": true,
+      "active": false,
       "first_seen": "2026-10-17",
       "history": [
         {
@@ -6241,30 +6241,29 @@
             "Reference venue name changed"
           ],
           "status": "unverified"
+        },
+        {
+          "date": "2026-10-19",
+          "reasons": [],
+          "status": "resolved"
         }
       ],
       "last_checked": "2026-10-19",
       "place_name": "Horbury",
       "postcode": "WF4 6LP",
       "pub_name": "Boons",
-      "reasons": [
-        "Reference venue name changed"
-      ],
+      "reasons": [],
       "reference": {},
       "research": {},
       "source_checks": {
         "camra": {
           "status": "conflict",
           "url": "https://camra.org.uk/pubs/135211"
-        },
-        "fsa_independent": {
-          "status": "coordinate_agreement",
-          "url": "https://ratings.food.gov.uk/business/1105176"
         }
       },
       "source_error": null,
-      "status": "unverified",
-      "unverified": true,
+      "status": "resolved",
+      "unverified": false,
       "venue_id": "v-67971303-be87-57be-b71c-7594fc2db50e"
     },
     "v-67f0c4b1-5e42-5159-8987-4abf521447fc": {
@@ -14516,5 +14515,5 @@
     }
   },
   "schema_version": 1,
-  "unverified_count": 30
+  "unverified_count": 29
 }

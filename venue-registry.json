@@ -1,6 +1,6 @@
 {
   "location_review": {
-    "active_count": 34,
+    "active_count": 33,
     "records": {
       "v-00a08839-2b8a-5782-b6c7-0bdce4cddb2f": {
         "active": false,
@@ -6233,7 +6233,7 @@
         "venue_id": "v-671e9e71-677b-5e94-b837-e50d3484667c"
       },
       "v-67971303-be87-57be-b71c-7594fc2db50e": {
-        "active": true,
+        "active": false,
         "first_seen": "2026-10-17",
         "history": [
           {
@@ -6242,30 +6242,29 @@
               "Reference venue name changed"
             ],
             "status": "unverified"
+          },
+          {
+            "date": "2026-10-19",
+            "reasons": [],
+            "status": "resolved"
           }
         ],
         "last_checked": "2026-10-19",
         "place_name": "Horbury",
         "postcode": "WF4 6LP",
         "pub_name": "Boons",
-        "reasons": [
-          "Reference venue name changed"
-        ],
+        "reasons": [],
         "reference": {},
         "research": {},
         "source_checks": {
           "camra": {
             "status": "conflict",
             "url": "https://camra.org.uk/pubs/135211"
-          },
-          "fsa_independent": {
-            "status": "coordinate_agreement",
-            "url": "https://ratings.food.gov.uk/business/1105176"
           }
         },
         "source_error": null,
-        "status": "unverified",
-        "unverified": true,
+        "status": "resolved",
+        "unverified": false,
         "venue_id": "v-67971303-be87-57be-b71c-7594fc2db50e"
       },
       "v-67f0c4b1-5e42-5159-8987-4abf521447fc": {
@@ -14517,7 +14516,7 @@
       }
     },
     "schema_version": 1,
-    "unverified_count": 30
+    "unverified_count": 29
   },
   "schema_version": 1,
   "venues": {
@@ -58197,7 +58196,8 @@
     },
     "v-67971303-be87-57be-b71c-7594fc2db50e": {
       "aliases": [
-        "boons|horbury|wf4 6lp"
+        "boons|horbury|wf4 6lp",
+        "boons horbury|horbury|wf4 6lp"
       ],
       "current_key": "boons|horbury|wf4 6lp",
       "independent_location_check": {
@@ -58254,6 +58254,36 @@
         "postcode": "WF4 6LP",
         "pub_name": "Boons"
       },
+      "location_approvals": [
+        {
+          "checked_at": "2026-10-19",
+          "comment_id": 6275914004,
+          "previous_pin": {
+            "evidence": [
+              {
+                "checked_at": "2026-09-11",
+                "difference_metres": 7.6,
+                "match": "venue_name_and_full_postcode",
+                "reference_coordinate": {
+                  "lat": 53.65965,
+                  "lng": -1.555008
+                },
+                "reference_postcode": "WF4 6LP",
+                "source": "camra",
+                "url": "https://camra.org.uk/pubs/135211"
+              }
+            ],
+            "lat": 53.65965,
+            "lng": -1.555008,
+            "review_reason": "Reference venue name changed",
+            "review_required": true,
+            "source": "openstreetmap-gb-extract"
+          },
+          "review_url": "https://github.com/bristolbagpiper/BassBeerMap/issues/5#issuecomment-6275914004",
+          "reviewed_by": "bristolbagpiper",
+          "source_url": "https://camra.org.uk/pubs/135211"
+        }
+      ],
       "verification_attempt": {
         "checked_at": "2026-10-17",
         "reason": "Reference venue name changed",
@@ -58269,23 +58299,24 @@
       "verified_pin": {
         "evidence": [
           {
-            "checked_at": "2026-09-11",
-            "difference_metres": 7.6,
-            "match": "venue_name_and_full_postcode",
+            "checked_at": "2026-10-19",
+            "match": "owner_reviewed_named_address_and_map",
+            "reference_address": "6 Queen Street",
             "reference_coordinate": {
-              "lat": 53.65965,
-              "lng": -1.555008
+              "lat": 53.659654,
+              "lng": -1.555123
             },
+            "reference_name": "Boons Horbury, Horbury",
             "reference_postcode": "WF4 6LP",
+            "review_url": "https://github.com/bristolbagpiper/BassBeerMap/issues/5#issuecomment-6275914004",
+            "reviewed_by": "bristolbagpiper",
             "source": "camra",
             "url": "https://camra.org.uk/pubs/135211"
           }
         ],
-        "lat": 53.65965,
-        "lng": -1.555008,
-        "review_reason": "Reference venue name changed",
-        "review_required": true,
-        "source": "openstreetmap-gb-extract"
+        "lat": 53.659654,
+        "lng": -1.555123,
+        "source": "owner-reviewed-camra"
       }
     },
     "v-67ba7177-95d2-5265-a5a8-f4c122e518e6": {

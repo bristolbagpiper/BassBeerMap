@@ -16,8 +16,8 @@ Locations with informational observations: 598 (may also have an actionable find
 ## Confidence
 
 - independent_coordinate_agreement: 430
-- existing_evidence_needs_corroboration: 558
-- owner_reviewed: 56
+- existing_evidence_needs_corroboration: 557
+- owner_reviewed: 57
 
 ## Limits
 
@@ -145,7 +145,7 @@ Locations with informational observations: 598 (may also have an actionable find
 | Cherry Tree | Leicester: Central | LE1 4SX | nearby | Informational | FSA coordinate is 25-50m away; informational only |
 | Cheshire Cheese | Stoke: Hanley | ST1 6BA | coordinate_disagreement | Informational | FSA coordinate is 63.1m from the accepted pin; informational only because the FSA geocode may be approximate |
 | Chester Tavern | Kidderminster | DY10 1TN | coordinate_disagreement | Informational | FSA coordinate is 64.3m from the accepted pin; informational only because the FSA geocode may be approximate |
-| Chestnuts (PMC) | Nuneaton: Central | CV10 0AB | coordinate_disagreement | Informational | FSA coordinate is 115.4m from the accepted pin; informational only because the FSA geocode may be approximate |
+| Chestnuts (PMC) | Nuneaton: Central | CV10 0AB | coordinate_disagreement | Informational | FSA coordinate is 126.9m from the accepted pin; informational only because the FSA geocode may be approximate |
 | Chilworth Arms | Chilworth | SO16 7JZ | coordinate_disagreement | Informational | FSA coordinate is 373.6m from the accepted pin; informational only because the FSA geocode may be approximate |
 | Clachan | Soho W1B | W1B 5QH | no_name_match | Informational | FSA comparison is inconclusive; absence of a match does not contradict accepted evidence |
 | Clarendon Arms | Kenilworth | CV8 1NB | nearby | Informational | FSA coordinate is 25-50m away; informational only |

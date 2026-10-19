@@ -1,6 +1,6 @@
 {
   "location_review": {
-    "active_count": 39,
+    "active_count": 38,
     "records": {
       "v-00a08839-2b8a-5782-b6c7-0bdce4cddb2f": {
         "active": false,
@@ -3939,7 +3939,7 @@
         "venue_id": "v-44818631-c2ca-546d-a097-25ded2897bc1"
       },
       "v-44d1557c-72e2-5898-ba5c-80ff7540b392": {
-        "active": true,
+        "active": false,
         "first_seen": "2026-10-09",
         "history": [
           {
@@ -3960,15 +3960,18 @@
               "Reference venue name changed"
             ],
             "status": "unverified"
+          },
+          {
+            "date": "2026-10-19",
+            "reasons": [],
+            "status": "resolved"
           }
         ],
-        "last_checked": "2026-10-16",
+        "last_checked": "2026-10-19",
         "place_name": "Nuneaton: Central",
         "postcode": "CV10 0AB",
         "pub_name": "Chestnuts (PMC)",
-        "reasons": [
-          "Reference venue name changed"
-        ],
+        "reasons": [],
         "reference": {},
         "research": {},
         "source_checks": {
@@ -3986,8 +3989,8 @@
           }
         },
         "source_error": null,
-        "status": "unverified",
-        "unverified": true,
+        "status": "resolved",
+        "unverified": false,
         "venue_id": "v-44d1557c-72e2-5898-ba5c-80ff7540b392"
       },
       "v-45ee8f54-501a-5688-8b29-c66374492475": {
@@ -14502,7 +14505,7 @@
       }
     },
     "schema_version": 1,
-    "unverified_count": 35
+    "unverified_count": 34
   },
   "schema_version": 1,
   "venues": {
@@ -43180,7 +43183,7 @@
         "comparisons": [
           {
             "address": "32 Old Hinckley Road, , Nuneaton",
-            "difference_metres": 115.4,
+            "difference_metres": 126.9,
             "lat": 52.527418,
             "lng": -1.459322,
             "name": "The Chestnuts Club",
@@ -43190,22 +43193,22 @@
             "url": "https://ratings.food.gov.uk/business/235162"
           }
         ],
-        "confidence": "existing_evidence_needs_corroboration",
+        "confidence": "owner_reviewed",
         "independent_of_pin": true,
         "listing": {
           "postcode": "CV10 0AB",
           "pub_name": "Chestnuts (PMC)"
         },
-        "owner_reviewed": false,
+        "owner_reviewed": true,
         "pin": {
-          "lat": 52.527003175492,
-          "lng": -1.460884957008
+          "lat": 52.5275151,
+          "lng": -1.4611907
         },
         "priority": 2,
         "reasons": [],
         "reference": {
           "address": "32 Old Hinckley Road, , Nuneaton",
-          "difference_metres": 115.4,
+          "difference_metres": 126.9,
           "lat": 52.527418,
           "lng": -1.459322,
           "name": "The Chestnuts Club",
@@ -43216,7 +43219,7 @@
         },
         "status": "coordinate_disagreement",
         "warnings": [
-          "FSA coordinate is 115.4m from the accepted pin; informational only because the FSA geocode may be approximate"
+          "FSA coordinate is 126.9m from the accepted pin; informational only because the FSA geocode may be approximate"
         ]
       },
       "listing": {
@@ -43230,6 +43233,28 @@
         "postcode": "CV10 0AB",
         "pub_name": "Chestnuts (PMC)"
       },
+      "location_approvals": [
+        {
+          "approved_coordinate": {
+            "lat": 52.5275151,
+            "lng": -1.4611907
+          },
+          "checked_at": "2026-10-19",
+          "conclusion": "Owner replied correct during satellite review of The Chestnuts Club at 32 Old Hinckley Road. Adopt the named Google Maps marker for The Chestnuts Club Ltd. It is 60.6m from the superseded CAMRA candidate; retain the CAMRA name-change conflict as historical evidence. The FSA address geocode is 126.9m away and remains informational.",
+          "context_map_url": "https://www.google.com/maps/@52.5274707,-1.4597148,303m/data=!3m1!1e3?entry=ttu&g_ep=EgoyMDI2MTAxMy4wIKXMDSoASAFQAw%3D%3D",
+          "listed": "CV10 0AB",
+          "owner_instruction": "correct",
+          "pub_name": "Chestnuts (PMC)",
+          "reference": "The Chestnuts Club Ltd, 32 Old Hinckley Rd, Nuneaton CV10 0AB",
+          "review_map_url": "https://www.google.com/maps/place/The+Chestnuts+Club+Ltd/@52.5275151,-1.4611907,523m/data=!3m2!1e3!4b1!4m6!3m5!1s0x487751e124b0bc97:0x1cdbf37c64785b16!8m2!3d52.5275151!4d-1.4611907!16s%2Fg%2F1thhj_zs",
+          "reviewed_by": "bristolbagpiper",
+          "source_url": "https://camra.org.uk/pubs/196934",
+          "supporting_address_urls": [
+            "https://www.google.com/maps/place/The+Chestnuts+Club+Ltd/@52.5275151,-1.4611907,523m/data=!3m2!1e3!4b1!4m6!3m5!1s0x487751e124b0bc97:0x1cdbf37c64785b16!8m2!3d52.5275151!4d-1.4611907!16s%2Fg%2F1thhj_zs",
+            "https://ratings.food.gov.uk/business/235162"
+          ]
+        }
+      ],
       "verification_attempt": {
         "checked_at": "2026-10-14",
         "reason": "Reference venue name changed",
@@ -43251,6 +43276,7 @@
           {
             "checked_at": "2026-09-11",
             "difference_metres": 0.0,
+            "disposition": "superseded_by_owner_review",
             "match": "venue_name_and_full_postcode",
             "reference_coordinate": {
               "lat": 52.527003175492,
@@ -43258,11 +43284,13 @@
             },
             "reference_postcode": "CV10 0AB",
             "source": "camra",
+            "superseded_checked_at": "2026-10-19",
             "url": "https://camra.org.uk/pubs/196934"
           },
           {
             "checked_at": "2026-09-11",
             "difference_metres": 0,
+            "disposition": "superseded_by_owner_review",
             "match": "existing_pin_over_50m_from_matching_venue",
             "reference_coordinate": {
               "lat": 52.527003175492,
@@ -43270,14 +43298,26 @@
             },
             "reference_postcode": "CV10 0AB",
             "source": "camra-pubs-location-audit",
+            "superseded_checked_at": "2026-10-19",
             "url": "https://camra.org.uk/pubs/196934"
+          },
+          {
+            "checked_at": "2026-10-19",
+            "match": "owner_confirmed_named_venue_building",
+            "reference_coordinate": {
+              "lat": 52.5275151,
+              "lng": -1.4611907
+            },
+            "reference_name": "The Chestnuts Club Ltd",
+            "reference_postcode": "CV10 0AB",
+            "reviewed_by": "bristolbagpiper",
+            "source": "manual_named_place_map",
+            "url": "https://www.google.com/maps/place/The+Chestnuts+Club+Ltd/@52.5275151,-1.4611907,523m/data=!3m2!1e3!4b1!4m6!3m5!1s0x487751e124b0bc97:0x1cdbf37c64785b16!8m2!3d52.5275151!4d-1.4611907!16s%2Fg%2F1thhj_zs"
           }
         ],
-        "lat": 52.527003175492,
-        "lng": -1.460884957008,
-        "review_reason": "Reference venue name changed",
-        "review_required": true,
-        "source": "camra-pubs-location-audit"
+        "lat": 52.5275151,
+        "lng": -1.4611907,
+        "source": "manual_named_place_map"
       }
     },
     "v-45011594-aabe-5007-96d9-67ce9c7832cf": {

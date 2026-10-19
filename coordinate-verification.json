@@ -1,7 +1,7 @@
 {
   "counts": {
-    "venue_coordinate_requires_review": 35,
-    "verified_venue": 1009
+    "venue_coordinate_requires_review": 34,
+    "verified_venue": 1010
   },
   "generated_at": "2026-10-19",
   "policy": {
@@ -5733,12 +5733,13 @@
       "venue_id": "v-793bea47-0978-5182-b472-e441735f2b6b"
     },
     "chestnuts (pmc)|nuneaton: central|cv10 0ab": {
-      "coordinate_source": "camra-pubs-location-audit",
-      "display_precision": "postcode",
+      "coordinate_source": "manual_named_place_map",
+      "display_precision": "venue",
       "evidence": [
         {
           "checked_at": "2026-09-11",
           "difference_metres": 0.0,
+          "disposition": "superseded_by_owner_review",
           "match": "venue_name_and_full_postcode",
           "reference_coordinate": {
             "lat": 52.527003175492,
@@ -5746,11 +5747,13 @@
           },
           "reference_postcode": "CV10 0AB",
           "source": "camra",
+          "superseded_checked_at": "2026-10-19",
           "url": "https://camra.org.uk/pubs/196934"
         },
         {
           "checked_at": "2026-09-11",
           "difference_metres": 0,
+          "disposition": "superseded_by_owner_review",
           "match": "existing_pin_over_50m_from_matching_venue",
           "reference_coordinate": {
             "lat": 52.527003175492,
@@ -5758,15 +5761,29 @@
           },
           "reference_postcode": "CV10 0AB",
           "source": "camra-pubs-location-audit",
+          "superseded_checked_at": "2026-10-19",
           "url": "https://camra.org.uk/pubs/196934"
+        },
+        {
+          "checked_at": "2026-10-19",
+          "match": "owner_confirmed_named_venue_building",
+          "reference_coordinate": {
+            "lat": 52.5275151,
+            "lng": -1.4611907
+          },
+          "reference_name": "The Chestnuts Club Ltd",
+          "reference_postcode": "CV10 0AB",
+          "reviewed_by": "bristolbagpiper",
+          "source": "manual_named_place_map",
+          "url": "https://www.google.com/maps/place/The+Chestnuts+Club+Ltd/@52.5275151,-1.4611907,523m/data=!3m2!1e3!4b1!4m6!3m5!1s0x487751e124b0bc97:0x1cdbf37c64785b16!8m2!3d52.5275151!4d-1.4611907!16s%2Fg%2F1thhj_zs"
         }
       ],
-      "lat": 52.527003175492,
-      "lng": -1.460884957008,
+      "lat": 52.5275151,
+      "lng": -1.4611907,
       "place_name": "Nuneaton: Central",
       "postcode": "CV10 0AB",
       "pub_name": "Chestnuts (PMC)",
-      "status": "venue_coordinate_requires_review",
+      "status": "verified_venue",
       "venue_id": "v-44d1557c-72e2-5898-ba5c-80ff7540b392"
     },
     "chevin golf club (pmc)|duffield|de56 4ee": {

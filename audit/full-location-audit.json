@@ -5859,7 +5859,7 @@
       "comparisons": [
         {
           "address": "32 Old Hinckley Road, , Nuneaton",
-          "difference_metres": 115.4,
+          "difference_metres": 126.9,
           "lat": 52.527418,
           "lng": -1.459322,
           "name": "The Chestnuts Club",
@@ -5869,7 +5869,7 @@
           "url": "https://ratings.food.gov.uk/business/235162"
         }
       ],
-      "confidence": "existing_evidence_needs_corroboration",
+      "confidence": "owner_reviewed",
       "country": "England",
       "dispense": "H",
       "independent_of_pin": true,
@@ -5879,11 +5879,11 @@
         "pub_name": "Chestnuts (PMC)"
       },
       "notes": "",
-      "owner_reviewed": false,
+      "owner_reviewed": true,
       "pg": "Perm",
       "pin": {
-        "lat": 52.527003175492,
-        "lng": -1.460884957008
+        "lat": 52.5275151,
+        "lng": -1.4611907
       },
       "place_name": "Nuneaton: Central",
       "postcode": "CV10 0AB",
@@ -5892,7 +5892,7 @@
       "reasons": [],
       "reference": {
         "address": "32 Old Hinckley Road, , Nuneaton",
-        "difference_metres": 115.4,
+        "difference_metres": 126.9,
         "lat": 52.527418,
         "lng": -1.459322,
         "name": "The Chestnuts Club",
@@ -5904,7 +5904,7 @@
       "status": "coordinate_disagreement",
       "venue_id": "v-44d1557c-72e2-5898-ba5c-80ff7540b392",
       "warnings": [
-        "FSA coordinate is 115.4m from the accepted pin; informational only because the FSA geocode may be approximate"
+        "FSA coordinate is 126.9m from the accepted pin; informational only because the FSA geocode may be approximate"
       ]
     },
     {
@@ -54375,9 +54375,9 @@
   "summary": {
     "actionable_count": 3,
     "confidence_counts": {
-      "existing_evidence_needs_corroboration": 558,
+      "existing_evidence_needs_corroboration": 557,
       "independent_coordinate_agreement": 430,
-      "owner_reviewed": 56
+      "owner_reviewed": 57
     },
     "counts": {
       "ambiguous_or_missing_coordinates": 61,

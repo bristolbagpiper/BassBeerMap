@@ -17512,12 +17512,12 @@
       "venue_id": "v-c63814fd-52c2-5e7a-bca3-131e9aa35dfa"
     },
     "new baron|hinckley|le10 0az": {
-      "coordinate_source": "camra-and-manual-building-review",
+      "coordinate_source": "agent-reviewed-named-place-map",
       "display_precision": "venue",
       "evidence": [
         {
           "checked_at": "2026-10-19",
-          "difference_metres": 0,
+          "difference_metres": 5.3,
           "match": "agent_reviewed_same_pub_alias_and_building",
           "reference_address": "5-7 Regent Street",
           "reference_coordinate": {
@@ -17538,8 +17538,8 @@
           "match": "agent_checked_satellite_roof_frontage_and_named_business",
           "reference_address": "5-7 Regent Street, Hinckley",
           "reference_coordinate": {
-            "lat": 52.54112,
-            "lng": -1.37392
+            "lat": 52.5411354,
+            "lng": -1.3739948
           },
           "reference_name": "Crafty Baron Hinckley",
           "reference_postcode": "LE10 0AZ",
@@ -17549,11 +17549,11 @@
             "https://hinckleyandbosworth.camra.org.uk/viewnode.php?id=32488",
             "https://camra.org.uk/pubs/181808"
           ],
-          "url": "https://www.google.com/maps?q=52.54112,-1.37392&z=21&t=k"
+          "url": "https://www.google.com/maps/search/?api=1&query=52.5411354%2C-1.3739948"
         }
       ],
-      "lat": 52.54112,
-      "lng": -1.37392,
+      "lat": 52.5411354,
+      "lng": -1.3739948,
       "metadata_issue": {
         "field": "postcode",
         "listed": "LE10 0AZ",

@@ -23005,7 +23005,7 @@
         "comparisons": [
           {
             "address": "The New Baron, 5 - 7 Regent Street, Hinckley, Leicestershire",
-            "difference_metres": 29.3,
+            "difference_metres": 27.1,
             "lat": 52.540943145752,
             "lng": -1.37424194812775,
             "name": "New Baron Of Hinckley",
@@ -23029,8 +23029,8 @@
         },
         "owner_reviewed": false,
         "pin": {
-          "lat": 52.54112,
-          "lng": -1.37392
+          "lat": 52.5411354,
+          "lng": -1.3739948
         },
         "priority": 0,
         "reasons": [
@@ -23038,7 +23038,7 @@
         ],
         "reference": {
           "address": "The New Baron, 5 - 7 Regent Street, Hinckley, Leicestershire",
-          "difference_metres": 29.3,
+          "difference_metres": 27.1,
           "lat": 52.540943145752,
           "lng": -1.37424194812775,
           "name": "New Baron Of Hinckley",
@@ -23067,8 +23067,8 @@
         {
           "checked_at": "2026-10-19",
           "corrected_coordinate": {
-            "lat": 52.54112,
-            "lng": -1.37392
+            "lat": 52.5411354,
+            "lng": -1.3739948
           },
           "corroborating_named_coordinate": {
             "lat": 52.5411354,
@@ -23076,7 +23076,11 @@
           },
           "google_named_place_url": "https://www.google.com/maps/place/Crafty+Baron+Hinckley/@52.5411354,-1.3739948,152m/data=!3m1!1e3!4m6!3m5!1s0x48775aa3f039f779:0x3df5fc876489910b!8m2!3d52.5411354!4d-1.3739948!16s%2Fg%2F1tjgzw8x",
           "identity_conclusion": "CAMRA branch explicitly names New Baron Hinckley (also known as Crafty Baron), at 5-7 Regent Street; the current national reference title is this same pub. Record exact current reference name for periodic rechecks without broadening automatic name matching.",
-          "method": "Agent checked aerial imagery and named Crafty Baron listing at 5-7 Regent Street, including frontage photograph. The current CAMRA coordinate and named Google marker are within 6m on the pub building. The rejected stored FSA point is about 29m southwest on a different part of the block. User authorized independent investigation; replacement is agent reviewed, not claimed as owner visual approval.",
+          "intermediate_frontage_coordinate": {
+            "lat": 52.54112,
+            "lng": -1.37392
+          },
+          "method": "Agent inspected aerial imagery and the named Crafty Baron business at 5-7 Regent Street, including its frontage photograph. Rejected stored FSA point is southwest on a different property. Close-up showed the CAMRA point on the pavement at the frontage; use the named Google marker inside the pub roof, within 6m of CAMRA. User authorized independent investigation; no claim of owner visual approval of replacement.",
           "owner_instruction": "just figure it out",
           "postcode_conclusion": "Preserve PDF/Google/FSA LE10 0AZ and conflicting CAMRA LE10 0QA; building correction does not resolve the postal delivery postcode.",
           "previous_pin": {
@@ -23119,7 +23123,7 @@
             "status": "conflict"
           },
           "prior_owner_instruction": "no",
-          "review_map_url": "https://www.google.com/maps?q=52.54112,-1.37392&z=21&t=k",
+          "review_map_url": "https://www.google.com/maps/search/?api=1&query=52.5411354%2C-1.3739948",
           "reviewed_by": "codex",
           "source_url": "https://camra.org.uk/pubs/181808",
           "supporting_address_urls": [
@@ -23155,7 +23159,7 @@
         "checked_at": "2026-10-19",
         "evidence": {
           "checked_at": "2026-10-19",
-          "difference_metres": 0,
+          "difference_metres": 5.3,
           "match": "agent_reviewed_same_pub_alias_and_building",
           "reference_address": "5-7 Regent Street",
           "reference_coordinate": {
@@ -23167,7 +23171,7 @@
           "source": "camra",
           "url": "https://camra.org.uk/pubs/181808"
         },
-        "reason": "Agent verified corrected pub-building point and same-pub New Baron/Crafty Baron identity after owner rejected stored point.",
+        "reason": "Agent verified roof point slightly west of CAMRA frontage and exact same-pub New Baron/Crafty Baron identity.",
         "sources": {
           "camra": {
             "status": "confirmed",
@@ -23180,7 +23184,7 @@
         "evidence": [
           {
             "checked_at": "2026-10-19",
-            "difference_metres": 0,
+            "difference_metres": 5.3,
             "match": "agent_reviewed_same_pub_alias_and_building",
             "reference_address": "5-7 Regent Street",
             "reference_coordinate": {
@@ -23201,8 +23205,8 @@
             "match": "agent_checked_satellite_roof_frontage_and_named_business",
             "reference_address": "5-7 Regent Street, Hinckley",
             "reference_coordinate": {
-              "lat": 52.54112,
-              "lng": -1.37392
+              "lat": 52.5411354,
+              "lng": -1.3739948
             },
             "reference_name": "Crafty Baron Hinckley",
             "reference_postcode": "LE10 0AZ",
@@ -23212,18 +23216,18 @@
               "https://hinckleyandbosworth.camra.org.uk/viewnode.php?id=32488",
               "https://camra.org.uk/pubs/181808"
             ],
-            "url": "https://www.google.com/maps?q=52.54112,-1.37392&z=21&t=k"
+            "url": "https://www.google.com/maps/search/?api=1&query=52.5411354%2C-1.3739948"
           }
         ],
-        "lat": 52.54112,
-        "lng": -1.37392,
+        "lat": 52.5411354,
+        "lng": -1.3739948,
         "metadata_issue": {
           "field": "postcode",
           "listed": "LE10 0AZ",
           "reference": "LE10 0QA",
           "source_url": "https://camra.org.uk/pubs/181808"
         },
-        "source": "camra-and-manual-building-review"
+        "source": "agent-reviewed-named-place-map"
       }
     },
     "v-14061bf4-822e-5fad-af95-e998a3002dba": {

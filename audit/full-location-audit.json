@@ -15573,11 +15573,11 @@
     {
       "actionable": false,
       "area": "Nottinghamshire",
-      "checked_at": "2026-10-09",
+      "checked_at": "2026-10-19",
       "comparisons": [
         {
           "address": "Lion Inn, 44 Mosley Street, , Nottingham",
-          "difference_metres": 104.1,
+          "difference_metres": 112.0,
           "lat": 52.972134,
           "lng": -1.174122,
           "name": "Lion Inn",
@@ -15587,7 +15587,7 @@
           "url": "https://ratings.food.gov.uk/business/216514"
         }
       ],
-      "confidence": "existing_evidence_needs_corroboration",
+      "confidence": "owner_reviewed",
       "country": "England",
       "dispense": "H",
       "independent_of_pin": true,
@@ -15597,11 +15597,11 @@
         "pub_name": "Lion"
       },
       "notes": "",
-      "owner_reviewed": false,
+      "owner_reviewed": true,
       "pg": "Perm",
       "pin": {
-        "lat": 52.971823,
-        "lng": -1.172655
+        "lat": 52.9718889,
+        "lng": -1.1725
       },
       "place_name": "Nottingham: New Basford",
       "postcode": "NG7 7FQ",
@@ -15610,7 +15610,7 @@
       "reasons": [],
       "reference": {
         "address": "Lion Inn, 44 Mosley Street, , Nottingham",
-        "difference_metres": 104.1,
+        "difference_metres": 112.0,
         "lat": 52.972134,
         "lng": -1.174122,
         "name": "Lion Inn",
@@ -15622,7 +15622,7 @@
       "status": "coordinate_disagreement",
       "venue_id": "v-7860bb0f-0624-57b4-b298-427b0b8e62fb",
       "warnings": [
-        "FSA coordinate is 104.1m from the accepted pin; informational only because the FSA geocode may be approximate"
+        "FSA coordinate is 112.0m from the accepted pin; informational only because the FSA geocode may be approximate"
       ]
     },
     {
@@ -54375,9 +54375,9 @@
   "summary": {
     "actionable_count": 3,
     "confidence_counts": {
-      "existing_evidence_needs_corroboration": 554,
+      "existing_evidence_needs_corroboration": 553,
       "independent_coordinate_agreement": 430,
-      "owner_reviewed": 60
+      "owner_reviewed": 61
     },
     "counts": {
       "ambiguous_or_missing_coordinates": 61,

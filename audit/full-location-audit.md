@@ -16,8 +16,8 @@ Locations with informational observations: 598 (may also have an actionable find
 ## Confidence
 
 - independent_coordinate_agreement: 430
-- existing_evidence_needs_corroboration: 554
-- owner_reviewed: 60
+- existing_evidence_needs_corroboration: 553
+- owner_reviewed: 61
 
 ## Limits
 
@@ -335,7 +335,7 @@ Locations with informational observations: 598 (may also have an actionable find
 | Liberal Club (PMC) | Derby: Spondon | DE21 7EA | no_name_match | Informational | FSA comparison is inconclusive; absence of a match does not contradict accepted evidence |
 | Lichfield Vaults | Hereford | HR1 2LR | nearby | Informational | FSA coordinate is 25-50m away; informational only |
 | Lime Kiln | Wirksworth | DE4 4FR | coordinate_disagreement | Informational | FSA coordinate is 511.7m from the accepted pin; informational only because the FSA geocode may be approximate |
-| Lion | Nottingham: New Basford | NG7 7FQ | coordinate_disagreement | Informational | FSA coordinate is 104.1m from the accepted pin; informational only because the FSA geocode may be approximate |
+| Lion | Nottingham: New Basford | NG7 7FQ | coordinate_disagreement | Informational | FSA coordinate is 112.0m from the accepted pin; informational only because the FSA geocode may be approximate |
 | Little Angel | Whitby | YO21 3BA | ambiguous_or_missing_coordinates | Informational | FSA comparison is inconclusive; absence of a match does not contradict accepted evidence |
 | Liverpool Arms | Conwy | LL32 8BE | ambiguous_or_missing_coordinates | Informational | FSA comparison is inconclusive; absence of a match does not contradict accepted evidence |
 | Llanover Arms | Pontypridd | CF37 4PE | no_name_match | Informational | FSA comparison is inconclusive; absence of a match does not contradict accepted evidence |

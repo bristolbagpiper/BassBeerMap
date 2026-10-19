@@ -1540,16 +1540,20 @@
       "source_url": "https://camra.org.uk/pubs/143323"
     },
     "lion|nottingham: new basford|ng7 7fq": {
-      "audit_reason": "existing_pin_over_50m_from_matching_venue",
-      "checked_at": "2026-09-11",
-      "lat": 52.971823,
-      "lng": -1.172655,
-      "previous_difference_metres": 104.1,
-      "previous_lat": 52.972134,
-      "previous_lng": -1.174122,
-      "previous_source": "food-standards-agency-fhrs",
-      "source": "camra-pubs-location-audit",
-      "source_url": "https://camra.org.uk/pubs/162510"
+      "audit_reason": "manual_named_place_address_and_map_check",
+      "checked_at": "2026-10-19",
+      "corroborating_source_url": "https://www.google.com/maps/place/The+Lion+at+Basford/@52.971896,-1.172499,601m/data=!3m2!1e3!4b1!4m6!3m5!1s0x4879c194c256423f:0xfdcd7b53850c4cc1!8m2!3d52.971896!4d-1.172499!16s%2Fg%2F1w4vjg0z?entry=ttu&g_ep=EgoyMDI2MTAxMy4wIKXMDSoASAFQAw%3D%3D",
+      "lat": 52.9718889,
+      "lng": -1.1725,
+      "previous_difference_metres": 12.7,
+      "previous_lat": 52.971823,
+      "previous_lng": -1.172655,
+      "previous_source": "camra-pubs-location-audit",
+      "reference_address": "44 Mosley Street, New Basford, Nottingham NG7 7FQ",
+      "reference_name": "The Lion at Basford",
+      "review_note": "Owner supplied this Google Maps point and confirmed it correct. It is 0.8m from Google's named-place marker and 12.7m from the saved CAMRA point; both identify the same pub at 44 Mosley Street. The FSA coordinate is 112.0m away and remains informational.",
+      "source": "google-maps-map-point",
+      "source_url": "https://www.google.com/maps/place/52%C2%B058'18.8%22N+1%C2%B010'21.0%22W/@52.9718889,-1.1731451,150m/data=!3m2!1e3!4b1!4m4!3m3!8m2!3d52.9718889!4d-1.1725?entry=ttu&g_ep=EgoyMDI2MTAxMy4wIKXMDSoASAFQAw%3D%3D"
     },
     "llanover arms|pontypridd|cf37 4pe": {
       "audit_reason": "existing_pin_over_50m_from_matching_venue",

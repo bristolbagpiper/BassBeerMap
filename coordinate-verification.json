@@ -1,7 +1,7 @@
 {
   "counts": {
-    "venue_coordinate_requires_review": 31,
-    "verified_venue": 1013
+    "venue_coordinate_requires_review": 30,
+    "verified_venue": 1014
   },
   "generated_at": "2026-10-19",
   "policy": {
@@ -15265,8 +15265,8 @@
       "venue_id": "v-32beb565-ed3a-5330-a1c1-23421ac706ac"
     },
     "lion|nottingham: new basford|ng7 7fq": {
-      "coordinate_source": "camra-pubs-location-audit",
-      "display_precision": "postcode",
+      "coordinate_source": "manual_named_place_map",
+      "display_precision": "venue",
       "evidence": [
         {
           "checked_at": "2026-09-11",
@@ -15291,14 +15291,27 @@
           "reference_postcode": "NG7 7FQ",
           "source": "camra-pubs-location-audit",
           "url": "https://camra.org.uk/pubs/162510"
+        },
+        {
+          "checked_at": "2026-10-19",
+          "match": "owner_approved_existing_venue_building",
+          "reference_coordinate": {
+            "lat": 52.9718889,
+            "lng": -1.1725
+          },
+          "reference_name": "The Lion at Basford",
+          "reference_postcode": "NG7 7FQ",
+          "reviewed_by": "bristolbagpiper",
+          "source": "manual_named_place_map",
+          "url": "https://www.google.com/maps/place/52%C2%B058'18.8%22N+1%C2%B010'21.0%22W/@52.9718889,-1.1731451,150m/data=!3m2!1e3!4b1!4m4!3m3!8m2!3d52.9718889!4d-1.1725?entry=ttu&g_ep=EgoyMDI2MTAxMy4wIKXMDSoASAFQAw%3D%3D"
         }
       ],
-      "lat": 52.971823,
-      "lng": -1.172655,
+      "lat": 52.9718889,
+      "lng": -1.1725,
       "place_name": "Nottingham: New Basford",
       "postcode": "NG7 7FQ",
       "pub_name": "Lion",
-      "status": "venue_coordinate_requires_review",
+      "status": "verified_venue",
       "venue_id": "v-7860bb0f-0624-57b4-b298-427b0b8e62fb"
     },
     "little angel|whitby|yo21 3ba": {

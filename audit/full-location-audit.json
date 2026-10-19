@@ -30557,7 +30557,7 @@
           "url": "https://ratings.food.gov.uk/business/1339780"
         }
       ],
-      "confidence": "existing_evidence_needs_corroboration",
+      "confidence": "owner_reviewed",
       "country": "England",
       "dispense": "H",
       "independent_of_pin": true,
@@ -30567,7 +30567,7 @@
         "pub_name": "Ye Olde Rock"
       },
       "notes": "",
-      "owner_reviewed": false,
+      "owner_reviewed": true,
       "pg": "Perm",
       "pin": {
         "lat": 53.146033,
@@ -54375,9 +54375,9 @@
   "summary": {
     "actionable_count": 3,
     "confidence_counts": {
-      "existing_evidence_needs_corroboration": 560,
+      "existing_evidence_needs_corroboration": 559,
       "independent_coordinate_agreement": 430,
-      "owner_reviewed": 54
+      "owner_reviewed": 55
     },
     "counts": {
       "ambiguous_or_missing_coordinates": 61,

@@ -1,7 +1,7 @@
 {
   "counts": {
-    "venue_coordinate_requires_review": 37,
-    "verified_venue": 1007
+    "venue_coordinate_requires_review": 36,
+    "verified_venue": 1008
   },
   "generated_at": "2026-10-19",
   "policy": {
@@ -29970,7 +29970,7 @@
     },
     "ye olde rock|upper hulme|st13 8ty": {
       "coordinate_source": "camra-pubs-location-audit",
-      "display_precision": "postcode",
+      "display_precision": "venue",
       "evidence": [
         {
           "checked_at": "2026-09-11",
@@ -29995,6 +29995,23 @@
           "reference_postcode": "ST13 8TY",
           "source": "camra-pubs-location-audit",
           "url": "https://camra.org.uk/pubs/143925"
+        },
+        {
+          "checked_at": "2026-10-19",
+          "difference_metres": 8.7,
+          "match": "owner_confirmed_existing_pub_building",
+          "reference_coordinate": {
+            "lat": 53.1459596,
+            "lng": -1.9816332
+          },
+          "reference_name": "Ye Olde Rock Inn",
+          "reviewed_by": "bristolbagpiper",
+          "source": "manual_named_place_map",
+          "supporting_address_urls": [
+            "https://camra.org.uk/pubs/143925",
+            "https://ratings.food.gov.uk/business/1339780"
+          ],
+          "url": "https://www.google.com/maps/place/Ye+Olde+Rock+Inn/@53.1460132,-1.9821247,106m/data=!3m1!1e3!4m6!3m5!1s0x487a38e36cd63845:0xe91dffd9407e14ba!8m2!3d53.1459596!4d-1.9816332!16s%2Fg%2F1vntjf6t?entry=ttu&g_ep=EgoyMDI2MTAxMy4wIKXMDSoASAFQAw%3D%3D"
         }
       ],
       "lat": 53.146033,
@@ -30002,7 +30019,7 @@
       "place_name": "Upper Hulme",
       "postcode": "ST13 8TY",
       "pub_name": "Ye Olde Rock",
-      "status": "venue_coordinate_requires_review",
+      "status": "verified_venue",
       "venue_id": "v-19987b0d-6480-58e7-b70f-9f56cafc2d33"
     },
     "ye olde talbot|uttoxeter|st14 8hf": {

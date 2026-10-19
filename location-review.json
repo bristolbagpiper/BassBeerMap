@@ -1,5 +1,5 @@
 {
-  "active_count": 41,
+  "active_count": 40,
   "records": {
     "v-00a08839-2b8a-5782-b6c7-0bdce4cddb2f": {
       "active": false,
@@ -1662,7 +1662,7 @@
       "venue_id": "v-178e9924-7d6e-5be4-a7f6-8602ed509683"
     },
     "v-19987b0d-6480-58e7-b70f-9f56cafc2d33": {
-      "active": true,
+      "active": false,
       "first_seen": "2026-10-09",
       "history": [
         {
@@ -1683,15 +1683,18 @@
             "Reference venue name changed"
           ],
           "status": "unverified"
+        },
+        {
+          "date": "2026-10-19",
+          "reasons": [],
+          "status": "resolved"
         }
       ],
-      "last_checked": "2026-10-13",
+      "last_checked": "2026-10-19",
       "place_name": "Upper Hulme",
       "postcode": "ST13 8TY",
       "pub_name": "Ye Olde Rock",
-      "reasons": [
-        "Reference venue name changed"
-      ],
+      "reasons": [],
       "reference": {},
       "research": {
         "checked_at": "2026-10-13",
@@ -1715,11 +1718,15 @@
         "fsa_independent": {
           "status": "coordinate_disagreement",
           "url": "https://ratings.food.gov.uk/business/1339780"
+        },
+        "manual_named_place_map": {
+          "status": "confirmed",
+          "url": "https://www.google.com/maps/place/Ye+Olde+Rock+Inn/@53.1460132,-1.9821247,106m/data=!3m1!1e3!4m6!3m5!1s0x487a38e36cd63845:0xe91dffd9407e14ba!8m2!3d53.1459596!4d-1.9816332!16s%2Fg%2F1vntjf6t?entry=ttu&g_ep=EgoyMDI2MTAxMy4wIKXMDSoASAFQAw%3D%3D"
         }
       },
       "source_error": null,
-      "status": "unverified",
-      "unverified": true,
+      "status": "resolved",
+      "unverified": false,
       "venue_id": "v-19987b0d-6480-58e7-b70f-9f56cafc2d33"
     },
     "v-1bf34620-f64f-5271-9684-ae4b0c95b4f1": {
@@ -14487,5 +14494,5 @@
     }
   },
   "schema_version": 1,
-  "unverified_count": 37
+  "unverified_count": 36
 }

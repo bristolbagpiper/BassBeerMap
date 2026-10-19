@@ -2,7 +2,7 @@
 
 Locations: 1044
 
-Actionable findings: 13
+Actionable findings: 12
 Locations with informational observations: 596 (may also have an actionable finding)
 
 ## Results
@@ -16,8 +16,8 @@ Locations with informational observations: 596 (may also have an actionable find
 ## Confidence
 
 - independent_coordinate_agreement: 432
-- existing_evidence_needs_corroboration: 568
-- owner_reviewed: 44
+- existing_evidence_needs_corroboration: 567
+- owner_reviewed: 45
 
 ## Limits
 
@@ -42,7 +42,6 @@ Locations with informational observations: 596 (may also have an actionable find
 | Stella Taps | Mansfield | NG18 4AL | coordinate_agreement | Actionable | Directory postcode differs from reviewed reference postcode |
 | Tame Otter | Hopwas | B78 3AB | coordinate_disagreement | Actionable | Directory postcode differs from reviewed reference postcode; FSA coordinate is 179.9m from the accepted pin; informational only because the FSA geocode may be approximate |
 | Waterfront | Barton-under-Needwood | DE13 8AS | no_name_match | Actionable | Directory postcode differs from reviewed reference postcode; FSA comparison is inconclusive; absence of a match does not contradict accepted evidence |
-| Waveney | Lowestoft: Oulton Broad | NR32 3LN | nearby | Actionable | Directory postcode differs from reviewed reference postcode; FSA coordinate is 25-50m away; informational only |
 | White Hart | Tean | ST10 4DZ | coordinate_disagreement | Actionable | Directory postcode differs from reviewed reference postcode; FSA coordinate is 105.4m from the accepted pin; informational only because the FSA geocode may be approximate |
 | 1852 Brewery Co | Leicester: South Wigston | LE18 2DH | no_name_match | Informational | FSA comparison is inconclusive; absence of a match does not contradict accepted evidence |
 | 45 Club (PMC) | Newcastle-U-L: Central | ST5 1DS | no_name_match | Informational | FSA comparison is inconclusive; absence of a match does not contradict accepted evidence |
@@ -586,6 +585,7 @@ Locations with informational observations: 596 (may also have an actionable find
 | Waldorf | Manchester: Central | M1 3AQ | coordinate_disagreement | Informational | FSA coordinate is 62.4m from the accepted pin; informational only because the FSA geocode may be approximate |
 | Waterloo | Biggin | SK17 0DH | coordinate_disagreement | Informational | FSA coordinate is 62.1m from the accepted pin; informational only because the FSA geocode may be approximate |
 | Waterloo | Burton U-T: Winshill | DE15 0LQ | no_name_match | Informational | FSA comparison is inconclusive; absence of a match does not contradict accepted evidence |
+| Waveney | Lowestoft: Oulton Broad | NR32 3LN | nearby | Informational | Owner reviewed this postcode discrepancy and confirmed the displayed pub building; listing postcode retained for provenance; FSA coordinate is 25-50m away; informational only |
 | Weavers Arms | Bulkington | CV12 9JZ | coordinate_disagreement | Informational | FSA coordinate is 100.2m from the accepted pin; informational only because the FSA geocode may be approximate |
 | Well | Luton | LU2 0BW | no_name_match | Informational | FSA comparison is inconclusive; absence of a match does not contradict accepted evidence |
 | Wellington Arms | Bedford | MK40 2JX | no_name_match | Informational | FSA comparison is inconclusive; absence of a match does not contradict accepted evidence |

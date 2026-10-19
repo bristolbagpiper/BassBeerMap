@@ -1,6 +1,6 @@
 {
   "location_review": {
-    "active_count": 51,
+    "active_count": 50,
     "records": {
       "v-00a08839-2b8a-5782-b6c7-0bdce4cddb2f": {
         "active": false,
@@ -318,7 +318,7 @@
         "venue_id": "v-05f63181-ba5a-5063-9c9f-09ede7663351"
       },
       "v-082c00f2-cff9-55ca-ac80-fb375cbc5f78": {
-        "active": true,
+        "active": false,
         "first_seen": "2026-10-02",
         "history": [
           {
@@ -327,18 +327,40 @@
               "Directory postcode NR32 3LN conflicts with reference address NR33 9JT"
             ],
             "status": "review_needed"
+          },
+          {
+            "date": "2026-10-19",
+            "reasons": [],
+            "status": "resolved"
           }
         ],
-        "last_checked": "2026-10-10",
+        "last_checked": "2026-10-19",
         "place_name": "Lowestoft: Oulton Broad",
         "postcode": "NR32 3LN",
         "pub_name": "Waveney",
-        "reasons": [
-          "Directory postcode NR32 3LN conflicts with reference address NR33 9JT"
-        ],
+        "reasons": [],
         "reference": {
           "field": "postcode",
           "listed": "NR32 3LN",
+          "owner_review": {
+            "approved_coordinate": {
+              "lat": 52.473285139999994,
+              "lng": 1.70988504
+            },
+            "checked_at": "2026-10-19",
+            "conclusion": "Owner visually confirmed the existing Waveney pub building at 132-134 Bridge Road in the Google satellite view. Retain the pin. CAMRA and the operator list NR33 9JT; the Bass directory PDF lists NR32 3LN. Preserve both source values; visual building confirmation does not establish which postcode serves postal delivery.",
+            "listed": "NR32 3LN",
+            "owner_instruction": "correct",
+            "pub_name": "Waveney",
+            "reference": "NR33 9JT",
+            "review_map_url": "https://www.google.com/maps/place/52%C2%B028%2723.8%22N+1%C2%B042%2735.6%22E/@52.4732851,1.709885,20z/data=!3m1!1e3",
+            "reviewed_by": "bristolbagpiper",
+            "source_url": "https://camra.org.uk/pubs/133832",
+            "supporting_address_urls": [
+              "https://camra.org.uk/pubs/waveney-oulton-broad-133832",
+              "https://www.craftunionpubs.com/waveney-oulton-broad"
+            ]
+          },
           "reference": "NR33 9JT",
           "source_url": "https://camra.org.uk/pubs/133832"
         },
@@ -350,7 +372,7 @@
           }
         },
         "source_error": null,
-        "status": "review_needed",
+        "status": "resolved",
         "unverified": false,
         "venue_id": "v-082c00f2-cff9-55ca-ac80-fb375cbc5f78"
       },
@@ -17043,7 +17065,7 @@
       ],
       "current_key": "waveney|lowestoft: oulton broad|nr32 3ln",
       "independent_location_check": {
-        "actionable": true,
+        "actionable": false,
         "checked_at": "2026-10-10",
         "comparisons": [
           {
@@ -17064,21 +17086,19 @@
             "url": "https://ratings.food.gov.uk/business/1592613"
           }
         ],
-        "confidence": "existing_evidence_needs_corroboration",
+        "confidence": "owner_reviewed",
         "independent_of_pin": true,
         "listing": {
           "postcode": "NR32 3LN",
           "pub_name": "Waveney"
         },
-        "owner_reviewed": false,
+        "owner_reviewed": true,
         "pin": {
           "lat": 52.473285139999994,
           "lng": 1.70988504
         },
-        "priority": 0,
-        "reasons": [
-          "Directory postcode differs from reviewed reference postcode"
-        ],
+        "priority": 2,
+        "reasons": [],
         "reference": {
           "address": "132 - 134 Bridge Road, Lowestoft, Suffolk",
           "difference_metres": 42.1,
@@ -17092,6 +17112,7 @@
         },
         "status": "nearby",
         "warnings": [
+          "Owner reviewed this postcode discrepancy and confirmed the displayed pub building; listing postcode retained for provenance",
           "FSA coordinate is 25-50m away; informational only"
         ]
       },
@@ -17106,6 +17127,27 @@
         "postcode": "NR32 3LN",
         "pub_name": "Waveney"
       },
+      "location_approvals": [
+        {
+          "approved_coordinate": {
+            "lat": 52.473285139999994,
+            "lng": 1.70988504
+          },
+          "checked_at": "2026-10-19",
+          "conclusion": "Owner visually confirmed the existing Waveney pub building at 132-134 Bridge Road in the Google satellite view. Retain the pin. CAMRA and the operator list NR33 9JT; the Bass directory PDF lists NR32 3LN. Preserve both source values; visual building confirmation does not establish which postcode serves postal delivery.",
+          "listed": "NR32 3LN",
+          "owner_instruction": "correct",
+          "pub_name": "Waveney",
+          "reference": "NR33 9JT",
+          "review_map_url": "https://www.google.com/maps/place/52%C2%B028%2723.8%22N+1%C2%B042%2735.6%22E/@52.4732851,1.709885,20z/data=!3m1!1e3",
+          "reviewed_by": "bristolbagpiper",
+          "source_url": "https://camra.org.uk/pubs/133832",
+          "supporting_address_urls": [
+            "https://camra.org.uk/pubs/waveney-oulton-broad-133832",
+            "https://www.craftunionpubs.com/waveney-oulton-broad"
+          ]
+        }
+      ],
       "verified_pin": {
         "evidence": [
           {
@@ -17121,6 +17163,23 @@
             "reference_postcode": "NR33 9JT",
             "source": "camra",
             "url": "https://camra.org.uk/pubs/133832"
+          },
+          {
+            "checked_at": "2026-10-19",
+            "match": "owner_confirmed_existing_pub_building",
+            "reference_coordinate": {
+              "lat": 52.473285139999994,
+              "lng": 1.70988504
+            },
+            "reference_name": "Waveney, Oulton Broad",
+            "reference_postcode": "NR33 9JT",
+            "reviewed_by": "bristolbagpiper",
+            "source": "manual_named_place_map",
+            "supporting_address_urls": [
+              "https://camra.org.uk/pubs/waveney-oulton-broad-133832",
+              "https://www.craftunionpubs.com/waveney-oulton-broad"
+            ],
+            "url": "https://www.google.com/maps/place/52%C2%B028%2723.8%22N+1%C2%B042%2735.6%22E/@52.4732851,1.709885,20z/data=!3m1!1e3"
           }
         ],
         "lat": 52.473285139999994,
@@ -17128,6 +17187,25 @@
         "metadata_issue": {
           "field": "postcode",
           "listed": "NR32 3LN",
+          "owner_review": {
+            "approved_coordinate": {
+              "lat": 52.473285139999994,
+              "lng": 1.70988504
+            },
+            "checked_at": "2026-10-19",
+            "conclusion": "Owner visually confirmed the existing Waveney pub building at 132-134 Bridge Road in the Google satellite view. Retain the pin. CAMRA and the operator list NR33 9JT; the Bass directory PDF lists NR32 3LN. Preserve both source values; visual building confirmation does not establish which postcode serves postal delivery.",
+            "listed": "NR32 3LN",
+            "owner_instruction": "correct",
+            "pub_name": "Waveney",
+            "reference": "NR33 9JT",
+            "review_map_url": "https://www.google.com/maps/place/52%C2%B028%2723.8%22N+1%C2%B042%2735.6%22E/@52.4732851,1.709885,20z/data=!3m1!1e3",
+            "reviewed_by": "bristolbagpiper",
+            "source_url": "https://camra.org.uk/pubs/133832",
+            "supporting_address_urls": [
+              "https://camra.org.uk/pubs/waveney-oulton-broad-133832",
+              "https://www.craftunionpubs.com/waveney-oulton-broad"
+            ]
+          },
           "reference": "NR33 9JT",
           "source_url": "https://camra.org.uk/pubs/133832"
         },

@@ -1331,7 +1331,7 @@
       "warnings": []
     },
     "v-082c00f2-cff9-55ca-ac80-fb375cbc5f78": {
-      "actionable": true,
+      "actionable": false,
       "checked_at": "2026-10-10",
       "comparisons": [
         {
@@ -1352,21 +1352,19 @@
           "url": "https://ratings.food.gov.uk/business/1592613"
         }
       ],
-      "confidence": "existing_evidence_needs_corroboration",
+      "confidence": "owner_reviewed",
       "independent_of_pin": true,
       "listing": {
         "postcode": "NR32 3LN",
         "pub_name": "Waveney"
       },
-      "owner_reviewed": false,
+      "owner_reviewed": true,
       "pin": {
         "lat": 52.473285139999994,
         "lng": 1.70988504
       },
-      "priority": 0,
-      "reasons": [
-        "Directory postcode differs from reviewed reference postcode"
-      ],
+      "priority": 2,
+      "reasons": [],
       "reference": {
         "address": "132 - 134 Bridge Road, Lowestoft, Suffolk",
         "difference_metres": 42.1,
@@ -1380,6 +1378,7 @@
       },
       "status": "nearby",
       "warnings": [
+        "Owner reviewed this postcode discrepancy and confirmed the displayed pub building; listing postcode retained for provenance",
         "FSA coordinate is 25-50m away; informational only"
       ]
     },

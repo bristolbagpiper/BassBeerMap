@@ -669,69 +669,6 @@
     },
     {
       "actionable": true,
-      "area": "Suffolk",
-      "checked_at": "2026-10-10",
-      "comparisons": [
-        {
-          "name_matches": 0,
-          "postcode_matches": 2,
-          "queried_postcode": "NR32 3LN",
-          "status": "no_name_match"
-        },
-        {
-          "address": "132 - 134 Bridge Road, Lowestoft, Suffolk",
-          "difference_metres": 42.1,
-          "lat": 52.472908,
-          "lng": 1.709837,
-          "name": "The Waveney",
-          "postcode": "NR33 9JT",
-          "queried_postcode": "NR33 9JT",
-          "status": "nearby",
-          "url": "https://ratings.food.gov.uk/business/1592613"
-        }
-      ],
-      "confidence": "existing_evidence_needs_corroboration",
-      "country": "England",
-      "dispense": "H",
-      "independent_of_pin": true,
-      "last": "2026 Q2",
-      "listing": {
-        "postcode": "NR32 3LN",
-        "pub_name": "Waveney"
-      },
-      "notes": "",
-      "owner_reviewed": false,
-      "pg": "Guest",
-      "pin": {
-        "lat": 52.473285139999994,
-        "lng": 1.70988504
-      },
-      "place_name": "Lowestoft: Oulton Broad",
-      "postcode": "NR32 3LN",
-      "priority": 0,
-      "pub_name": "Waveney",
-      "reasons": [
-        "Directory postcode differs from reviewed reference postcode"
-      ],
-      "reference": {
-        "address": "132 - 134 Bridge Road, Lowestoft, Suffolk",
-        "difference_metres": 42.1,
-        "lat": 52.472908,
-        "lng": 1.709837,
-        "name": "The Waveney",
-        "postcode": "NR33 9JT",
-        "queried_postcode": "NR33 9JT",
-        "status": "nearby",
-        "url": "https://ratings.food.gov.uk/business/1592613"
-      },
-      "status": "nearby",
-      "venue_id": "v-082c00f2-cff9-55ca-ac80-fb375cbc5f78",
-      "warnings": [
-        "FSA coordinate is 25-50m away; informational only"
-      ]
-    },
-    {
-      "actionable": true,
       "area": "Staffordshire",
       "checked_at": "2026-10-10",
       "comparisons": [
@@ -28545,6 +28482,68 @@
     },
     {
       "actionable": false,
+      "area": "Suffolk",
+      "checked_at": "2026-10-10",
+      "comparisons": [
+        {
+          "name_matches": 0,
+          "postcode_matches": 2,
+          "queried_postcode": "NR32 3LN",
+          "status": "no_name_match"
+        },
+        {
+          "address": "132 - 134 Bridge Road, Lowestoft, Suffolk",
+          "difference_metres": 42.1,
+          "lat": 52.472908,
+          "lng": 1.709837,
+          "name": "The Waveney",
+          "postcode": "NR33 9JT",
+          "queried_postcode": "NR33 9JT",
+          "status": "nearby",
+          "url": "https://ratings.food.gov.uk/business/1592613"
+        }
+      ],
+      "confidence": "owner_reviewed",
+      "country": "England",
+      "dispense": "H",
+      "independent_of_pin": true,
+      "last": "2026 Q2",
+      "listing": {
+        "postcode": "NR32 3LN",
+        "pub_name": "Waveney"
+      },
+      "notes": "",
+      "owner_reviewed": true,
+      "pg": "Guest",
+      "pin": {
+        "lat": 52.473285139999994,
+        "lng": 1.70988504
+      },
+      "place_name": "Lowestoft: Oulton Broad",
+      "postcode": "NR32 3LN",
+      "priority": 2,
+      "pub_name": "Waveney",
+      "reasons": [],
+      "reference": {
+        "address": "132 - 134 Bridge Road, Lowestoft, Suffolk",
+        "difference_metres": 42.1,
+        "lat": 52.472908,
+        "lng": 1.709837,
+        "name": "The Waveney",
+        "postcode": "NR33 9JT",
+        "queried_postcode": "NR33 9JT",
+        "status": "nearby",
+        "url": "https://ratings.food.gov.uk/business/1592613"
+      },
+      "status": "nearby",
+      "venue_id": "v-082c00f2-cff9-55ca-ac80-fb375cbc5f78",
+      "warnings": [
+        "Owner reviewed this postcode discrepancy and confirmed the displayed pub building; listing postcode retained for provenance",
+        "FSA coordinate is 25-50m away; informational only"
+      ]
+    },
+    {
+      "actionable": false,
       "area": "Warwickshire",
       "checked_at": "2026-10-09",
       "comparisons": [
@@ -54381,11 +54380,11 @@
   ],
   "schema_version": 1,
   "summary": {
-    "actionable_count": 13,
+    "actionable_count": 12,
     "confidence_counts": {
-      "existing_evidence_needs_corroboration": 568,
+      "existing_evidence_needs_corroboration": 567,
       "independent_coordinate_agreement": 432,
-      "owner_reviewed": 44
+      "owner_reviewed": 45
     },
     "counts": {
       "ambiguous_or_missing_coordinates": 61,

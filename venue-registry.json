@@ -1,6 +1,6 @@
 {
   "location_review": {
-    "active_count": 37,
+    "active_count": 36,
     "records": {
       "v-00a08839-2b8a-5782-b6c7-0bdce4cddb2f": {
         "active": false,
@@ -8035,7 +8035,7 @@
         "venue_id": "v-7ecdc061-3850-5388-865f-f697462bbc10"
       },
       "v-804d57d4-1953-5654-88fa-fc20c0ce6910": {
-        "active": true,
+        "active": false,
         "first_seen": "2026-10-09",
         "history": [
           {
@@ -8056,15 +8056,18 @@
               "Reference venue name changed"
             ],
             "status": "unverified"
+          },
+          {
+            "date": "2026-10-19",
+            "reasons": [],
+            "status": "resolved"
           }
         ],
         "last_checked": "2026-10-19",
         "place_name": "Newcastle-U-L: Bradwell",
         "postcode": "ST5 8JA",
         "pub_name": "Bradwell Working Mens Club (PMC)",
-        "reasons": [
-          "Reference venue name changed"
-        ],
+        "reasons": [],
         "reference": {},
         "research": {},
         "source_checks": {
@@ -8082,8 +8085,8 @@
           }
         },
         "source_error": null,
-        "status": "unverified",
-        "unverified": true,
+        "status": "resolved",
+        "unverified": false,
         "venue_id": "v-804d57d4-1953-5654-88fa-fc20c0ce6910"
       },
       "v-813a838f-ed8d-514d-9a9a-d192591cfe49": {
@@ -14508,7 +14511,7 @@
       }
     },
     "schema_version": 1,
-    "unverified_count": 33
+    "unverified_count": 32
   },
   "schema_version": 1,
   "venues": {
@@ -70138,7 +70141,7 @@
         "comparisons": [
           {
             "address": "Bradwell Workingmens Club, Bradwell Lane, Newcastle Under Lyme, Staffordshire",
-            "difference_metres": 50.5,
+            "difference_metres": 51.5,
             "lat": 53.041487,
             "lng": -2.233762,
             "name": "BRADWELL WORKINGMENS CLUB",
@@ -70148,22 +70151,22 @@
             "url": "https://ratings.food.gov.uk/business/404247"
           }
         ],
-        "confidence": "existing_evidence_needs_corroboration",
+        "confidence": "owner_reviewed",
         "independent_of_pin": true,
         "listing": {
           "postcode": "ST5 8JA",
           "pub_name": "Bradwell Working Mens Club (PMC)"
         },
-        "owner_reviewed": false,
+        "owner_reviewed": true,
         "pin": {
-          "lat": 53.041765,
-          "lng": -2.23436
+          "lat": 53.0417778,
+          "lng": -2.2343611
         },
         "priority": 2,
         "reasons": [],
         "reference": {
           "address": "Bradwell Workingmens Club, Bradwell Lane, Newcastle Under Lyme, Staffordshire",
-          "difference_metres": 50.5,
+          "difference_metres": 51.5,
           "lat": 53.041487,
           "lng": -2.233762,
           "name": "BRADWELL WORKINGMENS CLUB",
@@ -70174,7 +70177,7 @@
         },
         "status": "coordinate_disagreement",
         "warnings": [
-          "FSA coordinate is 50.5m from the accepted pin; informational only because the FSA geocode may be approximate"
+          "FSA coordinate is 51.5m from the accepted pin; informational only because the FSA geocode may be approximate"
         ]
       },
       "listing": {
@@ -70188,6 +70191,26 @@
         "postcode": "ST5 8JA",
         "pub_name": "Bradwell Working Mens Club (PMC)"
       },
+      "location_approvals": [
+        {
+          "approved_coordinate": {
+            "lat": 53.0417778,
+            "lng": -2.2343611
+          },
+          "checked_at": "2026-10-19",
+          "conclusion": "Owner said either nearby Google point was acceptable and supplied this selected map point. It is 1.4m from the saved candidate and 8.0m from Google's named-place marker, both at the same club. The FSA address geocode is 51.5m away and remains informational.",
+          "listed": "ST5 8JA",
+          "owner_instruction": "either is fine",
+          "pub_name": "Bradwell Working Mens Club (PMC)",
+          "reference": "Bradwell Working Men's Club, Bradwell Ln, Newcastle-under-Lyme ST5 8JA",
+          "review_map_url": "https://www.google.com/maps/place/53%C2%B002'30.4%22N+2%C2%B014'03.7%22W/@53.0417778,-2.2350048,150m/data=!3m2!1e3!4b1!4m4!3m3!8m2!3d53.0417778!4d-2.2343611?entry=ttu&g_ep=EgoyMDI2MTAxMy4wIKXMDSoASAFQAw%3D%3D",
+          "reviewed_by": "bristolbagpiper",
+          "source_url": "https://camra.org.uk/pubs/123211",
+          "supporting_address_urls": [
+            "https://www.google.com/maps/place/Bradwell+Working+Men's+Club/@53.041835,-2.2344339,600m/data=!3m2!1e3!4b1!4m6!3m5!1s0x487a5d4bf36bf14f:0x7940ad48c74698a4!8m2!3d53.041835!4d-2.2344339!16s%2Fg%2F1tjkf9_j"
+          ]
+        }
+      ],
       "verification_attempt": {
         "checked_at": "2026-10-19",
         "reason": "Reference venue name changed",
@@ -70229,13 +70252,24 @@
             "reference_postcode": "ST5 8JA",
             "source": "camra-pubs-location-audit",
             "url": "https://camra.org.uk/pubs/123211"
+          },
+          {
+            "checked_at": "2026-10-19",
+            "match": "owner_approved_existing_venue_building",
+            "reference_coordinate": {
+              "lat": 53.0417778,
+              "lng": -2.2343611
+            },
+            "reference_name": "Bradwell Working Men's Club",
+            "reference_postcode": "ST5 8JA",
+            "reviewed_by": "bristolbagpiper",
+            "source": "manual_named_place_map",
+            "url": "https://www.google.com/maps/place/53%C2%B002'30.4%22N+2%C2%B014'03.7%22W/@53.0417778,-2.2350048,150m/data=!3m2!1e3!4b1!4m4!3m3!8m2!3d53.0417778!4d-2.2343611?entry=ttu&g_ep=EgoyMDI2MTAxMy4wIKXMDSoASAFQAw%3D%3D"
           }
         ],
-        "lat": 53.041765,
-        "lng": -2.23436,
-        "review_reason": "Reference venue name changed",
-        "review_required": true,
-        "source": "camra-pubs-location-audit"
+        "lat": 53.0417778,
+        "lng": -2.2343611,
+        "source": "manual_named_place_map"
       }
     },
     "v-809531b4-2e54-53fe-a824-d4187ca7d360": {

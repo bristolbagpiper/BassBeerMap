@@ -16,8 +16,8 @@ Locations with informational observations: 598 (may also have an actionable find
 ## Confidence
 
 - independent_coordinate_agreement: 430
-- existing_evidence_needs_corroboration: 556
-- owner_reviewed: 58
+- existing_evidence_needs_corroboration: 555
+- owner_reviewed: 59
 
 ## Limits
 
@@ -110,7 +110,7 @@ Locations with informational observations: 598 (may also have an actionable find
 | Botanical Arms | Sheffield: Ecclesall Road | S11 8PR | coordinate_disagreement | Informational | FSA coordinate is 57.5m from the accepted pin; informational only because the FSA geocode may be approximate |
 | Bottle and Glass | Normanby | LN8 2HE | coordinate_disagreement | Informational | FSA coordinate is 114.9m from the accepted pin; informational only because the FSA geocode may be approximate |
 | Bowls Club (PMC) | Barton-under-Needwood | DE13 8AX | no_name_match | Informational | FSA comparison is inconclusive; absence of a match does not contradict accepted evidence |
-| Bradwell Working Mens Club (PMC) | Newcastle-U-L: Bradwell | ST5 8JA | coordinate_disagreement | Informational | FSA coordinate is 50.5m from the accepted pin; informational only because the FSA geocode may be approximate |
+| Bradwell Working Mens Club (PMC) | Newcastle-U-L: Bradwell | ST5 8JA | coordinate_disagreement | Informational | FSA coordinate is 51.5m from the accepted pin; informational only because the FSA geocode may be approximate |
 | Branston Golf & Country Club | Burton U-T: Branston | DE14 3DP | coordinate_disagreement | Informational | FSA coordinate is 484.8m from the accepted pin; informational only because the FSA geocode may be approximate |
 | Brass Button | Ashbourne | DE6 1EU | no_name_match | Informational | FSA comparison is inconclusive; absence of a match does not contradict accepted evidence |
 | Bread and Bitter | Nottingham: Mapperley | NG3 5JL | coordinate_disagreement | Informational | FSA coordinate is 96.9m from the accepted pin; informational only because the FSA geocode may be approximate |

@@ -1,7 +1,7 @@
 {
   "counts": {
-    "venue_coordinate_requires_review": 33,
-    "verified_venue": 1011
+    "venue_coordinate_requires_review": 32,
+    "verified_venue": 1012
   },
   "generated_at": "2026-10-19",
   "policy": {
@@ -3612,8 +3612,8 @@
       "venue_id": "v-914a7527-30f1-5b36-acce-5b36c7210041"
     },
     "bradwell working mens club (pmc)|newcastle-u-l: bradwell|st5 8ja": {
-      "coordinate_source": "camra-pubs-location-audit",
-      "display_precision": "postcode",
+      "coordinate_source": "manual_named_place_map",
+      "display_precision": "venue",
       "evidence": [
         {
           "checked_at": "2026-09-11",
@@ -3638,14 +3638,27 @@
           "reference_postcode": "ST5 8JA",
           "source": "camra-pubs-location-audit",
           "url": "https://camra.org.uk/pubs/123211"
+        },
+        {
+          "checked_at": "2026-10-19",
+          "match": "owner_approved_existing_venue_building",
+          "reference_coordinate": {
+            "lat": 53.0417778,
+            "lng": -2.2343611
+          },
+          "reference_name": "Bradwell Working Men's Club",
+          "reference_postcode": "ST5 8JA",
+          "reviewed_by": "bristolbagpiper",
+          "source": "manual_named_place_map",
+          "url": "https://www.google.com/maps/place/53%C2%B002'30.4%22N+2%C2%B014'03.7%22W/@53.0417778,-2.2350048,150m/data=!3m2!1e3!4b1!4m4!3m3!8m2!3d53.0417778!4d-2.2343611?entry=ttu&g_ep=EgoyMDI2MTAxMy4wIKXMDSoASAFQAw%3D%3D"
         }
       ],
-      "lat": 53.041765,
-      "lng": -2.23436,
+      "lat": 53.0417778,
+      "lng": -2.2343611,
       "place_name": "Newcastle-U-L: Bradwell",
       "postcode": "ST5 8JA",
       "pub_name": "Bradwell Working Mens Club (PMC)",
-      "status": "venue_coordinate_requires_review",
+      "status": "verified_venue",
       "venue_id": "v-804d57d4-1953-5654-88fa-fc20c0ce6910"
     },
     "branston golf & country club|burton u-t: branston|de14 3dp": {

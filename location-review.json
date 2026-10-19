@@ -1,5 +1,5 @@
 {
-  "active_count": 37,
+  "active_count": 36,
   "records": {
     "v-00a08839-2b8a-5782-b6c7-0bdce4cddb2f": {
       "active": false,
@@ -8034,7 +8034,7 @@
       "venue_id": "v-7ecdc061-3850-5388-865f-f697462bbc10"
     },
     "v-804d57d4-1953-5654-88fa-fc20c0ce6910": {
-      "active": true,
+      "active": false,
       "first_seen": "2026-10-09",
       "history": [
         {
@@ -8055,15 +8055,18 @@
             "Reference venue name changed"
           ],
           "status": "unverified"
+        },
+        {
+          "date": "2026-10-19",
+          "reasons": [],
+          "status": "resolved"
         }
       ],
       "last_checked": "2026-10-19",
       "place_name": "Newcastle-U-L: Bradwell",
       "postcode": "ST5 8JA",
       "pub_name": "Bradwell Working Mens Club (PMC)",
-      "reasons": [
-        "Reference venue name changed"
-      ],
+      "reasons": [],
       "reference": {},
       "research": {},
       "source_checks": {
@@ -8081,8 +8084,8 @@
         }
       },
       "source_error": null,
-      "status": "unverified",
-      "unverified": true,
+      "status": "resolved",
+      "unverified": false,
       "venue_id": "v-804d57d4-1953-5654-88fa-fc20c0ce6910"
     },
     "v-813a838f-ed8d-514d-9a9a-d192591cfe49": {
@@ -14507,5 +14510,5 @@
     }
   },
   "schema_version": 1,
-  "unverified_count": 33
+  "unverified_count": 32
 }

@@ -17432,24 +17432,48 @@
       "venue_id": "v-9ee32030-d38f-51bb-94b7-64a11d601650"
     },
     "nelson inn|brown lees|st8 6ph": {
-      "coordinate_source": "openstreetmap-gb-extract",
+      "coordinate_source": "camra-and-manual-building-review",
       "display_precision": "venue",
       "evidence": [
         {
-          "checked_at": "2026-09-11",
-          "difference_metres": 29.3,
-          "match": "venue_name_and_coordinate; listing_postcode_conflicts",
+          "checked_at": "2026-10-19",
+          "difference_metres": 0,
+          "match": "named_address_and_agent_verified_pub_building",
+          "reference_address": "118 Brown Lees Road",
           "reference_coordinate": {
-            "lat": 53.099298,
-            "lng": -2.183616
+            "lat": 53.099049,
+            "lng": -2.1834742
           },
+          "reference_name": "Nelson Inn, Brown Lees - Victorian Village Local",
           "reference_postcode": "ST8 6PW",
           "source": "camra",
           "url": "https://camra.org.uk/pubs/143866"
+        },
+        {
+          "checked_at": "2026-10-19",
+          "corroborating_coordinate": {
+            "lat": 53.0990094,
+            "lng": -2.1834542
+          },
+          "match": "agent_checked_satellite_roof_frontage_and_named_business",
+          "reference_address": "118 Brown Lees Road",
+          "reference_coordinate": {
+            "lat": 53.099049,
+            "lng": -2.1834742
+          },
+          "reference_name": "The Nelson",
+          "reference_postcode": "ST8 6PH",
+          "reviewed_by": "codex",
+          "source": "manual_named_place_map",
+          "supporting_address_urls": [
+            "https://camra.org.uk/pubs/143866",
+            "https://ratings.food.gov.uk/business/1559527"
+          ],
+          "url": "https://www.google.com/maps?q=53.099049,-2.1834742&z=21&t=k"
         }
       ],
-      "lat": 53.099298,
-      "lng": -2.183616,
+      "lat": 53.099049,
+      "lng": -2.1834742,
       "metadata_issue": {
         "field": "postcode",
         "listed": "ST8 6PH",

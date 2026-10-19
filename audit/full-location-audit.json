@@ -3,7 +3,7 @@
     {
       "actionable": true,
       "area": "Staffordshire",
-      "checked_at": "2026-10-10",
+      "checked_at": "2026-10-19",
       "comparisons": [
         {
           "name_matches": 0,
@@ -13,17 +13,17 @@
         },
         {
           "address": "118 Brown Lees Road, Brown Lees, Stoke-On-Trent",
-          "difference_metres": 31.3,
+          "difference_metres": 3.4,
           "lat": 53.0990243,
           "lng": -2.183505,
           "name": "THE NELSON INN",
           "postcode": "ST8 6PW",
           "queried_postcode": "ST8 6PW",
-          "status": "nearby",
+          "status": "coordinate_agreement",
           "url": "https://ratings.food.gov.uk/business/1559527"
         }
       ],
-      "confidence": "existing_evidence_needs_corroboration",
+      "confidence": "independent_coordinate_agreement",
       "country": "England",
       "dispense": "H",
       "independent_of_pin": true,
@@ -36,8 +36,8 @@
       "owner_reviewed": false,
       "pg": "Perm",
       "pin": {
-        "lat": 53.099298,
-        "lng": -2.183616
+        "lat": 53.099049,
+        "lng": -2.1834742
       },
       "place_name": "Brown Lees",
       "postcode": "ST8 6PH",
@@ -48,20 +48,18 @@
       ],
       "reference": {
         "address": "118 Brown Lees Road, Brown Lees, Stoke-On-Trent",
-        "difference_metres": 31.3,
+        "difference_metres": 3.4,
         "lat": 53.0990243,
         "lng": -2.183505,
         "name": "THE NELSON INN",
         "postcode": "ST8 6PW",
         "queried_postcode": "ST8 6PW",
-        "status": "nearby",
+        "status": "coordinate_agreement",
         "url": "https://ratings.food.gov.uk/business/1559527"
       },
-      "status": "nearby",
+      "status": "coordinate_agreement",
       "venue_id": "v-baef8a0f-c094-5f52-a9c2-3a37df4ca657",
-      "warnings": [
-        "FSA coordinate is 25-50m away; informational only"
-      ]
+      "warnings": []
     },
     {
       "actionable": true,
@@ -54383,18 +54381,18 @@
   "summary": {
     "actionable_count": 13,
     "confidence_counts": {
-      "existing_evidence_needs_corroboration": 568,
-      "independent_coordinate_agreement": 432,
+      "existing_evidence_needs_corroboration": 567,
+      "independent_coordinate_agreement": 433,
       "owner_reviewed": 44
     },
     "counts": {
       "ambiguous_or_missing_coordinates": 61,
-      "coordinate_agreement": 459,
+      "coordinate_agreement": 460,
       "coordinate_disagreement": 242,
-      "nearby": 103,
+      "nearby": 102,
       "no_name_match": 179
     },
-    "informational_count": 596,
+    "informational_count": 595,
     "limitations": [
       "Coordinate agreement does not prove the correct building or current Bass availability.",
       "Owner-approved coordinates take priority; CAMRA remains the primary automated reference.",

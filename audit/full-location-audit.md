@@ -3,20 +3,20 @@
 Locations: 1044
 
 Actionable findings: 13
-Locations with informational observations: 596 (may also have an actionable finding)
+Locations with informational observations: 595 (may also have an actionable finding)
 
 ## Results
 
-- nearby: 103
-- coordinate_agreement: 459
+- coordinate_agreement: 460
 - coordinate_disagreement: 242
 - no_name_match: 179
+- nearby: 102
 - ambiguous_or_missing_coordinates: 61
 
 ## Confidence
 
-- existing_evidence_needs_corroboration: 568
-- independent_coordinate_agreement: 432
+- independent_coordinate_agreement: 433
+- existing_evidence_needs_corroboration: 567
 - owner_reviewed: 44
 
 ## Limits
@@ -31,7 +31,7 @@ Locations with informational observations: 596 (may also have an actionable find
 
 | Pub | Place | Postcode | Result | Classification | Detail |
 |---|---|---|---|---|---|
-| Nelson Inn | Brown Lees | ST8 6PH | nearby | Actionable | Directory postcode differs from reviewed reference postcode; FSA coordinate is 25-50m away; informational only |
+| Nelson Inn | Brown Lees | ST8 6PH | coordinate_agreement | Actionable | Directory postcode differs from reviewed reference postcode |
 | New Baron | Hinckley | LE10 0AZ | coordinate_agreement | Actionable | Directory postcode differs from reviewed reference postcode |
 | Old Black Swan | Crich | DE4 5DD | coordinate_disagreement | Actionable | Directory postcode differs from reviewed reference postcode; FSA coordinate is 96.9m from the accepted pin; informational only because the FSA geocode may be approximate |
 | Rams Head | Lowton | WA3 2EY | coordinate_disagreement | Actionable | Directory postcode differs from reviewed reference postcode; FSA coordinate is 114.3m from the accepted pin; informational only because the FSA geocode may be approximate |

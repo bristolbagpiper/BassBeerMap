@@ -31894,7 +31894,7 @@
     },
     "v-baef8a0f-c094-5f52-a9c2-3a37df4ca657": {
       "actionable": true,
-      "checked_at": "2026-10-10",
+      "checked_at": "2026-10-19",
       "comparisons": [
         {
           "name_matches": 0,
@@ -31904,17 +31904,17 @@
         },
         {
           "address": "118 Brown Lees Road, Brown Lees, Stoke-On-Trent",
-          "difference_metres": 31.3,
+          "difference_metres": 3.4,
           "lat": 53.0990243,
           "lng": -2.183505,
           "name": "THE NELSON INN",
           "postcode": "ST8 6PW",
           "queried_postcode": "ST8 6PW",
-          "status": "nearby",
+          "status": "coordinate_agreement",
           "url": "https://ratings.food.gov.uk/business/1559527"
         }
       ],
-      "confidence": "existing_evidence_needs_corroboration",
+      "confidence": "independent_coordinate_agreement",
       "independent_of_pin": true,
       "listing": {
         "postcode": "ST8 6PH",
@@ -31922,8 +31922,8 @@
       },
       "owner_reviewed": false,
       "pin": {
-        "lat": 53.099298,
-        "lng": -2.183616
+        "lat": 53.099049,
+        "lng": -2.1834742
       },
       "priority": 0,
       "reasons": [
@@ -31931,19 +31931,17 @@
       ],
       "reference": {
         "address": "118 Brown Lees Road, Brown Lees, Stoke-On-Trent",
-        "difference_metres": 31.3,
+        "difference_metres": 3.4,
         "lat": 53.0990243,
         "lng": -2.183505,
         "name": "THE NELSON INN",
         "postcode": "ST8 6PW",
         "queried_postcode": "ST8 6PW",
-        "status": "nearby",
+        "status": "coordinate_agreement",
         "url": "https://ratings.food.gov.uk/business/1559527"
       },
-      "status": "nearby",
-      "warnings": [
-        "FSA coordinate is 25-50m away; informational only"
-      ]
+      "status": "coordinate_agreement",
+      "warnings": []
     },
     "v-bb27258b-c8fb-57fa-adf3-7195d0046191": {
       "actionable": false,

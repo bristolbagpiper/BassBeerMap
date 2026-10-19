@@ -10805,7 +10805,7 @@
             "status": "review_needed"
           }
         ],
-        "last_checked": "2026-10-10",
+        "last_checked": "2026-10-19",
         "place_name": "Brown Lees",
         "postcode": "ST8 6PH",
         "pub_name": "Nelson Inn",
@@ -10820,8 +10820,12 @@
         },
         "research": {},
         "source_checks": {
+          "camra": {
+            "status": "confirmed",
+            "url": "https://camra.org.uk/pubs/143866"
+          },
           "fsa_independent": {
-            "status": "nearby",
+            "status": "coordinate_agreement",
             "url": "https://ratings.food.gov.uk/business/1559527"
           }
         },
@@ -90937,7 +90941,7 @@
       "current_key": "nelson inn|brown lees|st8 6ph",
       "independent_location_check": {
         "actionable": true,
-        "checked_at": "2026-10-10",
+        "checked_at": "2026-10-19",
         "comparisons": [
           {
             "name_matches": 0,
@@ -90947,17 +90951,17 @@
           },
           {
             "address": "118 Brown Lees Road, Brown Lees, Stoke-On-Trent",
-            "difference_metres": 31.3,
+            "difference_metres": 3.4,
             "lat": 53.0990243,
             "lng": -2.183505,
             "name": "THE NELSON INN",
             "postcode": "ST8 6PW",
             "queried_postcode": "ST8 6PW",
-            "status": "nearby",
+            "status": "coordinate_agreement",
             "url": "https://ratings.food.gov.uk/business/1559527"
           }
         ],
-        "confidence": "existing_evidence_needs_corroboration",
+        "confidence": "independent_coordinate_agreement",
         "independent_of_pin": true,
         "listing": {
           "postcode": "ST8 6PH",
@@ -90965,8 +90969,8 @@
         },
         "owner_reviewed": false,
         "pin": {
-          "lat": 53.099298,
-          "lng": -2.183616
+          "lat": 53.099049,
+          "lng": -2.1834742
         },
         "priority": 0,
         "reasons": [
@@ -90974,19 +90978,17 @@
         ],
         "reference": {
           "address": "118 Brown Lees Road, Brown Lees, Stoke-On-Trent",
-          "difference_metres": 31.3,
+          "difference_metres": 3.4,
           "lat": 53.0990243,
           "lng": -2.183505,
           "name": "THE NELSON INN",
           "postcode": "ST8 6PW",
           "queried_postcode": "ST8 6PW",
-          "status": "nearby",
+          "status": "coordinate_agreement",
           "url": "https://ratings.food.gov.uk/business/1559527"
         },
-        "status": "nearby",
-        "warnings": [
-          "FSA coordinate is 25-50m away; informational only"
-        ]
+        "status": "coordinate_agreement",
+        "warnings": []
       },
       "listing": {
         "area": "Staffordshire",
@@ -90999,30 +91001,132 @@
         "postcode": "ST8 6PH",
         "pub_name": "Nelson Inn"
       },
+      "location_corrections": [
+        {
+          "checked_at": "2026-10-19",
+          "corrected_coordinate": {
+            "lat": 53.099049,
+            "lng": -2.1834742
+          },
+          "corroborating_fsa_coordinate": {
+            "lat": 53.0990243,
+            "lng": -2.183505
+          },
+          "corroborating_named_coordinate": {
+            "lat": 53.0990094,
+            "lng": -2.1834542
+          },
+          "google_named_place_url": "https://www.google.com/maps/place/The+Nelson/@53.098974,-2.1834726,75m/data=!3m1!1e3!4m15!1m8!3m7!1s0x487a4377b6e49969:0x93e7a524ba209e8c!2sNelson+Inn,+Brown+Lees+Rd,+Brown+Lees,+Stoke-on-Trent+ST8+6PH!3b1!8m2!3d53.098974!4d-2.1834726!16s%2Fg%2F11ytxmdk13!3m5!1s0x487a43000b4c5c79:0x7f9bf4e40b6dacc3!8m2!3d53.0990094!4d-2.1834542!16s%2Fg%2F11xmry06_q",
+          "method": "Agent inspected Google satellite imagery, the pub frontage photograph and the named business listing at 118 Brown Lees Road. The old pin is north of the pub building. Current CAMRA point lies on the identified pub roof, within 5m of the named business marker and FSA point. User authorized independent investigation and correction; no claim of owner visual approval of the replacement point.",
+          "owner_instruction": "just figure it out",
+          "postcode_conclusion": "CAMRA and FSA use ST8 6PW; Google business uses ST8 6PH as does the directory. Preserve this unresolved postcode discrepancy; correction establishes the pub building, not the postal delivery postcode.",
+          "previous_pin": {
+            "evidence": [
+              {
+                "checked_at": "2026-09-11",
+                "difference_metres": 29.3,
+                "match": "venue_name_and_coordinate; listing_postcode_conflicts",
+                "reference_coordinate": {
+                  "lat": 53.099298,
+                  "lng": -2.183616
+                },
+                "reference_postcode": "ST8 6PW",
+                "source": "camra",
+                "url": "https://camra.org.uk/pubs/143866"
+              }
+            ],
+            "lat": 53.099298,
+            "lng": -2.183616,
+            "metadata_issue": {
+              "field": "postcode",
+              "listed": "ST8 6PH",
+              "reference": "ST8 6PW",
+              "source_url": "https://camra.org.uk/pubs/143866"
+            },
+            "source": "openstreetmap-gb-extract"
+          },
+          "prior_owner_instruction": "no",
+          "review_map_url": "https://www.google.com/maps?q=53.099049,-2.1834742&z=21&t=k",
+          "reviewed_by": "codex",
+          "source_url": "https://camra.org.uk/pubs/143866",
+          "supporting_address_urls": [
+            "https://ratings.food.gov.uk/business/1559527"
+          ]
+        }
+      ],
+      "verification_attempt": {
+        "checked_at": "2026-10-19",
+        "evidence": {
+          "checked_at": "2026-10-19",
+          "difference_metres": 0,
+          "match": "named_address_and_agent_verified_pub_building",
+          "reference_address": "118 Brown Lees Road",
+          "reference_coordinate": {
+            "lat": 53.099049,
+            "lng": -2.1834742
+          },
+          "reference_name": "Nelson Inn, Brown Lees - Victorian Village Local",
+          "reference_postcode": "ST8 6PW",
+          "source": "camra",
+          "url": "https://camra.org.uk/pubs/143866"
+        },
+        "reason": "User rejected previous point; agent verified replacement on pub building using current CAMRA and named-map aerial evidence.",
+        "sources": {
+          "camra": {
+            "status": "confirmed",
+            "url": "https://camra.org.uk/pubs/143866"
+          }
+        },
+        "status": "confirmed"
+      },
       "verified_pin": {
         "evidence": [
           {
-            "checked_at": "2026-09-11",
-            "difference_metres": 29.3,
-            "match": "venue_name_and_coordinate; listing_postcode_conflicts",
+            "checked_at": "2026-10-19",
+            "difference_metres": 0,
+            "match": "named_address_and_agent_verified_pub_building",
+            "reference_address": "118 Brown Lees Road",
             "reference_coordinate": {
-              "lat": 53.099298,
-              "lng": -2.183616
+              "lat": 53.099049,
+              "lng": -2.1834742
             },
+            "reference_name": "Nelson Inn, Brown Lees - Victorian Village Local",
             "reference_postcode": "ST8 6PW",
             "source": "camra",
             "url": "https://camra.org.uk/pubs/143866"
+          },
+          {
+            "checked_at": "2026-10-19",
+            "corroborating_coordinate": {
+              "lat": 53.0990094,
+              "lng": -2.1834542
+            },
+            "match": "agent_checked_satellite_roof_frontage_and_named_business",
+            "reference_address": "118 Brown Lees Road",
+            "reference_coordinate": {
+              "lat": 53.099049,
+              "lng": -2.1834742
+            },
+            "reference_name": "The Nelson",
+            "reference_postcode": "ST8 6PH",
+            "reviewed_by": "codex",
+            "source": "manual_named_place_map",
+            "supporting_address_urls": [
+              "https://camra.org.uk/pubs/143866",
+              "https://ratings.food.gov.uk/business/1559527"
+            ],
+            "url": "https://www.google.com/maps?q=53.099049,-2.1834742&z=21&t=k"
           }
         ],
-        "lat": 53.099298,
-        "lng": -2.183616,
+        "lat": 53.099049,
+        "lng": -2.1834742,
         "metadata_issue": {
           "field": "postcode",
           "listed": "ST8 6PH",
           "reference": "ST8 6PW",
           "source_url": "https://camra.org.uk/pubs/143866"
         },
-        "source": "openstreetmap-gb-extract"
+        "source": "camra-and-manual-building-review"
       }
     },
     "v-bb27258b-c8fb-57fa-adf3-7195d0046191": {

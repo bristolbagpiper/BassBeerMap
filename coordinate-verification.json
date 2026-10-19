@@ -1,7 +1,7 @@
 {
   "counts": {
-    "venue_coordinate_requires_review": 32,
-    "verified_venue": 1012
+    "venue_coordinate_requires_review": 31,
+    "verified_venue": 1013
   },
   "generated_at": "2026-10-19",
   "policy": {
@@ -4744,8 +4744,8 @@
       "venue_id": "v-7b1892e4-b48c-5f5e-a463-5a8f08e40498"
     },
     "burton golf club (pmc)|bretby|de15 0ps": {
-      "coordinate_source": "camra-pubs-location-audit",
-      "display_precision": "postcode",
+      "coordinate_source": "manual_named_place_map",
+      "display_precision": "venue",
       "evidence": [
         {
           "checked_at": "2026-09-11",
@@ -4770,14 +4770,27 @@
           "reference_postcode": "DE15 0PS",
           "source": "camra-pubs-location-audit",
           "url": "https://camra.org.uk/pubs/124090"
+        },
+        {
+          "checked_at": "2026-10-19",
+          "match": "owner_approved_existing_venue_building",
+          "reference_coordinate": {
+            "lat": 52.7988056,
+            "lng": -1.5851111
+          },
+          "reference_name": "Burton-on-Trent Golf Club",
+          "reference_postcode": "DE15 0PS",
+          "reviewed_by": "bristolbagpiper",
+          "source": "manual_named_place_map",
+          "url": "https://www.google.com/maps/place/52%C2%B047'55.7%22N+1%C2%B035'06.4%22W/@52.7986548,-1.5851632,213m/data=!3m1!1e3!4m4!3m3!8m2!3d52.7988056!4d-1.5851111?entry=ttu&g_ep=EgoyMDI2MTAxMy4wIKXMDSoASAFQAw%3D%3D"
         }
       ],
-      "lat": 52.7988,
-      "lng": -1.5851,
+      "lat": 52.7988056,
+      "lng": -1.5851111,
       "place_name": "Bretby",
       "postcode": "DE15 0PS",
       "pub_name": "Burton Golf Club (PMC)",
-      "status": "venue_coordinate_requires_review",
+      "status": "verified_venue",
       "venue_id": "v-8427c0da-bdf7-5db8-9be9-0a7d5981de31"
     },
     "burton rugby club|burton u-t: branston|de13 9ff": {

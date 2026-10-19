@@ -1,6 +1,6 @@
 {
   "location_review": {
-    "active_count": 36,
+    "active_count": 35,
     "records": {
       "v-00a08839-2b8a-5782-b6c7-0bdce4cddb2f": {
         "active": false,
@@ -8401,7 +8401,7 @@
         "venue_id": "v-84149bd1-cc27-59d6-9c95-6fc859cc80f8"
       },
       "v-8427c0da-bdf7-5db8-9be9-0a7d5981de31": {
-        "active": true,
+        "active": false,
         "first_seen": "2026-10-09",
         "history": [
           {
@@ -8422,15 +8422,18 @@
               "Reference venue name changed"
             ],
             "status": "unverified"
+          },
+          {
+            "date": "2026-10-19",
+            "reasons": [],
+            "status": "resolved"
           }
         ],
         "last_checked": "2026-10-19",
         "place_name": "Bretby",
         "postcode": "DE15 0PS",
         "pub_name": "Burton Golf Club (PMC)",
-        "reasons": [
-          "Reference venue name changed"
-        ],
+        "reasons": [],
         "reference": {},
         "research": {},
         "source_checks": {
@@ -8448,8 +8451,8 @@
           }
         },
         "source_error": null,
-        "status": "unverified",
-        "unverified": true,
+        "status": "resolved",
+        "unverified": false,
         "venue_id": "v-8427c0da-bdf7-5db8-9be9-0a7d5981de31"
       },
       "v-8437cb49-dd3e-5c8c-a924-f3ca32bcd323": {
@@ -14511,7 +14514,7 @@
       }
     },
     "schema_version": 1,
-    "unverified_count": 32
+    "unverified_count": 31
   },
   "schema_version": 1,
   "venues": {
@@ -71975,11 +71978,11 @@
       "current_key": "burton golf club (pmc)|bretby|de15 0ps",
       "independent_location_check": {
         "actionable": false,
-        "checked_at": "2026-10-09",
+        "checked_at": "2026-10-19",
         "comparisons": [
           {
             "address": "BURTON ON TRENT GOLF CLUB ASHBY ROAD EAST, , BRETBY",
-            "difference_metres": 74.5,
+            "difference_metres": 75.4,
             "lat": 52.7985395,
             "lng": -1.584079,
             "name": "Burton on Trent Golf Club",
@@ -71989,22 +71992,22 @@
             "url": "https://ratings.food.gov.uk/business/230322"
           }
         ],
-        "confidence": "existing_evidence_needs_corroboration",
+        "confidence": "owner_reviewed",
         "independent_of_pin": true,
         "listing": {
           "postcode": "DE15 0PS",
           "pub_name": "Burton Golf Club (PMC)"
         },
-        "owner_reviewed": false,
+        "owner_reviewed": true,
         "pin": {
-          "lat": 52.7988,
-          "lng": -1.5851
+          "lat": 52.7988056,
+          "lng": -1.5851111
         },
         "priority": 2,
         "reasons": [],
         "reference": {
           "address": "BURTON ON TRENT GOLF CLUB ASHBY ROAD EAST, , BRETBY",
-          "difference_metres": 74.5,
+          "difference_metres": 75.4,
           "lat": 52.7985395,
           "lng": -1.584079,
           "name": "Burton on Trent Golf Club",
@@ -72015,7 +72018,7 @@
         },
         "status": "coordinate_disagreement",
         "warnings": [
-          "FSA coordinate is 74.5m from the accepted pin; informational only because the FSA geocode may be approximate"
+          "FSA coordinate is 75.4m from the accepted pin; informational only because the FSA geocode may be approximate"
         ]
       },
       "listing": {
@@ -72029,6 +72032,27 @@
         "postcode": "DE15 0PS",
         "pub_name": "Burton Golf Club (PMC)"
       },
+      "location_approvals": [
+        {
+          "approved_coordinate": {
+            "lat": 52.7988056,
+            "lng": -1.5851111
+          },
+          "checked_at": "2026-10-19",
+          "conclusion": "Owner confirmed this selected Google Maps point as correct. It is about 1.1m from the saved CAMRA point, so the location is retained. Google’s named-place marker is about 71m east; the FSA geocode is 74.5m away and remains informational.",
+          "listed": "DE15 0PS",
+          "owner_instruction": "correct",
+          "pub_name": "Burton Golf Club (PMC)",
+          "reference": "Burton-on-Trent Golf Club, 43 Ashby Road East, Bretby DE15 0PS",
+          "review_map_url": "https://www.google.com/maps/place/52%C2%B047'55.7%22N+1%C2%B035'06.4%22W/@52.7986548,-1.5851632,213m/data=!3m1!1e3!4m4!3m3!8m2!3d52.7988056!4d-1.5851111?entry=ttu&g_ep=EgoyMDI2MTAxMy4wIKXMDSoASAFQAw%3D%3D",
+          "reviewed_by": "bristolbagpiper",
+          "source_url": "https://camra.org.uk/index.php/pubs/burton-on-trent-golf-club-bretby-124090",
+          "supporting_address_urls": [
+            "https://www.google.com/maps/place/Burton-On-Trent+Golf+Club/@52.7987423,-1.584055,603m/data=!3m2!1e3!4b1!4m6!3m5!1s0x4879f8bdf5824c2b:0x94ed4ee642264c4a!8m2!3d52.7987423!4d-1.584055!16s%2Fg%2F1tctl9p8",
+            "https://www.botgc.co.uk/"
+          ]
+        }
+      ],
       "verification_attempt": {
         "checked_at": "2026-10-19",
         "reason": "Reference venue name changed",
@@ -72070,13 +72094,24 @@
             "reference_postcode": "DE15 0PS",
             "source": "camra-pubs-location-audit",
             "url": "https://camra.org.uk/pubs/124090"
+          },
+          {
+            "checked_at": "2026-10-19",
+            "match": "owner_approved_existing_venue_building",
+            "reference_coordinate": {
+              "lat": 52.7988056,
+              "lng": -1.5851111
+            },
+            "reference_name": "Burton-on-Trent Golf Club",
+            "reference_postcode": "DE15 0PS",
+            "reviewed_by": "bristolbagpiper",
+            "source": "manual_named_place_map",
+            "url": "https://www.google.com/maps/place/52%C2%B047'55.7%22N+1%C2%B035'06.4%22W/@52.7986548,-1.5851632,213m/data=!3m1!1e3!4m4!3m3!8m2!3d52.7988056!4d-1.5851111?entry=ttu&g_ep=EgoyMDI2MTAxMy4wIKXMDSoASAFQAw%3D%3D"
           }
         ],
-        "lat": 52.7988,
-        "lng": -1.5851,
-        "review_reason": "Reference venue name changed",
-        "review_required": true,
-        "source": "camra-pubs-location-audit"
+        "lat": 52.7988056,
+        "lng": -1.5851111,
+        "source": "manual_named_place_map"
       }
     },
     "v-8437cb49-dd3e-5c8c-a924-f3ca32bcd323": {

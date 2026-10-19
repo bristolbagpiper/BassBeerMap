@@ -477,16 +477,20 @@
       "source_url": "https://www.google.com/maps/search/?api=1&query=Burton+Albion+Football+Club+DE13+0AR"
     },
     "burton golf club (pmc)|bretby|de15 0ps": {
-      "audit_reason": "existing_pin_over_50m_from_matching_venue",
-      "checked_at": "2026-09-11",
-      "lat": 52.7988,
-      "lng": -1.5851,
-      "previous_difference_metres": 74.5,
-      "previous_lat": 52.7985395,
-      "previous_lng": -1.584079,
-      "previous_source": "food-standards-agency-fhrs",
-      "source": "camra-pubs-location-audit",
-      "source_url": "https://camra.org.uk/pubs/124090"
+      "audit_reason": "manual_named_place_address_and_map_check",
+      "checked_at": "2026-10-19",
+      "corroborating_source_url": "https://www.google.com/maps/place/Burton-On-Trent+Golf+Club/@52.7987423,-1.584055,603m/data=!3m2!1e3!4b1!4m6!3m5!1s0x4879f8bdf5824c2b:0x94ed4ee642264c4a!8m2!3d52.7987423!4d-1.584055!16s%2Fg%2F1tctl9p8",
+      "lat": 52.7988056,
+      "lng": -1.5851111,
+      "previous_difference_metres": 1.0,
+      "previous_lat": 52.7988,
+      "previous_lng": -1.5851,
+      "previous_source": "camra-pubs-location-audit",
+      "reference_address": "43 Ashby Road East, Bretby, Burton-on-Trent DE15 0PS",
+      "reference_name": "Burton-on-Trent Golf Club",
+      "review_note": "Owner confirmed this exact Google Maps point as correct. It is about 1.1m from the saved CAMRA point; retain it. Google named-place marker is about 71m east and FSA geocode is 74.5m away, both retained as comparison evidence.",
+      "source": "google-maps-map-point",
+      "source_url": "https://www.google.com/maps/place/52%C2%B047'55.7%22N+1%C2%B035'06.4%22W/@52.7986548,-1.5851632,213m/data=!3m1!1e3!4m4!3m3!8m2!3d52.7988056!4d-1.5851111?entry=ttu&g_ep=EgoyMDI2MTAxMy4wIKXMDSoASAFQAw%3D%3D"
     },
     "burton rugby club|burton u-t: branston|de13 9ff": {
       "audit_reason": "manual_named_place_address_and_map_check",

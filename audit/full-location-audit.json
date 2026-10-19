@@ -5032,11 +5032,11 @@
     {
       "actionable": false,
       "area": "Derbyshire",
-      "checked_at": "2026-10-09",
+      "checked_at": "2026-10-19",
       "comparisons": [
         {
           "address": "BURTON ON TRENT GOLF CLUB ASHBY ROAD EAST, , BRETBY",
-          "difference_metres": 74.5,
+          "difference_metres": 75.4,
           "lat": 52.7985395,
           "lng": -1.584079,
           "name": "Burton on Trent Golf Club",
@@ -5046,7 +5046,7 @@
           "url": "https://ratings.food.gov.uk/business/230322"
         }
       ],
-      "confidence": "existing_evidence_needs_corroboration",
+      "confidence": "owner_reviewed",
       "country": "England",
       "dispense": "H",
       "independent_of_pin": true,
@@ -5056,11 +5056,11 @@
         "pub_name": "Burton Golf Club (PMC)"
       },
       "notes": "",
-      "owner_reviewed": false,
+      "owner_reviewed": true,
       "pg": "Perm",
       "pin": {
-        "lat": 52.7988,
-        "lng": -1.5851
+        "lat": 52.7988056,
+        "lng": -1.5851111
       },
       "place_name": "Bretby",
       "postcode": "DE15 0PS",
@@ -5069,7 +5069,7 @@
       "reasons": [],
       "reference": {
         "address": "BURTON ON TRENT GOLF CLUB ASHBY ROAD EAST, , BRETBY",
-        "difference_metres": 74.5,
+        "difference_metres": 75.4,
         "lat": 52.7985395,
         "lng": -1.584079,
         "name": "Burton on Trent Golf Club",
@@ -5081,7 +5081,7 @@
       "status": "coordinate_disagreement",
       "venue_id": "v-8427c0da-bdf7-5db8-9be9-0a7d5981de31",
       "warnings": [
-        "FSA coordinate is 74.5m from the accepted pin; informational only because the FSA geocode may be approximate"
+        "FSA coordinate is 75.4m from the accepted pin; informational only because the FSA geocode may be approximate"
       ]
     },
     {
@@ -54375,9 +54375,9 @@
   "summary": {
     "actionable_count": 3,
     "confidence_counts": {
-      "existing_evidence_needs_corroboration": 555,
+      "existing_evidence_needs_corroboration": 554,
       "independent_coordinate_agreement": 430,
-      "owner_reviewed": 59
+      "owner_reviewed": 60
     },
     "counts": {
       "ambiguous_or_missing_coordinates": 61,

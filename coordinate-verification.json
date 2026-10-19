@@ -1,7 +1,7 @@
 {
   "counts": {
-    "venue_coordinate_requires_review": 36,
-    "verified_venue": 1008
+    "venue_coordinate_requires_review": 35,
+    "verified_venue": 1009
   },
   "generated_at": "2026-10-19",
   "policy": {
@@ -21115,7 +21115,7 @@
     },
     "red lion|kniveton|de6 1jh": {
       "coordinate_source": "camra-pubs-location-audit",
-      "display_precision": "postcode",
+      "display_precision": "venue",
       "evidence": [
         {
           "checked_at": "2026-09-11",
@@ -21140,6 +21140,23 @@
           "reference_postcode": "DE6 1JH",
           "source": "camra-pubs-location-audit",
           "url": "https://camra.org.uk/pubs/112757"
+        },
+        {
+          "checked_at": "2026-10-19",
+          "difference_metres": 2.5,
+          "match": "owner_confirmed_existing_pub_building",
+          "reference_coordinate": {
+            "lat": 53.0486189,
+            "lng": -1.6924836
+          },
+          "reference_name": "The Red Lion At Kniveton",
+          "reviewed_by": "bristolbagpiper",
+          "source": "manual_named_place_map",
+          "supporting_address_urls": [
+            "https://camra.org.uk/pubs/112757",
+            "https://ratings.food.gov.uk/business/1626219"
+          ],
+          "url": "https://www.google.com/maps/place/The+Red+Lion+At+Kniveton/@53.0486111,-1.6930895,150m/data=!3m1!1e3!4m6!3m5!1s0x487a21e6f2d3f69b:0x8983958447d89830!8m2!3d53.0486189!4d-1.6924836!16s%2Fg%2F11ph1gbnw8?entry=ttu&g_ep=EgoyMDI2MTAxMy4wIKXMDSoASAFQAw%3D%3D"
         }
       ],
       "lat": 53.048602,
@@ -21147,7 +21164,7 @@
       "place_name": "Kniveton",
       "postcode": "DE6 1JH",
       "pub_name": "Red Lion",
-      "status": "venue_coordinate_requires_review",
+      "status": "verified_venue",
       "venue_id": "v-1bf34620-f64f-5271-9684-ae4b0c95b4f1"
     },
     "red lion|linton|de12 6pz": {

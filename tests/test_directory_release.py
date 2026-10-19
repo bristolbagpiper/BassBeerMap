@@ -205,6 +205,8 @@ class SourceEvidenceTests(unittest.TestCase):
         self.assertTrue(name_matches('GJ Muckers', 'G&j Muckers, Macclesfield - Pub'))
         self.assertTrue(name_matches('Barrels', 'Barrels Ale House, Berwick'))
         self.assertFalse(name_matches('Red Lion', 'Red Lion and Crown, Bristol'))
+        self.assertTrue(name_matches('Boons', 'Boons Horbury, Horbury', 'Horbury'))
+        self.assertFalse(name_matches('Boons', 'Boons Liverpool, Liverpool', 'Horbury'))
 
     def test_aged_evidence_can_be_audited_and_quarantined_without_blocking_recovery(self):
         rows = [row()]

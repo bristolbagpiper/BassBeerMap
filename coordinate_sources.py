@@ -42,13 +42,13 @@ def camra_page(url):
     return parse_camra(fetch_text(url))
 
 
-def name_matches(listing, reference):
+def name_matches(listing, reference, place_name=''):
     # CAMRA appends town and SEO text to the JSON-LD name. Require the full
     # distinctive listing name at the start; do not accept substring matches.
     normal = lambda value: re.sub(r'[^a-z0-9]', '', re.sub(r'\band\b|&', '', re.sub(r'^the\s+', '', value.casefold())))
     wanted = normal(re.sub(r'\s*\(PMC\)', '', listing, flags=re.I))
     actual = normal(reference.split(',')[0].split(' - ')[0])
-    if wanted == actual:
+    if wanted == actual or (place_name and normal(f'{listing} {place_name}') == actual):
         return True
     return any(actual == wanted + suffix or wanted == actual + suffix
                for suffix in ('inn', 'hotel', 'pub', 'bar', 'alehouse', 'publichouse'))
@@ -61,7 +61,7 @@ def recheck_pin(row, pin):
     if item:
         observed = parse_camra(fetch_text(item['url']))
         reviewed_name = item.get('reference_name', '')
-        if not name_matches(row['pub_name'], observed['name']) and observed['name'] != reviewed_name:
+        if not name_matches(row['pub_name'], observed['name'], row.get('place_name', '')) and observed['name'] != reviewed_name:
             return {'status': 'conflict', 'reason': 'Reference venue name changed', 'source_url': item['url']}
         expected_postcode = item.get('reference_postcode') or pin.get('metadata_issue', {}).get('reference') or row['postcode']
         compact = lambda value: re.sub(r'\s+', '', value).upper()
@@ -140,12 +140,12 @@ def camra_reference(row, point, diagnostics=None):
     compact = lambda value: re.sub(r'\s+', '', str(value or '')).upper()
     matches = []
     for candidate in candidates:
-        if candidate.get('PremisesStatus') == 'X' or not name_matches(row['pub_name'], candidate.get('Name', '')):
+        if candidate.get('PremisesStatus') == 'X' or not name_matches(row['pub_name'], candidate.get('Name', ''), row.get('place_name', '')):
             continue
         url = f"https://camra.org.uk/pubs/{candidate['IncID']}"
         if not candidate.get('Postcode'):
             observed = camra_page(url)
-            if not name_matches(row['pub_name'], observed['name']):
+            if not name_matches(row['pub_name'], observed['name'], row.get('place_name', '')):
                 continue
             candidate = dict(candidate, Name=observed['name'], Postcode=observed['postcode'],
                              Street=observed['address'], Latitude=observed['lat'], Longitude=observed['lng'])

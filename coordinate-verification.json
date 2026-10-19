@@ -21579,6 +21579,23 @@
           "reference_postcode": "DE11 9NR",
           "source": "camra",
           "url": "https://camra.org.uk/pubs/123877"
+        },
+        {
+          "checked_at": "2026-10-19",
+          "difference_metres": 4.7,
+          "match": "owner_confirmed_existing_pub_building",
+          "reference_coordinate": {
+            "lat": 52.7607452,
+            "lng": -1.5643263
+          },
+          "reference_name": "Rising Sun, Church Gresley",
+          "reference_postcode": "DE11 9LY",
+          "reviewed_by": "bristolbagpiper",
+          "source": "manual_named_place_map",
+          "supporting_address_urls": [
+            "https://camra.org.uk/pubs/123877"
+          ],
+          "url": "https://www.google.com/maps/place/Rising+Sun/@52.7606878,-1.5643059,38m/data=!3m1!1e3!4m6!3m5!1s0x4879ff3e962dbd3d:0xfdcafe5f898bc3c4!8m2!3d52.7607452!4d-1.5643263!16s%2Fg%2F1thx_b45?entry=ttu&g_ep=EgoyMDI2MTAxMy4wIKXMDSoASAFQAw%3D%3D"
         }
       ],
       "lat": 52.7607231,
@@ -21586,6 +21603,24 @@
       "metadata_issue": {
         "field": "postcode",
         "listed": "DE11 9LY",
+        "owner_review": {
+          "approved_coordinate": {
+            "lat": 52.7607231,
+            "lng": -1.564267
+          },
+          "checked_at": "2026-10-19",
+          "conclusion": "Owner visually confirmed the existing Rising Sun, Church Gresley pub building in the named Google Maps satellite view. The Google named-place point is 4.7m from the retained pin; CAMRA identifies the same building within 5.2m. Retain the existing pin. Google and the Bass directory list DE11 9LY; CAMRA lists DE11 9NR. Preserve all source values; the map confirmation establishes the building only and does not establish the postcode used for postal delivery.",
+          "listed": "DE11 9LY",
+          "owner_instruction": "correct",
+          "pub_name": "Rising Sun",
+          "reference": "DE11 9NR",
+          "review_map_url": "https://www.google.com/maps/place/Rising+Sun/@52.7606878,-1.5643059,38m/data=!3m1!1e3!4m6!3m5!1s0x4879ff3e962dbd3d:0xfdcafe5f898bc3c4!8m2!3d52.7607452!4d-1.5643263!16s%2Fg%2F1thx_b45?entry=ttu&g_ep=EgoyMDI2MTAxMy4wIKXMDSoASAFQAw%3D%3D",
+          "reviewed_by": "bristolbagpiper",
+          "source_url": "https://camra.org.uk/pubs/123877",
+          "supporting_address_urls": [
+            "https://camra.org.uk/pubs/123877"
+          ]
+        },
         "reference": "DE11 9NR",
         "source_url": "https://camra.org.uk/pubs/123877"
       },

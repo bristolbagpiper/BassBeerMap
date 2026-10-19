@@ -2,8 +2,8 @@
 
 Locations: 1044
 
-Actionable findings: 8
-Locations with informational observations: 596 (may also have an actionable finding)
+Actionable findings: 7
+Locations with informational observations: 597 (may also have an actionable finding)
 
 ## Results
 
@@ -15,9 +15,9 @@ Locations with informational observations: 596 (may also have an actionable find
 
 ## Confidence
 
-- independent_coordinate_agreement: 432
+- independent_coordinate_agreement: 431
 - existing_evidence_needs_corroboration: 563
-- owner_reviewed: 49
+- owner_reviewed: 50
 
 ## Limits
 
@@ -33,7 +33,6 @@ Locations with informational observations: 596 (may also have an actionable find
 |---|---|---|---|---|---|
 | Nelson Inn | Brown Lees | ST8 6PH | coordinate_agreement | Actionable | Directory postcode differs from reviewed reference postcode |
 | New Baron | Hinckley | LE10 0AZ | nearby | Actionable | Directory postcode differs from reviewed reference postcode; FSA coordinate is 25-50m away; informational only |
-| Rising Sun | Church Gresley | DE11 9LY | coordinate_agreement | Actionable | Directory postcode differs from reviewed reference postcode |
 | Royal | Broughton Astley | LE9 6QB | no_name_match | Actionable | Directory postcode differs from reviewed reference postcode; FSA comparison is inconclusive; absence of a match does not contradict accepted evidence |
 | Stella Taps | Mansfield | NG18 4AL | coordinate_agreement | Actionable | Directory postcode differs from reviewed reference postcode |
 | Tame Otter | Hopwas | B78 3AB | coordinate_disagreement | Actionable | Directory postcode differs from reviewed reference postcode; FSA coordinate is 179.9m from the accepted pin; informational only because the FSA geocode may be approximate |
@@ -471,6 +470,7 @@ Locations with informational observations: 596 (may also have an actionable find
 | Rising Sun | Bury St Edmunds | IP33 3AA | no_name_match | Informational | FSA comparison is inconclusive; absence of a match does not contradict accepted evidence |
 | Rising Sun | Shackerstone | CV13 6NN | nearby | Informational | FSA coordinate is 25-50m away; informational only |
 | Rising Sun | Middleton by Wirksworth | DE4 4LS | coordinate_disagreement | Informational | FSA coordinate is 58.9m from the accepted pin; informational only because the FSA geocode may be approximate |
+| Rising Sun | Church Gresley | DE11 9LY | coordinate_agreement | Informational | Owner reviewed this postcode discrepancy and confirmed the displayed pub building; listing postcode retained for provenance |
 | Roaring Meg | Biddulph | ST8 7EA | nearby | Informational | FSA coordinate is 25-50m away; informational only |
 | Robin Hood | Swannington | LE67 8QQ | no_name_match | Informational | FSA comparison is inconclusive; absence of a match does not contradict accepted evidence |
 | Robin Hood | Amblecote | DY8 4EQ | coordinate_disagreement | Informational | FSA coordinate is 54.2m from the accepted pin; informational only because the FSA geocode may be approximate |

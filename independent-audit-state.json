@@ -35212,7 +35212,7 @@
       "warnings": []
     },
     "v-cd9c571f-ae55-5d76-9afd-6c4ee3724019": {
-      "actionable": true,
+      "actionable": false,
       "checked_at": "2026-10-10",
       "comparisons": [
         {
@@ -35233,21 +35233,19 @@
           "url": "https://ratings.food.gov.uk/business/283269"
         }
       ],
-      "confidence": "independent_coordinate_agreement",
+      "confidence": "owner_reviewed",
       "independent_of_pin": true,
       "listing": {
         "postcode": "DE11 9LY",
         "pub_name": "Rising Sun"
       },
-      "owner_reviewed": false,
+      "owner_reviewed": true,
       "pin": {
         "lat": 52.7607231,
         "lng": -1.564267
       },
-      "priority": 0,
-      "reasons": [
-        "Directory postcode differs from reviewed reference postcode"
-      ],
+      "priority": 2,
+      "reasons": [],
       "reference": {
         "address": "77 CHURCH STREET, CHURCH GRESLEY, SWADLINCOTE",
         "difference_metres": 4.3,
@@ -35260,7 +35258,9 @@
         "url": "https://ratings.food.gov.uk/business/283269"
       },
       "status": "coordinate_agreement",
-      "warnings": []
+      "warnings": [
+        "Owner reviewed this postcode discrepancy and confirmed the displayed pub building; listing postcode retained for provenance"
+      ]
     },
     "v-cdb2a668-ae06-569d-8e71-df37f469157f": {
       "actionable": false,

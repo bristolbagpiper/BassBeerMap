@@ -126,67 +126,6 @@
     },
     {
       "actionable": true,
-      "area": "Derbyshire",
-      "checked_at": "2026-10-10",
-      "comparisons": [
-        {
-          "name_matches": 0,
-          "postcode_matches": 0,
-          "queried_postcode": "DE11 9LY",
-          "status": "no_name_match"
-        },
-        {
-          "address": "77 CHURCH STREET, CHURCH GRESLEY, SWADLINCOTE",
-          "difference_metres": 4.3,
-          "lat": 52.7607571,
-          "lng": -1.564298,
-          "name": "The Rising Sun",
-          "postcode": "DE11 9NR",
-          "queried_postcode": "DE11 9NR",
-          "status": "coordinate_agreement",
-          "url": "https://ratings.food.gov.uk/business/283269"
-        }
-      ],
-      "confidence": "independent_coordinate_agreement",
-      "country": "England",
-      "dispense": "H",
-      "independent_of_pin": true,
-      "last": "2026 Q1",
-      "listing": {
-        "postcode": "DE11 9LY",
-        "pub_name": "Rising Sun"
-      },
-      "notes": "",
-      "owner_reviewed": false,
-      "pg": "Guest",
-      "pin": {
-        "lat": 52.7607231,
-        "lng": -1.564267
-      },
-      "place_name": "Church Gresley",
-      "postcode": "DE11 9LY",
-      "priority": 0,
-      "pub_name": "Rising Sun",
-      "reasons": [
-        "Directory postcode differs from reviewed reference postcode"
-      ],
-      "reference": {
-        "address": "77 CHURCH STREET, CHURCH GRESLEY, SWADLINCOTE",
-        "difference_metres": 4.3,
-        "lat": 52.7607571,
-        "lng": -1.564298,
-        "name": "The Rising Sun",
-        "postcode": "DE11 9NR",
-        "queried_postcode": "DE11 9NR",
-        "status": "coordinate_agreement",
-        "url": "https://ratings.food.gov.uk/business/283269"
-      },
-      "status": "coordinate_agreement",
-      "venue_id": "v-cd9c571f-ae55-5d76-9afd-6c4ee3724019",
-      "warnings": []
-    },
-    {
-      "actionable": true,
       "area": "Leicestershire",
       "checked_at": "2026-10-10",
       "comparisons": [
@@ -22617,6 +22556,67 @@
       "venue_id": "v-94bf26b6-c5ee-5cd7-a314-7bde4e022a94",
       "warnings": [
         "FSA coordinate is 58.9m from the accepted pin; informational only because the FSA geocode may be approximate"
+      ]
+    },
+    {
+      "actionable": false,
+      "area": "Derbyshire",
+      "checked_at": "2026-10-10",
+      "comparisons": [
+        {
+          "name_matches": 0,
+          "postcode_matches": 0,
+          "queried_postcode": "DE11 9LY",
+          "status": "no_name_match"
+        },
+        {
+          "address": "77 CHURCH STREET, CHURCH GRESLEY, SWADLINCOTE",
+          "difference_metres": 4.3,
+          "lat": 52.7607571,
+          "lng": -1.564298,
+          "name": "The Rising Sun",
+          "postcode": "DE11 9NR",
+          "queried_postcode": "DE11 9NR",
+          "status": "coordinate_agreement",
+          "url": "https://ratings.food.gov.uk/business/283269"
+        }
+      ],
+      "confidence": "owner_reviewed",
+      "country": "England",
+      "dispense": "H",
+      "independent_of_pin": true,
+      "last": "2026 Q1",
+      "listing": {
+        "postcode": "DE11 9LY",
+        "pub_name": "Rising Sun"
+      },
+      "notes": "",
+      "owner_reviewed": true,
+      "pg": "Guest",
+      "pin": {
+        "lat": 52.7607231,
+        "lng": -1.564267
+      },
+      "place_name": "Church Gresley",
+      "postcode": "DE11 9LY",
+      "priority": 2,
+      "pub_name": "Rising Sun",
+      "reasons": [],
+      "reference": {
+        "address": "77 CHURCH STREET, CHURCH GRESLEY, SWADLINCOTE",
+        "difference_metres": 4.3,
+        "lat": 52.7607571,
+        "lng": -1.564298,
+        "name": "The Rising Sun",
+        "postcode": "DE11 9NR",
+        "queried_postcode": "DE11 9NR",
+        "status": "coordinate_agreement",
+        "url": "https://ratings.food.gov.uk/business/283269"
+      },
+      "status": "coordinate_agreement",
+      "venue_id": "v-cd9c571f-ae55-5d76-9afd-6c4ee3724019",
+      "warnings": [
+        "Owner reviewed this postcode discrepancy and confirmed the displayed pub building; listing postcode retained for provenance"
       ]
     },
     {
@@ -54376,11 +54376,11 @@
   ],
   "schema_version": 1,
   "summary": {
-    "actionable_count": 8,
+    "actionable_count": 7,
     "confidence_counts": {
       "existing_evidence_needs_corroboration": 563,
-      "independent_coordinate_agreement": 432,
-      "owner_reviewed": 49
+      "independent_coordinate_agreement": 431,
+      "owner_reviewed": 50
     },
     "counts": {
       "ambiguous_or_missing_coordinates": 61,
@@ -54389,7 +54389,7 @@
       "nearby": 103,
       "no_name_match": 179
     },
-    "informational_count": 596,
+    "informational_count": 597,
     "limitations": [
       "Coordinate agreement does not prove the correct building or current Bass availability.",
       "Owner-approved coordinates take priority; CAMRA remains the primary automated reference.",

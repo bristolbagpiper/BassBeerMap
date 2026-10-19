@@ -9455,12 +9455,31 @@
       "precision": "venue"
     },
     "v-d9e0eb61-f9f5-5a93-8e14-a75dc459b5d9": {
-      "checked_at": "2026-09-13",
+      "checked_at": "2026-10-19",
       "lat": 53.1359222,
       "lng": -1.1960942,
       "metadata_issue": {
         "field": "postcode",
         "listed": "NG18 4AL",
+        "owner_review": {
+          "approved_coordinate": {
+            "lat": 53.1359222,
+            "lng": -1.1960942
+          },
+          "checked_at": "2026-10-19",
+          "conclusion": "Owner confirmed the named Stella Taps Google Maps place in satellite view; its selected coordinate matches the retained pin (53.1359222, -1.1960942). FSA independently identifies Stella Taps at 1 Stella Street, Mansfield, 5.1m from the pin. The Bass directory lists NG18 4AL and CAMRA lists NG18 4AN. Existing CAMRA evidence reports a 6.1m separation while storing the same coordinate pair as the pin, so that distance is not treated as corroboration. Retain the current pin. The map confirmation establishes the building, not the postal delivery postcode; preserve both source values.",
+          "listed": "NG18 4AL",
+          "owner_instruction": "correct",
+          "pub_name": "Stella Taps",
+          "reference": "NG18 4AN",
+          "review_map_url": "https://www.google.com/maps/place/Stella+Taps/@53.135896,-1.1961786,44m/data=!3m1!1e3!4m12!1m5!3m4!2zNTPCsDA4JzA5LjMiTiAxwrAxMSc0NS45Ilc!8m2!3d53.1359222!4d-1.1960942!3m5!1s0x4879bdf158b7c58d:0x9b2dad6fa5f050ff!8m2!3d53.1359222!4d-1.1960942!16s%2Fg%2F11lh5f7b3s?entry=ttu&g_ep=EgoyMDI2MTAxMy4wIKXMDSoASAFQAw%3D%3D",
+          "reviewed_by": "bristolbagpiper",
+          "source_url": "https://camra.org.uk/pubs/195140",
+          "supporting_address_urls": [
+            "https://camra.org.uk/pubs/195140",
+            "https://ratings.food.gov.uk/business/1991368"
+          ]
+        },
         "reference": "NG18 4AN",
         "source_url": "https://camra.org.uk/pubs/195140"
       },
@@ -11176,7 +11195,7 @@
     "source_name_hint": "",
     "source_pdf": "latest-bass-directory.pdf"
   },
-  "release_id": "1d147094a757ae98ff08c26e54092d8fcdddcf5ddfb5ffcff8b79c56d606abcf",
+  "release_id": "ed4bab1ade8ca646fa1baa35a980d606b35f6e60f64f4db607e2aa20d4e710cd",
   "rows": [
     {
       "area": "Bedfordshire",

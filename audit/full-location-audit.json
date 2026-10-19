@@ -126,67 +126,6 @@
     },
     {
       "actionable": true,
-      "area": "Nottinghamshire",
-      "checked_at": "2026-10-10",
-      "comparisons": [
-        {
-          "name_matches": 0,
-          "postcode_matches": 0,
-          "queried_postcode": "NG18 4AL",
-          "status": "no_name_match"
-        },
-        {
-          "address": "1 Stella Street, , Mansfield, Nottinghamshire",
-          "difference_metres": 5.1,
-          "lat": 53.1359179,
-          "lng": -1.1961704,
-          "name": "Stella Taps",
-          "postcode": "NG18 4AN",
-          "queried_postcode": "NG18 4AN",
-          "status": "coordinate_agreement",
-          "url": "https://ratings.food.gov.uk/business/1991368"
-        }
-      ],
-      "confidence": "independent_coordinate_agreement",
-      "country": "England",
-      "dispense": "H",
-      "independent_of_pin": true,
-      "last": "2026 Q2",
-      "listing": {
-        "postcode": "NG18 4AL",
-        "pub_name": "Stella Taps"
-      },
-      "notes": "",
-      "owner_reviewed": false,
-      "pg": "Guest",
-      "pin": {
-        "lat": 53.1359222,
-        "lng": -1.1960942
-      },
-      "place_name": "Mansfield",
-      "postcode": "NG18 4AL",
-      "priority": 0,
-      "pub_name": "Stella Taps",
-      "reasons": [
-        "Directory postcode differs from reviewed reference postcode"
-      ],
-      "reference": {
-        "address": "1 Stella Street, , Mansfield, Nottinghamshire",
-        "difference_metres": 5.1,
-        "lat": 53.1359179,
-        "lng": -1.1961704,
-        "name": "Stella Taps",
-        "postcode": "NG18 4AN",
-        "queried_postcode": "NG18 4AN",
-        "status": "coordinate_agreement",
-        "url": "https://ratings.food.gov.uk/business/1991368"
-      },
-      "status": "coordinate_agreement",
-      "venue_id": "v-d9e0eb61-f9f5-5a93-8e14-a75dc459b5d9",
-      "warnings": []
-    },
-    {
-      "actionable": true,
       "area": "Staffordshire",
       "checked_at": "2026-10-10",
       "comparisons": [
@@ -25678,6 +25617,67 @@
       "venue_id": "v-cb904e48-d976-5d4a-bc44-142901151a85",
       "warnings": [
         "FSA coordinate is 74.5m from the accepted pin; informational only because the FSA geocode may be approximate"
+      ]
+    },
+    {
+      "actionable": false,
+      "area": "Nottinghamshire",
+      "checked_at": "2026-10-10",
+      "comparisons": [
+        {
+          "name_matches": 0,
+          "postcode_matches": 0,
+          "queried_postcode": "NG18 4AL",
+          "status": "no_name_match"
+        },
+        {
+          "address": "1 Stella Street, , Mansfield, Nottinghamshire",
+          "difference_metres": 5.1,
+          "lat": 53.1359179,
+          "lng": -1.1961704,
+          "name": "Stella Taps",
+          "postcode": "NG18 4AN",
+          "queried_postcode": "NG18 4AN",
+          "status": "coordinate_agreement",
+          "url": "https://ratings.food.gov.uk/business/1991368"
+        }
+      ],
+      "confidence": "owner_reviewed",
+      "country": "England",
+      "dispense": "H",
+      "independent_of_pin": true,
+      "last": "2026 Q2",
+      "listing": {
+        "postcode": "NG18 4AL",
+        "pub_name": "Stella Taps"
+      },
+      "notes": "",
+      "owner_reviewed": true,
+      "pg": "Guest",
+      "pin": {
+        "lat": 53.1359222,
+        "lng": -1.1960942
+      },
+      "place_name": "Mansfield",
+      "postcode": "NG18 4AL",
+      "priority": 2,
+      "pub_name": "Stella Taps",
+      "reasons": [],
+      "reference": {
+        "address": "1 Stella Street, , Mansfield, Nottinghamshire",
+        "difference_metres": 5.1,
+        "lat": 53.1359179,
+        "lng": -1.1961704,
+        "name": "Stella Taps",
+        "postcode": "NG18 4AN",
+        "queried_postcode": "NG18 4AN",
+        "status": "coordinate_agreement",
+        "url": "https://ratings.food.gov.uk/business/1991368"
+      },
+      "status": "coordinate_agreement",
+      "venue_id": "v-d9e0eb61-f9f5-5a93-8e14-a75dc459b5d9",
+      "warnings": [
+        "Owner reviewed this postcode discrepancy and confirmed the displayed pub building; listing postcode retained for provenance"
       ]
     },
     {
@@ -54375,11 +54375,11 @@
   ],
   "schema_version": 1,
   "summary": {
-    "actionable_count": 6,
+    "actionable_count": 5,
     "confidence_counts": {
       "existing_evidence_needs_corroboration": 562,
-      "independent_coordinate_agreement": 431,
-      "owner_reviewed": 51
+      "independent_coordinate_agreement": 430,
+      "owner_reviewed": 52
     },
     "counts": {
       "ambiguous_or_missing_coordinates": 61,
@@ -54388,7 +54388,7 @@
       "nearby": 103,
       "no_name_match": 179
     },
-    "informational_count": 597,
+    "informational_count": 598,
     "limitations": [
       "Coordinate agreement does not prove the correct building or current Bass availability.",
       "Owner-approved coordinates take priority; CAMRA remains the primary automated reference.",

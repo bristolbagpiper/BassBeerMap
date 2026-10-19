@@ -2,8 +2,8 @@
 
 Locations: 1044
 
-Actionable findings: 6
-Locations with informational observations: 597 (may also have an actionable finding)
+Actionable findings: 5
+Locations with informational observations: 598 (may also have an actionable finding)
 
 ## Results
 
@@ -15,9 +15,9 @@ Locations with informational observations: 597 (may also have an actionable find
 
 ## Confidence
 
-- independent_coordinate_agreement: 431
+- independent_coordinate_agreement: 430
 - existing_evidence_needs_corroboration: 562
-- owner_reviewed: 51
+- owner_reviewed: 52
 
 ## Limits
 
@@ -33,7 +33,6 @@ Locations with informational observations: 597 (may also have an actionable find
 |---|---|---|---|---|---|
 | Nelson Inn | Brown Lees | ST8 6PH | coordinate_agreement | Actionable | Directory postcode differs from reviewed reference postcode |
 | New Baron | Hinckley | LE10 0AZ | nearby | Actionable | Directory postcode differs from reviewed reference postcode; FSA coordinate is 25-50m away; informational only |
-| Stella Taps | Mansfield | NG18 4AL | coordinate_agreement | Actionable | Directory postcode differs from reviewed reference postcode |
 | Tame Otter | Hopwas | B78 3AB | coordinate_disagreement | Actionable | Directory postcode differs from reviewed reference postcode; FSA coordinate is 179.9m from the accepted pin; informational only because the FSA geocode may be approximate |
 | Waterfront | Barton-under-Needwood | DE13 8AS | no_name_match | Actionable | Directory postcode differs from reviewed reference postcode; FSA comparison is inconclusive; absence of a match does not contradict accepted evidence |
 | White Hart | Tean | ST10 4DZ | coordinate_disagreement | Actionable | Directory postcode differs from reviewed reference postcode; FSA coordinate is 105.4m from the accepted pin; informational only because the FSA geocode may be approximate |
@@ -530,6 +529,7 @@ Locations with informational observations: 597 (may also have an actionable find
 | Station | Didsbury | M20 2DN | nearby | Informational | FSA coordinate is 25-50m away; informational only |
 | Staunton Arms | Staunton in the Vale | NG13 9PE | no_name_match | Informational | FSA comparison is inconclusive; absence of a match does not contradict accepted evidence |
 | Steampacket Inn | Swanwick | DE55 1AB | coordinate_disagreement | Informational | FSA coordinate is 74.5m from the accepted pin; informational only because the FSA geocode may be approximate |
+| Stella Taps | Mansfield | NG18 4AL | coordinate_agreement | Informational | Owner reviewed this postcode discrepancy and confirmed the displayed pub building; listing postcode retained for provenance |
 | Stockbridge Tap | Edinburgh: Stockbridge | EH4 1HN | coordinate_disagreement | Informational | FSA coordinate is 51.8m from the accepted pin; informational only because the FSA geocode may be approximate |
 | Stocks Tavern | Parbold | WN8 7NN | coordinate_disagreement | Informational | FSA coordinate is 94.9m from the accepted pin; informational only because the FSA geocode may be approximate |
 | Stratford Haven | Nottingham: West Bridgford | NG2 6BA | coordinate_disagreement | Informational | FSA coordinate is 269.4m from the accepted pin; informational only because the FSA geocode may be approximate |

@@ -37246,7 +37246,7 @@
       "warnings": []
     },
     "v-d9e0eb61-f9f5-5a93-8e14-a75dc459b5d9": {
-      "actionable": true,
+      "actionable": false,
       "checked_at": "2026-10-10",
       "comparisons": [
         {
@@ -37267,21 +37267,19 @@
           "url": "https://ratings.food.gov.uk/business/1991368"
         }
       ],
-      "confidence": "independent_coordinate_agreement",
+      "confidence": "owner_reviewed",
       "independent_of_pin": true,
       "listing": {
         "postcode": "NG18 4AL",
         "pub_name": "Stella Taps"
       },
-      "owner_reviewed": false,
+      "owner_reviewed": true,
       "pin": {
         "lat": 53.1359222,
         "lng": -1.1960942
       },
-      "priority": 0,
-      "reasons": [
-        "Directory postcode differs from reviewed reference postcode"
-      ],
+      "priority": 2,
+      "reasons": [],
       "reference": {
         "address": "1 Stella Street, , Mansfield, Nottinghamshire",
         "difference_metres": 5.1,
@@ -37294,7 +37292,9 @@
         "url": "https://ratings.food.gov.uk/business/1991368"
       },
       "status": "coordinate_agreement",
-      "warnings": []
+      "warnings": [
+        "Owner reviewed this postcode discrepancy and confirmed the displayed pub building; listing postcode retained for provenance"
+      ]
     },
     "v-da1ab1f7-22cf-5624-b84c-63141fdd4ce1": {
       "actionable": false,

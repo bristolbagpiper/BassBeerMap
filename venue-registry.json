@@ -1,6 +1,6 @@
 {
   "location_review": {
-    "active_count": 44,
+    "active_count": 43,
     "records": {
       "v-00a08839-2b8a-5782-b6c7-0bdce4cddb2f": {
         "active": false,
@@ -12501,7 +12501,7 @@
         "venue_id": "v-d95368c0-934f-5633-8229-7c363143a41c"
       },
       "v-d9e0eb61-f9f5-5a93-8e14-a75dc459b5d9": {
-        "active": true,
+        "active": false,
         "first_seen": "2026-10-02",
         "history": [
           {
@@ -12510,18 +12510,40 @@
               "Directory postcode NG18 4AL conflicts with reference address NG18 4AN"
             ],
             "status": "review_needed"
+          },
+          {
+            "date": "2026-10-19",
+            "reasons": [],
+            "status": "resolved"
           }
         ],
-        "last_checked": "2026-10-10",
+        "last_checked": "2026-10-19",
         "place_name": "Mansfield",
         "postcode": "NG18 4AL",
         "pub_name": "Stella Taps",
-        "reasons": [
-          "Directory postcode NG18 4AL conflicts with reference address NG18 4AN"
-        ],
+        "reasons": [],
         "reference": {
           "field": "postcode",
           "listed": "NG18 4AL",
+          "owner_review": {
+            "approved_coordinate": {
+              "lat": 53.1359222,
+              "lng": -1.1960942
+            },
+            "checked_at": "2026-10-19",
+            "conclusion": "Owner confirmed the named Stella Taps Google Maps place in satellite view; its selected coordinate matches the retained pin (53.1359222, -1.1960942). FSA independently identifies Stella Taps at 1 Stella Street, Mansfield, 5.1m from the pin. The Bass directory lists NG18 4AL and CAMRA lists NG18 4AN. Existing CAMRA evidence reports a 6.1m separation while storing the same coordinate pair as the pin, so that distance is not treated as corroboration. Retain the current pin. The map confirmation establishes the building, not the postal delivery postcode; preserve both source values.",
+            "listed": "NG18 4AL",
+            "owner_instruction": "correct",
+            "pub_name": "Stella Taps",
+            "reference": "NG18 4AN",
+            "review_map_url": "https://www.google.com/maps/place/Stella+Taps/@53.135896,-1.1961786,44m/data=!3m1!1e3!4m12!1m5!3m4!2zNTPCsDA4JzA5LjMiTiAxwrAxMSc0NS45Ilc!8m2!3d53.1359222!4d-1.1960942!3m5!1s0x4879bdf158b7c58d:0x9b2dad6fa5f050ff!8m2!3d53.1359222!4d-1.1960942!16s%2Fg%2F11lh5f7b3s?entry=ttu&g_ep=EgoyMDI2MTAxMy4wIKXMDSoASAFQAw%3D%3D",
+            "reviewed_by": "bristolbagpiper",
+            "source_url": "https://camra.org.uk/pubs/195140",
+            "supporting_address_urls": [
+              "https://camra.org.uk/pubs/195140",
+              "https://ratings.food.gov.uk/business/1991368"
+            ]
+          },
           "reference": "NG18 4AN",
           "source_url": "https://camra.org.uk/pubs/195140"
         },
@@ -12533,7 +12555,7 @@
           }
         },
         "source_error": null,
-        "status": "review_needed",
+        "status": "resolved",
         "unverified": false,
         "venue_id": "v-d9e0eb61-f9f5-5a93-8e14-a75dc459b5d9"
       },
@@ -102901,7 +102923,7 @@
       ],
       "current_key": "stella taps|mansfield|ng18 4al",
       "independent_location_check": {
-        "actionable": true,
+        "actionable": false,
         "checked_at": "2026-10-10",
         "comparisons": [
           {
@@ -102922,21 +102944,19 @@
             "url": "https://ratings.food.gov.uk/business/1991368"
           }
         ],
-        "confidence": "independent_coordinate_agreement",
+        "confidence": "owner_reviewed",
         "independent_of_pin": true,
         "listing": {
           "postcode": "NG18 4AL",
           "pub_name": "Stella Taps"
         },
-        "owner_reviewed": false,
+        "owner_reviewed": true,
         "pin": {
           "lat": 53.1359222,
           "lng": -1.1960942
         },
-        "priority": 0,
-        "reasons": [
-          "Directory postcode differs from reviewed reference postcode"
-        ],
+        "priority": 2,
+        "reasons": [],
         "reference": {
           "address": "1 Stella Street, , Mansfield, Nottinghamshire",
           "difference_metres": 5.1,
@@ -102949,7 +102969,9 @@
           "url": "https://ratings.food.gov.uk/business/1991368"
         },
         "status": "coordinate_agreement",
-        "warnings": []
+        "warnings": [
+          "Owner reviewed this postcode discrepancy and confirmed the displayed pub building; listing postcode retained for provenance"
+        ]
       },
       "listing": {
         "area": "Nottinghamshire",
@@ -102962,6 +102984,27 @@
         "postcode": "NG18 4AL",
         "pub_name": "Stella Taps"
       },
+      "location_approvals": [
+        {
+          "approved_coordinate": {
+            "lat": 53.1359222,
+            "lng": -1.1960942
+          },
+          "checked_at": "2026-10-19",
+          "conclusion": "Owner confirmed the named Stella Taps Google Maps place in satellite view; its selected coordinate matches the retained pin (53.1359222, -1.1960942). FSA independently identifies Stella Taps at 1 Stella Street, Mansfield, 5.1m from the pin. The Bass directory lists NG18 4AL and CAMRA lists NG18 4AN. Existing CAMRA evidence reports a 6.1m separation while storing the same coordinate pair as the pin, so that distance is not treated as corroboration. Retain the current pin. The map confirmation establishes the building, not the postal delivery postcode; preserve both source values.",
+          "listed": "NG18 4AL",
+          "owner_instruction": "correct",
+          "pub_name": "Stella Taps",
+          "reference": "NG18 4AN",
+          "review_map_url": "https://www.google.com/maps/place/Stella+Taps/@53.135896,-1.1961786,44m/data=!3m1!1e3!4m12!1m5!3m4!2zNTPCsDA4JzA5LjMiTiAxwrAxMSc0NS45Ilc!8m2!3d53.1359222!4d-1.1960942!3m5!1s0x4879bdf158b7c58d:0x9b2dad6fa5f050ff!8m2!3d53.1359222!4d-1.1960942!16s%2Fg%2F11lh5f7b3s?entry=ttu&g_ep=EgoyMDI2MTAxMy4wIKXMDSoASAFQAw%3D%3D",
+          "reviewed_by": "bristolbagpiper",
+          "source_url": "https://camra.org.uk/pubs/195140",
+          "supporting_address_urls": [
+            "https://camra.org.uk/pubs/195140",
+            "https://ratings.food.gov.uk/business/1991368"
+          ]
+        }
+      ],
       "verified_pin": {
         "evidence": [
           {
@@ -102987,6 +103030,23 @@
             "reference_postcode": "NG18 4AL",
             "source": "google-maps-named-place",
             "url": "https://www.google.com/maps/search/?api=1&query=Stella+Taps+Mansfield+NG18+4AL"
+          },
+          {
+            "checked_at": "2026-10-19",
+            "difference_metres": 0.0,
+            "match": "owner_confirmed_existing_pub_building",
+            "reference_coordinate": {
+              "lat": 53.1359222,
+              "lng": -1.1960942
+            },
+            "reference_name": "Stella Taps, Mansfield",
+            "reviewed_by": "bristolbagpiper",
+            "source": "manual_named_place_map",
+            "supporting_address_urls": [
+              "https://camra.org.uk/pubs/195140",
+              "https://ratings.food.gov.uk/business/1991368"
+            ],
+            "url": "https://www.google.com/maps/place/Stella+Taps/@53.135896,-1.1961786,44m/data=!3m1!1e3!4m12!1m5!3m4!2zNTPCsDA4JzA5LjMiTiAxwrAxMSc0NS45Ilc!8m2!3d53.1359222!4d-1.1960942!3m5!1s0x4879bdf158b7c58d:0x9b2dad6fa5f050ff!8m2!3d53.1359222!4d-1.1960942!16s%2Fg%2F11lh5f7b3s?entry=ttu&g_ep=EgoyMDI2MTAxMy4wIKXMDSoASAFQAw%3D%3D"
           }
         ],
         "lat": 53.1359222,
@@ -102994,6 +103054,25 @@
         "metadata_issue": {
           "field": "postcode",
           "listed": "NG18 4AL",
+          "owner_review": {
+            "approved_coordinate": {
+              "lat": 53.1359222,
+              "lng": -1.1960942
+            },
+            "checked_at": "2026-10-19",
+            "conclusion": "Owner confirmed the named Stella Taps Google Maps place in satellite view; its selected coordinate matches the retained pin (53.1359222, -1.1960942). FSA independently identifies Stella Taps at 1 Stella Street, Mansfield, 5.1m from the pin. The Bass directory lists NG18 4AL and CAMRA lists NG18 4AN. Existing CAMRA evidence reports a 6.1m separation while storing the same coordinate pair as the pin, so that distance is not treated as corroboration. Retain the current pin. The map confirmation establishes the building, not the postal delivery postcode; preserve both source values.",
+            "listed": "NG18 4AL",
+            "owner_instruction": "correct",
+            "pub_name": "Stella Taps",
+            "reference": "NG18 4AN",
+            "review_map_url": "https://www.google.com/maps/place/Stella+Taps/@53.135896,-1.1961786,44m/data=!3m1!1e3!4m12!1m5!3m4!2zNTPCsDA4JzA5LjMiTiAxwrAxMSc0NS45Ilc!8m2!3d53.1359222!4d-1.1960942!3m5!1s0x4879bdf158b7c58d:0x9b2dad6fa5f050ff!8m2!3d53.1359222!4d-1.1960942!16s%2Fg%2F11lh5f7b3s?entry=ttu&g_ep=EgoyMDI2MTAxMy4wIKXMDSoASAFQAw%3D%3D",
+            "reviewed_by": "bristolbagpiper",
+            "source_url": "https://camra.org.uk/pubs/195140",
+            "supporting_address_urls": [
+              "https://camra.org.uk/pubs/195140",
+              "https://ratings.food.gov.uk/business/1991368"
+            ]
+          },
           "reference": "NG18 4AN",
           "source_url": "https://camra.org.uk/pubs/195140"
         },

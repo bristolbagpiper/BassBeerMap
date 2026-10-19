@@ -24801,6 +24801,23 @@
           "reference_postcode": "NG18 4AL",
           "source": "google-maps-named-place",
           "url": "https://www.google.com/maps/search/?api=1&query=Stella+Taps+Mansfield+NG18+4AL"
+        },
+        {
+          "checked_at": "2026-10-19",
+          "difference_metres": 0.0,
+          "match": "owner_confirmed_existing_pub_building",
+          "reference_coordinate": {
+            "lat": 53.1359222,
+            "lng": -1.1960942
+          },
+          "reference_name": "Stella Taps, Mansfield",
+          "reviewed_by": "bristolbagpiper",
+          "source": "manual_named_place_map",
+          "supporting_address_urls": [
+            "https://camra.org.uk/pubs/195140",
+            "https://ratings.food.gov.uk/business/1991368"
+          ],
+          "url": "https://www.google.com/maps/place/Stella+Taps/@53.135896,-1.1961786,44m/data=!3m1!1e3!4m12!1m5!3m4!2zNTPCsDA4JzA5LjMiTiAxwrAxMSc0NS45Ilc!8m2!3d53.1359222!4d-1.1960942!3m5!1s0x4879bdf158b7c58d:0x9b2dad6fa5f050ff!8m2!3d53.1359222!4d-1.1960942!16s%2Fg%2F11lh5f7b3s?entry=ttu&g_ep=EgoyMDI2MTAxMy4wIKXMDSoASAFQAw%3D%3D"
         }
       ],
       "lat": 53.1359222,
@@ -24808,6 +24825,25 @@
       "metadata_issue": {
         "field": "postcode",
         "listed": "NG18 4AL",
+        "owner_review": {
+          "approved_coordinate": {
+            "lat": 53.1359222,
+            "lng": -1.1960942
+          },
+          "checked_at": "2026-10-19",
+          "conclusion": "Owner confirmed the named Stella Taps Google Maps place in satellite view; its selected coordinate matches the retained pin (53.1359222, -1.1960942). FSA independently identifies Stella Taps at 1 Stella Street, Mansfield, 5.1m from the pin. The Bass directory lists NG18 4AL and CAMRA lists NG18 4AN. Existing CAMRA evidence reports a 6.1m separation while storing the same coordinate pair as the pin, so that distance is not treated as corroboration. Retain the current pin. The map confirmation establishes the building, not the postal delivery postcode; preserve both source values.",
+          "listed": "NG18 4AL",
+          "owner_instruction": "correct",
+          "pub_name": "Stella Taps",
+          "reference": "NG18 4AN",
+          "review_map_url": "https://www.google.com/maps/place/Stella+Taps/@53.135896,-1.1961786,44m/data=!3m1!1e3!4m12!1m5!3m4!2zNTPCsDA4JzA5LjMiTiAxwrAxMSc0NS45Ilc!8m2!3d53.1359222!4d-1.1960942!3m5!1s0x4879bdf158b7c58d:0x9b2dad6fa5f050ff!8m2!3d53.1359222!4d-1.1960942!16s%2Fg%2F11lh5f7b3s?entry=ttu&g_ep=EgoyMDI2MTAxMy4wIKXMDSoASAFQAw%3D%3D",
+          "reviewed_by": "bristolbagpiper",
+          "source_url": "https://camra.org.uk/pubs/195140",
+          "supporting_address_urls": [
+            "https://camra.org.uk/pubs/195140",
+            "https://ratings.food.gov.uk/business/1991368"
+          ]
+        },
         "reference": "NG18 4AN",
         "source_url": "https://camra.org.uk/pubs/195140"
       },

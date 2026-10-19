@@ -1,5 +1,5 @@
 {
-  "active_count": 43,
+  "active_count": 42,
   "records": {
     "v-00a08839-2b8a-5782-b6c7-0bdce4cddb2f": {
       "active": false,
@@ -13229,7 +13229,7 @@
       "venue_id": "v-e4c27846-67c7-53b3-a224-aa715a6a73f9"
     },
     "v-e5b5b588-c46c-5c56-bd76-758f3c2cf5a8": {
-      "active": true,
+      "active": false,
       "first_seen": "2026-10-02",
       "history": [
         {
@@ -13238,18 +13238,39 @@
             "Directory postcode DE13 8AS conflicts with reference address DE13 8DZ"
           ],
           "status": "review_needed"
+        },
+        {
+          "date": "2026-10-19",
+          "reasons": [],
+          "status": "resolved"
         }
       ],
-      "last_checked": "2026-10-10",
+      "last_checked": "2026-10-19",
       "place_name": "Barton-under-Needwood",
       "postcode": "DE13 8AS",
       "pub_name": "Waterfront",
-      "reasons": [
-        "Directory postcode DE13 8AS conflicts with reference address DE13 8DZ"
-      ],
+      "reasons": [],
       "reference": {
         "field": "postcode",
         "listed": "DE13 8AS",
+        "owner_review": {
+          "approved_coordinate": {
+            "lat": 52.76037423333334,
+            "lng": -1.7082057047619048
+          },
+          "checked_at": "2026-10-19",
+          "conclusion": "Owner confirmed the existing Waterfront, Barton-under-Needwood pin identifies the pub building in Google Maps satellite view. The Google named-place point is 14.7m from the retained pin; keep the existing pin. The Bass directory lists DE13 8AS and CAMRA lists DE13 8DZ. The existing CAMRA record reports an 11.9m gap while storing the same coordinate pair as the pin, so that measurement is not treated as corroboration. The building review does not establish the postal delivery postcode; preserve both source values.",
+          "listed": "DE13 8AS",
+          "owner_instruction": "correct",
+          "pub_name": "Waterfront",
+          "reference": "DE13 8DZ",
+          "review_map_url": "https://www.google.com/maps/place/The+Waterfront/@52.7604134,-1.7085166,90m/data=!3m1!1e3!4m6!3m5!1s0x487a06b0ab6b091f:0x10b4964d038515b6!8m2!3d52.7604861!4d-1.7083214!16s%2Fg%2F1pzvyl8q3?entry=ttu&g_ep=EgoyMDI2MTAxMy4wIKXMDSoASAFQAw%3D%3D",
+          "reviewed_by": "bristolbagpiper",
+          "source_url": "https://camra.org.uk/pubs/124055",
+          "supporting_address_urls": [
+            "https://camra.org.uk/pubs/124055"
+          ]
+        },
         "reference": "DE13 8DZ",
         "source_url": "https://camra.org.uk/pubs/124055"
       },
@@ -13261,7 +13282,7 @@
         }
       },
       "source_error": null,
-      "status": "review_needed",
+      "status": "resolved",
       "unverified": false,
       "venue_id": "v-e5b5b588-c46c-5c56-bd76-758f3c2cf5a8"
     },

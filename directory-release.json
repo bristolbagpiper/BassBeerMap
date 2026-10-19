@@ -9968,12 +9968,30 @@
       "precision": "venue"
     },
     "v-e5b5b588-c46c-5c56-bd76-758f3c2cf5a8": {
-      "checked_at": "2026-09-11",
+      "checked_at": "2026-10-19",
       "lat": 52.76037423333334,
       "lng": -1.7082057047619048,
       "metadata_issue": {
         "field": "postcode",
         "listed": "DE13 8AS",
+        "owner_review": {
+          "approved_coordinate": {
+            "lat": 52.76037423333334,
+            "lng": -1.7082057047619048
+          },
+          "checked_at": "2026-10-19",
+          "conclusion": "Owner confirmed the existing Waterfront, Barton-under-Needwood pin identifies the pub building in Google Maps satellite view. The Google named-place point is 14.7m from the retained pin; keep the existing pin. The Bass directory lists DE13 8AS and CAMRA lists DE13 8DZ. The existing CAMRA record reports an 11.9m gap while storing the same coordinate pair as the pin, so that measurement is not treated as corroboration. The building review does not establish the postal delivery postcode; preserve both source values.",
+          "listed": "DE13 8AS",
+          "owner_instruction": "correct",
+          "pub_name": "Waterfront",
+          "reference": "DE13 8DZ",
+          "review_map_url": "https://www.google.com/maps/place/The+Waterfront/@52.7604134,-1.7085166,90m/data=!3m1!1e3!4m6!3m5!1s0x487a06b0ab6b091f:0x10b4964d038515b6!8m2!3d52.7604861!4d-1.7083214!16s%2Fg%2F1pzvyl8q3?entry=ttu&g_ep=EgoyMDI2MTAxMy4wIKXMDSoASAFQAw%3D%3D",
+          "reviewed_by": "bristolbagpiper",
+          "source_url": "https://camra.org.uk/pubs/124055",
+          "supporting_address_urls": [
+            "https://camra.org.uk/pubs/124055"
+          ]
+        },
         "reference": "DE13 8DZ",
         "source_url": "https://camra.org.uk/pubs/124055"
       },
@@ -11195,7 +11213,7 @@
     "source_name_hint": "",
     "source_pdf": "latest-bass-directory.pdf"
   },
-  "release_id": "ed4bab1ade8ca646fa1baa35a980d606b35f6e60f64f4db607e2aa20d4e710cd",
+  "release_id": "1eb4e5fb9885918696cd15f23e0f419bc16ea28474403734b2f50d761e72ebc2",
   "rows": [
     {
       "area": "Bedfordshire",

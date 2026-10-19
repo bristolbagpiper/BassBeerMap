@@ -6951,7 +6951,7 @@
       "venue_id": "v-6e6a3ef8-0baa-5d53-927c-a5d1b1044c85"
     },
     "v-6f77cbc4-dc76-59ba-a8ab-1c135bf8ce8d": {
-      "active": true,
+      "active": false,
       "first_seen": "2026-10-02",
       "history": [
         {
@@ -6960,18 +6960,41 @@
             "Directory postcode TA8 1NZ conflicts with reference address TA8 1NX"
           ],
           "status": "review_needed"
+        },
+        {
+          "date": "2026-10-19",
+          "reasons": [],
+          "status": "resolved"
         }
       ],
-      "last_checked": "2026-10-10",
+      "last_checked": "2026-10-19",
       "place_name": "Burnham-on-Sea",
       "postcode": "TA8 1NZ",
       "pub_name": "Somerset and Dorset",
-      "reasons": [
-        "Directory postcode TA8 1NZ conflicts with reference address TA8 1NX"
-      ],
+      "reasons": [],
       "reference": {
         "field": "postcode",
         "listed": "TA8 1NZ",
+        "owner_review": {
+          "approved_coordinate": {
+            "lat": 51.2343647,
+            "lng": -2.997543
+          },
+          "checked_at": "2026-10-19",
+          "conclusion": "Owner visually confirmed the existing Somerset & Dorset pub building at the displayed map point. Retain the pin. CAMRA and the current Craft Union page list TA8 1NX; the Bass directory and Stonegate reopening release list TA8 1NZ. Preserve all source values; the map review confirms the building only and does not establish the postcode used for postal delivery.",
+          "listed": "TA8 1NZ",
+          "owner_instruction": "correct",
+          "pub_name": "Somerset and Dorset",
+          "reference": "TA8 1NX",
+          "review_map_url": "https://www.google.com/maps/place/51%C2%B014'03.7%22N+2%C2%B059'51.2%22W/@51.2343647,-2.997543,78m/data=!3m1!1e3!4m4!3m3!8m2!3d51.2343611!4d-2.9975556?entry=ttu&g_ep=EgoyMDI2MTAxMy4wIKXMDSoASAFQAw%3D%3D",
+          "reviewed_by": "bristolbagpiper",
+          "source_url": "https://camra.org.uk/pubs/134015",
+          "supporting_address_urls": [
+            "https://camra.org.uk/pubs/somerset-dorset-burnham-on-sea-134015",
+            "https://www.craftunionpubs.com/somerset-and-dorset-burnham-on-sea/home",
+            "https://www.stonegategroup.co.uk/press/the-somerset-dorset-burnham-on-sea-reopens-this-january-following-transformative-investment/"
+          ]
+        },
         "reference": "TA8 1NX",
         "source_url": "https://camra.org.uk/pubs/134015"
       },
@@ -6983,7 +7006,7 @@
         }
       },
       "source_error": null,
-      "status": "review_needed",
+      "status": "resolved",
       "unverified": false,
       "venue_id": "v-6f77cbc4-dc76-59ba-a8ab-1c135bf8ce8d"
     },
@@ -7790,7 +7813,7 @@
       "venue_id": "v-7df916fa-bd2e-5f55-a3bb-5c3e589f3014"
     },
     "v-7e863132-ef0a-56a7-b5ff-8c1a74015d3c": {
-      "active": false,
+      "active": true,
       "first_seen": "2026-10-02",
       "history": [
         {
@@ -7820,34 +7843,25 @@
           "date": "2026-10-19",
           "reasons": [],
           "status": "resolved"
+        },
+        {
+          "date": "2026-10-19",
+          "reasons": [
+            "Directory postcode ST10 4DZ conflicts with reference address ST10 4DY"
+          ],
+          "status": "review_needed"
         }
       ],
       "last_checked": "2026-10-19",
       "place_name": "Tean",
       "postcode": "ST10 4DZ",
       "pub_name": "White Hart",
-      "reasons": [],
+      "reasons": [
+        "Directory postcode ST10 4DZ conflicts with reference address ST10 4DY"
+      ],
       "reference": {
         "field": "postcode",
         "listed": "ST10 4DZ",
-        "owner_review": {
-          "approved_coordinate": {
-            "lat": 52.9537639,
-            "lng": -1.988268
-          },
-          "checked_at": "2026-10-19",
-          "conclusion": "Owner visually confirmed the existing White Hart, Tean building in the Google satellite view. Retain the pin. CAMRA lists ST10 4DY; the Bass directory lists ST10 4DZ. Preserve both source values; visual building confirmation does not establish which postcode serves postal delivery.",
-          "listed": "ST10 4DZ",
-          "owner_instruction": "correct",
-          "pub_name": "White Hart",
-          "reference": "ST10 4DY",
-          "review_map_url": "https://www.google.com/maps/place/52%C2%B057%2713.6%22N+1%C2%B059%2717.8%22W/@52.9537639,-1.988268,20z/data=!3m1!1e3",
-          "reviewed_by": "bristolbagpiper",
-          "source_url": "https://camra.org.uk/pubs/128019",
-          "supporting_address_urls": [
-            "https://camra.org.uk/pubs/white-hart-tean-128019"
-          ]
-        },
         "reference": "ST10 4DY",
         "source_url": "https://camra.org.uk/pubs/128019"
       },
@@ -7863,7 +7877,7 @@
         }
       },
       "source_error": null,
-      "status": "resolved",
+      "status": "review_needed",
       "unverified": false,
       "venue_id": "v-7e863132-ef0a-56a7-b5ff-8c1a74015d3c"
     },

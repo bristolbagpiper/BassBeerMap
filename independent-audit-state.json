@@ -18724,7 +18724,7 @@
       "warnings": []
     },
     "v-6f77cbc4-dc76-59ba-a8ab-1c135bf8ce8d": {
-      "actionable": true,
+      "actionable": false,
       "checked_at": "2026-10-10",
       "comparisons": [
         {
@@ -18745,21 +18745,19 @@
           "url": "https://ratings.food.gov.uk/business/121718"
         }
       ],
-      "confidence": "existing_evidence_needs_corroboration",
+      "confidence": "owner_reviewed",
       "independent_of_pin": true,
       "listing": {
         "postcode": "TA8 1NZ",
         "pub_name": "Somerset and Dorset"
       },
-      "owner_reviewed": false,
+      "owner_reviewed": true,
       "pin": {
         "lat": 51.2343647,
         "lng": -2.997543
       },
-      "priority": 0,
-      "reasons": [
-        "Directory postcode differs from reviewed reference postcode"
-      ],
+      "priority": 2,
+      "reasons": [],
       "reference": {
         "address": "1 High Street, Burnham-On-Sea",
         "difference_metres": 37.8,
@@ -18773,6 +18771,7 @@
       },
       "status": "nearby",
       "warnings": [
+        "Owner reviewed this postcode discrepancy and confirmed the displayed pub building; listing postcode retained for provenance",
         "FSA coordinate is 25-50m away; informational only"
       ]
     },
@@ -21441,7 +21440,7 @@
       ]
     },
     "v-7e863132-ef0a-56a7-b5ff-8c1a74015d3c": {
-      "actionable": false,
+      "actionable": true,
       "checked_at": "2026-10-10",
       "comparisons": [
         {
@@ -21462,19 +21461,21 @@
           "url": "https://ratings.food.gov.uk/business/1903687"
         }
       ],
-      "confidence": "owner_reviewed",
+      "confidence": "existing_evidence_needs_corroboration",
       "independent_of_pin": true,
       "listing": {
         "postcode": "ST10 4DZ",
         "pub_name": "White Hart"
       },
-      "owner_reviewed": true,
+      "owner_reviewed": false,
       "pin": {
         "lat": 52.9537639,
         "lng": -1.988268
       },
-      "priority": 2,
-      "reasons": [],
+      "priority": 0,
+      "reasons": [
+        "Directory postcode differs from reviewed reference postcode"
+      ],
       "reference": {
         "address": "High Street, Upper Tean, Stoke On Trent",
         "difference_metres": 105.4,
@@ -21488,7 +21489,6 @@
       },
       "status": "coordinate_disagreement",
       "warnings": [
-        "Owner reviewed this postcode discrepancy and confirmed the displayed pub building; listing postcode retained for provenance",
         "FSA coordinate is 105.4m from the accepted pin; informational only because the FSA geocode may be approximate"
       ]
     },

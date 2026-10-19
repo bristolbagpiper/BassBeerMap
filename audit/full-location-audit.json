@@ -303,69 +303,6 @@
     },
     {
       "actionable": true,
-      "area": "Somerset",
-      "checked_at": "2026-10-10",
-      "comparisons": [
-        {
-          "name_matches": 0,
-          "postcode_matches": 0,
-          "queried_postcode": "TA8 1NZ",
-          "status": "no_name_match"
-        },
-        {
-          "address": "1 High Street, Burnham-On-Sea",
-          "difference_metres": 37.8,
-          "lat": 51.234686,
-          "lng": -2.997365,
-          "name": "The Somerset & Dorset",
-          "postcode": "TA8 1NX",
-          "queried_postcode": "TA8 1NX",
-          "status": "nearby",
-          "url": "https://ratings.food.gov.uk/business/121718"
-        }
-      ],
-      "confidence": "existing_evidence_needs_corroboration",
-      "country": "England",
-      "dispense": "H",
-      "independent_of_pin": true,
-      "last": "2026 Q2",
-      "listing": {
-        "postcode": "TA8 1NZ",
-        "pub_name": "Somerset and Dorset"
-      },
-      "notes": "",
-      "owner_reviewed": false,
-      "pg": "Guest",
-      "pin": {
-        "lat": 51.2343647,
-        "lng": -2.997543
-      },
-      "place_name": "Burnham-on-Sea",
-      "postcode": "TA8 1NZ",
-      "priority": 0,
-      "pub_name": "Somerset and Dorset",
-      "reasons": [
-        "Directory postcode differs from reviewed reference postcode"
-      ],
-      "reference": {
-        "address": "1 High Street, Burnham-On-Sea",
-        "difference_metres": 37.8,
-        "lat": 51.234686,
-        "lng": -2.997365,
-        "name": "The Somerset & Dorset",
-        "postcode": "TA8 1NX",
-        "queried_postcode": "TA8 1NX",
-        "status": "nearby",
-        "url": "https://ratings.food.gov.uk/business/121718"
-      },
-      "status": "nearby",
-      "venue_id": "v-6f77cbc4-dc76-59ba-a8ab-1c135bf8ce8d",
-      "warnings": [
-        "FSA coordinate is 25-50m away; informational only"
-      ]
-    },
-    {
-      "actionable": true,
       "area": "Nottinghamshire",
       "checked_at": "2026-10-10",
       "comparisons": [
@@ -539,6 +476,69 @@
       "venue_id": "v-e5b5b588-c46c-5c56-bd76-758f3c2cf5a8",
       "warnings": [
         "FSA comparison is inconclusive; absence of a match does not contradict accepted evidence"
+      ]
+    },
+    {
+      "actionable": true,
+      "area": "Staffordshire",
+      "checked_at": "2026-10-10",
+      "comparisons": [
+        {
+          "name_matches": 0,
+          "postcode_matches": 0,
+          "queried_postcode": "ST10 4DZ",
+          "status": "no_name_match"
+        },
+        {
+          "address": "High Street, Upper Tean, Stoke On Trent",
+          "difference_metres": 105.4,
+          "lat": 52.9536247253418,
+          "lng": -1.98671102523804,
+          "name": "The White Hart",
+          "postcode": "ST10 4DY",
+          "queried_postcode": "ST10 4DY",
+          "status": "coordinate_disagreement",
+          "url": "https://ratings.food.gov.uk/business/1903687"
+        }
+      ],
+      "confidence": "existing_evidence_needs_corroboration",
+      "country": "England",
+      "dispense": "H",
+      "independent_of_pin": true,
+      "last": "2026 Q3",
+      "listing": {
+        "postcode": "ST10 4DZ",
+        "pub_name": "White Hart"
+      },
+      "notes": "",
+      "owner_reviewed": false,
+      "pg": "Perm",
+      "pin": {
+        "lat": 52.9537639,
+        "lng": -1.988268
+      },
+      "place_name": "Tean",
+      "postcode": "ST10 4DZ",
+      "priority": 0,
+      "pub_name": "White Hart",
+      "reasons": [
+        "Directory postcode differs from reviewed reference postcode"
+      ],
+      "reference": {
+        "address": "High Street, Upper Tean, Stoke On Trent",
+        "difference_metres": 105.4,
+        "lat": 52.9536247253418,
+        "lng": -1.98671102523804,
+        "name": "The White Hart",
+        "postcode": "ST10 4DY",
+        "queried_postcode": "ST10 4DY",
+        "status": "coordinate_disagreement",
+        "url": "https://ratings.food.gov.uk/business/1903687"
+      },
+      "status": "coordinate_disagreement",
+      "venue_id": "v-7e863132-ef0a-56a7-b5ff-8c1a74015d3c",
+      "warnings": [
+        "FSA coordinate is 105.4m from the accepted pin; informational only because the FSA geocode may be approximate"
       ]
     },
     {
@@ -24802,6 +24802,68 @@
     },
     {
       "actionable": false,
+      "area": "Somerset",
+      "checked_at": "2026-10-10",
+      "comparisons": [
+        {
+          "name_matches": 0,
+          "postcode_matches": 0,
+          "queried_postcode": "TA8 1NZ",
+          "status": "no_name_match"
+        },
+        {
+          "address": "1 High Street, Burnham-On-Sea",
+          "difference_metres": 37.8,
+          "lat": 51.234686,
+          "lng": -2.997365,
+          "name": "The Somerset & Dorset",
+          "postcode": "TA8 1NX",
+          "queried_postcode": "TA8 1NX",
+          "status": "nearby",
+          "url": "https://ratings.food.gov.uk/business/121718"
+        }
+      ],
+      "confidence": "owner_reviewed",
+      "country": "England",
+      "dispense": "H",
+      "independent_of_pin": true,
+      "last": "2026 Q2",
+      "listing": {
+        "postcode": "TA8 1NZ",
+        "pub_name": "Somerset and Dorset"
+      },
+      "notes": "",
+      "owner_reviewed": true,
+      "pg": "Guest",
+      "pin": {
+        "lat": 51.2343647,
+        "lng": -2.997543
+      },
+      "place_name": "Burnham-on-Sea",
+      "postcode": "TA8 1NZ",
+      "priority": 2,
+      "pub_name": "Somerset and Dorset",
+      "reasons": [],
+      "reference": {
+        "address": "1 High Street, Burnham-On-Sea",
+        "difference_metres": 37.8,
+        "lat": 51.234686,
+        "lng": -2.997365,
+        "name": "The Somerset & Dorset",
+        "postcode": "TA8 1NX",
+        "queried_postcode": "TA8 1NX",
+        "status": "nearby",
+        "url": "https://ratings.food.gov.uk/business/121718"
+      },
+      "status": "nearby",
+      "venue_id": "v-6f77cbc4-dc76-59ba-a8ab-1c135bf8ce8d",
+      "warnings": [
+        "Owner reviewed this postcode discrepancy and confirmed the displayed pub building; listing postcode retained for provenance",
+        "FSA coordinate is 25-50m away; informational only"
+      ]
+    },
+    {
+      "actionable": false,
       "area": "Derbyshire",
       "checked_at": "2026-10-17",
       "comparisons": [
@@ -29185,68 +29247,6 @@
       "venue_id": "v-300cdecf-0171-5ebf-8123-5fb33d0783cb",
       "warnings": [
         "FSA coordinate is 25-50m away; informational only"
-      ]
-    },
-    {
-      "actionable": false,
-      "area": "Staffordshire",
-      "checked_at": "2026-10-10",
-      "comparisons": [
-        {
-          "name_matches": 0,
-          "postcode_matches": 0,
-          "queried_postcode": "ST10 4DZ",
-          "status": "no_name_match"
-        },
-        {
-          "address": "High Street, Upper Tean, Stoke On Trent",
-          "difference_metres": 105.4,
-          "lat": 52.9536247253418,
-          "lng": -1.98671102523804,
-          "name": "The White Hart",
-          "postcode": "ST10 4DY",
-          "queried_postcode": "ST10 4DY",
-          "status": "coordinate_disagreement",
-          "url": "https://ratings.food.gov.uk/business/1903687"
-        }
-      ],
-      "confidence": "owner_reviewed",
-      "country": "England",
-      "dispense": "H",
-      "independent_of_pin": true,
-      "last": "2026 Q3",
-      "listing": {
-        "postcode": "ST10 4DZ",
-        "pub_name": "White Hart"
-      },
-      "notes": "",
-      "owner_reviewed": true,
-      "pg": "Perm",
-      "pin": {
-        "lat": 52.9537639,
-        "lng": -1.988268
-      },
-      "place_name": "Tean",
-      "postcode": "ST10 4DZ",
-      "priority": 2,
-      "pub_name": "White Hart",
-      "reasons": [],
-      "reference": {
-        "address": "High Street, Upper Tean, Stoke On Trent",
-        "difference_metres": 105.4,
-        "lat": 52.9536247253418,
-        "lng": -1.98671102523804,
-        "name": "The White Hart",
-        "postcode": "ST10 4DY",
-        "queried_postcode": "ST10 4DY",
-        "status": "coordinate_disagreement",
-        "url": "https://ratings.food.gov.uk/business/1903687"
-      },
-      "status": "coordinate_disagreement",
-      "venue_id": "v-7e863132-ef0a-56a7-b5ff-8c1a74015d3c",
-      "warnings": [
-        "Owner reviewed this postcode discrepancy and confirmed the displayed pub building; listing postcode retained for provenance",
-        "FSA coordinate is 105.4m from the accepted pin; informational only because the FSA geocode may be approximate"
       ]
     },
     {

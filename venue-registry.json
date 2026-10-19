@@ -1,6 +1,6 @@
 {
   "location_review": {
-    "active_count": 50,
+    "active_count": 49,
     "records": {
       "v-00a08839-2b8a-5782-b6c7-0bdce4cddb2f": {
         "active": false,
@@ -2150,7 +2150,7 @@
         "venue_id": "v-2464a15c-36d6-5352-a32a-fb781a6437e5"
       },
       "v-24865350-c8b8-5220-878f-27452e3d1a13": {
-        "active": true,
+        "active": false,
         "first_seen": "2026-10-02",
         "history": [
           {
@@ -2175,18 +2175,40 @@
               "Directory postcode WA3 2EY conflicts with reference address WA3 2ED"
             ],
             "status": "review_needed"
+          },
+          {
+            "date": "2026-10-19",
+            "reasons": [],
+            "status": "resolved"
           }
         ],
-        "last_checked": "2026-10-11",
+        "last_checked": "2026-10-19",
         "place_name": "Lowton",
         "postcode": "WA3 2EY",
         "pub_name": "Rams Head",
-        "reasons": [
-          "Directory postcode WA3 2EY conflicts with reference address WA3 2ED"
-        ],
+        "reasons": [],
         "reference": {
           "field": "postcode",
           "listed": "WA3 2EY",
+          "owner_review": {
+            "approved_coordinate": {
+              "lat": 53.475426218181816,
+              "lng": -2.5811427727272727
+            },
+            "checked_at": "2026-10-19",
+            "conclusion": "Owner visually confirmed the existing Rams Head pub building at 248 Slag Lane in the Google satellite view. Retain the pin. CAMRA and Wigan Council list WA3 2ED; the Bass directory PDF lists WA3 2EY. Preserve both source values; visual building confirmation does not establish which postcode serves postal delivery.",
+            "listed": "WA3 2EY",
+            "owner_instruction": "correct",
+            "pub_name": "Rams Head",
+            "reference": "WA3 2ED",
+            "review_map_url": "https://www.google.com/maps/place/53%C2%B028%2731.5%22N+2%C2%B034%2752.1%22W/@53.4754262,-2.5811428,74m/data=!3m1!1e3!4m4!3m3!8m2!3d53.4754167!4d-2.5811389?entry=ttu&g_ep=EgoyMDI2MTAxMy4wIKXMDSoASAFQAw%3D%3D",
+            "reviewed_by": "bristolbagpiper",
+            "source_url": "https://camra.org.uk/pubs/170979",
+            "supporting_address_urls": [
+              "https://camra.org.uk/pubs/rams-head-inn-lowton-170979",
+              "https://www.wigan.gov.uk/Docs/PDF/Council/Disclosure-Logs/2025/19106.pdf"
+            ]
+          },
           "reference": "WA3 2ED",
           "source_url": "https://camra.org.uk/pubs/170979"
         },
@@ -2202,7 +2224,7 @@
           }
         },
         "source_error": null,
-        "status": "review_needed",
+        "status": "resolved",
         "unverified": false,
         "venue_id": "v-24865350-c8b8-5220-878f-27452e3d1a13"
       },
@@ -29493,7 +29515,7 @@
       ],
       "current_key": "rams head|lowton|wa3 2ey",
       "independent_location_check": {
-        "actionable": true,
+        "actionable": false,
         "checked_at": "2026-10-10",
         "comparisons": [
           {
@@ -29514,21 +29536,19 @@
             "url": "https://ratings.food.gov.uk/business/98853"
           }
         ],
-        "confidence": "existing_evidence_needs_corroboration",
+        "confidence": "owner_reviewed",
         "independent_of_pin": true,
         "listing": {
           "postcode": "WA3 2EY",
           "pub_name": "Rams Head"
         },
-        "owner_reviewed": false,
+        "owner_reviewed": true,
         "pin": {
           "lat": 53.475426218181816,
           "lng": -2.5811427727272727
         },
-        "priority": 0,
-        "reasons": [
-          "Directory postcode differs from reviewed reference postcode"
-        ],
+        "priority": 2,
+        "reasons": [],
         "reference": {
           "address": "248 Slag Lane, Lowton, Warrington",
           "difference_metres": 114.3,
@@ -29542,6 +29562,7 @@
         },
         "status": "coordinate_disagreement",
         "warnings": [
+          "Owner reviewed this postcode discrepancy and confirmed the displayed pub building; listing postcode retained for provenance",
           "FSA coordinate is 114.3m from the accepted pin; informational only because the FSA geocode may be approximate"
         ]
       },
@@ -29556,6 +29577,27 @@
         "postcode": "WA3 2EY",
         "pub_name": "Rams Head"
       },
+      "location_approvals": [
+        {
+          "approved_coordinate": {
+            "lat": 53.475426218181816,
+            "lng": -2.5811427727272727
+          },
+          "checked_at": "2026-10-19",
+          "conclusion": "Owner visually confirmed the existing Rams Head pub building at 248 Slag Lane in the Google satellite view. Retain the pin. CAMRA and Wigan Council list WA3 2ED; the Bass directory PDF lists WA3 2EY. Preserve both source values; visual building confirmation does not establish which postcode serves postal delivery.",
+          "listed": "WA3 2EY",
+          "owner_instruction": "correct",
+          "pub_name": "Rams Head",
+          "reference": "WA3 2ED",
+          "review_map_url": "https://www.google.com/maps/place/53%C2%B028%2731.5%22N+2%C2%B034%2752.1%22W/@53.4754262,-2.5811428,74m/data=!3m1!1e3!4m4!3m3!8m2!3d53.4754167!4d-2.5811389?entry=ttu&g_ep=EgoyMDI2MTAxMy4wIKXMDSoASAFQAw%3D%3D",
+          "reviewed_by": "bristolbagpiper",
+          "source_url": "https://camra.org.uk/pubs/170979",
+          "supporting_address_urls": [
+            "https://camra.org.uk/pubs/rams-head-inn-lowton-170979",
+            "https://www.wigan.gov.uk/Docs/PDF/Council/Disclosure-Logs/2025/19106.pdf"
+          ]
+        }
+      ],
       "verification_attempt": {
         "checked_at": "2026-10-11",
         "evidence": {
@@ -29595,6 +29637,23 @@
             "reference_postcode": "WA3 2ED",
             "source": "camra",
             "url": "https://camra.org.uk/pubs/170979"
+          },
+          {
+            "checked_at": "2026-10-19",
+            "match": "owner_confirmed_existing_pub_building",
+            "reference_coordinate": {
+              "lat": 53.475426218181816,
+              "lng": -2.5811427727272727
+            },
+            "reference_name": "Rams Head Inn, Lowton",
+            "reference_postcode": "WA3 2ED",
+            "reviewed_by": "bristolbagpiper",
+            "source": "manual_named_place_map",
+            "supporting_address_urls": [
+              "https://camra.org.uk/pubs/rams-head-inn-lowton-170979",
+              "https://www.wigan.gov.uk/Docs/PDF/Council/Disclosure-Logs/2025/19106.pdf"
+            ],
+            "url": "https://www.google.com/maps/place/53%C2%B028%2731.5%22N+2%C2%B034%2752.1%22W/@53.4754262,-2.5811428,74m/data=!3m1!1e3!4m4!3m3!8m2!3d53.4754167!4d-2.5811389?entry=ttu&g_ep=EgoyMDI2MTAxMy4wIKXMDSoASAFQAw%3D%3D"
           }
         ],
         "lat": 53.475426218181816,
@@ -29602,6 +29661,25 @@
         "metadata_issue": {
           "field": "postcode",
           "listed": "WA3 2EY",
+          "owner_review": {
+            "approved_coordinate": {
+              "lat": 53.475426218181816,
+              "lng": -2.5811427727272727
+            },
+            "checked_at": "2026-10-19",
+            "conclusion": "Owner visually confirmed the existing Rams Head pub building at 248 Slag Lane in the Google satellite view. Retain the pin. CAMRA and Wigan Council list WA3 2ED; the Bass directory PDF lists WA3 2EY. Preserve both source values; visual building confirmation does not establish which postcode serves postal delivery.",
+            "listed": "WA3 2EY",
+            "owner_instruction": "correct",
+            "pub_name": "Rams Head",
+            "reference": "WA3 2ED",
+            "review_map_url": "https://www.google.com/maps/place/53%C2%B028%2731.5%22N+2%C2%B034%2752.1%22W/@53.4754262,-2.5811428,74m/data=!3m1!1e3!4m4!3m3!8m2!3d53.4754167!4d-2.5811389?entry=ttu&g_ep=EgoyMDI2MTAxMy4wIKXMDSoASAFQAw%3D%3D",
+            "reviewed_by": "bristolbagpiper",
+            "source_url": "https://camra.org.uk/pubs/170979",
+            "supporting_address_urls": [
+              "https://camra.org.uk/pubs/rams-head-inn-lowton-170979",
+              "https://www.wigan.gov.uk/Docs/PDF/Council/Disclosure-Logs/2025/19106.pdf"
+            ]
+          },
           "reference": "WA3 2ED",
           "source_url": "https://camra.org.uk/pubs/170979"
         },

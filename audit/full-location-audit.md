@@ -2,7 +2,7 @@
 
 Locations: 1044
 
-Actionable findings: 12
+Actionable findings: 11
 Locations with informational observations: 596 (may also have an actionable finding)
 
 ## Results
@@ -16,8 +16,8 @@ Locations with informational observations: 596 (may also have an actionable find
 ## Confidence
 
 - independent_coordinate_agreement: 432
-- existing_evidence_needs_corroboration: 567
-- owner_reviewed: 45
+- existing_evidence_needs_corroboration: 566
+- owner_reviewed: 46
 
 ## Limits
 
@@ -34,7 +34,6 @@ Locations with informational observations: 596 (may also have an actionable find
 | Nelson Inn | Brown Lees | ST8 6PH | coordinate_agreement | Actionable | Directory postcode differs from reviewed reference postcode |
 | New Baron | Hinckley | LE10 0AZ | nearby | Actionable | Directory postcode differs from reviewed reference postcode; FSA coordinate is 25-50m away; informational only |
 | Old Black Swan | Crich | DE4 5DD | coordinate_disagreement | Actionable | Directory postcode differs from reviewed reference postcode; FSA coordinate is 96.9m from the accepted pin; informational only because the FSA geocode may be approximate |
-| Rams Head | Lowton | WA3 2EY | coordinate_disagreement | Actionable | Directory postcode differs from reviewed reference postcode; FSA coordinate is 114.3m from the accepted pin; informational only because the FSA geocode may be approximate |
 | Red Lion | Hollington | DE6 3HA | coordinate_disagreement | Actionable | Directory postcode differs from reviewed reference postcode; FSA coordinate is 189.6m from the accepted pin; informational only because the FSA geocode may be approximate |
 | Rising Sun | Church Gresley | DE11 9LY | coordinate_agreement | Actionable | Directory postcode differs from reviewed reference postcode |
 | Royal | Broughton Astley | LE9 6QB | no_name_match | Actionable | Directory postcode differs from reviewed reference postcode; FSA comparison is inconclusive; absence of a match does not contradict accepted evidence |
@@ -448,6 +447,7 @@ Locations with informational observations: 596 (may also have an actionable find
 | Railway | Halmerend | ST7 8AG | no_name_match | Informational | FSA comparison is inconclusive; absence of a match does not contradict accepted evidence |
 | Railway Inn | Thorpe on the Hill | LN6 9BS | coordinate_disagreement | Informational | FSA coordinate is 171.6m from the accepted pin; informational only because the FSA geocode may be approximate |
 | Railway Tavern | Ashby-de-la-Zouch | LE65 2PW | coordinate_disagreement | Informational | FSA coordinate is 68.5m from the accepted pin; informational only because the FSA geocode may be approximate |
+| Rams Head | Lowton | WA3 2EY | coordinate_disagreement | Informational | Owner reviewed this postcode discrepancy and confirmed the displayed pub building; listing postcode retained for provenance; FSA coordinate is 114.3m from the accepted pin; informational only because the FSA geocode may be approximate |
 | Red Cow | Derby: Allestree | DE22 2DZ | coordinate_disagreement | Informational | FSA coordinate is 68.9m from the accepted pin; informational only because the FSA geocode may be approximate |
 | Red Lion | Baddesley Ensor | CV9 2BT | ambiguous_or_missing_coordinates | Informational | FSA comparison is inconclusive; absence of a match does not contradict accepted evidence |
 | Red Lion | Kniveton | DE6 1JH | coordinate_disagreement | Informational | FSA coordinate is 120.9m from the accepted pin; informational only because the FSA geocode may be approximate |

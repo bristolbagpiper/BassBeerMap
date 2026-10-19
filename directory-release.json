@@ -1533,12 +1533,31 @@
       "precision": "venue"
     },
     "v-24865350-c8b8-5220-878f-27452e3d1a13": {
-      "checked_at": "2026-10-11",
+      "checked_at": "2026-10-19",
       "lat": 53.475426218181816,
       "lng": -2.5811427727272727,
       "metadata_issue": {
         "field": "postcode",
         "listed": "WA3 2EY",
+        "owner_review": {
+          "approved_coordinate": {
+            "lat": 53.475426218181816,
+            "lng": -2.5811427727272727
+          },
+          "checked_at": "2026-10-19",
+          "conclusion": "Owner visually confirmed the existing Rams Head pub building at 248 Slag Lane in the Google satellite view. Retain the pin. CAMRA and Wigan Council list WA3 2ED; the Bass directory PDF lists WA3 2EY. Preserve both source values; visual building confirmation does not establish which postcode serves postal delivery.",
+          "listed": "WA3 2EY",
+          "owner_instruction": "correct",
+          "pub_name": "Rams Head",
+          "reference": "WA3 2ED",
+          "review_map_url": "https://www.google.com/maps/place/53%C2%B028%2731.5%22N+2%C2%B034%2752.1%22W/@53.4754262,-2.5811428,74m/data=!3m1!1e3!4m4!3m3!8m2!3d53.4754167!4d-2.5811389?entry=ttu&g_ep=EgoyMDI2MTAxMy4wIKXMDSoASAFQAw%3D%3D",
+          "reviewed_by": "bristolbagpiper",
+          "source_url": "https://camra.org.uk/pubs/170979",
+          "supporting_address_urls": [
+            "https://camra.org.uk/pubs/rams-head-inn-lowton-170979",
+            "https://www.wigan.gov.uk/Docs/PDF/Council/Disclosure-Logs/2025/19106.pdf"
+          ]
+        },
         "reference": "WA3 2ED",
         "source_url": "https://camra.org.uk/pubs/170979"
       },
@@ -11064,7 +11083,7 @@
     "source_name_hint": "",
     "source_pdf": "latest-bass-directory.pdf"
   },
-  "release_id": "9f9c3a4d68bb64d04cd0cd654877f9b2040088da10d82bcf7aa0a6957a9d8a8b",
+  "release_id": "4c94541f3cabcf6e9083218fa7e6a1b27d51012a6f956cdbefea0851dd3bb917",
   "rows": [
     {
       "area": "Bedfordshire",

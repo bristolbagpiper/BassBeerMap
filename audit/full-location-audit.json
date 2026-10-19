@@ -189,69 +189,6 @@
     },
     {
       "actionable": true,
-      "area": "Greater Manchester",
-      "checked_at": "2026-10-10",
-      "comparisons": [
-        {
-          "name_matches": 0,
-          "postcode_matches": 1,
-          "queried_postcode": "WA3 2EY",
-          "status": "no_name_match"
-        },
-        {
-          "address": "248 Slag Lane, Lowton, Warrington",
-          "difference_metres": 114.3,
-          "lat": 53.476228,
-          "lng": -2.580062,
-          "name": "Rams Head Hotel",
-          "postcode": "WA3 2ED",
-          "queried_postcode": "WA3 2ED",
-          "status": "coordinate_disagreement",
-          "url": "https://ratings.food.gov.uk/business/98853"
-        }
-      ],
-      "confidence": "existing_evidence_needs_corroboration",
-      "country": "England",
-      "dispense": "H",
-      "independent_of_pin": true,
-      "last": "2026 Q3",
-      "listing": {
-        "postcode": "WA3 2EY",
-        "pub_name": "Rams Head"
-      },
-      "notes": "",
-      "owner_reviewed": false,
-      "pg": "Guest",
-      "pin": {
-        "lat": 53.475426218181816,
-        "lng": -2.5811427727272727
-      },
-      "place_name": "Lowton",
-      "postcode": "WA3 2EY",
-      "priority": 0,
-      "pub_name": "Rams Head",
-      "reasons": [
-        "Directory postcode differs from reviewed reference postcode"
-      ],
-      "reference": {
-        "address": "248 Slag Lane, Lowton, Warrington",
-        "difference_metres": 114.3,
-        "lat": 53.476228,
-        "lng": -2.580062,
-        "name": "Rams Head Hotel",
-        "postcode": "WA3 2ED",
-        "queried_postcode": "WA3 2ED",
-        "status": "coordinate_disagreement",
-        "url": "https://ratings.food.gov.uk/business/98853"
-      },
-      "status": "coordinate_disagreement",
-      "venue_id": "v-24865350-c8b8-5220-878f-27452e3d1a13",
-      "warnings": [
-        "FSA coordinate is 114.3m from the accepted pin; informational only because the FSA geocode may be approximate"
-      ]
-    },
-    {
-      "actionable": true,
       "area": "Derbyshire",
       "checked_at": "2026-10-10",
       "comparisons": [
@@ -21453,6 +21390,68 @@
       "venue_id": "v-99376d26-255f-5a56-bf82-18e850c579ac",
       "warnings": [
         "FSA coordinate is 68.5m from the accepted pin; informational only because the FSA geocode may be approximate"
+      ]
+    },
+    {
+      "actionable": false,
+      "area": "Greater Manchester",
+      "checked_at": "2026-10-10",
+      "comparisons": [
+        {
+          "name_matches": 0,
+          "postcode_matches": 1,
+          "queried_postcode": "WA3 2EY",
+          "status": "no_name_match"
+        },
+        {
+          "address": "248 Slag Lane, Lowton, Warrington",
+          "difference_metres": 114.3,
+          "lat": 53.476228,
+          "lng": -2.580062,
+          "name": "Rams Head Hotel",
+          "postcode": "WA3 2ED",
+          "queried_postcode": "WA3 2ED",
+          "status": "coordinate_disagreement",
+          "url": "https://ratings.food.gov.uk/business/98853"
+        }
+      ],
+      "confidence": "owner_reviewed",
+      "country": "England",
+      "dispense": "H",
+      "independent_of_pin": true,
+      "last": "2026 Q3",
+      "listing": {
+        "postcode": "WA3 2EY",
+        "pub_name": "Rams Head"
+      },
+      "notes": "",
+      "owner_reviewed": true,
+      "pg": "Guest",
+      "pin": {
+        "lat": 53.475426218181816,
+        "lng": -2.5811427727272727
+      },
+      "place_name": "Lowton",
+      "postcode": "WA3 2EY",
+      "priority": 2,
+      "pub_name": "Rams Head",
+      "reasons": [],
+      "reference": {
+        "address": "248 Slag Lane, Lowton, Warrington",
+        "difference_metres": 114.3,
+        "lat": 53.476228,
+        "lng": -2.580062,
+        "name": "Rams Head Hotel",
+        "postcode": "WA3 2ED",
+        "queried_postcode": "WA3 2ED",
+        "status": "coordinate_disagreement",
+        "url": "https://ratings.food.gov.uk/business/98853"
+      },
+      "status": "coordinate_disagreement",
+      "venue_id": "v-24865350-c8b8-5220-878f-27452e3d1a13",
+      "warnings": [
+        "Owner reviewed this postcode discrepancy and confirmed the displayed pub building; listing postcode retained for provenance",
+        "FSA coordinate is 114.3m from the accepted pin; informational only because the FSA geocode may be approximate"
       ]
     },
     {
@@ -54380,11 +54379,11 @@
   ],
   "schema_version": 1,
   "summary": {
-    "actionable_count": 12,
+    "actionable_count": 11,
     "confidence_counts": {
-      "existing_evidence_needs_corroboration": 567,
+      "existing_evidence_needs_corroboration": 566,
       "independent_coordinate_agreement": 432,
-      "owner_reviewed": 45
+      "owner_reviewed": 46
     },
     "counts": {
       "ambiguous_or_missing_coordinates": 61,

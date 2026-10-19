@@ -7545,12 +7545,30 @@
       "precision": "venue"
     },
     "v-ab01088f-5062-5b84-b768-e5727529aaab": {
-      "checked_at": "2026-09-11",
+      "checked_at": "2026-10-19",
       "lat": 53.084615581818184,
       "lng": -1.478402390909091,
       "metadata_issue": {
         "field": "postcode",
         "listed": "DE4 5DD",
+        "owner_review": {
+          "approved_coordinate": {
+            "lat": 53.084615581818184,
+            "lng": -1.478402390909091
+          },
+          "checked_at": "2026-10-19",
+          "conclusion": "Owner visually confirmed the existing Old Black Swan, Crich pub building using the named Google Maps place. Its map point is 7.9m from the retained pin and CAMRA identifies the same building within 7.2m. Retain the existing pin. The Bass directory lists DE4 5DD while CAMRA lists DE4 5DG; preserve both source values. The map confirmation establishes the building only and does not establish the postcode used for postal delivery.",
+          "listed": "DE4 5DD",
+          "owner_instruction": "correct",
+          "pub_name": "Old Black Swan",
+          "reference": "DE4 5DG",
+          "review_map_url": "https://www.google.com/maps/place/The+Old+Black+Swan+Public+House/@53.0845616,-1.4787037,75m/data=!3m1!1e3!4m6!3m5!1s0x48798c595b711965:0x1d347e75f323ea98!8m2!3d53.0845969!4d-1.4785164!16s%2Fg%2F1tgdhhx9?entry=ttu&g_ep=EgoyMDI2MTAxMy4wIKXMDSoASAFQAw%3D%3D",
+          "reviewed_by": "bristolbagpiper",
+          "source_url": "https://camra.org.uk/pubs/165834",
+          "supporting_address_urls": [
+            "https://camra.org.uk/pubs/165834"
+          ]
+        },
         "reference": "DE4 5DG",
         "source_url": "https://camra.org.uk/pubs/165834"
       },
@@ -11122,7 +11140,7 @@
     "source_name_hint": "",
     "source_pdf": "latest-bass-directory.pdf"
   },
-  "release_id": "50e943280012f7144fa1feaec9d3e4a52cb94f3534a1df9f73ed6ec9f15729c4",
+  "release_id": "d503be5cbb7980391d3da7e2bc68dbdf758df772dd7f2d4491459c237e430e3e",
   "rows": [
     {
       "area": "Bedfordshire",

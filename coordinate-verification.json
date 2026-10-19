@@ -18357,6 +18357,23 @@
           "reference_postcode": "DE4 5DG",
           "source": "camra",
           "url": "https://camra.org.uk/pubs/165834"
+        },
+        {
+          "checked_at": "2026-10-19",
+          "difference_metres": 7.9,
+          "match": "owner_confirmed_existing_pub_building",
+          "reference_coordinate": {
+            "lat": 53.0845969,
+            "lng": -1.4785164
+          },
+          "reference_name": "The Old Black Swan Public House",
+          "reference_postcode": "DE4 5DG",
+          "reviewed_by": "bristolbagpiper",
+          "source": "manual_named_place_map",
+          "supporting_address_urls": [
+            "https://camra.org.uk/pubs/165834"
+          ],
+          "url": "https://www.google.com/maps/place/The+Old+Black+Swan+Public+House/@53.0845616,-1.4787037,75m/data=!3m1!1e3!4m6!3m5!1s0x48798c595b711965:0x1d347e75f323ea98!8m2!3d53.0845969!4d-1.4785164!16s%2Fg%2F1tgdhhx9?entry=ttu&g_ep=EgoyMDI2MTAxMy4wIKXMDSoASAFQAw%3D%3D"
         }
       ],
       "lat": 53.084615581818184,
@@ -18364,6 +18381,24 @@
       "metadata_issue": {
         "field": "postcode",
         "listed": "DE4 5DD",
+        "owner_review": {
+          "approved_coordinate": {
+            "lat": 53.084615581818184,
+            "lng": -1.478402390909091
+          },
+          "checked_at": "2026-10-19",
+          "conclusion": "Owner visually confirmed the existing Old Black Swan, Crich pub building using the named Google Maps place. Its map point is 7.9m from the retained pin and CAMRA identifies the same building within 7.2m. Retain the existing pin. The Bass directory lists DE4 5DD while CAMRA lists DE4 5DG; preserve both source values. The map confirmation establishes the building only and does not establish the postcode used for postal delivery.",
+          "listed": "DE4 5DD",
+          "owner_instruction": "correct",
+          "pub_name": "Old Black Swan",
+          "reference": "DE4 5DG",
+          "review_map_url": "https://www.google.com/maps/place/The+Old+Black+Swan+Public+House/@53.0845616,-1.4787037,75m/data=!3m1!1e3!4m6!3m5!1s0x48798c595b711965:0x1d347e75f323ea98!8m2!3d53.0845969!4d-1.4785164!16s%2Fg%2F1tgdhhx9?entry=ttu&g_ep=EgoyMDI2MTAxMy4wIKXMDSoASAFQAw%3D%3D",
+          "reviewed_by": "bristolbagpiper",
+          "source_url": "https://camra.org.uk/pubs/165834",
+          "supporting_address_urls": [
+            "https://camra.org.uk/pubs/165834"
+          ]
+        },
         "reference": "DE4 5DG",
         "source_url": "https://camra.org.uk/pubs/165834"
       },

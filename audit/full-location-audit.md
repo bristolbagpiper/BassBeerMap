@@ -2,22 +2,22 @@
 
 Locations: 1044
 
-Actionable findings: 9
+Actionable findings: 8
 Locations with informational observations: 596 (may also have an actionable finding)
 
 ## Results
 
 - coordinate_agreement: 459
 - nearby: 103
-- coordinate_disagreement: 242
 - no_name_match: 179
+- coordinate_disagreement: 242
 - ambiguous_or_missing_coordinates: 61
 
 ## Confidence
 
 - independent_coordinate_agreement: 432
-- existing_evidence_needs_corroboration: 564
-- owner_reviewed: 48
+- existing_evidence_needs_corroboration: 563
+- owner_reviewed: 49
 
 ## Limits
 
@@ -33,7 +33,6 @@ Locations with informational observations: 596 (may also have an actionable find
 |---|---|---|---|---|---|
 | Nelson Inn | Brown Lees | ST8 6PH | coordinate_agreement | Actionable | Directory postcode differs from reviewed reference postcode |
 | New Baron | Hinckley | LE10 0AZ | nearby | Actionable | Directory postcode differs from reviewed reference postcode; FSA coordinate is 25-50m away; informational only |
-| Old Black Swan | Crich | DE4 5DD | coordinate_disagreement | Actionable | Directory postcode differs from reviewed reference postcode; FSA coordinate is 96.9m from the accepted pin; informational only because the FSA geocode may be approximate |
 | Rising Sun | Church Gresley | DE11 9LY | coordinate_agreement | Actionable | Directory postcode differs from reviewed reference postcode |
 | Royal | Broughton Astley | LE9 6QB | no_name_match | Actionable | Directory postcode differs from reviewed reference postcode; FSA comparison is inconclusive; absence of a match does not contradict accepted evidence |
 | Stella Taps | Mansfield | NG18 4AL | coordinate_agreement | Actionable | Directory postcode differs from reviewed reference postcode |
@@ -400,6 +399,7 @@ Locations with informational observations: 596 (may also have an actionable find
 | Oak and Acorn | Derby: Oakwood | DE21 2HT | coordinate_disagreement | Informational | FSA coordinate is 119.4m from the accepted pin; informational only because the FSA geocode may be approximate |
 | Oat | Little Bowden | LE16 8AN | no_name_match | Informational | FSA comparison is inconclusive; absence of a match does not contradict accepted evidence |
 | Old Bell Hotel | Derby: Central | DE1 3NQ | nearby | Informational | FSA coordinate is 25-50m away; informational only |
+| Old Black Swan | Crich | DE4 5DD | coordinate_disagreement | Informational | Owner reviewed this postcode discrepancy and confirmed the displayed pub building; listing postcode retained for provenance; FSA coordinate is 96.9m from the accepted pin; informational only because the FSA geocode may be approximate |
 | Old Bulls Head | Woodhouse Eaves | LE12 8RZ | coordinate_disagreement | Informational | FSA coordinate is 336.1m from the accepted pin; informational only because the FSA geocode may be approximate |
 | Old Crown | Shardlow | DE72 2HL | coordinate_disagreement | Informational | FSA coordinate is 206.4m from the accepted pin; informational only because the FSA geocode may be approximate |
 | Old Down Inn | Emborough | BA3 4SA | ambiguous_or_missing_coordinates | Informational | FSA comparison is inconclusive; absence of a match does not contradict accepted evidence |

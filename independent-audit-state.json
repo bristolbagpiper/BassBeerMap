@@ -29751,7 +29751,7 @@
       ]
     },
     "v-ab01088f-5062-5b84-b768-e5727529aaab": {
-      "actionable": true,
+      "actionable": false,
       "checked_at": "2026-10-10",
       "comparisons": [
         {
@@ -29772,21 +29772,19 @@
           "url": "https://ratings.food.gov.uk/business/750"
         }
       ],
-      "confidence": "existing_evidence_needs_corroboration",
+      "confidence": "owner_reviewed",
       "independent_of_pin": true,
       "listing": {
         "postcode": "DE4 5DD",
         "pub_name": "Old Black Swan"
       },
-      "owner_reviewed": false,
+      "owner_reviewed": true,
       "pin": {
         "lat": 53.084615581818184,
         "lng": -1.478402390909091
       },
-      "priority": 0,
-      "reasons": [
-        "Directory postcode differs from reviewed reference postcode"
-      ],
+      "priority": 2,
+      "reasons": [],
       "reference": {
         "address": "6 Bowns Hill Crich Matlock Derbyshire",
         "difference_metres": 96.9,
@@ -29800,6 +29798,7 @@
       },
       "status": "coordinate_disagreement",
       "warnings": [
+        "Owner reviewed this postcode discrepancy and confirmed the displayed pub building; listing postcode retained for provenance",
         "FSA coordinate is 96.9m from the accepted pin; informational only because the FSA geocode may be approximate"
       ]
     },

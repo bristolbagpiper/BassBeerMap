@@ -1,6 +1,6 @@
 {
   "location_review": {
-    "active_count": 33,
+    "active_count": 34,
     "records": {
       "v-00a08839-2b8a-5782-b6c7-0bdce4cddb2f": {
         "active": false,
@@ -1308,7 +1308,7 @@
         "venue_id": "v-1488af46-baed-520b-89f3-b68543720635"
       },
       "v-152d1ab1-df05-55e1-a620-e4f9d08cdfd6": {
-        "active": false,
+        "active": true,
         "first_seen": "2026-10-10",
         "history": [
           {
@@ -1317,18 +1317,15 @@
               "Reference venue name changed"
             ],
             "status": "unverified"
-          },
-          {
-            "date": "2026-10-19",
-            "reasons": [],
-            "status": "resolved"
           }
         ],
-        "last_checked": "2026-10-19",
+        "last_checked": "2026-10-12",
         "place_name": "Liverpool: Central",
         "postcode": "L1 4JN",
         "pub_name": "Black Cat Bar",
-        "reasons": [],
+        "reasons": [
+          "Reference venue name changed"
+        ],
         "reference": {},
         "research": {
           "checked_at": "2026-10-13",
@@ -1355,8 +1352,8 @@
           }
         },
         "source_error": null,
-        "status": "resolved",
-        "unverified": false,
+        "status": "unverified",
+        "unverified": true,
         "venue_id": "v-152d1ab1-df05-55e1-a620-e4f9d08cdfd6"
       },
       "v-155ff10f-4111-5b96-975b-cf3c9827be4a": {
@@ -14520,7 +14517,7 @@
       }
     },
     "schema_version": 1,
-    "unverified_count": 29
+    "unverified_count": 30
   },
   "schema_version": 1,
   "venues": {
@@ -24303,7 +24300,7 @@
       "current_key": "black cat bar|liverpool: central|l1 4jn",
       "independent_location_check": {
         "actionable": false,
-        "checked_at": "2026-10-19",
+        "checked_at": "2026-10-12",
         "comparisons": [
           {
             "name_matches": 1,
@@ -24312,16 +24309,16 @@
             "status": "ambiguous_or_missing_coordinates"
           }
         ],
-        "confidence": "owner_reviewed",
+        "confidence": "existing_evidence_needs_corroboration",
         "independent_of_pin": true,
         "listing": {
           "postcode": "L1 4JN",
           "pub_name": "Black Cat Bar"
         },
-        "owner_reviewed": true,
+        "owner_reviewed": false,
         "pin": {
-          "lat": 53.4016502,
-          "lng": -2.9796419
+          "lat": 53.4022,
+          "lng": -2.98134
         },
         "priority": 2,
         "reasons": [],
@@ -24347,59 +24344,6 @@
         "postcode": "L1 4JN",
         "pub_name": "Black Cat Bar"
       },
-      "location_approvals": [
-        {
-          "approved_coordinate": {
-            "lat": 53.4016502,
-            "lng": -2.9796419
-          },
-          "checked_at": "2026-10-19",
-          "conclusion": "Owner confirmed the Google Maps point for the current Black Cat Parr Street building. CAMRA lists 25 Parr St, City Centre, Liverpool L1 4JN and says the third Black Cat opened in October 2025; the operator confirms its Parr Street venue opened in October 2025. Replace the stale pin, which was 128.1m northwest of the owner-approved point.",
-          "owner_instruction": "correct",
-          "previous_pin": {
-            "evidence": [
-              {
-                "checked_at": "2026-09-11",
-                "difference_metres": 0.0,
-                "match": "venue_name_and_full_postcode",
-                "reference_coordinate": {
-                  "lat": 53.4022,
-                  "lng": -2.98134
-                },
-                "reference_postcode": "L1 4JN",
-                "source": "camra",
-                "url": "https://camra.org.uk/pubs/199423"
-              },
-              {
-                "checked_at": "2026-09-11",
-                "difference_metres": 0,
-                "match": "postcode_fallback_replaced",
-                "reference_coordinate": {
-                  "lat": 53.4022,
-                  "lng": -2.98134
-                },
-                "reference_postcode": "L1 4JN",
-                "source": "camra-pubs-location-audit",
-                "url": "https://camra.org.uk/pubs/199423"
-              }
-            ],
-            "lat": 53.4022,
-            "lng": -2.98134,
-            "review_reason": "Reference venue name changed",
-            "review_required": true,
-            "source": "camra-pubs-location-audit"
-          },
-          "prior_review_reason": "Reference venue name changed",
-          "pub_name": "Black Cat Bar",
-          "review_map_url": "https://www.google.com/maps/place/Black+Cat+Parr+Street/@53.4016502,-2.9796419,595m/data=!3m2!1e3!4b1!4m6!3m5!1s0x487b21e290e5b141:0xf01add51fe76ea7!8m2!3d53.4016502!4d-2.9796419!16s%2Fg%2F11zkc1n1lr?entry=ttu&g_ep=EgoyMDI2MTAxMy4wIKXMDSoASAFQAw%3D%3D",
-          "reviewed_by": "bristolbagpiper",
-          "source_url": "https://camra.org.uk/pubs/black-cat-parr-street-liverpool-199423",
-          "supporting_address_urls": [
-            "https://camra.org.uk/pubs/black-cat-parr-street-liverpool-199423",
-            "https://www.blackcatbar.co.uk/"
-          ]
-        }
-      ],
       "location_research": {
         "checked_at": "2026-10-13",
         "coverage": {
@@ -24451,23 +24395,13 @@
             "reference_postcode": "L1 4JN",
             "source": "camra-pubs-location-audit",
             "url": "https://camra.org.uk/pubs/199423"
-          },
-          {
-            "checked_at": "2026-10-19",
-            "difference_metres": 0.0,
-            "match": "owner_approved_current_pub_building",
-            "reference_coordinate": {
-              "lat": 53.4016502,
-              "lng": -2.9796419
-            },
-            "reference_postcode": "L1 4JN",
-            "source": "manual_named_place_map",
-            "url": "https://www.google.com/maps/place/Black+Cat+Parr+Street/@53.4016502,-2.9796419,595m/data=!3m2!1e3!4b1!4m6!3m5!1s0x487b21e290e5b141:0xf01add51fe76ea7!8m2!3d53.4016502!4d-2.9796419!16s%2Fg%2F11zkc1n1lr?entry=ttu&g_ep=EgoyMDI2MTAxMy4wIKXMDSoASAFQAw%3D%3D"
           }
         ],
-        "lat": 53.4016502,
-        "lng": -2.9796419,
-        "source": "manual_named_place_map"
+        "lat": 53.4022,
+        "lng": -2.98134,
+        "review_reason": "Reference venue name changed",
+        "review_required": true,
+        "source": "camra-pubs-location-audit"
       }
     },
     "v-1554353b-6a48-561c-9f59-331364ce09dd": {

@@ -1,5 +1,5 @@
 {
-  "active_count": 33,
+  "active_count": 34,
   "records": {
     "v-00a08839-2b8a-5782-b6c7-0bdce4cddb2f": {
       "active": false,
@@ -1307,7 +1307,7 @@
       "venue_id": "v-1488af46-baed-520b-89f3-b68543720635"
     },
     "v-152d1ab1-df05-55e1-a620-e4f9d08cdfd6": {
-      "active": false,
+      "active": true,
       "first_seen": "2026-10-10",
       "history": [
         {
@@ -1316,18 +1316,15 @@
             "Reference venue name changed"
           ],
           "status": "unverified"
-        },
-        {
-          "date": "2026-10-19",
-          "reasons": [],
-          "status": "resolved"
         }
       ],
-      "last_checked": "2026-10-19",
+      "last_checked": "2026-10-12",
       "place_name": "Liverpool: Central",
       "postcode": "L1 4JN",
       "pub_name": "Black Cat Bar",
-      "reasons": [],
+      "reasons": [
+        "Reference venue name changed"
+      ],
       "reference": {},
       "research": {
         "checked_at": "2026-10-13",
@@ -1354,8 +1351,8 @@
         }
       },
       "source_error": null,
-      "status": "resolved",
-      "unverified": false,
+      "status": "unverified",
+      "unverified": true,
       "venue_id": "v-152d1ab1-df05-55e1-a620-e4f9d08cdfd6"
     },
     "v-155ff10f-4111-5b96-975b-cf3c9827be4a": {
@@ -14519,5 +14516,5 @@
     }
   },
   "schema_version": 1,
-  "unverified_count": 29
+  "unverified_count": 30
 }

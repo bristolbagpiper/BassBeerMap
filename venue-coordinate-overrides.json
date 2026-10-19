@@ -242,16 +242,20 @@
       "source_url": "https://www.google.com/maps/search/?api=1&query=Binary+Mickleover+DE3+0GR"
     },
     "black cat bar|liverpool: central|l1 4jn": {
-      "audit_reason": "postcode_fallback_replaced",
-      "checked_at": "2026-09-11",
-      "lat": 53.4022,
-      "lng": -2.98134,
-      "previous_difference_metres": 22.6,
-      "previous_lat": 53.402155,
-      "previous_lng": -2.981007,
-      "previous_source": "postcode",
-      "source": "camra-pubs-location-audit",
-      "source_url": "https://camra.org.uk/pubs/199423"
+      "audit_reason": "manual_named_place_address_and_map_check",
+      "checked_at": "2026-10-19",
+      "corroborating_source_url": "https://camra.org.uk/pubs/black-cat-parr-street-liverpool-199423",
+      "lat": 53.4016502,
+      "lng": -2.9796419,
+      "previous_difference_metres": 128.1,
+      "previous_lat": 53.4022,
+      "previous_lng": -2.98134,
+      "previous_source": "camra-pubs-location-audit",
+      "reference_address": "25 Parr St, City Centre, Liverpool L1 4JN",
+      "reference_name": "Black Cat Parr Street, Liverpool",
+      "review_note": "Owner confirmed this Google Maps point as the current Black Cat Parr Street building. CAMRA lists 25 Parr St, Liverpool L1 4JN and says the third Black Cat opened Oct 2025; the operator confirms Parr Street opened Oct 2025. The previous pin was 128.1m northwest and belonged to the stale reference.",
+      "source": "google-maps-map-point",
+      "source_url": "https://www.google.com/maps/place/Black+Cat+Parr+Street/@53.4016502,-2.9796419,595m/data=!3m2!1e3!4b1!4m6!3m5!1s0x487b21e290e5b141:0xf01add51fe76ea7!8m2!3d53.4016502!4d-2.9796419!16s%2Fg%2F11zkc1n1lr?entry=ttu&g_ep=EgoyMDI2MTAxMy4wIKXMDSoASAFQAw%3D%3D"
     },
     "black horse|appleby magna|de12 7ah": {
       "audit_reason": "existing_pin_over_50m_from_matching_venue",

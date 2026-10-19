@@ -2407,7 +2407,7 @@
     {
       "actionable": false,
       "area": "Merseyside",
-      "checked_at": "2026-10-12",
+      "checked_at": "2026-10-19",
       "comparisons": [
         {
           "name_matches": 1,
@@ -2416,7 +2416,7 @@
           "status": "ambiguous_or_missing_coordinates"
         }
       ],
-      "confidence": "existing_evidence_needs_corroboration",
+      "confidence": "owner_reviewed",
       "country": "England",
       "dispense": "H",
       "independent_of_pin": true,
@@ -2426,11 +2426,11 @@
         "pub_name": "Black Cat Bar"
       },
       "notes": "",
-      "owner_reviewed": false,
+      "owner_reviewed": true,
       "pg": "Perm",
       "pin": {
-        "lat": 53.4022,
-        "lng": -2.98134
+        "lat": 53.4016502,
+        "lng": -2.9796419
       },
       "place_name": "Liverpool: Central",
       "postcode": "L1 4JN",
@@ -54375,9 +54375,9 @@
   "summary": {
     "actionable_count": 3,
     "confidence_counts": {
-      "existing_evidence_needs_corroboration": 553,
+      "existing_evidence_needs_corroboration": 552,
       "independent_coordinate_agreement": 430,
-      "owner_reviewed": 61
+      "owner_reviewed": 62
     },
     "counts": {
       "ambiguous_or_missing_coordinates": 61,

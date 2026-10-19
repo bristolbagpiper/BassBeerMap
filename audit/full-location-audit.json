@@ -64,17 +64,17 @@
     {
       "actionable": true,
       "area": "Leicestershire",
-      "checked_at": "2026-10-10",
+      "checked_at": "2026-10-19",
       "comparisons": [
         {
           "address": "The New Baron, 5 - 7 Regent Street, Hinckley, Leicestershire",
-          "difference_metres": 0.0,
+          "difference_metres": 29.3,
           "lat": 52.540943145752,
           "lng": -1.37424194812775,
           "name": "New Baron Of Hinckley",
           "postcode": "LE10 0AZ",
           "queried_postcode": "LE10 0AZ",
-          "status": "coordinate_agreement",
+          "status": "nearby",
           "url": "https://ratings.food.gov.uk/business/1207324"
         },
         {
@@ -84,7 +84,7 @@
           "status": "no_name_match"
         }
       ],
-      "confidence": "independent_coordinate_agreement",
+      "confidence": "existing_evidence_needs_corroboration",
       "country": "England",
       "dispense": "H",
       "independent_of_pin": true,
@@ -97,8 +97,8 @@
       "owner_reviewed": false,
       "pg": "Guest",
       "pin": {
-        "lat": 52.540943145752,
-        "lng": -1.37424194812775
+        "lat": 52.54112,
+        "lng": -1.37392
       },
       "place_name": "Hinckley",
       "postcode": "LE10 0AZ",
@@ -109,18 +109,20 @@
       ],
       "reference": {
         "address": "The New Baron, 5 - 7 Regent Street, Hinckley, Leicestershire",
-        "difference_metres": 0.0,
+        "difference_metres": 29.3,
         "lat": 52.540943145752,
         "lng": -1.37424194812775,
         "name": "New Baron Of Hinckley",
         "postcode": "LE10 0AZ",
         "queried_postcode": "LE10 0AZ",
-        "status": "coordinate_agreement",
+        "status": "nearby",
         "url": "https://ratings.food.gov.uk/business/1207324"
       },
-      "status": "coordinate_agreement",
+      "status": "nearby",
       "venue_id": "v-13ff4a41-2ee6-5385-ae2b-22af01b93cf9",
-      "warnings": []
+      "warnings": [
+        "FSA coordinate is 25-50m away; informational only"
+      ]
     },
     {
       "actionable": true,
@@ -54381,18 +54383,18 @@
   "summary": {
     "actionable_count": 13,
     "confidence_counts": {
-      "existing_evidence_needs_corroboration": 567,
-      "independent_coordinate_agreement": 433,
+      "existing_evidence_needs_corroboration": 568,
+      "independent_coordinate_agreement": 432,
       "owner_reviewed": 44
     },
     "counts": {
       "ambiguous_or_missing_coordinates": 61,
-      "coordinate_agreement": 460,
+      "coordinate_agreement": 459,
       "coordinate_disagreement": 242,
-      "nearby": 102,
+      "nearby": 103,
       "no_name_match": 179
     },
-    "informational_count": 595,
+    "informational_count": 596,
     "limitations": [
       "Coordinate agreement does not prove the correct building or current Bass availability.",
       "Owner-approved coordinates take priority; CAMRA remains the primary automated reference.",

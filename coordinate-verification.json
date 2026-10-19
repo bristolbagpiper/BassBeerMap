@@ -1,7 +1,7 @@
 {
   "counts": {
-    "venue_coordinate_requires_review": 38,
-    "verified_venue": 1006
+    "venue_coordinate_requires_review": 37,
+    "verified_venue": 1007
   },
   "generated_at": "2026-10-19",
   "policy": {
@@ -17512,24 +17512,48 @@
       "venue_id": "v-c63814fd-52c2-5e7a-bca3-131e9aa35dfa"
     },
     "new baron|hinckley|le10 0az": {
-      "coordinate_source": "food-standards-agency-fhrs",
-      "display_precision": "postcode",
+      "coordinate_source": "camra-and-manual-building-review",
+      "display_precision": "venue",
       "evidence": [
         {
-          "checked_at": "2026-09-11",
-          "difference_metres": 29.3,
-          "match": "venue_name_and_coordinate; listing_postcode_conflicts",
+          "checked_at": "2026-10-19",
+          "difference_metres": 0,
+          "match": "agent_reviewed_same_pub_alias_and_building",
+          "reference_address": "5-7 Regent Street",
           "reference_coordinate": {
-            "lat": 52.540943145752,
-            "lng": -1.37424194812775
+            "lat": 52.54112,
+            "lng": -1.37392
           },
+          "reference_name": "New Baron Hinckley, Hinckley - Elmesthorpe Ales",
           "reference_postcode": "LE10 0QA",
           "source": "camra",
           "url": "https://camra.org.uk/pubs/181808"
+        },
+        {
+          "checked_at": "2026-10-19",
+          "corroborating_coordinate": {
+            "lat": 52.5411354,
+            "lng": -1.3739948
+          },
+          "match": "agent_checked_satellite_roof_frontage_and_named_business",
+          "reference_address": "5-7 Regent Street, Hinckley",
+          "reference_coordinate": {
+            "lat": 52.54112,
+            "lng": -1.37392
+          },
+          "reference_name": "Crafty Baron Hinckley",
+          "reference_postcode": "LE10 0AZ",
+          "reviewed_by": "codex",
+          "source": "manual_named_place_map",
+          "supporting_address_urls": [
+            "https://hinckleyandbosworth.camra.org.uk/viewnode.php?id=32488",
+            "https://camra.org.uk/pubs/181808"
+          ],
+          "url": "https://www.google.com/maps?q=52.54112,-1.37392&z=21&t=k"
         }
       ],
-      "lat": 52.540943145752,
-      "lng": -1.37424194812775,
+      "lat": 52.54112,
+      "lng": -1.37392,
       "metadata_issue": {
         "field": "postcode",
         "listed": "LE10 0AZ",
@@ -17539,7 +17563,7 @@
       "place_name": "Hinckley",
       "postcode": "LE10 0AZ",
       "pub_name": "New Baron",
-      "status": "venue_coordinate_requires_review",
+      "status": "verified_venue",
       "venue_id": "v-13ff4a41-2ee6-5385-ae2b-22af01b93cf9"
     },
     "new court inn|usk|np15 1ad": {

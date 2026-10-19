@@ -3695,17 +3695,17 @@
     },
     "v-13ff4a41-2ee6-5385-ae2b-22af01b93cf9": {
       "actionable": true,
-      "checked_at": "2026-10-10",
+      "checked_at": "2026-10-19",
       "comparisons": [
         {
           "address": "The New Baron, 5 - 7 Regent Street, Hinckley, Leicestershire",
-          "difference_metres": 0.0,
+          "difference_metres": 29.3,
           "lat": 52.540943145752,
           "lng": -1.37424194812775,
           "name": "New Baron Of Hinckley",
           "postcode": "LE10 0AZ",
           "queried_postcode": "LE10 0AZ",
-          "status": "coordinate_agreement",
+          "status": "nearby",
           "url": "https://ratings.food.gov.uk/business/1207324"
         },
         {
@@ -3715,7 +3715,7 @@
           "status": "no_name_match"
         }
       ],
-      "confidence": "independent_coordinate_agreement",
+      "confidence": "existing_evidence_needs_corroboration",
       "independent_of_pin": true,
       "listing": {
         "postcode": "LE10 0AZ",
@@ -3723,8 +3723,8 @@
       },
       "owner_reviewed": false,
       "pin": {
-        "lat": 52.540943145752,
-        "lng": -1.37424194812775
+        "lat": 52.54112,
+        "lng": -1.37392
       },
       "priority": 0,
       "reasons": [
@@ -3732,17 +3732,19 @@
       ],
       "reference": {
         "address": "The New Baron, 5 - 7 Regent Street, Hinckley, Leicestershire",
-        "difference_metres": 0.0,
+        "difference_metres": 29.3,
         "lat": 52.540943145752,
         "lng": -1.37424194812775,
         "name": "New Baron Of Hinckley",
         "postcode": "LE10 0AZ",
         "queried_postcode": "LE10 0AZ",
-        "status": "coordinate_agreement",
+        "status": "nearby",
         "url": "https://ratings.food.gov.uk/business/1207324"
       },
-      "status": "coordinate_agreement",
-      "warnings": []
+      "status": "nearby",
+      "warnings": [
+        "FSA coordinate is 25-50m away; informational only"
+      ]
     },
     "v-14061bf4-822e-5fad-af95-e998a3002dba": {
       "actionable": false,

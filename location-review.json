@@ -1184,14 +1184,20 @@
             "Directory postcode LE10 0AZ conflicts with reference address LE10 0QA"
           ],
           "status": "unverified"
+        },
+        {
+          "date": "2026-10-19",
+          "reasons": [
+            "Directory postcode LE10 0AZ conflicts with reference address LE10 0QA"
+          ],
+          "status": "review_needed"
         }
       ],
-      "last_checked": "2026-10-10",
+      "last_checked": "2026-10-19",
       "place_name": "Hinckley",
       "postcode": "LE10 0AZ",
       "pub_name": "New Baron",
       "reasons": [
-        "Reference venue name changed",
         "Directory postcode LE10 0AZ conflicts with reference address LE10 0QA"
       ],
       "reference": {
@@ -1226,17 +1232,17 @@
       },
       "source_checks": {
         "camra": {
-          "status": "conflict",
+          "status": "confirmed",
           "url": "https://camra.org.uk/pubs/181808"
         },
         "fsa_independent": {
-          "status": "coordinate_agreement",
+          "status": "nearby",
           "url": "https://ratings.food.gov.uk/business/1207324"
         }
       },
       "source_error": null,
-      "status": "unverified",
-      "unverified": true,
+      "status": "review_needed",
+      "unverified": false,
       "venue_id": "v-13ff4a41-2ee6-5385-ae2b-22af01b93cf9"
     },
     "v-1488af46-baed-520b-89f3-b68543720635": {
@@ -14252,5 +14258,5 @@
     }
   },
   "schema_version": 1,
-  "unverified_count": 38
+  "unverified_count": 37
 }

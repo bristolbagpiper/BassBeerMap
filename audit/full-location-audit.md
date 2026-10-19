@@ -2,22 +2,22 @@
 
 Locations: 1044
 
-Actionable findings: 7
+Actionable findings: 6
 Locations with informational observations: 597 (may also have an actionable finding)
 
 ## Results
 
 - coordinate_agreement: 459
 - nearby: 103
-- no_name_match: 179
 - coordinate_disagreement: 242
+- no_name_match: 179
 - ambiguous_or_missing_coordinates: 61
 
 ## Confidence
 
 - independent_coordinate_agreement: 431
-- existing_evidence_needs_corroboration: 563
-- owner_reviewed: 50
+- existing_evidence_needs_corroboration: 562
+- owner_reviewed: 51
 
 ## Limits
 
@@ -33,7 +33,6 @@ Locations with informational observations: 597 (may also have an actionable find
 |---|---|---|---|---|---|
 | Nelson Inn | Brown Lees | ST8 6PH | coordinate_agreement | Actionable | Directory postcode differs from reviewed reference postcode |
 | New Baron | Hinckley | LE10 0AZ | nearby | Actionable | Directory postcode differs from reviewed reference postcode; FSA coordinate is 25-50m away; informational only |
-| Royal | Broughton Astley | LE9 6QB | no_name_match | Actionable | Directory postcode differs from reviewed reference postcode; FSA comparison is inconclusive; absence of a match does not contradict accepted evidence |
 | Stella Taps | Mansfield | NG18 4AL | coordinate_agreement | Actionable | Directory postcode differs from reviewed reference postcode |
 | Tame Otter | Hopwas | B78 3AB | coordinate_disagreement | Actionable | Directory postcode differs from reviewed reference postcode; FSA coordinate is 179.9m from the accepted pin; informational only because the FSA geocode may be approximate |
 | Waterfront | Barton-under-Needwood | DE13 8AS | no_name_match | Actionable | Directory postcode differs from reviewed reference postcode; FSA comparison is inconclusive; absence of a match does not contradict accepted evidence |
@@ -482,6 +481,7 @@ Locations with informational observations: 597 (may also have an actionable find
 | Rose and Crown | Scartho | DN33 2HR | nearby | Informational | FSA coordinate is 25-50m away; informational only |
 | Rose and Crown | Grimsby: Scartho | DN33 2HR | nearby | Informational | FSA coordinate is 25-50m away; informational only |
 | Roston Inn | Roston | DE6 2EE | coordinate_disagreement | Informational | FSA coordinate is 405.1m from the accepted pin; informational only because the FSA geocode may be approximate |
+| Royal | Broughton Astley | LE9 6QB | no_name_match | Informational | Owner reviewed this postcode discrepancy and confirmed the displayed pub building; listing postcode retained for provenance; FSA comparison is inconclusive; absence of a match does not contradict accepted evidence |
 | Royal Air Forces Association (PMC) | Yeadon | LS19 7NA | no_name_match | Informational | FSA comparison is inconclusive; absence of a match does not contradict accepted evidence |
 | Royal British Legion | Oadby | LE2 5QA | nearby | Informational | FSA coordinate is 25-50m away; informational only |
 | Royal British Legion (PMC) | Bristol: Whitchurch | BS14 0QF | coordinate_disagreement | Informational | FSA coordinate is 61.0m from the accepted pin; informational only because the FSA geocode may be approximate |

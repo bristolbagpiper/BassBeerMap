@@ -1,6 +1,6 @@
 {
   "location_review": {
-    "active_count": 45,
+    "active_count": 44,
     "records": {
       "v-00a08839-2b8a-5782-b6c7-0bdce4cddb2f": {
         "active": false,
@@ -12901,7 +12901,7 @@
         "venue_id": "v-de4bb4cf-ba26-5249-bc8a-2d255fabb89c"
       },
       "v-ded2483d-e3d6-5fcb-b861-5cdf3b53b664": {
-        "active": true,
+        "active": false,
         "first_seen": "2026-10-02",
         "history": [
           {
@@ -12910,18 +12910,39 @@
               "Directory postcode LE9 6QB conflicts with reference address LE9 6QA"
             ],
             "status": "review_needed"
+          },
+          {
+            "date": "2026-10-19",
+            "reasons": [],
+            "status": "resolved"
           }
         ],
-        "last_checked": "2026-10-10",
+        "last_checked": "2026-10-19",
         "place_name": "Broughton Astley",
         "postcode": "LE9 6QB",
         "pub_name": "Royal",
-        "reasons": [
-          "Directory postcode LE9 6QB conflicts with reference address LE9 6QA"
-        ],
+        "reasons": [],
         "reference": {
           "field": "postcode",
           "listed": "LE9 6QB",
+          "owner_review": {
+            "approved_coordinate": {
+              "lat": 52.5356041,
+              "lng": -1.2323141
+            },
+            "checked_at": "2026-10-19",
+            "conclusion": "Owner visually confirmed that the existing Royal, Broughton Astley pin identifies the pub building in Google Maps satellite view. The selected Google Maps coordinate matches the retained pin (52.5356041, -1.2323141); retain it. The Bass directory lists LE9 6QB and CAMRA lists LE9 6QA. The existing CAMRA evidence reports a 3.8m separation while storing the same coordinate pair as the pin, so that distance is not treated as corroboration. The building review does not establish the postal delivery postcode; preserve both source values.",
+            "listed": "LE9 6QB",
+            "owner_instruction": "correct",
+            "pub_name": "Royal",
+            "reference": "LE9 6QA",
+            "review_map_url": "https://www.google.com/maps/place/52%C2%B032'08.2%22N+1%C2%B013'56.3%22W/@52.5356041,-1.2329592,152m/data=!3m2!1e3!4b1!4m4!3m3!8m2!3d52.5356041!4d-1.2323141?entry=ttu&g_ep=EgoyMDI2MTAxMy4wIKXMDSoASAFQAw%3D%3D",
+            "reviewed_by": "bristolbagpiper",
+            "source_url": "https://camra.org.uk/pubs/174059",
+            "supporting_address_urls": [
+              "https://camra.org.uk/pubs/174059"
+            ]
+          },
           "reference": "LE9 6QA",
           "source_url": "https://camra.org.uk/pubs/174059"
         },
@@ -12933,7 +12954,7 @@
           }
         },
         "source_error": null,
-        "status": "review_needed",
+        "status": "resolved",
         "unverified": false,
         "venue_id": "v-ded2483d-e3d6-5fcb-b861-5cdf3b53b664"
       },
@@ -104731,7 +104752,7 @@
       ],
       "current_key": "royal|broughton astley|le9 6qb",
       "independent_location_check": {
-        "actionable": true,
+        "actionable": false,
         "checked_at": "2026-10-10",
         "comparisons": [
           {
@@ -104747,21 +104768,19 @@
             "status": "ambiguous_or_missing_coordinates"
           }
         ],
-        "confidence": "existing_evidence_needs_corroboration",
+        "confidence": "owner_reviewed",
         "independent_of_pin": true,
         "listing": {
           "postcode": "LE9 6QB",
           "pub_name": "Royal"
         },
-        "owner_reviewed": false,
+        "owner_reviewed": true,
         "pin": {
           "lat": 52.5356041,
           "lng": -1.2323141
         },
-        "priority": 0,
-        "reasons": [
-          "Directory postcode differs from reviewed reference postcode"
-        ],
+        "priority": 2,
+        "reasons": [],
         "reference": {
           "name_matches": 0,
           "postcode_matches": 0,
@@ -104770,6 +104789,7 @@
         },
         "status": "no_name_match",
         "warnings": [
+          "Owner reviewed this postcode discrepancy and confirmed the displayed pub building; listing postcode retained for provenance",
           "FSA comparison is inconclusive; absence of a match does not contradict accepted evidence"
         ]
       },
@@ -104784,6 +104804,26 @@
         "postcode": "LE9 6QB",
         "pub_name": "Royal"
       },
+      "location_approvals": [
+        {
+          "approved_coordinate": {
+            "lat": 52.5356041,
+            "lng": -1.2323141
+          },
+          "checked_at": "2026-10-19",
+          "conclusion": "Owner visually confirmed that the existing Royal, Broughton Astley pin identifies the pub building in Google Maps satellite view. The selected Google Maps coordinate matches the retained pin (52.5356041, -1.2323141); retain it. The Bass directory lists LE9 6QB and CAMRA lists LE9 6QA. The existing CAMRA evidence reports a 3.8m separation while storing the same coordinate pair as the pin, so that distance is not treated as corroboration. The building review does not establish the postal delivery postcode; preserve both source values.",
+          "listed": "LE9 6QB",
+          "owner_instruction": "correct",
+          "pub_name": "Royal",
+          "reference": "LE9 6QA",
+          "review_map_url": "https://www.google.com/maps/place/52%C2%B032'08.2%22N+1%C2%B013'56.3%22W/@52.5356041,-1.2329592,152m/data=!3m2!1e3!4b1!4m4!3m3!8m2!3d52.5356041!4d-1.2323141?entry=ttu&g_ep=EgoyMDI2MTAxMy4wIKXMDSoASAFQAw%3D%3D",
+          "reviewed_by": "bristolbagpiper",
+          "source_url": "https://camra.org.uk/pubs/174059",
+          "supporting_address_urls": [
+            "https://camra.org.uk/pubs/174059"
+          ]
+        }
+      ],
       "verified_pin": {
         "evidence": [
           {
@@ -104797,6 +104837,22 @@
             "reference_postcode": "LE9 6QA",
             "source": "camra",
             "url": "https://camra.org.uk/pubs/174059"
+          },
+          {
+            "checked_at": "2026-10-19",
+            "difference_metres": 0.0,
+            "match": "owner_confirmed_existing_pub_building",
+            "reference_coordinate": {
+              "lat": 52.5356041,
+              "lng": -1.2323141
+            },
+            "reference_name": "The Royal, Broughton Astley",
+            "reviewed_by": "bristolbagpiper",
+            "source": "manual_named_place_map",
+            "supporting_address_urls": [
+              "https://camra.org.uk/pubs/174059"
+            ],
+            "url": "https://www.google.com/maps/place/52%C2%B032'08.2%22N+1%C2%B013'56.3%22W/@52.5356041,-1.2329592,152m/data=!3m2!1e3!4b1!4m4!3m3!8m2!3d52.5356041!4d-1.2323141?entry=ttu&g_ep=EgoyMDI2MTAxMy4wIKXMDSoASAFQAw%3D%3D"
           }
         ],
         "lat": 52.5356041,
@@ -104804,6 +104860,24 @@
         "metadata_issue": {
           "field": "postcode",
           "listed": "LE9 6QB",
+          "owner_review": {
+            "approved_coordinate": {
+              "lat": 52.5356041,
+              "lng": -1.2323141
+            },
+            "checked_at": "2026-10-19",
+            "conclusion": "Owner visually confirmed that the existing Royal, Broughton Astley pin identifies the pub building in Google Maps satellite view. The selected Google Maps coordinate matches the retained pin (52.5356041, -1.2323141); retain it. The Bass directory lists LE9 6QB and CAMRA lists LE9 6QA. The existing CAMRA evidence reports a 3.8m separation while storing the same coordinate pair as the pin, so that distance is not treated as corroboration. The building review does not establish the postal delivery postcode; preserve both source values.",
+            "listed": "LE9 6QB",
+            "owner_instruction": "correct",
+            "pub_name": "Royal",
+            "reference": "LE9 6QA",
+            "review_map_url": "https://www.google.com/maps/place/52%C2%B032'08.2%22N+1%C2%B013'56.3%22W/@52.5356041,-1.2329592,152m/data=!3m2!1e3!4b1!4m4!3m3!8m2!3d52.5356041!4d-1.2323141?entry=ttu&g_ep=EgoyMDI2MTAxMy4wIKXMDSoASAFQAw%3D%3D",
+            "reviewed_by": "bristolbagpiper",
+            "source_url": "https://camra.org.uk/pubs/174059",
+            "supporting_address_urls": [
+              "https://camra.org.uk/pubs/174059"
+            ]
+          },
           "reference": "LE9 6QA",
           "source_url": "https://camra.org.uk/pubs/174059"
         },

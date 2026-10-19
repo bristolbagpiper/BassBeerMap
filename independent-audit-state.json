@@ -38160,7 +38160,7 @@
       ]
     },
     "v-ded2483d-e3d6-5fcb-b861-5cdf3b53b664": {
-      "actionable": true,
+      "actionable": false,
       "checked_at": "2026-10-10",
       "comparisons": [
         {
@@ -38176,21 +38176,19 @@
           "status": "ambiguous_or_missing_coordinates"
         }
       ],
-      "confidence": "existing_evidence_needs_corroboration",
+      "confidence": "owner_reviewed",
       "independent_of_pin": true,
       "listing": {
         "postcode": "LE9 6QB",
         "pub_name": "Royal"
       },
-      "owner_reviewed": false,
+      "owner_reviewed": true,
       "pin": {
         "lat": 52.5356041,
         "lng": -1.2323141
       },
-      "priority": 0,
-      "reasons": [
-        "Directory postcode differs from reviewed reference postcode"
-      ],
+      "priority": 2,
+      "reasons": [],
       "reference": {
         "name_matches": 0,
         "postcode_matches": 0,
@@ -38199,6 +38197,7 @@
       },
       "status": "no_name_match",
       "warnings": [
+        "Owner reviewed this postcode discrepancy and confirmed the displayed pub building; listing postcode retained for provenance",
         "FSA comparison is inconclusive; absence of a match does not contradict accepted evidence"
       ]
     },

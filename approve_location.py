@@ -50,8 +50,8 @@ def approve(root, staging, event, owner):
         source = parse_camra(fetch_text(url))
         proposals = entry.get('location_research', {}).get('proposals', [])
         proposed = next((p for p in proposals if p['url'] == url), None)
-        if not name_matches(row['pub_name'], source['name']):
-            if not proposed or not (proposed['name'] == source['name'] or name_matches(proposed['name'], source['name'])):
+        if not name_matches(row['pub_name'], source['name'], row.get('place_name', '')):
+            if not proposed or not (proposed['name'] == source['name'] or name_matches(proposed['name'], source['name'], row.get('place_name', ''))):
                 raise ValueError('Source name does not identify this pub or a recorded research candidate')
         if proposed and (distance_metres(source, proposed) > 50 or (proposed['postcode'] and source['postcode'] != proposed['postcode'])):
             raise ValueError('Source address/coordinate changed since research; refresh the candidate before approving')

@@ -6249,7 +6249,7 @@
             "status": "resolved"
           }
         ],
-        "last_checked": "2026-10-19",
+        "last_checked": "2026-10-20",
         "place_name": "Horbury",
         "postcode": "WF4 6LP",
         "pub_name": "Boons",
@@ -6260,6 +6260,10 @@
           "camra": {
             "status": "conflict",
             "url": "https://camra.org.uk/pubs/135211"
+          },
+          "fsa_independent": {
+            "status": "coordinate_agreement",
+            "url": "https://ratings.food.gov.uk/business/1105176"
           }
         },
         "source_error": null,
@@ -6713,7 +6717,7 @@
             "status": "resolved"
           }
         ],
-        "last_checked": "2026-10-17",
+        "last_checked": "2026-10-20",
         "place_name": "Newton Burgoland",
         "postcode": "LE67 2SE",
         "pub_name": "Belper Arms",
@@ -6752,7 +6756,7 @@
             "status": "resolved"
           }
         ],
-        "last_checked": "2026-10-17",
+        "last_checked": "2026-10-20",
         "place_name": "Burton U-T: Horninglow",
         "postcode": "DE14 2PT",
         "pub_name": "Navigation",
@@ -6791,7 +6795,7 @@
             "status": "resolved"
           }
         ],
-        "last_checked": "2026-10-17",
+        "last_checked": "2026-10-20",
         "place_name": "Stretton",
         "postcode": "DE13 0HE",
         "pub_name": "Monks Bridge",
@@ -6837,7 +6841,7 @@
             "status": "resolved"
           }
         ],
-        "last_checked": "2026-10-09",
+        "last_checked": "2026-10-20",
         "place_name": "Bristol: St Werburghs",
         "postcode": "BS2 9RS",
         "pub_name": "Duke of York",
@@ -6909,7 +6913,7 @@
             "status": "resolved"
           }
         ],
-        "last_checked": "2026-10-17",
+        "last_checked": "2026-10-20",
         "place_name": "Ashby-de-la-Zouch",
         "postcode": "LE65 2GW",
         "pub_name": "Ivanhoe Social Club (PMC)",
@@ -6948,7 +6952,7 @@
             "status": "resolved"
           }
         ],
-        "last_checked": "2026-10-17",
+        "last_checked": "2026-10-20",
         "place_name": "Osgathorpe",
         "postcode": "LE12 9TA",
         "pub_name": "New Storey",
@@ -7047,7 +7051,7 @@
             "status": "resolved"
           }
         ],
-        "last_checked": "2026-10-18",
+        "last_checked": "2026-10-20",
         "place_name": "Selston",
         "postcode": "NG16 6FB",
         "pub_name": "Horse and Jockey",
@@ -7086,7 +7090,7 @@
             "status": "resolved"
           }
         ],
-        "last_checked": "2026-10-18",
+        "last_checked": "2026-10-20",
         "place_name": "Sheffield: Heeley",
         "postcode": "S8 9TZ",
         "pub_name": "Brothers Arms",
@@ -7125,7 +7129,7 @@
             "status": "resolved"
           }
         ],
-        "last_checked": "2026-10-18",
+        "last_checked": "2026-10-20",
         "place_name": "Kirk Ella",
         "postcode": "HU10 7LS",
         "pub_name": "Beech Tree",
@@ -7159,7 +7163,7 @@
             "status": "unverified"
           }
         ],
-        "last_checked": "2026-10-18",
+        "last_checked": "2026-10-20",
         "place_name": "Oadby",
         "postcode": "LE2 5QA",
         "pub_name": "Royal British Legion",
@@ -7207,7 +7211,7 @@
             "status": "resolved"
           }
         ],
-        "last_checked": "2026-10-09",
+        "last_checked": "2026-10-20",
         "place_name": "Wishaw",
         "postcode": "B76 9QL",
         "pub_name": "Cock Inn",
@@ -7274,7 +7278,7 @@
             "status": "resolved"
           }
         ],
-        "last_checked": "2026-10-18",
+        "last_checked": "2026-10-20",
         "place_name": "Stourport",
         "postcode": "DY13 9PA",
         "pub_name": "Old Rose and Crown",
@@ -7313,7 +7317,7 @@
             "status": "resolved"
           }
         ],
-        "last_checked": "2026-10-18",
+        "last_checked": "2026-10-20",
         "place_name": "Derby: Normanton",
         "postcode": "DE23 8DF",
         "pub_name": "Norman Arms",
@@ -58202,11 +58206,11 @@
       "current_key": "boons|horbury|wf4 6lp",
       "independent_location_check": {
         "actionable": false,
-        "checked_at": "2026-10-19",
+        "checked_at": "2026-10-20",
         "comparisons": [
           {
             "address": "6 Queen Street, Horbury, Wakefield",
-            "difference_metres": 5.3,
+            "difference_metres": 12.9,
             "lat": 53.6596506,
             "lng": -1.554927,
             "name": "Boons",
@@ -58216,22 +58220,22 @@
             "url": "https://ratings.food.gov.uk/business/1105176"
           }
         ],
-        "confidence": "independent_coordinate_agreement",
+        "confidence": "owner_reviewed",
         "independent_of_pin": true,
         "listing": {
           "postcode": "WF4 6LP",
           "pub_name": "Boons"
         },
-        "owner_reviewed": false,
+        "owner_reviewed": true,
         "pin": {
-          "lat": 53.65965,
-          "lng": -1.555008
+          "lat": 53.659654,
+          "lng": -1.555123
         },
         "priority": 3,
         "reasons": [],
         "reference": {
           "address": "6 Queen Street, Horbury, Wakefield",
-          "difference_metres": 5.3,
+          "difference_metres": 12.9,
           "lat": 53.6596506,
           "lng": -1.554927,
           "name": "Boons",
@@ -60209,7 +60213,7 @@
       "current_key": "duke of wellington|grimsby|dn31 1qd",
       "independent_location_check": {
         "actionable": false,
-        "checked_at": "2026-10-09",
+        "checked_at": "2026-10-20",
         "comparisons": [
           {
             "name_matches": 1,
@@ -60306,7 +60310,7 @@
       "current_key": "hearsall inn|coventry: chapelfields|cv5 8ds",
       "independent_location_check": {
         "actionable": false,
-        "checked_at": "2026-10-09",
+        "checked_at": "2026-10-20",
         "comparisons": [
           {
             "address": "Hearsall Inn 45 Hearsall Inn Craven Street, , , Coventry",
@@ -60602,7 +60606,7 @@
       "current_key": "belper arms|newton burgoland|le67 2se",
       "independent_location_check": {
         "actionable": false,
-        "checked_at": "2026-10-09",
+        "checked_at": "2026-10-20",
         "comparisons": [
           {
             "address": "Belper Arms, 7 Main Street, Newton Burgoland, Coalville",
@@ -60709,7 +60713,7 @@
       "current_key": "myrtle tree|bristol: hotwells|bs1 5uw",
       "independent_location_check": {
         "actionable": false,
-        "checked_at": "2026-10-09",
+        "checked_at": "2026-10-20",
         "comparisons": [
           {
             "address": "Myrtle Tree, 127 St Georges Road, City Centre, Bristol",
@@ -60814,7 +60818,7 @@
       "current_key": "navigation|burton u-t: horninglow|de14 2pt",
       "independent_location_check": {
         "actionable": false,
-        "checked_at": "2026-10-09",
+        "checked_at": "2026-10-20",
         "comparisons": [
           {
             "address": "Navigation Inn, 120 Horninglow Road, Burton upon Trent",
@@ -60921,7 +60925,7 @@
       "current_key": "bank|plymouth: central|pl1 2tg",
       "independent_location_check": {
         "actionable": false,
-        "checked_at": "2026-10-09",
+        "checked_at": "2026-10-20",
         "comparisons": [
           {
             "address": "The Bank, Old George Street, Plymouth, Devon",
@@ -61026,7 +61030,7 @@
       "current_key": "cobblers|leek|st13 5jf",
       "independent_location_check": {
         "actionable": false,
-        "checked_at": "2026-10-09",
+        "checked_at": "2026-10-20",
         "comparisons": [
           {
             "address": "1-5 Russell Street, Leek, Staffordshire",
@@ -61131,7 +61135,7 @@
       "current_key": "cross house tavern|tewkesbury|gl20 5ab",
       "independent_location_check": {
         "actionable": false,
-        "checked_at": "2026-10-09",
+        "checked_at": "2026-10-20",
         "comparisons": [
           {
             "name_matches": 0,
@@ -61228,7 +61232,7 @@
       "current_key": "monks bridge|stretton|de13 0he",
       "independent_location_check": {
         "actionable": false,
-        "checked_at": "2026-10-09",
+        "checked_at": "2026-10-20",
         "comparisons": [
           {
             "address": "Monks Bridge Inn, 74 Church Road, Stretton, Burton upon Trent",
@@ -61335,7 +61339,7 @@
       "current_key": "duke of york|bristol: st werburghs|bs2 9rs",
       "independent_location_check": {
         "actionable": false,
-        "checked_at": "2026-10-09",
+        "checked_at": "2026-10-20",
         "comparisons": [
           {
             "address": "2 Jubilee Road, St Werburghs, Bristol",
@@ -61471,7 +61475,7 @@
       "current_key": "beach bar|sutton-on-sea|ln12 2et",
       "independent_location_check": {
         "actionable": false,
-        "checked_at": "2026-10-09",
+        "checked_at": "2026-10-20",
         "comparisons": [
           {
             "name_matches": 0,
@@ -61568,7 +61572,7 @@
       "current_key": "uxbridge arms|burton u-t: central|de14 3lr",
       "independent_location_check": {
         "actionable": false,
-        "checked_at": "2026-10-09",
+        "checked_at": "2026-10-20",
         "comparisons": [
           {
             "address": "Uxbridge Arms, 1 Queen Street, Burton upon Trent",
@@ -61673,7 +61677,7 @@
       "current_key": "spanker|nether heage|de56 2at",
       "independent_location_check": {
         "actionable": false,
-        "checked_at": "2026-10-09",
+        "checked_at": "2026-10-20",
         "comparisons": [
           {
             "address": "Spanker Lane Nether Heage Belper Derbyshire",
@@ -61778,7 +61782,7 @@
       "current_key": "ivanhoe social club (pmc)|ashby-de-la-zouch|le65 2gw",
       "independent_location_check": {
         "actionable": false,
-        "checked_at": "2026-10-09",
+        "checked_at": "2026-10-20",
         "comparisons": [
           {
             "address": "Ivanhoe Social Club, Wilfred Place, Ashby-De-La-Zouch, Leicestershire",
@@ -61885,7 +61889,7 @@
       "current_key": "new storey|osgathorpe|le12 9ta",
       "independent_location_check": {
         "actionable": false,
-        "checked_at": "2026-10-09",
+        "checked_at": "2026-10-20",
         "comparisons": [
           {
             "address": "The Storey Arms, 41 Main Street, Osgathorpe, Loughborough",
@@ -61992,7 +61996,7 @@
       "current_key": "seven stars|falmouth|tr11 3qa",
       "independent_location_check": {
         "actionable": false,
-        "checked_at": "2026-10-09",
+        "checked_at": "2026-10-20",
         "comparisons": [
           {
             "address": "The Seven Stars, 1 The Moor, Falmouth, Cornwall",
@@ -62097,7 +62101,7 @@
       "current_key": "crown|heather|le67 2qp",
       "independent_location_check": {
         "actionable": false,
-        "checked_at": "2026-10-09",
+        "checked_at": "2026-10-20",
         "comparisons": [
           {
             "name_matches": 0,
@@ -62194,7 +62198,7 @@
       "current_key": "kingston arms|cambridge|cb1 2nu",
       "independent_location_check": {
         "actionable": false,
-        "checked_at": "2026-10-09",
+        "checked_at": "2026-10-20",
         "comparisons": [
           {
             "address": "Kingston Arms 33 Kingston Street, , Cambridge, Cambridgeshire",
@@ -62466,7 +62470,7 @@
       "current_key": "white hart|ridge lane|cv10 0rb",
       "independent_location_check": {
         "actionable": false,
-        "checked_at": "2026-10-09",
+        "checked_at": "2026-10-20",
         "comparisons": [
           {
             "address": "White Hart Inn Ridge Lane, , Nuneaton, Warwickshire",
@@ -62571,7 +62575,7 @@
       "current_key": "red lion|cheddleton|st13 7hn",
       "independent_location_check": {
         "actionable": false,
-        "checked_at": "2026-10-09",
+        "checked_at": "2026-10-20",
         "comparisons": [
           {
             "address": "37 Cheadle Road, Cheddleton, Leek",
@@ -62676,7 +62680,7 @@
       "current_key": "burton tennis and squash club (pmc)|burton u-t: stapenhill|de15 0lq",
       "independent_location_check": {
         "actionable": false,
-        "checked_at": "2026-10-09",
+        "checked_at": "2026-10-20",
         "comparisons": [
           {
             "name_matches": 0,
@@ -62773,7 +62777,7 @@
       "current_key": "horse and jockey|selston|ng16 6fb",
       "independent_location_check": {
         "actionable": false,
-        "checked_at": "2026-10-09",
+        "checked_at": "2026-10-20",
         "comparisons": [
           {
             "address": "Church Lane",
@@ -62880,7 +62884,7 @@
       "current_key": "shoulder of mutton|hamstall ridware|ws15 3rz",
       "independent_location_check": {
         "actionable": false,
-        "checked_at": "2026-10-09",
+        "checked_at": "2026-10-20",
         "comparisons": [
           {
             "address": "Yoxall Road, Hamstall Ridware, Rugeley, Staffordshire",
@@ -62985,7 +62989,7 @@
       "current_key": "brothers arms|sheffield: heeley|s8 9tz",
       "independent_location_check": {
         "actionable": false,
-        "checked_at": "2026-10-09",
+        "checked_at": "2026-10-20",
         "comparisons": [
           {
             "address": "106 Well Road, Sheffield",
@@ -63092,7 +63096,7 @@
       "current_key": "white hart|measham|de12 7lg",
       "independent_location_check": {
         "actionable": false,
-        "checked_at": "2026-10-09",
+        "checked_at": "2026-10-20",
         "comparisons": [
           {
             "address": "White Hart Public House, 13 Bosworth Road, Measham, Swadlincote",
@@ -63197,7 +63201,7 @@
       "current_key": "half moon|littleover|de23 6fn",
       "independent_location_check": {
         "actionable": false,
-        "checked_at": "2026-10-09",
+        "checked_at": "2026-10-20",
         "comparisons": [
           {
             "address": "534 Burton Road, Littleover, Derby",
@@ -63302,7 +63306,7 @@
       "current_key": "glenhills sports and social club (pmc)|glen parva|le2 9jb",
       "independent_location_check": {
         "actionable": false,
-        "checked_at": "2026-10-09",
+        "checked_at": "2026-10-20",
         "comparisons": [
           {
             "address": "2 Court Road, Glen Parva, Leicestershire",
@@ -63407,7 +63411,7 @@
       "current_key": "masham|hartburn|ts18 5dr",
       "independent_location_check": {
         "actionable": false,
-        "checked_at": "2026-10-09",
+        "checked_at": "2026-10-20",
         "comparisons": [
           {
             "address": "87 Hartburn Village, , Stockton-On-Tees",
@@ -63560,7 +63564,7 @@
       "current_key": "hillside|crawley: pund hill|rh10 7sx",
       "independent_location_check": {
         "actionable": false,
-        "checked_at": "2026-10-09",
+        "checked_at": "2026-10-20",
         "comparisons": [
           {
             "address": "Balcombe Road, Pound Hill, Crawley, West Sussex",
@@ -63665,7 +63669,7 @@
       "current_key": "stamfords|pocklington|yo42 2jl",
       "independent_location_check": {
         "actionable": false,
-        "checked_at": "2026-10-09",
+        "checked_at": "2026-10-20",
         "comparisons": [
           {
             "address": "12 Union Street, Pocklington, York",
@@ -63770,7 +63774,7 @@
       "current_key": "queens head|hinckley|le10 1rj",
       "independent_location_check": {
         "actionable": false,
-        "checked_at": "2026-10-09",
+        "checked_at": "2026-10-20",
         "comparisons": [
           {
             "address": "Queens Head, 40 Upper Bond Street, Hinckley, Leicestershire",
@@ -63875,7 +63879,7 @@
       "current_key": "kings head|north weald|cm16 6bu",
       "independent_location_check": {
         "actionable": false,
-        "checked_at": "2026-10-09",
+        "checked_at": "2026-10-20",
         "comparisons": [
           {
             "address": "The Kings Head PH 8 High Road, North Weald Bassett, Epping, Essex",
@@ -63980,7 +63984,7 @@
       "current_key": "beech tree|kirk ella|hu10 7ls",
       "independent_location_check": {
         "actionable": false,
-        "checked_at": "2026-10-09",
+        "checked_at": "2026-10-20",
         "comparisons": [
           {
             "address": "South Ella Way, Kirk Ella, Hull",
@@ -64087,7 +64091,7 @@
       "current_key": "royal british legion|oadby|le2 5qa",
       "independent_location_check": {
         "actionable": false,
-        "checked_at": "2026-10-09",
+        "checked_at": "2026-10-20",
         "comparisons": [
           {
             "address": "4A Wigston Road, Oadby, Leicestershire",
@@ -64182,7 +64186,7 @@
       "current_key": "kilverts|hay on wye|hr3 5ag",
       "independent_location_check": {
         "actionable": false,
-        "checked_at": "2026-10-09",
+        "checked_at": "2026-10-20",
         "comparisons": [
           {
             "address": "Kilverts, Bull Ring, Hay-On-Wye, Hereford",
@@ -64289,7 +64293,7 @@
       "current_key": "cock inn|wishaw|b76 9ql",
       "independent_location_check": {
         "actionable": false,
-        "checked_at": "2026-10-09",
+        "checked_at": "2026-10-20",
         "comparisons": [
           {
             "name_matches": 0,
@@ -64412,7 +64416,7 @@
       "current_key": "market inn|sutton in ashfield: huthwaite|ng17 2qw",
       "independent_location_check": {
         "actionable": false,
-        "checked_at": "2026-10-09",
+        "checked_at": "2026-10-20",
         "comparisons": [
           {
             "address": "15 Main Street",
@@ -64555,7 +64559,7 @@
       "current_key": "lodge inn|alsager|st7 2ja",
       "independent_location_check": {
         "actionable": false,
-        "checked_at": "2026-10-09",
+        "checked_at": "2026-10-20",
         "comparisons": [
           {
             "name_matches": 0,
@@ -64652,7 +64656,7 @@
       "current_key": "old rose and crown|stourport|dy13 9pa",
       "independent_location_check": {
         "actionable": false,
-        "checked_at": "2026-10-09",
+        "checked_at": "2026-10-20",
         "comparisons": [
           {
             "address": "Worcester Road, Stourport On Severn, Worcestershire",
@@ -64759,7 +64763,7 @@
       "current_key": "norman arms|derby: normanton|de23 8df",
       "independent_location_check": {
         "actionable": false,
-        "checked_at": "2026-10-09",
+        "checked_at": "2026-10-20",
         "comparisons": [
           {
             "address": "Village Street, Normanton, Derby",
@@ -64866,7 +64870,7 @@
       "current_key": "cock inn|stowe by chartley|st18 0lf",
       "independent_location_check": {
         "actionable": false,
-        "checked_at": "2026-10-09",
+        "checked_at": "2026-10-20",
         "comparisons": [
           {
             "address": "Cock Inn, Station Road, Stowe By Chartley, Stafford",
@@ -64971,7 +64975,7 @@
       "current_key": "stretton fox|stretton|wa4 4nu",
       "independent_location_check": {
         "actionable": false,
-        "checked_at": "2026-10-09",
+        "checked_at": "2026-10-20",
         "comparisons": [
           {
             "address": "Stretton Fox, Spark Hall Close",
@@ -65076,7 +65080,7 @@
       "current_key": "earl grey|leek|st13 5at",
       "independent_location_check": {
         "actionable": false,
-        "checked_at": "2026-10-09",
+        "checked_at": "2026-10-20",
         "comparisons": [
           {
             "address": "38 Ashbourne Road, Leek, Staffordshire",
@@ -65181,7 +65185,7 @@
       "current_key": "express tavern|brentford tw8|tw8 0ew",
       "independent_location_check": {
         "actionable": false,
-        "checked_at": "2026-10-09",
+        "checked_at": "2026-10-20",
         "comparisons": [
           {
             "address": "The Express Tavern, 56 Kew Bridge Road, Brentford",

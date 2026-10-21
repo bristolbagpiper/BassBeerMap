@@ -1,7 +1,7 @@
 {
   "counts": {
-    "venue_coordinate_requires_review": 36,
-    "verified_venue": 1008
+    "venue_coordinate_requires_review": 35,
+    "verified_venue": 1009
   },
   "generated_at": "2026-10-21",
   "policy": {
@@ -4068,40 +4068,31 @@
       "venue_id": "v-ac38ee23-9c64-5a78-bc32-371dab1126ed"
     },
     "brookfield (barrow social club)|barrow upon trent|de73 7hg": {
-      "coordinate_source": "camra-pubs-location-audit",
-      "display_precision": "postcode",
+      "coordinate_source": "owner-reviewed-google-maps",
+      "display_precision": "venue",
       "evidence": [
         {
-          "checked_at": "2026-09-11",
-          "difference_metres": 0.0,
-          "match": "venue_name_and_full_postcode",
+          "checked_at": "2026-10-21",
+          "match": "owner_reviewed_named_place_and_full_postcode",
+          "reference_address": "Brookfield, Barrow upon Trent, Derby DE73 7HG",
           "reference_coordinate": {
-            "lat": 52.853542,
-            "lng": -1.476693
+            "lat": 52.8535542,
+            "lng": -1.4767194
           },
+          "reference_name": "The Brookfield",
           "reference_postcode": "DE73 7HG",
-          "source": "camra",
-          "url": "https://camra.org.uk/pubs/143304"
-        },
-        {
-          "checked_at": "2026-09-11",
-          "difference_metres": 0,
-          "match": "postcode_fallback_replaced",
-          "reference_coordinate": {
-            "lat": 52.853542,
-            "lng": -1.476693
-          },
-          "reference_postcode": "DE73 7HG",
-          "source": "camra-pubs-location-audit",
-          "url": "https://camra.org.uk/pubs/143304"
+          "review_url": "https://github.com/bristolbagpiper/BassBeerMap/issues/5#issuecomment-6322831307",
+          "reviewed_by": "bristolbagpiper",
+          "source": "google-maps-named-place",
+          "url": "https://www.google.com/maps/place/The+Brookfield/@52.8535542,-1.4767194,519m/data=!3m2!1e3!4b1!4m6!3m5!1s0x4879fa127e69e087:0x49ed3d2fff52b75!8m2!3d52.8535542!4d-1.4767194!16s%2Fg%2F1tkc665q?entry=ttu&g_ep=EgoyMDI2MTAxOC4wIKXMDSoASAFQAw%3D%3D"
         }
       ],
-      "lat": 52.853542,
-      "lng": -1.476693,
+      "lat": 52.8535542,
+      "lng": -1.4767194,
       "place_name": "Barrow upon Trent",
       "postcode": "DE73 7HG",
       "pub_name": "Brookfield (Barrow Social Club)",
-      "status": "venue_coordinate_requires_review",
+      "status": "verified_venue",
       "venue_id": "v-606ed382-96eb-537b-b81c-c995f62186e7"
     },
     "brookhouse mill|denbigh|ll16 4rd": {

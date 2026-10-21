@@ -1,5 +1,5 @@
 {
-  "active_count": 40,
+  "active_count": 39,
   "records": {
     "v-00a08839-2b8a-5782-b6c7-0bdce4cddb2f": {
       "active": false,
@@ -5897,7 +5897,7 @@
       "venue_id": "v-6040a12f-787d-5099-a640-bc3a1fdc1c6c"
     },
     "v-606ed382-96eb-537b-b81c-c995f62186e7": {
-      "active": true,
+      "active": false,
       "first_seen": "2026-10-16",
       "history": [
         {
@@ -5906,15 +5906,18 @@
             "Reference venue name changed"
           ],
           "status": "unverified"
+        },
+        {
+          "date": "2026-10-21",
+          "reasons": [],
+          "status": "resolved"
         }
       ],
-      "last_checked": "2026-10-19",
+      "last_checked": "2026-10-21",
       "place_name": "Barrow upon Trent",
       "postcode": "DE73 7HG",
       "pub_name": "Brookfield (Barrow Social Club)",
-      "reasons": [
-        "Reference venue name changed"
-      ],
+      "reasons": [],
       "reference": {},
       "research": {
         "checked_at": "2026-10-20",
@@ -5934,15 +5937,11 @@
         "camra-pubs-location-audit": {
           "status": "conflict",
           "url": "https://camra.org.uk/pubs/143304"
-        },
-        "fsa_independent": {
-          "status": "ambiguous_or_missing_coordinates",
-          "url": ""
         }
       },
       "source_error": null,
-      "status": "unverified",
-      "unverified": true,
+      "status": "resolved",
+      "unverified": false,
       "venue_id": "v-606ed382-96eb-537b-b81c-c995f62186e7"
     },
     "v-60bf53be-fa5d-5d1d-8312-0e242acae533": {
@@ -15262,5 +15261,5 @@
     }
   },
   "schema_version": 1,
-  "unverified_count": 36
+  "unverified_count": 35
 }

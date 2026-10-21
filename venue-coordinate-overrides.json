@@ -242,16 +242,19 @@
       "source_url": "https://www.google.com/maps/search/?api=1&query=Binary+Mickleover+DE3+0GR"
     },
     "black cat bar|liverpool: central|l1 4jn": {
-      "audit_reason": "postcode_fallback_replaced",
-      "checked_at": "2026-09-11",
-      "lat": 53.4022,
-      "lng": -2.98134,
-      "previous_difference_metres": 22.6,
-      "previous_lat": 53.402155,
-      "previous_lng": -2.981007,
-      "previous_source": "postcode",
-      "source": "camra-pubs-location-audit",
-      "source_url": "https://camra.org.uk/pubs/199423"
+      "audit_reason": "manual_named_place_address_and_map_check",
+      "checked_at": "2026-10-21",
+      "lat": 53.4016502,
+      "lng": -2.9796419,
+      "previous_difference_metres": 128.1,
+      "previous_lat": 53.4022,
+      "previous_lng": -2.98134,
+      "previous_source": "camra-pubs-location-audit",
+      "reference_address": "25 Parr St, Liverpool L1 4JN",
+      "reference_name": "Black Cat Parr Street",
+      "review_note": "Repository owner confirmed the named-place marker and full address in issue #5.",
+      "source": "google-maps-named-place",
+      "source_url": "https://www.google.com/maps/place/Black+Cat+Parr+Street/@53.4016502,-2.9822168,512m/data=!3m2!1e3!4b1!4m14!1m7!3m6!1s0x487b21e290e5b141:0xf01add51fe76ea7!2sBlack+Cat+Parr+Street!8m2!3d53.4016502!4d-2.9796419!16s%2Fg%2F11zkc1n1lr!3m5!1s0x487b21e290e5b141:0xf01add51fe76ea7!8m2!3d53.4016502!4d-2.9796419!16s%2Fg%2F11zkc1n1lr?entry=ttu&g_ep=EgoyMDI2MTAxOC4wIKXMDSoASAFQAw%3D%3D"
     },
     "black horse|appleby magna|de12 7ah": {
       "audit_reason": "existing_pin_over_50m_from_matching_venue",
@@ -3192,7 +3195,7 @@
       "source": "camra-pubs-location-audit",
       "source_url": "https://camra.org.uk/pubs/123954"
     },
-    "y sgw\u00e2r (was ivy bush)|newcastle emlyn|sa38 9bg": {
+    "y sgwâr (was ivy bush)|newcastle emlyn|sa38 9bg": {
       "audit_reason": "postcode_fallback_replaced",
       "checked_at": "2026-09-11",
       "lat": 52.037091,

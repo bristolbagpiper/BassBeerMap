@@ -1,7 +1,7 @@
 {
   "counts": {
-    "venue_coordinate_requires_review": 38,
-    "verified_venue": 1006
+    "venue_coordinate_requires_review": 37,
+    "verified_venue": 1007
   },
   "generated_at": "2026-10-21",
   "policy": {
@@ -2126,40 +2126,31 @@
       "venue_id": "v-39d9e9c3-3b34-5919-84db-1301c4022b08"
     },
     "black cat bar|liverpool: central|l1 4jn": {
-      "coordinate_source": "camra-pubs-location-audit",
-      "display_precision": "postcode",
+      "coordinate_source": "owner-reviewed-google-maps",
+      "display_precision": "venue",
       "evidence": [
         {
-          "checked_at": "2026-09-11",
-          "difference_metres": 0.0,
-          "match": "venue_name_and_full_postcode",
+          "checked_at": "2026-10-21",
+          "match": "owner_reviewed_named_place_and_full_postcode",
+          "reference_address": "25 Parr St, Liverpool L1 4JN",
           "reference_coordinate": {
-            "lat": 53.4022,
-            "lng": -2.98134
+            "lat": 53.4016502,
+            "lng": -2.9796419
           },
+          "reference_name": "Black Cat Parr Street",
           "reference_postcode": "L1 4JN",
-          "source": "camra",
-          "url": "https://camra.org.uk/pubs/199423"
-        },
-        {
-          "checked_at": "2026-09-11",
-          "difference_metres": 0,
-          "match": "postcode_fallback_replaced",
-          "reference_coordinate": {
-            "lat": 53.4022,
-            "lng": -2.98134
-          },
-          "reference_postcode": "L1 4JN",
-          "source": "camra-pubs-location-audit",
-          "url": "https://camra.org.uk/pubs/199423"
+          "review_url": "https://github.com/bristolbagpiper/BassBeerMap/issues/5#issuecomment-6322555537",
+          "reviewed_by": "bristolbagpiper",
+          "source": "google-maps-named-place",
+          "url": "https://www.google.com/maps/place/Black+Cat+Parr+Street/@53.4016502,-2.9822168,512m/data=!3m2!1e3!4b1!4m14!1m7!3m6!1s0x487b21e290e5b141:0xf01add51fe76ea7!2sBlack+Cat+Parr+Street!8m2!3d53.4016502!4d-2.9796419!16s%2Fg%2F11zkc1n1lr!3m5!1s0x487b21e290e5b141:0xf01add51fe76ea7!8m2!3d53.4016502!4d-2.9796419!16s%2Fg%2F11zkc1n1lr?entry=ttu&g_ep=EgoyMDI2MTAxOC4wIKXMDSoASAFQAw%3D%3D"
         }
       ],
-      "lat": 53.4022,
-      "lng": -2.98134,
+      "lat": 53.4016502,
+      "lng": -2.9796419,
       "place_name": "Liverpool: Central",
       "postcode": "L1 4JN",
       "pub_name": "Black Cat Bar",
-      "status": "venue_coordinate_requires_review",
+      "status": "verified_venue",
       "venue_id": "v-152d1ab1-df05-55e1-a620-e4f9d08cdfd6"
     },
     "black cat|bristol: bedminster|bs3 3lh": {

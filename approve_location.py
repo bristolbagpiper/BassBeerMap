@@ -87,7 +87,16 @@ def manual_name_matches(listing, reference):
     primary_name = normalized_listing.split("(", 1)[0].strip()
     wanted = tokens(primary_name)
     actual = tokens(reference.split(",")[0].split(" - ")[0])
-    return bool(wanted) and wanted.issubset(actual)
+    if wanted and wanted.issubset(actual):
+        return True
+    # Some named-place listings omit a final "Arms" from the directory name.
+    # Accept that one exact suffix omission without loosening other name matches.
+    without_arms = wanted - {"arms"}
+    return (
+        bool(without_arms)
+        and primary_name.casefold().endswith(" arms")
+        and actual == without_arms
+    )
 
 
 def validate_google_place(command, row, centre):

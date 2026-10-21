@@ -1,6 +1,6 @@
 {
   "location_review": {
-    "active_count": 43,
+    "active_count": 42,
     "records": {
       "v-00a08839-2b8a-5782-b6c7-0bdce4cddb2f": {
         "active": false,
@@ -8975,7 +8975,7 @@
         "venue_id": "v-88baf1bf-439e-5f70-9c45-1cacab7a6c20"
       },
       "v-8a764607-ea97-5632-86d2-fa06d2ef61b9": {
-        "active": true,
+        "active": false,
         "first_seen": "2026-10-20",
         "history": [
           {
@@ -8984,15 +8984,18 @@
               "Reference venue name changed"
             ],
             "status": "unverified"
+          },
+          {
+            "date": "2026-10-21",
+            "reasons": [],
+            "status": "resolved"
           }
         ],
-        "last_checked": "2026-10-20",
+        "last_checked": "2026-10-21",
         "place_name": "Standerwick",
         "postcode": "BA11 2PR",
         "pub_name": "Bell",
-        "reasons": [
-          "Reference venue name changed"
-        ],
+        "reasons": [],
         "reference": {},
         "research": {
           "checked_at": "2026-10-20",
@@ -9035,15 +9038,11 @@
           "camra": {
             "status": "conflict",
             "url": "https://camra.org.uk/pubs/116804"
-          },
-          "fsa_independent": {
-            "status": "no_name_match",
-            "url": ""
           }
         },
         "source_error": null,
-        "status": "unverified",
-        "unverified": true,
+        "status": "resolved",
+        "unverified": false,
         "venue_id": "v-8a764607-ea97-5632-86d2-fa06d2ef61b9"
       },
       "v-8acf2d3a-8936-57c2-91ca-fe4928e34b3b": {
@@ -15266,7 +15265,7 @@
       }
     },
     "schema_version": 1,
-    "unverified_count": 39
+    "unverified_count": 38
   },
   "schema_version": 1,
   "venues": {
@@ -75991,7 +75990,8 @@
     },
     "v-8a764607-ea97-5632-86d2-fa06d2ef61b9": {
       "aliases": [
-        "bell|standerwick|ba11 2pr"
+        "bell|standerwick|ba11 2pr",
+        "bell at standerwick|standerwick|ba11 2pr"
       ],
       "current_key": "bell|standerwick|ba11 2pr",
       "independent_location_check": {
@@ -76040,6 +76040,36 @@
         "postcode": "BA11 2PR",
         "pub_name": "Bell"
       },
+      "location_approvals": [
+        {
+          "checked_at": "2026-10-21",
+          "comment_id": 6322159507,
+          "previous_pin": {
+            "evidence": [
+              {
+                "checked_at": "2026-09-11",
+                "difference_metres": 4.2,
+                "match": "venue_name_and_full_postcode",
+                "reference_coordinate": {
+                  "lat": 51.2545976,
+                  "lng": -2.2602332
+                },
+                "reference_postcode": "BA11 2PR",
+                "source": "camra",
+                "url": "https://camra.org.uk/pubs/116804"
+              }
+            ],
+            "lat": 51.2545976,
+            "lng": -2.2602332,
+            "review_reason": "Reference venue name changed",
+            "review_required": true,
+            "source": "openstreetmap-gb-extract"
+          },
+          "review_url": "https://github.com/bristolbagpiper/BassBeerMap/issues/5#issuecomment-6322159507",
+          "reviewed_by": "bristolbagpiper",
+          "source_url": "https://camra.org.uk/pubs/116804"
+        }
+      ],
       "location_research": {
         "checked_at": "2026-10-20",
         "coverage": {
@@ -76092,23 +76122,25 @@
       "verified_pin": {
         "evidence": [
           {
-            "checked_at": "2026-09-11",
-            "difference_metres": 4.2,
-            "match": "venue_name_and_full_postcode",
+            "checked_at": "2026-10-21",
+            "match": "owner_reviewed_named_locality_and_map",
+            "reference_address": "",
             "reference_coordinate": {
-              "lat": 51.2545976,
-              "lng": -2.2602332
+              "lat": 51.25456,
+              "lng": -2.26024
             },
+            "reference_locality": "Standerwick",
+            "reference_name": "Bell at Standerwick, Standerwick - Quiz & Live Music",
             "reference_postcode": "BA11 2PR",
+            "review_url": "https://github.com/bristolbagpiper/BassBeerMap/issues/5#issuecomment-6322159507",
+            "reviewed_by": "bristolbagpiper",
             "source": "camra",
             "url": "https://camra.org.uk/pubs/116804"
           }
         ],
-        "lat": 51.2545976,
-        "lng": -2.2602332,
-        "review_reason": "Reference venue name changed",
-        "review_required": true,
-        "source": "openstreetmap-gb-extract"
+        "lat": 51.25456,
+        "lng": -2.26024,
+        "source": "owner-reviewed-camra"
       }
     },
     "v-8a80a845-00a3-5f40-af35-ca6ea84d9153": {

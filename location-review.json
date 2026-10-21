@@ -1,5 +1,5 @@
 {
-  "active_count": 43,
+  "active_count": 42,
   "records": {
     "v-00a08839-2b8a-5782-b6c7-0bdce4cddb2f": {
       "active": false,
@@ -8974,7 +8974,7 @@
       "venue_id": "v-88baf1bf-439e-5f70-9c45-1cacab7a6c20"
     },
     "v-8a764607-ea97-5632-86d2-fa06d2ef61b9": {
-      "active": true,
+      "active": false,
       "first_seen": "2026-10-20",
       "history": [
         {
@@ -8983,15 +8983,18 @@
             "Reference venue name changed"
           ],
           "status": "unverified"
+        },
+        {
+          "date": "2026-10-21",
+          "reasons": [],
+          "status": "resolved"
         }
       ],
-      "last_checked": "2026-10-20",
+      "last_checked": "2026-10-21",
       "place_name": "Standerwick",
       "postcode": "BA11 2PR",
       "pub_name": "Bell",
-      "reasons": [
-        "Reference venue name changed"
-      ],
+      "reasons": [],
       "reference": {},
       "research": {
         "checked_at": "2026-10-20",
@@ -9034,15 +9037,11 @@
         "camra": {
           "status": "conflict",
           "url": "https://camra.org.uk/pubs/116804"
-        },
-        "fsa_independent": {
-          "status": "no_name_match",
-          "url": ""
         }
       },
       "source_error": null,
-      "status": "unverified",
-      "unverified": true,
+      "status": "resolved",
+      "unverified": false,
       "venue_id": "v-8a764607-ea97-5632-86d2-fa06d2ef61b9"
     },
     "v-8acf2d3a-8936-57c2-91ca-fe4928e34b3b": {
@@ -15265,5 +15264,5 @@
     }
   },
   "schema_version": 1,
-  "unverified_count": 39
+  "unverified_count": 38
 }

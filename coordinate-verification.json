@@ -1,7 +1,7 @@
 {
   "counts": {
-    "venue_coordinate_requires_review": 39,
-    "verified_venue": 1005
+    "venue_coordinate_requires_review": 38,
+    "verified_venue": 1006
   },
   "generated_at": "2026-10-21",
   "policy": {
@@ -1732,28 +1732,32 @@
       "venue_id": "v-7ecdc061-3850-5388-865f-f697462bbc10"
     },
     "bell|standerwick|ba11 2pr": {
-      "coordinate_source": "openstreetmap-gb-extract",
-      "display_precision": "postcode",
+      "coordinate_source": "owner-reviewed-camra",
+      "display_precision": "venue",
       "evidence": [
         {
-          "checked_at": "2026-09-11",
-          "difference_metres": 4.2,
-          "match": "venue_name_and_full_postcode",
+          "checked_at": "2026-10-21",
+          "match": "owner_reviewed_named_locality_and_map",
+          "reference_address": "",
           "reference_coordinate": {
-            "lat": 51.2545976,
-            "lng": -2.2602332
+            "lat": 51.25456,
+            "lng": -2.26024
           },
+          "reference_locality": "Standerwick",
+          "reference_name": "Bell at Standerwick, Standerwick - Quiz & Live Music",
           "reference_postcode": "BA11 2PR",
+          "review_url": "https://github.com/bristolbagpiper/BassBeerMap/issues/5#issuecomment-6322159507",
+          "reviewed_by": "bristolbagpiper",
           "source": "camra",
           "url": "https://camra.org.uk/pubs/116804"
         }
       ],
-      "lat": 51.2545976,
-      "lng": -2.2602332,
+      "lat": 51.25456,
+      "lng": -2.26024,
       "place_name": "Standerwick",
       "postcode": "BA11 2PR",
       "pub_name": "Bell",
-      "status": "venue_coordinate_requires_review",
+      "status": "verified_venue",
       "venue_id": "v-8a764607-ea97-5632-86d2-fa06d2ef61b9"
     },
     "belmont services club (pmc)|swadlincote: central|de11 8ju": {

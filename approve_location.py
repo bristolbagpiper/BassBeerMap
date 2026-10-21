@@ -81,7 +81,11 @@ def manual_name_matches(listing, reference):
         token for token in re.findall(r"[a-z0-9]+", value.casefold())
         if token not in generic and not token.isdigit()
     }
-    wanted = tokens(re.sub(r"\s*\(PMC\)", "", listing, flags=re.I))
+    normalized_listing = re.sub(r"\s*\(PMC\)", "", listing, flags=re.I)
+    # Parenthetical text often identifies a club or alias, while Google uses
+    # the venue's primary name. Keep the primary listing name as the match key.
+    primary_name = normalized_listing.split("(", 1)[0].strip()
+    wanted = tokens(primary_name)
     actual = tokens(reference.split(",")[0].split(" - ")[0])
     return bool(wanted) and wanted.issubset(actual)
 

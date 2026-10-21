@@ -1,7 +1,7 @@
 {
   "counts": {
-    "venue_coordinate_requires_review": 26,
-    "verified_venue": 1018
+    "venue_coordinate_requires_review": 25,
+    "verified_venue": 1019
   },
   "generated_at": "2026-10-21",
   "policy": {
@@ -14927,40 +14927,31 @@
       "venue_id": "v-6f596460-a688-5196-acb3-b4fdc1f6f6cd"
     },
     "labour club (pmc)|kidsgrove|st7 4ab": {
-      "coordinate_source": "camra-pubs-location-audit",
-      "display_precision": "postcode",
+      "coordinate_source": "owner-reviewed-google-maps",
+      "display_precision": "venue",
       "evidence": [
         {
-          "checked_at": "2026-09-11",
-          "difference_metres": 0.0,
-          "match": "venue_name_and_full_postcode",
+          "checked_at": "2026-10-21",
+          "match": "owner_reviewed_named_place_and_full_postcode",
+          "reference_address": "52 Market St, Kidsgrove, Stoke-on-Trent ST7 4AB",
           "reference_coordinate": {
-            "lat": 53.086751,
-            "lng": -2.237602
+            "lat": 53.086788,
+            "lng": -2.237675
           },
+          "reference_name": "Kidsgrove Labour Club",
           "reference_postcode": "ST7 4AB",
-          "source": "camra",
-          "url": "https://camra.org.uk/pubs/123199"
-        },
-        {
-          "checked_at": "2026-09-11",
-          "difference_metres": 0,
-          "match": "postcode_fallback_replaced",
-          "reference_coordinate": {
-            "lat": 53.086751,
-            "lng": -2.237602
-          },
-          "reference_postcode": "ST7 4AB",
-          "source": "camra-pubs-location-audit",
-          "url": "https://camra.org.uk/pubs/123199"
+          "review_url": "https://github.com/bristolbagpiper/BassBeerMap/issues/5#issuecomment-6329235569",
+          "reviewed_by": "bristolbagpiper",
+          "source": "google-maps-named-place",
+          "url": "https://www.google.com/maps/place/Kidsgrove+Labour+Club/@53.086788,-2.237675,639m/data=!3m2!1e3!4b1!4m6!3m5!1s0x487a5cca34d2bcc9:0x2f3f71e68f2efb6c!8m2!3d53.086788!4d-2.237675!16s%2Fg%2F1tfpzcjp"
         }
       ],
-      "lat": 53.086751,
-      "lng": -2.237602,
+      "lat": 53.086788,
+      "lng": -2.237675,
       "place_name": "Kidsgrove",
       "postcode": "ST7 4AB",
       "pub_name": "Labour Club (PMC)",
-      "status": "venue_coordinate_requires_review",
+      "status": "verified_venue",
       "venue_id": "v-82d27ed9-bb32-515b-a67d-b4ddfc98eb6c"
     },
     "laburnum|matlock|de4 2pw": {

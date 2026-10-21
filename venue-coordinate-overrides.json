@@ -1545,16 +1545,19 @@
       "source_url": "https://www.google.com/maps/place/Kings+Head/@53.0515538,-2.1746214,160m/data=!3m2!1e3!4b1!4m4!3m3!8m2!3d53.0515538!4d-2.1739763?entry=ttu"
     },
     "labour club (pmc)|kidsgrove|st7 4ab": {
-      "audit_reason": "postcode_fallback_replaced",
-      "checked_at": "2026-09-11",
-      "lat": 53.086751,
-      "lng": -2.237602,
-      "previous_difference_metres": 81.3,
-      "previous_lat": 53.087051,
-      "previous_lng": -2.238712,
-      "previous_source": "postcode",
-      "source": "camra-pubs-location-audit",
-      "source_url": "https://camra.org.uk/pubs/123199"
+      "audit_reason": "manual_named_place_address_and_map_check",
+      "checked_at": "2026-10-21",
+      "lat": 53.086788,
+      "lng": -2.237675,
+      "previous_difference_metres": 6.4,
+      "previous_lat": 53.086751,
+      "previous_lng": -2.237602,
+      "previous_source": "camra-pubs-location-audit",
+      "reference_address": "52 Market St, Kidsgrove, Stoke-on-Trent ST7 4AB",
+      "reference_name": "Kidsgrove Labour Club",
+      "review_note": "Repository owner confirmed the named-place marker and full address in issue #5.",
+      "source": "google-maps-named-place",
+      "source_url": "https://www.google.com/maps/place/Kidsgrove+Labour+Club/@53.086788,-2.237675,639m/data=!3m2!1e3!4b1!4m6!3m5!1s0x487a5cca34d2bcc9:0x2f3f71e68f2efb6c!8m2!3d53.086788!4d-2.237675!16s%2Fg%2F1tfpzcjp"
     },
     "lancaster inn|woodhall spa|ln10 6st": {
       "audit_reason": "manual_named_place_address_and_map_check",

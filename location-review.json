@@ -1,5 +1,5 @@
 {
-  "active_count": 31,
+  "active_count": 30,
   "records": {
     "v-00a08839-2b8a-5782-b6c7-0bdce4cddb2f": {
       "active": false,
@@ -8441,7 +8441,7 @@
       "venue_id": "v-81c9b5aa-f6be-589b-b9e0-b5fe40ab9ef9"
     },
     "v-82d27ed9-bb32-515b-a67d-b4ddfc98eb6c": {
-      "active": true,
+      "active": false,
       "first_seen": "2026-10-19",
       "history": [
         {
@@ -8450,15 +8450,18 @@
             "Reference venue name changed"
           ],
           "status": "unverified"
+        },
+        {
+          "date": "2026-10-21",
+          "reasons": [],
+          "status": "resolved"
         }
       ],
-      "last_checked": "2026-10-19",
+      "last_checked": "2026-10-21",
       "place_name": "Kidsgrove",
       "postcode": "ST7 4AB",
       "pub_name": "Labour Club (PMC)",
-      "reasons": [
-        "Reference venue name changed"
-      ],
+      "reasons": [],
       "reference": {},
       "research": {
         "checked_at": "2026-10-20",
@@ -8478,15 +8481,11 @@
         "camra-pubs-location-audit": {
           "status": "conflict",
           "url": "https://camra.org.uk/pubs/123199"
-        },
-        "fsa_independent": {
-          "status": "no_name_match",
-          "url": ""
         }
       },
       "source_error": null,
-      "status": "unverified",
-      "unverified": true,
+      "status": "resolved",
+      "unverified": false,
       "venue_id": "v-82d27ed9-bb32-515b-a67d-b4ddfc98eb6c"
     },
     "v-82f88f23-14c9-56fa-8746-d2ff8f254d42": {
@@ -15265,5 +15264,5 @@
     }
   },
   "schema_version": 1,
-  "unverified_count": 26
+  "unverified_count": 25
 }

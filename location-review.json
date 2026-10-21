@@ -1,5 +1,5 @@
 {
-  "active_count": 34,
+  "active_count": 33,
   "records": {
     "v-00a08839-2b8a-5782-b6c7-0bdce4cddb2f": {
       "active": false,
@@ -1862,7 +1862,7 @@
       "venue_id": "v-1c5553ae-f896-5b2e-ae71-9e62972431bf"
     },
     "v-1dbfdcda-d5a4-5519-969f-979e11cc3ec5": {
-      "active": true,
+      "active": false,
       "first_seen": "2026-10-11",
       "history": [
         {
@@ -1871,15 +1871,18 @@
             "Reference venue name changed"
           ],
           "status": "unverified"
+        },
+        {
+          "date": "2026-10-21",
+          "reasons": [],
+          "status": "resolved"
         }
       ],
-      "last_checked": "2026-10-13",
+      "last_checked": "2026-10-21",
       "place_name": "Shelford",
       "postcode": "NG12 1EQ",
       "pub_name": "Earl of Chesterfield Arms",
-      "reasons": [
-        "Reference venue name changed"
-      ],
+      "reasons": [],
       "reference": {},
       "research": {
         "checked_at": "2026-10-20",
@@ -1913,15 +1916,11 @@
         "camra-pubs-location-audit": {
           "status": "conflict",
           "url": "https://camra.org.uk/pubs/162843"
-        },
-        "fsa_independent": {
-          "status": "nearby",
-          "url": "https://ratings.food.gov.uk/business/1740178"
         }
       },
       "source_error": null,
-      "status": "unverified",
-      "unverified": true,
+      "status": "resolved",
+      "unverified": false,
       "venue_id": "v-1dbfdcda-d5a4-5519-969f-979e11cc3ec5"
     },
     "v-1f980acc-ae24-543c-9afc-40840f5ecc91": {
@@ -15268,5 +15267,5 @@
     }
   },
   "schema_version": 1,
-  "unverified_count": 29
+  "unverified_count": 28
 }

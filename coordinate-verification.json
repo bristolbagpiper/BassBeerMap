@@ -1,7 +1,7 @@
 {
   "counts": {
-    "venue_coordinate_requires_review": 29,
-    "verified_venue": 1015
+    "venue_coordinate_requires_review": 28,
+    "verified_venue": 1016
   },
   "generated_at": "2026-10-21",
   "policy": {
@@ -9758,40 +9758,31 @@
       "venue_id": "v-9a79cf57-994d-5621-9d2d-800516e98833"
     },
     "earl of chesterfield arms|shelford|ng12 1eq": {
-      "coordinate_source": "camra-pubs-location-audit",
-      "display_precision": "postcode",
+      "coordinate_source": "owner-reviewed-google-maps",
+      "display_precision": "venue",
       "evidence": [
         {
-          "checked_at": "2026-09-11",
-          "difference_metres": 0.0,
-          "match": "venue_name_and_full_postcode",
+          "checked_at": "2026-10-21",
+          "match": "owner_reviewed_named_place_and_full_postcode",
+          "reference_address": "Main Rd, Shelford, Nottingham NG12 1EQ",
           "reference_coordinate": {
-            "lat": 52.9759,
-            "lng": -1.0129
+            "lat": 52.9755234,
+            "lng": -1.0120792
           },
+          "reference_name": "The Earl of Chesterfield",
           "reference_postcode": "NG12 1EQ",
-          "source": "camra",
-          "url": "https://camra.org.uk/pubs/162843"
-        },
-        {
-          "checked_at": "2026-09-11",
-          "difference_metres": 0,
-          "match": "existing_pin_over_50m_from_matching_venue",
-          "reference_coordinate": {
-            "lat": 52.9759,
-            "lng": -1.0129
-          },
-          "reference_postcode": "NG12 1EQ",
-          "source": "camra-pubs-location-audit",
-          "url": "https://camra.org.uk/pubs/162843"
+          "review_url": "https://github.com/bristolbagpiper/BassBeerMap/issues/5#issuecomment-6329098329",
+          "reviewed_by": "bristolbagpiper",
+          "source": "google-maps-named-place",
+          "url": "https://www.google.com/maps/place/The+Earl+of+Chesterfield/@52.9754979,-1.012228,40m/data=!3m1!1e3!4m6!3m5!1s0x4879c617eaf89019:0x5398220fe768072f!8m2!3d52.9755234!4d-1.0120792!16s%2Fg%2F1v2yyd3r?entry=ttu&g_ep=EgoyMDI2MTAxOS4wIKXMDSoASAFQAw%3D%3D"
         }
       ],
-      "lat": 52.9759,
-      "lng": -1.0129,
+      "lat": 52.9755234,
+      "lng": -1.0120792,
       "place_name": "Shelford",
       "postcode": "NG12 1EQ",
       "pub_name": "Earl of Chesterfield Arms",
-      "status": "venue_coordinate_requires_review",
+      "status": "verified_venue",
       "venue_id": "v-1dbfdcda-d5a4-5519-969f-979e11cc3ec5"
     },
     "easington|banbury|ox16 9ju": {

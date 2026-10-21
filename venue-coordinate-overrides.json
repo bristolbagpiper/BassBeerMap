@@ -1081,16 +1081,19 @@
       "source_url": "https://www.google.com/maps/search/?api=1&query=Dyers+Arms+Leek+ST13+8JZ"
     },
     "earl of chesterfield arms|shelford|ng12 1eq": {
-      "audit_reason": "existing_pin_over_50m_from_matching_venue",
-      "checked_at": "2026-09-11",
-      "lat": 52.9759,
-      "lng": -1.0129,
-      "previous_difference_metres": 80.8,
-      "previous_lat": 52.97551897777778,
-      "previous_lng": -1.0118716666666667,
-      "previous_source": "openstreetmap-gb-extract",
-      "source": "camra-pubs-location-audit",
-      "source_url": "https://camra.org.uk/pubs/162843"
+      "audit_reason": "manual_named_place_address_and_map_check",
+      "checked_at": "2026-10-21",
+      "lat": 52.9755234,
+      "lng": -1.0120792,
+      "previous_difference_metres": 69.1,
+      "previous_lat": 52.9759,
+      "previous_lng": -1.0129,
+      "previous_source": "camra-pubs-location-audit",
+      "reference_address": "Main Rd, Shelford, Nottingham NG12 1EQ",
+      "reference_name": "The Earl of Chesterfield",
+      "review_note": "Repository owner confirmed the named-place marker and full address in issue #5.",
+      "source": "google-maps-named-place",
+      "source_url": "https://www.google.com/maps/place/The+Earl+of+Chesterfield/@52.9754979,-1.012228,40m/data=!3m1!1e3!4m6!3m5!1s0x4879c617eaf89019:0x5398220fe768072f!8m2!3d52.9755234!4d-1.0120792!16s%2Fg%2F1v2yyd3r?entry=ttu&g_ep=EgoyMDI2MTAxOS4wIKXMDSoASAFQAw%3D%3D"
     },
     "ecclian|eccleshall|st21 6bw": {
       "audit_reason": "postcode_fallback_replaced",

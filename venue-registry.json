@@ -1,6 +1,6 @@
 {
   "location_review": {
-    "active_count": 34,
+    "active_count": 33,
     "records": {
       "v-00a08839-2b8a-5782-b6c7-0bdce4cddb2f": {
         "active": false,
@@ -1863,7 +1863,7 @@
         "venue_id": "v-1c5553ae-f896-5b2e-ae71-9e62972431bf"
       },
       "v-1dbfdcda-d5a4-5519-969f-979e11cc3ec5": {
-        "active": true,
+        "active": false,
         "first_seen": "2026-10-11",
         "history": [
           {
@@ -1872,15 +1872,18 @@
               "Reference venue name changed"
             ],
             "status": "unverified"
+          },
+          {
+            "date": "2026-10-21",
+            "reasons": [],
+            "status": "resolved"
           }
         ],
-        "last_checked": "2026-10-13",
+        "last_checked": "2026-10-21",
         "place_name": "Shelford",
         "postcode": "NG12 1EQ",
         "pub_name": "Earl of Chesterfield Arms",
-        "reasons": [
-          "Reference venue name changed"
-        ],
+        "reasons": [],
         "reference": {},
         "research": {
           "checked_at": "2026-10-20",
@@ -1914,15 +1917,11 @@
           "camra-pubs-location-audit": {
             "status": "conflict",
             "url": "https://camra.org.uk/pubs/162843"
-          },
-          "fsa_independent": {
-            "status": "nearby",
-            "url": "https://ratings.food.gov.uk/business/1740178"
           }
         },
         "source_error": null,
-        "status": "unverified",
-        "unverified": true,
+        "status": "resolved",
+        "unverified": false,
         "venue_id": "v-1dbfdcda-d5a4-5519-969f-979e11cc3ec5"
       },
       "v-1f980acc-ae24-543c-9afc-40840f5ecc91": {
@@ -15269,7 +15268,7 @@
       }
     },
     "schema_version": 1,
-    "unverified_count": 29
+    "unverified_count": 28
   },
   "schema_version": 1,
   "venues": {
@@ -28451,6 +28450,48 @@
         "postcode": "NG12 1EQ",
         "pub_name": "Earl of Chesterfield Arms"
       },
+      "location_approvals": [
+        {
+          "checked_at": "2026-10-21",
+          "comment_id": 6329098329,
+          "previous_pin": {
+            "evidence": [
+              {
+                "checked_at": "2026-09-11",
+                "difference_metres": 0.0,
+                "match": "venue_name_and_full_postcode",
+                "reference_coordinate": {
+                  "lat": 52.9759,
+                  "lng": -1.0129
+                },
+                "reference_postcode": "NG12 1EQ",
+                "source": "camra",
+                "url": "https://camra.org.uk/pubs/162843"
+              },
+              {
+                "checked_at": "2026-09-11",
+                "difference_metres": 0,
+                "match": "existing_pin_over_50m_from_matching_venue",
+                "reference_coordinate": {
+                  "lat": 52.9759,
+                  "lng": -1.0129
+                },
+                "reference_postcode": "NG12 1EQ",
+                "source": "camra-pubs-location-audit",
+                "url": "https://camra.org.uk/pubs/162843"
+              }
+            ],
+            "lat": 52.9759,
+            "lng": -1.0129,
+            "review_reason": "Reference venue name changed",
+            "review_required": true,
+            "source": "camra-pubs-location-audit"
+          },
+          "review_url": "https://github.com/bristolbagpiper/BassBeerMap/issues/5#issuecomment-6329098329",
+          "reviewed_by": "bristolbagpiper",
+          "source_url": "https://www.google.com/maps/place/The+Earl+of+Chesterfield/@52.9754979,-1.012228,40m/data=!3m1!1e3!4m6!3m5!1s0x4879c617eaf89019:0x5398220fe768072f!8m2!3d52.9755234!4d-1.0120792!16s%2Fg%2F1v2yyd3r?entry=ttu&g_ep=EgoyMDI2MTAxOS4wIKXMDSoASAFQAw%3D%3D"
+        }
+      ],
       "location_research": {
         "checked_at": "2026-10-20",
         "coverage": {
@@ -28494,35 +28535,24 @@
       "verified_pin": {
         "evidence": [
           {
-            "checked_at": "2026-09-11",
-            "difference_metres": 0.0,
-            "match": "venue_name_and_full_postcode",
+            "checked_at": "2026-10-21",
+            "match": "owner_reviewed_named_place_and_full_postcode",
+            "reference_address": "Main Rd, Shelford, Nottingham NG12 1EQ",
             "reference_coordinate": {
-              "lat": 52.9759,
-              "lng": -1.0129
+              "lat": 52.9755234,
+              "lng": -1.0120792
             },
+            "reference_name": "The Earl of Chesterfield",
             "reference_postcode": "NG12 1EQ",
-            "source": "camra",
-            "url": "https://camra.org.uk/pubs/162843"
-          },
-          {
-            "checked_at": "2026-09-11",
-            "difference_metres": 0,
-            "match": "existing_pin_over_50m_from_matching_venue",
-            "reference_coordinate": {
-              "lat": 52.9759,
-              "lng": -1.0129
-            },
-            "reference_postcode": "NG12 1EQ",
-            "source": "camra-pubs-location-audit",
-            "url": "https://camra.org.uk/pubs/162843"
+            "review_url": "https://github.com/bristolbagpiper/BassBeerMap/issues/5#issuecomment-6329098329",
+            "reviewed_by": "bristolbagpiper",
+            "source": "google-maps-named-place",
+            "url": "https://www.google.com/maps/place/The+Earl+of+Chesterfield/@52.9754979,-1.012228,40m/data=!3m1!1e3!4m6!3m5!1s0x4879c617eaf89019:0x5398220fe768072f!8m2!3d52.9755234!4d-1.0120792!16s%2Fg%2F1v2yyd3r?entry=ttu&g_ep=EgoyMDI2MTAxOS4wIKXMDSoASAFQAw%3D%3D"
           }
         ],
-        "lat": 52.9759,
-        "lng": -1.0129,
-        "review_reason": "Reference venue name changed",
-        "review_required": true,
-        "source": "camra-pubs-location-audit"
+        "lat": 52.9755234,
+        "lng": -1.0120792,
+        "source": "owner-reviewed-google-maps"
       }
     },
     "v-1dd21f62-1893-575a-bdad-15ce9c50ac90": {

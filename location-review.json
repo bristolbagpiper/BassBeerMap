@@ -1,5 +1,5 @@
 {
-  "active_count": 32,
+  "active_count": 31,
   "records": {
     "v-00a08839-2b8a-5782-b6c7-0bdce4cddb2f": {
       "active": false,
@@ -6021,7 +6021,7 @@
       "venue_id": "v-60cbad75-5bdf-57da-ae6f-91718f40ac7e"
     },
     "v-61ef0fd9-e848-5ed0-a6ab-0d77481ac2f5": {
-      "active": true,
+      "active": false,
       "first_seen": "2026-10-16",
       "history": [
         {
@@ -6030,15 +6030,18 @@
             "Reference venue name changed"
           ],
           "status": "unverified"
+        },
+        {
+          "date": "2026-10-21",
+          "reasons": [],
+          "status": "resolved"
         }
       ],
-      "last_checked": "2026-10-19",
+      "last_checked": "2026-10-21",
       "place_name": "Stoke: Smallthorne",
       "postcode": "ST6 1NT",
       "pub_name": "Kings Head (Scrimmies)",
-      "reasons": [
-        "Reference venue name changed"
-      ],
+      "reasons": [],
       "reference": {},
       "research": {
         "checked_at": "2026-10-20",
@@ -6058,15 +6061,11 @@
         "camra-pubs-location-audit": {
           "status": "conflict",
           "url": "https://camra.org.uk/pubs/122971"
-        },
-        "fsa_independent": {
-          "status": "no_name_match",
-          "url": ""
         }
       },
       "source_error": null,
-      "status": "unverified",
-      "unverified": true,
+      "status": "resolved",
+      "unverified": false,
       "venue_id": "v-61ef0fd9-e848-5ed0-a6ab-0d77481ac2f5"
     },
     "v-62c1c92b-14d0-5967-801f-35f03d3cb24f": {
@@ -15266,5 +15265,5 @@
     }
   },
   "schema_version": 1,
-  "unverified_count": 27
+  "unverified_count": 26
 }

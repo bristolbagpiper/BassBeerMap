@@ -1,7 +1,7 @@
 {
   "counts": {
-    "venue_coordinate_requires_review": 27,
-    "verified_venue": 1017
+    "venue_coordinate_requires_review": 26,
+    "verified_venue": 1018
   },
   "generated_at": "2026-10-21",
   "policy": {
@@ -14739,40 +14739,31 @@
       "venue_id": "v-ceae4c50-fc62-580c-b6de-a0769bf742b2"
     },
     "kings head (scrimmies)|stoke: smallthorne|st6 1nt": {
-      "coordinate_source": "camra-pubs-location-audit",
-      "display_precision": "postcode",
+      "coordinate_source": "owner-reviewed-google-maps",
+      "display_precision": "venue",
       "evidence": [
         {
-          "checked_at": "2026-09-11",
-          "difference_metres": 0.0,
-          "match": "venue_name_and_full_postcode",
+          "checked_at": "2026-10-21",
+          "match": "owner_reviewed_named_place_and_full_postcode",
+          "reference_address": "101 Ford Green Rd, Stoke-on-Trent ST6 1NT",
           "reference_coordinate": {
-            "lat": 53.051584,
-            "lng": -2.173975
+            "lat": 53.0515538,
+            "lng": -2.1739763
           },
+          "reference_name": "Kings Head",
           "reference_postcode": "ST6 1NT",
-          "source": "camra",
-          "url": "https://camra.org.uk/pubs/122971"
-        },
-        {
-          "checked_at": "2026-09-11",
-          "difference_metres": 0,
-          "match": "postcode_fallback_replaced",
-          "reference_coordinate": {
-            "lat": 53.051584,
-            "lng": -2.173975
-          },
-          "reference_postcode": "ST6 1NT",
-          "source": "camra-pubs-location-audit",
-          "url": "https://camra.org.uk/pubs/122971"
+          "review_url": "https://github.com/bristolbagpiper/BassBeerMap/issues/5#issuecomment-6329198236",
+          "reviewed_by": "bristolbagpiper",
+          "source": "google-maps-named-place",
+          "url": "https://www.google.com/maps/place/Kings+Head/@53.0515538,-2.1746214,160m/data=!3m2!1e3!4b1!4m4!3m3!8m2!3d53.0515538!4d-2.1739763?entry=ttu"
         }
       ],
-      "lat": 53.051584,
-      "lng": -2.173975,
+      "lat": 53.0515538,
+      "lng": -2.1739763,
       "place_name": "Stoke: Smallthorne",
       "postcode": "ST6 1NT",
       "pub_name": "Kings Head (Scrimmies)",
-      "status": "venue_coordinate_requires_review",
+      "status": "verified_venue",
       "venue_id": "v-61ef0fd9-e848-5ed0-a6ab-0d77481ac2f5"
     },
     "kings head|duffield|de56 4eh": {

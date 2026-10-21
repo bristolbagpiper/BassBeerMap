@@ -1,6 +1,6 @@
 {
   "location_review": {
-    "active_count": 32,
+    "active_count": 31,
     "records": {
       "v-00a08839-2b8a-5782-b6c7-0bdce4cddb2f": {
         "active": false,
@@ -6022,7 +6022,7 @@
         "venue_id": "v-60cbad75-5bdf-57da-ae6f-91718f40ac7e"
       },
       "v-61ef0fd9-e848-5ed0-a6ab-0d77481ac2f5": {
-        "active": true,
+        "active": false,
         "first_seen": "2026-10-16",
         "history": [
           {
@@ -6031,15 +6031,18 @@
               "Reference venue name changed"
             ],
             "status": "unverified"
+          },
+          {
+            "date": "2026-10-21",
+            "reasons": [],
+            "status": "resolved"
           }
         ],
-        "last_checked": "2026-10-19",
+        "last_checked": "2026-10-21",
         "place_name": "Stoke: Smallthorne",
         "postcode": "ST6 1NT",
         "pub_name": "Kings Head (Scrimmies)",
-        "reasons": [
-          "Reference venue name changed"
-        ],
+        "reasons": [],
         "reference": {},
         "research": {
           "checked_at": "2026-10-20",
@@ -6059,15 +6062,11 @@
           "camra-pubs-location-audit": {
             "status": "conflict",
             "url": "https://camra.org.uk/pubs/122971"
-          },
-          "fsa_independent": {
-            "status": "no_name_match",
-            "url": ""
           }
         },
         "source_error": null,
-        "status": "unverified",
-        "unverified": true,
+        "status": "resolved",
+        "unverified": false,
         "venue_id": "v-61ef0fd9-e848-5ed0-a6ab-0d77481ac2f5"
       },
       "v-62c1c92b-14d0-5967-801f-35f03d3cb24f": {
@@ -15267,7 +15266,7 @@
       }
     },
     "schema_version": 1,
-    "unverified_count": 27
+    "unverified_count": 26
   },
   "schema_version": 1,
   "venues": {
@@ -57490,6 +57489,48 @@
         "postcode": "ST6 1NT",
         "pub_name": "Kings Head (Scrimmies)"
       },
+      "location_approvals": [
+        {
+          "checked_at": "2026-10-21",
+          "comment_id": 6329198236,
+          "previous_pin": {
+            "evidence": [
+              {
+                "checked_at": "2026-09-11",
+                "difference_metres": 0.0,
+                "match": "venue_name_and_full_postcode",
+                "reference_coordinate": {
+                  "lat": 53.051584,
+                  "lng": -2.173975
+                },
+                "reference_postcode": "ST6 1NT",
+                "source": "camra",
+                "url": "https://camra.org.uk/pubs/122971"
+              },
+              {
+                "checked_at": "2026-09-11",
+                "difference_metres": 0,
+                "match": "postcode_fallback_replaced",
+                "reference_coordinate": {
+                  "lat": 53.051584,
+                  "lng": -2.173975
+                },
+                "reference_postcode": "ST6 1NT",
+                "source": "camra-pubs-location-audit",
+                "url": "https://camra.org.uk/pubs/122971"
+              }
+            ],
+            "lat": 53.051584,
+            "lng": -2.173975,
+            "review_reason": "Reference venue name changed",
+            "review_required": true,
+            "source": "camra-pubs-location-audit"
+          },
+          "review_url": "https://github.com/bristolbagpiper/BassBeerMap/issues/5#issuecomment-6329198236",
+          "reviewed_by": "bristolbagpiper",
+          "source_url": "https://www.google.com/maps/place/Kings+Head/@53.0515538,-2.1746214,160m/data=!3m2!1e3!4b1!4m4!3m3!8m2!3d53.0515538!4d-2.1739763?entry=ttu"
+        }
+      ],
       "location_research": {
         "checked_at": "2026-10-20",
         "coverage": {
@@ -57519,35 +57560,24 @@
       "verified_pin": {
         "evidence": [
           {
-            "checked_at": "2026-09-11",
-            "difference_metres": 0.0,
-            "match": "venue_name_and_full_postcode",
+            "checked_at": "2026-10-21",
+            "match": "owner_reviewed_named_place_and_full_postcode",
+            "reference_address": "101 Ford Green Rd, Stoke-on-Trent ST6 1NT",
             "reference_coordinate": {
-              "lat": 53.051584,
-              "lng": -2.173975
+              "lat": 53.0515538,
+              "lng": -2.1739763
             },
+            "reference_name": "Kings Head",
             "reference_postcode": "ST6 1NT",
-            "source": "camra",
-            "url": "https://camra.org.uk/pubs/122971"
-          },
-          {
-            "checked_at": "2026-09-11",
-            "difference_metres": 0,
-            "match": "postcode_fallback_replaced",
-            "reference_coordinate": {
-              "lat": 53.051584,
-              "lng": -2.173975
-            },
-            "reference_postcode": "ST6 1NT",
-            "source": "camra-pubs-location-audit",
-            "url": "https://camra.org.uk/pubs/122971"
+            "review_url": "https://github.com/bristolbagpiper/BassBeerMap/issues/5#issuecomment-6329198236",
+            "reviewed_by": "bristolbagpiper",
+            "source": "google-maps-named-place",
+            "url": "https://www.google.com/maps/place/Kings+Head/@53.0515538,-2.1746214,160m/data=!3m2!1e3!4b1!4m4!3m3!8m2!3d53.0515538!4d-2.1739763?entry=ttu"
           }
         ],
-        "lat": 53.051584,
-        "lng": -2.173975,
-        "review_reason": "Reference venue name changed",
-        "review_required": true,
-        "source": "camra-pubs-location-audit"
+        "lat": 53.0515538,
+        "lng": -2.1739763,
+        "source": "owner-reviewed-google-maps"
       }
     },
     "v-61fcdd19-f140-5d25-9a9b-72d08f037b8b": {

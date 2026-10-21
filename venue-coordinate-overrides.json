@@ -1530,16 +1530,19 @@
       "source_url": "https://www.google.com/maps/search/?api=1&query=Kings+Arms+Brighton+BN2+1RJ"
     },
     "kings head (scrimmies)|stoke: smallthorne|st6 1nt": {
-      "audit_reason": "postcode_fallback_replaced",
-      "checked_at": "2026-09-11",
-      "lat": 53.051584,
-      "lng": -2.173975,
-      "previous_difference_metres": 105.7,
-      "previous_lat": 53.050972,
-      "previous_lng": -2.175186,
-      "previous_source": "postcode",
-      "source": "camra-pubs-location-audit",
-      "source_url": "https://camra.org.uk/pubs/122971"
+      "audit_reason": "manual_named_place_address_and_map_check",
+      "checked_at": "2026-10-21",
+      "lat": 53.0515538,
+      "lng": -2.1739763,
+      "previous_difference_metres": 3.4,
+      "previous_lat": 53.051584,
+      "previous_lng": -2.173975,
+      "previous_source": "camra-pubs-location-audit",
+      "reference_address": "101 Ford Green Rd, Stoke-on-Trent ST6 1NT",
+      "reference_name": "Kings Head",
+      "review_note": "Repository owner confirmed the named-place marker and full address in issue #5.",
+      "source": "google-maps-named-place",
+      "source_url": "https://www.google.com/maps/place/Kings+Head/@53.0515538,-2.1746214,160m/data=!3m2!1e3!4b1!4m4!3m3!8m2!3d53.0515538!4d-2.1739763?entry=ttu"
     },
     "labour club (pmc)|kidsgrove|st7 4ab": {
       "audit_reason": "postcode_fallback_replaced",

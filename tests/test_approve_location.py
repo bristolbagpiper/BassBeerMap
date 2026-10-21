@@ -6,6 +6,8 @@ from approve_location import (
     validate_google_place,
 )
 
+from coordinate_sources import name_matches
+
 
 VENUE_ID = "v-152d1ab1-df05-55e1-a620-e4f9d08cdfd6"
 PLACE_URL = (
@@ -39,6 +41,22 @@ class ApprovalCommandTests(unittest.TestCase):
     def test_parenthetical_label_does_not_hide_mismatched_primary_name(self):
         self.assertFalse(
             manual_name_matches("New Brookfield (Barrow Social Club)", "The Brookfield")
+        )
+
+    def test_camra_town_prefixed_title_matches_listing_locality(self):
+        self.assertTrue(
+            name_matches(
+                "Constitutional Club (PMC)",
+                "Swadlincote Constitutional Club, Swadlincote",
+                "Swadlincote: Central",
+            )
+        )
+        self.assertFalse(
+            name_matches(
+                "Constitutional Club (PMC)",
+                "Swadlincote Conservative Club, Swadlincote",
+                "Swadlincote: Central",
+            )
         )
 
     def test_google_place_command_is_parsed_with_explicit_point_and_address(self):

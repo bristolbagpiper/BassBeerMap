@@ -1,7 +1,7 @@
 {
   "counts": {
-    "venue_coordinate_requires_review": 37,
-    "verified_venue": 1007
+    "venue_coordinate_requires_review": 36,
+    "verified_venue": 1008
   },
   "generated_at": "2026-10-21",
   "policy": {
@@ -3573,40 +3573,31 @@
       "venue_id": "v-c3fd6c21-9469-5012-b29c-7ebc59138762"
     },
     "bowls club (pmc)|barton-under-needwood|de13 8ax": {
-      "coordinate_source": "camra-pubs-location-audit",
-      "display_precision": "postcode",
+      "coordinate_source": "owner-reviewed-google-maps",
+      "display_precision": "venue",
       "evidence": [
         {
-          "checked_at": "2026-09-11",
-          "difference_metres": 0.0,
-          "match": "venue_name_and_full_postcode",
+          "checked_at": "2026-10-21",
+          "match": "owner_reviewed_named_place_and_full_postcode",
+          "reference_address": "Dunstall Rd, Barton-under-Needwood, Burton-on-Trent DE13 8AX",
           "reference_coordinate": {
-            "lat": 52.7657,
-            "lng": -1.7219
+            "lat": 52.7656129,
+            "lng": -1.7219396
           },
+          "reference_name": "Barton Bowls And Social Club (The Bowler)",
           "reference_postcode": "DE13 8AX",
-          "source": "camra",
-          "url": "https://camra.org.uk/pubs/124105"
-        },
-        {
-          "checked_at": "2026-09-11",
-          "difference_metres": 0,
-          "match": "postcode_fallback_replaced",
-          "reference_coordinate": {
-            "lat": 52.7657,
-            "lng": -1.7219
-          },
-          "reference_postcode": "DE13 8AX",
-          "source": "camra-pubs-location-audit",
-          "url": "https://camra.org.uk/pubs/124105"
+          "review_url": "https://github.com/bristolbagpiper/BassBeerMap/issues/5#issuecomment-6322652855",
+          "reviewed_by": "bristolbagpiper",
+          "source": "google-maps-named-place",
+          "url": "https://www.google.com/maps/place/Barton+Bowls+And+Social+Club+(The+Bowler)/@52.7655022,-1.722555,228m/data=!3m1!1e3!4m6!3m5!1s0x487a06a2a99054b5:0x3b4a42af59827759!8m2!3d52.7656129!4d-1.7219396!16s%2Fg%2F1tj7_hl0?entry=ttu&g_ep=EgoyMDI2MTAxOC4wIKXMDSoASAFQAw%3D%3D"
         }
       ],
-      "lat": 52.7657,
-      "lng": -1.7219,
+      "lat": 52.7656129,
+      "lng": -1.7219396,
       "place_name": "Barton-under-Needwood",
       "postcode": "DE13 8AX",
       "pub_name": "Bowls Club (PMC)",
-      "status": "venue_coordinate_requires_review",
+      "status": "verified_venue",
       "venue_id": "v-914a7527-30f1-5b36-acce-5b36c7210041"
     },
     "bradwell working mens club (pmc)|newcastle-u-l: bradwell|st5 8ja": {

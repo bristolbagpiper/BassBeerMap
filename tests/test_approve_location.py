@@ -1,6 +1,6 @@
 import unittest
 
-from approve_location import approved_commands, validate_google_place
+from approve_location import approved_commands, manual_name_matches, validate_google_place
 
 
 VENUE_ID = "v-152d1ab1-df05-55e1-a620-e4f9d08cdfd6"
@@ -27,6 +27,15 @@ def event(body, login="bristolbagpiper", user_type="User", issue=5):
 
 
 class ApprovalCommandTests(unittest.TestCase):
+    def test_parenthetical_social_club_label_allows_primary_venue_name(self):
+        self.assertTrue(
+            manual_name_matches("Brookfield (Barrow Social Club)", "The Brookfield")
+        )
+
+    def test_parenthetical_label_does_not_hide_mismatched_primary_name(self):
+        self.assertFalse(
+            manual_name_matches("New Brookfield (Barrow Social Club)", "The Brookfield")
+        )
     def test_google_place_command_is_parsed_with_explicit_point_and_address(self):
         command = (
             f'/verify-location {VENUE_ID} google 53.4016502 -2.9796419 '

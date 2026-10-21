@@ -75,6 +75,33 @@ class ApprovalCommandTests(unittest.TestCase):
             "reference_address": "25 Parr St, Liverpool L1 4JN",
         }])
 
+    def test_manual_name_accepts_only_an_omitted_final_arms_suffix(self):
+        self.assertTrue(
+            manual_name_matches("Earl of Chesterfield Arms", "The Earl of Chesterfield")
+        )
+        self.assertFalse(
+            manual_name_matches("Earl of Chesterfield Arms", "The Earl of Chesterfield Golf Course")
+        )
+
+    def test_google_place_accepts_the_exact_earl_of_chesterfield_arms_alias(self):
+        url = (
+            "https://www.google.com/maps/place/The+Earl+of+Chesterfield/"
+            "@52.9754979,-1.012228,40m/data=!3m1!1e3!4m6!3m5!"
+            "1s0x4879c617eaf89019:0x5398220fe768072f!8m2!"
+            "3d52.9755234!4d-1.0120792!16s%2Fg%2F1v2yyd3r"
+        )
+        validate_google_place(
+            {
+                "lat": 52.9755234,
+                "lng": -1.0120792,
+                "url": url,
+                "reference_name": "The Earl of Chesterfield",
+                "reference_address": "Main Rd, Shelford, Nottingham NG12 1EQ",
+            },
+            {"pub_name": "Earl of Chesterfield Arms", "postcode": "NG12 1EQ"},
+            {"lat": 52.975953, "lng": -1.012223},
+        )
+
     def test_existing_camra_command_remains_supported(self):
         url = "https://camra.org.uk/pubs/173888"
         result = approved_commands(

@@ -721,16 +721,19 @@
       "source_url": "https://camra.org.uk/pubs/158264"
     },
     "cricket club|blackpool: stanley park|fy3 9eq": {
-      "audit_reason": "postcode_fallback_replaced",
-      "checked_at": "2026-09-11",
-      "lat": 53.815142,
-      "lng": -3.030204,
-      "previous_difference_metres": 9.1,
-      "previous_lat": 53.815101,
-      "previous_lng": -3.030084,
-      "previous_source": "postcode",
-      "source": "camra-pubs-location-audit",
-      "source_url": "https://camra.org.uk/pubs/120146"
+      "audit_reason": "manual_named_place_address_and_map_check",
+      "checked_at": "2026-10-21",
+      "lat": 53.8151608,
+      "lng": -3.0301495,
+      "previous_difference_metres": 4.1,
+      "previous_lat": 53.815142,
+      "previous_lng": -3.030204,
+      "previous_source": "camra-pubs-location-audit",
+      "reference_address": "W Park Dr, Blackpool FY3 9EQ",
+      "reference_name": "Blackpool Cricket Club",
+      "review_note": "Repository owner confirmed the named-place marker and full address in issue #5.",
+      "source": "google-maps-named-place",
+      "source_url": "https://www.google.com/maps/place/Blackpool+Cricket+Club/@53.8150693,-3.0303993,111m/data=!3m1!1e3!4m6!3m5!1s0x487b4391d8eb567f:0x2b4f677b74ef83fd!8m2!3d53.8151608!4d-3.0301495!16s%2Fg%2F1v1vcqzz?entry=ttu&g_ep=EgoyMDI2MTAxOS4wIKXMDSoASAFQAw%3D%3D"
     },
     "cricket club|caverswall|st3 6pj": {
       "audit_reason": "manual_named_place_address_and_map_check",

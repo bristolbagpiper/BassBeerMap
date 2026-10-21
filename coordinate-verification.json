@@ -1,7 +1,7 @@
 {
   "counts": {
-    "venue_coordinate_requires_review": 31,
-    "verified_venue": 1013
+    "venue_coordinate_requires_review": 30,
+    "verified_venue": 1014
   },
   "generated_at": "2026-10-21",
   "policy": {
@@ -7178,40 +7178,31 @@
       "venue_id": "v-b6bd3613-8bdd-5319-a275-eb726deeff46"
     },
     "cricket club|blackpool: stanley park|fy3 9eq": {
-      "coordinate_source": "camra-pubs-location-audit",
-      "display_precision": "postcode",
+      "coordinate_source": "owner-reviewed-google-maps",
+      "display_precision": "venue",
       "evidence": [
         {
-          "checked_at": "2026-09-11",
-          "difference_metres": 0.0,
-          "match": "venue_name_and_full_postcode",
+          "checked_at": "2026-10-21",
+          "match": "owner_reviewed_named_place_and_full_postcode",
+          "reference_address": "W Park Dr, Blackpool FY3 9EQ",
           "reference_coordinate": {
-            "lat": 53.815142,
-            "lng": -3.030204
+            "lat": 53.8151608,
+            "lng": -3.0301495
           },
+          "reference_name": "Blackpool Cricket Club",
           "reference_postcode": "FY3 9EQ",
-          "source": "camra",
-          "url": "https://camra.org.uk/pubs/120146"
-        },
-        {
-          "checked_at": "2026-09-11",
-          "difference_metres": 0,
-          "match": "postcode_fallback_replaced",
-          "reference_coordinate": {
-            "lat": 53.815142,
-            "lng": -3.030204
-          },
-          "reference_postcode": "FY3 9EQ",
-          "source": "camra-pubs-location-audit",
-          "url": "https://camra.org.uk/pubs/120146"
+          "review_url": "https://github.com/bristolbagpiper/BassBeerMap/issues/5#issuecomment-6328939807",
+          "reviewed_by": "bristolbagpiper",
+          "source": "google-maps-named-place",
+          "url": "https://www.google.com/maps/place/Blackpool+Cricket+Club/@53.8150693,-3.0303993,111m/data=!3m1!1e3!4m6!3m5!1s0x487b4391d8eb567f:0x2b4f677b74ef83fd!8m2!3d53.8151608!4d-3.0301495!16s%2Fg%2F1v1vcqzz?entry=ttu&g_ep=EgoyMDI2MTAxOS4wIKXMDSoASAFQAw%3D%3D"
         }
       ],
-      "lat": 53.815142,
-      "lng": -3.030204,
+      "lat": 53.8151608,
+      "lng": -3.0301495,
       "place_name": "Blackpool: Stanley Park",
       "postcode": "FY3 9EQ",
       "pub_name": "Cricket Club",
-      "status": "venue_coordinate_requires_review",
+      "status": "verified_venue",
       "venue_id": "v-101e22ce-2e15-5d8d-8f40-64e6ead91ee8"
     },
     "cricket club|caverswall|st3 6pj": {

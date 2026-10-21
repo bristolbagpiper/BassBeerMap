@@ -1,5 +1,5 @@
 {
-  "active_count": 36,
+  "active_count": 35,
   "records": {
     "v-00a08839-2b8a-5782-b6c7-0bdce4cddb2f": {
       "active": false,
@@ -791,7 +791,7 @@
       "venue_id": "v-0e203d6f-5b71-5bfa-815b-76bf8b65cc7e"
     },
     "v-101e22ce-2e15-5d8d-8f40-64e6ead91ee8": {
-      "active": true,
+      "active": false,
       "first_seen": "2026-10-10",
       "history": [
         {
@@ -800,15 +800,18 @@
             "Reference venue name changed"
           ],
           "status": "unverified"
+        },
+        {
+          "date": "2026-10-21",
+          "reasons": [],
+          "status": "resolved"
         }
       ],
-      "last_checked": "2026-10-12",
+      "last_checked": "2026-10-21",
       "place_name": "Blackpool: Stanley Park",
       "postcode": "FY3 9EQ",
       "pub_name": "Cricket Club",
-      "reasons": [
-        "Reference venue name changed"
-      ],
+      "reasons": [],
       "reference": {},
       "research": {
         "checked_at": "2026-10-20",
@@ -828,15 +831,11 @@
         "camra-pubs-location-audit": {
           "status": "conflict",
           "url": "https://camra.org.uk/pubs/120146"
-        },
-        "fsa_independent": {
-          "status": "no_name_match",
-          "url": ""
         }
       },
       "source_error": null,
-      "status": "unverified",
-      "unverified": true,
+      "status": "resolved",
+      "unverified": false,
       "venue_id": "v-101e22ce-2e15-5d8d-8f40-64e6ead91ee8"
     },
     "v-1180d481-648a-5e00-bc95-6b4c0e4693f0": {
@@ -15270,5 +15269,5 @@
     }
   },
   "schema_version": 1,
-  "unverified_count": 31
+  "unverified_count": 30
 }

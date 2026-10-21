@@ -52,6 +52,13 @@ def name_matches(listing, reference, place_name=''):
     if (wanted == actual or (place_name and normal(f'{listing} {place_name}') == actual)
             or (place_name and normal(f'{listing} at {place_name}') == actual)):
         return True
+    if place_name:
+        # Some CAMRA titles prefix the venue name with the town. Accept that
+        # format only when the prefix is the first locality in the listing.
+        locality_prefixes = (part.strip() for part in place_name.split(':'))
+        if any(normal(prefix) and actual == normal(prefix) + wanted
+               for prefix in locality_prefixes):
+            return True
     return any(actual == wanted + suffix or wanted == actual + suffix
                for suffix in ('inn', 'hotel', 'pub', 'bar', 'alehouse', 'publichouse'))
 

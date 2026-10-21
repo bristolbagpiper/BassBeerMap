@@ -3,20 +3,20 @@
 Locations: 1044
 
 Actionable findings: 3
-Locations with informational observations: 598 (may also have an actionable finding)
+Locations with informational observations: 597 (may also have an actionable finding)
 
 ## Results
 
-- coordinate_agreement: 459
+- coordinate_agreement: 460
 - nearby: 103
 - coordinate_disagreement: 242
-- no_name_match: 179
-- ambiguous_or_missing_coordinates: 61
+- no_name_match: 177
+- ambiguous_or_missing_coordinates: 62
 
 ## Confidence
 
-- independent_coordinate_agreement: 429
-- existing_evidence_needs_corroboration: 553
+- independent_coordinate_agreement: 430
+- existing_evidence_needs_corroboration: 552
 - owner_reviewed: 62
 
 ## Limits
@@ -193,7 +193,7 @@ Locations with informational observations: 598 (may also have an actionable find
 | Crown | Stockport | SK4 1AR | coordinate_disagreement | Informational | FSA coordinate is 56.9m from the accepted pin; informational only because the FSA geocode may be approximate |
 | Crown | Kemerton | GL20 7HP | nearby | Informational | FSA coordinate is 25-50m away; informational only |
 | Crown | Heather | LE67 2QP | no_name_match | Informational | FSA comparison is inconclusive; absence of a match does not contradict accepted evidence |
-| Crown | Glentham | LN8 2EQ | no_name_match | Informational | FSA comparison is inconclusive; absence of a match does not contradict accepted evidence |
+| Crown | Glentham | LN8 2EQ | ambiguous_or_missing_coordinates | Informational | FSA comparison is inconclusive; absence of a match does not contradict accepted evidence |
 | Crown | Melton Mowbray | LE13 1AE | nearby | Informational | FSA coordinate is 25-50m away; informational only |
 | Crown | Chilton | OX11 0RZ | no_name_match | Informational | FSA comparison is inconclusive; absence of a match does not contradict accepted evidence |
 | Crown | Oxford: Central | OX1 3HB | nearby | Informational | FSA coordinate is 25-50m away; informational only |
@@ -247,7 +247,6 @@ Locations with informational observations: 598 (may also have an actionable find
 | Flying Childers | Stanton in Peak | DE4 2LW | coordinate_disagreement | Informational | FSA coordinate is 91.5m from the accepted pin; informational only because the FSA geocode may be approximate |
 | Fox | Lutterworth | LE17 4BN | nearby | Informational | FSA coordinate is 25-50m away; informational only |
 | Fox and Goose | Foxt | ST10 2HN | coordinate_disagreement | Informational | FSA coordinate is 90.5m from the accepted pin; informational only because the FSA geocode may be approximate |
-| Fox and Hounds | Reepham | LN3 4DN | no_name_match | Informational | FSA comparison is inconclusive; absence of a match does not contradict accepted evidence |
 | GJ Muckers | Macclesfield | SK11 7NE | no_name_match | Informational | Owner reviewed this postcode discrepancy and confirmed the displayed pub building; listing postcode retained for provenance; FSA comparison is inconclusive; absence of a match does not contradict accepted evidence |
 | Garden House | Norwich | NR2 3HD | coordinate_disagreement | Informational | FSA coordinate is 118.9m from the accepted pin; informational only because the FSA geocode may be approximate |
 | Garibaldi | Redhill | RH1 6PA | no_name_match | Informational | FSA comparison is inconclusive; absence of a match does not contradict accepted evidence |

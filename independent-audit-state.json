@@ -19887,7 +19887,7 @@
     },
     "v-77056a66-be9a-52b4-9bbe-fadd4e67fa6f": {
       "actionable": false,
-      "checked_at": "2026-10-09",
+      "checked_at": "2026-10-21",
       "comparisons": [
         {
           "address": "57 Burton Street, Melton Mowbray",
@@ -19932,13 +19932,13 @@
     },
     "v-77092c69-962d-5c97-94aa-77f46ca88e4f": {
       "actionable": false,
-      "checked_at": "2026-10-09",
+      "checked_at": "2026-10-21",
       "comparisons": [
         {
-          "name_matches": 0,
-          "postcode_matches": 0,
+          "name_matches": 1,
+          "postcode_matches": 2,
           "queried_postcode": "LN8 2EQ",
-          "status": "no_name_match"
+          "status": "ambiguous_or_missing_coordinates"
         }
       ],
       "confidence": "existing_evidence_needs_corroboration",
@@ -19955,19 +19955,19 @@
       "priority": 2,
       "reasons": [],
       "reference": {
-        "name_matches": 0,
-        "postcode_matches": 0,
+        "name_matches": 1,
+        "postcode_matches": 2,
         "queried_postcode": "LN8 2EQ",
-        "status": "no_name_match"
+        "status": "ambiguous_or_missing_coordinates"
       },
-      "status": "no_name_match",
+      "status": "ambiguous_or_missing_coordinates",
       "warnings": [
         "FSA comparison is inconclusive; absence of a match does not contradict accepted evidence"
       ]
     },
     "v-773a6db4-ab20-5f3f-99c7-d4d030f53c9e": {
       "actionable": false,
-      "checked_at": "2026-10-09",
+      "checked_at": "2026-10-21",
       "comparisons": [
         {
           "address": "Bank Top, Winster, Derbyshire",
@@ -20010,7 +20010,7 @@
     },
     "v-77964dfc-3493-5149-a22c-df0ac085d1cf": {
       "actionable": false,
-      "checked_at": "2026-10-09",
+      "checked_at": "2026-10-21",
       "comparisons": [
         {
           "address": "Stretton Social Club, Beech Lane, Stretton, Burton upon Trent",
@@ -20106,7 +20106,7 @@
     },
     "v-77c88bf5-cdfa-5f69-9a85-6d9500e5b776": {
       "actionable": false,
-      "checked_at": "2026-10-09",
+      "checked_at": "2026-10-21",
       "comparisons": [
         {
           "name_matches": 0,
@@ -20141,7 +20141,7 @@
     },
     "v-77fe1223-0617-5e9e-8d73-cfa8e4dd14bf": {
       "actionable": false,
-      "checked_at": "2026-10-09",
+      "checked_at": "2026-10-21",
       "comparisons": [
         {
           "name_matches": 0,
@@ -20221,7 +20221,7 @@
     },
     "v-790cd688-0b91-5adf-81cc-75528dd143fe": {
       "actionable": false,
-      "checked_at": "2026-10-09",
+      "checked_at": "2026-10-21",
       "comparisons": [
         {
           "address": "Boundary Road, Boundary, Stoke-On-Trent",
@@ -20266,7 +20266,7 @@
     },
     "v-793bea47-0978-5182-b472-e441735f2b6b": {
       "actionable": false,
-      "checked_at": "2026-10-09",
+      "checked_at": "2026-10-21",
       "comparisons": [
         {
           "address": "40 Newbold Road, , , Chesterfield",
@@ -20309,7 +20309,7 @@
     },
     "v-79d5023b-81d8-59fe-af28-3713e8df2c1e": {
       "actionable": false,
-      "checked_at": "2026-10-09",
+      "checked_at": "2026-10-21",
       "comparisons": [
         {
           "address": "18A PYLEWELL ROAD, HYTHE, SOUTHAMPTON",
@@ -20352,16 +20352,21 @@
     },
     "v-79e55486-096e-540b-8cdc-ac76e94f6f9c": {
       "actionable": false,
-      "checked_at": "2026-10-09",
+      "checked_at": "2026-10-21",
       "comparisons": [
         {
-          "name_matches": 0,
-          "postcode_matches": 0,
+          "address": "Fox And Hounds, 9 Station Road, , Reepham",
+          "difference_metres": 2.1,
+          "lat": 53.2509278,
+          "lng": -0.4417992,
+          "name": "Fox and Hounds",
+          "postcode": "LN3 4DN",
           "queried_postcode": "LN3 4DN",
-          "status": "no_name_match"
+          "status": "coordinate_agreement",
+          "url": "https://ratings.food.gov.uk/business/234648"
         }
       ],
-      "confidence": "existing_evidence_needs_corroboration",
+      "confidence": "independent_coordinate_agreement",
       "independent_of_pin": true,
       "listing": {
         "postcode": "LN3 4DN",
@@ -20372,22 +20377,25 @@
         "lat": 53.2509368,
         "lng": -0.4418265
       },
-      "priority": 2,
+      "priority": 3,
       "reasons": [],
       "reference": {
-        "name_matches": 0,
-        "postcode_matches": 0,
+        "address": "Fox And Hounds, 9 Station Road, , Reepham",
+        "difference_metres": 2.1,
+        "lat": 53.2509278,
+        "lng": -0.4417992,
+        "name": "Fox and Hounds",
+        "postcode": "LN3 4DN",
         "queried_postcode": "LN3 4DN",
-        "status": "no_name_match"
+        "status": "coordinate_agreement",
+        "url": "https://ratings.food.gov.uk/business/234648"
       },
-      "status": "no_name_match",
-      "warnings": [
-        "FSA comparison is inconclusive; absence of a match does not contradict accepted evidence"
-      ]
+      "status": "coordinate_agreement",
+      "warnings": []
     },
     "v-79e75ee7-d08c-5954-8c2e-4abe4061a8bd": {
       "actionable": false,
-      "checked_at": "2026-10-09",
+      "checked_at": "2026-10-21",
       "comparisons": [
         {
           "address": "The Knoll, Tansley, Derbyshire",
@@ -20430,7 +20438,7 @@
     },
     "v-7a093ea0-089c-531d-99d2-a29cac75fb65": {
       "actionable": false,
-      "checked_at": "2026-10-09",
+      "checked_at": "2026-10-21",
       "comparisons": [
         {
           "address": "Wild Goose Inn Combeinteignhead Devon",
@@ -20473,7 +20481,7 @@
     },
     "v-7a3e5616-8a84-572d-9f07-41ad9ad93741": {
       "actionable": false,
-      "checked_at": "2026-10-09",
+      "checked_at": "2026-10-21",
       "comparisons": [
         {
           "address": "56 Oldbury Road, , Hartshill, Warwickshire",
@@ -20516,7 +20524,7 @@
     },
     "v-7acff0ac-109f-5c52-83e8-add11cb06319": {
       "actionable": false,
-      "checked_at": "2026-10-09",
+      "checked_at": "2026-10-21",
       "comparisons": [
         {
           "name_matches": 0,
@@ -20551,7 +20559,7 @@
     },
     "v-7ad6671f-7834-57cb-9096-bbd8d85669f1": {
       "actionable": false,
-      "checked_at": "2026-10-09",
+      "checked_at": "2026-10-21",
       "comparisons": [
         {
           "address": "7 Debdale Hill, Old Dalby, Melton Mowbray",
@@ -20594,7 +20602,7 @@
     },
     "v-7ae10979-fa76-53b3-bdc3-51d091c60752": {
       "actionable": false,
-      "checked_at": "2026-10-09",
+      "checked_at": "2026-10-21",
       "comparisons": [
         {
           "address": "Main Street, Clifton Campville, Tamworth, Staffordshire",
@@ -20639,7 +20647,7 @@
     },
     "v-7b076fbe-dd74-5ecc-b3d0-a40953c97eae": {
       "actionable": false,
-      "checked_at": "2026-10-09",
+      "checked_at": "2026-10-21",
       "comparisons": [
         {
           "address": "59 BRETBY ROAD, NEWHALL, SWADLINCOTE",
@@ -20682,7 +20690,7 @@
     },
     "v-7b1892e4-b48c-5f5e-a463-5a8f08e40498": {
       "actionable": false,
-      "checked_at": "2026-10-09",
+      "checked_at": "2026-10-21",
       "comparisons": [
         {
           "address": "149-150 High Street, Burton upon Trent",
@@ -20725,7 +20733,7 @@
     },
     "v-7b7219e5-71e0-524f-8e83-8546cb6673bd": {
       "actionable": false,
-      "checked_at": "2026-10-09",
+      "checked_at": "2026-10-21",
       "comparisons": [
         {
           "name_matches": 0,
@@ -20760,7 +20768,7 @@
     },
     "v-7b90e553-98bb-5704-956d-ac5077bae36a": {
       "actionable": false,
-      "checked_at": "2026-10-09",
+      "checked_at": "2026-10-21",
       "comparisons": [
         {
           "address": "White Hart Hotel, 19-21 High Street, Burgh Le Marsh Skegness",
@@ -20803,7 +20811,7 @@
     },
     "v-7bc1560c-56a6-5502-abc7-837eac873a9f": {
       "actionable": false,
-      "checked_at": "2026-10-09",
+      "checked_at": "2026-10-21",
       "comparisons": [
         {
           "address": "Sadler Gate, Derby",
@@ -20848,7 +20856,7 @@
     },
     "v-7c55fdbf-b583-58e0-a3c9-c0c8f1c2661b": {
       "actionable": false,
-      "checked_at": "2026-10-09",
+      "checked_at": "2026-10-21",
       "comparisons": [
         {
           "address": "46 West Street, Leek, Staffordshire",
@@ -20891,7 +20899,7 @@
     },
     "v-7c5832aa-d803-5bf0-811f-2fc6d351f330": {
       "actionable": false,
-      "checked_at": "2026-10-09",
+      "checked_at": "2026-10-21",
       "comparisons": [
         {
           "name_matches": 0,
@@ -20926,7 +20934,7 @@
     },
     "v-7c97cc32-0b5c-5fd8-9c5c-e0f1b99c5a90": {
       "actionable": false,
-      "checked_at": "2026-10-09",
+      "checked_at": "2026-10-21",
       "comparisons": [
         {
           "name_matches": 0,
@@ -20961,7 +20969,7 @@
     },
     "v-7cb03d6d-a981-50bd-83de-76106ba5efac": {
       "actionable": false,
-      "checked_at": "2026-10-09",
+      "checked_at": "2026-10-21",
       "comparisons": [
         {
           "name_matches": 0,
@@ -20996,7 +21004,7 @@
     },
     "v-7ce68043-1d31-5093-a8df-116df98bd8e7": {
       "actionable": false,
-      "checked_at": "2026-10-09",
+      "checked_at": "2026-10-21",
       "comparisons": [
         {
           "address": "The Old Windmill 22-23 The Old Windmill Public House Spon Street, , , Coventry",
@@ -21090,7 +21098,7 @@
     },
     "v-7d14bf86-375e-557a-b241-ef5aee6794f8": {
       "actionable": false,
-      "checked_at": "2026-10-09",
+      "checked_at": "2026-10-21",
       "comparisons": [
         {
           "address": "Horse And Jockey, 56 Nags Head Hill, St George, Bristol",
@@ -21135,7 +21143,7 @@
     },
     "v-7d455201-b0b8-5091-8fec-00a5eb31fa79": {
       "actionable": false,
-      "checked_at": "2026-10-09",
+      "checked_at": "2026-10-21",
       "comparisons": [
         {
           "address": "21 High Street, Cheadle, Stoke On Trent",
@@ -21178,7 +21186,7 @@
     },
     "v-7d99face-a438-502c-88f7-bb85dfbf8434": {
       "actionable": false,
-      "checked_at": "2026-10-09",
+      "checked_at": "2026-10-21",
       "comparisons": [
         {
           "address": "Copmere End, Eccleshall, Stafford",
@@ -21223,7 +21231,7 @@
     },
     "v-7deef57e-74e9-5154-b94e-32380988c487": {
       "actionable": false,
-      "checked_at": "2026-10-09",
+      "checked_at": "2026-10-21",
       "comparisons": [
         {
           "address": "Sir William Hill Road, Bretton, Derbyshire",
@@ -21320,7 +21328,7 @@
     },
     "v-7e5320ea-a764-56c1-8a12-6f8f07513841": {
       "actionable": false,
-      "checked_at": "2026-10-09",
+      "checked_at": "2026-10-21",
       "comparisons": [
         {
           "address": "11 Cleveland Place West, Walcot, Bath, Bath And North East Somerset",
@@ -21363,7 +21371,7 @@
     },
     "v-7e57ad1d-272f-53ca-8b18-7f3ac8bf26ee": {
       "actionable": false,
-      "checked_at": "2026-10-09",
+      "checked_at": "2026-10-21",
       "comparisons": [
         {
           "address": "Carpenters, 9 High Street, Newport, South Wales",
@@ -21406,7 +21414,7 @@
     },
     "v-7e74ffed-26f2-5cf1-be58-427561eec61b": {
       "actionable": false,
-      "checked_at": "2026-10-09",
+      "checked_at": "2026-10-21",
       "comparisons": [
         {
           "name_matches": 0,
@@ -21493,7 +21501,7 @@
     },
     "v-7e9b8405-bcad-56e8-b09f-6bb18b7f4648": {
       "actionable": false,
-      "checked_at": "2026-10-09",
+      "checked_at": "2026-10-21",
       "comparisons": [
         {
           "address": "Blackbird Road, Leicester",
@@ -21590,7 +21598,7 @@
     },
     "v-7f5d556a-433d-5732-af75-9cee3078da77": {
       "actionable": false,
-      "checked_at": "2026-10-09",
+      "checked_at": "2026-10-21",
       "comparisons": [
         {
           "address": "11 Percy Street, Hanley, Stoke-On-Trent",
@@ -21633,7 +21641,7 @@
     },
     "v-7f64dd0a-d18a-5285-83fe-52741ba89a21": {
       "actionable": false,
-      "checked_at": "2026-10-09",
+      "checked_at": "2026-10-21",
       "comparisons": [
         {
           "address": "Red Lion Inn, 24 High Street, Kegworth, Derby",
@@ -21678,7 +21686,7 @@
     },
     "v-7fff2567-68e6-58dd-b061-268c6b24cbe7": {
       "actionable": false,
-      "checked_at": "2026-10-09",
+      "checked_at": "2026-10-21",
       "comparisons": [
         {
           "name_matches": 0,
@@ -21713,7 +21721,7 @@
     },
     "v-804d57d4-1953-5654-88fa-fc20c0ce6910": {
       "actionable": false,
-      "checked_at": "2026-10-09",
+      "checked_at": "2026-10-21",
       "comparisons": [
         {
           "address": "Bradwell Workingmens Club, Bradwell Lane, Newcastle Under Lyme, Staffordshire",
@@ -21758,7 +21766,7 @@
     },
     "v-809531b4-2e54-53fe-a824-d4187ca7d360": {
       "actionable": false,
-      "checked_at": "2026-10-09",
+      "checked_at": "2026-10-21",
       "comparisons": [
         {
           "address": "4 Morris Square, Wolstanton, Newcastle Under Lyme",
@@ -21801,7 +21809,7 @@
     },
     "v-80a40ed0-e1a5-5f75-a9b5-9bf0859cdd70": {
       "actionable": false,
-      "checked_at": "2026-10-09",
+      "checked_at": "2026-10-21",
       "comparisons": [
         {
           "address": "9 New Buildings, Hinckley, Leicestershire",
@@ -21844,7 +21852,7 @@
     },
     "v-80b46aa7-9588-5a45-ad24-96f24abad31d": {
       "actionable": false,
-      "checked_at": "2026-10-09",
+      "checked_at": "2026-10-21",
       "comparisons": [
         {
           "address": "81 Liverpool Road, Rufford, Lancashire",
@@ -21887,7 +21895,7 @@
     },
     "v-8131d496-39be-5f8f-a17d-b58660aeda1b": {
       "actionable": false,
-      "checked_at": "2026-10-09",
+      "checked_at": "2026-10-21",
       "comparisons": [
         {
           "name_matches": 0,
@@ -21922,7 +21930,7 @@
     },
     "v-813a838f-ed8d-514d-9a9a-d192591cfe49": {
       "actionable": false,
-      "checked_at": "2026-10-09",
+      "checked_at": "2026-10-21",
       "comparisons": [
         {
           "address": "Bridford Devon",
@@ -21967,7 +21975,7 @@
     },
     "v-81579a99-029e-575f-b8fe-66baf9991001": {
       "actionable": false,
-      "checked_at": "2026-10-09",
+      "checked_at": "2026-10-21",
       "comparisons": [
         {
           "address": "2 Stubbs Gate, Newcastle Under Lyme, Staffordshire",
@@ -22012,7 +22020,7 @@
     },
     "v-8194a310-e6f2-5a66-a125-ab7d7f72c127": {
       "actionable": false,
-      "checked_at": "2026-10-09",
+      "checked_at": "2026-10-21",
       "comparisons": [
         {
           "name_matches": 0,

@@ -9702,6 +9702,13 @@
             "FSA no longer provides an unambiguous agreeing venue"
           ],
           "status": "unverified"
+        },
+        {
+          "date": "2026-10-21",
+          "reasons": [
+            "Directory postcode ST10 2PQ conflicts with reference address ST10 2PZ"
+          ],
+          "status": "review_needed"
         }
       ],
       "last_checked": "2026-10-21",
@@ -9709,23 +9716,24 @@
       "postcode": "ST10 2PQ",
       "pub_name": "Charlie Bassetts",
       "reasons": [
-        "FSA no longer provides an unambiguous agreeing venue"
+        "Directory postcode ST10 2PQ conflicts with reference address ST10 2PZ"
       ],
-      "reference": {},
+      "reference": {
+        "field": "postcode",
+        "listed": "ST10 2PQ",
+        "reference": "ST10 2PZ",
+        "source_url": "https://camra.org.uk/pubs/charlie-bassetts-dilhorne-143882"
+      },
       "research": {},
       "source_checks": {
         "food_standards_agency": {
           "status": "conflict",
           "url": "https://api.ratings.food.gov.uk/Establishments?address=ST10+2PQ&pageSize=100&pageNumber=1"
-        },
-        "fsa_independent": {
-          "status": "coordinate_agreement",
-          "url": "https://ratings.food.gov.uk/business/1806172"
         }
       },
       "source_error": null,
-      "status": "unverified",
-      "unverified": true,
+      "status": "review_needed",
+      "unverified": false,
       "venue_id": "v-95a10492-5d95-5fd1-85cd-7a9a58882d81"
     },
     "v-95b88dcf-eb87-53c8-8629-a0630c553722": {
@@ -15260,5 +15268,5 @@
     }
   },
   "schema_version": 1,
-  "unverified_count": 34
+  "unverified_count": 33
 }

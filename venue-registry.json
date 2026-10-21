@@ -9703,6 +9703,13 @@
               "FSA no longer provides an unambiguous agreeing venue"
             ],
             "status": "unverified"
+          },
+          {
+            "date": "2026-10-21",
+            "reasons": [
+              "Directory postcode ST10 2PQ conflicts with reference address ST10 2PZ"
+            ],
+            "status": "review_needed"
           }
         ],
         "last_checked": "2026-10-21",
@@ -9710,23 +9717,24 @@
         "postcode": "ST10 2PQ",
         "pub_name": "Charlie Bassetts",
         "reasons": [
-          "FSA no longer provides an unambiguous agreeing venue"
+          "Directory postcode ST10 2PQ conflicts with reference address ST10 2PZ"
         ],
-        "reference": {},
+        "reference": {
+          "field": "postcode",
+          "listed": "ST10 2PQ",
+          "reference": "ST10 2PZ",
+          "source_url": "https://camra.org.uk/pubs/charlie-bassetts-dilhorne-143882"
+        },
         "research": {},
         "source_checks": {
           "food_standards_agency": {
             "status": "conflict",
             "url": "https://api.ratings.food.gov.uk/Establishments?address=ST10+2PQ&pageSize=100&pageNumber=1"
-          },
-          "fsa_independent": {
-            "status": "coordinate_agreement",
-            "url": "https://ratings.food.gov.uk/business/1806172"
           }
         },
         "source_error": null,
-        "status": "unverified",
-        "unverified": true,
+        "status": "review_needed",
+        "unverified": false,
         "venue_id": "v-95a10492-5d95-5fd1-85cd-7a9a58882d81"
       },
       "v-95b88dcf-eb87-53c8-8629-a0630c553722": {
@@ -15261,7 +15269,7 @@
       }
     },
     "schema_version": 1,
-    "unverified_count": 34
+    "unverified_count": 33
   },
   "schema_version": 1,
   "venues": {
@@ -81124,7 +81132,9 @@
     },
     "v-95a10492-5d95-5fd1-85cd-7a9a58882d81": {
       "aliases": [
-        "charlie bassetts|dilhorne|st10 2pq"
+        "charlie bassetts|dilhorne|st10 2pq",
+        "charlie bassetts|dilhorne|st10 2pz",
+        "charlie bassett's|dilhorne|st10 2pz"
       ],
       "current_key": "charlie bassetts|dilhorne|st10 2pq",
       "independent_location_check": {
@@ -81181,6 +81191,36 @@
         "postcode": "ST10 2PQ",
         "pub_name": "Charlie Bassetts"
       },
+      "location_approvals": [
+        {
+          "checked_at": "2026-10-21",
+          "comment_id": 6323009880,
+          "previous_pin": {
+            "evidence": [
+              {
+                "checked_at": "2026-09-11",
+                "difference_metres": 0.0,
+                "match": "venue_name_or_safe_alias_and_full_postcode",
+                "reference_coordinate": {
+                  "lat": 52.9880447387695,
+                  "lng": -2.04433488845825
+                },
+                "reference_postcode": "ST10 2PQ",
+                "source": "food_standards_agency",
+                "url": "https://api.ratings.food.gov.uk/Establishments?address=ST10+2PQ&pageSize=100&pageNumber=1"
+              }
+            ],
+            "lat": 52.9880447387695,
+            "lng": -2.04433488845825,
+            "review_reason": "FSA no longer provides an unambiguous agreeing venue",
+            "review_required": true,
+            "source": "food-standards-agency-fhrs"
+          },
+          "review_url": "https://github.com/bristolbagpiper/BassBeerMap/issues/5#issuecomment-6323009880",
+          "reviewed_by": "bristolbagpiper",
+          "source_url": "https://camra.org.uk/pubs/charlie-bassetts-dilhorne-143882"
+        }
+      ],
       "verification_attempt": {
         "checked_at": "2026-10-21",
         "reason": "FSA no longer provides an unambiguous agreeing venue",
@@ -81196,23 +81236,31 @@
       "verified_pin": {
         "evidence": [
           {
-            "checked_at": "2026-09-11",
-            "difference_metres": 0.0,
-            "match": "venue_name_or_safe_alias_and_full_postcode",
+            "checked_at": "2026-10-21",
+            "match": "owner_reviewed_named_address_and_map",
+            "reference_address": "New Road",
             "reference_coordinate": {
-              "lat": 52.9880447387695,
-              "lng": -2.04433488845825
+              "lat": 52.986997,
+              "lng": -2.046611
             },
-            "reference_postcode": "ST10 2PQ",
-            "source": "food_standards_agency",
-            "url": "https://api.ratings.food.gov.uk/Establishments?address=ST10+2PQ&pageSize=100&pageNumber=1"
+            "reference_locality": "Dilhorne",
+            "reference_name": "Charlie Bassett's, Dilhorne - Pub with Beer Garden",
+            "reference_postcode": "ST10 2PZ",
+            "review_url": "https://github.com/bristolbagpiper/BassBeerMap/issues/5#issuecomment-6323009880",
+            "reviewed_by": "bristolbagpiper",
+            "source": "camra",
+            "url": "https://camra.org.uk/pubs/charlie-bassetts-dilhorne-143882"
           }
         ],
-        "lat": 52.9880447387695,
-        "lng": -2.04433488845825,
-        "review_reason": "FSA no longer provides an unambiguous agreeing venue",
-        "review_required": true,
-        "source": "food-standards-agency-fhrs"
+        "lat": 52.986997,
+        "lng": -2.046611,
+        "metadata_issue": {
+          "field": "postcode",
+          "listed": "ST10 2PQ",
+          "reference": "ST10 2PZ",
+          "source_url": "https://camra.org.uk/pubs/charlie-bassetts-dilhorne-143882"
+        },
+        "source": "owner-reviewed-camra"
       }
     },
     "v-95b88dcf-eb87-53c8-8629-a0630c553722": {

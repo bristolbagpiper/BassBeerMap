@@ -978,6 +978,21 @@
       "source": "camra-pubs-location-audit",
       "source_url": "https://camra.org.uk/pubs/171382"
     },
+    "dial|burton u-t: central|de14 1bn": {
+      "audit_reason": "manual_named_place_address_and_map_check",
+      "checked_at": "2026-10-21",
+      "lat": 52.803817,
+      "lng": -1.633027,
+      "previous_difference_metres": 17.5,
+      "previous_lat": 52.8039241,
+      "previous_lng": -1.6332179,
+      "previous_source": "openstreetmap-gb-extract",
+      "reference_address": "174-175 Station St, Burton-on-Trent DE14 1BN",
+      "reference_name": "The Dial",
+      "review_note": "Repository owner confirmed the named-place marker and full address in issue #5.",
+      "source": "google-maps-named-place",
+      "source_url": "https://www.google.com/maps/place/The+Dial/@52.803817,-1.633027,643m/data=!3m2!1e3!4b1!4m6!3m5!1s0x487a024677e400d3:0x620ba200efa8668!8m2!3d52.803817!4d-1.633027!16s%2Fg%2F1th09zf7?entry=ttu&g_ep=EgoyMDI2MTAxOS4wIKXMDSoASAFQAw%3D%3D"
+    },
     "dick turpin|newcastle-u-l: higherland|st5 2qs": {
       "audit_reason": "camra_and_fsa_agree_within_50m_current_pin_does_not",
       "camra_to_fsa_metres": 5.2,

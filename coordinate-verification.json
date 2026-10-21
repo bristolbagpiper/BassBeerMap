@@ -1,7 +1,7 @@
 {
   "counts": {
-    "venue_coordinate_requires_review": 30,
-    "verified_venue": 1014
+    "venue_coordinate_requires_review": 29,
+    "verified_venue": 1015
   },
   "generated_at": "2026-10-21",
   "policy": {
@@ -8922,28 +8922,31 @@
       "venue_id": "v-bde6c78b-c336-58d3-8ed3-1b619b4ee470"
     },
     "dial|burton u-t: central|de14 1bn": {
-      "coordinate_source": "openstreetmap-gb-extract",
-      "display_precision": "postcode",
+      "coordinate_source": "owner-reviewed-google-maps",
+      "display_precision": "venue",
       "evidence": [
         {
-          "checked_at": "2026-09-11",
-          "difference_metres": 8.3,
-          "match": "venue_name_and_full_postcode",
+          "checked_at": "2026-10-21",
+          "match": "owner_reviewed_named_place_and_full_postcode",
+          "reference_address": "174-175 Station St, Burton-on-Trent DE14 1BN",
           "reference_coordinate": {
-            "lat": 52.8039241,
-            "lng": -1.6332179
+            "lat": 52.803817,
+            "lng": -1.633027
           },
+          "reference_name": "The Dial",
           "reference_postcode": "DE14 1BN",
-          "source": "camra",
-          "url": "https://camra.org.uk/pubs/124067"
+          "review_url": "https://github.com/bristolbagpiper/BassBeerMap/issues/5#issuecomment-6328998003",
+          "reviewed_by": "bristolbagpiper",
+          "source": "google-maps-named-place",
+          "url": "https://www.google.com/maps/place/The+Dial/@52.803817,-1.633027,643m/data=!3m2!1e3!4b1!4m6!3m5!1s0x487a024677e400d3:0x620ba200efa8668!8m2!3d52.803817!4d-1.633027!16s%2Fg%2F1th09zf7?entry=ttu&g_ep=EgoyMDI2MTAxOS4wIKXMDSoASAFQAw%3D%3D"
         }
       ],
-      "lat": 52.8039241,
-      "lng": -1.6332179,
+      "lat": 52.803817,
+      "lng": -1.633027,
       "place_name": "Burton U-T: Central",
       "postcode": "DE14 1BN",
       "pub_name": "Dial",
-      "status": "venue_coordinate_requires_review",
+      "status": "verified_venue",
       "venue_id": "v-45ee8f54-501a-5688-8b29-c66374492475"
     },
     "dick turpin|newcastle-u-l: higherland|st5 2qs": {

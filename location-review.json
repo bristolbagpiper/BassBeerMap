@@ -1,5 +1,5 @@
 {
-  "active_count": 35,
+  "active_count": 34,
   "records": {
     "v-00a08839-2b8a-5782-b6c7-0bdce4cddb2f": {
       "active": false,
@@ -4000,7 +4000,7 @@
       "venue_id": "v-44d1557c-72e2-5898-ba5c-80ff7540b392"
     },
     "v-45ee8f54-501a-5688-8b29-c66374492475": {
-      "active": true,
+      "active": false,
       "first_seen": "2026-10-14",
       "history": [
         {
@@ -4009,15 +4009,18 @@
             "Reference venue name changed"
           ],
           "status": "unverified"
+        },
+        {
+          "date": "2026-10-21",
+          "reasons": [],
+          "status": "resolved"
         }
       ],
-      "last_checked": "2026-10-16",
+      "last_checked": "2026-10-21",
       "place_name": "Burton U-T: Central",
       "postcode": "DE14 1BN",
       "pub_name": "Dial",
-      "reasons": [
-        "Reference venue name changed"
-      ],
+      "reasons": [],
       "reference": {},
       "research": {
         "checked_at": "2026-10-20",
@@ -4033,15 +4036,11 @@
         "camra": {
           "status": "conflict",
           "url": "https://camra.org.uk/pubs/124067"
-        },
-        "fsa_independent": {
-          "status": "no_name_match",
-          "url": ""
         }
       },
       "source_error": null,
-      "status": "unverified",
-      "unverified": true,
+      "status": "resolved",
+      "unverified": false,
       "venue_id": "v-45ee8f54-501a-5688-8b29-c66374492475"
     },
     "v-46d4e6a8-2503-564e-9f1e-8229e93de130": {
@@ -15269,5 +15268,5 @@
     }
   },
   "schema_version": 1,
-  "unverified_count": 30
+  "unverified_count": 29
 }

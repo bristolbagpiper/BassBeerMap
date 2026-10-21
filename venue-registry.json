@@ -1,6 +1,6 @@
 {
   "location_review": {
-    "active_count": 35,
+    "active_count": 34,
     "records": {
       "v-00a08839-2b8a-5782-b6c7-0bdce4cddb2f": {
         "active": false,
@@ -4001,7 +4001,7 @@
         "venue_id": "v-44d1557c-72e2-5898-ba5c-80ff7540b392"
       },
       "v-45ee8f54-501a-5688-8b29-c66374492475": {
-        "active": true,
+        "active": false,
         "first_seen": "2026-10-14",
         "history": [
           {
@@ -4010,15 +4010,18 @@
               "Reference venue name changed"
             ],
             "status": "unverified"
+          },
+          {
+            "date": "2026-10-21",
+            "reasons": [],
+            "status": "resolved"
           }
         ],
-        "last_checked": "2026-10-16",
+        "last_checked": "2026-10-21",
         "place_name": "Burton U-T: Central",
         "postcode": "DE14 1BN",
         "pub_name": "Dial",
-        "reasons": [
-          "Reference venue name changed"
-        ],
+        "reasons": [],
         "reference": {},
         "research": {
           "checked_at": "2026-10-20",
@@ -4034,15 +4037,11 @@
           "camra": {
             "status": "conflict",
             "url": "https://camra.org.uk/pubs/124067"
-          },
-          "fsa_independent": {
-            "status": "no_name_match",
-            "url": ""
           }
         },
         "source_error": null,
-        "status": "unverified",
-        "unverified": true,
+        "status": "resolved",
+        "unverified": false,
         "venue_id": "v-45ee8f54-501a-5688-8b29-c66374492475"
       },
       "v-46d4e6a8-2503-564e-9f1e-8229e93de130": {
@@ -15270,7 +15269,7 @@
       }
     },
     "schema_version": 1,
-    "unverified_count": 30
+    "unverified_count": 29
   },
   "schema_version": 1,
   "venues": {
@@ -44523,6 +44522,36 @@
         "postcode": "DE14 1BN",
         "pub_name": "Dial"
       },
+      "location_approvals": [
+        {
+          "checked_at": "2026-10-21",
+          "comment_id": 6328998003,
+          "previous_pin": {
+            "evidence": [
+              {
+                "checked_at": "2026-09-11",
+                "difference_metres": 8.3,
+                "match": "venue_name_and_full_postcode",
+                "reference_coordinate": {
+                  "lat": 52.8039241,
+                  "lng": -1.6332179
+                },
+                "reference_postcode": "DE14 1BN",
+                "source": "camra",
+                "url": "https://camra.org.uk/pubs/124067"
+              }
+            ],
+            "lat": 52.8039241,
+            "lng": -1.6332179,
+            "review_reason": "Reference venue name changed",
+            "review_required": true,
+            "source": "openstreetmap-gb-extract"
+          },
+          "review_url": "https://github.com/bristolbagpiper/BassBeerMap/issues/5#issuecomment-6328998003",
+          "reviewed_by": "bristolbagpiper",
+          "source_url": "https://www.google.com/maps/place/The+Dial/@52.803817,-1.633027,643m/data=!3m2!1e3!4b1!4m6!3m5!1s0x487a024677e400d3:0x620ba200efa8668!8m2!3d52.803817!4d-1.633027!16s%2Fg%2F1th09zf7?entry=ttu&g_ep=EgoyMDI2MTAxOS4wIKXMDSoASAFQAw%3D%3D"
+        }
+      ],
       "location_research": {
         "checked_at": "2026-10-20",
         "coverage": {
@@ -44548,23 +44577,24 @@
       "verified_pin": {
         "evidence": [
           {
-            "checked_at": "2026-09-11",
-            "difference_metres": 8.3,
-            "match": "venue_name_and_full_postcode",
+            "checked_at": "2026-10-21",
+            "match": "owner_reviewed_named_place_and_full_postcode",
+            "reference_address": "174-175 Station St, Burton-on-Trent DE14 1BN",
             "reference_coordinate": {
-              "lat": 52.8039241,
-              "lng": -1.6332179
+              "lat": 52.803817,
+              "lng": -1.633027
             },
+            "reference_name": "The Dial",
             "reference_postcode": "DE14 1BN",
-            "source": "camra",
-            "url": "https://camra.org.uk/pubs/124067"
+            "review_url": "https://github.com/bristolbagpiper/BassBeerMap/issues/5#issuecomment-6328998003",
+            "reviewed_by": "bristolbagpiper",
+            "source": "google-maps-named-place",
+            "url": "https://www.google.com/maps/place/The+Dial/@52.803817,-1.633027,643m/data=!3m2!1e3!4b1!4m6!3m5!1s0x487a024677e400d3:0x620ba200efa8668!8m2!3d52.803817!4d-1.633027!16s%2Fg%2F1th09zf7?entry=ttu&g_ep=EgoyMDI2MTAxOS4wIKXMDSoASAFQAw%3D%3D"
           }
         ],
-        "lat": 52.8039241,
-        "lng": -1.6332179,
-        "review_reason": "Reference venue name changed",
-        "review_required": true,
-        "source": "openstreetmap-gb-extract"
+        "lat": 52.803817,
+        "lng": -1.633027,
+        "source": "owner-reviewed-google-maps"
       }
     },
     "v-4634cde4-72d5-570d-bf92-0de3a94336f5": {

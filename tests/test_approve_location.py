@@ -1,0 +1,94 @@
+import unittest
+
+from approve_location import approved_commands, validate_google_place
+
+
+VENUE_ID = "v-152d1ab1-df05-55e1-a620-e4f9d08cdfd6"
+PLACE_URL = (
+    "https://www.google.com/maps/place/Black+Cat+Parr+Street/"
+    "@53.4016502,-2.9822168,512m/data=!3m2!1e3!4b1!4m14!1m7!3m6!"
+    "1s0x487b21e290e5b141:0xf01add51fe76ea7!2sBlack+Cat+Parr+Street!"
+    "8m2!3d53.4016502!4d-2.9796419!16s%2Fg%2F11zkc1n1lr!3m5!"
+    "1s0x487b21e290e5b141:0xf01add51fe76ea7!8m2!3d53.4016502!"
+    "4d-2.9796419!16s%2Fg%2F11zkc1n1lr"
+)
+ROW = {"pub_name": "Black Cat Bar", "place_name": "Liverpool: Central", "postcode": "L1 4JN"}
+CENTRE = {"lat": 53.4022, "lng": -2.98134}
+
+
+def event(body, login="bristolbagpiper", user_type="User", issue=5):
+    return {
+        "comment": {
+            "user": {"login": login, "type": user_type},
+            "body": body,
+        },
+        "issue": {"number": issue},
+    }
+
+
+class ApprovalCommandTests(unittest.TestCase):
+    def test_google_place_command_is_parsed_with_explicit_point_and_address(self):
+        command = (
+            f'/verify-location {VENUE_ID} google 53.4016502 -2.9796419 '
+            f'{PLACE_URL} "Black Cat Parr Street" "25 Parr St, Liverpool L1 4JN"'
+        )
+        result = approved_commands(event(command), "bristolbagpiper")
+        self.assertEqual(result, [{
+            "kind": "google",
+            "venue_id": VENUE_ID,
+            "lat": 53.4016502,
+            "lng": -2.9796419,
+            "url": PLACE_URL,
+            "reference_name": "Black Cat Parr Street",
+            "reference_address": "25 Parr St, Liverpool L1 4JN",
+        }])
+
+    def test_existing_camra_command_remains_supported(self):
+        url = "https://camra.org.uk/pubs/173888"
+        result = approved_commands(
+            event(f"/verify-location {VENUE_ID} {url}"), "bristolbagpiper"
+        )
+        self.assertEqual(result, [{"kind": "camra", "venue_id": VENUE_ID, "url": url}])
+
+    def test_only_repository_owner_can_submit(self):
+        with self.assertRaisesRegex(ValueError, "Only the repository owner"):
+            approved_commands(
+                event(f"/verify-location {VENUE_ID} https://camra.org.uk/pubs/173888", login="someone-else"),
+                "bristolbagpiper",
+            )
+
+    def test_google_place_requires_matching_marker_coordinates_and_full_postcode(self):
+        command = {
+            "lat": 53.4016502,
+            "lng": -2.9796419,
+            "url": PLACE_URL,
+            "reference_name": "Black Cat Parr Street",
+            "reference_address": "25 Parr St, Liverpool L1 4JN",
+        }
+        validate_google_place(command, ROW, CENTRE)
+
+    def test_google_place_rejects_coordinates_different_from_named_marker(self):
+        command = {
+            "lat": 53.4022,
+            "lng": -2.98134,
+            "url": PLACE_URL,
+            "reference_name": "Black Cat Parr Street",
+            "reference_address": "25 Parr St, Liverpool L1 4JN",
+        }
+        with self.assertRaisesRegex(ValueError, "must match the named Google Maps place marker"):
+            validate_google_place(command, ROW, CENTRE)
+
+    def test_google_place_requires_matching_full_postcode(self):
+        command = {
+            "lat": 53.4016502,
+            "lng": -2.9796419,
+            "url": PLACE_URL,
+            "reference_name": "Black Cat Parr Street",
+            "reference_address": "25 Parr Street, Liverpool L1 4HY",
+        }
+        with self.assertRaisesRegex(ValueError, "full postcode"):
+            validate_google_place(command, ROW, CENTRE)
+
+
+if __name__ == "__main__":
+    unittest.main()

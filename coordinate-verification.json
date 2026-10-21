@@ -1,7 +1,7 @@
 {
   "counts": {
-    "venue_coordinate_requires_review": 32,
-    "verified_venue": 1012
+    "venue_coordinate_requires_review": 31,
+    "verified_venue": 1013
   },
   "generated_at": "2026-10-21",
   "policy": {
@@ -6694,40 +6694,31 @@
       "venue_id": "v-42849d87-7e78-54f2-8b46-6c1ce4578fa3"
     },
     "constitutional club (pmc)|burbage|le10 2de": {
-      "coordinate_source": "camra-pubs-location-audit",
-      "display_precision": "postcode",
+      "coordinate_source": "owner-reviewed-google-maps",
+      "display_precision": "venue",
       "evidence": [
         {
-          "checked_at": "2026-09-11",
-          "difference_metres": 0.0,
-          "match": "venue_name_and_full_postcode",
+          "checked_at": "2026-10-21",
+          "match": "owner_reviewed_named_place_and_full_postcode",
+          "reference_address": "64 Church St, Burbage, Hinckley LE10 2DE",
           "reference_coordinate": {
-            "lat": 52.52999,
-            "lng": -1.34841
+            "lat": 52.5299606,
+            "lng": -1.3485631
           },
+          "reference_name": "Burbage & District Constitutional Club",
           "reference_postcode": "LE10 2DE",
-          "source": "camra",
-          "url": "https://camra.org.uk/pubs/181789"
-        },
-        {
-          "checked_at": "2026-09-11",
-          "difference_metres": 0,
-          "match": "postcode_fallback_replaced",
-          "reference_coordinate": {
-            "lat": 52.52999,
-            "lng": -1.34841
-          },
-          "reference_postcode": "LE10 2DE",
-          "source": "camra-pubs-location-audit",
-          "url": "https://camra.org.uk/pubs/181789"
+          "review_url": "https://github.com/bristolbagpiper/BassBeerMap/issues/5#issuecomment-6328897769",
+          "reviewed_by": "bristolbagpiper",
+          "source": "google-maps-named-place",
+          "url": "https://www.google.com/maps/place/Burbage+%26+District+Constitutional+Club/@52.5299604,-1.3487907,81m/data=!3m1!1e3!4m6!3m5!1s0x48775ace98fdd0ed:0x138717d1b385246c!8m2!3d52.5299606!4d-1.3485631!16s%2Fg%2F1tg7rj7f?entry=ttu&g_ep=EgoyMDI2MTAxOS4wIKXMDSoASAFQAw%3D%3D"
         }
       ],
-      "lat": 52.52999,
-      "lng": -1.34841,
+      "lat": 52.5299606,
+      "lng": -1.3485631,
       "place_name": "Burbage",
       "postcode": "LE10 2DE",
       "pub_name": "Constitutional Club (PMC)",
-      "status": "venue_coordinate_requires_review",
+      "status": "verified_venue",
       "venue_id": "v-81c9b5aa-f6be-589b-b9e0-b5fe40ab9ef9"
     },
     "constitutional club (pmc)|swadlincote: central|de11 0an": {

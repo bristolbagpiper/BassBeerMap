@@ -1,5 +1,5 @@
 {
-  "active_count": 37,
+  "active_count": 36,
   "records": {
     "v-00a08839-2b8a-5782-b6c7-0bdce4cddb2f": {
       "active": false,
@@ -8398,7 +8398,7 @@
       "venue_id": "v-81b026f2-0fdf-5f62-a2b2-95e3e3cd9c14"
     },
     "v-81c9b5aa-f6be-589b-b9e0-b5fe40ab9ef9": {
-      "active": true,
+      "active": false,
       "first_seen": "2026-10-19",
       "history": [
         {
@@ -8407,15 +8407,18 @@
             "Reference venue name changed"
           ],
           "status": "unverified"
+        },
+        {
+          "date": "2026-10-21",
+          "reasons": [],
+          "status": "resolved"
         }
       ],
-      "last_checked": "2026-10-19",
+      "last_checked": "2026-10-21",
       "place_name": "Burbage",
       "postcode": "LE10 2DE",
       "pub_name": "Constitutional Club (PMC)",
-      "reasons": [
-        "Reference venue name changed"
-      ],
+      "reasons": [],
       "reference": {},
       "research": {
         "checked_at": "2026-10-20",
@@ -8435,15 +8438,11 @@
         "camra-pubs-location-audit": {
           "status": "conflict",
           "url": "https://camra.org.uk/pubs/181789"
-        },
-        "fsa_independent": {
-          "status": "no_name_match",
-          "url": ""
         }
       },
       "source_error": null,
-      "status": "unverified",
-      "unverified": true,
+      "status": "resolved",
+      "unverified": false,
       "venue_id": "v-81c9b5aa-f6be-589b-b9e0-b5fe40ab9ef9"
     },
     "v-82d27ed9-bb32-515b-a67d-b4ddfc98eb6c": {
@@ -15271,5 +15270,5 @@
     }
   },
   "schema_version": 1,
-  "unverified_count": 32
+  "unverified_count": 31
 }

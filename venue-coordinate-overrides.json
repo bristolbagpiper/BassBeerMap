@@ -646,16 +646,19 @@
       "source_url": "https://www.openstreetmap.org/node/12386186884"
     },
     "constitutional club (pmc)|burbage|le10 2de": {
-      "audit_reason": "postcode_fallback_replaced",
-      "checked_at": "2026-09-11",
-      "lat": 52.52999,
-      "lng": -1.34841,
-      "previous_difference_metres": 9.3,
-      "previous_lat": 52.52998,
-      "previous_lng": -1.348546,
-      "previous_source": "postcode",
-      "source": "camra-pubs-location-audit",
-      "source_url": "https://camra.org.uk/pubs/181789"
+      "audit_reason": "manual_named_place_address_and_map_check",
+      "checked_at": "2026-10-21",
+      "lat": 52.5299606,
+      "lng": -1.3485631,
+      "previous_difference_metres": 10.9,
+      "previous_lat": 52.52999,
+      "previous_lng": -1.34841,
+      "previous_source": "camra-pubs-location-audit",
+      "reference_address": "64 Church St, Burbage, Hinckley LE10 2DE",
+      "reference_name": "Burbage & District Constitutional Club",
+      "review_note": "Repository owner confirmed the named-place marker and full address in issue #5.",
+      "source": "google-maps-named-place",
+      "source_url": "https://www.google.com/maps/place/Burbage+%26+District+Constitutional+Club/@52.5299604,-1.3487907,81m/data=!3m1!1e3!4m6!3m5!1s0x48775ace98fdd0ed:0x138717d1b385246c!8m2!3d52.5299606!4d-1.3485631!16s%2Fg%2F1tg7rj7f?entry=ttu&g_ep=EgoyMDI2MTAxOS4wIKXMDSoASAFQAw%3D%3D"
     },
     "constitutional club (pmc)|swadlincote: central|de11 0an": {
       "audit_reason": "postcode_fallback_replaced",

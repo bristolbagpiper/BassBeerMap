@@ -207,6 +207,8 @@ class SourceEvidenceTests(unittest.TestCase):
         self.assertFalse(name_matches('Red Lion', 'Red Lion and Crown, Bristol'))
         self.assertTrue(name_matches('Boons', 'Boons Horbury, Horbury', 'Horbury'))
         self.assertFalse(name_matches('Boons', 'Boons Liverpool, Liverpool', 'Horbury'))
+        self.assertTrue(name_matches('Bell', 'Bell at Standerwick, Standerwick - Quiz & Live Music', 'Standerwick'))
+        self.assertFalse(name_matches('Bell', 'Bell at Rode, Rode', 'Standerwick'))
 
     def test_aged_evidence_can_be_audited_and_quarantined_without_blocking_recovery(self):
         rows = [row()]
@@ -241,6 +243,15 @@ class SourceEvidenceTests(unittest.TestCase):
     def test_ordinary_successful_html_is_not_coordinate_evidence(self):
         with self.assertRaises(ValueError):
             parse_camra('<html><h1>Welcome</h1></html>')
+
+    def test_camra_locality_is_preserved_when_street_address_is_missing(self):
+        payload = {'@type': 'BarOrPub', 'name': 'Bell at Standerwick, Standerwick',
+                   'address': {'addressLocality': 'Standerwick', 'postalCode': 'BA11 2PR'},
+                   'geo': {'latitude': 51.25456, 'longitude': -2.26024}}
+        page = '<script type="application/ld+json">' + json.dumps(payload) + '</script>'
+        source = parse_camra(page)
+        self.assertEqual(source['address'], '')
+        self.assertEqual(source['locality'], 'Standerwick')
 
     def test_disputed_pin_cannot_be_automatically_restored(self):
         entry = {'verified_pin': dict(pin(), review_required=True, review_reason='address conflict')}

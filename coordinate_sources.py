@@ -31,8 +31,9 @@ def parse_camra(text):
     point = {'lat': float(entity['geo']['latitude']), 'lng': float(entity['geo']['longitude'])}
     if not point_valid(point):
         raise ValueError('Source coordinate is invalid or outside the directory region')
-    return dict(point, name=entity['name'], postcode=entity.get('address', {}).get('postalCode', ''),
-                address=entity.get('address', {}).get('streetAddress', ''))
+    address = entity.get('address') or {}
+    return dict(point, name=entity['name'], postcode=address.get('postalCode', ''),
+                address=address.get('streetAddress', ''), locality=address.get('addressLocality', ''))
 
 
 @lru_cache(maxsize=300)
@@ -48,7 +49,8 @@ def name_matches(listing, reference, place_name=''):
     normal = lambda value: re.sub(r'[^a-z0-9]', '', re.sub(r'\band\b|&', '', re.sub(r'^the\s+', '', value.casefold())))
     wanted = normal(re.sub(r'\s*\(PMC\)', '', listing, flags=re.I))
     actual = normal(reference.split(',')[0].split(' - ')[0])
-    if wanted == actual or (place_name and normal(f'{listing} {place_name}') == actual):
+    if (wanted == actual or (place_name and normal(f'{listing} {place_name}') == actual)
+            or (place_name and normal(f'{listing} at {place_name}') == actual)):
         return True
     return any(actual == wanted + suffix or wanted == actual + suffix
                for suffix in ('inn', 'hotel', 'pub', 'bar', 'alehouse', 'publichouse'))

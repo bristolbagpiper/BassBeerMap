@@ -80,6 +80,18 @@ class ResearchAndApprovalTests(unittest.TestCase):
             approve(self.root, self.stage, self.event, 'owner')
         self.assertEqual(read_json(self.stage / 'location-review.json')['unverified_count'], 0)
 
+    def test_owner_can_approve_camra_with_matching_locality_but_no_street_address(self):
+        source = dict(self.source, name='Example Inn at Bristol, Bristol - Local Pub',
+                      address='', locality='Bristol')
+        with patch('approve_location.fetch_text'), patch('approve_location.parse_camra', return_value=source):
+            approve(self.root, self.stage, self.event, 'owner')
+        entry = read_json(self.stage / 'venue-registry.json')['venues'][self.identifier]
+        evidence = entry['verified_pin']['evidence'][0]
+        self.assertEqual(evidence['reference_address'], '')
+        self.assertEqual(evidence['reference_locality'], 'Bristol')
+        self.assertEqual(evidence['match'], 'owner_reviewed_named_locality_and_map')
+        self.assertEqual(read_json(self.stage / 'location-review.json')['unverified_count'], 0)
+
     def test_changed_candidate_coordinate_requires_research_again(self):
         self.registry['venues'][self.identifier]['location_research'] = {'proposals': [dict(self.source, url=self.url)]}
         write_release(self.root, [self.listing], self.registry, {}, {'BS1 1AA': {'lat': 51.45, 'lng': -2.59}})

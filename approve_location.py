@@ -58,13 +58,18 @@ def approve(root, staging, event, owner):
         centre = read_json(root / 'pub-coordinates.json')['coordinates'][row['postcode']]
         if distance_metres(source, centre) > 6000:
             raise ValueError('Source is more than 6 km from the listed area; requires a dedicated relocation/address review')
-        if not source['address'] or not source['postcode']:
-            raise ValueError('Source lacks a named address and full postcode')
+        locality = source.get('locality', '').strip()
+        listing_locality = row.get('place_name', '').strip()
+        locality_matches = bool(locality and listing_locality and locality.casefold() == listing_locality.casefold())
+        if not source.get('postcode') or (not source.get('address') and not locality_matches):
+            raise ValueError('Source lacks a named street address or matching locality and full postcode')
         previous = copy.deepcopy(entry.get('verified_pin'))
         pin = dict(lat=source['lat'], lng=source['lng'], source='owner-reviewed-camra', evidence=[dict(
-            source='camra', url=url, checked_at=date.today().isoformat(), match='owner_reviewed_named_address_and_map',
+            source='camra', url=url, checked_at=date.today().isoformat(),
+            match=('owner_reviewed_named_address_and_map' if source.get('address') else 'owner_reviewed_named_locality_and_map'),
             reference_coordinate=dict(lat=source['lat'], lng=source['lng']), reference_name=source['name'],
-            reference_address=source['address'], reference_postcode=source['postcode'],
+            reference_address=source.get('address', ''), reference_locality=locality,
+            reference_postcode=source['postcode'],
             reviewed_by=owner, review_url=event['comment']['html_url'])])
         if row['postcode'].replace(' ', '').upper() != source['postcode'].replace(' ', '').upper():
             pin['metadata_issue'] = dict(field='postcode', listed=row['postcode'], reference=source['postcode'], source_url=url)

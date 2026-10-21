@@ -1,5 +1,5 @@
 {
-  "active_count": 33,
+  "active_count": 32,
   "records": {
     "v-00a08839-2b8a-5782-b6c7-0bdce4cddb2f": {
       "active": false,
@@ -5851,7 +5851,7 @@
       "venue_id": "v-6014c479-d96a-5eaf-a7d1-3a3b68eaa7ff"
     },
     "v-6040a12f-787d-5099-a640-bc3a1fdc1c6c": {
-      "active": true,
+      "active": false,
       "first_seen": "2026-10-16",
       "history": [
         {
@@ -5860,15 +5860,18 @@
             "FSA no longer provides an unambiguous agreeing venue"
           ],
           "status": "unverified"
+        },
+        {
+          "date": "2026-10-21",
+          "reasons": [],
+          "status": "resolved"
         }
       ],
-      "last_checked": "2026-10-19",
+      "last_checked": "2026-10-21",
       "place_name": "Leek",
       "postcode": "ST13 6HX",
       "pub_name": "Inkspot",
-      "reasons": [
-        "FSA no longer provides an unambiguous agreeing venue"
-      ],
+      "reasons": [],
       "reference": {},
       "research": {
         "checked_at": "2026-10-20",
@@ -5884,15 +5887,11 @@
         "food_standards_agency": {
           "status": "conflict",
           "url": "https://api.ratings.food.gov.uk/Establishments?address=ST13+6HX&pageSize=100&pageNumber=1"
-        },
-        "fsa_independent": {
-          "status": "coordinate_agreement",
-          "url": "https://ratings.food.gov.uk/business/1871203"
         }
       },
       "source_error": null,
-      "status": "unverified",
-      "unverified": true,
+      "status": "resolved",
+      "unverified": false,
       "venue_id": "v-6040a12f-787d-5099-a640-bc3a1fdc1c6c"
     },
     "v-606ed382-96eb-537b-b81c-c995f62186e7": {
@@ -15267,5 +15266,5 @@
     }
   },
   "schema_version": 1,
-  "unverified_count": 28
+  "unverified_count": 27
 }

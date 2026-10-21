@@ -1,7 +1,7 @@
 {
   "counts": {
-    "venue_coordinate_requires_review": 28,
-    "verified_venue": 1016
+    "venue_coordinate_requires_review": 27,
+    "verified_venue": 1017
   },
   "generated_at": "2026-10-21",
   "policy": {
@@ -13862,28 +13862,31 @@
       "venue_id": "v-a133f55b-7780-5435-a9a1-4f3b52e1acbe"
     },
     "inkspot|leek|st13 6hx": {
-      "coordinate_source": "food-standards-agency-fhrs",
-      "display_precision": "postcode",
+      "coordinate_source": "owner-reviewed-google-maps",
+      "display_precision": "venue",
       "evidence": [
         {
-          "checked_at": "2026-09-11",
-          "difference_metres": 0.0,
-          "match": "venue_name_or_safe_alias_and_full_postcode",
+          "checked_at": "2026-10-21",
+          "match": "owner_reviewed_named_place_and_full_postcode",
+          "reference_address": "3 Market St, Leek ST13 6HX",
           "reference_coordinate": {
-            "lat": 53.1064453125,
-            "lng": -2.02351498603821
+            "lat": 53.1059391,
+            "lng": -2.023426
           },
+          "reference_name": "The Inkspot",
           "reference_postcode": "ST13 6HX",
-          "source": "food_standards_agency",
-          "url": "https://api.ratings.food.gov.uk/Establishments?address=ST13+6HX&pageSize=100&pageNumber=1"
+          "review_url": "https://github.com/bristolbagpiper/BassBeerMap/issues/5#issuecomment-6329156788",
+          "reviewed_by": "bristolbagpiper",
+          "source": "google-maps-named-place",
+          "url": "https://www.google.com/maps/place/The+Inkspot/@53.1059036,-2.0238296,95m/data=!3m2!1e3!5s0x487a3f5708b8ffcd:0x514a0dc200a55888!4m6!3m5!1s0x487a3f8bc732c89f:0xf91504a8d7f902c!8m2!3d53.1059391!4d-2.023426!16s%2Fg%2F11mdp812nj?entry=ttu&g_ep=EgoyMDI2MTAxOS4wIKXMDSoASAFQAw%3D%3D"
         }
       ],
-      "lat": 53.1064453125,
-      "lng": -2.02351498603821,
+      "lat": 53.1059391,
+      "lng": -2.023426,
       "place_name": "Leek",
       "postcode": "ST13 6HX",
       "pub_name": "Inkspot",
-      "status": "venue_coordinate_requires_review",
+      "status": "verified_venue",
       "venue_id": "v-6040a12f-787d-5099-a640-bc3a1fdc1c6c"
     },
     "irby mill|greasby|ch49 3nt": {

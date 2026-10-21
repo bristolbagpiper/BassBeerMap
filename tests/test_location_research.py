@@ -30,7 +30,7 @@ class ResearchAndApprovalTests(unittest.TestCase):
         self.source = dict(lat=51.45, lng=-2.59, name='Example Inn, Bristol', postcode='BS1 1AA', address='1 High Street')
 
     def test_only_owner_human_commands_are_accepted(self):
-        self.assertEqual(approved_commands(self.event, 'owner'), [(self.identifier, self.url)])
+        self.assertEqual(approved_commands(self.event, 'owner'), [{'kind': 'camra', 'venue_id': self.identifier, 'url': self.url}])
         for field, value in [('login', 'outsider'), ('type', 'Bot')]:
             event = copy.deepcopy(self.event)
             event['comment']['user'][field] = value

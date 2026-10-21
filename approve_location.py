@@ -121,10 +121,13 @@ def stage_manual_checks(root, staging, reviews):
     """Keep the manually accepted point and its production override in sync."""
     root, staging = Path(root), Path(staging)
     checks_path = root / "audit/manual-place-checks.csv"
-    with checks_path.open(encoding="utf-8", newline="") as handle:
-        reader = csv.DictReader(handle)
-        fieldnames = reader.fieldnames or MANUAL_CHECK_FIELDS
-        rows = list(reader)
+    if checks_path.exists():
+        with checks_path.open(encoding="utf-8", newline="") as handle:
+            reader = csv.DictReader(handle)
+            fieldnames = reader.fieldnames or MANUAL_CHECK_FIELDS
+            rows = list(reader)
+    else:
+        fieldnames, rows = MANUAL_CHECK_FIELDS, []
     overrides_payload = read_json(root / "venue-coordinate-overrides.json", {"venues": {}})
     overrides = overrides_payload.setdefault("venues", {})
     generated = read_json(root / "venue-coordinates.json", {"venues": {}}).get("venues", {})
@@ -284,9 +287,19 @@ def approve(root, staging, event, owner):
     staging.mkdir(parents=True, exist_ok=True)
     write_release(staging, rows, registry, read_json(root / "directory-meta.json"), read_json(root / "pub-coordinates.json")["coordinates"])
     # Keep non-release audit inputs available to the candidate validators.
-    shutil.copyfile(root / "venue-coordinate-overrides.json", staging / "venue-coordinate-overrides.json")
+    overrides_path = root / "venue-coordinate-overrides.json"
+    if overrides_path.exists():
+        shutil.copyfile(overrides_path, staging / "venue-coordinate-overrides.json")
+    else:
+        write_json(staging / "venue-coordinate-overrides.json", {"venues": {}})
     (staging / "audit").mkdir(parents=True, exist_ok=True)
-    shutil.copyfile(root / "audit/manual-place-checks.csv", staging / "audit/manual-place-checks.csv")
+    checks_path = root / "audit/manual-place-checks.csv"
+    if checks_path.exists():
+        shutil.copyfile(checks_path, staging / "audit/manual-place-checks.csv")
+    else:
+        with (staging / "audit/manual-place-checks.csv").open("w", encoding="utf-8", newline="") as handle:
+            writer = csv.DictWriter(handle, fieldnames=MANUAL_CHECK_FIELDS, lineterminator="\n")
+            writer.writeheader()
     if manual_reviews:
         stage_manual_checks(root, staging, manual_reviews)
     shutil.copyfile(root / "latest-bass-directory.pdf", staging / "latest-bass-directory.pdf")

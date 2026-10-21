@@ -1,7 +1,7 @@
 {
   "counts": {
-    "venue_coordinate_requires_review": 35,
-    "verified_venue": 1009
+    "venue_coordinate_requires_review": 34,
+    "verified_venue": 1010
   },
   "generated_at": "2026-10-21",
   "policy": {
@@ -5384,40 +5384,31 @@
       "venue_id": "v-e4c45694-71bb-5b2e-8133-15e62890f98b"
     },
     "chandlers|shearsby|le17 6pl": {
-      "coordinate_source": "camra-pubs-location-audit",
-      "display_precision": "postcode",
+      "coordinate_source": "owner-reviewed-google-maps",
+      "display_precision": "venue",
       "evidence": [
         {
-          "checked_at": "2026-09-11",
-          "difference_metres": 0.0,
-          "match": "venue_name_and_full_postcode",
+          "checked_at": "2026-10-21",
+          "match": "owner_reviewed_named_place_and_full_postcode",
+          "reference_address": "Fenny Lane, Shearsby, LE17 6PL",
           "reference_coordinate": {
-            "lat": 52.511786,
-            "lng": -1.082842
+            "lat": 52.5118374,
+            "lng": -1.0828104
           },
+          "reference_name": "The Chandlers Arms",
           "reference_postcode": "LE17 6PL",
-          "source": "camra",
-          "url": "https://camra.org.uk/pubs/173888"
-        },
-        {
-          "checked_at": "2026-09-11",
-          "difference_metres": 0,
-          "match": "postcode_fallback_replaced",
-          "reference_coordinate": {
-            "lat": 52.511786,
-            "lng": -1.082842
-          },
-          "reference_postcode": "LE17 6PL",
-          "source": "camra-pubs-location-audit",
-          "url": "https://camra.org.uk/pubs/173888"
+          "review_url": "https://github.com/bristolbagpiper/BassBeerMap/issues/5#issuecomment-6322907563",
+          "reviewed_by": "bristolbagpiper",
+          "source": "google-maps-named-place",
+          "url": "https://www.google.com/maps/place/The+Chandlers+Arms/@52.5117654,-1.0831747,96m/data=!3m1!1e3!4m6!3m5!1s0x487768b35ae1401f:0xcb9bc552750fcd49!8m2!3d52.5118374!4d-1.0828104!16s%2Fg%2F1tf79ltd?entry=ttu&g_ep=EgoyMDI2MTAxOC4wIKXMDSoASAFQAw%3D%3D"
         }
       ],
-      "lat": 52.511786,
-      "lng": -1.082842,
+      "lat": 52.5118374,
+      "lng": -1.0828104,
       "place_name": "Shearsby",
       "postcode": "LE17 6PL",
       "pub_name": "Chandlers",
-      "status": "venue_coordinate_requires_review",
+      "status": "verified_venue",
       "venue_id": "v-5f2024a2-7c58-56fd-9a94-3f1066e9ccc1"
     },
     "charles roe|macclesfield|sk11 6dy": {

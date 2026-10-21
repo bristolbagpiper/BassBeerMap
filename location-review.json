@@ -1,5 +1,5 @@
 {
-  "active_count": 39,
+  "active_count": 38,
   "records": {
     "v-00a08839-2b8a-5782-b6c7-0bdce4cddb2f": {
       "active": false,
@@ -5750,7 +5750,7 @@
       "venue_id": "v-5e9138e0-7352-55f1-b255-7397c00900a8"
     },
     "v-5f2024a2-7c58-56fd-9a94-3f1066e9ccc1": {
-      "active": true,
+      "active": false,
       "first_seen": "2026-10-16",
       "history": [
         {
@@ -5759,15 +5759,18 @@
             "Reference venue name changed"
           ],
           "status": "unverified"
+        },
+        {
+          "date": "2026-10-21",
+          "reasons": [],
+          "status": "resolved"
         }
       ],
-      "last_checked": "2026-10-18",
+      "last_checked": "2026-10-21",
       "place_name": "Shearsby",
       "postcode": "LE17 6PL",
       "pub_name": "Chandlers",
-      "reasons": [
-        "Reference venue name changed"
-      ],
+      "reasons": [],
       "reference": {},
       "research": {
         "checked_at": "2026-10-20",
@@ -5801,15 +5804,11 @@
         "camra-pubs-location-audit": {
           "status": "conflict",
           "url": "https://camra.org.uk/pubs/173888"
-        },
-        "fsa_independent": {
-          "status": "ambiguous_or_missing_coordinates",
-          "url": ""
         }
       },
       "source_error": null,
-      "status": "unverified",
-      "unverified": true,
+      "status": "resolved",
+      "unverified": false,
       "venue_id": "v-5f2024a2-7c58-56fd-9a94-3f1066e9ccc1"
     },
     "v-6014c479-d96a-5eaf-a7d1-3a3b68eaa7ff": {
@@ -15261,5 +15260,5 @@
     }
   },
   "schema_version": 1,
-  "unverified_count": 35
+  "unverified_count": 34
 }

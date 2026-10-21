@@ -565,16 +565,19 @@
       "source_url": "https://www.google.com/maps/search/?api=1&query=Chaddesden+Park+Social+Club+DE21+6PD"
     },
     "chandlers|shearsby|le17 6pl": {
-      "audit_reason": "postcode_fallback_replaced",
-      "checked_at": "2026-09-11",
-      "lat": 52.511786,
-      "lng": -1.082842,
-      "previous_difference_metres": 63.7,
-      "previous_lat": 52.51142,
-      "previous_lng": -1.082118,
-      "previous_source": "postcode",
-      "source": "camra-pubs-location-audit",
-      "source_url": "https://camra.org.uk/pubs/173888"
+      "audit_reason": "manual_named_place_address_and_map_check",
+      "checked_at": "2026-10-21",
+      "lat": 52.5118374,
+      "lng": -1.0828104,
+      "previous_difference_metres": 6.1,
+      "previous_lat": 52.511786,
+      "previous_lng": -1.082842,
+      "previous_source": "camra-pubs-location-audit",
+      "reference_address": "Fenny Lane, Shearsby, LE17 6PL",
+      "reference_name": "The Chandlers Arms",
+      "review_note": "Repository owner confirmed the named-place marker and full address in issue #5.",
+      "source": "google-maps-named-place",
+      "source_url": "https://www.google.com/maps/place/The+Chandlers+Arms/@52.5117654,-1.0831747,96m/data=!3m1!1e3!4m6!3m5!1s0x487768b35ae1401f:0xcb9bc552750fcd49!8m2!3d52.5118374!4d-1.0828104!16s%2Fg%2F1tf79ltd?entry=ttu&g_ep=EgoyMDI2MTAxOC4wIKXMDSoASAFQAw%3D%3D"
     },
     "chestnuts (pmc)|nuneaton: central|cv10 0ab": {
       "audit_reason": "manual_named_place_address_and_map_check",

@@ -1,6 +1,6 @@
 {
   "location_review": {
-    "active_count": 38,
+    "active_count": 37,
     "records": {
       "v-00a08839-2b8a-5782-b6c7-0bdce4cddb2f": {
         "active": false,
@@ -4891,7 +4891,7 @@
         "venue_id": "v-54836fe6-8cdb-55fb-b63e-31051b80fc84"
       },
       "v-54a1b390-c593-5828-a06e-52905548f5ca": {
-        "active": true,
+        "active": false,
         "first_seen": "2026-10-15",
         "history": [
           {
@@ -4900,15 +4900,18 @@
               "Reference venue name changed"
             ],
             "status": "unverified"
+          },
+          {
+            "date": "2026-10-21",
+            "reasons": [],
+            "status": "resolved"
           }
         ],
-        "last_checked": "2026-10-17",
+        "last_checked": "2026-10-21",
         "place_name": "Swadlincote: Central",
         "postcode": "DE11 0AN",
         "pub_name": "Constitutional Club (PMC)",
-        "reasons": [
-          "Reference venue name changed"
-        ],
+        "reasons": [],
         "reference": {},
         "research": {
           "checked_at": "2026-10-20",
@@ -4935,8 +4938,8 @@
           }
         },
         "source_error": null,
-        "status": "unverified",
-        "unverified": true,
+        "status": "resolved",
+        "unverified": false,
         "venue_id": "v-54a1b390-c593-5828-a06e-52905548f5ca"
       },
       "v-552c7fa1-965e-525c-9c6d-00f7d8e85446": {
@@ -15269,7 +15272,7 @@
       }
     },
     "schema_version": 1,
-    "unverified_count": 33
+    "unverified_count": 32
   },
   "schema_version": 1,
   "venues": {
@@ -50480,7 +50483,8 @@
     },
     "v-54a1b390-c593-5828-a06e-52905548f5ca": {
       "aliases": [
-        "constitutional club (pmc)|swadlincote: central|de11 0an"
+        "constitutional club (pmc)|swadlincote: central|de11 0an",
+        "swadlincote constitutional club|swadlincote: central|de11 0an"
       ],
       "current_key": "constitutional club (pmc)|swadlincote: central|de11 0an",
       "independent_location_check": {
@@ -50529,6 +50533,48 @@
         "postcode": "DE11 0AN",
         "pub_name": "Constitutional Club (PMC)"
       },
+      "location_approvals": [
+        {
+          "checked_at": "2026-10-21",
+          "comment_id": 6323229182,
+          "previous_pin": {
+            "evidence": [
+              {
+                "checked_at": "2026-09-11",
+                "difference_metres": 0.0,
+                "match": "venue_name_and_full_postcode",
+                "reference_coordinate": {
+                  "lat": 52.77442071513,
+                  "lng": -1.557683820186
+                },
+                "reference_postcode": "DE11 0AN",
+                "source": "camra",
+                "url": "https://camra.org.uk/pubs/124097"
+              },
+              {
+                "checked_at": "2026-09-11",
+                "difference_metres": 0,
+                "match": "postcode_fallback_replaced",
+                "reference_coordinate": {
+                  "lat": 52.77442071513,
+                  "lng": -1.557683820186
+                },
+                "reference_postcode": "DE11 0AN",
+                "source": "camra-pubs-location-audit",
+                "url": "https://camra.org.uk/pubs/124097"
+              }
+            ],
+            "lat": 52.77442071513,
+            "lng": -1.557683820186,
+            "review_reason": "Reference venue name changed",
+            "review_required": true,
+            "source": "camra-pubs-location-audit"
+          },
+          "review_url": "https://github.com/bristolbagpiper/BassBeerMap/issues/5#issuecomment-6323229182",
+          "reviewed_by": "bristolbagpiper",
+          "source_url": "https://camra.org.uk/pubs/124097"
+        }
+      ],
       "location_research": {
         "checked_at": "2026-10-20",
         "coverage": {
@@ -50558,35 +50604,25 @@
       "verified_pin": {
         "evidence": [
           {
-            "checked_at": "2026-09-11",
-            "difference_metres": 0.0,
-            "match": "venue_name_and_full_postcode",
+            "checked_at": "2026-10-21",
+            "match": "owner_reviewed_named_address_and_map",
+            "reference_address": "7 Midland Road",
             "reference_coordinate": {
               "lat": 52.77442071513,
               "lng": -1.557683820186
             },
+            "reference_locality": "Swadlincote",
+            "reference_name": "Swadlincote Constitutional Club, Swadlincote",
             "reference_postcode": "DE11 0AN",
+            "review_url": "https://github.com/bristolbagpiper/BassBeerMap/issues/5#issuecomment-6323229182",
+            "reviewed_by": "bristolbagpiper",
             "source": "camra",
-            "url": "https://camra.org.uk/pubs/124097"
-          },
-          {
-            "checked_at": "2026-09-11",
-            "difference_metres": 0,
-            "match": "postcode_fallback_replaced",
-            "reference_coordinate": {
-              "lat": 52.77442071513,
-              "lng": -1.557683820186
-            },
-            "reference_postcode": "DE11 0AN",
-            "source": "camra-pubs-location-audit",
             "url": "https://camra.org.uk/pubs/124097"
           }
         ],
         "lat": 52.77442071513,
         "lng": -1.557683820186,
-        "review_reason": "Reference venue name changed",
-        "review_required": true,
-        "source": "camra-pubs-location-audit"
+        "source": "owner-reviewed-camra"
       }
     },
     "v-550340f5-bace-5f0d-9e9e-03d587634c4f": {

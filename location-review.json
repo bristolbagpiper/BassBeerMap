@@ -1,5 +1,5 @@
 {
-  "active_count": 38,
+  "active_count": 37,
   "records": {
     "v-00a08839-2b8a-5782-b6c7-0bdce4cddb2f": {
       "active": false,
@@ -4890,7 +4890,7 @@
       "venue_id": "v-54836fe6-8cdb-55fb-b63e-31051b80fc84"
     },
     "v-54a1b390-c593-5828-a06e-52905548f5ca": {
-      "active": true,
+      "active": false,
       "first_seen": "2026-10-15",
       "history": [
         {
@@ -4899,15 +4899,18 @@
             "Reference venue name changed"
           ],
           "status": "unverified"
+        },
+        {
+          "date": "2026-10-21",
+          "reasons": [],
+          "status": "resolved"
         }
       ],
-      "last_checked": "2026-10-17",
+      "last_checked": "2026-10-21",
       "place_name": "Swadlincote: Central",
       "postcode": "DE11 0AN",
       "pub_name": "Constitutional Club (PMC)",
-      "reasons": [
-        "Reference venue name changed"
-      ],
+      "reasons": [],
       "reference": {},
       "research": {
         "checked_at": "2026-10-20",
@@ -4934,8 +4937,8 @@
         }
       },
       "source_error": null,
-      "status": "unverified",
-      "unverified": true,
+      "status": "resolved",
+      "unverified": false,
       "venue_id": "v-54a1b390-c593-5828-a06e-52905548f5ca"
     },
     "v-552c7fa1-965e-525c-9c6d-00f7d8e85446": {
@@ -15268,5 +15271,5 @@
     }
   },
   "schema_version": 1,
-  "unverified_count": 33
+  "unverified_count": 32
 }

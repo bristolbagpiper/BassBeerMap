@@ -1,7 +1,7 @@
 {
   "counts": {
-    "venue_coordinate_requires_review": 33,
-    "verified_venue": 1011
+    "venue_coordinate_requires_review": 32,
+    "verified_venue": 1012
   },
   "generated_at": "2026-10-21",
   "policy": {
@@ -6731,31 +6731,23 @@
       "venue_id": "v-81c9b5aa-f6be-589b-b9e0-b5fe40ab9ef9"
     },
     "constitutional club (pmc)|swadlincote: central|de11 0an": {
-      "coordinate_source": "camra-pubs-location-audit",
-      "display_precision": "postcode",
+      "coordinate_source": "owner-reviewed-camra",
+      "display_precision": "venue",
       "evidence": [
         {
-          "checked_at": "2026-09-11",
-          "difference_metres": 0.0,
-          "match": "venue_name_and_full_postcode",
+          "checked_at": "2026-10-21",
+          "match": "owner_reviewed_named_address_and_map",
+          "reference_address": "7 Midland Road",
           "reference_coordinate": {
             "lat": 52.77442071513,
             "lng": -1.557683820186
           },
+          "reference_locality": "Swadlincote",
+          "reference_name": "Swadlincote Constitutional Club, Swadlincote",
           "reference_postcode": "DE11 0AN",
+          "review_url": "https://github.com/bristolbagpiper/BassBeerMap/issues/5#issuecomment-6323229182",
+          "reviewed_by": "bristolbagpiper",
           "source": "camra",
-          "url": "https://camra.org.uk/pubs/124097"
-        },
-        {
-          "checked_at": "2026-09-11",
-          "difference_metres": 0,
-          "match": "postcode_fallback_replaced",
-          "reference_coordinate": {
-            "lat": 52.77442071513,
-            "lng": -1.557683820186
-          },
-          "reference_postcode": "DE11 0AN",
-          "source": "camra-pubs-location-audit",
           "url": "https://camra.org.uk/pubs/124097"
         }
       ],
@@ -6764,7 +6756,7 @@
       "place_name": "Swadlincote: Central",
       "postcode": "DE11 0AN",
       "pub_name": "Constitutional Club (PMC)",
-      "status": "venue_coordinate_requires_review",
+      "status": "verified_venue",
       "venue_id": "v-54a1b390-c593-5828-a06e-52905548f5ca"
     },
     "coopers arms|weston on trent|de72 2bj": {

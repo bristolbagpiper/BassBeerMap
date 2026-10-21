@@ -1,5 +1,5 @@
 {
-  "active_count": 37,
+  "active_count": 43,
   "records": {
     "v-00a08839-2b8a-5782-b6c7-0bdce4cddb2f": {
       "active": false,
@@ -9501,6 +9501,46 @@
       "unverified": true,
       "venue_id": "v-9174bee8-338b-54f6-9f95-2f7be830455b"
     },
+    "v-93765f1e-9190-594b-9c77-6b96456e5433": {
+      "active": true,
+      "first_seen": "2026-10-21",
+      "history": [
+        {
+          "date": "2026-10-21",
+          "reasons": [
+            "Reference venue name changed"
+          ],
+          "status": "unverified"
+        }
+      ],
+      "last_checked": "2026-10-21",
+      "place_name": "Whitwick",
+      "postcode": "LE67 5GN",
+      "pub_name": "Three Horseshoes (Pollys)",
+      "reasons": [
+        "Reference venue name changed"
+      ],
+      "reference": {},
+      "research": {},
+      "source_checks": {
+        "camra": {
+          "status": "conflict",
+          "url": "https://camra.org.uk/pubs/171270"
+        },
+        "camra-pubs-location-audit": {
+          "status": "conflict",
+          "url": "https://camra.org.uk/pubs/171270"
+        },
+        "fsa_independent": {
+          "status": "no_name_match",
+          "url": ""
+        }
+      },
+      "source_error": null,
+      "status": "unverified",
+      "unverified": true,
+      "venue_id": "v-93765f1e-9190-594b-9c77-6b96456e5433"
+    },
     "v-93cef072-fe89-5716-82cc-0382b3448476": {
       "active": false,
       "first_seen": "2026-10-09",
@@ -9518,7 +9558,7 @@
           "status": "resolved"
         }
       ],
-      "last_checked": "2026-10-09",
+      "last_checked": "2026-10-21",
       "place_name": "Hulme End",
       "postcode": "SK17 0EX",
       "pub_name": "Manifold Inn",
@@ -9526,6 +9566,10 @@
       "reference": {},
       "research": {},
       "source_checks": {
+        "camra": {
+          "status": "confirmed",
+          "url": "https://camra.org.uk/pubs/143976"
+        },
         "fsa_independent": {
           "status": "coordinate_disagreement",
           "url": "https://ratings.food.gov.uk/business/1259417"
@@ -9553,7 +9597,7 @@
           "status": "resolved"
         }
       ],
-      "last_checked": "2026-10-09",
+      "last_checked": "2026-10-21",
       "place_name": "Stoke: Smallthorne",
       "postcode": "ST6 1NT",
       "pub_name": "White Hart",
@@ -9561,6 +9605,10 @@
       "reference": {},
       "research": {},
       "source_checks": {
+        "camra": {
+          "status": "confirmed",
+          "url": "https://camra.org.uk/pubs/122968"
+        },
         "fsa_independent": {
           "status": "coordinate_disagreement",
           "url": "https://ratings.food.gov.uk/business/681167"
@@ -9588,7 +9636,7 @@
           "status": "resolved"
         }
       ],
-      "last_checked": "2026-10-09",
+      "last_checked": "2026-10-21",
       "place_name": "Middleton by Wirksworth",
       "postcode": "DE4 4LS",
       "pub_name": "Rising Sun",
@@ -9596,6 +9644,10 @@
       "reference": {},
       "research": {},
       "source_checks": {
+        "camra": {
+          "status": "confirmed",
+          "url": "https://camra.org.uk/pubs/165669"
+        },
         "fsa_independent": {
           "status": "coordinate_disagreement",
           "url": "https://ratings.food.gov.uk/business/1626467"
@@ -9623,7 +9675,7 @@
           "status": "resolved"
         }
       ],
-      "last_checked": "2026-10-09",
+      "last_checked": "2026-10-21",
       "place_name": "Looe",
       "postcode": "PL13 1HN",
       "pub_name": "Globe Inn",
@@ -9631,6 +9683,10 @@
       "reference": {},
       "research": {},
       "source_checks": {
+        "camra": {
+          "status": "confirmed",
+          "url": "https://camra.org.uk/pubs/138921"
+        },
         "fsa_independent": {
           "status": "coordinate_disagreement",
           "url": "https://ratings.food.gov.uk/business/1768852"
@@ -9640,6 +9696,42 @@
       "status": "resolved",
       "unverified": false,
       "venue_id": "v-9516fb66-53e8-53a8-9bb0-922e7be7580f"
+    },
+    "v-95a10492-5d95-5fd1-85cd-7a9a58882d81": {
+      "active": true,
+      "first_seen": "2026-10-21",
+      "history": [
+        {
+          "date": "2026-10-21",
+          "reasons": [
+            "FSA no longer provides an unambiguous agreeing venue"
+          ],
+          "status": "unverified"
+        }
+      ],
+      "last_checked": "2026-10-21",
+      "place_name": "Dilhorne",
+      "postcode": "ST10 2PQ",
+      "pub_name": "Charlie Bassetts",
+      "reasons": [
+        "FSA no longer provides an unambiguous agreeing venue"
+      ],
+      "reference": {},
+      "research": {},
+      "source_checks": {
+        "food_standards_agency": {
+          "status": "conflict",
+          "url": "https://api.ratings.food.gov.uk/Establishments?address=ST10+2PQ&pageSize=100&pageNumber=1"
+        },
+        "fsa_independent": {
+          "status": "coordinate_agreement",
+          "url": "https://ratings.food.gov.uk/business/1806172"
+        }
+      },
+      "source_error": null,
+      "status": "unverified",
+      "unverified": true,
+      "venue_id": "v-95a10492-5d95-5fd1-85cd-7a9a58882d81"
     },
     "v-95b88dcf-eb87-53c8-8629-a0630c553722": {
       "active": false,
@@ -9658,7 +9750,7 @@
           "status": "resolved"
         }
       ],
-      "last_checked": "2026-10-09",
+      "last_checked": "2026-10-21",
       "place_name": "Loughborough",
       "postcode": "LE11 1UD",
       "pub_name": "White Hart",
@@ -9666,6 +9758,10 @@
       "reference": {},
       "research": {},
       "source_checks": {
+        "camra": {
+          "status": "confirmed",
+          "url": "https://camra.org.uk/pubs/171199"
+        },
         "fsa_independent": {
           "status": "coordinate_disagreement",
           "url": "https://ratings.food.gov.uk/business/147326"
@@ -9675,6 +9771,46 @@
       "status": "resolved",
       "unverified": false,
       "venue_id": "v-95b88dcf-eb87-53c8-8629-a0630c553722"
+    },
+    "v-9607544c-290c-57e9-922a-02fb2360c91c": {
+      "active": true,
+      "first_seen": "2026-10-21",
+      "history": [
+        {
+          "date": "2026-10-21",
+          "reasons": [
+            "Reference venue name changed"
+          ],
+          "status": "unverified"
+        }
+      ],
+      "last_checked": "2026-10-21",
+      "place_name": "Newcastle Emlyn",
+      "postcode": "SA38 9BG",
+      "pub_name": "Y Sgwâr (was Ivy Bush)",
+      "reasons": [
+        "Reference venue name changed"
+      ],
+      "reference": {},
+      "research": {},
+      "source_checks": {
+        "camra": {
+          "status": "conflict",
+          "url": "https://camra.org.uk/pubs/131517"
+        },
+        "camra-pubs-location-audit": {
+          "status": "conflict",
+          "url": "https://camra.org.uk/pubs/131517"
+        },
+        "fsa_independent": {
+          "status": "no_name_match",
+          "url": ""
+        }
+      },
+      "source_error": null,
+      "status": "unverified",
+      "unverified": true,
+      "venue_id": "v-9607544c-290c-57e9-922a-02fb2360c91c"
     },
     "v-96c69280-8350-5291-9fb1-4267938024b9": {
       "active": false,
@@ -9693,7 +9829,7 @@
           "status": "resolved"
         }
       ],
-      "last_checked": "2026-10-09",
+      "last_checked": "2026-10-21",
       "place_name": "Kenilworth",
       "postcode": "CV8 2HP",
       "pub_name": "Engine Inn",
@@ -9701,6 +9837,10 @@
       "reference": {},
       "research": {},
       "source_checks": {
+        "camra": {
+          "status": "confirmed",
+          "url": "https://camra.org.uk/pubs/140576"
+        },
         "fsa_independent": {
           "status": "coordinate_disagreement",
           "url": "https://ratings.food.gov.uk/business/242149"
@@ -9821,7 +9961,7 @@
           "status": "resolved"
         }
       ],
-      "last_checked": "2026-10-09",
+      "last_checked": "2026-10-21",
       "place_name": "Belper: Central",
       "postcode": "DE56 1UU",
       "pub_name": "Tavern",
@@ -9829,6 +9969,10 @@
       "reference": {},
       "research": {},
       "source_checks": {
+        "camra": {
+          "status": "confirmed",
+          "url": "https://camra.org.uk/pubs/113232"
+        },
         "fsa_independent": {
           "status": "coordinate_disagreement",
           "url": "https://ratings.food.gov.uk/business/1079"
@@ -9856,7 +10000,7 @@
           "status": "resolved"
         }
       ],
-      "last_checked": "2026-10-09",
+      "last_checked": "2026-10-21",
       "place_name": "Ashby-de-la-Zouch",
       "postcode": "LE65 2PW",
       "pub_name": "Railway Tavern",
@@ -9864,6 +10008,10 @@
       "reference": {},
       "research": {},
       "source_checks": {
+        "camra": {
+          "status": "confirmed",
+          "url": "https://camra.org.uk/pubs/171184"
+        },
         "fsa_independent": {
           "status": "coordinate_disagreement",
           "url": "https://ratings.food.gov.uk/business/1302185"
@@ -9873,6 +10021,86 @@
       "status": "resolved",
       "unverified": false,
       "venue_id": "v-99376d26-255f-5a56-bf82-18e850c579ac"
+    },
+    "v-99412060-4aa7-5602-85e3-0ddf38526a87": {
+      "active": true,
+      "first_seen": "2026-10-21",
+      "history": [
+        {
+          "date": "2026-10-21",
+          "reasons": [
+            "Reference venue name changed"
+          ],
+          "status": "unverified"
+        }
+      ],
+      "last_checked": "2026-10-21",
+      "place_name": "Derby: Spondon",
+      "postcode": "DE21 7JP",
+      "pub_name": "Village/Conservative Club (PMC)",
+      "reasons": [
+        "Reference venue name changed"
+      ],
+      "reference": {},
+      "research": {},
+      "source_checks": {
+        "camra": {
+          "status": "conflict",
+          "url": "https://camra.org.uk/pubs/143292"
+        },
+        "camra-pubs-location-audit": {
+          "status": "conflict",
+          "url": "https://camra.org.uk/pubs/143292"
+        },
+        "fsa_independent": {
+          "status": "no_name_match",
+          "url": ""
+        }
+      },
+      "source_error": null,
+      "status": "unverified",
+      "unverified": true,
+      "venue_id": "v-99412060-4aa7-5602-85e3-0ddf38526a87"
+    },
+    "v-9a1e8581-39f4-58cd-949d-c3908758ad50": {
+      "active": true,
+      "first_seen": "2026-10-21",
+      "history": [
+        {
+          "date": "2026-10-21",
+          "reasons": [
+            "Reference venue name changed"
+          ],
+          "status": "unverified"
+        }
+      ],
+      "last_checked": "2026-10-21",
+      "place_name": "Tynemouth",
+      "postcode": "NE30 4DZ",
+      "pub_name": "Turks Head (Stuffed Dog)",
+      "reasons": [
+        "Reference venue name changed"
+      ],
+      "reference": {},
+      "research": {},
+      "source_checks": {
+        "camra": {
+          "status": "conflict",
+          "url": "https://camra.org.uk/pubs/193172"
+        },
+        "camra-pubs-location-audit": {
+          "status": "conflict",
+          "url": "https://camra.org.uk/pubs/193172"
+        },
+        "fsa_independent": {
+          "status": "no_name_match",
+          "url": ""
+        }
+      },
+      "source_error": null,
+      "status": "unverified",
+      "unverified": true,
+      "venue_id": "v-9a1e8581-39f4-58cd-949d-c3908758ad50"
     },
     "v-9a79cf57-994d-5621-9d2d-800516e98833": {
       "active": false,
@@ -9942,7 +10170,7 @@
           "status": "resolved"
         }
       ],
-      "last_checked": "2026-10-09",
+      "last_checked": "2026-10-21",
       "place_name": "Hathern",
       "postcode": "LE12 5HY",
       "pub_name": "Dew Drop Inn",
@@ -9950,6 +10178,10 @@
       "reference": {},
       "research": {},
       "source_checks": {
+        "camra": {
+          "status": "confirmed",
+          "url": "https://camra.org.uk/pubs/171382"
+        },
         "fsa_independent": {
           "status": "coordinate_disagreement",
           "url": "https://ratings.food.gov.uk/business/1629508"
@@ -10035,7 +10267,7 @@
           "status": "resolved"
         }
       ],
-      "last_checked": "2026-10-09",
+      "last_checked": "2026-10-21",
       "place_name": "Pontfaen",
       "postcode": "SA65 9SE",
       "pub_name": "Dyffryn Arms",
@@ -10043,6 +10275,10 @@
       "reference": {},
       "research": {},
       "source_checks": {
+        "camra": {
+          "status": "confirmed",
+          "url": "https://camra.org.uk/pubs/159867"
+        },
         "fsa_independent": {
           "status": "coordinate_disagreement",
           "url": "https://ratings.food.gov.uk/business/856350"
@@ -10052,6 +10288,42 @@
       "status": "resolved",
       "unverified": false,
       "venue_id": "v-9c208293-484d-560e-8270-d8276b49f0f7"
+    },
+    "v-9ce795c2-762b-5724-843b-9477738f1a90": {
+      "active": true,
+      "first_seen": "2026-10-21",
+      "history": [
+        {
+          "date": "2026-10-21",
+          "reasons": [
+            "Reference venue name changed"
+          ],
+          "status": "unverified"
+        }
+      ],
+      "last_checked": "2026-10-21",
+      "place_name": "Cambridge",
+      "postcode": "CB1 1LD",
+      "pub_name": "The Rad (was St Radegund)",
+      "reasons": [
+        "Reference venue name changed"
+      ],
+      "reference": {},
+      "research": {},
+      "source_checks": {
+        "camra": {
+          "status": "conflict",
+          "url": "https://camra.org.uk/pubs/131286"
+        },
+        "fsa_independent": {
+          "status": "coordinate_agreement",
+          "url": "https://ratings.food.gov.uk/business/1964104"
+        }
+      },
+      "source_error": null,
+      "status": "unverified",
+      "unverified": true,
+      "venue_id": "v-9ce795c2-762b-5724-843b-9477738f1a90"
     },
     "v-9db08c01-435f-5d69-acd6-b69f4bcf6d1a": {
       "active": false,
@@ -14993,5 +15265,5 @@
     }
   },
   "schema_version": 1,
-  "unverified_count": 33
+  "unverified_count": 39
 }

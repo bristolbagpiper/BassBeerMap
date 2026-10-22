@@ -2,22 +2,22 @@
 
 Locations: 1044
 
-Actionable findings: 3
-Locations with informational observations: 597 (may also have an actionable finding)
+Actionable findings: 4
+Locations with informational observations: 599 (may also have an actionable finding)
 
 ## Results
 
-- coordinate_agreement: 460
-- nearby: 103
-- coordinate_disagreement: 242
+- coordinate_disagreement: 245
+- coordinate_agreement: 458
+- nearby: 102
 - no_name_match: 177
 - ambiguous_or_missing_coordinates: 62
 
 ## Confidence
 
+- owner_reviewed: 76
 - independent_coordinate_agreement: 430
-- existing_evidence_needs_corroboration: 552
-- owner_reviewed: 62
+- existing_evidence_needs_corroboration: 538
 
 ## Limits
 
@@ -31,6 +31,7 @@ Locations with informational observations: 597 (may also have an actionable find
 
 | Pub | Place | Postcode | Result | Classification | Detail |
 |---|---|---|---|---|---|
+| Charlie Bassetts | Dilhorne | ST10 2PQ | coordinate_disagreement | Actionable | Directory postcode differs from reviewed reference postcode; FSA coordinate is 191.8m from the accepted pin; informational only because the FSA geocode may be approximate |
 | Nelson Inn | Brown Lees | ST8 6PH | coordinate_agreement | Actionable | Directory postcode differs from reviewed reference postcode |
 | New Baron | Hinckley | LE10 0AZ | nearby | Actionable | Directory postcode differs from reviewed reference postcode; FSA coordinate is 25-50m away; informational only |
 | Tame Otter | Hopwas | B78 3AB | coordinate_disagreement | Actionable | Directory postcode differs from reviewed reference postcode; FSA coordinate is 179.9m from the accepted pin; informational only because the FSA geocode may be approximate |
@@ -230,7 +231,7 @@ Locations with informational observations: 597 (may also have an actionable find
 | Dyers Arms | Leek | ST13 8JZ | coordinate_agreement | Informational | Owner reviewed this postcode discrepancy and confirmed the displayed pub building; listing postcode retained for provenance |
 | Dyffryn Arms | Pontfaen | SA65 9SE | coordinate_disagreement | Informational | FSA coordinate is 431.1m from the accepted pin; informational only because the FSA geocode may be approximate |
 | Eagle Tavern | Heage | DE56 2HU | coordinate_disagreement | Informational | FSA coordinate is 298.5m from the accepted pin; informational only because the FSA geocode may be approximate |
-| Earl of Chesterfield Arms | Shelford | NG12 1EQ | nearby | Informational | FSA coordinate is 25-50m away; informational only |
+| Earl of Chesterfield Arms | Shelford | NG12 1EQ | coordinate_disagreement | Informational | FSA coordinate is 82.0m from the accepted pin; informational only because the FSA geocode may be approximate |
 | Easington | Banbury | OX16 9JU | no_name_match | Informational | FSA comparison is inconclusive; absence of a match does not contradict accepted evidence |
 | Ecclian | Eccleshall | ST21 6BW | no_name_match | Informational | FSA comparison is inconclusive; absence of a match does not contradict accepted evidence |
 | Engine Inn | Kenilworth | CV8 2HP | coordinate_disagreement | Informational | FSA coordinate is 79.0m from the accepted pin; informational only because the FSA geocode may be approximate |
@@ -307,6 +308,7 @@ Locations with informational observations: 597 (may also have an actionable find
 | Hunters Arms | Kilburn | DE56 0LU | nearby | Informational | FSA coordinate is 25-50m away; informational only |
 | Hunting Lodge | Monkseaton | NE25 9SX | coordinate_disagreement | Informational | FSA coordinate is 331.2m from the accepted pin; informational only because the FSA geocode may be approximate |
 | Iford Bridge | Bournemouth: Iford | BH6 5RG | ambiguous_or_missing_coordinates | Informational | FSA comparison is inconclusive; absence of a match does not contradict accepted evidence |
+| Inkspot | Leek | ST13 6HX | coordinate_disagreement | Informational | FSA coordinate is 56.6m from the accepted pin; informational only because the FSA geocode may be approximate |
 | Ivanhoe Social Club (PMC) | Ashby-de-la-Zouch | LE65 2GW | coordinate_disagreement | Informational | FSA coordinate is 72.2m from the accepted pin; informational only because the FSA geocode may be approximate |
 | Ivy | Wragby | LN8 5QU | coordinate_disagreement | Informational | FSA coordinate is 75.3m from the accepted pin; informational only because the FSA geocode may be approximate |
 | Jack Rabbit | Derriford | PL6 8BD | no_name_match | Informational | FSA comparison is inconclusive; absence of a match does not contradict accepted evidence |

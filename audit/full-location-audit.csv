@@ -1,4 +1,5 @@
 venue_id,pub_name,place_name,postcode,priority,status,confidence,checked_at,actionable,reasons,warnings
+v-95a10492-5d95-5fd1-85cd-7a9a58882d81,Charlie Bassetts,Dilhorne,ST10 2PQ,0,coordinate_disagreement,owner_reviewed,2026-10-22,True,Directory postcode differs from reviewed reference postcode,FSA coordinate is 191.8m from the accepted pin; informational only because the FSA geocode may be approximate
 v-baef8a0f-c094-5f52-a9c2-3a37df4ca657,Nelson Inn,Brown Lees,ST8 6PH,0,coordinate_agreement,independent_coordinate_agreement,2026-10-19,True,Directory postcode differs from reviewed reference postcode,
 v-13ff4a41-2ee6-5385-ae2b-22af01b93cf9,New Baron,Hinckley,LE10 0AZ,0,nearby,existing_evidence_needs_corroboration,2026-10-19,True,Directory postcode differs from reviewed reference postcode,FSA coordinate is 25-50m away; informational only
 v-f5205b00-aadb-5928-870d-674117dbffab,Tame Otter,Hopwas,B78 3AB,0,coordinate_disagreement,owner_reviewed,2026-10-10,True,Directory postcode differs from reviewed reference postcode,FSA coordinate is 179.9m from the accepted pin; informational only because the FSA geocode may be approximate
@@ -35,7 +36,7 @@ v-72b13551-8faa-53ec-8154-192e09b3a12c,Beech Tree,Kirk Ella,HU10 7LS,2,coordinat
 v-d4f48241-43f7-5ed3-a525-833a8e5ca650,Beer Box,Bamber Bridge,PR5 6LA,2,nearby,existing_evidence_needs_corroboration,2026-10-09,False,,FSA coordinate is 25-50m away; informational only
 v-6945d162-6c24-55b1-ba0f-698845e0dd2f,Beer Engine,Skipton,BD23 1JD,2,coordinate_disagreement,existing_evidence_needs_corroboration,2026-10-19,False,,FSA coordinate is 52.1m from the accepted pin; informational only because the FSA geocode may be approximate
 v-7ecdc061-3850-5388-865f-f697462bbc10,Bell,Halton Holegate,PE23 5NY,2,coordinate_disagreement,owner_reviewed,2026-10-10,False,,Owner reviewed this postcode discrepancy and confirmed the displayed pub building; listing postcode retained for provenance; FSA coordinate is 728.6m from the accepted pin; informational only because the FSA geocode may be approximate
-v-8a764607-ea97-5632-86d2-fa06d2ef61b9,Bell,Standerwick,BA11 2PR,2,no_name_match,existing_evidence_needs_corroboration,2026-10-09,False,,FSA comparison is inconclusive; absence of a match does not contradict accepted evidence
+v-8a764607-ea97-5632-86d2-fa06d2ef61b9,Bell,Standerwick,BA11 2PR,2,no_name_match,owner_reviewed,2026-10-22,False,,FSA comparison is inconclusive; absence of a match does not contradict accepted evidence
 v-3812a807-304d-5adf-b134-5306b3874319,Bell and Harp,Little Eaton,DE21 5AE,2,coordinate_disagreement,existing_evidence_needs_corroboration,2026-10-15,False,,FSA coordinate is 128.4m from the accepted pin; informational only because the FSA geocode may be approximate
 v-a9fafd22-94c0-5b69-baf6-d9f513ce90ce,Belmont Services Club (PMC),Swadlincote: Central,DE11 8JU,2,ambiguous_or_missing_coordinates,existing_evidence_needs_corroboration,2026-10-09,False,,FSA comparison is inconclusive; absence of a match does not contradict accepted evidence
 v-6c418917-db16-5f58-9555-1e89e05a18ec,Belper Arms,Newton Burgoland,LE67 2SE,2,coordinate_disagreement,existing_evidence_needs_corroboration,2026-10-20,False,,FSA coordinate is 173.9m from the accepted pin; informational only because the FSA geocode may be approximate
@@ -46,7 +47,7 @@ v-4ac48ba1-f454-50cb-a1e9-a069589c6d0c,Binary,Mickleover,DE3 0GR,2,no_name_match
 v-c42a1691-cc71-5fac-a7fa-2b3c2112ec0e,Bird in Hand,Austrey,CV9 3EE,2,no_name_match,owner_reviewed,2026-10-10,False,,Owner reviewed this postcode discrepancy and confirmed the displayed pub building; listing postcode retained for provenance; FSA comparison is inconclusive; absence of a match does not contradict accepted evidence
 v-01386b13-1f71-5e2b-ac42-1431c3dacb83,Black Cat,Liverpool: Mossley Hill,L18 8AG,2,no_name_match,existing_evidence_needs_corroboration,2026-10-10,False,,FSA comparison is inconclusive; absence of a match does not contradict accepted evidence
 v-e7af2655-33ef-50e0-beb2-9f67fcbfb565,Black Cat,Bristol: Bedminster,BS3 3LH,2,no_name_match,owner_reviewed,2026-10-09,False,,FSA comparison is inconclusive; absence of a match does not contradict accepted evidence
-v-152d1ab1-df05-55e1-a620-e4f9d08cdfd6,Black Cat Bar,Liverpool: Central,L1 4JN,2,ambiguous_or_missing_coordinates,existing_evidence_needs_corroboration,2026-10-12,False,,FSA comparison is inconclusive; absence of a match does not contradict accepted evidence
+v-152d1ab1-df05-55e1-a620-e4f9d08cdfd6,Black Cat Bar,Liverpool: Central,L1 4JN,2,ambiguous_or_missing_coordinates,owner_reviewed,2026-10-22,False,,FSA comparison is inconclusive; absence of a match does not contradict accepted evidence
 v-65289afd-0cc6-53a0-b6db-c2f3620317ec,Black Horse,Whitwick,LE67 5DN,2,no_name_match,existing_evidence_needs_corroboration,2026-10-19,False,,FSA comparison is inconclusive; absence of a match does not contradict accepted evidence
 v-696657d8-51ba-5487-b16e-7f3546bfd125,Black Horse,Grimston,LE14 3BZ,2,coordinate_disagreement,existing_evidence_needs_corroboration,2026-10-19,False,,FSA coordinate is 210.1m from the accepted pin; informational only because the FSA geocode may be approximate
 v-8ad8017a-37a9-5cf0-972d-0e10f27e7455,Black Horse,Nettleham,LN2 2NX,2,no_name_match,existing_evidence_needs_corroboration,2026-10-09,False,,FSA comparison is inconclusive; absence of a match does not contradict accepted evidence
@@ -77,7 +78,7 @@ v-e01e6670-6c03-55e3-9d57-5f25a7a8fbdf,Boot,Melbourne,DE73 8FE,2,no_name_match,e
 v-ee7d0ee2-cbc1-50cc-b108-7412c6245ced,Borough Street Bar,Castle Donington,DE74 2LA,2,nearby,existing_evidence_needs_corroboration,2026-10-09,False,,FSA coordinate is 25-50m away; informational only
 v-1639d0fb-54f0-58b5-8ce4-08eb9e335e87,Botanical Arms,Sheffield: Ecclesall Road,S11 8PR,2,coordinate_disagreement,existing_evidence_needs_corroboration,2026-10-13,False,,FSA coordinate is 57.5m from the accepted pin; informational only because the FSA geocode may be approximate
 v-6ac38966-0828-5ba1-b8cb-c2edab36afa1,Bottle and Glass,Normanby,LN8 2HE,2,coordinate_disagreement,existing_evidence_needs_corroboration,2026-10-19,False,,FSA coordinate is 114.9m from the accepted pin; informational only because the FSA geocode may be approximate
-v-914a7527-30f1-5b36-acce-5b36c7210041,Bowls Club (PMC),Barton-under-Needwood,DE13 8AX,2,no_name_match,existing_evidence_needs_corroboration,2026-10-09,False,,FSA comparison is inconclusive; absence of a match does not contradict accepted evidence
+v-914a7527-30f1-5b36-acce-5b36c7210041,Bowls Club (PMC),Barton-under-Needwood,DE13 8AX,2,no_name_match,owner_reviewed,2026-10-22,False,,FSA comparison is inconclusive; absence of a match does not contradict accepted evidence
 v-804d57d4-1953-5654-88fa-fc20c0ce6910,Bradwell Working Mens Club (PMC),Newcastle-U-L: Bradwell,ST5 8JA,2,coordinate_disagreement,owner_reviewed,2026-10-21,False,,FSA coordinate is 51.5m from the accepted pin; informational only because the FSA geocode may be approximate
 v-2bf5d12b-3027-5159-b3c2-4d2a1a8bd1ec,Branston Golf & Country Club,Burton U-T: Branston,DE14 3DP,2,coordinate_disagreement,existing_evidence_needs_corroboration,2026-10-14,False,,FSA coordinate is 484.8m from the accepted pin; informational only because the FSA geocode may be approximate
 v-77c88bf5-cdfa-5f69-9a85-6d9500e5b776,Brass Button,Ashbourne,DE6 1EU,2,no_name_match,existing_evidence_needs_corroboration,2026-10-21,False,,FSA comparison is inconclusive; absence of a match does not contradict accepted evidence
@@ -85,7 +86,7 @@ v-16ac6d8a-6dc0-5535-aae6-0cc85e773d54,Bread and Bitter,Nottingham: Mapperley,NG
 v-a00eabec-0246-562d-9640-f31752f67b33,Brickmakers Arms,Newton Solney,DE15 0SJ,2,ambiguous_or_missing_coordinates,existing_evidence_needs_corroboration,2026-10-09,False,,FSA comparison is inconclusive; absence of a match does not contradict accepted evidence
 v-813a838f-ed8d-514d-9a9a-d192591cfe49,Bridford Inn,Bridford,EX6 7HT,2,coordinate_disagreement,existing_evidence_needs_corroboration,2026-10-21,False,,FSA coordinate is 65.3m from the accepted pin; informational only because the FSA geocode may be approximate
 v-c86ec1b8-bc7e-5a25-ba5f-d4d8e7687ed9,Bristol Flyer,Bristol: Bishopston,BS7 8BN,2,nearby,existing_evidence_needs_corroboration,2026-10-09,False,,FSA coordinate is 25-50m away; informational only
-v-606ed382-96eb-537b-b81c-c995f62186e7,Brookfield (Barrow Social Club),Barrow upon Trent,DE73 7HG,2,ambiguous_or_missing_coordinates,existing_evidence_needs_corroboration,2026-10-19,False,,FSA comparison is inconclusive; absence of a match does not contradict accepted evidence
+v-606ed382-96eb-537b-b81c-c995f62186e7,Brookfield (Barrow Social Club),Barrow upon Trent,DE73 7HG,2,ambiguous_or_missing_coordinates,owner_reviewed,2026-10-22,False,,FSA comparison is inconclusive; absence of a match does not contradict accepted evidence
 v-dee50cac-ac0c-5801-a3aa-d5cb9fc35bfd,Brookhouse Mill,Denbigh,LL16 4RD,2,no_name_match,owner_reviewed,2026-10-09,False,,FSA comparison is inconclusive; absence of a match does not contradict accepted evidence
 v-70227d07-9b73-5a3c-bcd1-4751c99d3225,Brothers Arms,Sheffield: Heeley,S8 9TZ,2,coordinate_disagreement,existing_evidence_needs_corroboration,2026-10-20,False,,FSA coordinate is 68.7m from the accepted pin; informational only because the FSA geocode may be approximate
 v-6b2379e1-0215-5562-bb8c-9401a238f7db,Brownlow Inn,Congleton,CW12 4TH,2,ambiguous_or_missing_coordinates,existing_evidence_needs_corroboration,2026-10-19,False,,FSA comparison is inconclusive; absence of a match does not contradict accepted evidence
@@ -107,7 +108,7 @@ v-3a52a126-41ff-5d4d-b9bf-1c68fd53197a,Castle,Castleton,S33 8WG,2,coordinate_dis
 v-42916c51-c65c-5cc0-b28c-d514db7e5790,Castle Inn,Congleton,CW12 3LP,2,ambiguous_or_missing_coordinates,existing_evidence_needs_corroboration,2026-10-16,False,,FSA comparison is inconclusive; absence of a match does not contradict accepted evidence
 v-552acf01-151c-5ab2-8479-b5c3eaeea9cb,Chaddesen Park Social Club (PMC),Derby: Chaddesden,DE21 6PD,2,no_name_match,existing_evidence_needs_corroboration,2026-10-17,False,,FSA comparison is inconclusive; absence of a match does not contradict accepted evidence
 v-e4c45694-71bb-5b2e-8133-15e62890f98b,Chadwick Arms,Hill Ridware,WS15 3QX,2,no_name_match,existing_evidence_needs_corroboration,2026-10-09,False,,FSA comparison is inconclusive; absence of a match does not contradict accepted evidence
-v-5f2024a2-7c58-56fd-9a94-3f1066e9ccc1,Chandlers,Shearsby,LE17 6PL,2,ambiguous_or_missing_coordinates,existing_evidence_needs_corroboration,2026-10-18,False,,FSA comparison is inconclusive; absence of a match does not contradict accepted evidence
+v-5f2024a2-7c58-56fd-9a94-3f1066e9ccc1,Chandlers,Shearsby,LE17 6PL,2,ambiguous_or_missing_coordinates,owner_reviewed,2026-10-22,False,,FSA comparison is inconclusive; absence of a match does not contradict accepted evidence
 v-5b7a8e74-1d57-5edf-a58b-f3445daf1ea1,Charles Roe,Macclesfield,SK11 6DY,2,coordinate_agreement,owner_reviewed,2026-10-10,False,,Owner reviewed this postcode discrepancy and confirmed the displayed pub building; listing postcode retained for provenance
 v-04a60775-79f9-599b-beec-0caebb09b25b,Chequers,Fenny Stratford,MK2 2BY,2,coordinate_disagreement,existing_evidence_needs_corroboration,2026-10-11,False,,FSA coordinate is 85.8m from the accepted pin; informational only because the FSA geocode may be approximate
 v-8e2917d0-bd2b-5c1b-89dd-67bb7c8d5f66,Cherry Tree,Leicester: Central,LE1 4SX,2,nearby,existing_evidence_needs_corroboration,2026-10-09,False,,FSA coordinate is 25-50m away; informational only
@@ -133,8 +134,8 @@ v-b0c5a0d9-4d33-51d1-b510-32e297b5e595,Cock Inn,Hanbury,DE13 8TD,2,coordinate_di
 v-b89a416f-f3fd-5773-b692-0a6c06497864,Colliery Smokehouse,Linton,DE12 6PB,2,coordinate_disagreement,existing_evidence_needs_corroboration,2026-10-09,False,,FSA coordinate is 75.8m from the accepted pin; informational only because the FSA geocode may be approximate
 v-e70663f9-4841-5eb5-8426-1b7e902d06c4,Congleton Rugby Club (PMC),Congleton,CW12 1EG,2,no_name_match,existing_evidence_needs_corroboration,2026-10-09,False,,FSA comparison is inconclusive; absence of a match does not contradict accepted evidence
 v-42849d87-7e78-54f2-8b46-6c1ce4578fa3,Congress Inn,Stoke: Longton,ST3 1HJ,2,nearby,existing_evidence_needs_corroboration,2026-10-16,False,,FSA coordinate is 25-50m away; informational only
-v-54a1b390-c593-5828-a06e-52905548f5ca,Constitutional Club (PMC),Swadlincote: Central,DE11 0AN,2,no_name_match,existing_evidence_needs_corroboration,2026-10-17,False,,FSA comparison is inconclusive; absence of a match does not contradict accepted evidence
-v-81c9b5aa-f6be-589b-b9e0-b5fe40ab9ef9,Constitutional Club (PMC),Burbage,LE10 2DE,2,no_name_match,existing_evidence_needs_corroboration,2026-10-09,False,,FSA comparison is inconclusive; absence of a match does not contradict accepted evidence
+v-54a1b390-c593-5828-a06e-52905548f5ca,Constitutional Club (PMC),Swadlincote: Central,DE11 0AN,2,no_name_match,owner_reviewed,2026-10-17,False,,FSA comparison is inconclusive; absence of a match does not contradict accepted evidence
+v-81c9b5aa-f6be-589b-b9e0-b5fe40ab9ef9,Constitutional Club (PMC),Burbage,LE10 2DE,2,no_name_match,owner_reviewed,2026-10-22,False,,FSA comparison is inconclusive; absence of a match does not contradict accepted evidence
 v-5f7e16b2-688b-58c3-8cbd-db2f2320ec3d,Coopers Arms,Weston on Trent,DE72 2BJ,2,ambiguous_or_missing_coordinates,existing_evidence_needs_corroboration,2026-10-18,False,,FSA comparison is inconclusive; absence of a match does not contradict accepted evidence
 v-a945424a-620d-53be-9efc-5846f3ff9459,Coppersmiths,Burton U-T: Central,DE14 2JJ,2,ambiguous_or_missing_coordinates,existing_evidence_needs_corroboration,2026-10-09,False,,FSA comparison is inconclusive; absence of a match does not contradict accepted evidence
 v-f263b801-f5a1-5a23-beed-bf6c067f28b2,Cork and Bottle,Barnstaple,EX31 1JB,2,no_name_match,existing_evidence_needs_corroboration,2026-10-09,False,,FSA comparison is inconclusive; absence of a match does not contradict accepted evidence
@@ -145,7 +146,7 @@ v-1efcc2b8-fdff-5c09-81da-d206826f4e1e,Coryton Arms,St Mellion,PL12 6RJ,2,nearby
 v-22c42bbf-668a-568e-af2d-2c7d47fae5c7,Coton and Hopwas Social Club (PMC),Hopwas,B78 3AD,2,coordinate_disagreement,existing_evidence_needs_corroboration,2026-10-13,False,,FSA coordinate is 87.1m from the accepted pin; informational only because the FSA geocode may be approximate
 v-e5e26c8d-c7bc-5424-81ba-32a0b892b3eb,County Hotel,Lytham St Annes,FY8 5LH,2,ambiguous_or_missing_coordinates,existing_evidence_needs_corroboration,2026-10-09,False,,FSA comparison is inconclusive; absence of a match does not contradict accepted evidence
 v-b6bd3613-8bdd-5319-a275-eb726deeff46,Crew and Queens Hall,Nuneaton: Central,CV11 5LA,2,no_name_match,existing_evidence_needs_corroboration,2026-10-09,False,,FSA comparison is inconclusive; absence of a match does not contradict accepted evidence
-v-101e22ce-2e15-5d8d-8f40-64e6ead91ee8,Cricket Club,Blackpool: Stanley Park,FY3 9EQ,2,no_name_match,existing_evidence_needs_corroboration,2026-10-12,False,,FSA comparison is inconclusive; absence of a match does not contradict accepted evidence
+v-101e22ce-2e15-5d8d-8f40-64e6ead91ee8,Cricket Club,Blackpool: Stanley Park,FY3 9EQ,2,no_name_match,owner_reviewed,2026-10-22,False,,FSA comparison is inconclusive; absence of a match does not contradict accepted evidence
 v-488e5ec7-f851-583c-8a65-7f09c162ae1f,Cricket Club,Rolleston-on-Dove,DE13 9AU,2,no_name_match,existing_evidence_needs_corroboration,2026-10-16,False,,FSA comparison is inconclusive; absence of a match does not contradict accepted evidence
 v-911b7128-ea8a-5c05-95aa-dce74ff3e720,Cricket Club,Caverswall,ST3 6PJ,2,no_name_match,existing_evidence_needs_corroboration,2026-10-09,False,,FSA comparison is inconclusive; absence of a match does not contradict accepted evidence
 v-9db08c01-435f-5d69-acd6-b69f4bcf6d1a,Cricketers,Leicester: Aylestone,LE2 8AD,2,coordinate_disagreement,existing_evidence_needs_corroboration,2026-10-09,False,,FSA coordinate is 58.6m from the accepted pin; informational only because the FSA geocode may be approximate
@@ -153,7 +154,7 @@ v-697d698b-e30c-5f9b-a384-573dc1dfa1ad,Cricketers Arms,Oakamoor,ST10 3AB,2,no_na
 v-32646a4c-94da-52da-a73d-1125b6d05ce9,Crooked Billet,Leigh on Sea: Old Leigh,SS9 2EP,2,coordinate_disagreement,existing_evidence_needs_corroboration,2026-10-15,False,,FSA coordinate is 92.5m from the accepted pin; informational only because the FSA geocode may be approximate
 v-6d104889-387c-5da6-bcf2-f6ad2052f64a,Cross House Tavern,Tewkesbury,GL20 5AB,2,no_name_match,existing_evidence_needs_corroboration,2026-10-20,False,,FSA comparison is inconclusive; absence of a match does not contradict accepted evidence
 v-36312e4a-6b22-5a6b-8cd0-e4f51bfbc57b,Cross Keys,Penrhynside,LL30 3DD,2,ambiguous_or_missing_coordinates,existing_evidence_needs_corroboration,2026-10-15,False,,FSA comparison is inconclusive; absence of a match does not contradict accepted evidence
-v-8627142a-ac1d-5f2d-9602-8a2777baa6b9,Cross Keys,Newbold,LE67 8PJ,2,nearby,existing_evidence_needs_corroboration,2026-10-09,False,,FSA coordinate is 25-50m away; informational only
+v-8627142a-ac1d-5f2d-9602-8a2777baa6b9,Cross Keys,Newbold,LE67 8PJ,2,nearby,existing_evidence_needs_corroboration,2026-10-22,False,,FSA coordinate is 25-50m away; informational only
 v-da368401-dfbb-5300-8382-e75e3237f5db,Cross Keys,Belper: Central,DE56 1FZ,2,nearby,existing_evidence_needs_corroboration,2026-10-09,False,,FSA coordinate is 25-50m away; informational only
 v-e134de4c-f72e-5e95-b15b-76b3d65b224a,Crossbar,Chellaston,DE73 6TQ,2,no_name_match,existing_evidence_needs_corroboration,2026-10-09,False,,FSA comparison is inconclusive; absence of a match does not contradict accepted evidence
 v-c7575fb2-9a9e-5c73-aaad-76dfb8c5ba4b,Crossways (Bottlecraft),Newcastle-U-L: Central,ST5 1RW,2,no_name_match,owner_reviewed,2026-10-10,False,,Owner reviewed this postcode discrepancy and confirmed the displayed pub building; listing postcode retained for provenance; FSA comparison is inconclusive; absence of a match does not contradict accepted evidence
@@ -181,7 +182,7 @@ v-52a12f7c-0669-503c-bb15-8e1b988ccd10,Dead Poets Inn,Holbrook,DE56 0TQ,2,coordi
 v-5e3cc4d8-313b-5db8-b4d5-3f4cb880bc14,Devonshire Arms,Blackpool: North Shore,FY2 0TL,2,nearby,existing_evidence_needs_corroboration,2026-10-18,False,,FSA coordinate is 25-50m away; informational only
 v-edbf046b-76d8-5df9-9d71-3d63d37148e6,Devonshire Arms,Somercotes,DE55 4HX,2,coordinate_disagreement,existing_evidence_needs_corroboration,2026-10-09,False,,FSA coordinate is 94.9m from the accepted pin; informational only because the FSA geocode may be approximate
 v-9acf6cbe-1e88-5904-af35-f28c20b53738,Dew Drop Inn,Hathern,LE12 5HY,2,coordinate_disagreement,existing_evidence_needs_corroboration,2026-10-09,False,,FSA coordinate is 88.4m from the accepted pin; informational only because the FSA geocode may be approximate
-v-45ee8f54-501a-5688-8b29-c66374492475,Dial,Burton U-T: Central,DE14 1BN,2,no_name_match,existing_evidence_needs_corroboration,2026-10-16,False,,FSA comparison is inconclusive; absence of a match does not contradict accepted evidence
+v-45ee8f54-501a-5688-8b29-c66374492475,Dial,Burton U-T: Central,DE14 1BN,2,no_name_match,owner_reviewed,2026-10-22,False,,FSA comparison is inconclusive; absence of a match does not contradict accepted evidence
 v-59d2541d-6530-562f-96c2-2056496ae55a,Dinas Rock Hotel,Glynneath,SA11 5AP,2,coordinate_disagreement,existing_evidence_needs_corroboration,2026-10-18,False,,FSA coordinate is 86.9m from the accepted pin; informational only because the FSA geocode may be approximate
 v-e27927a2-937a-5a15-bd14-200b5d039498,Dog,Pentrich,DE5 3RE,2,coordinate_disagreement,existing_evidence_needs_corroboration,2026-10-09,False,,FSA coordinate is 61.7m from the accepted pin; informational only because the FSA geocode may be approximate
 v-eb84582d-6912-5e35-a98f-218e19f01eaf,Dog Inn,Water Orton,B46 1NW,2,ambiguous_or_missing_coordinates,existing_evidence_needs_corroboration,2026-10-09,False,,FSA comparison is inconclusive; absence of a match does not contradict accepted evidence
@@ -198,14 +199,14 @@ v-6dd3f8f8-bdf6-565c-b21a-ce49d9faa503,Duke of York,Bristol: St Werburghs,BS2 9R
 v-6312a106-c5ed-5161-86b8-ef30d0350f84,Dyers Arms,Leek,ST13 8JZ,2,coordinate_agreement,owner_reviewed,2026-10-10,False,,Owner reviewed this postcode discrepancy and confirmed the displayed pub building; listing postcode retained for provenance
 v-9c208293-484d-560e-8270-d8276b49f0f7,Dyffryn Arms,Pontfaen,SA65 9SE,2,coordinate_disagreement,existing_evidence_needs_corroboration,2026-10-09,False,,FSA coordinate is 431.1m from the accepted pin; informational only because the FSA geocode may be approximate
 v-0976863b-da58-5155-b32b-ba3b74195783,Eagle Tavern,Heage,DE56 2HU,2,coordinate_disagreement,existing_evidence_needs_corroboration,2026-10-11,False,,FSA coordinate is 298.5m from the accepted pin; informational only because the FSA geocode may be approximate
-v-1dbfdcda-d5a4-5519-969f-979e11cc3ec5,Earl of Chesterfield Arms,Shelford,NG12 1EQ,2,nearby,existing_evidence_needs_corroboration,2026-10-13,False,,FSA coordinate is 25-50m away; informational only
+v-1dbfdcda-d5a4-5519-969f-979e11cc3ec5,Earl of Chesterfield Arms,Shelford,NG12 1EQ,2,coordinate_disagreement,owner_reviewed,2026-10-22,False,,FSA coordinate is 82.0m from the accepted pin; informational only because the FSA geocode may be approximate
 v-f4485d10-20f9-5178-a539-cbade7e5b9a3,Easington,Banbury,OX16 9JU,2,no_name_match,existing_evidence_needs_corroboration,2026-10-09,False,,FSA comparison is inconclusive; absence of a match does not contradict accepted evidence
 v-696948e8-6eb2-5391-a8c1-bef7c0dc9c48,Ecclian,Eccleshall,ST21 6BW,2,no_name_match,existing_evidence_needs_corroboration,2026-10-19,False,,FSA comparison is inconclusive; absence of a match does not contradict accepted evidence
 v-96c69280-8350-5291-9fb1-4267938024b9,Engine Inn,Kenilworth,CV8 2HP,2,coordinate_disagreement,existing_evidence_needs_corroboration,2026-10-09,False,,FSA coordinate is 79.0m from the accepted pin; informational only because the FSA geocode may be approximate
 v-fb304b3f-2aa0-5fa6-9cca-5b4af6a1bb02,Engineers Arms,Henlow,SG16 6AA,2,coordinate_disagreement,owner_reviewed,2026-10-09,False,,FSA coordinate is 99.4m from the accepted pin; informational only because the FSA geocode may be approximate
 v-27db8714-ffd3-5660-a96b-cc3f55e0193d,Essex Arms,Watford: Cassiobury,WD17 3EG,2,coordinate_disagreement,existing_evidence_needs_corroboration,2026-10-14,False,,FSA coordinate is 69.8m from the accepted pin; informational only because the FSA geocode may be approximate
 v-175a24db-4014-523b-b0fc-54194c96e3d7,Fairhaven,Lytham St Annes,FY8 1YD,2,coordinate_agreement,owner_reviewed,2026-10-10,False,,Owner reviewed this postcode discrepancy and confirmed the displayed pub building; listing postcode retained for provenance
-v-8437cb49-dd3e-5c8c-a924-f3ca32bcd323,Fieldhouse,Solihull,B91 3JU,2,no_name_match,owner_reviewed,2026-10-09,False,,FSA comparison is inconclusive; absence of a match does not contradict accepted evidence
+v-8437cb49-dd3e-5c8c-a924-f3ca32bcd323,Fieldhouse,Solihull,B91 3JU,2,no_name_match,owner_reviewed,2026-10-22,False,,FSA comparison is inconclusive; absence of a match does not contradict accepted evidence
 v-d7f9aaa5-6a8f-5c14-ae38-74a59ed849f2,Final Whistle,Southwell,NG25 0ET,2,nearby,existing_evidence_needs_corroboration,2026-10-09,False,,FSA coordinate is 25-50m away; informational only
 v-9d030be7-195d-5767-b6e5-7a2d94d5d237,Firefly,Worcester: Central,WR1 2SE,2,nearby,existing_evidence_needs_corroboration,2026-10-09,False,,FSA coordinate is 25-50m away; informational only
 v-e897ef78-09c1-5f86-a813-d6050bc043bc,Five Bells,Bassingham,LN5 9JZ,2,nearby,existing_evidence_needs_corroboration,2026-10-09,False,,FSA coordinate is 25-50m away; informational only
@@ -234,14 +235,14 @@ v-cc35284e-c102-5090-b7e8-82980b2f7db1,Globe,Stoke: Tunstall,ST6 5TA,2,coordinat
 v-163491c3-e2cc-54a0-9d36-124f2bd17d8e,Globe Inn,Tamworth,B79 7AT,2,no_name_match,existing_evidence_needs_corroboration,2026-10-13,False,,FSA comparison is inconclusive; absence of a match does not contradict accepted evidence
 v-671e9e71-677b-5e94-b837-e50d3484667c,Globe Inn,Snarestone,DE12 7DB,2,coordinate_disagreement,existing_evidence_needs_corroboration,2026-10-19,False,,FSA coordinate is 274.3m from the accepted pin; informational only because the FSA geocode may be approximate
 v-9516fb66-53e8-53a8-9bb0-922e7be7580f,Globe Inn,Looe,PL13 1HN,2,coordinate_disagreement,existing_evidence_needs_corroboration,2026-10-09,False,,FSA coordinate is 119.3m from the accepted pin; informational only because the FSA geocode may be approximate
-v-84e7f044-8f38-5317-9255-08279e728ad6,Goats Head,Abbots Bromley,WS15 3BP,2,coordinate_disagreement,existing_evidence_needs_corroboration,2026-10-09,False,,FSA coordinate is 58.9m from the accepted pin; informational only because the FSA geocode may be approximate
+v-84e7f044-8f38-5317-9255-08279e728ad6,Goats Head,Abbots Bromley,WS15 3BP,2,coordinate_disagreement,existing_evidence_needs_corroboration,2026-10-22,False,,FSA coordinate is 58.9m from the accepted pin; informational only because the FSA geocode may be approximate
 v-a5ff460a-6b08-56c6-9d6a-b5bfca58a82e,Golden Cup,Stoke: Hanley,ST1 2JS,2,nearby,existing_evidence_needs_corroboration,2026-10-09,False,,FSA coordinate is 25-50m away; informational only
 v-b81d683f-d115-5e3b-bfce-7cf833ef9e75,Golden Pheasant,Biggleswade,SG18 0JH,2,no_name_match,owner_reviewed,2026-10-09,False,,FSA comparison is inconclusive; absence of a match does not contradict accepted evidence
 v-600d8503-7c5b-5676-8228-2202dec44abc,Grapes,Chipping Sodbury,BS37 6AS,2,no_name_match,existing_evidence_needs_corroboration,2026-10-18,False,,FSA comparison is inconclusive; absence of a match does not contradict accepted evidence
 v-33da9387-2aa7-5bdf-b0bb-3e369659eb47,Great Western,Deppers Bridge,CV47 2ST,2,coordinate_disagreement,existing_evidence_needs_corroboration,2026-10-15,False,,FSA coordinate is 114.8m from the accepted pin; informational only because the FSA geocode may be approximate
 v-d0199650-f7c0-5287-bb86-dda903baae89,Green House,Mere Green,B74 2UD,2,coordinate_disagreement,existing_evidence_needs_corroboration,2026-10-09,False,,FSA coordinate is 106.2m from the accepted pin; informational only because the FSA geocode may be approximate
 v-7ae10979-fa76-53b3-bdc3-51d091c60752,Green Man,Clifton Campville,B79 0AX,2,coordinate_disagreement,existing_evidence_needs_corroboration,2026-10-21,False,,FSA coordinate is 111.7m from the accepted pin; informational only because the FSA geocode may be approximate
-v-8842f4ca-7548-55fc-8210-5671f0439035,Green Man,Stamford,PE9 2YQ,2,nearby,existing_evidence_needs_corroboration,2026-10-09,False,,FSA coordinate is 25-50m away; informational only
+v-8842f4ca-7548-55fc-8210-5671f0439035,Green Man,Stamford,PE9 2YQ,2,nearby,existing_evidence_needs_corroboration,2026-10-22,False,,FSA coordinate is 25-50m away; informational only
 v-97a6ff26-33a9-521e-8875-2fa9a26e5f68,Grey Horse,Consett,DH8 6NF,2,coordinate_agreement,owner_reviewed,2026-10-10,False,,Owner reviewed this postcode discrepancy and confirmed the displayed pub building; listing postcode retained for provenance
 v-c31ee814-63f4-513d-8d38-fad12edad41f,Greyhound,Woodville,DE11 7BU,2,ambiguous_or_missing_coordinates,existing_evidence_needs_corroboration,2026-10-09,False,,FSA comparison is inconclusive; absence of a match does not contradict accepted evidence
 v-d704b3a8-33c3-553f-b067-e1ed747652da,Greyhound Inn,Warslow,SK17 0JN,2,nearby,existing_evidence_needs_corroboration,2026-10-09,False,,FSA coordinate is 25-50m away; informational only
@@ -275,6 +276,7 @@ v-35854177-dcea-5a78-88ed-b35277ce9ee9,Hug and Heave,Ashbourne,DE6 1GP,2,coordin
 v-2aef880b-a959-5ffb-83cc-e930ecc4b567,Hunters Arms,Kilburn,DE56 0LU,2,nearby,existing_evidence_needs_corroboration,2026-10-14,False,,FSA coordinate is 25-50m away; informational only
 v-bac691a4-12f5-5bf0-86fc-091c00c95720,Hunting Lodge,Monkseaton,NE25 9SX,2,coordinate_disagreement,existing_evidence_needs_corroboration,2026-10-09,False,,FSA coordinate is 331.2m from the accepted pin; informational only because the FSA geocode may be approximate
 v-f255d139-c9b9-53fa-9237-07ec27a1de5b,Iford Bridge,Bournemouth: Iford,BH6 5RG,2,ambiguous_or_missing_coordinates,existing_evidence_needs_corroboration,2026-10-09,False,,FSA comparison is inconclusive; absence of a match does not contradict accepted evidence
+v-6040a12f-787d-5099-a640-bc3a1fdc1c6c,Inkspot,Leek,ST13 6HX,2,coordinate_disagreement,owner_reviewed,2026-10-22,False,,FSA coordinate is 56.6m from the accepted pin; informational only because the FSA geocode may be approximate
 v-6e62d9c7-aa04-5175-9a9e-cbaebb8bd359,Ivanhoe Social Club (PMC),Ashby-de-la-Zouch,LE65 2GW,2,coordinate_disagreement,existing_evidence_needs_corroboration,2026-10-20,False,,FSA coordinate is 72.2m from the accepted pin; informational only because the FSA geocode may be approximate
 v-4fdbbe30-ceca-579f-be80-35ec84942cdf,Ivy,Wragby,LN8 5QU,2,coordinate_disagreement,existing_evidence_needs_corroboration,2026-10-17,False,,FSA coordinate is 75.3m from the accepted pin; informational only because the FSA geocode may be approximate
 v-77fe1223-0617-5e9e-8d73-cfa8e4dd14bf,Jack Rabbit,Derriford,PL6 8BD,2,no_name_match,existing_evidence_needs_corroboration,2026-10-21,False,,FSA comparison is inconclusive; absence of a match does not contradict accepted evidence
@@ -293,8 +295,8 @@ v-ec830769-d697-5d2b-b7e2-fa7d7a2ab82e,King and Castle,Kidderminster,DY10 1QX,2,
 v-983df26e-5c06-5f8b-99d6-7a2f61bf9029,Kings Arms,Brighton,BN2 1RJ,2,coordinate_disagreement,existing_evidence_needs_corroboration,2026-10-09,False,,FSA coordinate is 67.4m from the accepted pin; informational only because the FSA geocode may be approximate
 v-440ca4d2-973b-5646-9501-536f739eb035,Kings Head,Sutton Bonington,LE12 5PE,2,coordinate_disagreement,existing_evidence_needs_corroboration,2026-10-16,False,,FSA coordinate is 321.2m from the accepted pin; informational only because the FSA geocode may be approximate
 v-5bed8554-b468-584d-aa2f-e7ab466f2320,Kings Head,Duffield,DE56 4EH,2,coordinate_disagreement,existing_evidence_needs_corroboration,2026-10-18,False,,FSA coordinate is 94.5m from the accepted pin; informational only because the FSA geocode may be approximate
-v-61ef0fd9-e848-5ed0-a6ab-0d77481ac2f5,Kings Head (Scrimmies),Stoke: Smallthorne,ST6 1NT,2,no_name_match,existing_evidence_needs_corroboration,2026-10-19,False,,FSA comparison is inconclusive; absence of a match does not contradict accepted evidence
-v-82d27ed9-bb32-515b-a67d-b4ddfc98eb6c,Labour Club (PMC),Kidsgrove,ST7 4AB,2,no_name_match,existing_evidence_needs_corroboration,2026-10-09,False,,FSA comparison is inconclusive; absence of a match does not contradict accepted evidence
+v-61ef0fd9-e848-5ed0-a6ab-0d77481ac2f5,Kings Head (Scrimmies),Stoke: Smallthorne,ST6 1NT,2,no_name_match,owner_reviewed,2026-10-22,False,,FSA comparison is inconclusive; absence of a match does not contradict accepted evidence
+v-82d27ed9-bb32-515b-a67d-b4ddfc98eb6c,Labour Club (PMC),Kidsgrove,ST7 4AB,2,no_name_match,owner_reviewed,2026-10-22,False,,FSA comparison is inconclusive; absence of a match does not contradict accepted evidence
 v-135ca874-2542-5da4-a0b9-7c783ceb513e,Ladybrook,Bramhall,SK7 2NP,2,coordinate_disagreement,existing_evidence_needs_corroboration,2026-10-12,False,,FSA coordinate is 55.4m from the accepted pin; informational only because the FSA geocode may be approximate
 v-fd97cf72-faf0-54aa-bce6-e9fd40262cc0,Lancaster Inn,Woodhall Spa,LN10 6ST,2,no_name_match,existing_evidence_needs_corroboration,2026-10-09,False,,FSA comparison is inconclusive; absence of a match does not contradict accepted evidence
 v-d53ed861-78a3-55b6-8298-dc271b602e13,Leek Golf Club,Leek,ST13 5RE,2,coordinate_disagreement,existing_evidence_needs_corroboration,2026-10-09,False,,FSA coordinate is 264.2m from the accepted pin; informational only because the FSA geocode may be approximate
@@ -342,7 +344,7 @@ v-6bd49cd0-7be5-52b0-a714-be39cb377356,Mount Pleasant Inn,Castle Gresley,DE11 9J
 v-68d9eea7-9a49-525a-942f-1ae1c09e9057,Mushroom Hall,Albert Village,DE11 8EN,2,coordinate_disagreement,existing_evidence_needs_corroboration,2026-10-19,False,,FSA coordinate is 216.5m from the accepted pin; informational only because the FSA geocode may be approximate
 v-0708e496-253a-5e03-bd2f-6168fbb27ee7,Nags Head,East Leake,LE12 6PG,2,no_name_match,existing_evidence_needs_corroboration,2026-10-11,False,,FSA comparison is inconclusive; absence of a match does not contradict accepted evidence
 v-0977d392-c24b-5079-bfce-4e3aca2dbbab,Nags Head,Keelby,DN41 8EF,2,no_name_match,existing_evidence_needs_corroboration,2026-10-11,False,,FSA comparison is inconclusive; absence of a match does not contradict accepted evidence
-v-82f88f23-14c9-56fa-8746-d2ff8f254d42,Nags Head,Henley-in-Arden,B95 5BA,2,coordinate_disagreement,existing_evidence_needs_corroboration,2026-10-09,False,,FSA coordinate is 57.8m from the accepted pin; informational only because the FSA geocode may be approximate
+v-82f88f23-14c9-56fa-8746-d2ff8f254d42,Nags Head,Henley-in-Arden,B95 5BA,2,coordinate_disagreement,existing_evidence_needs_corroboration,2026-10-22,False,,FSA coordinate is 57.8m from the accepted pin; informational only because the FSA geocode may be approximate
 v-6c917cb2-72fd-5558-990b-8541d91a74f4,Navigation,Burton U-T: Horninglow,DE14 2PT,2,coordinate_disagreement,existing_evidence_needs_corroboration,2026-10-20,False,,FSA coordinate is 140.8m from the accepted pin; informational only because the FSA geocode may be approximate
 v-7c5832aa-d803-5bf0-811f-2fc6d351f330,Navigation,Newark,NG24 4TS,2,no_name_match,existing_evidence_needs_corroboration,2026-10-21,False,,FSA comparison is inconclusive; absence of a match does not contradict accepted evidence
 v-9b0214b5-0b89-530a-9485-b8662012f510,Navigation,Shardlow,DE72 2WA,2,coordinate_agreement,owner_reviewed,2026-10-10,False,,Owner reviewed this postcode discrepancy and confirmed the displayed pub building; listing postcode retained for provenance
@@ -355,7 +357,7 @@ v-fa521ab0-a824-5979-9f85-b6ea884f185a,New Inn,Tywardreath,PL24 2QP,2,nearby,exi
 v-0342b90c-d4c1-5faf-996a-58dc2512e334,New Pin,Chellaston,DE73 5UA,2,ambiguous_or_missing_coordinates,existing_evidence_needs_corroboration,2026-10-11,False,,FSA comparison is inconclusive; absence of a match does not contradict accepted evidence
 v-6e6a3ef8-0baa-5d53-927c-a5d1b1044c85,New Storey,Osgathorpe,LE12 9TA,2,coordinate_disagreement,existing_evidence_needs_corroboration,2026-10-20,False,,FSA coordinate is 81.5m from the accepted pin; informational only because the FSA geocode may be approximate
 v-df417cf2-1194-5613-8414-8dbc8b7760e4,Newcastle Town FC (PMC),Newcastle-U-L: Central,ST5 3BX,2,no_name_match,existing_evidence_needs_corroboration,2026-10-09,False,,FSA comparison is inconclusive; absence of a match does not contradict accepted evidence
-v-88baf1bf-439e-5f70-9c45-1cacab7a6c20,No 1 Pub,Cleethorpes,DN35 8AX,2,coordinate_disagreement,existing_evidence_needs_corroboration,2026-10-09,False,,FSA coordinate is 87.7m from the accepted pin; informational only because the FSA geocode may be approximate
+v-88baf1bf-439e-5f70-9c45-1cacab7a6c20,No 1 Pub,Cleethorpes,DN35 8AX,2,coordinate_disagreement,existing_evidence_needs_corroboration,2026-10-22,False,,FSA coordinate is 87.7m from the accepted pin; informational only because the FSA geocode may be approximate
 v-74dbf71c-c14e-5864-b00a-8517cff77270,Norman Arms,Derby: Normanton,DE23 8DF,2,coordinate_disagreement,existing_evidence_needs_corroboration,2026-10-20,False,,FSA coordinate is 102.2m from the accepted pin; informational only because the FSA geocode may be approximate
 v-687a0434-26b7-5b35-b774-ef8e42d70b8a,Nova Scotia,Bristol: Cumberland Basin,BS1 6XJ,2,no_name_match,existing_evidence_needs_corroboration,2026-10-19,False,,FSA comparison is inconclusive; absence of a match does not contradict accepted evidence
 v-30bde428-0b9d-560f-b64b-cc5d7f621110,Oak and Acorn,Derby: Oakwood,DE21 2HT,2,coordinate_disagreement,existing_evidence_needs_corroboration,2026-10-14,False,,FSA coordinate is 119.4m from the accepted pin; informational only because the FSA geocode may be approximate
@@ -377,12 +379,12 @@ v-f418e771-24bc-5543-a2b6-1293dbce7ce8,Old Star,Uttoxeter,ST14 8HJ,2,coordinate_
 v-e1529c31-a528-53b2-a01e-e18c1fb2a58e,Olde Royal Oak,Burton U-T: Central,DE14 1HA,2,no_name_match,existing_evidence_needs_corroboration,2026-10-09,False,,FSA comparison is inconclusive; absence of a match does not contradict accepted evidence
 v-1488af46-baed-520b-89f3-b68543720635,Palmerston Arms,Peterborough,PE2 9PA,2,coordinate_disagreement,existing_evidence_needs_corroboration,2026-10-12,False,,FSA coordinate is 96.8m from the accepted pin; informational only because the FSA geocode may be approximate
 v-ee8c2a42-5592-5cd7-b8b0-cf83d1433ecd,Pavilion,Ashbourne,DE6 1EJ,2,no_name_match,existing_evidence_needs_corroboration,2026-10-09,False,,FSA comparison is inconclusive; absence of a match does not contradict accepted evidence
-v-81b22492-143c-5193-98ab-361b21915dbb,Peacock Inn,Loughborough,LE11 1AL,2,nearby,existing_evidence_needs_corroboration,2026-10-09,False,,FSA coordinate is 25-50m away; informational only
+v-81b22492-143c-5193-98ab-361b21915dbb,Peacock Inn,Loughborough,LE11 1AL,2,nearby,existing_evidence_needs_corroboration,2026-10-22,False,,FSA coordinate is 25-50m away; informational only
 v-953856c6-66a8-5c4c-bdb1-a826dfd578a7,Peacock Inn,Derby: Central,DE1 3QS,2,no_name_match,existing_evidence_needs_corroboration,2026-10-09,False,,FSA comparison is inconclusive; absence of a match does not contradict accepted evidence
 v-9530734d-95e2-5236-9ff9-1abe95990a64,Pembroke,Portsmouth,PO1 2NR,2,nearby,existing_evidence_needs_corroboration,2026-10-09,False,,FSA coordinate is 25-50m away; informational only
 v-00a08839-2b8a-5782-b6c7-0bdce4cddb2f,Pestle and Mortar,Hinckley,LE10 1DA,2,coordinate_disagreement,existing_evidence_needs_corroboration,2026-10-10,False,,FSA coordinate is 99.1m from the accepted pin; informational only because the FSA geocode may be approximate
 v-00e4f998-bbbf-5827-9a65-ffbc37655195,Pig and Pump,Chesterfield: Central,S41 7TJ,2,coordinate_disagreement,existing_evidence_needs_corroboration,2026-10-10,False,,FSA coordinate is 53.2m from the accepted pin; informational only because the FSA geocode may be approximate
-v-8568c5e5-73b5-586a-bda1-0d7da959896b,Pit,Newstead,NG15 0BU,2,no_name_match,existing_evidence_needs_corroboration,2026-10-09,False,,FSA comparison is inconclusive; absence of a match does not contradict accepted evidence
+v-8568c5e5-73b5-586a-bda1-0d7da959896b,Pit,Newstead,NG15 0BU,2,no_name_match,existing_evidence_needs_corroboration,2026-10-22,False,,FSA comparison is inconclusive; absence of a match does not contradict accepted evidence
 v-155ff10f-4111-5b96-975b-cf3c9827be4a,Plough,Bedworth Heath,CV12 0LG,2,coordinate_disagreement,existing_evidence_needs_corroboration,2026-10-12,False,,FSA coordinate is 83.6m from the accepted pin; informational only because the FSA geocode may be approximate
 v-178e9924-7d6e-5be4-a7f6-8602ed509683,Plough,Diseworth,DE74 2QJ,2,coordinate_disagreement,existing_evidence_needs_corroboration,2026-10-13,False,,FSA coordinate is 133.3m from the accepted pin; informational only because the FSA geocode may be approximate
 v-2464a15c-36d6-5352-a32a-fb781a6437e5,Plough,Wysall,NG12 5QQ,2,coordinate_disagreement,existing_evidence_needs_corroboration,2026-10-13,False,,FSA coordinate is 161.4m from the accepted pin; informational only because the FSA geocode may be approximate
@@ -397,7 +399,7 @@ v-1700cddf-e989-5ee9-be6f-6a249550e1bb,Quarry,Cullercoats,NE25 8PL,2,coordinate_
 v-67013296-99b4-57d1-ab62-78ed1bf2852a,Quarryman,Wirksworth,DE4 4ET,2,nearby,existing_evidence_needs_corroboration,2026-10-19,False,,FSA coordinate is 25-50m away; informational only
 v-e615f8dc-310d-5594-8b9c-dd63c30bb7b3,Queens Arms,Bakewell,DE45 1DS,2,ambiguous_or_missing_coordinates,existing_evidence_needs_corroboration,2026-10-09,False,,FSA comparison is inconclusive; absence of a match does not contradict accepted evidence
 v-5316e12a-1f17-58f9-b913-f5050c616ce5,Queens Head,Meriden,CV7 7JP,2,ambiguous_or_missing_coordinates,existing_evidence_needs_corroboration,2026-10-17,False,,FSA comparison is inconclusive; absence of a match does not contradict accepted evidence
-v-82777cf0-8056-52f2-a4a8-5ddd173fcfac,Queens Head,Belton,LE12 9TP,2,nearby,existing_evidence_needs_corroboration,2026-10-09,False,,FSA coordinate is 25-50m away; informational only
+v-82777cf0-8056-52f2-a4a8-5ddd173fcfac,Queens Head,Belton,LE12 9TP,2,nearby,existing_evidence_needs_corroboration,2026-10-22,False,,FSA coordinate is 25-50m away; informational only
 v-cd0de5c3-353f-509e-9016-344a9d177fcf,Queens Head,Marlpool,DE75 7NJ,2,coordinate_disagreement,existing_evidence_needs_corroboration,2026-10-09,False,,FSA coordinate is 110.2m from the accepted pin; informational only because the FSA geocode may be approximate
 v-14167d8a-1571-5e7b-b69d-8bdf89455ff5,Queens Head Hotel,Congleton,CW12 3DE,2,ambiguous_or_missing_coordinates,existing_evidence_needs_corroboration,2026-10-12,False,,FSA comparison is inconclusive; absence of a match does not contradict accepted evidence
 v-b6c5ba97-eae0-51eb-92fe-7af9eba24354,Raddle,Hollington,ST10 4HQ,2,coordinate_disagreement,existing_evidence_needs_corroboration,2026-10-09,False,,FSA coordinate is 224.2m from the accepted pin; informational only because the FSA geocode may be approximate
@@ -428,7 +430,7 @@ v-c9e11474-128f-555c-8988-f4002725ad26,Red Lion,Wellingore,LN5 0HW,2,nearby,exis
 v-fc84c170-1f47-59d9-b45d-97825e8b5016,Red Lion,Great Chatwell,TF10 9BJ,2,ambiguous_or_missing_coordinates,existing_evidence_needs_corroboration,2026-10-09,False,,FSA comparison is inconclusive; absence of a match does not contradict accepted evidence
 v-399d86f9-f10f-51a5-aca2-2a7d139ed2ca,Red Monkey,Bristol: Redlands,BS6 6PF,2,no_name_match,existing_evidence_needs_corroboration,2026-10-15,False,,FSA comparison is inconclusive; absence of a match does not contradict accepted evidence
 v-a9457b71-bc91-59ee-9b6e-ca029404fa05,Red Shed,Wakefield,WF1 1QX,2,no_name_match,existing_evidence_needs_corroboration,2026-10-09,False,,FSA comparison is inconclusive; absence of a match does not contradict accepted evidence
-v-81b026f2-0fdf-5f62-a2b2-95e3e3cd9c14,Redemption Ale House,Heanor,DE75 7GE,2,coordinate_disagreement,existing_evidence_needs_corroboration,2026-10-09,False,,FSA coordinate is 91.7m from the accepted pin; informational only because the FSA geocode may be approximate
+v-81b026f2-0fdf-5f62-a2b2-95e3e3cd9c14,Redemption Ale House,Heanor,DE75 7GE,2,coordinate_disagreement,existing_evidence_needs_corroboration,2026-10-22,False,,FSA coordinate is 91.7m from the accepted pin; informational only because the FSA geocode may be approximate
 v-c9ab2529-04e8-5a66-a5bd-9280643cab45,Ring o Bells,Bath,BA2 4JT,2,no_name_match,existing_evidence_needs_corroboration,2026-10-09,False,,FSA comparison is inconclusive; absence of a match does not contradict accepted evidence
 v-0d01d59b-c408-5111-b2be-e3764c7fa27d,Rising Sun,Bury St Edmunds,IP33 3AA,2,no_name_match,existing_evidence_needs_corroboration,2026-10-12,False,,FSA comparison is inconclusive; absence of a match does not contradict accepted evidence
 v-1cd55db5-d1e4-547d-a5b5-0411990a6676,Rising Sun,Shackerstone,CV13 6NN,2,nearby,existing_evidence_needs_corroboration,2026-10-13,False,,FSA coordinate is 25-50m away; informational only
@@ -436,7 +438,7 @@ v-94bf26b6-c5ee-5cd7-a314-7bde4e022a94,Rising Sun,Middleton by Wirksworth,DE4 4L
 v-cd9c571f-ae55-5d76-9afd-6c4ee3724019,Rising Sun,Church Gresley,DE11 9LY,2,coordinate_agreement,owner_reviewed,2026-10-10,False,,Owner reviewed this postcode discrepancy and confirmed the displayed pub building; listing postcode retained for provenance
 v-912ad3bb-befd-535b-b0c3-30ad8236317c,Roaring Meg,Biddulph,ST8 7EA,2,nearby,existing_evidence_needs_corroboration,2026-10-09,False,,FSA coordinate is 25-50m away; informational only
 v-12016874-b271-5032-9ed9-e7c2669740f3,Robin Hood,Swannington,LE67 8QQ,2,no_name_match,existing_evidence_needs_corroboration,2026-10-12,False,,FSA comparison is inconclusive; absence of a match does not contradict accepted evidence
-v-84149bd1-cc27-59d6-9c95-6fc859cc80f8,Robin Hood,Amblecote,DY8 4EQ,2,coordinate_disagreement,existing_evidence_needs_corroboration,2026-10-09,False,,FSA coordinate is 54.2m from the accepted pin; informational only because the FSA geocode may be approximate
+v-84149bd1-cc27-59d6-9c95-6fc859cc80f8,Robin Hood,Amblecote,DY8 4EQ,2,coordinate_disagreement,existing_evidence_needs_corroboration,2026-10-22,False,,FSA coordinate is 54.2m from the accepted pin; informational only because the FSA geocode may be approximate
 v-048cf24b-712c-540b-adf4-69019d361865,Roebuck,Silverdale,ST5 6JH,2,coordinate_disagreement,existing_evidence_needs_corroboration,2026-10-11,False,,FSA coordinate is 95.4m from the accepted pin; informational only because the FSA geocode may be approximate
 v-69d2c947-bc3e-58da-9287-cd3fcb60250c,Roebuck,Newcastle-U-L: Silverdale,ST5 6JH,2,coordinate_disagreement,existing_evidence_needs_corroboration,2026-10-19,False,,FSA coordinate is 95.4m from the accepted pin; informational only because the FSA geocode may be approximate
 v-a8833c54-70a1-55d7-a422-fe8f237b91d6,Roebuck,Burton U-T: Central,DE14 1BT,2,coordinate_disagreement,existing_evidence_needs_corroboration,2026-10-09,False,,FSA coordinate is 123.0m from the accepted pin; informational only because the FSA geocode may be approximate
@@ -520,8 +522,8 @@ v-0a6c48e0-630f-5676-bb29-f16729916bea,Three Crowns,Wymeswold,LE12 6TZ,2,nearby,
 v-3d5087bc-6b35-594c-9de7-5c3bb759802e,Three Crowns,Nottingham: Central,NG1 6LD,2,coordinate_disagreement,existing_evidence_needs_corroboration,2026-10-16,False,,FSA coordinate is 62.0m from the accepted pin; informational only because the FSA geocode may be approximate
 v-d2bd535c-fb6c-5918-839a-3c7130ca80dc,Three Crowns,Stone: Little Stoke,ST15 8QU,2,nearby,existing_evidence_needs_corroboration,2026-10-09,False,,FSA coordinate is 25-50m away; informational only
 v-544837a2-5921-5f1a-894c-d82b5fc2d196,Three Cups,Stamford Bridge,YO41 1AX,2,ambiguous_or_missing_coordinates,existing_evidence_needs_corroboration,2026-10-17,False,,FSA comparison is inconclusive; absence of a match does not contradict accepted evidence
-v-84cdc7ac-376d-5172-a8f8-6b618c1597cc,Three Horseshoes,Barton-under-Needwood,DE13 8DR,2,coordinate_disagreement,existing_evidence_needs_corroboration,2026-10-09,False,,FSA coordinate is 87.9m from the accepted pin; informational only because the FSA geocode may be approximate
-v-87496db2-b40f-54a9-ab38-a9507a881536,Three Horseshoes,Fazeley,B78 3RD,2,coordinate_disagreement,existing_evidence_needs_corroboration,2026-10-09,False,,FSA coordinate is 51.4m from the accepted pin; informational only because the FSA geocode may be approximate
+v-84cdc7ac-376d-5172-a8f8-6b618c1597cc,Three Horseshoes,Barton-under-Needwood,DE13 8DR,2,coordinate_disagreement,existing_evidence_needs_corroboration,2026-10-22,False,,FSA coordinate is 87.9m from the accepted pin; informational only because the FSA geocode may be approximate
+v-87496db2-b40f-54a9-ab38-a9507a881536,Three Horseshoes,Fazeley,B78 3RD,2,coordinate_disagreement,existing_evidence_needs_corroboration,2026-10-22,False,,FSA coordinate is 51.4m from the accepted pin; informational only because the FSA geocode may be approximate
 v-8cde8d00-9411-5b53-8eb9-fac4cce54dab,Three Horseshoes,Stoke Golding,CV13 6HE,2,coordinate_disagreement,existing_evidence_needs_corroboration,2026-10-09,False,,FSA coordinate is 121.3m from the accepted pin; informational only because the FSA geocode may be approximate
 v-93765f1e-9190-594b-9c77-6b96456e5433,Three Horseshoes (Pollys),Whitwick,LE67 5GN,2,no_name_match,existing_evidence_needs_corroboration,2026-10-09,False,,FSA comparison is inconclusive; absence of a match does not contradict accepted evidence
 v-b0c6fb73-49cd-5fdf-b936-ee8fbd0ac4c6,Tides Out,Woolacombe,EX34 7BP,2,no_name_match,existing_evidence_needs_corroboration,2026-10-09,False,,FSA comparison is inconclusive; absence of a match does not contradict accepted evidence
@@ -594,14 +596,14 @@ v-61793663-b18f-5023-b24d-b2a4d9dd46ba,Ye Olde Butchers Arms,Reapsmoor,SK17 0LL,
 v-7b7219e5-71e0-524f-8e83-8546cb6673bd,Ye Olde Dolphin Inne,Derby: Central,DE1 3DL,2,no_name_match,existing_evidence_needs_corroboration,2026-10-21,False,,FSA comparison is inconclusive; absence of a match does not contradict accepted evidence
 v-19987b0d-6480-58e7-b70f-9f56cafc2d33,Ye Olde Rock,Upper Hulme,ST13 8TY,2,coordinate_disagreement,owner_reviewed,2026-10-13,False,,FSA coordinate is 53.9m from the accepted pin; informational only because the FSA geocode may be approximate
 v-f8ddf3fe-2e91-5117-a0d3-bfff56f4a0b9,Ye Olde Talbot,Uttoxeter,ST14 8HF,2,no_name_match,existing_evidence_needs_corroboration,2026-10-09,False,,FSA comparison is inconclusive; absence of a match does not contradict accepted evidence
-v-839b62df-ea58-53d1-9b38-174b5695addc,Ye Olde Watling,St Pauls,EC4M 9BR,2,nearby,existing_evidence_needs_corroboration,2026-10-09,False,,FSA coordinate is 25-50m away; informational only
+v-839b62df-ea58-53d1-9b38-174b5695addc,Ye Olde Watling,St Pauls,EC4M 9BR,2,nearby,existing_evidence_needs_corroboration,2026-10-22,False,,FSA coordinate is 25-50m away; informational only
 v-5e9138e0-7352-55f1-b255-7397c00900a8,Ye Olde Windmill,Gentleshaw,WS15 4NF,2,ambiguous_or_missing_coordinates,existing_evidence_needs_corroboration,2026-10-18,False,,FSA comparison is inconclusive; absence of a match does not contradict accepted evidence
 v-43226935-fcdc-552c-9ef0-2183dc60bb26,Yr Alex,Caernarfon,LL55 1BA,2,no_name_match,existing_evidence_needs_corroboration,2026-10-16,False,,FSA comparison is inconclusive; absence of a match does not contradict accepted evidence
 v-4daa7cd1-f719-59de-b7d9-0fff79c03028,Admiral Nelson,Market Harborough,LE16 9AX,3,coordinate_agreement,independent_coordinate_agreement,2026-10-17,False,,
 v-b609342b-02d8-5a22-ad62-a02a50c2f76d,Admiral Rodney,Hartshorne,DE11 7ES,3,coordinate_agreement,independent_coordinate_agreement,2026-10-09,False,,
 v-051ceacd-e5d7-58d1-81ce-dec99892c1e7,Alfred,Burton U-T: Central,DE14 2LD,3,coordinate_agreement,independent_coordinate_agreement,2026-10-11,False,,
 v-2039a2dc-edc4-5c45-8a2a-91a65e51ef0f,Anchor,Birmingham: Digbeth,B5 6ET,3,coordinate_agreement,independent_coordinate_agreement,2026-10-13,False,,
-v-82d3d17e-9f81-558d-afd7-e71bc5c4cdf4,Anchor,Newhall,DE11 0EA,3,coordinate_agreement,independent_coordinate_agreement,2026-10-09,False,,
+v-82d3d17e-9f81-558d-afd7-e71bc5c4cdf4,Anchor,Newhall,DE11 0EA,3,coordinate_agreement,independent_coordinate_agreement,2026-10-22,False,,
 v-bd6bb3de-ed02-51e8-abcc-6dfabb5f1bd9,Anchor Inn,Walton on the Wolds,LE12 8HT,3,coordinate_agreement,independent_coordinate_agreement,2026-10-09,False,,
 v-3520911e-cb85-50dc-9c8f-6fcabd27ec3d,Ancient Briton,Pen-y-cae,SA9 1YY,3,coordinate_agreement,independent_coordinate_agreement,2026-10-15,False,,
 v-baab4f7f-7a7e-57bd-b902-8967f59f3867,Anglesey,Salford,M3 5DF,3,coordinate_agreement,independent_coordinate_agreement,2026-10-09,False,,
@@ -656,7 +658,7 @@ v-ac38ee23-9c64-5a78-bc32-371dab1126ed,Broad Chare,Newcastle: Central,NE1 3DQ,3,
 v-bc7a8cb1-e9eb-558a-b040-fa088ecd86ff,Brown Cow,Mansfield,NG18 2JA,3,coordinate_agreement,independent_coordinate_agreement,2026-10-09,False,,
 v-9ce1b251-866a-561b-8d1a-0b8adc0da01f,Brunswick,Derby: Central,DE1 2RU,3,coordinate_agreement,independent_coordinate_agreement,2026-10-09,False,,
 v-ead349df-157a-56af-b920-d4356a2f638b,Bubble Inn,Stenson,DE73 7HL,3,coordinate_agreement,independent_coordinate_agreement,2026-10-09,False,,
-v-852ca206-bf9a-5daf-9e98-6e415532acfe,Bugle Horn,Hartwell,HP17 8QP,3,coordinate_agreement,independent_coordinate_agreement,2026-10-09,False,,
+v-852ca206-bf9a-5daf-9e98-6e415532acfe,Bugle Horn,Hartwell,HP17 8QP,3,coordinate_agreement,independent_coordinate_agreement,2026-10-22,False,,
 v-2c3d4d36-ce8e-51af-bdfb-fa13e97ac943,Bull,Rugby,CV21 3BX,3,coordinate_agreement,independent_coordinate_agreement,2026-10-14,False,,
 v-30313510-91a5-5adf-b5da-4f48d83379f8,Bulls Head,Rosliston,DE12 8JU,3,coordinate_agreement,independent_coordinate_agreement,2026-10-14,False,,
 v-ccbf78d9-f908-5ee3-b55d-b3150dafbb97,Bulls Head,Youlgrave,DE45 1UR,3,coordinate_agreement,independent_coordinate_agreement,2026-10-09,False,,
@@ -675,7 +677,6 @@ v-50323fa5-8304-5c72-972b-8d83a5347feb,Castle,Farringdon EC1M,EC1M 6DB,3,coordin
 v-92de2df6-e97e-5ce0-a462-5ca74b066b2e,Castle Court Hotel,Beaumaris,LL58 8DA,3,coordinate_agreement,independent_coordinate_agreement,2026-10-09,False,,
 v-f6886404-8431-56c0-9be6-1823b2099c4c,Castle Mona,Newcastle-U-L: Central,ST5 1NT,3,coordinate_agreement,independent_coordinate_agreement,2026-10-09,False,,
 v-aa3471ae-ad37-5208-8523-f8231e943888,Caught and Bowled,Giltbrook,NG16 2GG,3,coordinate_agreement,independent_coordinate_agreement,2026-10-09,False,,
-v-95a10492-5d95-5fd1-85cd-7a9a58882d81,Charlie Bassetts,Dilhorne,ST10 2PQ,3,coordinate_agreement,existing_evidence_needs_corroboration,2026-10-09,False,,
 v-25db9c48-c55a-5c1b-9c9d-351c6e520400,Chequers,Ticknall,DE73 7JH,3,coordinate_agreement,independent_coordinate_agreement,2026-10-14,False,,
 v-2de0bb85-bfc1-57c5-8db5-4eb99ac5bdfa,Chequers,Beeston,NG9 4AF,3,coordinate_agreement,independent_coordinate_agreement,2026-10-14,False,,
 v-aeb9d9e6-0cae-54ac-9e8c-eaac2a085f36,Chequers,Oxford: Central,OX1 4DH,3,coordinate_agreement,independent_coordinate_agreement,2026-10-09,False,,
@@ -692,7 +693,7 @@ v-6d0bb9e5-f7de-5257-b2ac-396a40f95a3b,Cobblers,Leek,ST13 5JF,3,coordinate_agree
 v-6a457ad2-7ee7-5c8a-9117-31e8b173865b,Cock,Woodseaves,ST20 0NP,3,coordinate_agreement,independent_coordinate_agreement,2026-10-19,False,,
 v-74f228b0-434a-58de-94db-1b6fc9c5a1bf,Cock Inn,Stowe by Chartley,ST18 0LF,3,coordinate_agreement,independent_coordinate_agreement,2026-10-20,False,,
 v-58e8a0e8-7f7f-548d-8f11-21a0a57db8e9,Coeur de Lion,Bath,BA1 5AR,3,coordinate_agreement,independent_coordinate_agreement,2026-10-18,False,,
-v-86e19a4c-2c6a-5dbf-aecc-02f4ee85d993,Colvile Arms,Lullington,DE12 8EG,3,coordinate_agreement,independent_coordinate_agreement,2026-10-09,False,,
+v-86e19a4c-2c6a-5dbf-aecc-02f4ee85d993,Colvile Arms,Lullington,DE12 8EG,3,coordinate_agreement,independent_coordinate_agreement,2026-10-22,False,,
 v-8ad1822b-757a-588b-bc8c-554fc8580a41,Commercial,Glossop,SK13 7SH,3,coordinate_agreement,independent_coordinate_agreement,2026-10-09,False,,
 v-5616593b-8a99-527f-97aa-bb5eb490b5dd,Compton Arms,Islington N1,N1 2XD,3,coordinate_agreement,independent_coordinate_agreement,2026-10-18,False,,
 v-38368b12-74dc-52f8-811e-567982334cbd,Coopers Tavern,Burton U-T: Central,DE14 1EG,3,coordinate_agreement,independent_coordinate_agreement,2026-10-15,False,,
@@ -704,7 +705,7 @@ v-d43b5ef8-7af5-5728-9a3a-e93e2dbed275,Cross Foxes,Shrewsbury: Coleham,SY3 7DE,3
 v-9548329c-9cf1-5d75-9fab-f9f59760c502,Cross Guns,Stoke: Northwood,ST1 6PW,3,coordinate_agreement,independent_coordinate_agreement,2026-10-09,False,,
 v-5c982fb1-848c-5b01-ba8e-e86d8420002f,Cross House,Doynton,BS30 5TF,3,coordinate_agreement,independent_coordinate_agreement,2026-10-18,False,,
 v-1d17c5c9-4733-52cd-b714-9df909ad3c38,Cross Keys,Tean,ST10 4DR,3,coordinate_agreement,independent_coordinate_agreement,2026-10-13,False,,
-v-8588f8fe-f1e5-5210-89c3-92f39c2f27a8,Cross Keys,Wallingford,OX10 0DB,3,coordinate_agreement,independent_coordinate_agreement,2026-10-09,False,,
+v-8588f8fe-f1e5-5210-89c3-92f39c2f27a8,Cross Keys,Wallingford,OX10 0DB,3,coordinate_agreement,independent_coordinate_agreement,2026-10-22,False,,
 v-9076f4fc-5f83-530b-bbaf-18318f2ac733,Cross Keys,Tutbury,DE13 9NR,3,coordinate_agreement,independent_coordinate_agreement,2026-10-09,False,,
 v-b9e27a79-683c-558f-b128-d5acbbd98a3d,Cross Keys,Barwell,LE9 8DD,3,coordinate_agreement,independent_coordinate_agreement,2026-10-09,False,,
 v-98c9c146-6069-548e-9386-bd971dc8e282,Cross Keys Hotel,Hednesford,WS12 2DN,3,coordinate_agreement,independent_coordinate_agreement,2026-10-09,False,,
@@ -783,7 +784,7 @@ v-2cd5a629-617c-5b91-b526-87934aee4d0c,Hand and Shears,Barbican EC1A,EC1A 7JA,3,
 v-ad92f484-649e-5618-98b2-57eab539a803,Harbour Pool Club (PMC),St Ives,TR26 1LF,3,coordinate_agreement,existing_evidence_needs_corroboration,2026-10-09,False,,
 v-a931934c-04a6-5c62-9e77-c493603da229,Hardinge Arms,Kings Newton,DE73 8BX,3,coordinate_agreement,independent_coordinate_agreement,2026-10-09,False,,
 v-59bedf56-036b-5a16-ba9c-a07870b4d01f,Hardwick Arms Hotel,Sedgefield,TS21 2AZ,3,coordinate_agreement,independent_coordinate_agreement,2026-10-18,False,,
-v-89e87eb9-f76f-51a2-9451-37b0d60465ab,Hare and Hounds,Harlton,CB23 1ES,3,coordinate_agreement,independent_coordinate_agreement,2026-10-09,False,,
+v-89e87eb9-f76f-51a2-9451-37b0d60465ab,Hare and Hounds,Harlton,CB23 1ES,3,coordinate_agreement,independent_coordinate_agreement,2026-10-22,False,,
 v-8e5b2393-cd3c-521b-9166-47d76c920c2b,Harrington Arms,Thulston,DE72 3EY,3,coordinate_agreement,independent_coordinate_agreement,2026-10-09,False,,
 v-be7f0bf6-ee04-51ab-b58d-71d3cbcc0f66,Hat and Beaver,Atherstone,CV9 1AF,3,coordinate_agreement,independent_coordinate_agreement,2026-10-09,False,,
 v-f37066e0-dd8f-5917-b980-2c0a8adc9424,Hawk and Buckle,Etwall,DE65 6LP,3,coordinate_agreement,independent_coordinate_agreement,2026-10-09,False,,
@@ -800,7 +801,6 @@ v-8bf82b3e-44d5-57d8-aae9-86f083fa56c7,Horse and Trumpet,Sileby,LE12 7LP,3,coord
 v-09253a78-877d-51d9-bcf3-2189fa846e2b,Horseshoe,Chipping Sodbury,BS37 6AH,3,coordinate_agreement,independent_coordinate_agreement,2026-10-11,False,,
 v-12224361-c352-56ce-914a-4df8cc9b38d2,Hourglass,Tutbury,DE13 9LP,3,coordinate_agreement,independent_coordinate_agreement,2026-10-12,False,,
 v-a133f55b-7780-5435-a9a1-4f3b52e1acbe,Imperial Inn,Gloucester,GL1 2AG,3,coordinate_agreement,independent_coordinate_agreement,2026-10-09,False,,
-v-6040a12f-787d-5099-a640-bc3a1fdc1c6c,Inkspot,Leek,ST13 6HX,3,coordinate_agreement,existing_evidence_needs_corroboration,2026-10-19,False,,
 v-67ba7177-95d2-5265-a5a8-f4c122e518e6,Irby Mill,Greasby,CH49 3NT,3,coordinate_agreement,independent_coordinate_agreement,2026-10-19,False,,
 v-c3c6a0c9-ece6-5d38-911c-a19caae36408,Island Queen,Islington N1,N1 8HD,3,coordinate_agreement,independent_coordinate_agreement,2026-10-09,False,,
 v-0a1afb42-ef83-5d3a-ac66-0f68788a05b3,Jawbone,Liverpool: Bootle,L20 3BZ,3,coordinate_agreement,owner_reviewed,2026-10-11,False,,
@@ -817,7 +817,7 @@ v-2a7a5a49-6d37-59f0-b157-ae0bb3fdcb0b,Kings Arms,Bethnal Green E2,E2 6EY,3,coor
 v-ceae4c50-fc62-580c-b6de-a0769bf742b2,Kings Arms,Whitchurch,RG28 7AB,3,coordinate_agreement,independent_coordinate_agreement,2026-10-09,False,,
 v-d50e8515-7788-542c-8eb8-b448a556ce3b,Kings Arms,Newent,GL18 1BD,3,coordinate_agreement,independent_coordinate_agreement,2026-10-09,False,,
 v-71fc939a-ab26-5da5-a03b-420f0b9dfcc9,Kings Head,North Weald,CM16 6BU,3,coordinate_agreement,independent_coordinate_agreement,2026-10-20,False,,
-v-8590dcc6-31ad-517a-bf81-afcbca16d3d6,Kings Head,Shrewsbury: Central,SY1 1PP,3,coordinate_agreement,independent_coordinate_agreement,2026-10-09,False,,
+v-8590dcc6-31ad-517a-bf81-afcbca16d3d6,Kings Head,Shrewsbury: Central,SY1 1PP,3,coordinate_agreement,independent_coordinate_agreement,2026-10-22,False,,
 v-f1c9a984-7cec-51a0-ba02-1041b5f3a7c5,Kings Way,Stoke: Central,ST4 1JB,3,coordinate_agreement,independent_coordinate_agreement,2026-10-09,False,,
 v-6f596460-a688-5196-acb3-b4fdc1f6f6cd,Kingston Arms,Cambridge,CB1 2NU,3,coordinate_agreement,independent_coordinate_agreement,2026-10-20,False,,
 v-d4791829-cd62-5610-8557-722e5a52f60a,Laburnum,Matlock,DE4 2PW,3,coordinate_agreement,independent_coordinate_agreement,2026-10-09,False,,
@@ -876,7 +876,7 @@ v-cab05bf0-cc9b-5c82-a7d4-146787ae933f,Olde Cottage,Chester,CH1 3DZ,3,coordinate
 v-d8553110-f596-5e7f-998c-21f1718f340b,Olde Kings Arms,Congleton,CW12 1BN,3,coordinate_agreement,independent_coordinate_agreement,2026-10-09,False,,
 v-5cebdfe8-553b-598e-afa8-1b1510a63c90,Olde Whyte Swanne,Louth,LN11 9NP,3,coordinate_agreement,independent_coordinate_agreement,2026-10-18,False,,
 v-09770c0c-efe5-5589-a6e1-edf4f7ca4a95,Park Inn,Stoke: Dresden,ST3 4EN,3,coordinate_agreement,independent_coordinate_agreement,2026-10-11,False,,
-v-87d62c18-2ada-5403-86fd-2030a2b69ad1,Pebbles Tavern,Watchet,TA23 0AN,3,coordinate_agreement,independent_coordinate_agreement,2026-10-09,False,,
+v-87d62c18-2ada-5403-86fd-2030a2b69ad1,Pebbles Tavern,Watchet,TA23 0AN,3,coordinate_agreement,independent_coordinate_agreement,2026-10-22,False,,
 v-fbb0978c-dd43-593b-85ea-bbdcc21abd9d,Pelican Inn/Tafarn Y Pelican,Newcastle Emlyn,SA38 9AP,3,coordinate_agreement,independent_coordinate_agreement,2026-10-09,False,,
 v-9fab66f6-d13e-584c-bcd9-0489b0a9d6b2,Pen and Wig,Newport,NP20 1JD,3,coordinate_agreement,independent_coordinate_agreement,2026-10-09,False,,
 v-3acebbc1-6350-590f-b5f3-e933c8e984a0,Philharmonic Dining Rooms,Liverpool: Central,L1 9BX,3,coordinate_agreement,independent_coordinate_agreement,2026-10-15,False,,
@@ -903,7 +903,7 @@ v-4f09947a-0bd9-5b32-ae9c-bd17066e74d5,Rawdon Arms,Moira,DE12 6AL,3,coordinate_a
 v-1e6c0956-c0d8-5c42-9da0-9cf6b803f949,Red Lion,Earl Shilton,LE9 7LQ,3,coordinate_agreement,independent_coordinate_agreement,2026-10-13,False,,
 v-2a4ff661-8819-5376-9467-014d30863ef0,Red Lion,Penderyn,CF44 9JR,3,coordinate_agreement,independent_coordinate_agreement,2026-10-14,False,,
 v-6fea27f6-7647-5469-a118-d1f310b732be,Red Lion,Cheddleton,ST13 7HN,3,coordinate_agreement,independent_coordinate_agreement,2026-10-20,False,,
-v-863b0850-5678-56fc-b581-b7e856e50968,Red Lion,Waterfall,ST10 3HZ,3,coordinate_agreement,independent_coordinate_agreement,2026-10-09,False,,
+v-863b0850-5678-56fc-b581-b7e856e50968,Red Lion,Waterfall,ST10 3HZ,3,coordinate_agreement,independent_coordinate_agreement,2026-10-22,False,,
 v-98217540-8d77-5352-aff2-83846e1183a8,Red Lion,Linton,DE12 6PZ,3,coordinate_agreement,independent_coordinate_agreement,2026-10-09,False,,
 v-cc4be9e4-0760-5865-a0bd-4c279c6fc777,Red Lion,Spalding,PE11 1SU,3,coordinate_agreement,independent_coordinate_agreement,2026-10-09,False,,
 v-e146d618-c9ba-5fa4-8427-d3a81da5ea85,Red Lion,Repton,DE65 6FL,3,coordinate_agreement,independent_coordinate_agreement,2026-10-09,False,,
@@ -925,14 +925,14 @@ v-ff000679-9cc7-5cbb-8c2c-a06a97d3dba4,Royal Oak,Rode Heath,ST7 3RW,3,coordinate
 v-32bebf96-9a7c-5c13-b5e6-214c22a6a6e8,Rutland Cottage,Ilkeston,DE7 8TE,3,coordinate_agreement,independent_coordinate_agreement,2026-10-15,False,,
 v-01dd87fe-80c7-51ce-8410-45c3664e8b45,Sawley Junction,Long Eaton,NG10 3JU,3,coordinate_agreement,independent_coordinate_agreement,2026-10-10,False,,
 v-5c396bdc-3097-5b38-904f-c1cd4ecdf0ad,Seabridge,Newcastle-U-L: Clayton,ST5 3HA,3,coordinate_agreement,independent_coordinate_agreement,2026-10-18,False,,
-v-87bd0095-c521-539d-8a94-b6ec16a2792b,Selly Park Tavern,Birmingham: Selly Oak,B29 7HQ,3,coordinate_agreement,independent_coordinate_agreement,2026-10-09,False,,
+v-87bd0095-c521-539d-8a94-b6ec16a2792b,Selly Park Tavern,Birmingham: Selly Oak,B29 7HQ,3,coordinate_agreement,independent_coordinate_agreement,2026-10-22,False,,
 v-6e90968f-4cae-505d-9fbe-5de8b2b5d1a1,Seven Stars,Falmouth,TR11 3QA,3,coordinate_agreement,independent_coordinate_agreement,2026-10-20,False,,
 v-31ec017a-013e-520a-b394-1b72c94b330a,Shakespeare Inn,Shardlow,DE72 2GP,3,coordinate_agreement,independent_coordinate_agreement,2026-10-15,False,,
 v-1f980acc-ae24-543c-9afc-40840f5ecc91,Sheet Anchor,Baldwins Gate,ST5 5BU,3,coordinate_agreement,existing_evidence_needs_corroboration,2026-10-13,False,,
 v-c62f31b0-c5b0-546c-979e-12fac920a47a,Shepherds Hall Ale House,Chorley,PR7 1BS,3,coordinate_agreement,independent_coordinate_agreement,2026-10-09,False,,
 v-b8d9f35f-2695-5316-9b49-ee5e6a6c0523,Shilton Vaults,Earl Shilton,LE9 7NA,3,coordinate_agreement,independent_coordinate_agreement,2026-10-09,False,,
-v-856326d7-01df-540b-844b-ed814125487b,Ship,Borough SE1,SE1 1DX,3,coordinate_agreement,independent_coordinate_agreement,2026-10-09,False,,
-v-875e47ea-6a05-5262-9979-71b2740ca04b,Ship Inn,Fishguard,SA65 9ND,3,coordinate_agreement,independent_coordinate_agreement,2026-10-09,False,,
+v-856326d7-01df-540b-844b-ed814125487b,Ship,Borough SE1,SE1 1DX,3,coordinate_agreement,independent_coordinate_agreement,2026-10-22,False,,
+v-875e47ea-6a05-5262-9979-71b2740ca04b,Ship Inn,Fishguard,SA65 9ND,3,coordinate_agreement,independent_coordinate_agreement,2026-10-22,False,,
 v-f11c4c2f-c649-589b-8470-da497a5265ff,Ship and Pilot,Ilfracombe,EX34 9EE,3,coordinate_agreement,independent_coordinate_agreement,2026-10-09,False,,
 v-6ff98c8e-26a6-5836-b35c-0ae118c68623,Shoulder of Mutton,Hamstall Ridware,WS15 3RZ,3,coordinate_agreement,independent_coordinate_agreement,2026-10-20,False,,
 v-f365d3e5-285c-5a5d-a0a7-3532f14a676c,Signalman,Stoke: Longton,ST3 1JE,3,coordinate_agreement,independent_coordinate_agreement,2026-10-09,False,,
@@ -946,7 +946,7 @@ v-dbeb3179-3c95-5e73-9ce6-227b045a3d74,Snowdon,Llandudno,LL30 2HB,3,coordinate_a
 v-0d6e06da-2598-5e42-abdb-11cebca8ba46,Snowdonia Parc,Waunfawr,LL55 4AQ,3,coordinate_agreement,independent_coordinate_agreement,2026-10-12,False,,
 v-6e2c75bb-4b00-5749-9b3b-386f6d79fe28,Spanker,Nether Heage,DE56 2AT,3,coordinate_agreement,independent_coordinate_agreement,2026-10-20,False,,
 v-637a846e-2e98-5d5c-9c88-c43a158f3b27,Spread Eagle,Etwall,DE65 6LP,3,coordinate_agreement,independent_coordinate_agreement,2026-10-19,False,,
-v-851df8e3-dfd8-5a84-9b07-6c94e5f85d8f,St Levan Inn,Plymouth: Dockyard,PL2 1JJ,3,coordinate_agreement,independent_coordinate_agreement,2026-10-09,False,,
+v-851df8e3-dfd8-5a84-9b07-6c94e5f85d8f,St Levan Inn,Plymouth: Dockyard,PL2 1JJ,3,coordinate_agreement,independent_coordinate_agreement,2026-10-22,False,,
 v-f796da6f-951a-52ac-a180-bd9f2f16efea,Staff of Life,Stoke: Central,ST4 1NL,3,coordinate_agreement,independent_coordinate_agreement,2026-10-09,False,,
 v-5d1ef228-39c5-5fd3-9d21-f0e8dc91ede1,Staffordshire Knot,Gillow Heath,ST8 6RG,3,coordinate_agreement,independent_coordinate_agreement,2026-10-18,False,,
 v-f5a285ad-dab2-5bd0-acb6-3a520fd42c8d,Staffordshire Knot,Biddulph,ST8 6RG,3,coordinate_agreement,independent_coordinate_agreement,2026-10-09,False,,
@@ -963,7 +963,7 @@ v-d662d0c4-a468-53cd-89b2-f7305f033e3c,Stoke Canon,Stoke Canon,EX5 4AR,3,coordin
 v-750b560a-6efe-5ea6-ba1b-b2548bbcf5a5,Stretton Fox,Stretton,WA4 4NU,3,coordinate_agreement,independent_coordinate_agreement,2026-10-20,False,,
 v-24b4549e-4e9e-5f4f-ab73-472f158c67f6,Sun,Stockton-on-Tees,TS18 1SU,3,coordinate_agreement,independent_coordinate_agreement,2026-10-13,False,,
 v-c13ddfa5-e07c-5ada-be8a-58b49b43b4a1,Sun Inn,Blackpool: South Shore,FY1 6AA,3,coordinate_agreement,independent_coordinate_agreement,2026-10-09,False,,
-v-87f1292d-8e25-5467-a071-41392b666208,Sutherland Arms,Stoke: Central,ST4 5RW,3,coordinate_agreement,independent_coordinate_agreement,2026-10-09,False,,
+v-87f1292d-8e25-5467-a071-41392b666208,Sutherland Arms,Stoke: Central,ST4 5RW,3,coordinate_agreement,independent_coordinate_agreement,2026-10-22,False,,
 v-1d6b0673-6a76-5c00-b89e-e0edef98a229,Swan,Buxton,SK17 6HB,3,coordinate_agreement,independent_coordinate_agreement,2026-10-13,False,,
 v-444bb5a4-de1a-5908-9f72-6b0a17eecae8,Swan,Betley,CW3 9AB,3,coordinate_agreement,independent_coordinate_agreement,2026-10-16,False,,
 v-a59604b7-f6a6-56bb-9338-723cc17f70b0,Swan Inn,Milton,DE65 6EF,3,coordinate_agreement,independent_coordinate_agreement,2026-10-09,False,,
@@ -986,14 +986,14 @@ v-2fb083b1-287a-500c-a101-a30a716d112d,Travellers Rest,Stoke: Milton,ST2 7AQ,3,c
 v-db7d725b-d3e5-5443-aec0-3dab78a19eae,Trent Navigation,Nottingham: Central,NG2 3HS,3,coordinate_agreement,independent_coordinate_agreement,2026-10-09,False,,
 v-8e577f40-1d4f-5d93-a248-eb1f6eb244e4,Trentside Cricket Club (PMC),Burton U-T: Branston,DE14 3DP,3,coordinate_agreement,existing_evidence_needs_corroboration,2026-10-09,False,,
 v-1c738e6e-5b59-5609-b777-bf14e0038c2b,Trinity,Bath,BA1 2DA,3,coordinate_agreement,independent_coordinate_agreement,2026-10-13,False,,
-v-87d7e6a3-cfa9-5f8f-a743-d41c521cf28f,Trubshaws,Rugeley: Bereton,WS15 1HR,3,coordinate_agreement,independent_coordinate_agreement,2026-10-09,False,,
+v-87d7e6a3-cfa9-5f8f-a743-d41c521cf28f,Trubshaws,Rugeley: Bereton,WS15 1HR,3,coordinate_agreement,independent_coordinate_agreement,2026-10-22,False,,
 v-4898455e-2503-5f64-a125-2c4bd6530cd8,Twelve Sixty,Hoylake,CH47 2AE,3,coordinate_agreement,independent_coordinate_agreement,2026-10-16,False,,
 v-d2c88a67-ea42-5c82-b9dd-08510511f068,Twelve-Sixty Bar and Lounge,Liscard,CH44 5XH,3,coordinate_agreement,independent_coordinate_agreement,2026-10-09,False,,
 v-1609cb4c-f51b-5a94-a5bc-6f1636395521,Two Pigs,Barton-under-Needwood,DE13 8AA,3,coordinate_agreement,independent_coordinate_agreement,2026-10-12,False,,
-v-896703d0-3830-5aad-9d85-cb50c7fc4a52,Tynemouth Lodge Hotel,Tynemouth,NE30 4AA,3,coordinate_agreement,independent_coordinate_agreement,2026-10-09,False,,
+v-896703d0-3830-5aad-9d85-cb50c7fc4a52,Tynemouth Lodge Hotel,Tynemouth,NE30 4AA,3,coordinate_agreement,independent_coordinate_agreement,2026-10-22,False,,
 v-0a4c4c27-092f-5435-af38-cbf015c51ce1,Unicorn,Lutterworth,LE17 4AE,3,coordinate_agreement,independent_coordinate_agreement,2026-10-11,False,,
 v-494b3af4-e3ee-5247-ac00-5a6740924868,Unicorn,Manchester: Central,M4 1PN,3,coordinate_agreement,independent_coordinate_agreement,2026-10-16,False,,
-v-86dac05b-abba-5392-ac1c-088cc3eb1ff1,Unicorn,Stoke: Hanley,ST1 1EG,3,coordinate_agreement,independent_coordinate_agreement,2026-10-09,False,,
+v-86dac05b-abba-5392-ac1c-088cc3eb1ff1,Unicorn,Stoke: Hanley,ST1 1EG,3,coordinate_agreement,independent_coordinate_agreement,2026-10-22,False,,
 v-6e0bdde8-3789-5828-b375-0f79ec63f9e4,Uxbridge Arms,Burton U-T: Central,DE14 3LR,3,coordinate_agreement,independent_coordinate_agreement,2026-10-20,False,,
 v-c2101302-1af3-5173-a708-50397fd5ac92,VAT and Fiddle,Nottingham: Central,NG2 1NB,3,coordinate_agreement,independent_coordinate_agreement,2026-10-09,False,,
 v-de3aa949-1b8d-570b-b6c2-a27e7db5964e,Valiant,Leek,ST13 5HG,3,coordinate_agreement,existing_evidence_needs_corroboration,2026-10-09,False,,
@@ -1024,7 +1024,7 @@ v-70415615-af92-517d-b22e-d258066aad2d,White Hart,Measham,DE12 7LG,3,coordinate_
 v-7b90e553-98bb-5704-956d-ac5077bae36a,White Hart,Burgh Le Marsh,PE24 5JL,3,coordinate_agreement,independent_coordinate_agreement,2026-10-21,False,,
 v-95bd3b66-7c97-5ae3-8743-864f7967c9cc,White Hart,Midsomer Norton,BA3 2HQ,3,coordinate_agreement,independent_coordinate_agreement,2026-10-09,False,,
 v-f3585e2e-c407-55f1-92d3-15438d5e9cd6,White Hart,Crystal Palace SE19,SE19 2EZ,3,coordinate_agreement,independent_coordinate_agreement,2026-10-09,False,,
-v-8802e318-5783-5125-b7fb-eba44264f1dc,White Horse,Oxford: Central,OX1 3BB,3,coordinate_agreement,independent_coordinate_agreement,2026-10-09,False,,
+v-8802e318-5783-5125-b7fb-eba44264f1dc,White Horse,Oxford: Central,OX1 3BB,3,coordinate_agreement,independent_coordinate_agreement,2026-10-22,False,,
 v-90e95fa4-3dbe-5cbe-96ec-da41123f2ead,White Horse,Derby: Central,DE1 2AW,3,coordinate_agreement,independent_coordinate_agreement,2026-10-09,False,,
 v-fab7fdfe-dae0-5204-a1bc-e1a6d7000c65,White Horse,Atherstone,CV9 1AB,3,coordinate_agreement,independent_coordinate_agreement,2026-10-09,False,,
 v-492dd39d-6b99-5214-aff3-fff232eb1421,White Lion,Stockport,SK1 1LW,3,coordinate_agreement,independent_coordinate_agreement,2026-10-16,False,,
@@ -1040,6 +1040,6 @@ v-4507f719-35b6-516e-88fc-710fde2fccf4,Woodman,Shrewsbury: Coton Hill,SY1 2DZ,3,
 v-f9a6a6f4-f01f-504e-80e8-b837ebf04666,Woodman,Stoke: Hanley,ST1 2AT,3,coordinate_agreement,independent_coordinate_agreement,2026-10-09,False,,
 v-5dfb4a42-bdc9-53dd-b394-836d2ede2b49,Working Mens Club (PMC),Birchmoor,B78 1AF,3,coordinate_agreement,independent_coordinate_agreement,2026-10-18,False,,
 v-fb33af27-f124-54bc-a72a-73b8a4e7f888,Worlds End,Lowdham,NG14 7AT,3,coordinate_agreement,independent_coordinate_agreement,2026-10-09,False,,
-v-86bdde5b-1bfe-5f34-8a0c-cc12d2d16579,Yacht Inn,Penzance,TR18 4AU,3,coordinate_agreement,independent_coordinate_agreement,2026-10-09,False,,
+v-86bdde5b-1bfe-5f34-8a0c-cc12d2d16579,Yacht Inn,Penzance,TR18 4AU,3,coordinate_agreement,independent_coordinate_agreement,2026-10-22,False,,
 v-2c1f4003-43a1-50d3-8033-167ee6c93294,Ye Olde Crown Hotel,Waterhouses,ST10 3HL,3,coordinate_agreement,independent_coordinate_agreement,2026-10-14,False,,
 v-1259d276-decd-56b7-8b71-12dfc9a13efd,Ye Olde Manor Inn,Stoke: Fenton,ST4 2PT,3,coordinate_agreement,independent_coordinate_agreement,2026-10-12,False,,

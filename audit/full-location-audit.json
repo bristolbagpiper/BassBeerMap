@@ -3,6 +3,69 @@
     {
       "actionable": true,
       "area": "Staffordshire",
+      "checked_at": "2026-10-22",
+      "comparisons": [
+        {
+          "address": "New Road, Dilhorne, Stoke On Trent",
+          "difference_metres": 191.8,
+          "lat": 52.9880447387695,
+          "lng": -2.04433488845825,
+          "name": "CHARLIE BASSETTS",
+          "postcode": "ST10 2PQ",
+          "queried_postcode": "ST10 2PQ",
+          "status": "coordinate_disagreement",
+          "url": "https://ratings.food.gov.uk/business/1806172"
+        },
+        {
+          "name_matches": 0,
+          "postcode_matches": 0,
+          "queried_postcode": "ST10 2PZ",
+          "status": "no_name_match"
+        }
+      ],
+      "confidence": "owner_reviewed",
+      "country": "England",
+      "dispense": "H",
+      "independent_of_pin": true,
+      "last": "2026 Q3",
+      "listing": {
+        "postcode": "ST10 2PQ",
+        "pub_name": "Charlie Bassetts"
+      },
+      "notes": "",
+      "owner_reviewed": true,
+      "pg": "Perm",
+      "pin": {
+        "lat": 52.986997,
+        "lng": -2.046611
+      },
+      "place_name": "Dilhorne",
+      "postcode": "ST10 2PQ",
+      "priority": 0,
+      "pub_name": "Charlie Bassetts",
+      "reasons": [
+        "Directory postcode differs from reviewed reference postcode"
+      ],
+      "reference": {
+        "address": "New Road, Dilhorne, Stoke On Trent",
+        "difference_metres": 191.8,
+        "lat": 52.9880447387695,
+        "lng": -2.04433488845825,
+        "name": "CHARLIE BASSETTS",
+        "postcode": "ST10 2PQ",
+        "queried_postcode": "ST10 2PQ",
+        "status": "coordinate_disagreement",
+        "url": "https://ratings.food.gov.uk/business/1806172"
+      },
+      "status": "coordinate_disagreement",
+      "venue_id": "v-95a10492-5d95-5fd1-85cd-7a9a58882d81",
+      "warnings": [
+        "FSA coordinate is 191.8m from the accepted pin; informational only because the FSA geocode may be approximate"
+      ]
+    },
+    {
+      "actionable": true,
+      "area": "Staffordshire",
       "checked_at": "2026-10-19",
       "comparisons": [
         {
@@ -1878,7 +1941,7 @@
     {
       "actionable": false,
       "area": "Somerset",
-      "checked_at": "2026-10-09",
+      "checked_at": "2026-10-22",
       "comparisons": [
         {
           "name_matches": 0,
@@ -1887,7 +1950,7 @@
           "status": "no_name_match"
         }
       ],
-      "confidence": "existing_evidence_needs_corroboration",
+      "confidence": "owner_reviewed",
       "country": "England",
       "dispense": "H",
       "independent_of_pin": true,
@@ -1897,11 +1960,11 @@
         "pub_name": "Bell"
       },
       "notes": "",
-      "owner_reviewed": false,
+      "owner_reviewed": true,
       "pg": "Guest",
       "pin": {
-        "lat": 51.2545976,
-        "lng": -2.2602332
+        "lat": 51.25456,
+        "lng": -2.26024
       },
       "place_name": "Standerwick",
       "postcode": "BA11 2PR",
@@ -2407,7 +2470,7 @@
     {
       "actionable": false,
       "area": "Merseyside",
-      "checked_at": "2026-10-12",
+      "checked_at": "2026-10-22",
       "comparisons": [
         {
           "name_matches": 1,
@@ -2416,7 +2479,7 @@
           "status": "ambiguous_or_missing_coordinates"
         }
       ],
-      "confidence": "existing_evidence_needs_corroboration",
+      "confidence": "owner_reviewed",
       "country": "England",
       "dispense": "H",
       "independent_of_pin": true,
@@ -2426,11 +2489,11 @@
         "pub_name": "Black Cat Bar"
       },
       "notes": "",
-      "owner_reviewed": false,
+      "owner_reviewed": true,
       "pg": "Perm",
       "pin": {
-        "lat": 53.4022,
-        "lng": -2.98134
+        "lat": 53.4016502,
+        "lng": -2.9796419
       },
       "place_name": "Liverpool: Central",
       "postcode": "L1 4JN",
@@ -4028,7 +4091,7 @@
     {
       "actionable": false,
       "area": "Staffordshire",
-      "checked_at": "2026-10-09",
+      "checked_at": "2026-10-22",
       "comparisons": [
         {
           "name_matches": 0,
@@ -4037,7 +4100,7 @@
           "status": "no_name_match"
         }
       ],
-      "confidence": "existing_evidence_needs_corroboration",
+      "confidence": "owner_reviewed",
       "country": "England",
       "dispense": "H",
       "independent_of_pin": true,
@@ -4047,11 +4110,11 @@
         "pub_name": "Bowls Club (PMC)"
       },
       "notes": "",
-      "owner_reviewed": false,
+      "owner_reviewed": true,
       "pg": "Perm",
       "pin": {
-        "lat": 52.7657,
-        "lng": -1.7219
+        "lat": 52.7656129,
+        "lng": -1.7219396
       },
       "place_name": "Barton-under-Needwood",
       "postcode": "DE13 8AX",
@@ -4438,7 +4501,7 @@
     {
       "actionable": false,
       "area": "Derbyshire",
-      "checked_at": "2026-10-19",
+      "checked_at": "2026-10-22",
       "comparisons": [
         {
           "name_matches": 1,
@@ -4447,7 +4510,7 @@
           "status": "ambiguous_or_missing_coordinates"
         }
       ],
-      "confidence": "existing_evidence_needs_corroboration",
+      "confidence": "owner_reviewed",
       "country": "England",
       "dispense": "H",
       "independent_of_pin": true,
@@ -4457,11 +4520,11 @@
         "pub_name": "Brookfield (Barrow Social Club)"
       },
       "notes": "",
-      "owner_reviewed": false,
+      "owner_reviewed": true,
       "pg": "Perm",
       "pin": {
-        "lat": 52.853542,
-        "lng": -1.476693
+        "lat": 52.8535542,
+        "lng": -1.4767194
       },
       "place_name": "Barrow upon Trent",
       "postcode": "DE73 7HG",
@@ -5529,7 +5592,7 @@
     {
       "actionable": false,
       "area": "Leicestershire",
-      "checked_at": "2026-10-18",
+      "checked_at": "2026-10-22",
       "comparisons": [
         {
           "name_matches": 1,
@@ -5538,7 +5601,7 @@
           "status": "ambiguous_or_missing_coordinates"
         }
       ],
-      "confidence": "existing_evidence_needs_corroboration",
+      "confidence": "owner_reviewed",
       "country": "England",
       "dispense": "H",
       "independent_of_pin": true,
@@ -5548,11 +5611,11 @@
         "pub_name": "Chandlers"
       },
       "notes": "",
-      "owner_reviewed": false,
+      "owner_reviewed": true,
       "pg": "Perm",
       "pin": {
-        "lat": 52.511786,
-        "lng": -1.082842
+        "lat": 52.5118374,
+        "lng": -1.0828104
       },
       "place_name": "Shearsby",
       "postcode": "LE17 6PL",
@@ -6884,7 +6947,7 @@
           "status": "no_name_match"
         }
       ],
-      "confidence": "existing_evidence_needs_corroboration",
+      "confidence": "owner_reviewed",
       "country": "England",
       "dispense": "H",
       "independent_of_pin": true,
@@ -6894,7 +6957,7 @@
         "pub_name": "Constitutional Club (PMC)"
       },
       "notes": "",
-      "owner_reviewed": false,
+      "owner_reviewed": true,
       "pg": "Perm",
       "pin": {
         "lat": 52.77442071513,
@@ -6920,7 +6983,7 @@
     {
       "actionable": false,
       "area": "Leicestershire",
-      "checked_at": "2026-10-09",
+      "checked_at": "2026-10-22",
       "comparisons": [
         {
           "name_matches": 0,
@@ -6929,7 +6992,7 @@
           "status": "no_name_match"
         }
       ],
-      "confidence": "existing_evidence_needs_corroboration",
+      "confidence": "owner_reviewed",
       "country": "England",
       "dispense": "H",
       "independent_of_pin": true,
@@ -6939,11 +7002,11 @@
         "pub_name": "Constitutional Club (PMC)"
       },
       "notes": "",
-      "owner_reviewed": false,
+      "owner_reviewed": true,
       "pg": "Perm",
       "pin": {
-        "lat": 52.52999,
-        "lng": -1.34841
+        "lat": 52.5299606,
+        "lng": -1.3485631
       },
       "place_name": "Burbage",
       "postcode": "LE10 2DE",
@@ -7455,7 +7518,7 @@
     {
       "actionable": false,
       "area": "Lancashire",
-      "checked_at": "2026-10-12",
+      "checked_at": "2026-10-22",
       "comparisons": [
         {
           "name_matches": 0,
@@ -7464,7 +7527,7 @@
           "status": "no_name_match"
         }
       ],
-      "confidence": "existing_evidence_needs_corroboration",
+      "confidence": "owner_reviewed",
       "country": "England",
       "dispense": "H",
       "independent_of_pin": true,
@@ -7474,11 +7537,11 @@
         "pub_name": "Cricket Club"
       },
       "notes": "",
-      "owner_reviewed": false,
+      "owner_reviewed": true,
       "pg": "Guest",
       "pin": {
-        "lat": 53.815142,
-        "lng": -3.030204
+        "lat": 53.8151608,
+        "lng": -3.0301495
       },
       "place_name": "Blackpool: Stanley Park",
       "postcode": "FY3 9EQ",
@@ -7835,7 +7898,7 @@
     {
       "actionable": false,
       "area": "Leicestershire",
-      "checked_at": "2026-10-09",
+      "checked_at": "2026-10-22",
       "comparisons": [
         {
           "address": "Cross Keys, 9 Worthington Lane, Newbold, Coalville",
@@ -9269,7 +9332,7 @@
     {
       "actionable": false,
       "area": "Staffordshire",
-      "checked_at": "2026-10-16",
+      "checked_at": "2026-10-22",
       "comparisons": [
         {
           "name_matches": 0,
@@ -9278,7 +9341,7 @@
           "status": "no_name_match"
         }
       ],
-      "confidence": "existing_evidence_needs_corroboration",
+      "confidence": "owner_reviewed",
       "country": "England",
       "dispense": "H",
       "independent_of_pin": true,
@@ -9288,11 +9351,11 @@
         "pub_name": "Dial"
       },
       "notes": "",
-      "owner_reviewed": false,
+      "owner_reviewed": true,
       "pg": "Guest",
       "pin": {
-        "lat": 52.8039241,
-        "lng": -1.6332179
+        "lat": 52.803817,
+        "lng": -1.633027
       },
       "place_name": "Burton U-T: Central",
       "postcode": "DE14 1BN",
@@ -10136,21 +10199,21 @@
     {
       "actionable": false,
       "area": "Nottinghamshire",
-      "checked_at": "2026-10-13",
+      "checked_at": "2026-10-22",
       "comparisons": [
         {
           "address": "The Earl Of Chesterfield Arms, Manor Lane, Shelford, Nottinghamshire",
-          "difference_metres": 33.8,
+          "difference_metres": 82.0,
           "lat": 52.97617,
           "lng": -1.012667,
           "name": "Country Club Caterers (Earl Of Chesterfield)",
           "postcode": "NG12 1EQ",
           "queried_postcode": "NG12 1EQ",
-          "status": "nearby",
+          "status": "coordinate_disagreement",
           "url": "https://ratings.food.gov.uk/business/1740178"
         }
       ],
-      "confidence": "existing_evidence_needs_corroboration",
+      "confidence": "owner_reviewed",
       "country": "England",
       "dispense": "H",
       "independent_of_pin": true,
@@ -10160,11 +10223,11 @@
         "pub_name": "Earl of Chesterfield Arms"
       },
       "notes": "",
-      "owner_reviewed": false,
+      "owner_reviewed": true,
       "pg": "Guest",
       "pin": {
-        "lat": 52.9759,
-        "lng": -1.0129
+        "lat": 52.9755234,
+        "lng": -1.0120792
       },
       "place_name": "Shelford",
       "postcode": "NG12 1EQ",
@@ -10173,19 +10236,19 @@
       "reasons": [],
       "reference": {
         "address": "The Earl Of Chesterfield Arms, Manor Lane, Shelford, Nottinghamshire",
-        "difference_metres": 33.8,
+        "difference_metres": 82.0,
         "lat": 52.97617,
         "lng": -1.012667,
         "name": "Country Club Caterers (Earl Of Chesterfield)",
         "postcode": "NG12 1EQ",
         "queried_postcode": "NG12 1EQ",
-        "status": "nearby",
+        "status": "coordinate_disagreement",
         "url": "https://ratings.food.gov.uk/business/1740178"
       },
-      "status": "nearby",
+      "status": "coordinate_disagreement",
       "venue_id": "v-1dbfdcda-d5a4-5519-969f-979e11cc3ec5",
       "warnings": [
-        "FSA coordinate is 25-50m away; informational only"
+        "FSA coordinate is 82.0m from the accepted pin; informational only because the FSA geocode may be approximate"
       ]
     },
     {
@@ -10507,7 +10570,7 @@
     {
       "actionable": false,
       "area": "West Midlands",
-      "checked_at": "2026-10-09",
+      "checked_at": "2026-10-22",
       "comparisons": [
         {
           "name_matches": 0,
@@ -12026,7 +12089,7 @@
     {
       "actionable": false,
       "area": "Staffordshire",
-      "checked_at": "2026-10-09",
+      "checked_at": "2026-10-22",
       "comparisons": [
         {
           "address": "The Goats Head, Market Place, Abbots Bromley, Rugeley",
@@ -12391,7 +12454,7 @@
     {
       "actionable": false,
       "area": "Lincolnshire",
-      "checked_at": "2026-10-09",
+      "checked_at": "2026-10-22",
       "comparisons": [
         {
           "address": "The Green Man, 29 Scotgate, Stamford, Lincolnshire",
@@ -14152,6 +14215,61 @@
     },
     {
       "actionable": false,
+      "area": "Staffordshire",
+      "checked_at": "2026-10-22",
+      "comparisons": [
+        {
+          "address": "Market Street, Leek, Staffordshire",
+          "difference_metres": 56.6,
+          "lat": 53.1064453125,
+          "lng": -2.02351498603821,
+          "name": "INKSPOT",
+          "postcode": "ST13 6HX",
+          "queried_postcode": "ST13 6HX",
+          "status": "coordinate_disagreement",
+          "url": "https://ratings.food.gov.uk/business/1871203"
+        }
+      ],
+      "confidence": "owner_reviewed",
+      "country": "England",
+      "dispense": "H",
+      "independent_of_pin": true,
+      "last": "2026 Q3",
+      "listing": {
+        "postcode": "ST13 6HX",
+        "pub_name": "Inkspot"
+      },
+      "notes": "",
+      "owner_reviewed": true,
+      "pg": "Guest",
+      "pin": {
+        "lat": 53.1059391,
+        "lng": -2.023426
+      },
+      "place_name": "Leek",
+      "postcode": "ST13 6HX",
+      "priority": 2,
+      "pub_name": "Inkspot",
+      "reasons": [],
+      "reference": {
+        "address": "Market Street, Leek, Staffordshire",
+        "difference_metres": 56.6,
+        "lat": 53.1064453125,
+        "lng": -2.02351498603821,
+        "name": "INKSPOT",
+        "postcode": "ST13 6HX",
+        "queried_postcode": "ST13 6HX",
+        "status": "coordinate_disagreement",
+        "url": "https://ratings.food.gov.uk/business/1871203"
+      },
+      "status": "coordinate_disagreement",
+      "venue_id": "v-6040a12f-787d-5099-a640-bc3a1fdc1c6c",
+      "warnings": [
+        "FSA coordinate is 56.6m from the accepted pin; informational only because the FSA geocode may be approximate"
+      ]
+    },
+    {
+      "actionable": false,
       "area": "Leicestershire",
       "checked_at": "2026-10-20",
       "comparisons": [
@@ -15083,7 +15201,7 @@
     {
       "actionable": false,
       "area": "Staffordshire",
-      "checked_at": "2026-10-19",
+      "checked_at": "2026-10-22",
       "comparisons": [
         {
           "name_matches": 0,
@@ -15092,7 +15210,7 @@
           "status": "no_name_match"
         }
       ],
-      "confidence": "existing_evidence_needs_corroboration",
+      "confidence": "owner_reviewed",
       "country": "England",
       "dispense": "H",
       "independent_of_pin": true,
@@ -15102,11 +15220,11 @@
         "pub_name": "Kings Head (Scrimmies)"
       },
       "notes": "",
-      "owner_reviewed": false,
+      "owner_reviewed": true,
       "pg": "Perm",
       "pin": {
-        "lat": 53.051584,
-        "lng": -2.173975
+        "lat": 53.0515538,
+        "lng": -2.1739763
       },
       "place_name": "Stoke: Smallthorne",
       "postcode": "ST6 1NT",
@@ -15128,7 +15246,7 @@
     {
       "actionable": false,
       "area": "Staffordshire",
-      "checked_at": "2026-10-09",
+      "checked_at": "2026-10-22",
       "comparisons": [
         {
           "name_matches": 0,
@@ -15137,7 +15255,7 @@
           "status": "no_name_match"
         }
       ],
-      "confidence": "existing_evidence_needs_corroboration",
+      "confidence": "owner_reviewed",
       "country": "England",
       "dispense": "H",
       "independent_of_pin": true,
@@ -15147,11 +15265,11 @@
         "pub_name": "Labour Club (PMC)"
       },
       "notes": "",
-      "owner_reviewed": false,
+      "owner_reviewed": true,
       "pg": "Guest",
       "pin": {
-        "lat": 53.086751,
-        "lng": -2.237602
+        "lat": 53.086788,
+        "lng": -2.237675
       },
       "place_name": "Kidsgrove",
       "postcode": "ST7 4AB",
@@ -17548,7 +17666,7 @@
     {
       "actionable": false,
       "area": "Warwickshire",
-      "checked_at": "2026-10-09",
+      "checked_at": "2026-10-22",
       "comparisons": [
         {
           "address": "161 High Street, Henley-in-Arden",
@@ -18225,7 +18343,7 @@
     {
       "actionable": false,
       "area": "Lincolnshire",
-      "checked_at": "2026-10-09",
+      "checked_at": "2026-10-22",
       "comparisons": [
         {
           "address": "Station Approach, , Cleethorpes",
@@ -19362,7 +19480,7 @@
     {
       "actionable": false,
       "area": "Leicestershire",
-      "checked_at": "2026-10-09",
+      "checked_at": "2026-10-22",
       "comparisons": [
         {
           "address": "26 Factory Street, , Loughborough",
@@ -19627,7 +19745,7 @@
     {
       "actionable": false,
       "area": "Nottinghamshire",
-      "checked_at": "2026-10-09",
+      "checked_at": "2026-10-22",
       "comparisons": [
         {
           "name_matches": 0,
@@ -20412,7 +20530,7 @@
     {
       "actionable": false,
       "area": "Leicestershire",
-      "checked_at": "2026-10-09",
+      "checked_at": "2026-10-22",
       "comparisons": [
         {
           "address": "2 Long Street, Belton, Loughborough, Leicestershire",
@@ -22031,7 +22149,7 @@
     {
       "actionable": false,
       "area": "Derbyshire",
-      "checked_at": "2026-10-09",
+      "checked_at": "2026-10-22",
       "comparisons": [
         {
           "address": "3 Ray Street Heanor Derbyshire",
@@ -22447,7 +22565,7 @@
     {
       "actionable": false,
       "area": "West Midlands",
-      "checked_at": "2026-10-09",
+      "checked_at": "2026-10-22",
       "comparisons": [
         {
           "address": "196 Collis Street, Amblecote, Stourbridge",
@@ -26837,7 +26955,7 @@
     {
       "actionable": false,
       "area": "Staffordshire",
-      "checked_at": "2026-10-09",
+      "checked_at": "2026-10-22",
       "comparisons": [
         {
           "address": "The Three Horseshoes, 2 Station Road, Barton under Needwood, Burton upon Trent",
@@ -26892,7 +27010,7 @@
     {
       "actionable": false,
       "area": "Staffordshire",
-      "checked_at": "2026-10-09",
+      "checked_at": "2026-10-22",
       "comparisons": [
         {
           "address": "New Street, Fazeley, Tamworth, Staffordshire",
@@ -30598,7 +30716,7 @@
     {
       "actionable": false,
       "area": "Greater London",
-      "checked_at": "2026-10-09",
+      "checked_at": "2026-10-22",
       "comparisons": [
         {
           "address": "Ye Olde Watling Public House, 29 Watling Street, London",
@@ -30955,7 +31073,7 @@
     {
       "actionable": false,
       "area": "Derbyshire",
-      "checked_at": "2026-10-09",
+      "checked_at": "2026-10-22",
       "comparisons": [
         {
           "address": "211 HIGH STREET, NEWHALL, SWADLINCOTE",
@@ -33870,7 +33988,7 @@
     {
       "actionable": false,
       "area": "Buckinghamshire",
-      "checked_at": "2026-10-09",
+      "checked_at": "2026-10-22",
       "comparisons": [
         {
           "address": "Oxford Road, Stone, Buckinghamshire",
@@ -34876,59 +34994,6 @@
     },
     {
       "actionable": false,
-      "area": "Staffordshire",
-      "checked_at": "2026-10-09",
-      "comparisons": [
-        {
-          "address": "New Road, Dilhorne, Stoke On Trent",
-          "difference_metres": 0.0,
-          "lat": 52.9880447387695,
-          "lng": -2.04433488845825,
-          "name": "CHARLIE BASSETTS",
-          "postcode": "ST10 2PQ",
-          "queried_postcode": "ST10 2PQ",
-          "status": "coordinate_agreement",
-          "url": "https://ratings.food.gov.uk/business/1806172"
-        }
-      ],
-      "confidence": "existing_evidence_needs_corroboration",
-      "country": "England",
-      "dispense": "H",
-      "independent_of_pin": false,
-      "last": "2026 Q3",
-      "listing": {
-        "postcode": "ST10 2PQ",
-        "pub_name": "Charlie Bassetts"
-      },
-      "notes": "",
-      "owner_reviewed": false,
-      "pg": "Perm",
-      "pin": {
-        "lat": 52.9880447387695,
-        "lng": -2.04433488845825
-      },
-      "place_name": "Dilhorne",
-      "postcode": "ST10 2PQ",
-      "priority": 3,
-      "pub_name": "Charlie Bassetts",
-      "reasons": [],
-      "reference": {
-        "address": "New Road, Dilhorne, Stoke On Trent",
-        "difference_metres": 0.0,
-        "lat": 52.9880447387695,
-        "lng": -2.04433488845825,
-        "name": "CHARLIE BASSETTS",
-        "postcode": "ST10 2PQ",
-        "queried_postcode": "ST10 2PQ",
-        "status": "coordinate_agreement",
-        "url": "https://ratings.food.gov.uk/business/1806172"
-      },
-      "status": "coordinate_agreement",
-      "venue_id": "v-95a10492-5d95-5fd1-85cd-7a9a58882d81",
-      "warnings": []
-    },
-    {
-      "actionable": false,
       "area": "Derbyshire",
       "checked_at": "2026-10-14",
       "comparisons": [
@@ -35778,7 +35843,7 @@
     {
       "actionable": false,
       "area": "Derbyshire",
-      "checked_at": "2026-10-09",
+      "checked_at": "2026-10-22",
       "comparisons": [
         {
           "address": "THE COLVILLE ARMS MAIN STREET, LULLINGTON, SWADLINCOTE",
@@ -36414,7 +36479,7 @@
     {
       "actionable": false,
       "area": "Oxfordshire",
-      "checked_at": "2026-10-09",
+      "checked_at": "2026-10-22",
       "comparisons": [
         {
           "address": "48 High Street, Wallingford, Oxon",
@@ -40601,7 +40666,7 @@
     {
       "actionable": false,
       "area": "Cambridgeshire",
-      "checked_at": "2026-10-09",
+      "checked_at": "2026-10-22",
       "comparisons": [
         {
           "address": "60 High Street, , Harlton, Cambridgeshire",
@@ -41501,59 +41566,6 @@
     },
     {
       "actionable": false,
-      "area": "Staffordshire",
-      "checked_at": "2026-10-19",
-      "comparisons": [
-        {
-          "address": "Market Street, Leek, Staffordshire",
-          "difference_metres": 0.0,
-          "lat": 53.1064453125,
-          "lng": -2.02351498603821,
-          "name": "INKSPOT",
-          "postcode": "ST13 6HX",
-          "queried_postcode": "ST13 6HX",
-          "status": "coordinate_agreement",
-          "url": "https://ratings.food.gov.uk/business/1871203"
-        }
-      ],
-      "confidence": "existing_evidence_needs_corroboration",
-      "country": "England",
-      "dispense": "H",
-      "independent_of_pin": false,
-      "last": "2026 Q3",
-      "listing": {
-        "postcode": "ST13 6HX",
-        "pub_name": "Inkspot"
-      },
-      "notes": "",
-      "owner_reviewed": false,
-      "pg": "Guest",
-      "pin": {
-        "lat": 53.1064453125,
-        "lng": -2.02351498603821
-      },
-      "place_name": "Leek",
-      "postcode": "ST13 6HX",
-      "priority": 3,
-      "pub_name": "Inkspot",
-      "reasons": [],
-      "reference": {
-        "address": "Market Street, Leek, Staffordshire",
-        "difference_metres": 0.0,
-        "lat": 53.1064453125,
-        "lng": -2.02351498603821,
-        "name": "INKSPOT",
-        "postcode": "ST13 6HX",
-        "queried_postcode": "ST13 6HX",
-        "status": "coordinate_agreement",
-        "url": "https://ratings.food.gov.uk/business/1871203"
-      },
-      "status": "coordinate_agreement",
-      "venue_id": "v-6040a12f-787d-5099-a640-bc3a1fdc1c6c",
-      "warnings": []
-    },
-    {
-      "actionable": false,
       "area": "Merseyside",
       "checked_at": "2026-10-19",
       "comparisons": [
@@ -42403,7 +42415,7 @@
     {
       "actionable": false,
       "area": "Shropshire",
-      "checked_at": "2026-10-09",
+      "checked_at": "2026-10-22",
       "comparisons": [
         {
           "address": "Kings Head Hotel 48 Mardol, , Shrewsbury, Shropshire",
@@ -45530,7 +45542,7 @@
     {
       "actionable": false,
       "area": "Somerset",
-      "checked_at": "2026-10-09",
+      "checked_at": "2026-10-22",
       "comparisons": [
         {
           "address": "Pebbles, 24A Market Street, Watchet, Somerset",
@@ -46961,7 +46973,7 @@
     {
       "actionable": false,
       "area": "Staffordshire",
-      "checked_at": "2026-10-09",
+      "checked_at": "2026-10-22",
       "comparisons": [
         {
           "address": "Townsend Lane, Waterfall, Waterhouses",
@@ -48127,7 +48139,7 @@
     {
       "actionable": false,
       "area": "West Midlands",
-      "checked_at": "2026-10-09",
+      "checked_at": "2026-10-22",
       "comparisons": [
         {
           "address": "592 Pershore Road, Selly Oak, Birmingham",
@@ -48445,7 +48457,7 @@
     {
       "actionable": false,
       "area": "Greater London",
-      "checked_at": "2026-10-09",
+      "checked_at": "2026-10-22",
       "comparisons": [
         {
           "address": "68, Borough Road, London",
@@ -48498,7 +48510,7 @@
     {
       "actionable": false,
       "area": "West Wales",
-      "checked_at": "2026-10-09",
+      "checked_at": "2026-10-22",
       "comparisons": [
         {
           "address": "3 Newport Road, , Fishguard, Pembrokeshire",
@@ -49240,7 +49252,7 @@
     {
       "actionable": false,
       "area": "Devon",
-      "checked_at": "2026-10-09",
+      "checked_at": "2026-10-22",
       "comparisons": [
         {
           "address": "251 St Levan Road, Plymouth",
@@ -50141,7 +50153,7 @@
     {
       "actionable": false,
       "area": "Staffordshire",
-      "checked_at": "2026-10-09",
+      "checked_at": "2026-10-22",
       "comparisons": [
         {
           "address": "207-209 London Road, Stoke-On-Trent",
@@ -51360,7 +51372,7 @@
     {
       "actionable": false,
       "area": "Staffordshire",
-      "checked_at": "2026-10-09",
+      "checked_at": "2026-10-22",
       "comparisons": [
         {
           "address": "65-67 Lodge Road, , Brereton",
@@ -51572,7 +51584,7 @@
     {
       "actionable": false,
       "area": "Tyne and Wear",
-      "checked_at": "2026-10-09",
+      "checked_at": "2026-10-22",
       "comparisons": [
         {
           "address": "Public House, Tynemouth Lodge Hotel, Tynemouth Road, North Shields",
@@ -51731,7 +51743,7 @@
     {
       "actionable": false,
       "area": "Staffordshire",
-      "checked_at": "2026-10-09",
+      "checked_at": "2026-10-22",
       "comparisons": [
         {
           "address": "40 Piccadilly, Hanley, Stoke-On-Trent",
@@ -53374,7 +53386,7 @@
     {
       "actionable": false,
       "area": "Oxfordshire",
-      "checked_at": "2026-10-09",
+      "checked_at": "2026-10-22",
       "comparisons": [
         {
           "address": "52 Broad Street, Oxford, Oxfordshire",
@@ -54222,7 +54234,7 @@
     {
       "actionable": false,
       "area": "Cornwall",
-      "checked_at": "2026-10-09",
+      "checked_at": "2026-10-22",
       "comparisons": [
         {
           "address": "Yacht Inn, Green Street, Penzance, Cornwall",
@@ -54381,20 +54393,20 @@
   ],
   "schema_version": 1,
   "summary": {
-    "actionable_count": 3,
+    "actionable_count": 4,
     "confidence_counts": {
-      "existing_evidence_needs_corroboration": 552,
+      "existing_evidence_needs_corroboration": 538,
       "independent_coordinate_agreement": 430,
-      "owner_reviewed": 62
+      "owner_reviewed": 76
     },
     "counts": {
       "ambiguous_or_missing_coordinates": 62,
-      "coordinate_agreement": 460,
-      "coordinate_disagreement": 242,
-      "nearby": 103,
+      "coordinate_agreement": 458,
+      "coordinate_disagreement": 245,
+      "nearby": 102,
       "no_name_match": 177
     },
-    "informational_count": 597,
+    "informational_count": 599,
     "limitations": [
       "Coordinate agreement does not prove the correct building or current Bass availability.",
       "Owner-approved coordinates take priority; CAMRA remains the primary automated reference.",

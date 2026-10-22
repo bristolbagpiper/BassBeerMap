@@ -1,9 +1,9 @@
 {
   "counts": {
-    "venue_coordinate_requires_review": 25,
-    "verified_venue": 1019
+    "venue_coordinate_requires_review": 24,
+    "verified_venue": 1020
   },
-  "generated_at": "2026-10-21",
+  "generated_at": "2026-10-22",
   "policy": {
     "max_evidence_age_days": 400,
     "venue_pin": "Evidence-backed venue coordinates; unresolved venues use explicitly approximate postcode pins."
@@ -15123,40 +15123,31 @@
       "venue_id": "v-2674af55-eb10-5ee5-bac1-3c7bf1bf37ac"
     },
     "liberal club (pmc)|derby: spondon|de21 7ea": {
-      "coordinate_source": "camra-pubs-location-audit",
-      "display_precision": "postcode",
+      "coordinate_source": "owner-reviewed-google-maps",
+      "display_precision": "venue",
       "evidence": [
         {
-          "checked_at": "2026-09-11",
-          "difference_metres": 0.0,
-          "match": "venue_name_and_full_postcode",
+          "checked_at": "2026-10-22",
+          "match": "owner_reviewed_named_place_and_full_postcode",
+          "reference_address": "4 Moor St, Spondon, Derby DE21 7EA",
           "reference_coordinate": {
-            "lat": 52.921066,
-            "lng": -1.402822
+            "lat": 52.9211532,
+            "lng": -1.4027621
           },
+          "reference_name": "Spondon Liberal Club",
           "reference_postcode": "DE21 7EA",
-          "source": "camra",
-          "url": "https://camra.org.uk/pubs/143323"
-        },
-        {
-          "checked_at": "2026-09-11",
-          "difference_metres": 0,
-          "match": "postcode_fallback_replaced",
-          "reference_coordinate": {
-            "lat": 52.921066,
-            "lng": -1.402822
-          },
-          "reference_postcode": "DE21 7EA",
-          "source": "camra-pubs-location-audit",
-          "url": "https://camra.org.uk/pubs/143323"
+          "review_url": "https://github.com/bristolbagpiper/BassBeerMap/issues/5#issuecomment-6339926656",
+          "reviewed_by": "bristolbagpiper",
+          "source": "google-maps-named-place",
+          "url": "https://www.google.com/maps/place/Spondon+Liberal+Club/@52.9210965,-1.4028139,57m/data=!3m1!1e3!4m6!3m5!1s0x4879f1d87a7013dd:0x59a7acbd6c12c968!8m2!3d52.9211532!4d-1.4027621!16s%2Fg%2F1tjdwfg6?entry=ttu"
         }
       ],
-      "lat": 52.921066,
-      "lng": -1.402822,
+      "lat": 52.9211532,
+      "lng": -1.4027621,
       "place_name": "Derby: Spondon",
       "postcode": "DE21 7EA",
       "pub_name": "Liberal Club (PMC)",
-      "status": "venue_coordinate_requires_review",
+      "status": "verified_venue",
       "venue_id": "v-9174bee8-338b-54f6-9f95-2f7be830455b"
     },
     "lichfield vaults|hereford|hr1 2lr": {

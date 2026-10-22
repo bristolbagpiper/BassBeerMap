@@ -1585,16 +1585,19 @@
       "source_url": "https://camra.org.uk/pubs/143984"
     },
     "liberal club (pmc)|derby: spondon|de21 7ea": {
-      "audit_reason": "postcode_fallback_replaced",
-      "checked_at": "2026-09-11",
-      "lat": 52.921066,
-      "lng": -1.402822,
-      "previous_difference_metres": 37.1,
-      "previous_lat": 52.921173,
-      "previous_lng": -1.402298,
-      "previous_source": "postcode",
-      "source": "camra-pubs-location-audit",
-      "source_url": "https://camra.org.uk/pubs/143323"
+      "audit_reason": "manual_named_place_address_and_map_check",
+      "checked_at": "2026-10-22",
+      "lat": 52.9211532,
+      "lng": -1.4027621,
+      "previous_difference_metres": 10.5,
+      "previous_lat": 52.921066,
+      "previous_lng": -1.402822,
+      "previous_source": "camra-pubs-location-audit",
+      "reference_address": "4 Moor St, Spondon, Derby DE21 7EA",
+      "reference_name": "Spondon Liberal Club",
+      "review_note": "Repository owner confirmed the named-place marker and full address in issue #5.",
+      "source": "google-maps-named-place",
+      "source_url": "https://www.google.com/maps/place/Spondon+Liberal+Club/@52.9210965,-1.4028139,57m/data=!3m1!1e3!4m6!3m5!1s0x4879f1d87a7013dd:0x59a7acbd6c12c968!8m2!3d52.9211532!4d-1.4027621!16s%2Fg%2F1tjdwfg6?entry=ttu"
     },
     "lion|nottingham: new basford|ng7 7fq": {
       "audit_reason": "manual_named_place_address_and_map_check",

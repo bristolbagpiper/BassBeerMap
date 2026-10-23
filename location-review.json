@@ -1,5 +1,5 @@
 {
-  "active_count": 29,
+  "active_count": 35,
   "records": {
     "v-00a08839-2b8a-5782-b6c7-0bdce4cddb2f": {
       "active": false,
@@ -10948,6 +10948,46 @@
       "unverified": false,
       "venue_id": "v-a77b7a83-4e63-5bea-9561-4e596c904bd9"
     },
+    "v-a829ca94-ad6b-5ad5-856e-65e75b429b0d": {
+      "active": true,
+      "first_seen": "2026-10-23",
+      "history": [
+        {
+          "date": "2026-10-23",
+          "reasons": [
+            "Reference venue name changed"
+          ],
+          "status": "unverified"
+        }
+      ],
+      "last_checked": "2026-10-23",
+      "place_name": "Durham",
+      "postcode": "DH1 4PS",
+      "pub_name": "Ye Old Elm Tree",
+      "reasons": [
+        "Reference venue name changed"
+      ],
+      "reference": {},
+      "research": {},
+      "source_checks": {
+        "camra": {
+          "status": "conflict",
+          "url": "https://camra.org.uk/pubs/186936"
+        },
+        "camra-pubs-location-audit": {
+          "status": "conflict",
+          "url": "https://camra.org.uk/pubs/186936"
+        },
+        "fsa_independent": {
+          "status": "no_name_match",
+          "url": ""
+        }
+      },
+      "source_error": null,
+      "status": "unverified",
+      "unverified": true,
+      "venue_id": "v-a829ca94-ad6b-5ad5-856e-65e75b429b0d"
+    },
     "v-a8358fc8-7e3f-5546-be32-b35472d438b7": {
       "active": false,
       "first_seen": "2026-10-09",
@@ -10965,7 +11005,7 @@
           "status": "resolved"
         }
       ],
-      "last_checked": "2026-10-09",
+      "last_checked": "2026-10-23",
       "place_name": "Louth",
       "postcode": "LN11 9YD",
       "pub_name": "Wheatsheaf",
@@ -10973,6 +11013,10 @@
       "reference": {},
       "research": {},
       "source_checks": {
+        "camra": {
+          "status": "confirmed",
+          "url": "https://camra.org.uk/pubs/172388"
+        },
         "fsa_independent": {
           "status": "coordinate_disagreement",
           "url": "https://ratings.food.gov.uk/business/769510"
@@ -11000,7 +11044,7 @@
           "status": "resolved"
         }
       ],
-      "last_checked": "2026-10-09",
+      "last_checked": "2026-10-23",
       "place_name": "Burton U-T: Central",
       "postcode": "DE14 1BT",
       "pub_name": "Roebuck",
@@ -11008,6 +11052,10 @@
       "reference": {},
       "research": {},
       "source_checks": {
+        "camra": {
+          "status": "confirmed",
+          "url": "https://camra.org.uk/pubs/123922"
+        },
         "fsa_independent": {
           "status": "coordinate_disagreement",
           "url": "https://ratings.food.gov.uk/business/1248540"
@@ -11017,6 +11065,46 @@
       "status": "resolved",
       "unverified": false,
       "venue_id": "v-a8833c54-70a1-55d7-a422-fe8f237b91d6"
+    },
+    "v-aa8fe83d-60ba-5937-9a59-ede918725a5c": {
+      "active": true,
+      "first_seen": "2026-10-23",
+      "history": [
+        {
+          "date": "2026-10-23",
+          "reasons": [
+            "Reference venue name changed"
+          ],
+          "status": "unverified"
+        }
+      ],
+      "last_checked": "2026-10-23",
+      "place_name": "Belfast",
+      "postcode": "BT2 7BA",
+      "pub_name": "Crown Liquor Saloon",
+      "reasons": [
+        "Reference venue name changed"
+      ],
+      "reference": {},
+      "research": {},
+      "source_checks": {
+        "camra": {
+          "status": "conflict",
+          "url": "https://camra.org.uk/pubs/117572"
+        },
+        "camra-pubs-location-audit": {
+          "status": "conflict",
+          "url": "https://camra.org.uk/pubs/117572"
+        },
+        "fsa_independent": {
+          "status": "no_name_match",
+          "url": ""
+        }
+      },
+      "source_error": null,
+      "status": "unverified",
+      "unverified": true,
+      "venue_id": "v-aa8fe83d-60ba-5937-9a59-ede918725a5c"
     },
     "v-aae48608-f3fd-5bf4-8e5d-ae4405430ebc": {
       "active": false,
@@ -11035,7 +11123,7 @@
           "status": "resolved"
         }
       ],
-      "last_checked": "2026-10-09",
+      "last_checked": "2026-10-23",
       "place_name": "Burbage",
       "postcode": "LE10 2EF",
       "pub_name": "Sycamores",
@@ -11043,6 +11131,10 @@
       "reference": {},
       "research": {},
       "source_checks": {
+        "camra": {
+          "status": "confirmed",
+          "url": "https://camra.org.uk/pubs/181780"
+        },
         "fsa_independent": {
           "status": "coordinate_disagreement",
           "url": "https://ratings.food.gov.uk/business/637935"
@@ -11128,7 +11220,7 @@
       "venue_id": "v-ab01088f-5062-5b84-b768-e5727529aaab"
     },
     "v-ac778227-1ccd-5f63-98cd-f4744b9915cf": {
-      "active": false,
+      "active": true,
       "first_seen": "2026-10-09",
       "history": [
         {
@@ -11142,24 +11234,41 @@
           "date": "2026-10-09",
           "reasons": [],
           "status": "resolved"
+        },
+        {
+          "date": "2026-10-23",
+          "reasons": [
+            "Reference venue name changed"
+          ],
+          "status": "unverified"
         }
       ],
-      "last_checked": "2026-10-09",
+      "last_checked": "2026-10-23",
       "place_name": "Ripley: Central",
       "postcode": "DE5 3LT",
       "pub_name": "Talbot Taphouse",
-      "reasons": [],
+      "reasons": [
+        "Reference venue name changed"
+      ],
       "reference": {},
       "research": {},
       "source_checks": {
+        "camra": {
+          "status": "conflict",
+          "url": "https://camra.org.uk/pubs/113335"
+        },
+        "camra-pubs-location-audit": {
+          "status": "conflict",
+          "url": "https://camra.org.uk/pubs/113335"
+        },
         "fsa_independent": {
           "status": "coordinate_disagreement",
           "url": "https://ratings.food.gov.uk/business/1161"
         }
       },
       "source_error": null,
-      "status": "resolved",
-      "unverified": false,
+      "status": "unverified",
+      "unverified": true,
       "venue_id": "v-ac778227-1ccd-5f63-98cd-f4744b9915cf"
     },
     "v-ac895bd4-69fd-53ea-89d8-97307a9112c5": {
@@ -11179,7 +11288,7 @@
           "status": "resolved"
         }
       ],
-      "last_checked": "2026-10-09",
+      "last_checked": "2026-10-23",
       "place_name": "Scarcliffe",
       "postcode": "S44 6SU",
       "pub_name": "Horse and Groom",
@@ -11187,6 +11296,10 @@
       "reference": {},
       "research": {},
       "source_checks": {
+        "camra": {
+          "status": "confirmed",
+          "url": "https://camra.org.uk/pubs/165169"
+        },
         "fsa_independent": {
           "status": "coordinate_disagreement",
           "url": "https://ratings.food.gov.uk/business/24162"
@@ -11196,6 +11309,78 @@
       "status": "resolved",
       "unverified": false,
       "venue_id": "v-ac895bd4-69fd-53ea-89d8-97307a9112c5"
+    },
+    "v-ad92f484-649e-5618-98b2-57eab539a803": {
+      "active": true,
+      "first_seen": "2026-10-23",
+      "history": [
+        {
+          "date": "2026-10-23",
+          "reasons": [
+            "FSA no longer provides an unambiguous agreeing venue"
+          ],
+          "status": "unverified"
+        }
+      ],
+      "last_checked": "2026-10-23",
+      "place_name": "St Ives",
+      "postcode": "TR26 1LF",
+      "pub_name": "Harbour Pool Club (PMC)",
+      "reasons": [
+        "FSA no longer provides an unambiguous agreeing venue"
+      ],
+      "reference": {},
+      "research": {},
+      "source_checks": {
+        "food_standards_agency": {
+          "status": "conflict",
+          "url": "https://api.ratings.food.gov.uk/Establishments?address=TR26+1LF&pageSize=100&pageNumber=1"
+        },
+        "fsa_independent": {
+          "status": "coordinate_agreement",
+          "url": "https://ratings.food.gov.uk/business/573976"
+        }
+      },
+      "source_error": null,
+      "status": "unverified",
+      "unverified": true,
+      "venue_id": "v-ad92f484-649e-5618-98b2-57eab539a803"
+    },
+    "v-af18b197-586e-5323-8171-e7f9e58f5ec9": {
+      "active": true,
+      "first_seen": "2026-10-23",
+      "history": [
+        {
+          "date": "2026-10-23",
+          "reasons": [
+            "FSA no longer provides an unambiguous agreeing venue"
+          ],
+          "status": "unverified"
+        }
+      ],
+      "last_checked": "2026-10-23",
+      "place_name": "Endon",
+      "postcode": "ST9 9BE",
+      "pub_name": "Plough",
+      "reasons": [
+        "FSA no longer provides an unambiguous agreeing venue"
+      ],
+      "reference": {},
+      "research": {},
+      "source_checks": {
+        "food_standards_agency": {
+          "status": "conflict",
+          "url": "https://api.ratings.food.gov.uk/Establishments?address=ST9+9BE&pageSize=100&pageNumber=1"
+        },
+        "fsa_independent": {
+          "status": "coordinate_agreement",
+          "url": "https://ratings.food.gov.uk/business/1259788"
+        }
+      },
+      "source_error": null,
+      "status": "unverified",
+      "unverified": true,
+      "venue_id": "v-af18b197-586e-5323-8171-e7f9e58f5ec9"
     },
     "v-af3b8421-13d9-59af-a20a-60d22faa409a": {
       "active": false,
@@ -11214,7 +11399,7 @@
           "status": "resolved"
         }
       ],
-      "last_checked": "2026-10-09",
+      "last_checked": "2026-10-23",
       "place_name": "Aubourn",
       "postcode": "LN5 9DT",
       "pub_name": "Royal Oak",
@@ -11222,6 +11407,10 @@
       "reference": {},
       "research": {},
       "source_checks": {
+        "camra": {
+          "status": "confirmed",
+          "url": "https://camra.org.uk/pubs/191694"
+        },
         "fsa_independent": {
           "status": "coordinate_disagreement",
           "url": "https://ratings.food.gov.uk/business/295853"
@@ -11323,7 +11512,7 @@
           "status": "resolved"
         }
       ],
-      "last_checked": "2026-10-09",
+      "last_checked": "2026-10-23",
       "place_name": "Loughborough",
       "postcode": "LE11 3AB",
       "pub_name": "Generous Briton",
@@ -11331,6 +11520,10 @@
       "reference": {},
       "research": {},
       "source_checks": {
+        "camra": {
+          "status": "confirmed",
+          "url": "https://camra.org.uk/pubs/171412"
+        },
         "fsa_independent": {
           "status": "coordinate_disagreement",
           "url": "https://ratings.food.gov.uk/business/1970032"
@@ -11358,7 +11551,7 @@
           "status": "resolved"
         }
       ],
-      "last_checked": "2026-10-09",
+      "last_checked": "2026-10-23",
       "place_name": "Chilworth",
       "postcode": "SO16 7JZ",
       "pub_name": "Chilworth Arms",
@@ -11366,6 +11559,10 @@
       "reference": {},
       "research": {},
       "source_checks": {
+        "camra": {
+          "status": "confirmed",
+          "url": "https://camra.org.uk/pubs/188013"
+        },
         "fsa_independent": {
           "status": "coordinate_disagreement",
           "url": "https://ratings.food.gov.uk/business/18283"
@@ -11393,7 +11590,7 @@
           "status": "resolved"
         }
       ],
-      "last_checked": "2026-10-09",
+      "last_checked": "2026-10-23",
       "place_name": "Hanbury",
       "postcode": "DE13 8TD",
       "pub_name": "Cock Inn",
@@ -11401,6 +11598,10 @@
       "reference": {},
       "research": {},
       "source_checks": {
+        "camra": {
+          "status": "confirmed",
+          "url": "https://camra.org.uk/pubs/123980"
+        },
         "fsa_independent": {
           "status": "coordinate_disagreement",
           "url": "https://ratings.food.gov.uk/business/1790600"
@@ -11410,6 +11611,46 @@
       "status": "resolved",
       "unverified": false,
       "venue_id": "v-b0c5a0d9-4d33-51d1-b510-32e297b5e595"
+    },
+    "v-b0c6fb73-49cd-5fdf-b936-ee8fbd0ac4c6": {
+      "active": true,
+      "first_seen": "2026-10-23",
+      "history": [
+        {
+          "date": "2026-10-23",
+          "reasons": [
+            "Reference venue name changed"
+          ],
+          "status": "unverified"
+        }
+      ],
+      "last_checked": "2026-10-23",
+      "place_name": "Woolacombe",
+      "postcode": "EX34 7BP",
+      "pub_name": "Tides Out",
+      "reasons": [
+        "Reference venue name changed"
+      ],
+      "reference": {},
+      "research": {},
+      "source_checks": {
+        "camra": {
+          "status": "conflict",
+          "url": "https://camra.org.uk/pubs/188466"
+        },
+        "camra-pubs-location-audit": {
+          "status": "conflict",
+          "url": "https://camra.org.uk/pubs/188466"
+        },
+        "fsa_independent": {
+          "status": "no_name_match",
+          "url": ""
+        }
+      },
+      "source_error": null,
+      "status": "unverified",
+      "unverified": true,
+      "venue_id": "v-b0c6fb73-49cd-5fdf-b936-ee8fbd0ac4c6"
     },
     "v-b14c46ca-8a21-58ee-a8ef-19a530de2799": {
       "active": false,
@@ -11428,7 +11669,7 @@
           "status": "resolved"
         }
       ],
-      "last_checked": "2026-10-09",
+      "last_checked": "2026-10-23",
       "place_name": "Litchborough",
       "postcode": "NN12 8JF",
       "pub_name": "Old Red Lion",
@@ -11436,6 +11677,10 @@
       "reference": {},
       "research": {},
       "source_checks": {
+        "camra": {
+          "status": "confirmed",
+          "url": "https://camra.org.uk/pubs/160706"
+        },
         "fsa_independent": {
           "status": "coordinate_disagreement",
           "url": "https://ratings.food.gov.uk/business/1540934"
@@ -11463,7 +11708,7 @@
           "status": "resolved"
         }
       ],
-      "last_checked": "2026-10-09",
+      "last_checked": "2026-10-23",
       "place_name": "Mickleover",
       "postcode": "DE3 0DA",
       "pub_name": "Vine",
@@ -11471,6 +11716,10 @@
       "reference": {},
       "research": {},
       "source_checks": {
+        "camra": {
+          "status": "confirmed",
+          "url": "https://camra.org.uk/pubs/143468"
+        },
         "fsa_independent": {
           "status": "coordinate_disagreement",
           "url": "https://ratings.food.gov.uk/business/216032"
@@ -15359,5 +15608,5 @@
     }
   },
   "schema_version": 1,
-  "unverified_count": 24
+  "unverified_count": 30
 }

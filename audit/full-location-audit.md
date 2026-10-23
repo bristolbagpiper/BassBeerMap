@@ -15,9 +15,9 @@ Locations with informational observations: 599 (may also have an actionable find
 
 ## Confidence
 
-- owner_reviewed: 76
+- owner_reviewed: 77
 - independent_coordinate_agreement: 430
-- existing_evidence_needs_corroboration: 538
+- existing_evidence_needs_corroboration: 537
 
 ## Limits
 

@@ -403,7 +403,7 @@ Locations with informational observations: 599 (may also have an actionable find
 | Old Inn | Littlethorpe | LE19 2HX | nearby | Informational | FSA coordinate is 25-50m away; informational only |
 | Old Kings Head | Belper: Central | DE56 1NP | nearby | Informational | FSA coordinate is 25-50m away; informational only |
 | Old Red Lion | Holmes Chapel | CW4 7AQ | ambiguous_or_missing_coordinates | Informational | FSA comparison is inconclusive; absence of a match does not contradict accepted evidence |
-| Old Red Lion | Litchborough | NN12 8JF | coordinate_disagreement | Informational | FSA coordinate is 231.8m from the accepted pin; informational only because the FSA geocode may be approximate |
+| Old Red Lion | Litchborough | NN12 8JF | coordinate_disagreement | Informational | FSA coordinate is 223.1m from the accepted pin; informational only because the FSA geocode may be approximate |
 | Old Red Lion | Ipstones | ST10 2NA | coordinate_disagreement | Informational | FSA coordinate is 568.7m from the accepted pin; informational only because the FSA geocode may be approximate |
 | Old Rose and Crown | Stourport | DY13 9PA | coordinate_disagreement | Informational | FSA coordinate is 209.6m from the accepted pin; informational only because the FSA geocode may be approximate |
 | Old Smugglers Inn | St Brelade, Jersey | JE3 8AW | no_name_match | Informational | FSA comparison is inconclusive; absence of a match does not contradict accepted evidence |

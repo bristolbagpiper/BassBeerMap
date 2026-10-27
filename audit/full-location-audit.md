@@ -3,12 +3,12 @@
 Locations: 1044
 
 Actionable findings: 4
-Locations with informational observations: 599 (may also have an actionable finding)
+Locations with informational observations: 598 (may also have an actionable finding)
 
 ## Results
 
-- coordinate_disagreement: 245
-- coordinate_agreement: 458
+- coordinate_disagreement: 244
+- coordinate_agreement: 459
 - nearby: 102
 - no_name_match: 177
 - ambiguous_or_missing_coordinates: 62
@@ -16,8 +16,8 @@ Locations with informational observations: 599 (may also have an actionable find
 ## Confidence
 
 - owner_reviewed: 77
-- independent_coordinate_agreement: 430
-- existing_evidence_needs_corroboration: 537
+- independent_coordinate_agreement: 431
+- existing_evidence_needs_corroboration: 536
 
 ## Limits
 
@@ -352,7 +352,6 @@ Locations with informational observations: 599 (may also have an actionable find
 | Mall | Bristol: Clifton | BS8 4DR | nearby | Informational | Owner reviewed this postcode discrepancy and confirmed the displayed pub building; listing postcode retained for provenance; FSA coordinate is 25-50m away; informational only |
 | Mall Tavern | Kensington W8 | W8 4RU | nearby | Informational | FSA coordinate is 25-50m away; informational only |
 | Malt | Aston on Trent | DE72 2AA | ambiguous_or_missing_coordinates | Informational | FSA comparison is inconclusive; absence of a match does not contradict accepted evidence |
-| Malt Shovel | Northampton | NN1 1QF | coordinate_disagreement | Informational | FSA coordinate is 78.4m from the accepted pin; informational only because the FSA geocode may be approximate |
 | Malt Shovel | Chorley | WS13 8DD | coordinate_disagreement | Informational | FSA coordinate is 57.1m from the accepted pin; informational only because the FSA geocode may be approximate |
 | Manifold Inn | Hulme End | SK17 0EX | coordinate_disagreement | Informational | FSA coordinate is 78.8m from the accepted pin; informational only because the FSA geocode may be approximate |
 | Manor House | Quorn | LE12 8AL | coordinate_disagreement | Informational | FSA coordinate is 493.4m from the accepted pin; informational only because the FSA geocode may be approximate |

@@ -1322,11 +1322,20 @@
       "source_url": "https://www.openstreetmap.org/way/423564114"
     },
     "harbour pool club (pmc)|st ives|tr26 1lf": {
-      "checked_at": "2026-09-08",
-      "lat": 50.21372,
-      "lng": -5.48006,
-      "source": "manual-openstreetmap-review",
-      "source_url": "https://www.openstreetmap.org/node/6088919012"
+      "audit_reason": "manual_named_place_address_and_map_check",
+      "checked_at": "2026-10-28",
+      "corroborating_source_url": "",
+      "lat": 50.2137882,
+      "lng": -5.4799693,
+      "previous_difference_metres": 10.0,
+      "previous_lat": 50.21372,
+      "previous_lng": -5.48006,
+      "previous_source": "manual-openstreetmap-review",
+      "reference_address": "Wharf Rd, Saint Ives TR26 1LF",
+      "reference_name": "Harbour Pool Club",
+      "review_note": "Repository owner confirmed the named-place marker and full address in issue #5.",
+      "source": "google-maps-named-place",
+      "source_url": "https://www.google.com/maps/place/Harbour+Pool+Club/@50.2137364,-5.4799465,43m/data=!3m1!1e3!4m6!3m5!1s0x486add5eaafd4977:0xc8e820a9e96a8b21!8m2!3d50.2137882!4d-5.4799693!16s%2Fg%2F11b6ntn8bt?entry=ttu&g_ep=EgoyMDI2MTAyMC4wIKXMDSoASAFQAw%3D%3D"
     },
     "harry cook free house|cheltenham|gl50 1sd": {
       "audit_reason": "existing_pin_over_50m_from_matching_venue",

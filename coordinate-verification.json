@@ -1,7 +1,7 @@
 {
   "counts": {
-    "venue_coordinate_requires_review": 37,
-    "verified_venue": 1007
+    "venue_coordinate_requires_review": 36,
+    "verified_venue": 1008
   },
   "generated_at": "2026-10-28",
   "policy": {
@@ -12634,28 +12634,31 @@
       "venue_id": "v-7acff0ac-109f-5c52-83e8-add11cb06319"
     },
     "harbour pool club (pmc)|st ives|tr26 1lf": {
-      "coordinate_source": "manual-openstreetmap-review",
-      "display_precision": "postcode",
+      "coordinate_source": "owner-reviewed-google-maps",
+      "display_precision": "venue",
       "evidence": [
         {
-          "checked_at": "2026-09-11",
-          "difference_metres": 18.6,
-          "match": "venue_name_or_safe_alias_and_full_postcode",
+          "checked_at": "2026-10-28",
+          "match": "owner_reviewed_named_place_and_full_postcode",
+          "reference_address": "Wharf Rd, Saint Ives TR26 1LF",
           "reference_coordinate": {
-            "lat": 50.21372,
-            "lng": -5.48006
+            "lat": 50.2137882,
+            "lng": -5.4799693
           },
+          "reference_name": "Harbour Pool Club",
           "reference_postcode": "TR26 1LF",
-          "source": "food_standards_agency",
-          "url": "https://api.ratings.food.gov.uk/Establishments?address=TR26+1LF&pageSize=100&pageNumber=1"
+          "review_url": "https://github.com/bristolbagpiper/BassBeerMap/issues/5#issuecomment-6473893297",
+          "reviewed_by": "bristolbagpiper",
+          "source": "google-maps-named-place",
+          "url": "https://www.google.com/maps/place/Harbour+Pool+Club/@50.2137364,-5.4799465,43m/data=!3m1!1e3!4m6!3m5!1s0x486add5eaafd4977:0xc8e820a9e96a8b21!8m2!3d50.2137882!4d-5.4799693!16s%2Fg%2F11b6ntn8bt?entry=ttu&g_ep=EgoyMDI2MTAyMC4wIKXMDSoASAFQAw%3D%3D"
         }
       ],
-      "lat": 50.21372,
-      "lng": -5.48006,
+      "lat": 50.2137882,
+      "lng": -5.4799693,
       "place_name": "St Ives",
       "postcode": "TR26 1LF",
       "pub_name": "Harbour Pool Club (PMC)",
-      "status": "venue_coordinate_requires_review",
+      "status": "verified_venue",
       "venue_id": "v-ad92f484-649e-5618-98b2-57eab539a803"
     },
     "hardinge arms|kings newton|de73 8bx": {

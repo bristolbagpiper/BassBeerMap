@@ -1,7 +1,7 @@
 {
   "counts": {
-    "venue_coordinate_requires_review": 32,
-    "verified_venue": 1012
+    "venue_coordinate_requires_review": 31,
+    "verified_venue": 1013
   },
   "generated_at": "2026-10-28",
   "policy": {
@@ -20224,28 +20224,31 @@
       "venue_id": "v-b6c5ba97-eae0-51eb-92fe-7af9eba24354"
     },
     "railway brewhouse|newton abbot|tq12 2bs": {
-      "coordinate_source": "food-standards-agency-fhrs",
-      "display_precision": "postcode",
+      "coordinate_source": "owner-reviewed-google-maps",
+      "display_precision": "venue",
       "evidence": [
         {
-          "checked_at": "2026-09-11",
-          "difference_metres": 4.5,
-          "match": "venue_name_and_full_postcode",
+          "checked_at": "2026-10-28",
+          "match": "owner_reviewed_named_place_and_full_postcode",
+          "reference_address": "197 Queen St, Newton Abbot TQ12 2BS",
           "reference_coordinate": {
-            "lat": 50.530374,
-            "lng": -3.5996462
+            "lat": 50.5303718,
+            "lng": -3.5996933
           },
+          "reference_name": "The Railway Brewhouse",
           "reference_postcode": "TQ12 2BS",
-          "source": "camra",
-          "url": "https://camra.org.uk/pubs/148715"
+          "review_url": "https://github.com/bristolbagpiper/BassBeerMap/issues/5#issuecomment-6476271825",
+          "reviewed_by": "bristolbagpiper",
+          "source": "google-maps-named-place",
+          "url": "https://www.google.com/maps/place/The+Railway+Brewhouse/@50.5303241,-3.5999519,169m/data=!3m1!1e3!4m6!3m5!1s0x486d05dcd4fe87fb:0x831b979fe3124df5!8m2!3d50.5303718!4d-3.5996933!16s%2Fg%2F1td2yx3x?entry=ttu"
         }
       ],
-      "lat": 50.530374,
-      "lng": -3.5996462,
+      "lat": 50.5303718,
+      "lng": -3.5996933,
       "place_name": "Newton Abbot",
       "postcode": "TQ12 2BS",
       "pub_name": "Railway Brewhouse",
-      "status": "venue_coordinate_requires_review",
+      "status": "verified_venue",
       "venue_id": "v-bd246278-e4f8-5207-a42a-5fc51626dc5e"
     },
     "railway inn|moira|de12 6dj": {

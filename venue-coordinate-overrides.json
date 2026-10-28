@@ -2255,6 +2255,22 @@
       "source": "camra-pubs-location-audit",
       "source_url": "https://camra.org.uk/pubs/128014"
     },
+    "railway brewhouse|newton abbot|tq12 2bs": {
+      "audit_reason": "manual_named_place_address_and_map_check",
+      "checked_at": "2026-10-28",
+      "corroborating_source_url": "",
+      "lat": 50.5303718,
+      "lng": -3.5996933,
+      "previous_difference_metres": 3.3,
+      "previous_lat": 50.530374,
+      "previous_lng": -3.5996462,
+      "previous_source": "food-standards-agency-fhrs",
+      "reference_address": "197 Queen St, Newton Abbot TQ12 2BS",
+      "reference_name": "The Railway Brewhouse",
+      "review_note": "Repository owner confirmed the named-place marker and full address in issue #5.",
+      "source": "google-maps-named-place",
+      "source_url": "https://www.google.com/maps/place/The+Railway+Brewhouse/@50.5303241,-3.5999519,169m/data=!3m1!1e3!4m6!3m5!1s0x486d05dcd4fe87fb:0x831b979fe3124df5!8m2!3d50.5303718!4d-3.5996933!16s%2Fg%2F1td2yx3x?entry=ttu"
+    },
     "railway inn|moira|de12 6dj": {
       "audit_reason": "existing_pin_over_250m_from_matching_venue",
       "checked_at": "2026-09-11",

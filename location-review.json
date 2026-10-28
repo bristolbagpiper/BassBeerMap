@@ -1,5 +1,5 @@
 {
-  "active_count": 37,
+  "active_count": 36,
   "records": {
     "v-00a08839-2b8a-5782-b6c7-0bdce4cddb2f": {
       "active": false,
@@ -12382,7 +12382,7 @@
       "venue_id": "v-bce902a8-ea2b-5c24-86c9-3c7c4f5dd04f"
     },
     "v-bd246278-e4f8-5207-a42a-5fc51626dc5e": {
-      "active": true,
+      "active": false,
       "first_seen": "2026-10-24",
       "history": [
         {
@@ -12391,15 +12391,18 @@
             "Reference venue name changed"
           ],
           "status": "unverified"
+        },
+        {
+          "date": "2026-10-28",
+          "reasons": [],
+          "status": "resolved"
         }
       ],
-      "last_checked": "2026-10-27",
+      "last_checked": "2026-10-28",
       "place_name": "Newton Abbot",
       "postcode": "TQ12 2BS",
       "pub_name": "Railway Brewhouse",
-      "reasons": [
-        "Reference venue name changed"
-      ],
+      "reasons": [],
       "reference": {},
       "research": {
         "checked_at": "2026-10-27",
@@ -12415,15 +12418,11 @@
         "camra": {
           "status": "conflict",
           "url": "https://camra.org.uk/pubs/148715"
-        },
-        "fsa_independent": {
-          "status": "coordinate_agreement",
-          "url": "https://ratings.food.gov.uk/business/1419570"
         }
       },
       "source_error": null,
-      "status": "unverified",
-      "unverified": true,
+      "status": "resolved",
+      "unverified": false,
       "venue_id": "v-bd246278-e4f8-5207-a42a-5fc51626dc5e"
     },
     "v-bd6c2b23-d51b-50bd-9f02-0fe7f42fd53a": {
@@ -16406,5 +16405,5 @@
     }
   },
   "schema_version": 1,
-  "unverified_count": 32
+  "unverified_count": 31
 }

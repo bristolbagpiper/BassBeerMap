@@ -1,6 +1,6 @@
 {
   "location_review": {
-    "active_count": 35,
+    "active_count": 34,
     "records": {
       "v-00a08839-2b8a-5782-b6c7-0bdce4cddb2f": {
         "active": false,
@@ -7336,7 +7336,7 @@
         "venue_id": "v-72b13551-8faa-53ec-8154-192e09b3a12c"
       },
       "v-72c779fa-81b2-55c0-af15-06c7b57722e7": {
-        "active": true,
+        "active": false,
         "first_seen": "2026-10-18",
         "history": [
           {
@@ -7345,15 +7345,18 @@
               "Reference venue name changed"
             ],
             "status": "unverified"
+          },
+          {
+            "date": "2026-10-28",
+            "reasons": [],
+            "status": "resolved"
           }
         ],
-        "last_checked": "2026-10-20",
+        "last_checked": "2026-10-28",
         "place_name": "Oadby",
         "postcode": "LE2 5QA",
         "pub_name": "Royal British Legion",
-        "reasons": [
-          "Reference venue name changed"
-        ],
+        "reasons": [],
         "reference": {},
         "research": {
           "checked_at": "2026-10-20",
@@ -7369,15 +7372,11 @@
           "camra": {
             "status": "conflict",
             "url": "https://camra.org.uk/pubs/174223"
-          },
-          "fsa_independent": {
-            "status": "nearby",
-            "url": "https://ratings.food.gov.uk/business/27779"
           }
         },
         "source_error": null,
-        "status": "unverified",
-        "unverified": true,
+        "status": "resolved",
+        "unverified": false,
         "venue_id": "v-72c779fa-81b2-55c0-af15-06c7b57722e7"
       },
       "v-738a0c0c-b9c3-511f-a6d0-a367e87bcd9f": {
@@ -16405,7 +16404,7 @@
       }
     },
     "schema_version": 1,
-    "unverified_count": 30
+    "unverified_count": 29
   },
   "schema_version": 1,
   "venues": {
@@ -66643,6 +66642,36 @@
         "postcode": "LE2 5QA",
         "pub_name": "Royal British Legion"
       },
+      "location_approvals": [
+        {
+          "checked_at": "2026-10-28",
+          "comment_id": 6480604037,
+          "previous_pin": {
+            "evidence": [
+              {
+                "checked_at": "2026-09-11",
+                "difference_metres": 4.1,
+                "match": "venue_name_and_full_postcode",
+                "reference_coordinate": {
+                  "lat": 52.5973603,
+                  "lng": -1.0808484
+                },
+                "reference_postcode": "LE2 5QA",
+                "source": "camra",
+                "url": "https://camra.org.uk/pubs/174223"
+              }
+            ],
+            "lat": 52.5973603,
+            "lng": -1.0808484,
+            "review_reason": "Reference venue name changed",
+            "review_required": true,
+            "source": "openstreetmap-gb-extract"
+          },
+          "review_url": "https://github.com/bristolbagpiper/BassBeerMap/issues/5#issuecomment-6480604037",
+          "reviewed_by": "bristolbagpiper",
+          "source_url": "https://www.google.com/maps/place/The+Royal+British+Legion/@52.5973763,-1.0807904,522m/data=!3m1!1e3!4m15!1m8!3m7!1s0x4877641c39851c91:0xb34217e228f7297a!2s4A+Wigston+Rd,+Oadby,+Leicester+LE2+5QA!3b1!8m2!3d52.5973763!4d-1.0807904!16s%2Fg%2F11pw186n9z!3m5!1s0x4877641c39835a1d:0xcc1300af90fce555!8m2!3d52.5973763!4d-1.0807904!16s%2Fg%2F1tdclgj5?entry=ttu"
+        }
+      ],
       "location_research": {
         "checked_at": "2026-10-20",
         "coverage": {
@@ -66668,23 +66697,24 @@
       "verified_pin": {
         "evidence": [
           {
-            "checked_at": "2026-09-11",
-            "difference_metres": 4.1,
-            "match": "venue_name_and_full_postcode",
+            "checked_at": "2026-10-28",
+            "match": "owner_reviewed_named_place_and_full_postcode",
+            "reference_address": "4A Wigston Road, Oadby, Leicester LE2 5QA",
             "reference_coordinate": {
-              "lat": 52.5973603,
-              "lng": -1.0808484
+              "lat": 52.5973763,
+              "lng": -1.0807904
             },
+            "reference_name": "The Royal British Legion",
             "reference_postcode": "LE2 5QA",
-            "source": "camra",
-            "url": "https://camra.org.uk/pubs/174223"
+            "review_url": "https://github.com/bristolbagpiper/BassBeerMap/issues/5#issuecomment-6480604037",
+            "reviewed_by": "bristolbagpiper",
+            "source": "google-maps-named-place",
+            "url": "https://www.google.com/maps/place/The+Royal+British+Legion/@52.5973763,-1.0807904,522m/data=!3m1!1e3!4m15!1m8!3m7!1s0x4877641c39851c91:0xb34217e228f7297a!2s4A+Wigston+Rd,+Oadby,+Leicester+LE2+5QA!3b1!8m2!3d52.5973763!4d-1.0807904!16s%2Fg%2F11pw186n9z!3m5!1s0x4877641c39835a1d:0xcc1300af90fce555!8m2!3d52.5973763!4d-1.0807904!16s%2Fg%2F1tdclgj5?entry=ttu"
           }
         ],
-        "lat": 52.5973603,
-        "lng": -1.0808484,
-        "review_reason": "Reference venue name changed",
-        "review_required": true,
-        "source": "openstreetmap-gb-extract"
+        "lat": 52.5973763,
+        "lng": -1.0807904,
+        "source": "owner-reviewed-google-maps"
       }
     },
     "v-72ccc6ea-0b34-5d9c-a77b-32fbea62b16e": {

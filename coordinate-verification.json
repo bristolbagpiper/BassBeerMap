@@ -1,7 +1,7 @@
 {
   "counts": {
-    "venue_coordinate_requires_review": 30,
-    "verified_venue": 1014
+    "venue_coordinate_requires_review": 29,
+    "verified_venue": 1015
   },
   "generated_at": "2026-10-28",
   "policy": {
@@ -22169,28 +22169,31 @@
       "venue_id": "v-0bf6d728-dc07-530e-9784-fbd9a3bb00f0"
     },
     "royal british legion|oadby|le2 5qa": {
-      "coordinate_source": "openstreetmap-gb-extract",
-      "display_precision": "postcode",
+      "coordinate_source": "owner-reviewed-google-maps",
+      "display_precision": "venue",
       "evidence": [
         {
-          "checked_at": "2026-09-11",
-          "difference_metres": 4.1,
-          "match": "venue_name_and_full_postcode",
+          "checked_at": "2026-10-28",
+          "match": "owner_reviewed_named_place_and_full_postcode",
+          "reference_address": "4A Wigston Road, Oadby, Leicester LE2 5QA",
           "reference_coordinate": {
-            "lat": 52.5973603,
-            "lng": -1.0808484
+            "lat": 52.5973763,
+            "lng": -1.0807904
           },
+          "reference_name": "The Royal British Legion",
           "reference_postcode": "LE2 5QA",
-          "source": "camra",
-          "url": "https://camra.org.uk/pubs/174223"
+          "review_url": "https://github.com/bristolbagpiper/BassBeerMap/issues/5#issuecomment-6480604037",
+          "reviewed_by": "bristolbagpiper",
+          "source": "google-maps-named-place",
+          "url": "https://www.google.com/maps/place/The+Royal+British+Legion/@52.5973763,-1.0807904,522m/data=!3m1!1e3!4m15!1m8!3m7!1s0x4877641c39851c91:0xb34217e228f7297a!2s4A+Wigston+Rd,+Oadby,+Leicester+LE2+5QA!3b1!8m2!3d52.5973763!4d-1.0807904!16s%2Fg%2F11pw186n9z!3m5!1s0x4877641c39835a1d:0xcc1300af90fce555!8m2!3d52.5973763!4d-1.0807904!16s%2Fg%2F1tdclgj5?entry=ttu"
         }
       ],
-      "lat": 52.5973603,
-      "lng": -1.0808484,
+      "lat": 52.5973763,
+      "lng": -1.0807904,
       "place_name": "Oadby",
       "postcode": "LE2 5QA",
       "pub_name": "Royal British Legion",
-      "status": "venue_coordinate_requires_review",
+      "status": "verified_venue",
       "venue_id": "v-72c779fa-81b2-55c0-af15-06c7b57722e7"
     },
     "royal oak (the tiddly)|ellerdine heath|tf6 6rl": {

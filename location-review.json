@@ -1,5 +1,5 @@
 {
-  "active_count": 35,
+  "active_count": 34,
   "records": {
     "v-00a08839-2b8a-5782-b6c7-0bdce4cddb2f": {
       "active": false,
@@ -7335,7 +7335,7 @@
       "venue_id": "v-72b13551-8faa-53ec-8154-192e09b3a12c"
     },
     "v-72c779fa-81b2-55c0-af15-06c7b57722e7": {
-      "active": true,
+      "active": false,
       "first_seen": "2026-10-18",
       "history": [
         {
@@ -7344,15 +7344,18 @@
             "Reference venue name changed"
           ],
           "status": "unverified"
+        },
+        {
+          "date": "2026-10-28",
+          "reasons": [],
+          "status": "resolved"
         }
       ],
-      "last_checked": "2026-10-20",
+      "last_checked": "2026-10-28",
       "place_name": "Oadby",
       "postcode": "LE2 5QA",
       "pub_name": "Royal British Legion",
-      "reasons": [
-        "Reference venue name changed"
-      ],
+      "reasons": [],
       "reference": {},
       "research": {
         "checked_at": "2026-10-20",
@@ -7368,15 +7371,11 @@
         "camra": {
           "status": "conflict",
           "url": "https://camra.org.uk/pubs/174223"
-        },
-        "fsa_independent": {
-          "status": "nearby",
-          "url": "https://ratings.food.gov.uk/business/27779"
         }
       },
       "source_error": null,
-      "status": "unverified",
-      "unverified": true,
+      "status": "resolved",
+      "unverified": false,
       "venue_id": "v-72c779fa-81b2-55c0-af15-06c7b57722e7"
     },
     "v-738a0c0c-b9c3-511f-a6d0-a367e87bcd9f": {
@@ -16404,5 +16403,5 @@
     }
   },
   "schema_version": 1,
-  "unverified_count": 30
+  "unverified_count": 29
 }

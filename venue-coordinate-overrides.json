@@ -1747,16 +1747,20 @@
       "source_url": "https://camra.org.uk/pubs/161018"
     },
     "milford sunshine social club (pmc)|milford|de56 0qh": {
-      "audit_reason": "postcode_fallback_replaced",
-      "checked_at": "2026-09-11",
-      "lat": 53.002795,
-      "lng": -1.480413,
-      "previous_difference_metres": 173.1,
-      "previous_lat": 53.003533,
-      "previous_lng": -1.48269,
-      "previous_source": "postcode",
-      "source": "camra-pubs-location-audit",
-      "source_url": "https://camra.org.uk/pubs/113188"
+      "audit_reason": "manual_named_place_address_and_map_check",
+      "checked_at": "2026-10-28",
+      "corroborating_source_url": "https://camra.org.uk/pubs/milford-social-club-milford-113188",
+      "lat": 53.002819,
+      "lng": -1.4804092,
+      "previous_difference_metres": 2.7,
+      "previous_lat": 53.002795,
+      "previous_lng": -1.480413,
+      "previous_source": "camra-pubs-location-audit",
+      "reference_address": "5 Chevin Rd, Milford, Belper DE56 0QH",
+      "reference_name": "Milford Social Club",
+      "review_note": "Repository owner confirmed the named-place marker and full address in issue #5; CAMRA corroborated the primary name, documented alias, postcode, and nearby point.",
+      "source": "google-maps-named-place",
+      "source_url": "https://www.google.com/maps/place/Milford+Social+Club/@53.0027926,-1.4805613,113m/data=!3m1!1e3!4m6!3m5!1s0x4879f30d3be736e7:0xa35191fd161dbc93!8m2!3d53.002819!4d-1.4804092!16s%2Fg%2F11clsg50h9?entry=ttu"
     },
     "monro|liverpool: central|l1 5ag": {
       "audit_reason": "existing_pin_over_50m_from_matching_venue",

@@ -1,6 +1,6 @@
 {
   "location_review": {
-    "active_count": 47,
+    "active_count": 46,
     "records": {
       "v-00a08839-2b8a-5782-b6c7-0bdce4cddb2f": {
         "active": false,
@@ -1441,7 +1441,7 @@
         "venue_id": "v-1639d0fb-54f0-58b5-8ce4-08eb9e335e87"
       },
       "v-166e22b5-0dd9-5054-8886-250d96144750": {
-        "active": true,
+        "active": false,
         "first_seen": "2026-10-10",
         "history": [
           {
@@ -1450,15 +1450,18 @@
               "Reference venue name changed"
             ],
             "status": "unverified"
+          },
+          {
+            "date": "2026-10-28",
+            "reasons": [],
+            "status": "resolved"
           }
         ],
-        "last_checked": "2026-10-13",
+        "last_checked": "2026-10-28",
         "place_name": "Milford",
         "postcode": "DE56 0QH",
         "pub_name": "Milford Sunshine Social Club (PMC)",
-        "reasons": [
-          "Reference venue name changed"
-        ],
+        "reasons": [],
         "reference": {},
         "research": {
           "checked_at": "2026-10-27",
@@ -1478,15 +1481,11 @@
           "camra-pubs-location-audit": {
             "status": "conflict",
             "url": "https://camra.org.uk/pubs/113188"
-          },
-          "fsa_independent": {
-            "status": "no_name_match",
-            "url": ""
           }
         },
         "source_error": null,
-        "status": "unverified",
-        "unverified": true,
+        "status": "resolved",
+        "unverified": false,
         "venue_id": "v-166e22b5-0dd9-5054-8886-250d96144750"
       },
       "v-16ac6d8a-6dc0-5535-aae6-0cc85e773d54": {
@@ -16417,7 +16416,7 @@
       }
     },
     "schema_version": 1,
-    "unverified_count": 42
+    "unverified_count": 41
   },
   "schema_version": 1,
   "venues": {
@@ -27169,6 +27168,48 @@
         "postcode": "DE56 0QH",
         "pub_name": "Milford Sunshine Social Club (PMC)"
       },
+      "location_approvals": [
+        {
+          "checked_at": "2026-10-28",
+          "comment_id": 6471273290,
+          "previous_pin": {
+            "evidence": [
+              {
+                "checked_at": "2026-09-11",
+                "difference_metres": 0.0,
+                "match": "venue_name_and_full_postcode",
+                "reference_coordinate": {
+                  "lat": 53.002795,
+                  "lng": -1.480413
+                },
+                "reference_postcode": "DE56 0QH",
+                "source": "camra",
+                "url": "https://camra.org.uk/pubs/113188"
+              },
+              {
+                "checked_at": "2026-09-11",
+                "difference_metres": 0,
+                "match": "postcode_fallback_replaced",
+                "reference_coordinate": {
+                  "lat": 53.002795,
+                  "lng": -1.480413
+                },
+                "reference_postcode": "DE56 0QH",
+                "source": "camra-pubs-location-audit",
+                "url": "https://camra.org.uk/pubs/113188"
+              }
+            ],
+            "lat": 53.002795,
+            "lng": -1.480413,
+            "review_reason": "Reference venue name changed",
+            "review_required": true,
+            "source": "camra-pubs-location-audit"
+          },
+          "review_url": "https://github.com/bristolbagpiper/BassBeerMap/issues/5#issuecomment-6471273290",
+          "reviewed_by": "bristolbagpiper",
+          "source_url": "https://www.google.com/maps/place/Milford+Social+Club/@53.0027926,-1.4805613,113m/data=!3m1!1e3!4m6!3m5!1s0x4879f30d3be736e7:0xa35191fd161dbc93!8m2!3d53.002819!4d-1.4804092!16s%2Fg%2F11clsg50h9?entry=ttu"
+        }
+      ],
       "location_research": {
         "checked_at": "2026-10-27",
         "coverage": {
@@ -27198,35 +27239,40 @@
       "verified_pin": {
         "evidence": [
           {
-            "checked_at": "2026-09-11",
-            "difference_metres": 0.0,
-            "match": "venue_name_and_full_postcode",
+            "checked_at": "2026-10-28",
+            "match": "owner_reviewed_named_place_and_full_postcode",
+            "reference_address": "5 Chevin Rd, Milford, Belper DE56 0QH",
             "reference_coordinate": {
-              "lat": 53.002795,
-              "lng": -1.480413
+              "lat": 53.002819,
+              "lng": -1.4804092
             },
+            "reference_name": "Milford Social Club",
             "reference_postcode": "DE56 0QH",
-            "source": "camra",
-            "url": "https://camra.org.uk/pubs/113188"
+            "review_url": "https://github.com/bristolbagpiper/BassBeerMap/issues/5#issuecomment-6471273290",
+            "reviewed_by": "bristolbagpiper",
+            "source": "google-maps-named-place",
+            "url": "https://www.google.com/maps/place/Milford+Social+Club/@53.0027926,-1.4805613,113m/data=!3m1!1e3!4m6!3m5!1s0x4879f30d3be736e7:0xa35191fd161dbc93!8m2!3d53.002819!4d-1.4804092!16s%2Fg%2F11clsg50h9?entry=ttu"
           },
           {
-            "checked_at": "2026-09-11",
-            "difference_metres": 0,
-            "match": "postcode_fallback_replaced",
+            "checked_at": "2026-10-28",
+            "match": "owner_reviewed_documented_alias_same_postcode_and_within_50m",
+            "reference_address": "5 Chevin View",
             "reference_coordinate": {
               "lat": 53.002795,
               "lng": -1.480413
             },
+            "reference_locality": "Milford",
+            "reference_name": "Milford Social Club, Milford - Club with Live Music",
             "reference_postcode": "DE56 0QH",
-            "source": "camra-pubs-location-audit",
-            "url": "https://camra.org.uk/pubs/113188"
+            "review_url": "https://github.com/bristolbagpiper/BassBeerMap/issues/5#issuecomment-6471273290",
+            "reviewed_by": "bristolbagpiper",
+            "source": "camra",
+            "url": "https://camra.org.uk/pubs/milford-social-club-milford-113188"
           }
         ],
-        "lat": 53.002795,
-        "lng": -1.480413,
-        "review_reason": "Reference venue name changed",
-        "review_required": true,
-        "source": "camra-pubs-location-audit"
+        "lat": 53.002819,
+        "lng": -1.4804092,
+        "source": "owner-reviewed-google-maps"
       }
     },
     "v-16ac6d8a-6dc0-5535-aae6-0cc85e773d54": {

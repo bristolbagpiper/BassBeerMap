@@ -1,7 +1,7 @@
 {
   "counts": {
-    "venue_coordinate_requires_review": 42,
-    "verified_venue": 1002
+    "venue_coordinate_requires_review": 41,
+    "verified_venue": 1003
   },
   "generated_at": "2026-10-28",
   "policy": {
@@ -16570,40 +16570,47 @@
       "venue_id": "v-a748dc26-69b2-5934-9c3d-903dac12e2a5"
     },
     "milford sunshine social club (pmc)|milford|de56 0qh": {
-      "coordinate_source": "camra-pubs-location-audit",
-      "display_precision": "postcode",
+      "coordinate_source": "owner-reviewed-google-maps",
+      "display_precision": "venue",
       "evidence": [
         {
-          "checked_at": "2026-09-11",
-          "difference_metres": 0.0,
-          "match": "venue_name_and_full_postcode",
+          "checked_at": "2026-10-28",
+          "match": "owner_reviewed_named_place_and_full_postcode",
+          "reference_address": "5 Chevin Rd, Milford, Belper DE56 0QH",
           "reference_coordinate": {
-            "lat": 53.002795,
-            "lng": -1.480413
+            "lat": 53.002819,
+            "lng": -1.4804092
           },
+          "reference_name": "Milford Social Club",
           "reference_postcode": "DE56 0QH",
-          "source": "camra",
-          "url": "https://camra.org.uk/pubs/113188"
+          "review_url": "https://github.com/bristolbagpiper/BassBeerMap/issues/5#issuecomment-6471273290",
+          "reviewed_by": "bristolbagpiper",
+          "source": "google-maps-named-place",
+          "url": "https://www.google.com/maps/place/Milford+Social+Club/@53.0027926,-1.4805613,113m/data=!3m1!1e3!4m6!3m5!1s0x4879f30d3be736e7:0xa35191fd161dbc93!8m2!3d53.002819!4d-1.4804092!16s%2Fg%2F11clsg50h9?entry=ttu"
         },
         {
-          "checked_at": "2026-09-11",
-          "difference_metres": 0,
-          "match": "postcode_fallback_replaced",
+          "checked_at": "2026-10-28",
+          "match": "owner_reviewed_documented_alias_same_postcode_and_within_50m",
+          "reference_address": "5 Chevin View",
           "reference_coordinate": {
             "lat": 53.002795,
             "lng": -1.480413
           },
+          "reference_locality": "Milford",
+          "reference_name": "Milford Social Club, Milford - Club with Live Music",
           "reference_postcode": "DE56 0QH",
-          "source": "camra-pubs-location-audit",
-          "url": "https://camra.org.uk/pubs/113188"
+          "review_url": "https://github.com/bristolbagpiper/BassBeerMap/issues/5#issuecomment-6471273290",
+          "reviewed_by": "bristolbagpiper",
+          "source": "camra",
+          "url": "https://camra.org.uk/pubs/milford-social-club-milford-113188"
         }
       ],
-      "lat": 53.002795,
-      "lng": -1.480413,
+      "lat": 53.002819,
+      "lng": -1.4804092,
       "place_name": "Milford",
       "postcode": "DE56 0QH",
       "pub_name": "Milford Sunshine Social Club (PMC)",
-      "status": "venue_coordinate_requires_review",
+      "status": "verified_venue",
       "venue_id": "v-166e22b5-0dd9-5054-8886-250d96144750"
     },
     "mill wheel|hartshorne|de11 7as": {

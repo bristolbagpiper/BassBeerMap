@@ -1,5 +1,5 @@
 {
-  "active_count": 47,
+  "active_count": 46,
   "records": {
     "v-00a08839-2b8a-5782-b6c7-0bdce4cddb2f": {
       "active": false,
@@ -1440,7 +1440,7 @@
       "venue_id": "v-1639d0fb-54f0-58b5-8ce4-08eb9e335e87"
     },
     "v-166e22b5-0dd9-5054-8886-250d96144750": {
-      "active": true,
+      "active": false,
       "first_seen": "2026-10-10",
       "history": [
         {
@@ -1449,15 +1449,18 @@
             "Reference venue name changed"
           ],
           "status": "unverified"
+        },
+        {
+          "date": "2026-10-28",
+          "reasons": [],
+          "status": "resolved"
         }
       ],
-      "last_checked": "2026-10-13",
+      "last_checked": "2026-10-28",
       "place_name": "Milford",
       "postcode": "DE56 0QH",
       "pub_name": "Milford Sunshine Social Club (PMC)",
-      "reasons": [
-        "Reference venue name changed"
-      ],
+      "reasons": [],
       "reference": {},
       "research": {
         "checked_at": "2026-10-27",
@@ -1477,15 +1480,11 @@
         "camra-pubs-location-audit": {
           "status": "conflict",
           "url": "https://camra.org.uk/pubs/113188"
-        },
-        "fsa_independent": {
-          "status": "no_name_match",
-          "url": ""
         }
       },
       "source_error": null,
-      "status": "unverified",
-      "unverified": true,
+      "status": "resolved",
+      "unverified": false,
       "venue_id": "v-166e22b5-0dd9-5054-8886-250d96144750"
     },
     "v-16ac6d8a-6dc0-5535-aae6-0cc85e773d54": {
@@ -16416,5 +16415,5 @@
     }
   },
   "schema_version": 1,
-  "unverified_count": 42
+  "unverified_count": 41
 }

@@ -1949,16 +1949,20 @@
       "source": "openstreetmap"
     },
     "new inn|peggs green|le67 8je": {
-      "audit_reason": "existing_pin_over_50m_from_matching_venue",
-      "checked_at": "2026-09-11",
-      "lat": 52.7568,
-      "lng": -1.39098,
-      "previous_difference_metres": 178.7,
-      "previous_lat": 52.755197366666664,
-      "previous_lng": -1.3907817,
-      "previous_source": "openstreetmap-gb-extract",
-      "source": "camra-pubs-location-audit",
-      "source_url": "https://camra.org.uk/pubs/171220"
+      "audit_reason": "manual_named_place_address_and_map_check",
+      "checked_at": "2026-10-28",
+      "corroborating_source_url": "",
+      "lat": 52.7551846,
+      "lng": -1.3908139,
+      "previous_difference_metres": 180.0,
+      "previous_lat": 52.7568,
+      "previous_lng": -1.39098,
+      "previous_source": "camra-pubs-location-audit",
+      "reference_address": "Clay Lane, Peggs Green, Coleorton, Coalville LE67 8JE",
+      "reference_name": "New Inn",
+      "review_note": "Repository owner confirmed the named-place marker and full address in issue #5.",
+      "source": "google-maps-named-place",
+      "source_url": "https://www.google.com/maps/place/New+Inn/@52.7551812,-1.3908858,68m/data=!3m1!1e3!4m6!3m5!1s0x4879e334ebdfad2f:0x7853b17e20e86ac6!8m2!3d52.7551846!4d-1.3908139!16s%2Fg%2F1tvdj9s5?entry=ttu"
     },
     "new storey|osgathorpe|le12 9ta": {
       "audit_reason": "existing_pin_over_50m_from_matching_venue",

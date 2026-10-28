@@ -1,7 +1,7 @@
 {
   "counts": {
-    "venue_coordinate_requires_review": 35,
-    "verified_venue": 1009
+    "venue_coordinate_requires_review": 34,
+    "verified_venue": 1010
   },
   "generated_at": "2026-10-28",
   "policy": {
@@ -17644,40 +17644,31 @@
       "venue_id": "v-bb2bede7-bcfa-547b-b302-fe75e69f1abe"
     },
     "new inn|peggs green|le67 8je": {
-      "coordinate_source": "camra-pubs-location-audit",
-      "display_precision": "postcode",
+      "coordinate_source": "owner-reviewed-google-maps",
+      "display_precision": "venue",
       "evidence": [
         {
-          "checked_at": "2026-09-11",
-          "difference_metres": 0.0,
-          "match": "venue_name_and_full_postcode",
+          "checked_at": "2026-10-28",
+          "match": "owner_reviewed_named_place_and_full_postcode",
+          "reference_address": "Clay Lane, Peggs Green, Coleorton, Coalville LE67 8JE",
           "reference_coordinate": {
-            "lat": 52.7568,
-            "lng": -1.39098
+            "lat": 52.7551846,
+            "lng": -1.3908139
           },
+          "reference_name": "New Inn",
           "reference_postcode": "LE67 8JE",
-          "source": "camra",
-          "url": "https://camra.org.uk/pubs/171220"
-        },
-        {
-          "checked_at": "2026-09-11",
-          "difference_metres": 0,
-          "match": "existing_pin_over_50m_from_matching_venue",
-          "reference_coordinate": {
-            "lat": 52.7568,
-            "lng": -1.39098
-          },
-          "reference_postcode": "LE67 8JE",
-          "source": "camra-pubs-location-audit",
-          "url": "https://camra.org.uk/pubs/171220"
+          "review_url": "https://github.com/bristolbagpiper/BassBeerMap/issues/5#issuecomment-6474133631",
+          "reviewed_by": "bristolbagpiper",
+          "source": "google-maps-named-place",
+          "url": "https://www.google.com/maps/place/New+Inn/@52.7551812,-1.3908858,68m/data=!3m1!1e3!4m6!3m5!1s0x4879e334ebdfad2f:0x7853b17e20e86ac6!8m2!3d52.7551846!4d-1.3908139!16s%2Fg%2F1tvdj9s5?entry=ttu"
         }
       ],
-      "lat": 52.7568,
-      "lng": -1.39098,
+      "lat": 52.7551846,
+      "lng": -1.3908139,
       "place_name": "Peggs Green",
       "postcode": "LE67 8JE",
       "pub_name": "New Inn",
-      "status": "venue_coordinate_requires_review",
+      "status": "verified_venue",
       "venue_id": "v-4288a224-ba85-52e6-9109-f4fcd9766a9a"
     },
     "new inn|tywardreath|pl24 2qp": {

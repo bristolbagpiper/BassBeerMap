@@ -2001,16 +2001,20 @@
       "source_url": "https://camra.org.uk/pubs/173035"
     },
     "oat|little bowden|le16 8an": {
-      "audit_reason": "postcode_fallback_replaced",
-      "checked_at": "2026-09-11",
-      "lat": 52.476708,
-      "lng": -0.911061,
-      "previous_difference_metres": 56.2,
-      "previous_lat": 52.476599,
-      "previous_lng": -0.910251,
-      "previous_source": "postcode",
-      "source": "camra-pubs-location-audit",
-      "source_url": "https://camra.org.uk/pubs/173960"
+      "audit_reason": "manual_named_place_address_and_map_check",
+      "checked_at": "2026-10-28",
+      "corroborating_source_url": "https://camra.org.uk/pubs/oat-hill-market-harborough-173960",
+      "lat": 52.4767156,
+      "lng": -0.9110755,
+      "previous_difference_metres": 1.3,
+      "previous_lat": 52.476708,
+      "previous_lng": -0.911061,
+      "previous_source": "camra-pubs-location-audit",
+      "reference_address": "31 Kettering Road, Little Bowden, Market Harborough LE16 8AN",
+      "reference_name": "The Oat Hill",
+      "review_note": "Repository owner confirmed the named-place marker and full address in issue #5; CAMRA corroborated the primary name, documented alias or co-located venue label, postcode, and nearby point.",
+      "source": "google-maps-named-place",
+      "source_url": "https://www.google.com/maps/place/The+Oat+Hill/@52.4767156,-0.9110755,648m/data=!3m2!1e3!4b1!4m6!3m5!1s0x48777119b6f1a78f:0x4ce77f13a87ea623!8m2!3d52.4767156!4d-0.9110755!16s%2Fg%2F1hc1hhvdk?entry=ttu"
     },
     "old crown|shardlow|de72 2hl": {
       "audit_reason": "existing_pin_over_50m_from_matching_venue",

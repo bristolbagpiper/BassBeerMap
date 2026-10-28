@@ -1,6 +1,6 @@
 {
   "location_review": {
-    "active_count": 39,
+    "active_count": 38,
     "records": {
       "v-00a08839-2b8a-5782-b6c7-0bdce4cddb2f": {
         "active": false,
@@ -4755,7 +4755,7 @@
         "venue_id": "v-5351f1e7-9b90-50e5-a520-f0c9598a6a36"
       },
       "v-539bf7df-26bd-5550-a414-a2b92947c993": {
-        "active": true,
+        "active": false,
         "first_seen": "2026-10-15",
         "history": [
           {
@@ -4764,15 +4764,18 @@
               "Reference venue name changed"
             ],
             "status": "unverified"
+          },
+          {
+            "date": "2026-10-28",
+            "reasons": [],
+            "status": "resolved"
           }
         ],
-        "last_checked": "2026-10-17",
+        "last_checked": "2026-10-28",
         "place_name": "Little Bowden",
         "postcode": "LE16 8AN",
         "pub_name": "Oat",
-        "reasons": [
-          "Reference venue name changed"
-        ],
+        "reasons": [],
         "reference": {},
         "research": {
           "checked_at": "2026-10-27",
@@ -4792,15 +4795,11 @@
           "camra-pubs-location-audit": {
             "status": "conflict",
             "url": "https://camra.org.uk/pubs/173960"
-          },
-          "fsa_independent": {
-            "status": "no_name_match",
-            "url": ""
           }
         },
         "source_error": null,
-        "status": "unverified",
-        "unverified": true,
+        "status": "resolved",
+        "unverified": false,
         "venue_id": "v-539bf7df-26bd-5550-a414-a2b92947c993"
       },
       "v-53f97947-824b-5e72-b0dc-68455d481ce3": {
@@ -16409,7 +16408,7 @@
       }
     },
     "schema_version": 1,
-    "unverified_count": 34
+    "unverified_count": 33
   },
   "schema_version": 1,
   "venues": {
@@ -51196,6 +51195,48 @@
         "postcode": "LE16 8AN",
         "pub_name": "Oat"
       },
+      "location_approvals": [
+        {
+          "checked_at": "2026-10-28",
+          "comment_id": 6474724957,
+          "previous_pin": {
+            "evidence": [
+              {
+                "checked_at": "2026-09-11",
+                "difference_metres": 0.0,
+                "match": "venue_name_and_full_postcode",
+                "reference_coordinate": {
+                  "lat": 52.476708,
+                  "lng": -0.911061
+                },
+                "reference_postcode": "LE16 8AN",
+                "source": "camra",
+                "url": "https://camra.org.uk/pubs/173960"
+              },
+              {
+                "checked_at": "2026-09-11",
+                "difference_metres": 0,
+                "match": "postcode_fallback_replaced",
+                "reference_coordinate": {
+                  "lat": 52.476708,
+                  "lng": -0.911061
+                },
+                "reference_postcode": "LE16 8AN",
+                "source": "camra-pubs-location-audit",
+                "url": "https://camra.org.uk/pubs/173960"
+              }
+            ],
+            "lat": 52.476708,
+            "lng": -0.911061,
+            "review_reason": "Reference venue name changed",
+            "review_required": true,
+            "source": "camra-pubs-location-audit"
+          },
+          "review_url": "https://github.com/bristolbagpiper/BassBeerMap/issues/5#issuecomment-6474724957",
+          "reviewed_by": "bristolbagpiper",
+          "source_url": "https://www.google.com/maps/place/The+Oat+Hill/@52.4767156,-0.9110755,648m/data=!3m2!1e3!4b1!4m6!3m5!1s0x48777119b6f1a78f:0x4ce77f13a87ea623!8m2!3d52.4767156!4d-0.9110755!16s%2Fg%2F1hc1hhvdk?entry=ttu"
+        }
+      ],
       "location_research": {
         "checked_at": "2026-10-27",
         "coverage": {
@@ -51225,35 +51266,40 @@
       "verified_pin": {
         "evidence": [
           {
-            "checked_at": "2026-09-11",
-            "difference_metres": 0.0,
-            "match": "venue_name_and_full_postcode",
+            "checked_at": "2026-10-28",
+            "match": "owner_reviewed_named_place_and_full_postcode",
+            "reference_address": "31 Kettering Road, Little Bowden, Market Harborough LE16 8AN",
             "reference_coordinate": {
-              "lat": 52.476708,
-              "lng": -0.911061
+              "lat": 52.4767156,
+              "lng": -0.9110755
             },
+            "reference_name": "The Oat Hill",
             "reference_postcode": "LE16 8AN",
-            "source": "camra",
-            "url": "https://camra.org.uk/pubs/173960"
+            "review_url": "https://github.com/bristolbagpiper/BassBeerMap/issues/5#issuecomment-6474724957",
+            "reviewed_by": "bristolbagpiper",
+            "source": "google-maps-named-place",
+            "url": "https://www.google.com/maps/place/The+Oat+Hill/@52.4767156,-0.9110755,648m/data=!3m2!1e3!4b1!4m6!3m5!1s0x48777119b6f1a78f:0x4ce77f13a87ea623!8m2!3d52.4767156!4d-0.9110755!16s%2Fg%2F1hc1hhvdk?entry=ttu"
           },
           {
-            "checked_at": "2026-09-11",
-            "difference_metres": 0,
-            "match": "postcode_fallback_replaced",
+            "checked_at": "2026-10-28",
+            "match": "owner_reviewed_same_primary_name_same_postcode_and_within_50m",
+            "reference_address": "31 Kettering Road",
             "reference_coordinate": {
               "lat": 52.476708,
               "lng": -0.911061
             },
+            "reference_locality": "Market Harborough",
+            "reference_name": "Oat Hill, Market Harborough - Pub with Large Garden",
             "reference_postcode": "LE16 8AN",
-            "source": "camra-pubs-location-audit",
-            "url": "https://camra.org.uk/pubs/173960"
+            "review_url": "https://github.com/bristolbagpiper/BassBeerMap/issues/5#issuecomment-6474724957",
+            "reviewed_by": "bristolbagpiper",
+            "source": "camra",
+            "url": "https://camra.org.uk/pubs/oat-hill-market-harborough-173960"
           }
         ],
-        "lat": 52.476708,
-        "lng": -0.911061,
-        "review_reason": "Reference venue name changed",
-        "review_required": true,
-        "source": "camra-pubs-location-audit"
+        "lat": 52.4767156,
+        "lng": -0.9110755,
+        "source": "owner-reviewed-google-maps"
       }
     },
     "v-53a80306-e3ec-508f-906a-02584800fd48": {

@@ -1,5 +1,5 @@
 {
-  "active_count": 39,
+  "active_count": 38,
   "records": {
     "v-00a08839-2b8a-5782-b6c7-0bdce4cddb2f": {
       "active": false,
@@ -4754,7 +4754,7 @@
       "venue_id": "v-5351f1e7-9b90-50e5-a520-f0c9598a6a36"
     },
     "v-539bf7df-26bd-5550-a414-a2b92947c993": {
-      "active": true,
+      "active": false,
       "first_seen": "2026-10-15",
       "history": [
         {
@@ -4763,15 +4763,18 @@
             "Reference venue name changed"
           ],
           "status": "unverified"
+        },
+        {
+          "date": "2026-10-28",
+          "reasons": [],
+          "status": "resolved"
         }
       ],
-      "last_checked": "2026-10-17",
+      "last_checked": "2026-10-28",
       "place_name": "Little Bowden",
       "postcode": "LE16 8AN",
       "pub_name": "Oat",
-      "reasons": [
-        "Reference venue name changed"
-      ],
+      "reasons": [],
       "reference": {},
       "research": {
         "checked_at": "2026-10-27",
@@ -4791,15 +4794,11 @@
         "camra-pubs-location-audit": {
           "status": "conflict",
           "url": "https://camra.org.uk/pubs/173960"
-        },
-        "fsa_independent": {
-          "status": "no_name_match",
-          "url": ""
         }
       },
       "source_error": null,
-      "status": "unverified",
-      "unverified": true,
+      "status": "resolved",
+      "unverified": false,
       "venue_id": "v-539bf7df-26bd-5550-a414-a2b92947c993"
     },
     "v-53f97947-824b-5e72-b0dc-68455d481ce3": {
@@ -16408,5 +16407,5 @@
     }
   },
   "schema_version": 1,
-  "unverified_count": 34
+  "unverified_count": 33
 }

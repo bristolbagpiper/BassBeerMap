@@ -1,7 +1,7 @@
 {
   "counts": {
-    "venue_coordinate_requires_review": 34,
-    "verified_venue": 1010
+    "venue_coordinate_requires_review": 33,
+    "verified_venue": 1011
   },
   "generated_at": "2026-10-28",
   "policy": {
@@ -18164,40 +18164,47 @@
       "venue_id": "v-30bde428-0b9d-560f-b64b-cc5d7f621110"
     },
     "oat|little bowden|le16 8an": {
-      "coordinate_source": "camra-pubs-location-audit",
-      "display_precision": "postcode",
+      "coordinate_source": "owner-reviewed-google-maps",
+      "display_precision": "venue",
       "evidence": [
         {
-          "checked_at": "2026-09-11",
-          "difference_metres": 0.0,
-          "match": "venue_name_and_full_postcode",
+          "checked_at": "2026-10-28",
+          "match": "owner_reviewed_named_place_and_full_postcode",
+          "reference_address": "31 Kettering Road, Little Bowden, Market Harborough LE16 8AN",
           "reference_coordinate": {
-            "lat": 52.476708,
-            "lng": -0.911061
+            "lat": 52.4767156,
+            "lng": -0.9110755
           },
+          "reference_name": "The Oat Hill",
           "reference_postcode": "LE16 8AN",
-          "source": "camra",
-          "url": "https://camra.org.uk/pubs/173960"
+          "review_url": "https://github.com/bristolbagpiper/BassBeerMap/issues/5#issuecomment-6474724957",
+          "reviewed_by": "bristolbagpiper",
+          "source": "google-maps-named-place",
+          "url": "https://www.google.com/maps/place/The+Oat+Hill/@52.4767156,-0.9110755,648m/data=!3m2!1e3!4b1!4m6!3m5!1s0x48777119b6f1a78f:0x4ce77f13a87ea623!8m2!3d52.4767156!4d-0.9110755!16s%2Fg%2F1hc1hhvdk?entry=ttu"
         },
         {
-          "checked_at": "2026-09-11",
-          "difference_metres": 0,
-          "match": "postcode_fallback_replaced",
+          "checked_at": "2026-10-28",
+          "match": "owner_reviewed_same_primary_name_same_postcode_and_within_50m",
+          "reference_address": "31 Kettering Road",
           "reference_coordinate": {
             "lat": 52.476708,
             "lng": -0.911061
           },
+          "reference_locality": "Market Harborough",
+          "reference_name": "Oat Hill, Market Harborough - Pub with Large Garden",
           "reference_postcode": "LE16 8AN",
-          "source": "camra-pubs-location-audit",
-          "url": "https://camra.org.uk/pubs/173960"
+          "review_url": "https://github.com/bristolbagpiper/BassBeerMap/issues/5#issuecomment-6474724957",
+          "reviewed_by": "bristolbagpiper",
+          "source": "camra",
+          "url": "https://camra.org.uk/pubs/oat-hill-market-harborough-173960"
         }
       ],
-      "lat": 52.476708,
-      "lng": -0.911061,
+      "lat": 52.4767156,
+      "lng": -0.9110755,
       "place_name": "Little Bowden",
       "postcode": "LE16 8AN",
       "pub_name": "Oat",
-      "status": "venue_coordinate_requires_review",
+      "status": "verified_venue",
       "venue_id": "v-539bf7df-26bd-5550-a414-a2b92947c993"
     },
     "office at warton|warton|b79 0jn": {

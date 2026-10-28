@@ -1,6 +1,6 @@
 {
   "location_review": {
-    "active_count": 44,
+    "active_count": 43,
     "records": {
       "v-00a08839-2b8a-5782-b6c7-0bdce4cddb2f": {
         "active": false,
@@ -11890,7 +11890,7 @@
         "venue_id": "v-b2a1d45e-8e0b-5274-acf9-fa3a099ee5dc"
       },
       "v-b6bd3613-8bdd-5319-a275-eb726deeff46": {
-        "active": true,
+        "active": false,
         "first_seen": "2026-10-24",
         "history": [
           {
@@ -11899,15 +11899,18 @@
               "Reference venue name changed"
             ],
             "status": "unverified"
+          },
+          {
+            "date": "2026-10-28",
+            "reasons": [],
+            "status": "resolved"
           }
         ],
-        "last_checked": "2026-10-26",
+        "last_checked": "2026-10-28",
         "place_name": "Nuneaton: Central",
         "postcode": "CV11 5LA",
         "pub_name": "Crew and Queens Hall",
-        "reasons": [
-          "Reference venue name changed"
-        ],
+        "reasons": [],
         "reference": {},
         "research": {
           "checked_at": "2026-10-27",
@@ -11927,15 +11930,11 @@
           "camra-pubs-location-audit": {
             "status": "conflict",
             "url": "https://camra.org.uk/pubs/158264"
-          },
-          "fsa_independent": {
-            "status": "no_name_match",
-            "url": ""
           }
         },
         "source_error": null,
-        "status": "unverified",
-        "unverified": true,
+        "status": "resolved",
+        "unverified": false,
         "venue_id": "v-b6bd3613-8bdd-5319-a275-eb726deeff46"
       },
       "v-b6c5ba97-eae0-51eb-92fe-7af9eba24354": {
@@ -16414,7 +16413,7 @@
       }
     },
     "schema_version": 1,
-    "unverified_count": 39
+    "unverified_count": 38
   },
   "schema_version": 1,
   "venues": {
@@ -97677,6 +97676,48 @@
         "postcode": "CV11 5LA",
         "pub_name": "Crew and Queens Hall"
       },
+      "location_approvals": [
+        {
+          "checked_at": "2026-10-28",
+          "comment_id": 6472970747,
+          "previous_pin": {
+            "evidence": [
+              {
+                "checked_at": "2026-09-11",
+                "difference_metres": 0.0,
+                "match": "venue_name_and_full_postcode",
+                "reference_coordinate": {
+                  "lat": 52.522512,
+                  "lng": -1.473486
+                },
+                "reference_postcode": "CV11 5LA",
+                "source": "camra",
+                "url": "https://camra.org.uk/pubs/158264"
+              },
+              {
+                "checked_at": "2026-09-11",
+                "difference_metres": 0,
+                "match": "postcode_fallback_replaced",
+                "reference_coordinate": {
+                  "lat": 52.522512,
+                  "lng": -1.473486
+                },
+                "reference_postcode": "CV11 5LA",
+                "source": "camra-pubs-location-audit",
+                "url": "https://camra.org.uk/pubs/158264"
+              }
+            ],
+            "lat": 52.522512,
+            "lng": -1.473486,
+            "review_reason": "Reference venue name changed",
+            "review_required": true,
+            "source": "camra-pubs-location-audit"
+          },
+          "review_url": "https://github.com/bristolbagpiper/BassBeerMap/issues/5#issuecomment-6472970747",
+          "reviewed_by": "bristolbagpiper",
+          "source_url": "https://www.google.com/maps/place/The+Crew/@52.5224146,-1.4736173,81m/data=!3m1!1e3!4m6!3m5!1s0x48774e02751e41b5:0x82b0e77e8f8e6295!8m2!3d52.5224838!4d-1.4733998!16s%2Fg%2F1vd70v2h?entry=ttu&g_ep=EgoyMDI2MTAyMC4wIKXMDSoASAFQAw%3D%3D"
+        }
+      ],
       "location_research": {
         "checked_at": "2026-10-27",
         "coverage": {
@@ -97706,35 +97747,40 @@
       "verified_pin": {
         "evidence": [
           {
-            "checked_at": "2026-09-11",
-            "difference_metres": 0.0,
-            "match": "venue_name_and_full_postcode",
+            "checked_at": "2026-10-28",
+            "match": "owner_reviewed_named_place_and_full_postcode",
+            "reference_address": "75 Queens Rd, Nuneaton CV11 5LA",
             "reference_coordinate": {
-              "lat": 52.522512,
-              "lng": -1.473486
+              "lat": 52.5224838,
+              "lng": -1.4733998
             },
+            "reference_name": "The Crew",
             "reference_postcode": "CV11 5LA",
-            "source": "camra",
-            "url": "https://camra.org.uk/pubs/158264"
+            "review_url": "https://github.com/bristolbagpiper/BassBeerMap/issues/5#issuecomment-6472970747",
+            "reviewed_by": "bristolbagpiper",
+            "source": "google-maps-named-place",
+            "url": "https://www.google.com/maps/place/The+Crew/@52.5224146,-1.4736173,81m/data=!3m1!1e3!4m6!3m5!1s0x48774e02751e41b5:0x82b0e77e8f8e6295!8m2!3d52.5224838!4d-1.4733998!16s%2Fg%2F1vd70v2h?entry=ttu&g_ep=EgoyMDI2MTAyMC4wIKXMDSoASAFQAw%3D%3D"
           },
           {
-            "checked_at": "2026-09-11",
-            "difference_metres": 0,
-            "match": "postcode_fallback_replaced",
+            "checked_at": "2026-10-28",
+            "match": "owner_reviewed_documented_name_relationship_same_postcode_and_within_50m",
+            "reference_address": "75 Queens Road",
             "reference_coordinate": {
               "lat": 52.522512,
               "lng": -1.473486
             },
+            "reference_locality": "Nuneaton",
+            "reference_name": "Crew, Nuneaton - Rock Memorabilia Pub",
             "reference_postcode": "CV11 5LA",
-            "source": "camra-pubs-location-audit",
+            "review_url": "https://github.com/bristolbagpiper/BassBeerMap/issues/5#issuecomment-6472970747",
+            "reviewed_by": "bristolbagpiper",
+            "source": "camra",
             "url": "https://camra.org.uk/pubs/158264"
           }
         ],
-        "lat": 52.522512,
-        "lng": -1.473486,
-        "review_reason": "Reference venue name changed",
-        "review_required": true,
-        "source": "camra-pubs-location-audit"
+        "lat": 52.5224838,
+        "lng": -1.4733998,
+        "source": "owner-reviewed-google-maps"
       }
     },
     "v-b6c5ba97-eae0-51eb-92fe-7af9eba24354": {

@@ -1,7 +1,7 @@
 {
   "counts": {
-    "venue_coordinate_requires_review": 39,
-    "verified_venue": 1005
+    "venue_coordinate_requires_review": 38,
+    "verified_venue": 1006
   },
   "generated_at": "2026-10-28",
   "policy": {
@@ -7141,40 +7141,47 @@
       "venue_id": "v-1099e58b-6e60-5619-b6b7-d5943139f761"
     },
     "crew and queens hall|nuneaton: central|cv11 5la": {
-      "coordinate_source": "camra-pubs-location-audit",
-      "display_precision": "postcode",
+      "coordinate_source": "owner-reviewed-google-maps",
+      "display_precision": "venue",
       "evidence": [
         {
-          "checked_at": "2026-09-11",
-          "difference_metres": 0.0,
-          "match": "venue_name_and_full_postcode",
+          "checked_at": "2026-10-28",
+          "match": "owner_reviewed_named_place_and_full_postcode",
+          "reference_address": "75 Queens Rd, Nuneaton CV11 5LA",
           "reference_coordinate": {
-            "lat": 52.522512,
-            "lng": -1.473486
+            "lat": 52.5224838,
+            "lng": -1.4733998
           },
+          "reference_name": "The Crew",
           "reference_postcode": "CV11 5LA",
-          "source": "camra",
-          "url": "https://camra.org.uk/pubs/158264"
+          "review_url": "https://github.com/bristolbagpiper/BassBeerMap/issues/5#issuecomment-6472970747",
+          "reviewed_by": "bristolbagpiper",
+          "source": "google-maps-named-place",
+          "url": "https://www.google.com/maps/place/The+Crew/@52.5224146,-1.4736173,81m/data=!3m1!1e3!4m6!3m5!1s0x48774e02751e41b5:0x82b0e77e8f8e6295!8m2!3d52.5224838!4d-1.4733998!16s%2Fg%2F1vd70v2h?entry=ttu&g_ep=EgoyMDI2MTAyMC4wIKXMDSoASAFQAw%3D%3D"
         },
         {
-          "checked_at": "2026-09-11",
-          "difference_metres": 0,
-          "match": "postcode_fallback_replaced",
+          "checked_at": "2026-10-28",
+          "match": "owner_reviewed_documented_name_relationship_same_postcode_and_within_50m",
+          "reference_address": "75 Queens Road",
           "reference_coordinate": {
             "lat": 52.522512,
             "lng": -1.473486
           },
+          "reference_locality": "Nuneaton",
+          "reference_name": "Crew, Nuneaton - Rock Memorabilia Pub",
           "reference_postcode": "CV11 5LA",
-          "source": "camra-pubs-location-audit",
+          "review_url": "https://github.com/bristolbagpiper/BassBeerMap/issues/5#issuecomment-6472970747",
+          "reviewed_by": "bristolbagpiper",
+          "source": "camra",
           "url": "https://camra.org.uk/pubs/158264"
         }
       ],
-      "lat": 52.522512,
-      "lng": -1.473486,
+      "lat": 52.5224838,
+      "lng": -1.4733998,
       "place_name": "Nuneaton: Central",
       "postcode": "CV11 5LA",
       "pub_name": "Crew and Queens Hall",
-      "status": "venue_coordinate_requires_review",
+      "status": "verified_venue",
       "venue_id": "v-b6bd3613-8bdd-5319-a275-eb726deeff46"
     },
     "cricket club|blackpool: stanley park|fy3 9eq": {

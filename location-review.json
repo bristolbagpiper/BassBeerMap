@@ -1,5 +1,5 @@
 {
-  "active_count": 44,
+  "active_count": 43,
   "records": {
     "v-00a08839-2b8a-5782-b6c7-0bdce4cddb2f": {
       "active": false,
@@ -11889,7 +11889,7 @@
       "venue_id": "v-b2a1d45e-8e0b-5274-acf9-fa3a099ee5dc"
     },
     "v-b6bd3613-8bdd-5319-a275-eb726deeff46": {
-      "active": true,
+      "active": false,
       "first_seen": "2026-10-24",
       "history": [
         {
@@ -11898,15 +11898,18 @@
             "Reference venue name changed"
           ],
           "status": "unverified"
+        },
+        {
+          "date": "2026-10-28",
+          "reasons": [],
+          "status": "resolved"
         }
       ],
-      "last_checked": "2026-10-26",
+      "last_checked": "2026-10-28",
       "place_name": "Nuneaton: Central",
       "postcode": "CV11 5LA",
       "pub_name": "Crew and Queens Hall",
-      "reasons": [
-        "Reference venue name changed"
-      ],
+      "reasons": [],
       "reference": {},
       "research": {
         "checked_at": "2026-10-27",
@@ -11926,15 +11929,11 @@
         "camra-pubs-location-audit": {
           "status": "conflict",
           "url": "https://camra.org.uk/pubs/158264"
-        },
-        "fsa_independent": {
-          "status": "no_name_match",
-          "url": ""
         }
       },
       "source_error": null,
-      "status": "unverified",
-      "unverified": true,
+      "status": "resolved",
+      "unverified": false,
       "venue_id": "v-b6bd3613-8bdd-5319-a275-eb726deeff46"
     },
     "v-b6c5ba97-eae0-51eb-92fe-7af9eba24354": {
@@ -16413,5 +16412,5 @@
     }
   },
   "schema_version": 1,
-  "unverified_count": 39
+  "unverified_count": 38
 }

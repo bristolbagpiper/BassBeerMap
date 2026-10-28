@@ -729,16 +729,20 @@
       "source_url": "https://camra.org.uk/pubs/120127"
     },
     "crew and queens hall|nuneaton: central|cv11 5la": {
-      "audit_reason": "postcode_fallback_replaced",
-      "checked_at": "2026-09-11",
-      "lat": 52.522512,
-      "lng": -1.473486,
-      "previous_difference_metres": 22.9,
-      "previous_lat": 52.522553,
-      "previous_lng": -1.473154,
-      "previous_source": "postcode",
-      "source": "camra-pubs-location-audit",
-      "source_url": "https://camra.org.uk/pubs/158264"
+      "audit_reason": "manual_named_place_address_and_map_check",
+      "checked_at": "2026-10-28",
+      "corroborating_source_url": "https://camra.org.uk/pubs/158264",
+      "lat": 52.5224838,
+      "lng": -1.4733998,
+      "previous_difference_metres": 6.6,
+      "previous_lat": 52.522512,
+      "previous_lng": -1.473486,
+      "previous_source": "camra-pubs-location-audit",
+      "reference_address": "75 Queens Rd, Nuneaton CV11 5LA",
+      "reference_name": "The Crew",
+      "review_note": "Repository owner confirmed the named-place marker and full address in issue #5; CAMRA corroborated the primary name, documented alias or co-located venue label, postcode, and nearby point.",
+      "source": "google-maps-named-place",
+      "source_url": "https://www.google.com/maps/place/The+Crew/@52.5224146,-1.4736173,81m/data=!3m1!1e3!4m6!3m5!1s0x48774e02751e41b5:0x82b0e77e8f8e6295!8m2!3d52.5224838!4d-1.4733998!16s%2Fg%2F1vd70v2h?entry=ttu&g_ep=EgoyMDI2MTAyMC4wIKXMDSoASAFQAw%3D%3D"
     },
     "cricket club|blackpool: stanley park|fy3 9eq": {
       "audit_reason": "manual_named_place_address_and_map_check",

@@ -1,6 +1,6 @@
 {
   "location_review": {
-    "active_count": 45,
+    "active_count": 44,
     "records": {
       "v-00a08839-2b8a-5782-b6c7-0bdce4cddb2f": {
         "active": false,
@@ -15267,7 +15267,7 @@
         "venue_id": "v-ea5559e6-e599-531a-9723-9c3975c92ee9"
       },
       "v-ead349df-157a-56af-b920-d4356a2f638b": {
-        "active": true,
+        "active": false,
         "first_seen": "2026-10-28",
         "history": [
           {
@@ -15276,30 +15276,29 @@
               "Reference venue name changed"
             ],
             "status": "unverified"
+          },
+          {
+            "date": "2026-10-28",
+            "reasons": [],
+            "status": "resolved"
           }
         ],
         "last_checked": "2026-10-28",
         "place_name": "Stenson",
         "postcode": "DE73 7HL",
         "pub_name": "Bubble Inn",
-        "reasons": [
-          "Reference venue name changed"
-        ],
+        "reasons": [],
         "reference": {},
         "research": {},
         "source_checks": {
           "camra": {
             "status": "conflict",
             "url": "https://camra.org.uk/pubs/143525"
-          },
-          "fsa_independent": {
-            "status": "coordinate_agreement",
-            "url": "https://ratings.food.gov.uk/business/230326"
           }
         },
         "source_error": null,
-        "status": "unverified",
-        "unverified": true,
+        "status": "resolved",
+        "unverified": false,
         "venue_id": "v-ead349df-157a-56af-b920-d4356a2f638b"
       },
       "v-ebb90635-2994-5b7a-a7bf-a6491ca45a75": {
@@ -16415,7 +16414,7 @@
       }
     },
     "schema_version": 1,
-    "unverified_count": 40
+    "unverified_count": 39
   },
   "schema_version": 1,
   "venues": {
@@ -120976,6 +120975,36 @@
         "postcode": "DE73 7HL",
         "pub_name": "Bubble Inn"
       },
+      "location_approvals": [
+        {
+          "checked_at": "2026-10-28",
+          "comment_id": 6472555276,
+          "previous_pin": {
+            "evidence": [
+              {
+                "checked_at": "2026-09-11",
+                "difference_metres": 24.3,
+                "match": "venue_name_and_full_postcode",
+                "reference_coordinate": {
+                  "lat": 52.867160417391304,
+                  "lng": -1.517700356521739
+                },
+                "reference_postcode": "DE73 7HL",
+                "source": "camra",
+                "url": "https://camra.org.uk/pubs/143525"
+              }
+            ],
+            "lat": 52.867160417391304,
+            "lng": -1.517700356521739,
+            "review_reason": "Reference venue name changed",
+            "review_required": true,
+            "source": "openstreetmap-gb-extract"
+          },
+          "review_url": "https://github.com/bristolbagpiper/BassBeerMap/issues/5#issuecomment-6472555276",
+          "reviewed_by": "bristolbagpiper",
+          "source_url": "https://www.google.com/maps/place/The+Bubble+Inn/@52.8670545,-1.5181375,135m/data=!3m1!1e3!4m6!3m5!1s0x4879f75927f02ae1:0x93abbb6209fdd2de!8m2!3d52.866999!4d-1.5177571!16s%2Fg%2F11ggqzb03s?entry=ttu&g_ep=EgoyMDI2MTAyMC4wIKXMDSoASAFQAw%3D%3D"
+        }
+      ],
       "verification_attempt": {
         "checked_at": "2026-10-28",
         "reason": "Reference venue name changed",
@@ -120991,23 +121020,24 @@
       "verified_pin": {
         "evidence": [
           {
-            "checked_at": "2026-09-11",
-            "difference_metres": 24.3,
-            "match": "venue_name_and_full_postcode",
+            "checked_at": "2026-10-28",
+            "match": "owner_reviewed_named_place_and_full_postcode",
+            "reference_address": "Stenson, Derby DE73 7HL",
             "reference_coordinate": {
-              "lat": 52.867160417391304,
-              "lng": -1.517700356521739
+              "lat": 52.866999,
+              "lng": -1.5177571
             },
+            "reference_name": "The Bubble Inn",
             "reference_postcode": "DE73 7HL",
-            "source": "camra",
-            "url": "https://camra.org.uk/pubs/143525"
+            "review_url": "https://github.com/bristolbagpiper/BassBeerMap/issues/5#issuecomment-6472555276",
+            "reviewed_by": "bristolbagpiper",
+            "source": "google-maps-named-place",
+            "url": "https://www.google.com/maps/place/The+Bubble+Inn/@52.8670545,-1.5181375,135m/data=!3m1!1e3!4m6!3m5!1s0x4879f75927f02ae1:0x93abbb6209fdd2de!8m2!3d52.866999!4d-1.5177571!16s%2Fg%2F11ggqzb03s?entry=ttu&g_ep=EgoyMDI2MTAyMC4wIKXMDSoASAFQAw%3D%3D"
           }
         ],
-        "lat": 52.867160417391304,
-        "lng": -1.517700356521739,
-        "review_reason": "Reference venue name changed",
-        "review_required": true,
-        "source": "openstreetmap-gb-extract"
+        "lat": 52.866999,
+        "lng": -1.5177571,
+        "source": "owner-reviewed-google-maps"
       }
     },
     "v-eb425970-07fc-52d0-995d-c0d13a473973": {

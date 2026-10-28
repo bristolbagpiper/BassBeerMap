@@ -1,7 +1,7 @@
 {
   "counts": {
-    "venue_coordinate_requires_review": 40,
-    "verified_venue": 1004
+    "venue_coordinate_requires_review": 39,
+    "verified_venue": 1005
   },
   "generated_at": "2026-10-28",
   "policy": {
@@ -4230,28 +4230,31 @@
       "venue_id": "v-9baa0fd2-1959-52b9-91ed-97f0fb74ec0b"
     },
     "bubble inn|stenson|de73 7hl": {
-      "coordinate_source": "openstreetmap-gb-extract",
-      "display_precision": "postcode",
+      "coordinate_source": "owner-reviewed-google-maps",
+      "display_precision": "venue",
       "evidence": [
         {
-          "checked_at": "2026-09-11",
-          "difference_metres": 24.3,
-          "match": "venue_name_and_full_postcode",
+          "checked_at": "2026-10-28",
+          "match": "owner_reviewed_named_place_and_full_postcode",
+          "reference_address": "Stenson, Derby DE73 7HL",
           "reference_coordinate": {
-            "lat": 52.867160417391304,
-            "lng": -1.517700356521739
+            "lat": 52.866999,
+            "lng": -1.5177571
           },
+          "reference_name": "The Bubble Inn",
           "reference_postcode": "DE73 7HL",
-          "source": "camra",
-          "url": "https://camra.org.uk/pubs/143525"
+          "review_url": "https://github.com/bristolbagpiper/BassBeerMap/issues/5#issuecomment-6472555276",
+          "reviewed_by": "bristolbagpiper",
+          "source": "google-maps-named-place",
+          "url": "https://www.google.com/maps/place/The+Bubble+Inn/@52.8670545,-1.5181375,135m/data=!3m1!1e3!4m6!3m5!1s0x4879f75927f02ae1:0x93abbb6209fdd2de!8m2!3d52.866999!4d-1.5177571!16s%2Fg%2F11ggqzb03s?entry=ttu&g_ep=EgoyMDI2MTAyMC4wIKXMDSoASAFQAw%3D%3D"
         }
       ],
-      "lat": 52.867160417391304,
-      "lng": -1.517700356521739,
+      "lat": 52.866999,
+      "lng": -1.5177571,
       "place_name": "Stenson",
       "postcode": "DE73 7HL",
       "pub_name": "Bubble Inn",
-      "status": "venue_coordinate_requires_review",
+      "status": "verified_venue",
       "venue_id": "v-ead349df-157a-56af-b920-d4356a2f638b"
     },
     "bucknall bowling & recreation club|stoke: bucknall|st2 7ab": {

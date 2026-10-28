@@ -1,5 +1,5 @@
 {
-  "active_count": 45,
+  "active_count": 44,
   "records": {
     "v-00a08839-2b8a-5782-b6c7-0bdce4cddb2f": {
       "active": false,
@@ -15266,7 +15266,7 @@
       "venue_id": "v-ea5559e6-e599-531a-9723-9c3975c92ee9"
     },
     "v-ead349df-157a-56af-b920-d4356a2f638b": {
-      "active": true,
+      "active": false,
       "first_seen": "2026-10-28",
       "history": [
         {
@@ -15275,30 +15275,29 @@
             "Reference venue name changed"
           ],
           "status": "unverified"
+        },
+        {
+          "date": "2026-10-28",
+          "reasons": [],
+          "status": "resolved"
         }
       ],
       "last_checked": "2026-10-28",
       "place_name": "Stenson",
       "postcode": "DE73 7HL",
       "pub_name": "Bubble Inn",
-      "reasons": [
-        "Reference venue name changed"
-      ],
+      "reasons": [],
       "reference": {},
       "research": {},
       "source_checks": {
         "camra": {
           "status": "conflict",
           "url": "https://camra.org.uk/pubs/143525"
-        },
-        "fsa_independent": {
-          "status": "coordinate_agreement",
-          "url": "https://ratings.food.gov.uk/business/230326"
         }
       },
       "source_error": null,
-      "status": "unverified",
-      "unverified": true,
+      "status": "resolved",
+      "unverified": false,
       "venue_id": "v-ead349df-157a-56af-b920-d4356a2f638b"
     },
     "v-ebb90635-2994-5b7a-a7bf-a6491ca45a75": {
@@ -16414,5 +16413,5 @@
     }
   },
   "schema_version": 1,
-  "unverified_count": 40
+  "unverified_count": 39
 }

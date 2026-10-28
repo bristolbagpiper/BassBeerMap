@@ -1,6 +1,6 @@
 {
   "location_review": {
-    "active_count": 46,
+    "active_count": 45,
     "records": {
       "v-00a08839-2b8a-5782-b6c7-0bdce4cddb2f": {
         "active": false,
@@ -13199,7 +13199,7 @@
         "venue_id": "v-cb904e48-d976-5d4a-bc44-142901151a85"
       },
       "v-cbc4b5d0-edd1-5be4-b287-9b1646ae7624": {
-        "active": true,
+        "active": false,
         "first_seen": "2026-10-09",
         "history": [
           {
@@ -13220,15 +13220,18 @@
               "Reference venue name changed"
             ],
             "status": "unverified"
+          },
+          {
+            "date": "2026-10-28",
+            "reasons": [],
+            "status": "resolved"
           }
         ],
         "last_checked": "2026-10-28",
         "place_name": "Burton U-T: Branston",
         "postcode": "DE14 3EY",
         "pub_name": "Blacksmiths",
-        "reasons": [
-          "Reference venue name changed"
-        ],
+        "reasons": [],
         "reference": {},
         "research": {
           "checked_at": "2026-10-27",
@@ -13263,15 +13266,11 @@
           "camra-pubs-location-audit": {
             "status": "conflict",
             "url": "https://camra.org.uk/pubs/123999"
-          },
-          "fsa_independent": {
-            "status": "coordinate_disagreement",
-            "url": "https://ratings.food.gov.uk/business/1743595"
           }
         },
         "source_error": null,
-        "status": "unverified",
-        "unverified": true,
+        "status": "resolved",
+        "unverified": false,
         "venue_id": "v-cbc4b5d0-edd1-5be4-b287-9b1646ae7624"
       },
       "v-cbd5bf6c-bc9e-5dfb-9ecf-d81705270701": {
@@ -16416,7 +16415,7 @@
       }
     },
     "schema_version": 1,
-    "unverified_count": 41
+    "unverified_count": 40
   },
   "schema_version": 1,
   "venues": {
@@ -106644,6 +106643,48 @@
         "postcode": "DE14 3EY",
         "pub_name": "Blacksmiths"
       },
+      "location_approvals": [
+        {
+          "checked_at": "2026-10-28",
+          "comment_id": 6471530815,
+          "previous_pin": {
+            "evidence": [
+              {
+                "checked_at": "2026-09-11",
+                "difference_metres": 0.0,
+                "match": "venue_name_and_full_postcode",
+                "reference_coordinate": {
+                  "lat": 52.7875,
+                  "lng": -1.6704
+                },
+                "reference_postcode": "DE14 3EY",
+                "source": "camra",
+                "url": "https://camra.org.uk/pubs/123999"
+              },
+              {
+                "checked_at": "2026-09-11",
+                "difference_metres": 0,
+                "match": "existing_pin_over_50m_from_matching_venue",
+                "reference_coordinate": {
+                  "lat": 52.7875,
+                  "lng": -1.6704
+                },
+                "reference_postcode": "DE14 3EY",
+                "source": "camra-pubs-location-audit",
+                "url": "https://camra.org.uk/pubs/123999"
+              }
+            ],
+            "lat": 52.7875,
+            "lng": -1.6704,
+            "review_reason": "Reference venue name changed",
+            "review_required": true,
+            "source": "camra-pubs-location-audit"
+          },
+          "review_url": "https://github.com/bristolbagpiper/BassBeerMap/issues/5#issuecomment-6471530815",
+          "reviewed_by": "bristolbagpiper",
+          "source_url": "https://www.google.com/maps/place/The+Blacksmiths+Arms/@52.7875072,-1.6704757,644m/data=!3m2!1e3!4b1!4m6!3m5!1s0x487a03dd3530bd51:0xbe48c24df7ac7a9d!8m2!3d52.7875072!4d-1.6704757!16s%2Fg%2F1tfvgr7h?entry=ttu&g_ep=EgoyMDI2MTAyMC4wIKXMDSoASAFQAw%3D%3D"
+        }
+      ],
       "location_research": {
         "checked_at": "2026-10-27",
         "coverage": {
@@ -106688,35 +106729,24 @@
       "verified_pin": {
         "evidence": [
           {
-            "checked_at": "2026-09-11",
-            "difference_metres": 0.0,
-            "match": "venue_name_and_full_postcode",
+            "checked_at": "2026-10-28",
+            "match": "owner_reviewed_named_place_and_full_postcode",
+            "reference_address": "Main St, Branston, Burton-on-Trent DE14 3EY",
             "reference_coordinate": {
-              "lat": 52.7875,
-              "lng": -1.6704
+              "lat": 52.7875072,
+              "lng": -1.6704757
             },
+            "reference_name": "The Blacksmiths Arms",
             "reference_postcode": "DE14 3EY",
-            "source": "camra",
-            "url": "https://camra.org.uk/pubs/123999"
-          },
-          {
-            "checked_at": "2026-09-11",
-            "difference_metres": 0,
-            "match": "existing_pin_over_50m_from_matching_venue",
-            "reference_coordinate": {
-              "lat": 52.7875,
-              "lng": -1.6704
-            },
-            "reference_postcode": "DE14 3EY",
-            "source": "camra-pubs-location-audit",
-            "url": "https://camra.org.uk/pubs/123999"
+            "review_url": "https://github.com/bristolbagpiper/BassBeerMap/issues/5#issuecomment-6471530815",
+            "reviewed_by": "bristolbagpiper",
+            "source": "google-maps-named-place",
+            "url": "https://www.google.com/maps/place/The+Blacksmiths+Arms/@52.7875072,-1.6704757,644m/data=!3m2!1e3!4b1!4m6!3m5!1s0x487a03dd3530bd51:0xbe48c24df7ac7a9d!8m2!3d52.7875072!4d-1.6704757!16s%2Fg%2F1tfvgr7h?entry=ttu&g_ep=EgoyMDI2MTAyMC4wIKXMDSoASAFQAw%3D%3D"
           }
         ],
-        "lat": 52.7875,
-        "lng": -1.6704,
-        "review_reason": "Reference venue name changed",
-        "review_required": true,
-        "source": "camra-pubs-location-audit"
+        "lat": 52.7875072,
+        "lng": -1.6704757,
+        "source": "owner-reviewed-google-maps"
       }
     },
     "v-cbd5bf6c-bc9e-5dfb-9ecf-d81705270701": {

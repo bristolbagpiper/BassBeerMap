@@ -1,7 +1,7 @@
 {
   "counts": {
-    "venue_coordinate_requires_review": 41,
-    "verified_venue": 1003
+    "venue_coordinate_requires_review": 40,
+    "verified_venue": 1004
   },
   "generated_at": "2026-10-28",
   "policy": {
@@ -2751,40 +2751,31 @@
       "venue_id": "v-7e9b8405-bcad-56e8-b09f-6bb18b7f4648"
     },
     "blacksmiths|burton u-t: branston|de14 3ey": {
-      "coordinate_source": "camra-pubs-location-audit",
-      "display_precision": "postcode",
+      "coordinate_source": "owner-reviewed-google-maps",
+      "display_precision": "venue",
       "evidence": [
         {
-          "checked_at": "2026-09-11",
-          "difference_metres": 0.0,
-          "match": "venue_name_and_full_postcode",
+          "checked_at": "2026-10-28",
+          "match": "owner_reviewed_named_place_and_full_postcode",
+          "reference_address": "Main St, Branston, Burton-on-Trent DE14 3EY",
           "reference_coordinate": {
-            "lat": 52.7875,
-            "lng": -1.6704
+            "lat": 52.7875072,
+            "lng": -1.6704757
           },
+          "reference_name": "The Blacksmiths Arms",
           "reference_postcode": "DE14 3EY",
-          "source": "camra",
-          "url": "https://camra.org.uk/pubs/123999"
-        },
-        {
-          "checked_at": "2026-09-11",
-          "difference_metres": 0,
-          "match": "existing_pin_over_50m_from_matching_venue",
-          "reference_coordinate": {
-            "lat": 52.7875,
-            "lng": -1.6704
-          },
-          "reference_postcode": "DE14 3EY",
-          "source": "camra-pubs-location-audit",
-          "url": "https://camra.org.uk/pubs/123999"
+          "review_url": "https://github.com/bristolbagpiper/BassBeerMap/issues/5#issuecomment-6471530815",
+          "reviewed_by": "bristolbagpiper",
+          "source": "google-maps-named-place",
+          "url": "https://www.google.com/maps/place/The+Blacksmiths+Arms/@52.7875072,-1.6704757,644m/data=!3m2!1e3!4b1!4m6!3m5!1s0x487a03dd3530bd51:0xbe48c24df7ac7a9d!8m2!3d52.7875072!4d-1.6704757!16s%2Fg%2F1tfvgr7h?entry=ttu&g_ep=EgoyMDI2MTAyMC4wIKXMDSoASAFQAw%3D%3D"
         }
       ],
-      "lat": 52.7875,
-      "lng": -1.6704,
+      "lat": 52.7875072,
+      "lng": -1.6704757,
       "place_name": "Burton U-T: Branston",
       "postcode": "DE14 3EY",
       "pub_name": "Blacksmiths",
-      "status": "venue_coordinate_requires_review",
+      "status": "verified_venue",
       "venue_id": "v-cbc4b5d0-edd1-5be4-b287-9b1646ae7624"
     },
     "bless|derby: central|de1 3gu": {

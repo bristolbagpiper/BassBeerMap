@@ -131,7 +131,43 @@ def extract_camra_heading(page_text):
     return re.sub(r"\s+", " ", html.unescape(text)).strip()
 
 
-def validate_camra_corroboration(command, row, source, heading, require_alias):
+def camra_documents_co_located_companion(page_text, listing, reference_name):
+    """Check that CAMRA explicitly places extra listing-name words at this venue."""
+    normalized_listing = re.sub(r"\s*\(PMC\)", "", listing, flags=re.I)
+    listing_primary = normalized_listing.split("(", 1)[0].strip()
+    listing_words = [
+        token for token in re.findall(r"[a-z0-9]+", listing_primary.casefold())
+        if token not in {"the", "bar", "pub", "inn", "hotel", "tavern", "restaurant",
+                         "brewery", "taproom", "club", "social", "house", "public",
+                         "and", "or"}
+        and not token.isdigit()
+    ]
+    reference_words = manual_name_tokens(reference_name)
+    extra_words = [token for token in listing_words if token not in reference_words]
+    if not extra_words:
+        return False
+    phrase = " ".join(extra_words)
+
+    without_scripts = re.sub(
+        r"<(script|style)\b[^>]*>.*?</\1>", " ", page_text,
+        flags=re.I | re.S,
+    )
+    plain_text = html.unescape(re.sub(r"<[^>]+>", " ", without_scripts))
+    for sentence in re.split(r"[.!?]+", plain_text):
+        normalized_sentence = " ".join(re.findall(r"[a-z0-9]+", sentence.casefold()))
+        if phrase not in normalized_sentence:
+            continue
+        if re.search(
+            r"\b(?:located|situated)\s+(?:upstairs|above|inside|within)\b|\bupstairs\b",
+            normalized_sentence,
+        ):
+            return True
+    return False
+
+
+def validate_camra_corroboration(
+    command, row, source, heading, require_alias, camra_page_text=""
+):
     compact = lambda value: re.sub(r"[^A-Z0-9]", "", str(value).upper())
     if not source.get("postcode") or compact(source["postcode"]) != compact(row["postcode"]):
         raise ValueError("CAMRA corroboration must have the listing's exact full postcode")
@@ -154,16 +190,29 @@ def validate_camra_corroboration(command, row, source, heading, require_alias):
     if require_alias:
         aliases = re.findall(r"\(([^()]*)\)", heading)
         alias_tokens = set().union(*(manual_name_tokens(alias) for alias in aliases)) if aliases else set()
+        documented_companion = camra_documents_co_located_companion(
+            camra_page_text, row["pub_name"], command["reference_name"]
+        )
         if (
             not missing
-            or not missing.issubset(alias_tokens)
-            or not listing_tokens.issubset(google_tokens | alias_tokens)
+            or (
+                not missing.issubset(alias_tokens)
+                and not documented_companion
+            )
+            or not listing_tokens.issubset(google_tokens | alias_tokens | (
+                listing_tokens if documented_companion else set()
+            ))
         ):
-            raise ValueError("CAMRA page does not document every missing listing-name word as an alias")
+            raise ValueError(
+                "CAMRA page does not document every missing listing-name word "
+                "as an alias or co-located venue"
+            )
     return True
 
 
-def validate_google_place(command, row, centre, camra_source=None, camra_heading=""):
+def validate_google_place(
+    command, row, centre, camra_source=None, camra_heading="", camra_page_text=""
+):
     """Require a named-place marker, matching address, and local coordinates."""
     parsed = urlparse(command["url"])
     if parsed.scheme != "https" or parsed.netloc != "www.google.com" or not parsed.path.startswith("/maps/place/"):
@@ -177,7 +226,10 @@ def validate_google_place(command, row, centre, camra_source=None, camra_heading
     if not name_matches_listing:
         if camra_source is None:
             raise ValueError("Google place name does not identify the listed venue")
-        validate_camra_corroboration(command, row, camra_source, camra_heading, require_alias=True)
+        validate_camra_corroboration(
+            command, row, camra_source, camra_heading, require_alias=True,
+            camra_page_text=camra_page_text,
+        )
     elif camra_source is not None:
         validate_camra_corroboration(command, row, camra_source, camra_heading, require_alias=False)
     compact = lambda value: re.sub(r"[^A-Z0-9]", "", str(value).upper())
@@ -231,7 +283,8 @@ def stage_manual_checks(root, staging, reviews):
             "checked_at": review["checked_at"],
             "review_note": (
                 "Repository owner confirmed the named-place marker and full address in issue #5; "
-                "CAMRA corroborated the primary name, documented alias, postcode, and nearby point."
+                "CAMRA corroborated the primary name, documented alias or co-located venue label, "
+                "postcode, and nearby point."
                 if review.get("corroborating_source_url")
                 else "Repository owner confirmed the named-place marker and full address in issue #5."
             ),
@@ -335,13 +388,14 @@ def approve(root, staging, event, owner):
         else:
             camra_source = None
             camra_heading = ""
+            camra_page = ""
             corroborating_url = command.get("corroborating_source_url", "")
             if corroborating_url:
                 camra_page = fetch_text(corroborating_url)
                 camra_source = parse_camra(camra_page)
                 camra_heading = extract_camra_heading(camra_page)
             camra_alias_used = validate_google_place(
-                command, row, centre, camra_source, camra_heading
+                command, row, centre, camra_source, camra_heading, camra_page
             )
             checked_at = date.today().isoformat()
             reference_coordinate = {"lat": command["lat"], "lng": command["lng"]}
@@ -367,7 +421,7 @@ def approve(root, staging, event, owner):
                     url=corroborating_url,
                     checked_at=checked_at,
                     match=(
-                        "owner_reviewed_documented_alias_same_postcode_and_within_50m"
+                        "owner_reviewed_documented_name_relationship_same_postcode_and_within_50m"
                         if camra_alias_used
                         else "owner_reviewed_same_primary_name_same_postcode_and_within_50m"
                     ),
@@ -433,3 +487,4 @@ if __name__ == "__main__":
     args = parser.parse_args()
     event = json.loads(Path(os.environ["GITHUB_EVENT_PATH"]).read_text())
     approve(args.root, args.staging, event, os.environ["GITHUB_REPOSITORY_OWNER"])
+

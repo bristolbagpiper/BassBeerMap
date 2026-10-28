@@ -1,6 +1,6 @@
 {
   "location_review": {
-    "active_count": 43,
+    "active_count": 42,
     "records": {
       "v-00a08839-2b8a-5782-b6c7-0bdce4cddb2f": {
         "active": false,
@@ -11123,7 +11123,7 @@
         "venue_id": "v-a8833c54-70a1-55d7-a422-fe8f237b91d6"
       },
       "v-aa8fe83d-60ba-5937-9a59-ede918725a5c": {
-        "active": true,
+        "active": false,
         "first_seen": "2026-10-23",
         "history": [
           {
@@ -11132,15 +11132,18 @@
               "Reference venue name changed"
             ],
             "status": "unverified"
+          },
+          {
+            "date": "2026-10-28",
+            "reasons": [],
+            "status": "resolved"
           }
         ],
-        "last_checked": "2026-10-26",
+        "last_checked": "2026-10-28",
         "place_name": "Belfast",
         "postcode": "BT2 7BA",
         "pub_name": "Crown Liquor Saloon",
-        "reasons": [
-          "Reference venue name changed"
-        ],
+        "reasons": [],
         "reference": {},
         "research": {
           "checked_at": "2026-10-27",
@@ -11160,15 +11163,11 @@
           "camra-pubs-location-audit": {
             "status": "conflict",
             "url": "https://camra.org.uk/pubs/117572"
-          },
-          "fsa_independent": {
-            "status": "no_name_match",
-            "url": ""
           }
         },
         "source_error": null,
-        "status": "unverified",
-        "unverified": true,
+        "status": "resolved",
+        "unverified": false,
         "venue_id": "v-aa8fe83d-60ba-5937-9a59-ede918725a5c"
       },
       "v-aae48608-f3fd-5bf4-8e5d-ae4405430ebc": {
@@ -16413,7 +16412,7 @@
       }
     },
     "schema_version": 1,
-    "unverified_count": 38
+    "unverified_count": 37
   },
   "schema_version": 1,
   "venues": {
@@ -93447,6 +93446,48 @@
         "postcode": "BT2 7BA",
         "pub_name": "Crown Liquor Saloon"
       },
+      "location_approvals": [
+        {
+          "checked_at": "2026-10-28",
+          "comment_id": 6473102805,
+          "previous_pin": {
+            "evidence": [
+              {
+                "checked_at": "2026-09-11",
+                "difference_metres": 0.0,
+                "match": "venue_name_and_full_postcode",
+                "reference_coordinate": {
+                  "lat": 54.5947112,
+                  "lng": -5.9341412
+                },
+                "reference_postcode": "BT2 7BA",
+                "source": "camra",
+                "url": "https://camra.org.uk/pubs/117572"
+              },
+              {
+                "checked_at": "2026-09-11",
+                "difference_metres": 0,
+                "match": "postcode_fallback_replaced",
+                "reference_coordinate": {
+                  "lat": 54.5947112,
+                  "lng": -5.9341412
+                },
+                "reference_postcode": "BT2 7BA",
+                "source": "camra-pubs-location-audit",
+                "url": "https://camra.org.uk/pubs/117572"
+              }
+            ],
+            "lat": 54.5947112,
+            "lng": -5.9341412,
+            "review_reason": "Reference venue name changed",
+            "review_required": true,
+            "source": "camra-pubs-location-audit"
+          },
+          "review_url": "https://github.com/bristolbagpiper/BassBeerMap/issues/5#issuecomment-6473102805",
+          "reviewed_by": "bristolbagpiper",
+          "source_url": "https://www.google.com/maps/place/The+Crown+Liquor+Saloon/@54.5946761,-5.9344946,154m/data=!3m1!1e3!4m6!3m5!1s0x486108f7f82ae92d:0xc684d41e09cf2fff!8m2!3d54.5947018!4d-5.9341146!16s%2Fg%2F11b5vyyvym?entry=ttu&g_ep=EgoyMDI2MTAyMC4wIKXMDSoASAFQAw%3D%3D"
+        }
+      ],
       "location_research": {
         "checked_at": "2026-10-27",
         "coverage": {
@@ -93476,35 +93517,24 @@
       "verified_pin": {
         "evidence": [
           {
-            "checked_at": "2026-09-11",
-            "difference_metres": 0.0,
-            "match": "venue_name_and_full_postcode",
+            "checked_at": "2026-10-28",
+            "match": "owner_reviewed_named_place_and_full_postcode",
+            "reference_address": "County Antrim, 46 Great Victoria St, Belfast BT2 7BA",
             "reference_coordinate": {
-              "lat": 54.5947112,
-              "lng": -5.9341412
+              "lat": 54.5947018,
+              "lng": -5.9341146
             },
+            "reference_name": "The Crown Liquor Saloon",
             "reference_postcode": "BT2 7BA",
-            "source": "camra",
-            "url": "https://camra.org.uk/pubs/117572"
-          },
-          {
-            "checked_at": "2026-09-11",
-            "difference_metres": 0,
-            "match": "postcode_fallback_replaced",
-            "reference_coordinate": {
-              "lat": 54.5947112,
-              "lng": -5.9341412
-            },
-            "reference_postcode": "BT2 7BA",
-            "source": "camra-pubs-location-audit",
-            "url": "https://camra.org.uk/pubs/117572"
+            "review_url": "https://github.com/bristolbagpiper/BassBeerMap/issues/5#issuecomment-6473102805",
+            "reviewed_by": "bristolbagpiper",
+            "source": "google-maps-named-place",
+            "url": "https://www.google.com/maps/place/The+Crown+Liquor+Saloon/@54.5946761,-5.9344946,154m/data=!3m1!1e3!4m6!3m5!1s0x486108f7f82ae92d:0xc684d41e09cf2fff!8m2!3d54.5947018!4d-5.9341146!16s%2Fg%2F11b5vyyvym?entry=ttu&g_ep=EgoyMDI2MTAyMC4wIKXMDSoASAFQAw%3D%3D"
           }
         ],
-        "lat": 54.5947112,
-        "lng": -5.9341412,
-        "review_reason": "Reference venue name changed",
-        "review_required": true,
-        "source": "camra-pubs-location-audit"
+        "lat": 54.5947018,
+        "lng": -5.9341146,
+        "source": "owner-reviewed-google-maps"
       }
     },
     "v-aae48608-f3fd-5bf4-8e5d-ae4405430ebc": {

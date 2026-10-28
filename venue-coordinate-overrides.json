@@ -859,16 +859,20 @@
       "source_url": "https://camra.org.uk/pubs/112779"
     },
     "crown liquor saloon|belfast|bt2 7ba": {
-      "audit_reason": "postcode_fallback_replaced",
-      "checked_at": "2026-09-11",
-      "lat": 54.5947112,
-      "lng": -5.9341412,
-      "previous_difference_metres": 34.6,
-      "previous_lat": 54.595011,
-      "previous_lng": -5.933997,
-      "previous_source": "postcode",
-      "source": "camra-pubs-location-audit",
-      "source_url": "https://camra.org.uk/pubs/117572"
+      "audit_reason": "manual_named_place_address_and_map_check",
+      "checked_at": "2026-10-28",
+      "corroborating_source_url": "",
+      "lat": 54.5947018,
+      "lng": -5.9341146,
+      "previous_difference_metres": 2.0,
+      "previous_lat": 54.5947112,
+      "previous_lng": -5.9341412,
+      "previous_source": "camra-pubs-location-audit",
+      "reference_address": "County Antrim, 46 Great Victoria St, Belfast BT2 7BA",
+      "reference_name": "The Crown Liquor Saloon",
+      "review_note": "Repository owner confirmed the named-place marker and full address in issue #5.",
+      "source": "google-maps-named-place",
+      "source_url": "https://www.google.com/maps/place/The+Crown+Liquor+Saloon/@54.5946761,-5.9344946,154m/data=!3m1!1e3!4m6!3m5!1s0x486108f7f82ae92d:0xc684d41e09cf2fff!8m2!3d54.5947018!4d-5.9341146!16s%2Fg%2F11b5vyyvym?entry=ttu&g_ep=EgoyMDI2MTAyMC4wIKXMDSoASAFQAw%3D%3D"
     },
     "crown|chilton|ox11 0rz": {
       "audit_reason": "postcode_fallback_replaced",

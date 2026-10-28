@@ -2541,16 +2541,20 @@
       "source_url": "https://www.google.com/maps/place/The+Royal+British+Legion/@52.5973763,-1.0807904,522m/data=!3m1!1e3!4m15!1m8!3m7!1s0x4877641c39851c91:0xb34217e228f7297a!2s4A+Wigston+Rd,+Oadby,+Leicester+LE2+5QA!3b1!8m2!3d52.5973763!4d-1.0807904!16s%2Fg%2F11pw186n9z!3m5!1s0x4877641c39835a1d:0xcc1300af90fce555!8m2!3d52.5973763!4d-1.0807904!16s%2Fg%2F1tdclgj5?entry=ttu"
     },
     "royal oak (the tiddly)|ellerdine heath|tf6 6rl": {
-      "audit_reason": "postcode_fallback_replaced",
-      "checked_at": "2026-09-11",
-      "lat": 52.799564190204,
-      "lng": -2.590269923943,
-      "previous_difference_metres": 203.3,
-      "previous_lat": 52.799248,
-      "previous_lng": -2.587292,
-      "previous_source": "postcode",
-      "source": "camra-pubs-location-audit",
-      "source_url": "https://camra.org.uk/pubs/130954"
+      "audit_reason": "manual_named_place_address_and_map_check",
+      "checked_at": "2026-10-28",
+      "corroborating_source_url": "https://camra.org.uk/pubs/royal-oak-ellerdine-heath-130954",
+      "lat": 52.7995576,
+      "lng": -2.5902823,
+      "previous_difference_metres": 1.1,
+      "previous_lat": 52.799564190204,
+      "previous_lng": -2.590269923943,
+      "previous_source": "camra-pubs-location-audit",
+      "reference_address": "Hazles Road, Ellerdine Heath, TF6 6RL",
+      "reference_name": "Royal Oak - The Tiddly Weds",
+      "review_note": "Repository owner confirmed the named-place marker and full address in issue #5; CAMRA corroborated the primary name, documented alias or co-located venue label, postcode, and nearby point.",
+      "source": "google-maps-named-place",
+      "source_url": "https://www.google.com/maps/place/Royal+Oak+-+The+Tiddly+Weds/@52.7995576,-2.5902823,519m/data=!3m2!1e3!4b1!4m6!3m5!1s0x487a84e3c066a67d:0xe544c25788012f2c!8m2!3d52.7995576!4d-2.5902823!16s%2Fg%2F1tfz9qrb?entry=ttu&g_ep=EgoyMDI2MTAyMC4wIKXMDSoASAFQAw%3D%3D"
     },
     "royal oak|attleborough|cv11 4jy": {
       "audit_reason": "existing_pin_over_250m_from_matching_venue",

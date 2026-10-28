@@ -1,6 +1,6 @@
 {
   "location_review": {
-    "active_count": 33,
+    "active_count": 32,
     "records": {
       "v-00a08839-2b8a-5782-b6c7-0bdce4cddb2f": {
         "active": false,
@@ -2961,7 +2961,7 @@
         "venue_id": "v-37770843-214d-5aec-9864-3b50c8dba389"
       },
       "v-379ea64d-386c-5b45-be0f-561f501307aa": {
-        "active": true,
+        "active": false,
         "first_seen": "2026-10-13",
         "history": [
           {
@@ -2970,15 +2970,18 @@
               "Reference venue name changed"
             ],
             "status": "unverified"
+          },
+          {
+            "date": "2026-10-28",
+            "reasons": [],
+            "status": "resolved"
           }
         ],
-        "last_checked": "2026-10-15",
+        "last_checked": "2026-10-28",
         "place_name": "Ellerdine Heath",
         "postcode": "TF6 6RL",
         "pub_name": "Royal Oak (The Tiddly)",
-        "reasons": [
-          "Reference venue name changed"
-        ],
+        "reasons": [],
         "reference": {},
         "research": {
           "checked_at": "2026-10-27",
@@ -2998,15 +3001,11 @@
           "camra-pubs-location-audit": {
             "status": "conflict",
             "url": "https://camra.org.uk/pubs/130954"
-          },
-          "fsa_independent": {
-            "status": "no_name_match",
-            "url": ""
           }
         },
         "source_error": null,
-        "status": "unverified",
-        "unverified": true,
+        "status": "resolved",
+        "unverified": false,
         "venue_id": "v-379ea64d-386c-5b45-be0f-561f501307aa"
       },
       "v-3812a807-304d-5adf-b134-5306b3874319": {
@@ -16403,7 +16402,7 @@
       }
     },
     "schema_version": 1,
-    "unverified_count": 28
+    "unverified_count": 27
   },
   "schema_version": 1,
   "venues": {
@@ -39716,6 +39715,48 @@
         "postcode": "TF6 6RL",
         "pub_name": "Royal Oak (The Tiddly)"
       },
+      "location_approvals": [
+        {
+          "checked_at": "2026-10-28",
+          "comment_id": 6480801394,
+          "previous_pin": {
+            "evidence": [
+              {
+                "checked_at": "2026-09-11",
+                "difference_metres": 0.0,
+                "match": "venue_name_and_full_postcode",
+                "reference_coordinate": {
+                  "lat": 52.799564190204,
+                  "lng": -2.590269923943
+                },
+                "reference_postcode": "TF6 6RL",
+                "source": "camra",
+                "url": "https://camra.org.uk/pubs/130954"
+              },
+              {
+                "checked_at": "2026-09-11",
+                "difference_metres": 0,
+                "match": "postcode_fallback_replaced",
+                "reference_coordinate": {
+                  "lat": 52.799564190204,
+                  "lng": -2.590269923943
+                },
+                "reference_postcode": "TF6 6RL",
+                "source": "camra-pubs-location-audit",
+                "url": "https://camra.org.uk/pubs/130954"
+              }
+            ],
+            "lat": 52.799564190204,
+            "lng": -2.590269923943,
+            "review_reason": "Reference venue name changed",
+            "review_required": true,
+            "source": "camra-pubs-location-audit"
+          },
+          "review_url": "https://github.com/bristolbagpiper/BassBeerMap/issues/5#issuecomment-6480801394",
+          "reviewed_by": "bristolbagpiper",
+          "source_url": "https://www.google.com/maps/place/Royal+Oak+-+The+Tiddly+Weds/@52.7995576,-2.5902823,519m/data=!3m2!1e3!4b1!4m6!3m5!1s0x487a84e3c066a67d:0xe544c25788012f2c!8m2!3d52.7995576!4d-2.5902823!16s%2Fg%2F1tfz9qrb?entry=ttu&g_ep=EgoyMDI2MTAyMC4wIKXMDSoASAFQAw%3D%3D"
+        }
+      ],
       "location_research": {
         "checked_at": "2026-10-27",
         "coverage": {
@@ -39745,35 +39786,40 @@
       "verified_pin": {
         "evidence": [
           {
-            "checked_at": "2026-09-11",
-            "difference_metres": 0.0,
-            "match": "venue_name_and_full_postcode",
+            "checked_at": "2026-10-28",
+            "match": "owner_reviewed_named_place_and_full_postcode",
+            "reference_address": "Hazles Road, Ellerdine Heath, TF6 6RL",
             "reference_coordinate": {
-              "lat": 52.799564190204,
-              "lng": -2.590269923943
+              "lat": 52.7995576,
+              "lng": -2.5902823
             },
+            "reference_name": "Royal Oak - The Tiddly Weds",
             "reference_postcode": "TF6 6RL",
-            "source": "camra",
-            "url": "https://camra.org.uk/pubs/130954"
+            "review_url": "https://github.com/bristolbagpiper/BassBeerMap/issues/5#issuecomment-6480801394",
+            "reviewed_by": "bristolbagpiper",
+            "source": "google-maps-named-place",
+            "url": "https://www.google.com/maps/place/Royal+Oak+-+The+Tiddly+Weds/@52.7995576,-2.5902823,519m/data=!3m2!1e3!4b1!4m6!3m5!1s0x487a84e3c066a67d:0xe544c25788012f2c!8m2!3d52.7995576!4d-2.5902823!16s%2Fg%2F1tfz9qrb?entry=ttu&g_ep=EgoyMDI2MTAyMC4wIKXMDSoASAFQAw%3D%3D"
           },
           {
-            "checked_at": "2026-09-11",
-            "difference_metres": 0,
-            "match": "postcode_fallback_replaced",
+            "checked_at": "2026-10-28",
+            "match": "owner_reviewed_same_primary_name_same_postcode_and_within_50m",
+            "reference_address": "Hazles Road",
             "reference_coordinate": {
               "lat": 52.799564190204,
               "lng": -2.590269923943
             },
+            "reference_locality": "Ellerdine Heath",
+            "reference_name": "Royal Oak, Ellerdine Heath - Rural Community Pub",
             "reference_postcode": "TF6 6RL",
-            "source": "camra-pubs-location-audit",
-            "url": "https://camra.org.uk/pubs/130954"
+            "review_url": "https://github.com/bristolbagpiper/BassBeerMap/issues/5#issuecomment-6480801394",
+            "reviewed_by": "bristolbagpiper",
+            "source": "camra",
+            "url": "https://camra.org.uk/pubs/royal-oak-ellerdine-heath-130954"
           }
         ],
-        "lat": 52.799564190204,
-        "lng": -2.590269923943,
-        "review_reason": "Reference venue name changed",
-        "review_required": true,
-        "source": "camra-pubs-location-audit"
+        "lat": 52.7995576,
+        "lng": -2.5902823,
+        "source": "owner-reviewed-google-maps"
       }
     },
     "v-37ce061c-4278-5999-9e12-18871f6248ab": {

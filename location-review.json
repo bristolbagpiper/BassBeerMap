@@ -1,5 +1,5 @@
 {
-  "active_count": 33,
+  "active_count": 32,
   "records": {
     "v-00a08839-2b8a-5782-b6c7-0bdce4cddb2f": {
       "active": false,
@@ -2960,7 +2960,7 @@
       "venue_id": "v-37770843-214d-5aec-9864-3b50c8dba389"
     },
     "v-379ea64d-386c-5b45-be0f-561f501307aa": {
-      "active": true,
+      "active": false,
       "first_seen": "2026-10-13",
       "history": [
         {
@@ -2969,15 +2969,18 @@
             "Reference venue name changed"
           ],
           "status": "unverified"
+        },
+        {
+          "date": "2026-10-28",
+          "reasons": [],
+          "status": "resolved"
         }
       ],
-      "last_checked": "2026-10-15",
+      "last_checked": "2026-10-28",
       "place_name": "Ellerdine Heath",
       "postcode": "TF6 6RL",
       "pub_name": "Royal Oak (The Tiddly)",
-      "reasons": [
-        "Reference venue name changed"
-      ],
+      "reasons": [],
       "reference": {},
       "research": {
         "checked_at": "2026-10-27",
@@ -2997,15 +3000,11 @@
         "camra-pubs-location-audit": {
           "status": "conflict",
           "url": "https://camra.org.uk/pubs/130954"
-        },
-        "fsa_independent": {
-          "status": "no_name_match",
-          "url": ""
         }
       },
       "source_error": null,
-      "status": "unverified",
-      "unverified": true,
+      "status": "resolved",
+      "unverified": false,
       "venue_id": "v-379ea64d-386c-5b45-be0f-561f501307aa"
     },
     "v-3812a807-304d-5adf-b134-5306b3874319": {
@@ -16402,5 +16401,5 @@
     }
   },
   "schema_version": 1,
-  "unverified_count": 28
+  "unverified_count": 27
 }

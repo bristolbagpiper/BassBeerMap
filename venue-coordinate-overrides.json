@@ -2564,6 +2564,22 @@
       "source": "camra-pubs-location-audit",
       "source_url": "https://camra.org.uk/pubs/158300"
     },
+    "royal oak|little cawthorpe|ln11 8lz": {
+      "audit_reason": "manual_named_place_address_and_map_check",
+      "checked_at": "2026-10-28",
+      "corroborating_source_url": "",
+      "lat": 53.335688,
+      "lng": 0.039335,
+      "previous_difference_metres": 9.2,
+      "previous_lat": 53.3356973,
+      "previous_lng": 0.0391978,
+      "previous_source": "openstreetmap-gb-extract",
+      "reference_address": "Watery Lane, Little Cawthorpe, Louth LN11 8LZ",
+      "reference_name": "Royal Oak Inn",
+      "review_note": "Repository owner confirmed the named-place marker and full address in issue #5.",
+      "source": "google-maps-named-place",
+      "source_url": "https://www.google.com/maps/place/Royal+Oak+Inn/@53.3355985,0.0384459,134m/data=!3m1!1e3!4m9!3m8!1s0x47d7d5b07afdea7f:0x5b4671403093ce48!5m2!4m1!1i2!8m2!3d53.335688!4d0.039335!16s%2Fg%2F1tltlmpg?entry=ttu&g_ep=EgoyMDI2MTAyMC4wIKXMDSoASAFQAw%3D%3D"
+    },
     "royal|st martin, jersey|je3 6ug": {
       "audit_reason": "postcode_fallback_replaced",
       "checked_at": "2026-09-11",

@@ -1,6 +1,6 @@
 {
   "location_review": {
-    "active_count": 34,
+    "active_count": 33,
     "records": {
       "v-00a08839-2b8a-5782-b6c7-0bdce4cddb2f": {
         "active": false,
@@ -15642,7 +15642,7 @@
         "venue_id": "v-efaae2bc-47a6-51d0-b153-1da28cc90bc9"
       },
       "v-f2d26093-e5ae-5c53-b055-7cdbf64a45a7": {
-        "active": true,
+        "active": false,
         "first_seen": "2026-10-09",
         "history": [
           {
@@ -15663,30 +15663,29 @@
               "Reference venue name changed"
             ],
             "status": "unverified"
+          },
+          {
+            "date": "2026-10-28",
+            "reasons": [],
+            "status": "resolved"
           }
         ],
         "last_checked": "2026-10-28",
         "place_name": "Little Cawthorpe",
         "postcode": "LN11 8LZ",
         "pub_name": "Royal Oak",
-        "reasons": [
-          "Reference venue name changed"
-        ],
+        "reasons": [],
         "reference": {},
         "research": {},
         "source_checks": {
           "camra": {
             "status": "conflict",
             "url": "https://camra.org.uk/pubs/172428"
-          },
-          "fsa_independent": {
-            "status": "coordinate_disagreement",
-            "url": "https://ratings.food.gov.uk/business/155941"
           }
         },
         "source_error": null,
-        "status": "unverified",
-        "unverified": true,
+        "status": "resolved",
+        "unverified": false,
         "venue_id": "v-f2d26093-e5ae-5c53-b055-7cdbf64a45a7"
       },
       "v-f35c2f32-d38e-56cf-8c04-dda1b9fc7f08": {
@@ -16404,7 +16403,7 @@
       }
     },
     "schema_version": 1,
-    "unverified_count": 29
+    "unverified_count": 28
   },
   "schema_version": 1,
   "venues": {
@@ -124531,6 +124530,36 @@
         "postcode": "LN11 8LZ",
         "pub_name": "Royal Oak"
       },
+      "location_approvals": [
+        {
+          "checked_at": "2026-10-28",
+          "comment_id": 6480711486,
+          "previous_pin": {
+            "evidence": [
+              {
+                "checked_at": "2026-09-11",
+                "difference_metres": 8.4,
+                "match": "venue_name_and_full_postcode",
+                "reference_coordinate": {
+                  "lat": 53.3356973,
+                  "lng": 0.0391978
+                },
+                "reference_postcode": "LN11 8LZ",
+                "source": "camra",
+                "url": "https://camra.org.uk/pubs/172428"
+              }
+            ],
+            "lat": 53.3356973,
+            "lng": 0.0391978,
+            "review_reason": "Reference venue name changed",
+            "review_required": true,
+            "source": "openstreetmap-gb-extract"
+          },
+          "review_url": "https://github.com/bristolbagpiper/BassBeerMap/issues/5#issuecomment-6480711486",
+          "reviewed_by": "bristolbagpiper",
+          "source_url": "https://www.google.com/maps/place/Royal+Oak+Inn/@53.3355985,0.0384459,134m/data=!3m1!1e3!4m9!3m8!1s0x47d7d5b07afdea7f:0x5b4671403093ce48!5m2!4m1!1i2!8m2!3d53.335688!4d0.039335!16s%2Fg%2F1tltlmpg?entry=ttu&g_ep=EgoyMDI2MTAyMC4wIKXMDSoASAFQAw%3D%3D"
+        }
+      ],
       "verification_attempt": {
         "checked_at": "2026-10-28",
         "reason": "Reference venue name changed",
@@ -124546,23 +124575,24 @@
       "verified_pin": {
         "evidence": [
           {
-            "checked_at": "2026-09-11",
-            "difference_metres": 8.4,
-            "match": "venue_name_and_full_postcode",
+            "checked_at": "2026-10-28",
+            "match": "owner_reviewed_named_place_and_full_postcode",
+            "reference_address": "Watery Lane, Little Cawthorpe, Louth LN11 8LZ",
             "reference_coordinate": {
-              "lat": 53.3356973,
-              "lng": 0.0391978
+              "lat": 53.335688,
+              "lng": 0.039335
             },
+            "reference_name": "Royal Oak Inn",
             "reference_postcode": "LN11 8LZ",
-            "source": "camra",
-            "url": "https://camra.org.uk/pubs/172428"
+            "review_url": "https://github.com/bristolbagpiper/BassBeerMap/issues/5#issuecomment-6480711486",
+            "reviewed_by": "bristolbagpiper",
+            "source": "google-maps-named-place",
+            "url": "https://www.google.com/maps/place/Royal+Oak+Inn/@53.3355985,0.0384459,134m/data=!3m1!1e3!4m9!3m8!1s0x47d7d5b07afdea7f:0x5b4671403093ce48!5m2!4m1!1i2!8m2!3d53.335688!4d0.039335!16s%2Fg%2F1tltlmpg?entry=ttu&g_ep=EgoyMDI2MTAyMC4wIKXMDSoASAFQAw%3D%3D"
           }
         ],
-        "lat": 53.3356973,
-        "lng": 0.0391978,
-        "review_reason": "Reference venue name changed",
-        "review_required": true,
-        "source": "openstreetmap-gb-extract"
+        "lat": 53.335688,
+        "lng": 0.039335,
+        "source": "owner-reviewed-google-maps"
       }
     },
     "v-f3585e2e-c407-55f1-92d3-15438d5e9cd6": {

@@ -1,7 +1,7 @@
 {
   "counts": {
-    "venue_coordinate_requires_review": 29,
-    "verified_venue": 1015
+    "venue_coordinate_requires_review": 28,
+    "verified_venue": 1016
   },
   "generated_at": "2026-10-28",
   "policy": {
@@ -22450,28 +22450,31 @@
       "venue_id": "v-ea5559e6-e599-531a-9723-9c3975c92ee9"
     },
     "royal oak|little cawthorpe|ln11 8lz": {
-      "coordinate_source": "openstreetmap-gb-extract",
-      "display_precision": "postcode",
+      "coordinate_source": "owner-reviewed-google-maps",
+      "display_precision": "venue",
       "evidence": [
         {
-          "checked_at": "2026-09-11",
-          "difference_metres": 8.4,
-          "match": "venue_name_and_full_postcode",
+          "checked_at": "2026-10-28",
+          "match": "owner_reviewed_named_place_and_full_postcode",
+          "reference_address": "Watery Lane, Little Cawthorpe, Louth LN11 8LZ",
           "reference_coordinate": {
-            "lat": 53.3356973,
-            "lng": 0.0391978
+            "lat": 53.335688,
+            "lng": 0.039335
           },
+          "reference_name": "Royal Oak Inn",
           "reference_postcode": "LN11 8LZ",
-          "source": "camra",
-          "url": "https://camra.org.uk/pubs/172428"
+          "review_url": "https://github.com/bristolbagpiper/BassBeerMap/issues/5#issuecomment-6480711486",
+          "reviewed_by": "bristolbagpiper",
+          "source": "google-maps-named-place",
+          "url": "https://www.google.com/maps/place/Royal+Oak+Inn/@53.3355985,0.0384459,134m/data=!3m1!1e3!4m9!3m8!1s0x47d7d5b07afdea7f:0x5b4671403093ce48!5m2!4m1!1i2!8m2!3d53.335688!4d0.039335!16s%2Fg%2F1tltlmpg?entry=ttu&g_ep=EgoyMDI2MTAyMC4wIKXMDSoASAFQAw%3D%3D"
         }
       ],
-      "lat": 53.3356973,
-      "lng": 0.0391978,
+      "lat": 53.335688,
+      "lng": 0.039335,
       "place_name": "Little Cawthorpe",
       "postcode": "LN11 8LZ",
       "pub_name": "Royal Oak",
-      "status": "venue_coordinate_requires_review",
+      "status": "verified_venue",
       "venue_id": "v-f2d26093-e5ae-5c53-b055-7cdbf64a45a7"
     },
     "royal oak|nuneaton: hartshill|cv10 0td": {

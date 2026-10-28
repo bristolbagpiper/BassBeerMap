@@ -1,5 +1,5 @@
 {
-  "active_count": 41,
+  "active_count": 40,
   "records": {
     "v-00a08839-2b8a-5782-b6c7-0bdce4cddb2f": {
       "active": false,
@@ -12310,7 +12310,7 @@
       "venue_id": "v-bb6ba8ca-176e-57ab-adfe-7fab1710fd1a"
     },
     "v-bce902a8-ea2b-5c24-86c9-3c7c4f5dd04f": {
-      "active": true,
+      "active": false,
       "first_seen": "2026-10-09",
       "history": [
         {
@@ -12331,15 +12331,18 @@
             "Reference venue name changed"
           ],
           "status": "unverified"
+        },
+        {
+          "date": "2026-10-28",
+          "reasons": [],
+          "status": "resolved"
         }
       ],
-      "last_checked": "2026-10-27",
+      "last_checked": "2026-10-28",
       "place_name": "Northampton",
       "postcode": "NN1 1QF",
       "pub_name": "Malt Shovel",
-      "reasons": [
-        "Reference venue name changed"
-      ],
+      "reasons": [],
       "reference": {},
       "research": {
         "checked_at": "2026-10-27",
@@ -12374,15 +12377,11 @@
         "camra-pubs-location-audit": {
           "status": "conflict",
           "url": "https://camra.org.uk/pubs/160658"
-        },
-        "fsa_independent": {
-          "status": "coordinate_agreement",
-          "url": "https://ratings.food.gov.uk/business/2004291"
         }
       },
       "source_error": null,
-      "status": "unverified",
-      "unverified": true,
+      "status": "resolved",
+      "unverified": false,
       "venue_id": "v-bce902a8-ea2b-5c24-86c9-3c7c4f5dd04f"
     },
     "v-bd246278-e4f8-5207-a42a-5fc51626dc5e": {
@@ -16410,5 +16409,5 @@
     }
   },
   "schema_version": 1,
-  "unverified_count": 36
+  "unverified_count": 35
 }

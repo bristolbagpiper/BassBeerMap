@@ -173,6 +173,68 @@ class ApprovalCommandTests(unittest.TestCase):
             )
         )
 
+    def test_camra_documented_upstairs_companion_can_corroborate_composite_listing(self):
+        url = (
+            "https://www.google.com/maps/place/The+Crew/"
+            "@52.5224146,-1.4736173,81m/data=!3m1!1e3!4m6!3m5!"
+            "1s0x48774e02751e41b5:0x82b0e77e8f8e6295!8m2!"
+            "3d52.5224838!4d-1.4733998!16s%2Fg%2F1vd70v2h"
+        )
+        command = {
+            "lat": 52.5224838,
+            "lng": -1.4733998,
+            "url": url,
+            "reference_name": "The Crew",
+            "reference_address": "75 Queens Rd, Nuneaton CV11 5LA",
+        }
+        row = {
+            "pub_name": "Crew and Queens Hall",
+            "postcode": "CV11 5LA",
+        }
+        source = {
+            "lat": 52.52246,
+            "lng": -1.47342,
+            "name": "Crew, Nuneaton",
+            "postcode": "CV11 5LA",
+        }
+        page = (
+            "<h1>Crew, Nuneaton - Rock Memorabilia &amp; Live Music</h1>"
+            "<p>Queens Hall rock venue is located upstairs with tribute bands.</p>"
+        )
+        self.assertTrue(
+            validate_google_place(
+                command, row, {"lat": 52.5224, "lng": -1.4735},
+                source, "Crew, Nuneaton - Rock Memorabilia & Live Music", page,
+            )
+        )
+
+    def test_camra_companion_name_requires_explicit_co_location_context(self):
+        url = (
+            "https://www.google.com/maps/place/The+Crew/"
+            "@52.5224146,-1.4736173,81m/data=!3m1!1e3!4m6!3m5!"
+            "1s0x48774e02751e41b5:0x82b0e77e8f8e6295!8m2!"
+            "3d52.5224838!4d-1.4733998!16s%2Fg%2F1vd70v2h"
+        )
+        command = {
+            "lat": 52.5224838,
+            "lng": -1.4733998,
+            "url": url,
+            "reference_name": "The Crew",
+            "reference_address": "75 Queens Rd, Nuneaton CV11 5LA",
+        }
+        row = {"pub_name": "Crew and Queens Hall", "postcode": "CV11 5LA"}
+        source = {
+            "lat": 52.52246,
+            "lng": -1.47342,
+            "name": "Crew, Nuneaton",
+            "postcode": "CV11 5LA",
+        }
+        with self.assertRaisesRegex(ValueError, "alias or co-located venue"):
+            validate_google_place(
+                command, row, {"lat": 52.5224, "lng": -1.4735}, source,
+                "Crew, Nuneaton", "<p>Queens Hall hosts several bands.</p>",
+            )
+
     def test_google_name_mismatch_still_fails_without_camra(self):
         command = {
             "lat": 53.002819,
@@ -259,3 +321,4 @@ class ApprovalCommandTests(unittest.TestCase):
 
 if __name__ == "__main__":
     unittest.main()
+

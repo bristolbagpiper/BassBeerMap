@@ -1,6 +1,6 @@
 {
   "location_review": {
-    "active_count": 38,
+    "active_count": 37,
     "records": {
       "v-00a08839-2b8a-5782-b6c7-0bdce4cddb2f": {
         "active": false,
@@ -11426,7 +11426,7 @@
         "venue_id": "v-ad92f484-649e-5618-98b2-57eab539a803"
       },
       "v-af18b197-586e-5323-8171-e7f9e58f5ec9": {
-        "active": true,
+        "active": false,
         "first_seen": "2026-10-23",
         "history": [
           {
@@ -11435,15 +11435,18 @@
               "FSA no longer provides an unambiguous agreeing venue"
             ],
             "status": "unverified"
+          },
+          {
+            "date": "2026-10-28",
+            "reasons": [],
+            "status": "resolved"
           }
         ],
-        "last_checked": "2026-10-26",
+        "last_checked": "2026-10-28",
         "place_name": "Endon",
         "postcode": "ST9 9BE",
         "pub_name": "Plough",
-        "reasons": [
-          "FSA no longer provides an unambiguous agreeing venue"
-        ],
+        "reasons": [],
         "reference": {},
         "research": {
           "checked_at": "2026-10-27",
@@ -11459,15 +11462,11 @@
           "food_standards_agency": {
             "status": "conflict",
             "url": "https://api.ratings.food.gov.uk/Establishments?address=ST9+9BE&pageSize=100&pageNumber=1"
-          },
-          "fsa_independent": {
-            "status": "coordinate_agreement",
-            "url": "https://ratings.food.gov.uk/business/1259788"
           }
         },
         "source_error": null,
-        "status": "unverified",
-        "unverified": true,
+        "status": "resolved",
+        "unverified": false,
         "venue_id": "v-af18b197-586e-5323-8171-e7f9e58f5ec9"
       },
       "v-af3b8421-13d9-59af-a20a-60d22faa409a": {
@@ -16408,7 +16407,7 @@
       }
     },
     "schema_version": 1,
-    "unverified_count": 33
+    "unverified_count": 32
   },
   "schema_version": 1,
   "venues": {
@@ -95204,6 +95203,36 @@
         "postcode": "ST9 9BE",
         "pub_name": "Plough"
       },
+      "location_approvals": [
+        {
+          "checked_at": "2026-10-28",
+          "comment_id": 6474968895,
+          "previous_pin": {
+            "evidence": [
+              {
+                "checked_at": "2026-09-11",
+                "difference_metres": 9.7,
+                "match": "venue_name_or_safe_alias_and_full_postcode",
+                "reference_coordinate": {
+                  "lat": 53.07882295454545,
+                  "lng": -2.1085675545454547
+                },
+                "reference_postcode": "ST9 9BE",
+                "source": "food_standards_agency",
+                "url": "https://api.ratings.food.gov.uk/Establishments?address=ST9+9BE&pageSize=100&pageNumber=1"
+              }
+            ],
+            "lat": 53.07882295454545,
+            "lng": -2.1085675545454547,
+            "review_reason": "FSA no longer provides an unambiguous agreeing venue",
+            "review_required": true,
+            "source": "openstreetmap-gb-extract"
+          },
+          "review_url": "https://github.com/bristolbagpiper/BassBeerMap/issues/5#issuecomment-6474968895",
+          "reviewed_by": "bristolbagpiper",
+          "source_url": "https://www.google.com/maps/place/Toby+Carvery+Endon/@53.078809,-2.1093964,320m/data=!3m1!1e3!4m15!1m8!3m7!1s0x487a417263a59985:0x3668a888beaac58b!2sThe+Plough,+Leek+Rd,+Endon,+Stoke-on-Trent+ST9+9BE!3b1!8m2!3d53.0801976!4d-2.1059788!16s%2Fg%2F1tgxhlc_!3m5!1s0x487a4179b9848331:0xb63b2c727a11b174!8m2!3d53.0787953!4d-2.1085343!16s%2Fg%2F1vc81bfr?entry=ttu"
+        }
+      ],
       "location_research": {
         "checked_at": "2026-10-27",
         "coverage": {
@@ -95229,23 +95258,40 @@
       "verified_pin": {
         "evidence": [
           {
-            "checked_at": "2026-09-11",
-            "difference_metres": 9.7,
-            "match": "venue_name_or_safe_alias_and_full_postcode",
+            "checked_at": "2026-10-28",
+            "match": "owner_reviewed_named_place_and_full_postcode",
+            "reference_address": "Leek Road, Endon, Stoke-on-Trent ST9 9BE",
             "reference_coordinate": {
-              "lat": 53.07882295454545,
-              "lng": -2.1085675545454547
+              "lat": 53.0787953,
+              "lng": -2.1085343
             },
+            "reference_name": "Toby Carvery, Endon",
             "reference_postcode": "ST9 9BE",
-            "source": "food_standards_agency",
-            "url": "https://api.ratings.food.gov.uk/Establishments?address=ST9+9BE&pageSize=100&pageNumber=1"
+            "review_url": "https://github.com/bristolbagpiper/BassBeerMap/issues/5#issuecomment-6474968895",
+            "reviewed_by": "bristolbagpiper",
+            "source": "google-maps-named-place",
+            "url": "https://www.google.com/maps/place/Toby+Carvery+Endon/@53.078809,-2.1093964,320m/data=!3m1!1e3!4m15!1m8!3m7!1s0x487a417263a59985:0x3668a888beaac58b!2sThe+Plough,+Leek+Rd,+Endon,+Stoke-on-Trent+ST9+9BE!3b1!8m2!3d53.0801976!4d-2.1059788!16s%2Fg%2F1tgxhlc_!3m5!1s0x487a4179b9848331:0xb63b2c727a11b174!8m2!3d53.0787953!4d-2.1085343!16s%2Fg%2F1vc81bfr?entry=ttu"
+          },
+          {
+            "checked_at": "2026-10-28",
+            "match": "owner_reviewed_documented_name_relationship_same_postcode_and_within_50m",
+            "reference_address": "Leek Road",
+            "reference_coordinate": {
+              "lat": 53.078753,
+              "lng": -2.1086952
+            },
+            "reference_locality": "Endon",
+            "reference_name": "Toby Carvery, Endon - Roadside Pub with Garden",
+            "reference_postcode": "ST9 9BE",
+            "review_url": "https://github.com/bristolbagpiper/BassBeerMap/issues/5#issuecomment-6474968895",
+            "reviewed_by": "bristolbagpiper",
+            "source": "camra",
+            "url": "https://camra.org.uk/pubs/toby-carvery-endon-143884"
           }
         ],
-        "lat": 53.07882295454545,
-        "lng": -2.1085675545454547,
-        "review_reason": "FSA no longer provides an unambiguous agreeing venue",
-        "review_required": true,
-        "source": "openstreetmap-gb-extract"
+        "lat": 53.0787953,
+        "lng": -2.1085343,
+        "source": "owner-reviewed-google-maps"
       }
     },
     "v-af3b8421-13d9-59af-a20a-60d22faa409a": {

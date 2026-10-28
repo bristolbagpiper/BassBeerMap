@@ -2153,6 +2153,22 @@
       "source": "camra-pubs-location-audit",
       "source_url": "https://camra.org.uk/pubs/171375"
     },
+    "plough|endon|st9 9be": {
+      "audit_reason": "manual_named_place_address_and_map_check",
+      "checked_at": "2026-10-28",
+      "corroborating_source_url": "https://camra.org.uk/pubs/toby-carvery-endon-143884",
+      "lat": 53.0787953,
+      "lng": -2.1085343,
+      "previous_difference_metres": 3.8,
+      "previous_lat": 53.07882295454545,
+      "previous_lng": -2.1085675545454547,
+      "previous_source": "openstreetmap-gb-extract",
+      "reference_address": "Leek Road, Endon, Stoke-on-Trent ST9 9BE",
+      "reference_name": "Toby Carvery, Endon",
+      "review_note": "Repository owner confirmed the named-place marker and full address in issue #5; CAMRA corroborated the primary name, documented alias or co-located venue label, postcode, and nearby point.",
+      "source": "google-maps-named-place",
+      "source_url": "https://www.google.com/maps/place/Toby+Carvery+Endon/@53.078809,-2.1093964,320m/data=!3m1!1e3!4m15!1m8!3m7!1s0x487a417263a59985:0x3668a888beaac58b!2sThe+Plough,+Leek+Rd,+Endon,+Stoke-on-Trent+ST9+9BE!3b1!8m2!3d53.0801976!4d-2.1059788!16s%2Fg%2F1tgxhlc_!3m5!1s0x487a4179b9848331:0xb63b2c727a11b174!8m2!3d53.0787953!4d-2.1085343!16s%2Fg%2F1vc81bfr?entry=ttu"
+    },
     "plough|kidsgrove|st7 4ew": {
       "audit_reason": "existing_pin_over_250m_from_matching_venue",
       "checked_at": "2026-09-11",

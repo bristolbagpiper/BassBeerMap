@@ -2,6 +2,7 @@
 import argparse
 import copy
 import csv
+import html
 import json
 import os
 import re
@@ -26,7 +27,8 @@ GOOGLE_COMMAND = re.compile(
     rf'^/verify-location (?P<venue_id>{VENUE_ID}) google '
     r'(?P<lat>-?\d+(?:\.\d+)?) (?P<lng>-?\d+(?:\.\d+)?) '
     r'(?P<url>https://www\.google\.com/maps/place/\S+) '
-    r'"(?P<reference_name>[^"]+)" "(?P<reference_address>[^"]+)"$'
+    r'"(?P<reference_name>[^"]+)" "(?P<reference_address>[^"]+)"'
+    r'(?: camra (?P<corroborating_source_url>https://camra\.org\.uk/pubs/[a-z0-9-]+))?$'
 )
 MANUAL_CHECK_FIELDS = [
     "venue_key", "lat", "lng", "reference_name", "reference_address",
@@ -50,7 +52,7 @@ def approved_commands(event, owner):
             continue
         google = GOOGLE_COMMAND.fullmatch(line)
         if google:
-            commands.append({
+            command = {
                 "kind": "google",
                 "venue_id": google["venue_id"],
                 "lat": float(google["lat"]),
@@ -58,12 +60,15 @@ def approved_commands(event, owner):
                 "url": google["url"],
                 "reference_name": google["reference_name"],
                 "reference_address": google["reference_address"],
-            })
+            }
+            if google["corroborating_source_url"]:
+                command["corroborating_source_url"] = google["corroborating_source_url"]
+            commands.append(command)
             continue
         raise ValueError(
             'Use /verify-location <venue-id> <CAMRA-url>, or '
             '/verify-location <venue-id> google <lat> <lng> <Google Maps place URL> '
-            '"<place name>" "<full address>"'
+            '"<place name>" "<full address>" [camra <CAMRA-url>]'
         )
     if not lines or len(lines) > 30:
         raise ValueError("Provide between 1 and 30 approval commands")
@@ -99,8 +104,67 @@ def manual_name_matches(listing, reference):
     )
 
 
-def validate_google_place(command, row, centre):
-    """Require an exact named-place marker, matching name/address, and local coordinates."""
+def manual_name_tokens(value):
+    generic = {
+        "the", "bar", "pub", "inn", "hotel", "tavern", "restaurant",
+        "brewery", "taproom", "club", "social", "house", "public",
+    }
+    return {
+        token for token in re.findall(r"[a-z0-9]+", value.casefold())
+        if token not in generic and not token.isdigit()
+    }
+
+
+def normalized_place_name(value):
+    primary = value.split("(", 1)[0].split(",", 1)[0].split(" - ", 1)[0].strip()
+    tokens = re.findall(r"[a-z0-9]+", primary.casefold())
+    if tokens and tokens[0] == "the":
+        tokens = tokens[1:]
+    return " ".join(tokens)
+
+
+def extract_camra_heading(page_text):
+    match = re.search(r"<h1\b[^>]*>(.*?)</h1>", page_text, re.I | re.S)
+    if not match:
+        return ""
+    text = re.sub(r"<[^>]+>", " ", match.group(1))
+    return re.sub(r"\s+", " ", html.unescape(text)).strip()
+
+
+def validate_camra_corroboration(command, row, source, heading, require_alias):
+    compact = lambda value: re.sub(r"[^A-Z0-9]", "", str(value).upper())
+    if not source.get("postcode") or compact(source["postcode"]) != compact(row["postcode"]):
+        raise ValueError("CAMRA corroboration must have the listing's exact full postcode")
+    if distance_metres(
+        {"lat": command["lat"], "lng": command["lng"]}, source
+    ) > 50:
+        raise ValueError("CAMRA corroboration must be within 50 metres of the Google place marker")
+
+    google_name = normalized_place_name(command["reference_name"])
+    camra_name = normalized_place_name(source.get("name", ""))
+    heading_name = normalized_place_name(heading)
+    if not google_name or google_name != camra_name or camra_name != heading_name:
+        raise ValueError("CAMRA page, structured venue, and Google place must have the same primary name")
+
+    normalized_listing = re.sub(r"\s*\(PMC\)", "", row["pub_name"], flags=re.I)
+    listing_primary = normalized_listing.split("(", 1)[0].strip()
+    listing_tokens = manual_name_tokens(listing_primary)
+    google_tokens = manual_name_tokens(command["reference_name"])
+    missing = listing_tokens - google_tokens
+    if require_alias:
+        aliases = re.findall(r"\(([^()]*)\)", heading)
+        alias_tokens = set().union(*(manual_name_tokens(alias) for alias in aliases)) if aliases else set()
+        if (
+            not missing
+            or not missing.issubset(alias_tokens)
+            or not listing_tokens.issubset(google_tokens | alias_tokens)
+        ):
+            raise ValueError("CAMRA page does not document every missing listing-name word as an alias")
+    return True
+
+
+def validate_google_place(command, row, centre, camra_source=None, camra_heading=""):
+    """Require a named-place marker, matching address, and local coordinates."""
     parsed = urlparse(command["url"])
     if parsed.scheme != "https" or parsed.netloc != "www.google.com" or not parsed.path.startswith("/maps/place/"):
         raise ValueError("Google review must link to a named Google Maps place")
@@ -109,8 +173,13 @@ def validate_google_place(command, row, centre):
         r"[^a-z0-9]", "", command["reference_name"].casefold()
     ):
         raise ValueError("Reference name does not match the Google Maps place URL")
-    if not manual_name_matches(row["pub_name"], command["reference_name"]):
-        raise ValueError("Google place name does not identify the listed venue")
+    name_matches_listing = manual_name_matches(row["pub_name"], command["reference_name"])
+    if not name_matches_listing:
+        if camra_source is None:
+            raise ValueError("Google place name does not identify the listed venue")
+        validate_camra_corroboration(command, row, camra_source, camra_heading, require_alias=True)
+    elif camra_source is not None:
+        validate_camra_corroboration(command, row, camra_source, camra_heading, require_alias=False)
     compact = lambda value: re.sub(r"[^A-Z0-9]", "", str(value).upper())
     if compact(row["postcode"]) not in compact(command["reference_address"]):
         raise ValueError("Google reference address must contain the listing's full postcode")
@@ -128,6 +197,7 @@ def validate_google_place(command, row, centre):
         raise ValueError("Coordinates must match the named Google Maps place marker")
     if distance_metres(target, centre) > 6000:
         raise ValueError("Google place is more than 6 km from the listed area; requires address review")
+    return not name_matches_listing
 
 
 def stage_manual_checks(root, staging, reviews):
@@ -157,9 +227,14 @@ def stage_manual_checks(root, staging, reviews):
             "reference_address": review["reference_address"],
             "source": "google-maps-named-place",
             "source_url": review["source_url"],
-            "corroborating_source_url": "",
+            "corroborating_source_url": review.get("corroborating_source_url", ""),
             "checked_at": review["checked_at"],
-            "review_note": "Repository owner confirmed the named-place marker and full address in issue #5.",
+            "review_note": (
+                "Repository owner confirmed the named-place marker and full address in issue #5; "
+                "CAMRA corroborated the primary name, documented alias, postcode, and nearby point."
+                if review.get("corroborating_source_url")
+                else "Repository owner confirmed the named-place marker and full address in issue #5."
+            ),
         }
         existing = next((index for index, row in enumerate(rows) if row.get("venue_key") == key), None)
         if existing is None:
@@ -177,6 +252,7 @@ def stage_manual_checks(root, staging, reviews):
             "reference_name": audit_row["reference_name"],
             "reference_address": audit_row["reference_address"],
             "review_note": audit_row["review_note"],
+            "corroborating_source_url": audit_row["corroborating_source_url"],
         }
         if previous:
             override.update({
@@ -257,7 +333,16 @@ def approve(root, staging, event, owner):
                     entry["aliases"].append(key)
             approval_url = url
         else:
-            validate_google_place(command, row, centre)
+            camra_source = None
+            camra_heading = ""
+            corroborating_url = command.get("corroborating_source_url", "")
+            if corroborating_url:
+                camra_page = fetch_text(corroborating_url)
+                camra_source = parse_camra(camra_page)
+                camra_heading = extract_camra_heading(camra_page)
+            camra_alias_used = validate_google_place(
+                command, row, centre, camra_source, camra_heading
+            )
             checked_at = date.today().isoformat()
             reference_coordinate = {"lat": command["lat"], "lng": command["lng"]}
             pin = dict(
@@ -275,6 +360,25 @@ def approve(root, staging, event, owner):
                     review_url=event["comment"]["html_url"],
                 )],
             )
+            if camra_source is not None:
+                camra_point = {"lat": camra_source["lat"], "lng": camra_source["lng"]}
+                pin["evidence"].append(dict(
+                    source="camra",
+                    url=corroborating_url,
+                    checked_at=checked_at,
+                    match=(
+                        "owner_reviewed_documented_alias_same_postcode_and_within_50m"
+                        if camra_alias_used
+                        else "owner_reviewed_same_primary_name_same_postcode_and_within_50m"
+                    ),
+                    reference_coordinate=camra_point,
+                    reference_name=camra_source["name"],
+                    reference_address=camra_source.get("address", ""),
+                    reference_locality=camra_source.get("locality", ""),
+                    reference_postcode=camra_source["postcode"],
+                    reviewed_by=owner,
+                    review_url=event["comment"]["html_url"],
+                ))
             approval_url = command["url"]
             manual_reviews.append({
                 "venue_key": entry["current_key"],
@@ -283,6 +387,7 @@ def approve(root, staging, event, owner):
                 "reference_name": command["reference_name"],
                 "reference_address": command["reference_address"],
                 "source_url": command["url"],
+                "corroborating_source_url": corroborating_url,
                 "checked_at": checked_at,
             })
 

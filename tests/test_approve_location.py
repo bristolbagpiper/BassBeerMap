@@ -2,6 +2,7 @@ import unittest
 
 from approve_location import (
     approved_commands,
+    extract_camra_heading,
     manual_name_matches,
     validate_google_place,
 )
@@ -136,6 +137,113 @@ class ApprovalCommandTests(unittest.TestCase):
         }
         with self.assertRaisesRegex(ValueError, "must match the named Google Maps place marker"):
             validate_google_place(command, ROW, CENTRE)
+
+    def test_camra_documented_alias_can_corroborate_google_place_name(self):
+        url = (
+            "https://www.google.com/maps/place/Milford+Social+Club/"
+            "@53.0027926,-1.4805613,113m/data=!3m1!1e3!4m6!3m5!"
+            "1s0x4879f30d3be736e7:0xa35191fd161dbc93!8m2!"
+            "3d53.002819!4d-1.4804092!16s%2Fg%2F11clsg50h9"
+        )
+        command = {
+            "lat": 53.002819,
+            "lng": -1.4804092,
+            "url": url,
+            "reference_name": "Milford Social Club",
+            "reference_address": "5 Chevin Rd, Milford, Belper DE56 0QH",
+        }
+        row = {
+            "pub_name": "Milford Sunshine Social Club (PMC)",
+            "place_name": "Milford",
+            "postcode": "DE56 0QH",
+        }
+        source = {
+            "lat": 53.002795,
+            "lng": -1.480413,
+            "name": "Milford Social Club, Milford",
+            "postcode": "DE56 0QH",
+            "address": "5 Chevin View",
+            "locality": "Milford",
+        }
+        heading = "Milford Social Club, Milford (Sunshine Club)"
+        self.assertEqual(extract_camra_heading(f"<h1>{heading}</h1>"), heading)
+        self.assertTrue(
+            validate_google_place(
+                command, row, {"lat": 53.0028, "lng": -1.4805}, source, heading
+            )
+        )
+
+    def test_google_name_mismatch_still_fails_without_camra(self):
+        command = {
+            "lat": 53.002819,
+            "lng": -1.4804092,
+            "url": "https://www.google.com/maps/place/Milford+Social+Club/"
+                   "@53.0027926,-1.4805613,113m/data=!3m1!1e3!4m6!3m5!"
+                   "1s0x4879f30d3be736e7:0xa35191fd161dbc93!8m2!"
+                   "3d53.002819!4d-1.4804092!16s%2Fg%2F11clsg50h9",
+            "reference_name": "Milford Social Club",
+            "reference_address": "5 Chevin Rd, Milford, Belper DE56 0QH",
+        }
+        with self.assertRaisesRegex(ValueError, "does not identify the listed venue"):
+            validate_google_place(
+                command,
+                {"pub_name": "Milford Sunshine Social Club (PMC)", "postcode": "DE56 0QH"},
+                {"lat": 53.0028, "lng": -1.4805},
+            )
+
+    def test_camra_alias_requires_exact_postcode_and_nearby_point(self):
+        command = {
+            "lat": 53.002819,
+            "lng": -1.4804092,
+            "url": "https://www.google.com/maps/place/Milford+Social+Club/"
+                   "@53.0027926,-1.4805613,113m/data=!3m1!1e3!4m6!3m5!"
+                   "1s0x4879f30d3be736e7:0xa35191fd161dbc93!8m2!"
+                   "3d53.002819!4d-1.4804092!16s%2Fg%2F11clsg50h9",
+            "reference_name": "Milford Social Club",
+            "reference_address": "5 Chevin Rd, Milford, Belper DE56 0QH",
+        }
+        row = {"pub_name": "Milford Sunshine Social Club (PMC)", "postcode": "DE56 0QH"}
+        source = {
+            "lat": 53.002795,
+            "lng": -1.480413,
+            "name": "Milford Social Club, Milford",
+            "postcode": "DE56 0QH",
+        }
+        heading = "Milford Social Club, Milford (Sunshine Club)"
+        with self.assertRaisesRegex(ValueError, "exact full postcode"):
+            validate_google_place(
+                command, row, {"lat": 53.0028, "lng": -1.4805},
+                dict(source, postcode="DE56 0QB"), heading
+            )
+        with self.assertRaisesRegex(ValueError, "within 50 metres"):
+            validate_google_place(
+                command, row, {"lat": 53.0028, "lng": -1.4805},
+                dict(source, lat=53.0035), heading
+            )
+        with self.assertRaisesRegex(ValueError, "document every missing listing-name word"):
+            validate_google_place(
+                command, row, {"lat": 53.0028, "lng": -1.4805},
+                source, "Milford Social Club, Milford (Club)"
+            )
+
+    def test_google_command_parses_camra_alias_source(self):
+        google_url = (
+            "https://www.google.com/maps/place/Milford+Social+Club/"
+            "@53.0027926,-1.4805613,113m/data=!3m1!1e3!4m6!3m5!"
+            "1s0x4879f30d3be736e7:0xa35191fd161dbc93!8m2!"
+            "3d53.002819!4d-1.4804092!16s%2Fg%2F11clsg50h9"
+        )
+        command = (
+            f'/verify-location {VENUE_ID} google 53.002819 -1.4804092 '
+            f'{google_url} "Milford Social Club" '
+            '"5 Chevin Rd, Milford, Belper DE56 0QH" '
+            'camra https://camra.org.uk/pubs/milford-social-club-milford-113188'
+        )
+        result = approved_commands(event(command), "bristolbagpiper")
+        self.assertEqual(
+            result[0]["corroborating_source_url"],
+            "https://camra.org.uk/pubs/milford-social-club-milford-113188",
+        )
 
     def test_google_place_requires_matching_full_postcode(self):
         command = {

@@ -1,7 +1,7 @@
 {
   "counts": {
-    "venue_coordinate_requires_review": 31,
-    "verified_venue": 1013
+    "venue_coordinate_requires_review": 30,
+    "verified_venue": 1014
   },
   "generated_at": "2026-10-28",
   "policy": {
@@ -21733,28 +21733,31 @@
       "venue_id": "v-12016874-b271-5032-9ed9-e7c2669740f3"
     },
     "rock inn|porthcawl|cf36 3dt": {
-      "coordinate_source": "openstreetmap-gb-extract",
-      "display_precision": "postcode",
+      "coordinate_source": "owner-reviewed-google-maps",
+      "display_precision": "venue",
       "evidence": [
         {
-          "checked_at": "2026-09-11",
-          "difference_metres": 8.5,
-          "match": "venue_name_and_full_postcode",
+          "checked_at": "2026-10-28",
+          "match": "owner_reviewed_named_place_and_full_postcode",
+          "reference_address": "THE ROCK INN, 98 John St, Porthcawl CF36 3DT",
           "reference_coordinate": {
-            "lat": 51.4798128,
-            "lng": -3.7031183
+            "lat": 51.4799265,
+            "lng": -3.7031654
           },
+          "reference_name": "The Rock Inn",
           "reference_postcode": "CF36 3DT",
-          "source": "camra",
-          "url": "https://camra.org.uk/pubs/127895"
+          "review_url": "https://github.com/bristolbagpiper/BassBeerMap/issues/5#issuecomment-6480396426",
+          "reviewed_by": "bristolbagpiper",
+          "source": "google-maps-named-place",
+          "url": "https://www.google.com/maps/place/The+Rock+Inn/@51.4799265,-3.7031654,535m/data=!3m2!1e3!4b1!4m6!3m5!1s0x486e65675ce64593:0xcd971b770bb4cff2!8m2!3d51.4799265!4d-3.7031654!16s%2Fg%2F1th0mb14"
         }
       ],
-      "lat": 51.4798128,
-      "lng": -3.7031183,
+      "lat": 51.4799265,
+      "lng": -3.7031654,
       "place_name": "Porthcawl",
       "postcode": "CF36 3DT",
       "pub_name": "Rock Inn",
-      "status": "venue_coordinate_requires_review",
+      "status": "verified_venue",
       "venue_id": "v-3c120939-ec25-5fc2-b4c1-89bdcca8382d"
     },
     "rockcliffe arms|whitley bay|ne26 2dt": {

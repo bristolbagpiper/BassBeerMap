@@ -2451,6 +2451,22 @@
       "source": "camra-pubs-location-audit",
       "source_url": "https://camra.org.uk/pubs/171254"
     },
+    "rock inn|porthcawl|cf36 3dt": {
+      "audit_reason": "manual_named_place_address_and_map_check",
+      "checked_at": "2026-10-28",
+      "corroborating_source_url": "",
+      "lat": 51.4799265,
+      "lng": -3.7031654,
+      "previous_difference_metres": 13.1,
+      "previous_lat": 51.4798128,
+      "previous_lng": -3.7031183,
+      "previous_source": "openstreetmap-gb-extract",
+      "reference_address": "THE ROCK INN, 98 John St, Porthcawl CF36 3DT",
+      "reference_name": "The Rock Inn",
+      "review_note": "Repository owner confirmed the named-place marker and full address in issue #5.",
+      "source": "google-maps-named-place",
+      "source_url": "https://www.google.com/maps/place/The+Rock+Inn/@51.4799265,-3.7031654,535m/data=!3m2!1e3!4b1!4m6!3m5!1s0x486e65675ce64593:0xcd971b770bb4cff2!8m2!3d51.4799265!4d-3.7031654!16s%2Fg%2F1th0mb14"
+    },
     "roebuck inn|forsbrook|st11 9bx": {
       "audit_reason": "existing_pin_over_50m_from_matching_venue",
       "checked_at": "2026-09-11",

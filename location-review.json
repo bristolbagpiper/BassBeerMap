@@ -1,5 +1,5 @@
 {
-  "active_count": 36,
+  "active_count": 35,
   "records": {
     "v-00a08839-2b8a-5782-b6c7-0bdce4cddb2f": {
       "active": false,
@@ -3256,7 +3256,7 @@
       "venue_id": "v-3be6023a-044e-5730-941e-0a4fc3ec2e03"
     },
     "v-3c120939-ec25-5fc2-b4c1-89bdcca8382d": {
-      "active": true,
+      "active": false,
       "first_seen": "2026-10-13",
       "history": [
         {
@@ -3265,15 +3265,18 @@
             "Reference venue name changed"
           ],
           "status": "unverified"
+        },
+        {
+          "date": "2026-10-28",
+          "reasons": [],
+          "status": "resolved"
         }
       ],
-      "last_checked": "2026-10-15",
+      "last_checked": "2026-10-28",
       "place_name": "Porthcawl",
       "postcode": "CF36 3DT",
       "pub_name": "Rock Inn",
-      "reasons": [
-        "Reference venue name changed"
-      ],
+      "reasons": [],
       "reference": {},
       "research": {
         "checked_at": "2026-10-27",
@@ -3289,15 +3292,11 @@
         "camra": {
           "status": "conflict",
           "url": "https://camra.org.uk/pubs/127895"
-        },
-        "fsa_independent": {
-          "status": "coordinate_agreement",
-          "url": "https://ratings.food.gov.uk/business/1970144"
         }
       },
       "source_error": null,
-      "status": "unverified",
-      "unverified": true,
+      "status": "resolved",
+      "unverified": false,
       "venue_id": "v-3c120939-ec25-5fc2-b4c1-89bdcca8382d"
     },
     "v-3c4faad2-ac27-5dbb-99aa-18012b9dcbed": {
@@ -16405,5 +16404,5 @@
     }
   },
   "schema_version": 1,
-  "unverified_count": 31
+  "unverified_count": 30
 }

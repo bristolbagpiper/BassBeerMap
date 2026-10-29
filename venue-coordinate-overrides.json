@@ -2661,16 +2661,20 @@
       "source_url": "https://camra.org.uk/pubs/123014"
     },
     "shakespeare (summer row)|birmingham: central|b3 1jj": {
-      "audit_reason": "postcode_fallback_replaced",
-      "checked_at": "2026-09-11",
-      "lat": 52.481477,
-      "lng": -1.906951,
-      "previous_difference_metres": 58.1,
-      "previous_lat": 52.481676,
-      "previous_lng": -1.907745,
-      "previous_source": "postcode",
-      "source": "camra-pubs-location-audit",
-      "source_url": "https://camra.org.uk/pubs/121105"
+      "audit_reason": "manual_named_place_address_and_map_check",
+      "checked_at": "2026-10-29",
+      "corroborating_source_url": "https://camra.org.uk/pubs/shakespeare-birmingham-121105",
+      "lat": 52.4815327,
+      "lng": -1.9069232,
+      "previous_difference_metres": 6.5,
+      "previous_lat": 52.481477,
+      "previous_lng": -1.906951,
+      "previous_source": "camra-pubs-location-audit",
+      "reference_address": "31 Summer Row, Birmingham, B3 1JJ",
+      "reference_name": "The Shakespeare Inn",
+      "review_note": "Repository owner confirmed the named-place marker and full address in issue #5; CAMRA corroborated the primary name, documented alias or co-located venue label, postcode, and nearby point.",
+      "source": "google-maps-named-place",
+      "source_url": "https://www.google.com/maps/place/The+Shakespeare+Inn/@52.481477,-1.906951,162m/data=!3m1!1e3!4m6!3m5!1s0x4870bcf3243a495d:0x7f2541dc1c1f46e2!8m2!3d52.4815327!4d-1.9069232!16s%2Fg%2F1v2yy9dm?entry=ttu&g_ep=EgoyMDI2MTAyMC4wIKXMDSoASAFQAw%3D%3D"
     },
     "ship inn|red wharf bay|ll75 8rj": {
       "audit_reason": "existing_pin_over_50m_from_matching_venue",

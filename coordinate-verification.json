@@ -1,10 +1,10 @@
 {
   "counts": {
     "postcode_approximate": 1,
-    "venue_coordinate_requires_review": 27,
-    "verified_venue": 1016
+    "venue_coordinate_requires_review": 26,
+    "verified_venue": 1017
   },
-  "generated_at": "2026-10-28",
+  "generated_at": "2026-10-29",
   "policy": {
     "max_evidence_age_days": 400,
     "venue_pin": "Evidence-backed venue coordinates; unresolved venues use explicitly approximate postcode pins."
@@ -23107,40 +23107,47 @@
       "venue_id": "v-6e90968f-4cae-505d-9fbe-5de8b2b5d1a1"
     },
     "shakespeare (summer row)|birmingham: central|b3 1jj": {
-      "coordinate_source": "camra-pubs-location-audit",
-      "display_precision": "postcode",
+      "coordinate_source": "owner-reviewed-google-maps",
+      "display_precision": "venue",
       "evidence": [
         {
-          "checked_at": "2026-09-11",
-          "difference_metres": 0.0,
-          "match": "venue_name_and_full_postcode",
+          "checked_at": "2026-10-29",
+          "match": "owner_reviewed_named_place_and_full_postcode",
+          "reference_address": "31 Summer Row, Birmingham, B3 1JJ",
           "reference_coordinate": {
-            "lat": 52.481477,
-            "lng": -1.906951
+            "lat": 52.4815327,
+            "lng": -1.9069232
           },
+          "reference_name": "The Shakespeare Inn",
           "reference_postcode": "B3 1JJ",
-          "source": "camra",
-          "url": "https://camra.org.uk/pubs/121105"
+          "review_url": "https://github.com/bristolbagpiper/BassBeerMap/issues/5#issuecomment-6498380776",
+          "reviewed_by": "bristolbagpiper",
+          "source": "google-maps-named-place",
+          "url": "https://www.google.com/maps/place/The+Shakespeare+Inn/@52.481477,-1.906951,162m/data=!3m1!1e3!4m6!3m5!1s0x4870bcf3243a495d:0x7f2541dc1c1f46e2!8m2!3d52.4815327!4d-1.9069232!16s%2Fg%2F1v2yy9dm?entry=ttu&g_ep=EgoyMDI2MTAyMC4wIKXMDSoASAFQAw%3D%3D"
         },
         {
-          "checked_at": "2026-09-11",
-          "difference_metres": 0,
-          "match": "postcode_fallback_replaced",
+          "checked_at": "2026-10-29",
+          "match": "owner_reviewed_same_primary_name_same_postcode_and_within_50m",
+          "reference_address": "31 Summer Row",
           "reference_coordinate": {
             "lat": 52.481477,
             "lng": -1.906951
           },
+          "reference_locality": "Birmingham",
+          "reference_name": "Shakespeare, Birmingham - Victorian Red-Brick Local",
           "reference_postcode": "B3 1JJ",
-          "source": "camra-pubs-location-audit",
-          "url": "https://camra.org.uk/pubs/121105"
+          "review_url": "https://github.com/bristolbagpiper/BassBeerMap/issues/5#issuecomment-6498380776",
+          "reviewed_by": "bristolbagpiper",
+          "source": "camra",
+          "url": "https://camra.org.uk/pubs/shakespeare-birmingham-121105"
         }
       ],
-      "lat": 52.481477,
-      "lng": -1.906951,
+      "lat": 52.4815327,
+      "lng": -1.9069232,
       "place_name": "Birmingham: Central",
       "postcode": "B3 1JJ",
       "pub_name": "Shakespeare (Summer Row)",
-      "status": "venue_coordinate_requires_review",
+      "status": "verified_venue",
       "venue_id": "v-e07e9d6f-d8ee-506b-bcd7-f8379224bc4e"
     },
     "shakespeare inn|shardlow|de72 2gp": {

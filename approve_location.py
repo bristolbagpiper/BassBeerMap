@@ -99,6 +99,18 @@ def camra_previous_name_matches(page_text, listing):
     return bool(expected and any(normalize(part) == expected for part in re.split(r'[,;]', text)))
 
 
+def camra_heading_confirms_listing_alias(listing, source_name, page_text):
+    """Require both a directory former name and CAMRA's exact heading alias."""
+    match = re.fullmatch(r'\s*(.*?)\s*\(was\s+([^()]+)\)\s*', listing, re.I)
+    if not match:
+        return False
+    current, former = match.groups()
+    if not normalized_place_name(former) or normalized_place_name(former) != normalized_place_name(source_name):
+        return False
+    aliases = re.findall(r'\(([^()]*)\)', extract_camra_heading(page_text))
+    return any(normalized_place_name(current) == normalized_place_name(alias) for alias in aliases)
+
+
 def validate_retained_point(command, row, entry, source, camra_page_text=''):
     pin = entry.get('verified_pin') or {}
     target = {'lat': command['lat'], 'lng': command['lng']}
@@ -113,7 +125,9 @@ def validate_retained_point(command, row, entry, source, camra_page_text=''):
         raise ValueError('CAMRA address or coordinates do not corroborate the saved point')
     tokens = lambda value: set(re.findall(r'[a-z0-9]+', value.casefold())) - {'the', 'at', 'and', 'inn', 'pub', 'bar', 'hotel'}
     listing_tokens = tokens(row['pub_name'])
-    if (len(listing_tokens) < 2 or not listing_tokens.issubset(tokens(source.get('name', '')))) and not camra_previous_name_matches(camra_page_text, row['pub_name']):
+    if ((len(listing_tokens) < 2 or not listing_tokens.issubset(tokens(source.get('name', ''))))
+            and not camra_previous_name_matches(camra_page_text, row['pub_name'])
+            and not camra_heading_confirms_listing_alias(row['pub_name'], source.get('name', ''), camra_page_text)):
         raise ValueError('CAMRA name does not identify the listed venue')
     return pin
 

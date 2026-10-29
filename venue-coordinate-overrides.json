@@ -3109,16 +3109,20 @@
       "source_url": "https://camra.org.uk/pubs/195849"
     },
     "tynemouth wmc/social club (pmc)|tynemouth|ne30 4dx": {
-      "audit_reason": "postcode_fallback_replaced",
-      "checked_at": "2026-09-11",
-      "lat": 55.0177047,
-      "lng": -1.4246349,
-      "previous_difference_metres": 7.1,
-      "previous_lat": 55.017703,
-      "previous_lng": -1.424524,
-      "previous_source": "postcode",
-      "source": "camra-pubs-location-audit",
-      "source_url": "https://camra.org.uk/pubs/193793"
+      "audit_reason": "manual_named_place_address_and_map_check",
+      "checked_at": "2026-10-29",
+      "corroborating_source_url": "",
+      "lat": 55.0177967,
+      "lng": -1.4250238,
+      "previous_difference_metres": 26.8,
+      "previous_lat": 55.0177047,
+      "previous_lng": -1.4246349,
+      "previous_source": "camra-pubs-location-audit",
+      "reference_address": "15-16 Front St, Tynemouth, North Shields NE30 4DX",
+      "reference_name": "Tynemouth & District Working Mens Social Club & Institute Ltd",
+      "review_note": "Repository owner confirmed the named-place marker and full address in issue #5.",
+      "source": "google-maps-named-place",
+      "source_url": "https://www.google.com/maps/place/Tynemouth+%26+District+Working+Mens+Social+Club+%26+Institute+Ltd/@55.0177967,-1.4250238,492m/data=!3m2!1e3!4b1!4m6!3m5!1s0x487e6ec0b76f901f:0x2e5db25287634b8!8m2!3d55.0177967!4d-1.4250238!16s%2Fg%2F1thd6769"
     },
     "unicorn|newton solney|de15 0sg": {
       "audit_reason": "postcode_fallback_replaced",

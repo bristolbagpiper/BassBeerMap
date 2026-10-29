@@ -1,7 +1,7 @@
 {
   "counts": {
-    "venue_coordinate_requires_review": 15,
-    "verified_venue": 1029
+    "venue_coordinate_requires_review": 14,
+    "verified_venue": 1030
   },
   "generated_at": "2026-10-29",
   "policy": {
@@ -26955,40 +26955,31 @@
       "venue_id": "v-896703d0-3830-5aad-9d85-cb50c7fc4a52"
     },
     "tynemouth wmc/social club (pmc)|tynemouth|ne30 4dx": {
-      "coordinate_source": "camra-pubs-location-audit",
-      "display_precision": "postcode",
+      "coordinate_source": "owner-reviewed-google-maps",
+      "display_precision": "venue",
       "evidence": [
         {
-          "checked_at": "2026-09-11",
-          "difference_metres": 0.0,
-          "match": "venue_name_and_full_postcode",
+          "checked_at": "2026-10-29",
+          "match": "owner_reviewed_named_place_and_full_postcode",
+          "reference_address": "15-16 Front St, Tynemouth, North Shields NE30 4DX",
           "reference_coordinate": {
-            "lat": 55.0177047,
-            "lng": -1.4246349
+            "lat": 55.0177967,
+            "lng": -1.4250238
           },
+          "reference_name": "Tynemouth & District Working Mens Social Club & Institute Ltd",
           "reference_postcode": "NE30 4DX",
-          "source": "camra",
-          "url": "https://camra.org.uk/pubs/193793"
-        },
-        {
-          "checked_at": "2026-09-11",
-          "difference_metres": 0,
-          "match": "postcode_fallback_replaced",
-          "reference_coordinate": {
-            "lat": 55.0177047,
-            "lng": -1.4246349
-          },
-          "reference_postcode": "NE30 4DX",
-          "source": "camra-pubs-location-audit",
-          "url": "https://camra.org.uk/pubs/193793"
+          "review_url": "https://github.com/bristolbagpiper/BassBeerMap/issues/5#issuecomment-6507899224",
+          "reviewed_by": "bristolbagpiper",
+          "source": "google-maps-named-place",
+          "url": "https://www.google.com/maps/place/Tynemouth+%26+District+Working+Mens+Social+Club+%26+Institute+Ltd/@55.0177967,-1.4250238,492m/data=!3m2!1e3!4b1!4m6!3m5!1s0x487e6ec0b76f901f:0x2e5db25287634b8!8m2!3d55.0177967!4d-1.4250238!16s%2Fg%2F1thd6769"
         }
       ],
-      "lat": 55.0177047,
-      "lng": -1.4246349,
+      "lat": 55.0177967,
+      "lng": -1.4250238,
       "place_name": "Tynemouth",
       "postcode": "NE30 4DX",
       "pub_name": "Tynemouth WMC/Social Club (PMC)",
-      "status": "venue_coordinate_requires_review",
+      "status": "verified_venue",
       "venue_id": "v-13a2ad1c-e050-5c7a-944e-064bff66e040"
     },
     "uncle toms cabin|cookham dean|sl6 9nt": {

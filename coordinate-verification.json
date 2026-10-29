@@ -1,7 +1,7 @@
 {
   "counts": {
-    "venue_coordinate_requires_review": 17,
-    "verified_venue": 1027
+    "venue_coordinate_requires_review": 16,
+    "verified_venue": 1028
   },
   "generated_at": "2026-10-29",
   "policy": {
@@ -26687,28 +26687,38 @@
       "venue_id": "v-db7d725b-d3e5-5443-aec0-3dab78a19eae"
     },
     "trentside cricket club (pmc)|burton u-t: branston|de14 3dp": {
-      "coordinate_source": "food-standards-agency-fhrs",
-      "display_precision": "postcode",
+      "coordinate_source": "owner-reviewed-camra",
+      "display_precision": "venue",
       "evidence": [
         {
-          "checked_at": "2026-09-11",
-          "difference_metres": 0.0,
-          "match": "venue_name_or_safe_alias_and_full_postcode",
+          "checked_at": "2026-10-29",
+          "match": "owner_reviewed_named_address_and_map",
+          "reference_address": "82 Burton Road",
           "reference_coordinate": {
-            "lat": 52.7872505187988,
-            "lng": -1.65420198440552
+            "lat": 52.7867,
+            "lng": -1.651
           },
-          "reference_postcode": "DE14 3DP",
-          "source": "food_standards_agency",
-          "url": "https://api.ratings.food.gov.uk/Establishments?address=DE14+3DP&pageSize=100&pageNumber=1"
+          "reference_locality": "Burton upon Trent",
+          "reference_name": "Trentside Cricket Club, Burton upon Trent",
+          "reference_postcode": "DE14 3DN",
+          "review_url": "https://github.com/bristolbagpiper/BassBeerMap/issues/5#issuecomment-6507387821",
+          "reviewed_by": "bristolbagpiper",
+          "source": "camra",
+          "url": "https://camra.org.uk/pubs/124106"
         }
       ],
-      "lat": 52.7872505187988,
-      "lng": -1.65420198440552,
+      "lat": 52.7867,
+      "lng": -1.651,
+      "metadata_issue": {
+        "field": "postcode",
+        "listed": "DE14 3DP",
+        "reference": "DE14 3DN",
+        "source_url": "https://camra.org.uk/pubs/124106"
+      },
       "place_name": "Burton U-T: Branston",
       "postcode": "DE14 3DP",
       "pub_name": "Trentside Cricket Club (PMC)",
-      "status": "venue_coordinate_requires_review",
+      "status": "verified_venue",
       "venue_id": "v-8e577f40-1d4f-5d93-a248-eb1f6eb244e4"
     },
     "trinity|bath|ba1 2da": {

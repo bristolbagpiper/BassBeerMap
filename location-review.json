@@ -9425,16 +9425,28 @@
             "FSA no longer provides an unambiguous agreeing venue"
           ],
           "status": "unverified"
+        },
+        {
+          "date": "2026-10-29",
+          "reasons": [
+            "Directory postcode DE14 3DP conflicts with reference address DE14 3DN"
+          ],
+          "status": "review_needed"
         }
       ],
-      "last_checked": "2026-10-23",
+      "last_checked": "2026-10-29",
       "place_name": "Burton U-T: Branston",
       "postcode": "DE14 3DP",
       "pub_name": "Trentside Cricket Club (PMC)",
       "reasons": [
-        "FSA no longer provides an unambiguous agreeing venue"
+        "Directory postcode DE14 3DP conflicts with reference address DE14 3DN"
       ],
-      "reference": {},
+      "reference": {
+        "field": "postcode",
+        "listed": "DE14 3DP",
+        "reference": "DE14 3DN",
+        "source_url": "https://camra.org.uk/pubs/124106"
+      },
       "research": {
         "checked_at": "2026-10-20",
         "coverage": {
@@ -9463,15 +9475,11 @@
         "food_standards_agency": {
           "status": "conflict",
           "url": "https://api.ratings.food.gov.uk/Establishments?address=DE14+3DP&pageSize=100&pageNumber=1"
-        },
-        "fsa_independent": {
-          "status": "coordinate_agreement",
-          "url": "https://ratings.food.gov.uk/business/1248081"
         }
       },
       "source_error": null,
-      "status": "unverified",
-      "unverified": true,
+      "status": "review_needed",
+      "unverified": false,
       "venue_id": "v-8e577f40-1d4f-5d93-a248-eb1f6eb244e4"
     },
     "v-8ed8c1ad-ceb1-56c0-9c67-1218004eb836": {
@@ -16689,5 +16697,5 @@
     }
   },
   "schema_version": 1,
-  "unverified_count": 17
+  "unverified_count": 16
 }

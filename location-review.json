@@ -1,5 +1,5 @@
 {
-  "active_count": 21,
+  "active_count": 20,
   "records": {
     "v-00a08839-2b8a-5782-b6c7-0bdce4cddb2f": {
       "active": false,
@@ -13944,7 +13944,7 @@
       "venue_id": "v-d53ed861-78a3-55b6-8298-dc271b602e13"
     },
     "v-d571346c-3991-578a-855c-37a93c47aaa3": {
-      "active": true,
+      "active": false,
       "first_seen": "2026-10-26",
       "history": [
         {
@@ -13953,15 +13953,18 @@
             "Reference venue name changed"
           ],
           "status": "unverified"
+        },
+        {
+          "date": "2026-10-29",
+          "reasons": [],
+          "status": "resolved"
         }
       ],
       "last_checked": "2026-10-29",
       "place_name": "St Albans: Central",
       "postcode": "AL3 4QE",
       "pub_name": "Verulam Arms",
-      "reasons": [
-        "Reference venue name changed"
-      ],
+      "reasons": [],
       "reference": {},
       "research": {
         "checked_at": "2026-10-27",
@@ -13984,8 +13987,8 @@
         }
       },
       "source_error": null,
-      "status": "unverified",
-      "unverified": true,
+      "status": "resolved",
+      "unverified": false,
       "venue_id": "v-d571346c-3991-578a-855c-37a93c47aaa3"
     },
     "v-d5a95fe5-2d9e-5854-9a27-0fda70c5267a": {
@@ -16695,5 +16698,5 @@
     }
   },
   "schema_version": 1,
-  "unverified_count": 14
+  "unverified_count": 13
 }

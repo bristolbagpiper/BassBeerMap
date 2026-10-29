@@ -1,7 +1,7 @@
 {
   "counts": {
-    "venue_coordinate_requires_review": 14,
-    "verified_venue": 1030
+    "venue_coordinate_requires_review": 13,
+    "verified_venue": 1031
   },
   "generated_at": "2026-10-29",
   "policy": {
@@ -27317,8 +27317,23 @@
     },
     "verulam arms|st albans: central|al3 4qe": {
       "coordinate_source": "openstreetmap-gb-extract",
-      "display_precision": "postcode",
+      "display_precision": "venue",
       "evidence": [
+        {
+          "checked_at": "2026-10-29",
+          "match": "owner_confirmed_saved_point_corroborated_by_named_camra_venue",
+          "reference_address": "41 Lower Dagnall Street",
+          "reference_coordinate": {
+            "lat": 51.752815442531,
+            "lng": -0.34408450126648
+          },
+          "reference_name": "Verulam, St. Albans - Record Player Pub",
+          "reference_postcode": "AL3 4QE",
+          "review_url": "https://github.com/bristolbagpiper/BassBeerMap/issues/5#issuecomment-6508031961",
+          "reviewed_by": "bristolbagpiper",
+          "source": "camra",
+          "url": "https://camra.org.uk/pubs/192538"
+        },
         {
           "checked_at": "2026-09-11",
           "difference_metres": 10.0,
@@ -27337,7 +27352,7 @@
       "place_name": "St Albans: Central",
       "postcode": "AL3 4QE",
       "pub_name": "Verulam Arms",
-      "status": "venue_coordinate_requires_review",
+      "status": "verified_venue",
       "venue_id": "v-d571346c-3991-578a-855c-37a93c47aaa3"
     },
     "victoria inn|alfreton|de55 7gl": {

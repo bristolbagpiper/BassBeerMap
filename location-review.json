@@ -1,5 +1,5 @@
 {
-  "active_count": 31,
+  "active_count": 30,
   "records": {
     "v-00a08839-2b8a-5782-b6c7-0bdce4cddb2f": {
       "active": false,
@@ -12976,7 +12976,7 @@
       "venue_id": "v-c62d2143-2a1f-54e0-a9f9-9ee5893a5d48"
     },
     "v-c62f31b0-c5b0-546c-979e-12fac920a47a": {
-      "active": true,
+      "active": false,
       "first_seen": "2026-10-25",
       "history": [
         {
@@ -12985,15 +12985,18 @@
             "Reference venue name changed"
           ],
           "status": "unverified"
+        },
+        {
+          "date": "2026-10-29",
+          "reasons": [],
+          "status": "resolved"
         }
       ],
-      "last_checked": "2026-10-28",
+      "last_checked": "2026-10-29",
       "place_name": "Chorley",
       "postcode": "PR7 1BS",
       "pub_name": "Shepherds Hall Ale House",
-      "reasons": [
-        "Reference venue name changed"
-      ],
+      "reasons": [],
       "reference": {},
       "research": {
         "checked_at": "2026-10-27",
@@ -13031,8 +13034,8 @@
         }
       },
       "source_error": null,
-      "status": "unverified",
-      "unverified": true,
+      "status": "resolved",
+      "unverified": false,
       "venue_id": "v-c62f31b0-c5b0-546c-979e-12fac920a47a"
     },
     "v-c7575fb2-9a9e-5c73-aaad-76dfb8c5ba4b": {
@@ -16661,5 +16664,5 @@
     }
   },
   "schema_version": 1,
-  "unverified_count": 26
+  "unverified_count": 25
 }

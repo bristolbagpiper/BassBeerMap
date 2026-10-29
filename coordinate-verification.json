@@ -1,7 +1,7 @@
 {
   "counts": {
-    "venue_coordinate_requires_review": 26,
-    "verified_venue": 1018
+    "venue_coordinate_requires_review": 25,
+    "verified_venue": 1019
   },
   "generated_at": "2026-10-29",
   "policy": {
@@ -23244,7 +23244,7 @@
     },
     "shepherds hall ale house|chorley|pr7 1bs": {
       "coordinate_source": "openstreetmap-gb-extract",
-      "display_precision": "postcode",
+      "display_precision": "venue",
       "evidence": [
         {
           "checked_at": "2026-09-11",
@@ -23257,6 +23257,21 @@
           "reference_postcode": "PR7 1BS",
           "source": "camra",
           "url": "https://camra.org.uk/pubs/180027"
+        },
+        {
+          "checked_at": "2026-10-29",
+          "match": "owner_confirmed_saved_point_corroborated_by_named_camra_venue",
+          "reference_address": "63-67 Chapel Street",
+          "reference_coordinate": {
+            "lat": 53.652569,
+            "lng": -2.628662
+          },
+          "reference_name": "Shepherds' Hall Ale House & Victoria Rooms, Chorley",
+          "reference_postcode": "PR7 1BS",
+          "review_url": "https://github.com/bristolbagpiper/BassBeerMap/issues/5#issuecomment-6505084384",
+          "reviewed_by": "bristolbagpiper",
+          "source": "camra",
+          "url": "https://camra.org.uk/pubs/180027"
         }
       ],
       "lat": 53.6525648,
@@ -23264,7 +23279,7 @@
       "place_name": "Chorley",
       "postcode": "PR7 1BS",
       "pub_name": "Shepherds Hall Ale House",
-      "status": "venue_coordinate_requires_review",
+      "status": "verified_venue",
       "venue_id": "v-c62f31b0-c5b0-546c-979e-12fac920a47a"
     },
     "shilton vaults|earl shilton|le9 7na": {

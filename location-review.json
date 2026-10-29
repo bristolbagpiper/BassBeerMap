@@ -1,5 +1,5 @@
 {
-  "active_count": 24,
+  "active_count": 23,
   "records": {
     "v-00a08839-2b8a-5782-b6c7-0bdce4cddb2f": {
       "active": false,
@@ -15504,7 +15504,7 @@
       "venue_id": "v-ec13b2c3-01a7-5b02-8729-8cfc02ae51bf"
     },
     "v-ed990d48-e259-5f95-be08-d303379dc514": {
-      "active": true,
+      "active": false,
       "first_seen": "2026-10-28",
       "history": [
         {
@@ -15513,15 +15513,18 @@
             "Reference venue name changed"
           ],
           "status": "unverified"
+        },
+        {
+          "date": "2026-10-29",
+          "reasons": [],
+          "status": "resolved"
         }
       ],
-      "last_checked": "2026-10-28",
+      "last_checked": "2026-10-29",
       "place_name": "Stoke: Trentham",
       "postcode": "ST4 8BU",
       "pub_name": "Toby Carvery Trentham Village",
-      "reasons": [
-        "Reference venue name changed"
-      ],
+      "reasons": [],
       "reference": {},
       "research": {},
       "source_checks": {
@@ -15535,8 +15538,8 @@
         }
       },
       "source_error": null,
-      "status": "unverified",
-      "unverified": true,
+      "status": "resolved",
+      "unverified": false,
       "venue_id": "v-ed990d48-e259-5f95-be08-d303379dc514"
     },
     "v-edbf046b-76d8-5df9-9d71-3d63d37148e6": {
@@ -16686,5 +16689,5 @@
     }
   },
   "schema_version": 1,
-  "unverified_count": 18
+  "unverified_count": 17
 }

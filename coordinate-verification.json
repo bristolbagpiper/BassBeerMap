@@ -1,7 +1,7 @@
 {
   "counts": {
-    "venue_coordinate_requires_review": 18,
-    "verified_venue": 1026
+    "venue_coordinate_requires_review": 17,
+    "verified_venue": 1027
   },
   "generated_at": "2026-10-29",
   "policy": {
@@ -26429,8 +26429,23 @@
     },
     "toby carvery trentham village|stoke: trentham|st4 8bu": {
       "coordinate_source": "food-standards-agency-fhrs",
-      "display_precision": "postcode",
+      "display_precision": "venue",
       "evidence": [
+        {
+          "checked_at": "2026-10-29",
+          "match": "owner_confirmed_saved_point_corroborated_by_named_camra_venue",
+          "reference_address": "206 Longton Road",
+          "reference_coordinate": {
+            "lat": 52.9651,
+            "lng": -2.18118
+          },
+          "reference_name": "Toby Carvery, Stoke-on-Trent - Carvery Food Pub",
+          "reference_postcode": "ST4 8BU",
+          "review_url": "https://github.com/bristolbagpiper/BassBeerMap/issues/5#issuecomment-6507200524",
+          "reviewed_by": "bristolbagpiper",
+          "source": "camra",
+          "url": "https://camra.org.uk/pubs/122990"
+        },
         {
           "checked_at": "2026-09-11",
           "difference_metres": 41.7,
@@ -26449,7 +26464,7 @@
       "place_name": "Stoke: Trentham",
       "postcode": "ST4 8BU",
       "pub_name": "Toby Carvery Trentham Village",
-      "status": "venue_coordinate_requires_review",
+      "status": "verified_venue",
       "venue_id": "v-ed990d48-e259-5f95-be08-d303379dc514"
     },
     "toby carvery|beckenham br3|br3 3hq": {

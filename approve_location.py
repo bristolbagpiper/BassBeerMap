@@ -10,6 +10,7 @@ import shutil
 from datetime import date
 from pathlib import Path
 from urllib.parse import unquote_plus, urlparse
+from urllib.request import Request, urlopen
 
 from coordinate_sources import fetch_text, name_matches, parse_camra
 from directory_release import (
@@ -26,7 +27,8 @@ CAMRA_COMMAND = re.compile(
 RETAIN_COMMAND = re.compile(
     rf'^/verify-location (?P<venue_id>{VENUE_ID}) retain '
     r'(?P<lat>-?\d+(?:\.\d+)?) (?P<lng>-?\d+(?:\.\d+)?) '
-    r'(?P<url>https://camra\.org\.uk/pubs/[a-z0-9-]+)$'
+    r'(?P<url>https://camra\.org\.uk/pubs/[a-z0-9-]+)'
+    r'(?: fsa (?P<fsa_id>\d+))?$'
 )
 GOOGLE_COMMAND = re.compile(
     rf'^/verify-location (?P<venue_id>{VENUE_ID}) google '
@@ -53,8 +55,11 @@ def approved_commands(event, owner):
         line = line.strip()
         retain = RETAIN_COMMAND.fullmatch(line)
         if retain:
-            commands.append({'kind': 'retain', 'venue_id': retain['venue_id'],
-                             'lat': float(retain['lat']), 'lng': float(retain['lng']), 'url': retain['url']})
+            command = {'kind': 'retain', 'venue_id': retain['venue_id'],
+                       'lat': float(retain['lat']), 'lng': float(retain['lng']), 'url': retain['url']}
+            if retain['fsa_id']:
+                command['fsa_id'] = int(retain['fsa_id'])
+            commands.append(command)
             continue
         camra = CAMRA_COMMAND.fullmatch(line)
         if camra:
@@ -119,7 +124,22 @@ def camra_heading_confirms_listing_alias(listing, source_name, page_text):
     return any(normalized_place_name(current) == normalized_place_name(alias) for alias in aliases)
 
 
-def validate_retained_point(command, row, entry, source, camra_page_text=''):
+def fsa_confirms_address_name(row, source, record, expected_id):
+    """Corroborate a name difference only with an exact FSA premises name and street."""
+    if not record or record.get('FHRSID') != expected_id:
+        return False
+    compact = lambda value: re.sub(r'[^a-z0-9]', '', re.sub(r'^the\s+', '', str(value).casefold().strip()))
+    listing = compact(row['pub_name'])
+    premises = compact(record.get('AddressLine1', ''))
+    street = compact(source.get('address', ''))
+    fsa_streets = [compact(record.get(f'AddressLine{i}', '')) for i in range(2, 5)]
+    fsa_name = normalized_place_name(record.get('BusinessName', ''))
+    camra_name = normalized_place_name(source.get('name', ''))
+    return bool(listing and premises == listing and street and street in fsa_streets
+                and fsa_name and fsa_name == camra_name and record.get('PostCode'))
+
+
+def validate_retained_point(command, row, entry, source, camra_page_text='', fsa_record=None):
     pin = entry.get('verified_pin') or {}
     target = {'lat': command['lat'], 'lng': command['lng']}
     if not point_valid(pin) or distance_metres(pin, target) > 0.01:
@@ -135,7 +155,8 @@ def validate_retained_point(command, row, entry, source, camra_page_text=''):
     listing_tokens = tokens(row['pub_name'])
     if ((len(listing_tokens) < 2 or not listing_tokens.issubset(tokens(source.get('name', ''))))
             and not camra_previous_name_matches(camra_page_text, row['pub_name'])
-            and not camra_heading_confirms_listing_alias(row['pub_name'], source.get('name', ''), camra_page_text)):
+            and not camra_heading_confirms_listing_alias(row['pub_name'], source.get('name', ''), camra_page_text)
+            and not fsa_confirms_address_name(row, source, fsa_record, command.get('fsa_id'))):
         raise ValueError('CAMRA name does not identify the listed venue')
     return pin
 
@@ -428,9 +449,25 @@ def approve(root, staging, event, owner):
             url = command['url']
             camra_page = fetch_text(url)
             source = parse_camra(camra_page)
-            pin = copy.deepcopy(validate_retained_point(command, row, entry, source, camra_page))
+            fsa_record = None
+            if command.get('fsa_id'):
+                request = Request(f"https://api.ratings.food.gov.uk/Establishments/{command['fsa_id']}",
+                                  headers={'User-Agent': 'BassBeerMap location review', 'Accept': 'application/json', 'x-api-version': '2'})
+                with urlopen(request, timeout=20) as response:
+                    fsa_record = json.load(response)
+                if not fsa_confirms_address_name(row, source, fsa_record, command['fsa_id']):
+                    raise ValueError('FSA record does not establish the venue name and street relationship')
+            pin = copy.deepcopy(validate_retained_point(command, row, entry, source, camra_page, fsa_record))
             pin.pop('review_required', None)
             pin.pop('review_reason', None)
+            if fsa_record:
+                pin['name_corroboration'] = {'source': 'food-standards-agency',
+                    'url': f"https://ratings.food.gov.uk/business/{command['fsa_id']}",
+                    'checked_at': date.today().isoformat(), 'business_name': fsa_record['BusinessName'],
+                    'premises_name': fsa_record['AddressLine1'], 'postcode': fsa_record['PostCode']}
+            if fsa_record and re.sub(r'\s+', '', fsa_record['PostCode']).upper() != re.sub(r'\s+', '', row['postcode']).upper():
+                pin['metadata_issue'] = {'field': 'postcode', 'listed': row['postcode'],
+                    'reference': fsa_record['PostCode'], 'source_url': f"https://ratings.food.gov.uk/business/{command['fsa_id']}"}
             pin['evidence'].insert(0, dict(source='camra', url=url, checked_at=date.today().isoformat(),
                 match='owner_confirmed_saved_point_corroborated_by_named_camra_venue',
                 reference_coordinate={'lat': source['lat'], 'lng': source['lng']},

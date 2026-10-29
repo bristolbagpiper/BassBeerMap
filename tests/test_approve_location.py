@@ -35,6 +35,21 @@ def event(body, login="bristolbagpiper", user_type="User", issue=5):
 
 
 class ApprovalCommandTests(unittest.TestCase):
+    def test_retained_point_requires_exact_fsa_premises_and_camra_name(self):
+        url = 'https://camra.org.uk/pubs/188466'
+        command = {'lat': 51.172685037242, 'lng': -4.2054578186163, 'url': url, 'fsa_id': 178413}
+        row = {'pub_name': 'Tides Out', 'postcode': 'EX34 7BP'}
+        entry = {'verified_pin': {'lat': command['lat'], 'lng': command['lng'], 'evidence': [{'source': 'camra', 'url': url}]}}
+        source = {'lat': command['lat'], 'lng': command['lng'], 'postcode': 'EX34 7BP',
+                  'address': 'Beach Road', 'name': 'Tides Inn, Woolacombe'}
+        fsa = {'FHRSID': 178413, 'BusinessName': 'The Tides Inn', 'AddressLine1': 'The Tidesout',
+               'AddressLine2': 'Beach Road', 'PostCode': 'EX34 7FG'}
+        self.assertEqual(validate_retained_point(command, row, entry, source, '', fsa), entry['verified_pin'])
+        for change in ({'AddressLine1': 'Different Pub'}, {'AddressLine2': 'Other Street'},
+                       {'BusinessName': 'Other Inn'}, {'FHRSID': 1}):
+            with self.assertRaises(ValueError):
+                validate_retained_point(command, row, entry, source, '', dict(fsa, **change))
+
     def test_retained_point_accepts_exact_documented_parenthetical_nickname(self):
         url = 'https://camra.org.uk/pubs/171270'
         command = {'lat': 52.740011107146, 'lng': -1.352965300941, 'url': url}

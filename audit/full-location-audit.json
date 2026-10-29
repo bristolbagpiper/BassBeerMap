@@ -343,7 +343,7 @@
     {
       "actionable": false,
       "area": "West Yorkshire",
-      "checked_at": "2026-10-09",
+      "checked_at": "2026-10-29",
       "comparisons": [
         {
           "address": "Hunslet Road, Hunslet, Leeds",
@@ -1769,7 +1769,7 @@
     {
       "actionable": false,
       "area": "Lancashire",
-      "checked_at": "2026-10-09",
+      "checked_at": "2026-10-29",
       "comparisons": [
         {
           "address": "Unit 3, 143 Station Road, Bamber Bridge, Preston",
@@ -3245,11 +3245,11 @@
     {
       "actionable": false,
       "area": "Staffordshire",
-      "checked_at": "2026-10-28",
+      "checked_at": "2026-10-29",
       "comparisons": [
         {
           "address": "Blacksmiths Arms, Main Street, Branston, Burton upon Trent",
-          "difference_metres": 236.3,
+          "difference_metres": 232.2,
           "lat": 52.7865142822266,
           "lng": -1.67351305484772,
           "name": "BLACKSMITHS ARMS",
@@ -3259,7 +3259,7 @@
           "url": "https://ratings.food.gov.uk/business/1743595"
         }
       ],
-      "confidence": "existing_evidence_needs_corroboration",
+      "confidence": "owner_reviewed",
       "country": "England",
       "dispense": "H",
       "independent_of_pin": true,
@@ -3269,11 +3269,11 @@
         "pub_name": "Blacksmiths"
       },
       "notes": "",
-      "owner_reviewed": false,
+      "owner_reviewed": true,
       "pg": "Perm",
       "pin": {
-        "lat": 52.7875,
-        "lng": -1.6704
+        "lat": 52.7875072,
+        "lng": -1.6704757
       },
       "place_name": "Burton U-T: Branston",
       "postcode": "DE14 3EY",
@@ -3282,7 +3282,7 @@
       "reasons": [],
       "reference": {
         "address": "Blacksmiths Arms, Main Street, Branston, Burton upon Trent",
-        "difference_metres": 236.3,
+        "difference_metres": 232.2,
         "lat": 52.7865142822266,
         "lng": -1.67351305484772,
         "name": "BLACKSMITHS ARMS",
@@ -3294,7 +3294,7 @@
       "status": "coordinate_disagreement",
       "venue_id": "v-cbc4b5d0-edd1-5be4-b287-9b1646ae7624",
       "warnings": [
-        "FSA coordinate is 236.3m from the accepted pin; informational only because the FSA geocode may be approximate"
+        "FSA coordinate is 232.2m from the accepted pin; informational only because the FSA geocode may be approximate"
       ]
     },
     {
@@ -4739,6 +4739,61 @@
       },
       "status": "nearby",
       "venue_id": "v-9baa0fd2-1959-52b9-91ed-97f0fb74ec0b",
+      "warnings": [
+        "FSA coordinate is 25-50m away; informational only"
+      ]
+    },
+    {
+      "actionable": false,
+      "area": "Derbyshire",
+      "checked_at": "2026-10-29",
+      "comparisons": [
+        {
+          "address": "BUBBLE INN STENSON ROAD, , STENSON",
+          "difference_metres": 33.7,
+          "lat": 52.8672921,
+          "lng": -1.5176301,
+          "name": "Bubble Inn",
+          "postcode": "DE73 7HL",
+          "queried_postcode": "DE73 7HL",
+          "status": "nearby",
+          "url": "https://ratings.food.gov.uk/business/230326"
+        }
+      ],
+      "confidence": "owner_reviewed",
+      "country": "England",
+      "dispense": "H",
+      "independent_of_pin": true,
+      "last": "2026 Q2",
+      "listing": {
+        "postcode": "DE73 7HL",
+        "pub_name": "Bubble Inn"
+      },
+      "notes": "",
+      "owner_reviewed": true,
+      "pg": "Perm",
+      "pin": {
+        "lat": 52.866999,
+        "lng": -1.5177571
+      },
+      "place_name": "Stenson",
+      "postcode": "DE73 7HL",
+      "priority": 2,
+      "pub_name": "Bubble Inn",
+      "reasons": [],
+      "reference": {
+        "address": "BUBBLE INN STENSON ROAD, , STENSON",
+        "difference_metres": 33.7,
+        "lat": 52.8672921,
+        "lng": -1.5176301,
+        "name": "Bubble Inn",
+        "postcode": "DE73 7HL",
+        "queried_postcode": "DE73 7HL",
+        "status": "nearby",
+        "url": "https://ratings.food.gov.uk/business/230326"
+      },
+      "status": "nearby",
+      "venue_id": "v-ead349df-157a-56af-b920-d4356a2f638b",
       "warnings": [
         "FSA coordinate is 25-50m away; informational only"
       ]
@@ -7473,7 +7528,7 @@
     {
       "actionable": false,
       "area": "Warwickshire",
-      "checked_at": "2026-10-26",
+      "checked_at": "2026-10-29",
       "comparisons": [
         {
           "name_matches": 0,
@@ -7482,7 +7537,7 @@
           "status": "no_name_match"
         }
       ],
-      "confidence": "existing_evidence_needs_corroboration",
+      "confidence": "owner_reviewed",
       "country": "England",
       "dispense": "H",
       "independent_of_pin": true,
@@ -7492,11 +7547,11 @@
         "pub_name": "Crew and Queens Hall"
       },
       "notes": "",
-      "owner_reviewed": false,
+      "owner_reviewed": true,
       "pg": "Perm",
       "pin": {
-        "lat": 52.522512,
-        "lng": -1.473486
+        "lat": 52.5224838,
+        "lng": -1.4733998
       },
       "place_name": "Nuneaton: Central",
       "postcode": "CV11 5LA",
@@ -8770,7 +8825,7 @@
     {
       "actionable": false,
       "area": "",
-      "checked_at": "2026-10-26",
+      "checked_at": "2026-10-29",
       "comparisons": [
         {
           "name_matches": 0,
@@ -8779,7 +8834,7 @@
           "status": "no_name_match"
         }
       ],
-      "confidence": "existing_evidence_needs_corroboration",
+      "confidence": "owner_reviewed",
       "country": "Northern Ireland",
       "dispense": "H",
       "independent_of_pin": true,
@@ -8789,11 +8844,11 @@
         "pub_name": "Crown Liquor Saloon"
       },
       "notes": "",
-      "owner_reviewed": false,
+      "owner_reviewed": true,
       "pg": "Guest",
       "pin": {
-        "lat": 54.5947112,
-        "lng": -5.9341412
+        "lat": 54.5947018,
+        "lng": -5.9341146
       },
       "place_name": "Belfast",
       "postcode": "BT2 7BA",
@@ -11517,7 +11572,7 @@
     {
       "actionable": false,
       "area": "Derbyshire",
-      "checked_at": "2026-10-09",
+      "checked_at": "2026-10-29",
       "comparisons": [
         {
           "address": "35 Stanton Road, , Ilkeston",
@@ -12344,7 +12399,7 @@
     {
       "actionable": false,
       "area": "West Midlands",
-      "checked_at": "2026-10-09",
+      "checked_at": "2026-10-29",
       "comparisons": [
         {
           "address": "Halfway House, 226 Lichfield Road, Sutton Four Oaks, Birmingham",
@@ -13036,6 +13091,61 @@
       "venue_id": "v-7acff0ac-109f-5c52-83e8-add11cb06319",
       "warnings": [
         "FSA comparison is inconclusive; absence of a match does not contradict accepted evidence"
+      ]
+    },
+    {
+      "actionable": false,
+      "area": "Cornwall",
+      "checked_at": "2026-10-29",
+      "comparisons": [
+        {
+          "address": "Harbour Pool And Billiards Club, The Wharf, St Ives, Cornwall",
+          "difference_metres": 25.8,
+          "lat": 50.213557,
+          "lng": -5.480003,
+          "name": "Harbour Pool & Billiards Club",
+          "postcode": "TR26 1LF",
+          "queried_postcode": "TR26 1LF",
+          "status": "nearby",
+          "url": "https://ratings.food.gov.uk/business/573976"
+        }
+      ],
+      "confidence": "owner_reviewed",
+      "country": "England",
+      "dispense": "H",
+      "independent_of_pin": true,
+      "last": "2026 Q2",
+      "listing": {
+        "postcode": "TR26 1LF",
+        "pub_name": "Harbour Pool Club (PMC)"
+      },
+      "notes": "",
+      "owner_reviewed": true,
+      "pg": "Guest",
+      "pin": {
+        "lat": 50.2137882,
+        "lng": -5.4799693
+      },
+      "place_name": "St Ives",
+      "postcode": "TR26 1LF",
+      "priority": 2,
+      "pub_name": "Harbour Pool Club (PMC)",
+      "reasons": [],
+      "reference": {
+        "address": "Harbour Pool And Billiards Club, The Wharf, St Ives, Cornwall",
+        "difference_metres": 25.8,
+        "lat": 50.213557,
+        "lng": -5.480003,
+        "name": "Harbour Pool & Billiards Club",
+        "postcode": "TR26 1LF",
+        "queried_postcode": "TR26 1LF",
+        "status": "nearby",
+        "url": "https://ratings.food.gov.uk/business/573976"
+      },
+      "status": "nearby",
+      "venue_id": "v-ad92f484-649e-5618-98b2-57eab539a803",
+      "warnings": [
+        "FSA coordinate is 25-50m away; informational only"
       ]
     },
     {
@@ -15391,7 +15501,7 @@
     {
       "actionable": false,
       "area": "Staffordshire",
-      "checked_at": "2026-10-09",
+      "checked_at": "2026-10-29",
       "comparisons": [
         {
           "address": "Cheddleton Road, Leek, Staffordshire",
@@ -16698,7 +16808,7 @@
     {
       "actionable": false,
       "area": "Derbyshire",
-      "checked_at": "2026-10-09",
+      "checked_at": "2026-10-29",
       "comparisons": [
         {
           "name_matches": 0,
@@ -16914,7 +17024,7 @@
     {
       "actionable": false,
       "area": "Derbyshire",
-      "checked_at": "2026-10-09",
+      "checked_at": "2026-10-29",
       "comparisons": [
         {
           "name_matches": 0,
@@ -17004,7 +17114,7 @@
     {
       "actionable": false,
       "area": "Derbyshire",
-      "checked_at": "2026-10-13",
+      "checked_at": "2026-10-29",
       "comparisons": [
         {
           "name_matches": 0,
@@ -17013,7 +17123,7 @@
           "status": "no_name_match"
         }
       ],
-      "confidence": "existing_evidence_needs_corroboration",
+      "confidence": "owner_reviewed",
       "country": "England",
       "dispense": "G/H",
       "independent_of_pin": true,
@@ -17023,11 +17133,11 @@
         "pub_name": "Milford Sunshine Social Club (PMC)"
       },
       "notes": "",
-      "owner_reviewed": false,
+      "owner_reviewed": true,
       "pg": "Perm",
       "pin": {
-        "lat": 53.002795,
-        "lng": -1.480413
+        "lat": 53.002819,
+        "lng": -1.4804092
       },
       "place_name": "Milford",
       "postcode": "DE56 0QH",
@@ -17998,7 +18108,7 @@
     {
       "actionable": false,
       "area": "Leicestershire",
-      "checked_at": "2026-10-16",
+      "checked_at": "2026-10-29",
       "comparisons": [
         {
           "name_matches": 0,
@@ -18007,7 +18117,7 @@
           "status": "no_name_match"
         }
       ],
-      "confidence": "existing_evidence_needs_corroboration",
+      "confidence": "owner_reviewed",
       "country": "England",
       "dispense": "G/J",
       "independent_of_pin": true,
@@ -18017,11 +18127,11 @@
         "pub_name": "New Inn"
       },
       "notes": "",
-      "owner_reviewed": false,
+      "owner_reviewed": true,
       "pg": "Perm",
       "pin": {
-        "lat": 52.7568,
-        "lng": -1.39098
+        "lat": 52.7551846,
+        "lng": -1.3908139
       },
       "place_name": "Peggs Green",
       "postcode": "LE67 8JE",
@@ -18498,7 +18608,7 @@
     {
       "actionable": false,
       "area": "Leicestershire",
-      "checked_at": "2026-10-17",
+      "checked_at": "2026-10-29",
       "comparisons": [
         {
           "name_matches": 0,
@@ -18507,7 +18617,7 @@
           "status": "no_name_match"
         }
       ],
-      "confidence": "existing_evidence_needs_corroboration",
+      "confidence": "owner_reviewed",
       "country": "England",
       "dispense": "H",
       "independent_of_pin": true,
@@ -18517,11 +18627,11 @@
         "pub_name": "Oat"
       },
       "notes": "Quality warning (May 26)",
-      "owner_reviewed": false,
+      "owner_reviewed": true,
       "pg": "Guest",
       "pin": {
-        "lat": 52.476708,
-        "lng": -0.911061
+        "lat": 52.4767156,
+        "lng": -0.9110755
       },
       "place_name": "Little Bowden",
       "postcode": "LE16 8AN",
@@ -19070,7 +19180,7 @@
     {
       "actionable": false,
       "area": "Staffordshire",
-      "checked_at": "2026-10-09",
+      "checked_at": "2026-10-29",
       "comparisons": [
         {
           "address": "Froghall Road, Ipstones, Stoke On Trent Staffordshire",
@@ -22785,7 +22895,7 @@
     {
       "actionable": false,
       "area": "Warwickshire",
-      "checked_at": "2026-10-09",
+      "checked_at": "2026-10-29",
       "comparisons": [
         {
           "name_matches": 1,
@@ -23092,7 +23202,7 @@
     {
       "actionable": false,
       "area": "Leicestershire",
-      "checked_at": "2026-10-20",
+      "checked_at": "2026-10-29",
       "comparisons": [
         {
           "address": "4A Wigston Road, Oadby, Leicestershire",
@@ -23106,7 +23216,7 @@
           "url": "https://ratings.food.gov.uk/business/27779"
         }
       ],
-      "confidence": "existing_evidence_needs_corroboration",
+      "confidence": "owner_reviewed",
       "country": "England",
       "dispense": "H",
       "independent_of_pin": true,
@@ -23116,11 +23226,11 @@
         "pub_name": "Royal British Legion"
       },
       "notes": "",
-      "owner_reviewed": false,
+      "owner_reviewed": true,
       "pg": "Perm",
       "pin": {
-        "lat": 52.5973603,
-        "lng": -1.0808484
+        "lat": 52.5973763,
+        "lng": -1.0807904
       },
       "place_name": "Oadby",
       "postcode": "LE2 5QA",
@@ -23467,7 +23577,7 @@
     {
       "actionable": false,
       "area": "Nottinghamshire",
-      "checked_at": "2026-10-09",
+      "checked_at": "2026-10-29",
       "comparisons": [
         {
           "address": "Royal Oak, Main Road, Radcliffe On Trent, Nottinghamshire",
@@ -23577,11 +23687,11 @@
     {
       "actionable": false,
       "area": "Lincolnshire",
-      "checked_at": "2026-10-09",
+      "checked_at": "2026-10-29",
       "comparisons": [
         {
           "address": "Royal Oak Inn, Watery Lane, Little Cawthorpe Louth",
-          "difference_metres": 151.1,
+          "difference_metres": 154.3,
           "lat": 53.33447265625,
           "lng": 0.0382120013237,
           "name": "The Royal Oak Inn",
@@ -23591,7 +23701,7 @@
           "url": "https://ratings.food.gov.uk/business/155941"
         }
       ],
-      "confidence": "existing_evidence_needs_corroboration",
+      "confidence": "owner_reviewed",
       "country": "England",
       "dispense": "H",
       "independent_of_pin": true,
@@ -23601,11 +23711,11 @@
         "pub_name": "Royal Oak"
       },
       "notes": "",
-      "owner_reviewed": false,
+      "owner_reviewed": true,
       "pg": "Guest",
       "pin": {
-        "lat": 53.3356973,
-        "lng": 0.0391978
+        "lat": 53.335688,
+        "lng": 0.039335
       },
       "place_name": "Little Cawthorpe",
       "postcode": "LN11 8LZ",
@@ -23614,7 +23724,7 @@
       "reasons": [],
       "reference": {
         "address": "Royal Oak Inn, Watery Lane, Little Cawthorpe Louth",
-        "difference_metres": 151.1,
+        "difference_metres": 154.3,
         "lat": 53.33447265625,
         "lng": 0.0382120013237,
         "name": "The Royal Oak Inn",
@@ -23626,13 +23736,13 @@
       "status": "coordinate_disagreement",
       "venue_id": "v-f2d26093-e5ae-5c53-b055-7cdbf64a45a7",
       "warnings": [
-        "FSA coordinate is 151.1m from the accepted pin; informational only because the FSA geocode may be approximate"
+        "FSA coordinate is 154.3m from the accepted pin; informational only because the FSA geocode may be approximate"
       ]
     },
     {
       "actionable": false,
       "area": "Shropshire",
-      "checked_at": "2026-10-15",
+      "checked_at": "2026-10-29",
       "comparisons": [
         {
           "name_matches": 0,
@@ -23641,7 +23751,7 @@
           "status": "no_name_match"
         }
       ],
-      "confidence": "existing_evidence_needs_corroboration",
+      "confidence": "owner_reviewed",
       "country": "England",
       "dispense": "H",
       "independent_of_pin": true,
@@ -23651,11 +23761,11 @@
         "pub_name": "Royal Oak (The Tiddly)"
       },
       "notes": "",
-      "owner_reviewed": false,
+      "owner_reviewed": true,
       "pg": "Guest",
       "pin": {
-        "lat": 52.799564190204,
-        "lng": -2.590269923943
+        "lat": 52.7995576,
+        "lng": -2.5902823
       },
       "place_name": "Ellerdine Heath",
       "postcode": "TF6 6RL",
@@ -23732,7 +23842,7 @@
     {
       "actionable": false,
       "area": "Derbyshire",
-      "checked_at": "2026-10-09",
+      "checked_at": "2026-10-29",
       "comparisons": [
         {
           "address": "The Brewery Tap, 1 Derwent Street, Derby",
@@ -26800,7 +26910,7 @@
     {
       "actionable": false,
       "area": "Staffordshire",
-      "checked_at": "2026-10-09",
+      "checked_at": "2026-10-29",
       "comparisons": [
         {
           "address": "Three Crowns, Lichfield Road, Stone, Staffordshire",
@@ -27745,7 +27855,7 @@
     {
       "actionable": false,
       "area": "Durham",
-      "checked_at": "2026-10-09",
+      "checked_at": "2026-10-29",
       "comparisons": [
         {
           "name_matches": 1,
@@ -27925,7 +28035,7 @@
     {
       "actionable": false,
       "area": "Devon",
-      "checked_at": "2026-10-09",
+      "checked_at": "2026-10-29",
       "comparisons": [
         {
           "name_matches": 1,
@@ -28549,7 +28659,7 @@
     {
       "actionable": false,
       "area": "Bedfordshire",
-      "checked_at": "2026-10-09",
+      "checked_at": "2026-10-29",
       "comparisons": [
         {
           "name_matches": 0,
@@ -28694,18 +28804,13 @@
     {
       "actionable": false,
       "area": "Leicestershire",
-      "checked_at": "2026-10-09",
+      "checked_at": "2026-10-29",
       "comparisons": [
         {
-          "address": "Coventry Road, Hinckley, Leicestershire",
-          "difference_metres": 42.3,
-          "lat": 52.535359,
-          "lng": -1.394901,
-          "name": "Wharf Inn",
-          "postcode": "LE10 0NQ",
+          "name_matches": 0,
+          "postcode_matches": 2,
           "queried_postcode": "LE10 0NQ",
-          "status": "nearby",
-          "url": "https://ratings.food.gov.uk/business/225326"
+          "status": "no_name_match"
         }
       ],
       "confidence": "existing_evidence_needs_corroboration",
@@ -28730,20 +28835,15 @@
       "pub_name": "Wharf Inn",
       "reasons": [],
       "reference": {
-        "address": "Coventry Road, Hinckley, Leicestershire",
-        "difference_metres": 42.3,
-        "lat": 52.535359,
-        "lng": -1.394901,
-        "name": "Wharf Inn",
-        "postcode": "LE10 0NQ",
+        "name_matches": 0,
+        "postcode_matches": 2,
         "queried_postcode": "LE10 0NQ",
-        "status": "nearby",
-        "url": "https://ratings.food.gov.uk/business/225326"
+        "status": "no_name_match"
       },
-      "status": "nearby",
+      "status": "no_name_match",
       "venue_id": "v-d63ce0bc-e06c-5cae-a586-ef5e0978d05a",
       "warnings": [
-        "FSA coordinate is 25-50m away; informational only"
+        "FSA comparison is inconclusive; absence of a match does not contradict accepted evidence"
       ]
     },
     {
@@ -29641,7 +29741,7 @@
     {
       "actionable": false,
       "area": "South Wales",
-      "checked_at": "2026-10-09",
+      "checked_at": "2026-10-29",
       "comparisons": [
         {
           "address": "1-3 Newton Road, , Mumbles",
@@ -33879,59 +33979,6 @@
     },
     {
       "actionable": false,
-      "area": "Derbyshire",
-      "checked_at": "2026-10-09",
-      "comparisons": [
-        {
-          "address": "BUBBLE INN STENSON ROAD, , STENSON",
-          "difference_metres": 15.4,
-          "lat": 52.8672921,
-          "lng": -1.5176301,
-          "name": "Bubble Inn",
-          "postcode": "DE73 7HL",
-          "queried_postcode": "DE73 7HL",
-          "status": "coordinate_agreement",
-          "url": "https://ratings.food.gov.uk/business/230326"
-        }
-      ],
-      "confidence": "independent_coordinate_agreement",
-      "country": "England",
-      "dispense": "H",
-      "independent_of_pin": true,
-      "last": "2026 Q2",
-      "listing": {
-        "postcode": "DE73 7HL",
-        "pub_name": "Bubble Inn"
-      },
-      "notes": "",
-      "owner_reviewed": false,
-      "pg": "Perm",
-      "pin": {
-        "lat": 52.867160417391304,
-        "lng": -1.517700356521739
-      },
-      "place_name": "Stenson",
-      "postcode": "DE73 7HL",
-      "priority": 3,
-      "pub_name": "Bubble Inn",
-      "reasons": [],
-      "reference": {
-        "address": "BUBBLE INN STENSON ROAD, , STENSON",
-        "difference_metres": 15.4,
-        "lat": 52.8672921,
-        "lng": -1.5176301,
-        "name": "Bubble Inn",
-        "postcode": "DE73 7HL",
-        "queried_postcode": "DE73 7HL",
-        "status": "coordinate_agreement",
-        "url": "https://ratings.food.gov.uk/business/230326"
-      },
-      "status": "coordinate_agreement",
-      "venue_id": "v-ead349df-157a-56af-b920-d4356a2f638b",
-      "warnings": []
-    },
-    {
-      "actionable": false,
       "area": "Buckinghamshire",
       "checked_at": "2026-10-22",
       "comparisons": [
@@ -35099,7 +35146,7 @@
     {
       "actionable": false,
       "area": "Cheshire",
-      "checked_at": "2026-10-09",
+      "checked_at": "2026-10-29",
       "comparisons": [
         {
           "address": "Chester Road Tavern 18 Chester Road, Macclesfield, , Cheshire East",
@@ -36212,7 +36259,7 @@
     {
       "actionable": false,
       "area": "Shropshire",
-      "checked_at": "2026-10-09",
+      "checked_at": "2026-10-29",
       "comparisons": [
         {
           "address": "Cross Foxes 27 Longden Coleham, , Shrewsbury, Shropshire",
@@ -37325,7 +37372,7 @@
     {
       "actionable": false,
       "area": "Staffordshire",
-      "checked_at": "2026-10-09",
+      "checked_at": "2026-10-29",
       "comparisons": [
         {
           "address": "Devonshire Arms, 86 Station Street, Burton upon Trent",
@@ -39763,7 +39810,7 @@
     {
       "actionable": false,
       "area": "Derbyshire",
-      "checked_at": "2026-10-09",
+      "checked_at": "2026-10-29",
       "comparisons": [
         {
           "address": "1 CANAL BRIDGE, WILLINGTON, DERBY",
@@ -40447,59 +40494,6 @@
       },
       "status": "coordinate_agreement",
       "venue_id": "v-2cd5a629-617c-5b91-b526-87934aee4d0c",
-      "warnings": []
-    },
-    {
-      "actionable": false,
-      "area": "Cornwall",
-      "checked_at": "2026-10-26",
-      "comparisons": [
-        {
-          "address": "Harbour Pool And Billiards Club, The Wharf, St Ives, Cornwall",
-          "difference_metres": 18.6,
-          "lat": 50.213557,
-          "lng": -5.480003,
-          "name": "Harbour Pool & Billiards Club",
-          "postcode": "TR26 1LF",
-          "queried_postcode": "TR26 1LF",
-          "status": "coordinate_agreement",
-          "url": "https://ratings.food.gov.uk/business/573976"
-        }
-      ],
-      "confidence": "existing_evidence_needs_corroboration",
-      "country": "England",
-      "dispense": "H",
-      "independent_of_pin": false,
-      "last": "2026 Q2",
-      "listing": {
-        "postcode": "TR26 1LF",
-        "pub_name": "Harbour Pool Club (PMC)"
-      },
-      "notes": "",
-      "owner_reviewed": false,
-      "pg": "Guest",
-      "pin": {
-        "lat": 50.21372,
-        "lng": -5.48006
-      },
-      "place_name": "St Ives",
-      "postcode": "TR26 1LF",
-      "priority": 3,
-      "pub_name": "Harbour Pool Club (PMC)",
-      "reasons": [],
-      "reference": {
-        "address": "Harbour Pool And Billiards Club, The Wharf, St Ives, Cornwall",
-        "difference_metres": 18.6,
-        "lat": 50.213557,
-        "lng": -5.480003,
-        "name": "Harbour Pool & Billiards Club",
-        "postcode": "TR26 1LF",
-        "queried_postcode": "TR26 1LF",
-        "status": "coordinate_agreement",
-        "url": "https://ratings.food.gov.uk/business/573976"
-      },
-      "status": "coordinate_agreement",
-      "venue_id": "v-ad92f484-649e-5618-98b2-57eab539a803",
       "warnings": []
     },
     {
@@ -42254,7 +42248,7 @@
     {
       "actionable": false,
       "area": "Gloucs & Bristol",
-      "checked_at": "2026-10-09",
+      "checked_at": "2026-10-29",
       "comparisons": [
         {
           "address": "Kings Arms Inn, Ross Road, Newent, Gloucestershire",
@@ -42519,7 +42513,7 @@
     {
       "actionable": false,
       "area": "Derbyshire",
-      "checked_at": "2026-10-09",
+      "checked_at": "2026-10-29",
       "comparisons": [
         {
           "address": "2 Hackney Road, Hackney, Derbyshire",
@@ -43208,11 +43202,11 @@
     {
       "actionable": false,
       "area": "Northamptonshire",
-      "checked_at": "2026-10-27",
+      "checked_at": "2026-10-29",
       "comparisons": [
         {
           "address": "The Malt Shovel Public House 121 Bridge Street, , Northampton, West Northamptonshire",
-          "difference_metres": 3.3,
+          "difference_metres": 3.1,
           "lat": 52.2330811,
           "lng": -0.8969513,
           "name": "The Malt Shovel Tavern",
@@ -43222,7 +43216,7 @@
           "url": "https://ratings.food.gov.uk/business/2004291"
         }
       ],
-      "confidence": "independent_coordinate_agreement",
+      "confidence": "owner_reviewed",
       "country": "England",
       "dispense": "H",
       "independent_of_pin": true,
@@ -43232,11 +43226,11 @@
         "pub_name": "Malt Shovel"
       },
       "notes": "",
-      "owner_reviewed": false,
+      "owner_reviewed": true,
       "pg": "Guest",
       "pin": {
-        "lat": 52.233057,
-        "lng": -0.896922
+        "lat": 52.2330589,
+        "lng": -0.8969778
       },
       "place_name": "Northampton",
       "postcode": "NN1 1QF",
@@ -43245,7 +43239,7 @@
       "reasons": [],
       "reference": {
         "address": "The Malt Shovel Public House 121 Bridge Street, , Northampton, West Northamptonshire",
-        "difference_metres": 3.3,
+        "difference_metres": 3.1,
         "lat": 52.2330811,
         "lng": -0.8969513,
         "name": "The Malt Shovel Tavern",
@@ -44374,7 +44368,7 @@
     {
       "actionable": false,
       "area": "Derbyshire",
-      "checked_at": "2026-10-09",
+      "checked_at": "2026-10-29",
       "comparisons": [
         {
           "address": "New Zealand Arms, 2 Langley Street, Derby",
@@ -45964,11 +45958,11 @@
     {
       "actionable": false,
       "area": "Staffordshire",
-      "checked_at": "2026-10-26",
+      "checked_at": "2026-10-29",
       "comparisons": [
         {
           "address": "Leek Road, Endon, Stoke On Trent Staffordshire",
-          "difference_metres": 9.7,
+          "difference_metres": 7.9,
           "lat": 53.0788192749023,
           "lng": -2.10842299461365,
           "name": "Plough Inn",
@@ -45978,21 +45972,21 @@
           "url": "https://ratings.food.gov.uk/business/1259788"
         }
       ],
-      "confidence": "existing_evidence_needs_corroboration",
+      "confidence": "owner_reviewed",
       "country": "England",
       "dispense": "H",
-      "independent_of_pin": false,
+      "independent_of_pin": true,
       "last": "2026 Q2",
       "listing": {
         "postcode": "ST9 9BE",
         "pub_name": "Plough"
       },
       "notes": "",
-      "owner_reviewed": false,
+      "owner_reviewed": true,
       "pg": "Guest",
       "pin": {
-        "lat": 53.07882295454545,
-        "lng": -2.1085675545454547
+        "lat": 53.0787953,
+        "lng": -2.1085343
       },
       "place_name": "Endon",
       "postcode": "ST9 9BE",
@@ -46001,7 +45995,7 @@
       "reasons": [],
       "reference": {
         "address": "Leek Road, Endon, Stoke On Trent Staffordshire",
-        "difference_metres": 9.7,
+        "difference_metres": 7.9,
         "lat": 53.0788192749023,
         "lng": -2.10842299461365,
         "name": "Plough Inn",
@@ -46547,11 +46541,11 @@
     {
       "actionable": false,
       "area": "Devon",
-      "checked_at": "2026-10-27",
+      "checked_at": "2026-10-29",
       "comparisons": [
         {
           "address": "The Railway 197 Queen Street Newton Abbot Devon",
-          "difference_metres": 0.0,
+          "difference_metres": 3.3,
           "lat": 50.530374,
           "lng": -3.5996462,
           "name": "The Railway Brewhouse",
@@ -46561,7 +46555,7 @@
           "url": "https://ratings.food.gov.uk/business/1419570"
         }
       ],
-      "confidence": "independent_coordinate_agreement",
+      "confidence": "owner_reviewed",
       "country": "England",
       "dispense": "H",
       "independent_of_pin": true,
@@ -46571,11 +46565,11 @@
         "pub_name": "Railway Brewhouse"
       },
       "notes": "",
-      "owner_reviewed": false,
+      "owner_reviewed": true,
       "pg": "Perm",
       "pin": {
-        "lat": 50.530374,
-        "lng": -3.5996462
+        "lat": 50.5303718,
+        "lng": -3.5996933
       },
       "place_name": "Newton Abbot",
       "postcode": "TQ12 2BS",
@@ -46584,7 +46578,7 @@
       "reasons": [],
       "reference": {
         "address": "The Railway 197 Queen Street Newton Abbot Devon",
-        "difference_metres": 0.0,
+        "difference_metres": 3.3,
         "lat": 50.530374,
         "lng": -3.5996462,
         "name": "The Railway Brewhouse",
@@ -46600,7 +46594,7 @@
     {
       "actionable": false,
       "area": "Leicestershire",
-      "checked_at": "2026-10-09",
+      "checked_at": "2026-10-29",
       "comparisons": [
         {
           "address": "Railway Inn, 31 Ashby Road, Moira, Swadlincote",
@@ -47236,11 +47230,11 @@
     {
       "actionable": false,
       "area": "South Wales",
-      "checked_at": "2026-10-15",
+      "checked_at": "2026-10-29",
       "comparisons": [
         {
           "address": "Rock Inn 98 John Street, , Porthcawl, Bridgend",
-          "difference_metres": 11.4,
+          "difference_metres": 18.8,
           "lat": 51.4797706604004,
           "lng": -3.70326900482178,
           "name": "The Rock Inn",
@@ -47250,7 +47244,7 @@
           "url": "https://ratings.food.gov.uk/business/1970144"
         }
       ],
-      "confidence": "independent_coordinate_agreement",
+      "confidence": "owner_reviewed",
       "country": "Wales",
       "dispense": "H",
       "independent_of_pin": true,
@@ -47260,11 +47254,11 @@
         "pub_name": "Rock Inn"
       },
       "notes": "",
-      "owner_reviewed": false,
+      "owner_reviewed": true,
       "pg": "Guest",
       "pin": {
-        "lat": 51.4798128,
-        "lng": -3.7031183
+        "lat": 51.4799265,
+        "lng": -3.7031654
       },
       "place_name": "Porthcawl",
       "postcode": "CF36 3DT",
@@ -47273,7 +47267,7 @@
       "reasons": [],
       "reference": {
         "address": "Rock Inn 98 John Street, , Porthcawl, Bridgend",
-        "difference_metres": 11.4,
+        "difference_metres": 18.8,
         "lat": 51.4797706604004,
         "lng": -3.70326900482178,
         "name": "The Rock Inn",
@@ -48826,7 +48820,7 @@
     {
       "actionable": false,
       "area": "Bedfordshire",
-      "checked_at": "2026-10-09",
+      "checked_at": "2026-10-29",
       "comparisons": [
         {
           "address": "39 High Street, Sandy, Beds",
@@ -49568,7 +49562,7 @@
     {
       "actionable": false,
       "area": "Staffordshire",
-      "checked_at": "2026-10-09",
+      "checked_at": "2026-10-29",
       "comparisons": [
         {
           "address": "Club, 23 Main Street, Stapenhill, Burton upon Trent",
@@ -51476,7 +51470,7 @@
     {
       "actionable": false,
       "area": "Merseyside",
-      "checked_at": "2026-10-09",
+      "checked_at": "2026-10-29",
       "comparisons": [
         {
           "address": "45 - 51 St Albans Road, Liscard, Wirral",
@@ -52059,7 +52053,7 @@
     {
       "actionable": false,
       "area": "Hertfordshire",
-      "checked_at": "2026-10-09",
+      "checked_at": "2026-10-29",
       "comparisons": [
         {
           "address": "The Verulam Arms, 41 Lower Dagnall Street, St Albans, Hertfordshire",
@@ -53649,7 +53643,7 @@
     {
       "actionable": false,
       "area": "Derbyshire",
-      "checked_at": "2026-10-09",
+      "checked_at": "2026-10-29",
       "comparisons": [
         {
           "address": "WHITE SWAN INN 41 CASTLE STREET, MELBOURNE, DERBY",
@@ -54393,18 +54387,18 @@
   "summary": {
     "actionable_count": 4,
     "confidence_counts": {
-      "existing_evidence_needs_corroboration": 536,
-      "independent_coordinate_agreement": 431,
-      "owner_reviewed": 77
+      "existing_evidence_needs_corroboration": 525,
+      "independent_coordinate_agreement": 427,
+      "owner_reviewed": 92
     },
     "counts": {
       "ambiguous_or_missing_coordinates": 62,
-      "coordinate_agreement": 459,
+      "coordinate_agreement": 457,
       "coordinate_disagreement": 244,
-      "nearby": 102,
-      "no_name_match": 177
+      "nearby": 103,
+      "no_name_match": 178
     },
-    "informational_count": 598,
+    "informational_count": 600,
     "limitations": [
       "Coordinate agreement does not prove the correct building or current Bass availability.",
       "Owner-approved coordinates take priority; CAMRA remains the primary automated reference.",

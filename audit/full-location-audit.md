@@ -3,21 +3,21 @@
 Locations: 1044
 
 Actionable findings: 4
-Locations with informational observations: 598 (may also have an actionable finding)
+Locations with informational observations: 600 (may also have an actionable finding)
 
 ## Results
 
 - coordinate_disagreement: 244
-- coordinate_agreement: 459
-- nearby: 102
-- no_name_match: 177
+- coordinate_agreement: 457
+- nearby: 103
+- no_name_match: 178
 - ambiguous_or_missing_coordinates: 62
 
 ## Confidence
 
-- owner_reviewed: 77
-- independent_coordinate_agreement: 431
-- existing_evidence_needs_corroboration: 536
+- owner_reviewed: 92
+- independent_coordinate_agreement: 427
+- existing_evidence_needs_corroboration: 525
 
 ## Limits
 
@@ -94,7 +94,7 @@ Locations with informational observations: 598 (may also have an actionable find
 | Black Swan | Uttoxeter | ST14 8JA | nearby | Informational | FSA coordinate is 25-50m away; informational only |
 | Black Swan | Shepshed | LE12 9DL | nearby | Informational | FSA coordinate is 25-50m away; informational only |
 | Blackbird | Leicester: Abbey Park | LE4 0FW | coordinate_disagreement | Informational | FSA coordinate is 117.2m from the accepted pin; informational only because the FSA geocode may be approximate |
-| Blacksmiths | Burton U-T: Branston | DE14 3EY | coordinate_disagreement | Informational | FSA coordinate is 236.3m from the accepted pin; informational only because the FSA geocode may be approximate |
+| Blacksmiths | Burton U-T: Branston | DE14 3EY | coordinate_disagreement | Informational | FSA coordinate is 232.2m from the accepted pin; informational only because the FSA geocode may be approximate |
 | Blue Bell | Sandiacre | NG10 5DF | coordinate_disagreement | Informational | FSA coordinate is 120.3m from the accepted pin; informational only because the FSA geocode may be approximate |
 | Blue Bell | Helpston | PE6 7ED | coordinate_disagreement | Informational | FSA coordinate is 52.1m from the accepted pin; informational only because the FSA geocode may be approximate |
 | Blue Dog | Sewstern | NG33 5RG | coordinate_agreement | Informational | Owner reviewed this postcode discrepancy and confirmed the displayed pub building; listing postcode retained for provenance |
@@ -123,6 +123,7 @@ Locations with informational observations: 598 (may also have an actionable find
 | Brothers Arms | Sheffield: Heeley | S8 9TZ | coordinate_disagreement | Informational | FSA coordinate is 68.7m from the accepted pin; informational only because the FSA geocode may be approximate |
 | Brownlow Inn | Congleton | CW12 4TH | ambiguous_or_missing_coordinates | Informational | FSA comparison is inconclusive; absence of a match does not contradict accepted evidence |
 | Brushmakers Arms | Oulton | ST15 8UW | nearby | Informational | FSA coordinate is 25-50m away; informational only |
+| Bubble Inn | Stenson | DE73 7HL | nearby | Informational | FSA coordinate is 25-50m away; informational only |
 | Bucknall Bowling & Recreation Club | Stoke: Bucknall | ST2 7AB | no_name_match | Informational | Owner reviewed this postcode discrepancy and confirmed the displayed pub building; listing postcode retained for provenance; FSA comparison is inconclusive; absence of a match does not contradict accepted evidence |
 | Bull | Poulton-le-Fylde | FY6 7DH | coordinate_disagreement | Informational | FSA coordinate is 93.7m from the accepted pin; informational only because the FSA geocode may be approximate |
 | Bull and Butcher | Corley Moor | CV7 8AQ | ambiguous_or_missing_coordinates | Informational | FSA comparison is inconclusive; absence of a match does not contradict accepted evidence |
@@ -285,6 +286,7 @@ Locations with informational observations: 598 (may also have an actionable find
 | Hales Bar | Harrogate | HG1 2RS | coordinate_disagreement | Informational | FSA coordinate is 71.1m from the accepted pin; informational only because the FSA geocode may be approximate |
 | Halfway House | Donisthorpe | DE12 7PX | coordinate_disagreement | Informational | FSA coordinate is 382.3m from the accepted pin; informational only because the FSA geocode may be approximate |
 | Hanging Gate | Higher Sutton | SK11 0NG | no_name_match | Informational | FSA comparison is inconclusive; absence of a match does not contradict accepted evidence |
+| Harbour Pool Club (PMC) | St Ives | TR26 1LF | nearby | Informational | FSA coordinate is 25-50m away; informational only |
 | Heanton Court | Heanton | EX31 4AX | ambiguous_or_missing_coordinates | Informational | FSA comparison is inconclusive; absence of a match does not contradict accepted evidence |
 | Heaton Hops | Heaton Chapel | SK4 5DE | coordinate_disagreement | Informational | FSA coordinate is 63.6m from the accepted pin; informational only because the FSA geocode may be approximate |
 | Hen and Chickens | Islington N1 | N1 2NA | ambiguous_or_missing_coordinates | Informational | FSA comparison is inconclusive; absence of a match does not contradict accepted evidence |
@@ -489,7 +491,7 @@ Locations with informational observations: 598 (may also have an actionable find
 | Royal Oak | Aubourn | LN5 9DT | coordinate_disagreement | Informational | FSA coordinate is 105.6m from the accepted pin; informational only because the FSA geocode may be approximate |
 | Royal Oak | Radcliffe on Trent | NG12 2FD | coordinate_disagreement | Informational | FSA coordinate is 100.7m from the accepted pin; informational only because the FSA geocode may be approximate |
 | Royal Oak | Hurdlow | SK17 9QJ | coordinate_disagreement | Informational | FSA coordinate is 82.1m from the accepted pin; informational only because the FSA geocode may be approximate |
-| Royal Oak | Little Cawthorpe | LN11 8LZ | coordinate_disagreement | Informational | FSA coordinate is 151.1m from the accepted pin; informational only because the FSA geocode may be approximate |
+| Royal Oak | Little Cawthorpe | LN11 8LZ | coordinate_disagreement | Informational | FSA coordinate is 154.3m from the accepted pin; informational only because the FSA geocode may be approximate |
 | Royal Oak (The Tiddly) | Ellerdine Heath | TF6 6RL | no_name_match | Informational | FSA comparison is inconclusive; absence of a match does not contradict accepted evidence |
 | Royal Standard | Blackheath SE3 | SE3 7JQ | coordinate_disagreement | Informational | FSA coordinate is 146.4m from the accepted pin; informational only because the FSA geocode may be approximate |
 | Royal Standard | Derby: Central | DE1 2ED | coordinate_disagreement | Informational | FSA coordinate is 71.7m from the accepted pin; informational only because the FSA geocode may be approximate |
@@ -589,7 +591,7 @@ Locations with informational observations: 598 (may also have an actionable find
 | Well | Luton | LU2 0BW | no_name_match | Informational | FSA comparison is inconclusive; absence of a match does not contradict accepted evidence |
 | Wellington Arms | Bedford | MK40 2JX | no_name_match | Informational | FSA comparison is inconclusive; absence of a match does not contradict accepted evidence |
 | Wellington Inn | Wolviston | TS22 5JY | coordinate_disagreement | Informational | FSA coordinate is 95.6m from the accepted pin; informational only because the FSA geocode may be approximate |
-| Wharf Inn | Hinckley | LE10 0NQ | nearby | Informational | FSA coordinate is 25-50m away; informational only |
+| Wharf Inn | Hinckley | LE10 0NQ | no_name_match | Informational | FSA comparison is inconclusive; absence of a match does not contradict accepted evidence |
 | Wharf Tavern | Cheswardine | TF9 2LP | ambiguous_or_missing_coordinates | Informational | FSA comparison is inconclusive; absence of a match does not contradict accepted evidence |
 | Wheatsheaf | Wirksworth | DE4 4DS | no_name_match | Informational | FSA comparison is inconclusive; absence of a match does not contradict accepted evidence |
 | Wheatsheaf | Brading | PO36 0DQ | coordinate_disagreement | Informational | FSA coordinate is 99.8m from the accepted pin; informational only because the FSA geocode may be approximate |

@@ -216,6 +216,8 @@ def normalized_place_name(value):
 
 
 def extract_camra_heading(page_text):
+    if not isinstance(page_text, str):
+        return ""
     match = re.search(r"<h1\b[^>]*>(.*?)</h1>", page_text, re.I | re.S)
     if not match:
         return ""

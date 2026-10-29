@@ -1,5 +1,5 @@
 {
-  "active_count": 26,
+  "active_count": 25,
   "records": {
     "v-00a08839-2b8a-5782-b6c7-0bdce4cddb2f": {
       "active": false,
@@ -9619,7 +9619,7 @@
       "venue_id": "v-9174bee8-338b-54f6-9f95-2f7be830455b"
     },
     "v-93765f1e-9190-594b-9c77-6b96456e5433": {
-      "active": true,
+      "active": false,
       "first_seen": "2026-10-21",
       "history": [
         {
@@ -9628,15 +9628,18 @@
             "Reference venue name changed"
           ],
           "status": "unverified"
+        },
+        {
+          "date": "2026-10-29",
+          "reasons": [],
+          "status": "resolved"
         }
       ],
-      "last_checked": "2026-10-23",
+      "last_checked": "2026-10-29",
       "place_name": "Whitwick",
       "postcode": "LE67 5GN",
       "pub_name": "Three Horseshoes (Pollys)",
-      "reasons": [
-        "Reference venue name changed"
-      ],
+      "reasons": [],
       "reference": {},
       "research": {
         "checked_at": "2026-10-27",
@@ -9663,8 +9666,8 @@
         }
       },
       "source_error": null,
-      "status": "unverified",
-      "unverified": true,
+      "status": "resolved",
+      "unverified": false,
       "venue_id": "v-93765f1e-9190-594b-9c77-6b96456e5433"
     },
     "v-93cef072-fe89-5716-82cc-0382b3448476": {
@@ -16672,5 +16675,5 @@
     }
   },
   "schema_version": 1,
-  "unverified_count": 21
+  "unverified_count": 20
 }

@@ -1,7 +1,7 @@
 {
   "counts": {
-    "venue_coordinate_requires_review": 21,
-    "verified_venue": 1023
+    "venue_coordinate_requires_review": 20,
+    "verified_venue": 1024
   },
   "generated_at": "2026-10-29",
   "policy": {
@@ -26130,8 +26130,23 @@
     },
     "three horseshoes (pollys)|whitwick|le67 5gn": {
       "coordinate_source": "camra-pubs-location-audit",
-      "display_precision": "postcode",
+      "display_precision": "venue",
       "evidence": [
+        {
+          "checked_at": "2026-10-29",
+          "match": "owner_confirmed_saved_point_corroborated_by_named_camra_venue",
+          "reference_address": "11 Leicester Road",
+          "reference_coordinate": {
+            "lat": 52.740011107146,
+            "lng": -1.352965300941
+          },
+          "reference_name": "Three Horseshoes, Whitwick - Historic Pub Interior",
+          "reference_postcode": "LE67 5GN",
+          "review_url": "https://github.com/bristolbagpiper/BassBeerMap/issues/5#issuecomment-6506245825",
+          "reviewed_by": "bristolbagpiper",
+          "source": "camra",
+          "url": "https://camra.org.uk/pubs/171270"
+        },
         {
           "checked_at": "2026-09-11",
           "difference_metres": 0.0,
@@ -26162,7 +26177,7 @@
       "place_name": "Whitwick",
       "postcode": "LE67 5GN",
       "pub_name": "Three Horseshoes (Pollys)",
-      "status": "venue_coordinate_requires_review",
+      "status": "verified_venue",
       "venue_id": "v-93765f1e-9190-594b-9c77-6b96456e5433"
     },
     "three horseshoes|barton-under-needwood|de13 8dr": {

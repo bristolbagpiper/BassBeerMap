@@ -1,5 +1,5 @@
 {
-  "active_count": 33,
+  "active_count": 32,
   "records": {
     "v-00a08839-2b8a-5782-b6c7-0bdce4cddb2f": {
       "active": false,
@@ -16116,7 +16116,7 @@
       "venue_id": "v-f5205b00-aadb-5928-870d-674117dbffab"
     },
     "v-f5aec448-8eee-52d9-abb9-75adbf3dbdbf": {
-      "active": true,
+      "active": false,
       "first_seen": "2026-10-29",
       "history": [
         {
@@ -16125,15 +16125,18 @@
             "Reference venue name changed"
           ],
           "status": "unverified"
+        },
+        {
+          "date": "2026-10-29",
+          "reasons": [],
+          "status": "resolved"
         }
       ],
       "last_checked": "2026-10-29",
       "place_name": "Stafford",
       "postcode": "ST16 2JU",
       "pub_name": "Pickled Pig at the Bankhouse",
-      "reasons": [
-        "Reference venue name changed"
-      ],
+      "reasons": [],
       "reference": {},
       "research": {},
       "source_checks": {
@@ -16147,8 +16150,8 @@
         }
       },
       "source_error": null,
-      "status": "unverified",
-      "unverified": true,
+      "status": "resolved",
+      "unverified": false,
       "venue_id": "v-f5aec448-8eee-52d9-abb9-75adbf3dbdbf"
     },
     "v-f66c462f-8eca-5321-885e-56b1bd7e0ee9": {
@@ -16659,5 +16662,5 @@
     }
   },
   "schema_version": 1,
-  "unverified_count": 28
+  "unverified_count": 27
 }

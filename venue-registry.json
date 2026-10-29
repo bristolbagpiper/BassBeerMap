@@ -1,6 +1,6 @@
 {
   "location_review": {
-    "active_count": 33,
+    "active_count": 32,
     "records": {
       "v-00a08839-2b8a-5782-b6c7-0bdce4cddb2f": {
         "active": false,
@@ -16117,7 +16117,7 @@
         "venue_id": "v-f5205b00-aadb-5928-870d-674117dbffab"
       },
       "v-f5aec448-8eee-52d9-abb9-75adbf3dbdbf": {
-        "active": true,
+        "active": false,
         "first_seen": "2026-10-29",
         "history": [
           {
@@ -16126,15 +16126,18 @@
               "Reference venue name changed"
             ],
             "status": "unverified"
+          },
+          {
+            "date": "2026-10-29",
+            "reasons": [],
+            "status": "resolved"
           }
         ],
         "last_checked": "2026-10-29",
         "place_name": "Stafford",
         "postcode": "ST16 2JU",
         "pub_name": "Pickled Pig at the Bankhouse",
-        "reasons": [
-          "Reference venue name changed"
-        ],
+        "reasons": [],
         "reference": {},
         "research": {},
         "source_checks": {
@@ -16148,8 +16151,8 @@
           }
         },
         "source_error": null,
-        "status": "unverified",
-        "unverified": true,
+        "status": "resolved",
+        "unverified": false,
         "venue_id": "v-f5aec448-8eee-52d9-abb9-75adbf3dbdbf"
       },
       "v-f66c462f-8eca-5321-885e-56b1bd7e0ee9": {
@@ -16660,7 +16663,7 @@
       }
     },
     "schema_version": 1,
-    "unverified_count": 28
+    "unverified_count": 27
   },
   "schema_version": 1,
   "venues": {
@@ -126822,6 +126825,36 @@
         "postcode": "ST16 2JU",
         "pub_name": "Pickled Pig at the Bankhouse"
       },
+      "location_approvals": [
+        {
+          "checked_at": "2026-10-29",
+          "comment_id": 6504919666,
+          "previous_pin": {
+            "evidence": [
+              {
+                "checked_at": "2026-09-11",
+                "difference_metres": 5.1,
+                "match": "venue_name_and_full_postcode",
+                "reference_coordinate": {
+                  "lat": 52.8079276,
+                  "lng": -2.1168364
+                },
+                "reference_postcode": "ST16 2JU",
+                "source": "camra",
+                "url": "https://camra.org.uk/pubs/145783"
+              }
+            ],
+            "lat": 52.8079276,
+            "lng": -2.1168364,
+            "review_reason": "Reference venue name changed",
+            "review_required": true,
+            "source": "food-standards-agency-fhrs"
+          },
+          "review_url": "https://github.com/bristolbagpiper/BassBeerMap/issues/5#issuecomment-6504919666",
+          "reviewed_by": "bristolbagpiper",
+          "source_url": "https://camra.org.uk/pubs/145783"
+        }
+      ],
       "verification_attempt": {
         "checked_at": "2026-10-29",
         "reason": "Reference venue name changed",
@@ -126847,12 +126880,25 @@
             "reference_postcode": "ST16 2JU",
             "source": "camra",
             "url": "https://camra.org.uk/pubs/145783"
+          },
+          {
+            "checked_at": "2026-10-29",
+            "match": "owner_confirmed_saved_point_corroborated_by_named_camra_venue",
+            "reference_address": "5 Salter Street",
+            "reference_coordinate": {
+              "lat": 52.807928,
+              "lng": -2.11676
+            },
+            "reference_name": "Pickled Pig, at the Bankhouse, Stafford - Live Music",
+            "reference_postcode": "ST16 2JU",
+            "review_url": "https://github.com/bristolbagpiper/BassBeerMap/issues/5#issuecomment-6504919666",
+            "reviewed_by": "bristolbagpiper",
+            "source": "camra",
+            "url": "https://camra.org.uk/pubs/145783"
           }
         ],
         "lat": 52.8079276,
         "lng": -2.1168364,
-        "review_reason": "Reference venue name changed",
-        "review_required": true,
         "source": "food-standards-agency-fhrs"
       }
     },

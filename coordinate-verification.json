@@ -1,7 +1,7 @@
 {
   "counts": {
-    "venue_coordinate_requires_review": 28,
-    "verified_venue": 1016
+    "venue_coordinate_requires_review": 27,
+    "verified_venue": 1017
   },
   "generated_at": "2026-10-29",
   "policy": {
@@ -19366,7 +19366,7 @@
     },
     "pickled pig at the bankhouse|stafford|st16 2ju": {
       "coordinate_source": "food-standards-agency-fhrs",
-      "display_precision": "postcode",
+      "display_precision": "venue",
       "evidence": [
         {
           "checked_at": "2026-09-11",
@@ -19379,6 +19379,21 @@
           "reference_postcode": "ST16 2JU",
           "source": "camra",
           "url": "https://camra.org.uk/pubs/145783"
+        },
+        {
+          "checked_at": "2026-10-29",
+          "match": "owner_confirmed_saved_point_corroborated_by_named_camra_venue",
+          "reference_address": "5 Salter Street",
+          "reference_coordinate": {
+            "lat": 52.807928,
+            "lng": -2.11676
+          },
+          "reference_name": "Pickled Pig, at the Bankhouse, Stafford - Live Music",
+          "reference_postcode": "ST16 2JU",
+          "review_url": "https://github.com/bristolbagpiper/BassBeerMap/issues/5#issuecomment-6504919666",
+          "reviewed_by": "bristolbagpiper",
+          "source": "camra",
+          "url": "https://camra.org.uk/pubs/145783"
         }
       ],
       "lat": 52.8079276,
@@ -19386,7 +19401,7 @@
       "place_name": "Stafford",
       "postcode": "ST16 2JU",
       "pub_name": "Pickled Pig at the Bankhouse",
-      "status": "venue_coordinate_requires_review",
+      "status": "verified_venue",
       "venue_id": "v-f5aec448-8eee-52d9-abb9-75adbf3dbdbf"
     },
     "pig and pump|chesterfield: central|s41 7tj": {

@@ -36,6 +36,20 @@ def event(body, login="bristolbagpiper", user_type="User", issue=5):
 
 
 class ApprovalCommandTests(unittest.TestCase):
+    def test_retained_slash_names_require_exact_camra_heading_alias(self):
+        url = 'https://camra.org.uk/pubs/143292'
+        command = {'lat': 52.921261, 'lng': -1.404047, 'url': url}
+        row = {'pub_name': 'Village/Conservative Club (PMC)', 'place_name': 'Derby: Spondon', 'postcode': 'DE21 7JP'}
+        entry = {'verified_pin': {'lat': command['lat'], 'lng': command['lng'], 'evidence': [{'source': 'camra', 'url': url}]}}
+        source = {'lat': command['lat'], 'lng': command['lng'], 'postcode': 'DE21 7JP',
+                  'address': '13 Chapel Street', 'name': 'Village Club, Derby - Club with Live Music'}
+        page = '<h1>Village Club, Derby (Spondon Conservative Club)</h1>'
+        self.assertEqual(validate_retained_point(command, row, entry, source, page), entry['verified_pin'])
+        with self.assertRaises(ValueError):
+            validate_retained_point(command, row, entry, source, '<h1>Village Club, Derby (Spondon Liberal Club)</h1>')
+        with self.assertRaises(ValueError):
+            validate_retained_point(command, row, entry, dict(source, name='Other Club, Derby'), page)
+
     def test_working_mens_club_abbreviation_requires_full_named_match(self):
         listing = 'Tynemouth WMC/Social Club (PMC)'
         self.assertTrue(manual_name_matches(listing, 'Tynemouth & District Working Mens Social Club & Institute Ltd'))

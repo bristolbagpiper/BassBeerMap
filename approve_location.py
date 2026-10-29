@@ -124,6 +124,21 @@ def camra_heading_confirms_listing_alias(listing, source_name, page_text):
     return any(normalized_place_name(current) == normalized_place_name(alias) for alias in aliases)
 
 
+def camra_heading_confirms_slash_names(listing, source_name, page_text, place_name):
+    """Require a complete primary name and an explicit CAMRA heading alias."""
+    listing = re.sub(r'\s*\(PMC\)\s*', '', listing, flags=re.I).strip()
+    parts = listing.split('/')
+    if len(parts) != 2:
+        return False
+    primary, alternate = (manual_name_tokens(part) for part in parts)
+    source_primary = manual_name_tokens(source_name.split(',', 1)[0].split(' - ', 1)[0])
+    if not primary or not alternate or primary != source_primary:
+        return False
+    locality_tokens = manual_name_tokens(place_name)
+    aliases = re.findall(r'\(([^()]*)\)', extract_camra_heading(page_text))
+    return any(manual_name_tokens(alias) - locality_tokens == alternate for alias in aliases)
+
+
 def fsa_confirms_address_name(row, source, record, expected_id, target=None):
     """Corroborate a name difference only with an exact FSA premises name and street."""
     if not record or record.get('FHRSID') != expected_id:
@@ -172,6 +187,7 @@ def validate_retained_point(command, row, entry, source, camra_page_text='', fsa
     if ((len(listing_tokens) < 2 or not listing_tokens.issubset(tokens(source.get('name', ''))))
             and not camra_previous_name_matches(camra_page_text, row['pub_name'])
             and not camra_heading_confirms_listing_alias(row['pub_name'], source.get('name', ''), camra_page_text)
+            and not camra_heading_confirms_slash_names(row['pub_name'], source.get('name', ''), camra_page_text, row.get('place_name', ''))
             and not fsa_confirms_address_name(row, source, fsa_record, command.get('fsa_id'), target)):
         raise ValueError('CAMRA name does not identify the listed venue')
     return pin

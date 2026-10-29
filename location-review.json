@@ -11805,16 +11805,28 @@
             "Reference venue name changed"
           ],
           "status": "unverified"
+        },
+        {
+          "date": "2026-10-29",
+          "reasons": [
+            "Directory postcode EX34 7BP conflicts with reference address EX34 7FG"
+          ],
+          "status": "review_needed"
         }
       ],
-      "last_checked": "2026-10-26",
+      "last_checked": "2026-10-29",
       "place_name": "Woolacombe",
       "postcode": "EX34 7BP",
       "pub_name": "Tides Out",
       "reasons": [
-        "Reference venue name changed"
+        "Directory postcode EX34 7BP conflicts with reference address EX34 7FG"
       ],
-      "reference": {},
+      "reference": {
+        "field": "postcode",
+        "listed": "EX34 7BP",
+        "reference": "EX34 7FG",
+        "source_url": "https://ratings.food.gov.uk/business/178413"
+      },
       "research": {
         "checked_at": "2026-10-27",
         "coverage": {
@@ -11840,8 +11852,8 @@
         }
       },
       "source_error": null,
-      "status": "unverified",
-      "unverified": true,
+      "status": "review_needed",
+      "unverified": false,
       "venue_id": "v-b0c6fb73-49cd-5fdf-b936-ee8fbd0ac4c6"
     },
     "v-b14c46ca-8a21-58ee-a8ef-19a530de2799": {
@@ -16675,5 +16687,5 @@
     }
   },
   "schema_version": 1,
-  "unverified_count": 20
+  "unverified_count": 19
 }

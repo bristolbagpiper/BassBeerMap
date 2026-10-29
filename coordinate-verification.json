@@ -1,7 +1,7 @@
 {
   "counts": {
-    "venue_coordinate_requires_review": 20,
-    "verified_venue": 1024
+    "venue_coordinate_requires_review": 19,
+    "verified_venue": 1025
   },
   "generated_at": "2026-10-29",
   "policy": {
@@ -26317,8 +26317,23 @@
     },
     "tides out|woolacombe|ex34 7bp": {
       "coordinate_source": "camra-pubs-location-audit",
-      "display_precision": "postcode",
+      "display_precision": "venue",
       "evidence": [
+        {
+          "checked_at": "2026-10-29",
+          "match": "owner_confirmed_saved_point_corroborated_by_named_camra_venue",
+          "reference_address": "Beach Road",
+          "reference_coordinate": {
+            "lat": 51.172685037242,
+            "lng": -4.2054578186163
+          },
+          "reference_name": "Tides Inn, Woolacombe - Restaurant-Style Inn",
+          "reference_postcode": "EX34 7BP",
+          "review_url": "https://github.com/bristolbagpiper/BassBeerMap/issues/5#issuecomment-6506397771",
+          "reviewed_by": "bristolbagpiper",
+          "source": "camra",
+          "url": "https://camra.org.uk/pubs/188466"
+        },
         {
           "checked_at": "2026-09-11",
           "difference_metres": 0.0,
@@ -26346,10 +26361,16 @@
       ],
       "lat": 51.172685037242,
       "lng": -4.2054578186163,
+      "metadata_issue": {
+        "field": "postcode",
+        "listed": "EX34 7BP",
+        "reference": "EX34 7FG",
+        "source_url": "https://ratings.food.gov.uk/business/178413"
+      },
       "place_name": "Woolacombe",
       "postcode": "EX34 7BP",
       "pub_name": "Tides Out",
-      "status": "venue_coordinate_requires_review",
+      "status": "verified_venue",
       "venue_id": "v-b0c6fb73-49cd-5fdf-b936-ee8fbd0ac4c6"
     },
     "tiger inn|easington|ts13 4ne": {

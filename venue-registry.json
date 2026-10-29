@@ -11806,16 +11806,28 @@
               "Reference venue name changed"
             ],
             "status": "unverified"
+          },
+          {
+            "date": "2026-10-29",
+            "reasons": [
+              "Directory postcode EX34 7BP conflicts with reference address EX34 7FG"
+            ],
+            "status": "review_needed"
           }
         ],
-        "last_checked": "2026-10-26",
+        "last_checked": "2026-10-29",
         "place_name": "Woolacombe",
         "postcode": "EX34 7BP",
         "pub_name": "Tides Out",
         "reasons": [
-          "Reference venue name changed"
+          "Directory postcode EX34 7BP conflicts with reference address EX34 7FG"
         ],
-        "reference": {},
+        "reference": {
+          "field": "postcode",
+          "listed": "EX34 7BP",
+          "reference": "EX34 7FG",
+          "source_url": "https://ratings.food.gov.uk/business/178413"
+        },
         "research": {
           "checked_at": "2026-10-27",
           "coverage": {
@@ -11841,8 +11853,8 @@
           }
         },
         "source_error": null,
-        "status": "unverified",
-        "unverified": true,
+        "status": "review_needed",
+        "unverified": false,
         "venue_id": "v-b0c6fb73-49cd-5fdf-b936-ee8fbd0ac4c6"
       },
       "v-b14c46ca-8a21-58ee-a8ef-19a530de2799": {
@@ -16676,7 +16688,7 @@
       }
     },
     "schema_version": 1,
-    "unverified_count": 20
+    "unverified_count": 19
   },
   "schema_version": 1,
   "venues": {
@@ -96955,6 +96967,48 @@
         "postcode": "EX34 7BP",
         "pub_name": "Tides Out"
       },
+      "location_approvals": [
+        {
+          "checked_at": "2026-10-29",
+          "comment_id": 6506397771,
+          "previous_pin": {
+            "evidence": [
+              {
+                "checked_at": "2026-09-11",
+                "difference_metres": 0.0,
+                "match": "venue_name_and_full_postcode",
+                "reference_coordinate": {
+                  "lat": 51.172685037242,
+                  "lng": -4.2054578186163
+                },
+                "reference_postcode": "EX34 7BP",
+                "source": "camra",
+                "url": "https://camra.org.uk/pubs/188466"
+              },
+              {
+                "checked_at": "2026-09-11",
+                "difference_metres": 0,
+                "match": "postcode_fallback_replaced",
+                "reference_coordinate": {
+                  "lat": 51.172685037242,
+                  "lng": -4.2054578186163
+                },
+                "reference_postcode": "EX34 7BP",
+                "source": "camra-pubs-location-audit",
+                "url": "https://camra.org.uk/pubs/188466"
+              }
+            ],
+            "lat": 51.172685037242,
+            "lng": -4.2054578186163,
+            "review_reason": "Reference venue name changed",
+            "review_required": true,
+            "source": "camra-pubs-location-audit"
+          },
+          "review_url": "https://github.com/bristolbagpiper/BassBeerMap/issues/5#issuecomment-6506397771",
+          "reviewed_by": "bristolbagpiper",
+          "source_url": "https://camra.org.uk/pubs/188466"
+        }
+      ],
       "location_research": {
         "checked_at": "2026-10-27",
         "coverage": {
@@ -96984,6 +97038,21 @@
       "verified_pin": {
         "evidence": [
           {
+            "checked_at": "2026-10-29",
+            "match": "owner_confirmed_saved_point_corroborated_by_named_camra_venue",
+            "reference_address": "Beach Road",
+            "reference_coordinate": {
+              "lat": 51.172685037242,
+              "lng": -4.2054578186163
+            },
+            "reference_name": "Tides Inn, Woolacombe - Restaurant-Style Inn",
+            "reference_postcode": "EX34 7BP",
+            "review_url": "https://github.com/bristolbagpiper/BassBeerMap/issues/5#issuecomment-6506397771",
+            "reviewed_by": "bristolbagpiper",
+            "source": "camra",
+            "url": "https://camra.org.uk/pubs/188466"
+          },
+          {
             "checked_at": "2026-09-11",
             "difference_metres": 0.0,
             "match": "venue_name_and_full_postcode",
@@ -97010,8 +97079,20 @@
         ],
         "lat": 51.172685037242,
         "lng": -4.2054578186163,
-        "review_reason": "Reference venue name changed",
-        "review_required": true,
+        "metadata_issue": {
+          "field": "postcode",
+          "listed": "EX34 7BP",
+          "reference": "EX34 7FG",
+          "source_url": "https://ratings.food.gov.uk/business/178413"
+        },
+        "name_corroboration": {
+          "business_name": "The Tides Inn",
+          "checked_at": "2026-10-29",
+          "postcode": "EX34 7FG",
+          "premises_name": "The Tidesout",
+          "source": "food-standards-agency",
+          "url": "https://ratings.food.gov.uk/business/178413"
+        },
         "source": "camra-pubs-location-audit"
       }
     },

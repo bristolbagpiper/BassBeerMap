@@ -1,5 +1,5 @@
 {
-  "active_count": 27,
+  "active_count": 26,
   "records": {
     "v-00a08839-2b8a-5782-b6c7-0bdce4cddb2f": {
       "active": false,
@@ -10455,7 +10455,7 @@
       "venue_id": "v-9c208293-484d-560e-8270-d8276b49f0f7"
     },
     "v-9ce795c2-762b-5724-843b-9477738f1a90": {
-      "active": true,
+      "active": false,
       "first_seen": "2026-10-21",
       "history": [
         {
@@ -10464,15 +10464,18 @@
             "Reference venue name changed"
           ],
           "status": "unverified"
+        },
+        {
+          "date": "2026-10-29",
+          "reasons": [],
+          "status": "resolved"
         }
       ],
-      "last_checked": "2026-10-24",
+      "last_checked": "2026-10-29",
       "place_name": "Cambridge",
       "postcode": "CB1 1LD",
       "pub_name": "The Rad (was St Radegund)",
-      "reasons": [
-        "Reference venue name changed"
-      ],
+      "reasons": [],
       "reference": {},
       "research": {
         "checked_at": "2026-10-27",
@@ -10495,8 +10498,8 @@
         }
       },
       "source_error": null,
-      "status": "unverified",
-      "unverified": true,
+      "status": "resolved",
+      "unverified": false,
       "venue_id": "v-9ce795c2-762b-5724-843b-9477738f1a90"
     },
     "v-9db08c01-435f-5d69-acd6-b69f4bcf6d1a": {
@@ -16669,5 +16672,5 @@
     }
   },
   "schema_version": 1,
-  "unverified_count": 22
+  "unverified_count": 21
 }

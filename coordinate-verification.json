@@ -1,7 +1,7 @@
 {
   "counts": {
-    "venue_coordinate_requires_review": 22,
-    "verified_venue": 1022
+    "venue_coordinate_requires_review": 21,
+    "verified_venue": 1023
   },
   "generated_at": "2026-10-29",
   "policy": {
@@ -25793,8 +25793,23 @@
     },
     "the rad (was st radegund)|cambridge|cb1 1ld": {
       "coordinate_source": "food-standards-agency-fhrs",
-      "display_precision": "postcode",
+      "display_precision": "venue",
       "evidence": [
+        {
+          "checked_at": "2026-10-29",
+          "match": "owner_confirmed_saved_point_corroborated_by_named_camra_venue",
+          "reference_address": "129 King Street",
+          "reference_coordinate": {
+            "lat": 52.207599,
+            "lng": 0.126732
+          },
+          "reference_name": "St. Radegund, Cambridge - Cambridge's Smallest Pub",
+          "reference_postcode": "CB1 1LD",
+          "review_url": "https://github.com/bristolbagpiper/BassBeerMap/issues/5#issuecomment-6506117103",
+          "reviewed_by": "bristolbagpiper",
+          "source": "camra",
+          "url": "https://camra.org.uk/pubs/131286"
+        },
         {
           "checked_at": "2026-09-11",
           "difference_metres": 4.0,
@@ -25813,7 +25828,7 @@
       "place_name": "Cambridge",
       "postcode": "CB1 1LD",
       "pub_name": "The Rad (was St Radegund)",
-      "status": "venue_coordinate_requires_review",
+      "status": "verified_venue",
       "venue_id": "v-9ce795c2-762b-5724-843b-9477738f1a90"
     },
     "thorn tree inn|belper: central|de56 1ff": {

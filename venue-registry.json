@@ -1,6 +1,6 @@
 {
   "location_review": {
-    "active_count": 27,
+    "active_count": 26,
     "records": {
       "v-00a08839-2b8a-5782-b6c7-0bdce4cddb2f": {
         "active": false,
@@ -10456,7 +10456,7 @@
         "venue_id": "v-9c208293-484d-560e-8270-d8276b49f0f7"
       },
       "v-9ce795c2-762b-5724-843b-9477738f1a90": {
-        "active": true,
+        "active": false,
         "first_seen": "2026-10-21",
         "history": [
           {
@@ -10465,15 +10465,18 @@
               "Reference venue name changed"
             ],
             "status": "unverified"
+          },
+          {
+            "date": "2026-10-29",
+            "reasons": [],
+            "status": "resolved"
           }
         ],
-        "last_checked": "2026-10-24",
+        "last_checked": "2026-10-29",
         "place_name": "Cambridge",
         "postcode": "CB1 1LD",
         "pub_name": "The Rad (was St Radegund)",
-        "reasons": [
-          "Reference venue name changed"
-        ],
+        "reasons": [],
         "reference": {},
         "research": {
           "checked_at": "2026-10-27",
@@ -10496,8 +10499,8 @@
           }
         },
         "source_error": null,
-        "status": "unverified",
-        "unverified": true,
+        "status": "resolved",
+        "unverified": false,
         "venue_id": "v-9ce795c2-762b-5724-843b-9477738f1a90"
       },
       "v-9db08c01-435f-5d69-acd6-b69f4bcf6d1a": {
@@ -16670,7 +16673,7 @@
       }
     },
     "schema_version": 1,
-    "unverified_count": 22
+    "unverified_count": 21
   },
   "schema_version": 1,
   "venues": {
@@ -87111,6 +87114,36 @@
         "postcode": "CB1 1LD",
         "pub_name": "The Rad (was St Radegund)"
       },
+      "location_approvals": [
+        {
+          "checked_at": "2026-10-29",
+          "comment_id": 6506117103,
+          "previous_pin": {
+            "evidence": [
+              {
+                "checked_at": "2026-09-11",
+                "difference_metres": 4.0,
+                "match": "venue_name_and_full_postcode",
+                "reference_coordinate": {
+                  "lat": 52.2076353,
+                  "lng": 0.1267339
+                },
+                "reference_postcode": "CB1 1LD",
+                "source": "camra",
+                "url": "https://camra.org.uk/pubs/131286"
+              }
+            ],
+            "lat": 52.2076353,
+            "lng": 0.1267339,
+            "review_reason": "Reference venue name changed",
+            "review_required": true,
+            "source": "food-standards-agency-fhrs"
+          },
+          "review_url": "https://github.com/bristolbagpiper/BassBeerMap/issues/5#issuecomment-6506117103",
+          "reviewed_by": "bristolbagpiper",
+          "source_url": "https://camra.org.uk/pubs/131286"
+        }
+      ],
       "location_research": {
         "checked_at": "2026-10-27",
         "coverage": {
@@ -87136,6 +87169,21 @@
       "verified_pin": {
         "evidence": [
           {
+            "checked_at": "2026-10-29",
+            "match": "owner_confirmed_saved_point_corroborated_by_named_camra_venue",
+            "reference_address": "129 King Street",
+            "reference_coordinate": {
+              "lat": 52.207599,
+              "lng": 0.126732
+            },
+            "reference_name": "St. Radegund, Cambridge - Cambridge's Smallest Pub",
+            "reference_postcode": "CB1 1LD",
+            "review_url": "https://github.com/bristolbagpiper/BassBeerMap/issues/5#issuecomment-6506117103",
+            "reviewed_by": "bristolbagpiper",
+            "source": "camra",
+            "url": "https://camra.org.uk/pubs/131286"
+          },
+          {
             "checked_at": "2026-09-11",
             "difference_metres": 4.0,
             "match": "venue_name_and_full_postcode",
@@ -87150,8 +87198,6 @@
         ],
         "lat": 52.2076353,
         "lng": 0.1267339,
-        "review_reason": "Reference venue name changed",
-        "review_required": true,
         "source": "food-standards-agency-fhrs"
       }
     },

@@ -1,5 +1,5 @@
 {
-  "active_count": 25,
+  "active_count": 24,
   "records": {
     "v-00a08839-2b8a-5782-b6c7-0bdce4cddb2f": {
       "active": false,
@@ -6289,7 +6289,7 @@
       "venue_id": "v-6312a106-c5ed-5161-86b8-ef30d0350f84"
     },
     "v-640a3ec6-ce7e-59da-8d9c-6073e61fb6c2": {
-      "active": true,
+      "active": false,
       "first_seen": "2026-10-16",
       "history": [
         {
@@ -6298,15 +6298,18 @@
             "FSA no longer provides an unambiguous agreeing venue"
           ],
           "status": "unverified"
+        },
+        {
+          "date": "2026-10-29",
+          "reasons": [],
+          "status": "resolved"
         }
       ],
-      "last_checked": "2026-10-19",
+      "last_checked": "2026-10-29",
       "place_name": "Beckenham BR3",
       "postcode": "BR3 3HQ",
       "pub_name": "Toby Carvery",
-      "reasons": [
-        "FSA no longer provides an unambiguous agreeing venue"
-      ],
+      "reasons": [],
       "reference": {},
       "research": {
         "checked_at": "2026-10-20",
@@ -6322,15 +6325,11 @@
         "food_standards_agency": {
           "status": "conflict",
           "url": "https://api.ratings.food.gov.uk/Establishments?address=BR3+3HQ&pageSize=100&pageNumber=1"
-        },
-        "fsa_independent": {
-          "status": "coordinate_agreement",
-          "url": "https://ratings.food.gov.uk/business/357311"
         }
       },
       "source_error": null,
-      "status": "unverified",
-      "unverified": true,
+      "status": "resolved",
+      "unverified": false,
       "venue_id": "v-640a3ec6-ce7e-59da-8d9c-6073e61fb6c2"
     },
     "v-656e9318-5ec1-58d5-8970-bebead631a90": {
@@ -16687,5 +16686,5 @@
     }
   },
   "schema_version": 1,
-  "unverified_count": 19
+  "unverified_count": 18
 }

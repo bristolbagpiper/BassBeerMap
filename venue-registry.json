@@ -1,6 +1,6 @@
 {
   "location_review": {
-    "active_count": 25,
+    "active_count": 24,
     "records": {
       "v-00a08839-2b8a-5782-b6c7-0bdce4cddb2f": {
         "active": false,
@@ -6290,7 +6290,7 @@
         "venue_id": "v-6312a106-c5ed-5161-86b8-ef30d0350f84"
       },
       "v-640a3ec6-ce7e-59da-8d9c-6073e61fb6c2": {
-        "active": true,
+        "active": false,
         "first_seen": "2026-10-16",
         "history": [
           {
@@ -6299,15 +6299,18 @@
               "FSA no longer provides an unambiguous agreeing venue"
             ],
             "status": "unverified"
+          },
+          {
+            "date": "2026-10-29",
+            "reasons": [],
+            "status": "resolved"
           }
         ],
-        "last_checked": "2026-10-19",
+        "last_checked": "2026-10-29",
         "place_name": "Beckenham BR3",
         "postcode": "BR3 3HQ",
         "pub_name": "Toby Carvery",
-        "reasons": [
-          "FSA no longer provides an unambiguous agreeing venue"
-        ],
+        "reasons": [],
         "reference": {},
         "research": {
           "checked_at": "2026-10-20",
@@ -6323,15 +6326,11 @@
           "food_standards_agency": {
             "status": "conflict",
             "url": "https://api.ratings.food.gov.uk/Establishments?address=BR3+3HQ&pageSize=100&pageNumber=1"
-          },
-          "fsa_independent": {
-            "status": "coordinate_agreement",
-            "url": "https://ratings.food.gov.uk/business/357311"
           }
         },
         "source_error": null,
-        "status": "unverified",
-        "unverified": true,
+        "status": "resolved",
+        "unverified": false,
         "venue_id": "v-640a3ec6-ce7e-59da-8d9c-6073e61fb6c2"
       },
       "v-656e9318-5ec1-58d5-8970-bebead631a90": {
@@ -16688,7 +16687,7 @@
       }
     },
     "schema_version": 1,
-    "unverified_count": 19
+    "unverified_count": 18
   },
   "schema_version": 1,
   "venues": {
@@ -59890,7 +59889,8 @@
     },
     "v-640a3ec6-ce7e-59da-8d9c-6073e61fb6c2": {
       "aliases": [
-        "toby carvery|beckenham br3|br3 3hq"
+        "toby carvery|beckenham br3|br3 3hq",
+        "eden park|beckenham br3|br3 3hq"
       ],
       "current_key": "toby carvery|beckenham br3|br3 3hq",
       "independent_location_check": {
@@ -59947,6 +59947,36 @@
         "postcode": "BR3 3HQ",
         "pub_name": "Toby Carvery"
       },
+      "location_approvals": [
+        {
+          "checked_at": "2026-10-29",
+          "comment_id": 6506547627,
+          "previous_pin": {
+            "evidence": [
+              {
+                "checked_at": "2026-09-11",
+                "difference_metres": 0.0,
+                "match": "venue_name_or_safe_alias_and_full_postcode",
+                "reference_coordinate": {
+                  "lat": 51.3898643,
+                  "lng": -0.0274306
+                },
+                "reference_postcode": "BR3 3HQ",
+                "source": "food_standards_agency",
+                "url": "https://api.ratings.food.gov.uk/Establishments?address=BR3+3HQ&pageSize=100&pageNumber=1"
+              }
+            ],
+            "lat": 51.3898643,
+            "lng": -0.0274306,
+            "review_reason": "FSA no longer provides an unambiguous agreeing venue",
+            "review_required": true,
+            "source": "food-standards-agency-fhrs"
+          },
+          "review_url": "https://github.com/bristolbagpiper/BassBeerMap/issues/5#issuecomment-6506547627",
+          "reviewed_by": "bristolbagpiper",
+          "source_url": "https://camra.org.uk/pubs/128131"
+        }
+      ],
       "location_research": {
         "checked_at": "2026-10-20",
         "coverage": {
@@ -59972,23 +60002,25 @@
       "verified_pin": {
         "evidence": [
           {
-            "checked_at": "2026-09-11",
-            "difference_metres": 0.0,
-            "match": "venue_name_or_safe_alias_and_full_postcode",
+            "checked_at": "2026-10-29",
+            "match": "owner_reviewed_named_address_and_map",
+            "reference_address": "422 Upper Elmers End Road",
             "reference_coordinate": {
-              "lat": 51.3898643,
-              "lng": -0.0274306
+              "lat": 51.389961529855,
+              "lng": -0.027205771828
             },
+            "reference_locality": "Eden Park",
+            "reference_name": "Eden Park, Eden Park - Carvery with Outdoor Area",
             "reference_postcode": "BR3 3HQ",
-            "source": "food_standards_agency",
-            "url": "https://api.ratings.food.gov.uk/Establishments?address=BR3+3HQ&pageSize=100&pageNumber=1"
+            "review_url": "https://github.com/bristolbagpiper/BassBeerMap/issues/5#issuecomment-6506547627",
+            "reviewed_by": "bristolbagpiper",
+            "source": "camra",
+            "url": "https://camra.org.uk/pubs/128131"
           }
         ],
-        "lat": 51.3898643,
-        "lng": -0.0274306,
-        "review_reason": "FSA no longer provides an unambiguous agreeing venue",
-        "review_required": true,
-        "source": "food-standards-agency-fhrs"
+        "lat": 51.389961529855,
+        "lng": -0.027205771828,
+        "source": "owner-reviewed-camra"
       }
     },
     "v-64de191e-b0d6-56c5-b367-6a142d3f746c": {

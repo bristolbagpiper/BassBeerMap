@@ -1,7 +1,7 @@
 {
   "counts": {
-    "venue_coordinate_requires_review": 19,
-    "verified_venue": 1025
+    "venue_coordinate_requires_review": 18,
+    "verified_venue": 1026
   },
   "generated_at": "2026-10-29",
   "policy": {
@@ -26453,28 +26453,32 @@
       "venue_id": "v-ed990d48-e259-5f95-be08-d303379dc514"
     },
     "toby carvery|beckenham br3|br3 3hq": {
-      "coordinate_source": "food-standards-agency-fhrs",
-      "display_precision": "postcode",
+      "coordinate_source": "owner-reviewed-camra",
+      "display_precision": "venue",
       "evidence": [
         {
-          "checked_at": "2026-09-11",
-          "difference_metres": 0.0,
-          "match": "venue_name_or_safe_alias_and_full_postcode",
+          "checked_at": "2026-10-29",
+          "match": "owner_reviewed_named_address_and_map",
+          "reference_address": "422 Upper Elmers End Road",
           "reference_coordinate": {
-            "lat": 51.3898643,
-            "lng": -0.0274306
+            "lat": 51.389961529855,
+            "lng": -0.027205771828
           },
+          "reference_locality": "Eden Park",
+          "reference_name": "Eden Park, Eden Park - Carvery with Outdoor Area",
           "reference_postcode": "BR3 3HQ",
-          "source": "food_standards_agency",
-          "url": "https://api.ratings.food.gov.uk/Establishments?address=BR3+3HQ&pageSize=100&pageNumber=1"
+          "review_url": "https://github.com/bristolbagpiper/BassBeerMap/issues/5#issuecomment-6506547627",
+          "reviewed_by": "bristolbagpiper",
+          "source": "camra",
+          "url": "https://camra.org.uk/pubs/128131"
         }
       ],
-      "lat": 51.3898643,
-      "lng": -0.0274306,
+      "lat": 51.389961529855,
+      "lng": -0.027205771828,
       "place_name": "Beckenham BR3",
       "postcode": "BR3 3HQ",
       "pub_name": "Toby Carvery",
-      "status": "venue_coordinate_requires_review",
+      "status": "verified_venue",
       "venue_id": "v-640a3ec6-ce7e-59da-8d9c-6073e61fb6c2"
     },
     "toby carvery|derby: chaddesden|de21 6lz": {

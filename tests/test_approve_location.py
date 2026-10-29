@@ -35,6 +35,20 @@ def event(body, login="bristolbagpiper", user_type="User", issue=5):
 
 
 class ApprovalCommandTests(unittest.TestCase):
+    def test_retained_point_accepts_exact_documented_parenthetical_nickname(self):
+        url = 'https://camra.org.uk/pubs/171270'
+        command = {'lat': 52.740011107146, 'lng': -1.352965300941, 'url': url}
+        row = {'pub_name': 'Three Horseshoes (Pollys)', 'postcode': 'LE67 5GN'}
+        entry = {'verified_pin': {'lat': command['lat'], 'lng': command['lng'], 'evidence': [{'source': 'camra', 'url': url}]}}
+        source = {'lat': command['lat'], 'lng': command['lng'], 'postcode': 'LE67 5GN',
+                  'address': '11 Leicester Road', 'name': 'Three Horseshoes, Whitwick - Historic Interior'}
+        page = "<h1>Three Horseshoes, Whitwick (Polly's)</h1>"
+        self.assertEqual(validate_retained_point(command, row, entry, source, page), entry['verified_pin'])
+        with self.assertRaises(ValueError):
+            validate_retained_point(command, row, entry, source, '<h1>Three Horseshoes, Whitwick (Other)</h1>')
+        with self.assertRaises(ValueError):
+            validate_retained_point(command, row, entry, dict(source, name='Other Horseshoes'), page)
+
     def test_retained_point_accepts_camra_heading_alias_and_exact_former_name(self):
         url = 'https://camra.org.uk/pubs/131286'
         command = {'lat': 52.2076353, 'lng': 0.1267339, 'url': url}

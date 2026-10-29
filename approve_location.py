@@ -103,7 +103,15 @@ def camra_heading_confirms_listing_alias(listing, source_name, page_text):
     """Require both a directory former name and CAMRA's exact heading alias."""
     match = re.fullmatch(r'\s*(.*?)\s*\(was\s+([^()]+)\)\s*', listing, re.I)
     if not match:
-        return False
+        nickname = re.fullmatch(r'\s*(.*?)\s*\((?!was\s+)([^()]+)\)\s*', listing, re.I)
+        if not nickname:
+            return False
+        primary, alias = nickname.groups()
+        if not normalized_place_name(primary) or normalized_place_name(primary) != normalized_place_name(source_name):
+            return False
+        compact = lambda value: re.sub(r'[^a-z0-9]', '', value.casefold())
+        aliases = re.findall(r'\(([^()]*)\)', extract_camra_heading(page_text))
+        return bool(compact(alias)) and any(compact(alias) == compact(item) for item in aliases)
     current, former = match.groups()
     if not normalized_place_name(former) or normalized_place_name(former) != normalized_place_name(source_name):
         return False

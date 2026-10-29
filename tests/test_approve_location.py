@@ -34,6 +34,11 @@ def event(body, login="bristolbagpiper", user_type="User", issue=5):
 
 
 class ApprovalCommandTests(unittest.TestCase):
+    def test_pelican_reviewed_bilingual_name_is_specific(self):
+        self.assertTrue(manual_name_matches("Pelican Inn/Tafarn Y Pelican", "The Pelican Inn"))
+        self.assertFalse(manual_name_matches("Pelican Inn/Tafarn Y Pelican", "The Pelican Arms"))
+        self.assertFalse(manual_name_matches("Other Inn/Tafarn Y Pelican", "The Pelican Inn"))
+
     def test_parenthetical_social_club_label_allows_primary_venue_name(self):
         self.assertTrue(
             manual_name_matches("Brookfield (Barrow Social Club)", "The Brookfield")
@@ -321,4 +326,5 @@ class ApprovalCommandTests(unittest.TestCase):
 
 if __name__ == "__main__":
     unittest.main()
+
 

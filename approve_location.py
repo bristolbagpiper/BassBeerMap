@@ -78,6 +78,11 @@ def approved_commands(event, owner):
 
 
 def manual_name_matches(listing, reference):
+    # Reviewed bilingual listing: CAMRA and Google use the English name;
+    # the Welsh name is independently listed at the same address by the FSA.
+    if (listing.strip().casefold() == "pelican inn/tafarn y pelican"
+            and reference.strip().casefold() == "the pelican inn"):
+        return True
     generic = {
         "the", "bar", "pub", "inn", "hotel", "tavern", "restaurant",
         "brewery", "taproom", "club", "social", "house", "public",
@@ -490,4 +495,5 @@ if __name__ == "__main__":
     args = parser.parse_args()
     event = json.loads(Path(os.environ["GITHUB_EVENT_PATH"]).read_text())
     approve(args.root, args.staging, event, os.environ["GITHUB_REPOSITORY_OWNER"])
+
 

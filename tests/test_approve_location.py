@@ -36,6 +36,12 @@ def event(body, login="bristolbagpiper", user_type="User", issue=5):
 
 
 class ApprovalCommandTests(unittest.TestCase):
+    def test_working_mens_club_abbreviation_requires_full_named_match(self):
+        listing = 'Tynemouth WMC/Social Club (PMC)'
+        self.assertTrue(manual_name_matches(listing, 'Tynemouth & District Working Mens Social Club & Institute Ltd'))
+        self.assertFalse(manual_name_matches(listing, 'Tynemouth District Social Club'))
+        self.assertFalse(manual_name_matches(listing, 'Whitley Bay Working Mens Social Club'))
+
     def test_retained_point_accepts_exact_fsa_name_address_and_point(self):
         url = 'https://camra.org.uk/pubs/122990'
         command = {'lat': 52.965468, 'lng': -2.1813, 'url': url, 'fsa_id': 113675}

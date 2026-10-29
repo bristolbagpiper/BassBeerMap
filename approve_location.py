@@ -188,7 +188,7 @@ def manual_name_matches(listing, reference):
         "brewery", "taproom", "club", "social", "house", "public",
     }
     tokens = lambda value: {
-        token for token in re.findall(r"[a-z0-9]+", value.casefold())
+        token for token in re.findall(r"[a-z0-9]+", re.sub(r"\bwmc\b", "working mens", value.casefold()))
         if token not in generic and not token.isdigit()
     }
     normalized_listing = re.sub(r"\s*\(PMC\)", "", listing, flags=re.I)

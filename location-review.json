@@ -1,5 +1,5 @@
 {
-  "active_count": 23,
+  "active_count": 22,
   "records": {
     "v-00a08839-2b8a-5782-b6c7-0bdce4cddb2f": {
       "active": false,
@@ -10229,7 +10229,7 @@
       "venue_id": "v-99412060-4aa7-5602-85e3-0ddf38526a87"
     },
     "v-9a1e8581-39f4-58cd-949d-c3908758ad50": {
-      "active": true,
+      "active": false,
       "first_seen": "2026-10-21",
       "history": [
         {
@@ -10238,15 +10238,18 @@
             "Reference venue name changed"
           ],
           "status": "unverified"
+        },
+        {
+          "date": "2026-10-29",
+          "reasons": [],
+          "status": "resolved"
         }
       ],
-      "last_checked": "2026-10-24",
+      "last_checked": "2026-10-29",
       "place_name": "Tynemouth",
       "postcode": "NE30 4DZ",
       "pub_name": "Turks Head (Stuffed Dog)",
-      "reasons": [
-        "Reference venue name changed"
-      ],
+      "reasons": [],
       "reference": {},
       "research": {
         "checked_at": "2026-10-27",
@@ -10266,15 +10269,11 @@
         "camra-pubs-location-audit": {
           "status": "conflict",
           "url": "https://camra.org.uk/pubs/193172"
-        },
-        "fsa_independent": {
-          "status": "no_name_match",
-          "url": ""
         }
       },
       "source_error": null,
-      "status": "unverified",
-      "unverified": true,
+      "status": "resolved",
+      "unverified": false,
       "venue_id": "v-9a1e8581-39f4-58cd-949d-c3908758ad50"
     },
     "v-9a79cf57-994d-5621-9d2d-800516e98833": {
@@ -16697,5 +16696,5 @@
     }
   },
   "schema_version": 1,
-  "unverified_count": 16
+  "unverified_count": 15
 }

@@ -1,6 +1,6 @@
 {
   "location_review": {
-    "active_count": 23,
+    "active_count": 22,
     "records": {
       "v-00a08839-2b8a-5782-b6c7-0bdce4cddb2f": {
         "active": false,
@@ -10230,7 +10230,7 @@
         "venue_id": "v-99412060-4aa7-5602-85e3-0ddf38526a87"
       },
       "v-9a1e8581-39f4-58cd-949d-c3908758ad50": {
-        "active": true,
+        "active": false,
         "first_seen": "2026-10-21",
         "history": [
           {
@@ -10239,15 +10239,18 @@
               "Reference venue name changed"
             ],
             "status": "unverified"
+          },
+          {
+            "date": "2026-10-29",
+            "reasons": [],
+            "status": "resolved"
           }
         ],
-        "last_checked": "2026-10-24",
+        "last_checked": "2026-10-29",
         "place_name": "Tynemouth",
         "postcode": "NE30 4DZ",
         "pub_name": "Turks Head (Stuffed Dog)",
-        "reasons": [
-          "Reference venue name changed"
-        ],
+        "reasons": [],
         "reference": {},
         "research": {
           "checked_at": "2026-10-27",
@@ -10267,15 +10270,11 @@
           "camra-pubs-location-audit": {
             "status": "conflict",
             "url": "https://camra.org.uk/pubs/193172"
-          },
-          "fsa_independent": {
-            "status": "no_name_match",
-            "url": ""
           }
         },
         "source_error": null,
-        "status": "unverified",
-        "unverified": true,
+        "status": "resolved",
+        "unverified": false,
         "venue_id": "v-9a1e8581-39f4-58cd-949d-c3908758ad50"
       },
       "v-9a79cf57-994d-5621-9d2d-800516e98833": {
@@ -16698,7 +16697,7 @@
       }
     },
     "schema_version": 1,
-    "unverified_count": 16
+    "unverified_count": 15
   },
   "schema_version": 1,
   "venues": {
@@ -85813,6 +85812,48 @@
         "postcode": "NE30 4DZ",
         "pub_name": "Turks Head (Stuffed Dog)"
       },
+      "location_approvals": [
+        {
+          "checked_at": "2026-10-29",
+          "comment_id": 6507793590,
+          "previous_pin": {
+            "evidence": [
+              {
+                "checked_at": "2026-09-11",
+                "difference_metres": 0.0,
+                "match": "venue_name_and_full_postcode",
+                "reference_coordinate": {
+                  "lat": 55.0177454,
+                  "lng": -1.4220353
+                },
+                "reference_postcode": "NE30 4DZ",
+                "source": "camra",
+                "url": "https://camra.org.uk/pubs/193172"
+              },
+              {
+                "checked_at": "2026-09-11",
+                "difference_metres": 0,
+                "match": "postcode_fallback_replaced",
+                "reference_coordinate": {
+                  "lat": 55.0177454,
+                  "lng": -1.4220353
+                },
+                "reference_postcode": "NE30 4DZ",
+                "source": "camra-pubs-location-audit",
+                "url": "https://camra.org.uk/pubs/193172"
+              }
+            ],
+            "lat": 55.0177454,
+            "lng": -1.4220353,
+            "review_reason": "Reference venue name changed",
+            "review_required": true,
+            "source": "camra-pubs-location-audit"
+          },
+          "review_url": "https://github.com/bristolbagpiper/BassBeerMap/issues/5#issuecomment-6507793590",
+          "reviewed_by": "bristolbagpiper",
+          "source_url": "https://www.google.com/maps/place/Turks+Head/@55.0179358,-1.4219527,492m/data=!3m2!1e3!4b1!4m6!3m5!1s0x487e6ec76c382507:0xb5facf2449c486c6!8m2!3d55.0179358!4d-1.4219527!16s%2Fg%2F1tnbkpvd"
+        }
+      ],
       "location_research": {
         "checked_at": "2026-10-27",
         "coverage": {
@@ -85842,35 +85883,40 @@
       "verified_pin": {
         "evidence": [
           {
-            "checked_at": "2026-09-11",
-            "difference_metres": 0.0,
-            "match": "venue_name_and_full_postcode",
+            "checked_at": "2026-10-29",
+            "match": "owner_reviewed_named_place_and_full_postcode",
+            "reference_address": "41 Front Street, Tynemouth, NE30 4DZ",
             "reference_coordinate": {
-              "lat": 55.0177454,
-              "lng": -1.4220353
+              "lat": 55.0179358,
+              "lng": -1.4219527
             },
+            "reference_name": "Turks Head",
             "reference_postcode": "NE30 4DZ",
-            "source": "camra",
-            "url": "https://camra.org.uk/pubs/193172"
+            "review_url": "https://github.com/bristolbagpiper/BassBeerMap/issues/5#issuecomment-6507793590",
+            "reviewed_by": "bristolbagpiper",
+            "source": "google-maps-named-place",
+            "url": "https://www.google.com/maps/place/Turks+Head/@55.0179358,-1.4219527,492m/data=!3m2!1e3!4b1!4m6!3m5!1s0x487e6ec76c382507:0xb5facf2449c486c6!8m2!3d55.0179358!4d-1.4219527!16s%2Fg%2F1tnbkpvd"
           },
           {
-            "checked_at": "2026-09-11",
-            "difference_metres": 0,
-            "match": "postcode_fallback_replaced",
+            "checked_at": "2026-10-29",
+            "match": "owner_reviewed_same_primary_name_same_postcode_and_within_50m",
+            "reference_address": "41 Front Street",
             "reference_coordinate": {
               "lat": 55.0177454,
               "lng": -1.4220353
             },
+            "reference_locality": "Tynemouth",
+            "reference_name": "Turks Head, Tynemouth - Famous Stuffed Dog",
             "reference_postcode": "NE30 4DZ",
-            "source": "camra-pubs-location-audit",
+            "review_url": "https://github.com/bristolbagpiper/BassBeerMap/issues/5#issuecomment-6507793590",
+            "reviewed_by": "bristolbagpiper",
+            "source": "camra",
             "url": "https://camra.org.uk/pubs/193172"
           }
         ],
-        "lat": 55.0177454,
-        "lng": -1.4220353,
-        "review_reason": "Reference venue name changed",
-        "review_required": true,
-        "source": "camra-pubs-location-audit"
+        "lat": 55.0179358,
+        "lng": -1.4219527,
+        "source": "owner-reviewed-google-maps"
       }
     },
     "v-9a79cf57-994d-5621-9d2d-800516e98833": {

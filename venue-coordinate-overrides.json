@@ -3081,16 +3081,20 @@
       "source_url": "https://www.google.com/maps/search/?api=1&query=The+Tuppenny+Swindon+SN1+4BD"
     },
     "turks head (stuffed dog)|tynemouth|ne30 4dz": {
-      "audit_reason": "postcode_fallback_replaced",
-      "checked_at": "2026-09-11",
-      "lat": 55.0177454,
-      "lng": -1.4220353,
-      "previous_difference_metres": 21.9,
-      "previous_lat": 55.017916,
-      "previous_lng": -1.422206,
-      "previous_source": "postcode",
-      "source": "camra-pubs-location-audit",
-      "source_url": "https://camra.org.uk/pubs/193172"
+      "audit_reason": "manual_named_place_address_and_map_check",
+      "checked_at": "2026-10-29",
+      "corroborating_source_url": "https://camra.org.uk/pubs/193172",
+      "lat": 55.0179358,
+      "lng": -1.4219527,
+      "previous_difference_metres": 21.8,
+      "previous_lat": 55.0177454,
+      "previous_lng": -1.4220353,
+      "previous_source": "camra-pubs-location-audit",
+      "reference_address": "41 Front Street, Tynemouth, NE30 4DZ",
+      "reference_name": "Turks Head",
+      "review_note": "Repository owner confirmed the named-place marker and full address in issue #5; CAMRA corroborated the primary name, documented alias or co-located venue label, postcode, and nearby point.",
+      "source": "google-maps-named-place",
+      "source_url": "https://www.google.com/maps/place/Turks+Head/@55.0179358,-1.4219527,492m/data=!3m2!1e3!4b1!4m6!3m5!1s0x487e6ec76c382507:0xb5facf2449c486c6!8m2!3d55.0179358!4d-1.4219527!16s%2Fg%2F1tnbkpvd"
     },
     "tutbury club (pmc)|tutbury|de13 9ls": {
       "audit_reason": "postcode_fallback_replaced",

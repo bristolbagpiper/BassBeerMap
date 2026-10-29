@@ -1,7 +1,7 @@
 {
   "counts": {
-    "venue_coordinate_requires_review": 16,
-    "verified_venue": 1028
+    "venue_coordinate_requires_review": 15,
+    "verified_venue": 1029
   },
   "generated_at": "2026-10-29",
   "policy": {
@@ -26776,40 +26776,47 @@
       "venue_id": "v-87d7e6a3-cfa9-5f8f-a743-d41c521cf28f"
     },
     "turks head (stuffed dog)|tynemouth|ne30 4dz": {
-      "coordinate_source": "camra-pubs-location-audit",
-      "display_precision": "postcode",
+      "coordinate_source": "owner-reviewed-google-maps",
+      "display_precision": "venue",
       "evidence": [
         {
-          "checked_at": "2026-09-11",
-          "difference_metres": 0.0,
-          "match": "venue_name_and_full_postcode",
+          "checked_at": "2026-10-29",
+          "match": "owner_reviewed_named_place_and_full_postcode",
+          "reference_address": "41 Front Street, Tynemouth, NE30 4DZ",
           "reference_coordinate": {
-            "lat": 55.0177454,
-            "lng": -1.4220353
+            "lat": 55.0179358,
+            "lng": -1.4219527
           },
+          "reference_name": "Turks Head",
           "reference_postcode": "NE30 4DZ",
-          "source": "camra",
-          "url": "https://camra.org.uk/pubs/193172"
+          "review_url": "https://github.com/bristolbagpiper/BassBeerMap/issues/5#issuecomment-6507793590",
+          "reviewed_by": "bristolbagpiper",
+          "source": "google-maps-named-place",
+          "url": "https://www.google.com/maps/place/Turks+Head/@55.0179358,-1.4219527,492m/data=!3m2!1e3!4b1!4m6!3m5!1s0x487e6ec76c382507:0xb5facf2449c486c6!8m2!3d55.0179358!4d-1.4219527!16s%2Fg%2F1tnbkpvd"
         },
         {
-          "checked_at": "2026-09-11",
-          "difference_metres": 0,
-          "match": "postcode_fallback_replaced",
+          "checked_at": "2026-10-29",
+          "match": "owner_reviewed_same_primary_name_same_postcode_and_within_50m",
+          "reference_address": "41 Front Street",
           "reference_coordinate": {
             "lat": 55.0177454,
             "lng": -1.4220353
           },
+          "reference_locality": "Tynemouth",
+          "reference_name": "Turks Head, Tynemouth - Famous Stuffed Dog",
           "reference_postcode": "NE30 4DZ",
-          "source": "camra-pubs-location-audit",
+          "review_url": "https://github.com/bristolbagpiper/BassBeerMap/issues/5#issuecomment-6507793590",
+          "reviewed_by": "bristolbagpiper",
+          "source": "camra",
           "url": "https://camra.org.uk/pubs/193172"
         }
       ],
-      "lat": 55.0177454,
-      "lng": -1.4220353,
+      "lat": 55.0179358,
+      "lng": -1.4219527,
       "place_name": "Tynemouth",
       "postcode": "NE30 4DZ",
       "pub_name": "Turks Head (Stuffed Dog)",
-      "status": "venue_coordinate_requires_review",
+      "status": "verified_venue",
       "venue_id": "v-9a1e8581-39f4-58cd-949d-c3908758ad50"
     },
     "tutbury club (pmc)|tutbury|de13 9ls": {

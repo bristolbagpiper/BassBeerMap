@@ -1,7 +1,7 @@
 {
   "counts": {
-    "venue_coordinate_requires_review": 24,
-    "verified_venue": 1020
+    "venue_coordinate_requires_review": 23,
+    "verified_venue": 1021
   },
   "generated_at": "2026-10-29",
   "policy": {
@@ -24391,7 +24391,7 @@
     },
     "stapenhill institute|burton u-t: stapenhill|de15 9ap": {
       "coordinate_source": "food-standards-agency-fhrs",
-      "display_precision": "postcode",
+      "display_precision": "venue",
       "evidence": [
         {
           "checked_at": "2026-09-11",
@@ -24404,6 +24404,21 @@
           "reference_postcode": "DE15 9AP",
           "source": "camra",
           "url": "https://camra.org.uk/pubs/124102"
+        },
+        {
+          "checked_at": "2026-10-29",
+          "match": "owner_confirmed_saved_point_corroborated_by_named_camra_venue",
+          "reference_address": "23 Main Street, Stapenhill",
+          "reference_coordinate": {
+            "lat": 52.7936,
+            "lng": -1.6231
+          },
+          "reference_name": "Stapenhill Institute Club, Burton upon Trent",
+          "reference_postcode": "DE15 9AP",
+          "review_url": "https://github.com/bristolbagpiper/BassBeerMap/issues/5#issuecomment-6505337978",
+          "reviewed_by": "bristolbagpiper",
+          "source": "camra",
+          "url": "https://camra.org.uk/pubs/124102"
         }
       ],
       "lat": 52.7936442,
@@ -24411,7 +24426,7 @@
       "place_name": "Burton U-T: Stapenhill",
       "postcode": "DE15 9AP",
       "pub_name": "Stapenhill Institute",
-      "status": "venue_coordinate_requires_review",
+      "status": "verified_venue",
       "venue_id": "v-d440d36d-80af-56b5-9fd0-8a15f6211abc"
     },
     "star inn|bath|ba1 5na": {

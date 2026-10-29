@@ -1,6 +1,6 @@
 {
   "location_review": {
-    "active_count": 28,
+    "active_count": 27,
     "records": {
       "v-00a08839-2b8a-5782-b6c7-0bdce4cddb2f": {
         "active": false,
@@ -11362,7 +11362,7 @@
         "venue_id": "v-ab01088f-5062-5b84-b768-e5727529aaab"
       },
       "v-ac778227-1ccd-5f63-98cd-f4744b9915cf": {
-        "active": true,
+        "active": false,
         "first_seen": "2026-10-09",
         "history": [
           {
@@ -11383,15 +11383,18 @@
               "Reference venue name changed"
             ],
             "status": "unverified"
+          },
+          {
+            "date": "2026-10-29",
+            "reasons": [],
+            "status": "resolved"
           }
         ],
-        "last_checked": "2026-10-26",
+        "last_checked": "2026-10-29",
         "place_name": "Ripley: Central",
         "postcode": "DE5 3LT",
         "pub_name": "Talbot Taphouse",
-        "reasons": [
-          "Reference venue name changed"
-        ],
+        "reasons": [],
         "reference": {},
         "research": {
           "checked_at": "2026-10-27",
@@ -11418,8 +11421,8 @@
           }
         },
         "source_error": null,
-        "status": "unverified",
-        "unverified": true,
+        "status": "resolved",
+        "unverified": false,
         "venue_id": "v-ac778227-1ccd-5f63-98cd-f4744b9915cf"
       },
       "v-ac895bd4-69fd-53ea-89d8-97307a9112c5": {
@@ -16667,7 +16670,7 @@
       }
     },
     "schema_version": 1,
-    "unverified_count": 23
+    "unverified_count": 22
   },
   "schema_version": 1,
   "venues": {
@@ -94570,6 +94573,48 @@
         "postcode": "DE5 3LT",
         "pub_name": "Talbot Taphouse"
       },
+      "location_approvals": [
+        {
+          "checked_at": "2026-10-29",
+          "comment_id": 6505925353,
+          "previous_pin": {
+            "evidence": [
+              {
+                "checked_at": "2026-09-11",
+                "difference_metres": 0.0,
+                "match": "venue_name_and_full_postcode",
+                "reference_coordinate": {
+                  "lat": 53.053271,
+                  "lng": -1.405467
+                },
+                "reference_postcode": "DE5 3LT",
+                "source": "camra",
+                "url": "https://camra.org.uk/pubs/113335"
+              },
+              {
+                "checked_at": "2026-09-11",
+                "difference_metres": 0,
+                "match": "existing_pin_over_50m_from_matching_venue",
+                "reference_coordinate": {
+                  "lat": 53.053271,
+                  "lng": -1.405467
+                },
+                "reference_postcode": "DE5 3LT",
+                "source": "camra-pubs-location-audit",
+                "url": "https://camra.org.uk/pubs/113335"
+              }
+            ],
+            "lat": 53.053271,
+            "lng": -1.405467,
+            "review_reason": "Reference venue name changed",
+            "review_required": true,
+            "source": "camra-pubs-location-audit"
+          },
+          "review_url": "https://github.com/bristolbagpiper/BassBeerMap/issues/5#issuecomment-6505925353",
+          "reviewed_by": "bristolbagpiper",
+          "source_url": "https://camra.org.uk/pubs/113335"
+        }
+      ],
       "location_research": {
         "checked_at": "2026-10-27",
         "coverage": {
@@ -94599,6 +94644,21 @@
       "verified_pin": {
         "evidence": [
           {
+            "checked_at": "2026-10-29",
+            "match": "owner_confirmed_saved_point_corroborated_by_named_camra_venue",
+            "reference_address": "1 Butterley Hill",
+            "reference_coordinate": {
+              "lat": 53.053271,
+              "lng": -1.405467
+            },
+            "reference_name": "Talbot, Ripley - Victorian Flat Iron Pub",
+            "reference_postcode": "DE5 3LT",
+            "review_url": "https://github.com/bristolbagpiper/BassBeerMap/issues/5#issuecomment-6505925353",
+            "reviewed_by": "bristolbagpiper",
+            "source": "camra",
+            "url": "https://camra.org.uk/pubs/113335"
+          },
+          {
             "checked_at": "2026-09-11",
             "difference_metres": 0.0,
             "match": "venue_name_and_full_postcode",
@@ -94625,8 +94685,6 @@
         ],
         "lat": 53.053271,
         "lng": -1.405467,
-        "review_reason": "Reference venue name changed",
-        "review_required": true,
         "source": "camra-pubs-location-audit"
       }
     },

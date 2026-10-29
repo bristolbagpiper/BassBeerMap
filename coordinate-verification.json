@@ -1,7 +1,7 @@
 {
   "counts": {
-    "venue_coordinate_requires_review": 23,
-    "verified_venue": 1021
+    "venue_coordinate_requires_review": 22,
+    "verified_venue": 1022
   },
   "generated_at": "2026-10-29",
   "policy": {
@@ -25518,8 +25518,23 @@
     },
     "talbot taphouse|ripley: central|de5 3lt": {
       "coordinate_source": "camra-pubs-location-audit",
-      "display_precision": "postcode",
+      "display_precision": "venue",
       "evidence": [
+        {
+          "checked_at": "2026-10-29",
+          "match": "owner_confirmed_saved_point_corroborated_by_named_camra_venue",
+          "reference_address": "1 Butterley Hill",
+          "reference_coordinate": {
+            "lat": 53.053271,
+            "lng": -1.405467
+          },
+          "reference_name": "Talbot, Ripley - Victorian Flat Iron Pub",
+          "reference_postcode": "DE5 3LT",
+          "review_url": "https://github.com/bristolbagpiper/BassBeerMap/issues/5#issuecomment-6505925353",
+          "reviewed_by": "bristolbagpiper",
+          "source": "camra",
+          "url": "https://camra.org.uk/pubs/113335"
+        },
         {
           "checked_at": "2026-09-11",
           "difference_metres": 0.0,
@@ -25550,7 +25565,7 @@
       "place_name": "Ripley: Central",
       "postcode": "DE5 3LT",
       "pub_name": "Talbot Taphouse",
-      "status": "venue_coordinate_requires_review",
+      "status": "verified_venue",
       "venue_id": "v-ac778227-1ccd-5f63-98cd-f4744b9915cf"
     },
     "talbot|biddulph moor|st8 7ry": {

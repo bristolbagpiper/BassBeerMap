@@ -120,6 +120,9 @@ def normalized_place_name(value):
     tokens = re.findall(r"[a-z0-9]+", primary.casefold())
     if tokens and tokens[0] == "the":
         tokens = tokens[1:]
+    # CAMRA often omits a generic final "Inn" used by the named Google place.
+    if len(tokens) > 1 and tokens[-1] == "inn":
+        tokens = tokens[:-1]
     return " ".join(tokens)
 
 

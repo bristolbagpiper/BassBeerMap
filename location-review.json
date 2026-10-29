@@ -1,5 +1,5 @@
 {
-  "active_count": 34,
+  "active_count": 33,
   "records": {
     "v-00a08839-2b8a-5782-b6c7-0bdce4cddb2f": {
       "active": false,
@@ -16545,7 +16545,7 @@
       "venue_id": "v-fb5ddb66-cc8e-53b3-bed6-c35c165091be"
     },
     "v-fbb0978c-dd43-593b-85ea-bbdcc21abd9d": {
-      "active": true,
+      "active": false,
       "first_seen": "2026-10-29",
       "history": [
         {
@@ -16554,30 +16554,29 @@
             "Reference venue name changed"
           ],
           "status": "unverified"
+        },
+        {
+          "date": "2026-10-29",
+          "reasons": [],
+          "status": "resolved"
         }
       ],
       "last_checked": "2026-10-29",
       "place_name": "Newcastle Emlyn",
       "postcode": "SA38 9AP",
       "pub_name": "Pelican Inn/Tafarn Y Pelican",
-      "reasons": [
-        "Reference venue name changed"
-      ],
+      "reasons": [],
       "reference": {},
       "research": {},
       "source_checks": {
         "camra": {
           "status": "conflict",
           "url": "https://camra.org.uk/pubs/131523"
-        },
-        "fsa_independent": {
-          "status": "coordinate_agreement",
-          "url": "https://ratings.food.gov.uk/business/879315"
         }
       },
       "source_error": null,
-      "status": "unverified",
-      "unverified": true,
+      "status": "resolved",
+      "unverified": false,
       "venue_id": "v-fbb0978c-dd43-593b-85ea-bbdcc21abd9d"
     },
     "v-fc2c48c0-a296-51ac-b5db-89d187700d7d": {
@@ -16660,5 +16659,5 @@
     }
   },
   "schema_version": 1,
-  "unverified_count": 29
+  "unverified_count": 28
 }

@@ -1,7 +1,7 @@
 {
   "counts": {
-    "venue_coordinate_requires_review": 29,
-    "verified_venue": 1015
+    "venue_coordinate_requires_review": 28,
+    "verified_venue": 1016
   },
   "generated_at": "2026-10-29",
   "policy": {
@@ -19186,28 +19186,47 @@
       "venue_id": "v-87d62c18-2ada-5403-86fd-2030a2b69ad1"
     },
     "pelican inn/tafarn y pelican|newcastle emlyn|sa38 9ap": {
-      "coordinate_source": "food-standards-agency-fhrs",
-      "display_precision": "postcode",
+      "coordinate_source": "owner-reviewed-google-maps",
+      "display_precision": "venue",
       "evidence": [
         {
-          "checked_at": "2026-09-11",
-          "difference_metres": 39.0,
-          "match": "venue_name_and_full_postcode",
+          "checked_at": "2026-10-29",
+          "match": "owner_reviewed_named_place_and_full_postcode",
+          "reference_address": "Sycamore Street, Newcastle Emlyn, SA38 9AP",
           "reference_coordinate": {
-            "lat": 52.038507,
-            "lng": -4.4678
+            "lat": 52.0385305,
+            "lng": -4.4676877
           },
+          "reference_name": "The Pelican Inn",
           "reference_postcode": "SA38 9AP",
+          "review_url": "https://github.com/bristolbagpiper/BassBeerMap/issues/5#issuecomment-6503891334",
+          "reviewed_by": "bristolbagpiper",
+          "source": "google-maps-named-place",
+          "url": "https://www.google.com/maps/place/The+Pelican+Inn/@52.0385179,-4.4681671,126m/data=!3m1!1e3!4m6!3m5!1s0x486f23c19b6280c3:0x6274838bd8522a05!8m2!3d52.0385305!4d-4.4676877!16s%2Fg%2F1hc209vz2?entry=ttu"
+        },
+        {
+          "checked_at": "2026-10-29",
+          "match": "owner_reviewed_same_primary_name_same_postcode_and_within_50m",
+          "reference_address": "Sycamore Street",
+          "reference_coordinate": {
+            "lat": 52.038222,
+            "lng": -4.468132
+          },
+          "reference_locality": "Newcastle Emlyn",
+          "reference_name": "Pelican Inn, Newcastle Emlyn - Original Fittings",
+          "reference_postcode": "SA38 9AP",
+          "review_url": "https://github.com/bristolbagpiper/BassBeerMap/issues/5#issuecomment-6503891334",
+          "reviewed_by": "bristolbagpiper",
           "source": "camra",
-          "url": "https://camra.org.uk/pubs/131523"
+          "url": "https://camra.org.uk/pubs/pelican-inn-newcastle-emlyn-131523"
         }
       ],
-      "lat": 52.038507,
-      "lng": -4.4678,
+      "lat": 52.0385305,
+      "lng": -4.4676877,
       "place_name": "Newcastle Emlyn",
       "postcode": "SA38 9AP",
       "pub_name": "Pelican Inn/Tafarn Y Pelican",
-      "status": "venue_coordinate_requires_review",
+      "status": "verified_venue",
       "venue_id": "v-fbb0978c-dd43-593b-85ea-bbdcc21abd9d"
     },
     "pembroke|portsmouth|po1 2nr": {

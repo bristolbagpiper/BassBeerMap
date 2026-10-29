@@ -124,7 +124,7 @@ def camra_heading_confirms_listing_alias(listing, source_name, page_text):
     return any(normalized_place_name(current) == normalized_place_name(alias) for alias in aliases)
 
 
-def fsa_confirms_address_name(row, source, record, expected_id):
+def fsa_confirms_address_name(row, source, record, expected_id, target=None):
     """Corroborate a name difference only with an exact FSA premises name and street."""
     if not record or record.get('FHRSID') != expected_id:
         return False
@@ -135,8 +135,24 @@ def fsa_confirms_address_name(row, source, record, expected_id):
     fsa_streets = [compact(record.get(f'AddressLine{i}', '')) for i in range(2, 5)]
     fsa_name = normalized_place_name(record.get('BusinessName', ''))
     camra_name = normalized_place_name(source.get('name', ''))
-    return bool(listing and premises == listing and street and street in fsa_streets
-                and fsa_name and fsa_name == camra_name and record.get('PostCode'))
+    if (listing and premises == listing and street and street in fsa_streets
+            and fsa_name and fsa_name == camra_name and record.get('PostCode')):
+        return True
+    # Some official records add a locality to the full business name while
+    # CAMRA uses the chain's shorter name. Require the exact FSA listing name,
+    # postcode and point, plus the same street and a complete name prefix.
+    listed_name = normalized_place_name(row['pub_name'])
+    source_street = compact(re.sub(r'^\s*\d+\s+', '', source.get('address', '')))
+    try:
+        fsa_point = {'lat': float(record['geocode']['latitude']), 'lng': float(record['geocode']['longitude'])}
+    except (KeyError, TypeError, ValueError):
+        return False
+    postcode = lambda value: re.sub(r'\s+', '', str(value or '')).upper()
+    return bool(target and point_valid(fsa_point) and distance_metres(target, fsa_point) <= 1
+                and postcode(record.get('PostCode')) == postcode(row['postcode'])
+                and fsa_name == listed_name and len(camra_name.split()) >= 2
+                and listed_name.startswith(camra_name + ' ')
+                and source_street and source_street in fsa_streets)
 
 
 def validate_retained_point(command, row, entry, source, camra_page_text='', fsa_record=None):
@@ -156,7 +172,7 @@ def validate_retained_point(command, row, entry, source, camra_page_text='', fsa
     if ((len(listing_tokens) < 2 or not listing_tokens.issubset(tokens(source.get('name', ''))))
             and not camra_previous_name_matches(camra_page_text, row['pub_name'])
             and not camra_heading_confirms_listing_alias(row['pub_name'], source.get('name', ''), camra_page_text)
-            and not fsa_confirms_address_name(row, source, fsa_record, command.get('fsa_id'))):
+            and not fsa_confirms_address_name(row, source, fsa_record, command.get('fsa_id'), target)):
         raise ValueError('CAMRA name does not identify the listed venue')
     return pin
 
@@ -465,7 +481,8 @@ def approve(root, staging, event, owner):
                                   headers={'User-Agent': 'BassBeerMap location review', 'Accept': 'application/json', 'x-api-version': '2'})
                 with urlopen(request, timeout=20) as response:
                     fsa_record = json.load(response)
-                if not fsa_confirms_address_name(row, source, fsa_record, command['fsa_id']):
+                if not fsa_confirms_address_name(row, source, fsa_record, command['fsa_id'],
+                                                 {'lat': command['lat'], 'lng': command['lng']}):
                     raise ValueError('FSA record does not establish the venue name and street relationship')
             pin = copy.deepcopy(validate_retained_point(command, row, entry, source, camra_page, fsa_record))
             pin.pop('review_required', None)

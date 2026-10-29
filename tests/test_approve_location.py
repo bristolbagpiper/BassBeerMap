@@ -36,6 +36,22 @@ def event(body, login="bristolbagpiper", user_type="User", issue=5):
 
 
 class ApprovalCommandTests(unittest.TestCase):
+    def test_retained_point_accepts_exact_fsa_name_address_and_point(self):
+        url = 'https://camra.org.uk/pubs/122990'
+        command = {'lat': 52.965468, 'lng': -2.1813, 'url': url, 'fsa_id': 113675}
+        row = {'pub_name': 'Toby Carvery Trentham Village', 'postcode': 'ST4 8BU'}
+        entry = {'verified_pin': {'lat': command['lat'], 'lng': command['lng'], 'evidence': [{'source': 'camra', 'url': url}]}}
+        source = {'lat': 52.965468, 'lng': -2.1813, 'postcode': 'ST4 8BU',
+                  'address': '206 Longton Road', 'name': 'Toby Carvery, Stoke-on-Trent'}
+        fsa = {'FHRSID': 113675, 'BusinessName': 'Toby Carvery Trentham Village', 'AddressLine1': '',
+               'AddressLine2': 'Longton Road', 'PostCode': 'ST4 8BU',
+               'geocode': {'latitude': '52.965468', 'longitude': '-2.1813'}}
+        self.assertEqual(validate_retained_point(command, row, entry, source, '', fsa), entry['verified_pin'])
+        for change in ({'BusinessName': 'Toby Carvery Other'}, {'PostCode': 'ST4 1AA'},
+                       {'AddressLine2': 'Other Road'}, {'geocode': {'latitude': '53.1', 'longitude': '-2.1'}}):
+            with self.assertRaises(ValueError):
+                validate_retained_point(command, row, entry, source, '', dict(fsa, **change))
+
     def test_camra_heading_requires_complete_exact_alias(self):
         page = '<h1>Eden Park, Eden Park (Toby Carvery)</h1>'
         self.assertTrue(camra_heading_matches_listing('Toby Carvery', page))

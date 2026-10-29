@@ -1,6 +1,6 @@
 {
   "location_review": {
-    "active_count": 20,
+    "active_count": 19,
     "records": {
       "v-00a08839-2b8a-5782-b6c7-0bdce4cddb2f": {
         "active": false,
@@ -10180,7 +10180,7 @@
         "venue_id": "v-99376d26-255f-5a56-bf82-18e850c579ac"
       },
       "v-99412060-4aa7-5602-85e3-0ddf38526a87": {
-        "active": true,
+        "active": false,
         "first_seen": "2026-10-21",
         "history": [
           {
@@ -10189,15 +10189,18 @@
               "Reference venue name changed"
             ],
             "status": "unverified"
+          },
+          {
+            "date": "2026-10-29",
+            "reasons": [],
+            "status": "resolved"
           }
         ],
-        "last_checked": "2026-10-24",
+        "last_checked": "2026-10-29",
         "place_name": "Derby: Spondon",
         "postcode": "DE21 7JP",
         "pub_name": "Village/Conservative Club (PMC)",
-        "reasons": [
-          "Reference venue name changed"
-        ],
+        "reasons": [],
         "reference": {},
         "research": {
           "checked_at": "2026-10-27",
@@ -10224,8 +10227,8 @@
           }
         },
         "source_error": null,
-        "status": "unverified",
-        "unverified": true,
+        "status": "resolved",
+        "unverified": false,
         "venue_id": "v-99412060-4aa7-5602-85e3-0ddf38526a87"
       },
       "v-9a1e8581-39f4-58cd-949d-c3908758ad50": {
@@ -16699,7 +16702,7 @@
       }
     },
     "schema_version": 1,
-    "unverified_count": 13
+    "unverified_count": 12
   },
   "schema_version": 1,
   "venues": {
@@ -85276,6 +85279,48 @@
         "postcode": "DE21 7JP",
         "pub_name": "Village/Conservative Club (PMC)"
       },
+      "location_approvals": [
+        {
+          "checked_at": "2026-10-29",
+          "comment_id": 6508247841,
+          "previous_pin": {
+            "evidence": [
+              {
+                "checked_at": "2026-09-11",
+                "difference_metres": 0.0,
+                "match": "venue_name_and_full_postcode",
+                "reference_coordinate": {
+                  "lat": 52.921261,
+                  "lng": -1.404047
+                },
+                "reference_postcode": "DE21 7JP",
+                "source": "camra",
+                "url": "https://camra.org.uk/pubs/143292"
+              },
+              {
+                "checked_at": "2026-09-11",
+                "difference_metres": 0,
+                "match": "postcode_fallback_replaced",
+                "reference_coordinate": {
+                  "lat": 52.921261,
+                  "lng": -1.404047
+                },
+                "reference_postcode": "DE21 7JP",
+                "source": "camra-pubs-location-audit",
+                "url": "https://camra.org.uk/pubs/143292"
+              }
+            ],
+            "lat": 52.921261,
+            "lng": -1.404047,
+            "review_reason": "Reference venue name changed",
+            "review_required": true,
+            "source": "camra-pubs-location-audit"
+          },
+          "review_url": "https://github.com/bristolbagpiper/BassBeerMap/issues/5#issuecomment-6508247841",
+          "reviewed_by": "bristolbagpiper",
+          "source_url": "https://camra.org.uk/pubs/143292"
+        }
+      ],
       "location_research": {
         "checked_at": "2026-10-27",
         "coverage": {
@@ -85305,6 +85350,21 @@
       "verified_pin": {
         "evidence": [
           {
+            "checked_at": "2026-10-29",
+            "match": "owner_confirmed_saved_point_corroborated_by_named_camra_venue",
+            "reference_address": "13 Chapel Street",
+            "reference_coordinate": {
+              "lat": 52.921261,
+              "lng": -1.404047
+            },
+            "reference_name": "Village Club, Derby - Club with Live Music",
+            "reference_postcode": "DE21 7JP",
+            "review_url": "https://github.com/bristolbagpiper/BassBeerMap/issues/5#issuecomment-6508247841",
+            "reviewed_by": "bristolbagpiper",
+            "source": "camra",
+            "url": "https://camra.org.uk/pubs/143292"
+          },
+          {
             "checked_at": "2026-09-11",
             "difference_metres": 0.0,
             "match": "venue_name_and_full_postcode",
@@ -85331,8 +85391,6 @@
         ],
         "lat": 52.921261,
         "lng": -1.404047,
-        "review_reason": "Reference venue name changed",
-        "review_required": true,
         "source": "camra-pubs-location-audit"
       }
     },

@@ -1,7 +1,7 @@
 {
   "counts": {
-    "venue_coordinate_requires_review": 13,
-    "verified_venue": 1031
+    "venue_coordinate_requires_review": 12,
+    "verified_venue": 1032
   },
   "generated_at": "2026-10-29",
   "policy": {
@@ -27600,8 +27600,23 @@
     },
     "village/conservative club (pmc)|derby: spondon|de21 7jp": {
       "coordinate_source": "camra-pubs-location-audit",
-      "display_precision": "postcode",
+      "display_precision": "venue",
       "evidence": [
+        {
+          "checked_at": "2026-10-29",
+          "match": "owner_confirmed_saved_point_corroborated_by_named_camra_venue",
+          "reference_address": "13 Chapel Street",
+          "reference_coordinate": {
+            "lat": 52.921261,
+            "lng": -1.404047
+          },
+          "reference_name": "Village Club, Derby - Club with Live Music",
+          "reference_postcode": "DE21 7JP",
+          "review_url": "https://github.com/bristolbagpiper/BassBeerMap/issues/5#issuecomment-6508247841",
+          "reviewed_by": "bristolbagpiper",
+          "source": "camra",
+          "url": "https://camra.org.uk/pubs/143292"
+        },
         {
           "checked_at": "2026-09-11",
           "difference_metres": 0.0,
@@ -27632,7 +27647,7 @@
       "place_name": "Derby: Spondon",
       "postcode": "DE21 7JP",
       "pub_name": "Village/Conservative Club (PMC)",
-      "status": "venue_coordinate_requires_review",
+      "status": "verified_venue",
       "venue_id": "v-99412060-4aa7-5602-85e3-0ddf38526a87"
     },
     "vine inn|newcastle-u-l: silverdale|st5 6lx": {

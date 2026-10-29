@@ -1,5 +1,5 @@
 {
-  "active_count": 32,
+  "active_count": 35,
   "records": {
     "v-00a08839-2b8a-5782-b6c7-0bdce4cddb2f": {
       "active": false,
@@ -15984,7 +15984,7 @@
           "status": "resolved"
         }
       ],
-      "last_checked": "2026-10-09",
+      "last_checked": "2026-10-29",
       "place_name": "Thringstone",
       "postcode": "LE67 8UH",
       "pub_name": "George and Dragon",
@@ -15992,6 +15992,10 @@
       "reference": {},
       "research": {},
       "source_checks": {
+        "camra": {
+          "status": "confirmed",
+          "url": "https://camra.org.uk/pubs/171257"
+        },
         "fsa_independent": {
           "status": "coordinate_disagreement",
           "url": "https://ratings.food.gov.uk/business/693176"
@@ -16101,6 +16105,42 @@
       "unverified": false,
       "venue_id": "v-f5205b00-aadb-5928-870d-674117dbffab"
     },
+    "v-f5aec448-8eee-52d9-abb9-75adbf3dbdbf": {
+      "active": true,
+      "first_seen": "2026-10-29",
+      "history": [
+        {
+          "date": "2026-10-29",
+          "reasons": [
+            "Reference venue name changed"
+          ],
+          "status": "unverified"
+        }
+      ],
+      "last_checked": "2026-10-29",
+      "place_name": "Stafford",
+      "postcode": "ST16 2JU",
+      "pub_name": "Pickled Pig at the Bankhouse",
+      "reasons": [
+        "Reference venue name changed"
+      ],
+      "reference": {},
+      "research": {},
+      "source_checks": {
+        "camra": {
+          "status": "conflict",
+          "url": "https://camra.org.uk/pubs/145783"
+        },
+        "fsa_independent": {
+          "status": "coordinate_agreement",
+          "url": "https://ratings.food.gov.uk/business/1195739"
+        }
+      },
+      "source_error": null,
+      "status": "unverified",
+      "unverified": true,
+      "venue_id": "v-f5aec448-8eee-52d9-abb9-75adbf3dbdbf"
+    },
     "v-f66c462f-8eca-5321-885e-56b1bd7e0ee9": {
       "active": false,
       "first_seen": "2026-10-09",
@@ -16118,7 +16158,7 @@
           "status": "resolved"
         }
       ],
-      "last_checked": "2026-10-09",
+      "last_checked": "2026-10-29",
       "place_name": "Guiseley",
       "postcode": "LS20 8LY",
       "pub_name": "White Cross",
@@ -16126,6 +16166,10 @@
       "reference": {},
       "research": {},
       "source_checks": {
+        "camra": {
+          "status": "confirmed",
+          "url": "https://camra.org.uk/pubs/177447"
+        },
         "fsa_independent": {
           "status": "coordinate_disagreement",
           "url": "https://ratings.food.gov.uk/business/320485"
@@ -16135,6 +16179,46 @@
       "status": "resolved",
       "unverified": false,
       "venue_id": "v-f66c462f-8eca-5321-885e-56b1bd7e0ee9"
+    },
+    "v-f8ddf3fe-2e91-5117-a0d3-bfff56f4a0b9": {
+      "active": true,
+      "first_seen": "2026-10-29",
+      "history": [
+        {
+          "date": "2026-10-29",
+          "reasons": [
+            "Reference venue name changed"
+          ],
+          "status": "unverified"
+        }
+      ],
+      "last_checked": "2026-10-29",
+      "place_name": "Uttoxeter",
+      "postcode": "ST14 8HF",
+      "pub_name": "Ye Olde Talbot",
+      "reasons": [
+        "Reference venue name changed"
+      ],
+      "reference": {},
+      "research": {},
+      "source_checks": {
+        "camra": {
+          "status": "conflict",
+          "url": "https://camra.org.uk/pubs/128046"
+        },
+        "camra-pubs-location-audit": {
+          "status": "conflict",
+          "url": "https://camra.org.uk/pubs/128046"
+        },
+        "fsa_independent": {
+          "status": "no_name_match",
+          "url": ""
+        }
+      },
+      "source_error": null,
+      "status": "unverified",
+      "unverified": true,
+      "venue_id": "v-f8ddf3fe-2e91-5117-a0d3-bfff56f4a0b9"
     },
     "v-f919086c-3b90-501a-a57e-9531ef1f8805": {
       "active": false,
@@ -16153,7 +16237,7 @@
           "status": "resolved"
         }
       ],
-      "last_checked": "2026-10-09",
+      "last_checked": "2026-10-29",
       "place_name": "Louth",
       "postcode": "LN11 8EG",
       "pub_name": "White Horse Inn",
@@ -16161,6 +16245,10 @@
       "reference": {},
       "research": {},
       "source_checks": {
+        "camra": {
+          "status": "confirmed",
+          "url": "https://camra.org.uk/pubs/172419"
+        },
         "fsa_independent": {
           "status": "coordinate_disagreement",
           "url": "https://ratings.food.gov.uk/business/155999"
@@ -16246,7 +16334,7 @@
           "status": "resolved"
         }
       ],
-      "last_checked": "2026-10-09",
+      "last_checked": "2026-10-29",
       "place_name": "Nottingham: West Bridgford",
       "postcode": "NG2 6BA",
       "pub_name": "Stratford Haven",
@@ -16254,6 +16342,10 @@
       "reference": {},
       "research": {},
       "source_checks": {
+        "camra": {
+          "status": "confirmed",
+          "url": "https://camra.org.uk/pubs/162885"
+        },
         "fsa_independent": {
           "status": "coordinate_disagreement",
           "url": "https://ratings.food.gov.uk/business/266033"
@@ -16381,7 +16473,7 @@
           "status": "resolved"
         }
       ],
-      "last_checked": "2026-10-09",
+      "last_checked": "2026-10-29",
       "place_name": "Newcastle-U-L: Central",
       "postcode": "ST5 1JR",
       "pub_name": "Hopinn",
@@ -16389,6 +16481,10 @@
       "reference": {},
       "research": {},
       "source_checks": {
+        "camra": {
+          "status": "confirmed",
+          "url": "https://camra.org.uk/pubs/123045"
+        },
         "fsa_independent": {
           "status": "coordinate_disagreement",
           "url": "https://ratings.food.gov.uk/business/756321"
@@ -16416,7 +16512,7 @@
           "status": "resolved"
         }
       ],
-      "last_checked": "2026-10-09",
+      "last_checked": "2026-10-29",
       "place_name": "Manchester: Central",
       "postcode": "M1 3AQ",
       "pub_name": "Waldorf",
@@ -16424,6 +16520,10 @@
       "reference": {},
       "research": {},
       "source_checks": {
+        "camra": {
+          "status": "confirmed",
+          "url": "https://camra.org.uk/pubs/137634"
+        },
         "fsa_independent": {
           "status": "coordinate_disagreement",
           "url": "https://ratings.food.gov.uk/business/1817517"
@@ -16433,6 +16533,42 @@
       "status": "resolved",
       "unverified": false,
       "venue_id": "v-fb5ddb66-cc8e-53b3-bed6-c35c165091be"
+    },
+    "v-fbb0978c-dd43-593b-85ea-bbdcc21abd9d": {
+      "active": true,
+      "first_seen": "2026-10-29",
+      "history": [
+        {
+          "date": "2026-10-29",
+          "reasons": [
+            "Reference venue name changed"
+          ],
+          "status": "unverified"
+        }
+      ],
+      "last_checked": "2026-10-29",
+      "place_name": "Newcastle Emlyn",
+      "postcode": "SA38 9AP",
+      "pub_name": "Pelican Inn/Tafarn Y Pelican",
+      "reasons": [
+        "Reference venue name changed"
+      ],
+      "reference": {},
+      "research": {},
+      "source_checks": {
+        "camra": {
+          "status": "conflict",
+          "url": "https://camra.org.uk/pubs/131523"
+        },
+        "fsa_independent": {
+          "status": "coordinate_agreement",
+          "url": "https://ratings.food.gov.uk/business/879315"
+        }
+      },
+      "source_error": null,
+      "status": "unverified",
+      "unverified": true,
+      "venue_id": "v-fbb0978c-dd43-593b-85ea-bbdcc21abd9d"
     },
     "v-fc2c48c0-a296-51ac-b5db-89d187700d7d": {
       "active": false,
@@ -16451,7 +16587,7 @@
           "status": "resolved"
         }
       ],
-      "last_checked": "2026-10-09",
+      "last_checked": "2026-10-29",
       "place_name": "Blackpool: Stanley Park",
       "postcode": "FY3 9PH",
       "pub_name": "Saddle Inn",
@@ -16459,6 +16595,10 @@
       "reference": {},
       "research": {},
       "source_checks": {
+        "camra": {
+          "status": "confirmed",
+          "url": "https://camra.org.uk/pubs/120066"
+        },
         "fsa_independent": {
           "status": "coordinate_disagreement",
           "url": "https://ratings.food.gov.uk/business/140804"
@@ -16486,7 +16626,7 @@
           "status": "resolved"
         }
       ],
-      "last_checked": "2026-10-09",
+      "last_checked": "2026-10-29",
       "place_name": "Butterton",
       "postcode": "ST13 7SP",
       "pub_name": "Black Lion",
@@ -16494,6 +16634,10 @@
       "reference": {},
       "research": {},
       "source_checks": {
+        "camra": {
+          "status": "confirmed",
+          "url": "https://camra.org.uk/pubs/143948"
+        },
         "fsa_independent": {
           "status": "coordinate_disagreement",
           "url": "https://ratings.food.gov.uk/business/1259618"
@@ -16506,5 +16650,5 @@
     }
   },
   "schema_version": 1,
-  "unverified_count": 27
+  "unverified_count": 30
 }

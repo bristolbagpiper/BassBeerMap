@@ -23,6 +23,11 @@ CAMRA_COMMAND = re.compile(
     rf"^/verify-location (?P<venue_id>{VENUE_ID}) "
     r"(?P<url>https://camra\.org\.uk/pubs/[a-z0-9-]+)$"
 )
+RETAIN_COMMAND = re.compile(
+    rf'^/verify-location (?P<venue_id>{VENUE_ID}) retain '
+    r'(?P<lat>-?\d+(?:\.\d+)?) (?P<lng>-?\d+(?:\.\d+)?) '
+    r'(?P<url>https://camra\.org\.uk/pubs/[a-z0-9-]+)$'
+)
 GOOGLE_COMMAND = re.compile(
     rf'^/verify-location (?P<venue_id>{VENUE_ID}) google '
     r'(?P<lat>-?\d+(?:\.\d+)?) (?P<lng>-?\d+(?:\.\d+)?) '
@@ -46,6 +51,11 @@ def approved_commands(event, owner):
     commands = []
     for line in lines:
         line = line.strip()
+        retain = RETAIN_COMMAND.fullmatch(line)
+        if retain:
+            commands.append({'kind': 'retain', 'venue_id': retain['venue_id'],
+                             'lat': float(retain['lat']), 'lng': float(retain['lng']), 'url': retain['url']})
+            continue
         camra = CAMRA_COMMAND.fullmatch(line)
         if camra:
             commands.append({"kind": "camra", "venue_id": camra["venue_id"], "url": camra["url"]})
@@ -75,6 +85,25 @@ def approved_commands(event, owner):
     if len({command["venue_id"] for command in commands}) != len(commands):
         raise ValueError("Approve each venue ID only once in a comment")
     return commands
+
+
+def validate_retained_point(command, row, entry, source):
+    pin = entry.get('verified_pin') or {}
+    target = {'lat': command['lat'], 'lng': command['lng']}
+    if not point_valid(pin) or distance_metres(pin, target) > 0.01:
+        raise ValueError('The reviewed point no longer matches the saved venue point')
+    if not any(e.get('source') == 'camra' and e.get('url') == command['url'] for e in pin.get('evidence', [])):
+        raise ValueError('CAMRA source is not part of the saved venue evidence')
+    compact = lambda value: re.sub(r'[^A-Z0-9]', '', str(value).upper())
+    if not source.get('postcode') or compact(source['postcode']) != compact(row['postcode']):
+        raise ValueError('CAMRA postcode does not match the directory')
+    if not source.get('address') or not point_valid(source) or distance_metres(pin, source) > 50:
+        raise ValueError('CAMRA address or coordinates do not corroborate the saved point')
+    tokens = lambda value: set(re.findall(r'[a-z0-9]+', value.casefold())) - {'the', 'at', 'and', 'inn', 'pub', 'bar', 'hotel'}
+    listing_tokens = tokens(row['pub_name'])
+    if len(listing_tokens) < 2 or not listing_tokens.issubset(tokens(source.get('name', ''))):
+        raise ValueError('CAMRA name does not identify the listed venue')
+    return pin
 
 
 def manual_name_matches(listing, reference):
@@ -361,7 +390,19 @@ def approve(root, staging, event, owner):
             raise ValueError("Only an unverified location can be approved; verified relocations require a dedicated review")
         centre = read_json(root / "pub-coordinates.json")["coordinates"][row["postcode"]]
 
-        if command["kind"] == "camra":
+        if command["kind"] == "retain":
+            url = command['url']
+            source = parse_camra(fetch_text(url))
+            pin = copy.deepcopy(validate_retained_point(command, row, entry, source))
+            pin.pop('review_required', None)
+            pin.pop('review_reason', None)
+            pin['evidence'].append(dict(source='camra', url=url, checked_at=date.today().isoformat(),
+                match='owner_confirmed_saved_point_corroborated_by_named_camra_venue',
+                reference_coordinate={'lat': source['lat'], 'lng': source['lng']},
+                reference_name=source['name'], reference_address=source['address'],
+                reference_postcode=source['postcode'], reviewed_by=owner, review_url=event['comment']['html_url']))
+            approval_url = url
+        elif command["kind"] == "camra":
             url = command["url"]
             source = parse_camra(fetch_text(url))
             proposals = entry.get("location_research", {}).get("proposals", [])

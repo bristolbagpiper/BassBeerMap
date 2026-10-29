@@ -5,6 +5,7 @@ from approve_location import (
     extract_camra_heading,
     manual_name_matches,
     validate_google_place,
+    validate_retained_point,
 )
 
 from coordinate_sources import name_matches
@@ -34,6 +35,24 @@ def event(body, login="bristolbagpiper", user_type="User", issue=5):
 
 
 class ApprovalCommandTests(unittest.TestCase):
+    def test_retained_point_requires_same_saved_point_and_corroborating_source(self):
+        url = 'https://camra.org.uk/pubs/145783'
+        command = {'lat': 52.8079276, 'lng': -2.1168364, 'url': url}
+        row = {'pub_name': 'Pickled Pig at the Bankhouse', 'postcode': 'ST16 2JU'}
+        entry = {'verified_pin': {'lat': command['lat'], 'lng': command['lng'],
+                                  'evidence': [{'source': 'camra', 'url': url}]}}
+        source = {'lat': 52.807928, 'lng': -2.11676, 'postcode': 'ST16 2JU',
+                  'address': '5 Salter Street', 'name': 'Pickled Pig, at the Bankhouse, Stafford'}
+        self.assertEqual(validate_retained_point(command, row, entry, source), entry['verified_pin'])
+        with self.assertRaises(ValueError):
+            validate_retained_point(dict(command, lat=52.808), row, entry, source)
+        with self.assertRaises(ValueError):
+            validate_retained_point(command, row, entry, dict(source, name='Other Pub'))
+        with self.assertRaises(ValueError):
+            validate_retained_point(command, row, entry, dict(source, postcode='ST16 1AA'))
+        with self.assertRaises(ValueError):
+            validate_retained_point(command, row, entry, dict(source, lat=53.1))
+
     def test_pelican_reviewed_bilingual_name_is_specific(self):
         self.assertTrue(manual_name_matches("Pelican Inn/Tafarn Y Pelican", "The Pelican Inn"))
         self.assertFalse(manual_name_matches("Pelican Inn/Tafarn Y Pelican", "The Pelican Arms"))

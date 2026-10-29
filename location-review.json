@@ -1,5 +1,5 @@
 {
-  "active_count": 32,
+  "active_count": 31,
   "records": {
     "v-00a08839-2b8a-5782-b6c7-0bdce4cddb2f": {
       "active": false,
@@ -1939,7 +1939,7 @@
       "venue_id": "v-1dbfdcda-d5a4-5519-969f-979e11cc3ec5"
     },
     "v-1f980acc-ae24-543c-9afc-40840f5ecc91": {
-      "active": true,
+      "active": false,
       "first_seen": "2026-10-11",
       "history": [
         {
@@ -1948,15 +1948,18 @@
             "FSA no longer provides an unambiguous agreeing venue"
           ],
           "status": "unverified"
+        },
+        {
+          "date": "2026-10-29",
+          "reasons": [],
+          "status": "resolved"
         }
       ],
-      "last_checked": "2026-10-13",
+      "last_checked": "2026-10-29",
       "place_name": "Baldwins Gate",
       "postcode": "ST5 5BU",
       "pub_name": "Sheet Anchor",
-      "reasons": [
-        "FSA no longer provides an unambiguous agreeing venue"
-      ],
+      "reasons": [],
       "reference": {},
       "research": {
         "checked_at": "2026-10-27",
@@ -1972,15 +1975,11 @@
         "food_standards_agency": {
           "status": "conflict",
           "url": "https://api.ratings.food.gov.uk/Establishments?address=ST5+5BU&pageSize=100&pageNumber=1"
-        },
-        "fsa_independent": {
-          "status": "coordinate_agreement",
-          "url": "https://ratings.food.gov.uk/business/835439"
         }
       },
       "source_error": null,
-      "status": "unverified",
-      "unverified": true,
+      "status": "resolved",
+      "unverified": false,
       "venue_id": "v-1f980acc-ae24-543c-9afc-40840f5ecc91"
     },
     "v-2147c2d1-f406-58f5-8226-6b32e965cdd5": {
@@ -16662,5 +16661,5 @@
     }
   },
   "schema_version": 1,
-  "unverified_count": 27
+  "unverified_count": 26
 }

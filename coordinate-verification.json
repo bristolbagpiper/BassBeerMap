@@ -1,7 +1,7 @@
 {
   "counts": {
-    "venue_coordinate_requires_review": 27,
-    "verified_venue": 1017
+    "venue_coordinate_requires_review": 26,
+    "verified_venue": 1018
   },
   "generated_at": "2026-10-29",
   "policy": {
@@ -23215,28 +23215,31 @@
       "venue_id": "v-31ec017a-013e-520a-b394-1b72c94b330a"
     },
     "sheet anchor|baldwins gate|st5 5bu": {
-      "coordinate_source": "food-standards-agency-fhrs",
-      "display_precision": "postcode",
+      "coordinate_source": "owner-reviewed-google-maps",
+      "display_precision": "venue",
       "evidence": [
         {
-          "checked_at": "2026-09-11",
-          "difference_metres": 0.0,
-          "match": "venue_name_or_safe_alias_and_full_postcode",
+          "checked_at": "2026-10-29",
+          "match": "owner_reviewed_named_place_and_full_postcode",
+          "reference_address": "Newcastle Road, Baldwins Gate, ST5 5BU",
           "reference_coordinate": {
-            "lat": 52.960363,
-            "lng": -2.303902
+            "lat": 52.9604905,
+            "lng": -2.3046398
           },
+          "reference_name": "Blockhouse at The Sheet Anchor",
           "reference_postcode": "ST5 5BU",
-          "source": "food_standards_agency",
-          "url": "https://api.ratings.food.gov.uk/Establishments?address=ST5+5BU&pageSize=100&pageNumber=1"
+          "review_url": "https://github.com/bristolbagpiper/BassBeerMap/issues/5#issuecomment-6505019451",
+          "reviewed_by": "bristolbagpiper",
+          "source": "google-maps-named-place",
+          "url": "https://www.google.com/maps/place/Blockhouse+at+The+Sheet+Anchor/@52.96048,-2.3046308,126m/data=!3m1!1e3!4m12!1m5!3m4!2zNTLCsDU3JzM3LjgiTiAywrAxOCcxNi45Ilc!8m2!3d52.96049!4d-2.30469!3m5!1s0x487a66c092fe6be3:0x779edc8d7b1d590!8m2!3d52.9604905!4d-2.3046398!16s%2Fg%2F1v76z5hb?entry=ttu"
         }
       ],
-      "lat": 52.960363,
-      "lng": -2.303902,
+      "lat": 52.9604905,
+      "lng": -2.3046398,
       "place_name": "Baldwins Gate",
       "postcode": "ST5 5BU",
       "pub_name": "Sheet Anchor",
-      "status": "venue_coordinate_requires_review",
+      "status": "verified_venue",
       "venue_id": "v-1f980acc-ae24-543c-9afc-40840f5ecc91"
     },
     "shepherds hall ale house|chorley|pr7 1bs": {

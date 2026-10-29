@@ -1,6 +1,6 @@
 {
   "location_review": {
-    "active_count": 30,
+    "active_count": 29,
     "records": {
       "v-00a08839-2b8a-5782-b6c7-0bdce4cddb2f": {
         "active": false,
@@ -15636,7 +15636,7 @@
         "venue_id": "v-ee7d0ee2-cbc1-50cc-b108-7412c6245ced"
       },
       "v-eea3abfd-0bbc-5138-8def-dfc09a6bb22f": {
-        "active": true,
+        "active": false,
         "first_seen": "2026-10-28",
         "history": [
           {
@@ -15645,15 +15645,18 @@
               "Reference venue name changed"
             ],
             "status": "unverified"
+          },
+          {
+            "date": "2026-10-29",
+            "reasons": [],
+            "status": "resolved"
           }
         ],
-        "last_checked": "2026-10-28",
+        "last_checked": "2026-10-29",
         "place_name": "Silloth",
         "postcode": "CA7 4BL",
         "pub_name": "Silloth On Solway Golf Club (PMC)",
-        "reasons": [
-          "Reference venue name changed"
-        ],
+        "reasons": [],
         "reference": {},
         "research": {},
         "source_checks": {
@@ -15664,15 +15667,11 @@
           "camra-pubs-location-audit": {
             "status": "conflict",
             "url": "https://camra.org.uk/pubs/144375"
-          },
-          "fsa_independent": {
-            "status": "no_name_match",
-            "url": ""
           }
         },
         "source_error": null,
-        "status": "unverified",
-        "unverified": true,
+        "status": "resolved",
+        "unverified": false,
         "venue_id": "v-eea3abfd-0bbc-5138-8def-dfc09a6bb22f"
       },
       "v-eea3d86a-9388-5ea9-9736-52d5bc80f972": {
@@ -16665,7 +16664,7 @@
       }
     },
     "schema_version": 1,
-    "unverified_count": 25
+    "unverified_count": 24
   },
   "schema_version": 1,
   "venues": {
@@ -123158,6 +123157,48 @@
         "postcode": "CA7 4BL",
         "pub_name": "Silloth On Solway Golf Club (PMC)"
       },
+      "location_approvals": [
+        {
+          "checked_at": "2026-10-29",
+          "comment_id": 6505282409,
+          "previous_pin": {
+            "evidence": [
+              {
+                "checked_at": "2026-09-11",
+                "difference_metres": 0.0,
+                "match": "venue_name_and_full_postcode",
+                "reference_coordinate": {
+                  "lat": 54.86603688,
+                  "lng": -3.389233205
+                },
+                "reference_postcode": "CA7 4BL",
+                "source": "camra",
+                "url": "https://camra.org.uk/pubs/144375"
+              },
+              {
+                "checked_at": "2026-09-11",
+                "difference_metres": 0,
+                "match": "existing_pin_over_50m_from_matching_venue",
+                "reference_coordinate": {
+                  "lat": 54.86603688,
+                  "lng": -3.389233205
+                },
+                "reference_postcode": "CA7 4BL",
+                "source": "camra-pubs-location-audit",
+                "url": "https://camra.org.uk/pubs/144375"
+              }
+            ],
+            "lat": 54.86603688,
+            "lng": -3.389233205,
+            "review_reason": "Reference venue name changed",
+            "review_required": true,
+            "source": "camra-pubs-location-audit"
+          },
+          "review_url": "https://github.com/bristolbagpiper/BassBeerMap/issues/5#issuecomment-6505282409",
+          "reviewed_by": "bristolbagpiper",
+          "source_url": "https://www.google.com/maps/place/Silloth+On+Solway+Golf+Club/@54.8667471,-3.392711,860m/data=!3m2!1e3!4b1!4m6!3m5!1s0x487d29c80f2661b5:0x863213c7c62a2cf7!8m2!3d54.8667471!4d-3.3901361!16s%2Fg%2F1tfk_s38?entry=ttu"
+        }
+      ],
       "verification_attempt": {
         "checked_at": "2026-10-28",
         "reason": "Reference venue name changed",
@@ -123177,35 +123218,24 @@
       "verified_pin": {
         "evidence": [
           {
-            "checked_at": "2026-09-11",
-            "difference_metres": 0.0,
-            "match": "venue_name_and_full_postcode",
+            "checked_at": "2026-10-29",
+            "match": "owner_reviewed_named_place_and_full_postcode",
+            "reference_address": "The Club House, Station Road, Silloth, CA7 4BL",
             "reference_coordinate": {
-              "lat": 54.86603688,
-              "lng": -3.389233205
+              "lat": 54.8667471,
+              "lng": -3.3901361
             },
+            "reference_name": "Silloth On Solway Golf Club",
             "reference_postcode": "CA7 4BL",
-            "source": "camra",
-            "url": "https://camra.org.uk/pubs/144375"
-          },
-          {
-            "checked_at": "2026-09-11",
-            "difference_metres": 0,
-            "match": "existing_pin_over_50m_from_matching_venue",
-            "reference_coordinate": {
-              "lat": 54.86603688,
-              "lng": -3.389233205
-            },
-            "reference_postcode": "CA7 4BL",
-            "source": "camra-pubs-location-audit",
-            "url": "https://camra.org.uk/pubs/144375"
+            "review_url": "https://github.com/bristolbagpiper/BassBeerMap/issues/5#issuecomment-6505282409",
+            "reviewed_by": "bristolbagpiper",
+            "source": "google-maps-named-place",
+            "url": "https://www.google.com/maps/place/Silloth+On+Solway+Golf+Club/@54.8667471,-3.392711,860m/data=!3m2!1e3!4b1!4m6!3m5!1s0x487d29c80f2661b5:0x863213c7c62a2cf7!8m2!3d54.8667471!4d-3.3901361!16s%2Fg%2F1tfk_s38?entry=ttu"
           }
         ],
-        "lat": 54.86603688,
-        "lng": -3.389233205,
-        "review_reason": "Reference venue name changed",
-        "review_required": true,
-        "source": "camra-pubs-location-audit"
+        "lat": 54.8667471,
+        "lng": -3.3901361,
+        "source": "owner-reviewed-google-maps"
       }
     },
     "v-eea3d86a-9388-5ea9-9736-52d5bc80f972": {

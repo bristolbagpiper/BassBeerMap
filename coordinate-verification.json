@@ -1,7 +1,7 @@
 {
   "counts": {
-    "venue_coordinate_requires_review": 25,
-    "verified_venue": 1019
+    "venue_coordinate_requires_review": 24,
+    "verified_venue": 1020
   },
   "generated_at": "2026-10-29",
   "policy": {
@@ -23661,40 +23661,31 @@
       "venue_id": "v-f365d3e5-285c-5a5d-a0a7-3532f14a676c"
     },
     "silloth on solway golf club (pmc)|silloth|ca7 4bl": {
-      "coordinate_source": "camra-pubs-location-audit",
-      "display_precision": "postcode",
+      "coordinate_source": "owner-reviewed-google-maps",
+      "display_precision": "venue",
       "evidence": [
         {
-          "checked_at": "2026-09-11",
-          "difference_metres": 0.0,
-          "match": "venue_name_and_full_postcode",
+          "checked_at": "2026-10-29",
+          "match": "owner_reviewed_named_place_and_full_postcode",
+          "reference_address": "The Club House, Station Road, Silloth, CA7 4BL",
           "reference_coordinate": {
-            "lat": 54.86603688,
-            "lng": -3.389233205
+            "lat": 54.8667471,
+            "lng": -3.3901361
           },
+          "reference_name": "Silloth On Solway Golf Club",
           "reference_postcode": "CA7 4BL",
-          "source": "camra",
-          "url": "https://camra.org.uk/pubs/144375"
-        },
-        {
-          "checked_at": "2026-09-11",
-          "difference_metres": 0,
-          "match": "existing_pin_over_50m_from_matching_venue",
-          "reference_coordinate": {
-            "lat": 54.86603688,
-            "lng": -3.389233205
-          },
-          "reference_postcode": "CA7 4BL",
-          "source": "camra-pubs-location-audit",
-          "url": "https://camra.org.uk/pubs/144375"
+          "review_url": "https://github.com/bristolbagpiper/BassBeerMap/issues/5#issuecomment-6505282409",
+          "reviewed_by": "bristolbagpiper",
+          "source": "google-maps-named-place",
+          "url": "https://www.google.com/maps/place/Silloth+On+Solway+Golf+Club/@54.8667471,-3.392711,860m/data=!3m2!1e3!4b1!4m6!3m5!1s0x487d29c80f2661b5:0x863213c7c62a2cf7!8m2!3d54.8667471!4d-3.3901361!16s%2Fg%2F1tfk_s38?entry=ttu"
         }
       ],
-      "lat": 54.86603688,
-      "lng": -3.389233205,
+      "lat": 54.8667471,
+      "lng": -3.3901361,
       "place_name": "Silloth",
       "postcode": "CA7 4BL",
       "pub_name": "Silloth On Solway Golf Club (PMC)",
-      "status": "venue_coordinate_requires_review",
+      "status": "verified_venue",
       "venue_id": "v-eea3abfd-0bbc-5138-8def-dfc09a6bb22f"
     },
     "sinclairs|southport: central|pr9 0an": {

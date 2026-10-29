@@ -1,5 +1,5 @@
 {
-  "active_count": 35,
+  "active_count": 34,
   "records": {
     "v-00a08839-2b8a-5782-b6c7-0bdce4cddb2f": {
       "active": false,
@@ -5453,15 +5453,18 @@
             "Venue removed from the current directory"
           ],
           "status": "removed"
+        },
+        {
+          "date": "2026-10-29",
+          "reasons": [],
+          "status": "resolved"
         }
       ],
       "last_checked": "2026-10-18",
       "place_name": "Belper: Central",
       "postcode": "DE56 1FF",
       "pub_name": "Thorn Tree Inn",
-      "reasons": [
-        "Venue removed from the current directory"
-      ],
+      "reasons": [],
       "reference": {},
       "research": {},
       "source_checks": {
@@ -5475,7 +5478,7 @@
         }
       },
       "source_error": null,
-      "status": "removed",
+      "status": "resolved",
       "unverified": false,
       "venue_id": "v-5b19fe32-b19e-5945-9af1-459583a88d2f"
     },
@@ -5638,7 +5641,7 @@
       "venue_id": "v-5c24d06c-1aa0-5399-826e-81bdc7e18289"
     },
     "v-5cbd9588-4bcc-545b-af86-cb47a80b832c": {
-      "active": true,
+      "active": false,
       "first_seen": "2026-10-29",
       "history": [
         {
@@ -5647,6 +5650,13 @@
             "FSA businesses at the postcode do not match the pub name; CAMRA not checked"
           ],
           "status": "unverified"
+        },
+        {
+          "date": "2026-10-29",
+          "reasons": [
+            "Venue removed from the current directory"
+          ],
+          "status": "removed"
         }
       ],
       "last_checked": "2026-10-29",
@@ -5654,7 +5664,7 @@
       "postcode": "DE56 1FF",
       "pub_name": "and re-entries on the list are coloured gold.",
       "reasons": [
-        "FSA businesses at the postcode do not match the pub name; CAMRA not checked"
+        "Venue removed from the current directory"
       ],
       "reference": {},
       "research": {},
@@ -5670,8 +5680,8 @@
         }
       },
       "source_error": null,
-      "status": "unverified",
-      "unverified": true,
+      "status": "removed",
+      "unverified": false,
       "venue_id": "v-5cbd9588-4bcc-545b-af86-cb47a80b832c"
     },
     "v-5ddc0a4c-1901-5073-946a-674c74a082b8": {
@@ -16650,5 +16660,5 @@
     }
   },
   "schema_version": 1,
-  "unverified_count": 30
+  "unverified_count": 29
 }

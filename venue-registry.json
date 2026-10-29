@@ -1,6 +1,6 @@
 {
   "location_review": {
-    "active_count": 32,
+    "active_count": 33,
     "records": {
       "v-00a08839-2b8a-5782-b6c7-0bdce4cddb2f": {
         "active": false,
@@ -5447,13 +5447,22 @@
             "date": "2026-10-09",
             "reasons": [],
             "status": "resolved"
+          },
+          {
+            "date": "2026-10-29",
+            "reasons": [
+              "Venue removed from the current directory"
+            ],
+            "status": "removed"
           }
         ],
         "last_checked": "2026-10-18",
         "place_name": "Belper: Central",
         "postcode": "DE56 1FF",
         "pub_name": "Thorn Tree Inn",
-        "reasons": [],
+        "reasons": [
+          "Venue removed from the current directory"
+        ],
         "reference": {},
         "research": {},
         "source_checks": {
@@ -5467,7 +5476,7 @@
           }
         },
         "source_error": null,
-        "status": "resolved",
+        "status": "removed",
         "unverified": false,
         "venue_id": "v-5b19fe32-b19e-5945-9af1-459583a88d2f"
       },
@@ -5628,6 +5637,43 @@
         "status": "resolved",
         "unverified": false,
         "venue_id": "v-5c24d06c-1aa0-5399-826e-81bdc7e18289"
+      },
+      "v-5cbd9588-4bcc-545b-af86-cb47a80b832c": {
+        "active": true,
+        "first_seen": "2026-10-29",
+        "history": [
+          {
+            "date": "2026-10-29",
+            "reasons": [
+              "FSA businesses at the postcode do not match the pub name; CAMRA not checked"
+            ],
+            "status": "unverified"
+          }
+        ],
+        "last_checked": "2026-10-29",
+        "place_name": "Thorn Tree Inn",
+        "postcode": "DE56 1FF",
+        "pub_name": "and re-entries on the list are coloured gold.",
+        "reasons": [
+          "FSA businesses at the postcode do not match the pub name; CAMRA not checked"
+        ],
+        "reference": {},
+        "research": {},
+        "source_checks": {
+          "camra": {
+            "status": "not_checked"
+          },
+          "fsa": {
+            "name_matches": 0,
+            "postcode_matches": 2,
+            "records_returned": 2,
+            "status": "no_name_match"
+          }
+        },
+        "source_error": null,
+        "status": "unverified",
+        "unverified": true,
+        "venue_id": "v-5cbd9588-4bcc-545b-af86-cb47a80b832c"
       },
       "v-5ddc0a4c-1901-5073-946a-674c74a082b8": {
         "active": true,
@@ -16462,7 +16508,7 @@
       }
     },
     "schema_version": 1,
-    "unverified_count": 27
+    "unverified_count": 28
   },
   "schema_version": 1,
   "venues": {
@@ -56027,6 +56073,39 @@
         "source": "openstreetmap-gb-extract"
       }
     },
+    "v-5cbd9588-4bcc-545b-af86-cb47a80b832c": {
+      "aliases": [
+        "and re-entries on the list are coloured gold.|thorn tree inn|de56 1ff"
+      ],
+      "current_key": "and re-entries on the list are coloured gold.|thorn tree inn|de56 1ff",
+      "listing": {
+        "area": "Derbyshire",
+        "country": "England",
+        "dispense": "H",
+        "last": "2026 Q3",
+        "notes": "Belper: Central",
+        "pg": "Perm",
+        "place_name": "Thorn Tree Inn",
+        "postcode": "DE56 1FF",
+        "pub_name": "and re-entries on the list are coloured gold."
+      },
+      "verification_attempt": {
+        "checked_at": "2026-10-29",
+        "reason": "FSA businesses at the postcode do not match the pub name; CAMRA not checked",
+        "sources": {
+          "camra": {
+            "status": "not_checked"
+          },
+          "fsa": {
+            "name_matches": 0,
+            "postcode_matches": 2,
+            "records_returned": 2,
+            "status": "no_name_match"
+          }
+        }
+      },
+      "verified_pin": null
+    },
     "v-5cebdfe8-553b-598e-afa8-1b1510a63c90": {
       "aliases": [
         "olde whyte swanne|louth|ln11 9np"
@@ -84509,7 +84588,7 @@
         "country": "England",
         "dispense": "H",
         "last": "2026 Q2",
-        "notes": "v1 'once a year'. Newand re-entries on the list are coloured gold.This directory couldn't have happened without Ian Thurman, Pub Curmudgeon (RIP), Retired Martin, Britain Beer Mat and Ian Webster.The directory is now kept updated by Quinten Taylor AKA Watney Mann (Fb). All content copyright Quinten Taylor.",
+        "notes": "v1 'once a year'. New",
         "pg": "Perm",
         "place_name": "Belper: Central",
         "postcode": "DE56 1UU",

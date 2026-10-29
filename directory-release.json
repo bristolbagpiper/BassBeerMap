@@ -3774,16 +3774,6 @@
       },
       "precision": "venue"
     },
-    "v-5b19fe32-b19e-5945-9af1-459583a88d2f": {
-      "checked_at": "2026-10-16",
-      "lat": 53.0276025,
-      "lng": -1.4762328,
-      "postcode_location": {
-        "lat": 53.028296,
-        "lng": -1.476177
-      },
-      "precision": "venue"
-    },
     "v-5b7a8e74-1d57-5edf-a58b-f3445daf1ea1": {
       "checked_at": "2026-10-13",
       "lat": 53.2608242,
@@ -3888,6 +3878,15 @@
         "lng": -1.438155
       },
       "precision": "venue"
+    },
+    "v-5cbd9588-4bcc-545b-af86-cb47a80b832c": {
+      "lat": 53.028296,
+      "lng": -1.476177,
+      "postcode_location": {
+        "lat": 53.028296,
+        "lng": -1.476177
+      },
+      "precision": "postcode"
     },
     "v-5cebdfe8-553b-598e-afa8-1b1510a63c90": {
       "checked_at": "2026-10-16",
@@ -11248,7 +11247,7 @@
     "source_name_hint": "",
     "source_pdf": "latest-bass-directory.pdf"
   },
-  "release_id": "8552331c3a9a63cabd9a033a7b964b764a070142e427db5664800190022eb4cf",
+  "release_id": "58607a0a46b1e2027a90224f683d7dcac14022450b6acff808de774270bbd28f",
   "rows": [
     {
       "area": "Bedfordshire",
@@ -12143,7 +12142,7 @@
       "country": "England",
       "dispense": "H",
       "last": "2026 Q2",
-      "notes": "v1 'once a year'. Newand re-entries on the list are coloured gold.This directory couldn't have happened without Ian Thurman, Pub Curmudgeon (RIP), Retired Martin, Britain Beer Mat and Ian Webster.The directory is now kept updated by Quinten Taylor AKA Watney Mann (Fb). All content copyright Quinten Taylor.",
+      "notes": "v1 'once a year'. New",
       "pg": "Perm",
       "place_name": "Belper: Central",
       "postcode": "DE56 1UU",
@@ -12155,12 +12154,12 @@
       "country": "England",
       "dispense": "H",
       "last": "2026 Q3",
-      "notes": "",
+      "notes": "Belper: Central",
       "pg": "Perm",
-      "place_name": "Belper: Central",
+      "place_name": "Thorn Tree Inn",
       "postcode": "DE56 1FF",
-      "pub_name": "Thorn Tree Inn",
-      "venue_id": "v-5b19fe32-b19e-5945-9af1-459583a88d2f"
+      "pub_name": "and re-entries on the list are coloured gold.",
+      "venue_id": "v-5cbd9588-4bcc-545b-af86-cb47a80b832c"
     },
     {
       "area": "Derbyshire",

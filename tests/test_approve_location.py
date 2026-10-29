@@ -53,6 +53,19 @@ class ApprovalCommandTests(unittest.TestCase):
         with self.assertRaises(ValueError):
             validate_retained_point(command, row, entry, dict(source, lat=53.1))
 
+    def test_retained_point_accepts_exact_documented_previous_name_only(self):
+        url = 'https://camra.org.uk/pubs/113335'
+        command = {'lat': 53.053271, 'lng': -1.405467, 'url': url}
+        row = {'pub_name': 'Talbot Taphouse', 'postcode': 'DE5 3LT'}
+        entry = {'verified_pin': {'lat': command['lat'], 'lng': command['lng'], 'evidence': [{'source': 'camra', 'url': url}]}}
+        source = {'lat': command['lat'], 'lng': command['lng'], 'postcode': 'DE5 3LT',
+                  'address': '1 Butterley Hill', 'name': 'Talbot, Ripley'}
+        page = '<dt class="text-sm">Previous Names</dt><dd>Talbot Taphouse</dd>'
+        self.assertEqual(validate_retained_point(command, row, entry, source, page), entry['verified_pin'])
+        for other in ('<p>Talbot Taphouse</p>', '<dt>Previous Names</dt><dd>Talbot Taphouse Other</dd>'):
+            with self.assertRaises(ValueError):
+                validate_retained_point(command, row, entry, source, other)
+
     def test_pelican_reviewed_bilingual_name_is_specific(self):
         self.assertTrue(manual_name_matches("Pelican Inn/Tafarn Y Pelican", "The Pelican Inn"))
         self.assertFalse(manual_name_matches("Pelican Inn/Tafarn Y Pelican", "The Pelican Arms"))

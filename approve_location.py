@@ -87,7 +87,19 @@ def approved_commands(event, owner):
     return commands
 
 
-def validate_retained_point(command, row, entry, source):
+def camra_previous_name_matches(page_text, listing):
+    """Only accept an exact former name from CAMRA's Previous Names field."""
+    match = re.search(r'<dt\b[^>]*>\s*Previous Names\s*</dt>\s*<dd\b[^>]*>(.*?)</dd>',
+                      page_text, re.I | re.S)
+    if not match:
+        return False
+    text = html.unescape(re.sub(r'<[^>]+>', ' ', match.group(1)))
+    normalize = lambda value: re.sub(r'[^a-z0-9]', '', value.casefold())
+    expected = normalize(row_name) if (row_name := listing.strip()) else ''
+    return bool(expected and any(normalize(part) == expected for part in re.split(r'[,;]', text)))
+
+
+def validate_retained_point(command, row, entry, source, camra_page_text=''):
     pin = entry.get('verified_pin') or {}
     target = {'lat': command['lat'], 'lng': command['lng']}
     if not point_valid(pin) or distance_metres(pin, target) > 0.01:
@@ -101,7 +113,7 @@ def validate_retained_point(command, row, entry, source):
         raise ValueError('CAMRA address or coordinates do not corroborate the saved point')
     tokens = lambda value: set(re.findall(r'[a-z0-9]+', value.casefold())) - {'the', 'at', 'and', 'inn', 'pub', 'bar', 'hotel'}
     listing_tokens = tokens(row['pub_name'])
-    if len(listing_tokens) < 2 or not listing_tokens.issubset(tokens(source.get('name', ''))):
+    if (len(listing_tokens) < 2 or not listing_tokens.issubset(tokens(source.get('name', '')))) and not camra_previous_name_matches(camra_page_text, row['pub_name']):
         raise ValueError('CAMRA name does not identify the listed venue')
     return pin
 
@@ -392,11 +404,12 @@ def approve(root, staging, event, owner):
 
         if command["kind"] == "retain":
             url = command['url']
-            source = parse_camra(fetch_text(url))
-            pin = copy.deepcopy(validate_retained_point(command, row, entry, source))
+            camra_page = fetch_text(url)
+            source = parse_camra(camra_page)
+            pin = copy.deepcopy(validate_retained_point(command, row, entry, source, camra_page))
             pin.pop('review_required', None)
             pin.pop('review_reason', None)
-            pin['evidence'].append(dict(source='camra', url=url, checked_at=date.today().isoformat(),
+            pin['evidence'].insert(0, dict(source='camra', url=url, checked_at=date.today().isoformat(),
                 match='owner_confirmed_saved_point_corroborated_by_named_camra_venue',
                 reference_coordinate={'lat': source['lat'], 'lng': source['lng']},
                 reference_name=source['name'], reference_address=source['address'],

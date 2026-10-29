@@ -36,6 +36,20 @@ def event(body, login="bristolbagpiper", user_type="User", issue=5):
 
 
 class ApprovalCommandTests(unittest.TestCase):
+    def test_retained_point_accepts_only_exact_omitted_arms_suffix(self):
+        url = 'https://camra.org.uk/pubs/188280'
+        command = {'lat': 51.2066561, 'lng': -4.1257507, 'url': url}
+        row = {'pub_name': 'Wellington', 'postcode': 'EX34 9QE'}
+        entry = {'verified_pin': {'lat': command['lat'], 'lng': command['lng'], 'evidence': [{'source': 'camra', 'url': url}]}}
+        source = {'lat': 51.2067224, 'lng': -4.1256102, 'postcode': 'EX34 9QE',
+                  'address': '66-67 High Street', 'name': 'Wellington Arms, Ilfracombe - Town Local'}
+        page = '<h1>Wellington Arms, Ilfracombe</h1>'
+        self.assertEqual(validate_retained_point(command, row, entry, source, page), entry['verified_pin'])
+        for bad_source, bad_page in ((dict(source, name='Other Wellington Arms'), page),
+                                     (source, '<h1>Wellington Hotel, Ilfracombe</h1>')):
+            with self.assertRaises(ValueError):
+                validate_retained_point(command, row, entry, bad_source, bad_page)
+
     def test_retained_slash_names_require_exact_camra_heading_alias(self):
         url = 'https://camra.org.uk/pubs/143292'
         command = {'lat': 52.921261, 'lng': -1.404047, 'url': url}

@@ -109,6 +109,15 @@ def parse_pdf_rows(reader: PdfReader) -> list[dict[str, str]]:
 
       page.extract_text(visitor_text=visitor)
 
+    # The first page contains a legend above the table. PDF text extraction
+    # can emit that legend *after* the table, split into arbitrary fragments.
+    # Locate the table header rather than depending on its wording or order.
+    first_page_header = next((float(item["y"]) for item in items
+                              if item["page"] == 1 and str(item["text"]).strip() == "UK Area"
+                              and abs(float(item["y"])) > 0.01), None)
+    if first_page_header is None:
+        raise ValueError("Cannot locate the first-page table header; refusing to extract listings")
+
     rows: list[dict[str, str]] = []
     current_country = ""
     current_area = ""
@@ -129,6 +138,9 @@ def parse_pdf_rows(reader: PdfReader) -> list[dict[str, str]]:
         x = float(item["x"])
         y = float(item["y"])
         positioned = abs(y) > 0.01
+
+        if item["page"] == 1 and positioned and y > first_page_header:
+            continue
 
         if not text or text in SKIP_EXACT:
             continue
@@ -338,3 +350,4 @@ def main() -> None:
 
 if __name__ == "__main__":
     main()
+

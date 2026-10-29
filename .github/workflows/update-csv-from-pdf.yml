@@ -4,12 +4,20 @@ on:
   schedule:
     - cron: "17 6 1 * *"
   workflow_dispatch:
+    inputs:
+      allow_reindex:
+        description: Allow reviewed listing changes from an unchanged PDF
+        type: boolean
+        default: false
   push:
+    branches:
+      - main
     paths:
       - "*.pdf"
       - ".github/workflows/update-csv-from-pdf.yml"
       - "convert_pdf_to_csv.py"
       - "fetch_latest_pdf.py"
+      - "guard_unchanged_pdf.py"
       - "send_alert_email.py"
       - "validate_csv.py"
       - "build_coordinates.py"
@@ -144,6 +152,16 @@ jobs:
       - name: Validate candidate files again before publication
         run: python validate_directory_release.py --root candidate-release --previous .
 
+      - name: Guard against unexpected changes from an unchanged PDF
+        env:
+          ALLOW_REINDEX: ${{ inputs.allow_reindex }}
+        run: |
+          if [ "$ALLOW_REINDEX" = "true" ]; then
+            python guard_unchanged_pdf.py --allow-reindex
+          else
+            python guard_unchanged_pdf.py
+          fi
+
       - name: Run browser smoke test against the candidate release
         env:
           RUN_BROWSER_TESTS: "1"
@@ -211,3 +229,4 @@ jobs:
             const existing = issues.find(i => i.title === title);
             if (existing) await github.rest.issues.createComment({...context.repo, issue_number: existing.number, body});
             else await github.rest.issues.create({...context.repo, title, body});
+

@@ -6,6 +6,7 @@ from approve_location import (
     manual_name_matches,
     validate_google_place,
     validate_retained_point,
+    camra_heading_matches_listing,
 )
 
 from coordinate_sources import name_matches
@@ -35,6 +36,12 @@ def event(body, login="bristolbagpiper", user_type="User", issue=5):
 
 
 class ApprovalCommandTests(unittest.TestCase):
+    def test_camra_heading_requires_complete_exact_alias(self):
+        page = '<h1>Eden Park, Eden Park (Toby Carvery)</h1>'
+        self.assertTrue(camra_heading_matches_listing('Toby Carvery', page))
+        self.assertFalse(camra_heading_matches_listing('Toby Carvery Other', page))
+        self.assertFalse(camra_heading_matches_listing('Toby Carvery', '<h1>Eden Park</h1><p>Toby Carvery</p>'))
+
     def test_retained_point_requires_exact_fsa_premises_and_camra_name(self):
         url = 'https://camra.org.uk/pubs/188466'
         command = {'lat': 51.172685037242, 'lng': -4.2054578186163, 'url': url, 'fsa_id': 178413}

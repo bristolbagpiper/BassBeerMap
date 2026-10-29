@@ -223,6 +223,14 @@ def extract_camra_heading(page_text):
     return re.sub(r"\s+", " ", html.unescape(text)).strip()
 
 
+def camra_heading_matches_listing(listing, page_text):
+    """Match only a complete listing name explicitly shown as a heading alias."""
+    listing = re.sub(r'\s*\(PMC\)\s*', '', listing, flags=re.I).strip()
+    wanted = normalized_place_name(listing)
+    aliases = re.findall(r'\(([^()]*)\)', extract_camra_heading(page_text))
+    return bool(wanted) and any(normalized_place_name(alias) == wanted for alias in aliases)
+
+
 def camra_documents_co_located_companion(page_text, listing, reference_name):
     """Check that CAMRA explicitly places extra listing-name words at this venue."""
     normalized_listing = re.sub(r"\s*\(PMC\)", "", listing, flags=re.I)
@@ -476,11 +484,14 @@ def approve(root, staging, event, owner):
             approval_url = url
         elif command["kind"] == "camra":
             url = command["url"]
-            source = parse_camra(fetch_text(url))
+            camra_page = fetch_text(url)
+            source = parse_camra(camra_page)
             proposals = entry.get("location_research", {}).get("proposals", [])
             proposed = next((p for p in proposals if p["url"] == url), None)
             if not name_matches(row["pub_name"], source["name"], row.get("place_name", "")):
-                if not proposed or not (proposed["name"] == source["name"] or name_matches(proposed["name"], source["name"], row.get("place_name", ""))):
+                exact_postcode = re.sub(r'\s+', '', source.get('postcode', '')).upper() == re.sub(r'\s+', '', row['postcode']).upper()
+                heading_alias = bool(exact_postcode and camra_heading_matches_listing(row['pub_name'], camra_page))
+                if not heading_alias and (not proposed or not (proposed["name"] == source["name"] or name_matches(proposed["name"], source["name"], row.get("place_name", "")))):
                     raise ValueError("Source name does not identify this pub or a recorded research candidate")
             if proposed and (distance_metres(source, proposed) > 50 or (proposed["postcode"] and source["postcode"] != proposed["postcode"])):
                 raise ValueError("Source address/coordinate changed since research; refresh the candidate before approving")

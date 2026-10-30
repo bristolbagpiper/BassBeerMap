@@ -1,6 +1,6 @@
 {
   "location_review": {
-    "active_count": 10,
+    "active_count": 9,
     "records": {
       "v-00a08839-2b8a-5782-b6c7-0bdce4cddb2f": {
         "active": false,
@@ -8812,7 +8812,7 @@
         "venue_id": "v-82f88f23-14c9-56fa-8746-d2ff8f254d42"
       },
       "v-839b62df-ea58-53d1-9b38-174b5695addc": {
-        "active": true,
+        "active": false,
         "first_seen": "2026-10-19",
         "history": [
           {
@@ -8821,15 +8821,18 @@
               "Reference venue name changed"
             ],
             "status": "unverified"
+          },
+          {
+            "date": "2026-10-30",
+            "reasons": [],
+            "status": "resolved"
           }
         ],
-        "last_checked": "2026-10-22",
+        "last_checked": "2026-10-30",
         "place_name": "St Pauls",
         "postcode": "EC4M 9BR",
         "pub_name": "Ye Olde Watling",
-        "reasons": [
-          "Reference venue name changed"
-        ],
+        "reasons": [],
         "reference": {},
         "research": {
           "checked_at": "2026-10-20",
@@ -8852,8 +8855,8 @@
           }
         },
         "source_error": null,
-        "status": "unverified",
-        "unverified": true,
+        "status": "resolved",
+        "unverified": false,
         "venue_id": "v-839b62df-ea58-53d1-9b38-174b5695addc"
       },
       "v-84149bd1-cc27-59d6-9c95-6fc859cc80f8": {
@@ -16916,7 +16919,7 @@
       }
     },
     "schema_version": 1,
-    "unverified_count": 3
+    "unverified_count": 2
   },
   "schema_version": 1,
   "venues": {
@@ -76051,6 +76054,36 @@
         "postcode": "EC4M 9BR",
         "pub_name": "Ye Olde Watling"
       },
+      "location_approvals": [
+        {
+          "checked_at": "2026-10-30",
+          "comment_id": 6531668940,
+          "previous_pin": {
+            "evidence": [
+              {
+                "checked_at": "2026-09-11",
+                "difference_metres": 2.9,
+                "match": "venue_name_and_full_postcode",
+                "reference_coordinate": {
+                  "lat": 51.51290628,
+                  "lng": -0.0935724
+                },
+                "reference_postcode": "EC4M 9BR",
+                "source": "camra",
+                "url": "https://camra.org.uk/pubs/156664"
+              }
+            ],
+            "lat": 51.51290628,
+            "lng": -0.0935724,
+            "review_reason": "Reference venue name changed",
+            "review_required": true,
+            "source": "openstreetmap-gb-extract"
+          },
+          "review_url": "https://github.com/bristolbagpiper/BassBeerMap/issues/5#issuecomment-6531668940",
+          "reviewed_by": "bristolbagpiper",
+          "source_url": "https://camra.org.uk/pubs/156664"
+        }
+      ],
       "location_research": {
         "checked_at": "2026-10-20",
         "coverage": {
@@ -76076,6 +76109,21 @@
       "verified_pin": {
         "evidence": [
           {
+            "checked_at": "2026-10-30",
+            "match": "owner_confirmed_saved_point_corroborated_by_named_camra_venue",
+            "reference_address": "29 Watling Street",
+            "reference_coordinate": {
+              "lat": 51.51292508498,
+              "lng": -0.093544139881
+            },
+            "reference_name": "Olde Watling, London - Timber-Framed Pub",
+            "reference_postcode": "EC4M 9BR",
+            "review_url": "https://github.com/bristolbagpiper/BassBeerMap/issues/5#issuecomment-6531668940",
+            "reviewed_by": "bristolbagpiper",
+            "source": "camra",
+            "url": "https://camra.org.uk/pubs/156664"
+          },
+          {
             "checked_at": "2026-09-11",
             "difference_metres": 2.9,
             "match": "venue_name_and_full_postcode",
@@ -76090,8 +76138,6 @@
         ],
         "lat": 51.51290628,
         "lng": -0.0935724,
-        "review_reason": "Reference venue name changed",
-        "review_required": true,
         "source": "openstreetmap-gb-extract"
       }
     },

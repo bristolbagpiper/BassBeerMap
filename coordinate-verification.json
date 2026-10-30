@@ -1,7 +1,7 @@
 {
   "counts": {
-    "venue_coordinate_requires_review": 3,
-    "verified_venue": 1041
+    "venue_coordinate_requires_review": 2,
+    "verified_venue": 1042
   },
   "generated_at": "2026-10-30",
   "policy": {
@@ -30468,8 +30468,23 @@
     },
     "ye olde watling|st pauls|ec4m 9br": {
       "coordinate_source": "openstreetmap-gb-extract",
-      "display_precision": "postcode",
+      "display_precision": "venue",
       "evidence": [
+        {
+          "checked_at": "2026-10-30",
+          "match": "owner_confirmed_saved_point_corroborated_by_named_camra_venue",
+          "reference_address": "29 Watling Street",
+          "reference_coordinate": {
+            "lat": 51.51292508498,
+            "lng": -0.093544139881
+          },
+          "reference_name": "Olde Watling, London - Timber-Framed Pub",
+          "reference_postcode": "EC4M 9BR",
+          "review_url": "https://github.com/bristolbagpiper/BassBeerMap/issues/5#issuecomment-6531668940",
+          "reviewed_by": "bristolbagpiper",
+          "source": "camra",
+          "url": "https://camra.org.uk/pubs/156664"
+        },
         {
           "checked_at": "2026-09-11",
           "difference_metres": 2.9,
@@ -30488,7 +30503,7 @@
       "place_name": "St Pauls",
       "postcode": "EC4M 9BR",
       "pub_name": "Ye Olde Watling",
-      "status": "venue_coordinate_requires_review",
+      "status": "verified_venue",
       "venue_id": "v-839b62df-ea58-53d1-9b38-174b5695addc"
     },
     "ye olde windmill|gentleshaw|ws15 4nf": {

@@ -1630,6 +1630,11 @@
     let problemReportTurnstileToken = '';
     let turnstileWidgetId = null;
     const CSV_COLUMNS = ['country', 'area', 'pub_name', 'place_name', 'postcode', 'pg', 'last', 'dispense', 'notes'];
+    // Corrections apply to a specific venue and source postcode, preserving the
+    // directory value for traceability and allowing future directory changes.
+    const POSTCODE_CORRECTIONS = {
+      'v-baef8a0f-c094-5f52-a9c2-3a37df4ca657': { listed: 'ST8 6PH', corrected: 'ST8 6PW' }
+    };
     const DISPENSE_LABELS = {
       H: 'Handpump',
       G: 'Gravity',
@@ -1701,6 +1706,11 @@
 
         normalised.id = index + 1;
         normalised.venue_id = String(item.venue_id ?? '');
+        const correction = POSTCODE_CORRECTIONS[normalised.venue_id];
+        if (correction && normalised.postcode.toUpperCase() === correction.listed) {
+          normalised.directoryPostcode = normalised.postcode;
+          normalised.postcode = correction.corrected;
+        }
         normalised.searchText = [
           normalised.pub_name,
           normalised.place_name,
@@ -1862,7 +1872,7 @@
           <p><strong>Place:</strong> ${escapeHtml(item.place_name)}</p>
           <p><strong>Postcode:</strong> ${escapeHtml(item.postcode)}</p>
           ${item.locationPrecision === 'postcode' ? '<p class="approximate-location"><strong>Map location:</strong> Approximate postcode area — not the exact venue.</p>' : ''}
-          ${item.locationIssue ? (item.venue_id === 'v-95a10492-5d95-5fd1-85cd-7a9a58882d81' ? '<p class="approximate-location">The directory and council list ST10 2PQ; CAMRA lists ST10 2PZ. The pin marks the reviewed venue.</p>' : `<p class="approximate-location">The directory postcode differs from the reference address (${escapeHtml(item.locationIssue.reference)}). ${item.locationPrecision === 'venue' ? 'The pin marks the verified venue.' : 'The precise venue location needs review.'}</p>`) : ''}
+          ${item.directoryPostcode ? `<p class="approximate-location">The Bass directory lists ${escapeHtml(item.directoryPostcode)}; the postcode shown above is the reviewed correction.</p>` : item.locationIssue ? (item.venue_id === 'v-95a10492-5d95-5fd1-85cd-7a9a58882d81' ? '<p class="approximate-location">The directory and council list ST10 2PQ; CAMRA lists ST10 2PZ. The pin marks the reviewed venue.</p>' : `<p class="approximate-location">The directory postcode differs from the reference address (${escapeHtml(item.locationIssue.reference)}). ${item.locationPrecision === 'venue' ? 'The pin marks the verified venue.' : 'The precise venue location needs review.'}</p>`) : ''}
           <p><strong>Area:</strong> ${escapeHtml(item.area || '—')} | <strong>Country:</strong> ${escapeHtml(item.country)}</p>
           <p><strong>Status:</strong> ${escapeHtml(item.pg)} | <strong>Last confirmed:</strong> ${escapeHtml(item.last)} | <strong>Dispense:</strong> ${escapeHtml(dispenseLabel(item.dispense))}</p>
           ${item.notes ? `<p><strong>Notes:</strong> ${escapeHtml(item.notes)}</p>` : ''}
@@ -1983,7 +1993,7 @@
         </div>
         ${distanceMiles(item) !== null ? `<div class="footer-note">${distanceMiles(item).toFixed(1)} miles away</div>` : ''}
         ${item.locationPrecision === 'postcode' ? '<div class="footer-note">Map pin shows the approximate postcode area.</div>' : ''}
-        ${item.locationIssue ? (item.venue_id === 'v-95a10492-5d95-5fd1-85cd-7a9a58882d81' ? '<div class="footer-note">The directory and council list ST10 2PQ; CAMRA lists ST10 2PZ.</div>' : `<div class="footer-note">Reference address postcode: ${escapeHtml(item.locationIssue.reference)}. The directory lists a different postcode.</div>`) : ''}
+        ${item.directoryPostcode ? `<div class="footer-note">Bass directory postcode: ${escapeHtml(item.directoryPostcode)}; the postcode shown is the reviewed correction.</div>` : item.locationIssue ? (item.venue_id === 'v-95a10492-5d95-5fd1-85cd-7a9a58882d81' ? '<div class="footer-note">The directory and council list ST10 2PQ; CAMRA lists ST10 2PZ.</div>' : `<div class="footer-note">Reference address postcode: ${escapeHtml(item.locationIssue.reference)}. The directory lists a different postcode.</div>`) : ''}
         ${!item.marker ? '<div class="footer-note">Location unavailable on the map.</div>' : ''}
         ${item.notes ? `<div class="footer-note">${escapeHtml(item.notes)}</div>` : ''}
         <div class="card-actions">
@@ -2368,5 +2378,6 @@
   </script>
 </body>
 </html>
+
 
 

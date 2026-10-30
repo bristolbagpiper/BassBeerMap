@@ -12,17 +12,26 @@ Updated: 30 October 2026. This report records disagreements between sources; it 
 - **Status:** The map retains ST10 2PQ and the reviewed point. The source disagreement remains open until CAMRA or the pub confirms the correct address.
 - **Suggested follow-up to CAMRA or the pub:** Please check the postcode for Charlie Bassetts on New Road, Dilhorne. The council licence record and FSA list ST10 2PQ, while CAMRA lists ST10 2PZ. Can you confirm which is correct and update the relevant listing if necessary?
 
+## Nelson Inn, Brown Lees — postcode
+
+- **Address:** 118 Brown Lees Road, Brown Lees, Stoke-on-Trent.
+- **Bass directory postcode:** ST8 6PH.
+- **Reviewed postcode displayed on the map:** ST8 6PW. The venue pin is unchanged.
+- **Evidence:** [CAMRA](https://camra.org.uk/pubs/nelson-inn-brown-lees-143866), the [Food Standards Agency](https://ratings.food.gov.uk/business/1559527/the-nelson-inn-stoke-on-trent), and [Companies House](https://find-and-update.company-information.service.gov.uk/company/15041641) each list 118 Brown Lees Road, ST8 6PW.
+- **Status:** The map owner accepted the correction. The original directory value is retained for provenance; the National Bass Directory has not been changed.
+- **Suggested follow-up to the National Bass Directory:** Please check Nelson Inn, 118 Brown Lees Road, Brown Lees. The directory currently lists ST8 6PH; CAMRA, the Food Standards Agency and Companies House list ST8 6PW. Please update the directory if confirmed.
+
 ## Other discrepancies awaiting review
 
 These entries are leads from the review queue, not confirmed corrections. Check the underlying evidence and the venue before forwarding a correction.
 
 | Venue | Bass directory postcode | Reference postcode | Issue |
 | --- | --- | --- | --- |
-| Nelson Inn, Brown Lees | ST8 6PH | ST8 6PW | Postcode disagreement |
 | New Baron, Hinckley | LE10 0AZ | LE10 0QA | Postcode disagreement |
 | Tame Otter, Hopwas | B78 3AB | B78 3AF | Postcode and coordinate disagreement |
 | Tides Out, Woolacombe | EX34 7BP | EX34 7FG | Postcode and name disagreement |
 | Trentside Cricket Club, Branston | DE14 3DP | DE14 3DN | Postcode and coordinate disagreement |
 
 Charles Roe in Macclesfield also remains open in the review queue for uncertain trading status. Its map listing carries a notice that CAMRA reports it closed and Bass availability is unconfirmed.
+
 

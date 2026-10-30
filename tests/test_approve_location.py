@@ -36,6 +36,20 @@ def event(body, login="bristolbagpiper", user_type="User", issue=5):
 
 
 class ApprovalCommandTests(unittest.TestCase):
+    def test_retained_ye_olde_prefix_with_full_matching_name(self):
+        url = 'https://camra.org.uk/pubs/143928'
+        command = {'lat': 53.0490531921387, 'lng': -1.87625002861023, 'url': url}
+        row = {'pub_name': 'Ye Olde Crown Hotel', 'postcode': 'ST10 3HL'}
+        entry = {'verified_pin': {'lat': command['lat'], 'lng': command['lng'], 'evidence': [{'source': 'camra', 'url': url}]}}
+        source = {'lat': 53.049, 'lng': -1.8763, 'postcode': 'ST10 3HL',
+                  'address': 'Leek Road', 'name': 'Old Crown Hotel, Waterhouses - 17th Century Pub'}
+        page = '<h1>Old Crown Hotel, Waterhouses</h1>'
+        self.assertEqual(validate_retained_point(command, row, entry, source, page), entry['verified_pin'])
+        with self.assertRaises(ValueError):
+            validate_retained_point(command, row, entry, dict(source, name='Old Swan Hotel, Waterhouses'), page)
+        with self.assertRaises(ValueError):
+            validate_retained_point(command, row, entry, source, '<h1>Old Swan Hotel, Waterhouses</h1>')
+
     def test_retained_omitted_ye_requires_full_name_and_heading(self):
         url = 'https://camra.org.uk/pubs/186936'
         command = {'lat': 54.775832, 'lng': -1.5815745, 'url': url}

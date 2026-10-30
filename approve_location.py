@@ -159,6 +159,7 @@ def camra_heading_confirms_omitted_ye(listing, source_name, page_text):
     """Require the entire remaining name and CAMRA heading to agree."""
     wanted = normalized_place_name(listing)
     official = normalized_place_name(source_name)
+    wanted = re.sub(r'^ye olde\b', 'ye old', wanted)
     return bool(wanted.startswith('ye ') and len(official.split()) >= 2
                 and wanted[3:] == official
                 and normalized_place_name(extract_camra_heading(page_text)) == official)

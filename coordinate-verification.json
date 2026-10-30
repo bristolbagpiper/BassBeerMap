@@ -1,7 +1,7 @@
 {
   "counts": {
-    "venue_coordinate_requires_review": 5,
-    "verified_venue": 1039
+    "venue_coordinate_requires_review": 4,
+    "verified_venue": 1040
   },
   "generated_at": "2026-10-30",
   "policy": {
@@ -30333,28 +30333,31 @@
       "venue_id": "v-7b7219e5-71e0-524f-8e83-8546cb6673bd"
     },
     "ye olde manor inn|stoke: fenton|st4 2pt": {
-      "coordinate_source": "food-standards-agency-fhrs",
-      "display_precision": "postcode",
+      "coordinate_source": "owner-reviewed-google-maps",
+      "display_precision": "venue",
       "evidence": [
         {
-          "checked_at": "2026-09-11",
-          "difference_metres": 7.4,
-          "match": "venue_name_and_full_postcode",
+          "checked_at": "2026-10-30",
+          "match": "owner_reviewed_named_place_and_full_postcode",
+          "reference_address": "13 Manor Street, Fenton, Stoke-on-Trent ST4 2PT",
           "reference_coordinate": {
-            "lat": 53.000666,
-            "lng": -2.164729
+            "lat": 52.9998948,
+            "lng": -2.1648569
           },
+          "reference_name": "Ye Olde Manor Inne Pub",
           "reference_postcode": "ST4 2PT",
-          "source": "camra",
-          "url": "https://camra.org.uk/pubs/122902"
+          "review_url": "https://github.com/bristolbagpiper/BassBeerMap/issues/5#issuecomment-6531573005",
+          "reviewed_by": "bristolbagpiper",
+          "source": "google-maps-named-place",
+          "url": "https://www.google.com/maps/place/Ye+Olde+Manor+Inne+Pub/@52.9999327,-2.1646904,112m/data=!3m1!1e3!4m6!3m5!1s0x487a68bdb7a88909:0x92881de68d220130!8m2!3d52.9998948!4d-2.1648569!16s%2Fg%2F1thwzzkw?entry=ttu&g_ep=EgoyMDI2MTAyOC4wIKXMDSoASAFQAw%3D%3D"
         }
       ],
-      "lat": 53.000666,
-      "lng": -2.164729,
+      "lat": 52.9998948,
+      "lng": -2.1648569,
       "place_name": "Stoke: Fenton",
       "postcode": "ST4 2PT",
       "pub_name": "Ye Olde Manor Inn",
-      "status": "venue_coordinate_requires_review",
+      "status": "verified_venue",
       "venue_id": "v-1259d276-decd-56b7-8b71-12dfc9a13efd"
     },
     "ye olde rock|upper hulme|st13 8ty": {

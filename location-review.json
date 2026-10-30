@@ -1,5 +1,5 @@
 {
-  "active_count": 12,
+  "active_count": 11,
   "records": {
     "v-00a08839-2b8a-5782-b6c7-0bdce4cddb2f": {
       "active": false,
@@ -921,7 +921,7 @@
       "venue_id": "v-11bc49a7-dcc1-599f-90cf-8a904dfde143"
     },
     "v-1259d276-decd-56b7-8b71-12dfc9a13efd": {
-      "active": true,
+      "active": false,
       "first_seen": "2026-10-10",
       "history": [
         {
@@ -930,15 +930,18 @@
             "Reference venue name changed"
           ],
           "status": "unverified"
+        },
+        {
+          "date": "2026-10-30",
+          "reasons": [],
+          "status": "resolved"
         }
       ],
-      "last_checked": "2026-10-12",
+      "last_checked": "2026-10-30",
       "place_name": "Stoke: Fenton",
       "postcode": "ST4 2PT",
       "pub_name": "Ye Olde Manor Inn",
-      "reasons": [
-        "Reference venue name changed"
-      ],
+      "reasons": [],
       "reference": {},
       "research": {
         "checked_at": "2026-10-27",
@@ -954,15 +957,11 @@
         "camra": {
           "status": "conflict",
           "url": "https://camra.org.uk/pubs/122902"
-        },
-        "fsa_independent": {
-          "status": "coordinate_agreement",
-          "url": "https://ratings.food.gov.uk/business/911404"
         }
       },
       "source_error": null,
-      "status": "unverified",
-      "unverified": true,
+      "status": "resolved",
+      "unverified": false,
       "venue_id": "v-1259d276-decd-56b7-8b71-12dfc9a13efd"
     },
     "v-127772d1-4ac7-5386-bf8a-8dae262bbc03": {
@@ -16913,5 +16912,5 @@
     }
   },
   "schema_version": 1,
-  "unverified_count": 5
+  "unverified_count": 4
 }

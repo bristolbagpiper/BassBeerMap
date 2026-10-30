@@ -1,6 +1,6 @@
 {
   "location_review": {
-    "active_count": 12,
+    "active_count": 11,
     "records": {
       "v-00a08839-2b8a-5782-b6c7-0bdce4cddb2f": {
         "active": false,
@@ -922,7 +922,7 @@
         "venue_id": "v-11bc49a7-dcc1-599f-90cf-8a904dfde143"
       },
       "v-1259d276-decd-56b7-8b71-12dfc9a13efd": {
-        "active": true,
+        "active": false,
         "first_seen": "2026-10-10",
         "history": [
           {
@@ -931,15 +931,18 @@
               "Reference venue name changed"
             ],
             "status": "unverified"
+          },
+          {
+            "date": "2026-10-30",
+            "reasons": [],
+            "status": "resolved"
           }
         ],
-        "last_checked": "2026-10-12",
+        "last_checked": "2026-10-30",
         "place_name": "Stoke: Fenton",
         "postcode": "ST4 2PT",
         "pub_name": "Ye Olde Manor Inn",
-        "reasons": [
-          "Reference venue name changed"
-        ],
+        "reasons": [],
         "reference": {},
         "research": {
           "checked_at": "2026-10-27",
@@ -955,15 +958,11 @@
           "camra": {
             "status": "conflict",
             "url": "https://camra.org.uk/pubs/122902"
-          },
-          "fsa_independent": {
-            "status": "coordinate_agreement",
-            "url": "https://ratings.food.gov.uk/business/911404"
           }
         },
         "source_error": null,
-        "status": "unverified",
-        "unverified": true,
+        "status": "resolved",
+        "unverified": false,
         "venue_id": "v-1259d276-decd-56b7-8b71-12dfc9a13efd"
       },
       "v-127772d1-4ac7-5386-bf8a-8dae262bbc03": {
@@ -16914,7 +16913,7 @@
       }
     },
     "schema_version": 1,
-    "unverified_count": 5
+    "unverified_count": 4
   },
   "schema_version": 1,
   "venues": {
@@ -24713,6 +24712,36 @@
         "postcode": "ST4 2PT",
         "pub_name": "Ye Olde Manor Inn"
       },
+      "location_approvals": [
+        {
+          "checked_at": "2026-10-30",
+          "comment_id": 6531573005,
+          "previous_pin": {
+            "evidence": [
+              {
+                "checked_at": "2026-09-11",
+                "difference_metres": 7.4,
+                "match": "venue_name_and_full_postcode",
+                "reference_coordinate": {
+                  "lat": 53.000666,
+                  "lng": -2.164729
+                },
+                "reference_postcode": "ST4 2PT",
+                "source": "camra",
+                "url": "https://camra.org.uk/pubs/122902"
+              }
+            ],
+            "lat": 53.000666,
+            "lng": -2.164729,
+            "review_reason": "Reference venue name changed",
+            "review_required": true,
+            "source": "food-standards-agency-fhrs"
+          },
+          "review_url": "https://github.com/bristolbagpiper/BassBeerMap/issues/5#issuecomment-6531573005",
+          "reviewed_by": "bristolbagpiper",
+          "source_url": "https://www.google.com/maps/place/Ye+Olde+Manor+Inne+Pub/@52.9999327,-2.1646904,112m/data=!3m1!1e3!4m6!3m5!1s0x487a68bdb7a88909:0x92881de68d220130!8m2!3d52.9998948!4d-2.1648569!16s%2Fg%2F1thwzzkw?entry=ttu&g_ep=EgoyMDI2MTAyOC4wIKXMDSoASAFQAw%3D%3D"
+        }
+      ],
       "location_research": {
         "checked_at": "2026-10-27",
         "coverage": {
@@ -24738,23 +24767,24 @@
       "verified_pin": {
         "evidence": [
           {
-            "checked_at": "2026-09-11",
-            "difference_metres": 7.4,
-            "match": "venue_name_and_full_postcode",
+            "checked_at": "2026-10-30",
+            "match": "owner_reviewed_named_place_and_full_postcode",
+            "reference_address": "13 Manor Street, Fenton, Stoke-on-Trent ST4 2PT",
             "reference_coordinate": {
-              "lat": 53.000666,
-              "lng": -2.164729
+              "lat": 52.9998948,
+              "lng": -2.1648569
             },
+            "reference_name": "Ye Olde Manor Inne Pub",
             "reference_postcode": "ST4 2PT",
-            "source": "camra",
-            "url": "https://camra.org.uk/pubs/122902"
+            "review_url": "https://github.com/bristolbagpiper/BassBeerMap/issues/5#issuecomment-6531573005",
+            "reviewed_by": "bristolbagpiper",
+            "source": "google-maps-named-place",
+            "url": "https://www.google.com/maps/place/Ye+Olde+Manor+Inne+Pub/@52.9999327,-2.1646904,112m/data=!3m1!1e3!4m6!3m5!1s0x487a68bdb7a88909:0x92881de68d220130!8m2!3d52.9998948!4d-2.1648569!16s%2Fg%2F1thwzzkw?entry=ttu&g_ep=EgoyMDI2MTAyOC4wIKXMDSoASAFQAw%3D%3D"
           }
         ],
-        "lat": 53.000666,
-        "lng": -2.164729,
-        "review_reason": "Reference venue name changed",
-        "review_required": true,
-        "source": "food-standards-agency-fhrs"
+        "lat": 52.9998948,
+        "lng": -2.1648569,
+        "source": "owner-reviewed-google-maps"
       }
     },
     "v-126daf8a-4846-5d52-8a19-8f91497a3e88": {

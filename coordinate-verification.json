@@ -1,7 +1,7 @@
 {
   "counts": {
-    "venue_coordinate_requires_review": 2,
-    "verified_venue": 1042
+    "venue_coordinate_requires_review": 1,
+    "verified_venue": 1043
   },
   "generated_at": "2026-10-30",
   "policy": {
@@ -30508,8 +30508,23 @@
     },
     "ye olde windmill|gentleshaw|ws15 4nf": {
       "coordinate_source": "camra-pubs-location-audit",
-      "display_precision": "postcode",
+      "display_precision": "venue",
       "evidence": [
+        {
+          "checked_at": "2026-10-30",
+          "match": "owner_confirmed_saved_point_corroborated_by_named_camra_venue",
+          "reference_address": "Windmill Lane",
+          "reference_coordinate": {
+            "lat": 52.704137389829,
+            "lng": -1.925503116567
+          },
+          "reference_name": "Olde Windmill, Gentleshaw - 400-Year-Old Country Pub",
+          "reference_postcode": "WS15 4NF",
+          "review_url": "https://github.com/bristolbagpiper/BassBeerMap/issues/5#issuecomment-6531727791",
+          "reviewed_by": "bristolbagpiper",
+          "source": "camra",
+          "url": "https://camra.org.uk/pubs/140971"
+        },
         {
           "checked_at": "2026-09-11",
           "difference_metres": 0.0,
@@ -30540,7 +30555,7 @@
       "place_name": "Gentleshaw",
       "postcode": "WS15 4NF",
       "pub_name": "Ye Olde Windmill",
-      "status": "venue_coordinate_requires_review",
+      "status": "verified_venue",
       "venue_id": "v-5e9138e0-7352-55f1-b255-7397c00900a8"
     },
     "yr alex|caernarfon|ll55 1ba": {

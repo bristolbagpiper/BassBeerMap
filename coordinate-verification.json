@@ -1,7 +1,7 @@
 {
   "counts": {
-    "venue_coordinate_requires_review": 9,
-    "verified_venue": 1035
+    "venue_coordinate_requires_review": 8,
+    "verified_venue": 1036
   },
   "generated_at": "2026-10-30",
   "policy": {
@@ -30098,8 +30098,23 @@
     },
     "y sgwâr (was ivy bush)|newcastle emlyn|sa38 9bg": {
       "coordinate_source": "camra-pubs-location-audit",
-      "display_precision": "postcode",
+      "display_precision": "venue",
       "evidence": [
+        {
+          "checked_at": "2026-10-30",
+          "match": "owner_confirmed_saved_point_corroborated_by_named_camra_venue",
+          "reference_address": "Emlyn Square",
+          "reference_coordinate": {
+            "lat": 52.037091,
+            "lng": -4.469749
+          },
+          "reference_name": "Y Sgwâr, Newcastle Emlyn - Pub with Beer Garden",
+          "reference_postcode": "SA38 9BG",
+          "review_url": "https://github.com/bristolbagpiper/BassBeerMap/issues/5#issuecomment-6530756999",
+          "reviewed_by": "bristolbagpiper",
+          "source": "camra",
+          "url": "https://camra.org.uk/pubs/131517"
+        },
         {
           "checked_at": "2026-09-11",
           "difference_metres": 0.0,
@@ -30130,7 +30145,7 @@
       "place_name": "Newcastle Emlyn",
       "postcode": "SA38 9BG",
       "pub_name": "Y Sgwâr (was Ivy Bush)",
-      "status": "venue_coordinate_requires_review",
+      "status": "verified_venue",
       "venue_id": "v-9607544c-290c-57e9-922a-02fb2360c91c"
     },
     "yacht inn|penzance|tr18 4au": {

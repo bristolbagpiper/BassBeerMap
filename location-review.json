@@ -1,5 +1,5 @@
 {
-  "active_count": 16,
+  "active_count": 15,
   "records": {
     "v-00a08839-2b8a-5782-b6c7-0bdce4cddb2f": {
       "active": false,
@@ -10089,7 +10089,7 @@
       "venue_id": "v-95b88dcf-eb87-53c8-8629-a0630c553722"
     },
     "v-9607544c-290c-57e9-922a-02fb2360c91c": {
-      "active": true,
+      "active": false,
       "first_seen": "2026-10-21",
       "history": [
         {
@@ -10098,15 +10098,18 @@
             "Reference venue name changed"
           ],
           "status": "unverified"
+        },
+        {
+          "date": "2026-10-30",
+          "reasons": [],
+          "status": "resolved"
         }
       ],
-      "last_checked": "2026-10-24",
+      "last_checked": "2026-10-30",
       "place_name": "Newcastle Emlyn",
       "postcode": "SA38 9BG",
       "pub_name": "Y Sgwâr (was Ivy Bush)",
-      "reasons": [
-        "Reference venue name changed"
-      ],
+      "reasons": [],
       "reference": {},
       "research": {
         "checked_at": "2026-10-27",
@@ -10133,8 +10136,8 @@
         }
       },
       "source_error": null,
-      "status": "unverified",
-      "unverified": true,
+      "status": "resolved",
+      "unverified": false,
       "venue_id": "v-9607544c-290c-57e9-922a-02fb2360c91c"
     },
     "v-96c69280-8350-5291-9fb1-4267938024b9": {
@@ -16901,5 +16904,5 @@
     }
   },
   "schema_version": 1,
-  "unverified_count": 9
+  "unverified_count": 8
 }

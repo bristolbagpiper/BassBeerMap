@@ -251,6 +251,116 @@
       ]
     },
     {
+      "actionable": true,
+      "area": "Devon",
+      "checked_at": "2026-10-26",
+      "comparisons": [
+        {
+          "name_matches": 0,
+          "postcode_matches": 2,
+          "queried_postcode": "EX34 7BP",
+          "status": "no_name_match"
+        }
+      ],
+      "confidence": "owner_reviewed",
+      "country": "England",
+      "dispense": "H",
+      "independent_of_pin": true,
+      "last": "2026 Q2",
+      "listing": {
+        "postcode": "EX34 7BP",
+        "pub_name": "Tides Out"
+      },
+      "notes": "",
+      "owner_reviewed": true,
+      "pg": "Guest",
+      "pin": {
+        "lat": 51.172685037242,
+        "lng": -4.2054578186163
+      },
+      "place_name": "Woolacombe",
+      "postcode": "EX34 7BP",
+      "priority": 0,
+      "pub_name": "Tides Out",
+      "reasons": [
+        "Directory postcode differs from reviewed reference postcode"
+      ],
+      "reference": {
+        "name_matches": 0,
+        "postcode_matches": 2,
+        "queried_postcode": "EX34 7BP",
+        "status": "no_name_match"
+      },
+      "status": "no_name_match",
+      "venue_id": "v-b0c6fb73-49cd-5fdf-b936-ee8fbd0ac4c6",
+      "warnings": [
+        "FSA comparison is inconclusive; absence of a match does not contradict accepted evidence"
+      ]
+    },
+    {
+      "actionable": true,
+      "area": "Staffordshire",
+      "checked_at": "2026-10-30",
+      "comparisons": [
+        {
+          "address": "Trentside Cricket Club, Off Faldo Close, Branston, Burton upon Trent",
+          "difference_metres": 223.9,
+          "lat": 52.7872505187988,
+          "lng": -1.65420198440552,
+          "name": "Trentside Cricket Club",
+          "postcode": "DE14 3DP",
+          "queried_postcode": "DE14 3DP",
+          "status": "coordinate_disagreement",
+          "url": "https://ratings.food.gov.uk/business/1248081"
+        },
+        {
+          "name_matches": 0,
+          "postcode_matches": 2,
+          "queried_postcode": "DE14 3DN",
+          "status": "no_name_match"
+        }
+      ],
+      "confidence": "owner_reviewed",
+      "country": "England",
+      "dispense": "H",
+      "independent_of_pin": true,
+      "last": "2026 Q1",
+      "listing": {
+        "postcode": "DE14 3DP",
+        "pub_name": "Trentside Cricket Club (PMC)"
+      },
+      "notes": "",
+      "owner_reviewed": true,
+      "pg": "Perm",
+      "pin": {
+        "lat": 52.7867,
+        "lng": -1.651
+      },
+      "place_name": "Burton U-T: Branston",
+      "postcode": "DE14 3DP",
+      "priority": 0,
+      "pub_name": "Trentside Cricket Club (PMC)",
+      "reasons": [
+        "Directory postcode differs from reviewed reference postcode"
+      ],
+      "reference": {
+        "address": "Trentside Cricket Club, Off Faldo Close, Branston, Burton upon Trent",
+        "difference_metres": 223.9,
+        "lat": 52.7872505187988,
+        "lng": -1.65420198440552,
+        "name": "Trentside Cricket Club",
+        "postcode": "DE14 3DP",
+        "queried_postcode": "DE14 3DP",
+        "status": "coordinate_disagreement",
+        "url": "https://ratings.food.gov.uk/business/1248081"
+      },
+      "status": "coordinate_disagreement",
+      "venue_id": "v-8e577f40-1d4f-5d93-a248-eb1f6eb244e4",
+      "warnings": [
+        "FSA coordinate is 223.9m from the accepted pin; informational only because the FSA geocode may be approximate"
+      ]
+    },
+    {
       "actionable": false,
       "area": "Leicestershire",
       "checked_at": "2026-10-25",
@@ -898,7 +1008,7 @@
     {
       "actionable": false,
       "area": "Leicestershire",
-      "checked_at": "2026-10-09",
+      "checked_at": "2026-10-30",
       "comparisons": [
         {
           "address": "2 Stoop Lane, , Quorn",
@@ -998,7 +1108,7 @@
     {
       "actionable": false,
       "area": "Derbyshire",
-      "checked_at": "2026-10-09",
+      "checked_at": "2026-10-30",
       "comparisons": [
         {
           "name_matches": 0,
@@ -2141,7 +2251,7 @@
     {
       "actionable": false,
       "area": "Derbyshire",
-      "checked_at": "2026-10-09",
+      "checked_at": "2026-10-30",
       "comparisons": [
         {
           "name_matches": 0,
@@ -2805,7 +2915,7 @@
     {
       "actionable": false,
       "area": "Leicestershire",
-      "checked_at": "2026-10-09",
+      "checked_at": "2026-10-30",
       "comparisons": [
         {
           "address": "Main Road, Sheepy Magna, Atherstone, Leicestershire",
@@ -3881,7 +3991,7 @@
     {
       "actionable": false,
       "area": "Derbyshire",
-      "checked_at": "2026-10-09",
+      "checked_at": "2026-10-30",
       "comparisons": [
         {
           "name_matches": 0,
@@ -4546,7 +4656,7 @@
     {
       "actionable": false,
       "area": "North Wales",
-      "checked_at": "2026-10-09",
+      "checked_at": "2026-10-30",
       "comparisons": [
         {
           "name_matches": 0,
@@ -6183,7 +6293,7 @@
     {
       "actionable": false,
       "area": "Durham",
-      "checked_at": "2026-10-09",
+      "checked_at": "2026-10-30",
       "comparisons": [
         {
           "address": "704-706 Yarm Road, , Stockton-on-Tees",
@@ -8008,7 +8118,7 @@
     {
       "actionable": false,
       "area": "Derbyshire",
-      "checked_at": "2026-10-09",
+      "checked_at": "2026-10-30",
       "comparisons": [
         {
           "address": "35 Market Place Belper Derbyshire",
@@ -8615,7 +8725,7 @@
     {
       "actionable": false,
       "area": "Rutland",
-      "checked_at": "2026-10-09",
+      "checked_at": "2026-10-30",
       "comparisons": [
         {
           "address": "The Crown Inn, Old Great North Road, Great Casterton, Stamford",
@@ -8670,7 +8780,7 @@
     {
       "actionable": false,
       "area": "Staffordshire",
-      "checked_at": "2026-10-09",
+      "checked_at": "2026-10-30",
       "comparisons": [
         {
           "address": "The Crown Inn, Main Street, Yoxall, Burton upon Trent",
@@ -8770,7 +8880,7 @@
     {
       "actionable": false,
       "area": "Derbyshire",
-      "checked_at": "2026-10-09",
+      "checked_at": "2026-10-30",
       "comparisons": [
         {
           "address": "Riggs Lane, Marston Montgomery, Derbyshire",
@@ -10670,7 +10780,7 @@
     {
       "actionable": false,
       "area": "Nottinghamshire",
-      "checked_at": "2026-10-09",
+      "checked_at": "2026-10-30",
       "comparisons": [
         {
           "address": "Station Road, Southwell",
@@ -12670,7 +12780,7 @@
     {
       "actionable": false,
       "area": "Staffordshire",
-      "checked_at": "2026-10-09",
+      "checked_at": "2026-10-30",
       "comparisons": [
         {
           "address": "Leek Road, Warslow, Buxton",
@@ -12996,7 +13106,7 @@
     {
       "actionable": false,
       "area": "Leicestershire",
-      "checked_at": "2026-10-09",
+      "checked_at": "2026-10-30",
       "comparisons": [
         {
           "address": "Halfway House, 65 Church Street, Donisthorpe, Swadlincote",
@@ -14071,7 +14181,7 @@
     {
       "actionable": false,
       "area": "Derbyshire",
-      "checked_at": "2026-10-09",
+      "checked_at": "2026-10-30",
       "comparisons": [
         {
           "name_matches": 0,
@@ -16236,7 +16346,7 @@
     {
       "actionable": false,
       "area": "Worcestershire",
-      "checked_at": "2026-10-09",
+      "checked_at": "2026-10-30",
       "comparisons": [
         {
           "address": "Ankerage Green, Worcester",
@@ -17159,7 +17269,7 @@
     {
       "actionable": false,
       "area": "Derbyshire",
-      "checked_at": "2026-10-09",
+      "checked_at": "2026-10-30",
       "comparisons": [
         {
           "name_matches": 0,
@@ -18353,7 +18463,7 @@
     {
       "actionable": false,
       "area": "Staffordshire",
-      "checked_at": "2026-10-09",
+      "checked_at": "2026-10-30",
       "comparisons": [
         {
           "name_matches": 0,
@@ -24207,7 +24317,7 @@
     {
       "actionable": false,
       "area": "West Midlands",
-      "checked_at": "2026-10-09",
+      "checked_at": "2026-10-30",
       "comparisons": [
         {
           "name_matches": 0,
@@ -24216,7 +24326,7 @@
           "status": "no_name_match"
         }
       ],
-      "confidence": "existing_evidence_needs_corroboration",
+      "confidence": "owner_reviewed",
       "country": "England",
       "dispense": "H",
       "independent_of_pin": true,
@@ -24226,11 +24336,11 @@
         "pub_name": "Shakespeare (Summer Row)"
       },
       "notes": "",
-      "owner_reviewed": false,
+      "owner_reviewed": true,
       "pg": "Guest",
       "pin": {
-        "lat": 52.481477,
-        "lng": -1.906951
+        "lat": 52.4815327,
+        "lng": -1.9069232
       },
       "place_name": "Birmingham: Central",
       "postcode": "B3 1JJ",
@@ -24247,6 +24357,61 @@
       "venue_id": "v-e07e9d6f-d8ee-506b-bcd7-f8379224bc4e",
       "warnings": [
         "FSA comparison is inconclusive; absence of a match does not contradict accepted evidence"
+      ]
+    },
+    {
+      "actionable": false,
+      "area": "Staffordshire",
+      "checked_at": "2026-10-30",
+      "comparisons": [
+        {
+          "address": "The Sheet Anchor, Newcastle Road, Whitmore, Newcastle Under Lyme",
+          "difference_metres": 51.4,
+          "lat": 52.960363,
+          "lng": -2.303902,
+          "name": "THE BLOCKHOUSE @ THE SHEET ANCHOR",
+          "postcode": "ST5 5BU",
+          "queried_postcode": "ST5 5BU",
+          "status": "coordinate_disagreement",
+          "url": "https://ratings.food.gov.uk/business/835439"
+        }
+      ],
+      "confidence": "owner_reviewed",
+      "country": "England",
+      "dispense": "H",
+      "independent_of_pin": true,
+      "last": "2026 Q3",
+      "listing": {
+        "postcode": "ST5 5BU",
+        "pub_name": "Sheet Anchor"
+      },
+      "notes": "also known as The Blockhouse",
+      "owner_reviewed": true,
+      "pg": "Perm",
+      "pin": {
+        "lat": 52.9604905,
+        "lng": -2.3046398
+      },
+      "place_name": "Baldwins Gate",
+      "postcode": "ST5 5BU",
+      "priority": 2,
+      "pub_name": "Sheet Anchor",
+      "reasons": [],
+      "reference": {
+        "address": "The Sheet Anchor, Newcastle Road, Whitmore, Newcastle Under Lyme",
+        "difference_metres": 51.4,
+        "lat": 52.960363,
+        "lng": -2.303902,
+        "name": "THE BLOCKHOUSE @ THE SHEET ANCHOR",
+        "postcode": "ST5 5BU",
+        "queried_postcode": "ST5 5BU",
+        "status": "coordinate_disagreement",
+        "url": "https://ratings.food.gov.uk/business/835439"
+      },
+      "status": "coordinate_disagreement",
+      "venue_id": "v-1f980acc-ae24-543c-9afc-40840f5ecc91",
+      "warnings": [
+        "FSA coordinate is 51.4m from the accepted pin; informational only because the FSA geocode may be approximate"
       ]
     },
     {
@@ -24342,7 +24507,7 @@
     {
       "actionable": false,
       "area": "North Wales",
-      "checked_at": "2026-10-09",
+      "checked_at": "2026-10-30",
       "comparisons": [
         {
           "address": "Ship Inn, Quay Terrace, Red Wharf Bay, Pentraeth",
@@ -24662,7 +24827,7 @@
     {
       "actionable": false,
       "area": "Cumbria",
-      "checked_at": "2026-10-09",
+      "checked_at": "2026-10-30",
       "comparisons": [
         {
           "name_matches": 0,
@@ -24671,7 +24836,7 @@
           "status": "no_name_match"
         }
       ],
-      "confidence": "existing_evidence_needs_corroboration",
+      "confidence": "owner_reviewed",
       "country": "England",
       "dispense": "H",
       "independent_of_pin": true,
@@ -24681,11 +24846,11 @@
         "pub_name": "Silloth On Solway Golf Club (PMC)"
       },
       "notes": "",
-      "owner_reviewed": false,
+      "owner_reviewed": true,
       "pg": "Guest",
       "pin": {
-        "lat": 54.86603688,
-        "lng": -3.389233205
+        "lat": 54.8667471,
+        "lng": -3.3901361
       },
       "place_name": "Silloth",
       "postcode": "CA7 4BL",
@@ -26404,7 +26569,7 @@
           "url": "https://ratings.food.gov.uk/business/1161"
         }
       ],
-      "confidence": "existing_evidence_needs_corroboration",
+      "confidence": "owner_reviewed",
       "country": "England",
       "dispense": "H",
       "independent_of_pin": true,
@@ -26414,7 +26579,7 @@
         "pub_name": "Talbot Taphouse"
       },
       "notes": "",
-      "owner_reviewed": false,
+      "owner_reviewed": true,
       "pg": "Guest",
       "pin": {
         "lat": 53.053271,
@@ -26568,7 +26733,7 @@
         "postcode": "DE56 1UU",
         "pub_name": "Tavern"
       },
-      "notes": "v1 'once a year'. Newand re-entries on the list are coloured gold.This directory couldn't have happened without Ian Thurman, Pub Curmudgeon (RIP), Retired Martin, Britain Beer Mat and Ian Webster.The directory is now kept updated by Quinten Taylor AKA Watney Mann (Fb). All content copyright Quinten Taylor.",
+      "notes": "",
       "owner_reviewed": false,
       "pg": "Perm",
       "pin": {
@@ -27184,7 +27349,7 @@
           "status": "no_name_match"
         }
       ],
-      "confidence": "existing_evidence_needs_corroboration",
+      "confidence": "owner_reviewed",
       "country": "England",
       "dispense": "H",
       "independent_of_pin": true,
@@ -27194,7 +27359,7 @@
         "pub_name": "Three Horseshoes (Pollys)"
       },
       "notes": "",
-      "owner_reviewed": false,
+      "owner_reviewed": true,
       "pg": "Perm",
       "pin": {
         "lat": 52.740011107146,
@@ -27213,51 +27378,6 @@
       },
       "status": "no_name_match",
       "venue_id": "v-93765f1e-9190-594b-9c77-6b96456e5433",
-      "warnings": [
-        "FSA comparison is inconclusive; absence of a match does not contradict accepted evidence"
-      ]
-    },
-    {
-      "actionable": false,
-      "area": "Devon",
-      "checked_at": "2026-10-26",
-      "comparisons": [
-        {
-          "name_matches": 0,
-          "postcode_matches": 2,
-          "queried_postcode": "EX34 7BP",
-          "status": "no_name_match"
-        }
-      ],
-      "confidence": "existing_evidence_needs_corroboration",
-      "country": "England",
-      "dispense": "H",
-      "independent_of_pin": true,
-      "last": "2026 Q2",
-      "listing": {
-        "postcode": "EX34 7BP",
-        "pub_name": "Tides Out"
-      },
-      "notes": "",
-      "owner_reviewed": false,
-      "pg": "Guest",
-      "pin": {
-        "lat": 51.172685037242,
-        "lng": -4.2054578186163
-      },
-      "place_name": "Woolacombe",
-      "postcode": "EX34 7BP",
-      "priority": 2,
-      "pub_name": "Tides Out",
-      "reasons": [],
-      "reference": {
-        "name_matches": 0,
-        "postcode_matches": 2,
-        "queried_postcode": "EX34 7BP",
-        "status": "no_name_match"
-      },
-      "status": "no_name_match",
-      "venue_id": "v-b0c6fb73-49cd-5fdf-b936-ee8fbd0ac4c6",
       "warnings": [
         "FSA comparison is inconclusive; absence of a match does not contradict accepted evidence"
       ]
@@ -27465,7 +27585,7 @@
     {
       "actionable": false,
       "area": "Tyne and Wear",
-      "checked_at": "2026-10-24",
+      "checked_at": "2026-10-30",
       "comparisons": [
         {
           "name_matches": 0,
@@ -27474,7 +27594,7 @@
           "status": "no_name_match"
         }
       ],
-      "confidence": "existing_evidence_needs_corroboration",
+      "confidence": "owner_reviewed",
       "country": "England",
       "dispense": "H",
       "independent_of_pin": true,
@@ -27484,11 +27604,11 @@
         "pub_name": "Turks Head (Stuffed Dog)"
       },
       "notes": "",
-      "owner_reviewed": false,
+      "owner_reviewed": true,
       "pg": "Perm",
       "pin": {
-        "lat": 55.0177454,
-        "lng": -1.4220353
+        "lat": 55.0179358,
+        "lng": -1.4219527
       },
       "place_name": "Tynemouth",
       "postcode": "NE30 4DZ",
@@ -27555,7 +27675,7 @@
     {
       "actionable": false,
       "area": "Tyne and Wear",
-      "checked_at": "2026-10-12",
+      "checked_at": "2026-10-30",
       "comparisons": [
         {
           "name_matches": 0,
@@ -27564,7 +27684,7 @@
           "status": "no_name_match"
         }
       ],
-      "confidence": "existing_evidence_needs_corroboration",
+      "confidence": "owner_reviewed",
       "country": "England",
       "dispense": "H",
       "independent_of_pin": true,
@@ -27574,11 +27694,11 @@
         "pub_name": "Tynemouth WMC/Social Club (PMC)"
       },
       "notes": "\"non-members welcome\"",
-      "owner_reviewed": false,
+      "owner_reviewed": true,
       "pg": "Perm",
       "pin": {
-        "lat": 55.0177047,
-        "lng": -1.4246349
+        "lat": 55.0177967,
+        "lng": -1.4250238
       },
       "place_name": "Tynemouth",
       "postcode": "NE30 4DX",
@@ -28089,7 +28209,7 @@
           "status": "no_name_match"
         }
       ],
-      "confidence": "existing_evidence_needs_corroboration",
+      "confidence": "owner_reviewed",
       "country": "England",
       "dispense": "H",
       "independent_of_pin": true,
@@ -28099,7 +28219,7 @@
         "pub_name": "Village/Conservative Club (PMC)"
       },
       "notes": "",
-      "owner_reviewed": false,
+      "owner_reviewed": true,
       "pg": "Perm",
       "pin": {
         "lat": 52.921261,
@@ -28849,7 +28969,7 @@
     {
       "actionable": false,
       "area": "Shropshire",
-      "checked_at": "2026-10-09",
+      "checked_at": "2026-10-30",
       "comparisons": [
         {
           "name_matches": 1,
@@ -29049,7 +29169,7 @@
     {
       "actionable": false,
       "area": "Derbyshire",
-      "checked_at": "2026-10-09",
+      "checked_at": "2026-10-30",
       "comparisons": [
         {
           "address": "3 Compton, Ashbourne, Derbyshire",
@@ -29540,7 +29660,7 @@
           "status": "no_name_match"
         }
       ],
-      "confidence": "existing_evidence_needs_corroboration",
+      "confidence": "owner_reviewed",
       "country": "Wales",
       "dispense": "H",
       "independent_of_pin": true,
@@ -29550,7 +29670,7 @@
         "pub_name": "White Horse Inn / Tafarn Penllan"
       },
       "notes": "",
-      "owner_reviewed": false,
+      "owner_reviewed": true,
       "pg": "Perm",
       "pin": {
         "lat": 53.0829,
@@ -31595,7 +31715,7 @@
     {
       "actionable": false,
       "area": "East Yorkshire",
-      "checked_at": "2026-10-09",
+      "checked_at": "2026-10-30",
       "comparisons": [
         {
           "address": "100 Chanterlands Avenue, Kingston Upon Hull",
@@ -36895,7 +37015,7 @@
     {
       "actionable": false,
       "area": "Merseyside",
-      "checked_at": "2026-10-09",
+      "checked_at": "2026-10-30",
       "comparisons": [
         {
           "address": "43 Lime Street, , Liverpool",
@@ -37637,7 +37757,7 @@
     {
       "actionable": false,
       "area": "Staffordshire",
-      "checked_at": "2026-10-09",
+      "checked_at": "2026-10-30",
       "comparisons": [
         {
           "address": "508 Turnhurst Road, Chell, Stoke-On-Trent",
@@ -37690,7 +37810,7 @@
     {
       "actionable": false,
       "area": "Devon",
-      "checked_at": "2026-10-09",
+      "checked_at": "2026-10-30",
       "comparisons": [
         {
           "address": "The Dolphin Inn, 14 The Barbican, Plymouth",
@@ -37743,7 +37863,7 @@
     {
       "actionable": false,
       "area": "Derbyshire",
-      "checked_at": "2026-10-09",
+      "checked_at": "2026-10-30",
       "comparisons": [
         {
           "address": "11 THE GREEN, WILLINGTON, DERBY",
@@ -39863,7 +39983,7 @@
     {
       "actionable": false,
       "area": "Warwickshire",
-      "checked_at": "2026-10-09",
+      "checked_at": "2026-10-30",
       "comparisons": [
         {
           "address": "The Green Man Inn Church Lane, , Middleton, Warwickshire",
@@ -40181,7 +40301,7 @@
     {
       "actionable": false,
       "area": "Derbyshire",
-      "checked_at": "2026-10-09",
+      "checked_at": "2026-10-30",
       "comparisons": [
         {
           "address": "The Groovers Arms 153 Peasehill Ripley Derbyshire",
@@ -40340,7 +40460,7 @@
     {
       "actionable": false,
       "area": "Durham",
-      "checked_at": "2026-10-09",
+      "checked_at": "2026-10-30",
       "comparisons": [
         {
           "address": "86 NEW ELVET, , DURHAM",
@@ -42990,7 +43110,7 @@
     {
       "actionable": false,
       "area": "Devon",
-      "checked_at": "2026-10-09",
+      "checked_at": "2026-10-30",
       "comparisons": [
         {
           "address": "7 Stopford Place, Plymouth",
@@ -45375,7 +45495,7 @@
     {
       "actionable": false,
       "area": "Cheshire",
-      "checked_at": "2026-10-09",
+      "checked_at": "2026-10-30",
       "comparisons": [
         {
           "address": "1 High Street, Congleton, , Cheshire",
@@ -45587,11 +45707,11 @@
     {
       "actionable": false,
       "area": "West Wales",
-      "checked_at": "2026-10-09",
+      "checked_at": "2026-10-30",
       "comparisons": [
         {
           "address": "Sycamore Street, Newcastle Emlyn, Carmarthenshire",
-          "difference_metres": 0.0,
+          "difference_metres": 8.1,
           "lat": 52.038507,
           "lng": -4.4678,
           "name": "Tafarn Y Pelican",
@@ -45601,7 +45721,7 @@
           "url": "https://ratings.food.gov.uk/business/879315"
         }
       ],
-      "confidence": "independent_coordinate_agreement",
+      "confidence": "owner_reviewed",
       "country": "Wales",
       "dispense": "G",
       "independent_of_pin": true,
@@ -45611,11 +45731,11 @@
         "pub_name": "Pelican Inn/Tafarn Y Pelican"
       },
       "notes": "",
-      "owner_reviewed": false,
+      "owner_reviewed": true,
       "pg": "Perm",
       "pin": {
-        "lat": 52.038507,
-        "lng": -4.4678
+        "lat": 52.0385305,
+        "lng": -4.4676877
       },
       "place_name": "Newcastle Emlyn",
       "postcode": "SA38 9AP",
@@ -45624,7 +45744,7 @@
       "reasons": [],
       "reference": {
         "address": "Sycamore Street, Newcastle Emlyn, Carmarthenshire",
-        "difference_metres": 0.0,
+        "difference_metres": 8.1,
         "lat": 52.038507,
         "lng": -4.4678,
         "name": "Tafarn Y Pelican",
@@ -45813,7 +45933,7 @@
           "url": "https://ratings.food.gov.uk/business/1195739"
         }
       ],
-      "confidence": "independent_coordinate_agreement",
+      "confidence": "owner_reviewed",
       "country": "England",
       "dispense": "H",
       "independent_of_pin": true,
@@ -45823,7 +45943,7 @@
         "pub_name": "Pickled Pig at the Bankhouse"
       },
       "notes": "",
-      "owner_reviewed": false,
+      "owner_reviewed": true,
       "pg": "Guest",
       "pin": {
         "lat": 52.8079276,
@@ -48289,59 +48409,6 @@
     },
     {
       "actionable": false,
-      "area": "Staffordshire",
-      "checked_at": "2026-10-13",
-      "comparisons": [
-        {
-          "address": "The Sheet Anchor, Newcastle Road, Whitmore, Newcastle Under Lyme",
-          "difference_metres": 0.0,
-          "lat": 52.960363,
-          "lng": -2.303902,
-          "name": "THE BLOCKHOUSE @ THE SHEET ANCHOR",
-          "postcode": "ST5 5BU",
-          "queried_postcode": "ST5 5BU",
-          "status": "coordinate_agreement",
-          "url": "https://ratings.food.gov.uk/business/835439"
-        }
-      ],
-      "confidence": "existing_evidence_needs_corroboration",
-      "country": "England",
-      "dispense": "H",
-      "independent_of_pin": false,
-      "last": "2026 Q3",
-      "listing": {
-        "postcode": "ST5 5BU",
-        "pub_name": "Sheet Anchor"
-      },
-      "notes": "also known as The Blockhouse",
-      "owner_reviewed": false,
-      "pg": "Perm",
-      "pin": {
-        "lat": 52.960363,
-        "lng": -2.303902
-      },
-      "place_name": "Baldwins Gate",
-      "postcode": "ST5 5BU",
-      "priority": 3,
-      "pub_name": "Sheet Anchor",
-      "reasons": [],
-      "reference": {
-        "address": "The Sheet Anchor, Newcastle Road, Whitmore, Newcastle Under Lyme",
-        "difference_metres": 0.0,
-        "lat": 52.960363,
-        "lng": -2.303902,
-        "name": "THE BLOCKHOUSE @ THE SHEET ANCHOR",
-        "postcode": "ST5 5BU",
-        "queried_postcode": "ST5 5BU",
-        "status": "coordinate_agreement",
-        "url": "https://ratings.food.gov.uk/business/835439"
-      },
-      "status": "coordinate_agreement",
-      "venue_id": "v-1f980acc-ae24-543c-9afc-40840f5ecc91",
-      "warnings": []
-    },
-    {
-      "actionable": false,
       "area": "Lancashire",
       "checked_at": "2026-10-28",
       "comparisons": [
@@ -48357,7 +48424,7 @@
           "url": "https://ratings.food.gov.uk/business/1593325"
         }
       ],
-      "confidence": "independent_coordinate_agreement",
+      "confidence": "owner_reviewed",
       "country": "England",
       "dispense": "H",
       "independent_of_pin": true,
@@ -48367,7 +48434,7 @@
         "pub_name": "Shepherds Hall Ale House"
       },
       "notes": "",
-      "owner_reviewed": false,
+      "owner_reviewed": true,
       "pg": "Guest",
       "pin": {
         "lat": 53.6525648,
@@ -49032,7 +49099,7 @@
     {
       "actionable": false,
       "area": "North Wales",
-      "checked_at": "2026-10-09",
+      "checked_at": "2026-10-30",
       "comparisons": [
         {
           "address": "The Snowdon Hotel  11 Tudno Street, , Llandudno, Conwy",
@@ -49576,7 +49643,7 @@
           "url": "https://ratings.food.gov.uk/business/1247986"
         }
       ],
-      "confidence": "independent_coordinate_agreement",
+      "confidence": "owner_reviewed",
       "country": "England",
       "dispense": "H",
       "independent_of_pin": true,
@@ -49586,7 +49653,7 @@
         "pub_name": "Stapenhill Institute"
       },
       "notes": "",
-      "owner_reviewed": false,
+      "owner_reviewed": true,
       "pg": "Perm",
       "pin": {
         "lat": 52.7936442,
@@ -49933,7 +50000,7 @@
     {
       "actionable": false,
       "area": "Devon",
-      "checked_at": "2026-10-09",
+      "checked_at": "2026-10-30",
       "comparisons": [
         {
           "address": "Stoke Canon Inn, High Street, Stoke Canon, Exeter",
@@ -50530,7 +50597,7 @@
           "url": "https://ratings.food.gov.uk/business/1964104"
         }
       ],
-      "confidence": "independent_coordinate_agreement",
+      "confidence": "owner_reviewed",
       "country": "England",
       "dispense": "H",
       "independent_of_pin": true,
@@ -50540,7 +50607,7 @@
         "pub_name": "The Rad (was St Radegund)"
       },
       "notes": "",
-      "owner_reviewed": false,
+      "owner_reviewed": true,
       "pg": "Guest",
       "pin": {
         "lat": 52.2076353,
@@ -50887,7 +50954,7 @@
     {
       "actionable": false,
       "area": "Dorset",
-      "checked_at": "2026-10-09",
+      "checked_at": "2026-10-30",
       "comparisons": [
         {
           "address": "16 Barrack Street, , Bridport, Dorset",
@@ -50940,11 +51007,11 @@
     {
       "actionable": false,
       "area": "Greater London",
-      "checked_at": "2026-10-19",
+      "checked_at": "2026-10-30",
       "comparisons": [
         {
           "address": "Eden Park Hotel 422 Upper Elmers End Road, , Beckenham",
-          "difference_metres": 0.0,
+          "difference_metres": 19.0,
           "lat": 51.3898643,
           "lng": -0.0274306,
           "name": "Toby Carvery - Eden Park Hotel",
@@ -50954,21 +51021,21 @@
           "url": "https://ratings.food.gov.uk/business/357311"
         }
       ],
-      "confidence": "existing_evidence_needs_corroboration",
+      "confidence": "owner_reviewed",
       "country": "England",
       "dispense": "H",
-      "independent_of_pin": false,
+      "independent_of_pin": true,
       "last": "2026 Q1",
       "listing": {
         "postcode": "BR3 3HQ",
         "pub_name": "Toby Carvery"
       },
       "notes": "",
-      "owner_reviewed": false,
+      "owner_reviewed": true,
       "pg": "Guest",
       "pin": {
-        "lat": 51.3898643,
-        "lng": -0.0274306
+        "lat": 51.389961529855,
+        "lng": -0.027205771828
       },
       "place_name": "Beckenham BR3",
       "postcode": "BR3 3HQ",
@@ -50977,7 +51044,7 @@
       "reasons": [],
       "reference": {
         "address": "Eden Park Hotel 422 Upper Elmers End Road, , Beckenham",
-        "difference_metres": 0.0,
+        "difference_metres": 19.0,
         "lat": 51.3898643,
         "lng": -0.0274306,
         "name": "Toby Carvery - Eden Park Hotel",
@@ -51060,7 +51127,7 @@
           "url": "https://ratings.food.gov.uk/business/113675"
         }
       ],
-      "confidence": "independent_coordinate_agreement",
+      "confidence": "owner_reviewed",
       "country": "England",
       "dispense": "H",
       "independent_of_pin": true,
@@ -51070,7 +51137,7 @@
         "pub_name": "Toby Carvery Trentham Village"
       },
       "notes": "",
-      "owner_reviewed": false,
+      "owner_reviewed": true,
       "pg": "Guest",
       "pin": {
         "lat": 52.965468,
@@ -51205,7 +51272,7 @@
     {
       "actionable": false,
       "area": "Nottinghamshire",
-      "checked_at": "2026-10-09",
+      "checked_at": "2026-10-30",
       "comparisons": [
         {
           "address": "Trent Navigation Inn, 17 Meadow Lane, , Nottingham",
@@ -51253,59 +51320,6 @@
       },
       "status": "coordinate_agreement",
       "venue_id": "v-db7d725b-d3e5-5443-aec0-3dab78a19eae",
-      "warnings": []
-    },
-    {
-      "actionable": false,
-      "area": "Staffordshire",
-      "checked_at": "2026-10-23",
-      "comparisons": [
-        {
-          "address": "Trentside Cricket Club, Off Faldo Close, Branston, Burton upon Trent",
-          "difference_metres": 0.0,
-          "lat": 52.7872505187988,
-          "lng": -1.65420198440552,
-          "name": "Trentside Cricket Club",
-          "postcode": "DE14 3DP",
-          "queried_postcode": "DE14 3DP",
-          "status": "coordinate_agreement",
-          "url": "https://ratings.food.gov.uk/business/1248081"
-        }
-      ],
-      "confidence": "existing_evidence_needs_corroboration",
-      "country": "England",
-      "dispense": "H",
-      "independent_of_pin": false,
-      "last": "2026 Q1",
-      "listing": {
-        "postcode": "DE14 3DP",
-        "pub_name": "Trentside Cricket Club (PMC)"
-      },
-      "notes": "",
-      "owner_reviewed": false,
-      "pg": "Perm",
-      "pin": {
-        "lat": 52.7872505187988,
-        "lng": -1.65420198440552
-      },
-      "place_name": "Burton U-T: Branston",
-      "postcode": "DE14 3DP",
-      "priority": 3,
-      "pub_name": "Trentside Cricket Club (PMC)",
-      "reasons": [],
-      "reference": {
-        "address": "Trentside Cricket Club, Off Faldo Close, Branston, Burton upon Trent",
-        "difference_metres": 0.0,
-        "lat": 52.7872505187988,
-        "lng": -1.65420198440552,
-        "name": "Trentside Cricket Club",
-        "postcode": "DE14 3DP",
-        "queried_postcode": "DE14 3DP",
-        "status": "coordinate_agreement",
-        "url": "https://ratings.food.gov.uk/business/1248081"
-      },
-      "status": "coordinate_agreement",
-      "venue_id": "v-8e577f40-1d4f-5d93-a248-eb1f6eb244e4",
       "warnings": []
     },
     {
@@ -51894,7 +51908,7 @@
     {
       "actionable": false,
       "area": "Staffordshire",
-      "checked_at": "2026-10-09",
+      "checked_at": "2026-10-30",
       "comparisons": [
         {
           "address": "3 Stanley Street, Leek, Staffordshire",
@@ -52067,7 +52081,7 @@
           "url": "https://ratings.food.gov.uk/business/1715975"
         }
       ],
-      "confidence": "independent_coordinate_agreement",
+      "confidence": "owner_reviewed",
       "country": "England",
       "dispense": "H",
       "independent_of_pin": true,
@@ -52077,7 +52091,7 @@
         "pub_name": "Verulam Arms"
       },
       "notes": "",
-      "owner_reviewed": false,
+      "owner_reviewed": true,
       "pg": "Guest",
       "pin": {
         "lat": 51.75283803333333,
@@ -52650,7 +52664,7 @@
           "url": "https://ratings.food.gov.uk/business/1041713"
         }
       ],
-      "confidence": "independent_coordinate_agreement",
+      "confidence": "owner_reviewed",
       "country": "England",
       "dispense": "H",
       "independent_of_pin": true,
@@ -52660,7 +52674,7 @@
         "pub_name": "Wellington"
       },
       "notes": "",
-      "owner_reviewed": false,
+      "owner_reviewed": true,
       "pg": "Guest",
       "pin": {
         "lat": 51.206656055555555,
@@ -52689,7 +52703,7 @@
     {
       "actionable": false,
       "area": "Herefordshire",
-      "checked_at": "2026-10-09",
+      "checked_at": "2026-10-30",
       "comparisons": [
         {
           "address": "Weston Under Penyard, , Ross-On-Wye",
@@ -53074,7 +53088,7 @@
           "url": "https://ratings.food.gov.uk/business/1030996"
         }
       ],
-      "confidence": "independent_coordinate_agreement",
+      "confidence": "owner_reviewed",
       "country": "England",
       "dispense": "H",
       "independent_of_pin": true,
@@ -53084,7 +53098,7 @@
         "pub_name": "White Hart"
       },
       "notes": "",
-      "owner_reviewed": false,
+      "owner_reviewed": true,
       "pg": "Perm",
       "pin": {
         "lat": 53.39397612222222,
@@ -54134,7 +54148,7 @@
           "url": "https://ratings.food.gov.uk/business/521262"
         }
       ],
-      "confidence": "independent_coordinate_agreement",
+      "confidence": "owner_reviewed",
       "country": "England",
       "dispense": "H",
       "independent_of_pin": true,
@@ -54144,7 +54158,7 @@
         "pub_name": "Working Mens Club (PMC)"
       },
       "notes": "",
-      "owner_reviewed": false,
+      "owner_reviewed": true,
       "pg": "Guest",
       "pin": {
         "lat": 52.61053543,
@@ -54385,20 +54399,20 @@
   ],
   "schema_version": 1,
   "summary": {
-    "actionable_count": 4,
+    "actionable_count": 6,
     "confidence_counts": {
-      "existing_evidence_needs_corroboration": 525,
-      "independent_coordinate_agreement": 427,
-      "owner_reviewed": 92
+      "existing_evidence_needs_corroboration": 513,
+      "independent_coordinate_agreement": 417,
+      "owner_reviewed": 114
     },
     "counts": {
       "ambiguous_or_missing_coordinates": 62,
-      "coordinate_agreement": 457,
-      "coordinate_disagreement": 244,
+      "coordinate_agreement": 455,
+      "coordinate_disagreement": 246,
       "nearby": 103,
       "no_name_match": 178
     },
-    "informational_count": 600,
+    "informational_count": 602,
     "limitations": [
       "Coordinate agreement does not prove the correct building or current Bass availability.",
       "Owner-approved coordinates take priority; CAMRA remains the primary automated reference.",

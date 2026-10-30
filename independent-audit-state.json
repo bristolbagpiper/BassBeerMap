@@ -3572,7 +3572,7 @@
     },
     "v-13a2ad1c-e050-5c7a-944e-064bff66e040": {
       "actionable": false,
-      "checked_at": "2026-10-12",
+      "checked_at": "2026-10-30",
       "comparisons": [
         {
           "name_matches": 0,
@@ -3581,16 +3581,16 @@
           "status": "no_name_match"
         }
       ],
-      "confidence": "existing_evidence_needs_corroboration",
+      "confidence": "owner_reviewed",
       "independent_of_pin": true,
       "listing": {
         "postcode": "NE30 4DX",
         "pub_name": "Tynemouth WMC/Social Club (PMC)"
       },
-      "owner_reviewed": false,
+      "owner_reviewed": true,
       "pin": {
-        "lat": 55.0177047,
-        "lng": -1.4246349
+        "lat": 55.0177967,
+        "lng": -1.4250238
       },
       "priority": 2,
       "reasons": [],
@@ -5561,46 +5561,48 @@
     },
     "v-1f980acc-ae24-543c-9afc-40840f5ecc91": {
       "actionable": false,
-      "checked_at": "2026-10-13",
+      "checked_at": "2026-10-30",
       "comparisons": [
         {
           "address": "The Sheet Anchor, Newcastle Road, Whitmore, Newcastle Under Lyme",
-          "difference_metres": 0.0,
+          "difference_metres": 51.4,
           "lat": 52.960363,
           "lng": -2.303902,
           "name": "THE BLOCKHOUSE @ THE SHEET ANCHOR",
           "postcode": "ST5 5BU",
           "queried_postcode": "ST5 5BU",
-          "status": "coordinate_agreement",
+          "status": "coordinate_disagreement",
           "url": "https://ratings.food.gov.uk/business/835439"
         }
       ],
-      "confidence": "existing_evidence_needs_corroboration",
-      "independent_of_pin": false,
+      "confidence": "owner_reviewed",
+      "independent_of_pin": true,
       "listing": {
         "postcode": "ST5 5BU",
         "pub_name": "Sheet Anchor"
       },
-      "owner_reviewed": false,
+      "owner_reviewed": true,
       "pin": {
-        "lat": 52.960363,
-        "lng": -2.303902
+        "lat": 52.9604905,
+        "lng": -2.3046398
       },
-      "priority": 3,
+      "priority": 2,
       "reasons": [],
       "reference": {
         "address": "The Sheet Anchor, Newcastle Road, Whitmore, Newcastle Under Lyme",
-        "difference_metres": 0.0,
+        "difference_metres": 51.4,
         "lat": 52.960363,
         "lng": -2.303902,
         "name": "THE BLOCKHOUSE @ THE SHEET ANCHOR",
         "postcode": "ST5 5BU",
         "queried_postcode": "ST5 5BU",
-        "status": "coordinate_agreement",
+        "status": "coordinate_disagreement",
         "url": "https://ratings.food.gov.uk/business/835439"
       },
-      "status": "coordinate_agreement",
-      "warnings": []
+      "status": "coordinate_disagreement",
+      "warnings": [
+        "FSA coordinate is 51.4m from the accepted pin; informational only because the FSA geocode may be approximate"
+      ]
     },
     "v-1f982dcb-1647-57f0-8177-9fc792bbf7d3": {
       "actionable": false,
@@ -13665,13 +13667,13 @@
           "url": "https://ratings.food.gov.uk/business/1030996"
         }
       ],
-      "confidence": "independent_coordinate_agreement",
+      "confidence": "owner_reviewed",
       "independent_of_pin": true,
       "listing": {
         "postcode": "SK8 1PX",
         "pub_name": "White Hart"
       },
-      "owner_reviewed": false,
+      "owner_reviewed": true,
       "pin": {
         "lat": 53.39397612222222,
         "lng": -2.217801722222222
@@ -15503,13 +15505,13 @@
           "url": "https://ratings.food.gov.uk/business/1041713"
         }
       ],
-      "confidence": "independent_coordinate_agreement",
+      "confidence": "owner_reviewed",
       "independent_of_pin": true,
       "listing": {
         "postcode": "EX34 9QE",
         "pub_name": "Wellington"
       },
-      "owner_reviewed": false,
+      "owner_reviewed": true,
       "pin": {
         "lat": 51.206656055555555,
         "lng": -4.12575065925926
@@ -15546,13 +15548,13 @@
           "url": "https://ratings.food.gov.uk/business/521262"
         }
       ],
-      "confidence": "independent_coordinate_agreement",
+      "confidence": "owner_reviewed",
       "independent_of_pin": true,
       "listing": {
         "postcode": "B78 1AF",
         "pub_name": "Working Mens Club (PMC)"
       },
-      "owner_reviewed": false,
+      "owner_reviewed": true,
       "pin": {
         "lat": 52.61053543,
         "lng": -1.63121538
@@ -16642,11 +16644,11 @@
     },
     "v-640a3ec6-ce7e-59da-8d9c-6073e61fb6c2": {
       "actionable": false,
-      "checked_at": "2026-10-19",
+      "checked_at": "2026-10-30",
       "comparisons": [
         {
           "address": "Eden Park Hotel 422 Upper Elmers End Road, , Beckenham",
-          "difference_metres": 0.0,
+          "difference_metres": 19.0,
           "lat": 51.3898643,
           "lng": -0.0274306,
           "name": "Toby Carvery - Eden Park Hotel",
@@ -16656,22 +16658,22 @@
           "url": "https://ratings.food.gov.uk/business/357311"
         }
       ],
-      "confidence": "existing_evidence_needs_corroboration",
-      "independent_of_pin": false,
+      "confidence": "owner_reviewed",
+      "independent_of_pin": true,
       "listing": {
         "postcode": "BR3 3HQ",
         "pub_name": "Toby Carvery"
       },
-      "owner_reviewed": false,
+      "owner_reviewed": true,
       "pin": {
-        "lat": 51.3898643,
-        "lng": -0.0274306
+        "lat": 51.389961529855,
+        "lng": -0.027205771828
       },
       "priority": 3,
       "reasons": [],
       "reference": {
         "address": "Eden Park Hotel 422 Upper Elmers End Road, , Beckenham",
-        "difference_metres": 0.0,
+        "difference_metres": 19.0,
         "lat": 51.3898643,
         "lng": -0.0274306,
         "name": "Toby Carvery - Eden Park Hotel",
@@ -20980,13 +20982,13 @@
           "status": "no_name_match"
         }
       ],
-      "confidence": "existing_evidence_needs_corroboration",
+      "confidence": "owner_reviewed",
       "independent_of_pin": true,
       "listing": {
         "postcode": "LL26 0RW",
         "pub_name": "White Horse Inn / Tafarn Penllan"
       },
-      "owner_reviewed": false,
+      "owner_reviewed": true,
       "pin": {
         "lat": 53.0829,
         "lng": -3.7695
@@ -24340,47 +24342,57 @@
       ]
     },
     "v-8e577f40-1d4f-5d93-a248-eb1f6eb244e4": {
-      "actionable": false,
-      "checked_at": "2026-10-23",
+      "actionable": true,
+      "checked_at": "2026-10-30",
       "comparisons": [
         {
           "address": "Trentside Cricket Club, Off Faldo Close, Branston, Burton upon Trent",
-          "difference_metres": 0.0,
+          "difference_metres": 223.9,
           "lat": 52.7872505187988,
           "lng": -1.65420198440552,
           "name": "Trentside Cricket Club",
           "postcode": "DE14 3DP",
           "queried_postcode": "DE14 3DP",
-          "status": "coordinate_agreement",
+          "status": "coordinate_disagreement",
           "url": "https://ratings.food.gov.uk/business/1248081"
+        },
+        {
+          "name_matches": 0,
+          "postcode_matches": 2,
+          "queried_postcode": "DE14 3DN",
+          "status": "no_name_match"
         }
       ],
-      "confidence": "existing_evidence_needs_corroboration",
-      "independent_of_pin": false,
+      "confidence": "owner_reviewed",
+      "independent_of_pin": true,
       "listing": {
         "postcode": "DE14 3DP",
         "pub_name": "Trentside Cricket Club (PMC)"
       },
-      "owner_reviewed": false,
+      "owner_reviewed": true,
       "pin": {
-        "lat": 52.7872505187988,
-        "lng": -1.65420198440552
+        "lat": 52.7867,
+        "lng": -1.651
       },
-      "priority": 3,
-      "reasons": [],
+      "priority": 0,
+      "reasons": [
+        "Directory postcode differs from reviewed reference postcode"
+      ],
       "reference": {
         "address": "Trentside Cricket Club, Off Faldo Close, Branston, Burton upon Trent",
-        "difference_metres": 0.0,
+        "difference_metres": 223.9,
         "lat": 52.7872505187988,
         "lng": -1.65420198440552,
         "name": "Trentside Cricket Club",
         "postcode": "DE14 3DP",
         "queried_postcode": "DE14 3DP",
-        "status": "coordinate_agreement",
+        "status": "coordinate_disagreement",
         "url": "https://ratings.food.gov.uk/business/1248081"
       },
-      "status": "coordinate_agreement",
-      "warnings": []
+      "status": "coordinate_disagreement",
+      "warnings": [
+        "FSA coordinate is 223.9m from the accepted pin; informational only because the FSA geocode may be approximate"
+      ]
     },
     "v-8e5b2393-cd3c-521b-9166-47d76c920c2b": {
       "actionable": false,
@@ -25117,13 +25129,13 @@
           "status": "no_name_match"
         }
       ],
-      "confidence": "existing_evidence_needs_corroboration",
+      "confidence": "owner_reviewed",
       "independent_of_pin": true,
       "listing": {
         "postcode": "LE67 5GN",
         "pub_name": "Three Horseshoes (Pollys)"
       },
-      "owner_reviewed": false,
+      "owner_reviewed": true,
       "pin": {
         "lat": 52.740011107146,
         "lng": -1.352965300941
@@ -26270,13 +26282,13 @@
           "status": "no_name_match"
         }
       ],
-      "confidence": "existing_evidence_needs_corroboration",
+      "confidence": "owner_reviewed",
       "independent_of_pin": true,
       "listing": {
         "postcode": "DE21 7JP",
         "pub_name": "Village/Conservative Club (PMC)"
       },
-      "owner_reviewed": false,
+      "owner_reviewed": true,
       "pin": {
         "lat": 52.921261,
         "lng": -1.404047
@@ -26470,7 +26482,7 @@
     },
     "v-9a1e8581-39f4-58cd-949d-c3908758ad50": {
       "actionable": false,
-      "checked_at": "2026-10-24",
+      "checked_at": "2026-10-30",
       "comparisons": [
         {
           "name_matches": 0,
@@ -26479,16 +26491,16 @@
           "status": "no_name_match"
         }
       ],
-      "confidence": "existing_evidence_needs_corroboration",
+      "confidence": "owner_reviewed",
       "independent_of_pin": true,
       "listing": {
         "postcode": "NE30 4DZ",
         "pub_name": "Turks Head (Stuffed Dog)"
       },
-      "owner_reviewed": false,
+      "owner_reviewed": true,
       "pin": {
-        "lat": 55.0177454,
-        "lng": -1.4220353
+        "lat": 55.0179358,
+        "lng": -1.4219527
       },
       "priority": 2,
       "reasons": [],
@@ -27043,13 +27055,13 @@
           "url": "https://ratings.food.gov.uk/business/1964104"
         }
       ],
-      "confidence": "independent_coordinate_agreement",
+      "confidence": "owner_reviewed",
       "independent_of_pin": true,
       "listing": {
         "postcode": "CB1 1LD",
         "pub_name": "The Rad (was St Radegund)"
       },
-      "owner_reviewed": false,
+      "owner_reviewed": true,
       "pin": {
         "lat": 52.2076353,
         "lng": 0.1267339
@@ -29923,13 +29935,13 @@
           "url": "https://ratings.food.gov.uk/business/1161"
         }
       ],
-      "confidence": "existing_evidence_needs_corroboration",
+      "confidence": "owner_reviewed",
       "independent_of_pin": true,
       "listing": {
         "postcode": "DE5 3LT",
         "pub_name": "Talbot Taphouse"
       },
-      "owner_reviewed": false,
+      "owner_reviewed": true,
       "pin": {
         "lat": 53.053271,
         "lng": -1.405467
@@ -30729,7 +30741,7 @@
       ]
     },
     "v-b0c6fb73-49cd-5fdf-b936-ee8fbd0ac4c6": {
-      "actionable": false,
+      "actionable": true,
       "checked_at": "2026-10-26",
       "comparisons": [
         {
@@ -30739,19 +30751,21 @@
           "status": "no_name_match"
         }
       ],
-      "confidence": "existing_evidence_needs_corroboration",
+      "confidence": "owner_reviewed",
       "independent_of_pin": true,
       "listing": {
         "postcode": "EX34 7BP",
         "pub_name": "Tides Out"
       },
-      "owner_reviewed": false,
+      "owner_reviewed": true,
       "pin": {
         "lat": 51.172685037242,
         "lng": -4.2054578186163
       },
-      "priority": 2,
-      "reasons": [],
+      "priority": 0,
+      "reasons": [
+        "Directory postcode differs from reviewed reference postcode"
+      ],
       "reference": {
         "name_matches": 0,
         "postcode_matches": 2,
@@ -33740,13 +33754,13 @@
           "url": "https://ratings.food.gov.uk/business/1593325"
         }
       ],
-      "confidence": "independent_coordinate_agreement",
+      "confidence": "owner_reviewed",
       "independent_of_pin": true,
       "listing": {
         "postcode": "PR7 1BS",
         "pub_name": "Shepherds Hall Ale House"
       },
-      "owner_reviewed": false,
+      "owner_reviewed": true,
       "pin": {
         "lat": 53.6525648,
         "lng": -2.6286238
@@ -36129,13 +36143,13 @@
           "url": "https://ratings.food.gov.uk/business/1247986"
         }
       ],
-      "confidence": "independent_coordinate_agreement",
+      "confidence": "owner_reviewed",
       "independent_of_pin": true,
       "listing": {
         "postcode": "DE15 9AP",
         "pub_name": "Stapenhill Institute"
       },
-      "owner_reviewed": false,
+      "owner_reviewed": true,
       "pin": {
         "lat": 52.7936442,
         "lng": -1.6229348
@@ -36471,13 +36485,13 @@
           "url": "https://ratings.food.gov.uk/business/1715975"
         }
       ],
-      "confidence": "independent_coordinate_agreement",
+      "confidence": "owner_reviewed",
       "independent_of_pin": true,
       "listing": {
         "postcode": "AL3 4QE",
         "pub_name": "Verulam Arms"
       },
-      "owner_reviewed": false,
+      "owner_reviewed": true,
       "pin": {
         "lat": 51.75283803333333,
         "lng": -0.34422567333333337
@@ -36705,7 +36719,7 @@
     },
     "v-d6613461-a4b6-5497-9232-48f62c18fb88": {
       "actionable": false,
-      "checked_at": "2026-10-09",
+      "checked_at": "2026-10-30",
       "comparisons": [
         {
           "address": "11 THE GREEN, WILLINGTON, DERBY",
@@ -36748,7 +36762,7 @@
     },
     "v-d662d0c4-a468-53cd-89b2-f7305f033e3c": {
       "actionable": false,
-      "checked_at": "2026-10-09",
+      "checked_at": "2026-10-30",
       "comparisons": [
         {
           "address": "Stoke Canon Inn, High Street, Stoke Canon, Exeter",
@@ -36791,7 +36805,7 @@
     },
     "v-d6a59038-f5ef-5bc9-b298-68f7798fe8c6": {
       "actionable": false,
-      "checked_at": "2026-10-09",
+      "checked_at": "2026-10-30",
       "comparisons": [
         {
           "address": "The Groovers Arms 153 Peasehill Ripley Derbyshire",
@@ -36834,7 +36848,7 @@
     },
     "v-d704b3a8-33c3-553f-b067-e1ed747652da": {
       "actionable": false,
-      "checked_at": "2026-10-09",
+      "checked_at": "2026-10-30",
       "comparisons": [
         {
           "address": "Leek Road, Warslow, Buxton",
@@ -36879,7 +36893,7 @@
     },
     "v-d7a5ca84-76d7-5f19-ad38-9b3f8bc3e3f3": {
       "actionable": false,
-      "checked_at": "2026-10-09",
+      "checked_at": "2026-10-30",
       "comparisons": [
         {
           "address": "Riggs Lane, Marston Montgomery, Derbyshire",
@@ -36924,7 +36938,7 @@
     },
     "v-d7f9aaa5-6a8f-5c14-ae38-74a59ed849f2": {
       "actionable": false,
-      "checked_at": "2026-10-09",
+      "checked_at": "2026-10-30",
       "comparisons": [
         {
           "address": "Station Road, Southwell",
@@ -36969,7 +36983,7 @@
     },
     "v-d8070a01-ac91-5ded-a8a4-899851cf5c2b": {
       "actionable": false,
-      "checked_at": "2026-10-09",
+      "checked_at": "2026-10-30",
       "comparisons": [
         {
           "address": "Ankerage Green, Worcester",
@@ -37014,7 +37028,7 @@
     },
     "v-d8553110-f596-5e7f-998c-21f1718f340b": {
       "actionable": false,
-      "checked_at": "2026-10-09",
+      "checked_at": "2026-10-30",
       "comparisons": [
         {
           "address": "1 High Street, Congleton, , Cheshire",
@@ -37057,7 +37071,7 @@
     },
     "v-d87d7238-4c39-56eb-8021-0599d9585515": {
       "actionable": false,
-      "checked_at": "2026-10-09",
+      "checked_at": "2026-10-30",
       "comparisons": [
         {
           "address": "43 Lime Street, , Liverpool",
@@ -37100,7 +37114,7 @@
     },
     "v-d8f002a1-4ed3-5ffb-8de9-c9cdbef55a1b": {
       "actionable": false,
-      "checked_at": "2026-10-09",
+      "checked_at": "2026-10-30",
       "comparisons": [
         {
           "name_matches": 0,
@@ -37135,7 +37149,7 @@
     },
     "v-d944d60b-3d83-5635-abc4-0ca08c0e432c": {
       "actionable": false,
-      "checked_at": "2026-10-09",
+      "checked_at": "2026-10-30",
       "comparisons": [
         {
           "address": "100 Chanterlands Avenue, Kingston Upon Hull",
@@ -37178,7 +37192,7 @@
     },
     "v-d95368c0-934f-5633-8229-7c363143a41c": {
       "actionable": false,
-      "checked_at": "2026-10-09",
+      "checked_at": "2026-10-30",
       "comparisons": [
         {
           "name_matches": 1,
@@ -37213,7 +37227,7 @@
     },
     "v-d9576d07-54ef-5423-846c-2d0e9f595931": {
       "actionable": false,
-      "checked_at": "2026-10-09",
+      "checked_at": "2026-10-30",
       "comparisons": [
         {
           "address": "The Green Man Inn Church Lane, , Middleton, Warwickshire",
@@ -37307,7 +37321,7 @@
     },
     "v-da1ab1f7-22cf-5624-b84c-63141fdd4ce1": {
       "actionable": false,
-      "checked_at": "2026-10-09",
+      "checked_at": "2026-10-30",
       "comparisons": [
         {
           "address": "7 Stopford Place, Plymouth",
@@ -37350,7 +37364,7 @@
     },
     "v-da368401-dfbb-5300-8382-e75e3237f5db": {
       "actionable": false,
-      "checked_at": "2026-10-09",
+      "checked_at": "2026-10-30",
       "comparisons": [
         {
           "address": "35 Market Place Belper Derbyshire",
@@ -37447,7 +37461,7 @@
     },
     "v-daf05614-68d7-51cb-810d-549409054f62": {
       "actionable": false,
-      "checked_at": "2026-10-09",
+      "checked_at": "2026-10-30",
       "comparisons": [
         {
           "name_matches": 0,
@@ -37482,7 +37496,7 @@
     },
     "v-db632ec8-4b2f-5b93-8f58-9ce371439095": {
       "actionable": false,
-      "checked_at": "2026-10-09",
+      "checked_at": "2026-10-30",
       "comparisons": [
         {
           "address": "Ship Inn, Quay Terrace, Red Wharf Bay, Pentraeth",
@@ -37527,7 +37541,7 @@
     },
     "v-db7d725b-d3e5-5443-aec0-3dab78a19eae": {
       "actionable": false,
-      "checked_at": "2026-10-09",
+      "checked_at": "2026-10-30",
       "comparisons": [
         {
           "address": "Trent Navigation Inn, 17 Meadow Lane, , Nottingham",
@@ -37570,7 +37584,7 @@
     },
     "v-db9df189-c856-5dc4-916d-8c83c4c56001": {
       "actionable": false,
-      "checked_at": "2026-10-09",
+      "checked_at": "2026-10-30",
       "comparisons": [
         {
           "name_matches": 0,
@@ -37605,7 +37619,7 @@
     },
     "v-dbeb3179-3c95-5e73-9ce6-227b045a3d74": {
       "actionable": false,
-      "checked_at": "2026-10-09",
+      "checked_at": "2026-10-30",
       "comparisons": [
         {
           "address": "The Snowdon Hotel  11 Tudno Street, , Llandudno, Conwy",
@@ -37648,7 +37662,7 @@
     },
     "v-dc03b99c-c5e0-5026-917a-16ad1f5c1bff": {
       "actionable": false,
-      "checked_at": "2026-10-09",
+      "checked_at": "2026-10-30",
       "comparisons": [
         {
           "address": "Weston Under Penyard, , Ross-On-Wye",
@@ -37691,7 +37705,7 @@
     },
     "v-dc3f2dcb-ee6f-59fa-8966-a9fab3cfca5b": {
       "actionable": false,
-      "checked_at": "2026-10-09",
+      "checked_at": "2026-10-30",
       "comparisons": [
         {
           "address": "The Crown Inn, Old Great North Road, Great Casterton, Stamford",
@@ -37736,7 +37750,7 @@
     },
     "v-dc8686e7-6bc9-527e-9a90-7f72211c77ba": {
       "actionable": false,
-      "checked_at": "2026-10-09",
+      "checked_at": "2026-10-30",
       "comparisons": [
         {
           "address": "The Crown Inn, Main Street, Yoxall, Burton upon Trent",
@@ -37781,7 +37795,7 @@
     },
     "v-dccf5b1d-e34e-5468-b42c-d448fdde6136": {
       "actionable": false,
-      "checked_at": "2026-10-09",
+      "checked_at": "2026-10-30",
       "comparisons": [
         {
           "name_matches": 0,
@@ -37816,7 +37830,7 @@
     },
     "v-dd4987ce-5e38-5560-a40d-5b4eb6e4ddf4": {
       "actionable": false,
-      "checked_at": "2026-10-09",
+      "checked_at": "2026-10-30",
       "comparisons": [
         {
           "address": "508 Turnhurst Road, Chell, Stoke-On-Trent",
@@ -37859,7 +37873,7 @@
     },
     "v-ddce654b-d48e-5ff2-95f9-180ed7d47a52": {
       "actionable": false,
-      "checked_at": "2026-10-09",
+      "checked_at": "2026-10-30",
       "comparisons": [
         {
           "address": "Main Road, Sheepy Magna, Atherstone, Leicestershire",
@@ -37904,7 +37918,7 @@
     },
     "v-ddfb023e-eca4-5ec5-bc0b-3bbc2a8c8aeb": {
       "actionable": false,
-      "checked_at": "2026-10-09",
+      "checked_at": "2026-10-30",
       "comparisons": [
         {
           "address": "2 Stoop Lane, , Quorn",
@@ -37949,7 +37963,7 @@
     },
     "v-de06f22a-12d8-5910-b35e-9d8129aad5a9": {
       "actionable": false,
-      "checked_at": "2026-10-09",
+      "checked_at": "2026-10-30",
       "comparisons": [
         {
           "address": "704-706 Yarm Road, , Stockton-on-Tees",
@@ -37994,7 +38008,7 @@
     },
     "v-de2ec786-9fab-576b-a8db-3aa287f8b5ef": {
       "actionable": false,
-      "checked_at": "2026-10-09",
+      "checked_at": "2026-10-30",
       "comparisons": [
         {
           "address": "3 Compton, Ashbourne, Derbyshire",
@@ -38039,7 +38053,7 @@
     },
     "v-de3630ba-38b6-59f8-b5fb-01e545c5be29": {
       "actionable": false,
-      "checked_at": "2026-10-09",
+      "checked_at": "2026-10-30",
       "comparisons": [
         {
           "address": "16 Barrack Street, , Bridport, Dorset",
@@ -38082,7 +38096,7 @@
     },
     "v-de3aa949-1b8d-570b-b6c2-a27e7db5964e": {
       "actionable": false,
-      "checked_at": "2026-10-09",
+      "checked_at": "2026-10-30",
       "comparisons": [
         {
           "address": "3 Stanley Street, Leek, Staffordshire",
@@ -38125,7 +38139,7 @@
     },
     "v-de4bb4cf-ba26-5249-bc8a-2d255fabb89c": {
       "actionable": false,
-      "checked_at": "2026-10-09",
+      "checked_at": "2026-10-30",
       "comparisons": [
         {
           "address": "Halfway House, 65 Church Street, Donisthorpe, Swadlincote",
@@ -38212,7 +38226,7 @@
     },
     "v-dee50cac-ac0c-5801-a3aa-d5cb9fc35bfd": {
       "actionable": false,
-      "checked_at": "2026-10-09",
+      "checked_at": "2026-10-30",
       "comparisons": [
         {
           "name_matches": 0,
@@ -38247,7 +38261,7 @@
     },
     "v-df417cf2-1194-5613-8414-8dbc8b7760e4": {
       "actionable": false,
-      "checked_at": "2026-10-09",
+      "checked_at": "2026-10-30",
       "comparisons": [
         {
           "name_matches": 0,
@@ -38282,7 +38296,7 @@
     },
     "v-df554200-c89f-5066-8998-b693c85f9a24": {
       "actionable": false,
-      "checked_at": "2026-10-09",
+      "checked_at": "2026-10-30",
       "comparisons": [
         {
           "address": "86 NEW ELVET, , DURHAM",
@@ -38325,7 +38339,7 @@
     },
     "v-df6d2b46-d775-57a3-9172-6ab51e523b58": {
       "actionable": false,
-      "checked_at": "2026-10-09",
+      "checked_at": "2026-10-30",
       "comparisons": [
         {
           "address": "The Dolphin Inn, 14 The Barbican, Plymouth",
@@ -38368,7 +38382,7 @@
     },
     "v-e01e6670-6c03-55e3-9d57-5f25a7a8fbdf": {
       "actionable": false,
-      "checked_at": "2026-10-09",
+      "checked_at": "2026-10-30",
       "comparisons": [
         {
           "name_matches": 0,
@@ -38493,7 +38507,7 @@
     },
     "v-e07e9d6f-d8ee-506b-bcd7-f8379224bc4e": {
       "actionable": false,
-      "checked_at": "2026-10-09",
+      "checked_at": "2026-10-30",
       "comparisons": [
         {
           "name_matches": 0,
@@ -38502,16 +38516,16 @@
           "status": "no_name_match"
         }
       ],
-      "confidence": "existing_evidence_needs_corroboration",
+      "confidence": "owner_reviewed",
       "independent_of_pin": true,
       "listing": {
         "postcode": "B3 1JJ",
         "pub_name": "Shakespeare (Summer Row)"
       },
-      "owner_reviewed": false,
+      "owner_reviewed": true,
       "pin": {
-        "lat": 52.481477,
-        "lng": -1.906951
+        "lat": 52.4815327,
+        "lng": -1.9069232
       },
       "priority": 2,
       "reasons": [],
@@ -40401,13 +40415,13 @@
           "url": "https://ratings.food.gov.uk/business/113675"
         }
       ],
-      "confidence": "independent_coordinate_agreement",
+      "confidence": "owner_reviewed",
       "independent_of_pin": true,
       "listing": {
         "postcode": "ST4 8BU",
         "pub_name": "Toby Carvery Trentham Village"
       },
-      "owner_reviewed": false,
+      "owner_reviewed": true,
       "pin": {
         "lat": 52.965468,
         "lng": -2.1813
@@ -40643,7 +40657,7 @@
     },
     "v-eea3abfd-0bbc-5138-8def-dfc09a6bb22f": {
       "actionable": false,
-      "checked_at": "2026-10-09",
+      "checked_at": "2026-10-30",
       "comparisons": [
         {
           "name_matches": 0,
@@ -40652,16 +40666,16 @@
           "status": "no_name_match"
         }
       ],
-      "confidence": "existing_evidence_needs_corroboration",
+      "confidence": "owner_reviewed",
       "independent_of_pin": true,
       "listing": {
         "postcode": "CA7 4BL",
         "pub_name": "Silloth On Solway Golf Club (PMC)"
       },
-      "owner_reviewed": false,
+      "owner_reviewed": true,
       "pin": {
-        "lat": 54.86603688,
-        "lng": -3.389233205
+        "lat": 54.8667471,
+        "lng": -3.3901361
       },
       "priority": 2,
       "reasons": [],
@@ -42093,13 +42107,13 @@
           "url": "https://ratings.food.gov.uk/business/1195739"
         }
       ],
-      "confidence": "independent_coordinate_agreement",
+      "confidence": "owner_reviewed",
       "independent_of_pin": true,
       "listing": {
         "postcode": "ST16 2JU",
         "pub_name": "Pickled Pig at the Bankhouse"
       },
-      "owner_reviewed": false,
+      "owner_reviewed": true,
       "pin": {
         "lat": 52.8079276,
         "lng": -2.1168364
@@ -43350,11 +43364,11 @@
     },
     "v-fbb0978c-dd43-593b-85ea-bbdcc21abd9d": {
       "actionable": false,
-      "checked_at": "2026-10-09",
+      "checked_at": "2026-10-30",
       "comparisons": [
         {
           "address": "Sycamore Street, Newcastle Emlyn, Carmarthenshire",
-          "difference_metres": 0.0,
+          "difference_metres": 8.1,
           "lat": 52.038507,
           "lng": -4.4678,
           "name": "Tafarn Y Pelican",
@@ -43364,22 +43378,22 @@
           "url": "https://ratings.food.gov.uk/business/879315"
         }
       ],
-      "confidence": "independent_coordinate_agreement",
+      "confidence": "owner_reviewed",
       "independent_of_pin": true,
       "listing": {
         "postcode": "SA38 9AP",
         "pub_name": "Pelican Inn/Tafarn Y Pelican"
       },
-      "owner_reviewed": false,
+      "owner_reviewed": true,
       "pin": {
-        "lat": 52.038507,
-        "lng": -4.4678
+        "lat": 52.0385305,
+        "lng": -4.4676877
       },
       "priority": 3,
       "reasons": [],
       "reference": {
         "address": "Sycamore Street, Newcastle Emlyn, Carmarthenshire",
-        "difference_metres": 0.0,
+        "difference_metres": 8.1,
         "lat": 52.038507,
         "lng": -4.4678,
         "name": "Tafarn Y Pelican",

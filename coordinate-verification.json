@@ -1,7 +1,7 @@
 {
   "counts": {
-    "venue_coordinate_requires_review": 7,
-    "verified_venue": 1037
+    "venue_coordinate_requires_review": 6,
+    "verified_venue": 1038
   },
   "generated_at": "2026-10-30",
   "policy": {
@@ -30254,8 +30254,23 @@
     },
     "ye olde crown hotel|waterhouses|st10 3hl": {
       "coordinate_source": "food-standards-agency-fhrs",
-      "display_precision": "postcode",
+      "display_precision": "venue",
       "evidence": [
+        {
+          "checked_at": "2026-10-30",
+          "match": "owner_confirmed_saved_point_corroborated_by_named_camra_venue",
+          "reference_address": "Leek Road",
+          "reference_coordinate": {
+            "lat": 53.049,
+            "lng": -1.8763
+          },
+          "reference_name": "Old Crown Hotel, Waterhouses - 17th Century Pub",
+          "reference_postcode": "ST10 3HL",
+          "review_url": "https://github.com/bristolbagpiper/BassBeerMap/issues/5#issuecomment-6531028841",
+          "reviewed_by": "bristolbagpiper",
+          "source": "camra",
+          "url": "https://camra.org.uk/pubs/143928"
+        },
         {
           "checked_at": "2026-09-11",
           "difference_metres": 6.8,
@@ -30274,7 +30289,7 @@
       "place_name": "Waterhouses",
       "postcode": "ST10 3HL",
       "pub_name": "Ye Olde Crown Hotel",
-      "status": "venue_coordinate_requires_review",
+      "status": "verified_venue",
       "venue_id": "v-2c1f4003-43a1-50d3-8033-167ee6c93294"
     },
     "ye olde dolphin inne|derby: central|de1 3dl": {

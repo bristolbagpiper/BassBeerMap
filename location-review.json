@@ -1,5 +1,5 @@
 {
-  "active_count": 14,
+  "active_count": 13,
   "records": {
     "v-00a08839-2b8a-5782-b6c7-0bdce4cddb2f": {
       "active": false,
@@ -2398,7 +2398,7 @@
       "venue_id": "v-2bf5d12b-3027-5159-b3c2-4d2a1a8bd1ec"
     },
     "v-2c1f4003-43a1-50d3-8033-167ee6c93294": {
-      "active": true,
+      "active": false,
       "first_seen": "2026-10-12",
       "history": [
         {
@@ -2407,15 +2407,18 @@
             "Reference venue name changed"
           ],
           "status": "unverified"
+        },
+        {
+          "date": "2026-10-30",
+          "reasons": [],
+          "status": "resolved"
         }
       ],
-      "last_checked": "2026-10-14",
+      "last_checked": "2026-10-30",
       "place_name": "Waterhouses",
       "postcode": "ST10 3HL",
       "pub_name": "Ye Olde Crown Hotel",
-      "reasons": [
-        "Reference venue name changed"
-      ],
+      "reasons": [],
       "reference": {},
       "research": {
         "checked_at": "2026-10-27",
@@ -2438,8 +2441,8 @@
         }
       },
       "source_error": null,
-      "status": "unverified",
-      "unverified": true,
+      "status": "resolved",
+      "unverified": false,
       "venue_id": "v-2c1f4003-43a1-50d3-8033-167ee6c93294"
     },
     "v-2d4ccddd-3368-5ba5-9bca-109bb030fc98": {
@@ -16907,5 +16910,5 @@
     }
   },
   "schema_version": 1,
-  "unverified_count": 7
+  "unverified_count": 6
 }

@@ -1,7 +1,7 @@
 {
   "counts": {
-    "venue_coordinate_requires_review": 8,
-    "verified_venue": 1036
+    "venue_coordinate_requires_review": 9,
+    "verified_venue": 1035
   },
   "generated_at": "2026-10-30",
   "policy": {
@@ -1374,18 +1374,6 @@
       "display_precision": "venue",
       "evidence": [
         {
-          "checked_at": "2026-09-11",
-          "difference_metres": 2.1,
-          "match": "venue_name_and_coordinate; listing_postcode_conflicts",
-          "reference_coordinate": {
-            "lat": 52.537224,
-            "lng": -2.420888
-          },
-          "reference_postcode": "WV16 4ET",
-          "source": "camra",
-          "url": "https://camra.org.uk/pubs/122176"
-        },
-        {
           "checked_at": "2026-09-13",
           "difference_metres": 0,
           "match": "manual_named_place_address_and_map_check",
@@ -1412,6 +1400,20 @@
             "https://www.craftunionpubs.com/pubs/bear-inn-bridgnorth/contact"
           ],
           "url": "https://www.google.com/maps/search/?api=1&query=52.537224%2C-2.420888"
+        },
+        {
+          "checked_at": "2026-10-30",
+          "difference_metres": 2.1,
+          "match": "venue_name_and_coordinate; listing_postcode_conflicts",
+          "reference_address": "24 Northgate",
+          "reference_coordinate": {
+            "lat": 52.537212347836,
+            "lng": -2.420863628387
+          },
+          "reference_name": "Bear, Bridgnorth - Sun Trap Garden",
+          "reference_postcode": "WV16 4ET",
+          "source": "camra",
+          "url": "https://camra.org.uk/pubs/122176"
         }
       ],
       "lat": 52.537224,
@@ -1667,18 +1669,6 @@
       "display_precision": "venue",
       "evidence": [
         {
-          "checked_at": "2026-09-11",
-          "difference_metres": 7.5,
-          "match": "venue_name_and_coordinate; listing_postcode_conflicts",
-          "reference_coordinate": {
-            "lat": 53.1652169,
-            "lng": 0.1178604
-          },
-          "reference_postcode": "PE23 5PA",
-          "source": "camra",
-          "url": "https://camra.org.uk/pubs/167970"
-        },
-        {
           "checked_at": "2026-10-13",
           "match": "owner_confirmed_existing_pub_building",
           "reference_coordinate": {
@@ -1690,6 +1680,20 @@
           "reviewed_by": "bristolbagpiper",
           "source": "manual_named_place_map",
           "url": "https://www.google.com/maps/search/?api=1&query=53.1652169%2C0.1178604"
+        },
+        {
+          "checked_at": "2026-10-30",
+          "difference_metres": 7.5,
+          "match": "venue_name_and_coordinate; listing_postcode_conflicts",
+          "reference_address": "Spilsby Road",
+          "reference_coordinate": {
+            "lat": 53.165154,
+            "lng": 0.117821
+          },
+          "reference_name": "Bell Inn, Halton Holegate - 16th Century Country Inn",
+          "reference_postcode": "PE23 5PA",
+          "source": "camra",
+          "url": "https://camra.org.uk/pubs/167970"
         }
       ],
       "lat": 53.1652169,
@@ -1915,18 +1919,6 @@
       "display_precision": "venue",
       "evidence": [
         {
-          "checked_at": "2026-09-11",
-          "difference_metres": 9.7,
-          "match": "venue_name_and_coordinate; listing_postcode_conflicts",
-          "reference_coordinate": {
-            "lat": 52.9040166,
-            "lng": -1.544656
-          },
-          "reference_postcode": "DE3 0BZ",
-          "source": "camra",
-          "url": "https://camra.org.uk/pubs/196347"
-        },
-        {
           "checked_at": "2026-09-13",
           "difference_metres": 0,
           "match": "manual_named_place_address_and_map_check",
@@ -1954,6 +1946,20 @@
             "https://ratings.food.gov.uk/business/1489317/binary-bar-and-restaurant-derby"
           ],
           "url": "https://www.google.com/maps/search/?api=1&query=52.9040166%2C-1.544656"
+        },
+        {
+          "checked_at": "2026-10-30",
+          "difference_metres": 9.7,
+          "match": "venue_name_and_coordinate; listing_postcode_conflicts",
+          "reference_address": "Limes Avenue",
+          "reference_coordinate": {
+            "lat": 52.903963,
+            "lng": -1.544542
+          },
+          "reference_name": "Binary, Derby - Modern Two-Level Pub",
+          "reference_postcode": "DE3 0BZ",
+          "source": "camra",
+          "url": "https://camra.org.uk/pubs/196347"
         }
       ],
       "lat": 52.9040166,
@@ -1995,18 +2001,6 @@
       "display_precision": "venue",
       "evidence": [
         {
-          "checked_at": "2026-09-11",
-          "difference_metres": 7.6,
-          "match": "venue_name_and_coordinate; listing_postcode_conflicts",
-          "reference_coordinate": {
-            "lat": 52.6531183,
-            "lng": -1.5630947545454545
-          },
-          "reference_postcode": "CV9 3EB",
-          "source": "camra",
-          "url": "https://camra.org.uk/pubs/181770"
-        },
-        {
           "checked_at": "2026-10-13",
           "match": "owner_confirmed_existing_pub_building",
           "reference_coordinate": {
@@ -2021,6 +2015,20 @@
             "https://birdinhandaustrey.co.uk/book-a-table/"
           ],
           "url": "https://www.google.com/maps/search/?api=1&query=52.6531183%2C-1.5630947545454545"
+        },
+        {
+          "checked_at": "2026-10-30",
+          "difference_metres": 7.6,
+          "match": "venue_name_and_coordinate; listing_postcode_conflicts",
+          "reference_address": "Main Road",
+          "reference_coordinate": {
+            "lat": 52.653079153262,
+            "lng": -1.563002536211
+          },
+          "reference_name": "Bird in Hand, Austrey - Thatched 15th-Century Pub",
+          "reference_postcode": "CV9 3EB",
+          "source": "camra",
+          "url": "https://camra.org.uk/pubs/181770"
         }
       ],
       "lat": 52.6531183,
@@ -3420,13 +3428,14 @@
           "url": "https://ratings.food.gov.uk/business/1765840"
         },
         {
-          "checked_at": "2026-10-02",
+          "checked_at": "2026-10-30",
           "match": "named_venue_full_postcode_and_independent_fsa_agreement",
+          "reference_address": "32 Borough Street",
           "reference_coordinate": {
             "lat": 52.8419,
             "lng": -1.3383
           },
-          "reference_name": "Borough Street Bar, Castle Donington - Cask Ales",
+          "reference_name": "Borough Street Bar, Castle Donington - Cosy Bar",
           "reference_postcode": "DE74 2LA",
           "source": "camra",
           "url": "https://camra.org.uk/pubs/171283"
@@ -3901,14 +3910,14 @@
       "display_precision": "venue",
       "evidence": [
         {
-          "checked_at": "2026-10-02",
+          "checked_at": "2026-10-30",
           "match": "reviewed_name_address_and_coordinate",
           "reference_address": "18 Rowley Village B4171",
           "reference_coordinate": {
             "lat": 52.481201171875,
             "lng": -2.0424299240112
           },
-          "reference_name": "Britannia Inn, Rowley Regis - Cask Ales & Live Music",
+          "reference_name": "Britannia Inn, Rowley Regis - Live Music Pub",
           "reference_postcode": "B65 9AT",
           "source": "camra",
           "url": "https://camra.org.uk/pubs/britannia-inn-rowley-regis-146821"
@@ -4398,18 +4407,6 @@
       "display_precision": "venue",
       "evidence": [
         {
-          "checked_at": "2026-09-11",
-          "difference_metres": 8.4,
-          "match": "venue_name_and_coordinate; listing_postcode_conflicts",
-          "reference_coordinate": {
-            "lat": 52.65975373333333,
-            "lng": -1.3862997166666666
-          },
-          "reference_postcode": "CV13 0QB",
-          "source": "camra",
-          "url": "https://camra.org.uk/pubs/181822"
-        },
-        {
           "checked_at": "2026-10-13",
           "match": "owner_confirmed_existing_pub_building",
           "reference_coordinate": {
@@ -4424,6 +4421,20 @@
             "https://hinckleyandbosworth.camra.org.uk/viewnode.php?id=32502"
           ],
           "url": "https://www.google.com/maps/search/?api=1&query=52.65975373333333%2C-1.3862997166666666"
+        },
+        {
+          "checked_at": "2026-10-30",
+          "difference_metres": 8.4,
+          "match": "venue_name_and_coordinate; listing_postcode_conflicts",
+          "reference_address": "88 Main Street",
+          "reference_coordinate": {
+            "lat": 52.65968,
+            "lng": -1.38633
+          },
+          "reference_name": "Bulls Head, Nailstone - Pool and Darts Pub",
+          "reference_postcode": "CV13 0QB",
+          "source": "camra",
+          "url": "https://camra.org.uk/pubs/181822"
         }
       ],
       "lat": 52.65975373333333,
@@ -4751,7 +4762,7 @@
     },
     "burton rugby club|burton u-t: branston|de13 9ff": {
       "coordinate_source": "google-maps-named-place",
-      "display_precision": "venue",
+      "display_precision": "postcode",
       "evidence": [
         {
           "checked_at": "2026-09-11",
@@ -4826,7 +4837,7 @@
       "place_name": "Burton U-T: Branston",
       "postcode": "DE13 9FF",
       "pub_name": "Burton Rugby Club",
-      "status": "verified_venue",
+      "status": "venue_coordinate_requires_review",
       "venue_id": "v-13f74f7e-8175-550d-b8b3-ca94a57e5233"
     },
     "burton tennis and squash club (pmc)|burton u-t: stapenhill|de15 0lq": {
@@ -5398,18 +5409,6 @@
       "display_precision": "venue",
       "evidence": [
         {
-          "checked_at": "2026-09-11",
-          "difference_metres": 3.0,
-          "match": "venue_name_and_coordinate; listing_postcode_conflicts",
-          "reference_coordinate": {
-            "lat": 53.2608242,
-            "lng": -2.128478
-          },
-          "reference_postcode": "SK11 6DZ",
-          "source": "camra",
-          "url": "https://camra.org.uk/pubs/199589"
-        },
-        {
           "checked_at": "2026-10-13",
           "match": "owner_accepted_existing_pin_near_enough",
           "reference_coordinate": {
@@ -5424,6 +5423,20 @@
             "https://www.thecharlesroepub.co.uk/"
           ],
           "url": "https://www.google.com/maps/search/?api=1&query=53.2608242%2C-2.128478"
+        },
+        {
+          "checked_at": "2026-10-30",
+          "difference_metres": 3.0,
+          "match": "venue_name_and_coordinate; listing_postcode_conflicts",
+          "reference_address": "60-62 Chestergate",
+          "reference_coordinate": {
+            "lat": 53.26081,
+            "lng": -2.12844
+          },
+          "reference_name": "Charles Roe, Macclesfield",
+          "reference_postcode": "SK11 6DZ",
+          "source": "camra",
+          "url": "https://camra.org.uk/pubs/199589"
         }
       ],
       "lat": 53.2608242,
@@ -9323,18 +9336,6 @@
       "display_precision": "venue",
       "evidence": [
         {
-          "checked_at": "2026-09-11",
-          "difference_metres": 10.4,
-          "match": "venue_name_and_coordinate; listing_postcode_conflicts",
-          "reference_coordinate": {
-            "lat": 53.013306,
-            "lng": -1.3528839
-          },
-          "reference_postcode": "DE75 7EG",
-          "source": "camra",
-          "url": "https://camra.org.uk/pubs/200257"
-        },
-        {
           "checked_at": "2026-10-14",
           "match": "owner_confirmed_existing_pub_building",
           "reference_coordinate": {
@@ -9349,6 +9350,20 @@
             "https://camra.org.uk/pubs/drunken-dog-heanor-200257"
           ],
           "url": "https://www.google.com/maps/search/?api=1&query=53.013306%2C-1.3528839"
+        },
+        {
+          "checked_at": "2026-10-30",
+          "difference_metres": 10.4,
+          "match": "venue_name_and_coordinate; listing_postcode_conflicts",
+          "reference_address": "Unit 2, 38 Market Place",
+          "reference_coordinate": {
+            "lat": 53.013217,
+            "lng": -1.35293
+          },
+          "reference_name": "Drunken Dog, Heanor - Draught Bass Pub",
+          "reference_postcode": "DE75 7EG",
+          "source": "camra",
+          "url": "https://camra.org.uk/pubs/200257"
         }
       ],
       "lat": 53.013306,
@@ -9532,18 +9547,6 @@
       "display_precision": "venue",
       "evidence": [
         {
-          "checked_at": "2026-09-11",
-          "difference_metres": 1.0,
-          "match": "venue_name_and_coordinate; listing_postcode_conflicts",
-          "reference_coordinate": {
-            "lat": 53.1095142,
-            "lng": -2.0362443
-          },
-          "reference_postcode": "ST13 8LD",
-          "source": "camra",
-          "url": "https://camra.org.uk/pubs/143903"
-        },
-        {
           "checked_at": "2026-09-13",
           "difference_metres": 0,
           "match": "manual_named_place_address_and_map_check",
@@ -9570,6 +9573,20 @@
             "https://camra.org.uk/pubs/143903"
           ],
           "url": "https://www.google.com/maps/search/?api=1&query=53.1095142%2C-2.0362443"
+        },
+        {
+          "checked_at": "2026-10-30",
+          "difference_metres": 1.0,
+          "match": "venue_name_and_coordinate; listing_postcode_conflicts",
+          "reference_address": "3 Macclesfield Road",
+          "reference_coordinate": {
+            "lat": 53.109505,
+            "lng": -2.036247
+          },
+          "reference_name": "Dyers Arms, Leek - Traditional Local",
+          "reference_postcode": "ST13 8LD",
+          "source": "camra",
+          "url": "https://camra.org.uk/pubs/143903"
         }
       ],
       "lat": 53.1095142,
@@ -11336,20 +11353,6 @@
       "display_precision": "venue",
       "evidence": [
         {
-          "checked_at": "2026-10-02",
-          "difference_metres": 0,
-          "match": "manual_address_and_map_review",
-          "reference_address": "36-38 Sunderland Street",
-          "reference_coordinate": {
-            "lat": 53.25777,
-            "lng": -2.12237
-          },
-          "reference_name": "G&j Muckers, Macclesfield - Traditional Pub with R",
-          "reference_postcode": "SK11 6JL",
-          "source": "manual-camra-review",
-          "url": "https://camra.org.uk/pubs/gj-muckers-macclesfield-197659"
-        },
-        {
           "checked_at": "2026-10-14",
           "match": "owner_confirmed_existing_pub_building",
           "reference_coordinate": {
@@ -11364,6 +11367,20 @@
             "https://camra.org.uk/pubs/gj-muckers-macclesfield-197659"
           ],
           "url": "https://www.google.com/maps/search/?api=1&query=53.25777%2C-2.12237"
+        },
+        {
+          "checked_at": "2026-10-30",
+          "difference_metres": 0,
+          "match": "manual_address_and_map_review",
+          "reference_address": "36-38 Sunderland Street",
+          "reference_coordinate": {
+            "lat": 53.25777,
+            "lng": -2.12237
+          },
+          "reference_name": "G&J Muckers, Macclesfield - Pub with Real Fire",
+          "reference_postcode": "SK11 6JL",
+          "source": "manual-camra-review",
+          "url": "https://camra.org.uk/pubs/gj-muckers-macclesfield-197659"
         }
       ],
       "lat": 53.25777,
@@ -12053,18 +12070,6 @@
       "display_precision": "venue",
       "evidence": [
         {
-          "checked_at": "2026-09-11",
-          "difference_metres": 20.3,
-          "match": "venue_name_and_coordinate; listing_postcode_conflicts",
-          "reference_coordinate": {
-            "lat": 54.8544235,
-            "lng": -1.824519
-          },
-          "reference_postcode": "DH8 6NE",
-          "source": "camra",
-          "url": "https://camra.org.uk/pubs/186917"
-        },
-        {
           "checked_at": "2026-10-14",
           "match": "owner_confirmed_existing_pub_building",
           "reference_coordinate": {
@@ -12079,6 +12084,20 @@
             "https://camra.org.uk/pubs/grey-horse-consett-186917"
           ],
           "url": "https://www.google.com/maps/search/?api=1&query=54.8544235%2C-1.824519"
+        },
+        {
+          "checked_at": "2026-10-30",
+          "difference_metres": 20.3,
+          "match": "venue_name_and_coordinate; listing_postcode_conflicts",
+          "reference_address": "115 Sherburn Terrace",
+          "reference_coordinate": {
+            "lat": 54.854306653598,
+            "lng": -1.8242745251312
+          },
+          "reference_name": "Grey Horse, Consett - Pub with Brewery",
+          "reference_postcode": "DH8 6NE",
+          "source": "camra",
+          "url": "https://camra.org.uk/pubs/186917"
         }
       ],
       "lat": 54.8544235,
@@ -12388,18 +12407,6 @@
       "display_precision": "venue",
       "evidence": [
         {
-          "checked_at": "2026-09-11",
-          "difference_metres": 1.7,
-          "match": "venue_name_and_coordinate; listing_postcode_conflicts",
-          "reference_coordinate": {
-            "lat": 53.6505819,
-            "lng": -2.9994951
-          },
-          "reference_postcode": "PR9 0QE",
-          "source": "camra",
-          "url": "https://camra.org.uk/pubs/147054"
-        },
-        {
           "checked_at": "2026-10-14",
           "match": "owner_confirmed_existing_pub_building",
           "reference_coordinate": {
@@ -12414,6 +12421,20 @@
             "https://historicengland.org.uk/listing/the-list/list-entry/1426314"
           ],
           "url": "https://www.google.com/maps/search/?api=1&query=53.6505819%2C-2.9994951"
+        },
+        {
+          "checked_at": "2026-10-30",
+          "difference_metres": 1.7,
+          "match": "venue_name_and_coordinate; listing_postcode_conflicts",
+          "reference_address": "16 Union Street",
+          "reference_coordinate": {
+            "lat": 53.65058,
+            "lng": -2.99947
+          },
+          "reference_name": "Guest House, Southport - Listed Pub with Courtyard",
+          "reference_postcode": "PR9 0QE",
+          "source": "camra",
+          "url": "https://camra.org.uk/pubs/147054"
         }
       ],
       "lat": 53.6505819,
@@ -15862,18 +15883,6 @@
       "display_precision": "venue",
       "evidence": [
         {
-          "checked_at": "2026-09-11",
-          "difference_metres": 7.6,
-          "match": "venue_name_and_coordinate; listing_postcode_conflicts",
-          "reference_coordinate": {
-            "lat": 51.45637530833333,
-            "lng": -2.621618991666667
-          },
-          "reference_postcode": "BS8 4JG",
-          "source": "camra",
-          "url": "https://camra.org.uk/pubs/114046"
-        },
-        {
           "checked_at": "2026-10-14",
           "match": "owner_confirmed_existing_pub_building",
           "reference_coordinate": {
@@ -15888,6 +15897,20 @@
             "https://www.themallpubbristol.co.uk/jobs/"
           ],
           "url": "https://www.google.com/maps/search/?api=1&query=51.45637530833333%2C-2.621618991666667"
+        },
+        {
+          "checked_at": "2026-10-30",
+          "difference_metres": 7.6,
+          "match": "venue_name_and_coordinate; listing_postcode_conflicts",
+          "reference_address": "66 The Mall",
+          "reference_coordinate": {
+            "lat": 51.456401824951,
+            "lng": -2.621720075607
+          },
+          "reference_name": "Mall, Bristol - Downs-View Pub",
+          "reference_postcode": "BS8 4JG",
+          "source": "camra",
+          "url": "https://camra.org.uk/pubs/114046"
         }
       ],
       "lat": 51.45637530833333,
@@ -16890,18 +16913,6 @@
       "display_precision": "venue",
       "evidence": [
         {
-          "checked_at": "2026-09-11",
-          "difference_metres": 27.7,
-          "match": "venue_name_and_coordinate; listing_postcode_conflicts",
-          "reference_coordinate": {
-            "lat": 52.7498761,
-            "lng": -1.5737433
-          },
-          "reference_postcode": "DE11 9JJ",
-          "source": "camra",
-          "url": "https://camra.org.uk/pubs/124016"
-        },
-        {
           "checked_at": "2026-09-13",
           "difference_metres": 0,
           "match": "manual_named_place_address_and_map_check",
@@ -16929,6 +16940,20 @@
             "https://ratings.food.gov.uk/business/241288/mount-pleasant-inn-swadlincote"
           ],
           "url": "https://www.google.com/maps/search/?api=1&query=52.7498761%2C-1.5737433"
+        },
+        {
+          "checked_at": "2026-10-30",
+          "difference_metres": 27.7,
+          "match": "venue_name_and_coordinate; listing_postcode_conflicts",
+          "reference_address": "109 Mount Pleasant Road",
+          "reference_coordinate": {
+            "lat": 52.75,
+            "lng": -1.5741
+          },
+          "reference_name": "Mount Pleasant Inn, Castle Gresley - J-Shaped Room",
+          "reference_postcode": "DE11 9JJ",
+          "source": "camra",
+          "url": "https://camra.org.uk/pubs/124016"
         }
       ],
       "lat": 52.7498761,
@@ -18055,13 +18080,14 @@
           "url": "https://ratings.food.gov.uk/business/1725521"
         },
         {
-          "checked_at": "2026-10-02",
+          "checked_at": "2026-10-30",
           "match": "named_venue_full_postcode_and_independent_fsa_agreement",
+          "reference_address": "5-7 Seaview Street",
           "reference_coordinate": {
             "lat": 53.557686,
             "lng": -0.025062
           },
-          "reference_name": "Nottingham House, Cleethorpes",
+          "reference_name": "Nottingham House, Cleethorpes - Three-Roomed Pub",
           "reference_postcode": "DN35 8EU",
           "source": "camra",
           "url": "https://camra.org.uk/pubs/173041"
@@ -27160,13 +27186,14 @@
           "url": "https://ratings.food.gov.uk/business/850102"
         },
         {
-          "checked_at": "2026-10-02",
+          "checked_at": "2026-10-30",
           "match": "named_venue_full_postcode_and_independent_fsa_agreement",
+          "reference_address": "Stanley Street",
           "reference_coordinate": {
             "lat": 53.105788,
             "lng": -2.02568
           },
-          "reference_name": "Valiant, Leek - Marston's Pub with Beer Garden",
+          "reference_name": "Valiant, Leek - Single-Room Community Pub",
           "reference_postcode": "ST13 5HG",
           "source": "camra",
           "url": "https://camra.org.uk/pubs/143914"

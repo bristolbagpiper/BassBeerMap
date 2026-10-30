@@ -1,5 +1,5 @@
 {
-  "active_count": 15,
+  "active_count": 16,
   "records": {
     "v-00a08839-2b8a-5782-b6c7-0bdce4cddb2f": {
       "active": false,
@@ -1135,7 +1135,7 @@
       "venue_id": "v-13b39b8a-0c4b-5514-8c6a-8f4ceaf7dc89"
     },
     "v-13f74f7e-8175-550d-b8b3-ca94a57e5233": {
-      "active": false,
+      "active": true,
       "first_seen": "2026-10-02",
       "history": [
         {
@@ -1149,13 +1149,22 @@
           "date": "2026-10-13",
           "reasons": [],
           "status": "resolved"
+        },
+        {
+          "date": "2026-10-30",
+          "reasons": [
+            "Reference venue name changed"
+          ],
+          "status": "unverified"
         }
       ],
-      "last_checked": "2026-10-13",
+      "last_checked": "2026-10-30",
       "place_name": "Burton U-T: Branston",
       "postcode": "DE13 9FF",
       "pub_name": "Burton Rugby Club",
-      "reasons": [],
+      "reasons": [
+        "Reference venue name changed"
+      ],
       "reference": {
         "field": "postcode",
         "listed": "DE13 9FF",
@@ -1184,14 +1193,26 @@
       },
       "research": {},
       "source_checks": {
+        "camra": {
+          "status": "conflict",
+          "url": "https://camra.org.uk/pubs/196798"
+        },
         "fsa_independent": {
           "status": "no_name_match",
           "url": ""
+        },
+        "google-maps-named-place": {
+          "status": "conflict",
+          "url": "https://www.google.com/maps/search/?api=1&query=Burton+Rugby+Football+Club+DE13+9FF"
+        },
+        "manual_named_place_map": {
+          "status": "conflict",
+          "url": "https://www.google.com/maps/search/?api=1&query=52.7893745%2C-1.6834532"
         }
       },
       "source_error": null,
-      "status": "resolved",
-      "unverified": false,
+      "status": "unverified",
+      "unverified": true,
       "venue_id": "v-13f74f7e-8175-550d-b8b3-ca94a57e5233"
     },
     "v-13ff4a41-2ee6-5385-ae2b-22af01b93cf9": {
@@ -2581,7 +2602,7 @@
           "status": "resolved"
         }
       ],
-      "last_checked": "2026-10-13",
+      "last_checked": "2026-10-30",
       "place_name": "Stoke: Bucknall",
       "postcode": "ST2 7AB",
       "pub_name": "Bucknall Bowling & Recreation Club",
@@ -2615,6 +2636,14 @@
         "fsa_independent": {
           "status": "no_name_match",
           "url": ""
+        },
+        "google-maps-named-place": {
+          "status": "manual_review",
+          "url": "https://www.google.com/maps/search/?api=1&query=Bucknall+Bowling+Recreation+Club"
+        },
+        "manual_named_place_map": {
+          "status": "manual_review",
+          "url": "https://www.google.com/maps/search/?api=1&query=53.0241582%2C-2.1317236"
         }
       },
       "source_error": null,
@@ -2795,7 +2824,7 @@
           "status": "resolved"
         }
       ],
-      "last_checked": "2026-10-15",
+      "last_checked": "2026-10-30",
       "place_name": "Deppers Bridge",
       "postcode": "CV47 2ST",
       "pub_name": "Great Western",
@@ -2806,6 +2835,10 @@
         "fsa_independent": {
           "status": "coordinate_disagreement",
           "url": "https://ratings.food.gov.uk/business/1871629"
+        },
+        "official-venue-map-link": {
+          "status": "manual_review",
+          "url": "https://thegreatwestern.pub/find-us/"
         }
       },
       "source_error": null,
@@ -3893,7 +3926,7 @@
           "status": "resolved"
         }
       ],
-      "last_checked": "2026-10-14",
+      "last_checked": "2026-10-30",
       "place_name": "Bristol: Clifton",
       "postcode": "BS8 4DR",
       "pub_name": "Mall",
@@ -3924,9 +3957,17 @@
       },
       "research": {},
       "source_checks": {
+        "camra": {
+          "status": "confirmed",
+          "url": "https://camra.org.uk/pubs/114046"
+        },
         "fsa_independent": {
           "status": "nearby",
           "url": "https://ratings.food.gov.uk/business/312118"
+        },
+        "manual_named_place_map": {
+          "status": "confirmed",
+          "url": "https://www.google.com/maps/search/?api=1&query=51.45637530833333%2C-2.621618991666667"
         }
       },
       "source_error": null,
@@ -4262,7 +4303,7 @@
           "status": "resolved"
         }
       ],
-      "last_checked": "2026-10-13",
+      "last_checked": "2026-10-30",
       "place_name": "Mickleover",
       "postcode": "DE3 0GR",
       "pub_name": "Binary",
@@ -4295,9 +4336,21 @@
       },
       "research": {},
       "source_checks": {
+        "camra": {
+          "status": "confirmed",
+          "url": "https://camra.org.uk/pubs/196347"
+        },
         "fsa_independent": {
           "status": "no_name_match",
           "url": ""
+        },
+        "google-maps-named-place": {
+          "status": "confirmed",
+          "url": "https://www.google.com/maps/search/?api=1&query=Binary+Mickleover+DE3+0GR"
+        },
+        "manual_named_place_map": {
+          "status": "confirmed",
+          "url": "https://www.google.com/maps/search/?api=1&query=52.9040166%2C-1.544656"
         }
       },
       "source_error": null,
@@ -5074,7 +5127,7 @@
           "status": "resolved"
         }
       ],
-      "last_checked": "2026-10-14",
+      "last_checked": "2026-10-30",
       "place_name": "Macclesfield",
       "postcode": "SK11 7NE",
       "pub_name": "GJ Muckers",
@@ -5108,6 +5161,14 @@
         "fsa_independent": {
           "status": "no_name_match",
           "url": ""
+        },
+        "manual-camra-review": {
+          "status": "confirmed",
+          "url": "https://camra.org.uk/pubs/gj-muckers-macclesfield-197659"
+        },
+        "manual_named_place_map": {
+          "status": "confirmed",
+          "url": "https://www.google.com/maps/search/?api=1&query=53.25777%2C-2.12237"
         }
       },
       "source_error": null,
@@ -5510,7 +5571,7 @@
           "status": "review_needed"
         }
       ],
-      "last_checked": "2026-10-13",
+      "last_checked": "2026-10-30",
       "place_name": "Macclesfield",
       "postcode": "SK11 6DY",
       "pub_name": "Charles Roe",
@@ -5544,9 +5605,17 @@
       },
       "research": {},
       "source_checks": {
+        "camra": {
+          "status": "confirmed",
+          "url": "https://camra.org.uk/pubs/199589"
+        },
         "fsa_independent": {
           "status": "coordinate_agreement",
           "url": "https://ratings.food.gov.uk/business/1909081"
+        },
+        "manual_named_place_map": {
+          "status": "confirmed",
+          "url": "https://www.google.com/maps/search/?api=1&query=53.2608242%2C-2.128478"
         }
       },
       "source_error": null,
@@ -6205,7 +6274,7 @@
           "status": "resolved"
         }
       ],
-      "last_checked": "2026-10-14",
+      "last_checked": "2026-10-30",
       "place_name": "Heanor",
       "postcode": "DE75 7EF",
       "pub_name": "Drunken Dog",
@@ -6236,9 +6305,17 @@
       },
       "research": {},
       "source_checks": {
+        "camra": {
+          "status": "confirmed",
+          "url": "https://camra.org.uk/pubs/200257"
+        },
         "fsa_independent": {
           "status": "coordinate_agreement",
           "url": "https://ratings.food.gov.uk/business/21340"
+        },
+        "manual_named_place_map": {
+          "status": "confirmed",
+          "url": "https://www.google.com/maps/search/?api=1&query=53.013306%2C-1.3528839"
         }
       },
       "source_error": null,
@@ -6263,7 +6340,7 @@
           "status": "resolved"
         }
       ],
-      "last_checked": "2026-10-14",
+      "last_checked": "2026-10-30",
       "place_name": "Leek",
       "postcode": "ST13 8JZ",
       "pub_name": "Dyers Arms",
@@ -6294,9 +6371,21 @@
       },
       "research": {},
       "source_checks": {
+        "camra": {
+          "status": "confirmed",
+          "url": "https://camra.org.uk/pubs/143903"
+        },
         "fsa_independent": {
           "status": "coordinate_agreement",
           "url": "https://ratings.food.gov.uk/business/1559526"
+        },
+        "google-maps-named-place": {
+          "status": "confirmed",
+          "url": "https://www.google.com/maps/search/?api=1&query=Dyers+Arms+Leek+ST13+8JZ"
+        },
+        "manual_named_place_map": {
+          "status": "confirmed",
+          "url": "https://www.google.com/maps/search/?api=1&query=53.1095142%2C-2.0362443"
         }
       },
       "source_error": null,
@@ -6603,7 +6692,7 @@
           "status": "resolved"
         }
       ],
-      "last_checked": "2026-10-19",
+      "last_checked": "2026-10-30",
       "place_name": "Albert Village",
       "postcode": "DE11 8EN",
       "pub_name": "Mushroom Hall",
@@ -6614,6 +6703,10 @@
         "fsa_independent": {
           "status": "coordinate_disagreement",
           "url": "https://ratings.food.gov.uk/business/8726"
+        },
+        "google-maps-named-place": {
+          "status": "manual_review",
+          "url": "https://www.google.com/maps/search/?api=1&query=Mushroom+Hall+Albert+Village+DE11+8EN"
         }
       },
       "source_error": null,
@@ -6933,7 +7026,7 @@
           "status": "resolved"
         }
       ],
-      "last_checked": "2026-10-14",
+      "last_checked": "2026-10-30",
       "place_name": "Castle Gresley",
       "postcode": "DE11 9JE",
       "pub_name": "Mount Pleasant Inn",
@@ -6966,9 +7059,21 @@
       },
       "research": {},
       "source_checks": {
+        "camra": {
+          "status": "confirmed",
+          "url": "https://camra.org.uk/pubs/124016"
+        },
         "fsa_independent": {
           "status": "ambiguous_or_missing_coordinates",
           "url": ""
+        },
+        "google-maps-named-place": {
+          "status": "confirmed",
+          "url": "https://www.google.com/maps/search/?api=1&query=Mount+Pleasant+Inn+DE11+9JE"
+        },
+        "manual_named_place_map": {
+          "status": "confirmed",
+          "url": "https://www.google.com/maps/search/?api=1&query=52.7498761%2C-1.5737433"
         }
       },
       "source_error": null,
@@ -7683,7 +7788,7 @@
           "status": "resolved"
         }
       ],
-      "last_checked": "2026-10-13",
+      "last_checked": "2026-10-30",
       "place_name": "Bridgnorth",
       "postcode": "WV16 4ER",
       "pub_name": "Bear Inn",
@@ -7714,9 +7819,21 @@
       },
       "research": {},
       "source_checks": {
+        "camra": {
+          "status": "confirmed",
+          "url": "https://camra.org.uk/pubs/122176"
+        },
         "fsa_independent": {
           "status": "coordinate_agreement",
           "url": "https://ratings.food.gov.uk/business/1959805"
+        },
+        "google-maps-and-official-address": {
+          "status": "confirmed",
+          "url": "https://www.google.com/maps/search/?api=1&query=Bear+24+Northgate+Bridgnorth"
+        },
+        "manual_named_place_map": {
+          "status": "confirmed",
+          "url": "https://www.google.com/maps/search/?api=1&query=52.537224%2C-2.420888"
         }
       },
       "source_error": null,
@@ -7971,7 +8088,7 @@
           "status": "resolved"
         }
       ],
-      "last_checked": "2026-10-14",
+      "last_checked": "2026-10-30",
       "place_name": "Southport: Central",
       "postcode": "PR9 0QF",
       "pub_name": "Guest House",
@@ -8002,9 +8119,17 @@
       },
       "research": {},
       "source_checks": {
+        "camra": {
+          "status": "confirmed",
+          "url": "https://camra.org.uk/pubs/147054"
+        },
         "fsa_independent": {
           "status": "coordinate_agreement",
           "url": "https://ratings.food.gov.uk/business/132024"
+        },
+        "manual_named_place_map": {
+          "status": "confirmed",
+          "url": "https://www.google.com/maps/search/?api=1&query=53.6505819%2C-2.9994951"
         }
       },
       "source_error": null,
@@ -8107,7 +8232,7 @@
           "status": "resolved"
         }
       ],
-      "last_checked": "2026-10-13",
+      "last_checked": "2026-10-30",
       "place_name": "Nailstone",
       "postcode": "CV13 0QE",
       "pub_name": "Bulls Head",
@@ -8138,9 +8263,17 @@
       },
       "research": {},
       "source_checks": {
+        "camra": {
+          "status": "confirmed",
+          "url": "https://camra.org.uk/pubs/181822"
+        },
         "fsa_independent": {
           "status": "nearby",
           "url": "https://ratings.food.gov.uk/business/1887993"
+        },
+        "manual_named_place_map": {
+          "status": "confirmed",
+          "url": "https://www.google.com/maps/search/?api=1&query=52.65975373333333%2C-1.3862997166666666"
         }
       },
       "source_error": null,
@@ -8311,7 +8444,7 @@
           "status": "resolved"
         }
       ],
-      "last_checked": "2026-10-13",
+      "last_checked": "2026-10-30",
       "place_name": "Halton Holegate",
       "postcode": "PE23 5NY",
       "pub_name": "Bell",
@@ -8339,9 +8472,17 @@
       },
       "research": {},
       "source_checks": {
+        "camra": {
+          "status": "confirmed",
+          "url": "https://camra.org.uk/pubs/167970"
+        },
         "fsa_independent": {
           "status": "coordinate_disagreement",
           "url": "https://ratings.food.gov.uk/business/155806"
+        },
+        "manual_named_place_map": {
+          "status": "confirmed",
+          "url": "https://www.google.com/maps/search/?api=1&query=53.1652169%2C0.1178604"
         }
       },
       "source_error": null,
@@ -10052,7 +10193,7 @@
           "status": "resolved"
         }
       ],
-      "last_checked": "2026-10-14",
+      "last_checked": "2026-10-30",
       "place_name": "Consett",
       "postcode": "DH8 6NF",
       "pub_name": "Grey Horse",
@@ -10083,9 +10224,17 @@
       },
       "research": {},
       "source_checks": {
+        "camra": {
+          "status": "confirmed",
+          "url": "https://camra.org.uk/pubs/186917"
+        },
         "fsa_independent": {
           "status": "coordinate_agreement",
           "url": "https://ratings.food.gov.uk/business/1104097"
+        },
+        "manual_named_place_map": {
+          "status": "confirmed",
+          "url": "https://www.google.com/maps/search/?api=1&query=54.8544235%2C-1.824519"
         }
       },
       "source_error": null,
@@ -10110,7 +10259,7 @@
           "status": "resolved"
         }
       ],
-      "last_checked": "2026-10-24",
+      "last_checked": "2026-10-30",
       "place_name": "Brighton",
       "postcode": "BN2 1RJ",
       "pub_name": "Kings Arms",
@@ -10121,6 +10270,10 @@
         "fsa_independent": {
           "status": "coordinate_disagreement",
           "url": "https://ratings.food.gov.uk/business/1129215"
+        },
+        "google-maps-named-place": {
+          "status": "manual_review",
+          "url": "https://www.google.com/maps/search/?api=1&query=Kings+Arms+Brighton+BN2+1RJ"
         }
       },
       "source_error": null,
@@ -11031,7 +11184,7 @@
           "status": "resolved"
         }
       ],
-      "last_checked": "2026-10-25",
+      "last_checked": "2026-10-30",
       "place_name": "Bramshall",
       "postcode": "ST14 5BG",
       "pub_name": "Butchers Arms",
@@ -11042,6 +11195,10 @@
         "fsa_independent": {
           "status": "coordinate_disagreement",
           "url": "https://ratings.food.gov.uk/business/1435886"
+        },
+        "google-maps-named-place": {
+          "status": "manual_review",
+          "url": "https://www.google.com/maps/search/?api=1&query=Butchers+Arms+Bramshall+ST14+5BG"
         }
       },
       "source_error": null,
@@ -12322,7 +12479,7 @@
           "status": "resolved"
         }
       ],
-      "last_checked": "2026-10-27",
+      "last_checked": "2026-10-30",
       "place_name": "Linton",
       "postcode": "DE12 6PB",
       "pub_name": "Colliery Smokehouse",
@@ -12333,6 +12490,10 @@
         "fsa_independent": {
           "status": "coordinate_disagreement",
           "url": "https://ratings.food.gov.uk/business/1977000"
+        },
+        "google-maps-named-place": {
+          "status": "manual_review",
+          "url": "https://www.google.com/maps/search/?api=1&query=Colliery+Smokehouse+DE12+6PB"
         }
       },
       "source_error": null,
@@ -12794,7 +12955,7 @@
           "status": "resolved"
         }
       ],
-      "last_checked": "2026-10-13",
+      "last_checked": "2026-10-30",
       "place_name": "Austrey",
       "postcode": "CV9 3EE",
       "pub_name": "Bird in Hand",
@@ -12825,9 +12986,17 @@
       },
       "research": {},
       "source_checks": {
+        "camra": {
+          "status": "confirmed",
+          "url": "https://camra.org.uk/pubs/181770"
+        },
         "fsa_independent": {
           "status": "no_name_match",
           "url": ""
+        },
+        "manual_named_place_map": {
+          "status": "confirmed",
+          "url": "https://www.google.com/maps/search/?api=1&query=52.6531183%2C-1.5630947545454545"
         }
       },
       "source_error": null,
@@ -14743,18 +14912,11 @@
       },
       "source_checks": {
         "camra": {
-          "address": "Stanley Street",
-          "lat": 53.105788,
-          "lng": -2.02568,
-          "name": "Valiant, Leek - Marston's Pub with Beer Garden",
-          "postcode": "ST13 5HG",
-          "status": "matched",
+          "status": "confirmed",
           "url": "https://camra.org.uk/pubs/143914"
         },
-        "fsa": {
-          "lat": 53.1057439,
-          "lng": -2.0256633,
-          "status": "matched",
+        "food-standards-agency-fhrs": {
+          "status": "confirmed",
           "url": "https://ratings.food.gov.uk/business/850102"
         },
         "fsa_independent": {
@@ -15653,7 +15815,7 @@
           "status": "resolved"
         }
       ],
-      "last_checked": "2026-10-09",
+      "last_checked": "2026-10-30",
       "place_name": "Castle Donington",
       "postcode": "DE74 2LA",
       "pub_name": "Borough Street Bar",
@@ -15684,18 +15846,11 @@
       },
       "source_checks": {
         "camra": {
-          "address": "32 Borough Street",
-          "lat": 52.8419,
-          "lng": -1.3383,
-          "name": "Borough Street Bar, Castle Donington - Cask Ales",
-          "postcode": "DE74 2LA",
-          "status": "matched",
+          "status": "confirmed",
           "url": "https://camra.org.uk/pubs/171283"
         },
-        "fsa": {
-          "lat": 52.842166,
-          "lng": -1.338476,
-          "status": "matched",
+        "food-standards-agency-fhrs": {
+          "status": "confirmed",
           "url": "https://ratings.food.gov.uk/business/1765840"
         },
         "fsa_independent": {
@@ -15904,7 +16059,7 @@
           "status": "resolved"
         }
       ],
-      "last_checked": "2026-10-09",
+      "last_checked": "2026-10-30",
       "place_name": "Cleethorpes",
       "postcode": "DN35 8EU",
       "pub_name": "Nottingham House",
@@ -15935,18 +16090,11 @@
       },
       "source_checks": {
         "camra": {
-          "address": "5-7 Seaview Street",
-          "lat": 53.557686,
-          "lng": -0.025062,
-          "name": "Nottingham House, Cleethorpes",
-          "postcode": "DN35 8EU",
-          "status": "matched",
+          "status": "confirmed",
           "url": "https://camra.org.uk/pubs/173041"
         },
-        "fsa": {
-          "lat": 53.5576352,
-          "lng": -0.0250027,
-          "status": "matched",
+        "food-standards-agency-fhrs": {
+          "status": "confirmed",
           "url": "https://ratings.food.gov.uk/business/1725521"
         },
         "fsa_independent": {
@@ -15976,7 +16124,7 @@
           "status": "resolved"
         }
       ],
-      "last_checked": "2026-10-13",
+      "last_checked": "2026-10-30",
       "place_name": "Sewstern",
       "postcode": "NG33 5RG",
       "pub_name": "Blue Dog",
@@ -16010,6 +16158,14 @@
         "fsa_independent": {
           "status": "coordinate_agreement",
           "url": "https://ratings.food.gov.uk/business/1681293"
+        },
+        "google-maps-named-place": {
+          "status": "manual_review",
+          "url": "https://www.google.com/maps/search/?api=1&query=Blue+Dog+Sewstern"
+        },
+        "manual_named_place_map": {
+          "status": "manual_review",
+          "url": "https://www.google.com/maps/search/?api=1&query=52.7862037%2C-0.6840474"
         }
       },
       "source_error": null,
@@ -16745,5 +16901,5 @@
     }
   },
   "schema_version": 1,
-  "unverified_count": 8
+  "unverified_count": 9
 }

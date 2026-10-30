@@ -21,13 +21,21 @@ Updated: 30 October 2026. This report records disagreements between sources; it 
 - **Status:** The map owner accepted the correction. The original directory value is retained for provenance; the National Bass Directory has not been changed.
 - **Suggested follow-up to the National Bass Directory:** Please check Nelson Inn, 118 Brown Lees Road, Brown Lees. The directory currently lists ST8 6PH; CAMRA, the Food Standards Agency and Companies House list ST8 6PW. Please update the directory if confirmed.
 
+## New Baron, Hinckley — postcode
+
+- **Address:** 5–7 Regent Street, Hinckley.
+- **Postcode used by the Bass directory and map:** LE10 0AZ.
+- **CAMRA postcode:** LE10 0QA. [CAMRA listing](https://camra.org.uk/pubs/new-baron-hinckley-also-known-as-crafty-baron-hinckley-181808).
+- **Supporting evidence for LE10 0AZ:** [Hinckley and Bosworth Borough Council](https://www.hinckley-bosworth.gov.uk/info/100003/anti-social_behaviour_and_crime/1519/ask_for_angela_-_get_help_during_a_date/2) and the [Food Standards Agency](https://ratings.food.gov.uk/business/1207324) list the venue at 5–7 Regent Street with LE10 0AZ.
+- **Status:** The map retains the directory postcode and reviewed venue pin. The disagreement remains open pending confirmation from the pub or CAMRA.
+- **Suggested follow-up to CAMRA or the pub:** Please check the postcode for New Baron, 5–7 Regent Street, Hinckley. The council and FSA list LE10 0AZ while CAMRA lists LE10 0QA. Can you confirm the correct postcode and update the relevant listing if necessary?
+
 ## Other discrepancies awaiting review
 
 These entries are leads from the review queue, not confirmed corrections. Check the underlying evidence and the venue before forwarding a correction.
 
 | Venue | Bass directory postcode | Reference postcode | Issue |
 | --- | --- | --- | --- |
-| New Baron, Hinckley | LE10 0AZ | LE10 0QA | Postcode disagreement |
 | Tame Otter, Hopwas | B78 3AB | B78 3AF | Postcode and coordinate disagreement |
 | Tides Out, Woolacombe | EX34 7BP | EX34 7FG | Postcode and name disagreement |
 | Trentside Cricket Club, Branston | DE14 3DP | DE14 3DN | Postcode and coordinate disagreement |

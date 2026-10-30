@@ -1,7 +1,7 @@
 {
   "counts": {
-    "venue_coordinate_requires_review": 9,
-    "verified_venue": 1035
+    "venue_coordinate_requires_review": 8,
+    "verified_venue": 1036
   },
   "generated_at": "2026-10-30",
   "policy": {
@@ -29977,8 +29977,23 @@
     },
     "working mens club (pmc)|birchmoor|b78 1af": {
       "coordinate_source": "food-standards-agency-fhrs",
-      "display_precision": "postcode",
+      "display_precision": "venue",
       "evidence": [
+        {
+          "checked_at": "2026-10-30",
+          "match": "owner_confirmed_saved_point_corroborated_by_named_camra_venue",
+          "reference_address": "31 New Street",
+          "reference_coordinate": {
+            "lat": 52.610551470899,
+            "lng": -1.631239708004
+          },
+          "reference_name": "Birchmoor Working Mens Club, Birchmoor",
+          "reference_postcode": "B78 1AF",
+          "review_url": "https://github.com/bristolbagpiper/BassBeerMap/issues/5#issuecomment-6511701839",
+          "reviewed_by": "bristolbagpiper",
+          "source": "camra",
+          "url": "https://camra.org.uk/pubs/131826"
+        },
         {
           "checked_at": "2026-09-11",
           "difference_metres": 2.4,
@@ -29997,7 +30012,7 @@
       "place_name": "Birchmoor",
       "postcode": "B78 1AF",
       "pub_name": "Working Mens Club (PMC)",
-      "status": "venue_coordinate_requires_review",
+      "status": "verified_venue",
       "venue_id": "v-5dfb4a42-bdc9-53dd-b394-836d2ede2b49"
     },
     "worlds end|lowdham|ng14 7at": {

@@ -1,5 +1,5 @@
 {
-  "active_count": 8,
+  "active_count": 7,
   "records": {
     "v-00a08839-2b8a-5782-b6c7-0bdce4cddb2f": {
       "active": false,
@@ -1134,7 +1134,7 @@
       "venue_id": "v-13b39b8a-0c4b-5514-8c6a-8f4ceaf7dc89"
     },
     "v-13f74f7e-8175-550d-b8b3-ca94a57e5233": {
-      "active": true,
+      "active": false,
       "first_seen": "2026-10-02",
       "history": [
         {
@@ -1155,15 +1155,18 @@
             "Reference venue name changed"
           ],
           "status": "unverified"
+        },
+        {
+          "date": "2026-10-30",
+          "reasons": [],
+          "status": "resolved"
         }
       ],
       "last_checked": "2026-10-30",
       "place_name": "Burton U-T: Branston",
       "postcode": "DE13 9FF",
       "pub_name": "Burton Rugby Club",
-      "reasons": [
-        "Reference venue name changed"
-      ],
+      "reasons": [],
       "reference": {
         "field": "postcode",
         "listed": "DE13 9FF",
@@ -1210,8 +1213,8 @@
         }
       },
       "source_error": null,
-      "status": "unverified",
-      "unverified": true,
+      "status": "resolved",
+      "unverified": false,
       "venue_id": "v-13f74f7e-8175-550d-b8b3-ca94a57e5233"
     },
     "v-13ff4a41-2ee6-5385-ae2b-22af01b93cf9": {
@@ -16921,5 +16924,5 @@
     }
   },
   "schema_version": 1,
-  "unverified_count": 1
+  "unverified_count": 0
 }

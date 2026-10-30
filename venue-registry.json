@@ -1,6 +1,6 @@
 {
   "location_review": {
-    "active_count": 8,
+    "active_count": 7,
     "records": {
       "v-00a08839-2b8a-5782-b6c7-0bdce4cddb2f": {
         "active": false,
@@ -1135,7 +1135,7 @@
         "venue_id": "v-13b39b8a-0c4b-5514-8c6a-8f4ceaf7dc89"
       },
       "v-13f74f7e-8175-550d-b8b3-ca94a57e5233": {
-        "active": true,
+        "active": false,
         "first_seen": "2026-10-02",
         "history": [
           {
@@ -1156,15 +1156,18 @@
               "Reference venue name changed"
             ],
             "status": "unverified"
+          },
+          {
+            "date": "2026-10-30",
+            "reasons": [],
+            "status": "resolved"
           }
         ],
         "last_checked": "2026-10-30",
         "place_name": "Burton U-T: Branston",
         "postcode": "DE13 9FF",
         "pub_name": "Burton Rugby Club",
-        "reasons": [
-          "Reference venue name changed"
-        ],
+        "reasons": [],
         "reference": {
           "field": "postcode",
           "listed": "DE13 9FF",
@@ -1211,8 +1214,8 @@
           }
         },
         "source_error": null,
-        "status": "unverified",
-        "unverified": true,
+        "status": "resolved",
+        "unverified": false,
         "venue_id": "v-13f74f7e-8175-550d-b8b3-ca94a57e5233"
       },
       "v-13ff4a41-2ee6-5385-ae2b-22af01b93cf9": {
@@ -16922,7 +16925,7 @@
       }
     },
     "schema_version": 1,
-    "unverified_count": 1
+    "unverified_count": 0
   },
   "schema_version": 1,
   "venues": {
@@ -25751,6 +25754,89 @@
             "https://www.pitchero.com/clubs/burton/contact",
             "https://staffsrfu.com/clubs/burton-rugby-football-club/"
           ]
+        },
+        {
+          "checked_at": "2026-10-30",
+          "comment_id": 6531799268,
+          "previous_pin": {
+            "evidence": [
+              {
+                "checked_at": "2026-09-11",
+                "difference_metres": 8.9,
+                "match": "venue_name_and_coordinate; listing_postcode_conflicts",
+                "reference_coordinate": {
+                  "lat": 52.7893745,
+                  "lng": -1.6834532
+                },
+                "reference_postcode": "DE14 3EZ",
+                "source": "camra",
+                "url": "https://camra.org.uk/pubs/196798"
+              },
+              {
+                "checked_at": "2026-09-13",
+                "difference_metres": 0,
+                "match": "manual_named_place_address_and_map_check",
+                "reference_coordinate": {
+                  "lat": 52.7893745,
+                  "lng": -1.6834532
+                },
+                "reference_postcode": "DE13 9FF",
+                "source": "google-maps-named-place",
+                "url": "https://www.google.com/maps/search/?api=1&query=Burton+Rugby+Football+Club+DE13+9FF"
+              },
+              {
+                "checked_at": "2026-10-13",
+                "match": "owner_confirmed_existing_pub_building_operator_postcode",
+                "reference_coordinate": {
+                  "lat": 52.7893745,
+                  "lng": -1.6834532
+                },
+                "reference_name": "Burton Rugby Club",
+                "reference_postcode": "DE13 9FF",
+                "reviewed_by": "bristolbagpiper",
+                "source": "manual_named_place_map",
+                "supporting_address_urls": [
+                  "https://www.pitchero.com/clubs/burton/contact",
+                  "https://staffsrfu.com/clubs/burton-rugby-football-club/"
+                ],
+                "url": "https://www.google.com/maps/search/?api=1&query=52.7893745%2C-1.6834532"
+              }
+            ],
+            "lat": 52.7893745,
+            "lng": -1.6834532,
+            "metadata_issue": {
+              "field": "postcode",
+              "listed": "DE13 9FF",
+              "owner_review": {
+                "accepted_postcode": "DE13 9FF",
+                "approved_coordinate": {
+                  "lat": 52.7893745,
+                  "lng": -1.6834532
+                },
+                "checked_at": "2026-10-13",
+                "conclusion": "Owner visually confirmed the existing Burton Rugby Club building on Battlestead Croft, Branston Road, Tatenhill. Retain the pin and PDF postcode DE13 9FF, supported by the club website and Staffordshire RFU address. CAMRA lists DE14 3EZ; preserve that conflicting source value as provenance rather than substituting it for the club address.",
+                "listed": "DE13 9FF",
+                "owner_instruction": "yes",
+                "pub_name": "Burton Rugby Club",
+                "reference": "DE14 3EZ",
+                "review_map_url": "https://www.google.com/maps/search/?api=1&query=52.7893745%2C-1.6834532",
+                "reviewed_by": "bristolbagpiper",
+                "source_url": "https://camra.org.uk/pubs/196798",
+                "supporting_address_urls": [
+                  "https://www.pitchero.com/clubs/burton/contact",
+                  "https://staffsrfu.com/clubs/burton-rugby-football-club/"
+                ]
+              },
+              "reference": "DE14 3EZ",
+              "source_url": "https://camra.org.uk/pubs/196798"
+            },
+            "review_reason": "Reference venue name changed",
+            "review_required": true,
+            "source": "google-maps-named-place"
+          },
+          "review_url": "https://github.com/bristolbagpiper/BassBeerMap/issues/5#issuecomment-6531799268",
+          "reviewed_by": "bristolbagpiper",
+          "source_url": "https://camra.org.uk/pubs/196798"
         }
       ],
       "verification_attempt": {
@@ -25775,6 +25861,21 @@
       },
       "verified_pin": {
         "evidence": [
+          {
+            "checked_at": "2026-10-30",
+            "match": "owner_confirmed_saved_point_corroborated_by_named_camra_venue",
+            "reference_address": "Battlestead Croft, Branston Road",
+            "reference_coordinate": {
+              "lat": 52.7893,
+              "lng": -1.6835
+            },
+            "reference_name": "Burton Rugby Football Club, Tatenhill - Rugby Club",
+            "reference_postcode": "DE14 3EZ",
+            "review_url": "https://github.com/bristolbagpiper/BassBeerMap/issues/5#issuecomment-6531799268",
+            "reviewed_by": "bristolbagpiper",
+            "source": "camra",
+            "url": "https://camra.org.uk/pubs/196798"
+          },
           {
             "checked_at": "2026-09-11",
             "difference_metres": 8.9,
@@ -25845,8 +25946,6 @@
           "reference": "DE14 3EZ",
           "source_url": "https://camra.org.uk/pubs/196798"
         },
-        "review_reason": "Reference venue name changed",
-        "review_required": true,
         "source": "google-maps-named-place"
       }
     },

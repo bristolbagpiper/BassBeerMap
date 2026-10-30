@@ -1,7 +1,6 @@
 {
   "counts": {
-    "venue_coordinate_requires_review": 1,
-    "verified_venue": 1043
+    "verified_venue": 1044
   },
   "generated_at": "2026-10-30",
   "policy": {
@@ -4762,8 +4761,23 @@
     },
     "burton rugby club|burton u-t: branston|de13 9ff": {
       "coordinate_source": "google-maps-named-place",
-      "display_precision": "postcode",
+      "display_precision": "venue",
       "evidence": [
+        {
+          "checked_at": "2026-10-30",
+          "match": "owner_confirmed_saved_point_corroborated_by_named_camra_venue",
+          "reference_address": "Battlestead Croft, Branston Road",
+          "reference_coordinate": {
+            "lat": 52.7893,
+            "lng": -1.6835
+          },
+          "reference_name": "Burton Rugby Football Club, Tatenhill - Rugby Club",
+          "reference_postcode": "DE14 3EZ",
+          "review_url": "https://github.com/bristolbagpiper/BassBeerMap/issues/5#issuecomment-6531799268",
+          "reviewed_by": "bristolbagpiper",
+          "source": "camra",
+          "url": "https://camra.org.uk/pubs/196798"
+        },
         {
           "checked_at": "2026-09-11",
           "difference_metres": 8.9,
@@ -4837,7 +4851,7 @@
       "place_name": "Burton U-T: Branston",
       "postcode": "DE13 9FF",
       "pub_name": "Burton Rugby Club",
-      "status": "venue_coordinate_requires_review",
+      "status": "verified_venue",
       "venue_id": "v-13f74f7e-8175-550d-b8b3-ca94a57e5233"
     },
     "burton tennis and squash club (pmc)|burton u-t: stapenhill|de15 0lq": {

@@ -1,6 +1,6 @@
 {
   "location_review": {
-    "active_count": 17,
+    "active_count": 16,
     "records": {
       "v-00a08839-2b8a-5782-b6c7-0bdce4cddb2f": {
         "active": false,
@@ -7889,7 +7889,7 @@
         "venue_id": "v-7b7219e5-71e0-524f-8e83-8546cb6673bd"
       },
       "v-7cb03d6d-a981-50bd-83de-76106ba5efac": {
-        "active": true,
+        "active": false,
         "first_seen": "2026-10-19",
         "history": [
           {
@@ -7898,15 +7898,18 @@
               "Reference venue name changed"
             ],
             "status": "unverified"
+          },
+          {
+            "date": "2026-10-30",
+            "reasons": [],
+            "status": "resolved"
           }
         ],
-        "last_checked": "2026-10-21",
+        "last_checked": "2026-10-30",
         "place_name": "Capel Garmon",
         "postcode": "LL26 0RW",
         "pub_name": "White Horse Inn / Tafarn Penllan",
-        "reasons": [
-          "Reference venue name changed"
-        ],
+        "reasons": [],
         "reference": {},
         "research": {
           "checked_at": "2026-10-20",
@@ -7933,8 +7936,8 @@
           }
         },
         "source_error": null,
-        "status": "unverified",
-        "unverified": true,
+        "status": "resolved",
+        "unverified": false,
         "venue_id": "v-7cb03d6d-a981-50bd-83de-76106ba5efac"
       },
       "v-7cf2d126-509d-589d-9dee-d89d58765eff": {
@@ -16708,7 +16711,7 @@
       }
     },
     "schema_version": 1,
-    "unverified_count": 10
+    "unverified_count": 9
   },
   "schema_version": 1,
   "venues": {
@@ -71337,6 +71340,48 @@
         "postcode": "LL26 0RW",
         "pub_name": "White Horse Inn / Tafarn Penllan"
       },
+      "location_approvals": [
+        {
+          "checked_at": "2026-10-30",
+          "comment_id": 6511583662,
+          "previous_pin": {
+            "evidence": [
+              {
+                "checked_at": "2026-09-11",
+                "difference_metres": 0.0,
+                "match": "venue_name_and_full_postcode",
+                "reference_coordinate": {
+                  "lat": 53.0829,
+                  "lng": -3.7695
+                },
+                "reference_postcode": "LL26 0RW",
+                "source": "camra",
+                "url": "https://camra.org.uk/pubs/115768"
+              },
+              {
+                "checked_at": "2026-09-11",
+                "difference_metres": 0,
+                "match": "postcode_fallback_replaced",
+                "reference_coordinate": {
+                  "lat": 53.0829,
+                  "lng": -3.7695
+                },
+                "reference_postcode": "LL26 0RW",
+                "source": "camra-pubs-location-audit",
+                "url": "https://camra.org.uk/pubs/115768"
+              }
+            ],
+            "lat": 53.0829,
+            "lng": -3.7695,
+            "review_reason": "Reference venue name changed",
+            "review_required": true,
+            "source": "camra-pubs-location-audit"
+          },
+          "review_url": "https://github.com/bristolbagpiper/BassBeerMap/issues/5#issuecomment-6511583662",
+          "reviewed_by": "bristolbagpiper",
+          "source_url": "https://camra.org.uk/pubs/115768"
+        }
+      ],
       "location_research": {
         "checked_at": "2026-10-20",
         "coverage": {
@@ -71366,6 +71411,21 @@
       "verified_pin": {
         "evidence": [
           {
+            "checked_at": "2026-10-30",
+            "match": "owner_confirmed_saved_point_corroborated_by_named_camra_venue",
+            "reference_address": "",
+            "reference_coordinate": {
+              "lat": 53.0829,
+              "lng": -3.7695
+            },
+            "reference_name": "Tafarn Penllan, Capel Garmon - Pub with Stove",
+            "reference_postcode": "LL26 0RW",
+            "review_url": "https://github.com/bristolbagpiper/BassBeerMap/issues/5#issuecomment-6511583662",
+            "reviewed_by": "bristolbagpiper",
+            "source": "camra",
+            "url": "https://camra.org.uk/pubs/115768"
+          },
+          {
             "checked_at": "2026-09-11",
             "difference_metres": 0.0,
             "match": "venue_name_and_full_postcode",
@@ -71392,8 +71452,6 @@
         ],
         "lat": 53.0829,
         "lng": -3.7695,
-        "review_reason": "Reference venue name changed",
-        "review_required": true,
         "source": "camra-pubs-location-audit"
       }
     },

@@ -1,7 +1,7 @@
 {
   "counts": {
-    "venue_coordinate_requires_review": 4,
-    "verified_venue": 1040
+    "venue_coordinate_requires_review": 3,
+    "verified_venue": 1041
   },
   "generated_at": "2026-10-30",
   "policy": {
@@ -30416,8 +30416,23 @@
     },
     "ye olde talbot|uttoxeter|st14 8hf": {
       "coordinate_source": "camra-pubs-location-audit",
-      "display_precision": "postcode",
+      "display_precision": "venue",
       "evidence": [
+        {
+          "checked_at": "2026-10-30",
+          "match": "owner_confirmed_saved_point_corroborated_by_named_camra_venue",
+          "reference_address": "43 Market Place",
+          "reference_coordinate": {
+            "lat": 52.898052203935,
+            "lng": -1.864610433578
+          },
+          "reference_name": "Olde Talbot, Uttoxeter - Historic Inn",
+          "reference_postcode": "ST14 8HF",
+          "review_url": "https://github.com/bristolbagpiper/BassBeerMap/issues/5#issuecomment-6531622554",
+          "reviewed_by": "bristolbagpiper",
+          "source": "camra",
+          "url": "https://camra.org.uk/pubs/128046"
+        },
         {
           "checked_at": "2026-09-11",
           "difference_metres": 0.0,
@@ -30448,7 +30463,7 @@
       "place_name": "Uttoxeter",
       "postcode": "ST14 8HF",
       "pub_name": "Ye Olde Talbot",
-      "status": "venue_coordinate_requires_review",
+      "status": "verified_venue",
       "venue_id": "v-f8ddf3fe-2e91-5117-a0d3-bfff56f4a0b9"
     },
     "ye olde watling|st pauls|ec4m 9br": {

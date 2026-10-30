@@ -1,5 +1,5 @@
 {
-  "active_count": 11,
+  "active_count": 10,
   "records": {
     "v-00a08839-2b8a-5782-b6c7-0bdce4cddb2f": {
       "active": false,
@@ -16440,7 +16440,7 @@
       "venue_id": "v-f66c462f-8eca-5321-885e-56b1bd7e0ee9"
     },
     "v-f8ddf3fe-2e91-5117-a0d3-bfff56f4a0b9": {
-      "active": true,
+      "active": false,
       "first_seen": "2026-10-29",
       "history": [
         {
@@ -16449,15 +16449,18 @@
             "Reference venue name changed"
           ],
           "status": "unverified"
+        },
+        {
+          "date": "2026-10-30",
+          "reasons": [],
+          "status": "resolved"
         }
       ],
-      "last_checked": "2026-10-29",
+      "last_checked": "2026-10-30",
       "place_name": "Uttoxeter",
       "postcode": "ST14 8HF",
       "pub_name": "Ye Olde Talbot",
-      "reasons": [
-        "Reference venue name changed"
-      ],
+      "reasons": [],
       "reference": {},
       "research": {},
       "source_checks": {
@@ -16475,8 +16478,8 @@
         }
       },
       "source_error": null,
-      "status": "unverified",
-      "unverified": true,
+      "status": "resolved",
+      "unverified": false,
       "venue_id": "v-f8ddf3fe-2e91-5117-a0d3-bfff56f4a0b9"
     },
     "v-f919086c-3b90-501a-a57e-9531ef1f8805": {
@@ -16912,5 +16915,5 @@
     }
   },
   "schema_version": 1,
-  "unverified_count": 4
+  "unverified_count": 3
 }

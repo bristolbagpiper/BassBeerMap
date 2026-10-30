@@ -443,6 +443,7 @@
     .popup h3 { margin: 0 0 6px; font-size: 1rem; }
     .popup p { margin: 4px 0; color: var(--muted); }
     .popup .approximate-location { color: #7a4d11; font-weight: 600; }
+    .trading-notice { color: #7a4d11; font-weight: 600; }
     .approximate-marker {
       background: transparent;
       border: 0;
@@ -1847,11 +1848,17 @@
       return `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(`${item.pub_name}, ${item.place_name}, ${item.postcode}`)}`;
     }
 
+    function tradingNotice(item) {
+      if (item.venue_id !== 'v-5b7a8e74-1d57-5edf-a58b-f3445daf1ea1') return '';
+      return 'Trading status uncertain: CAMRA reports this pub closed. Check before travelling; Bass availability is unconfirmed.';
+    }
+
     function makePopup(item) {
       const directions = directionsUrl(item);
       return `
         <div class="popup">
           <h3>${escapeHtml(item.pub_name)}</h3>
+          ${tradingNotice(item) ? `<p class="trading-notice">${escapeHtml(tradingNotice(item))}</p>` : ''}
           <p><strong>Place:</strong> ${escapeHtml(item.place_name)}</p>
           <p><strong>Postcode:</strong> ${escapeHtml(item.postcode)}</p>
           ${item.locationPrecision === 'postcode' ? '<p class="approximate-location"><strong>Map location:</strong> Approximate postcode area — not the exact venue.</p>' : ''}
@@ -1967,6 +1974,7 @@
       card.className = 'card';
       card.innerHTML = `
         <div class="card-title">${escapeHtml(item.pub_name)}</div>
+        ${tradingNotice(item) ? `<div class="footer-note trading-notice">${escapeHtml(tradingNotice(item))}</div>` : ''}
         <div class="meta">${escapeHtml(item.place_name)} · ${escapeHtml(item.postcode)}<br>${escapeHtml(item.area || '—')} · ${escapeHtml(item.country)}</div>
         <div class="chips">
           <span class="chip ${item.pg === 'Perm' ? 'perm' : 'guest'}">${item.pg === 'Perm' ? 'Permanent' : 'Guest / occasional'}</span>
@@ -2360,3 +2368,4 @@
   </script>
 </body>
 </html>
+

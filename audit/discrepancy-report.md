@@ -1,0 +1,28 @@
+# Bass Beer Map: discrepancies for follow-up
+
+Updated: 30 October 2026. This report records disagreements between sources; it does not itself change the National Bass Directory or CAMRA. The [live review queue](https://github.com/bristolbagpiper/BassBeerMap/issues/5) is the current operational list.
+
+## Charlie Bassetts, Dilhorne — postcode
+
+- **Address:** New Road, Dilhorne, Staffordshire.
+- **Postcode used by the Bass directory and map:** ST10 2PQ.
+- **CAMRA postcode:** ST10 2PZ. [CAMRA listing](https://camra.org.uk/pubs/charlie-bassetts-dilhorne-143882).
+- **Supporting evidence for ST10 2PQ:** [Staffordshire Moorlands council premises-licence report](https://democracy.highpeak.gov.uk/documents/s47589/Charlie%20Bassetts%20Committee%20Report.pdf), [Food Standards Agency record](https://ratings.food.gov.uk/business/1806172), and [Visit Staffordshire listing](https://www.visitstaffordshire.com/listing/charlie-bassetts/207540101/).
+- **Location:** 52.986997, -2.046611, previously reviewed and confirmed by the map owner. The FSA record supplies a different, approximately 192 m distant geocode; it may be approximate and is not being used to replace the reviewed pin.
+- **Status:** The map retains ST10 2PQ and the reviewed point. The source disagreement remains open until CAMRA or the pub confirms the correct address.
+- **Suggested follow-up to CAMRA or the pub:** Please check the postcode for Charlie Bassetts on New Road, Dilhorne. The council licence record and FSA list ST10 2PQ, while CAMRA lists ST10 2PZ. Can you confirm which is correct and update the relevant listing if necessary?
+
+## Other discrepancies awaiting review
+
+These entries are leads from the review queue, not confirmed corrections. Check the underlying evidence and the venue before forwarding a correction.
+
+| Venue | Bass directory postcode | Reference postcode | Issue |
+| --- | --- | --- | --- |
+| Nelson Inn, Brown Lees | ST8 6PH | ST8 6PW | Postcode disagreement |
+| New Baron, Hinckley | LE10 0AZ | LE10 0QA | Postcode disagreement |
+| Tame Otter, Hopwas | B78 3AB | B78 3AF | Postcode and coordinate disagreement |
+| Tides Out, Woolacombe | EX34 7BP | EX34 7FG | Postcode and name disagreement |
+| Trentside Cricket Club, Branston | DE14 3DP | DE14 3DN | Postcode and coordinate disagreement |
+
+Charles Roe in Macclesfield also remains open in the review queue for uncertain trading status. Its map listing carries a notice that CAMRA reports it closed and Bass availability is unconfirmed.
+

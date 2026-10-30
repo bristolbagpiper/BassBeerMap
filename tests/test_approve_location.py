@@ -36,6 +36,17 @@ def event(body, login="bristolbagpiper", user_type="User", issue=5):
 
 
 class ApprovalCommandTests(unittest.TestCase):
+    def test_retained_club_ignores_pmc_designation_but_requires_name(self):
+        url = 'https://camra.org.uk/pubs/131826'
+        command = {'lat': 52.61053543, 'lng': -1.63121538, 'url': url}
+        row = {'pub_name': 'Working Mens Club (PMC)', 'postcode': 'B78 1AF'}
+        entry = {'verified_pin': {'lat': command['lat'], 'lng': command['lng'], 'evidence': [{'source': 'camra', 'url': url}]}}
+        source = {'lat': 52.610551470899, 'lng': -1.631239708004, 'postcode': 'B78 1AF',
+                  'address': '31 New Street', 'name': 'Birchmoor Working Mens Club, Birchmoor'}
+        self.assertEqual(validate_retained_point(command, row, entry, source), entry['verified_pin'])
+        with self.assertRaises(ValueError):
+            validate_retained_point(command, row, entry, dict(source, name='Birchmoor Social Club'))
+
     def test_retained_slash_names_accept_reverse_order_with_exact_locality(self):
         url = 'https://camra.org.uk/pubs/115768'
         command = {'lat': 53.0829, 'lng': -3.7695, 'url': url}

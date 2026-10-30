@@ -197,7 +197,7 @@ def validate_retained_point(command, row, entry, source, camra_page_text='', fsa
             or not point_valid(source) or distance_metres(pin, source) > 50):
         raise ValueError('CAMRA address or coordinates do not corroborate the saved point')
     tokens = lambda value: set(re.findall(r'[a-z0-9]+', value.casefold())) - {'the', 'at', 'and', 'inn', 'pub', 'bar', 'hotel'}
-    listing_tokens = tokens(row['pub_name'])
+    listing_tokens = tokens(re.sub(r'\s*\(PMC\)\s*', ' ', row['pub_name'], flags=re.I))
     if ((len(listing_tokens) < 2 or not listing_tokens.issubset(tokens(source.get('name', ''))))
             and not camra_previous_name_matches(camra_page_text, row['pub_name'])
             and not camra_heading_confirms_listing_alias(row['pub_name'], source.get('name', ''), camra_page_text)

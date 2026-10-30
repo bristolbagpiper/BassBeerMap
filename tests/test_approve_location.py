@@ -36,6 +36,18 @@ def event(body, login="bristolbagpiper", user_type="User", issue=5):
 
 
 class ApprovalCommandTests(unittest.TestCase):
+    def test_retained_ye_olde_name_with_olde_camra_heading(self):
+        url = 'https://camra.org.uk/pubs/143488'
+        command = {'lat': 52.92527998181818, 'lng': -1.4777686090909092, 'url': url}
+        row = {'pub_name': 'Ye Olde Dolphin Inne', 'postcode': 'DE1 3DL'}
+        entry = {'verified_pin': {'lat': command['lat'], 'lng': command['lng'], 'evidence': [{'source': 'camra', 'url': url}]}}
+        source = {'lat': 52.925255, 'lng': -1.477935, 'postcode': 'DE1 3DL',
+                  'address': '5a Queen Street', 'name': 'Olde Dolphin Inne, Derby - Live Music Pub'}
+        page = '<h1>Olde Dolphin Inne, Derby</h1>'
+        self.assertEqual(validate_retained_point(command, row, entry, source, page), entry['verified_pin'])
+        with self.assertRaises(ValueError):
+            validate_retained_point(command, row, entry, source, '<h1>Olde Crown Inne, Derby</h1>')
+
     def test_retained_ye_olde_prefix_with_full_matching_name(self):
         url = 'https://camra.org.uk/pubs/143928'
         command = {'lat': 53.0490531921387, 'lng': -1.87625002861023, 'url': url}

@@ -36,6 +36,20 @@ def event(body, login="bristolbagpiper", user_type="User", issue=5):
 
 
 class ApprovalCommandTests(unittest.TestCase):
+    def test_retained_omitted_ye_requires_full_name_and_heading(self):
+        url = 'https://camra.org.uk/pubs/186936'
+        command = {'lat': 54.775832, 'lng': -1.5815745, 'url': url}
+        row = {'pub_name': 'Ye Old Elm Tree', 'postcode': 'DH1 4PS'}
+        entry = {'verified_pin': {'lat': command['lat'], 'lng': command['lng'], 'evidence': [{'source': 'camra', 'url': url}]}}
+        source = {'lat': command['lat'], 'lng': command['lng'], 'postcode': 'DH1 4PS',
+                  'address': '12 Crossgate', 'name': 'Old Elm Tree, Durham - Acoustic Nights & Patio'}
+        page = '<h1>Old Elm Tree, Durham</h1>'
+        self.assertEqual(validate_retained_point(command, row, entry, source, page), entry['verified_pin'])
+        for bad_source, bad_page in ((dict(source, name='Old Oak Tree, Durham'), page),
+                                     (source, '<h1>Old Oak Tree, Durham</h1>')):
+            with self.assertRaises(ValueError):
+                validate_retained_point(command, row, entry, bad_source, bad_page)
+
     def test_retained_current_name_requires_documented_former_name(self):
         url = 'https://camra.org.uk/pubs/131517'
         command = {'lat': 52.037091, 'lng': -4.469749, 'url': url}

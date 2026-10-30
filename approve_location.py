@@ -155,6 +155,15 @@ def camra_heading_confirms_omitted_arms(listing, source_name, page_text):
                 and normalized_place_name(extract_camra_heading(page_text)) == official)
 
 
+def camra_heading_confirms_omitted_ye(listing, source_name, page_text):
+    """Require the entire remaining name and CAMRA heading to agree."""
+    wanted = normalized_place_name(listing)
+    official = normalized_place_name(source_name)
+    return bool(wanted.startswith('ye ') and len(official.split()) >= 2
+                and wanted[3:] == official
+                and normalized_place_name(extract_camra_heading(page_text)) == official)
+
+
 def fsa_confirms_address_name(row, source, record, expected_id, target=None):
     """Corroborate a name difference only with an exact FSA premises name and street."""
     if not record or record.get('FHRSID') != expected_id:
@@ -208,6 +217,7 @@ def validate_retained_point(command, row, entry, source, camra_page_text='', fsa
             and not camra_heading_confirms_listing_alias(row['pub_name'], source.get('name', ''), camra_page_text)
             and not camra_heading_confirms_slash_names(row['pub_name'], source.get('name', ''), camra_page_text, row.get('place_name', ''))
             and not camra_heading_confirms_omitted_arms(row['pub_name'], source.get('name', ''), camra_page_text)
+            and not camra_heading_confirms_omitted_ye(row['pub_name'], source.get('name', ''), camra_page_text)
             and not fsa_confirms_address_name(row, source, fsa_record, command.get('fsa_id'), target)):
         raise ValueError('CAMRA name does not identify the listed venue')
     return pin

@@ -206,7 +206,14 @@ def validate_retained_point(command, row, entry, source, camra_page_text='', fsa
     if not any(e.get('source') == 'camra' and e.get('url') == command['url'] for e in pin.get('evidence', [])):
         raise ValueError('CAMRA source is not part of the saved venue evidence')
     compact = lambda value: re.sub(r'[^A-Z0-9]', '', str(value).upper())
-    if not source.get('postcode') or compact(source['postcode']) != compact(row['postcode']):
+    metadata = pin.get('metadata_issue') or {}
+    prior = metadata.get('owner_review') or {}
+    previous_point = prior.get('approved_coordinate') or {}
+    approved_discrepancy = (prior.get('reviewed_by') and prior.get('source_url') == command['url']
+        and compact(prior.get('listed', '')) == compact(row['postcode'])
+        and compact(prior.get('reference', '')) == compact(source.get('postcode', ''))
+        and point_valid(previous_point) and distance_metres(pin, previous_point) <= 0.01)
+    if not source.get('postcode') or (compact(source['postcode']) != compact(row['postcode']) and not approved_discrepancy):
         raise ValueError('CAMRA postcode does not match the directory')
     locality = str(source.get('locality') or '').strip().casefold()
     listing_locality = str(row.get('place_name') or '').strip().casefold()
@@ -216,6 +223,7 @@ def validate_retained_point(command, row, entry, source, camra_page_text='', fsa
     tokens = lambda value: set(re.findall(r'[a-z0-9]+', value.casefold())) - {'the', 'at', 'and', 'inn', 'pub', 'bar', 'hotel'}
     listing_tokens = tokens(re.sub(r'\s*\(PMC\)\s*', ' ', row['pub_name'], flags=re.I))
     if ((len(listing_tokens) < 2 or not listing_tokens.issubset(tokens(source.get('name', ''))))
+            and not (approved_discrepancy and name_matches(row['pub_name'], source.get('name', ''), row.get('place_name', '')))
             and not camra_previous_name_matches(camra_page_text, row['pub_name'])
             and not camra_heading_confirms_listing_alias(row['pub_name'], source.get('name', ''), camra_page_text)
             and not camra_heading_confirms_slash_names(row['pub_name'], source.get('name', ''), camra_page_text, row.get('place_name', ''))

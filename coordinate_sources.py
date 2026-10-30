@@ -46,7 +46,9 @@ def camra_page(url):
 def name_matches(listing, reference, place_name=''):
     # CAMRA appends town and SEO text to the JSON-LD name. Require the full
     # distinctive listing name at the start; do not accept substring matches.
-    normal = lambda value: re.sub(r'[^a-z0-9]', '', re.sub(r'\band\b|&', '', re.sub(r'^the\s+', '', value.casefold())))
+    def normal(value):
+        value = re.sub(r'\brugby\s+football\s+club\b', 'rugby club', value.casefold())
+        return re.sub(r'[^a-z0-9]', '', re.sub(r'\band\b|&', '', re.sub(r'^the\s+', '', value)))
     wanted = normal(re.sub(r'\s*\(PMC\)', '', listing, flags=re.I))
     actual = normal(reference.split(',')[0].split(' - ')[0])
     if (wanted == actual or (place_name and normal(f'{listing} {place_name}') == actual)
@@ -184,3 +186,4 @@ def camra_reference(row, point, diagnostics=None):
             diagnostics['reason'] = f'CAMRA venue found, but its coordinate is {difference} metres from FSA (maximum 50)'
         return None
     return matches[0]
+

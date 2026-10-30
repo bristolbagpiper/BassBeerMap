@@ -36,6 +36,24 @@ def event(body, login="bristolbagpiper", user_type="User", issue=5):
 
 
 class ApprovalCommandTests(unittest.TestCase):
+    def test_retained_previously_approved_postcode_discrepancy(self):
+        url = 'https://camra.org.uk/pubs/196798'
+        command = {'lat': 52.7893745, 'lng': -1.6834532, 'url': url}
+        row = {'pub_name': 'Burton Rugby Club', 'place_name': 'Burton U-T: Branston', 'postcode': 'DE13 9FF'}
+        prior = {'reviewed_by': 'bristolbagpiper', 'source_url': url, 'listed': 'DE13 9FF',
+                 'reference': 'DE14 3EZ', 'approved_coordinate': {'lat': command['lat'], 'lng': command['lng']}}
+        pin = {'lat': command['lat'], 'lng': command['lng'], 'evidence': [{'source': 'camra', 'url': url}],
+               'metadata_issue': {'owner_review': prior}}
+        source = {'lat': 52.7893, 'lng': -1.6835, 'postcode': 'DE14 3EZ',
+                  'address': 'Battlestead Croft, Branston Road', 'name': 'Burton Rugby Football Club, Tatenhill - Rugby Club'}
+        self.assertEqual(validate_retained_point(command, row, {'verified_pin': pin}, source), pin)
+        for bad in (dict(source, postcode='DE14 3AA'), dict(source, name='Other Rugby Football Club, Tatenhill'),
+                    dict(source, lat=53.1)):
+            with self.assertRaises(ValueError):
+                validate_retained_point(command, row, {'verified_pin': pin}, bad)
+        with self.assertRaises(ValueError):
+            validate_retained_point(command, row, {'verified_pin': dict(pin, metadata_issue={})}, source)
+
     def test_retained_ye_olde_name_with_olde_camra_heading(self):
         url = 'https://camra.org.uk/pubs/143488'
         command = {'lat': 52.92527998181818, 'lng': -1.4777686090909092, 'url': url}

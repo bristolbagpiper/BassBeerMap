@@ -118,6 +118,11 @@ def camra_heading_confirms_listing_alias(listing, source_name, page_text):
         aliases = re.findall(r'\(([^()]*)\)', extract_camra_heading(page_text))
         return bool(compact(alias)) and any(compact(alias) == compact(item) for item in aliases)
     current, former = match.groups()
+    if (normalized_place_name(current)
+            and normalized_place_name(current) == normalized_place_name(source_name)
+            and normalized_place_name(extract_camra_heading(page_text)) == normalized_place_name(source_name)
+            and camra_previous_name_matches(page_text, former)):
+        return True
     if not normalized_place_name(former) or normalized_place_name(former) != normalized_place_name(source_name):
         return False
     aliases = re.findall(r'\(([^()]*)\)', extract_camra_heading(page_text))

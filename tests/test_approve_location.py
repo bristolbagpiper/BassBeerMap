@@ -36,6 +36,21 @@ def event(body, login="bristolbagpiper", user_type="User", issue=5):
 
 
 class ApprovalCommandTests(unittest.TestCase):
+    def test_retained_current_name_requires_documented_former_name(self):
+        url = 'https://camra.org.uk/pubs/131517'
+        command = {'lat': 52.037091, 'lng': -4.469749, 'url': url}
+        row = {'pub_name': 'Y Sgwâr (was Ivy Bush)', 'postcode': 'SA38 9BG'}
+        entry = {'verified_pin': {'lat': command['lat'], 'lng': command['lng'], 'evidence': [{'source': 'camra', 'url': url}]}}
+        source = {'lat': command['lat'], 'lng': command['lng'], 'postcode': 'SA38 9BG',
+                  'address': 'Emlyn Square', 'name': 'Y Sgwâr, Newcastle Emlyn - Pub with Beer Garden'}
+        page = '<h1>Y Sgwâr, Newcastle Emlyn (Square)</h1><dt>Previous Names</dt><dd>Ivy Bush</dd>'
+        self.assertEqual(validate_retained_point(command, row, entry, source, page), entry['verified_pin'])
+        for bad in (page.replace('Ivy Bush', 'Other'), page.replace('<h1>Y Sgwâr', '<h1>Other')):
+            with self.assertRaises(ValueError):
+                validate_retained_point(command, row, entry, source, bad)
+        with self.assertRaises(ValueError):
+            validate_retained_point(command, row, entry, dict(source, name='Other, Newcastle Emlyn'), page)
+
     def test_retained_club_ignores_pmc_designation_but_requires_name(self):
         url = 'https://camra.org.uk/pubs/131826'
         command = {'lat': 52.61053543, 'lng': -1.63121538, 'url': url}

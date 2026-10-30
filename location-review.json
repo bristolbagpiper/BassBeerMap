@@ -1,5 +1,5 @@
 {
-  "active_count": 15,
+  "active_count": 14,
   "records": {
     "v-00a08839-2b8a-5782-b6c7-0bdce4cddb2f": {
       "active": false,
@@ -11275,7 +11275,7 @@
       "venue_id": "v-a77b7a83-4e63-5bea-9561-4e596c904bd9"
     },
     "v-a829ca94-ad6b-5ad5-856e-65e75b429b0d": {
-      "active": true,
+      "active": false,
       "first_seen": "2026-10-23",
       "history": [
         {
@@ -11284,15 +11284,18 @@
             "Reference venue name changed"
           ],
           "status": "unverified"
+        },
+        {
+          "date": "2026-10-30",
+          "reasons": [],
+          "status": "resolved"
         }
       ],
-      "last_checked": "2026-10-25",
+      "last_checked": "2026-10-30",
       "place_name": "Durham",
       "postcode": "DH1 4PS",
       "pub_name": "Ye Old Elm Tree",
-      "reasons": [
-        "Reference venue name changed"
-      ],
+      "reasons": [],
       "reference": {},
       "research": {
         "checked_at": "2026-10-27",
@@ -11319,8 +11322,8 @@
         }
       },
       "source_error": null,
-      "status": "unverified",
-      "unverified": true,
+      "status": "resolved",
+      "unverified": false,
       "venue_id": "v-a829ca94-ad6b-5ad5-856e-65e75b429b0d"
     },
     "v-a8358fc8-7e3f-5546-be32-b35472d438b7": {
@@ -16904,5 +16907,5 @@
     }
   },
   "schema_version": 1,
-  "unverified_count": 8
+  "unverified_count": 7
 }

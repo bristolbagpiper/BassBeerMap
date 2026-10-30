@@ -1,7 +1,7 @@
 {
   "counts": {
-    "venue_coordinate_requires_review": 8,
-    "verified_venue": 1036
+    "venue_coordinate_requires_review": 7,
+    "verified_venue": 1037
   },
   "generated_at": "2026-10-30",
   "policy": {
@@ -30177,8 +30177,23 @@
     },
     "ye old elm tree|durham|dh1 4ps": {
       "coordinate_source": "camra-pubs-location-audit",
-      "display_precision": "postcode",
+      "display_precision": "venue",
       "evidence": [
+        {
+          "checked_at": "2026-10-30",
+          "match": "owner_confirmed_saved_point_corroborated_by_named_camra_venue",
+          "reference_address": "12 Crossgate",
+          "reference_coordinate": {
+            "lat": 54.775832,
+            "lng": -1.5815745
+          },
+          "reference_name": "Old Elm Tree, Durham - Acoustic Nights & Patio",
+          "reference_postcode": "DH1 4PS",
+          "review_url": "https://github.com/bristolbagpiper/BassBeerMap/issues/5#issuecomment-6530920777",
+          "reviewed_by": "bristolbagpiper",
+          "source": "camra",
+          "url": "https://camra.org.uk/pubs/186936"
+        },
         {
           "checked_at": "2026-09-11",
           "difference_metres": 0.0,
@@ -30209,7 +30224,7 @@
       "place_name": "Durham",
       "postcode": "DH1 4PS",
       "pub_name": "Ye Old Elm Tree",
-      "status": "venue_coordinate_requires_review",
+      "status": "verified_venue",
       "venue_id": "v-a829ca94-ad6b-5ad5-856e-65e75b429b0d"
     },
     "ye olde butchers arms|reapsmoor|sk17 0ll": {

@@ -1,6 +1,6 @@
 {
   "location_review": {
-    "active_count": 15,
+    "active_count": 14,
     "records": {
       "v-00a08839-2b8a-5782-b6c7-0bdce4cddb2f": {
         "active": false,
@@ -11276,7 +11276,7 @@
         "venue_id": "v-a77b7a83-4e63-5bea-9561-4e596c904bd9"
       },
       "v-a829ca94-ad6b-5ad5-856e-65e75b429b0d": {
-        "active": true,
+        "active": false,
         "first_seen": "2026-10-23",
         "history": [
           {
@@ -11285,15 +11285,18 @@
               "Reference venue name changed"
             ],
             "status": "unverified"
+          },
+          {
+            "date": "2026-10-30",
+            "reasons": [],
+            "status": "resolved"
           }
         ],
-        "last_checked": "2026-10-25",
+        "last_checked": "2026-10-30",
         "place_name": "Durham",
         "postcode": "DH1 4PS",
         "pub_name": "Ye Old Elm Tree",
-        "reasons": [
-          "Reference venue name changed"
-        ],
+        "reasons": [],
         "reference": {},
         "research": {
           "checked_at": "2026-10-27",
@@ -11320,8 +11323,8 @@
           }
         },
         "source_error": null,
-        "status": "unverified",
-        "unverified": true,
+        "status": "resolved",
+        "unverified": false,
         "venue_id": "v-a829ca94-ad6b-5ad5-856e-65e75b429b0d"
       },
       "v-a8358fc8-7e3f-5546-be32-b35472d438b7": {
@@ -16905,7 +16908,7 @@
       }
     },
     "schema_version": 1,
-    "unverified_count": 8
+    "unverified_count": 7
   },
   "schema_version": 1,
   "venues": {
@@ -93870,6 +93873,48 @@
         "postcode": "DH1 4PS",
         "pub_name": "Ye Old Elm Tree"
       },
+      "location_approvals": [
+        {
+          "checked_at": "2026-10-30",
+          "comment_id": 6530920777,
+          "previous_pin": {
+            "evidence": [
+              {
+                "checked_at": "2026-09-11",
+                "difference_metres": 0.0,
+                "match": "venue_name_and_full_postcode",
+                "reference_coordinate": {
+                  "lat": 54.775832,
+                  "lng": -1.5815745
+                },
+                "reference_postcode": "DH1 4PS",
+                "source": "camra",
+                "url": "https://camra.org.uk/pubs/186936"
+              },
+              {
+                "checked_at": "2026-09-11",
+                "difference_metres": 0,
+                "match": "postcode_fallback_replaced",
+                "reference_coordinate": {
+                  "lat": 54.775832,
+                  "lng": -1.5815745
+                },
+                "reference_postcode": "DH1 4PS",
+                "source": "camra-pubs-location-audit",
+                "url": "https://camra.org.uk/pubs/186936"
+              }
+            ],
+            "lat": 54.775832,
+            "lng": -1.5815745,
+            "review_reason": "Reference venue name changed",
+            "review_required": true,
+            "source": "camra-pubs-location-audit"
+          },
+          "review_url": "https://github.com/bristolbagpiper/BassBeerMap/issues/5#issuecomment-6530920777",
+          "reviewed_by": "bristolbagpiper",
+          "source_url": "https://camra.org.uk/pubs/186936"
+        }
+      ],
       "location_research": {
         "checked_at": "2026-10-27",
         "coverage": {
@@ -93899,6 +93944,21 @@
       "verified_pin": {
         "evidence": [
           {
+            "checked_at": "2026-10-30",
+            "match": "owner_confirmed_saved_point_corroborated_by_named_camra_venue",
+            "reference_address": "12 Crossgate",
+            "reference_coordinate": {
+              "lat": 54.775832,
+              "lng": -1.5815745
+            },
+            "reference_name": "Old Elm Tree, Durham - Acoustic Nights & Patio",
+            "reference_postcode": "DH1 4PS",
+            "review_url": "https://github.com/bristolbagpiper/BassBeerMap/issues/5#issuecomment-6530920777",
+            "reviewed_by": "bristolbagpiper",
+            "source": "camra",
+            "url": "https://camra.org.uk/pubs/186936"
+          },
+          {
             "checked_at": "2026-09-11",
             "difference_metres": 0.0,
             "match": "venue_name_and_full_postcode",
@@ -93925,8 +93985,6 @@
         ],
         "lat": 54.775832,
         "lng": -1.5815745,
-        "review_reason": "Reference venue name changed",
-        "review_required": true,
         "source": "camra-pubs-location-audit"
       }
     },

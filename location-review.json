@@ -1,5 +1,5 @@
 {
-  "active_count": 18,
+  "active_count": 17,
   "records": {
     "v-00a08839-2b8a-5782-b6c7-0bdce4cddb2f": {
       "active": false,
@@ -4818,7 +4818,7 @@
       "venue_id": "v-539bf7df-26bd-5550-a414-a2b92947c993"
     },
     "v-53f97947-824b-5e72-b0dc-68455d481ce3": {
-      "active": true,
+      "active": false,
       "first_seen": "2026-10-15",
       "history": [
         {
@@ -4827,15 +4827,18 @@
             "Reference venue name changed"
           ],
           "status": "unverified"
+        },
+        {
+          "date": "2026-10-30",
+          "reasons": [],
+          "status": "resolved"
         }
       ],
-      "last_checked": "2026-10-17",
+      "last_checked": "2026-10-30",
       "place_name": "Cheadle",
       "postcode": "SK8 1PX",
       "pub_name": "White Hart",
-      "reasons": [
-        "Reference venue name changed"
-      ],
+      "reasons": [],
       "reference": {},
       "research": {
         "checked_at": "2026-10-27",
@@ -4873,8 +4876,8 @@
         }
       },
       "source_error": null,
-      "status": "unverified",
-      "unverified": true,
+      "status": "resolved",
+      "unverified": false,
       "venue_id": "v-53f97947-824b-5e72-b0dc-68455d481ce3"
     },
     "v-54836fe6-8cdb-55fb-b63e-31051b80fc84": {
@@ -16704,5 +16707,5 @@
     }
   },
   "schema_version": 1,
-  "unverified_count": 11
+  "unverified_count": 10
 }

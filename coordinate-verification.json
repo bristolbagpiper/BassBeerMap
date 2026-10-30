@@ -1,7 +1,7 @@
 {
   "counts": {
-    "venue_coordinate_requires_review": 11,
-    "verified_venue": 1033
+    "venue_coordinate_requires_review": 10,
+    "verified_venue": 1034
   },
   "generated_at": "2026-10-30",
   "policy": {
@@ -28754,8 +28754,23 @@
     },
     "white hart|cheadle|sk8 1px": {
       "coordinate_source": "openstreetmap-gb-extract",
-      "display_precision": "postcode",
+      "display_precision": "venue",
       "evidence": [
+        {
+          "checked_at": "2026-10-30",
+          "match": "owner_confirmed_saved_point_corroborated_by_named_camra_venue",
+          "reference_address": "High Street",
+          "reference_coordinate": {
+            "lat": 53.39383472971,
+            "lng": -2.2177255153656
+          },
+          "reference_name": "White Hart Tavern, Cheadle - Beside St Mary's Church",
+          "reference_postcode": "SK8 1PX",
+          "review_url": "https://github.com/bristolbagpiper/BassBeerMap/issues/5#issuecomment-6511538949",
+          "reviewed_by": "bristolbagpiper",
+          "source": "camra",
+          "url": "https://camra.org.uk/pubs/167788"
+        },
         {
           "checked_at": "2026-09-11",
           "difference_metres": 16.5,
@@ -28774,7 +28789,7 @@
       "place_name": "Cheadle",
       "postcode": "SK8 1PX",
       "pub_name": "White Hart",
-      "status": "venue_coordinate_requires_review",
+      "status": "verified_venue",
       "venue_id": "v-53f97947-824b-5e72-b0dc-68455d481ce3"
     },
     "white hart|crystal palace se19|se19 2ez": {

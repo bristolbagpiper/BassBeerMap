@@ -1,7 +1,7 @@
 {
   "counts": {
-    "venue_coordinate_requires_review": 6,
-    "verified_venue": 1038
+    "venue_coordinate_requires_review": 5,
+    "verified_venue": 1039
   },
   "generated_at": "2026-10-30",
   "policy": {
@@ -30294,8 +30294,23 @@
     },
     "ye olde dolphin inne|derby: central|de1 3dl": {
       "coordinate_source": "openstreetmap-gb-extract",
-      "display_precision": "postcode",
+      "display_precision": "venue",
       "evidence": [
+        {
+          "checked_at": "2026-10-30",
+          "match": "owner_confirmed_saved_point_corroborated_by_named_camra_venue",
+          "reference_address": "5a Queen Street",
+          "reference_coordinate": {
+            "lat": 52.925255,
+            "lng": -1.477935
+          },
+          "reference_name": "Olde Dolphin Inne, Derby - Live Music Pub",
+          "reference_postcode": "DE1 3DL",
+          "review_url": "https://github.com/bristolbagpiper/BassBeerMap/issues/5#issuecomment-6531115344",
+          "reviewed_by": "bristolbagpiper",
+          "source": "camra",
+          "url": "https://camra.org.uk/pubs/143488"
+        },
         {
           "checked_at": "2026-09-11",
           "difference_metres": 11.5,
@@ -30314,7 +30329,7 @@
       "place_name": "Derby: Central",
       "postcode": "DE1 3DL",
       "pub_name": "Ye Olde Dolphin Inne",
-      "status": "venue_coordinate_requires_review",
+      "status": "verified_venue",
       "venue_id": "v-7b7219e5-71e0-524f-8e83-8546cb6673bd"
     },
     "ye olde manor inn|stoke: fenton|st4 2pt": {

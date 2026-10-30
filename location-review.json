@@ -1,5 +1,5 @@
 {
-  "active_count": 13,
+  "active_count": 12,
   "records": {
     "v-00a08839-2b8a-5782-b6c7-0bdce4cddb2f": {
       "active": false,
@@ -7978,7 +7978,7 @@
       "venue_id": "v-7ae10979-fa76-53b3-bdc3-51d091c60752"
     },
     "v-7b7219e5-71e0-524f-8e83-8546cb6673bd": {
-      "active": true,
+      "active": false,
       "first_seen": "2026-10-18",
       "history": [
         {
@@ -7987,15 +7987,18 @@
             "Reference venue name changed"
           ],
           "status": "unverified"
+        },
+        {
+          "date": "2026-10-30",
+          "reasons": [],
+          "status": "resolved"
         }
       ],
-      "last_checked": "2026-10-21",
+      "last_checked": "2026-10-30",
       "place_name": "Derby: Central",
       "postcode": "DE1 3DL",
       "pub_name": "Ye Olde Dolphin Inne",
-      "reasons": [
-        "Reference venue name changed"
-      ],
+      "reasons": [],
       "reference": {},
       "research": {
         "checked_at": "2026-10-20",
@@ -8018,8 +8021,8 @@
         }
       },
       "source_error": null,
-      "status": "unverified",
-      "unverified": true,
+      "status": "resolved",
+      "unverified": false,
       "venue_id": "v-7b7219e5-71e0-524f-8e83-8546cb6673bd"
     },
     "v-7cb03d6d-a981-50bd-83de-76106ba5efac": {
@@ -16910,5 +16913,5 @@
     }
   },
   "schema_version": 1,
-  "unverified_count": 6
+  "unverified_count": 5
 }

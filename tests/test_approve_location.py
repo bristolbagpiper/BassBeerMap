@@ -36,6 +36,22 @@ def event(body, login="bristolbagpiper", user_type="User", issue=5):
 
 
 class ApprovalCommandTests(unittest.TestCase):
+    def test_retained_slash_names_accept_reverse_order_with_exact_locality(self):
+        url = 'https://camra.org.uk/pubs/115768'
+        command = {'lat': 53.0829, 'lng': -3.7695, 'url': url}
+        row = {'pub_name': 'White Horse Inn / Tafarn Penllan', 'place_name': 'Capel Garmon', 'postcode': 'LL26 0RW'}
+        entry = {'verified_pin': {'lat': command['lat'], 'lng': command['lng'], 'evidence': [{'source': 'camra', 'url': url}]}}
+        source = {'lat': command['lat'], 'lng': command['lng'], 'postcode': 'LL26 0RW',
+                  'address': '', 'locality': 'Capel Garmon', 'name': 'Tafarn Penllan, Capel Garmon - Pub with Stove'}
+        page = '<h1>Tafarn Penllan, Capel Garmon (White Horse Inn)</h1>'
+        self.assertEqual(validate_retained_point(command, row, entry, source, page), entry['verified_pin'])
+        with self.assertRaises(ValueError):
+            validate_retained_point(command, row, entry, dict(source, locality='Other Village'), page)
+        with self.assertRaises(ValueError):
+            validate_retained_point(command, row, entry, source, '<h1>Other Pub, Capel Garmon (White Horse Inn)</h1>')
+        with self.assertRaises(ValueError):
+            validate_retained_point(command, row, entry, source, '<h1>Tafarn Penllan, Capel Garmon (Other Inn)</h1>')
+
     def test_retained_point_accepts_only_exact_omitted_arms_suffix(self):
         url = 'https://camra.org.uk/pubs/188280'
         command = {'lat': 51.2066561, 'lng': -4.1257507, 'url': url}

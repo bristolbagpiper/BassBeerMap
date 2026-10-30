@@ -130,12 +130,15 @@ def camra_heading_confirms_slash_names(listing, source_name, page_text, place_na
     parts = listing.split('/')
     if len(parts) != 2:
         return False
-    primary, alternate = (manual_name_tokens(part) for part in parts)
+    names = [manual_name_tokens(part) for part in parts]
     source_primary = manual_name_tokens(source_name.split(',', 1)[0].split(' - ', 1)[0])
-    if not primary or not alternate or primary != source_primary:
+    heading = extract_camra_heading(page_text)
+    if (not all(names) or source_primary not in names
+            or normalized_place_name(heading) != normalized_place_name(source_name)):
         return False
+    alternate = names[1] if names[0] == source_primary else names[0]
     locality_tokens = manual_name_tokens(place_name)
-    aliases = re.findall(r'\(([^()]*)\)', extract_camra_heading(page_text))
+    aliases = re.findall(r'\(([^()]*)\)', heading)
     return any(manual_name_tokens(alias) - locality_tokens == alternate for alias in aliases)
 
 
@@ -188,7 +191,10 @@ def validate_retained_point(command, row, entry, source, camra_page_text='', fsa
     compact = lambda value: re.sub(r'[^A-Z0-9]', '', str(value).upper())
     if not source.get('postcode') or compact(source['postcode']) != compact(row['postcode']):
         raise ValueError('CAMRA postcode does not match the directory')
-    if not source.get('address') or not point_valid(source) or distance_metres(pin, source) > 50:
+    locality = str(source.get('locality') or '').strip().casefold()
+    listing_locality = str(row.get('place_name') or '').strip().casefold()
+    if ((not source.get('address') and not (locality and locality == listing_locality))
+            or not point_valid(source) or distance_metres(pin, source) > 50):
         raise ValueError('CAMRA address or coordinates do not corroborate the saved point')
     tokens = lambda value: set(re.findall(r'[a-z0-9]+', value.casefold())) - {'the', 'at', 'and', 'inn', 'pub', 'bar', 'hotel'}
     listing_tokens = tokens(row['pub_name'])

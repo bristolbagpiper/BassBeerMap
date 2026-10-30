@@ -1,9 +1,9 @@
 {
   "counts": {
-    "venue_coordinate_requires_review": 12,
-    "verified_venue": 1032
+    "venue_coordinate_requires_review": 11,
+    "verified_venue": 1033
   },
-  "generated_at": "2026-10-29",
+  "generated_at": "2026-10-30",
   "policy": {
     "max_evidence_age_days": 400,
     "venue_pin": "Evidence-backed venue coordinates; unresolved venues use explicitly approximate postcode pins."
@@ -28218,8 +28218,23 @@
     },
     "wellington|ilfracombe|ex34 9qe": {
       "coordinate_source": "openstreetmap-gb-extract",
-      "display_precision": "postcode",
+      "display_precision": "venue",
       "evidence": [
+        {
+          "checked_at": "2026-10-30",
+          "match": "owner_confirmed_saved_point_corroborated_by_named_camra_venue",
+          "reference_address": "66-67 High Street",
+          "reference_coordinate": {
+            "lat": 51.2067224,
+            "lng": -4.1256102
+          },
+          "reference_name": "Wellington Arms, Ilfracombe - Town Local",
+          "reference_postcode": "EX34 9QE",
+          "review_url": "https://github.com/bristolbagpiper/BassBeerMap/issues/5#issuecomment-6511480555",
+          "reviewed_by": "bristolbagpiper",
+          "source": "camra",
+          "url": "https://camra.org.uk/pubs/188280"
+        },
         {
           "checked_at": "2026-09-11",
           "difference_metres": 12.3,
@@ -28238,7 +28253,7 @@
       "place_name": "Ilfracombe",
       "postcode": "EX34 9QE",
       "pub_name": "Wellington",
-      "status": "venue_coordinate_requires_review",
+      "status": "verified_venue",
       "venue_id": "v-5ddc0a4c-1901-5073-946a-674c74a082b8"
     },
     "wellington|stockport|sk1 3ru": {

@@ -1,5 +1,5 @@
 {
-  "active_count": 19,
+  "active_count": 18,
   "records": {
     "v-00a08839-2b8a-5782-b6c7-0bdce4cddb2f": {
       "active": false,
@@ -5683,7 +5683,7 @@
       "venue_id": "v-5cbd9588-4bcc-545b-af86-cb47a80b832c"
     },
     "v-5ddc0a4c-1901-5073-946a-674c74a082b8": {
-      "active": true,
+      "active": false,
       "first_seen": "2026-10-16",
       "history": [
         {
@@ -5692,15 +5692,18 @@
             "Reference venue name changed"
           ],
           "status": "unverified"
+        },
+        {
+          "date": "2026-10-30",
+          "reasons": [],
+          "status": "resolved"
         }
       ],
-      "last_checked": "2026-10-18",
+      "last_checked": "2026-10-30",
       "place_name": "Ilfracombe",
       "postcode": "EX34 9QE",
       "pub_name": "Wellington",
-      "reasons": [
-        "Reference venue name changed"
-      ],
+      "reasons": [],
       "reference": {},
       "research": {
         "checked_at": "2026-10-27",
@@ -5738,8 +5741,8 @@
         }
       },
       "source_error": null,
-      "status": "unverified",
-      "unverified": true,
+      "status": "resolved",
+      "unverified": false,
       "venue_id": "v-5ddc0a4c-1901-5073-946a-674c74a082b8"
     },
     "v-5dfb4a42-bdc9-53dd-b394-836d2ede2b49": {
@@ -16701,5 +16704,5 @@
     }
   },
   "schema_version": 1,
-  "unverified_count": 12
+  "unverified_count": 11
 }

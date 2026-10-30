@@ -1,6 +1,6 @@
 {
   "location_review": {
-    "active_count": 19,
+    "active_count": 18,
     "records": {
       "v-00a08839-2b8a-5782-b6c7-0bdce4cddb2f": {
         "active": false,
@@ -5684,7 +5684,7 @@
         "venue_id": "v-5cbd9588-4bcc-545b-af86-cb47a80b832c"
       },
       "v-5ddc0a4c-1901-5073-946a-674c74a082b8": {
-        "active": true,
+        "active": false,
         "first_seen": "2026-10-16",
         "history": [
           {
@@ -5693,15 +5693,18 @@
               "Reference venue name changed"
             ],
             "status": "unverified"
+          },
+          {
+            "date": "2026-10-30",
+            "reasons": [],
+            "status": "resolved"
           }
         ],
-        "last_checked": "2026-10-18",
+        "last_checked": "2026-10-30",
         "place_name": "Ilfracombe",
         "postcode": "EX34 9QE",
         "pub_name": "Wellington",
-        "reasons": [
-          "Reference venue name changed"
-        ],
+        "reasons": [],
         "reference": {},
         "research": {
           "checked_at": "2026-10-27",
@@ -5739,8 +5742,8 @@
           }
         },
         "source_error": null,
-        "status": "unverified",
-        "unverified": true,
+        "status": "resolved",
+        "unverified": false,
         "venue_id": "v-5ddc0a4c-1901-5073-946a-674c74a082b8"
       },
       "v-5dfb4a42-bdc9-53dd-b394-836d2ede2b49": {
@@ -16702,7 +16705,7 @@
       }
     },
     "schema_version": 1,
-    "unverified_count": 12
+    "unverified_count": 11
   },
   "schema_version": 1,
   "venues": {
@@ -56738,6 +56741,36 @@
         "postcode": "EX34 9QE",
         "pub_name": "Wellington"
       },
+      "location_approvals": [
+        {
+          "checked_at": "2026-10-30",
+          "comment_id": 6511480555,
+          "previous_pin": {
+            "evidence": [
+              {
+                "checked_at": "2026-09-11",
+                "difference_metres": 12.3,
+                "match": "venue_name_and_full_postcode",
+                "reference_coordinate": {
+                  "lat": 51.206656055555555,
+                  "lng": -4.12575065925926
+                },
+                "reference_postcode": "EX34 9QE",
+                "source": "camra",
+                "url": "https://camra.org.uk/pubs/188280"
+              }
+            ],
+            "lat": 51.206656055555555,
+            "lng": -4.12575065925926,
+            "review_reason": "Reference venue name changed",
+            "review_required": true,
+            "source": "openstreetmap-gb-extract"
+          },
+          "review_url": "https://github.com/bristolbagpiper/BassBeerMap/issues/5#issuecomment-6511480555",
+          "reviewed_by": "bristolbagpiper",
+          "source_url": "https://camra.org.uk/pubs/188280"
+        }
+      ],
       "location_research": {
         "checked_at": "2026-10-27",
         "coverage": {
@@ -56778,6 +56811,21 @@
       "verified_pin": {
         "evidence": [
           {
+            "checked_at": "2026-10-30",
+            "match": "owner_confirmed_saved_point_corroborated_by_named_camra_venue",
+            "reference_address": "66-67 High Street",
+            "reference_coordinate": {
+              "lat": 51.2067224,
+              "lng": -4.1256102
+            },
+            "reference_name": "Wellington Arms, Ilfracombe - Town Local",
+            "reference_postcode": "EX34 9QE",
+            "review_url": "https://github.com/bristolbagpiper/BassBeerMap/issues/5#issuecomment-6511480555",
+            "reviewed_by": "bristolbagpiper",
+            "source": "camra",
+            "url": "https://camra.org.uk/pubs/188280"
+          },
+          {
             "checked_at": "2026-09-11",
             "difference_metres": 12.3,
             "match": "venue_name_and_full_postcode",
@@ -56792,8 +56840,6 @@
         ],
         "lat": 51.206656055555555,
         "lng": -4.12575065925926,
-        "review_reason": "Reference venue name changed",
-        "review_required": true,
         "source": "openstreetmap-gb-extract"
       }
     },

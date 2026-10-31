@@ -1,6 +1,6 @@
 {
   "location_review": {
-    "active_count": 7,
+    "active_count": 0,
     "records": {
       "v-00a08839-2b8a-5782-b6c7-0bdce4cddb2f": {
         "active": false,
@@ -1223,7 +1223,7 @@
         "venue_id": "v-13f74f7e-8175-550d-b8b3-ca94a57e5233"
       },
       "v-13ff4a41-2ee6-5385-ae2b-22af01b93cf9": {
-        "active": true,
+        "active": false,
         "first_seen": "2026-10-02",
         "history": [
           {
@@ -1247,18 +1247,34 @@
               "Directory postcode LE10 0AZ conflicts with reference address LE10 0QA"
             ],
             "status": "review_needed"
+          },
+          {
+            "date": "2026-10-31",
+            "reasons": [],
+            "status": "resolved"
           }
         ],
         "last_checked": "2026-10-19",
         "place_name": "Hinckley",
         "postcode": "LE10 0AZ",
         "pub_name": "New Baron",
-        "reasons": [
-          "Directory postcode LE10 0AZ conflicts with reference address LE10 0QA"
-        ],
+        "reasons": [],
         "reference": {
           "field": "postcode",
           "listed": "LE10 0AZ",
+          "owner_review": {
+            "approved_coordinate": {
+              "lat": 52.5411354,
+              "lng": -1.3739948
+            },
+            "checked_at": "2026-10-31",
+            "listed": "LE10 0AZ",
+            "owner_instruction": "Close map review; retain discrepancy for follow-up",
+            "pub_name": "New Baron",
+            "reference": "LE10 0QA",
+            "reviewed_by": "bristolbagpiper",
+            "source_url": "https://camra.org.uk/pubs/181808"
+          },
           "reference": "LE10 0QA",
           "source_url": "https://camra.org.uk/pubs/181808"
         },
@@ -1297,7 +1313,7 @@
           }
         },
         "source_error": null,
-        "status": "review_needed",
+        "status": "resolved",
         "unverified": false,
         "venue_id": "v-13ff4a41-2ee6-5385-ae2b-22af01b93cf9"
       },
@@ -5563,7 +5579,7 @@
         "venue_id": "v-5b19fe32-b19e-5945-9af1-459583a88d2f"
       },
       "v-5b7a8e74-1d57-5edf-a58b-f3445daf1ea1": {
-        "active": true,
+        "active": false,
         "first_seen": "2026-10-02",
         "history": [
           {
@@ -5579,15 +5595,18 @@
               "Trading status needs review: CAMRA reports closed long term from 10 July 2026, while the pub website advertises opening hours; current trading and Bass availability unconfirmed"
             ],
             "status": "review_needed"
+          },
+          {
+            "date": "2026-10-31",
+            "reasons": [],
+            "status": "resolved"
           }
         ],
         "last_checked": "2026-10-30",
         "place_name": "Macclesfield",
         "postcode": "SK11 6DY",
         "pub_name": "Charles Roe",
-        "reasons": [
-          "Trading status needs review: CAMRA reports closed long term from 10 July 2026, while the pub website advertises opening hours; current trading and Bass availability unconfirmed"
-        ],
+        "reasons": [],
         "reference": {
           "field": "postcode",
           "listed": "SK11 6DY",
@@ -5629,7 +5648,7 @@
           }
         },
         "source_error": null,
-        "status": "review_needed",
+        "status": "resolved",
         "trading_status_review": {
           "checked_at": "2026-10-13",
           "evidence": [
@@ -9599,7 +9618,7 @@
         "venue_id": "v-8e1407cf-c80a-5db2-a0dc-6ba84b6cee48"
       },
       "v-8e577f40-1d4f-5d93-a248-eb1f6eb244e4": {
-        "active": true,
+        "active": false,
         "first_seen": "2026-10-20",
         "history": [
           {
@@ -9615,18 +9634,34 @@
               "Directory postcode DE14 3DP conflicts with reference address DE14 3DN"
             ],
             "status": "review_needed"
+          },
+          {
+            "date": "2026-10-31",
+            "reasons": [],
+            "status": "resolved"
           }
         ],
         "last_checked": "2026-10-30",
         "place_name": "Burton U-T: Branston",
         "postcode": "DE14 3DP",
         "pub_name": "Trentside Cricket Club (PMC)",
-        "reasons": [
-          "Directory postcode DE14 3DP conflicts with reference address DE14 3DN"
-        ],
+        "reasons": [],
         "reference": {
           "field": "postcode",
           "listed": "DE14 3DP",
+          "owner_review": {
+            "approved_coordinate": {
+              "lat": 52.7867,
+              "lng": -1.651
+            },
+            "checked_at": "2026-10-31",
+            "listed": "DE14 3DP",
+            "owner_instruction": "Close map review; retain discrepancy for follow-up",
+            "pub_name": "Trentside Cricket Club (PMC)",
+            "reference": "DE14 3DN",
+            "reviewed_by": "bristolbagpiper",
+            "source_url": "https://camra.org.uk/pubs/124106"
+          },
           "reference": "DE14 3DN",
           "source_url": "https://camra.org.uk/pubs/124106"
         },
@@ -9665,7 +9700,7 @@
           }
         },
         "source_error": null,
-        "status": "review_needed",
+        "status": "resolved",
         "unverified": false,
         "venue_id": "v-8e577f40-1d4f-5d93-a248-eb1f6eb244e4"
       },
@@ -10021,7 +10056,7 @@
         "venue_id": "v-9516fb66-53e8-53a8-9bb0-922e7be7580f"
       },
       "v-95a10492-5d95-5fd1-85cd-7a9a58882d81": {
-        "active": true,
+        "active": false,
         "first_seen": "2026-10-21",
         "history": [
           {
@@ -10037,18 +10072,34 @@
               "Directory postcode ST10 2PQ conflicts with reference address ST10 2PZ"
             ],
             "status": "review_needed"
+          },
+          {
+            "date": "2026-10-31",
+            "reasons": [],
+            "status": "resolved"
           }
         ],
         "last_checked": "2026-10-22",
         "place_name": "Dilhorne",
         "postcode": "ST10 2PQ",
         "pub_name": "Charlie Bassetts",
-        "reasons": [
-          "Directory postcode ST10 2PQ conflicts with reference address ST10 2PZ"
-        ],
+        "reasons": [],
         "reference": {
           "field": "postcode",
           "listed": "ST10 2PQ",
+          "owner_review": {
+            "approved_coordinate": {
+              "lat": 52.986997,
+              "lng": -2.046611
+            },
+            "checked_at": "2026-10-31",
+            "listed": "ST10 2PQ",
+            "owner_instruction": "Close map review; retain discrepancy for follow-up",
+            "pub_name": "Charlie Bassetts",
+            "reference": "ST10 2PZ",
+            "reviewed_by": "bristolbagpiper",
+            "source_url": "https://camra.org.uk/pubs/charlie-bassetts-dilhorne-143882"
+          },
           "reference": "ST10 2PZ",
           "source_url": "https://camra.org.uk/pubs/charlie-bassetts-dilhorne-143882"
         },
@@ -10064,7 +10115,7 @@
           }
         },
         "source_error": null,
-        "status": "review_needed",
+        "status": "resolved",
         "unverified": false,
         "venue_id": "v-95a10492-5d95-5fd1-85cd-7a9a58882d81"
       },
@@ -12018,7 +12069,7 @@
         "venue_id": "v-b0c5a0d9-4d33-51d1-b510-32e297b5e595"
       },
       "v-b0c6fb73-49cd-5fdf-b936-ee8fbd0ac4c6": {
-        "active": true,
+        "active": false,
         "first_seen": "2026-10-23",
         "history": [
           {
@@ -12034,18 +12085,34 @@
               "Directory postcode EX34 7BP conflicts with reference address EX34 7FG"
             ],
             "status": "review_needed"
+          },
+          {
+            "date": "2026-10-31",
+            "reasons": [],
+            "status": "resolved"
           }
         ],
         "last_checked": "2026-10-29",
         "place_name": "Woolacombe",
         "postcode": "EX34 7BP",
         "pub_name": "Tides Out",
-        "reasons": [
-          "Directory postcode EX34 7BP conflicts with reference address EX34 7FG"
-        ],
+        "reasons": [],
         "reference": {
           "field": "postcode",
           "listed": "EX34 7BP",
+          "owner_review": {
+            "approved_coordinate": {
+              "lat": 51.172685037242,
+              "lng": -4.2054578186163
+            },
+            "checked_at": "2026-10-31",
+            "listed": "EX34 7BP",
+            "owner_instruction": "Close map review; retain discrepancy for follow-up",
+            "pub_name": "Tides Out",
+            "reference": "EX34 7FG",
+            "reviewed_by": "bristolbagpiper",
+            "source_url": "https://ratings.food.gov.uk/business/178413"
+          },
           "reference": "EX34 7FG",
           "source_url": "https://ratings.food.gov.uk/business/178413"
         },
@@ -12074,7 +12141,7 @@
           }
         },
         "source_error": null,
-        "status": "review_needed",
+        "status": "resolved",
         "unverified": false,
         "venue_id": "v-b0c6fb73-49cd-5fdf-b936-ee8fbd0ac4c6"
       },
@@ -12566,7 +12633,7 @@
         "venue_id": "v-bac691a4-12f5-5bf0-86fc-091c00c95720"
       },
       "v-baef8a0f-c094-5f52-a9c2-3a37df4ca657": {
-        "active": true,
+        "active": false,
         "first_seen": "2026-10-02",
         "history": [
           {
@@ -12575,18 +12642,34 @@
               "Directory postcode ST8 6PH conflicts with reference address ST8 6PW"
             ],
             "status": "review_needed"
+          },
+          {
+            "date": "2026-10-31",
+            "reasons": [],
+            "status": "resolved"
           }
         ],
         "last_checked": "2026-10-19",
         "place_name": "Brown Lees",
         "postcode": "ST8 6PH",
         "pub_name": "Nelson Inn",
-        "reasons": [
-          "Directory postcode ST8 6PH conflicts with reference address ST8 6PW"
-        ],
+        "reasons": [],
         "reference": {
           "field": "postcode",
           "listed": "ST8 6PH",
+          "owner_review": {
+            "approved_coordinate": {
+              "lat": 53.099049,
+              "lng": -2.1834742
+            },
+            "checked_at": "2026-10-31",
+            "listed": "ST8 6PH",
+            "owner_instruction": "Close map review; retain discrepancy for follow-up",
+            "pub_name": "Nelson Inn",
+            "reference": "ST8 6PW",
+            "reviewed_by": "bristolbagpiper",
+            "source_url": "https://camra.org.uk/pubs/143866"
+          },
           "reference": "ST8 6PW",
           "source_url": "https://camra.org.uk/pubs/143866"
         },
@@ -12602,7 +12685,7 @@
           }
         },
         "source_error": null,
-        "status": "review_needed",
+        "status": "resolved",
         "unverified": false,
         "venue_id": "v-baef8a0f-c094-5f52-a9c2-3a37df4ca657"
       },
@@ -16277,7 +16360,7 @@
         "venue_id": "v-f51208c4-412a-5581-9e4d-cc17a72caaac"
       },
       "v-f5205b00-aadb-5928-870d-674117dbffab": {
-        "active": true,
+        "active": false,
         "first_seen": "2026-10-02",
         "history": [
           {
@@ -16316,18 +16399,34 @@
               "Directory postcode B78 3AB conflicts with reference address B78 3AF"
             ],
             "status": "review_needed"
+          },
+          {
+            "date": "2026-10-31",
+            "reasons": [],
+            "status": "resolved"
           }
         ],
         "last_checked": "2026-10-10",
         "place_name": "Hopwas",
         "postcode": "B78 3AB",
         "pub_name": "Tame Otter",
-        "reasons": [
-          "Directory postcode B78 3AB conflicts with reference address B78 3AF"
-        ],
+        "reasons": [],
         "reference": {
           "field": "postcode",
           "listed": "B78 3AB",
+          "owner_review": {
+            "approved_coordinate": {
+              "lat": 52.643088,
+              "lng": -1.736479
+            },
+            "checked_at": "2026-10-31",
+            "listed": "B78 3AB",
+            "owner_instruction": "Close map review; retain discrepancy for follow-up",
+            "pub_name": "Tame Otter",
+            "reference": "B78 3AF",
+            "reviewed_by": "bristolbagpiper",
+            "source_url": "https://camra.org.uk/pubs/131641"
+          },
           "reference": "B78 3AF",
           "source_url": "https://camra.org.uk/pubs/131641"
         },
@@ -16371,7 +16470,7 @@
           }
         },
         "source_error": null,
-        "status": "review_needed",
+        "status": "resolved",
         "unverified": false,
         "venue_id": "v-f5205b00-aadb-5928-870d-674117dbffab"
       },
@@ -26185,6 +26284,19 @@
         "metadata_issue": {
           "field": "postcode",
           "listed": "LE10 0AZ",
+          "owner_review": {
+            "approved_coordinate": {
+              "lat": 52.5411354,
+              "lng": -1.3739948
+            },
+            "checked_at": "2026-10-31",
+            "listed": "LE10 0AZ",
+            "owner_instruction": "Close map review; retain discrepancy for follow-up",
+            "pub_name": "New Baron",
+            "reference": "LE10 0QA",
+            "reviewed_by": "bristolbagpiper",
+            "source_url": "https://camra.org.uk/pubs/181808"
+          },
           "reference": "LE10 0QA",
           "source_url": "https://camra.org.uk/pubs/181808"
         },
@@ -56094,6 +56206,27 @@
       }
     },
     "v-5b7a8e74-1d57-5edf-a58b-f3445daf1ea1": {
+      "acknowledged_trading_review": {
+        "checked_at": "2026-10-31",
+        "owner_instruction": "Close review, keep public closure warning and follow-up discrepancy",
+        "reviewed_by": "bristolbagpiper",
+        "snapshot": {
+          "evidence": [
+            {
+              "claim": "Closed long term from 10 July 2026; listing updated 18 September 2026",
+              "source": "camra",
+              "url": "https://camra.org.uk/pubs/charles-roe-macclesfield-199589"
+            },
+            {
+              "claim": "Website advertises opening hours; website alone does not establish current trading",
+              "source": "operator",
+              "url": "https://www.thecharlesroepub.co.uk/"
+            }
+          ],
+          "reason": "CAMRA reports closed long term from 10 July 2026, while the pub website advertises opening hours; current trading and Bass availability unconfirmed",
+          "status": "needs_review"
+        }
+      },
       "aliases": [
         "charles roe|macclesfield|sk11 6dy"
       ],
@@ -81478,6 +81611,19 @@
         "metadata_issue": {
           "field": "postcode",
           "listed": "DE14 3DP",
+          "owner_review": {
+            "approved_coordinate": {
+              "lat": 52.7867,
+              "lng": -1.651
+            },
+            "checked_at": "2026-10-31",
+            "listed": "DE14 3DP",
+            "owner_instruction": "Close map review; retain discrepancy for follow-up",
+            "pub_name": "Trentside Cricket Club (PMC)",
+            "reference": "DE14 3DN",
+            "reviewed_by": "bristolbagpiper",
+            "source_url": "https://camra.org.uk/pubs/124106"
+          },
           "reference": "DE14 3DN",
           "source_url": "https://camra.org.uk/pubs/124106"
         },
@@ -84723,6 +84869,19 @@
         "metadata_issue": {
           "field": "postcode",
           "listed": "ST10 2PQ",
+          "owner_review": {
+            "approved_coordinate": {
+              "lat": 52.986997,
+              "lng": -2.046611
+            },
+            "checked_at": "2026-10-31",
+            "listed": "ST10 2PQ",
+            "owner_instruction": "Close map review; retain discrepancy for follow-up",
+            "pub_name": "Charlie Bassetts",
+            "reference": "ST10 2PZ",
+            "reviewed_by": "bristolbagpiper",
+            "source_url": "https://camra.org.uk/pubs/charlie-bassetts-dilhorne-143882"
+          },
           "reference": "ST10 2PZ",
           "source_url": "https://camra.org.uk/pubs/charlie-bassetts-dilhorne-143882"
         },
@@ -98748,6 +98907,19 @@
         "metadata_issue": {
           "field": "postcode",
           "listed": "EX34 7BP",
+          "owner_review": {
+            "approved_coordinate": {
+              "lat": 51.172685037242,
+              "lng": -4.2054578186163
+            },
+            "checked_at": "2026-10-31",
+            "listed": "EX34 7BP",
+            "owner_instruction": "Close map review; retain discrepancy for follow-up",
+            "pub_name": "Tides Out",
+            "reference": "EX34 7FG",
+            "reviewed_by": "bristolbagpiper",
+            "source_url": "https://ratings.food.gov.uk/business/178413"
+          },
           "reference": "EX34 7FG",
           "source_url": "https://ratings.food.gov.uk/business/178413"
         },
@@ -102050,6 +102222,19 @@
         "metadata_issue": {
           "field": "postcode",
           "listed": "ST8 6PH",
+          "owner_review": {
+            "approved_coordinate": {
+              "lat": 53.099049,
+              "lng": -2.1834742
+            },
+            "checked_at": "2026-10-31",
+            "listed": "ST8 6PH",
+            "owner_instruction": "Close map review; retain discrepancy for follow-up",
+            "pub_name": "Nelson Inn",
+            "reference": "ST8 6PW",
+            "reviewed_by": "bristolbagpiper",
+            "source_url": "https://camra.org.uk/pubs/143866"
+          },
           "reference": "ST8 6PW",
           "source_url": "https://camra.org.uk/pubs/143866"
         },
@@ -128976,6 +129161,19 @@
         "metadata_issue": {
           "field": "postcode",
           "listed": "B78 3AB",
+          "owner_review": {
+            "approved_coordinate": {
+              "lat": 52.643088,
+              "lng": -1.736479
+            },
+            "checked_at": "2026-10-31",
+            "listed": "B78 3AB",
+            "owner_instruction": "Close map review; retain discrepancy for follow-up",
+            "pub_name": "Tame Otter",
+            "reference": "B78 3AF",
+            "reviewed_by": "bristolbagpiper",
+            "source_url": "https://camra.org.uk/pubs/131641"
+          },
           "reference": "B78 3AF",
           "source_url": "https://camra.org.uk/pubs/131641"
         },

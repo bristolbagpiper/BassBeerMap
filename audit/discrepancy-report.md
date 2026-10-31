@@ -57,7 +57,7 @@ Updated: 31 October 2026. This report records disagreements between sources; it 
 - **Supporting evidence for DE14 3DP:** [Staffordshire County Cricket Club's ground list](https://staffordshireccc.co.uk/about/grounds/) and the [Food Standards Agency record](https://ratings.food.gov.uk/business/1248081/trentside-cricket-club-branston) use DE14 3DP.
 - **CAMRA postcode:** [CAMRA](https://camra.org.uk/pubs/trentside-cricket-club-burton-upon-trent-124106) lists 82 Burton Road, DE14 3DN.
 - **Map location:** 52.7867, -1.651, accepted by the map owner on 29 October 2026. The FSA geocode is about 224 m away and may be approximate; it has not replaced the reviewed point.
-- **Status:** The map retains DE14 3DP and the owner-reviewed point. The address discrepancy remains open for confirmation from the club or CAMRA.
+- **Status:** The map owner confirmed the map is correct on 31 October 2026; it retains DE14 3DP and the previously reviewed point. CAMRA's different postcode remains recorded for follow-up with the club or CAMRA.
 - **Suggested follow-up to CAMRA or the club:** Please check Trentside Cricket Club's postcode: the directory, Staffordshire County Cricket Club and the FSA give DE14 3DP, while CAMRA gives 82 Burton Road, DE14 3DN. Can you confirm the correct address and update the relevant listing if necessary?
 
 ## Trading status awaiting confirmation

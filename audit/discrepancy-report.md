@@ -60,12 +60,7 @@ Updated: 31 October 2026. This report records disagreements between sources; it 
 - **Status:** The map retains DE14 3DP and the owner-reviewed point. The address discrepancy remains open for confirmation from the club or CAMRA.
 - **Suggested follow-up to CAMRA or the club:** Please check Trentside Cricket Club's postcode: the directory, Staffordshire County Cricket Club and the FSA give DE14 3DP, while CAMRA gives 82 Burton Road, DE14 3DN. Can you confirm the correct address and update the relevant listing if necessary?
 
-## Other discrepancies awaiting review
-
-These entries are leads from the review queue, not confirmed corrections. Check the underlying evidence and the venue before forwarding a correction.
-
-| Venue | Bass directory postcode | Reference postcode | Issue |
-| --- | --- | --- | --- |
+## Trading status awaiting confirmation
 
 Charles Roe in Macclesfield also remains open in the review queue for uncertain trading status. Its map listing carries a notice that CAMRA reports it closed and Bass availability is unconfirmed.
 

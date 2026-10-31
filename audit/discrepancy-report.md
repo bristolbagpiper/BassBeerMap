@@ -1,6 +1,6 @@
 # Bass Beer Map: discrepancies for follow-up
 
-Updated: 30 October 2026. This report records disagreements between sources; it does not itself change the National Bass Directory or CAMRA. The [live review queue](https://github.com/bristolbagpiper/BassBeerMap/issues/5) is the current operational list.
+Updated: 31 October 2026. This report records disagreements between sources; it does not itself change the National Bass Directory or CAMRA. The [live review queue](https://github.com/bristolbagpiper/BassBeerMap/issues/5) is the current operational list.
 
 ## Charlie Bassetts, Dilhorne — postcode
 
@@ -40,15 +40,16 @@ Updated: 30 October 2026. This report records disagreements between sources; it 
 - **Status:** The map displays B78 3AF; the source directory value is retained for provenance. The National Bass Directory has not been changed.
 - **Suggested follow-up to the National Bass Directory:** Please check Tame Otter, Lichfield Road, Hopwas. The directory lists B78 3AB; the pub operator, CAMRA and FSA list B78 3AF. Please update the directory if confirmed.
 
-## Tides Out, Woolacombe — name and postcode
+## Tides Out, Woolacombe — postcode
 
 - **Bass directory:** Tides Out, Beach Road, Woolacombe, EX34 7BP (October 2026 PDF, page 4).
-- **Tides Out website:** The [sports bar's website](https://www.tidesoutwoolacombe.co.uk/) gives Beach Road, EX34 7FG and telephone 07961 294080.
-- **Tides Inn website:** The [Tides Inn website](https://tidesinnwoolacombe.co.uk/) gives Beach Road, EX34 7BP and the same phone number. [CAMRA](https://camra.org.uk/index.php/pubs/tides-inn-woolacombe-188466) lists the Tides Inn at EX34 7BP. The shared phone suggests a connection but does not establish whether the two names describe the same bar or precise entrance.
-- **Map location:** 51.172685037242, -4.2054578186163. The map owner previously confirmed the point as close enough for Tides Inn; that confirmation alone does not establish that the point marks Tides Out specifically.
-- **Food Standards Agency evidence:** The [Tides Inn record](https://ratings.food.gov.uk/business/178413) identifies the premises as The Tidesout and gives EX34 7FG. The sources disagree, so do not infer the correct postcode from one record alone.
-- **Status:** Unresolved. The map still displays the directory postcode and the previously reviewed location. Establish whether Tides Out and the Tides Inn are the same venue or distinct parts of the premises, and confirm Tides Out's correct postcode and Bass availability.
-- **Suggested follow-up to the pub:** Is Tides Out a separate bar from the Tides Inn? Which postcode and entrance should visitors use for Tides Out, and is draught Bass available there?
+- **Venue identity:** On 31 October 2026 the map owner clarified that Tides Out is the pub and the adjoining restaurant is called the Tides Inn. The map retains the directory name Tides Out.
+- **Tides Out website:** The [pub's website](https://www.tidesoutwoolacombe.co.uk/) gives Beach Road, EX34 7FG.
+- **Tides Inn website:** The adjoining [restaurant's website](https://tidesinnwoolacombe.co.uk/) gives Beach Road, EX34 7BP. [CAMRA](https://camra.org.uk/index.php/pubs/tides-inn-woolacombe-188466) also lists Tides Inn at EX34 7BP.
+- **Map location:** 51.172685037242, -4.2054578186163. The map owner previously accepted this point as close enough for Tides Inn; the location has not been changed.
+- **Food Standards Agency evidence:** The [Tides Inn record](https://ratings.food.gov.uk/business/178413) identifies the premises as The Tidesout and gives EX34 7FG.
+- **Status:** Venue identity clarified by the map owner. The postcode discrepancy remains open: the map displays the directory's EX34 7BP, while Tides Out's website gives EX34 7FG. Current Bass availability is unconfirmed.
+- **Suggested follow-up to the pub:** Which postcode and entrance should visitors use for Tides Out, and is draught Bass available there?
 
 ## Other discrepancies awaiting review
 

@@ -8,7 +8,7 @@ on:
   workflow_dispatch:
   push:
     branches: [main]
-    paths: ['.github/workflows/location-alerts.yml', 'notify_location_review.py', 'location_review.py']
+    paths: ['.github/workflows/location-alerts.yml', 'notify_location_review.py', 'location_review.py', 'apply_closed_reviews.py', 'audit/closed-review-decisions.json']
 
 permissions:
   contents: write
@@ -31,6 +31,17 @@ jobs:
       - uses: actions/setup-python@v5
         with:
           python-version: '3.13'
+      - name: Apply matching owner review decisions
+        run: |
+          python apply_closed_reviews.py
+          python validate_directory_release.py --allow-expired-evidence
+          git add pubs.csv directory-meta.json pub-coordinates.json venue-coordinates.json coordinate-verification.json venue-registry.json directory-release.json location-review.json
+          if ! git diff --cached --quiet; then
+            git config user.name 'github-actions[bot]'
+            git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+            git commit -m 'Record completed owner reviews'
+            git push
+          fi
       - name: Validate the location register
         run: python validate_directory_release.py --allow-expired-evidence
       - name: Write the complete review queue
@@ -46,13 +57,11 @@ jobs:
             const failed = source && ['failure', 'timed_out', 'action_required'].includes(source.conclusion);
             const fullBody = (failed ? `Import or audit failed: ${source.html_url}\n\n` : '') + fs.readFileSync('location-review-report.md', 'utf8');
             const body = fullBody.length > 60000 ? fullBody.slice(0, 58000) + '\n\nReport shortened for GitHub. Full audit: https://github.com/bristolbagpiper/BassBeerMap/blob/main/audit/full-location-audit.md' : fullBody;
-            const issues = await github.paginate(github.rest.issues.listForRepo, {...context.repo, state:'open', per_page:100});
-            const existing = issues.find(i => !i.pull_request && i.title === title);
+            const existing = (await github.rest.issues.get({...context.repo, issue_number:5})).data;
             if (report.active_count || failed) {
-              if (!existing) await github.rest.issues.create({...context.repo, title, body});
-              else if (existing.body !== body) await github.rest.issues.update({...context.repo, issue_number:existing.number, body});
-            } else if (existing) {
-              await github.rest.issues.update({...context.repo, issue_number:existing.number, state:'closed', state_reason:'completed'});
+              if (existing.state !== 'open' || existing.body !== body) await github.rest.issues.update({...context.repo, issue_number:existing.number, state:'open', body});
+            } else if (existing.state !== 'closed' || existing.body !== body) {
+              await github.rest.issues.update({...context.repo, issue_number:existing.number, body, state:'closed', state_reason:'completed'});
             }
       - name: Email changed unverified locations and failed checks
         env:
@@ -104,3 +113,4 @@ jobs:
             for (const issue of issues.filter(i => i.title === 'BassBeerMap location notification failed')) {
               await github.rest.issues.update({...context.repo, issue_number:issue.number, state:'closed', state_reason:'completed'});
             }
+

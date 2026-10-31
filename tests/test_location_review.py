@@ -140,3 +140,35 @@ class LocationTrackingTests(unittest.TestCase):
         self.assertEqual(resolved['active_count'], 0)
         self.assertEqual(resolved['records'][identifier]['status'], 'resolved')
         self.assertNotEqual(fingerprint(report), fingerprint(resolved))
+
+    def test_closed_review_is_scoped_to_current_point_and_postcodes(self):
+        from apply_closed_reviews import apply_decisions
+        listing, registry, identifier = self.fixture()
+        entry = registry['venues'][identifier]
+        entry['verified_pin'] = pin()
+        entry['verified_pin']['metadata_issue'] = dict(listed=listing['postcode'], reference='BS1 1AB', source_url='https://camra.org.uk/pubs/123')
+        decision = dict(venue_id=identifier, pub_name=listing['pub_name'], listed=listing['postcode'],
+                        reference='BS1 1AB', source_url='https://camra.org.uk/pubs/123',
+                        approved_coordinate={'lat':51.45, 'lng':-2.59}, checked_at='2026-10-31',
+                        reviewed_by='bristolbagpiper', owner_instruction='close review')
+        self.assertTrue(apply_decisions(registry, {'postcode_reviews': [decision]}))
+        self.assertEqual(build_review([listing], registry, build_ledger([listing], registry))['active_count'], 0)
+        self.assertFalse(apply_decisions(registry, {'postcode_reviews': [decision]}))
+        entry['verified_pin']['metadata_issue']['reference'] = 'BS1 1AC'
+        self.assertFalse(apply_decisions(registry, {'postcode_reviews': [decision]}))
+        self.assertEqual(build_review([listing], registry, build_ledger([listing], registry))['active_count'], 1)
+
+    def test_trading_acknowledgement_reopens_when_evidence_changes(self):
+        from apply_closed_reviews import apply_decisions
+        listing, registry, identifier = self.fixture()
+        entry = registry['venues'][identifier]
+        entry['verified_pin'] = pin()
+        entry['trading_status_review'] = dict(status='needs_review', reason='conflicting information', evidence=[])
+        decision = {'venue_id': identifier, 'snapshot': copy.deepcopy(entry['trading_status_review']),
+                    'reviewed_by': 'bristolbagpiper', 'checked_at': '2026-10-31'}
+        self.assertTrue(apply_decisions(registry, {'trading_reviews': [decision]}))
+        self.assertEqual(build_review([listing], registry, build_ledger([listing], registry))['active_count'], 0)
+        entry['trading_status_review']['reason'] = 'new conflicting information'
+        self.assertFalse(apply_decisions(registry, {'trading_reviews': [decision]}))
+        self.assertEqual(build_review([listing], registry, build_ledger([listing], registry))['active_count'], 1)
+

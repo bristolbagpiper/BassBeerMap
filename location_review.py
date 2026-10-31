@@ -50,7 +50,9 @@ def build_review(rows, registry, ledger):
             if independent.get('status') == 'unavailable':
                 reasons.append('Independent FSA comparison unavailable; last accepted pin retained')
         trading = entry.get('trading_status_review') or {}
-        if trading.get('status') == 'needs_review':
+        trading_snapshot = {key: trading.get(key) for key in ('status', 'reason', 'evidence')}
+        acknowledged = entry.get('acknowledged_trading_review') or {}
+        if trading.get('status') == 'needs_review' and acknowledged.get('snapshot') != trading_snapshot:
             reasons.append('Trading status needs review: ' + trading.get('reason', 'conflicting opening or closure information'))
         active = bool(reasons)
         if not active and identifier not in records:
@@ -132,3 +134,4 @@ def format_report(report):
               'Full history: https://github.com/bristolbagpiper/BassBeerMap/blob/main/location-review.json',
               'Full independent audit: https://github.com/bristolbagpiper/BassBeerMap/blob/main/audit/full-location-audit.md']
     return '\n'.join(lines)
+

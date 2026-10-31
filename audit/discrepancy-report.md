@@ -1,6 +1,6 @@
 # Bass Beer Map: discrepancies for follow-up
 
-Updated: 31 October 2026. This report records disagreements between sources; it does not itself change the National Bass Directory or CAMRA. The [live review queue](https://github.com/bristolbagpiper/BassBeerMap/issues/5) is the current operational list.
+Updated: 31 October 2026. The map owner has closed the current map reviews; the source discrepancies below remain recorded for follow-up. This report does not itself change the National Bass Directory or CAMRA. The [review queue](https://github.com/bristolbagpiper/BassBeerMap/issues/5) tracks new or changed issues.
 
 ## Charlie Bassetts, Dilhorne — postcode
 
@@ -63,6 +63,7 @@ Updated: 31 October 2026. This report records disagreements between sources; it 
 ## Trading status awaiting confirmation
 
 Charles Roe in Macclesfield also remains open in the review queue for uncertain trading status. Its map listing carries a notice that CAMRA reports it closed and Bass availability is unconfirmed.
+
 
 
 

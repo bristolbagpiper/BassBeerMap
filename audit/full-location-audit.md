@@ -3,21 +3,21 @@
 Locations: 1044
 
 Actionable findings: 6
-Locations with informational observations: 602 (may also have an actionable finding)
+Locations with informational observations: 603 (may also have an actionable finding)
 
 ## Results
 
-- coordinate_disagreement: 246
-- coordinate_agreement: 455
+- coordinate_disagreement: 247
+- coordinate_agreement: 454
 - nearby: 103
 - no_name_match: 178
 - ambiguous_or_missing_coordinates: 62
 
 ## Confidence
 
-- owner_reviewed: 114
-- independent_coordinate_agreement: 417
-- existing_evidence_needs_corroboration: 513
+- owner_reviewed: 122
+- independent_coordinate_agreement: 415
+- existing_evidence_needs_corroboration: 507
 
 ## Limits
 
@@ -629,6 +629,7 @@ Locations with informational observations: 602 (may also have an actionable find
 | Ye Old Elm Tree | Durham | DH1 4PS | no_name_match | Informational | FSA comparison is inconclusive; absence of a match does not contradict accepted evidence |
 | Ye Olde Butchers Arms | Reapsmoor | SK17 0LL | no_name_match | Informational | FSA comparison is inconclusive; absence of a match does not contradict accepted evidence |
 | Ye Olde Dolphin Inne | Derby: Central | DE1 3DL | no_name_match | Informational | FSA comparison is inconclusive; absence of a match does not contradict accepted evidence |
+| Ye Olde Manor Inn | Stoke: Fenton | ST4 2PT | coordinate_disagreement | Informational | FSA coordinate is 86.2m from the accepted pin; informational only because the FSA geocode may be approximate |
 | Ye Olde Rock | Upper Hulme | ST13 8TY | coordinate_disagreement | Informational | FSA coordinate is 53.9m from the accepted pin; informational only because the FSA geocode may be approximate |
 | Ye Olde Talbot | Uttoxeter | ST14 8HF | no_name_match | Informational | FSA comparison is inconclusive; absence of a match does not contradict accepted evidence |
 | Ye Olde Watling | St Pauls | EC4M 9BR | nearby | Informational | FSA coordinate is 25-50m away; informational only |

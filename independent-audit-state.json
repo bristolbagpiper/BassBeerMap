@@ -3273,46 +3273,48 @@
     },
     "v-1259d276-decd-56b7-8b71-12dfc9a13efd": {
       "actionable": false,
-      "checked_at": "2026-10-12",
+      "checked_at": "2026-10-31",
       "comparisons": [
         {
           "address": "13a Manor Street, Fenton, Stoke-On-Trent",
-          "difference_metres": 0.0,
+          "difference_metres": 86.2,
           "lat": 53.000666,
           "lng": -2.164729,
           "name": "Ye Olde Manor Inne",
           "postcode": "ST4 2PT",
           "queried_postcode": "ST4 2PT",
-          "status": "coordinate_agreement",
+          "status": "coordinate_disagreement",
           "url": "https://ratings.food.gov.uk/business/911404"
         }
       ],
-      "confidence": "independent_coordinate_agreement",
+      "confidence": "owner_reviewed",
       "independent_of_pin": true,
       "listing": {
         "postcode": "ST4 2PT",
         "pub_name": "Ye Olde Manor Inn"
       },
-      "owner_reviewed": false,
+      "owner_reviewed": true,
       "pin": {
-        "lat": 53.000666,
-        "lng": -2.164729
+        "lat": 52.9998948,
+        "lng": -2.1648569
       },
-      "priority": 3,
+      "priority": 2,
       "reasons": [],
       "reference": {
         "address": "13a Manor Street, Fenton, Stoke-On-Trent",
-        "difference_metres": 0.0,
+        "difference_metres": 86.2,
         "lat": 53.000666,
         "lng": -2.164729,
         "name": "Ye Olde Manor Inne",
         "postcode": "ST4 2PT",
         "queried_postcode": "ST4 2PT",
-        "status": "coordinate_agreement",
+        "status": "coordinate_disagreement",
         "url": "https://ratings.food.gov.uk/business/911404"
       },
-      "status": "coordinate_agreement",
-      "warnings": []
+      "status": "coordinate_disagreement",
+      "warnings": [
+        "FSA coordinate is 86.2m from the accepted pin; informational only because the FSA geocode may be approximate"
+      ]
     },
     "v-126daf8a-4846-5d52-8a19-8f91497a3e88": {
       "actionable": false,
@@ -7393,13 +7395,13 @@
           "url": "https://ratings.food.gov.uk/business/1259584"
         }
       ],
-      "confidence": "independent_coordinate_agreement",
+      "confidence": "owner_reviewed",
       "independent_of_pin": true,
       "listing": {
         "postcode": "ST10 3HL",
         "pub_name": "Ye Olde Crown Hotel"
       },
-      "owner_reviewed": false,
+      "owner_reviewed": true,
       "pin": {
         "lat": 53.0490531921387,
         "lng": -1.87625002861023
@@ -15674,13 +15676,13 @@
           "status": "ambiguous_or_missing_coordinates"
         }
       ],
-      "confidence": "existing_evidence_needs_corroboration",
+      "confidence": "owner_reviewed",
       "independent_of_pin": true,
       "listing": {
         "postcode": "WS15 4NF",
         "pub_name": "Ye Olde Windmill"
       },
-      "owner_reviewed": false,
+      "owner_reviewed": true,
       "pin": {
         "lat": 52.704137389829,
         "lng": -1.925503116567
@@ -20746,13 +20748,13 @@
           "status": "no_name_match"
         }
       ],
-      "confidence": "existing_evidence_needs_corroboration",
+      "confidence": "owner_reviewed",
       "independent_of_pin": true,
       "listing": {
         "postcode": "DE1 3DL",
         "pub_name": "Ye Olde Dolphin Inne"
       },
-      "owner_reviewed": false,
+      "owner_reviewed": true,
       "pin": {
         "lat": 52.92527998181818,
         "lng": -1.4777686090909092
@@ -22366,13 +22368,13 @@
           "url": "https://ratings.food.gov.uk/business/294261"
         }
       ],
-      "confidence": "existing_evidence_needs_corroboration",
+      "confidence": "owner_reviewed",
       "independent_of_pin": true,
       "listing": {
         "postcode": "EC4M 9BR",
         "pub_name": "Ye Olde Watling"
       },
-      "owner_reviewed": false,
+      "owner_reviewed": true,
       "pin": {
         "lat": 51.51290628,
         "lng": -0.0935724
@@ -25729,13 +25731,13 @@
           "status": "no_name_match"
         }
       ],
-      "confidence": "existing_evidence_needs_corroboration",
+      "confidence": "owner_reviewed",
       "independent_of_pin": true,
       "listing": {
         "postcode": "SA38 9BG",
         "pub_name": "Y Sgwâr (was Ivy Bush)"
       },
-      "owner_reviewed": false,
+      "owner_reviewed": true,
       "pin": {
         "lat": 52.037091,
         "lng": -4.469749
@@ -29154,13 +29156,13 @@
           "status": "no_name_match"
         }
       ],
-      "confidence": "existing_evidence_needs_corroboration",
+      "confidence": "owner_reviewed",
       "independent_of_pin": true,
       "listing": {
         "postcode": "DH1 4PS",
         "pub_name": "Ye Old Elm Tree"
       },
-      "owner_reviewed": false,
+      "owner_reviewed": true,
       "pin": {
         "lat": 54.775832,
         "lng": -1.5815745
@@ -38417,7 +38419,7 @@
     },
     "v-e0384b05-0761-5511-ad08-8bef2af3049c": {
       "actionable": false,
-      "checked_at": "2026-10-09",
+      "checked_at": "2026-10-31",
       "comparisons": [
         {
           "address": "31 High Street, , Wolviston",
@@ -38462,7 +38464,7 @@
     },
     "v-e04311ec-88d7-51a3-8fbd-9a2d667025ca": {
       "actionable": false,
-      "checked_at": "2026-10-09",
+      "checked_at": "2026-10-31",
       "comparisons": [
         {
           "address": "1 Pembroke Road, Norwich",
@@ -38542,7 +38544,7 @@
     },
     "v-e09e5f24-dcda-5107-9408-6e0f75b68f11": {
       "actionable": false,
-      "checked_at": "2026-10-09",
+      "checked_at": "2026-10-31",
       "comparisons": [
         {
           "address": "The Whitestone, Meadowside, , Nuneaton",
@@ -38585,7 +38587,7 @@
     },
     "v-e134de4c-f72e-5e95-b15b-76b3d65b224a": {
       "actionable": false,
-      "checked_at": "2026-10-09",
+      "checked_at": "2026-10-31",
       "comparisons": [
         {
           "name_matches": 0,
@@ -38620,7 +38622,7 @@
     },
     "v-e146d618-c9ba-5fa4-8427-d3a81da5ea85": {
       "actionable": false,
-      "checked_at": "2026-10-09",
+      "checked_at": "2026-10-31",
       "comparisons": [
         {
           "address": "RED LION 3 BURTON ROAD, REPTON, DERBY",
@@ -38663,7 +38665,7 @@
     },
     "v-e1529c31-a528-53b2-a01e-e18c1fb2a58e": {
       "actionable": false,
-      "checked_at": "2026-10-09",
+      "checked_at": "2026-10-31",
       "comparisons": [
         {
           "name_matches": 0,
@@ -38698,7 +38700,7 @@
     },
     "v-e1ce989b-4625-5d8d-93a9-1c92fad41e6a": {
       "actionable": false,
-      "checked_at": "2026-10-09",
+      "checked_at": "2026-10-31",
       "comparisons": [
         {
           "address": "31-32 DEAN STREET, , LONDON",
@@ -38741,7 +38743,7 @@
     },
     "v-e1f5511f-cbbb-556a-ae99-ee2609c8de6c": {
       "actionable": false,
-      "checked_at": "2026-10-09",
+      "checked_at": "2026-10-31",
       "comparisons": [
         {
           "address": "THE MINERS ARMS GEORGE STREET, CHURCH GRESLEY, SWADLINCOTE",
@@ -38784,7 +38786,7 @@
     },
     "v-e21d11b7-711d-5b02-81c5-e791289e6d39": {
       "actionable": false,
-      "checked_at": "2026-10-09",
+      "checked_at": "2026-10-31",
       "comparisons": [
         {
           "address": "The Green, Caverswall, Stoke-On-Trent",
@@ -38829,7 +38831,7 @@
     },
     "v-e27927a2-937a-5a15-bd14-200b5d039498": {
       "actionable": false,
-      "checked_at": "2026-10-09",
+      "checked_at": "2026-10-31",
       "comparisons": [
         {
           "address": "Main Road Pentrich Ripley Derbyshire",
@@ -38874,7 +38876,7 @@
     },
     "v-e35fcbdb-afcc-5ba3-ad05-cec8a8eced3f": {
       "actionable": false,
-      "checked_at": "2026-10-09",
+      "checked_at": "2026-10-31",
       "comparisons": [
         {
           "name_matches": 0,
@@ -38909,7 +38911,7 @@
     },
     "v-e460c7f8-200d-5f04-9b30-42d13d7da123": {
       "actionable": false,
-      "checked_at": "2026-10-09",
+      "checked_at": "2026-10-31",
       "comparisons": [
         {
           "address": "Prince Of Wales, 95 Ecclesall Road South, Sheffield",
@@ -38954,7 +38956,7 @@
     },
     "v-e47f59cf-447a-50fc-b24d-67f8b13b54a4": {
       "actionable": false,
-      "checked_at": "2026-10-09",
+      "checked_at": "2026-10-31",
       "comparisons": [
         {
           "address": "19 Green End, , Whitchurch, Shropshire",
@@ -38997,7 +38999,7 @@
     },
     "v-e4c27846-67c7-53b3-a224-aa715a6a73f9": {
       "actionable": false,
-      "checked_at": "2026-10-09",
+      "checked_at": "2026-10-31",
       "comparisons": [
         {
           "address": "Mansfield Road, , Breadsall",
@@ -39042,7 +39044,7 @@
     },
     "v-e4c45694-71bb-5b2e-8133-15e62890f98b": {
       "actionable": false,
-      "checked_at": "2026-10-09",
+      "checked_at": "2026-10-31",
       "comparisons": [
         {
           "name_matches": 0,
@@ -39077,7 +39079,7 @@
     },
     "v-e4f4c1f2-4300-5212-be6a-f7a73e821187": {
       "actionable": false,
-      "checked_at": "2026-10-09",
+      "checked_at": "2026-10-31",
       "comparisons": [
         {
           "address": "The Cinque Ports 49 High Street, , Seaford, East Sussex",
@@ -39162,7 +39164,7 @@
     },
     "v-e5e26c8d-c7bc-5424-81ba-32a0b892b3eb": {
       "actionable": false,
-      "checked_at": "2026-10-09",
+      "checked_at": "2026-10-31",
       "comparisons": [
         {
           "name_matches": 1,
@@ -39197,7 +39199,7 @@
     },
     "v-e5e5f85f-93de-512e-8fd6-11d2a72c10d3": {
       "actionable": false,
-      "checked_at": "2026-10-09",
+      "checked_at": "2026-10-31",
       "comparisons": [
         {
           "address": "Black Lion Inn, 3 Main Street, Blackfordby, Swadlincote",
@@ -39242,7 +39244,7 @@
     },
     "v-e5f76eb5-7724-5a20-9332-98a295f50c7c": {
       "actionable": false,
-      "checked_at": "2026-10-09",
+      "checked_at": "2026-10-31",
       "comparisons": [
         {
           "name_matches": 1,
@@ -39277,7 +39279,7 @@
     },
     "v-e5f92e78-749b-524c-b4d7-5d92abab2099": {
       "actionable": false,
-      "checked_at": "2026-10-09",
+      "checked_at": "2026-10-31",
       "comparisons": [
         {
           "address": "The Plough Inn, Main Street, Bruntingthorpe, Lutterworth",
@@ -39322,7 +39324,7 @@
     },
     "v-e615f8dc-310d-5594-8b9c-dd63c30bb7b3": {
       "actionable": false,
-      "checked_at": "2026-10-09",
+      "checked_at": "2026-10-31",
       "comparisons": [
         {
           "name_matches": 1,
@@ -39357,7 +39359,7 @@
     },
     "v-e6679625-95b2-50be-92e0-187d41170ed6": {
       "actionable": false,
-      "checked_at": "2026-10-09",
+      "checked_at": "2026-10-31",
       "comparisons": [
         {
           "name_matches": 1,
@@ -39392,7 +39394,7 @@
     },
     "v-e68ede49-f87d-5c23-ba09-269eafa95b85": {
       "actionable": false,
-      "checked_at": "2026-10-09",
+      "checked_at": "2026-10-31",
       "comparisons": [
         {
           "name_matches": 0,
@@ -39427,7 +39429,7 @@
     },
     "v-e70663f9-4841-5eb5-8426-1b7e902d06c4": {
       "actionable": false,
-      "checked_at": "2026-10-09",
+      "checked_at": "2026-10-31",
       "comparisons": [
         {
           "name_matches": 0,
@@ -39462,7 +39464,7 @@
     },
     "v-e75db084-5f0c-5888-bed2-3c4146bcfaef": {
       "actionable": false,
-      "checked_at": "2026-10-09",
+      "checked_at": "2026-10-31",
       "comparisons": [
         {
           "address": "The Bricklayers Arms, 16-18 High Town Road, , Luton",
@@ -39505,7 +39507,7 @@
     },
     "v-e799550e-04a8-5b7c-8f01-2e24ea9b0374": {
       "actionable": false,
-      "checked_at": "2026-10-09",
+      "checked_at": "2026-10-31",
       "comparisons": [
         {
           "address": "6 Pound Street, Plymouth, Devon",
@@ -39548,7 +39550,7 @@
     },
     "v-e7af2655-33ef-50e0-beb2-9f67fcbfb565": {
       "actionable": false,
-      "checked_at": "2026-10-09",
+      "checked_at": "2026-10-31",
       "comparisons": [
         {
           "name_matches": 0,
@@ -39583,7 +39585,7 @@
     },
     "v-e7bad941-21fe-54ea-ac10-8e31c62bd593": {
       "actionable": false,
-      "checked_at": "2026-10-09",
+      "checked_at": "2026-10-31",
       "comparisons": [
         {
           "name_matches": 0,
@@ -39618,7 +39620,7 @@
     },
     "v-e7d4f9c3-ee63-596f-9098-c62fde1d69d2": {
       "actionable": false,
-      "checked_at": "2026-10-09",
+      "checked_at": "2026-10-31",
       "comparisons": [
         {
           "address": "46 St Marys Gate, , Nottingham",
@@ -39661,7 +39663,7 @@
     },
     "v-e7f9b89d-37f0-5216-a99b-54be85ad70f5": {
       "actionable": false,
-      "checked_at": "2026-10-09",
+      "checked_at": "2026-10-31",
       "comparisons": [
         {
           "address": "Anglesey Arms, The Green, Stretton, Burton upon Trent",
@@ -39706,7 +39708,7 @@
     },
     "v-e81d21cc-04bb-56f0-9987-0d081b8c6d47": {
       "actionable": false,
-      "checked_at": "2026-10-09",
+      "checked_at": "2026-10-31",
       "comparisons": [
         {
           "name_matches": 0,
@@ -39741,7 +39743,7 @@
     },
     "v-e8284c87-dd05-565a-8112-3742ea66b55e": {
       "actionable": false,
-      "checked_at": "2026-10-09",
+      "checked_at": "2026-10-31",
       "comparisons": [
         {
           "address": "21 Cleveland Street, Chorley",
@@ -39786,7 +39788,7 @@
     },
     "v-e897ef78-09c1-5f86-a813-d6050bc043bc": {
       "actionable": false,
-      "checked_at": "2026-10-09",
+      "checked_at": "2026-10-31",
       "comparisons": [
         {
           "address": "Five Bells, 17 High Street, , Bassingham",
@@ -39831,7 +39833,7 @@
     },
     "v-e8a2925c-001e-5327-a06c-3fb2aebeaccc": {
       "actionable": false,
-      "checked_at": "2026-10-09",
+      "checked_at": "2026-10-31",
       "comparisons": [
         {
           "name_matches": 1,
@@ -39866,7 +39868,7 @@
     },
     "v-e8dac826-c3c9-5615-8b07-36f9f17c8f30": {
       "actionable": false,
-      "checked_at": "2026-10-09",
+      "checked_at": "2026-10-31",
       "comparisons": [
         {
           "name_matches": 0,
@@ -39901,7 +39903,7 @@
     },
     "v-e8e25192-5139-58e7-b524-43583399d8f6": {
       "actionable": false,
-      "checked_at": "2026-10-09",
+      "checked_at": "2026-10-31",
       "comparisons": [
         {
           "name_matches": 0,
@@ -39936,7 +39938,7 @@
     },
     "v-e9047638-573d-53df-994a-6bd287f5236c": {
       "actionable": false,
-      "checked_at": "2026-10-09",
+      "checked_at": "2026-10-31",
       "comparisons": [
         {
           "address": "38 Westgate, Lincoln, Lincolnshire",
@@ -39979,7 +39981,7 @@
     },
     "v-e939bbc5-104d-5967-bb40-cf7029349c8b": {
       "actionable": false,
-      "checked_at": "2026-10-09",
+      "checked_at": "2026-10-31",
       "comparisons": [
         {
           "address": "36 St John Street, Ashbourne, Derbyshire",
@@ -40022,7 +40024,7 @@
     },
     "v-ea5559e6-e599-531a-9723-9c3975c92ee9": {
       "actionable": false,
-      "checked_at": "2026-10-09",
+      "checked_at": "2026-10-31",
       "comparisons": [
         {
           "address": "Tagg Lane, Hurdlow, Derbyshire",
@@ -40067,7 +40069,7 @@
     },
     "v-ea7e9bda-4f8c-5c2a-95d8-184ad5ec92ab": {
       "actionable": false,
-      "checked_at": "2026-10-09",
+      "checked_at": "2026-10-31",
       "comparisons": [
         {
           "address": "British Oak, 1364 Pershore Road, Bournville, Birmingham",
@@ -40155,7 +40157,7 @@
     },
     "v-eb425970-07fc-52d0-995d-c0d13a473973": {
       "actionable": false,
-      "checked_at": "2026-10-09",
+      "checked_at": "2026-10-31",
       "comparisons": [
         {
           "address": "Church Street, Kingsbridge",
@@ -40198,7 +40200,7 @@
     },
     "v-eb5b7af9-8129-5b24-a189-76342f7025ca": {
       "actionable": false,
-      "checked_at": "2026-10-09",
+      "checked_at": "2026-10-31",
       "comparisons": [
         {
           "address": "THREE BREWERS PRIORY STREET, , CORSHAM",
@@ -40241,7 +40243,7 @@
     },
     "v-eb84582d-6912-5e35-a98f-218e19f01eaf": {
       "actionable": false,
-      "checked_at": "2026-10-09",
+      "checked_at": "2026-10-31",
       "comparisons": [
         {
           "name_matches": 1,
@@ -40276,7 +40278,7 @@
     },
     "v-ebb90635-2994-5b7a-a7bf-a6491ca45a75": {
       "actionable": false,
-      "checked_at": "2026-10-09",
+      "checked_at": "2026-10-31",
       "comparisons": [
         {
           "address": "Copmere End, Eccleshall, Stafford",
@@ -42573,13 +42575,13 @@
           "status": "no_name_match"
         }
       ],
-      "confidence": "existing_evidence_needs_corroboration",
+      "confidence": "owner_reviewed",
       "independent_of_pin": true,
       "listing": {
         "postcode": "ST14 8HF",
         "pub_name": "Ye Olde Talbot"
       },
-      "owner_reviewed": false,
+      "owner_reviewed": true,
       "pin": {
         "lat": 52.898052203935,
         "lng": -1.864610433578

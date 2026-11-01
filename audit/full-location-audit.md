@@ -2,22 +2,22 @@
 
 Locations: 1044
 
-Actionable findings: 6
-Locations with informational observations: 603 (may also have an actionable finding)
+Actionable findings: 0
+Locations with informational observations: 604 (may also have an actionable finding)
 
 ## Results
 
-- coordinate_disagreement: 247
-- coordinate_agreement: 454
-- nearby: 103
 - no_name_match: 178
+- coordinate_disagreement: 247
+- nearby: 103
+- coordinate_agreement: 454
 - ambiguous_or_missing_coordinates: 62
 
 ## Confidence
 
+- existing_evidence_needs_corroboration: 507
 - owner_reviewed: 122
 - independent_coordinate_agreement: 415
-- existing_evidence_needs_corroboration: 507
 
 ## Limits
 
@@ -31,12 +31,6 @@ Locations with informational observations: 603 (may also have an actionable find
 
 | Pub | Place | Postcode | Result | Classification | Detail |
 |---|---|---|---|---|---|
-| Charlie Bassetts | Dilhorne | ST10 2PQ | coordinate_disagreement | Actionable | Directory postcode differs from reviewed reference postcode; FSA coordinate is 191.8m from the accepted pin; informational only because the FSA geocode may be approximate |
-| Nelson Inn | Brown Lees | ST8 6PH | coordinate_agreement | Actionable | Directory postcode differs from reviewed reference postcode |
-| New Baron | Hinckley | LE10 0AZ | nearby | Actionable | Directory postcode differs from reviewed reference postcode; FSA coordinate is 25-50m away; informational only |
-| Tame Otter | Hopwas | B78 3AB | coordinate_disagreement | Actionable | Directory postcode differs from reviewed reference postcode; FSA coordinate is 179.9m from the accepted pin; informational only because the FSA geocode may be approximate |
-| Tides Out | Woolacombe | EX34 7BP | no_name_match | Actionable | Directory postcode differs from reviewed reference postcode; FSA comparison is inconclusive; absence of a match does not contradict accepted evidence |
-| Trentside Cricket Club (PMC) | Burton U-T: Branston | DE14 3DP | coordinate_disagreement | Actionable | Directory postcode differs from reviewed reference postcode; FSA coordinate is 223.9m from the accepted pin; informational only because the FSA geocode may be approximate |
 | 1852 Brewery Co | Leicester: South Wigston | LE18 2DH | no_name_match | Informational | FSA comparison is inconclusive; absence of a match does not contradict accepted evidence |
 | 45 Club (PMC) | Newcastle-U-L: Central | ST5 1DS | no_name_match | Informational | FSA comparison is inconclusive; absence of a match does not contradict accepted evidence |
 | Adelphi | Leeds: Central | LS10 1JQ | coordinate_disagreement | Informational | FSA coordinate is 158.8m from the accepted pin; informational only because the FSA geocode may be approximate |
@@ -145,6 +139,7 @@ Locations with informational observations: 603 (may also have an actionable find
 | Chadwick Arms | Hill Ridware | WS15 3QX | no_name_match | Informational | FSA comparison is inconclusive; absence of a match does not contradict accepted evidence |
 | Chandlers | Shearsby | LE17 6PL | ambiguous_or_missing_coordinates | Informational | FSA comparison is inconclusive; absence of a match does not contradict accepted evidence |
 | Charles Roe | Macclesfield | SK11 6DY | coordinate_agreement | Informational | Owner reviewed this postcode discrepancy and confirmed the displayed pub building; listing postcode retained for provenance |
+| Charlie Bassetts | Dilhorne | ST10 2PQ | coordinate_disagreement | Informational | Owner reviewed this postcode discrepancy and confirmed the displayed pub building; listing postcode retained for provenance; FSA coordinate is 191.8m from the accepted pin; informational only because the FSA geocode may be approximate |
 | Chequers | Fenny Stratford | MK2 2BY | coordinate_disagreement | Informational | FSA coordinate is 85.8m from the accepted pin; informational only because the FSA geocode may be approximate |
 | Cherry Tree | Leicester: Central | LE1 4SX | nearby | Informational | FSA coordinate is 25-50m away; informational only |
 | Cheshire Cheese | Stoke: Hanley | ST1 6BA | coordinate_disagreement | Informational | FSA coordinate is 63.1m from the accepted pin; informational only because the FSA geocode may be approximate |
@@ -385,6 +380,8 @@ Locations with informational observations: 603 (may also have an actionable find
 | Navigation | Shardlow | DE72 2WA | coordinate_agreement | Informational | Owner reviewed this postcode discrepancy and confirmed the displayed pub building; listing postcode retained for provenance |
 | Needle and Pin | Loughborough | LE11 5BG | coordinate_agreement | Informational | Owner reviewed this postcode discrepancy and confirmed the displayed pub building; listing postcode retained for provenance |
 | Needles | Derby: Alvaston | DE24 0UQ | coordinate_disagreement | Informational | FSA coordinate is 129.6m from the accepted pin; informational only because the FSA geocode may be approximate |
+| Nelson Inn | Brown Lees | ST8 6PH | coordinate_agreement | Informational | Owner reviewed this postcode discrepancy and confirmed the displayed pub building; listing postcode retained for provenance |
+| New Baron | Hinckley | LE10 0AZ | nearby | Informational | Owner reviewed this postcode discrepancy and confirmed the displayed pub building; listing postcode retained for provenance; FSA coordinate is 25-50m away; informational only |
 | New Inn | Alphington | EX2 8TA | coordinate_disagreement | Informational | FSA coordinate is 63.3m from the accepted pin; informational only because the FSA geocode may be approximate |
 | New Inn | Peggs Green | LE67 8JE | no_name_match | Informational | FSA comparison is inconclusive; absence of a match does not contradict accepted evidence |
 | New Inn | Witney | OX28 6AU | no_name_match | Informational | FSA comparison is inconclusive; absence of a match does not contradict accepted evidence |
@@ -547,6 +544,7 @@ Locations with informational observations: 603 (may also have an actionable find
 | Sycamores | Burbage | LE10 2EF | coordinate_disagreement | Informational | FSA coordinate is 115.6m from the accepted pin; informational only because the FSA geocode may be approximate |
 | Tafarn Pencei | Porthmadog | LL49 9AT | coordinate_disagreement | Informational | FSA coordinate is 63.0m from the accepted pin; informational only because the FSA geocode may be approximate |
 | Talbot Taphouse | Ripley: Central | DE5 3LT | coordinate_disagreement | Informational | FSA coordinate is 63.0m from the accepted pin; informational only because the FSA geocode may be approximate |
+| Tame Otter | Hopwas | B78 3AB | coordinate_disagreement | Informational | Owner reviewed this postcode discrepancy and confirmed the displayed pub building; listing postcode retained for provenance; FSA coordinate is 179.9m from the accepted pin; informational only because the FSA geocode may be approximate |
 | Tap House | Smisby | LE65 2TA | nearby | Informational | FSA coordinate is 25-50m away; informational only |
 | Tavern | Hatton | DE65 5EH | ambiguous_or_missing_coordinates | Informational | FSA comparison is inconclusive; absence of a match does not contradict accepted evidence |
 | Tavern | Belper: Central | DE56 1UU | coordinate_disagreement | Informational | FSA coordinate is 96.5m from the accepted pin; informational only because the FSA geocode may be approximate |
@@ -562,10 +560,12 @@ Locations with informational observations: 603 (may also have an actionable find
 | Three Horseshoes | Fazeley | B78 3RD | coordinate_disagreement | Informational | FSA coordinate is 51.4m from the accepted pin; informational only because the FSA geocode may be approximate |
 | Three Horseshoes | Stoke Golding | CV13 6HE | coordinate_disagreement | Informational | FSA coordinate is 121.3m from the accepted pin; informational only because the FSA geocode may be approximate |
 | Three Horseshoes (Pollys) | Whitwick | LE67 5GN | no_name_match | Informational | FSA comparison is inconclusive; absence of a match does not contradict accepted evidence |
+| Tides Out | Woolacombe | EX34 7BP | no_name_match | Informational | Owner reviewed this postcode discrepancy and confirmed the displayed pub building; listing postcode retained for provenance; FSA comparison is inconclusive; absence of a match does not contradict accepted evidence |
 | Tiger Inn | Easington | TS13 4NE | coordinate_disagreement | Informational | FSA coordinate is 62.4m from the accepted pin; informational only because the FSA geocode may be approximate |
 | Town Hall | Liverpool: Wavertree | L15 8HF | no_name_match | Informational | FSA comparison is inconclusive; absence of a match does not contradict accepted evidence |
 | Track & Sleeper | Knaresborough | HG5 9AA | no_name_match | Informational | FSA comparison is inconclusive; absence of a match does not contradict accepted evidence |
 | Travellers Rest | Stanley | ST9 9LX | coordinate_disagreement | Informational | FSA coordinate is 52.7m from the accepted pin; informational only because the FSA geocode may be approximate |
+| Trentside Cricket Club (PMC) | Burton U-T: Branston | DE14 3DP | coordinate_disagreement | Informational | Owner reviewed this postcode discrepancy and confirmed the displayed pub building; listing postcode retained for provenance; FSA coordinate is 223.9m from the accepted pin; informational only because the FSA geocode may be approximate |
 | Turks Head (Stuffed Dog) | Tynemouth | NE30 4DZ | no_name_match | Informational | FSA comparison is inconclusive; absence of a match does not contradict accepted evidence |
 | Tutbury Club (PMC) | Tutbury | DE13 9LS | no_name_match | Informational | FSA comparison is inconclusive; absence of a match does not contradict accepted evidence |
 | Tynemouth WMC/Social Club (PMC) | Tynemouth | NE30 4DX | no_name_match | Informational | FSA comparison is inconclusive; absence of a match does not contradict accepted evidence |

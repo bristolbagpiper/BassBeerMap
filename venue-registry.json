@@ -15991,7 +15991,7 @@
             "status": "resolved"
           }
         ],
-        "last_checked": "2026-10-28",
+        "last_checked": "2026-11-01",
         "place_name": "Oldbury-on-Severn",
         "postcode": "BS35 1QA",
         "pub_name": "Anchor Inn",
@@ -16030,7 +16030,7 @@
             "status": "resolved"
           }
         ],
-        "last_checked": "2026-10-29",
+        "last_checked": "2026-11-01",
         "place_name": "Stoke: Trentham",
         "postcode": "ST4 8BU",
         "pub_name": "Toby Carvery Trentham Village",
@@ -16069,7 +16069,7 @@
             "status": "resolved"
           }
         ],
-        "last_checked": "2026-10-28",
+        "last_checked": "2026-11-01",
         "place_name": "Somercotes",
         "postcode": "DE55 4HX",
         "pub_name": "Devonshire Arms",
@@ -16115,7 +16115,7 @@
             "status": "resolved"
           }
         ],
-        "last_checked": "2026-10-30",
+        "last_checked": "2026-11-01",
         "place_name": "Castle Donington",
         "postcode": "DE74 2LA",
         "pub_name": "Borough Street Bar",
@@ -16223,7 +16223,7 @@
             "status": "resolved"
           }
         ],
-        "last_checked": "2026-10-28",
+        "last_checked": "2026-11-01",
         "place_name": "Windsor",
         "postcode": "SL4 1BG",
         "pub_name": "Corner House",
@@ -16262,7 +16262,7 @@
             "status": "resolved"
           }
         ],
-        "last_checked": "2026-10-28",
+        "last_checked": "2026-11-01",
         "place_name": "Chorley",
         "postcode": "WS13 8DD",
         "pub_name": "Malt Shovel",
@@ -16359,7 +16359,7 @@
             "status": "resolved"
           }
         ],
-        "last_checked": "2026-10-30",
+        "last_checked": "2026-11-01",
         "place_name": "Cleethorpes",
         "postcode": "DN35 8EU",
         "pub_name": "Nottingham House",
@@ -16490,7 +16490,7 @@
             "status": "resolved"
           }
         ],
-        "last_checked": "2026-10-28",
+        "last_checked": "2026-11-01",
         "place_name": "Uttoxeter",
         "postcode": "ST14 8HJ",
         "pub_name": "Old Star",
@@ -16529,7 +16529,7 @@
             "status": "resolved"
           }
         ],
-        "last_checked": "2026-10-29",
+        "last_checked": "2026-11-01",
         "place_name": "Thringstone",
         "postcode": "LE67 8UH",
         "pub_name": "George and Dragon",
@@ -16683,7 +16683,7 @@
             "status": "resolved"
           }
         ],
-        "last_checked": "2026-10-29",
+        "last_checked": "2026-11-01",
         "place_name": "Stafford",
         "postcode": "ST16 2JU",
         "pub_name": "Pickled Pig at the Bankhouse",
@@ -16722,7 +16722,7 @@
             "status": "resolved"
           }
         ],
-        "last_checked": "2026-10-29",
+        "last_checked": "2026-11-01",
         "place_name": "Guiseley",
         "postcode": "LS20 8LY",
         "pub_name": "White Cross",
@@ -27023,7 +27023,7 @@
       ],
       "current_key": "new baron|hinckley|le10 0az",
       "independent_location_check": {
-        "actionable": true,
+        "actionable": false,
         "checked_at": "2026-10-19",
         "comparisons": [
           {
@@ -27055,10 +27055,8 @@
           "lat": 52.5411354,
           "lng": -1.3739948
         },
-        "priority": 0,
-        "reasons": [
-          "Directory postcode differs from reviewed reference postcode"
-        ],
+        "priority": 2,
+        "reasons": [],
         "reference": {
           "address": "The New Baron, 5 - 7 Regent Street, Hinckley, Leicestershire",
           "difference_metres": 27.1,
@@ -27072,6 +27070,7 @@
         },
         "status": "nearby",
         "warnings": [
+          "Owner reviewed this postcode discrepancy and confirmed the displayed pub building; listing postcode retained for provenance",
           "FSA coordinate is 25-50m away; informational only"
         ]
       },
@@ -82455,7 +82454,7 @@
       ],
       "current_key": "trentside cricket club (pmc)|burton u-t: branston|de14 3dp",
       "independent_location_check": {
-        "actionable": true,
+        "actionable": false,
         "checked_at": "2026-10-30",
         "comparisons": [
           {
@@ -82487,10 +82486,8 @@
           "lat": 52.7867,
           "lng": -1.651
         },
-        "priority": 0,
-        "reasons": [
-          "Directory postcode differs from reviewed reference postcode"
-        ],
+        "priority": 2,
+        "reasons": [],
         "reference": {
           "address": "Trentside Cricket Club, Off Faldo Close, Branston, Burton upon Trent",
           "difference_metres": 223.9,
@@ -82504,6 +82501,7 @@
         },
         "status": "coordinate_disagreement",
         "warnings": [
+          "Owner reviewed this postcode discrepancy and confirmed the displayed pub building; listing postcode retained for provenance",
           "FSA coordinate is 223.9m from the accepted pin; informational only because the FSA geocode may be approximate"
         ]
       },
@@ -85737,7 +85735,7 @@
       ],
       "current_key": "charlie bassetts|dilhorne|st10 2pq",
       "independent_location_check": {
-        "actionable": true,
+        "actionable": false,
         "checked_at": "2026-10-22",
         "comparisons": [
           {
@@ -85769,10 +85767,8 @@
           "lat": 52.986997,
           "lng": -2.046611
         },
-        "priority": 0,
-        "reasons": [
-          "Directory postcode differs from reviewed reference postcode"
-        ],
+        "priority": 2,
+        "reasons": [],
         "reference": {
           "address": "New Road, Dilhorne, Stoke On Trent",
           "difference_metres": 191.8,
@@ -85786,6 +85782,7 @@
         },
         "status": "coordinate_disagreement",
         "warnings": [
+          "Owner reviewed this postcode discrepancy and confirmed the displayed pub building; listing postcode retained for provenance",
           "FSA coordinate is 191.8m from the accepted pin; informational only because the FSA geocode may be approximate"
         ]
       },
@@ -99806,7 +99803,7 @@
       ],
       "current_key": "tides out|woolacombe|ex34 7bp",
       "independent_location_check": {
-        "actionable": true,
+        "actionable": false,
         "checked_at": "2026-10-26",
         "comparisons": [
           {
@@ -99827,10 +99824,8 @@
           "lat": 51.172685037242,
           "lng": -4.2054578186163
         },
-        "priority": 0,
-        "reasons": [
-          "Directory postcode differs from reviewed reference postcode"
-        ],
+        "priority": 2,
+        "reasons": [],
         "reference": {
           "name_matches": 0,
           "postcode_matches": 2,
@@ -99839,6 +99834,7 @@
         },
         "status": "no_name_match",
         "warnings": [
+          "Owner reviewed this postcode discrepancy and confirmed the displayed pub building; listing postcode retained for provenance",
           "FSA comparison is inconclusive; absence of a match does not contradict accepted evidence"
         ]
       },
@@ -103134,7 +103130,7 @@
       ],
       "current_key": "nelson inn|brown lees|st8 6ph",
       "independent_location_check": {
-        "actionable": true,
+        "actionable": false,
         "checked_at": "2026-10-19",
         "comparisons": [
           {
@@ -103166,10 +103162,8 @@
           "lat": 53.099049,
           "lng": -2.1834742
         },
-        "priority": 0,
-        "reasons": [
-          "Directory postcode differs from reviewed reference postcode"
-        ],
+        "priority": 2,
+        "reasons": [],
         "reference": {
           "address": "118 Brown Lees Road, Brown Lees, Stoke-On-Trent",
           "difference_metres": 3.4,
@@ -103182,7 +103176,9 @@
           "url": "https://ratings.food.gov.uk/business/1559527"
         },
         "status": "coordinate_agreement",
-        "warnings": []
+        "warnings": [
+          "Owner reviewed this postcode discrepancy and confirmed the displayed pub building; listing postcode retained for provenance"
+        ]
       },
       "listing": {
         "area": "Staffordshire",
@@ -125908,7 +125904,7 @@
       "current_key": "anchor inn|oldbury-on-severn|bs35 1qa",
       "independent_location_check": {
         "actionable": false,
-        "checked_at": "2026-10-09",
+        "checked_at": "2026-11-01",
         "comparisons": [
           {
             "address": "Church Road, Oldbury-On-Severn, South Gloucestershire",
@@ -126015,7 +126011,7 @@
       "current_key": "king and castle|kidderminster|dy10 1qx",
       "independent_location_check": {
         "actionable": false,
-        "checked_at": "2026-10-09",
+        "checked_at": "2026-11-01",
         "comparisons": [
           {
             "name_matches": 0,
@@ -126112,7 +126108,7 @@
       "current_key": "toby carvery trentham village|stoke: trentham|st4 8bu",
       "independent_location_check": {
         "actionable": false,
-        "checked_at": "2026-10-09",
+        "checked_at": "2026-11-01",
         "comparisons": [
           {
             "address": "Longton Road, Stoke-on-Trent",
@@ -126256,7 +126252,7 @@
       "current_key": "devonshire arms|somercotes|de55 4hx",
       "independent_location_check": {
         "actionable": false,
-        "checked_at": "2026-10-09",
+        "checked_at": "2026-11-01",
         "comparisons": [
           {
             "address": "241 Somercotes Hill Somercotes Alfreton Derbyshire",
@@ -126363,7 +126359,7 @@
       "current_key": "stag and scotch|newport|tf10 7au",
       "independent_location_check": {
         "actionable": false,
-        "checked_at": "2026-10-09",
+        "checked_at": "2026-11-01",
         "comparisons": [
           {
             "address": "71 High Street, , Newport, Shropshire",
@@ -126468,7 +126464,7 @@
       "current_key": "black swan|shepshed|le12 9dl",
       "independent_location_check": {
         "actionable": false,
-        "checked_at": "2026-10-09",
+        "checked_at": "2026-11-01",
         "comparisons": [
           {
             "address": "21 Loughborough Road, , Shepshed",
@@ -126575,7 +126571,7 @@
       "current_key": "borough street bar|castle donington|de74 2la",
       "independent_location_check": {
         "actionable": false,
-        "checked_at": "2026-10-09",
+        "checked_at": "2026-11-01",
         "comparisons": [
           {
             "address": "32 Borough Street, Castle Donington, Derby",
@@ -126718,7 +126714,7 @@
       "current_key": "pavilion|ashbourne|de6 1ej",
       "independent_location_check": {
         "actionable": false,
-        "checked_at": "2026-10-09",
+        "checked_at": "2026-11-01",
         "comparisons": [
           {
             "name_matches": 0,
@@ -126947,7 +126943,7 @@
       "current_key": "corner house|windsor|sl4 1bg",
       "independent_location_check": {
         "actionable": false,
-        "checked_at": "2026-10-09",
+        "checked_at": "2026-11-01",
         "comparisons": [
           {
             "address": "22 Sheet Street, Windsor",
@@ -127054,7 +127050,7 @@
       "current_key": "horse|shepshed|le12 9ef",
       "independent_location_check": {
         "actionable": false,
-        "checked_at": "2026-10-09",
+        "checked_at": "2026-11-01",
         "comparisons": [
           {
             "name_matches": 0,
@@ -127151,7 +127147,7 @@
       "current_key": "millstone|newcastle: south gosforth|ne3 1ql",
       "independent_location_check": {
         "actionable": false,
-        "checked_at": "2026-10-09",
+        "checked_at": "2026-11-01",
         "comparisons": [
           {
             "address": "Mill Rise South Gosforth, , Newcastle Upon Tyne",
@@ -127294,7 +127290,7 @@
       "current_key": "malt shovel|chorley|ws13 8dd",
       "independent_location_check": {
         "actionable": false,
-        "checked_at": "2026-10-09",
+        "checked_at": "2026-11-01",
         "comparisons": [
           {
             "address": "Lower Lane, Chorley, Lichfield, Staffordshire",
@@ -127401,11 +127397,11 @@
       "current_key": "coach and horses|stoke newington n16|n16 7jl",
       "independent_location_check": {
         "actionable": false,
-        "checked_at": "2026-10-09",
+        "checked_at": "2026-11-01",
         "comparisons": [
           {
             "name_matches": 0,
-            "postcode_matches": 8,
+            "postcode_matches": 7,
             "queried_postcode": "N16 7JL",
             "status": "no_name_match"
           }
@@ -127425,7 +127421,7 @@
         "reasons": [],
         "reference": {
           "name_matches": 0,
-          "postcode_matches": 8,
+          "postcode_matches": 7,
           "queried_postcode": "N16 7JL",
           "status": "no_name_match"
         },
@@ -127534,7 +127530,7 @@
       "current_key": "cotton tree|bollington|sk10 5re",
       "independent_location_check": {
         "actionable": false,
-        "checked_at": "2026-10-09",
+        "checked_at": "2026-11-01",
         "comparisons": [
           {
             "address": "3/5 Ingersley Road, Bollington, , Macclesfield",
@@ -127639,7 +127635,7 @@
       "current_key": "ship and pilot|ilfracombe|ex34 9ee",
       "independent_location_check": {
         "actionable": false,
-        "checked_at": "2026-10-09",
+        "checked_at": "2026-11-01",
         "comparisons": [
           {
             "address": "The Ship And Pilot Inn, 9-10 Broad Street, Ilfracombe, Devon",
@@ -127744,7 +127740,7 @@
       "current_key": "horse and jockey|congerstone|cv13 6ly",
       "independent_location_check": {
         "actionable": false,
-        "checked_at": "2026-10-09",
+        "checked_at": "2026-11-01",
         "comparisons": [
           {
             "name_matches": 1,
@@ -127841,7 +127837,7 @@
       "current_key": "kings way|stoke: central|st4 1jb",
       "independent_location_check": {
         "actionable": false,
-        "checked_at": "2026-10-09",
+        "checked_at": "2026-11-01",
         "comparisons": [
           {
             "address": "63 Kingsway, Stoke, Stoke-On-Trent",
@@ -127946,7 +127942,7 @@
       "current_key": "gate inn|hugglescote|le67 2hg",
       "independent_location_check": {
         "actionable": false,
-        "checked_at": "2026-10-09",
+        "checked_at": "2026-11-01",
         "comparisons": [
           {
             "address": "The Gate Inn, 108 Fairfield Road, Hugglescote, Coalville",
@@ -128051,7 +128047,7 @@
       "current_key": "minerva|hull|hu1 1xe",
       "independent_location_check": {
         "actionable": false,
-        "checked_at": "2026-10-09",
+        "checked_at": "2026-11-01",
         "comparisons": [
           {
             "address": "Minerva Hotel Public House, Nelson Street, Kingston Upon Hull",
@@ -128156,7 +128152,7 @@
       "current_key": "green man|trumpington|cb2 9hz",
       "independent_location_check": {
         "actionable": false,
-        "checked_at": "2026-10-09",
+        "checked_at": "2026-11-01",
         "comparisons": [
           {
             "address": "The Green Man 55 High Street, Trumpington, Cambridge, Cambridgeshire",
@@ -128261,7 +128257,7 @@
       "current_key": "iford bridge|bournemouth: iford|bh6 5rg",
       "independent_location_check": {
         "actionable": false,
-        "checked_at": "2026-10-09",
+        "checked_at": "2026-11-01",
         "comparisons": [
           {
             "name_matches": 2,
@@ -128358,7 +128354,7 @@
       "current_key": "cork and bottle|barnstaple|ex31 1jb",
       "independent_location_check": {
         "actionable": false,
-        "checked_at": "2026-10-09",
+        "checked_at": "2026-11-01",
         "comparisons": [
           {
             "name_matches": 0,
@@ -128455,7 +128451,7 @@
       "current_key": "macbeth|hoxton n1|n1 6lp",
       "independent_location_check": {
         "actionable": false,
-        "checked_at": "2026-10-09",
+        "checked_at": "2026-11-01",
         "comparisons": [
           {
             "address": "THE MACBETH 70 HOXTON STREET, Hackney, London",
@@ -128560,7 +128556,7 @@
       "current_key": "borough arms|neath|sa11 1ph",
       "independent_location_check": {
         "actionable": false,
-        "checked_at": "2026-10-09",
+        "checked_at": "2026-11-01",
         "comparisons": [
           {
             "address": "The Borough Arms, 2 New Henry Street, Neath, Neath Port Talbot",
@@ -128791,7 +128787,7 @@
       "current_key": "white hart|crystal palace se19|se19 2ez",
       "independent_location_check": {
         "actionable": false,
-        "checked_at": "2026-10-09",
+        "checked_at": "2026-11-01",
         "comparisons": [
           {
             "address": "96 Church Road, Upper Norwood, London",
@@ -128896,7 +128892,7 @@
       "current_key": "nottingham house|cleethorpes|dn35 8eu",
       "independent_location_check": {
         "actionable": false,
-        "checked_at": "2026-10-09",
+        "checked_at": "2026-11-01",
         "comparisons": [
           {
             "address": "7 Seaview Street, , Cleethorpes",
@@ -129037,7 +129033,7 @@
       "current_key": "signalman|stoke: longton|st3 1je",
       "independent_location_check": {
         "actionable": false,
-        "checked_at": "2026-10-09",
+        "checked_at": "2026-11-01",
         "comparisons": [
           {
             "address": "Paragon Road, Longton, Stoke-On-Trent",
@@ -129142,7 +129138,7 @@
       "current_key": "crown|newhall|de11 0sn",
       "independent_location_check": {
         "actionable": false,
-        "checked_at": "2026-10-09",
+        "checked_at": "2026-11-01",
         "comparisons": [
           {
             "address": "145 OVERSETTS ROAD, NEWHALL, SWADLINCOTE",
@@ -129247,7 +129243,7 @@
       "current_key": "hawk and buckle|etwall|de65 6lp",
       "independent_location_check": {
         "actionable": false,
-        "checked_at": "2026-10-09",
+        "checked_at": "2026-11-01",
         "comparisons": [
           {
             "address": "THE HAWK AND BUCKLE 46 MAIN STREET, ETWALL, DERBY",
@@ -129352,7 +129348,7 @@
       "current_key": "fishguard arms|fishguard|sa65 9hj",
       "independent_location_check": {
         "actionable": false,
-        "checked_at": "2026-10-09",
+        "checked_at": "2026-11-01",
         "comparisons": [
           {
             "address": "24 Main Street, , Fishguard, Pembrokeshire",
@@ -129457,7 +129453,7 @@
       "current_key": "george and dragon|yarm|ts15 9ah",
       "independent_location_check": {
         "actionable": false,
-        "checked_at": "2026-10-09",
+        "checked_at": "2026-11-01",
         "comparisons": [
           {
             "address": "70 High Street, , Yarm",
@@ -129562,7 +129558,7 @@
       "current_key": "pilot inn|mumbles|sa3 4el",
       "independent_location_check": {
         "actionable": false,
-        "checked_at": "2026-10-09",
+        "checked_at": "2026-11-01",
         "comparisons": [
           {
             "address": "726 Mumbles Road, , Mumbles",
@@ -129829,7 +129825,7 @@
       "current_key": "old star|uttoxeter|st14 8hj",
       "independent_location_check": {
         "actionable": false,
-        "checked_at": "2026-10-09",
+        "checked_at": "2026-11-01",
         "comparisons": [
           {
             "address": "The Old Star Inn, Queen Street, Uttoxeter",
@@ -129936,7 +129932,7 @@
       "current_key": "easington|banbury|ox16 9ju",
       "independent_location_check": {
         "actionable": false,
-        "checked_at": "2026-10-09",
+        "checked_at": "2026-11-01",
         "comparisons": [
           {
             "name_matches": 0,
@@ -130033,7 +130029,7 @@
       "current_key": "navigation|breaston|de72 3bp",
       "independent_location_check": {
         "actionable": false,
-        "checked_at": "2026-10-09",
+        "checked_at": "2026-11-01",
         "comparisons": [
           {
             "address": "Risley Lane, , Breaston",
@@ -130138,7 +130134,7 @@
       "current_key": "george and dragon|thringstone|le67 8uh",
       "independent_location_check": {
         "actionable": false,
-        "checked_at": "2026-10-09",
+        "checked_at": "2026-11-01",
         "comparisons": [
           {
             "address": "The George And Dragon Inn, Ashby Road, Thringstone, Coalville",
@@ -130245,7 +130241,7 @@
       "current_key": "old yew tree|south wingfield|de55 7nh",
       "independent_location_check": {
         "actionable": false,
-        "checked_at": "2026-10-09",
+        "checked_at": "2026-11-01",
         "comparisons": [
           {
             "address": "51 Manor Road South Wingfield Alfreton Derbyshire",
@@ -130350,7 +130346,7 @@
       ],
       "current_key": "tame otter|hopwas|b78 3ab",
       "independent_location_check": {
-        "actionable": true,
+        "actionable": false,
         "checked_at": "2026-10-10",
         "comparisons": [
           {
@@ -130382,10 +130378,8 @@
           "lat": 52.643088,
           "lng": -1.736479
         },
-        "priority": 0,
-        "reasons": [
-          "Directory postcode differs from reviewed reference postcode"
-        ],
+        "priority": 2,
+        "reasons": [],
         "reference": {
           "address": "Lichfield Road, Hopwas, Tamworth, Staffordshire",
           "difference_metres": 179.9,
@@ -130399,6 +130393,7 @@
         },
         "status": "coordinate_disagreement",
         "warnings": [
+          "Owner reviewed this postcode discrepancy and confirmed the displayed pub building; listing postcode retained for provenance",
           "FSA coordinate is 179.9m from the accepted pin; informational only because the FSA geocode may be approximate"
         ]
       },
@@ -130511,7 +130506,7 @@
       "current_key": "staffordshire knot|biddulph|st8 6rg",
       "independent_location_check": {
         "actionable": false,
-        "checked_at": "2026-10-09",
+        "checked_at": "2026-11-01",
         "comparisons": [
           {
             "address": "Marshfield Lane, Biddulph, Stoke On Trent Staffordshire",
@@ -130616,7 +130611,7 @@
       "current_key": "pickled pig at the bankhouse|stafford|st16 2ju",
       "independent_location_check": {
         "actionable": false,
-        "checked_at": "2026-10-09",
+        "checked_at": "2026-11-01",
         "comparisons": [
           {
             "address": "The Bankhouse, Salter Street, Stafford, Staffordshire",
@@ -130752,7 +130747,7 @@
       "current_key": "coach and horses|ashbourne|de6 1gf",
       "independent_location_check": {
         "actionable": false,
-        "checked_at": "2026-10-09",
+        "checked_at": "2026-11-01",
         "comparisons": [
           {
             "address": "27 Dig Street, Ashbourne, Derbyshire",
@@ -130895,7 +130890,7 @@
       "current_key": "low lights tavern|north shields|ne30 1ll",
       "independent_location_check": {
         "actionable": false,
-        "checked_at": "2026-10-09",
+        "checked_at": "2026-11-01",
         "comparisons": [
           {
             "name_matches": 1,
@@ -130992,7 +130987,7 @@
       "current_key": "market tavern tap|atherstone|cv9 1et",
       "independent_location_check": {
         "actionable": false,
-        "checked_at": "2026-10-09",
+        "checked_at": "2026-11-01",
         "comparisons": [
           {
             "address": "21 Market Street, , Atherstone, Warwickshire",
@@ -131097,7 +131092,7 @@
       "current_key": "white cross|guiseley|ls20 8ly",
       "independent_location_check": {
         "actionable": false,
-        "checked_at": "2026-10-09",
+        "checked_at": "2026-11-01",
         "comparisons": [
           {
             "address": "Otley Road, Guiseley, Leeds",
@@ -131204,7 +131199,7 @@
       "current_key": "castle mona|newcastle-u-l: central|st5 1nt",
       "independent_location_check": {
         "actionable": false,
-        "checked_at": "2026-10-09",
+        "checked_at": "2026-11-01",
         "comparisons": [
           {
             "address": "Castle Mona, 4 Victoria Street, Newcastle Under Lyme, Staffordshire",
@@ -131309,7 +131304,7 @@
       "current_key": "o'neills|watford: centre|wd17 1et",
       "independent_location_check": {
         "actionable": false,
-        "checked_at": "2026-10-09",
+        "checked_at": "2026-11-01",
         "comparisons": [
           {
             "address": "O'Neills, Station Road, Watford",

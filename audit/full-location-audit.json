@@ -1,366 +1,6 @@
 {
   "records": [
     {
-      "actionable": true,
-      "area": "Staffordshire",
-      "checked_at": "2026-10-22",
-      "comparisons": [
-        {
-          "address": "New Road, Dilhorne, Stoke On Trent",
-          "difference_metres": 191.8,
-          "lat": 52.9880447387695,
-          "lng": -2.04433488845825,
-          "name": "CHARLIE BASSETTS",
-          "postcode": "ST10 2PQ",
-          "queried_postcode": "ST10 2PQ",
-          "status": "coordinate_disagreement",
-          "url": "https://ratings.food.gov.uk/business/1806172"
-        },
-        {
-          "name_matches": 0,
-          "postcode_matches": 0,
-          "queried_postcode": "ST10 2PZ",
-          "status": "no_name_match"
-        }
-      ],
-      "confidence": "owner_reviewed",
-      "country": "England",
-      "dispense": "H",
-      "independent_of_pin": true,
-      "last": "2026 Q3",
-      "listing": {
-        "postcode": "ST10 2PQ",
-        "pub_name": "Charlie Bassetts"
-      },
-      "notes": "",
-      "owner_reviewed": true,
-      "pg": "Perm",
-      "pin": {
-        "lat": 52.986997,
-        "lng": -2.046611
-      },
-      "place_name": "Dilhorne",
-      "postcode": "ST10 2PQ",
-      "priority": 0,
-      "pub_name": "Charlie Bassetts",
-      "reasons": [
-        "Directory postcode differs from reviewed reference postcode"
-      ],
-      "reference": {
-        "address": "New Road, Dilhorne, Stoke On Trent",
-        "difference_metres": 191.8,
-        "lat": 52.9880447387695,
-        "lng": -2.04433488845825,
-        "name": "CHARLIE BASSETTS",
-        "postcode": "ST10 2PQ",
-        "queried_postcode": "ST10 2PQ",
-        "status": "coordinate_disagreement",
-        "url": "https://ratings.food.gov.uk/business/1806172"
-      },
-      "status": "coordinate_disagreement",
-      "venue_id": "v-95a10492-5d95-5fd1-85cd-7a9a58882d81",
-      "warnings": [
-        "FSA coordinate is 191.8m from the accepted pin; informational only because the FSA geocode may be approximate"
-      ]
-    },
-    {
-      "actionable": true,
-      "area": "Staffordshire",
-      "checked_at": "2026-10-19",
-      "comparisons": [
-        {
-          "name_matches": 0,
-          "postcode_matches": 1,
-          "queried_postcode": "ST8 6PH",
-          "status": "no_name_match"
-        },
-        {
-          "address": "118 Brown Lees Road, Brown Lees, Stoke-On-Trent",
-          "difference_metres": 3.4,
-          "lat": 53.0990243,
-          "lng": -2.183505,
-          "name": "THE NELSON INN",
-          "postcode": "ST8 6PW",
-          "queried_postcode": "ST8 6PW",
-          "status": "coordinate_agreement",
-          "url": "https://ratings.food.gov.uk/business/1559527"
-        }
-      ],
-      "confidence": "independent_coordinate_agreement",
-      "country": "England",
-      "dispense": "H",
-      "independent_of_pin": true,
-      "last": "2026 Q1",
-      "listing": {
-        "postcode": "ST8 6PH",
-        "pub_name": "Nelson Inn"
-      },
-      "notes": "",
-      "owner_reviewed": false,
-      "pg": "Perm",
-      "pin": {
-        "lat": 53.099049,
-        "lng": -2.1834742
-      },
-      "place_name": "Brown Lees",
-      "postcode": "ST8 6PH",
-      "priority": 0,
-      "pub_name": "Nelson Inn",
-      "reasons": [
-        "Directory postcode differs from reviewed reference postcode"
-      ],
-      "reference": {
-        "address": "118 Brown Lees Road, Brown Lees, Stoke-On-Trent",
-        "difference_metres": 3.4,
-        "lat": 53.0990243,
-        "lng": -2.183505,
-        "name": "THE NELSON INN",
-        "postcode": "ST8 6PW",
-        "queried_postcode": "ST8 6PW",
-        "status": "coordinate_agreement",
-        "url": "https://ratings.food.gov.uk/business/1559527"
-      },
-      "status": "coordinate_agreement",
-      "venue_id": "v-baef8a0f-c094-5f52-a9c2-3a37df4ca657",
-      "warnings": []
-    },
-    {
-      "actionable": true,
-      "area": "Leicestershire",
-      "checked_at": "2026-10-19",
-      "comparisons": [
-        {
-          "address": "The New Baron, 5 - 7 Regent Street, Hinckley, Leicestershire",
-          "difference_metres": 27.1,
-          "lat": 52.540943145752,
-          "lng": -1.37424194812775,
-          "name": "New Baron Of Hinckley",
-          "postcode": "LE10 0AZ",
-          "queried_postcode": "LE10 0AZ",
-          "status": "nearby",
-          "url": "https://ratings.food.gov.uk/business/1207324"
-        },
-        {
-          "name_matches": 0,
-          "postcode_matches": 2,
-          "queried_postcode": "LE10 0QA",
-          "status": "no_name_match"
-        }
-      ],
-      "confidence": "existing_evidence_needs_corroboration",
-      "country": "England",
-      "dispense": "H",
-      "independent_of_pin": true,
-      "last": "2026 Q1",
-      "listing": {
-        "postcode": "LE10 0AZ",
-        "pub_name": "New Baron"
-      },
-      "notes": "",
-      "owner_reviewed": false,
-      "pg": "Guest",
-      "pin": {
-        "lat": 52.5411354,
-        "lng": -1.3739948
-      },
-      "place_name": "Hinckley",
-      "postcode": "LE10 0AZ",
-      "priority": 0,
-      "pub_name": "New Baron",
-      "reasons": [
-        "Directory postcode differs from reviewed reference postcode"
-      ],
-      "reference": {
-        "address": "The New Baron, 5 - 7 Regent Street, Hinckley, Leicestershire",
-        "difference_metres": 27.1,
-        "lat": 52.540943145752,
-        "lng": -1.37424194812775,
-        "name": "New Baron Of Hinckley",
-        "postcode": "LE10 0AZ",
-        "queried_postcode": "LE10 0AZ",
-        "status": "nearby",
-        "url": "https://ratings.food.gov.uk/business/1207324"
-      },
-      "status": "nearby",
-      "venue_id": "v-13ff4a41-2ee6-5385-ae2b-22af01b93cf9",
-      "warnings": [
-        "FSA coordinate is 25-50m away; informational only"
-      ]
-    },
-    {
-      "actionable": true,
-      "area": "Staffordshire",
-      "checked_at": "2026-10-10",
-      "comparisons": [
-        {
-          "name_matches": 0,
-          "postcode_matches": 1,
-          "queried_postcode": "B78 3AB",
-          "status": "no_name_match"
-        },
-        {
-          "address": "Lichfield Road, Hopwas, Tamworth, Staffordshire",
-          "difference_metres": 179.9,
-          "lat": 52.6426239013672,
-          "lng": -1.73903298377991,
-          "name": "The Tame Otter",
-          "postcode": "B78 3AF",
-          "queried_postcode": "B78 3AF",
-          "status": "coordinate_disagreement",
-          "url": "https://ratings.food.gov.uk/business/1249091"
-        }
-      ],
-      "confidence": "owner_reviewed",
-      "country": "England",
-      "dispense": "H",
-      "independent_of_pin": true,
-      "last": "2026 Q3",
-      "listing": {
-        "postcode": "B78 3AB",
-        "pub_name": "Tame Otter"
-      },
-      "notes": "",
-      "owner_reviewed": true,
-      "pg": "Guest",
-      "pin": {
-        "lat": 52.643088,
-        "lng": -1.736479
-      },
-      "place_name": "Hopwas",
-      "postcode": "B78 3AB",
-      "priority": 0,
-      "pub_name": "Tame Otter",
-      "reasons": [
-        "Directory postcode differs from reviewed reference postcode"
-      ],
-      "reference": {
-        "address": "Lichfield Road, Hopwas, Tamworth, Staffordshire",
-        "difference_metres": 179.9,
-        "lat": 52.6426239013672,
-        "lng": -1.73903298377991,
-        "name": "The Tame Otter",
-        "postcode": "B78 3AF",
-        "queried_postcode": "B78 3AF",
-        "status": "coordinate_disagreement",
-        "url": "https://ratings.food.gov.uk/business/1249091"
-      },
-      "status": "coordinate_disagreement",
-      "venue_id": "v-f5205b00-aadb-5928-870d-674117dbffab",
-      "warnings": [
-        "FSA coordinate is 179.9m from the accepted pin; informational only because the FSA geocode may be approximate"
-      ]
-    },
-    {
-      "actionable": true,
-      "area": "Devon",
-      "checked_at": "2026-10-26",
-      "comparisons": [
-        {
-          "name_matches": 0,
-          "postcode_matches": 2,
-          "queried_postcode": "EX34 7BP",
-          "status": "no_name_match"
-        }
-      ],
-      "confidence": "owner_reviewed",
-      "country": "England",
-      "dispense": "H",
-      "independent_of_pin": true,
-      "last": "2026 Q2",
-      "listing": {
-        "postcode": "EX34 7BP",
-        "pub_name": "Tides Out"
-      },
-      "notes": "",
-      "owner_reviewed": true,
-      "pg": "Guest",
-      "pin": {
-        "lat": 51.172685037242,
-        "lng": -4.2054578186163
-      },
-      "place_name": "Woolacombe",
-      "postcode": "EX34 7BP",
-      "priority": 0,
-      "pub_name": "Tides Out",
-      "reasons": [
-        "Directory postcode differs from reviewed reference postcode"
-      ],
-      "reference": {
-        "name_matches": 0,
-        "postcode_matches": 2,
-        "queried_postcode": "EX34 7BP",
-        "status": "no_name_match"
-      },
-      "status": "no_name_match",
-      "venue_id": "v-b0c6fb73-49cd-5fdf-b936-ee8fbd0ac4c6",
-      "warnings": [
-        "FSA comparison is inconclusive; absence of a match does not contradict accepted evidence"
-      ]
-    },
-    {
-      "actionable": true,
-      "area": "Staffordshire",
-      "checked_at": "2026-10-30",
-      "comparisons": [
-        {
-          "address": "Trentside Cricket Club, Off Faldo Close, Branston, Burton upon Trent",
-          "difference_metres": 223.9,
-          "lat": 52.7872505187988,
-          "lng": -1.65420198440552,
-          "name": "Trentside Cricket Club",
-          "postcode": "DE14 3DP",
-          "queried_postcode": "DE14 3DP",
-          "status": "coordinate_disagreement",
-          "url": "https://ratings.food.gov.uk/business/1248081"
-        },
-        {
-          "name_matches": 0,
-          "postcode_matches": 2,
-          "queried_postcode": "DE14 3DN",
-          "status": "no_name_match"
-        }
-      ],
-      "confidence": "owner_reviewed",
-      "country": "England",
-      "dispense": "H",
-      "independent_of_pin": true,
-      "last": "2026 Q1",
-      "listing": {
-        "postcode": "DE14 3DP",
-        "pub_name": "Trentside Cricket Club (PMC)"
-      },
-      "notes": "",
-      "owner_reviewed": true,
-      "pg": "Perm",
-      "pin": {
-        "lat": 52.7867,
-        "lng": -1.651
-      },
-      "place_name": "Burton U-T: Branston",
-      "postcode": "DE14 3DP",
-      "priority": 0,
-      "pub_name": "Trentside Cricket Club (PMC)",
-      "reasons": [
-        "Directory postcode differs from reviewed reference postcode"
-      ],
-      "reference": {
-        "address": "Trentside Cricket Club, Off Faldo Close, Branston, Burton upon Trent",
-        "difference_metres": 223.9,
-        "lat": 52.7872505187988,
-        "lng": -1.65420198440552,
-        "name": "Trentside Cricket Club",
-        "postcode": "DE14 3DP",
-        "queried_postcode": "DE14 3DP",
-        "status": "coordinate_disagreement",
-        "url": "https://ratings.food.gov.uk/business/1248081"
-      },
-      "status": "coordinate_disagreement",
-      "venue_id": "v-8e577f40-1d4f-5d93-a248-eb1f6eb244e4",
-      "warnings": [
-        "FSA coordinate is 223.9m from the accepted pin; informational only because the FSA geocode may be approximate"
-      ]
-    },
-    {
       "actionable": false,
       "area": "Leicestershire",
       "checked_at": "2026-10-25",
@@ -743,7 +383,7 @@
     {
       "actionable": false,
       "area": "Gloucs & Bristol",
-      "checked_at": "2026-10-09",
+      "checked_at": "2026-11-01",
       "comparisons": [
         {
           "address": "Church Road, Oldbury-On-Severn, South Gloucestershire",
@@ -3245,7 +2885,7 @@
     {
       "actionable": false,
       "area": "Leicestershire",
-      "checked_at": "2026-10-09",
+      "checked_at": "2026-11-01",
       "comparisons": [
         {
           "address": "21 Loughborough Road, , Shepshed",
@@ -4036,7 +3676,7 @@
     {
       "actionable": false,
       "area": "Leicestershire",
-      "checked_at": "2026-10-09",
+      "checked_at": "2026-11-01",
       "comparisons": [
         {
           "address": "32 Borough Street, Castle Donington, Derby",
@@ -5862,6 +5502,68 @@
     },
     {
       "actionable": false,
+      "area": "Staffordshire",
+      "checked_at": "2026-10-22",
+      "comparisons": [
+        {
+          "address": "New Road, Dilhorne, Stoke On Trent",
+          "difference_metres": 191.8,
+          "lat": 52.9880447387695,
+          "lng": -2.04433488845825,
+          "name": "CHARLIE BASSETTS",
+          "postcode": "ST10 2PQ",
+          "queried_postcode": "ST10 2PQ",
+          "status": "coordinate_disagreement",
+          "url": "https://ratings.food.gov.uk/business/1806172"
+        },
+        {
+          "name_matches": 0,
+          "postcode_matches": 0,
+          "queried_postcode": "ST10 2PZ",
+          "status": "no_name_match"
+        }
+      ],
+      "confidence": "owner_reviewed",
+      "country": "England",
+      "dispense": "H",
+      "independent_of_pin": true,
+      "last": "2026 Q3",
+      "listing": {
+        "postcode": "ST10 2PQ",
+        "pub_name": "Charlie Bassetts"
+      },
+      "notes": "",
+      "owner_reviewed": true,
+      "pg": "Perm",
+      "pin": {
+        "lat": 52.986997,
+        "lng": -2.046611
+      },
+      "place_name": "Dilhorne",
+      "postcode": "ST10 2PQ",
+      "priority": 2,
+      "pub_name": "Charlie Bassetts",
+      "reasons": [],
+      "reference": {
+        "address": "New Road, Dilhorne, Stoke On Trent",
+        "difference_metres": 191.8,
+        "lat": 52.9880447387695,
+        "lng": -2.04433488845825,
+        "name": "CHARLIE BASSETTS",
+        "postcode": "ST10 2PQ",
+        "queried_postcode": "ST10 2PQ",
+        "status": "coordinate_disagreement",
+        "url": "https://ratings.food.gov.uk/business/1806172"
+      },
+      "status": "coordinate_disagreement",
+      "venue_id": "v-95a10492-5d95-5fd1-85cd-7a9a58882d81",
+      "warnings": [
+        "Owner reviewed this postcode discrepancy and confirmed the displayed pub building; listing postcode retained for provenance",
+        "FSA coordinate is 191.8m from the accepted pin; informational only because the FSA geocode may be approximate"
+      ]
+    },
+    {
+      "actionable": false,
       "area": "Buckinghamshire",
       "checked_at": "2026-10-11",
       "comparisons": [
@@ -6703,11 +6405,11 @@
     {
       "actionable": false,
       "area": "Greater London",
-      "checked_at": "2026-10-09",
+      "checked_at": "2026-11-01",
       "comparisons": [
         {
           "name_matches": 0,
-          "postcode_matches": 8,
+          "postcode_matches": 7,
           "queried_postcode": "N16 7JL",
           "status": "no_name_match"
         }
@@ -6735,7 +6437,7 @@
       "reasons": [],
       "reference": {
         "name_matches": 0,
-        "postcode_matches": 8,
+        "postcode_matches": 7,
         "queried_postcode": "N16 7JL",
         "status": "no_name_match"
       },
@@ -6748,7 +6450,7 @@
     {
       "actionable": false,
       "area": "Derbyshire",
-      "checked_at": "2026-10-09",
+      "checked_at": "2026-11-01",
       "comparisons": [
         {
           "address": "27 Dig Street, Ashbourne, Derbyshire",
@@ -7283,7 +6985,7 @@
     {
       "actionable": false,
       "area": "Devon",
-      "checked_at": "2026-10-09",
+      "checked_at": "2026-11-01",
       "comparisons": [
         {
           "name_matches": 0,
@@ -7383,7 +7085,7 @@
     {
       "actionable": false,
       "area": "Berkshire",
-      "checked_at": "2026-10-09",
+      "checked_at": "2026-11-01",
       "comparisons": [
         {
           "address": "22 Sheet Street, Windsor",
@@ -9387,7 +9089,7 @@
     {
       "actionable": false,
       "area": "Derbyshire",
-      "checked_at": "2026-10-09",
+      "checked_at": "2026-11-01",
       "comparisons": [
         {
           "address": "241 Somercotes Hill Somercotes Alfreton Derbyshire",
@@ -10419,7 +10121,7 @@
     {
       "actionable": false,
       "area": "Oxfordshire",
-      "checked_at": "2026-10-09",
+      "checked_at": "2026-11-01",
       "comparisons": [
         {
           "name_matches": 0,
@@ -11989,7 +11691,7 @@
     {
       "actionable": false,
       "area": "Leicestershire",
-      "checked_at": "2026-10-09",
+      "checked_at": "2026-11-01",
       "comparisons": [
         {
           "address": "The George And Dragon Inn, Ashby Road, Thringstone, Coalville",
@@ -13771,7 +13473,7 @@
     {
       "actionable": false,
       "area": "Leicestershire",
-      "checked_at": "2026-10-09",
+      "checked_at": "2026-11-01",
       "comparisons": [
         {
           "name_matches": 0,
@@ -14081,7 +13783,7 @@
     {
       "actionable": false,
       "area": "Leicestershire",
-      "checked_at": "2026-10-09",
+      "checked_at": "2026-11-01",
       "comparisons": [
         {
           "name_matches": 1,
@@ -14391,7 +14093,7 @@
     {
       "actionable": false,
       "area": "Dorset",
-      "checked_at": "2026-10-09",
+      "checked_at": "2026-11-01",
       "comparisons": [
         {
           "name_matches": 2,
@@ -15211,7 +14913,7 @@
     {
       "actionable": false,
       "area": "Worcestershire",
-      "checked_at": "2026-10-09",
+      "checked_at": "2026-11-01",
       "comparisons": [
         {
           "name_matches": 0,
@@ -16301,7 +16003,7 @@
     {
       "actionable": false,
       "area": "Tyne and Wear",
-      "checked_at": "2026-10-09",
+      "checked_at": "2026-11-01",
       "comparisons": [
         {
           "name_matches": 1,
@@ -16653,7 +16355,7 @@
     {
       "actionable": false,
       "area": "Staffordshire",
-      "checked_at": "2026-10-09",
+      "checked_at": "2026-11-01",
       "comparisons": [
         {
           "address": "Lower Lane, Chorley, Lichfield, Staffordshire",
@@ -17314,7 +17016,7 @@
     {
       "actionable": false,
       "area": "Tyne and Wear",
-      "checked_at": "2026-10-09",
+      "checked_at": "2026-11-01",
       "comparisons": [
         {
           "address": "Mill Rise South Gosforth, , Newcastle Upon Tyne",
@@ -18158,6 +17860,129 @@
       "venue_id": "v-9ee32030-d38f-51bb-94b7-64a11d601650",
       "warnings": [
         "FSA coordinate is 129.6m from the accepted pin; informational only because the FSA geocode may be approximate"
+      ]
+    },
+    {
+      "actionable": false,
+      "area": "Staffordshire",
+      "checked_at": "2026-10-19",
+      "comparisons": [
+        {
+          "name_matches": 0,
+          "postcode_matches": 1,
+          "queried_postcode": "ST8 6PH",
+          "status": "no_name_match"
+        },
+        {
+          "address": "118 Brown Lees Road, Brown Lees, Stoke-On-Trent",
+          "difference_metres": 3.4,
+          "lat": 53.0990243,
+          "lng": -2.183505,
+          "name": "THE NELSON INN",
+          "postcode": "ST8 6PW",
+          "queried_postcode": "ST8 6PW",
+          "status": "coordinate_agreement",
+          "url": "https://ratings.food.gov.uk/business/1559527"
+        }
+      ],
+      "confidence": "independent_coordinate_agreement",
+      "country": "England",
+      "dispense": "H",
+      "independent_of_pin": true,
+      "last": "2026 Q1",
+      "listing": {
+        "postcode": "ST8 6PH",
+        "pub_name": "Nelson Inn"
+      },
+      "notes": "",
+      "owner_reviewed": false,
+      "pg": "Perm",
+      "pin": {
+        "lat": 53.099049,
+        "lng": -2.1834742
+      },
+      "place_name": "Brown Lees",
+      "postcode": "ST8 6PH",
+      "priority": 2,
+      "pub_name": "Nelson Inn",
+      "reasons": [],
+      "reference": {
+        "address": "118 Brown Lees Road, Brown Lees, Stoke-On-Trent",
+        "difference_metres": 3.4,
+        "lat": 53.0990243,
+        "lng": -2.183505,
+        "name": "THE NELSON INN",
+        "postcode": "ST8 6PW",
+        "queried_postcode": "ST8 6PW",
+        "status": "coordinate_agreement",
+        "url": "https://ratings.food.gov.uk/business/1559527"
+      },
+      "status": "coordinate_agreement",
+      "venue_id": "v-baef8a0f-c094-5f52-a9c2-3a37df4ca657",
+      "warnings": [
+        "Owner reviewed this postcode discrepancy and confirmed the displayed pub building; listing postcode retained for provenance"
+      ]
+    },
+    {
+      "actionable": false,
+      "area": "Leicestershire",
+      "checked_at": "2026-10-19",
+      "comparisons": [
+        {
+          "address": "The New Baron, 5 - 7 Regent Street, Hinckley, Leicestershire",
+          "difference_metres": 27.1,
+          "lat": 52.540943145752,
+          "lng": -1.37424194812775,
+          "name": "New Baron Of Hinckley",
+          "postcode": "LE10 0AZ",
+          "queried_postcode": "LE10 0AZ",
+          "status": "nearby",
+          "url": "https://ratings.food.gov.uk/business/1207324"
+        },
+        {
+          "name_matches": 0,
+          "postcode_matches": 2,
+          "queried_postcode": "LE10 0QA",
+          "status": "no_name_match"
+        }
+      ],
+      "confidence": "existing_evidence_needs_corroboration",
+      "country": "England",
+      "dispense": "H",
+      "independent_of_pin": true,
+      "last": "2026 Q1",
+      "listing": {
+        "postcode": "LE10 0AZ",
+        "pub_name": "New Baron"
+      },
+      "notes": "",
+      "owner_reviewed": false,
+      "pg": "Guest",
+      "pin": {
+        "lat": 52.5411354,
+        "lng": -1.3739948
+      },
+      "place_name": "Hinckley",
+      "postcode": "LE10 0AZ",
+      "priority": 2,
+      "pub_name": "New Baron",
+      "reasons": [],
+      "reference": {
+        "address": "The New Baron, 5 - 7 Regent Street, Hinckley, Leicestershire",
+        "difference_metres": 27.1,
+        "lat": 52.540943145752,
+        "lng": -1.37424194812775,
+        "name": "New Baron Of Hinckley",
+        "postcode": "LE10 0AZ",
+        "queried_postcode": "LE10 0AZ",
+        "status": "nearby",
+        "url": "https://ratings.food.gov.uk/business/1207324"
+      },
+      "status": "nearby",
+      "venue_id": "v-13ff4a41-2ee6-5385-ae2b-22af01b93cf9",
+      "warnings": [
+        "Owner reviewed this postcode discrepancy and confirmed the displayed pub building; listing postcode retained for provenance",
+        "FSA coordinate is 25-50m away; informational only"
       ]
     },
     {
@@ -19445,7 +19270,7 @@
     {
       "actionable": false,
       "area": "Staffordshire",
-      "checked_at": "2026-10-09",
+      "checked_at": "2026-11-01",
       "comparisons": [
         {
           "address": "The Old Star Inn, Queen Street, Uttoxeter",
@@ -19600,7 +19425,7 @@
     {
       "actionable": false,
       "area": "Derbyshire",
-      "checked_at": "2026-10-09",
+      "checked_at": "2026-11-01",
       "comparisons": [
         {
           "name_matches": 0,
@@ -26609,6 +26434,68 @@
     },
     {
       "actionable": false,
+      "area": "Staffordshire",
+      "checked_at": "2026-10-10",
+      "comparisons": [
+        {
+          "name_matches": 0,
+          "postcode_matches": 1,
+          "queried_postcode": "B78 3AB",
+          "status": "no_name_match"
+        },
+        {
+          "address": "Lichfield Road, Hopwas, Tamworth, Staffordshire",
+          "difference_metres": 179.9,
+          "lat": 52.6426239013672,
+          "lng": -1.73903298377991,
+          "name": "The Tame Otter",
+          "postcode": "B78 3AF",
+          "queried_postcode": "B78 3AF",
+          "status": "coordinate_disagreement",
+          "url": "https://ratings.food.gov.uk/business/1249091"
+        }
+      ],
+      "confidence": "owner_reviewed",
+      "country": "England",
+      "dispense": "H",
+      "independent_of_pin": true,
+      "last": "2026 Q3",
+      "listing": {
+        "postcode": "B78 3AB",
+        "pub_name": "Tame Otter"
+      },
+      "notes": "",
+      "owner_reviewed": true,
+      "pg": "Guest",
+      "pin": {
+        "lat": 52.643088,
+        "lng": -1.736479
+      },
+      "place_name": "Hopwas",
+      "postcode": "B78 3AB",
+      "priority": 2,
+      "pub_name": "Tame Otter",
+      "reasons": [],
+      "reference": {
+        "address": "Lichfield Road, Hopwas, Tamworth, Staffordshire",
+        "difference_metres": 179.9,
+        "lat": 52.6426239013672,
+        "lng": -1.73903298377991,
+        "name": "The Tame Otter",
+        "postcode": "B78 3AF",
+        "queried_postcode": "B78 3AF",
+        "status": "coordinate_disagreement",
+        "url": "https://ratings.food.gov.uk/business/1249091"
+      },
+      "status": "coordinate_disagreement",
+      "venue_id": "v-f5205b00-aadb-5928-870d-674117dbffab",
+      "warnings": [
+        "Owner reviewed this postcode discrepancy and confirmed the displayed pub building; listing postcode retained for provenance",
+        "FSA coordinate is 179.9m from the accepted pin; informational only because the FSA geocode may be approximate"
+      ]
+    },
+    {
+      "actionable": false,
       "area": "Leicestershire",
       "checked_at": "2026-10-09",
       "comparisons": [
@@ -27384,6 +27271,52 @@
     },
     {
       "actionable": false,
+      "area": "Devon",
+      "checked_at": "2026-10-26",
+      "comparisons": [
+        {
+          "name_matches": 0,
+          "postcode_matches": 2,
+          "queried_postcode": "EX34 7BP",
+          "status": "no_name_match"
+        }
+      ],
+      "confidence": "owner_reviewed",
+      "country": "England",
+      "dispense": "H",
+      "independent_of_pin": true,
+      "last": "2026 Q2",
+      "listing": {
+        "postcode": "EX34 7BP",
+        "pub_name": "Tides Out"
+      },
+      "notes": "",
+      "owner_reviewed": true,
+      "pg": "Guest",
+      "pin": {
+        "lat": 51.172685037242,
+        "lng": -4.2054578186163
+      },
+      "place_name": "Woolacombe",
+      "postcode": "EX34 7BP",
+      "priority": 2,
+      "pub_name": "Tides Out",
+      "reasons": [],
+      "reference": {
+        "name_matches": 0,
+        "postcode_matches": 2,
+        "queried_postcode": "EX34 7BP",
+        "status": "no_name_match"
+      },
+      "status": "no_name_match",
+      "venue_id": "v-b0c6fb73-49cd-5fdf-b936-ee8fbd0ac4c6",
+      "warnings": [
+        "Owner reviewed this postcode discrepancy and confirmed the displayed pub building; listing postcode retained for provenance",
+        "FSA comparison is inconclusive; absence of a match does not contradict accepted evidence"
+      ]
+    },
+    {
+      "actionable": false,
       "area": "North Yorkshire",
       "checked_at": "2026-10-19",
       "comparisons": [
@@ -27580,6 +27513,68 @@
       "venue_id": "v-8ed8c1ad-ceb1-56c0-9c67-1218004eb836",
       "warnings": [
         "FSA coordinate is 52.7m from the accepted pin; informational only because the FSA geocode may be approximate"
+      ]
+    },
+    {
+      "actionable": false,
+      "area": "Staffordshire",
+      "checked_at": "2026-10-30",
+      "comparisons": [
+        {
+          "address": "Trentside Cricket Club, Off Faldo Close, Branston, Burton upon Trent",
+          "difference_metres": 223.9,
+          "lat": 52.7872505187988,
+          "lng": -1.65420198440552,
+          "name": "Trentside Cricket Club",
+          "postcode": "DE14 3DP",
+          "queried_postcode": "DE14 3DP",
+          "status": "coordinate_disagreement",
+          "url": "https://ratings.food.gov.uk/business/1248081"
+        },
+        {
+          "name_matches": 0,
+          "postcode_matches": 2,
+          "queried_postcode": "DE14 3DN",
+          "status": "no_name_match"
+        }
+      ],
+      "confidence": "owner_reviewed",
+      "country": "England",
+      "dispense": "H",
+      "independent_of_pin": true,
+      "last": "2026 Q1",
+      "listing": {
+        "postcode": "DE14 3DP",
+        "pub_name": "Trentside Cricket Club (PMC)"
+      },
+      "notes": "",
+      "owner_reviewed": true,
+      "pg": "Perm",
+      "pin": {
+        "lat": 52.7867,
+        "lng": -1.651
+      },
+      "place_name": "Burton U-T: Branston",
+      "postcode": "DE14 3DP",
+      "priority": 2,
+      "pub_name": "Trentside Cricket Club (PMC)",
+      "reasons": [],
+      "reference": {
+        "address": "Trentside Cricket Club, Off Faldo Close, Branston, Burton upon Trent",
+        "difference_metres": 223.9,
+        "lat": 52.7872505187988,
+        "lng": -1.65420198440552,
+        "name": "Trentside Cricket Club",
+        "postcode": "DE14 3DP",
+        "queried_postcode": "DE14 3DP",
+        "status": "coordinate_disagreement",
+        "url": "https://ratings.food.gov.uk/business/1248081"
+      },
+      "status": "coordinate_disagreement",
+      "venue_id": "v-8e577f40-1d4f-5d93-a248-eb1f6eb244e4",
+      "warnings": [
+        "Owner reviewed this postcode discrepancy and confirmed the displayed pub building; listing postcode retained for provenance",
+        "FSA coordinate is 223.9m from the accepted pin; informational only because the FSA geocode may be approximate"
       ]
     },
     {
@@ -29314,7 +29309,7 @@
     {
       "actionable": false,
       "area": "West Yorkshire",
-      "checked_at": "2026-10-09",
+      "checked_at": "2026-11-01",
       "comparisons": [
         {
           "address": "Otley Road, Guiseley, Leeds",
@@ -33413,7 +33408,7 @@
     {
       "actionable": false,
       "area": "South Wales",
-      "checked_at": "2026-10-09",
+      "checked_at": "2026-11-01",
       "comparisons": [
         {
           "address": "The Borough Arms, 2 New Henry Street, Neath, Neath Port Talbot",
@@ -35056,7 +35051,7 @@
     {
       "actionable": false,
       "area": "Staffordshire",
-      "checked_at": "2026-10-09",
+      "checked_at": "2026-11-01",
       "comparisons": [
         {
           "address": "Castle Mona, 4 Victoria Street, Newcastle Under Lyme, Staffordshire",
@@ -36328,7 +36323,7 @@
     {
       "actionable": false,
       "area": "Cheshire",
-      "checked_at": "2026-10-09",
+      "checked_at": "2026-11-01",
       "comparisons": [
         {
           "address": "3/5 Ingersley Road, Bollington, , Macclesfield",
@@ -37017,7 +37012,7 @@
     {
       "actionable": false,
       "area": "Derbyshire",
-      "checked_at": "2026-10-09",
+      "checked_at": "2026-11-01",
       "comparisons": [
         {
           "address": "145 OVERSETTS ROAD, NEWHALL, SWADLINCOTE",
@@ -38448,7 +38443,7 @@
     {
       "actionable": false,
       "area": "West Wales",
-      "checked_at": "2026-10-09",
+      "checked_at": "2026-11-01",
       "comparisons": [
         {
           "address": "24 Main Street, , Fishguard, Pembrokeshire",
@@ -39137,7 +39132,7 @@
     {
       "actionable": false,
       "area": "Leicestershire",
-      "checked_at": "2026-10-09",
+      "checked_at": "2026-11-01",
       "comparisons": [
         {
           "address": "The Gate Inn, 108 Fairfield Road, Hugglescote, Coalville",
@@ -39402,7 +39397,7 @@
     {
       "actionable": false,
       "area": "North Yorkshire",
-      "checked_at": "2026-10-09",
+      "checked_at": "2026-11-01",
       "comparisons": [
         {
           "address": "70 High Street, , Yarm",
@@ -40091,7 +40086,7 @@
     {
       "actionable": false,
       "area": "Cambridgeshire",
-      "checked_at": "2026-10-09",
+      "checked_at": "2026-11-01",
       "comparisons": [
         {
           "address": "The Green Man 55 High Street, Trumpington, Cambridge, Cambridgeshire",
@@ -40939,7 +40934,7 @@
     {
       "actionable": false,
       "area": "Derbyshire",
-      "checked_at": "2026-10-09",
+      "checked_at": "2026-11-01",
       "comparisons": [
         {
           "address": "THE HAWK AND BUCKLE 46 MAIN STREET, ETWALL, DERBY",
@@ -42582,7 +42577,7 @@
     {
       "actionable": false,
       "area": "Staffordshire",
-      "checked_at": "2026-10-09",
+      "checked_at": "2026-11-01",
       "comparisons": [
         {
           "address": "63 Kingsway, Stoke, Stoke-On-Trent",
@@ -43218,7 +43213,7 @@
     {
       "actionable": false,
       "area": "Greater London",
-      "checked_at": "2026-10-09",
+      "checked_at": "2026-11-01",
       "comparisons": [
         {
           "address": "THE MACBETH 70 HOXTON STREET, Hackney, London",
@@ -43695,7 +43690,7 @@
     {
       "actionable": false,
       "area": "Warwickshire",
-      "checked_at": "2026-10-09",
+      "checked_at": "2026-11-01",
       "comparisons": [
         {
           "address": "21 Market Street, , Atherstone, Warwickshire",
@@ -44013,7 +44008,7 @@
     {
       "actionable": false,
       "area": "East Yorkshire",
-      "checked_at": "2026-10-09",
+      "checked_at": "2026-11-01",
       "comparisons": [
         {
           "address": "Minerva Hotel Public House, Nelson Street, Kingston Upon Hull",
@@ -44172,7 +44167,7 @@
     {
       "actionable": false,
       "area": "Derbyshire",
-      "checked_at": "2026-10-09",
+      "checked_at": "2026-11-01",
       "comparisons": [
         {
           "address": "Risley Lane, , Breaston",
@@ -44808,7 +44803,7 @@
     {
       "actionable": false,
       "area": "Lincolnshire",
-      "checked_at": "2026-10-09",
+      "checked_at": "2026-11-01",
       "comparisons": [
         {
           "address": "7 Seaview Street, , Cleethorpes",
@@ -44914,7 +44909,7 @@
     {
       "actionable": false,
       "area": "Hertfordshire",
-      "checked_at": "2026-10-09",
+      "checked_at": "2026-11-01",
       "comparisons": [
         {
           "address": "O'Neills, Station Road, Watford",
@@ -45391,7 +45386,7 @@
     {
       "actionable": false,
       "area": "Derbyshire",
-      "checked_at": "2026-10-09",
+      "checked_at": "2026-11-01",
       "comparisons": [
         {
           "address": "51 Manor Road South Wingfield Alfreton Derbyshire",
@@ -45974,7 +45969,7 @@
     {
       "actionable": false,
       "area": "Staffordshire",
-      "checked_at": "2026-10-09",
+      "checked_at": "2026-11-01",
       "comparisons": [
         {
           "address": "The Bankhouse, Salter Street, Stafford, Staffordshire",
@@ -46027,7 +46022,7 @@
     {
       "actionable": false,
       "area": "South Wales",
-      "checked_at": "2026-10-09",
+      "checked_at": "2026-11-01",
       "comparisons": [
         {
           "address": "726 Mumbles Road, , Mumbles",
@@ -48677,7 +48672,7 @@
     {
       "actionable": false,
       "area": "Devon",
-      "checked_at": "2026-10-09",
+      "checked_at": "2026-11-01",
       "comparisons": [
         {
           "address": "The Ship And Pilot Inn, 9-10 Broad Street, Ilfracombe, Devon",
@@ -48783,7 +48778,7 @@
     {
       "actionable": false,
       "area": "Staffordshire",
-      "checked_at": "2026-10-09",
+      "checked_at": "2026-11-01",
       "comparisons": [
         {
           "address": "Paragon Road, Longton, Stoke-On-Trent",
@@ -49525,7 +49520,7 @@
     {
       "actionable": false,
       "area": "Staffordshire",
-      "checked_at": "2026-10-09",
+      "checked_at": "2026-11-01",
       "comparisons": [
         {
           "address": "Marshfield Lane, Biddulph, Stoke On Trent Staffordshire",
@@ -49578,7 +49573,7 @@
     {
       "actionable": false,
       "area": "Shropshire",
-      "checked_at": "2026-10-09",
+      "checked_at": "2026-11-01",
       "comparisons": [
         {
           "address": "71 High Street, , Newport, Shropshire",
@@ -51168,7 +51163,7 @@
     {
       "actionable": false,
       "area": "Staffordshire",
-      "checked_at": "2026-10-09",
+      "checked_at": "2026-11-01",
       "comparisons": [
         {
           "address": "Longton Road, Stoke-on-Trent",
@@ -53394,7 +53389,7 @@
     {
       "actionable": false,
       "area": "Greater London",
-      "checked_at": "2026-10-09",
+      "checked_at": "2026-11-01",
       "comparisons": [
         {
           "address": "96 Church Road, Upper Norwood, London",
@@ -54401,7 +54396,7 @@
   ],
   "schema_version": 1,
   "summary": {
-    "actionable_count": 6,
+    "actionable_count": 0,
     "confidence_counts": {
       "existing_evidence_needs_corroboration": 507,
       "independent_coordinate_agreement": 415,
@@ -54414,7 +54409,7 @@
       "nearby": 103,
       "no_name_match": 178
     },
-    "informational_count": 603,
+    "informational_count": 604,
     "limitations": [
       "Coordinate agreement does not prove the correct building or current Bass availability.",
       "Owner-approved coordinates take priority; CAMRA remains the primary automated reference.",

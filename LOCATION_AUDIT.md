@@ -21,6 +21,13 @@ The report sorts known postcode discrepancies first, then informational differen
 - A complete independent audit can also be started with the workflow's `full` option.
 - Changed actionable postcode/source conflicts, source outages and failed jobs use the existing review issue and SMTP notification pipeline. Unchanged issues stay quiet. Nearby and missing-name results remain visible in the full report for manual review.
 
+The daily job fails on a live release mismatch, invalid schema or failed fetch,
+and records the result in `map-health-status.json` even when no safe candidate
+can be published. Notifications combine the latest saved health result with the
+location register. Repeated incidents stay quiet; a recovery produces one
+changed-state email. Valid source checks can still publish during a live-site
+failure. The review issue is owned by the notification workflow alone.
+
 The independent audit never moves or recolours a pin. It records all observations; coordinate-only differences never open review flags or trigger changed-location emails; corrections require reviewed evidence. Pin signatures invalidate stale comparisons after a correction. Historical owner decisions and previous coordinates remain in the registry.
 
 ## Run locally
@@ -30,5 +37,10 @@ The independent audit never moves or recolours a pin. It records all observation
 This writes a resumable checkpoint and full report under `candidate-independent/`, without changing the map. `--limit 45` rotates a smaller batch. `--publish --resume` updates reports and review flags after validating that every displayed location is unchanged. The reports are based on factual source comparisons, not an assertion that every building has been visually inspected.
 
 `python -u full_location_audit.py --reports-only --publish` rebuilds classifications and reports from saved comparisons, without querying sources or updating their check dates. Existing review history is retained when coordinate-only flags are resolved.
+
+The owner-decision notification step refreshes `audit/full-location-audit.*`
+from saved comparisons automatically. Its actionable count describes that
+independent comparison; the complete current location queue also covers
+quarantined pins and other source failures.
 
 An owner can resolve location review of a postcode discrepancy by confirming the pub building. The source postcode and reference postcode remain recorded; this does not assert that the postal delivery postcode was independently proven. The decision covers the exact pub name, postcode pair, reference URL and coordinate. Any change to these reopens review.

@@ -35,30 +35,47 @@ jobs:
         run: |
           python apply_closed_reviews.py
           python validate_directory_release.py --allow-expired-evidence
-          git add pubs.csv directory-meta.json pub-coordinates.json venue-coordinates.json coordinate-verification.json venue-registry.json directory-release.json location-review.json
+          git add pubs.csv directory-meta.json pub-coordinates.json venue-coordinates.json coordinate-verification.json venue-registry.json directory-release.json location-review.json audit/full-location-audit.json audit/full-location-audit.csv audit/full-location-audit.md
           if ! git diff --cached --quiet; then
             git config user.name 'github-actions[bot]'
             git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
-            git commit -m 'Record completed owner reviews'
+            git commit -m 'Refresh owner decisions and review reports'
             git push
           fi
       - name: Validate the location register
         run: python validate_directory_release.py --allow-expired-evidence
       - name: Write the complete review queue
-        run: python -c "from directory_release import read_json; from location_review import format_report; from pathlib import Path; Path('location-review-report.md').write_text(format_report(read_json('location-review.json')), encoding='utf-8')"
+        # Read main's current durable status, including failed health runs; a
+        # delayed workflow_run event must not replace it with an old artifact.
+        run: python -c "from directory_release import read_json, write_json; from location_review import format_report, load_health_status, with_health; from pathlib import Path; report = with_health(read_json('location-review.json'), load_health_status('map-health-status.json')); write_json('notification-report.json', report); Path('location-review-report.md').write_text(format_report(report), encoding='utf-8')"
       - name: Update the persistent GitHub review issue
         uses: actions/github-script@v7
         with:
           script: |
             const fs = require('fs');
-            const report = JSON.parse(fs.readFileSync('location-review.json', 'utf8'));
+            const report = JSON.parse(fs.readFileSync('notification-report.json', 'utf8'));
             const title = 'BassBeerMap coordinate review';
             const source = context.payload.workflow_run;
-            const failed = source && ['failure', 'timed_out', 'action_required'].includes(source.conclusion);
+            const isHealth = source && ['Weekly map validation', 'Daily map validation'].includes(source.name);
+            const sameHealthRun = source && Number(report.health_run_id || 0) === Number(source.id);
+            const healthCheckedAt = Date.parse(report.health_checked_at || '');
+            const sourceCompletedAt = Date.parse(source?.updated_at || '');
+            const comparableTimes = Number.isFinite(healthCheckedAt) && Number.isFinite(sourceCompletedAt);
+            // A rerun can observe health after a higher run ID has completed.
+            // Across distinct runs, observation time wins over allocation order.
+            const newerHealth = source && (sameHealthRun
+              ? Number(report.health_run_attempt || 1) > Number(source.run_attempt || 1)
+              : comparableTimes && healthCheckedAt > sourceCompletedAt);
+            const sameHealthAttempt = sameHealthRun && Number(report.health_run_attempt || 1) === Number(source.run_attempt || 1);
+            // A failure after the status commit (for example artifact upload)
+            // is still visible. A recovered newer run/attempt supersedes it.
+            const representedHealth = isHealth && (newerHealth || (sameHealthAttempt && report.health_count));
+            const failed = source && !representedHealth && ['failure', 'timed_out', 'action_required'].includes(source.conclusion);
+            core.exportVariable('FAILURE_URL', failed ? source.html_url : '');
             const fullBody = (failed ? `Import or audit failed: ${source.html_url}\n\n` : '') + fs.readFileSync('location-review-report.md', 'utf8');
             const body = fullBody.length > 60000 ? fullBody.slice(0, 58000) + '\n\nReport shortened for GitHub. Full audit: https://github.com/bristolbagpiper/BassBeerMap/blob/main/audit/full-location-audit.md' : fullBody;
             const existing = (await github.rest.issues.get({...context.repo, issue_number:5})).data;
-            if (report.active_count || failed) {
+            if (report.active_count || report.health_count || failed) {
               if (existing.state !== 'open' || existing.body !== body) await github.rest.issues.update({...context.repo, issue_number:existing.number, state:'open', body});
             } else if (existing.state !== 'closed' || existing.body !== body) {
               await github.rest.issues.update({...context.repo, issue_number:existing.number, body, state:'closed', state_reason:'completed'});
@@ -72,13 +89,8 @@ jobs:
           ALERT_TO: ${{ secrets.ALERT_TO }}
           ALERT_FROM: ${{ secrets.ALERT_FROM }}
           SOURCE_CONCLUSION: ${{ github.event.workflow_run.conclusion }}
-          SOURCE_RUN_URL: ${{ github.event.workflow_run.html_url }}
         run: |
-          if [ "$SOURCE_CONCLUSION" = 'failure' ] || [ "$SOURCE_CONCLUSION" = 'timed_out' ] || [ "$SOURCE_CONCLUSION" = 'action_required' ]; then
-            python notify_location_review.py --failure-url "$SOURCE_RUN_URL"
-          else
-            python notify_location_review.py
-          fi
+          python notify_location_review.py --report notification-report.json --failure-url "$FAILURE_URL"
       - name: Commit successful email acknowledgement
         run: |
           if [ ! -f location-alert-state.json ]; then exit 0; fi

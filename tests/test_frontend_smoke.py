@@ -76,6 +76,13 @@ class FrontendSmokeTests(unittest.TestCase):
     def tearDown(self):
         type(self).release_override = None
 
+    def save_review_screenshot(self, name):
+        directory = os.environ.get('DIRECTORY_TEST_SCREENSHOTS')
+        if directory:
+            path = Path(directory)
+            path.mkdir(parents=True, exist_ok=True)
+            self.driver.save_screenshot(str(path / name))
+
     def test_muckers_keeps_verified_pin_and_directions_despite_postcode_conflict(self):
         self.load_directory()
         result = self.driver.execute_script("const p = pubData.find(p => p.pub_name === 'GJ Muckers'); return {precision:p.locationPrecision, lat:p.lat, lng:p.lng, issue:p.locationIssue, directions:directionsUrl(p)};")
@@ -90,6 +97,44 @@ class FrontendSmokeTests(unittest.TestCase):
         self.load_directory()
         result = self.driver.execute_script("return pubData.filter(p => p.pub_name === 'Black Lion' && p.place_name === 'Blackfordby').map(p => p.pg)")
         self.assertEqual(result, ['Guest'])
+
+    def test_nearby_status_tracks_guest_all_and_radius_filters(self):
+        from selenium.webdriver.common.by import By
+        from selenium.webdriver.support.ui import Select
+        self.load_directory()
+        Select(self.driver.find_element(By.ID, 'typeFilter')).select_by_value('Guest')
+        self.driver.execute_script("setUserLocation(51.45593, -2.593993, 'Test postcode');")
+        self.assertIn('closest guest listings within 25 miles', self.driver.find_element(By.ID, 'locationStatus').text)
+        self.assertNotIn('permanent', self.driver.find_element(By.ID, 'locationStatus').text)
+        self.save_review_screenshot('Bass Map nearby Guest preview.png')
+        Select(self.driver.find_element(By.ID, 'typeFilter')).select_by_value('')
+        Select(self.driver.find_element(By.ID, 'radiusFilter')).select_by_value('')
+        self.assertIn('closest all listings at any distance', self.driver.find_element(By.ID, 'locationStatus').text)
+        Select(self.driver.find_element(By.ID, 'typeFilter')).select_by_value('Perm')
+        Select(self.driver.find_element(By.ID, 'radiusFilter')).select_by_value('10')
+        self.assertIn('closest permanent listings within 10 miles', self.driver.find_element(By.ID, 'locationStatus').text)
+
+    def test_report_dialog_keeps_keyboard_focus_and_restores_background(self):
+        from selenium.webdriver.common.by import By
+        from selenium.webdriver.common.keys import Keys
+        self.load_directory()
+        # This test exercises only local modal behavior. No report service or
+        # challenge request is needed and the form is never submitted.
+        self.driver.execute_script('loadTurnstile = async () => {};')
+        self.driver.find_element(By.ID, 'openProblemReportBtn').click()
+        self.assertEqual(self.driver.switch_to.active_element.get_attribute('id'), 'problemMessage')
+        self.assertTrue(self.driver.execute_script("return document.querySelector('.layout').inert"))
+        self.driver.find_element(By.ID, 'submitProblemReportBtn').send_keys(Keys.TAB)
+        self.assertEqual(self.driver.switch_to.active_element.get_attribute('id'), 'closeProblemReportBtn')
+        self.driver.switch_to.active_element.send_keys(Keys.SHIFT, Keys.TAB)
+        self.assertEqual(self.driver.switch_to.active_element.get_attribute('id'), 'submitProblemReportBtn')
+        self.driver.set_window_size(390, 844)
+        self.save_review_screenshot('Bass Map report dialog preview.png')
+        self.driver.switch_to.active_element.send_keys(Keys.ESCAPE)
+        self.assertTrue(self.driver.execute_script('return document.getElementById("reportDialog").hidden'))
+        self.assertFalse(self.driver.execute_script("return document.querySelector('.layout').inert"))
+        self.assertEqual(self.driver.switch_to.active_element.get_attribute('id'), 'openProblemReportBtn')
+        self.driver.set_window_size(1440, 1000)
 
     def test_expired_evidence_falls_back_to_approximate_pin(self):
         payload = json.loads((self.data_root / 'directory-release.json').read_text(encoding='utf-8'))

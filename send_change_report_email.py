@@ -14,7 +14,7 @@ def listing_label(row):
 def format_report(report):
     summary = report["summary"]
     lines = [
-        "Bass directory update validated and ready to publish.",
+        "Bass directory release validated and committed; check the Pages deployment and live map for visibility.",
         "",
         f"Listings: {summary['previous_listing_count']} → {summary['candidate_listing_count']}",
         f"Added: {summary['added_count']} | Removed: {summary['removed_count']} | Updated: {summary['updated_count']}",

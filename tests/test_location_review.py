@@ -7,12 +7,48 @@ from unittest.mock import MagicMock, patch
 
 from coordinate_sources import camra_reference, resolve_new_pin
 from directory_release import build_ledger, permanent_id, read_json, venue_key
-from location_review import build_review, fingerprint, format_report
+from location_review import build_review, fingerprint, format_report, load_health_status, with_health
 from notify_location_review import notify
 from tests.test_directory_release import row, pin
 
 
 class LocationTrackingTests(unittest.TestCase):
+    def test_health_alerts_deduplicate_and_send_one_recovery_with_mocked_smtp(self):
+        empty = dict(records={}, active_count=0, unverified_count=0)
+        healthy = dict(schema_version=1, issues=[], run_id='10', checked_at='2026-10-31T10:00:00Z')
+        self.assertEqual(with_health(empty, healthy)['health_checked_at'], healthy['checked_at'])
+        failed = dict(schema_version=1, issues=['Live release unreachable: TimeoutError'], run_id='11')
+        settings = dict(SMTP_HOST='smtp.example.test', SMTP_USERNAME='test', SMTP_PASSWORD='test', ALERT_TO='test@example.test')
+        with tempfile.TemporaryDirectory() as directory, patch.dict(os.environ, settings, clear=True):
+            state = Path(directory) / 'delivery.json'
+            smtp = MagicMock()
+            smtp.return_value.__enter__.return_value.send_message.return_value = {}
+            self.assertFalse(notify(with_health(empty, None), state, smtp_factory=smtp))
+            self.assertFalse(notify(with_health(empty, healthy), state, smtp_factory=smtp))
+            self.assertTrue(notify(with_health(empty, failed), state, smtp_factory=smtp))
+            body = smtp.return_value.__enter__.return_value.send_message.call_args.args[0].get_content()
+            self.assertIn('Live release unreachable', body)
+            later = dict(failed, run_id='12', checked_at='2026-11-01', run_url='https://example.test/12')
+            self.assertFalse(notify(with_health(empty, later), state, smtp_factory=smtp))
+            self.assertTrue(notify(with_health(empty, healthy), state, smtp_factory=smtp))
+            self.assertFalse(notify(with_health(empty, healthy), state, smtp_factory=smtp))
+            self.assertEqual(smtp.call_count, 2)
+        self.assertEqual(empty, dict(records={}, active_count=0, unverified_count=0))
+
+    def test_corrupt_or_unknown_health_status_fails_visibly(self):
+        empty = dict(records={}, active_count=0, unverified_count=0)
+        for status in ([], {}, {'schema_version': 2, 'issues': []},
+                       {'schema_version': 1, 'issues': 'failure'}, {'schema_version': 1, 'issues': [None]}):
+            with self.subTest(status=status), self.assertRaisesRegex(ValueError, 'Invalid map health'):
+                with_health(empty, status)
+        with tempfile.TemporaryDirectory() as directory:
+            path = Path(directory) / 'status.json'
+            self.assertIsNone(load_health_status(path))
+            for content in ('null', 'broken json'):
+                path.write_text(content, encoding='utf-8')
+                with self.assertRaises(ValueError):
+                    load_health_status(path)
+
     def fixture(self):
         listing = row()
         identifier = permanent_id(venue_key(listing))

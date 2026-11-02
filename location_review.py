@@ -3,6 +3,7 @@ import copy
 import hashlib
 import json
 from datetime import date
+from pathlib import Path
 
 
 def postcode_issue_reviewed(issue, pin, pub_name):
@@ -81,6 +82,34 @@ def build_review(rows, registry, ledger):
             'active_count': sum(r['active'] for r in records.values())}
 
 
+def load_health_status(path):
+    path = Path(path)
+    if not path.exists():
+        return None
+    status = json.loads(path.read_text(encoding='utf-8'))
+    if status is None:
+        raise ValueError('Invalid map health status: null snapshot')
+    return status
+
+
+def with_health(report, status):
+    """Combine the current health snapshot without changing venue lifecycle data."""
+    combined = copy.deepcopy(report)
+    if status is None:  # Older checkouts have no health snapshot yet.
+        return combined
+    if (not isinstance(status, dict) or status.get('schema_version') != 1
+            or not isinstance(status.get('issues'), list)
+            or not all(isinstance(issue, str) and issue for issue in status['issues'])):
+        raise ValueError('Invalid map health status; rerun the daily map audit')
+    combined['health_issues'] = sorted(set(status['issues']))
+    combined['health_count'] = len(combined['health_issues'])
+    combined['health_run_id'] = status.get('run_id', '')
+    combined['health_run_attempt'] = status.get('run_attempt', 1)
+    combined['health_checked_at'] = status.get('checked_at', '')
+    combined['health_run_url'] = status.get('run_url', '')
+    return combined
+
+
 def fingerprint(report):
     # Check dates and repeated identical attempts do not create repeated emails.
     active = {identifier: {k: r.get(k) for k in ('pub_name', 'place_name', 'postcode', 'status', 'reasons')}
@@ -94,6 +123,9 @@ def fingerprint(report):
                                                for p in research['proposals']]
         if research.get('status') == 'unavailable':
             active[identifier]['research_error'] = research.get('error')
+    if report.get('health_issues'):
+        # Run IDs and timestamps are receipts, not new incidents.
+        active['map_health'] = sorted(set(report['health_issues']))
     return hashlib.sha256(json.dumps(active, sort_keys=True).encode()).hexdigest()
 
 
@@ -101,6 +133,12 @@ def format_report(report):
     lines = [f"Unverified map locations: {report['unverified_count']}",
              f"All active location reviews: {report['active_count']}", '',
              'Brown pins remain approximate until independently verified.', '']
+    if 'health_issues' in report:
+        lines += [f"Active map health checks: {len(report['health_issues'])}",
+                  *[f'- {issue}' for issue in report['health_issues']]]
+        if report.get('health_run_url'):
+            lines.append('Latest map audit: ' + report['health_run_url'])
+        lines.append('')
     for identifier, record in sorted(report['records'].items(), key=lambda item: (not item[1]['unverified'], item[1]['pub_name'], item[0])):
         if not record['active']:
             continue

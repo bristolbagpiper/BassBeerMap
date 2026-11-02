@@ -60,6 +60,46 @@ class IdentityTests(unittest.TestCase):
         _, _, report = reconcile([row('New Name')], registry, {})
         self.assertIn('identity review', report['errors'][0])
 
+    def test_locality_change_with_ambiguous_prior_identities_requires_review(self):
+        first = row()
+        second = dict(first, place_name='Bristol Centre')
+        registry = registry_for([first, second])
+        after = dict(first, place_name='Bristol (label correction)')
+        rows, updated, report = reconcile([after], registry, {})
+        self.assertEqual(len(report['errors']), 1)
+        for before in (first, second):
+            self.assertIn(before['venue_id'], report['errors'][0])
+        self.assertNotIn('venue_id', rows[0])
+        self.assertEqual(updated, registry)
+        self.assertEqual(report['changes'], [])
+
+    def test_active_same_name_and_postcode_branch_allows_distinct_locality(self):
+        before = row()
+        registry = registry_for([before])
+        branch = dict(before, place_name='Bristol Centre')
+        rows, updated, report = reconcile([branch, before], registry, {})
+        self.assertEqual(report['errors'], [])
+        self.assertNotEqual(rows[0]['venue_id'], before['venue_id'])
+        self.assertIsNone(updated['venues'][rows[0]['venue_id']]['verified_pin'])
+        self.assertEqual(rows[1]['venue_id'], before['venue_id'])
+
+    def test_postcode_spacing_cannot_bypass_locality_identity_review(self):
+        before = row()
+        registry = registry_for([before])
+        after = dict(before, place_name='Bristol (label correction)', postcode='bs11aa')
+        _, updated, report = reconcile([after], registry, {})
+        self.assertTrue(any('identity review' in error for error in report['errors']))
+        self.assertEqual(updated, registry)
+
+    def test_same_name_in_new_locality_and_different_full_postcode_is_new_venue(self):
+        before = row()
+        registry = registry_for([before])
+        after = dict(before, place_name='Bristol Centre', postcode='BS1 1AB')
+        rows, updated, report = reconcile([after], registry, {})
+        self.assertEqual(report['errors'], [])
+        self.assertNotEqual(rows[0]['venue_id'], before['venue_id'])
+        self.assertIsNone(updated['venues'][rows[0]['venue_id']]['verified_pin'])
+
     def test_conflicting_duplicate_is_blocked_and_reviewed_exception_cannot_drift(self):
         one, two = row('Black Lion'), dict(row('Black Lion'), pg='Guest', last='2026 Q2')
         _, _, report = reconcile([one, two], {'venues': {}}, {})
@@ -153,6 +193,53 @@ class ReleaseGateTests(unittest.TestCase):
         report = stage_import(candidate, self.root, self.stage, check_sources=False)
         self.assertFalse(report['valid'])
         self.assertEqual({p.name: p.read_bytes() for p in self.root.iterdir()}, before)
+
+    def test_unreviewed_locality_edit_cannot_replace_protected_identity(self):
+        candidate = Path(self.temporary.name) / 'raw.csv'
+        rows = copy.deepcopy(self.rows)
+        rows[0]['place_name'] += ' (label correction)'
+        write_rows(candidate, rows)
+        before = {p.name: p.read_bytes() for p in self.root.iterdir()}
+        with patch('ingest_directory.resolve_new_pin', return_value=None) as resolver, patch(
+                'ingest_directory.postcode_coordinates', return_value=self.postcodes) as coordinates:
+            report = stage_import(candidate, self.root, self.stage)
+        self.assertFalse(report['valid'])
+        self.assertTrue(any('identity review' in error for error in report['errors']))
+        resolver.assert_not_called()
+        coordinates.assert_not_called()
+        self.assertFalse((self.stage / 'directory-release.json').exists())
+        self.assertEqual({p.name: p.read_bytes() for p in self.root.iterdir()}, before)
+
+    def test_reviewed_locality_edit_preserves_identity_pin_and_downgrade_guard(self):
+        candidate = Path(self.temporary.name) / 'raw.csv'
+        rows = copy.deepcopy(self.rows)
+        before = rows[0]
+        rows[0] = dict(before, place_name=before['place_name'] + ' (label correction)')
+        write_rows(candidate, rows)
+        decision = {'identity_aliases': {venue_key(rows[0]): {
+            'previous_key': venue_key(before), 'reason': 'reviewed locality label correction',
+            'source_url': 'https://camra.org.uk/pubs/example', 'checked_at': date.today().isoformat(),
+            'reference_postcode': before['postcode']}}}
+        write_json(self.root / 'ingestion-decisions.json', decision)
+        published = {p.name: p.read_bytes() for p in self.root.iterdir()}
+        report = stage_import(candidate, self.root, self.stage, check_sources=False)
+        self.assertTrue(report['valid'], report['errors'])
+        self.assertEqual(report['summary']['verified_pins'], len(rows))
+        self.assertEqual(report['summary']['approximate_pins'], 0)
+        staged = read_json(self.stage / 'venue-registry.json')
+        identifier = before['venue_id']
+        self.assertEqual(staged['venues'][identifier]['current_key'], venue_key(rows[0]))
+        self.assertEqual(staged['venues'][identifier]['verified_pin'], self.registry['venues'][identifier]['verified_pin'])
+        self.assertEqual(staged['venues'][identifier]['identity_reviews'], [decision['identity_aliases'][venue_key(rows[0])]])
+        staged_rows = read_json(self.stage / 'directory-release.json')['rows']
+        self.assertEqual(staged_rows[0]['venue_id'], identifier)
+        self.assertEqual({p.name: p.read_bytes() for p in self.root.iterdir()}, published)
+        # Identity review must retain the existing pin-loss gate as well as the
+        # current point. An approximate replacement under that ID is rejected.
+        staged['venues'][identifier]['verified_pin'] = None
+        write_release(self.stage, staged_rows, staged, self.metadata, self.postcodes)
+        self.assertTrue(any('previously verified pin lost verification' in error
+                            for error in validate_release(self.stage, self.root)))
 
     def test_expired_evidence_never_produces_a_precise_pin(self):
         registry = copy.deepcopy(self.registry)

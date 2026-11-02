@@ -7,7 +7,6 @@ on:
 
 permissions:
   contents: write
-  issues: write
 
 concurrency:
   group: directory-data
@@ -28,16 +27,14 @@ jobs:
       - name: Validate all committed map assets
         run: python validate_directory_release.py --allow-expired-evidence
       - name: Check the live map and rotate 45 external venue checks
+        id: audit
         run: python audit_map_health.py --limit 45
-      - name: Upload health report and candidate artifacts
-        if: always()
-        uses: actions/upload-artifact@v4
-        with:
-          name: map-health-review
-          path: candidate-health/
-          if-no-files-found: warn
       - name: Publish confirmed checks and quarantine disputed pins
+        # A live deployment failure must not discard safe source checks. Invalid
+        # candidate assets are never copied, even when the audit exited nonzero.
+        if: always() && steps.audit.outcome != 'skipped'
         run: |
+          if ! python -c "from directory_release import read_json; assert read_json('candidate-health/health-report.json', {}).get('valid')"; then exit 0; fi
           python validate_directory_release.py --root candidate-health --previous . --allow-review-downgrades
           python -c "from pathlib import Path; from shutil import copyfile; from directory_release import RELEASE_FILES; [copyfile(Path('candidate-health') / name, name) for name in RELEASE_FILES + ['coordinate-health-state.json']]"
           python validate_directory_release.py
@@ -49,24 +46,27 @@ jobs:
           git add pubs.csv directory-meta.json pub-coordinates.json venue-coordinates.json coordinate-verification.json venue-registry.json directory-release.json location-review.json coordinate-health-state.json
           git commit -m 'Refresh coordinate evidence and map health'
           git push
-      - name: Report failed audit
+      - name: Persist the latest map health status, including failed audits
         if: always()
-        uses: actions/github-script@v7
+        env:
+          PIPELINE_STATUS: ${{ job.status }}
+          AUDIT_RUN_ID: ${{ github.run_id }}
+          AUDIT_RUN_ATTEMPT: ${{ github.run_attempt }}
+          AUDIT_RUN_URL: https://github.com/${{ github.repository }}/actions/runs/${{ github.run_id }}
+        run: |
+          python -c "import os; from audit_map_health import write_health_status; write_health_status('candidate-health', 'map-health-status.json', os.environ['AUDIT_RUN_ID'], os.environ['AUDIT_RUN_URL'], os.environ['PIPELINE_STATUS'] == 'failure', os.environ['AUDIT_RUN_ATTEMPT'])"
+          git add map-health-status.json
+          if git diff --cached --quiet; then exit 0; fi
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git commit -m 'Record latest map health result' -- map-health-status.json
+          git push
+      - name: Upload health report and candidate artifacts
+        if: always()
+        uses: actions/upload-artifact@v4
         with:
-          script: |
-            const fs = require('fs');
-            const path = 'candidate-health/health-report.json';
-            const report = fs.existsSync(path) ? JSON.parse(fs.readFileSync(path, 'utf8')) : {valid:false, errors:['Audit failed before producing its report.']};
-            const failed = '${{ job.status }}' === 'failure' || !report.valid;
-            if (!failed) return; // Successful reports are delivered by Location review notifications.
-            const title = 'BassBeerMap coordinate review';
-            const items = [...(report.errors || []), ...(report.issues || [])];
-            const { data: issues } = await github.rest.issues.listForRepo({...context.repo, state:'open'});
-            const existing = issues.find(i => i.title === title);
-            const body = [...items.map(i => `- ${i}`), '', `Run: https://github.com/${context.repo.owner}/${context.repo.repo}/actions/runs/${context.runId}`].join('\n');
-            if (items.length || failed) {
-              if (existing) await github.rest.issues.update({...context.repo, issue_number:existing.number, body});
-              else await github.rest.issues.create({...context.repo, title, body});
-            } else if (existing) {
-              await github.rest.issues.update({...context.repo, issue_number:existing.number, state:'closed', state_reason:'completed'});
-            }
+          name: map-health-review
+          path: |
+            candidate-health/
+            map-health-status.json
+          if-no-files-found: warn

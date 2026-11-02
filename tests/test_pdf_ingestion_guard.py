@@ -17,6 +17,18 @@ class Page:
 
 
 class ParserRegressionTests(unittest.TestCase):
+    def test_lowercase_dispense_column_is_normalized_without_polluting_notes(self):
+        class Reader:
+            pages = [Page([('UK Area', 20, 647), ('Ds', 721, 647), ('Source/Notes', 765, 647), ('ENGLAND', 20, 627),
+                           ('MERSEYSIDE', 20, 608), ('Jawbone', 150, 590),
+                           ('Liverpool: Bootle', 320, 590), ('L20 3BZ', 460, 590),
+                           ('Guest', 520, 590), ('2026 Q3', 560, 590),
+                           ('h', 721, 590), ('h', 765, 590)])]
+        rows = parse_pdf_rows(Reader())
+        self.assertEqual(len(rows), 1)
+        self.assertEqual(rows[0]['dispense'], 'H')
+        self.assertEqual(rows[0]['notes'], 'h')  # Only the real note survives.
+
     def test_legend_emitted_after_table_does_not_create_a_pub(self):
         class Reader:
             pages = [Page([('UK Area', 20, 647), ('ENGLAND', 20, 627),

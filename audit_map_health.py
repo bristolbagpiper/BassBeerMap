@@ -5,7 +5,7 @@ import hashlib
 import json
 import shutil
 import time
-from datetime import date
+from datetime import date, datetime, timezone
 from pathlib import Path
 
 from coordinate_sources import fetch_text, recheck_pin, resolve_new_pin
@@ -45,7 +45,8 @@ def health_audit(root, staging, limit=30, check_live=True):
     staging.mkdir(parents=True, exist_ok=True)
     # Ageing is handled below, not mistaken for corrupt committed assets.
     errors = validate_release(root, allow_expired=True)
-    report = {'valid': not errors, 'errors': errors, 'issues': [], 'checked': [], 'source_warnings': []}
+    report = {'valid': not errors, 'healthy': not errors, 'errors': errors, 'issues': [],
+              'live_issues': [], 'checked': [], 'source_warnings': []}
     if errors:
         write_json(staging / 'health-report.json', report)
         return report
@@ -57,11 +58,11 @@ def health_audit(root, staging, limit=30, check_live=True):
         try:
             live = json.loads(fetch_text('https://bassbeermap.com/directory-release.json'))
             if live.get('release_id') != read_json(root / 'directory-release.json')['release_id']:
-                report['issues'].append('The live map is not serving the committed release')
+                report['live_issues'].append('The live map is not serving the committed release')
             if live.get('schema_version') != 1:
-                report['issues'].append('The live map release schema is invalid')
+                report['live_issues'].append('The live map release schema is invalid')
         except Exception as error:
-            report['issues'].append(f'The live map release could not be checked: {type(error).__name__}')
+            report['live_issues'].append(f'The live map release could not be checked: {type(error).__name__}')
     for row in select_batch(rows, registry, state, limit):
         identifier = row['venue_id']
         entry = registry['venues'][identifier]
@@ -80,41 +81,39 @@ def health_audit(root, staging, limit=30, check_live=True):
                     entry['verified_pin'] = pin
         except Exception as error:
             result = {'status': 'unavailable', 'reason': type(error).__name__}
-            report['source_warnings'].append(f'{identifier}: {type(error).__name__}; last verified pin retained')
+        if result['status'] == 'unavailable':
+            retained = 'last verified pin retained' if entry.get('verified_pin') else 'location remains approximate'
+            report['source_warnings'].append(f'{identifier}: {result.get("reason", "unknown error")}; {retained}')
         state['checks'][identifier] = dict(result, attempted_at=date.today().isoformat())
         if entry.get('verified_pin'):
             sources = {e['source']: {'status': result['status'], 'url': e['url']}
                        for e in entry['verified_pin'].get('evidence', [])}
             entry['verification_attempt'] = dict(result, checked_at=date.today().isoformat(), sources=sources)
+        else:
+            # Retain lookup diagnostics, including an outage before any pin exists.
+            entry.setdefault('verification_attempt', {}).update(result, checked_at=date.today().isoformat())
         report['checked'].append({'venue_id': identifier, 'pub_name': row['pub_name'], 'status': result['status']})
         time.sleep(1)
     for row in rows:
         identifier = row['venue_id']
         pin = registry['venues'][identifier].get('verified_pin')
-        result = state['checks'].get(identifier, {})
-        if pin and pin.get('review_required'):
-            report['issues'].append(f'{identifier}: {row["pub_name"]}: {pin["review_reason"]}')
-        elif pin and not evidence_valid(pin):
+        if pin and not pin.get('review_required') and not evidence_valid(pin):
             pin['review_required'] = True
             pin['review_reason'] = 'Coordinate evidence expired or is incomplete'
-            report['issues'].append(f'{identifier}: {row["pub_name"]}: coordinate evidence needs review')
-        elif not pin:
-            report['issues'].append(f'{identifier}: {row["pub_name"]}: approximate postcode pin needs venue verification')
-        elif result.get('status') == 'manual_review':
-            newest = max(date.fromisoformat(e['checked_at']) for e in pin['evidence'])
-            if (date.today() - newest).days >= 180:
-                report['issues'].append(f'{identifier}: {row["pub_name"]}: manual evidence needs a fresh address/map check')
-        elif result.get('status') == 'unavailable':
-            report['issues'].append(f'{identifier}: {row["pub_name"]}: verification source unavailable ({result["reason"]})')
-        issue = (pin or {}).get('metadata_issue', {})
-        if issue and issue.get('listed', '').replace(' ', '').upper() != issue.get('reference', '').replace(' ', '').upper():
-            report['issues'].append(f'{identifier}: {row["pub_name"]}: directory postcode {issue["listed"]} conflicts with verified address {issue["reference"]}')
     write_release(staging, rows, registry, read_json(root / 'directory-meta.json'), read_json(root / 'pub-coordinates.json')['coordinates'])
+    # Share the queue's human-review rules; accepted postcode and FSA differences
+    # must not turn into a second, inconsistent set of health alerts.
+    review = read_json(staging / 'location-review.json')
+    report['issues'] = report['live_issues'] + [
+        f'{identifier}: {record["pub_name"]}: {reason}'
+        for identifier, record in review['records'].items() if record['active']
+        for reason in record['reasons']]
     if (root / 'latest-bass-directory.pdf').exists():
         shutil.copyfile(root / 'latest-bass-directory.pdf', staging / 'latest-bass-directory.pdf')
     errors = validate_release(staging, root, allow_review_downgrades=True)
     report['errors'].extend(errors)
     report['valid'] = not report['errors']
+    report['healthy'] = not (report['errors'] or report['live_issues'])
     fingerprint = hashlib.sha256(json.dumps(sorted(report['issues'])).encode()).hexdigest()
     report['notify'] = bool((report['issues'] or previous_fingerprint) and fingerprint != previous_fingerprint)
     state['issue_fingerprint'] = fingerprint
@@ -123,13 +122,36 @@ def health_audit(root, staging, limit=30, check_live=True):
     return report
 
 
-if __name__ == '__main__':
+def write_health_status(staging, destination, run_id='', run_url='', pipeline_failed=False, run_attempt=1):
+    """Persist deployment failures even when candidate release validation failed.
+
+    This file is deliberately outside the release bundle. Notification reruns
+    read the latest main-branch snapshot, never a triggering run's old artifact.
+    """
+    report = read_json(Path(staging) / 'health-report.json')
+    if report is None:
+        issues = ['Map audit failed before producing its report']
+    else:
+        issues = report.get('errors', []) + report.get('live_issues', [])
+    if pipeline_failed and not issues:
+        issues.append('Map audit pipeline failed; inspect its validation or publication step')
+    status = dict(schema_version=1, issues=issues, checked_at=datetime.now(timezone.utc).isoformat(),
+                  run_id=str(run_id), run_attempt=int(run_attempt), run_url=run_url)
+    write_json(destination, status)
+    return status
+
+
+def main(argv=None):
     parser = argparse.ArgumentParser()
     parser.add_argument('--root', type=Path, default=Path('.'))
     parser.add_argument('--staging', type=Path, default=Path('candidate-health'))
     parser.add_argument('--limit', type=int, default=30)
     parser.add_argument('--skip-live', action='store_true')
-    args = parser.parse_args()
+    args = parser.parse_args(argv)
     report = health_audit(args.root, args.staging, args.limit, not args.skip_live)
     print(json.dumps(report, indent=2))
-    raise SystemExit(not report['valid'])
+    return int(not report['healthy'])
+
+
+if __name__ == '__main__':
+    raise SystemExit(main())

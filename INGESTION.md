@@ -40,11 +40,13 @@ data/code commit, run release validation and browser tests, and preserve the old
 evidence in Git history. Remove `review_required` only after that human review.
 Do not automatically restore a pin that external checks disputed.
 
-## Weekly validation
+## Daily validation
 
-`Weekly map validation` runs Mondays at 06:47 UTC and supports manual dispatch.
+`Daily map validation` runs every day at 06:47 UTC and supports manual dispatch.
+Its historical filename is `weekly-map-validation.yml`. All GitHub cron times
+are UTC; London summer time is one hour later. Scheduled starts can be delayed.
 It validates every committed release asset and checks the live release ID. It
-then rotates through up to 30 external checks, prioritising older checks while
+then rotates through up to 45 external checks, prioritising older checks while
 reserving capacity for unresolved venues. This checks named addresses and
 coordinates, not just HTTP availability. It retains evidence on source outages
 and never changes a check date merely because a page responded successfully.
@@ -58,6 +60,15 @@ updated on meaningful changes and closed when resolved. Reports and staged
 assets are retained as workflow artifacts. Monthly change-report email remains
 available when SMTP secrets are configured.
 
+Release validity and live health are separate results. A stale, unreachable or
+invalid live release fails the audit even when its candidate files are valid.
+Safe source checks can still be committed. `map-health-status.json` records the
+latest live/pipeline result separately from the release bundle; notifications
+read this durable status from current `main`, alongside the venue review queue.
+Repeated identical health problems stay quiet, while a changed problem or
+recovery is emailed once after SMTP accepts it. The daily job does not write a
+second competing version of the review issue.
+
 ## Location tracking and alerts
 
 Every release includes `location-review.json`: permanent venue ID, name, place,
@@ -67,7 +78,8 @@ in the register. The candidate gate requires every approximate pin to appear in
 the active register. Lookup failures never mean a source has no listing unless
 that source was actually searched.
 
-`Location review notifications` runs after imports and weekly audits, including
+`Location review notifications` runs after imports, daily audits, research and
+owner approvals, including
 failed runs, and can be dispatched manually. It updates the GitHub review issue
 and emails the configured `ALERT_TO` recipient using existing SMTP secrets.
 The initial report includes all outstanding locations; later emails cover new
@@ -76,6 +88,11 @@ remain quiet. `location-alert-state.json` records successful SMTP acceptance onl
 an exception or refused recipient leaves delivery unacknowledged for retry.
 Notification failures fail visibly and open a separate GitHub issue. Successful
 recovery closes that issue. SMTP acceptance does not prove inbox delivery.
+
+Owner decisions also rebuild the independent report from saved comparisons,
+including when an acknowledgment was already applied. This updates derived
+classification only: source check dates, coordinates and approval facts are not
+refreshed. Informational FSA differences do not become active health incidents.
 
 ## Fixing brown pins without AI
 

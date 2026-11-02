@@ -33,10 +33,13 @@ def apply_decisions(registry, decisions):
 def main():
     root = Path('.')
     registry = read_json(root / 'venue-registry.json')
-    if not apply_decisions(registry, read_json(root / 'audit/closed-review-decisions.json')):
-        return
-    write_release(root, read_rows(root / 'pubs.csv'), registry,
-                  read_json(root / 'directory-meta.json'), read_json(root / 'pub-coordinates.json')['coordinates'])
+    if apply_decisions(registry, read_json(root / 'audit/closed-review-decisions.json')):
+        write_release(root, read_rows(root / 'pubs.csv'), registry,
+                      read_json(root / 'directory-meta.json'), read_json(root / 'pub-coordinates.json')['coordinates'])
+    # Decisions may already be recorded while a previously generated report is
+    # stale. Reclassify saved observations every time; do not refresh evidence.
+    from full_location_audit import refresh_saved_reports
+    refresh_saved_reports(root)
 
 
 if __name__ == '__main__':

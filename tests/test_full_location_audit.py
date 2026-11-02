@@ -4,7 +4,7 @@ import tempfile
 from pathlib import Path
 from unittest.mock import patch
 
-from full_location_audit import assess, compare, select_rows, run
+from full_location_audit import assess, compare, select_rows, run, refresh_saved_reports
 from location_review import build_review
 from directory_release import build_ledger, write_release, read_json, validate_release
 from tests.test_directory_release import row, registry_for, pin
@@ -16,6 +16,37 @@ def business(name='Example Inn', lat=51.45, lng=-2.59, postcode='BS1 1AA'):
 
 
 class IndependentAuditTests(unittest.TestCase):
+    def test_saved_report_refresh_applies_decisions_without_refreshing_source_evidence(self):
+        from directory_release import write_json
+        from apply_closed_reviews import apply_decisions
+        rows = [row()]
+        registry = registry_for(rows)
+        identifier = rows[0]['venue_id']
+        entry = registry['venues'][identifier]
+        entry['verified_pin']['metadata_issue'] = dict(listed='BS1 1AA', reference='BS1 1AB', source_url='https://camra.org.uk/pubs/123')
+        check = assess(rows[0], entry, lambda query, **k: [business(postcode=query['postcode'])])
+        check['checked_at'] = '2026-10-08'
+        self.assertTrue(check['actionable'])
+        decision = dict(venue_id=identifier, pub_name=rows[0]['pub_name'], listed='BS1 1AA', reference='BS1 1AB',
+                        source_url='https://camra.org.uk/pubs/123', approved_coordinate={'lat':51.45,'lng':-2.59},
+                        checked_at='2026-10-31', reviewed_by='bristolbagpiper', owner_instruction='retain reviewed building')
+        self.assertTrue(apply_decisions(registry, {'postcode_reviews':[decision]}))
+        with tempfile.TemporaryDirectory() as directory:
+            root = Path(directory)
+            write_release(root, rows, registry, {}, {'BS1 1AA': {'lat':51.46,'lng':-2.58}})
+            write_json(root/'independent-audit-state.json', {'checks': {identifier:check}})
+            before = {name:(root/name).read_bytes() for name in ('venue-registry.json','directory-release.json','independent-audit-state.json')}
+            with patch('full_location_audit.assess') as lookup:
+                summary = refresh_saved_reports(root)
+                self.assertEqual(summary['actionable_count'], 0)
+                self.assertEqual(refresh_saved_reports(root), summary)
+            lookup.assert_not_called()
+            saved = read_json(root/'audit/full-location-audit.json')['records'][0]
+            self.assertEqual(saved['checked_at'], '2026-10-08')
+            self.assertFalse(saved['actionable'])
+            self.assertTrue(saved['warnings'])
+            self.assertTrue(all((root/name).read_bytes() == data for name,data in before.items()))
+
     def test_disagreement_does_not_move_owner_approved_pin(self):
         listing = row()
         registry = registry_for([listing])

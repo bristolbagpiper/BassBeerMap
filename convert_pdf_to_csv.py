@@ -117,6 +117,10 @@ def parse_pdf_rows(reader: PdfReader) -> list[dict[str, str]]:
                               and abs(float(item["y"])) > 0.01), None)
     if first_page_header is None:
         raise ValueError("Cannot locate the first-page table header; refusing to extract listings")
+    dispense_column_x = next((float(item['x']) for item in items
+                              if item['page'] == 1 and str(item['text']).strip() == 'Ds'), 660)
+    notes_column_x = next((float(item['x']) for item in items
+                          if item['page'] == 1 and str(item['text']).strip() == 'Source/Notes'), 720)
 
     rows: list[dict[str, str]] = []
     current_country = ""
@@ -172,7 +176,10 @@ def parse_pdf_rows(reader: PdfReader) -> list[dict[str, str]]:
         is_postcode = bool(POSTCODE_RE.match(normalised_text))
         is_status = text in STATUS_VALUES
         is_last = bool(LAST_RE.match(text))
-        is_dispense = bool(DISPENSE_RE.match(text))
+        # Only normalize codes in the dispense column. A lowercase letter in
+        # a pub name, locality or note is ordinary source text, not a code.
+        dispense_text = text.upper() if positioned and dispense_column_x - 4 <= x < notes_column_x - 4 else text
+        is_dispense = bool(DISPENSE_RE.fullmatch(dispense_text))
         is_note_column = x >= 720
 
         if current_row is None:
@@ -201,7 +208,7 @@ def parse_pdf_rows(reader: PdfReader) -> list[dict[str, str]]:
             current_row["last"] = text
             continue
         if is_dispense:
-            current_row["dispense"] = text
+            current_row["dispense"] = dispense_text
             continue
         if is_note_column:
             current_row["notes"] = (current_row["notes"] + " " + text).strip()

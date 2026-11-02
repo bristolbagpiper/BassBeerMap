@@ -148,6 +148,34 @@ def report(rows, registry, checks, output):
     return summary
 
 
+def reclassify_checks(rows, registry, checks):
+    """Refresh derived decisions without looking up sources or dating a check anew."""
+    for row in rows:
+        identifier = row['venue_id']
+        check = checks.get(identifier)
+        if not check:
+            continue
+        entry = registry['venues'][identifier]
+        urls = [e.get('url', '') for e in (entry.get('verified_pin') or {}).get('evidence', [])]
+        independent = any(url and 'ratings.food.gov.uk' not in url for url in urls) and not any('ratings.food.gov.uk' in url for url in urls)
+        check['independent_of_pin'] = independent
+        check['owner_reviewed'] = bool(entry.get('location_approvals'))
+        check['confidence'] = ('owner_reviewed' if check['owner_reviewed'] else 'independent_coordinate_agreement' if check['status'] == 'coordinate_agreement' and independent else 'existing_evidence_needs_corroboration')
+        classify(check, entry.get('verified_pin') or {})
+
+
+def refresh_saved_reports(root):
+    """Render current review decisions over saved observations, without publication."""
+    root = Path(root)
+    rows = read_rows(root / 'pubs.csv')
+    registry = read_json(root / 'venue-registry.json')
+    checks = read_json(root / 'independent-audit-state.json', {}).get('checks', {})
+    reclassify_checks(rows, registry, checks)
+    output = root / 'audit'
+    output.mkdir(exist_ok=True)
+    return report(rows, registry, checks, output)
+
+
 def run(root, output, limit=0, publish=False, resume=False, reports_only=False):
     root, output = Path(root), Path(output)
     errors = validate_release(root)
@@ -171,18 +199,7 @@ def run(root, output, limit=0, publish=False, resume=False, reports_only=False):
             if completed % 25 == 0 or completed == len(selected):
                 print(f'{completed}/{len(selected)} compared', flush=True)
     # Refresh derived confidence after resuming a report created by older code.
-    for row in rows:
-        identifier = row['venue_id']
-        check = checks.get(identifier)
-        if not check:
-            continue
-        entry = registry['venues'][identifier]
-        urls = [e.get('url', '') for e in (entry.get('verified_pin') or {}).get('evidence', [])]
-        independent = any(url and 'ratings.food.gov.uk' not in url for url in urls) and not any('ratings.food.gov.uk' in url for url in urls)
-        check['independent_of_pin'] = independent
-        check['owner_reviewed'] = bool(entry.get('location_approvals'))
-        check['confidence'] = ('owner_reviewed' if check['owner_reviewed'] else 'independent_coordinate_agreement' if check['status'] == 'coordinate_agreement' and independent else 'existing_evidence_needs_corroboration')
-        classify(check, entry.get('verified_pin') or {})
+    reclassify_checks(rows, registry, checks)
     checkpoint(output / 'independent-audit-state.json', checks)
     summary = report(rows, registry, checks, output)
     if publish:

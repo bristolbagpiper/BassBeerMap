@@ -178,11 +178,18 @@ def reconcile(rows, registry, decisions):
                 old = entry['listing']
                 same_place = old.get('place_name', '').casefold() == row['place_name'].casefold()
                 same_name = old.get('pub_name', '').casefold() == row['pub_name'].casefold()
-                same_postcode = old.get('postcode', '').casefold() == row['postcode'].casefold()
-                if same_place and (same_name or same_postcode) and entry['current_key'] not in active_keys:
+                same_postcode = old.get('postcode', '').replace(' ', '').casefold() == row['postcode'].replace(' ', '').casefold()
+                # A locality label correction changes the key too. Do not let
+                # it replace an absent venue's permanent ID (and reviewed pin)
+                # merely because the old locality no longer matches. Matching
+                # the full postcode and name flags review, never an auto-merge;
+                # a still-active branch can coexist with a genuinely new one.
+                possible_identity_change = (same_place and (same_name or same_postcode)
+                                            or same_name and same_postcode and bool(row['postcode']))
+                if possible_identity_change and entry['current_key'] not in active_keys:
                     similar.append(old_id)
             if similar:
-                errors.append(f'{key}: possible rename/postcode change requires identity review ({", ".join(similar)})')
+                errors.append(f'{key}: possible rename/locality/postcode change requires identity review ({", ".join(similar)})')
                 continue
             identifier = permanent_id(key)
             registry['venues'][identifier] = {'aliases': [key], 'current_key': key, 'listing': row, 'verified_pin': None}

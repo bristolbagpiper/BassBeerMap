@@ -1413,8 +1413,8 @@
       <img class="bass-logo" src="bass-logo.svg" alt="Bass logo" />
       <div class="splash-kicker">Bass Directory Map</div>
       <h2>Loading the latest listings</h2>
-      <div class="splash-copy">The map is preparing the CSV data and postcode lookups. The first load can take a few seconds.</div>
-      <div id="splashStatusText" class="status splash-status">Preparing postcode lookups…</div>
+      <div class="splash-copy">The map is loading the directory and its saved locations. The first load can take a few seconds.</div>
+      <div id="splashStatusText" class="status splash-status">Loading the directory…</div>
       <div class="loading-bar"><div id="splashLoadingFill"></div></div>
     </div>
   </div>
@@ -1629,6 +1629,7 @@
     const REPORT_PROBLEM_ENDPOINT = 'https://bassbeermap.bristolbagpiper.workers.dev/api/report-problem';
     let problemReportTurnstileToken = '';
     let turnstileWidgetId = null;
+    let reportBackgroundState = [];
     const CSV_COLUMNS = ['country', 'area', 'pub_name', 'place_name', 'postcode', 'pg', 'last', 'dispense', 'notes'];
     // Corrections apply to a specific venue and source postcode, preserving the
     // directory value for traceability and allowing future directory changes.
@@ -2083,6 +2084,7 @@
     }
 
     function applyFilters(fit = false) {
+      updateNearbyStatus();
       const filtered = pubData.filter(matchesFilters);
       renderResults(filtered);
       updateMobileResetButton();
@@ -2152,8 +2154,17 @@
       applyFilters(true);
     }
 
+    function updateNearbyStatus() {
+      if (!userLocation) return;
+      const type = els.typeFilter.value;
+      const availability = type === 'Perm' ? 'permanent' : type === 'Guest' ? 'guest' : 'all';
+      const distance = els.radiusFilter.value ? `within ${els.radiusFilter.value} miles` : 'at any distance';
+      const guestHint = type === 'Perm' ? ' Choose Guest in the filter if needed.' : '';
+      els.locationStatus.textContent = `${userLocation.label}. Showing closest ${availability} listings ${distance}.${guestHint}`;
+    }
+
     function setUserLocation(lat, lng, label) {
-      userLocation = { lat, lng };
+      userLocation = { lat, lng, label };
       if (userMarker) map.removeLayer(userMarker);
       userMarker = L.circleMarker([lat, lng], {
         radius: 8,
@@ -2166,7 +2177,6 @@
       els.radiusFilter.disabled = false;
       if (!els.typeFilter.value) els.typeFilter.value = 'Perm';
       if (!els.radiusFilter.value) els.radiusFilter.value = '25';
-      els.locationStatus.textContent = `${label}. Showing closest permanent listings within ${els.radiusFilter.value} miles. Choose Guest in the filter if needed.`;
       map.setView([lat, lng], 11);
       applyFilters(true);
       if (isMobileView()) closeMobilePanel();
@@ -2278,8 +2288,13 @@
     }
 
     async function openProblemReport() {
+      if (!els.reportDialog.hidden) return;
       els.reportDialog.hidden = false;
       els.reportDialog.setAttribute('aria-hidden', 'false');
+      reportBackgroundState = [...document.body.children]
+        .filter(element => element !== els.reportDialog && !['SCRIPT', 'STYLE', 'LINK'].includes(element.tagName))
+        .map(element => ({ element, wasInert: element.hasAttribute('inert') }));
+      reportBackgroundState.forEach(({ element }) => element.setAttribute('inert', ''));
       els.problemMessage.focus();
       setProblemReportStatus('Loading spam protection…');
       try {
@@ -2293,6 +2308,10 @@
     function closeProblemReport() {
       els.reportDialog.hidden = true;
       els.reportDialog.setAttribute('aria-hidden', 'true');
+      reportBackgroundState.forEach(({ element, wasInert }) => {
+        if (!wasInert) element.removeAttribute('inert');
+      });
+      reportBackgroundState = [];
       els.openProblemReportBtn.focus();
     }
 
@@ -2303,7 +2322,24 @@
       if (event.target === els.reportDialog) closeProblemReport();
     });
     document.addEventListener('keydown', event => {
-      if (event.key === 'Escape' && !els.reportDialog.hidden) closeProblemReport();
+      if (els.reportDialog.hidden) return;
+      if (event.key === 'Escape') {
+        event.preventDefault();
+        closeProblemReport();
+      } else if (event.key === 'Tab') {
+        const focusable = [...els.reportDialog.querySelectorAll('a[href], button:not([disabled]), input:not([disabled]), textarea:not([disabled]), select:not([disabled]), iframe, [tabindex]')]
+          .filter(element => element.offsetParent !== null && element.tabIndex >= 0);
+        const first = focusable[0];
+        const last = focusable[focusable.length - 1];
+        if (!first) return;
+        if (!els.reportDialog.contains(document.activeElement) || (!event.shiftKey && document.activeElement === last)) {
+          event.preventDefault();
+          first.focus();
+        } else if (event.shiftKey && document.activeElement === first) {
+          event.preventDefault();
+          last.focus();
+        }
+      }
     });
     els.problemReportForm.addEventListener('submit', async event => {
       event.preventDefault();

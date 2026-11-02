@@ -1,5 +1,11 @@
 # Bass Beer Map coordinate audit
 
+> Historical snapshot from 13 September 2026. The counts, data path and
+> reproduction commands below describe that build, not the current release.
+> See [current location policy](../LOCATION_AUDIT.md) and
+> [current import and review workflow](../INGESTION.md). Reproduce old direct
+> maintenance commands only in an isolated copy.
+
 Completed 13 September 2026. This audit covers every one of the 1,102 unique
 directory listings. It is an evidence audit, not a claim that any third-party
 map database can never contain an error.

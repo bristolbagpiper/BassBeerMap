@@ -2,5 +2,7 @@ name = "bassbeermap-report"
 main = "src/index.js"
 compatibility_date = "2026-09-08"
 
-# Configure the production route in the Cloudflare dashboard as:
-# bassbeermap.com/api/report-problem*
+# Starter Worker name: confirm the existing deployment name/account before use.
+# The public HTML currently calls:
+# https://bassbeermap.bristolbagpiper.workers.dev/api/report-problem
+# A same-domain route is optional and is not the current browser endpoint.

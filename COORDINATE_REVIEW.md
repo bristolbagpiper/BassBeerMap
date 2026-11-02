@@ -1,41 +1,36 @@
 # Reviewing difficult venue pins
 
-`venue-coordinate-overrides.json` is the permanent, version-controlled place
-for a manually verified venue coordinate. It takes precedence over the
-automated OSM result, so it remains in effect after every monthly directory
-refresh.
+`venue-registry.json` owns stable venue IDs, accepted physical locations and
+review history. The browser reads the generated `directory-release.json`.
+Follow [Directory imports and pin verification](INGESTION.md) for the current
+staged import and approval process; [Location audit and confidence](LOCATION_AUDIT.md)
+explains what source agreement can establish.
 
-Only add a coordinate after checking that the venue itself is the result — not
-merely the postcode or the town centre. Record where it was checked so a later
-review is possible:
+## Current review path
 
-```json
-{
-  "venues": {
-    "example inn|example town|ab1 2cd": {
-      "lat": 51.5000,
-      "lng": -0.1200,
-      "source": "manual-openstreetmap-review",
-      "source_url": "https://www.openstreetmap.org/node/123",
-      "checked_at": "2026-09-08"
-    }
-  }
-}
-```
+Use `location-review.json` and issue #5 to identify a disputed or approximate
+pin. Research proposals are candidates, not approved coordinates. Check the
+named venue, address and map; the human repository owner can submit the
+recorded `/verify-location` command for an eligible unverified location.
+Approval stages a complete release, records provenance against the existing ID,
+and runs validation and browser checks before publication.
 
-The map only requires `lat`, `lng`, and `source`; the provenance fields are
-there for auditability. Never copy a postcode-centre coordinate into this file.
+A rename, locality label or postcode change must retain its reviewed identity.
+When an incoming row could replace a prior venue, add a fact-scoped reviewed
+alias in `ingestion-decisions.json`; do not mint a new identity to evade a
+disputed pin. A relocation of an already precise pin requires a dedicated
+review. Later source disagreements quarantine pins until reviewed again.
 
-## Finding the next venue
+## Historical maintenance tools
 
-Run:
+`venue-coordinate-overrides.json` and `audit/manual-place-checks.csv` retain
+reviewed inputs and compatibility history. They are not a substitute for the
+current registry and complete release validation. Evidence source, date and
+reference coordinate are required for an accepted pin.
 
-```powershell
-python build_coordinate_review_queue.py
-```
-
-It produces `coordinate-review-queue.csv`, containing only listings without an
-automated exact venue match or a manual override. The monthly GitHub workflow
-also creates the same file as an artifact and writes the count into its run
-summary. That means new difficult listings appear in one place instead of
-quietly falling back to an approximate pin.
+The old OSM resolvers, `audit/apply_*` scripts, bare batch converter and
+`build_coordinate_review_queue.py` are maintenance tools. Run historical
+reproduction commands only in an isolated copy. They can write individual files
+without the current stage gate, and editing an override alone does not update
+the live browser bundle. Preserve their history; use the staged workflow for
+normal operation.

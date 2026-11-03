@@ -15334,6 +15334,7 @@
         {
           "checked_at": "2026-10-12",
           "difference_metres": 10.4,
+          "disposition": "superseded_by_source_refresh",
           "match": "venue_name_and_full_postcode",
           "reference_address": "49 West End Street",
           "reference_coordinate": {
@@ -15341,6 +15342,20 @@
             "lng": 1.2755
           },
           "reference_name": "Fat Cat, Norwich - Nearly 30 Real Ales",
+          "reference_postcode": "NR2 4NA",
+          "source": "camra",
+          "url": "https://camra.org.uk/pubs/189715"
+        },
+        {
+          "checked_at": "2026-11-03",
+          "difference_metres": 10.4,
+          "match": "venue_name_and_full_postcode",
+          "reference_address": "49 West End Street",
+          "reference_coordinate": {
+            "lat": 52.6352,
+            "lng": 1.2755
+          },
+          "reference_name": "Fat Cat, Norwich - Up to 30 Ales",
           "reference_postcode": "NR2 4NA",
           "source": "camra",
           "url": "https://camra.org.uk/pubs/189715"

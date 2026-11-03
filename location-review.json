@@ -1,6 +1,6 @@
 {
   "actionable_count": 2,
-  "active_count": 4,
+  "active_count": 3,
   "records": {
     "v-0043695f-006e-58fe-adc2-894e5500b940": {
       "active": false,
@@ -2749,7 +2749,7 @@
       "venue_id": "v-27db8714-ffd3-5660-a96b-cc3f55e0193d"
     },
     "v-282b4121-c19d-51ad-bb24-ee3aa2de5f0d": {
-      "active": true,
+      "active": false,
       "first_seen": "2026-11-03",
       "history": [
         {
@@ -2758,23 +2758,26 @@
             "Verification source unavailable: HTTPError"
           ],
           "status": "review_needed"
+        },
+        {
+          "date": "2026-11-03",
+          "reasons": [],
+          "status": "resolved"
         }
       ],
       "last_checked": "2026-11-03",
       "manual_action_required": false,
-      "next_action": "Source unavailable; retain the pin and retry the source, not the venue",
+      "next_action": "No pin check requested",
       "place_name": "Norwich",
       "postcode": "NR2 4NA",
       "pub_name": "Fat Cat",
-      "reasons": [
-        "Verification source unavailable: HTTPError"
-      ],
+      "reasons": [],
       "reference": {},
       "research": {},
-      "review_category": "source_warning",
+      "review_category": "confirmed",
       "source_checks": {
         "camra": {
-          "status": "not_checked",
+          "status": "confirmed",
           "url": "https://camra.org.uk/pubs/189715"
         },
         "fsa_independent": {
@@ -2783,7 +2786,7 @@
         }
       },
       "source_error": null,
-      "status": "review_needed",
+      "status": "resolved",
       "unverified": false,
       "venue_id": "v-282b4121-c19d-51ad-bb24-ee3aa2de5f0d"
     },
@@ -19356,6 +19359,6 @@
     }
   },
   "schema_version": 1,
-  "source_warning_count": 2,
+  "source_warning_count": 1,
   "unverified_count": 0
 }

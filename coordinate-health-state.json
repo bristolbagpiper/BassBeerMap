@@ -2839,8 +2839,21 @@
     },
     "v-282b4121-c19d-51ad-bb24-ee3aa2de5f0d": {
       "attempted_at": "2026-11-03",
-      "reason": "HTTPError",
-      "status": "unavailable"
+      "evidence": {
+        "checked_at": "2026-11-03",
+        "difference_metres": 10.4,
+        "match": "venue_name_and_full_postcode",
+        "reference_address": "49 West End Street",
+        "reference_coordinate": {
+          "lat": 52.6352,
+          "lng": 1.2755
+        },
+        "reference_name": "Fat Cat, Norwich - Up to 30 Ales",
+        "reference_postcode": "NR2 4NA",
+        "source": "camra",
+        "url": "https://camra.org.uk/pubs/189715"
+      },
+      "status": "confirmed"
     },
     "v-2866301e-8347-50ee-9816-745050ab13d2": {
       "attempted_at": "2026-11-03",
@@ -18719,5 +18732,5 @@
       "status": "confirmed"
     }
   },
-  "issue_fingerprint": "5219517b8bc15d29c6f38330d2856e13f45b114913141fce6f1ce0f369694f5d"
+  "issue_fingerprint": "5c2cdb81db8a4083cbe8d0fb43cd056b46b3af76219fb68020c868b6d4ee1a31"
 }

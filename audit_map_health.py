@@ -62,6 +62,7 @@ def health_audit(root, staging, limit=30, check_live=True):
         return report
     registry = copy.deepcopy(read_json(root / 'venue-registry.json'))
     rows = read_rows(root / 'pubs.csv')
+    postcode_coordinates = read_json(root / 'pub-coordinates.json')['coordinates']
     state = read_json(root / 'coordinate-health-state.json', {'checks': {}})
     previous_fingerprint = state.get('issue_fingerprint', '')
     if check_live:
@@ -83,9 +84,11 @@ def health_audit(root, staging, limit=30, check_live=True):
             else:
                 attempt = {}
                 try:
-                    pin = resolve_new_pin(row, attempt)
+                    pin = resolve_new_pin(row, attempt, centre=postcode_coordinates.get(row['postcode']))
                 finally:
                     entry['verification_attempt'] = attempt
+                for warning in attempt.get('source_warnings', []):
+                    report['source_warnings'].append(f'{identifier}: {warning}')
                 result = {'status': 'confirmed' if pin else 'unresolved'}
                 if pin:
                     entry['verified_pin'] = pin
@@ -116,7 +119,7 @@ def health_audit(root, staging, limit=30, check_live=True):
         if pin and not pin.get('review_required') and not evidence_valid(pin):
             pin['review_required'] = True
             pin['review_reason'] = 'Coordinate evidence expired or is incomplete'
-    write_release(staging, rows, registry, read_json(root / 'directory-meta.json'), read_json(root / 'pub-coordinates.json')['coordinates'])
+    write_release(staging, rows, registry, read_json(root / 'directory-meta.json'), postcode_coordinates)
     # Share the queue's human-review rules; accepted postcode and FSA differences
     # must not turn into a second, inconsistent set of health alerts.
     review = read_json(staging / 'location-review.json')

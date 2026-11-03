@@ -179,8 +179,14 @@ class ReleaseGateTests(unittest.TestCase):
         candidate = Path(self.temporary.name) / 'raw.csv'
         write_rows(candidate, self.rows + [dict(row('New Inn'), venue_id='')])
         before = (self.root / 'directory-release.json').read_bytes()
-        with patch('ingest_directory.resolve_new_pin', side_effect=TimeoutError('source offline')):
+        proposals = [{'name': 'New Inn', 'source_status': 'named_page_checked'}]
+        with patch('ingest_directory.resolve_new_pin', side_effect=TimeoutError('source offline')), patch(
+                'research_locations.discover', return_value=(proposals, {'complete': True})) as discover:
             report = stage_import(candidate, self.root, self.stage)
+        discover.assert_called_once()
+        discovered_row, discovered_centre = discover.call_args.args
+        self.assertEqual(discovered_row['pub_name'], 'New Inn')
+        self.assertEqual(discovered_centre, self.postcodes['BS1 1AA'])
         self.assertTrue(report['valid'], report['errors'])
         self.assertEqual(report['summary']['approximate_pins'], 1)
         self.assertEqual(report['summary']['added_count'], 1)
@@ -319,13 +325,14 @@ class SourceEvidenceTests(unittest.TestCase):
 
     def test_new_pin_requires_independent_agreement(self):
         match = {'lat': 51.45, 'lng': -2.59, 'fhrs_id': 123}
+        centre = {'lat': 51.46, 'lng': -2.58}
         with patch('coordinate_sources.search', return_value=[]), patch('coordinate_sources.choose_match', return_value=match), patch('coordinate_sources.camra_reference', return_value=None):
-            self.assertIsNone(resolve_new_pin(row()))
-        reference = {'lat': 51.4501, 'lng': -2.59, 'url': 'https://camra.org.uk/pubs/1', 'name': 'Example Inn', 'postcode': 'BS1 1AA'}
+            self.assertIsNone(resolve_new_pin(row(), centre=centre))
+        reference = {'lat': 51.4501, 'lng': -2.59, 'url': 'https://camra.org.uk/pubs/1', 'name': 'Example Inn', 'postcode': 'BS1 1AA', 'address': '1 High Street'}
         with patch('coordinate_sources.search', return_value=[]), patch('coordinate_sources.choose_match', return_value=match), patch('coordinate_sources.camra_reference', return_value=reference):
-            result = resolve_new_pin(row())
+            result = resolve_new_pin(row(), centre=centre)
         self.assertEqual(result['lat'], reference['lat'])
-        self.assertEqual(len(result['evidence']), 2)
+        self.assertEqual(result['evidence'][0]['source'], 'camra')
 
     def test_ordinary_successful_html_is_not_coordinate_evidence(self):
         with self.assertRaises(ValueError):

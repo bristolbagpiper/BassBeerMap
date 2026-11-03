@@ -96,7 +96,7 @@ class MapHealthTests(unittest.TestCase):
         identifier = self.rows[0]['venue_id']
         del self.registry['venues'][identifier]['verified_pin']
         write_release(self.root, self.rows, self.registry, {}, {'BS1 1AA': {'lat': 51.46, 'lng': -2.58}})
-        def outage(row, diagnostics):
+        def outage(row, diagnostics, *, centre=None):
             diagnostics['sources'] = {'fsa': {'status': 'unavailable'}}
             raise TimeoutError()
         with patch('audit_map_health.resolve_new_pin', side_effect=outage), patch('audit_map_health.time.sleep'):

@@ -82,22 +82,74 @@ class LocationTrackingTests(unittest.TestCase):
         later['records'][identifier]['reasons'] = ['CAMRA coordinate disagrees']
         self.assertNotEqual(fingerprint(review), fingerprint(later))
 
-    def test_fsa_failure_does_not_claim_camra_has_no_listing(self):
+    def test_fsa_failure_still_checks_camra_from_postcode_centre(self):
         diagnostics = {}
-        with patch('coordinate_sources.search', return_value=[]), patch('coordinate_sources.camra_reference') as camra:
-            self.assertIsNone(resolve_new_pin(row(), diagnostics))
-        camra.assert_not_called()
-        self.assertEqual(diagnostics['sources']['camra']['status'], 'not_checked')
-        self.assertEqual(diagnostics['sources']['fsa']['status'], 'no_postcode_match')
+        centre = {'lat': 51.45, 'lng': -2.59}
+        reference = {'lat': 51.4501, 'lng': -2.59, 'url': 'https://camra.org.uk/pubs/123',
+                     'name': 'Example Inn', 'postcode': 'BS1 1AA', 'address': '1 High Street'}
+        with patch('coordinate_sources.search', side_effect=TimeoutError()), patch(
+                'coordinate_sources.camra_reference', return_value=reference) as camra:
+            result = resolve_new_pin(row(), diagnostics, centre=centre)
+        self.assertEqual(result['lat'], reference['lat'])
+        camra.assert_called_once_with(row(), centre, diagnostics)
+        self.assertEqual(diagnostics['sources']['fsa']['status'], 'unavailable')
+
+    def test_camra_coordinate_disagreement_with_fsa_is_warning_not_veto(self):
+        centre = {'lat': 51.45, 'lng': -2.59}
+        reference = {'lat': 51.4505, 'lng': -2.59, 'url': 'https://camra.org.uk/pubs/123',
+                     'name': 'Example Inn', 'postcode': 'BS1 1AA', 'address': '1 High Street'}
+        fsa = [{'BusinessName': 'Example Inn', 'PostCode': 'BS1 1AA', 'Latitude': 51.46,
+                'Longitude': -2.59, 'FHRSID': 42}]
+        diagnostics = {}
+        with patch('coordinate_sources.search', return_value=fsa), patch(
+                'coordinate_sources.choose_match', return_value={'lat': 51.46, 'lng': -2.59, 'fhrs_id': 42}), patch(
+                'coordinate_sources.camra_reference', return_value=reference):
+            result = resolve_new_pin(row(), diagnostics, centre=centre)
+        self.assertIsNotNone(result)
+        self.assertEqual((result['lat'], result['lng']), (reference['lat'], reference['lng']))
+        self.assertEqual(diagnostics['sources']['fsa']['status'], 'coordinate_disagreement')
+        self.assertGreater(diagnostics['sources']['fsa']['difference_metres'], 50)
 
     def test_camra_match_with_disagreeing_coordinate_is_tracked(self):
         diagnostics = {}
         candidate = dict(Name='Example Inn', Postcode='BS1 1AA', Latitude=51.46, Longitude=-2.59,
                          IncID=123, PremisesStatus='O')
-        with patch('audit.fetch_camra.fetch', return_value={'venues': [candidate]}):
-            self.assertIsNone(camra_reference(row(), {'lat': 51.45, 'lng': -2.59}, diagnostics))
-        self.assertEqual(diagnostics['sources']['camra']['status'], 'coordinate_disagreement')
-        self.assertIn('CAMRA venue found', diagnostics['reason'])
+        page = dict(lat=51.46, lng=-2.59, name='Example Inn', postcode='BS1 1AA',
+                    address='1 High Street', locality='Bristol')
+        with patch('audit.fetch_camra.fetch', return_value={'venues': [candidate]}), patch(
+                'coordinate_sources.camra_page', return_value=page) as named_page:
+            match = camra_reference(row(), {'lat': 51.45, 'lng': -2.59}, diagnostics)
+        named_page.assert_called_once_with('https://camra.org.uk/pubs/123')
+        self.assertEqual(match['lat'], 51.46)
+        self.assertEqual(diagnostics['sources']['camra']['status'], 'matched')
+
+    def test_two_exact_named_page_matches_are_ambiguous(self):
+        centre = {'lat': 51.45, 'lng': -2.59}
+        venues = [dict(Name='Example Inn', Postcode='BS1 1AA', Latitude=51.45, Longitude=-2.59,
+                       IncID=123, PremisesStatus='O'),
+                  dict(Name='Example Inn', Postcode='BS1 1AA', Latitude=51.4501, Longitude=-2.59,
+                       IncID=124, PremisesStatus='O')]
+        page = dict(lat=51.45, lng=-2.59, name='Example Inn', postcode='BS1 1AA',
+                    address='1 High Street', locality='Bristol')
+        diagnostics = {}
+        with patch('audit.fetch_camra.fetch', return_value={'venues': venues, 'total': 2}), patch(
+                'coordinate_sources.camra_page', return_value=page) as named_page:
+            self.assertIsNone(camra_reference(row(), centre, diagnostics))
+        self.assertEqual(named_page.call_count, 2)
+        self.assertEqual(diagnostics['sources']['camra']['status'], 'ambiguous')
+
+    def test_map_still_incomplete_after_five_bounded_queries(self):
+        centre = {'lat': 51.45, 'lng': -2.59}
+        venue = dict(Name='Example Inn', Postcode='BS1 1AA', Latitude=51.45, Longitude=-2.59,
+                     IncID=123, PremisesStatus='O')
+        page = dict(lat=51.45, lng=-2.59, name='Example Inn', postcode='BS1 1AA',
+                    address='1 High Street', locality='Bristol')
+        diagnostics = {}
+        with patch('audit.fetch_camra.fetch', return_value={'venues': [venue], 'total': 100}) as fetch, patch(
+                'coordinate_sources.camra_page', return_value=page):
+            self.assertIsNone(camra_reference(row(), centre, diagnostics))
+        self.assertEqual(fetch.call_count, 5)
+        self.assertEqual(diagnostics['sources']['camra']['status'], 'incomplete')
 
     def test_email_failure_is_not_acknowledged_and_success_is_deduplicated(self):
         listing, registry, identifier = self.fixture()

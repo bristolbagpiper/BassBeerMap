@@ -2,6 +2,7 @@
 import argparse
 import json
 import shutil
+from datetime import date
 from pathlib import Path
 from urllib.request import Request, urlopen
 
@@ -52,16 +53,39 @@ def stage_import(candidate, root, staging, check_sources=True):
         if check_sources:
             for row in rows:
                 entry = registry['venues'][row['venue_id']]
+                # Accepted and disputed pins are never replaced by discovery.
                 if entry.get('verified_pin'):
                     continue
                 attempt = {}
+                pin = None
                 try:
-                    pin = resolve_new_pin(row, attempt)
-                    if pin:
-                        entry['verified_pin'] = pin
+                    centre = coordinates.get(row['postcode'])
+                    pin = resolve_new_pin(row, attempt, centre=centre)
                 except Exception as error:
                     attempt['error'] = type(error).__name__
                     report['source_warnings'].append(f'{venue_key(row)}: location lookup unavailable: {type(error).__name__}')
+                if pin:
+                    entry['verified_pin'] = pin
+                elif coordinates.get(row['postcode']):
+                    # Keep CAMRA discovery in the import run so unresolved
+                    # venues do not wait for the weekly research rotation.
+                    from research_locations import discover
+                    try:
+                        proposals, coverage = discover(row, coordinates[row['postcode']])
+                        entry['location_research'] = dict(
+                            checked_at=date.today().isoformat(),
+                            status='candidates_found' if proposals else 'no_candidate',
+                            proposals=proposals, coverage=coverage)
+                    except Exception as error:
+                        previous_research = entry.get('location_research', {})
+                        entry['location_research'] = dict(
+                            previous_research,
+                            checked_at=date.today().isoformat(),
+                            status='unavailable', error=type(error).__name__)
+                        report['source_warnings'].append(
+                            f'{venue_key(row)}: CAMRA discovery unavailable ({type(error).__name__})')
+                for warning in attempt.get('source_warnings', []):
+                    report['source_warnings'].append(f'{venue_key(row)}: {warning}')
                 entry['verification_attempt'] = attempt
         metadata = read_json(root / 'candidate-directory-meta.json', read_json(root / 'directory-meta.json', {}))
         ledger = write_release(staging, rows, registry, metadata, coordinates)

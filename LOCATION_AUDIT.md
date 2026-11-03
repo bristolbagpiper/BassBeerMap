@@ -26,6 +26,13 @@ Distances of up to 25 metres are reported as coordinate agreement, 25-50 metres 
 
 The report sorts known postcode discrepancies first, then informational differences or inconclusive evidence, then close agreement. Informational findings are explicitly labelled and excluded from the actionable review queue. Every current location appears in the report. Results for an older coordinate do not count as a check of a newly approved point.
 
+New venue verification checks CAMRA independently of FSA, including during each
+PDF import. One unambiguous named CAMRA address at the exact full postcode can
+establish a venue point. FSA is supporting evidence; a missing or displaced FSA
+geocode cannot veto that CAMRA match. Conflicting postcodes, incomplete CAMRA
+coverage and ambiguous names stay in review. Existing accepted and owner-reviewed
+coordinates retain the movement and identity protections.
+
 ## Recurring jobs
 
 - **Daily map validation**: 45 rotating source checks at 06:47 UTC; checks committed assets and the live release, refreshes confirmed evidence and quarantines source conflicts under the existing policy. The same job then rotates up to 45 Google Places comparisons after publishing safe CAMRA results, within a combined 40-minute job deadline.

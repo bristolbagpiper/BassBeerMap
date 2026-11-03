@@ -85,13 +85,15 @@ def research(root, staging, limit=30):
         if not entry.get('verified_pin'):
             attempt = {}
             try:
-                pin = resolve_new_pin(row, attempt)
+                pin = resolve_new_pin(row, attempt, centre=postcodes.get(row['postcode']))
                 if pin:
                     entry['verified_pin'] = pin
                     report['automatically_verified'].append(identifier)
             except Exception as error:
                 attempt['error'] = type(error).__name__
             entry['verification_attempt'] = attempt
+            for warning in attempt.get('source_warnings', []):
+                report.setdefault('source_warnings', []).append(f'{identifier}: {warning}')
         if identifier not in report['automatically_verified']:
             try:
                 proposals, coverage = discover(row, postcodes[row['postcode']])

@@ -4,6 +4,7 @@ import json
 import re
 from datetime import date
 from functools import lru_cache
+from urllib.parse import quote
 from urllib.request import Request, urlopen
 
 from directory_release import active_evidence, distance_metres, point_valid
@@ -102,105 +103,166 @@ def recheck_pin(row, pin):
         return {'status': 'confirmed', 'evidence': updated}
     fsa_item = next((e for e in evidence if e.get('source') in ('food_standards_agency', 'food-standards-agency-fhrs')), None)
     if fsa_item:
-        observed_pin = resolve_new_pin(row)
+        diagnostics = {}
+        observed_pin = resolve_new_pin(row, diagnostics, centre=pin)
         if observed_pin and distance_metres(pin, observed_pin) <= 50:
             return {'status': 'confirmed', 'evidence': observed_pin['evidence'][0]}
-        return {'status': 'conflict', 'reason': 'FSA no longer provides an unambiguous agreeing venue', 'source_url': fsa_item['url']}
+        if observed_pin:
+            return {'status': 'conflict', 'reason': 'CAMRA reference differs from the saved coordinate by more than 50 metres', 'source_url': observed_pin['evidence'][0]['url']}
+        # Failure to find supporting data is not proof that an accepted pin is
+        # wrong. Keep it while exposing the primary-source check limitation.
+        return {'status': 'unavailable', 'reason': diagnostics.get('reason', 'CAMRA reference could not be established'), 'source_url': fsa_item['url']}
     return {'status': 'manual_review', 'reason': 'Manual map evidence needs a fresh human address/map check'}
 
 
-def resolve_new_pin(row, diagnostics=None):
+@lru_cache(maxsize=500)
+def postcode_centre(postcode):
+    payload = json.loads(fetch_text('https://api.postcodes.io/postcodes/' + quote(postcode, safe='')))
+    result = payload.get('result') or {}
+    point = {'lat': result.get('latitude'), 'lng': result.get('longitude')}
+    if not point_valid(point):
+        raise ValueError('No usable postcode search area')
+    return point
+
+
+def fsa_support(row, diagnostics):
+    """Record a secondary comparison; it can never approve or veto a pin."""
+    try:
+        candidates = search(row, include_name=False)
+        match = choose_match(row, candidates)
+    except Exception as error:
+        diagnostics['sources']['fsa'] = {'status': 'unavailable', 'error': type(error).__name__}
+        diagnostics.setdefault('source_warnings', []).append('Supporting FSA lookup unavailable: ' + type(error).__name__)
+        return None
+    if match and not point_valid(match):
+        diagnostics['sources']['fsa'] = {'status': 'invalid_coordinates'}
+        return None
+    if match:
+        check = dict(status='matched', lat=match['lat'], lng=match['lng'])
+        if match.get('fhrs_id'):
+            check['url'] = f"https://ratings.food.gov.uk/business/{match['fhrs_id']}"
+        diagnostics['sources']['fsa'] = check
+        return match
+    compact = lambda value: re.sub(r'\s+', '', str(value or '')).upper()
+    addressed = [c for c in candidates if compact(c.get('PostCode')) == compact(row['postcode'])]
+    named = [c for c in addressed if names_match(row['pub_name'], str(c.get('BusinessName') or ''))]
+    status = ('no_postcode_match' if not addressed else 'no_name_match' if not named
+              else 'missing_or_ambiguous_coordinates')
+    diagnostics['sources']['fsa'] = dict(status=status, records_returned=len(candidates),
+                                          postcode_matches=len(addressed), name_matches=len(named))
+    return None
+
+
+def resolve_new_pin(row, diagnostics=None, *, centre=None):
+    """Approve an unambiguous named CAMRA address; FSA only adds context.
+
+    A supplied centre is a postcode search area, never coordinate evidence.
+    Accepted/owner-reviewed pins are retained by callers, not moved here.
+    """
     diagnostics = diagnostics if diagnostics is not None else {}
-    diagnostics.update(checked_at=date.today().isoformat(), reason='FSA lookup failed',
-                       sources={'fsa': {'status': 'unavailable'}, 'camra': {'status': 'not_checked'}})
-    # Query all businesses at the full postcode so a name-filtered response
-    # cannot conceal another same-name venue at a different point.
-    candidates = search(row, include_name=False)
-    match = choose_match(row, candidates)
-    if not match:
-        compact = lambda value: re.sub(r'\s+', '', str(value or '')).upper()
-        addressed = [c for c in candidates if compact(c.get('PostCode')) == compact(row['postcode'])]
-        named = [c for c in addressed if names_match(row['pub_name'], str(c.get('BusinessName') or ''))]
-        status, reason = ('no_postcode_match', 'FSA returned no businesses at the listed full postcode') if not addressed else (
-            ('no_name_match', 'FSA businesses at the postcode do not match the pub name') if not named else (
-                ('missing_or_ambiguous_coordinates', 'FSA matching business coordinates are missing or disagree')))
-        diagnostics['sources']['fsa'] = {'status': status, 'records_returned': len(candidates),
-                                          'postcode_matches': len(addressed), 'name_matches': len(named)}
-        diagnostics['reason'] = reason + '; CAMRA not checked'
-        return None
-    diagnostics['sources']['fsa'] = {'status': 'matched', 'lat': match['lat'], 'lng': match['lng']}
-    identifier = match.get('fhrs_id')
-    if not identifier:
-        diagnostics['reason'] = 'FSA match has no business identifier; CAMRA not checked'
-        return None
-    diagnostics['sources']['fsa']['url'] = f'https://ratings.food.gov.uk/business/{identifier}'
-    # Official food-business geocodes can be postcode centres. Require a
-    # separately mapped named CAMRA venue before displaying a new precise pin.
-    diagnostics['sources']['camra'] = {'status': 'unavailable'}
-    diagnostics['reason'] = 'CAMRA lookup failed'
-    reference = camra_reference(row, match, diagnostics)
+    diagnostics.update(checked_at=date.today().isoformat(), reason='CAMRA lookup unavailable',
+                       sources={'camra': {'status': 'not_checked'}, 'fsa': {'status': 'not_checked'}},
+                       source_warnings=[])
+    reference = None
+    try:
+        centre = centre if point_valid(centre) else postcode_centre(row['postcode'])
+        reference = camra_reference(row, centre, diagnostics)
+    except Exception as error:
+        diagnostics['sources']['camra'] = dict(status='unavailable', error=type(error).__name__)
+        diagnostics['reason'] = 'Primary CAMRA lookup unavailable: ' + type(error).__name__
+    # Run independently even when CAMRA was inconclusive. The result supplies
+    # diagnostics and agreement evidence, never a discovery prerequisite.
+    match = fsa_support(row, diagnostics)
     if not reference:
-        if diagnostics['sources']['camra']['status'] == 'unavailable':
-            diagnostics['sources']['camra']['status'] = 'unmatched'
-            diagnostics['reason'] = 'No agreeing CAMRA venue match'
         return None
     diagnostics['sources']['camra'] = dict(status='matched', **reference)
-    diagnostics['reason'] = 'FSA and CAMRA agree on named venue, full postcode and location'
-    return {'lat': reference['lat'], 'lng': reference['lng'], 'source': 'camra-and-fhrs', 'evidence': [{
-        'source': 'food-standards-agency-fhrs',
-        'url': f'https://ratings.food.gov.uk/business/{identifier}',
-        'checked_at': date.today().isoformat(), 'match': 'unique_name_and_full_postcode',
-        'reference_coordinate': {'lat': match['lat'], 'lng': match['lng']},
-        'reference_postcode': row['postcode'],
-    }, {
-        'source': 'camra', 'url': reference['url'], 'checked_at': date.today().isoformat(),
-        'match': 'named_venue_full_postcode_and_independent_fsa_agreement',
+    diagnostics.update(status='confirmed', reason='CAMRA identifies one named venue, full postcode and mapped address; FSA is supporting information only')
+    evidence = [{
+        'source': 'camra', 'url': reference['url'], 'checked_at': diagnostics['checked_at'],
+        'match': 'primary_named_venue_full_postcode_and_address',
         'reference_coordinate': {'lat': reference['lat'], 'lng': reference['lng']},
         'reference_postcode': reference['postcode'], 'reference_name': reference['name'],
-    }]}
+        'reference_address': reference.get('address', ''), 'reference_locality': reference.get('locality', ''),
+    }]
+    if match:
+        difference = round(distance_metres(reference, match), 1)
+        diagnostics['sources']['fsa']['difference_metres'] = difference
+        diagnostics['sources']['fsa']['status'] = 'coordinate_agreement' if difference <= 50 else 'coordinate_disagreement'
+        if difference <= 50 and match.get('fhrs_id'):
+            evidence.append(dict(source='food-standards-agency-fhrs',
+                url=f"https://ratings.food.gov.uk/business/{match['fhrs_id']}", checked_at=diagnostics['checked_at'],
+                match='supporting_name_and_full_postcode_agreement',
+                reference_coordinate={'lat': match['lat'], 'lng': match['lng']}, reference_postcode=row['postcode']))
+    return dict(lat=reference['lat'], lng=reference['lng'], source='camra-primary', evidence=evidence,
+                additional_checks={'fsa': dict(diagnostics['sources']['fsa'])})
 
 
 def camra_reference(row, point, diagnostics=None):
-    if diagnostics is not None:
-        diagnostics.setdefault('sources', {})
+    """Discover independently of FSA and inspect the named CAMRA page.
+
+    Split a capped map response once; if any area is still incomplete, retain
+    candidates for review rather than declaring an unambiguous match.
+    """
+    diagnostics = diagnostics if diagnostics is not None else {}
+    diagnostics.setdefault('sources', {})
     from audit.fetch_camra import fetch
-    candidates = fetch((point['lat'] - 0.02, point['lat'] + 0.02, point['lng'] - 0.02, point['lng'] + 0.02))['venues']
+
+    def read_area(bounds):
+        result = fetch(bounds)
+        south, north, west, east = bounds
+        inside = []
+        for candidate in result['venues']:
+            try:
+                lat, lng = float(candidate['Latitude']), float(candidate['Longitude'])
+                if south <= lat <= north and west <= lng <= east:
+                    inside.append(candidate)
+            except (KeyError, TypeError, ValueError):
+                continue
+        return inside, result.get('total', len(inside)) <= len(inside)
+
+    south, north = point['lat'] - .02, point['lat'] + .02
+    west, east = point['lng'] - .02, point['lng'] + .02
+    candidates, complete = read_area((south, north, west, east))
+    if not complete:
+        areas = [(south, point['lat'], west, point['lng']), (south, point['lat'], point['lng'], east),
+                 (point['lat'], north, west, point['lng']), (point['lat'], north, point['lng'], east)]
+        partitions = [read_area(bounds) for bounds in areas]
+        candidates = list({str(c['IncID']): c for records, _ in partitions for c in records}.values())
+        complete = all(done for _, done in partitions)
     compact = lambda value: re.sub(r'\s+', '', str(value or '')).upper()
-    matches = []
+    matches, conflicts = [], []
     for candidate in candidates:
         if candidate.get('PremisesStatus') == 'X' or not name_matches(row['pub_name'], candidate.get('Name', ''), row.get('place_name', '')):
             continue
         url = f"https://camra.org.uk/pubs/{candidate['IncID']}"
-        if not candidate.get('Postcode'):
-            observed = camra_page(url)
-            if not name_matches(row['pub_name'], observed['name'], row.get('place_name', '')):
-                continue
-            candidate = dict(candidate, Name=observed['name'], Postcode=observed['postcode'],
-                             Street=observed['address'], Latitude=observed['lat'], Longitude=observed['lng'])
-        if compact(candidate.get('Postcode')) != compact(row['postcode']):
+        observed = camra_page(url)
+        if not name_matches(row['pub_name'], observed['name'], row.get('place_name', '')):
             continue
-        try:
-            location = {'lat': float(candidate['Latitude']), 'lng': float(candidate['Longitude'])}
-            if point_valid(location):
-                matches.append(dict(location, name=candidate['Name'], postcode=candidate['Postcode'],
-                                    address=candidate.get('Street') or '', url=url))
-        except (KeyError, TypeError, ValueError):
+        if not point_valid(observed) or distance_metres(point, observed) > 6000:
             continue
+        reference = dict(observed, url=url)
+        if compact(observed.get('postcode')) != compact(row['postcode']):
+            conflicts.append(reference)
+            continue
+        locality = str(observed.get('locality', '')).strip().casefold()
+        if not str(observed.get('address', '')).strip() and not (locality and locality == str(row.get('place_name', '')).strip().casefold()):
+            continue
+        matches.append(reference)
+    diagnostics['sources']['camra'] = dict(status='unmatched', records_returned=len(candidates),
+        coverage_complete=complete, candidates=matches + conflicts)
+    if not complete:
+        diagnostics['sources']['camra']['status'] = 'incomplete'
+        diagnostics['reason'] = 'CAMRA discovery coverage is incomplete; candidates require review'
+        return None
     if not matches:
-        if diagnostics is not None:
-            diagnostics['sources']['camra'] = {'status': 'unmatched', 'records_returned': len(candidates)}
-            diagnostics['reason'] = 'CAMRA search returned no same-name/full-postcode venue'
+        diagnostics['sources']['camra']['status'] = 'postcode_conflict' if conflicts else 'unmatched'
+        diagnostics['reason'] = ('CAMRA address/postcode conflict: named address has a different full postcode; address review required' if conflicts
+                                 else 'CAMRA search returned no unambiguous named address at the full postcode')
         return None
-    if any(distance_metres(matches[0], other) > 50 for other in matches):
-        if diagnostics is not None:
-            diagnostics['sources']['camra'] = {'status': 'ambiguous', 'matches': matches}
-            diagnostics['reason'] = 'CAMRA has multiple matching venues at different locations'
+    if len(matches) > 1:
+        diagnostics['sources']['camra']['status'] = 'ambiguous'
+        diagnostics['reason'] = 'CAMRA has multiple named venues at the same postcode; identity review required'
         return None
-    difference = round(distance_metres(point, matches[0]), 1)
-    if difference > 50:
-        if diagnostics is not None:
-            diagnostics['sources']['camra'] = dict(status='coordinate_disagreement', difference_metres=difference, **matches[0])
-            diagnostics['reason'] = f'CAMRA venue found, but its coordinate is {difference} metres from FSA (maximum 50)'
-        return None
+    diagnostics['sources']['camra'] = dict(status='matched', coverage_complete=True, **matches[0])
     return matches[0]
 

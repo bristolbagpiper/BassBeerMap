@@ -99,6 +99,8 @@ def classify_review(record):
         category = 'address_metadata'
     elif reasons and all('unavailable' in reason.casefold() for reason in reasons):
         category = 'source_warning'
+    elif record.get('unverified'):
+        category = 'needs_verification'
     elif 'manual location evidence' in joined or 'expired' in joined or 'not yet been' in joined or 'building comparison' in joined:
         category = 'needs_verification'
     else:

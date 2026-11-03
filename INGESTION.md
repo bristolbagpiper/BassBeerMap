@@ -17,9 +17,15 @@ The gate rejects conflicting duplicates, unresolved identity changes, invalid
 coordinates, missing coverage, evidence/coordinate mismatches and loss or
 movement over 50 metres of previously verified pins. Existing reviewed locations
 are preserved rather than replaced with a new automatic geocode. Unknown venues
-require an unambiguous full-postcode FSA match plus an independently mapped
-same-name CAMRA venue agreeing within 50 metres to get a precise pin. Otherwise
-they get an explicitly approximate postcode pin and a review queue entry.
+require one unambiguous same-name, full-postcode CAMRA venue with a checked
+named-page address and coordinate to get a precise pin. Discovery uses the
+postcode search area, independently of FSA. Incomplete CAMRA coverage, different
+postcodes, ambiguous venues and fuzzy names remain review candidates. FSA is an
+additional address/coordinate comparison: missing records, outages and coordinate
+disagreements do not veto a clear CAMRA match. A postcode search centre never
+counts as venue-coordinate evidence. Unresolved venues retain an explicitly
+approximate postcode pin and a review queue entry, with CAMRA candidate discovery
+performed in the same import rather than waiting for the weekly research job.
 Source outages preserve existing pins; failures to locate a new postcode reject
 the release. Evidence older than 400 days cannot render as precise.
 
@@ -97,7 +103,7 @@ refreshed. Informational FSA differences do not become active health incidents.
 ## Fixing brown pins without AI
 
 `Research unverified locations` runs Tuesdays at 08:17 UTC and supports manual
-dispatch. It retries strong FSA/CAMRA verification and independently searches
+dispatch. It retries CAMRA-primary verification, records supporting FSA checks and searches
 CAMRA around the listed postcode even when FSA matching fails. It rotates through
 up to 30 unverified venues, retaining up to three possible named-address matches
 per venue. Name variants and spelling similarities are suggestions only. Source

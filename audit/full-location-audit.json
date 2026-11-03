@@ -2,6 +2,28 @@
   "records": [
     {
       "actionable": false,
+      "area": "Derbyshire",
+      "country": "England",
+      "dispense": "H",
+      "last": "2026 Q3",
+      "manual_action_required": false,
+      "next_action": "No pin check requested.",
+      "notes": "",
+      "pg": "Perm",
+      "place_name": "Woodville",
+      "postcode": "DE11 7BU",
+      "priority": 0,
+      "pub_name": "Greyhound",
+      "reasons": [],
+      "review_category": "informational",
+      "status": "not_checked",
+      "venue_id": "v-c31ee814-63f4-513d-8d38-fad12edad41f",
+      "warnings": [
+        "Current pin has not been independently compared"
+      ]
+    },
+    {
+      "actionable": false,
       "area": "Leicestershire",
       "checked_at": "2026-10-25",
       "comparisons": [
@@ -13355,55 +13377,6 @@
       "venue_id": "v-97a6ff26-33a9-521e-8875-2fa9a26e5f68",
       "warnings": [
         "Owner reviewed this postcode discrepancy and confirmed the displayed pub building; listing postcode retained for provenance"
-      ]
-    },
-    {
-      "actionable": false,
-      "area": "Derbyshire",
-      "checked_at": "2026-10-27",
-      "comparisons": [
-        {
-          "name_matches": 1,
-          "postcode_matches": 1,
-          "queried_postcode": "DE11 7BU",
-          "status": "ambiguous_or_missing_coordinates"
-        }
-      ],
-      "confidence": "existing_evidence_needs_corroboration",
-      "country": "England",
-      "dispense": "H",
-      "independent_of_pin": true,
-      "last": "2026 Q3",
-      "listing": {
-        "postcode": "DE11 7BU",
-        "pub_name": "Greyhound"
-      },
-      "manual_action_required": false,
-      "next_action": "No pin check requested.",
-      "notes": "",
-      "owner_pin_confirmed": false,
-      "owner_reviewed": false,
-      "pg": "Perm",
-      "pin": {
-        "lat": 52.7671,
-        "lng": -1.5111
-      },
-      "place_name": "Woodville",
-      "postcode": "DE11 7BU",
-      "priority": 2,
-      "pub_name": "Greyhound",
-      "reasons": [],
-      "reference": {
-        "name_matches": 1,
-        "postcode_matches": 1,
-        "queried_postcode": "DE11 7BU",
-        "status": "ambiguous_or_missing_coordinates"
-      },
-      "review_category": "informational",
-      "status": "ambiguous_or_missing_coordinates",
-      "venue_id": "v-c31ee814-63f4-513d-8d38-fad12edad41f",
-      "warnings": [
-        "FSA comparison is inconclusive; absence of a match does not contradict accepted evidence"
       ]
     },
     {
@@ -58583,16 +58556,18 @@
     "action_required_count": 0,
     "actionable_count": 0,
     "confidence_counts": {
-      "existing_evidence_needs_corroboration": 503,
+      "existing_evidence_needs_corroboration": 502,
       "independent_coordinate_agreement": 414,
+      "not_checked": 1,
       "owner_reviewed": 127
     },
     "counts": {
-      "ambiguous_or_missing_coordinates": 62,
+      "ambiguous_or_missing_coordinates": 61,
       "coordinate_agreement": 455,
       "coordinate_disagreement": 247,
       "nearby": 103,
-      "no_name_match": 177
+      "no_name_match": 177,
+      "not_checked": 1
     },
     "information_no_pin_check_count": 1044,
     "informational_count": 603,

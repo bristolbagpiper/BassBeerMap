@@ -8,15 +8,17 @@ Locations with informational observations: 603 (may also have an actionable find
 
 ## Results
 
+- not_checked: 1
 - no_name_match: 177
 - coordinate_disagreement: 247
 - nearby: 103
 - coordinate_agreement: 455
-- ambiguous_or_missing_coordinates: 62
+- ambiguous_or_missing_coordinates: 61
 
 ## Confidence
 
-- existing_evidence_needs_corroboration: 503
+- not_checked: 1
+- existing_evidence_needs_corroboration: 502
 - owner_reviewed: 127
 - independent_coordinate_agreement: 414
 
@@ -37,6 +39,7 @@ Locations with informational observations: 603 (may also have an actionable find
 
 | Pub | Place | Postcode | Result | Information |
 |---|---|---|---|---|
+| Greyhound | Woodville | DE11 7BU | not_checked | Current pin has not been independently compared |
 | 1852 Brewery Co | Leicester: South Wigston | LE18 2DH | no_name_match | FSA comparison is inconclusive; absence of a match does not contradict accepted evidence |
 | 45 Club (PMC) | Newcastle-U-L: Central | ST5 1DS | no_name_match | FSA comparison is inconclusive; absence of a match does not contradict accepted evidence |
 | Adelphi | Leeds: Central | LS10 1JQ | coordinate_disagreement | FSA coordinate is 158.8m from the accepted pin; informational only because the FSA geocode may be approximate |
@@ -279,7 +282,6 @@ Locations with informational observations: 603 (may also have an actionable find
 | Green Man | Clifton Campville | B79 0AX | coordinate_disagreement | FSA coordinate is 111.7m from the accepted pin; informational only because the FSA geocode may be approximate |
 | Green Man | Stamford | PE9 2YQ | nearby | FSA coordinate is 25-50m away; informational only |
 | Grey Horse | Consett | DH8 6NF | coordinate_agreement | Owner reviewed this postcode discrepancy and confirmed the displayed pub building; listing postcode retained for provenance |
-| Greyhound | Woodville | DE11 7BU | ambiguous_or_missing_coordinates | FSA comparison is inconclusive; absence of a match does not contradict accepted evidence |
 | Greyhound Inn | Warslow | SK17 0JN | nearby | FSA coordinate is 25-50m away; informational only |
 | Griffin | Shustoke | B46 2LB | ambiguous_or_missing_coordinates | FSA comparison is inconclusive; absence of a match does not contradict accepted evidence |
 | Grouse Inn | Darley Dale | DE4 2FT | nearby | FSA coordinate is 25-50m away; informational only |

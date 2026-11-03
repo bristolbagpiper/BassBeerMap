@@ -131,9 +131,137 @@ def reconcile(rows, registry, decisions):
     """Only exact known identities or explicit reviewed aliases retain an ID."""
     registry = copy.deepcopy(registry)
     errors, changes, ignored = [], [], []
+    applied_corrections, applied_exclusions = [], []
+    decisions = copy.deepcopy(decisions) if isinstance(decisions, dict) else {}
+    raw_rows = [{field: str(original.get(field, '')).strip() for field in FIELDS} for original in rows]
+    aliases_before = {alias: identifier for identifier, entry in registry.get('venues', {}).items()
+                      for alias in entry.get('aliases', [])}
+
+    def valid_review(decision):
+        if not isinstance(decision, dict):
+            return False
+        try:
+            checked = date.fromisoformat(decision.get('checked_at', ''))
+        except (TypeError, ValueError):
+            return False
+        return (checked <= date.today() and isinstance(decision.get('reason'), str) and bool(decision['reason'].strip())
+                and isinstance(decision.get('source_url'), str) and decision['source_url'].startswith('https://'))
+
+    def record_once(entry, key, decision, original, kind):
+        reviews = entry.setdefault('listing_reviews', [])
+        item = {'kind': kind, 'original_key': key, 'original': copy.deepcopy(original),
+                'decision': copy.deepcopy(decision)}
+        if item not in reviews:
+            reviews.append(item)
+
+    correction_decisions = decisions.get('listing_corrections', {})
+    if not isinstance(correction_decisions, dict):
+        errors.append('listing_corrections must be a mapping')
+        correction_decisions = {}
+    exclusion_decisions = decisions.get('listing_exclusions', {})
+    if not isinstance(exclusion_decisions, dict):
+        errors.append('listing_exclusions must be a mapping')
+        exclusion_decisions = {}
+
+    corrected_rows = []
+    for row in raw_rows:
+        key = venue_key(row)
+        exclusion = exclusion_decisions.get(key)
+        if exclusion is not None:
+            expected = exclusion.get('expected') if isinstance(exclusion, dict) else None
+            known_id = aliases_before.get(key)
+            if (not known_id or not isinstance(expected, dict) or set(expected) != set(FIELDS)
+                    or any(row.get(field) != expected.get(field) for field in FIELDS) or not valid_review(exclusion)):
+                errors.append(f'{key}: reviewed listing exclusion is malformed or the listing changed; manual review required')
+                continue
+            entry = registry['venues'][known_id]
+            record_once(entry, key, exclusion, row, 'exclusion')
+            entry.setdefault('listing_exclusions', [])
+            if exclusion not in entry['listing_exclusions']:
+                entry['listing_exclusions'].append(copy.deepcopy(exclusion))
+            applied_exclusions.append({'venue_key': key, 'venue_id': known_id, 'reason': exclusion['reason']})
+            continue
+
+        # An excluded permanent identity cannot silently return under a changed
+        # key or with changed confirmation fields.
+        excluded_identity = next(((identifier, item) for identifier, entry in registry.get('venues', {}).items()
+                                  for item in entry.get('listing_exclusions', [])
+                                  if isinstance(item, dict) and isinstance(item.get('expected'), dict)
+                                  and (key in entry.get('aliases', []) or
+                                       (row.get('pub_name') == item['expected'].get('pub_name') and
+                                        row.get('place_name') == item['expected'].get('place_name')))), None)
+        if excluded_identity:
+            errors.append(f'{key}: previously excluded listing changed or reappeared; manual review required')
+            continue
+
+        correction = correction_decisions.get(key)
+        if correction is not None:
+            expected = correction.get('expected') if isinstance(correction, dict) else None
+            changes_to_apply = correction.get('changes') if isinstance(correction, dict) else None
+            valid_expected = (isinstance(expected, dict) and
+                              all(field in expected and expected[field] == row[field]
+                                  for field in ('pub_name', 'place_name', 'postcode')) and
+                              all(field in FIELDS for field in expected))
+            valid_changes = (isinstance(changes_to_apply, dict) and bool(changes_to_apply) and
+                             set(changes_to_apply) <= {'postcode', 'notes'} and
+                             all(isinstance(value, str) and (value.strip() or field == 'notes')
+                                 for field, value in changes_to_apply.items()))
+            known_id = aliases_before.get(key)
+            raw_snapshot_matches = valid_expected and all(row[field] == value for field, value in expected.items())
+            canonical = dict(expected) if isinstance(expected, dict) else {}
+            if isinstance(changes_to_apply, dict):
+                canonical.update(changes_to_apply)
+            canonical_snapshot_matches = (valid_expected and valid_changes and
+                                          all(row.get(field) == value for field, value in canonical.items()))
+            corrected_key = venue_key(dict(row, **(changes_to_apply or {}))) if isinstance(changes_to_apply, dict) else ''
+            claimed_id = aliases_before.get(corrected_key)
+            if not (known_id and (raw_snapshot_matches or canonical_snapshot_matches)
+                    and valid_changes and valid_review(correction)):
+                errors.append(f'{key}: reviewed listing correction is malformed, mismatched, or has no known identity')
+                continue
+            if claimed_id and claimed_id != known_id:
+                errors.append(f'{key}: reviewed correction target is already owned by another permanent identity')
+                continue
+            identity_review = decisions.get('identity_aliases', {}).get(corrected_key)
+            if (corrected_key != key and identity_review
+                    and aliases_before.get(identity_review.get('previous_key')) != known_id):
+                errors.append(f'{key}: reviewed correction conflicts with another identity alias decision')
+                continue
+            original = copy.deepcopy(expected if canonical_snapshot_matches and not raw_snapshot_matches else row)
+            if raw_snapshot_matches:
+                row.update(changes_to_apply)
+            entry = registry['venues'][known_id]
+            record_once(entry, key, correction, original, 'correction')
+            applied_corrections.append({'venue_key': key, 'corrected_key': venue_key(row),
+                                        'venue_id': known_id, 'reason': correction['reason']})
+            if venue_key(row) != key:
+                identity_decisions = decisions.setdefault('identity_aliases', {})
+                identity_decisions.setdefault(venue_key(row), {
+                    'previous_key': key, 'reason': correction['reason'], 'source_url': correction['source_url'],
+                    'checked_at': correction['checked_at'],
+                    'reference_postcode': correction.get('reference_postcode', expected['postcode'])})
+        corrected_rows.append(row)
+
+    # Exclusions are pinned to their exact original snapshot. If the known
+    # identity is present with changed data, fail closed even when its key moved.
+    for key, exclusion in exclusion_decisions.items():
+        identifier = aliases_before.get(key)
+        if not identifier:
+            errors.append(f'{key}: listing exclusion does not refer to a known permanent identity')
+            continue
+        expected = exclusion.get('expected') if isinstance(exclusion, dict) else None
+        if not isinstance(expected, dict) or set(expected) != set(FIELDS) or not valid_review(exclusion):
+            errors.append(f'{key}: reviewed listing exclusion is malformed')
+            continue
+        for row in corrected_rows:
+            if row.get('pub_name') == expected.get('pub_name') and row.get('place_name') == expected.get('place_name'):
+                if any(row.get(field) != expected.get(field) for field in FIELDS):
+                    errors.append(f'{key}: excluded listing changed; manual review required')
+                else:
+                    errors.append(f'{key}: excluded listing was not safely omitted')
+
     groups = defaultdict(list)
-    for original in rows:
-        row = {field: str(original.get(field, '')).strip() for field in FIELDS}
+    for row in corrected_rows:
         groups[venue_key(row)].append(row)
     selected = []
     for key, duplicates in groups.items():
@@ -177,7 +305,9 @@ def reconcile(rows, registry, decisions):
                 continue
             entry = registry['venues'][identifier]
             entry['aliases'].append(key)
-            entry['identity_reviews'] = entry.get('identity_reviews', []) + [copy.deepcopy(decision)]
+            reviews = entry.setdefault('identity_reviews', [])
+            if decision not in reviews:
+                reviews.append(copy.deepcopy(decision))
             # A reviewed correction to listing metadata is not a coordinate move.
             if entry.get('verified_pin') and row['postcode'] != decision['reference_postcode']:
                 entry['verified_pin']['metadata_issue'] = {
@@ -225,7 +355,9 @@ def reconcile(rows, registry, decisions):
             else:
                 issue['listed'] = row['postcode']
         row['venue_id'] = identifier
-    return selected, registry, {'errors': errors, 'changes': changes, 'duplicate_resolutions': ignored}
+    return selected, registry, {'errors': errors, 'changes': changes, 'duplicate_resolutions': ignored,
+                                'listing_corrections': applied_corrections,
+                                'listing_exclusions': applied_exclusions}
 
 
 def build_ledger(rows, registry, allow_expired=False):

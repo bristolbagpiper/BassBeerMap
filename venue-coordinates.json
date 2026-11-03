@@ -1,13 +1,5 @@
 {
-  "unresolved_venues": [
-    "tiger|derby: central|de1 2tq",
-    "railway tavern|langley mill|ng16 4ae",
-    "barley mow|southsea|po5 3by",
-    "fitzgeralds|ashby-de-la-zouch|le65 1ah",
-    "new swan|atherstone|cv9 1fe",
-    "crown|southam|cv47 1ph",
-    "nineteen.57|talybont|ll43 2aq"
-  ],
+  "unresolved_venues": [],
   "venues": {
     "1852 brewery co|leicester: south wigston|le18 2dh": {
       "lat": 52.581962,
@@ -223,6 +215,11 @@
       "lat": 51.519675125735,
       "lng": -0.155660131283,
       "source": "camra-and-fhrs"
+    },
+    "barley mow|southsea|po5 3de": {
+      "lat": 50.789349,
+      "lng": -1.092775,
+      "source": "camra-primary"
     },
     "barley mow|warrington|wa1 1qb": {
       "lat": 53.38999856363637,
@@ -1494,6 +1491,11 @@
       "lng": -1.2583282,
       "source": "openstreetmap-gb-extract"
     },
+    "crown|southam|cv47 1ph": {
+      "lat": 52.253199,
+      "lng": -1.386725,
+      "source": "reviewed-camra-name-relationship"
+    },
     "crown|southport: birkdale|pr8 3bz": {
       "lat": 53.6158,
       "lng": -3.0174,
@@ -1788,6 +1790,11 @@
       "lat": 51.9941523,
       "lng": -4.9744534,
       "source": "openstreetmap-gb-extract"
+    },
+    "fitzgeralds|ashby-de-la-zouch|le65 1ah": {
+      "lat": 52.7471038,
+      "lng": -1.4705552,
+      "source": "reviewed-google-named-place"
     },
     "five bells|bassingham|ln5 9jz": {
       "lat": 53.1305037,
@@ -3174,6 +3181,11 @@
       "lng": -1.3697,
       "source": "camra-pubs-location-audit"
     },
+    "new swan|atherstone|cv9 1ha": {
+      "lat": 52.577782,
+      "lng": -1.547074,
+      "source": "camra-primary"
+    },
     "new zealand arms|derby: new zealand|de22 3gl": {
       "lat": 52.92570281111111,
       "lng": -1.498861611111111,
@@ -3193,6 +3205,11 @@
       "lat": 50.7006156,
       "lng": -1.2939824,
       "source": "openstreetmap-gb-extract"
+    },
+    "nineteen.57|talybont|ll43 2aq": {
+      "lat": 52.7701046,
+      "lng": -4.1021738,
+      "source": "reviewed-google-named-place"
     },
     "no 1 pub|cleethorpes|dn35 8ax": {
       "lat": 53.562574,
@@ -3664,6 +3681,11 @@
       "lng": -1.475177320098,
       "source": "camra-pubs-location-audit"
     },
+    "railway tavern|langley mill|ng16 4ae": {
+      "lat": 53.019288,
+      "lng": -1.328595,
+      "source": "reviewed-camra-name-relationship"
+    },
     "railway|blackheath se3|se3 9le": {
       "lat": 51.46542478571428,
       "lng": 0.008900742857142858,
@@ -3973,11 +3995,6 @@
       "lat": 52.9666845,
       "lng": -1.8104137,
       "source": "openstreetmap-gb-extract"
-    },
-    "roundhouse|nottingham: central|ng1 6fs": {
-      "lat": 52.9517517089844,
-      "lng": -1.15588998794556,
-      "source": "food-standards-agency-fhrs"
     },
     "royal air forces association (pmc)|yeadon|ls19 7na": {
       "lat": 53.8633885,
@@ -4718,6 +4735,11 @@
       "lat": 50.7337837219238,
       "lng": -2.75429391860962,
       "source": "food-standards-agency-fhrs"
+    },
+    "tiger|derby: central|de1 2dq": {
+      "lat": 52.922476,
+      "lng": -1.476485,
+      "source": "camra-primary"
     },
     "toby carvery trentham village|stoke: trentham|st4 8bu": {
       "lat": 52.965468,

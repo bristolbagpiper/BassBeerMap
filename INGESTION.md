@@ -102,6 +102,15 @@ refreshed. Informational FSA differences do not become active health incidents.
 
 ## Fixing brown pins without AI
 
+Reviewed `listing_corrections` in `ingestion-decisions.json` are scoped to an
+exact venue identity and expected source fields. They can correct a postcode or
+add a dated public note without changing another pub at the same postcode.
+Postcode corrections retain the existing permanent ID and original-row history.
+Exact `listing_exclusions` can remove a reviewed obsolete Bass listing while
+retaining its registry and pin history. If that excluded listing changes in a
+later PDF, publication stops for a fresh review rather than silently restoring
+or discarding a new beer confirmation.
+
 `Research unverified locations` runs Tuesdays at 08:17 UTC and supports manual
 dispatch. It retries CAMRA-primary verification, records supporting FSA checks and searches
 CAMRA around the listed postcode even when FSA matching fails. It rotates through

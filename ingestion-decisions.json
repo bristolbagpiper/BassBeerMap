@@ -55,5 +55,94 @@
       "source_url": "https://camra.org.uk/pubs/red-lion-dayhills-145933"
     }
   },
+  "listing_corrections": {
+    "barley mow|southsea|po5 3by": {
+      "changes": {
+        "postcode": "PO5 3DE"
+      },
+      "checked_at": "2026-11-03",
+      "corroborating_source_url": "https://www.portsmouth.gov.uk/wp-content/uploads/2020/09/LIC-Register-of-Current-Premises-Licences-sep.pdf",
+      "expected": {
+        "place_name": "Southsea",
+        "postcode": "PO5 3BY",
+        "pub_name": "Barley Mow"
+      },
+      "reason": "Same named venue and street address: source postcode PO5 3BY is incorrect; CAMRA and supporting address evidence give PO5 3DE. Retain the existing permanent venue ID.",
+      "reference_postcode": "PO5 3DE",
+      "reviewed_by": "Codex source review authorised by map owner",
+      "source_url": "https://camra.org.uk/pubs/190766"
+    },
+    "new swan|atherstone|cv9 1fe": {
+      "changes": {
+        "postcode": "CV9 1HA"
+      },
+      "checked_at": "2026-11-03",
+      "corroborating_source_url": "https://ratings.food.gov.uk/business/84105",
+      "expected": {
+        "place_name": "Atherstone",
+        "postcode": "CV9 1FE",
+        "pub_name": "New Swan"
+      },
+      "reason": "Same named venue and street address: source postcode CV9 1FE is incorrect; CAMRA and supporting address evidence give CV9 1HA. Retain the existing permanent venue ID.",
+      "reference_postcode": "CV9 1HA",
+      "reviewed_by": "Codex source review authorised by map owner",
+      "source_url": "https://camra.org.uk/pubs/131584"
+    },
+    "shepherds hall ale house|chorley|pr7 1bs": {
+      "changes": {
+        "notes": "CAMRA reports temporary closure since 2 July 2026; reopening expected by 7 November but unconfirmed (checked 3 November 2026). Check with the venue before travelling."
+      },
+      "checked_at": "2026-11-03",
+      "expected": {
+        "area": "Lancashire",
+        "country": "England",
+        "dispense": "H",
+        "last": "2026 Q1",
+        "notes": "",
+        "pg": "Guest",
+        "place_name": "Chorley",
+        "postcode": "PR7 1BS",
+        "pub_name": "Shepherds Hall Ale House"
+      },
+      "reason": "Display the current dated temporary-closure warning. Keep the reopening/trading check unresolved and retain the owner-reviewed building pin.",
+      "reviewed_by": "Codex source review authorised by map owner",
+      "source_url": "https://camra.org.uk/pubs/180027"
+    },
+    "tiger|derby: central|de1 2tq": {
+      "changes": {
+        "postcode": "DE1 2DQ"
+      },
+      "checked_at": "2026-11-03",
+      "corroborating_source_url": "https://www.derbycathedralquarter.co.uk/directory/tiger-bar/",
+      "expected": {
+        "place_name": "Derby: Central",
+        "postcode": "DE1 2TQ",
+        "pub_name": "Tiger"
+      },
+      "reason": "Same named venue and street address: source postcode DE1 2TQ is incorrect; CAMRA and supporting address evidence give DE1 2DQ. Retain the existing permanent venue ID.",
+      "reference_postcode": "DE1 2DQ",
+      "reviewed_by": "Codex source review authorised by map owner",
+      "source_url": "https://camra.org.uk/pubs/143461"
+    }
+  },
+  "listing_exclusions": {
+    "roundhouse|nottingham: central|ng1 6fs": {
+      "checked_at": "2026-11-03",
+      "expected": {
+        "area": "Nottinghamshire",
+        "country": "England",
+        "dispense": "H",
+        "last": "2026 Q1",
+        "notes": "",
+        "pg": "Guest",
+        "place_name": "Nottingham: Central",
+        "postcode": "NG1 6FS",
+        "pub_name": "Roundhouse"
+      },
+      "reason": "CAMRA record162611 now identifies Kova, an Asian restaurant at the former Roundhouse, with cask ale unavailable. Exclude this exact old Q1 Bass listing from active outlets; retain identity/pin history. Changed future directory confirmation requires review rather than silent re-addition.",
+      "reviewed_by": "Codex source review authorised by map owner",
+      "source_url": "https://camra.org.uk/pubs/kova-nottingham-162611"
+    }
+  },
   "schema_version": 1
 }

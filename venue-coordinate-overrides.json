@@ -1166,6 +1166,21 @@
       "source": "camra-pubs-location-audit",
       "source_url": "https://camra.org.uk/pubs/148812"
     },
+    "fitzgeralds|ashby-de-la-zouch|le65 1ah": {
+      "audit_reason": "manual_named_place_address_and_map_check",
+      "checked_at": "2026-11-03",
+      "corroborating_source_url": "https://fitzgeraldsashby.co.uk/contact/",
+      "lat": 52.7471038,
+      "lng": -1.4705552,
+      "previous_lat": 52.747885,
+      "previous_lng": -1.469553,
+      "previous_source": "postcode",
+      "reference_address": "60A Market Street, Ashby-de-la-Zouch, LE65 1AN",
+      "reference_name": "Fitzgeralds Ashby",
+      "review_note": "Named Google Maps place marker checked together with the operator's named street/caravan-park address. Marker fields !3d/!4d were used, not viewport-centre coordinates. This is a manual source review, not a Places API or owner visual confirmation.",
+      "source": "google-maps-named-place",
+      "source_url": "https://www.google.com/maps/place/Fitzgeralds+Ashby/@52.7471038,-1.4705552,17z/data=!3m1!4b1!4m6!3m5!1s0x4879fd6287892107:0xc6b7c50a88009f92!8m2!3d52.7471038!4d-1.4705552!16s%2Fg%2F11zy8xb2rv?entry=ttu&g_ep=EgoyMDI2MTAyOC4wIKXMDSoASAFQAw%3D%3D"
+    },
     "five ways|heath hayes|ws12 3hu": {
       "audit_reason": "postcode_fallback_replaced",
       "checked_at": "2026-09-11",
@@ -1990,6 +2005,21 @@
       "review_note": "club and full postcode agree",
       "source": "google-maps-named-place",
       "source_url": "https://www.google.com/maps/search/?api=1&query=Newcastle+Town+FC+ST5+3BX"
+    },
+    "nineteen.57|talybont|ll43 2aq": {
+      "audit_reason": "manual_named_place_address_and_map_check",
+      "checked_at": "2026-11-03",
+      "corroborating_source_url": "https://nineteen57.uk/",
+      "lat": 52.7701046,
+      "lng": -4.1021738,
+      "previous_lat": 52.772624,
+      "previous_lng": -4.100279,
+      "previous_source": "postcode",
+      "reference_address": "Islawrffordd Caravan Park, Talybont, LL43 2AQ",
+      "reference_name": "Nineteen.57",
+      "review_note": "Named Google Maps place marker checked together with the operator's named street/caravan-park address. Marker fields !3d/!4d were used, not viewport-centre coordinates. This is a manual source review, not a Places API or owner visual confirmation.",
+      "source": "google-maps-named-place",
+      "source_url": "https://www.google.com/maps/place/Nineteen.57/@52.7701046,-4.1021738,17z/data=!3m1!4b1!4m6!3m5!1s0x4865829037e2be5f:0xe30e8b08ff7256a2!8m2!3d52.7701046!4d-4.1021738!16s%2Fg%2F11ckw28yhb?entry=ttu&g_ep=EgoyMDI2MTAyOC4wIKXMDSoASAFQAw%3D%3D"
     },
     "no 1 pub|cleethorpes|dn35 8ax": {
       "audit_reason": "existing_pin_over_50m_from_matching_venue",

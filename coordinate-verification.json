@@ -1,7 +1,6 @@
 {
   "counts": {
-    "postcode_approximate": 7,
-    "verified_venue": 1081
+    "verified_venue": 1087
   },
   "generated_at": "2026-11-03",
   "policy": {
@@ -1215,14 +1214,42 @@
       "status": "verified_venue",
       "venue_id": "v-39e372db-cd57-5382-b4a5-0d7f92fd9cf8"
     },
-    "barley mow|southsea|po5 3by": {
-      "coordinate_source": "postcode",
-      "display_precision": "postcode",
-      "evidence": [],
+    "barley mow|southsea|po5 3de": {
+      "coordinate_source": "camra-primary",
+      "display_precision": "venue",
+      "evidence": [
+        {
+          "checked_at": "2026-11-03",
+          "match": "primary_named_venue_full_postcode_and_address",
+          "reference_address": "39 Castle Road",
+          "reference_coordinate": {
+            "lat": 50.789349,
+            "lng": -1.092775
+          },
+          "reference_locality": "Portsmouth",
+          "reference_name": "Barley Mow, Portsmouth - Community Pub",
+          "reference_postcode": "PO5 3DE",
+          "source": "camra",
+          "url": "https://camra.org.uk/pubs/190766"
+        },
+        {
+          "checked_at": "2026-11-03",
+          "match": "supporting_name_and_full_postcode_agreement",
+          "reference_coordinate": {
+            "lat": 50.7893872,
+            "lng": -1.0927197
+          },
+          "reference_postcode": "PO5 3DE",
+          "source": "food-standards-agency-fhrs",
+          "url": "https://ratings.food.gov.uk/business/90065"
+        }
+      ],
+      "lat": 50.789349,
+      "lng": -1.092775,
       "place_name": "Southsea",
-      "postcode": "PO5 3BY",
+      "postcode": "PO5 3DE",
       "pub_name": "Barley Mow",
-      "status": "postcode_approximate",
+      "status": "verified_venue",
       "venue_id": "v-f8bee24d-ecda-57fd-ba79-92aae52bba74"
     },
     "barley mow|warrington|wa1 1qb": {
@@ -8846,13 +8873,31 @@
       "venue_id": "v-c2444f01-e722-553c-8aba-198828ded1de"
     },
     "crown|southam|cv47 1ph": {
-      "coordinate_source": "postcode",
-      "display_precision": "postcode",
-      "evidence": [],
+      "coordinate_source": "reviewed-camra-name-relationship",
+      "display_precision": "venue",
+      "evidence": [
+        {
+          "checked_at": "2026-11-03",
+          "match": "reviewed_same_named_premises_address_and_full_postcode",
+          "reference_address": "Daventry Street",
+          "reference_coordinate": {
+            "lat": 52.253199,
+            "lng": -1.386725
+          },
+          "reference_name": "Alchemy at The Crown, Southam - Grade II Listed Pub",
+          "reference_postcode": "CV47 1PH",
+          "review_reason": "Reviewed CAMRA Alchemy at The Crown at Daventry Street, Southam CV47 1PH; previous name Crown Inn and FSA The Crown identify this same premises, not the other-town Crowns.",
+          "reviewed_by": "Codex source review authorised by map owner",
+          "source": "camra",
+          "url": "https://camra.org.uk/pubs/122330"
+        }
+      ],
+      "lat": 52.253199,
+      "lng": -1.386725,
       "place_name": "Southam",
       "postcode": "CV47 1PH",
       "pub_name": "Crown",
-      "status": "postcode_approximate",
+      "status": "verified_venue",
       "venue_id": "v-59f0070d-7f4c-559e-b10b-e85d2383e5bc"
     },
     "crown|southport: birkdale|pr8 3bz": {
@@ -10666,13 +10711,40 @@
       "venue_id": "v-f3734e56-20a8-5a7e-8441-157b6f375658"
     },
     "fitzgeralds|ashby-de-la-zouch|le65 1ah": {
-      "coordinate_source": "postcode",
-      "display_precision": "postcode",
-      "evidence": [],
+      "coordinate_source": "reviewed-google-named-place",
+      "display_precision": "venue",
+      "evidence": [
+        {
+          "checked_at": "2026-11-03",
+          "match": "manual_named_place_and_operator_address_check",
+          "reference_address": "60A Market Street, Ashby-de-la-Zouch, LE65 1AN",
+          "reference_coordinate": {
+            "lat": 52.7471038,
+            "lng": -1.4705552
+          },
+          "reference_name": "Fitzgeralds Ashby",
+          "reference_postcode": "LE65 1AN",
+          "review_reason": "Named Google Maps place marker checked together with the operator's named street/caravan-park address. Marker fields !3d/!4d were used, not viewport-centre coordinates. This is a manual source review, not a Places API or owner visual confirmation.",
+          "reviewed_by": "Codex source review authorised by map owner",
+          "source": "google-maps-named-place",
+          "url": "https://www.google.com/maps/place/Fitzgeralds+Ashby/@52.7471038,-1.4705552,17z/data=!3m1!4b1!4m6!3m5!1s0x4879fd6287892107:0xc6b7c50a88009f92!8m2!3d52.7471038!4d-1.4705552!16s%2Fg%2F11zy8xb2rv?entry=ttu&g_ep=EgoyMDI2MTAyOC4wIKXMDSoASAFQAw%3D%3D"
+        }
+      ],
+      "lat": 52.7471038,
+      "lng": -1.4705552,
+      "metadata_issue": {
+        "field": "postcode",
+        "listed": "LE65 1AH",
+        "operator_postcode": "LE65 1AH",
+        "operator_url": "https://fitzgeraldsashby.co.uk/contact/",
+        "reference": "LE65 1AN",
+        "review_reason": "Keep operator/PDF LE65 1AH while Google says LE65 1AN. The named building marker is resolved; postal-code disagreement remains an address review.",
+        "source_url": "https://www.google.com/maps/place/Fitzgeralds+Ashby/@52.7471038,-1.4705552,17z/data=!3m1!4b1!4m6!3m5!1s0x4879fd6287892107:0xc6b7c50a88009f92!8m2!3d52.7471038!4d-1.4705552!16s%2Fg%2F11zy8xb2rv?entry=ttu&g_ep=EgoyMDI2MTAyOC4wIKXMDSoASAFQAw%3D%3D"
+      },
       "place_name": "Ashby-de-la-Zouch",
       "postcode": "LE65 1AH",
       "pub_name": "Fitzgeralds",
-      "status": "postcode_approximate",
+      "status": "verified_venue",
       "venue_id": "v-b1f768d3-f5ed-5eae-a199-6b21559ba452"
     },
     "five bells|bassingham|ln5 9jz": {
@@ -18951,14 +19023,31 @@
       "status": "verified_venue",
       "venue_id": "v-6e6a3ef8-0baa-5d53-927c-a5d1b1044c85"
     },
-    "new swan|atherstone|cv9 1fe": {
-      "coordinate_source": "postcode",
-      "display_precision": "postcode",
-      "evidence": [],
+    "new swan|atherstone|cv9 1ha": {
+      "coordinate_source": "camra-primary",
+      "display_precision": "venue",
+      "evidence": [
+        {
+          "checked_at": "2026-11-03",
+          "match": "primary_named_venue_full_postcode_and_address",
+          "reference_address": "Church Street",
+          "reference_coordinate": {
+            "lat": 52.577782,
+            "lng": -1.547074
+          },
+          "reference_locality": "Atherstone",
+          "reference_name": "New Swan, Atherstone - Compact Town Pub",
+          "reference_postcode": "CV9 1HA",
+          "source": "camra",
+          "url": "https://camra.org.uk/pubs/131584"
+        }
+      ],
+      "lat": 52.577782,
+      "lng": -1.547074,
       "place_name": "Atherstone",
-      "postcode": "CV9 1FE",
+      "postcode": "CV9 1HA",
       "pub_name": "New Swan",
-      "status": "postcode_approximate",
+      "status": "verified_venue",
       "venue_id": "v-f8899d25-0fe4-551f-b83c-e47f3ecf0ed6"
     },
     "new zealand arms|derby: new zealand|de22 3gl": {
@@ -19068,13 +19157,31 @@
       "venue_id": "v-3925df2c-0a5b-5692-9cdb-ad609c4da147"
     },
     "nineteen.57|talybont|ll43 2aq": {
-      "coordinate_source": "postcode",
-      "display_precision": "postcode",
-      "evidence": [],
+      "coordinate_source": "reviewed-google-named-place",
+      "display_precision": "venue",
+      "evidence": [
+        {
+          "checked_at": "2026-11-03",
+          "match": "manual_named_place_and_operator_address_check",
+          "reference_address": "Islawrffordd Caravan Park, Talybont, LL43 2AQ",
+          "reference_coordinate": {
+            "lat": 52.7701046,
+            "lng": -4.1021738
+          },
+          "reference_name": "Nineteen.57",
+          "reference_postcode": "LL43 2AQ",
+          "review_reason": "Named Google Maps place marker checked together with the operator's named street/caravan-park address. Marker fields !3d/!4d were used, not viewport-centre coordinates. This is a manual source review, not a Places API or owner visual confirmation.",
+          "reviewed_by": "Codex source review authorised by map owner",
+          "source": "google-maps-named-place",
+          "url": "https://www.google.com/maps/place/Nineteen.57/@52.7701046,-4.1021738,17z/data=!3m1!4b1!4m6!3m5!1s0x4865829037e2be5f:0xe30e8b08ff7256a2!8m2!3d52.7701046!4d-4.1021738!16s%2Fg%2F11ckw28yhb?entry=ttu&g_ep=EgoyMDI2MTAyOC4wIKXMDSoASAFQAw%3D%3D"
+        }
+      ],
+      "lat": 52.7701046,
+      "lng": -4.1021738,
       "place_name": "Talybont",
       "postcode": "LL43 2AQ",
       "pub_name": "Nineteen.57",
-      "status": "postcode_approximate",
+      "status": "verified_venue",
       "venue_id": "v-ad1cdbb6-9c64-5a6a-a5ce-53557e5637f7"
     },
     "no 1 pub|cleethorpes|dn35 8ax": {
@@ -21826,13 +21933,31 @@
       "venue_id": "v-99376d26-255f-5a56-bf82-18e850c579ac"
     },
     "railway tavern|langley mill|ng16 4ae": {
-      "coordinate_source": "postcode",
-      "display_precision": "postcode",
-      "evidence": [],
+      "coordinate_source": "reviewed-camra-name-relationship",
+      "display_precision": "venue",
+      "evidence": [
+        {
+          "checked_at": "2026-11-03",
+          "match": "reviewed_same_named_premises_address_and_full_postcode",
+          "reference_address": "188 Station Road",
+          "reference_coordinate": {
+            "lat": 53.019288,
+            "lng": -1.328595
+          },
+          "reference_name": "Railway Tavern Micro Bar, Langley Mill - Hand Pumps",
+          "reference_postcode": "NG16 4AE",
+          "review_reason": "Reviewed full CAMRA name Railway Tavern Micro Bar at 188 Station Road and exact NG16 4AE; Micro Bar is a descriptive extension of the same named premises.",
+          "reviewed_by": "Codex source review authorised by map owner",
+          "source": "camra",
+          "url": "https://camra.org.uk/pubs/161331"
+        }
+      ],
+      "lat": 53.019288,
+      "lng": -1.328595,
       "place_name": "Langley Mill",
       "postcode": "NG16 4AE",
       "pub_name": "Railway Tavern",
-      "status": "postcode_approximate",
+      "status": "verified_venue",
       "venue_id": "v-13b369ca-b0c7-55ae-9466-6c57b35bd624"
     },
     "railway|blackheath se3|se3 9le": {
@@ -23670,33 +23795,6 @@
       "pub_name": "Roston Inn",
       "status": "verified_venue",
       "venue_id": "v-cdb2a668-ae06-569d-8e71-df37f469157f"
-    },
-    "roundhouse|nottingham: central|ng1 6fs": {
-      "coordinate_source": "food-standards-agency-fhrs",
-      "display_precision": "venue",
-      "evidence": [
-        {
-          "checked_at": "2026-10-20",
-          "difference_metres": 48.3,
-          "match": "venue_name_and_full_postcode",
-          "reference_address": "Royal Standard Place",
-          "reference_coordinate": {
-            "lat": 52.9517,
-            "lng": -1.155174
-          },
-          "reference_name": "Roundhouse, Nottingham",
-          "reference_postcode": "NG1 6FS",
-          "source": "camra",
-          "url": "https://camra.org.uk/pubs/162611"
-        }
-      ],
-      "lat": 52.9517517089844,
-      "lng": -1.15588998794556,
-      "place_name": "Nottingham: Central",
-      "postcode": "NG1 6FS",
-      "pub_name": "Roundhouse",
-      "status": "verified_venue",
-      "venue_id": "v-8c80b729-ceaf-5912-ab4a-1b51de2fb3f8"
     },
     "royal air forces association (pmc)|yeadon|ls19 7na": {
       "coordinate_source": "google-maps-named-place",
@@ -28088,14 +28186,31 @@
       "status": "verified_venue",
       "venue_id": "v-de3630ba-38b6-59f8-b5fb-01e545c5be29"
     },
-    "tiger|derby: central|de1 2tq": {
-      "coordinate_source": "postcode",
-      "display_precision": "postcode",
-      "evidence": [],
+    "tiger|derby: central|de1 2dq": {
+      "coordinate_source": "camra-primary",
+      "display_precision": "venue",
+      "evidence": [
+        {
+          "checked_at": "2026-11-03",
+          "match": "primary_named_venue_full_postcode_and_address",
+          "reference_address": "Lockup Yard - Cornmarket",
+          "reference_coordinate": {
+            "lat": 52.922476,
+            "lng": -1.476485
+          },
+          "reference_locality": "Derby",
+          "reference_name": "Tiger, Derby - Community Pub",
+          "reference_postcode": "DE1 2DQ",
+          "source": "camra",
+          "url": "https://camra.org.uk/pubs/143461"
+        }
+      ],
+      "lat": 52.922476,
+      "lng": -1.476485,
       "place_name": "Derby: Central",
-      "postcode": "DE1 2TQ",
+      "postcode": "DE1 2DQ",
       "pub_name": "Tiger",
-      "status": "postcode_approximate",
+      "status": "verified_venue",
       "venue_id": "v-de948283-fe31-5f55-b16a-547c37e592ce"
     },
     "toby carvery trentham village|stoke: trentham|st4 8bu": {

@@ -1,6 +1,6 @@
 {
-  "actionable_count": 3,
-  "active_count": 3,
+  "actionable_count": 2,
+  "active_count": 2,
   "records": {
     "v-00a08839-2b8a-5782-b6c7-0bdce4cddb2f": {
       "active": false,
@@ -14025,7 +14025,7 @@
       "venue_id": "v-c21cc65e-83ff-5a18-a955-b26d106455a7"
     },
     "v-c31ee814-63f4-513d-8d38-fad12edad41f": {
-      "active": true,
+      "active": false,
       "first_seen": "2026-11-02",
       "history": [
         {
@@ -14041,46 +14041,31 @@
             "Building comparison needs verification: Earlier manual Google named-place comparison differed by more than 50 m. Check the Greyhound building; disagreement is not proof of an incorrect pin."
           ],
           "status": "review_needed"
+        },
+        {
+          "date": "2026-11-03",
+          "reasons": [],
+          "status": "resolved"
         }
       ],
-      "last_checked": "2026-11-02",
-      "manual_action_required": true,
-      "manual_review_request": {
-        "checked_at": "2026-11-02",
-        "evidence_kind": "manual named-listing observation; not an automated Places API check",
-        "id": "d5f997ccbb54b9cdc6925fb55ff15eaf6f76f801417bb99ddd758f06c6b6cb1d",
-        "questioned_coordinate": {
-          "lat": 52.7671,
-          "lng": -1.5111
-        },
-        "reason": "Earlier manual Google named-place comparison differed by more than 50 m. Check the Greyhound building; disagreement is not proof of an incorrect pin.",
-        "schema_version": 1,
-        "scope": "building_coordinate",
-        "source_url": "https://www.google.com/maps/place/The+Greyhound+Inn/@52.767456,-1.5125223,17z/data=!3m1!4b1!4m6!3m5!1s0x4879feba10708f69:0x3f4eab9b3f5e67f6!8m2!3d52.767456!4d-1.5125223!16s%2Fg%2F1tcx11fl",
-        "venue_id": "v-c31ee814-63f4-513d-8d38-fad12edad41f"
-      },
-      "next_action": "Compare the named building and saved pin; a source disagreement is not proof of an incorrect pin",
+      "last_checked": "2026-11-03",
+      "manual_action_required": false,
+      "next_action": "No pin check requested",
       "place_name": "Woodville",
       "postcode": "DE11 7BU",
       "pub_name": "Greyhound",
-      "reasons": [
-        "Building comparison needs verification: Earlier manual Google named-place comparison differed by more than 50 m. Check the Greyhound building; disagreement is not proof of an incorrect pin."
-      ],
+      "reasons": [],
       "reference": {},
       "research": {},
-      "review_category": "needs_verification",
+      "review_category": "confirmed",
       "source_checks": {
-        "camra": {
-          "status": "confirmed",
-          "url": "https://camra.org.uk/pubs/123900"
-        },
-        "fsa_independent": {
-          "status": "ambiguous_or_missing_coordinates",
-          "url": ""
+        "google-maps-named-place": {
+          "status": "owner_confirmed",
+          "url": "https://www.google.com/maps/place/The+Greyhound+Inn/@52.767456,-1.5125223,17z/data=!3m1!4b1!4m6!3m5!1s0x4879feba10708f69:0x3f4eab9b3f5e67f6!8m2!3d52.767456!4d-1.5125223!16s%2Fg%2F1tcx11fl"
         }
       },
       "source_error": null,
-      "status": "review_needed",
+      "status": "resolved",
       "unverified": false,
       "venue_id": "v-c31ee814-63f4-513d-8d38-fad12edad41f"
     },

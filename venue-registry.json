@@ -1,7 +1,7 @@
 {
   "location_review": {
-    "actionable_count": 3,
-    "active_count": 3,
+    "actionable_count": 2,
+    "active_count": 2,
     "records": {
       "v-00a08839-2b8a-5782-b6c7-0bdce4cddb2f": {
         "active": false,
@@ -14026,7 +14026,7 @@
         "venue_id": "v-c21cc65e-83ff-5a18-a955-b26d106455a7"
       },
       "v-c31ee814-63f4-513d-8d38-fad12edad41f": {
-        "active": true,
+        "active": false,
         "first_seen": "2026-11-02",
         "history": [
           {
@@ -14042,46 +14042,31 @@
               "Building comparison needs verification: Earlier manual Google named-place comparison differed by more than 50 m. Check the Greyhound building; disagreement is not proof of an incorrect pin."
             ],
             "status": "review_needed"
+          },
+          {
+            "date": "2026-11-03",
+            "reasons": [],
+            "status": "resolved"
           }
         ],
-        "last_checked": "2026-11-02",
-        "manual_action_required": true,
-        "manual_review_request": {
-          "checked_at": "2026-11-02",
-          "evidence_kind": "manual named-listing observation; not an automated Places API check",
-          "id": "d5f997ccbb54b9cdc6925fb55ff15eaf6f76f801417bb99ddd758f06c6b6cb1d",
-          "questioned_coordinate": {
-            "lat": 52.7671,
-            "lng": -1.5111
-          },
-          "reason": "Earlier manual Google named-place comparison differed by more than 50 m. Check the Greyhound building; disagreement is not proof of an incorrect pin.",
-          "schema_version": 1,
-          "scope": "building_coordinate",
-          "source_url": "https://www.google.com/maps/place/The+Greyhound+Inn/@52.767456,-1.5125223,17z/data=!3m1!4b1!4m6!3m5!1s0x4879feba10708f69:0x3f4eab9b3f5e67f6!8m2!3d52.767456!4d-1.5125223!16s%2Fg%2F1tcx11fl",
-          "venue_id": "v-c31ee814-63f4-513d-8d38-fad12edad41f"
-        },
-        "next_action": "Compare the named building and saved pin; a source disagreement is not proof of an incorrect pin",
+        "last_checked": "2026-11-03",
+        "manual_action_required": false,
+        "next_action": "No pin check requested",
         "place_name": "Woodville",
         "postcode": "DE11 7BU",
         "pub_name": "Greyhound",
-        "reasons": [
-          "Building comparison needs verification: Earlier manual Google named-place comparison differed by more than 50 m. Check the Greyhound building; disagreement is not proof of an incorrect pin."
-        ],
+        "reasons": [],
         "reference": {},
         "research": {},
-        "review_category": "needs_verification",
+        "review_category": "confirmed",
         "source_checks": {
-          "camra": {
-            "status": "confirmed",
-            "url": "https://camra.org.uk/pubs/123900"
-          },
-          "fsa_independent": {
-            "status": "ambiguous_or_missing_coordinates",
-            "url": ""
+          "google-maps-named-place": {
+            "status": "owner_confirmed",
+            "url": "https://www.google.com/maps/place/The+Greyhound+Inn/@52.767456,-1.5125223,17z/data=!3m1!4b1!4m6!3m5!1s0x4879feba10708f69:0x3f4eab9b3f5e67f6!8m2!3d52.767456!4d-1.5125223!16s%2Fg%2F1tcx11fl"
           }
         },
         "source_error": null,
-        "status": "review_needed",
+        "status": "resolved",
         "unverified": false,
         "venue_id": "v-c31ee814-63f4-513d-8d38-fad12edad41f"
       },
@@ -109134,35 +109119,75 @@
         "postcode": "DE11 7BU",
         "pub_name": "Greyhound"
       },
-      "verification_attempt": {
-        "checked_at": "2026-10-24",
-        "evidence": {
-          "checked_at": "2026-10-24",
-          "difference_metres": 0.0,
-          "match": "venue_name_and_full_postcode",
-          "reference_address": "149 Ashby Road",
-          "reference_coordinate": {
-            "lat": 52.7671,
-            "lng": -1.5111
+      "location_corrections": [
+        {
+          "approved_coordinate": {
+            "lat": 52.767456,
+            "lng": -1.5125223
           },
-          "reference_name": "Greyhound Inn, Woodville - Free House with Patio",
-          "reference_postcode": "DE11 7BU",
-          "source": "camra",
-          "url": "https://camra.org.uk/pubs/123900"
-        },
+          "checked_at": "2026-11-03",
+          "difference_metres": 103.6,
+          "owner_instruction": "google is correct",
+          "previous_pin": {
+            "evidence": [
+              {
+                "checked_at": "2026-10-24",
+                "difference_metres": 0.0,
+                "match": "venue_name_and_full_postcode",
+                "reference_address": "149 Ashby Road",
+                "reference_coordinate": {
+                  "lat": 52.7671,
+                  "lng": -1.5111
+                },
+                "reference_name": "Greyhound Inn, Woodville - Free House with Patio",
+                "reference_postcode": "DE11 7BU",
+                "source": "camra",
+                "url": "https://camra.org.uk/pubs/123900"
+              }
+            ],
+            "lat": 52.7671,
+            "lng": -1.5111,
+            "manual_review_request": {
+              "checked_at": "2026-11-02",
+              "evidence_kind": "manual named-listing observation; not an automated Places API check",
+              "id": "d5f997ccbb54b9cdc6925fb55ff15eaf6f76f801417bb99ddd758f06c6b6cb1d",
+              "questioned_coordinate": {
+                "lat": 52.7671,
+                "lng": -1.5111
+              },
+              "reason": "Earlier manual Google named-place comparison differed by more than 50 m. Check the Greyhound building; disagreement is not proof of an incorrect pin.",
+              "schema_version": 1,
+              "scope": "building_coordinate",
+              "source_url": "https://www.google.com/maps/place/The+Greyhound+Inn/@52.767456,-1.5125223,17z/data=!3m1!4b1!4m6!3m5!1s0x4879feba10708f69:0x3f4eab9b3f5e67f6!8m2!3d52.767456!4d-1.5125223!16s%2Fg%2F1tcx11fl",
+              "venue_id": "v-c31ee814-63f4-513d-8d38-fad12edad41f"
+            },
+            "source": "camra-pubs-location-audit"
+          },
+          "reason": "Owner selected the named Google Greyhound building after comparing the saved pin.",
+          "resolved_review_request_id": "d5f997ccbb54b9cdc6925fb55ff15eaf6f76f801417bb99ddd758f06c6b6cb1d",
+          "reviewed_by": "bristolbagpiper",
+          "source_url": "https://www.google.com/maps/place/The+Greyhound+Inn/@52.767456,-1.5125223,17z/data=!3m1!4b1!4m6!3m5!1s0x4879feba10708f69:0x3f4eab9b3f5e67f6!8m2!3d52.767456!4d-1.5125223!16s%2Fg%2F1tcx11fl"
+        }
+      ],
+      "verification_attempt": {
+        "checked_at": "2026-11-03",
+        "reason": "Owner confirmed Google named-place building; next manual evidence refresh follows the existing 180-day policy.",
         "sources": {
-          "camra": {
-            "status": "confirmed",
-            "url": "https://camra.org.uk/pubs/123900"
+          "google-maps-named-place": {
+            "status": "owner_confirmed",
+            "url": "https://www.google.com/maps/place/The+Greyhound+Inn/@52.767456,-1.5125223,17z/data=!3m1!4b1!4m6!3m5!1s0x4879feba10708f69:0x3f4eab9b3f5e67f6!8m2!3d52.767456!4d-1.5125223!16s%2Fg%2F1tcx11fl"
           }
         },
-        "status": "confirmed"
+        "status": "manual_review"
       },
       "verified_pin": {
         "evidence": [
           {
             "checked_at": "2026-10-24",
             "difference_metres": 0.0,
+            "disposition": "superseded_by_owner_building_correction",
+            "disposition_checked_at": "2026-11-03",
+            "disposition_reason": "Owner confirmed the Google named-place building instead of this CAMRA geocode; retained as historical source disagreement, not current coordinate authority.",
             "match": "venue_name_and_full_postcode",
             "reference_address": "149 Ashby Road",
             "reference_coordinate": {
@@ -109173,10 +109198,26 @@
             "reference_postcode": "DE11 7BU",
             "source": "camra",
             "url": "https://camra.org.uk/pubs/123900"
+          },
+          {
+            "checked_at": "2026-11-03",
+            "evidence_kind": "Owner-confirmed manual Google Maps named-place observation; not an automated Places API check",
+            "match": "owner_reviewed_named_place_and_full_postcode",
+            "owner_instruction": "google is correct",
+            "reference_address": "149 Ashby Road, Woodville, DE11 7BU",
+            "reference_coordinate": {
+              "lat": 52.767456,
+              "lng": -1.5125223
+            },
+            "reference_name": "The Greyhound Inn",
+            "reference_postcode": "DE11 7BU",
+            "reviewed_by": "bristolbagpiper",
+            "source": "google-maps-named-place",
+            "url": "https://www.google.com/maps/place/The+Greyhound+Inn/@52.767456,-1.5125223,17z/data=!3m1!4b1!4m6!3m5!1s0x4879feba10708f69:0x3f4eab9b3f5e67f6!8m2!3d52.767456!4d-1.5125223!16s%2Fg%2F1tcx11fl"
           }
         ],
-        "lat": 52.7671,
-        "lng": -1.5111,
+        "lat": 52.767456,
+        "lng": -1.5125223,
         "manual_review_request": {
           "checked_at": "2026-11-02",
           "evidence_kind": "manual named-listing observation; not an automated Places API check",
@@ -109191,7 +109232,31 @@
           "source_url": "https://www.google.com/maps/place/The+Greyhound+Inn/@52.767456,-1.5125223,17z/data=!3m1!4b1!4m6!3m5!1s0x4879feba10708f69:0x3f4eab9b3f5e67f6!8m2!3d52.767456!4d-1.5125223!16s%2Fg%2F1tcx11fl",
           "venue_id": "v-c31ee814-63f4-513d-8d38-fad12edad41f"
         },
-        "source": "camra-pubs-location-audit"
+        "owner_confirmation": {
+          "approved_coordinate": {
+            "lat": 52.767456,
+            "lng": -1.5125223
+          },
+          "checked_at": "2026-11-03",
+          "conclusion": "Owner confirmed the named Google Greyhound Inn marker at 149 Ashby Road, Woodville DE11 7BU. Move the saved pin to this building; this does not verify Bass availability.",
+          "listing": {
+            "area": "Derbyshire",
+            "country": "England",
+            "place_name": "Woodville",
+            "postcode": "DE11 7BU",
+            "pub_name": "Greyhound",
+            "venue_id": "v-c31ee814-63f4-513d-8d38-fad12edad41f"
+          },
+          "owner_instruction": "google is correct",
+          "resolved_review_request_ids": [
+            "d5f997ccbb54b9cdc6925fb55ff15eaf6f76f801417bb99ddd758f06c6b6cb1d"
+          ],
+          "reviewed_by": "bristolbagpiper",
+          "schema_version": 1,
+          "scope": "displayed_venue_building",
+          "source_url": "https://www.google.com/maps/place/The+Greyhound+Inn/@52.767456,-1.5125223,17z/data=!3m1!4b1!4m6!3m5!1s0x4879feba10708f69:0x3f4eab9b3f5e67f6!8m2!3d52.767456!4d-1.5125223!16s%2Fg%2F1tcx11fl"
+        },
+        "source": "owner-reviewed-google-maps"
       }
     },
     "v-c35bce3d-8f52-54ae-9346-2917f95a95c7": {

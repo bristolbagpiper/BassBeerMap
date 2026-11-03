@@ -2,7 +2,7 @@
   "counts": {
     "verified_venue": 1044
   },
-  "generated_at": "2026-11-02",
+  "generated_at": "2026-11-03",
   "policy": {
     "max_evidence_age_days": 400,
     "venue_pin": "Evidence-backed venue coordinates; unresolved venues use explicitly approximate postcode pins."
@@ -12446,12 +12446,15 @@
       "venue_id": "v-92423ecf-1b34-5b41-902a-9213e47f7aaf"
     },
     "greyhound|woodville|de11 7bu": {
-      "coordinate_source": "camra-pubs-location-audit",
+      "coordinate_source": "owner-reviewed-google-maps",
       "display_precision": "venue",
       "evidence": [
         {
           "checked_at": "2026-10-24",
           "difference_metres": 0.0,
+          "disposition": "superseded_by_owner_building_correction",
+          "disposition_checked_at": "2026-11-03",
+          "disposition_reason": "Owner confirmed the Google named-place building instead of this CAMRA geocode; retained as historical source disagreement, not current coordinate authority.",
           "match": "venue_name_and_full_postcode",
           "reference_address": "149 Ashby Road",
           "reference_coordinate": {
@@ -12462,10 +12465,26 @@
           "reference_postcode": "DE11 7BU",
           "source": "camra",
           "url": "https://camra.org.uk/pubs/123900"
+        },
+        {
+          "checked_at": "2026-11-03",
+          "evidence_kind": "Owner-confirmed manual Google Maps named-place observation; not an automated Places API check",
+          "match": "owner_reviewed_named_place_and_full_postcode",
+          "owner_instruction": "google is correct",
+          "reference_address": "149 Ashby Road, Woodville, DE11 7BU",
+          "reference_coordinate": {
+            "lat": 52.767456,
+            "lng": -1.5125223
+          },
+          "reference_name": "The Greyhound Inn",
+          "reference_postcode": "DE11 7BU",
+          "reviewed_by": "bristolbagpiper",
+          "source": "google-maps-named-place",
+          "url": "https://www.google.com/maps/place/The+Greyhound+Inn/@52.767456,-1.5125223,17z/data=!3m1!4b1!4m6!3m5!1s0x4879feba10708f69:0x3f4eab9b3f5e67f6!8m2!3d52.767456!4d-1.5125223!16s%2Fg%2F1tcx11fl"
         }
       ],
-      "lat": 52.7671,
-      "lng": -1.5111,
+      "lat": 52.767456,
+      "lng": -1.5125223,
       "place_name": "Woodville",
       "postcode": "DE11 7BU",
       "pub_name": "Greyhound",

@@ -1,27 +1,26 @@
 # Full location audit
 
-Locations: 1088
+Locations: 1087
 
-Action required: 7
-Information — no pin check requested: 1081
-Locations with informational observations: 619 (may also have an actionable finding)
+Action required: 0
+Information — no pin check requested: 1087
+Locations with informational observations: 626 (may also have an actionable finding)
 
 ## Results
 
-- not_checked: 10
-- no_accepted_pin: 7
+- not_checked: 17
 - no_name_match: 177
 - coordinate_disagreement: 247
 - nearby: 109
-- coordinate_agreement: 476
+- coordinate_agreement: 475
 - ambiguous_or_missing_coordinates: 62
 
 ## Confidence
 
-- not_checked: 10
-- existing_evidence_needs_corroboration: 536
+- not_checked: 17
+- existing_evidence_needs_corroboration: 529
 - owner_reviewed: 127
-- independent_coordinate_agreement: 415
+- independent_coordinate_agreement: 414
 
 ## Limits
 
@@ -35,27 +34,27 @@ Locations with informational observations: 619 (may also have an actionable find
 
 | Pub | Place | Postcode | Category | Result | Required action | Finding |
 |---|---|---|---|---|---|---|
-| Barley Mow | Southsea | PO5 3BY | needs_verification | no_accepted_pin | Verify the pub location from an independent source; no accepted pin evidence is recorded yet. | No accepted venue coordinate yet; postcode pin remains approximate |
-| Crown | Southam | CV47 1PH | needs_verification | no_accepted_pin | Verify the pub location from an independent source; no accepted pin evidence is recorded yet. | No accepted venue coordinate yet; postcode pin remains approximate |
-| Fitzgeralds | Ashby-de-la-Zouch | LE65 1AH | needs_verification | no_accepted_pin | Verify the pub location from an independent source; no accepted pin evidence is recorded yet. | No accepted venue coordinate yet; postcode pin remains approximate |
-| New Swan | Atherstone | CV9 1FE | needs_verification | no_accepted_pin | Verify the pub location from an independent source; no accepted pin evidence is recorded yet. | No accepted venue coordinate yet; postcode pin remains approximate |
-| Nineteen.57 | Talybont | LL43 2AQ | needs_verification | no_accepted_pin | Verify the pub location from an independent source; no accepted pin evidence is recorded yet. | No accepted venue coordinate yet; postcode pin remains approximate |
-| Railway Tavern | Langley Mill | NG16 4AE | needs_verification | no_accepted_pin | Verify the pub location from an independent source; no accepted pin evidence is recorded yet. | No accepted venue coordinate yet; postcode pin remains approximate |
-| Tiger | Derby: Central | DE1 2TQ | needs_verification | no_accepted_pin | Verify the pub location from an independent source; no accepted pin evidence is recorded yet. | No accepted venue coordinate yet; postcode pin remains approximate |
 
 ## Information — no pin check requested
 
 | Pub | Place | Postcode | Result | Information |
 |---|---|---|---|---|
 | Astbury Golf Club | Astbury | CW12 4RE | not_checked | Current pin has not been independently compared |
+| Barley Mow | Southsea | PO5 3DE | not_checked | Current pin has not been independently compared |
 | Church Inn | Darley Dale | DE4 2GG | not_checked | Current pin has not been independently compared |
 | Court Oak | Birmingham: Harborne | B32 2EH | not_checked | Current pin has not been independently compared |
 | Cricketers | Epsom | KT18 7SR | not_checked | Current pin has not been independently compared |
+| Crown | Southam | CV47 1PH | not_checked | Current pin has not been independently compared |
+| Fitzgeralds | Ashby-de-la-Zouch | LE65 1AH | not_checked | Current pin has not been independently compared |
 | Marstons Sports and Social Club (PMC) | Burton U-T: Central | DE14 2BG | not_checked | Current pin has not been independently compared |
+| New Swan | Atherstone | CV9 1HA | not_checked | Current pin has not been independently compared |
+| Nineteen.57 | Talybont | LL43 2AQ | not_checked | Current pin has not been independently compared |
 | Noahs Ark | Plymouth: Central | PL1 1EP | not_checked | Current pin has not been independently compared |
 | Panton Arms | Pentraeth (Anglesey) | LL75 8AZ | not_checked | Current pin has not been independently compared |
+| Railway Tavern | Langley Mill | NG16 4AE | not_checked | Current pin has not been independently compared |
 | Red Lion | Mortimer West End | RG7 2HU | not_checked | Current pin has not been independently compared |
 | Stag and Hounds | Burrough on the Hill | LE14 2JQ | not_checked | Current pin has not been independently compared |
+| Tiger | Derby: Central | DE1 2DQ | not_checked | Current pin has not been independently compared |
 | Windmill Inn | Ingham | LN1 2YQ | not_checked | Current pin has not been independently compared |
 | 1852 Brewery Co | Leicester: South Wigston | LE18 2DH | no_name_match | FSA comparison is inconclusive; absence of a match does not contradict accepted evidence |
 | 45 Club (PMC) | Newcastle-U-L: Central | ST5 1DS | no_name_match | FSA comparison is inconclusive; absence of a match does not contradict accepted evidence |
@@ -998,7 +997,6 @@ Locations with informational observations: 619 (may also have an actionable find
 | Roebuck | Warwick | CV34 4HU | coordinate_agreement | No pin check requested. |
 | Rose and Crown | Flamborough | YO15 1JY | coordinate_agreement | No pin check requested. |
 | Rose of Denmark | Bristol: Hotwells | BS8 4QL | coordinate_agreement | No pin check requested. |
-| Roundhouse | Nottingham: Central | NG1 6FS | coordinate_agreement | No pin check requested. |
 | Royal Oak | Attleborough | CV11 4JY | coordinate_agreement | No pin check requested. |
 | Royal Oak | Nuneaton: Hartshill | CV10 0TD | coordinate_agreement | No pin check requested. |
 | Royal Oak | Hartshill | CV10 0TD | coordinate_agreement | No pin check requested. |

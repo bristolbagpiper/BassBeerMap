@@ -12,7 +12,7 @@ import unittest
 from unittest.mock import MagicMock, patch
 
 from build_place_review_queue import digest, signatures
-from location_review import (GOOGLE_COVERAGE_ISSUE, GOOGLE_STALE_STATUS_ISSUE, fingerprint,
+from location_review import (GOOGLE_CONFIGURATION_ISSUE, GOOGLE_COVERAGE_ISSUE, GOOGLE_STALE_STATUS_ISSUE, fingerprint,
                              format_report, load_google_status, with_google, with_health)
 from notify_location_review import notify
 
@@ -61,7 +61,7 @@ class GoogleJobIntegrationTests(unittest.TestCase):
         self.assertIn('Google comparison needs review', text)
         self.assertIn('do not approve or move map pins', text)
 
-    def test_missing_old_snapshot_is_optional_but_malformed_snapshot_fails_closed(self):
+    def test_missing_snapshot_reports_incomplete_coverage_without_venue_actions(self):
         with tempfile.TemporaryDirectory() as directory:
             path = Path(directory) / 'google.json'
             self.assertIsNone(load_google_status(path))
@@ -69,7 +69,15 @@ class GoogleJobIntegrationTests(unittest.TestCase):
                 path.write_text(content, encoding='utf-8')
                 with self.assertRaises(ValueError):
                     load_google_status(path)
-        self.assertEqual(self.attach(self.report(), None), self.report())
+        report = self.attach(self.report(), None)
+        self.assertEqual(report['records'], {})
+        self.assertFalse(report['google_configured'])
+        self.assertEqual(report['google_actionable_count'], 0)
+        self.assertEqual(set(report['google_issues']), {GOOGLE_COVERAGE_ISSUE, GOOGLE_STALE_STATUS_ISSUE})
+        self.assertIn(GOOGLE_STALE_STATUS_ISSUE, format_report(report))
+        self.assertNotEqual(fingerprint(report), fingerprint(self.report()))
+
+    def test_malformed_snapshot_fails_closed(self):
         malformed = [[], {}, self.status(schema_version=2), self.status(schema_version=True),
                      self.status(configured='false'), self.status(issues=['']), self.status(issues='error'),
                      self.status(counts={'checked': -1}), self.status(counts={'checked': True}),
@@ -78,6 +86,14 @@ class GoogleJobIntegrationTests(unittest.TestCase):
         for status in malformed:
             with self.subTest(status=status), self.assertRaisesRegex(ValueError, 'Invalid Google comparison'):
                 self.attach(self.report(), status)
+
+    def test_hermes_provider_publishes_new_browser_batch_without_waiting_for_daily_job(self):
+        with tempfile.TemporaryDirectory() as directory:
+            root = Path(directory)
+            (root / 'google-review-provider.json').write_text('{"provider":"hermes-browser"}', encoding='utf-8')
+            (root / 'google-places-status.json').write_text(json.dumps(self.status(run_id='old')), encoding='utf-8')
+            (root / 'hermes-google-status.json').write_text(json.dumps(self.status(run_id='browser-new')), encoding='utf-8')
+            self.assertEqual(load_google_status(root / 'google-places-status.json')['run_id'], 'browser-new')
 
     def test_google_changes_send_once_and_recovery_once_with_mock_smtp(self):
         healthy = self.attach(self.report(), self.status())
@@ -102,14 +118,21 @@ class GoogleJobIntegrationTests(unittest.TestCase):
             self.assertEqual(smtp.call_count, 3)
 
     def test_configuration_issue_alerts_without_active_venue_or_health_reviews(self):
-        issue = 'Google comparison is not configured; no live Google checks have run'
+        issue = GOOGLE_CONFIGURATION_ISSUE
         report = self.attach(self.report(), self.status(configured=False, issues=[issue]))
-        self.assertEqual(report['google_count'], 1)
+        self.assertEqual(report['google_count'], 2)
         self.assertIn(issue, format_report(report))
         later = copy.deepcopy(report)
         later.update(google_run_id='15', google_checked_at='2026-11-04')
         self.assertEqual(fingerprint(report), fingerprint(later))
         self.assertNotEqual(fingerprint(report), fingerprint(self.report()))
+
+    def test_disabled_snapshot_cannot_claim_complete_google_coverage(self):
+        report = self.attach(self.report(), self.status(configured=False, issues=[],
+                             counts=dict(current=0, total=1)))
+        self.assertEqual(set(report['google_issues']), {GOOGLE_CONFIGURATION_ISSUE, GOOGLE_COVERAGE_ISSUE})
+        self.assertEqual(report['google_actionable_count'], 0)
+        self.assertIn('Google comparisons current for this listing and pin: 0/1', format_report(report))
 
     def test_changed_identity_point_or_removed_pub_invalidates_old_findings_at_notification_time(self):
         status = self.status(findings=[self.finding()])
@@ -164,6 +187,9 @@ class GoogleJobIntegrationTests(unittest.TestCase):
 
     def test_scheduled_job_publishes_camra_then_google_and_persists_failed_google(self):
         workflow = (ROOT / '.github/workflows/weekly-map-validation.yml').read_text()
+        self.assertIn("workflows: ['Update CSV From PDF']", workflow)
+        self.assertIn('types: [completed]', workflow)
+        self.assertIn("if: github.event_name != 'workflow_run' || github.event.workflow_run.conclusion == 'success'", workflow)
         google = workflow.index('      - name: Rotate Google Places comparisons')
         persisted = workflow.index('      - name: Persist Google comparison status')
         self.assertLess(workflow.index("git commit -m 'Refresh coordinate evidence and map health'"), google)
@@ -173,7 +199,7 @@ class GoogleJobIntegrationTests(unittest.TestCase):
         self.assertIn('timeout-minutes: 40', workflow)
         self.assertIn("if: always() && steps.checkout.outcome == 'success' && steps.python.outcome == 'success'", workflow)
         self.assertIn("if: always() && steps.google.outcome != 'skipped'", workflow)
-        self.assertIn('python audit_google_places.py --root . --state google-places-state.json --status google-places-status.json --limit 45', workflow)
+        self.assertIn('python audit_google_comparisons.py --root . --state google-places-state.json --status google-places-status.json --limit 45', workflow)
         self.assertIn('GOOGLE_PLACES_ENABLED: ${{ vars.GOOGLE_PLACES_ENABLED }}', workflow)
         self.assertIn('GOOGLE_PLACES_API_KEY: ${{ secrets.GOOGLE_PLACES_API_KEY }}', workflow)
         self.assertIn('files=(google-places-status.json)', workflow)

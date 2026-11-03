@@ -13,6 +13,7 @@ from owner_location_review import classify_review, current_confirmation, google_
 
 GOOGLE_COVERAGE_ISSUE = 'Google comparison coverage is incomplete; untested or stale pubs remain'
 GOOGLE_STALE_STATUS_ISSUE = 'Google comparison status is missing or stale; rerun the daily map audit'
+GOOGLE_CONFIGURATION_ISSUE = 'Google comparison is not configured; no live Google checks ran this time'
 
 
 def postcode_issue_reviewed(issue, pin, pub_name):
@@ -135,6 +136,15 @@ def with_health(report, status):
 
 def load_google_status(path):
     path = Path(path)
+    provider_path = path.parent / 'google-review-provider.json'
+    if provider_path.exists():
+        provider = json.loads(provider_path.read_text(encoding='utf-8'))
+        if provider == {'provider': 'hermes-browser'}:
+            # A newly published browser batch must reach the same review issue
+            # immediately, without waiting for the next scheduled API/router run.
+            browser_status = path.parent / 'hermes-google-status.json'
+            if browser_status.exists():
+                path = browser_status
     if not path.exists():
         return None  # Older checkouts have no Google snapshot yet.
     status = json.loads(path.read_text(encoding='utf-8'))
@@ -147,6 +157,12 @@ def with_google(report, status, current_bundle=None, now=None):
     """Attach derived Google review flags, never provider names or coordinates."""
     combined = copy.deepcopy(report)
     if status is None:
+        # Google is a required comparison source. Absence of a saved run is a
+        # coverage gap, never an all-clear or a reason to recheck correct pins.
+        combined.update(google_issues=[GOOGLE_COVERAGE_ISSUE, GOOGLE_STALE_STATUS_ISSUE],
+                        google_findings=[], google_count=2, google_configured=False,
+                        google_actionable_count=0, google_source_warning_count=2,
+                        google_hard_failure=False)
         return combined
     fields = {'venue_id', 'pub_name', 'place_name', 'postcode', 'status', 'reason', 'binding_signature'}
     if (not isinstance(status, dict) or type(status.get('schema_version')) is not int
@@ -169,6 +185,9 @@ def with_google(report, status, current_bundle=None, now=None):
         if directory_signature is not None or not status.get('hard_failure'):
             raise ValueError('Invalid Google comparison status; missing directory binding')
     issues = set(status['issues'])
+    if not status['configured']:
+        issues.add(GOOGLE_CONFIGURATION_ISSUE)
+        issues.add(GOOGLE_COVERAGE_ISSUE)
     current = {}
     if current_bundle is not None:
         try:
@@ -215,6 +234,10 @@ def with_google(report, status, current_bundle=None, now=None):
     combined['google_source_warning_count'] = len(combined['google_issues']) + sum(not f['manual_action_required'] for f in combined['google_findings'])
     combined['google_count'] = len(combined['google_issues']) + len(combined['google_findings'])
     combined['google_configured'] = status['configured']
+    combined['google_counts'] = copy.deepcopy(status['counts'])
+    if current_bundle is not None and current_signature != directory_signature:
+        combined['google_counts'].update(total=len(current), current=0, unchecked_or_stale=len(current))
+    combined['google_provider'] = status.get('provider', 'places-api')
     combined['google_hard_failure'] = status.get('hard_failure', False)
     for field in ('run_id', 'run_attempt', 'checked_at', 'run_url'):
         combined['google_' + field] = status.get(field, '')
@@ -265,6 +288,9 @@ def format_report(report):
         lines.append('')
     if 'google_issues' in report:
         findings = report.get('google_findings', [])
+        counts = report.get('google_counts', {})
+        if 'current' in counts and 'total' in counts:
+            lines.append(f"Google comparisons current for this listing and pin: {counts['current']}/{counts['total']}")
         google_actions = [f for f in findings if f.get('manual_action_required', google_finding_assessment(f)['manual_action_required'])]
         google_warnings = [f for f in findings if not f.get('manual_action_required', google_finding_assessment(f)['manual_action_required'])]
         lines += [f"Google pub actions: {report.get('google_actionable_count', len(google_actions))}",

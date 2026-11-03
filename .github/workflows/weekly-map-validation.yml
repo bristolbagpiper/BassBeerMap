@@ -4,6 +4,10 @@ on:
   schedule:
     - cron: '47 6 * * *'
   workflow_dispatch:
+  workflow_run:
+    workflows: ['Update CSV From PDF']
+    types: [completed]
+    branches: [main]
 
 permissions:
   contents: write
@@ -15,6 +19,9 @@ concurrency:
 
 jobs:
   map-health:
+    # Imports already check new/unresolved venues against CAMRA. Follow each
+    # successful import with both source rotations against the current release.
+    if: github.event_name != 'workflow_run' || github.event.workflow_run.conclusion == 'success'
     runs-on: ubuntu-latest
     timeout-minutes: 40
     steps:
@@ -74,7 +81,7 @@ jobs:
           AUDIT_RUN_ID: ${{ github.run_id }}
           AUDIT_RUN_ATTEMPT: ${{ github.run_attempt }}
           AUDIT_RUN_URL: https://github.com/${{ github.repository }}/actions/runs/${{ github.run_id }}
-        run: python audit_google_places.py --root . --state google-places-state.json --status google-places-status.json --limit 45
+        run: python audit_google_comparisons.py --root . --state google-places-state.json --status google-places-status.json --limit 45
       - name: Persist Google comparison status and rotation, including partial failures
         if: always() && steps.google.outcome != 'skipped' && steps.checkout.outcome == 'success' && steps.python.outcome == 'success'
         run: |

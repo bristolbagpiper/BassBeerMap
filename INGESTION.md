@@ -48,7 +48,12 @@ Do not automatically restore a pin that external checks disputed.
 
 ## Daily validation
 
+CAMRA and Google are the two main comparison sources; FSA supplies supporting
+information only. Google disagreements flag a manual review and never move a
+pin automatically. A CAMRA match is not a claim that Google has also checked it.
+
 `Daily map validation` runs every day at 06:47 UTC and supports manual dispatch.
+It also runs after each successful PDF import, against the current main release.
 Its historical filename is `weekly-map-validation.yml`. All GitHub cron times
 are UTC; London summer time is one hour later. Scheduled starts can be delayed.
 It validates every committed release asset and checks the live release ID. It
@@ -74,6 +79,41 @@ read this durable status from current `main`, alongside the venue review queue.
 Repeated identical health problems stay quiet, while a changed problem or
 recovery is emailed once after SMTP accepts it. The daily job does not write a
 second competing version of the review issue.
+
+The Google provider is selected in `google-review-provider.json`. The configured
+`hermes-browser` route reads dated results from the local Hermes browser worker;
+the GitHub job makes no Google Places API requests, even if an API key exists.
+Hermes compares the visible named business, full postcode and actual place marker
+with the saved pin. It rotates the oldest exact-bound attempts, up to 45 per run.
+A marker more than 50 metres away, conflicting identity or possible closure is
+flagged separately for review. A failed browser or consent/CAPTCHA block stops
+the batch and leaves untouched venues unchecked. It never bypasses challenges.
+
+Private receipts contain only venue IDs, binding signatures, dated categories
+and source links. They are explicitly machine observations, not owner approvals.
+The public `hermes-google-status.json` contains derived classifications and
+coverage only. The connected publisher validates the execution receipt and
+current directory bindings before uploading that status. Source names,
+addresses and coordinates are not copied into the public Google report.
+Google checks expire after 30 days. Missing, blocked and stale coverage is an
+explicit source warning, rather than a request to recheck every correct pin.
+Neither source disagreements nor browser results can automatically move pins.
+
+The alternative `places-api` provider remains available but is not enabled by
+this route. It requires both `GOOGLE_PLACES_ENABLED=true` and
+`GOOGLE_PLACES_API_KEY`, plus a Google Places project with billing. Its request
+limits remain 45 per day and 1,400 per month. The Hermes browser route uses no
+Google API key or API billing and depends on the local computer being available.
+
+The installed native Hermes job `1353548e1bb7` runs daily at 07:40 Europe/London,
+using a separate clean local browser and a script-only job (no model calls).
+State and private receipts live under `%LOCALAPPDATA%\hermes\profiles\mcjeeves\bass-map-google`.
+The connected Codex report handoff runs at 08:15 in this chat, using the existing
+GitHub connection so the Hermes worker needs no new GitHub token. It checks the
+terminal execution receipt and status hash, recomputes against current published
+identities/pins, and publishes only `hermes-google-status.json`. Unchanged results
+stay quiet. Both local scheduling hosts must be available; a stale/missing batch
+remains incomplete coverage rather than a successful unattended check.
 
 ## Location tracking and alerts
 

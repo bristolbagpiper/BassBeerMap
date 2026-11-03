@@ -1,14 +1,14 @@
 # Full location audit
 
-Locations: 1044
+Locations: 1088
 
 Action required: 0
-Information — no pin check requested: 1044
-Locations with informational observations: 603 (may also have an actionable finding)
+Information — no pin check requested: 1088
+Locations with informational observations: 647 (may also have an actionable finding)
 
 ## Results
 
-- not_checked: 1
+- not_checked: 45
 - no_name_match: 177
 - coordinate_disagreement: 247
 - nearby: 103
@@ -17,7 +17,7 @@ Locations with informational observations: 603 (may also have an actionable find
 
 ## Confidence
 
-- not_checked: 1
+- not_checked: 45
 - existing_evidence_needs_corroboration: 502
 - owner_reviewed: 127
 - independent_coordinate_agreement: 414
@@ -39,7 +39,51 @@ Locations with informational observations: 603 (may also have an actionable find
 
 | Pub | Place | Postcode | Result | Information |
 |---|---|---|---|---|
-| Greyhound | Woodville | DE11 7BU | not_checked | Current pin has not been independently compared |
+| Astbury Golf Club | Astbury | CW12 4RE | not_checked | Current pin has not been independently compared |
+| Barley Mow | Southsea | PO5 3BY | not_checked | Current pin has not been independently compared |
+| Bell Foundry | Loughborough | LE11 5BL | not_checked | Current pin has not been independently compared |
+| Berkeley Arms | Wymondham | LE14 2AG | not_checked | Current pin has not been independently compared |
+| Black Swan | Belper: Central | DE56 1FZ | not_checked | Current pin has not been independently compared |
+| Church Inn | Darley Dale | DE4 2GG | not_checked | Current pin has not been independently compared |
+| Court Oak | Birmingham: Harborne | B32 2EH | not_checked | Current pin has not been independently compared |
+| Cricketers | Epsom | KT18 7SR | not_checked | Current pin has not been independently compared |
+| Crown | Southport: Birkdale | PR8 3BZ | not_checked | Current pin has not been independently compared |
+| Crown | Southam | CV47 1PH | not_checked | Current pin has not been independently compared |
+| Fitzgeralds | Ashby-de-la-Zouch | LE65 1AH | not_checked | Current pin has not been independently compared |
+| Fox | Oadby | LE2 5DL | not_checked | Current pin has not been independently compared |
+| Fox and Hounds | Belgravia SW1W | SW1W 8HR | not_checked | Current pin has not been independently compared |
+| George and Dragon | Lichfield | WS13 7AJ | not_checked | Current pin has not been independently compared |
+| George and the Dragon | Gnosall | ST20 0EX | not_checked | Current pin has not been independently compared |
+| Globe | Liverpool: Central | L1 1HW | not_checked | Current pin has not been independently compared |
+| Great Western | Wolverhampton: Central | WV10 0DG | not_checked | Current pin has not been independently compared |
+| Greyhound | Boundary / Woodville | DE11 7BU | not_checked | Current pin has not been independently compared |
+| Greyhound Hotel | Cromford | DE4 3QE | not_checked | Current pin has not been independently compared |
+| Hanbury | Islington N1 | N1 7DU | not_checked | Current pin has not been independently compared |
+| Holly Bush | Makeney | DE56 0RX | not_checked | Current pin has not been independently compared |
+| London Inn | Padstow | PL28 8AN | not_checked | Current pin has not been independently compared |
+| Lord Nelson | Beverley | HU17 0NP | not_checked | Current pin has not been independently compared |
+| Malt Cross | Nottingham: Central | NG1 6FG | not_checked | Current pin has not been independently compared |
+| Malt Shovel | Worthington | LE65 1RQ | not_checked | Current pin has not been independently compared |
+| Marstons Sports and Social Club (PMC) | Burton U-T: Central | DE14 2BG | not_checked | Current pin has not been independently compared |
+| New Swan | Atherstone | CV9 1FE | not_checked | Current pin has not been independently compared |
+| Nineteen.57 | Talybont | LL43 2AQ | not_checked | Current pin has not been independently compared |
+| Noahs Ark | Plymouth: Central | PL1 1EP | not_checked | Current pin has not been independently compared |
+| Old Wellington | Manchester: Central | M3 1SW | not_checked | Current pin has not been independently compared |
+| Pant yr Ardd | Tregarth | LL57 4PL | not_checked | Current pin has not been independently compared |
+| Panton Arms | Pentraeth (Anglesey) | LL75 8AZ | not_checked | Current pin has not been independently compared |
+| Park Inn | Southampton: Shirley | SO16 4FN | not_checked | Current pin has not been independently compared |
+| Pattenmakers  Arms | Duffield | DE56 4EY | not_checked | Current pin has not been independently compared |
+| Pembury Tavern | Hackney E8 1JH | E8 1JH | not_checked | Current pin has not been independently compared |
+| Railway Tavern | Langley Mill | NG16 4AE | not_checked | Current pin has not been independently compared |
+| Red Lion | Mortimer West End | RG7 2HU | not_checked | Current pin has not been independently compared |
+| Red Lion | Chinnor | OX39 4DL | not_checked | Current pin has not been independently compared |
+| Red Lion | Old Colwyn | LL29 9PL | not_checked | Current pin has not been independently compared |
+| Settle Social Club | Settle | BD24 9DW | not_checked | Current pin has not been independently compared |
+| Stag and Hounds | Burrough on the Hill | LE14 2JQ | not_checked | Current pin has not been independently compared |
+| Tiger | Derby: Central | DE1 2TQ | not_checked | Current pin has not been independently compared |
+| Victoria Comet | Newcastle: Central | NE1 5DF | not_checked | Current pin has not been independently compared |
+| Windmill Inn | Ingham | LN1 2YQ | not_checked | Current pin has not been independently compared |
+| Ye Cracke | Liverpool: Central | L1 9BB | not_checked | Current pin has not been independently compared |
 | 1852 Brewery Co | Leicester: South Wigston | LE18 2DH | no_name_match | FSA comparison is inconclusive; absence of a match does not contradict accepted evidence |
 | 45 Club (PMC) | Newcastle-U-L: Central | ST5 1DS | no_name_match | FSA comparison is inconclusive; absence of a match does not contradict accepted evidence |
 | Adelphi | Leeds: Central | LS10 1JQ | coordinate_disagreement | FSA coordinate is 158.8m from the accepted pin; informational only because the FSA geocode may be approximate |

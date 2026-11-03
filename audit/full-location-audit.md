@@ -2,25 +2,24 @@
 
 Locations: 1088
 
-Action required: 0
-Information — no pin check requested: 1088
-Locations with informational observations: 647 (may also have an actionable finding)
+Action required: 17
+Information — no pin check requested: 1071
+Locations with informational observations: 609 (may also have an actionable finding)
 
 ## Results
 
-- not_checked: 45
+- no_accepted_pin: 17
 - no_name_match: 177
 - coordinate_disagreement: 247
-- nearby: 103
-- coordinate_agreement: 455
-- ambiguous_or_missing_coordinates: 61
+- nearby: 109
+- coordinate_agreement: 476
+- ambiguous_or_missing_coordinates: 62
 
 ## Confidence
 
-- not_checked: 45
-- existing_evidence_needs_corroboration: 502
+- existing_evidence_needs_corroboration: 546
 - owner_reviewed: 127
-- independent_coordinate_agreement: 414
+- independent_coordinate_agreement: 415
 
 ## Limits
 
@@ -34,56 +33,28 @@ Locations with informational observations: 647 (may also have an actionable find
 
 | Pub | Place | Postcode | Category | Result | Required action | Finding |
 |---|---|---|---|---|---|---|
+| Astbury Golf Club | Astbury | CW12 4RE | needs_verification | no_accepted_pin | Verify the pub location from an independent source; no accepted pin evidence is recorded yet. | No accepted venue coordinate yet; postcode pin remains approximate |
+| Barley Mow | Southsea | PO5 3BY | needs_verification | no_accepted_pin | Verify the pub location from an independent source; no accepted pin evidence is recorded yet. | No accepted venue coordinate yet; postcode pin remains approximate |
+| Church Inn | Darley Dale | DE4 2GG | needs_verification | no_accepted_pin | Verify the pub location from an independent source; no accepted pin evidence is recorded yet. | No accepted venue coordinate yet; postcode pin remains approximate |
+| Court Oak | Birmingham: Harborne | B32 2EH | needs_verification | no_accepted_pin | Verify the pub location from an independent source; no accepted pin evidence is recorded yet. | No accepted venue coordinate yet; postcode pin remains approximate |
+| Cricketers | Epsom | KT18 7SR | needs_verification | no_accepted_pin | Verify the pub location from an independent source; no accepted pin evidence is recorded yet. | No accepted venue coordinate yet; postcode pin remains approximate |
+| Crown | Southam | CV47 1PH | needs_verification | no_accepted_pin | Verify the pub location from an independent source; no accepted pin evidence is recorded yet. | No accepted venue coordinate yet; postcode pin remains approximate |
+| Fitzgeralds | Ashby-de-la-Zouch | LE65 1AH | needs_verification | no_accepted_pin | Verify the pub location from an independent source; no accepted pin evidence is recorded yet. | No accepted venue coordinate yet; postcode pin remains approximate |
+| Marstons Sports and Social Club (PMC) | Burton U-T: Central | DE14 2BG | needs_verification | no_accepted_pin | Verify the pub location from an independent source; no accepted pin evidence is recorded yet. | No accepted venue coordinate yet; postcode pin remains approximate |
+| New Swan | Atherstone | CV9 1FE | needs_verification | no_accepted_pin | Verify the pub location from an independent source; no accepted pin evidence is recorded yet. | No accepted venue coordinate yet; postcode pin remains approximate |
+| Nineteen.57 | Talybont | LL43 2AQ | needs_verification | no_accepted_pin | Verify the pub location from an independent source; no accepted pin evidence is recorded yet. | No accepted venue coordinate yet; postcode pin remains approximate |
+| Noahs Ark | Plymouth: Central | PL1 1EP | needs_verification | no_accepted_pin | Verify the pub location from an independent source; no accepted pin evidence is recorded yet. | No accepted venue coordinate yet; postcode pin remains approximate |
+| Panton Arms | Pentraeth (Anglesey) | LL75 8AZ | needs_verification | no_accepted_pin | Verify the pub location from an independent source; no accepted pin evidence is recorded yet. | No accepted venue coordinate yet; postcode pin remains approximate |
+| Railway Tavern | Langley Mill | NG16 4AE | needs_verification | no_accepted_pin | Verify the pub location from an independent source; no accepted pin evidence is recorded yet. | No accepted venue coordinate yet; postcode pin remains approximate |
+| Red Lion | Mortimer West End | RG7 2HU | needs_verification | no_accepted_pin | Verify the pub location from an independent source; no accepted pin evidence is recorded yet. | No accepted venue coordinate yet; postcode pin remains approximate |
+| Stag and Hounds | Burrough on the Hill | LE14 2JQ | needs_verification | no_accepted_pin | Verify the pub location from an independent source; no accepted pin evidence is recorded yet. | No accepted venue coordinate yet; postcode pin remains approximate |
+| Tiger | Derby: Central | DE1 2TQ | needs_verification | no_accepted_pin | Verify the pub location from an independent source; no accepted pin evidence is recorded yet. | No accepted venue coordinate yet; postcode pin remains approximate |
+| Windmill Inn | Ingham | LN1 2YQ | needs_verification | no_accepted_pin | Verify the pub location from an independent source; no accepted pin evidence is recorded yet. | No accepted venue coordinate yet; postcode pin remains approximate |
 
 ## Information — no pin check requested
 
 | Pub | Place | Postcode | Result | Information |
 |---|---|---|---|---|
-| Astbury Golf Club | Astbury | CW12 4RE | not_checked | Current pin has not been independently compared |
-| Barley Mow | Southsea | PO5 3BY | not_checked | Current pin has not been independently compared |
-| Bell Foundry | Loughborough | LE11 5BL | not_checked | Current pin has not been independently compared |
-| Berkeley Arms | Wymondham | LE14 2AG | not_checked | Current pin has not been independently compared |
-| Black Swan | Belper: Central | DE56 1FZ | not_checked | Current pin has not been independently compared |
-| Church Inn | Darley Dale | DE4 2GG | not_checked | Current pin has not been independently compared |
-| Court Oak | Birmingham: Harborne | B32 2EH | not_checked | Current pin has not been independently compared |
-| Cricketers | Epsom | KT18 7SR | not_checked | Current pin has not been independently compared |
-| Crown | Southport: Birkdale | PR8 3BZ | not_checked | Current pin has not been independently compared |
-| Crown | Southam | CV47 1PH | not_checked | Current pin has not been independently compared |
-| Fitzgeralds | Ashby-de-la-Zouch | LE65 1AH | not_checked | Current pin has not been independently compared |
-| Fox | Oadby | LE2 5DL | not_checked | Current pin has not been independently compared |
-| Fox and Hounds | Belgravia SW1W | SW1W 8HR | not_checked | Current pin has not been independently compared |
-| George and Dragon | Lichfield | WS13 7AJ | not_checked | Current pin has not been independently compared |
-| George and the Dragon | Gnosall | ST20 0EX | not_checked | Current pin has not been independently compared |
-| Globe | Liverpool: Central | L1 1HW | not_checked | Current pin has not been independently compared |
-| Great Western | Wolverhampton: Central | WV10 0DG | not_checked | Current pin has not been independently compared |
-| Greyhound | Boundary / Woodville | DE11 7BU | not_checked | Current pin has not been independently compared |
-| Greyhound Hotel | Cromford | DE4 3QE | not_checked | Current pin has not been independently compared |
-| Hanbury | Islington N1 | N1 7DU | not_checked | Current pin has not been independently compared |
-| Holly Bush | Makeney | DE56 0RX | not_checked | Current pin has not been independently compared |
-| London Inn | Padstow | PL28 8AN | not_checked | Current pin has not been independently compared |
-| Lord Nelson | Beverley | HU17 0NP | not_checked | Current pin has not been independently compared |
-| Malt Cross | Nottingham: Central | NG1 6FG | not_checked | Current pin has not been independently compared |
-| Malt Shovel | Worthington | LE65 1RQ | not_checked | Current pin has not been independently compared |
-| Marstons Sports and Social Club (PMC) | Burton U-T: Central | DE14 2BG | not_checked | Current pin has not been independently compared |
-| New Swan | Atherstone | CV9 1FE | not_checked | Current pin has not been independently compared |
-| Nineteen.57 | Talybont | LL43 2AQ | not_checked | Current pin has not been independently compared |
-| Noahs Ark | Plymouth: Central | PL1 1EP | not_checked | Current pin has not been independently compared |
-| Old Wellington | Manchester: Central | M3 1SW | not_checked | Current pin has not been independently compared |
-| Pant yr Ardd | Tregarth | LL57 4PL | not_checked | Current pin has not been independently compared |
-| Panton Arms | Pentraeth (Anglesey) | LL75 8AZ | not_checked | Current pin has not been independently compared |
-| Park Inn | Southampton: Shirley | SO16 4FN | not_checked | Current pin has not been independently compared |
-| Pattenmakers  Arms | Duffield | DE56 4EY | not_checked | Current pin has not been independently compared |
-| Pembury Tavern | Hackney E8 1JH | E8 1JH | not_checked | Current pin has not been independently compared |
-| Railway Tavern | Langley Mill | NG16 4AE | not_checked | Current pin has not been independently compared |
-| Red Lion | Mortimer West End | RG7 2HU | not_checked | Current pin has not been independently compared |
-| Red Lion | Chinnor | OX39 4DL | not_checked | Current pin has not been independently compared |
-| Red Lion | Old Colwyn | LL29 9PL | not_checked | Current pin has not been independently compared |
-| Settle Social Club | Settle | BD24 9DW | not_checked | Current pin has not been independently compared |
-| Stag and Hounds | Burrough on the Hill | LE14 2JQ | not_checked | Current pin has not been independently compared |
-| Tiger | Derby: Central | DE1 2TQ | not_checked | Current pin has not been independently compared |
-| Victoria Comet | Newcastle: Central | NE1 5DF | not_checked | Current pin has not been independently compared |
-| Windmill Inn | Ingham | LN1 2YQ | not_checked | Current pin has not been independently compared |
-| Ye Cracke | Liverpool: Central | L1 9BB | not_checked | Current pin has not been independently compared |
 | 1852 Brewery Co | Leicester: South Wigston | LE18 2DH | no_name_match | FSA comparison is inconclusive; absence of a match does not contradict accepted evidence |
 | 45 Club (PMC) | Newcastle-U-L: Central | ST5 1DS | no_name_match | FSA comparison is inconclusive; absence of a match does not contradict accepted evidence |
 | Adelphi | Leeds: Central | LS10 1JQ | coordinate_disagreement | FSA coordinate is 158.8m from the accepted pin; informational only because the FSA geocode may be approximate |
@@ -326,6 +297,8 @@ Locations with informational observations: 647 (may also have an actionable find
 | Green Man | Clifton Campville | B79 0AX | coordinate_disagreement | FSA coordinate is 111.7m from the accepted pin; informational only because the FSA geocode may be approximate |
 | Green Man | Stamford | PE9 2YQ | nearby | FSA coordinate is 25-50m away; informational only |
 | Grey Horse | Consett | DH8 6NF | coordinate_agreement | Owner reviewed this postcode discrepancy and confirmed the displayed pub building; listing postcode retained for provenance |
+| Greyhound | Boundary / Woodville | DE11 7BU | ambiguous_or_missing_coordinates | FSA comparison is inconclusive; absence of a match does not contradict accepted evidence |
+| Greyhound Hotel | Cromford | DE4 3QE | nearby | FSA coordinate is 25-50m away; informational only |
 | Greyhound Inn | Warslow | SK17 0JN | nearby | FSA coordinate is 25-50m away; informational only |
 | Griffin | Shustoke | B46 2LB | ambiguous_or_missing_coordinates | FSA comparison is inconclusive; absence of a match does not contradict accepted evidence |
 | Grouse Inn | Darley Dale | DE4 2FT | nearby | FSA coordinate is 25-50m away; informational only |
@@ -333,6 +306,7 @@ Locations with informational observations: 647 (may also have an actionable find
 | HQ Pencadlys | Prestatyn | LL19 9DT | coordinate_disagreement | FSA coordinate is 58.3m from the accepted pin; informational only because the FSA geocode may be approximate |
 | Hales Bar | Harrogate | HG1 2RS | coordinate_disagreement | FSA coordinate is 71.1m from the accepted pin; informational only because the FSA geocode may be approximate |
 | Halfway House | Donisthorpe | DE12 7PX | coordinate_disagreement | FSA coordinate is 382.3m from the accepted pin; informational only because the FSA geocode may be approximate |
+| Hanbury | Islington N1 | N1 7DU | nearby | FSA coordinate is 25-50m away; informational only |
 | Hanging Gate | Higher Sutton | SK11 0NG | no_name_match | FSA comparison is inconclusive; absence of a match does not contradict accepted evidence |
 | Harbour Pool Club (PMC) | St Ives | TR26 1LF | nearby | FSA coordinate is 25-50m away; informational only |
 | Heanton Court | Heanton | EX31 4AX | ambiguous_or_missing_coordinates | FSA comparison is inconclusive; absence of a match does not contradict accepted evidence |
@@ -343,6 +317,7 @@ Locations with informational observations: 647 (may also have an actionable find
 | Hole in the Wall | Spalding | PE11 1AT | no_name_match | FSA comparison is inconclusive; absence of a match does not contradict accepted evidence |
 | Hole in the Wall | Bodmin | PL31 2DS | nearby | FSA coordinate is 25-50m away; informational only |
 | Holly Bush | Church Broughton | DE65 5AS | ambiguous_or_missing_coordinates | FSA comparison is inconclusive; absence of a match does not contradict accepted evidence |
+| Holly Bush | Makeney | DE56 0RX | nearby | FSA coordinate is 25-50m away; informational only |
 | Hope and Anchor | Grimsby | DN31 1NX | nearby | FSA coordinate is 25-50m away; informational only |
 | Hopinn | Newcastle-U-L: Central | ST5 1JR | coordinate_disagreement | FSA coordinate is 123.4m from the accepted pin; informational only because the FSA geocode may be approximate |
 | Horse | Shepshed | LE12 9EF | no_name_match | FSA comparison is inconclusive; absence of a match does not contradict accepted evidence |
@@ -393,6 +368,7 @@ Locations with informational observations: 647 (may also have an actionable find
 | Loaf and Cheese | Burton U-T: Central | DE14 2NF | no_name_match | FSA comparison is inconclusive; absence of a match does not contradict accepted evidence |
 | Lodge Inn | Alsager | ST7 2JA | no_name_match | FSA comparison is inconclusive; absence of a match does not contradict accepted evidence |
 | Long Hop | Burton U-T: Central | DE14 3RW | nearby | FSA coordinate is 25-50m away; informational only |
+| Lord Nelson | Beverley | HU17 0NP | nearby | FSA coordinate is 25-50m away; informational only |
 | Lord Nelson | Ansley | CV10 9PQ | ambiguous_or_missing_coordinates | FSA comparison is inconclusive; absence of a match does not contradict accepted evidence |
 | Lost Pug | North End | CV47 2TJ | nearby | FSA coordinate is 25-50m away; informational only |
 | Low Lights Tavern | North Shields | NE30 1LL | ambiguous_or_missing_coordinates | FSA comparison is inconclusive; absence of a match does not contradict accepted evidence |
@@ -461,6 +437,8 @@ Locations with informational observations: 647 (may also have an actionable find
 | Old Star | Uttoxeter | ST14 8HJ | coordinate_disagreement | FSA coordinate is 56.5m from the accepted pin; informational only because the FSA geocode may be approximate |
 | Olde Royal Oak | Burton U-T: Central | DE14 1HA | no_name_match | FSA comparison is inconclusive; absence of a match does not contradict accepted evidence |
 | Palmerston Arms | Peterborough | PE2 9PA | coordinate_disagreement | FSA coordinate is 96.8m from the accepted pin; informational only because the FSA geocode may be approximate |
+| Pant yr Ardd | Tregarth | LL57 4PL | nearby | FSA coordinate is 25-50m away; informational only |
+| Park Inn | Southampton: Shirley | SO16 4FN | nearby | FSA coordinate is 25-50m away; informational only |
 | Pavilion | Ashbourne | DE6 1EJ | no_name_match | FSA comparison is inconclusive; absence of a match does not contradict accepted evidence |
 | Peacock Inn | Loughborough | LE11 1AL | nearby | FSA coordinate is 25-50m away; informational only |
 | Peacock Inn | Derby: Central | DE1 3QS | no_name_match | FSA comparison is inconclusive; absence of a match does not contradict accepted evidence |
@@ -711,9 +689,11 @@ Locations with informational observations: 647 (may also have an actionable find
 | Bay Horse | Manchester: Central | M4 1NA | coordinate_agreement | No pin check requested. |
 | Beach | Exmouth | EX8 1DR | coordinate_agreement | No pin check requested. |
 | Bell | Eccleshall | ST21 6BZ | coordinate_agreement | No pin check requested. |
+| Bell Foundry | Loughborough | LE11 5BL | coordinate_agreement | No pin check requested. |
 | Bell Inn | Whittington | WS14 9JR | coordinate_agreement | No pin check requested. |
 | Bell and Bear | Emberton | MK46 5DH | coordinate_agreement | No pin check requested. |
 | Bench and Bar | Stoke: Fenton | ST4 3AJ | coordinate_agreement | No pin check requested. |
+| Berkeley Arms | Wymondham | LE14 2AG | coordinate_agreement | No pin check requested. |
 | Black Boy | Caernarfon | LL55 1RW | coordinate_agreement | No pin check requested. |
 | Black Bull | Godmanchester | PE29 2AQ | coordinate_agreement | No pin check requested. |
 | Black Cat | Liverpool: Mossley Hill | L18 8AG | coordinate_agreement | No pin check requested. |
@@ -723,6 +703,7 @@ Locations with informational observations: 647 (may also have an actionable find
 | Black Horse | Coton in the Elms | DE12 8HJ | coordinate_agreement | No pin check requested. |
 | Black Lion | Cheddleton | ST13 7HP | coordinate_agreement | No pin check requested. |
 | Black Lion | Oswestry | SY11 2RJ | coordinate_agreement | No pin check requested. |
+| Black Swan | Belper: Central | DE56 1FZ | coordinate_agreement | No pin check requested. |
 | Bless | Derby: Central | DE1 3GU | coordinate_agreement | No pin check requested. |
 | Blind Jacks | Knaresborough | HG5 8AL | coordinate_agreement | No pin check requested. |
 | Blue Bell | Ashby-de-la-Zouch | LE65 2JG | coordinate_agreement | No pin check requested. |
@@ -797,6 +778,7 @@ Locations with informational observations: 647 (may also have an actionable find
 | Cross Keys | Barwell | LE9 8DD | coordinate_agreement | No pin check requested. |
 | Cross Keys Hotel | Hednesford | WS12 2DN | coordinate_agreement | No pin check requested. |
 | Crossways Inn | West Huntspill | TA9 3RA | coordinate_agreement | No pin check requested. |
+| Crown | Southport: Birkdale | PR8 3BZ | coordinate_agreement | No pin check requested. |
 | Crown | Abbots Bromley | WS15 3BS | coordinate_agreement | No pin check requested. |
 | Crown | Old Dalby | LE14 3LF | coordinate_agreement | No pin check requested. |
 | Crown | Newhall | DE11 0SN | coordinate_agreement | No pin check requested. |
@@ -832,10 +814,12 @@ Locations with informational observations: 647 (may also have an actionable find
 | Flowerpot | Derby: Central | DE1 3DZ | coordinate_agreement | No pin check requested. |
 | Fountain | Lower Gornal | DY3 2PE | coordinate_agreement | No pin check requested. |
 | Fountain Inn | Leek | ST13 6JR | coordinate_agreement | No pin check requested. |
+| Fox | Oadby | LE2 5DL | coordinate_agreement | No pin check requested. |
 | Fox | Hanwell W7 | W7 2PJ | coordinate_agreement | No pin check requested. |
 | Fox | Ysceifiog | CH8 8NJ | coordinate_agreement | No pin check requested. |
 | Fox & Hounds | Lulsley | WR6 5QT | coordinate_agreement | No pin check requested. |
 | Fox and Hounds | Reepham | LN3 4DN | coordinate_agreement | No pin check requested. |
+| Fox and Hounds | Belgravia SW1W | SW1W 8HR | coordinate_agreement | No pin check requested. |
 | Fox and Pine | Oldham | OL1 1AD | coordinate_agreement | No pin check requested. |
 | Frog and Ferret | Spennymoor | DL16 7RS | coordinate_agreement | No pin check requested. |
 | Gate | Tansley | DE4 5FN | coordinate_agreement | No pin check requested. |
@@ -844,13 +828,17 @@ Locations with informational observations: 647 (may also have an actionable find
 | George Inn | Coleorton | LE67 8HF | coordinate_agreement | No pin check requested. |
 | George Inn | Winterton | DN15 9PT | coordinate_agreement | No pin check requested. |
 | George and Dragon | Belper: Central | DE56 1BA | coordinate_agreement | No pin check requested. |
+| George and Dragon | Lichfield | WS13 7AJ | coordinate_agreement | No pin check requested. |
 | George and Dragon | Yarm | TS15 9AH | coordinate_agreement | No pin check requested. |
+| George and the Dragon | Gnosall | ST20 0EX | coordinate_agreement | No pin check requested. |
 | Gipsy Moth | Greenwich SE10 | SE10 9BL | coordinate_agreement | No pin check requested. |
 | Glen | Haverfordwest | SA61 1XA | coordinate_agreement | No pin check requested. |
 | Glenhills Sports and Social Club (PMC) | Glen Parva | LE2 9JB | coordinate_agreement | No pin check requested. |
+| Globe | Liverpool: Central | L1 1HW | coordinate_agreement | No pin check requested. |
 | Golden Eagle | Lincoln | LN5 8BD | coordinate_agreement | No pin check requested. |
 | Golden Eagle | Chester | CH1 2DS | coordinate_agreement | No pin check requested. |
 | Goodmanham Arms | Goodmanham | YO43 3JA | coordinate_agreement | No pin check requested. |
+| Great Western | Wolverhampton: Central | WV10 0DG | coordinate_agreement | No pin check requested. |
 | Green Dragon | Little Stretton | SY6 6RE | coordinate_agreement | No pin check requested. |
 | Green Man | Milwich | ST18 0EG | coordinate_agreement | No pin check requested. |
 | Green Man | Fitzrovia W1W | W1W 7EP | coordinate_agreement | No pin check requested. |
@@ -909,6 +897,7 @@ Locations with informational observations: 647 (may also have an actionable find
 | Laburnum | Matlock | DE4 2PW | coordinate_agreement | No pin check requested. |
 | Leopard | Doncaster | DN1 3AA | coordinate_agreement | No pin check requested. |
 | London Inn | Plympton | PL7 1NH | coordinate_agreement | No pin check requested. |
+| London Inn | Padstow | PL28 8AN | coordinate_agreement | No pin check requested. |
 | Loose Cannon | Newark | NG24 1AN | coordinate_agreement | No pin check requested. |
 | Lord Clyde | Borough SE1 | SE1 1ER | coordinate_agreement | No pin check requested. |
 | Lord Grenfell | Maidenhead | SL6 1TW | coordinate_agreement | No pin check requested. |
@@ -919,6 +908,8 @@ Locations with informational observations: 647 (may also have an actionable find
 | Macbeth | Hoxton N1 | N1 6LP | coordinate_agreement | No pin check requested. |
 | Magazine Hotel | New Brighton | CH45 1HP | coordinate_agreement | No pin check requested. |
 | Maid of the Mill | Atherstone | CV9 2AB | coordinate_agreement | No pin check requested. |
+| Malt Cross | Nottingham: Central | NG1 6FG | coordinate_agreement | No pin check requested. |
+| Malt Shovel | Worthington | LE65 1RQ | coordinate_agreement | No pin check requested. |
 | Malt Shovel | Northampton | NN1 1QF | coordinate_agreement | No pin check requested. |
 | Man In Space | Stoke: Trentham | ST4 8PZ | coordinate_agreement | No pin check requested. |
 | Man Within Compass | Whitwick | LE67 5AS | coordinate_agreement | No pin check requested. |
@@ -956,6 +947,7 @@ Locations with informational observations: 647 (may also have an actionable find
 | Old Shepherd | Chorleywood | WD3 5JH | coordinate_agreement | No pin check requested. |
 | Old Silk Mill | Derby: Central | DE1 3AF | coordinate_agreement | No pin check requested. |
 | Old Swan | Madeley Heath | CW3 9LD | coordinate_agreement | No pin check requested. |
+| Old Wellington | Manchester: Central | M3 1SW | coordinate_agreement | No pin check requested. |
 | Old Windmill | Coventry: Central | CV1 3BA | coordinate_agreement | No pin check requested. |
 | Old Yew Tree | South Wingfield | DE55 7NH | coordinate_agreement | No pin check requested. |
 | Olde Chequers Inn | Bulkington | CV12 9NH | coordinate_agreement | No pin check requested. |
@@ -963,8 +955,10 @@ Locations with informational observations: 647 (may also have an actionable find
 | Olde Kings Arms | Congleton | CW12 1BN | coordinate_agreement | No pin check requested. |
 | Olde Whyte Swanne | Louth | LN11 9NP | coordinate_agreement | No pin check requested. |
 | Park Inn | Stoke: Dresden | ST3 4EN | coordinate_agreement | No pin check requested. |
+| Pattenmakers  Arms | Duffield | DE56 4EY | coordinate_agreement | No pin check requested. |
 | Pebbles Tavern | Watchet | TA23 0AN | coordinate_agreement | No pin check requested. |
 | Pelican Inn/Tafarn Y Pelican | Newcastle Emlyn | SA38 9AP | coordinate_agreement | No pin check requested. |
+| Pembury Tavern | Hackney E8 1JH | E8 1JH | coordinate_agreement | No pin check requested. |
 | Pen and Wig | Newport | NP20 1JD | coordinate_agreement | No pin check requested. |
 | Philharmonic Dining Rooms | Liverpool: Central | L1 9BX | coordinate_agreement | No pin check requested. |
 | Pick & Davy | Eastwood | NG16 3GS | coordinate_agreement | No pin check requested. |
@@ -989,6 +983,8 @@ Locations with informational observations: 647 (may also have an actionable find
 | Rawdon Arms | Moira | DE12 6AL | coordinate_agreement | No pin check requested. |
 | Red Lion | Earl Shilton | LE9 7LQ | coordinate_agreement | No pin check requested. |
 | Red Lion | Penderyn | CF44 9JR | coordinate_agreement | No pin check requested. |
+| Red Lion | Chinnor | OX39 4DL | coordinate_agreement | No pin check requested. |
+| Red Lion | Old Colwyn | LL29 9PL | coordinate_agreement | No pin check requested. |
 | Red Lion | Cheddleton | ST13 7HN | coordinate_agreement | No pin check requested. |
 | Red Lion | Waterfall | ST10 3HZ | coordinate_agreement | No pin check requested. |
 | Red Lion | Linton | DE12 6PZ | coordinate_agreement | No pin check requested. |
@@ -1013,6 +1009,7 @@ Locations with informational observations: 647 (may also have an actionable find
 | Sawley Junction | Long Eaton | NG10 3JU | coordinate_agreement | No pin check requested. |
 | Seabridge | Newcastle-U-L: Clayton | ST5 3HA | coordinate_agreement | No pin check requested. |
 | Selly Park Tavern | Birmingham: Selly Oak | B29 7HQ | coordinate_agreement | No pin check requested. |
+| Settle Social Club | Settle | BD24 9DW | coordinate_agreement | No pin check requested. |
 | Seven Stars | Falmouth | TR11 3QA | coordinate_agreement | No pin check requested. |
 | Shakespeare Inn | Shardlow | DE72 2GP | coordinate_agreement | No pin check requested. |
 | Shepherds Hall Ale House | Chorley | PR7 1BS | coordinate_agreement | No pin check requested. |
@@ -1085,6 +1082,7 @@ Locations with informational observations: 647 (may also have an actionable find
 | Vault | Buxton | SK17 6EU | coordinate_agreement | No pin check requested. |
 | Vernon Arms | Liverpool: Central | L2 2HJ | coordinate_agreement | No pin check requested. |
 | Verulam Arms | St Albans: Central | AL3 4QE | coordinate_agreement | No pin check requested. |
+| Victoria Comet | Newcastle: Central | NE1 5DF | coordinate_agreement | No pin check requested. |
 | Victoria Inn | Mumbles | SA3 4DB | coordinate_agreement | No pin check requested. |
 | Victoria Tavern | Ruddington | NG11 6EQ | coordinate_agreement | No pin check requested. |
 | Village Tavern | Newcastle-U-L: Wolstanton | ST5 0EP | coordinate_agreement | No pin check requested. |
@@ -1126,4 +1124,5 @@ Locations with informational observations: 647 (may also have an actionable find
 | Working Mens Club (PMC) | Birchmoor | B78 1AF | coordinate_agreement | No pin check requested. |
 | Worlds End | Lowdham | NG14 7AT | coordinate_agreement | No pin check requested. |
 | Yacht Inn | Penzance | TR18 4AU | coordinate_agreement | No pin check requested. |
+| Ye Cracke | Liverpool: Central | L1 9BB | coordinate_agreement | No pin check requested. |
 | Ye Olde Crown Hotel | Waterhouses | ST10 3HL | coordinate_agreement | No pin check requested. |

@@ -18,8 +18,8 @@ Locations with informational observations: 626 (may also have an actionable find
 ## Confidence
 
 - not_checked: 17
-- existing_evidence_needs_corroboration: 529
-- owner_reviewed: 127
+- existing_evidence_needs_corroboration: 528
+- owner_reviewed: 128
 - independent_coordinate_agreement: 414
 
 ## Limits
@@ -1124,5 +1124,5 @@ Locations with informational observations: 626 (may also have an actionable find
 | Working Mens Club (PMC) | Birchmoor | B78 1AF | coordinate_agreement | No pin check requested. |
 | Worlds End | Lowdham | NG14 7AT | coordinate_agreement | No pin check requested. |
 | Yacht Inn | Penzance | TR18 4AU | coordinate_agreement | No pin check requested. |
-| Ye Cracke | Liverpool: Central | L1 9BB | coordinate_agreement | No pin check requested. |
+| Ye Cracke | Liverpool: Central | L1 9BB | coordinate_agreement | Owner confirmed this exact pin; no pin check requested. |
 | Ye Olde Crown Hotel | Waterhouses | ST10 3HL | coordinate_agreement | No pin check requested. |

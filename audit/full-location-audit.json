@@ -60348,7 +60348,7 @@
           "url": "https://ratings.food.gov.uk/business/497141"
         }
       ],
-      "confidence": "existing_evidence_needs_corroboration",
+      "confidence": "owner_reviewed",
       "country": "England",
       "dispense": "H",
       "independent_of_pin": false,
@@ -60358,10 +60358,10 @@
         "pub_name": "Ye Cracke"
       },
       "manual_action_required": false,
-      "next_action": "No pin check requested.",
+      "next_action": "Owner confirmed this exact pin; no pin check requested.",
       "notes": "",
-      "owner_pin_confirmed": false,
-      "owner_reviewed": false,
+      "owner_pin_confirmed": true,
+      "owner_reviewed": true,
       "pg": "Guest",
       "pin": {
         "lat": 53.400439,
@@ -60383,7 +60383,7 @@
         "status": "coordinate_agreement",
         "url": "https://ratings.food.gov.uk/business/497141"
       },
-      "review_category": "informational",
+      "review_category": "owner_confirmed",
       "status": "coordinate_agreement",
       "venue_id": "v-5080e2d0-2553-564a-978f-9bbc0a625f1f",
       "warnings": []
@@ -60451,10 +60451,10 @@
     "action_required_count": 0,
     "actionable_count": 0,
     "confidence_counts": {
-      "existing_evidence_needs_corroboration": 529,
+      "existing_evidence_needs_corroboration": 528,
       "independent_coordinate_agreement": 414,
       "not_checked": 17,
-      "owner_reviewed": 127
+      "owner_reviewed": 128
     },
     "counts": {
       "ambiguous_or_missing_coordinates": 62,

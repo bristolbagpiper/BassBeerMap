@@ -1,23 +1,24 @@
 {
-  "checked_at": "2026-11-03T14:43:18.917082+00:00",
-  "configured": false,
+  "checked_at": "2026-11-03T15:50:39.877036+00:00",
+  "configured": true,
   "counts": {
-    "checked_this_run": 0,
-    "current": 0,
-    "requests_this_run": 0,
+    "attempted_venue_count": 5,
+    "checked_this_run": 5,
+    "current": 5,
     "review_count": 0,
     "total": 1087,
-    "unchecked_or_stale": 1087
+    "unchecked_or_stale": 1082
   },
   "directory_binding_signature": "367ecf4bc481f1568d5904b0315969bcbc363b7af941f4d3db871e7de335eb90",
   "findings": [],
   "hard_failure": false,
   "issues": [
-    "Google comparison is not configured; no live Google checks ran this time",
     "Google comparison coverage is incomplete; untested or stale pubs remain"
   ],
+  "provider": "hermes-browser",
   "run_attempt": 1,
-  "run_id": "41656151967",
-  "run_url": "https://github.com/bristolbagpiper/BassBeerMap/actions/runs/41656151967",
-  "schema_version": 1
+  "run_id": "41668939303",
+  "run_url": "https://github.com/bristolbagpiper/BassBeerMap/actions/runs/41668939303",
+  "schema_version": 1,
+  "source_execution_finished_at": "2026-11-03T15:50:40.031975+00:00"
 }

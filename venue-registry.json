@@ -1,8 +1,48 @@
 {
   "location_review": {
-    "actionable_count": 2,
-    "active_count": 2,
+    "actionable_count": 19,
+    "active_count": 19,
     "records": {
+      "v-0043695f-006e-58fe-adc2-894e5500b940": {
+        "active": true,
+        "first_seen": "2026-11-03",
+        "history": [
+          {
+            "date": "2026-11-03",
+            "reasons": [
+              "FSA matching business coordinates are missing or disagree; CAMRA not checked"
+            ],
+            "status": "unverified"
+          }
+        ],
+        "last_checked": "2026-11-03",
+        "manual_action_required": true,
+        "next_action": "Check the named building or approximate/moved coordinate",
+        "place_name": "Astbury",
+        "postcode": "CW12 4RE",
+        "pub_name": "Astbury Golf Club",
+        "reasons": [
+          "FSA matching business coordinates are missing or disagree; CAMRA not checked"
+        ],
+        "reference": {},
+        "research": {},
+        "review_category": "location_check",
+        "source_checks": {
+          "camra": {
+            "status": "not_checked"
+          },
+          "fsa": {
+            "name_matches": 1,
+            "postcode_matches": 1,
+            "records_returned": 1,
+            "status": "missing_or_ambiguous_coordinates"
+          }
+        },
+        "source_error": null,
+        "status": "unverified",
+        "unverified": true,
+        "venue_id": "v-0043695f-006e-58fe-adc2-894e5500b940"
+      },
       "v-00a08839-2b8a-5782-b6c7-0bdce4cddb2f": {
         "active": false,
         "first_seen": "2026-10-09",
@@ -1007,6 +1047,53 @@
         "unverified": false,
         "venue_id": "v-101e22ce-2e15-5d8d-8f40-64e6ead91ee8"
       },
+      "v-1081a0f5-7955-5f26-933e-2d05487dbf04": {
+        "active": true,
+        "first_seen": "2026-11-03",
+        "history": [
+          {
+            "date": "2026-11-03",
+            "reasons": [
+              "CAMRA venue found, but its coordinate is 550.9 metres from FSA (maximum 50)"
+            ],
+            "status": "unverified"
+          }
+        ],
+        "last_checked": "2026-11-03",
+        "manual_action_required": true,
+        "next_action": "Check the named building or approximate/moved coordinate",
+        "place_name": "Mortimer West End",
+        "postcode": "RG7 2HU",
+        "pub_name": "Red Lion",
+        "reasons": [
+          "CAMRA venue found, but its coordinate is 550.9 metres from FSA (maximum 50)"
+        ],
+        "reference": {},
+        "research": {},
+        "review_category": "location_check",
+        "source_checks": {
+          "camra": {
+            "address": "Church Road",
+            "difference_metres": 550.9,
+            "lat": 51.3671979,
+            "lng": -1.0911012,
+            "name": "Red Lion, Mortimer West End - Traditional Pub",
+            "postcode": "RG7 2HU",
+            "status": "coordinate_disagreement",
+            "url": "https://camra.org.uk/pubs/179271"
+          },
+          "fsa": {
+            "lat": 51.3721504211426,
+            "lng": -1.09090304374695,
+            "status": "matched",
+            "url": "https://ratings.food.gov.uk/business/1942135"
+          }
+        },
+        "source_error": null,
+        "status": "unverified",
+        "unverified": true,
+        "venue_id": "v-1081a0f5-7955-5f26-933e-2d05487dbf04"
+      },
       "v-1180d481-648a-5e00-bc95-6b4c0e4693f0": {
         "active": false,
         "first_seen": "2026-10-09",
@@ -1280,6 +1367,47 @@
         "status": "resolved",
         "unverified": false,
         "venue_id": "v-13a2ad1c-e050-5c7a-944e-064bff66e040"
+      },
+      "v-13b369ca-b0c7-55ae-9466-6c57b35bd624": {
+        "active": true,
+        "first_seen": "2026-11-03",
+        "history": [
+          {
+            "date": "2026-11-03",
+            "reasons": [
+              "CAMRA search returned no same-name/full-postcode venue"
+            ],
+            "status": "unverified"
+          }
+        ],
+        "last_checked": "2026-11-03",
+        "manual_action_required": true,
+        "next_action": "Check the named building or approximate/moved coordinate",
+        "place_name": "Langley Mill",
+        "postcode": "NG16 4AE",
+        "pub_name": "Railway Tavern",
+        "reasons": [
+          "CAMRA search returned no same-name/full-postcode venue"
+        ],
+        "reference": {},
+        "research": {},
+        "review_category": "location_check",
+        "source_checks": {
+          "camra": {
+            "records_returned": 34,
+            "status": "unmatched"
+          },
+          "fsa": {
+            "lat": 53.019852,
+            "lng": -1.327311,
+            "status": "matched",
+            "url": "https://ratings.food.gov.uk/business/936"
+          }
+        },
+        "source_error": null,
+        "status": "unverified",
+        "unverified": true,
+        "venue_id": "v-13b369ca-b0c7-55ae-9466-6c57b35bd624"
       },
       "v-13b39b8a-0c4b-5514-8c6a-8f4ceaf7dc89": {
         "active": false,
@@ -5423,6 +5551,53 @@
         "unverified": false,
         "venue_id": "v-54836fe6-8cdb-55fb-b63e-31051b80fc84"
       },
+      "v-548955f9-8736-595b-9402-0138bf2e770f": {
+        "active": true,
+        "first_seen": "2026-11-03",
+        "history": [
+          {
+            "date": "2026-11-03",
+            "reasons": [
+              "CAMRA venue found, but its coordinate is 54.4 metres from FSA (maximum 50)"
+            ],
+            "status": "unverified"
+          }
+        ],
+        "last_checked": "2026-11-03",
+        "manual_action_required": true,
+        "next_action": "Check the named building or approximate/moved coordinate",
+        "place_name": "Pentraeth (Anglesey)",
+        "postcode": "LL75 8AZ",
+        "pub_name": "Panton Arms",
+        "reasons": [
+          "CAMRA venue found, but its coordinate is 54.4 metres from FSA (maximum 50)"
+        ],
+        "reference": {},
+        "research": {},
+        "review_category": "location_check",
+        "source_checks": {
+          "camra": {
+            "address": "The Square",
+            "difference_metres": 54.4,
+            "lat": 53.281996217982,
+            "lng": -4.215372829361,
+            "name": "Panton Arms, Pentraeth - Coaching Inn with Garden",
+            "postcode": "LL75 8AZ",
+            "status": "coordinate_disagreement",
+            "url": "https://camra.org.uk/pubs/146260"
+          },
+          "fsa": {
+            "lat": 53.281639,
+            "lng": -4.215931,
+            "status": "matched",
+            "url": "https://ratings.food.gov.uk/business/114182"
+          }
+        },
+        "source_error": null,
+        "status": "unverified",
+        "unverified": true,
+        "venue_id": "v-548955f9-8736-595b-9402-0138bf2e770f"
+      },
       "v-54a1b390-c593-5828-a06e-52905548f5ca": {
         "active": false,
         "first_seen": "2026-10-15",
@@ -5885,6 +6060,47 @@
         "status": "resolved",
         "unverified": false,
         "venue_id": "v-59d2541d-6530-562f-96c2-2056496ae55a"
+      },
+      "v-59f0070d-7f4c-559e-b10b-e85d2383e5bc": {
+        "active": true,
+        "first_seen": "2026-11-03",
+        "history": [
+          {
+            "date": "2026-11-03",
+            "reasons": [
+              "CAMRA search returned no same-name/full-postcode venue"
+            ],
+            "status": "unverified"
+          }
+        ],
+        "last_checked": "2026-11-03",
+        "manual_action_required": true,
+        "next_action": "Check the named building or approximate/moved coordinate",
+        "place_name": "Southam",
+        "postcode": "CV47 1PH",
+        "pub_name": "Crown",
+        "reasons": [
+          "CAMRA search returned no same-name/full-postcode venue"
+        ],
+        "reference": {},
+        "research": {},
+        "review_category": "location_check",
+        "source_checks": {
+          "camra": {
+            "records_returned": 202,
+            "status": "unmatched"
+          },
+          "fsa": {
+            "lat": 52.25286901,
+            "lng": -1.38747692,
+            "status": "matched",
+            "url": "https://ratings.food.gov.uk/business/1912629"
+          }
+        },
+        "source_error": null,
+        "status": "unverified",
+        "unverified": true,
+        "venue_id": "v-59f0070d-7f4c-559e-b10b-e85d2383e5bc"
       },
       "v-5af9953b-ee5a-5ecc-9679-35f8477da6d7": {
         "active": false,
@@ -8642,6 +8858,53 @@
         "unverified": false,
         "venue_id": "v-7b7219e5-71e0-524f-8e83-8546cb6673bd"
       },
+      "v-7c328aa9-453e-56d5-afaa-3e6011fb7385": {
+        "active": true,
+        "first_seen": "2026-11-03",
+        "history": [
+          {
+            "date": "2026-11-03",
+            "reasons": [
+              "CAMRA venue found, but its coordinate is 161.6 metres from FSA (maximum 50)"
+            ],
+            "status": "unverified"
+          }
+        ],
+        "last_checked": "2026-11-03",
+        "manual_action_required": true,
+        "next_action": "Check the named building or approximate/moved coordinate",
+        "place_name": "Darley Dale",
+        "postcode": "DE4 2GG",
+        "pub_name": "Church Inn",
+        "reasons": [
+          "CAMRA venue found, but its coordinate is 161.6 metres from FSA (maximum 50)"
+        ],
+        "reference": {},
+        "research": {},
+        "review_category": "location_check",
+        "source_checks": {
+          "camra": {
+            "address": "Church Rd, Darley Dale,, Matlock",
+            "difference_metres": 161.6,
+            "lat": 53.165214,
+            "lng": -1.601077,
+            "name": "Church Inn, Darley Dale - Village Pub with Music",
+            "postcode": "DE4 2GG",
+            "status": "coordinate_disagreement",
+            "url": "https://camra.org.uk/pubs/165764"
+          },
+          "fsa": {
+            "lat": 53.166558,
+            "lng": -1.602001,
+            "status": "matched",
+            "url": "https://ratings.food.gov.uk/business/1931032"
+          }
+        },
+        "source_error": null,
+        "status": "unverified",
+        "unverified": true,
+        "venue_id": "v-7c328aa9-453e-56d5-afaa-3e6011fb7385"
+      },
       "v-7cb03d6d-a981-50bd-83de-76106ba5efac": {
         "active": false,
         "first_seen": "2026-10-19",
@@ -10481,6 +10744,46 @@
         "unverified": false,
         "venue_id": "v-8ed8c1ad-ceb1-56c0-9c67-1218004eb836"
       },
+      "v-904f3702-2d9f-5a94-9a08-766db95b67b3": {
+        "active": true,
+        "first_seen": "2026-11-03",
+        "history": [
+          {
+            "date": "2026-11-03",
+            "reasons": [
+              "FSA matching business coordinates are missing or disagree; CAMRA not checked"
+            ],
+            "status": "unverified"
+          }
+        ],
+        "last_checked": "2026-11-03",
+        "manual_action_required": true,
+        "next_action": "Check the named building or approximate/moved coordinate",
+        "place_name": "Epsom",
+        "postcode": "KT18 7SR",
+        "pub_name": "Cricketers",
+        "reasons": [
+          "FSA matching business coordinates are missing or disagree; CAMRA not checked"
+        ],
+        "reference": {},
+        "research": {},
+        "review_category": "location_check",
+        "source_checks": {
+          "camra": {
+            "status": "not_checked"
+          },
+          "fsa": {
+            "name_matches": 1,
+            "postcode_matches": 1,
+            "records_returned": 1,
+            "status": "missing_or_ambiguous_coordinates"
+          }
+        },
+        "source_error": null,
+        "status": "unverified",
+        "unverified": true,
+        "venue_id": "v-904f3702-2d9f-5a94-9a08-766db95b67b3"
+      },
       "v-914a7527-30f1-5b36-acce-5b36c7210041": {
         "active": false,
         "first_seen": "2026-10-20",
@@ -10590,6 +10893,53 @@
         "status": "resolved",
         "unverified": false,
         "venue_id": "v-9174bee8-338b-54f6-9f95-2f7be830455b"
+      },
+      "v-91dc9a73-c434-5a18-968f-d2f88b9edca7": {
+        "active": true,
+        "first_seen": "2026-11-03",
+        "history": [
+          {
+            "date": "2026-11-03",
+            "reasons": [
+              "CAMRA venue found, but its coordinate is 252.7 metres from FSA (maximum 50)"
+            ],
+            "status": "unverified"
+          }
+        ],
+        "last_checked": "2026-11-03",
+        "manual_action_required": true,
+        "next_action": "Check the named building or approximate/moved coordinate",
+        "place_name": "Burton U-T: Central",
+        "postcode": "DE14 2BG",
+        "pub_name": "Marstons Sports and Social Club (PMC)",
+        "reasons": [
+          "CAMRA venue found, but its coordinate is 252.7 metres from FSA (maximum 50)"
+        ],
+        "reference": {},
+        "research": {},
+        "review_category": "location_check",
+        "source_checks": {
+          "camra": {
+            "address": "Shobnall Road",
+            "difference_metres": 252.7,
+            "lat": 52.8081,
+            "lng": -1.6604,
+            "name": "Marston's Sports & Social Club, Burton upon Trent",
+            "postcode": "DE14 2BG",
+            "status": "coordinate_disagreement",
+            "url": "https://camra.org.uk/pubs/124072"
+          },
+          "fsa": {
+            "lat": 52.807258605957,
+            "lng": -1.65690696239471,
+            "status": "matched",
+            "url": "https://ratings.food.gov.uk/business/1649665"
+          }
+        },
+        "source_error": null,
+        "status": "unverified",
+        "unverified": true,
+        "venue_id": "v-91dc9a73-c434-5a18-968f-d2f88b9edca7"
       },
       "v-93765f1e-9190-594b-9c77-6b96456e5433": {
         "active": false,
@@ -12011,6 +12361,53 @@
         "unverified": false,
         "venue_id": "v-a47a6a56-343d-53ea-b949-31dde357896e"
       },
+      "v-a4b4ccce-07e8-508f-8508-4461b5cea58c": {
+        "active": true,
+        "first_seen": "2026-11-03",
+        "history": [
+          {
+            "date": "2026-11-03",
+            "reasons": [
+              "CAMRA venue found, but its coordinate is 123.3 metres from FSA (maximum 50)"
+            ],
+            "status": "unverified"
+          }
+        ],
+        "last_checked": "2026-11-03",
+        "manual_action_required": true,
+        "next_action": "Check the named building or approximate/moved coordinate",
+        "place_name": "Burrough on the Hill",
+        "postcode": "LE14 2JQ",
+        "pub_name": "Stag and Hounds",
+        "reasons": [
+          "CAMRA venue found, but its coordinate is 123.3 metres from FSA (maximum 50)"
+        ],
+        "reference": {},
+        "research": {},
+        "review_category": "location_check",
+        "source_checks": {
+          "camra": {
+            "address": "4, Main Street",
+            "difference_metres": 123.3,
+            "lat": 52.68812,
+            "lng": -0.88267,
+            "name": "Stag & Hounds, Burrough on the Hill - Local Food Pub",
+            "postcode": "LE14 2JQ",
+            "status": "coordinate_disagreement",
+            "url": "https://camra.org.uk/pubs/192223"
+          },
+          "fsa": {
+            "lat": 52.688714,
+            "lng": -0.881126,
+            "status": "matched",
+            "url": "https://ratings.food.gov.uk/business/1999586"
+          }
+        },
+        "source_error": null,
+        "status": "unverified",
+        "unverified": true,
+        "venue_id": "v-a4b4ccce-07e8-508f-8508-4461b5cea58c"
+      },
       "v-a53a96f3-3672-5b95-a6f6-c15ee1b976eb": {
         "active": false,
         "first_seen": "2026-10-02",
@@ -12521,6 +12918,46 @@
         "unverified": false,
         "venue_id": "v-ab01088f-5062-5b84-b768-e5727529aaab"
       },
+      "v-ac3d5f12-6e5e-5205-b8e0-74f09dfa9e6c": {
+        "active": true,
+        "first_seen": "2026-11-03",
+        "history": [
+          {
+            "date": "2026-11-03",
+            "reasons": [
+              "FSA returned no businesses at the listed full postcode; CAMRA not checked"
+            ],
+            "status": "unverified"
+          }
+        ],
+        "last_checked": "2026-11-03",
+        "manual_action_required": true,
+        "next_action": "Check the named building or approximate/moved coordinate",
+        "place_name": "Ingham",
+        "postcode": "LN1 2YQ",
+        "pub_name": "Windmill Inn",
+        "reasons": [
+          "FSA returned no businesses at the listed full postcode; CAMRA not checked"
+        ],
+        "reference": {},
+        "research": {},
+        "review_category": "location_check",
+        "source_checks": {
+          "camra": {
+            "status": "not_checked"
+          },
+          "fsa": {
+            "name_matches": 0,
+            "postcode_matches": 0,
+            "records_returned": 0,
+            "status": "no_postcode_match"
+          }
+        },
+        "source_error": null,
+        "status": "unverified",
+        "unverified": true,
+        "venue_id": "v-ac3d5f12-6e5e-5205-b8e0-74f09dfa9e6c"
+      },
       "v-ac778227-1ccd-5f63-98cd-f4744b9915cf": {
         "active": false,
         "first_seen": "2026-10-09",
@@ -12629,6 +13066,46 @@
         "status": "resolved",
         "unverified": false,
         "venue_id": "v-ac895bd4-69fd-53ea-89d8-97307a9112c5"
+      },
+      "v-ad1cdbb6-9c64-5a6a-a5ce-53557e5637f7": {
+        "active": true,
+        "first_seen": "2026-11-03",
+        "history": [
+          {
+            "date": "2026-11-03",
+            "reasons": [
+              "FSA businesses at the postcode do not match the pub name; CAMRA not checked"
+            ],
+            "status": "unverified"
+          }
+        ],
+        "last_checked": "2026-11-03",
+        "manual_action_required": true,
+        "next_action": "Check the named building or approximate/moved coordinate",
+        "place_name": "Talybont",
+        "postcode": "LL43 2AQ",
+        "pub_name": "Nineteen.57",
+        "reasons": [
+          "FSA businesses at the postcode do not match the pub name; CAMRA not checked"
+        ],
+        "reference": {},
+        "research": {},
+        "review_category": "location_check",
+        "source_checks": {
+          "camra": {
+            "status": "not_checked"
+          },
+          "fsa": {
+            "name_matches": 0,
+            "postcode_matches": 4,
+            "records_returned": 4,
+            "status": "no_name_match"
+          }
+        },
+        "source_error": null,
+        "status": "unverified",
+        "unverified": true,
+        "venue_id": "v-ad1cdbb6-9c64-5a6a-a5ce-53557e5637f7"
       },
       "v-ad92f484-649e-5618-98b2-57eab539a803": {
         "active": false,
@@ -13135,6 +13612,46 @@
         "status": "resolved",
         "unverified": false,
         "venue_id": "v-b1ed2bf8-2858-5ace-80c6-3c5ae0e5d74c"
+      },
+      "v-b1f768d3-f5ed-5eae-a199-6b21559ba452": {
+        "active": true,
+        "first_seen": "2026-11-03",
+        "history": [
+          {
+            "date": "2026-11-03",
+            "reasons": [
+              "FSA businesses at the postcode do not match the pub name; CAMRA not checked"
+            ],
+            "status": "unverified"
+          }
+        ],
+        "last_checked": "2026-11-03",
+        "manual_action_required": true,
+        "next_action": "Check the named building or approximate/moved coordinate",
+        "place_name": "Ashby-de-la-Zouch",
+        "postcode": "LE65 1AH",
+        "pub_name": "Fitzgeralds",
+        "reasons": [
+          "FSA businesses at the postcode do not match the pub name; CAMRA not checked"
+        ],
+        "reference": {},
+        "research": {},
+        "review_category": "location_check",
+        "source_checks": {
+          "camra": {
+            "status": "not_checked"
+          },
+          "fsa": {
+            "name_matches": 0,
+            "postcode_matches": 9,
+            "records_returned": 9,
+            "status": "no_name_match"
+          }
+        },
+        "source_error": null,
+        "status": "unverified",
+        "unverified": true,
+        "venue_id": "v-b1f768d3-f5ed-5eae-a199-6b21559ba452"
       },
       "v-b2a1d45e-8e0b-5274-acf9-fa3a099ee5dc": {
         "active": false,
@@ -14052,7 +14569,7 @@
         "last_checked": "2026-11-03",
         "manual_action_required": false,
         "next_action": "No pin check requested",
-        "place_name": "Woodville",
+        "place_name": "Boundary / Woodville",
         "postcode": "DE11 7BU",
         "pub_name": "Greyhound",
         "reasons": [],
@@ -16294,6 +16811,46 @@
         "unverified": false,
         "venue_id": "v-de4bb4cf-ba26-5249-bc8a-2d255fabb89c"
       },
+      "v-de948283-fe31-5f55-b16a-547c37e592ce": {
+        "active": true,
+        "first_seen": "2026-11-03",
+        "history": [
+          {
+            "date": "2026-11-03",
+            "reasons": [
+              "FSA returned no businesses at the listed full postcode; CAMRA not checked"
+            ],
+            "status": "unverified"
+          }
+        ],
+        "last_checked": "2026-11-03",
+        "manual_action_required": true,
+        "next_action": "Check the named building or approximate/moved coordinate",
+        "place_name": "Derby: Central",
+        "postcode": "DE1 2TQ",
+        "pub_name": "Tiger",
+        "reasons": [
+          "FSA returned no businesses at the listed full postcode; CAMRA not checked"
+        ],
+        "reference": {},
+        "research": {},
+        "review_category": "location_check",
+        "source_checks": {
+          "camra": {
+            "status": "not_checked"
+          },
+          "fsa": {
+            "name_matches": 0,
+            "postcode_matches": 0,
+            "records_returned": 0,
+            "status": "no_postcode_match"
+          }
+        },
+        "source_error": null,
+        "status": "unverified",
+        "unverified": true,
+        "venue_id": "v-de948283-fe31-5f55-b16a-547c37e592ce"
+      },
       "v-ded2483d-e3d6-5fcb-b861-5cdf3b53b664": {
         "active": false,
         "first_seen": "2026-10-02",
@@ -17861,6 +18418,133 @@
         "unverified": false,
         "venue_id": "v-f66c462f-8eca-5321-885e-56b1bd7e0ee9"
       },
+      "v-f8715c2c-440d-5a56-96bc-95b9dc41b973": {
+        "active": true,
+        "first_seen": "2026-11-03",
+        "history": [
+          {
+            "date": "2026-11-03",
+            "reasons": [
+              "CAMRA venue found, but its coordinate is 62.6 metres from FSA (maximum 50)"
+            ],
+            "status": "unverified"
+          }
+        ],
+        "last_checked": "2026-11-03",
+        "manual_action_required": true,
+        "next_action": "Check the named building or approximate/moved coordinate",
+        "place_name": "Plymouth: Central",
+        "postcode": "PL1 1EP",
+        "pub_name": "Noahs Ark",
+        "reasons": [
+          "CAMRA venue found, but its coordinate is 62.6 metres from FSA (maximum 50)"
+        ],
+        "reference": {},
+        "research": {},
+        "review_category": "location_check",
+        "source_checks": {
+          "camra": {
+            "address": "32A Courtney Street",
+            "difference_metres": 62.6,
+            "lat": 50.370803,
+            "lng": -4.144467,
+            "name": "Noahs Ark, Plymouth - Big Screen Sport Pub",
+            "postcode": "PL1 1EP",
+            "status": "coordinate_disagreement",
+            "url": "https://camra.org.uk/pubs/154207"
+          },
+          "fsa": {
+            "lat": 50.370753,
+            "lng": -4.145346,
+            "status": "matched",
+            "url": "https://ratings.food.gov.uk/business/117458"
+          }
+        },
+        "source_error": null,
+        "status": "unverified",
+        "unverified": true,
+        "venue_id": "v-f8715c2c-440d-5a56-96bc-95b9dc41b973"
+      },
+      "v-f8899d25-0fe4-551f-b83c-e47f3ecf0ed6": {
+        "active": true,
+        "first_seen": "2026-11-03",
+        "history": [
+          {
+            "date": "2026-11-03",
+            "reasons": [
+              "FSA returned no businesses at the listed full postcode; CAMRA not checked"
+            ],
+            "status": "unverified"
+          }
+        ],
+        "last_checked": "2026-11-03",
+        "manual_action_required": true,
+        "next_action": "Check the named building or approximate/moved coordinate",
+        "place_name": "Atherstone",
+        "postcode": "CV9 1FE",
+        "pub_name": "New Swan",
+        "reasons": [
+          "FSA returned no businesses at the listed full postcode; CAMRA not checked"
+        ],
+        "reference": {},
+        "research": {},
+        "review_category": "location_check",
+        "source_checks": {
+          "camra": {
+            "status": "not_checked"
+          },
+          "fsa": {
+            "name_matches": 0,
+            "postcode_matches": 0,
+            "records_returned": 0,
+            "status": "no_postcode_match"
+          }
+        },
+        "source_error": null,
+        "status": "unverified",
+        "unverified": true,
+        "venue_id": "v-f8899d25-0fe4-551f-b83c-e47f3ecf0ed6"
+      },
+      "v-f8bee24d-ecda-57fd-ba79-92aae52bba74": {
+        "active": true,
+        "first_seen": "2026-11-03",
+        "history": [
+          {
+            "date": "2026-11-03",
+            "reasons": [
+              "FSA businesses at the postcode do not match the pub name; CAMRA not checked"
+            ],
+            "status": "unverified"
+          }
+        ],
+        "last_checked": "2026-11-03",
+        "manual_action_required": true,
+        "next_action": "Check the named building or approximate/moved coordinate",
+        "place_name": "Southsea",
+        "postcode": "PO5 3BY",
+        "pub_name": "Barley Mow",
+        "reasons": [
+          "FSA businesses at the postcode do not match the pub name; CAMRA not checked"
+        ],
+        "reference": {},
+        "research": {},
+        "review_category": "location_check",
+        "source_checks": {
+          "camra": {
+            "status": "not_checked"
+          },
+          "fsa": {
+            "name_matches": 0,
+            "postcode_matches": 2,
+            "records_returned": 2,
+            "status": "no_name_match"
+          }
+        },
+        "source_error": null,
+        "status": "unverified",
+        "unverified": true,
+        "venue_id": "v-f8bee24d-ecda-57fd-ba79-92aae52bba74"
+      },
       "v-f8ddf3fe-2e91-5117-a0d3-bfff56f4a0b9": {
         "active": false,
         "first_seen": "2026-10-29",
@@ -18063,6 +18747,53 @@
         "status": "resolved",
         "unverified": false,
         "venue_id": "v-f9c0e9cd-e7eb-554a-8fce-a15454327846"
+      },
+      "v-fa21eb85-2fa0-5cfb-b312-c00af1d392db": {
+        "active": true,
+        "first_seen": "2026-11-03",
+        "history": [
+          {
+            "date": "2026-11-03",
+            "reasons": [
+              "CAMRA venue found, but its coordinate is 225.9 metres from FSA (maximum 50)"
+            ],
+            "status": "unverified"
+          }
+        ],
+        "last_checked": "2026-11-03",
+        "manual_action_required": true,
+        "next_action": "Check the named building or approximate/moved coordinate",
+        "place_name": "Birmingham: Harborne",
+        "postcode": "B32 2EH",
+        "pub_name": "Court Oak",
+        "reasons": [
+          "CAMRA venue found, but its coordinate is 225.9 metres from FSA (maximum 50)"
+        ],
+        "reference": {},
+        "research": {},
+        "review_category": "location_check",
+        "source_checks": {
+          "camra": {
+            "address": "Balden Road",
+            "difference_metres": 225.9,
+            "lat": 52.460961,
+            "lng": -1.974438,
+            "name": "Court Oak, Birmingham - Family Pub with Restaurant",
+            "postcode": "B32 2EH",
+            "status": "coordinate_disagreement",
+            "url": "https://camra.org.uk/pubs/121192"
+          },
+          "fsa": {
+            "lat": 52.461953,
+            "lng": -1.977348,
+            "status": "matched",
+            "url": "https://ratings.food.gov.uk/business/601163"
+          }
+        },
+        "source_error": null,
+        "status": "unverified",
+        "unverified": true,
+        "venue_id": "v-fa21eb85-2fa0-5cfb-b312-c00af1d392db"
       },
       "v-fb304b3f-2aa0-5fa6-9cca-5b4af6a1bb02": {
         "active": false,
@@ -18368,10 +19099,43 @@
     },
     "schema_version": 1,
     "source_warning_count": 0,
-    "unverified_count": 0
+    "unverified_count": 17
   },
   "schema_version": 1,
   "venues": {
+    "v-0043695f-006e-58fe-adc2-894e5500b940": {
+      "aliases": [
+        "astbury golf club|astbury|cw12 4re"
+      ],
+      "current_key": "astbury golf club|astbury|cw12 4re",
+      "listing": {
+        "area": "Cheshire",
+        "country": "England",
+        "dispense": "H",
+        "last": "2026 Q4",
+        "notes": "",
+        "pg": "Perm",
+        "place_name": "Astbury",
+        "postcode": "CW12 4RE",
+        "pub_name": "Astbury Golf Club"
+      },
+      "verification_attempt": {
+        "checked_at": "2026-11-03",
+        "reason": "FSA matching business coordinates are missing or disagree; CAMRA not checked",
+        "sources": {
+          "camra": {
+            "status": "not_checked"
+          },
+          "fsa": {
+            "name_matches": 1,
+            "postcode_matches": 1,
+            "records_returned": 1,
+            "status": "missing_or_ambiguous_coordinates"
+          }
+        }
+      },
+      "verified_pin": null
+    },
     "v-009a7c6e-3950-55bb-8a3c-eaf89ba0737e": {
       "aliases": [
         "dick turpin|newcastle-u-l: higherland|st5 2qs"
@@ -18582,6 +19346,74 @@
         "lat": 52.542078,
         "lng": -1.368474,
         "source": "camra-pubs-location-audit"
+      }
+    },
+    "v-00bd7539-91ec-537f-b0a5-9a27b8e4b371": {
+      "aliases": [
+        "victoria comet|newcastle: central|ne1 5df"
+      ],
+      "current_key": "victoria comet|newcastle: central|ne1 5df",
+      "listing": {
+        "area": "Tyne and Wear",
+        "country": "England",
+        "dispense": "H",
+        "last": "2026 Q4",
+        "notes": "",
+        "pg": "Guest",
+        "place_name": "Newcastle: Central",
+        "postcode": "NE1 5DF",
+        "pub_name": "Victoria Comet"
+      },
+      "verification_attempt": {
+        "checked_at": "2026-11-03",
+        "reason": "FSA and CAMRA agree on named venue, full postcode and location",
+        "sources": {
+          "camra": {
+            "address": "38, Neville Street",
+            "lat": 54.9693325,
+            "lng": -1.6174133,
+            "name": "Victoria Comet, Newcastle upon Tyne",
+            "postcode": "NE1 5DF",
+            "status": "matched",
+            "url": "https://camra.org.uk/pubs/193656"
+          },
+          "fsa": {
+            "lat": 54.9693959,
+            "lng": -1.617408,
+            "status": "matched",
+            "url": "https://ratings.food.gov.uk/business/237204"
+          }
+        }
+      },
+      "verified_pin": {
+        "evidence": [
+          {
+            "checked_at": "2026-11-03",
+            "match": "unique_name_and_full_postcode",
+            "reference_coordinate": {
+              "lat": 54.9693959,
+              "lng": -1.617408
+            },
+            "reference_postcode": "NE1 5DF",
+            "source": "food-standards-agency-fhrs",
+            "url": "https://ratings.food.gov.uk/business/237204"
+          },
+          {
+            "checked_at": "2026-11-03",
+            "match": "named_venue_full_postcode_and_independent_fsa_agreement",
+            "reference_coordinate": {
+              "lat": 54.9693325,
+              "lng": -1.6174133
+            },
+            "reference_name": "Victoria Comet, Newcastle upon Tyne",
+            "reference_postcode": "NE1 5DF",
+            "source": "camra",
+            "url": "https://camra.org.uk/pubs/193656"
+          }
+        ],
+        "lat": 54.9693325,
+        "lng": -1.6174133,
+        "source": "camra-and-fhrs"
       }
     },
     "v-00e4f998-bbbf-5827-9a65-ffbc37655195": {
@@ -19420,7 +20252,7 @@
         "area": "Nottinghamshire",
         "country": "England",
         "dispense": "H",
-        "last": "2026 Q1",
+        "last": "2026 Q4",
         "notes": "",
         "pg": "Perm",
         "place_name": "Ruddington",
@@ -19525,7 +20357,7 @@
         "area": "Staffordshire",
         "country": "England",
         "dispense": "H",
-        "last": "2026 Q3",
+        "last": "2026 Q4",
         "notes": "",
         "pg": "Perm",
         "place_name": "Newcastle-U-L: Central",
@@ -19739,7 +20571,7 @@
         "area": "Nottinghamshire",
         "country": "England",
         "dispense": "H",
-        "last": "2026 Q3",
+        "last": "2026 Q4",
         "notes": "",
         "pg": "Guest",
         "place_name": "Nottingham: West Bridgford",
@@ -23184,7 +24016,7 @@
         "area": "Derbyshire",
         "country": "England",
         "dispense": "H",
-        "last": "2026 Q3",
+        "last": "2026 Q4",
         "notes": "",
         "pg": "Perm",
         "place_name": "Newton Solney",
@@ -23732,7 +24564,7 @@
         "area": "Leicestershire",
         "country": "England",
         "dispense": "H",
-        "last": "2026 Q1",
+        "last": "2026 Q4",
         "notes": "",
         "pg": "Perm",
         "place_name": "Wymeswold",
@@ -23942,7 +24774,7 @@
         "area": "North Yorkshire",
         "country": "England",
         "dispense": "H",
-        "last": "2026 Q3",
+        "last": "2026 Q4",
         "notes": "",
         "pg": "Guest",
         "place_name": "York: Central",
@@ -26259,7 +27091,7 @@
         "area": "North Wales",
         "country": "Wales",
         "dispense": "H",
-        "last": "2026 Q2",
+        "last": "2026 Q4",
         "notes": "",
         "pg": "Guest",
         "place_name": "Conwy",
@@ -26310,6 +27142,74 @@
         "lat": 53.280478933333335,
         "lng": -3.8306694,
         "source": "openstreetmap-gb-extract"
+      }
+    },
+    "v-0fe5d7e1-09cd-5359-8a80-61b9df5a9587": {
+      "aliases": [
+        "malt cross|nottingham: central|ng1 6fg"
+      ],
+      "current_key": "malt cross|nottingham: central|ng1 6fg",
+      "listing": {
+        "area": "Nottinghamshire",
+        "country": "England",
+        "dispense": "H",
+        "last": "2026 Q4",
+        "notes": "",
+        "pg": "Guest",
+        "place_name": "Nottingham: Central",
+        "postcode": "NG1 6FG",
+        "pub_name": "Malt Cross"
+      },
+      "verification_attempt": {
+        "checked_at": "2026-11-03",
+        "reason": "FSA and CAMRA agree on named venue, full postcode and location",
+        "sources": {
+          "camra": {
+            "address": "16 St James's Street",
+            "lat": 52.95311513953,
+            "lng": -1.152296131283,
+            "name": "Malt Cross, Nottingham: Central - Live Music Pub",
+            "postcode": "NG1 6FG",
+            "status": "matched",
+            "url": "https://camra.org.uk/pubs/162522"
+          },
+          "fsa": {
+            "lat": 52.953193,
+            "lng": -1.152349,
+            "status": "matched",
+            "url": "https://ratings.food.gov.uk/business/1095085"
+          }
+        }
+      },
+      "verified_pin": {
+        "evidence": [
+          {
+            "checked_at": "2026-11-03",
+            "match": "unique_name_and_full_postcode",
+            "reference_coordinate": {
+              "lat": 52.953193,
+              "lng": -1.152349
+            },
+            "reference_postcode": "NG1 6FG",
+            "source": "food-standards-agency-fhrs",
+            "url": "https://ratings.food.gov.uk/business/1095085"
+          },
+          {
+            "checked_at": "2026-11-03",
+            "match": "named_venue_full_postcode_and_independent_fsa_agreement",
+            "reference_coordinate": {
+              "lat": 52.95311513953,
+              "lng": -1.152296131283
+            },
+            "reference_name": "Malt Cross, Nottingham: Central - Live Music Pub",
+            "reference_postcode": "NG1 6FG",
+            "source": "camra",
+            "url": "https://camra.org.uk/pubs/162522"
+          }
+        ],
+        "lat": 52.95311513953,
+        "lng": -1.152296131283,
+        "source": "camra-and-fhrs"
       }
     },
     "v-101e22ce-2e15-5d8d-8f40-64e6ead91ee8": {
@@ -26510,6 +27410,46 @@
         },
         "source": "owner-reviewed-google-maps"
       }
+    },
+    "v-1081a0f5-7955-5f26-933e-2d05487dbf04": {
+      "aliases": [
+        "red lion|mortimer west end|rg7 2hu"
+      ],
+      "current_key": "red lion|mortimer west end|rg7 2hu",
+      "listing": {
+        "area": "Hampshire",
+        "country": "England",
+        "dispense": "H",
+        "last": "2026 Q4",
+        "notes": "",
+        "pg": "Perm",
+        "place_name": "Mortimer West End",
+        "postcode": "RG7 2HU",
+        "pub_name": "Red Lion"
+      },
+      "verification_attempt": {
+        "checked_at": "2026-11-03",
+        "reason": "CAMRA venue found, but its coordinate is 550.9 metres from FSA (maximum 50)",
+        "sources": {
+          "camra": {
+            "address": "Church Road",
+            "difference_metres": 550.9,
+            "lat": 51.3671979,
+            "lng": -1.0911012,
+            "name": "Red Lion, Mortimer West End - Traditional Pub",
+            "postcode": "RG7 2HU",
+            "status": "coordinate_disagreement",
+            "url": "https://camra.org.uk/pubs/179271"
+          },
+          "fsa": {
+            "lat": 51.3721504211426,
+            "lng": -1.09090304374695,
+            "status": "matched",
+            "url": "https://ratings.food.gov.uk/business/1942135"
+          }
+        }
+      },
+      "verified_pin": null
     },
     "v-1099e58b-6e60-5619-b6b7-d5943139f761": {
       "aliases": [
@@ -26777,7 +27717,7 @@
         "area": "Staffordshire",
         "country": "England",
         "dispense": "H",
-        "last": "2026 Q3",
+        "last": "2026 Q4",
         "notes": "",
         "pg": "Perm",
         "place_name": "Lichfield",
@@ -27193,7 +28133,7 @@
         "area": "Staffordshire",
         "country": "England",
         "dispense": "H",
-        "last": "2026 Q3",
+        "last": "2026 Q4",
         "notes": "",
         "pg": "Perm",
         "place_name": "Tutbury",
@@ -28143,6 +29083,40 @@
         "lng": -1.4250238,
         "source": "owner-reviewed-google-maps"
       }
+    },
+    "v-13b369ca-b0c7-55ae-9466-6c57b35bd624": {
+      "aliases": [
+        "railway tavern|langley mill|ng16 4ae"
+      ],
+      "current_key": "railway tavern|langley mill|ng16 4ae",
+      "listing": {
+        "area": "Derbyshire",
+        "country": "England",
+        "dispense": "H",
+        "last": "2026 Q4",
+        "notes": "",
+        "pg": "Guest",
+        "place_name": "Langley Mill",
+        "postcode": "NG16 4AE",
+        "pub_name": "Railway Tavern"
+      },
+      "verification_attempt": {
+        "checked_at": "2026-11-03",
+        "reason": "CAMRA search returned no same-name/full-postcode venue",
+        "sources": {
+          "camra": {
+            "records_returned": 34,
+            "status": "unmatched"
+          },
+          "fsa": {
+            "lat": 53.019852,
+            "lng": -1.327311,
+            "status": "matched",
+            "url": "https://ratings.food.gov.uk/business/936"
+          }
+        }
+      },
+      "verified_pin": null
     },
     "v-13b39b8a-0c4b-5514-8c6a-8f4ceaf7dc89": {
       "aliases": [
@@ -29573,7 +30547,7 @@
         "area": "Merseyside",
         "country": "England",
         "dispense": "H",
-        "last": "2026 Q3",
+        "last": "2026 Q4",
         "notes": "",
         "pg": "Perm",
         "place_name": "Liverpool: Central",
@@ -29669,6 +30643,74 @@
         "lat": 53.4016502,
         "lng": -2.9796419,
         "source": "owner-reviewed-google-maps"
+      }
+    },
+    "v-1536960d-c0c6-5571-b3f2-64947d2c6adf": {
+      "aliases": [
+        "malt shovel|worthington|le65 1rq"
+      ],
+      "current_key": "malt shovel|worthington|le65 1rq",
+      "listing": {
+        "area": "Leicestershire",
+        "country": "England",
+        "dispense": "H",
+        "last": "2026 Q4",
+        "notes": "",
+        "pg": "Guest",
+        "place_name": "Worthington",
+        "postcode": "LE65 1RQ",
+        "pub_name": "Malt Shovel"
+      },
+      "verification_attempt": {
+        "checked_at": "2026-11-03",
+        "reason": "FSA and CAMRA agree on named venue, full postcode and location",
+        "sources": {
+          "camra": {
+            "address": "29 Main Street",
+            "lat": 52.7803,
+            "lng": -1.3949,
+            "name": "Malt Shovel, Worthington - Free House Village Pub",
+            "postcode": "LE65 1RQ",
+            "status": "matched",
+            "url": "https://camra.org.uk/pubs/171277"
+          },
+          "fsa": {
+            "lat": 52.780089,
+            "lng": -1.394953,
+            "status": "matched",
+            "url": "https://ratings.food.gov.uk/business/1094515"
+          }
+        }
+      },
+      "verified_pin": {
+        "evidence": [
+          {
+            "checked_at": "2026-11-03",
+            "match": "unique_name_and_full_postcode",
+            "reference_coordinate": {
+              "lat": 52.780089,
+              "lng": -1.394953
+            },
+            "reference_postcode": "LE65 1RQ",
+            "source": "food-standards-agency-fhrs",
+            "url": "https://ratings.food.gov.uk/business/1094515"
+          },
+          {
+            "checked_at": "2026-11-03",
+            "match": "named_venue_full_postcode_and_independent_fsa_agreement",
+            "reference_coordinate": {
+              "lat": 52.7803,
+              "lng": -1.3949
+            },
+            "reference_name": "Malt Shovel, Worthington - Free House Village Pub",
+            "reference_postcode": "LE65 1RQ",
+            "source": "camra",
+            "url": "https://camra.org.uk/pubs/171277"
+          }
+        ],
+        "lat": 52.7803,
+        "lng": -1.3949,
+        "source": "camra-and-fhrs"
       }
     },
     "v-1554353b-6a48-561c-9f59-331364ce09dd": {
@@ -30393,7 +31435,7 @@
         "country": "England",
         "dispense": "H",
         "last": "2026 Q2",
-        "notes": "",
+        "notes": "\"The bar staff hadn't heard of it when I called  during the summer\" (Oct 26)",
         "pg": "Guest",
         "place_name": "Sheffield: Ecclesall Road",
         "postcode": "S11 8PR",
@@ -31254,7 +32296,7 @@
         "area": "Staffordshire",
         "country": "England",
         "dispense": "H",
-        "last": "2026 Q3",
+        "last": "2026 Q4",
         "notes": "",
         "pg": "Perm",
         "place_name": "Stoke: Hanley",
@@ -31933,7 +32975,7 @@
         "area": "Devon",
         "country": "England",
         "dispense": "H",
-        "last": "2026 Q3",
+        "last": "2026 Q4",
         "notes": "",
         "pg": "Perm",
         "place_name": "Plympton",
@@ -32227,7 +33269,7 @@
         "area": "Lincolnshire",
         "country": "England",
         "dispense": "H",
-        "last": "2026 Q2",
+        "last": "2026 Q4",
         "notes": "",
         "pg": "Guest",
         "place_name": "Broughton",
@@ -32966,7 +34008,7 @@
         "area": "Nottinghamshire",
         "country": "England",
         "dispense": "H",
-        "last": "2026 Q3",
+        "last": "2026 Q4",
         "notes": "",
         "pg": "Guest",
         "place_name": "Shelford",
@@ -33309,7 +34351,7 @@
         "area": "Leicestershire",
         "country": "England",
         "dispense": "H",
-        "last": "2026 Q3",
+        "last": "2026 Q4",
         "notes": "",
         "pg": "Perm",
         "place_name": "Earl Shilton",
@@ -33948,6 +34990,74 @@
         "source": "openstreetmap-gb-extract"
       }
     },
+    "v-1fe3e0a2-850a-5ee3-a037-86d27e598d40": {
+      "aliases": [
+        "fox|oadby|le2 5dl"
+      ],
+      "current_key": "fox|oadby|le2 5dl",
+      "listing": {
+        "area": "Leicestershire",
+        "country": "England",
+        "dispense": "H",
+        "last": "2026 Q4",
+        "notes": "",
+        "pg": "Perm",
+        "place_name": "Oadby",
+        "postcode": "LE2 5DL",
+        "pub_name": "Fox"
+      },
+      "verification_attempt": {
+        "checked_at": "2026-11-03",
+        "reason": "FSA and CAMRA agree on named venue, full postcode and location",
+        "sources": {
+          "camra": {
+            "address": "21 London Road",
+            "lat": 52.597816,
+            "lng": -1.079874,
+            "name": "Fox, Oadby - Traditional Local",
+            "postcode": "LE2 5DL",
+            "status": "matched",
+            "url": "https://camra.org.uk/pubs/174015"
+          },
+          "fsa": {
+            "lat": 52.597797,
+            "lng": -1.079704,
+            "status": "matched",
+            "url": "https://ratings.food.gov.uk/business/1934108"
+          }
+        }
+      },
+      "verified_pin": {
+        "evidence": [
+          {
+            "checked_at": "2026-11-03",
+            "match": "unique_name_and_full_postcode",
+            "reference_coordinate": {
+              "lat": 52.597797,
+              "lng": -1.079704
+            },
+            "reference_postcode": "LE2 5DL",
+            "source": "food-standards-agency-fhrs",
+            "url": "https://ratings.food.gov.uk/business/1934108"
+          },
+          {
+            "checked_at": "2026-11-03",
+            "match": "named_venue_full_postcode_and_independent_fsa_agreement",
+            "reference_coordinate": {
+              "lat": 52.597816,
+              "lng": -1.079874
+            },
+            "reference_name": "Fox, Oadby - Traditional Local",
+            "reference_postcode": "LE2 5DL",
+            "source": "camra",
+            "url": "https://camra.org.uk/pubs/174015"
+          }
+        ],
+        "lat": 52.597816,
+        "lng": -1.079874,
+        "source": "camra-and-fhrs"
+      }
+    },
     "v-2039a2dc-edc4-5c45-8a2a-91a65e51ef0f": {
       "aliases": [
         "anchor|birmingham: digbeth|b5 6et"
@@ -34000,7 +35110,7 @@
         "area": "West Midlands",
         "country": "England",
         "dispense": "H",
-        "last": "2026 Q3",
+        "last": "2026 Q4",
         "notes": "",
         "pg": "Guest",
         "place_name": "Birmingham: Digbeth",
@@ -34402,6 +35512,74 @@
         "source": "openstreetmap-gb-extract"
       }
     },
+    "v-211439b7-a4b0-553c-b44c-5f97f36df38f": {
+      "aliases": [
+        "london inn|padstow|pl28 8an"
+      ],
+      "current_key": "london inn|padstow|pl28 8an",
+      "listing": {
+        "area": "Cornwall",
+        "country": "England",
+        "dispense": "H",
+        "last": "2026 Q4",
+        "notes": "",
+        "pg": "Guest",
+        "place_name": "Padstow",
+        "postcode": "PL28 8AN",
+        "pub_name": "London Inn"
+      },
+      "verification_attempt": {
+        "checked_at": "2026-11-03",
+        "reason": "FSA and CAMRA agree on named venue, full postcode and location",
+        "sources": {
+          "camra": {
+            "address": "6-8 Lanadwell Street",
+            "lat": 50.54092,
+            "lng": -4.93958,
+            "name": "London Inn, Padstow - Village Local, Folk Music",
+            "postcode": "PL28 8AN",
+            "status": "matched",
+            "url": "https://camra.org.uk/pubs/139018"
+          },
+          "fsa": {
+            "lat": 50.5411018,
+            "lng": -4.9394906,
+            "status": "matched",
+            "url": "https://ratings.food.gov.uk/business/1935465"
+          }
+        }
+      },
+      "verified_pin": {
+        "evidence": [
+          {
+            "checked_at": "2026-11-03",
+            "match": "unique_name_and_full_postcode",
+            "reference_coordinate": {
+              "lat": 50.5411018,
+              "lng": -4.9394906
+            },
+            "reference_postcode": "PL28 8AN",
+            "source": "food-standards-agency-fhrs",
+            "url": "https://ratings.food.gov.uk/business/1935465"
+          },
+          {
+            "checked_at": "2026-11-03",
+            "match": "named_venue_full_postcode_and_independent_fsa_agreement",
+            "reference_coordinate": {
+              "lat": 50.54092,
+              "lng": -4.93958
+            },
+            "reference_name": "London Inn, Padstow - Village Local, Folk Music",
+            "reference_postcode": "PL28 8AN",
+            "source": "camra",
+            "url": "https://camra.org.uk/pubs/139018"
+          }
+        ],
+        "lat": 50.54092,
+        "lng": -4.93958,
+        "source": "camra-and-fhrs"
+      }
+    },
     "v-2147c2d1-f406-58f5-8226-6b32e965cdd5": {
       "aliases": [
         "red lion|burbage|le10 2ef"
@@ -34507,6 +35685,74 @@
         "lat": 52.527060687500004,
         "lng": -1.3489449,
         "source": "openstreetmap-gb-extract"
+      }
+    },
+    "v-21d5e56e-fe71-5e2a-8008-e2faadf64236": {
+      "aliases": [
+        "old wellington|manchester: central|m3 1sw"
+      ],
+      "current_key": "old wellington|manchester: central|m3 1sw",
+      "listing": {
+        "area": "Greater Manchester",
+        "country": "England",
+        "dispense": "H",
+        "last": "2026 Q4",
+        "notes": "",
+        "pg": "Guest",
+        "place_name": "Manchester: Central",
+        "postcode": "M3 1SW",
+        "pub_name": "Old Wellington"
+      },
+      "verification_attempt": {
+        "checked_at": "2026-11-03",
+        "reason": "FSA and CAMRA agree on named venue, full postcode and location",
+        "sources": {
+          "camra": {
+            "address": "4 Cathedral Gates, Manchester",
+            "lat": 53.484676480863,
+            "lng": -2.243988700211,
+            "name": "Old Wellington, Manchester - Real Ale Pub",
+            "postcode": "M3 1SW",
+            "status": "matched",
+            "url": "https://camra.org.uk/pubs/137520"
+          },
+          "fsa": {
+            "lat": 53.484691619873,
+            "lng": -2.24407291412354,
+            "status": "matched",
+            "url": "https://ratings.food.gov.uk/business/1818972"
+          }
+        }
+      },
+      "verified_pin": {
+        "evidence": [
+          {
+            "checked_at": "2026-11-03",
+            "match": "unique_name_and_full_postcode",
+            "reference_coordinate": {
+              "lat": 53.484691619873,
+              "lng": -2.24407291412354
+            },
+            "reference_postcode": "M3 1SW",
+            "source": "food-standards-agency-fhrs",
+            "url": "https://ratings.food.gov.uk/business/1818972"
+          },
+          {
+            "checked_at": "2026-11-03",
+            "match": "named_venue_full_postcode_and_independent_fsa_agreement",
+            "reference_coordinate": {
+              "lat": 53.484676480863,
+              "lng": -2.243988700211
+            },
+            "reference_name": "Old Wellington, Manchester - Real Ale Pub",
+            "reference_postcode": "M3 1SW",
+            "source": "camra",
+            "url": "https://camra.org.uk/pubs/137520"
+          }
+        ],
+        "lat": 53.484676480863,
+        "lng": -2.243988700211,
+        "source": "camra-and-fhrs"
       }
     },
     "v-22be00dc-148b-58ee-bdd5-b4bcfcc5ccca": {
@@ -35443,7 +36689,7 @@
         "area": "Durham",
         "country": "England",
         "dispense": "H/B",
-        "last": "2026 Q3",
+        "last": "2026 Q4",
         "notes": "Available Banked",
         "pg": "Perm",
         "place_name": "Stockton-on-Tees",
@@ -37492,7 +38738,7 @@
         "area": "Greater Manchester",
         "country": "England",
         "dispense": "H",
-        "last": "2026 Q3",
+        "last": "2026 Q4",
         "notes": "",
         "pg": "Perm",
         "place_name": "Manchester: Central",
@@ -39665,7 +40911,7 @@
         "area": "Derbyshire",
         "country": "England",
         "dispense": "H",
-        "last": "2026 Q3",
+        "last": "2026 Q4",
         "notes": "",
         "pg": "Guest",
         "place_name": "Repton",
@@ -40163,7 +41409,7 @@
         "area": "Derbyshire",
         "country": "England",
         "dispense": "H",
-        "last": "2026 Q3",
+        "last": "2026 Q4",
         "notes": "",
         "pg": "Perm",
         "place_name": "Belper: Bargate",
@@ -40664,8 +41910,8 @@
         "area": "Derbyshire",
         "country": "England",
         "dispense": "H",
-        "last": "2026 Q2",
-        "notes": "",
+        "last": "2026 Q4",
+        "notes": "£2.80 on a Monday and Tuesday (Oct 26)",
         "pg": "Guest",
         "place_name": "Derby: Oakwood",
         "postcode": "DE21 2HT",
@@ -43098,6 +44344,74 @@
         "source": "openstreetmap-gb-extract"
       }
     },
+    "v-377c7ea8-2fc7-5f33-900f-dfc367d0e758": {
+      "aliases": [
+        "black swan|belper: central|de56 1fz"
+      ],
+      "current_key": "black swan|belper: central|de56 1fz",
+      "listing": {
+        "area": "Derbyshire",
+        "country": "England",
+        "dispense": "H",
+        "last": "2026 Q4",
+        "notes": "",
+        "pg": "Guest",
+        "place_name": "Belper: Central",
+        "postcode": "DE56 1FZ",
+        "pub_name": "Black Swan"
+      },
+      "verification_attempt": {
+        "checked_at": "2026-11-03",
+        "reason": "FSA and CAMRA agree on named venue, full postcode and location",
+        "sources": {
+          "camra": {
+            "address": "44 Market Place",
+            "lat": 53.02321,
+            "lng": -1.478868,
+            "name": "Black Swan Ale House, Belper - Seven Cask Ales",
+            "postcode": "DE56 1FZ",
+            "status": "matched",
+            "url": "https://camra.org.uk/pubs/113310"
+          },
+          "fsa": {
+            "lat": 53.023319,
+            "lng": -1.478952,
+            "status": "matched",
+            "url": "https://ratings.food.gov.uk/business/1135"
+          }
+        }
+      },
+      "verified_pin": {
+        "evidence": [
+          {
+            "checked_at": "2026-11-03",
+            "match": "unique_name_and_full_postcode",
+            "reference_coordinate": {
+              "lat": 53.023319,
+              "lng": -1.478952
+            },
+            "reference_postcode": "DE56 1FZ",
+            "source": "food-standards-agency-fhrs",
+            "url": "https://ratings.food.gov.uk/business/1135"
+          },
+          {
+            "checked_at": "2026-11-03",
+            "match": "named_venue_full_postcode_and_independent_fsa_agreement",
+            "reference_coordinate": {
+              "lat": 53.02321,
+              "lng": -1.478868
+            },
+            "reference_name": "Black Swan Ale House, Belper - Seven Cask Ales",
+            "reference_postcode": "DE56 1FZ",
+            "source": "camra",
+            "url": "https://camra.org.uk/pubs/113310"
+          }
+        ],
+        "lat": 53.02321,
+        "lng": -1.478868,
+        "source": "camra-and-fhrs"
+      }
+    },
     "v-37880b55-26dd-518b-a31f-17f42d71a286": {
       "aliases": [
         "jug and glass|lea|de4 5gj"
@@ -43617,7 +44931,7 @@
         "area": "Derbyshire",
         "country": "England",
         "dispense": "H",
-        "last": "2026 Q3",
+        "last": "2026 Q4",
         "notes": "",
         "pg": "Perm",
         "place_name": "Little Eaton",
@@ -43827,7 +45141,7 @@
         "area": "Warwickshire",
         "country": "England",
         "dispense": "H",
-        "last": "2026 Q3",
+        "last": "2026 Q4",
         "notes": "",
         "pg": "Perm",
         "place_name": "Atherstone",
@@ -43932,7 +45246,7 @@
         "area": "Leicestershire",
         "country": "England",
         "dispense": "H",
-        "last": "2026 Q3",
+        "last": "2026 Q4",
         "notes": "",
         "pg": "Perm",
         "place_name": "Ashby-de-la-Zouch",
@@ -44497,7 +45811,7 @@
         "area": "Durham",
         "country": "England",
         "dispense": "H",
-        "last": "2026 Q3",
+        "last": "2026 Q4",
         "notes": "",
         "pg": "Guest",
         "place_name": "Darlington",
@@ -45786,7 +47100,7 @@
         "area": "Greater Manchester",
         "country": "England",
         "dispense": "H",
-        "last": "2026 Q2",
+        "last": "2026 Q4",
         "notes": "New owners same as Petersgate Tap",
         "pg": "Perm",
         "place_name": "Stockport",
@@ -46202,7 +47516,7 @@
         "area": "Nottinghamshire",
         "country": "England",
         "dispense": "H",
-        "last": "2026 Q2",
+        "last": "2026 Q4",
         "notes": "",
         "pg": "Guest",
         "place_name": "Eastwood",
@@ -46414,7 +47728,7 @@
         "area": "Warwickshire",
         "country": "England",
         "dispense": "H",
-        "last": "2026 Q3",
+        "last": "2026 Q4",
         "notes": "",
         "pg": "Guest",
         "place_name": "Hunningham",
@@ -47122,7 +48436,7 @@
         "area": "Somerset",
         "country": "England",
         "dispense": "G/H",
-        "last": "2026 Q3",
+        "last": "2026 Q4",
         "notes": "",
         "pg": "Perm",
         "place_name": "Bath",
@@ -47227,7 +48541,7 @@
         "area": "Staffordshire",
         "country": "England",
         "dispense": "H",
-        "last": "2026 Q3",
+        "last": "2026 Q4",
         "notes": "",
         "pg": "Perm",
         "place_name": "Burton U-T: Central",
@@ -47785,7 +49099,7 @@
         "area": "North Yorkshire",
         "country": "England",
         "dispense": "H",
-        "last": "2026 Q3",
+        "last": "2026 Q4",
         "notes": "",
         "pg": "Guest",
         "place_name": "Harrogate",
@@ -47989,7 +49303,7 @@
         "area": "North Wales",
         "country": "Wales",
         "dispense": "H",
-        "last": "2026 Q3",
+        "last": "2026 Q4",
         "notes": "",
         "pg": "Guest",
         "place_name": "Caernarfon",
@@ -48746,7 +50060,7 @@
         "area": "Lincolnshire",
         "country": "England",
         "dispense": "H",
-        "last": "2026 Q2",
+        "last": "2026 Q4",
         "notes": "",
         "pg": "Perm",
         "place_name": "Sleaford",
@@ -48851,7 +50165,7 @@
         "area": "North Yorkshire",
         "country": "England",
         "dispense": "H",
-        "last": "2026 Q1",
+        "last": "2026 Q4",
         "notes": "",
         "pg": "Perm",
         "place_name": "Knaresborough",
@@ -49209,7 +50523,7 @@
         "area": "Shropshire",
         "country": "England",
         "dispense": "H",
-        "last": "2026 Q3",
+        "last": "2026 Q4",
         "notes": "",
         "pg": "Perm",
         "place_name": "Shrewsbury: Coton Hill",
@@ -49411,7 +50725,7 @@
         "area": "Staffordshire",
         "country": "England",
         "dispense": "H",
-        "last": "2026 Q1",
+        "last": "2026 Q4",
         "notes": "",
         "pg": "Guest",
         "place_name": "Burton U-T: Central",
@@ -49527,6 +50841,74 @@
         "lat": 54.3219539,
         "lng": -4.381877,
         "source": "manual-openstreetmap-review"
+      }
+    },
+    "v-4636f62a-1e8b-5a4c-a4ce-3ad1fb58c684": {
+      "aliases": [
+        "crown|southport: birkdale|pr8 3bz"
+      ],
+      "current_key": "crown|southport: birkdale|pr8 3bz",
+      "listing": {
+        "area": "Merseyside",
+        "country": "England",
+        "dispense": "H",
+        "last": "2026 Q4",
+        "notes": "",
+        "pg": "Guest",
+        "place_name": "Southport: Birkdale",
+        "postcode": "PR8 3BZ",
+        "pub_name": "Crown"
+      },
+      "verification_attempt": {
+        "checked_at": "2026-11-03",
+        "reason": "FSA and CAMRA agree on named venue, full postcode and location",
+        "sources": {
+          "camra": {
+            "address": "304 Liverpool Road",
+            "lat": 53.6158,
+            "lng": -3.0174,
+            "name": "Crown Hotel, Southport - Cask Ale Nights",
+            "postcode": "PR8 3BZ",
+            "status": "matched",
+            "url": "https://camra.org.uk/pubs/146987"
+          },
+          "fsa": {
+            "lat": 53.615802,
+            "lng": -3.017414,
+            "status": "matched",
+            "url": "https://ratings.food.gov.uk/business/102154"
+          }
+        }
+      },
+      "verified_pin": {
+        "evidence": [
+          {
+            "checked_at": "2026-11-03",
+            "match": "unique_name_and_full_postcode",
+            "reference_coordinate": {
+              "lat": 53.615802,
+              "lng": -3.017414
+            },
+            "reference_postcode": "PR8 3BZ",
+            "source": "food-standards-agency-fhrs",
+            "url": "https://ratings.food.gov.uk/business/102154"
+          },
+          {
+            "checked_at": "2026-11-03",
+            "match": "named_venue_full_postcode_and_independent_fsa_agreement",
+            "reference_coordinate": {
+              "lat": 53.6158,
+              "lng": -3.0174
+            },
+            "reference_name": "Crown Hotel, Southport - Cask Ale Nights",
+            "reference_postcode": "PR8 3BZ",
+            "source": "camra",
+            "url": "https://camra.org.uk/pubs/146987"
+          }
+        ],
+        "lat": 53.6158,
+        "lng": -3.0174,
+        "source": "camra-and-fhrs"
       }
     },
     "v-468c44b4-4df8-5b41-a7c1-f5114c363f7c": {
@@ -49890,7 +51272,7 @@
         "area": "Derbyshire",
         "country": "England",
         "dispense": "H",
-        "last": "2026 Q3",
+        "last": "2026 Q4",
         "notes": "",
         "pg": "Perm",
         "place_name": "Derby: West End",
@@ -50757,7 +52139,7 @@
         "area": "Greater Manchester",
         "country": "England",
         "dispense": "H",
-        "last": "2026 Q3",
+        "last": "2026 Q4",
         "notes": "",
         "pg": "Guest",
         "place_name": "Didsbury",
@@ -50948,7 +52330,7 @@
         "area": "North Yorkshire",
         "country": "England",
         "dispense": "H",
-        "last": "2026 Q1",
+        "last": "2026 Q4",
         "notes": "",
         "pg": "Perm",
         "place_name": "Yarm",
@@ -51188,6 +52570,74 @@
           "source_url": "https://camra.org.uk/pubs/196347"
         },
         "source": "google-maps-named-place"
+      }
+    },
+    "v-4ac64929-0f37-5395-9fa7-4c90d72fda85": {
+      "aliases": [
+        "berkeley arms|wymondham|le14 2ag"
+      ],
+      "current_key": "berkeley arms|wymondham|le14 2ag",
+      "listing": {
+        "area": "Leicestershire",
+        "country": "England",
+        "dispense": "H",
+        "last": "2026 Q4",
+        "notes": "",
+        "pg": "Guest",
+        "place_name": "Wymondham",
+        "postcode": "LE14 2AG",
+        "pub_name": "Berkeley Arms"
+      },
+      "verification_attempt": {
+        "checked_at": "2026-11-03",
+        "reason": "FSA and CAMRA agree on named venue, full postcode and location",
+        "sources": {
+          "camra": {
+            "address": "59, Main Street",
+            "lat": 52.760298838848,
+            "lng": -0.73984550674595,
+            "name": "Berkeley Arms, Wymondham - Village Pub with Fire",
+            "postcode": "LE14 2AG",
+            "status": "matched",
+            "url": "https://camra.org.uk/pubs/192220"
+          },
+          "fsa": {
+            "lat": 52.7603165,
+            "lng": -0.7398496,
+            "status": "matched",
+            "url": "https://ratings.food.gov.uk/business/1101581"
+          }
+        }
+      },
+      "verified_pin": {
+        "evidence": [
+          {
+            "checked_at": "2026-11-03",
+            "match": "unique_name_and_full_postcode",
+            "reference_coordinate": {
+              "lat": 52.7603165,
+              "lng": -0.7398496
+            },
+            "reference_postcode": "LE14 2AG",
+            "source": "food-standards-agency-fhrs",
+            "url": "https://ratings.food.gov.uk/business/1101581"
+          },
+          {
+            "checked_at": "2026-11-03",
+            "match": "named_venue_full_postcode_and_independent_fsa_agreement",
+            "reference_coordinate": {
+              "lat": 52.760298838848,
+              "lng": -0.73984550674595
+            },
+            "reference_name": "Berkeley Arms, Wymondham - Village Pub with Fire",
+            "reference_postcode": "LE14 2AG",
+            "source": "camra",
+            "url": "https://camra.org.uk/pubs/192220"
+          }
+        ],
+        "lat": 52.760298838848,
+        "lng": -0.73984550674595,
+        "source": "camra-and-fhrs"
       }
     },
     "v-4acb6f16-6372-5492-adaa-19dc33655733": {
@@ -51939,6 +53389,74 @@
         "source": "openstreetmap-gb-extract"
       }
     },
+    "v-4c931869-1a5b-5007-81c1-6c504c97ef9d": {
+      "aliases": [
+        "red lion|chinnor|ox39 4dl"
+      ],
+      "current_key": "red lion|chinnor|ox39 4dl",
+      "listing": {
+        "area": "Oxfordshire",
+        "country": "England",
+        "dispense": "H",
+        "last": "2026 Q4",
+        "notes": "",
+        "pg": "Guest",
+        "place_name": "Chinnor",
+        "postcode": "OX39 4DL",
+        "pub_name": "Red Lion"
+      },
+      "verification_attempt": {
+        "checked_at": "2026-11-03",
+        "reason": "FSA and CAMRA agree on named venue, full postcode and location",
+        "sources": {
+          "camra": {
+            "address": "3 High Street",
+            "lat": 51.706119840027,
+            "lng": -0.908259558197,
+            "name": "Red Lion, Chinnor - Multi-Roomed Pub",
+            "postcode": "OX39 4DL",
+            "status": "matched",
+            "url": "https://camra.org.uk/pubs/115955"
+          },
+          "fsa": {
+            "lat": 51.7061,
+            "lng": -0.908203,
+            "status": "matched",
+            "url": "https://ratings.food.gov.uk/business/272264"
+          }
+        }
+      },
+      "verified_pin": {
+        "evidence": [
+          {
+            "checked_at": "2026-11-03",
+            "match": "unique_name_and_full_postcode",
+            "reference_coordinate": {
+              "lat": 51.7061,
+              "lng": -0.908203
+            },
+            "reference_postcode": "OX39 4DL",
+            "source": "food-standards-agency-fhrs",
+            "url": "https://ratings.food.gov.uk/business/272264"
+          },
+          {
+            "checked_at": "2026-11-03",
+            "match": "named_venue_full_postcode_and_independent_fsa_agreement",
+            "reference_coordinate": {
+              "lat": 51.706119840027,
+              "lng": -0.908259558197
+            },
+            "reference_name": "Red Lion, Chinnor - Multi-Roomed Pub",
+            "reference_postcode": "OX39 4DL",
+            "source": "camra",
+            "url": "https://camra.org.uk/pubs/115955"
+          }
+        ],
+        "lat": 51.706119840027,
+        "lng": -0.908259558197,
+        "source": "camra-and-fhrs"
+      }
+    },
     "v-4ca243c1-108e-5609-bd3d-398ac80611b4": {
       "aliases": [
         "meynell ingram arms|hoar cross|de13 8rb"
@@ -52417,7 +53935,7 @@
         "area": "Derbyshire",
         "country": "England",
         "dispense": "H",
-        "last": "2026 Q3",
+        "last": "2026 Q4",
         "notes": "",
         "pg": "Guest",
         "place_name": "Holbrook",
@@ -53033,7 +54551,7 @@
         "area": "Derbyshire",
         "country": "England",
         "dispense": "G/J",
-        "last": "2026 Q3",
+        "last": "2026 Q4",
         "notes": "",
         "pg": "Perm",
         "place_name": "Milford",
@@ -53447,7 +54965,7 @@
         "area": "Greater London",
         "country": "England",
         "dispense": "H",
-        "last": "2026 Q1",
+        "last": "2026 Q4",
         "notes": "",
         "pg": "Guest",
         "place_name": "Farringdon EC1M",
@@ -53498,6 +55016,74 @@
         "lat": 51.5202193,
         "lng": -0.1041739,
         "source": "openstreetmap-gb-extract"
+      }
+    },
+    "v-5080e2d0-2553-564a-978f-9bbc0a625f1f": {
+      "aliases": [
+        "ye cracke|liverpool: central|l1 9bb"
+      ],
+      "current_key": "ye cracke|liverpool: central|l1 9bb",
+      "listing": {
+        "area": "Merseyside",
+        "country": "England",
+        "dispense": "H",
+        "last": "2026 Q4",
+        "notes": "",
+        "pg": "Guest",
+        "place_name": "Liverpool: Central",
+        "postcode": "L1 9BB",
+        "pub_name": "Ye Cracke"
+      },
+      "verification_attempt": {
+        "checked_at": "2026-11-03",
+        "reason": "FSA and CAMRA agree on named venue, full postcode and location",
+        "sources": {
+          "camra": {
+            "address": "13 Rice St,",
+            "lat": 53.400439,
+            "lng": -2.971963,
+            "name": "Cracke, Liverpool - Back-Street Pub with Gallery",
+            "postcode": "L1 9BB",
+            "status": "matched",
+            "url": "https://camra.org.uk/pubs/165590"
+          },
+          "fsa": {
+            "lat": 53.4005116,
+            "lng": -2.9720348,
+            "status": "matched",
+            "url": "https://ratings.food.gov.uk/business/497141"
+          }
+        }
+      },
+      "verified_pin": {
+        "evidence": [
+          {
+            "checked_at": "2026-11-03",
+            "match": "unique_name_and_full_postcode",
+            "reference_coordinate": {
+              "lat": 53.4005116,
+              "lng": -2.9720348
+            },
+            "reference_postcode": "L1 9BB",
+            "source": "food-standards-agency-fhrs",
+            "url": "https://ratings.food.gov.uk/business/497141"
+          },
+          {
+            "checked_at": "2026-11-03",
+            "match": "named_venue_full_postcode_and_independent_fsa_agreement",
+            "reference_coordinate": {
+              "lat": 53.400439,
+              "lng": -2.971963
+            },
+            "reference_name": "Cracke, Liverpool - Back-Street Pub with Gallery",
+            "reference_postcode": "L1 9BB",
+            "source": "camra",
+            "url": "https://camra.org.uk/pubs/165590"
+          }
+        ],
+        "lat": 53.400439,
+        "lng": -2.971963,
+        "source": "camra-and-fhrs"
       }
     },
     "v-50a2ff67-fd6e-5abc-9624-821b80575e72": {
@@ -54099,7 +55685,7 @@
         "area": "Somerset",
         "country": "England",
         "dispense": "H",
-        "last": "2026 Q3",
+        "last": "2026 Q4",
         "notes": "Landlord Vic built the pub and has run it since 1973!",
         "pg": "Perm",
         "place_name": "Portishead",
@@ -54454,7 +56040,7 @@
         "area": "Derbyshire",
         "country": "England",
         "dispense": "H/J",
-        "last": "2026 Q3",
+        "last": "2026 Q4",
         "notes": "",
         "pg": "Perm",
         "place_name": "Holbrook",
@@ -54561,7 +56147,7 @@
         "area": "Derbyshire",
         "country": "England",
         "dispense": "H",
-        "last": "2026 Q3",
+        "last": "2026 Q4",
         "notes": "",
         "pg": "Guest",
         "place_name": "Sudbury",
@@ -54816,6 +56402,74 @@
         "lat": 52.63425105555555,
         "lng": -0.3446435555555556,
         "source": "openstreetmap-gb-extract"
+      }
+    },
+    "v-534bfc5b-7a14-54d0-a235-c918231eb243": {
+      "aliases": [
+        "settle social club|settle|bd24 9dw"
+      ],
+      "current_key": "settle social club|settle|bd24 9dw",
+      "listing": {
+        "area": "North Yorkshire",
+        "country": "England",
+        "dispense": "H",
+        "last": "2026 Q4",
+        "notes": "",
+        "pg": "Guest",
+        "place_name": "Settle",
+        "postcode": "BD24 9DW",
+        "pub_name": "Settle Social Club"
+      },
+      "verification_attempt": {
+        "checked_at": "2026-11-03",
+        "reason": "FSA and CAMRA agree on named venue, full postcode and location",
+        "sources": {
+          "camra": {
+            "address": "10 Duke Street",
+            "lat": 54.067674183528,
+            "lng": -2.27769682209,
+            "name": "Settle Social Club, Settle - Club with Snooker Room",
+            "postcode": "BD24 9DW",
+            "status": "matched",
+            "url": "https://camra.org.uk/pubs/144021"
+          },
+          "fsa": {
+            "lat": 54.0677438,
+            "lng": -2.2777547,
+            "status": "matched",
+            "url": "https://ratings.food.gov.uk/business/1861243"
+          }
+        }
+      },
+      "verified_pin": {
+        "evidence": [
+          {
+            "checked_at": "2026-11-03",
+            "match": "unique_name_and_full_postcode",
+            "reference_coordinate": {
+              "lat": 54.0677438,
+              "lng": -2.2777547
+            },
+            "reference_postcode": "BD24 9DW",
+            "source": "food-standards-agency-fhrs",
+            "url": "https://ratings.food.gov.uk/business/1861243"
+          },
+          {
+            "checked_at": "2026-11-03",
+            "match": "named_venue_full_postcode_and_independent_fsa_agreement",
+            "reference_coordinate": {
+              "lat": 54.067674183528,
+              "lng": -2.27769682209
+            },
+            "reference_name": "Settle Social Club, Settle - Club with Snooker Room",
+            "reference_postcode": "BD24 9DW",
+            "source": "camra",
+            "url": "https://camra.org.uk/pubs/144021"
+          }
+        ],
+        "lat": 54.067674183528,
+        "lng": -2.27769682209,
+        "source": "camra-and-fhrs"
       }
     },
     "v-5351f1e7-9b90-50e5-a520-f0c9598a6a36": {
@@ -55660,6 +57314,46 @@
         "source": "openstreetmap-gb-extract"
       }
     },
+    "v-548955f9-8736-595b-9402-0138bf2e770f": {
+      "aliases": [
+        "panton arms|pentraeth (anglesey)|ll75 8az"
+      ],
+      "current_key": "panton arms|pentraeth (anglesey)|ll75 8az",
+      "listing": {
+        "area": "North Wales",
+        "country": "Wales",
+        "dispense": "H",
+        "last": "2026 Q4",
+        "notes": "",
+        "pg": "Guest",
+        "place_name": "Pentraeth (Anglesey)",
+        "postcode": "LL75 8AZ",
+        "pub_name": "Panton Arms"
+      },
+      "verification_attempt": {
+        "checked_at": "2026-11-03",
+        "reason": "CAMRA venue found, but its coordinate is 54.4 metres from FSA (maximum 50)",
+        "sources": {
+          "camra": {
+            "address": "The Square",
+            "difference_metres": 54.4,
+            "lat": 53.281996217982,
+            "lng": -4.215372829361,
+            "name": "Panton Arms, Pentraeth - Coaching Inn with Garden",
+            "postcode": "LL75 8AZ",
+            "status": "coordinate_disagreement",
+            "url": "https://camra.org.uk/pubs/146260"
+          },
+          "fsa": {
+            "lat": 53.281639,
+            "lng": -4.215931,
+            "status": "matched",
+            "url": "https://ratings.food.gov.uk/business/114182"
+          }
+        }
+      },
+      "verified_pin": null
+    },
     "v-54a1b390-c593-5828-a06e-52905548f5ca": {
       "aliases": [
         "constitutional club (pmc)|swadlincote: central|de11 0an",
@@ -56333,7 +58027,7 @@
         "area": "Greater London",
         "country": "England",
         "dispense": "H",
-        "last": "2026 Q3",
+        "last": "2026 Q4",
         "notes": "",
         "pg": "Guest",
         "place_name": "Islington N1",
@@ -56489,6 +58183,142 @@
         "lat": 52.8227794625,
         "lng": -1.429328525,
         "source": "openstreetmap-gb-extract"
+      }
+    },
+    "v-56b3e28f-3fff-5717-be36-519b8e204f0f": {
+      "aliases": [
+        "great western|wolverhampton: central|wv10 0dg"
+      ],
+      "current_key": "great western|wolverhampton: central|wv10 0dg",
+      "listing": {
+        "area": "West Midlands",
+        "country": "England",
+        "dispense": "H",
+        "last": "2026 Q4",
+        "notes": "",
+        "pg": "Guest",
+        "place_name": "Wolverhampton: Central",
+        "postcode": "WV10 0DG",
+        "pub_name": "Great Western"
+      },
+      "verification_attempt": {
+        "checked_at": "2026-11-03",
+        "reason": "FSA and CAMRA agree on named venue, full postcode and location",
+        "sources": {
+          "camra": {
+            "address": "9 Sun Street",
+            "lat": 52.587103592327,
+            "lng": -2.117662230654,
+            "name": "Great Western, Wolverhampton - Grade II Listed Pub",
+            "postcode": "WV10 0DG",
+            "status": "matched",
+            "url": "https://camra.org.uk/pubs/127008"
+          },
+          "fsa": {
+            "lat": 52.587099,
+            "lng": -2.117652,
+            "status": "matched",
+            "url": "https://ratings.food.gov.uk/business/608880"
+          }
+        }
+      },
+      "verified_pin": {
+        "evidence": [
+          {
+            "checked_at": "2026-11-03",
+            "match": "unique_name_and_full_postcode",
+            "reference_coordinate": {
+              "lat": 52.587099,
+              "lng": -2.117652
+            },
+            "reference_postcode": "WV10 0DG",
+            "source": "food-standards-agency-fhrs",
+            "url": "https://ratings.food.gov.uk/business/608880"
+          },
+          {
+            "checked_at": "2026-11-03",
+            "match": "named_venue_full_postcode_and_independent_fsa_agreement",
+            "reference_coordinate": {
+              "lat": 52.587103592327,
+              "lng": -2.117662230654
+            },
+            "reference_name": "Great Western, Wolverhampton - Grade II Listed Pub",
+            "reference_postcode": "WV10 0DG",
+            "source": "camra",
+            "url": "https://camra.org.uk/pubs/127008"
+          }
+        ],
+        "lat": 52.587103592327,
+        "lng": -2.117662230654,
+        "source": "camra-and-fhrs"
+      }
+    },
+    "v-56ccfe69-691d-5487-8f64-bee410ee26dc": {
+      "aliases": [
+        "lord nelson|beverley|hu17 0np"
+      ],
+      "current_key": "lord nelson|beverley|hu17 0np",
+      "listing": {
+        "area": "East Yorkshire",
+        "country": "England",
+        "dispense": "H",
+        "last": "2026 Q4",
+        "notes": "",
+        "pg": "Guest",
+        "place_name": "Beverley",
+        "postcode": "HU17 0NP",
+        "pub_name": "Lord Nelson"
+      },
+      "verification_attempt": {
+        "checked_at": "2026-11-03",
+        "reason": "FSA and CAMRA agree on named venue, full postcode and location",
+        "sources": {
+          "camra": {
+            "address": "13 Flemingate",
+            "lat": 53.839115,
+            "lng": -0.422509,
+            "name": "Lord Nelson, Beverley - Grade II* Listed Pub",
+            "postcode": "HU17 0NP",
+            "status": "matched",
+            "url": "https://camra.org.uk/pubs/180778"
+          },
+          "fsa": {
+            "lat": 53.839304,
+            "lng": -0.422834,
+            "status": "matched",
+            "url": "https://ratings.food.gov.uk/business/439746"
+          }
+        }
+      },
+      "verified_pin": {
+        "evidence": [
+          {
+            "checked_at": "2026-11-03",
+            "match": "unique_name_and_full_postcode",
+            "reference_coordinate": {
+              "lat": 53.839304,
+              "lng": -0.422834
+            },
+            "reference_postcode": "HU17 0NP",
+            "source": "food-standards-agency-fhrs",
+            "url": "https://ratings.food.gov.uk/business/439746"
+          },
+          {
+            "checked_at": "2026-11-03",
+            "match": "named_venue_full_postcode_and_independent_fsa_agreement",
+            "reference_coordinate": {
+              "lat": 53.839115,
+              "lng": -0.422509
+            },
+            "reference_name": "Lord Nelson, Beverley - Grade II* Listed Pub",
+            "reference_postcode": "HU17 0NP",
+            "source": "camra",
+            "url": "https://camra.org.uk/pubs/180778"
+          }
+        ],
+        "lat": 53.839115,
+        "lng": -0.422509,
+        "source": "camra-and-fhrs"
       }
     },
     "v-56d162bc-5e13-58fa-9aec-a23ab8871ab2": {
@@ -57059,7 +58889,7 @@
         "area": "Staffordshire",
         "country": "England",
         "dispense": "H",
-        "last": "2026 Q2",
+        "last": "2026 Q4",
         "notes": "",
         "pg": "Perm",
         "place_name": "Stoke: Fenton",
@@ -57967,7 +59797,7 @@
         "area": "Durham",
         "country": "England",
         "dispense": "H",
-        "last": "2026 Q3",
+        "last": "2026 Q4",
         "notes": "incorporates Herd Grill",
         "pg": "Perm",
         "place_name": "Sedgefield",
@@ -58231,6 +60061,40 @@
         "lng": -2.0430979,
         "source": "openstreetmap-gb-extract"
       }
+    },
+    "v-59f0070d-7f4c-559e-b10b-e85d2383e5bc": {
+      "aliases": [
+        "crown|southam|cv47 1ph"
+      ],
+      "current_key": "crown|southam|cv47 1ph",
+      "listing": {
+        "area": "Warwickshire",
+        "country": "England",
+        "dispense": "H",
+        "last": "2026 Q4",
+        "notes": "",
+        "pg": "Guest",
+        "place_name": "Southam",
+        "postcode": "CV47 1PH",
+        "pub_name": "Crown"
+      },
+      "verification_attempt": {
+        "checked_at": "2026-11-03",
+        "reason": "CAMRA search returned no same-name/full-postcode venue",
+        "sources": {
+          "camra": {
+            "records_returned": 202,
+            "status": "unmatched"
+          },
+          "fsa": {
+            "lat": 52.25286901,
+            "lng": -1.38747692,
+            "status": "matched",
+            "url": "https://ratings.food.gov.uk/business/1912629"
+          }
+        }
+      },
+      "verified_pin": null
     },
     "v-5a7eafa6-1e23-50da-804e-e75569ac961f": {
       "aliases": [
@@ -58601,8 +60465,8 @@
         "area": "North Wales",
         "country": "Wales",
         "dispense": "H",
-        "last": "2026 Q1",
-        "notes": "",
+        "last": "2026 Q4",
+        "notes": "AKA Halcyon Quest",
         "pg": "Perm",
         "place_name": "Prestatyn",
         "postcode": "LL19 9DT",
@@ -58815,7 +60679,7 @@
         "area": "Derbyshire",
         "country": "England",
         "dispense": "H",
-        "last": "2026 Q3",
+        "last": "2026 Q4",
         "notes": "",
         "pg": "Perm",
         "place_name": "Belper: Central",
@@ -61230,7 +63094,7 @@
         "area": "West Midlands",
         "country": "England",
         "dispense": "H",
-        "last": "2026 Q3",
+        "last": "2026 Q4",
         "notes": "",
         "pg": "Perm",
         "place_name": "Birmingham: Central",
@@ -61580,7 +63444,7 @@
         "area": "Derbyshire",
         "country": "England",
         "dispense": "H",
-        "last": "2026 Q2",
+        "last": "2026 Q4",
         "notes": "",
         "pg": "Perm",
         "place_name": "Castle Gresley",
@@ -62680,7 +64544,7 @@
         "area": "Derbyshire",
         "country": "England",
         "dispense": "H",
-        "last": "2026 Q3",
+        "last": "2026 Q4",
         "notes": "",
         "pg": "Perm",
         "place_name": "Reapsmoor",
@@ -63319,10 +65183,10 @@
       ],
       "current_key": "red lion|old colwyn|ll29 9pl",
       "listing": {
-        "area": "North-West Wales",
+        "area": "North Wales",
         "country": "Wales",
         "dispense": "H",
-        "last": "2025 Q4",
+        "last": "2026 Q4",
         "notes": "",
         "pg": "Guest",
         "place_name": "Old Colwyn",
@@ -65175,7 +67039,7 @@
         "area": "Merseyside",
         "country": "England",
         "dispense": "H",
-        "last": "2026 Q3",
+        "last": "2026 Q4",
         "notes": "",
         "pg": "Perm",
         "place_name": "Southport: Central",
@@ -65578,7 +67442,7 @@
         "area": "Derbyshire",
         "country": "England",
         "dispense": "H",
-        "last": "2026 Q3",
+        "last": "2026 Q4",
         "notes": "",
         "pg": "Perm",
         "place_name": "Cromford",
@@ -65736,6 +67600,74 @@
         "lat": 53.9609075,
         "lng": -2.0192026,
         "source": "openstreetmap-gb-extract"
+      }
+    },
+    "v-6946317f-e8ea-5ab7-a0aa-6ba7d6df8cb8": {
+      "aliases": [
+        "globe|liverpool: central|l1 1hw"
+      ],
+      "current_key": "globe|liverpool: central|l1 1hw",
+      "listing": {
+        "area": "Merseyside",
+        "country": "England",
+        "dispense": "H",
+        "last": "2026 Q4",
+        "notes": "",
+        "pg": "Guest",
+        "place_name": "Liverpool: Central",
+        "postcode": "L1 1HW",
+        "pub_name": "Globe"
+      },
+      "verification_attempt": {
+        "checked_at": "2026-11-03",
+        "reason": "FSA and CAMRA agree on named venue, full postcode and location",
+        "sources": {
+          "camra": {
+            "address": "17 Cases Street",
+            "lat": 53.405213,
+            "lng": -2.980344,
+            "name": "Globe, Liverpool - Cosy City Centre Local",
+            "postcode": "L1 1HW",
+            "status": "matched",
+            "url": "https://camra.org.uk/pubs/166248"
+          },
+          "fsa": {
+            "lat": 53.4052351,
+            "lng": -2.9803104,
+            "status": "matched",
+            "url": "https://ratings.food.gov.uk/business/1929140"
+          }
+        }
+      },
+      "verified_pin": {
+        "evidence": [
+          {
+            "checked_at": "2026-11-03",
+            "match": "unique_name_and_full_postcode",
+            "reference_coordinate": {
+              "lat": 53.4052351,
+              "lng": -2.9803104
+            },
+            "reference_postcode": "L1 1HW",
+            "source": "food-standards-agency-fhrs",
+            "url": "https://ratings.food.gov.uk/business/1929140"
+          },
+          {
+            "checked_at": "2026-11-03",
+            "match": "named_venue_full_postcode_and_independent_fsa_agreement",
+            "reference_coordinate": {
+              "lat": 53.405213,
+              "lng": -2.980344
+            },
+            "reference_name": "Globe, Liverpool - Cosy City Centre Local",
+            "reference_postcode": "L1 1HW",
+            "source": "camra",
+            "url": "https://camra.org.uk/pubs/166248"
+          }
+        ],
+        "lat": 53.405213,
+        "lng": -2.980344,
+        "source": "camra-and-fhrs"
       }
     },
     "v-696657d8-51ba-5487-b16e-7f3546bfd125": {
@@ -67168,7 +69100,7 @@
         "area": "Derbyshire",
         "country": "England",
         "dispense": "H",
-        "last": "2026 Q3",
+        "last": "2026 Q4",
         "notes": "",
         "pg": "Perm",
         "place_name": "Castle Gresley",
@@ -67713,9 +69645,9 @@
         "area": "Devon",
         "country": "England",
         "dispense": "H",
-        "last": "2026 Q3",
+        "last": "2026 Q4",
         "notes": "",
-        "pg": "Guest",
+        "pg": "Perm",
         "place_name": "Plymouth: Central",
         "postcode": "PL1 2TG",
         "pub_name": "Bank"
@@ -69388,7 +71320,7 @@
         "area": "Warwickshire",
         "country": "England",
         "dispense": "H",
-        "last": "2026 Q3",
+        "last": "2026 Q4",
         "notes": "",
         "pg": "Perm",
         "place_name": "Ridge Lane",
@@ -69590,7 +71522,7 @@
         "area": "Staffordshire",
         "country": "England",
         "dispense": "H",
-        "last": "2026 Q3",
+        "last": "2026 Q4",
         "notes": "",
         "pg": "Guest",
         "place_name": "Burton U-T: Stapenhill",
@@ -69697,7 +71629,7 @@
         "area": "Nottinghamshire",
         "country": "England",
         "dispense": "H",
-        "last": "2026 Q3",
+        "last": "2026 Q4",
         "notes": "\"very regular guest\" (Sep 25)",
         "pg": "Guest",
         "place_name": "Selston",
@@ -70640,6 +72572,74 @@
         "source": "food-standards-agency-fhrs"
       }
     },
+    "v-71cd6c30-2d22-51b0-86f0-ffbcc0bf6202": {
+      "aliases": [
+        "pant yr ardd|tregarth|ll57 4pl"
+      ],
+      "current_key": "pant yr ardd|tregarth|ll57 4pl",
+      "listing": {
+        "area": "North Wales",
+        "country": "Wales",
+        "dispense": "H",
+        "last": "2026 Q4",
+        "notes": "",
+        "pg": "Guest",
+        "place_name": "Tregarth",
+        "postcode": "LL57 4PL",
+        "pub_name": "Pant yr Ardd"
+      },
+      "verification_attempt": {
+        "checked_at": "2026-11-03",
+        "reason": "FSA and CAMRA agree on named venue, full postcode and location",
+        "sources": {
+          "camra": {
+            "address": "B4409",
+            "lat": 53.189515,
+            "lng": -4.090606,
+            "name": "Pant Yr Ardd, Tregarth - Freehouse with Beer Garden",
+            "postcode": "LL57 4PL",
+            "status": "matched",
+            "url": "https://camra.org.uk/pubs/146304"
+          },
+          "fsa": {
+            "lat": 53.189826965332,
+            "lng": -4.09012794494629,
+            "status": "matched",
+            "url": "https://ratings.food.gov.uk/business/1436132"
+          }
+        }
+      },
+      "verified_pin": {
+        "evidence": [
+          {
+            "checked_at": "2026-11-03",
+            "match": "unique_name_and_full_postcode",
+            "reference_coordinate": {
+              "lat": 53.189826965332,
+              "lng": -4.09012794494629
+            },
+            "reference_postcode": "LL57 4PL",
+            "source": "food-standards-agency-fhrs",
+            "url": "https://ratings.food.gov.uk/business/1436132"
+          },
+          {
+            "checked_at": "2026-11-03",
+            "match": "named_venue_full_postcode_and_independent_fsa_agreement",
+            "reference_coordinate": {
+              "lat": 53.189515,
+              "lng": -4.090606
+            },
+            "reference_name": "Pant Yr Ardd, Tregarth - Freehouse with Beer Garden",
+            "reference_postcode": "LL57 4PL",
+            "source": "camra",
+            "url": "https://camra.org.uk/pubs/146304"
+          }
+        ],
+        "lat": 53.189515,
+        "lng": -4.090606,
+        "source": "camra-and-fhrs"
+      }
+    },
     "v-71e35bfa-6e25-5d89-a45d-f0dc746c8d96": {
       "aliases": [
         "queens head|hinckley|le10 1rj"
@@ -70848,6 +72848,74 @@
         "lat": 51.71344537777778,
         "lng": 0.16424752222222222,
         "source": "openstreetmap-gb-extract"
+      }
+    },
+    "v-7243c93a-08da-53c6-af08-c96618b6a371": {
+      "aliases": [
+        "bell foundry|loughborough|le11 5bl"
+      ],
+      "current_key": "bell foundry|loughborough|le11 5bl",
+      "listing": {
+        "area": "Leicestershire",
+        "country": "England",
+        "dispense": "H",
+        "last": "2026 Q4",
+        "notes": "",
+        "pg": "Guest",
+        "place_name": "Loughborough",
+        "postcode": "LE11 5BL",
+        "pub_name": "Bell Foundry"
+      },
+      "verification_attempt": {
+        "checked_at": "2026-11-03",
+        "reason": "FSA and CAMRA agree on named venue, full postcode and location",
+        "sources": {
+          "camra": {
+            "address": "Swan Street",
+            "lat": 52.7726,
+            "lng": -1.2077,
+            "name": "Bell Foundry, Loughborough - Sports Bar",
+            "postcode": "LE11 5BL",
+            "status": "matched",
+            "url": "https://camra.org.uk/pubs/171409"
+          },
+          "fsa": {
+            "lat": 52.772641,
+            "lng": -1.20771,
+            "status": "matched",
+            "url": "https://ratings.food.gov.uk/business/75556"
+          }
+        }
+      },
+      "verified_pin": {
+        "evidence": [
+          {
+            "checked_at": "2026-11-03",
+            "match": "unique_name_and_full_postcode",
+            "reference_coordinate": {
+              "lat": 52.772641,
+              "lng": -1.20771
+            },
+            "reference_postcode": "LE11 5BL",
+            "source": "food-standards-agency-fhrs",
+            "url": "https://ratings.food.gov.uk/business/75556"
+          },
+          {
+            "checked_at": "2026-11-03",
+            "match": "named_venue_full_postcode_and_independent_fsa_agreement",
+            "reference_coordinate": {
+              "lat": 52.7726,
+              "lng": -1.2077
+            },
+            "reference_name": "Bell Foundry, Loughborough - Sports Bar",
+            "reference_postcode": "LE11 5BL",
+            "source": "camra",
+            "url": "https://camra.org.uk/pubs/171409"
+          }
+        ],
+        "lat": 52.7726,
+        "lng": -1.2077,
+        "source": "camra-and-fhrs"
       }
     },
     "v-72b13551-8faa-53ec-8154-192e09b3a12c": {
@@ -73148,7 +75216,7 @@
         "area": "Nottinghamshire",
         "country": "England",
         "dispense": "H",
-        "last": "2026 Q3",
+        "last": "2026 Q4",
         "notes": "",
         "pg": "Perm",
         "place_name": "Nottingham: New Basford",
@@ -74458,7 +76526,7 @@
         "area": "Derbyshire",
         "country": "England",
         "dispense": "H",
-        "last": "2026 Q3",
+        "last": "2026 Q4",
         "notes": "",
         "pg": "Perm",
         "place_name": "Newhall",
@@ -74913,7 +76981,7 @@
         "area": "Derbyshire",
         "country": "England",
         "dispense": "H",
-        "last": "2026 Q3",
+        "last": "2026 Q4",
         "notes": "",
         "pg": "Perm",
         "place_name": "Derby: Central",
@@ -74965,6 +77033,46 @@
         "lng": -1.4779033291666668,
         "source": "openstreetmap-gb-extract"
       }
+    },
+    "v-7c328aa9-453e-56d5-afaa-3e6011fb7385": {
+      "aliases": [
+        "church inn|darley dale|de4 2gg"
+      ],
+      "current_key": "church inn|darley dale|de4 2gg",
+      "listing": {
+        "area": "Derbyshire",
+        "country": "England",
+        "dispense": "H",
+        "last": "2026 Q3",
+        "notes": "",
+        "pg": "Guest",
+        "place_name": "Darley Dale",
+        "postcode": "DE4 2GG",
+        "pub_name": "Church Inn"
+      },
+      "verification_attempt": {
+        "checked_at": "2026-11-03",
+        "reason": "CAMRA venue found, but its coordinate is 161.6 metres from FSA (maximum 50)",
+        "sources": {
+          "camra": {
+            "address": "Church Rd, Darley Dale,, Matlock",
+            "difference_metres": 161.6,
+            "lat": 53.165214,
+            "lng": -1.601077,
+            "name": "Church Inn, Darley Dale - Village Pub with Music",
+            "postcode": "DE4 2GG",
+            "status": "coordinate_disagreement",
+            "url": "https://camra.org.uk/pubs/165764"
+          },
+          "fsa": {
+            "lat": 53.166558,
+            "lng": -1.602001,
+            "status": "matched",
+            "url": "https://ratings.food.gov.uk/business/1931032"
+          }
+        }
+      },
+      "verified_pin": null
     },
     "v-7c55fdbf-b583-58e0-a3c9-c0c8f1c2661b": {
       "aliases": [
@@ -75596,7 +77704,7 @@
         "area": "Merseyside",
         "country": "England",
         "dispense": "H",
-        "last": "2026 Q3",
+        "last": "2026 Q4",
         "notes": "",
         "pg": "Guest",
         "place_name": "Southport: Central",
@@ -77680,6 +79788,74 @@
         "source": "manual_named_place_map"
       }
     },
+    "v-8060d339-96cf-553b-8e8f-a43b79ce7db2": {
+      "aliases": [
+        "park inn|southampton: shirley|so16 4fn"
+      ],
+      "current_key": "park inn|southampton: shirley|so16 4fn",
+      "listing": {
+        "area": "Hampshire",
+        "country": "England",
+        "dispense": "H",
+        "last": "2026 Q4",
+        "notes": "",
+        "pg": "Guest",
+        "place_name": "Southampton: Shirley",
+        "postcode": "SO16 4FN",
+        "pub_name": "Park Inn"
+      },
+      "verification_attempt": {
+        "checked_at": "2026-11-03",
+        "reason": "FSA and CAMRA agree on named venue, full postcode and location",
+        "sources": {
+          "camra": {
+            "address": "37 Carlisle Road",
+            "lat": 50.92359,
+            "lng": -1.43695,
+            "name": "Park Inn, Southampton - Street Corner Local",
+            "postcode": "SO16 4FN",
+            "status": "matched",
+            "url": "https://camra.org.uk/pubs/188748"
+          },
+          "fsa": {
+            "lat": 50.923432,
+            "lng": -1.436668,
+            "status": "matched",
+            "url": "https://ratings.food.gov.uk/business/220079"
+          }
+        }
+      },
+      "verified_pin": {
+        "evidence": [
+          {
+            "checked_at": "2026-11-03",
+            "match": "unique_name_and_full_postcode",
+            "reference_coordinate": {
+              "lat": 50.923432,
+              "lng": -1.436668
+            },
+            "reference_postcode": "SO16 4FN",
+            "source": "food-standards-agency-fhrs",
+            "url": "https://ratings.food.gov.uk/business/220079"
+          },
+          {
+            "checked_at": "2026-11-03",
+            "match": "named_venue_full_postcode_and_independent_fsa_agreement",
+            "reference_coordinate": {
+              "lat": 50.92359,
+              "lng": -1.43695
+            },
+            "reference_name": "Park Inn, Southampton - Street Corner Local",
+            "reference_postcode": "SO16 4FN",
+            "source": "camra",
+            "url": "https://camra.org.uk/pubs/188748"
+          }
+        ],
+        "lat": 50.92359,
+        "lng": -1.43695,
+        "source": "camra-and-fhrs"
+      }
+    },
     "v-809531b4-2e54-53fe-a824-d4187ca7d360": {
       "aliases": [
         "whippet inn|newcastle-u-l: wolstanton|st5 0en"
@@ -77837,7 +80013,7 @@
         "area": "Leicestershire",
         "country": "England",
         "dispense": "H",
-        "last": "2026 Q3",
+        "last": "2026 Q4",
         "notes": "",
         "pg": "Perm",
         "place_name": "Hinckley",
@@ -78253,7 +80429,7 @@
         "area": "Staffordshire",
         "country": "England",
         "dispense": "H",
-        "last": "2026 Q3",
+        "last": "2026 Q4",
         "notes": "",
         "pg": "Perm",
         "place_name": "Newcastle-U-L: Central",
@@ -78493,7 +80669,7 @@
         "area": "Derbyshire",
         "country": "England",
         "dispense": "H",
-        "last": "2026 Q3",
+        "last": "2026 Q4",
         "notes": "",
         "pg": "Guest",
         "place_name": "Heanor",
@@ -80018,7 +82194,7 @@
         "area": "Staffordshire",
         "country": "England",
         "dispense": "H",
-        "last": "2026 Q3",
+        "last": "2026 Q4",
         "notes": "",
         "pg": "Perm",
         "place_name": "Abbots Bromley",
@@ -80333,7 +82509,7 @@
         "area": "Greater London",
         "country": "England",
         "dispense": "H",
-        "last": "2026 Q3",
+        "last": "2026 Q4",
         "notes": "",
         "pg": "Guest",
         "place_name": "Borough SE1",
@@ -80430,7 +82606,7 @@
         "area": "Nottinghamshire",
         "country": "England",
         "dispense": "H",
-        "last": "2026 Q2",
+        "last": "2026 Q4",
         "notes": "",
         "pg": "Guest",
         "place_name": "Newstead",
@@ -80640,7 +82816,7 @@
         "area": "Shropshire",
         "country": "England",
         "dispense": "H",
-        "last": "2026 Q3",
+        "last": "2026 Q4",
         "notes": "",
         "pg": "Perm",
         "place_name": "Shrewsbury: Central",
@@ -80747,7 +82923,7 @@
         "area": "Leicestershire",
         "country": "England",
         "dispense": "H",
-        "last": "2026 Q2",
+        "last": "2026 Q4",
         "notes": "",
         "pg": "Perm",
         "place_name": "Newbold",
@@ -82154,7 +84330,7 @@
         "area": "Lincolnshire",
         "country": "England",
         "dispense": "H",
-        "last": "2026 Q3",
+        "last": "2026 Q4",
         "notes": "",
         "pg": "Perm",
         "place_name": "Cleethorpes",
@@ -83171,7 +85347,7 @@
         "area": "Derbyshire",
         "country": "England",
         "dispense": "H",
-        "last": "2026 Q2",
+        "last": "2026 Q4",
         "notes": "\"due to a high price from supplier we only occasionally have it\"",
         "pg": "Guest",
         "place_name": "Draycott",
@@ -83899,6 +86075,74 @@
         "source": "food-standards-agency-fhrs"
       }
     },
+    "v-8ca08ab9-8611-5132-a7c6-2f7a29f93fc6": {
+      "aliases": [
+        "hanbury|islington n1|n1 7du"
+      ],
+      "current_key": "hanbury|islington n1|n1 7du",
+      "listing": {
+        "area": "Greater London",
+        "country": "England",
+        "dispense": "H",
+        "last": "2026 Q4",
+        "notes": "",
+        "pg": "Guest",
+        "place_name": "Islington N1",
+        "postcode": "N1 7DU",
+        "pub_name": "Hanbury"
+      },
+      "verification_attempt": {
+        "checked_at": "2026-11-03",
+        "reason": "FSA and CAMRA agree on named venue, full postcode and location",
+        "sources": {
+          "camra": {
+            "address": "33 Linton Street",
+            "lat": 51.536,
+            "lng": -0.0937,
+            "name": "Hanbury, Islington - Street Corner Pub",
+            "postcode": "N1 7DU",
+            "status": "matched",
+            "url": "https://camra.org.uk/pubs/124756"
+          },
+          "fsa": {
+            "lat": 51.5362096,
+            "lng": -0.0934957,
+            "status": "matched",
+            "url": "https://ratings.food.gov.uk/business/1380835"
+          }
+        }
+      },
+      "verified_pin": {
+        "evidence": [
+          {
+            "checked_at": "2026-11-03",
+            "match": "unique_name_and_full_postcode",
+            "reference_coordinate": {
+              "lat": 51.5362096,
+              "lng": -0.0934957
+            },
+            "reference_postcode": "N1 7DU",
+            "source": "food-standards-agency-fhrs",
+            "url": "https://ratings.food.gov.uk/business/1380835"
+          },
+          {
+            "checked_at": "2026-11-03",
+            "match": "named_venue_full_postcode_and_independent_fsa_agreement",
+            "reference_coordinate": {
+              "lat": 51.536,
+              "lng": -0.0937
+            },
+            "reference_name": "Hanbury, Islington - Street Corner Pub",
+            "reference_postcode": "N1 7DU",
+            "source": "camra",
+            "url": "https://camra.org.uk/pubs/124756"
+          }
+        ],
+        "lat": 51.536,
+        "lng": -0.0937,
+        "source": "camra-and-fhrs"
+      }
+    },
     "v-8cde8d00-9411-5b53-8eb9-fac4cce54dab": {
       "aliases": [
         "three horseshoes|stoke golding|cv13 6he"
@@ -84274,7 +86518,7 @@
         "area": "Leicestershire",
         "country": "England",
         "dispense": "H",
-        "last": "2026 Q3",
+        "last": "2026 Q4",
         "notes": "",
         "pg": "Perm",
         "place_name": "Leicester: Central",
@@ -85020,6 +87264,74 @@
         "source": "openstreetmap-gb-extract"
       }
     },
+    "v-8eb08e1f-62d1-5230-bc83-dee40c6d7495": {
+      "aliases": [
+        "george and the dragon|gnosall|st20 0ex"
+      ],
+      "current_key": "george and the dragon|gnosall|st20 0ex",
+      "listing": {
+        "area": "Staffordshire",
+        "country": "England",
+        "dispense": "H",
+        "last": "2026 Q4",
+        "notes": "",
+        "pg": "Perm",
+        "place_name": "Gnosall",
+        "postcode": "ST20 0EX",
+        "pub_name": "George and the Dragon"
+      },
+      "verification_attempt": {
+        "checked_at": "2026-11-03",
+        "reason": "FSA and CAMRA agree on named venue, full postcode and location",
+        "sources": {
+          "camra": {
+            "address": "46 High Street",
+            "lat": 52.785512,
+            "lng": -2.254677,
+            "name": "George & the Dragon, Gnosall - Steampunk Interior",
+            "postcode": "ST20 0EX",
+            "status": "matched",
+            "url": "https://camra.org.uk/pubs/145996"
+          },
+          "fsa": {
+            "lat": 52.785561,
+            "lng": -2.2546397,
+            "status": "matched",
+            "url": "https://ratings.food.gov.uk/business/1195651"
+          }
+        }
+      },
+      "verified_pin": {
+        "evidence": [
+          {
+            "checked_at": "2026-11-03",
+            "match": "unique_name_and_full_postcode",
+            "reference_coordinate": {
+              "lat": 52.785561,
+              "lng": -2.2546397
+            },
+            "reference_postcode": "ST20 0EX",
+            "source": "food-standards-agency-fhrs",
+            "url": "https://ratings.food.gov.uk/business/1195651"
+          },
+          {
+            "checked_at": "2026-11-03",
+            "match": "named_venue_full_postcode_and_independent_fsa_agreement",
+            "reference_coordinate": {
+              "lat": 52.785512,
+              "lng": -2.254677
+            },
+            "reference_name": "George & the Dragon, Gnosall - Steampunk Interior",
+            "reference_postcode": "ST20 0EX",
+            "source": "camra",
+            "url": "https://camra.org.uk/pubs/145996"
+          }
+        ],
+        "lat": 52.785512,
+        "lng": -2.254677,
+        "source": "camra-and-fhrs"
+      }
+    },
     "v-8ed8c1ad-ceb1-56c0-9c67-1218004eb836": {
       "aliases": [
         "travellers rest|stanley|st9 9lx"
@@ -85179,7 +87491,7 @@
         "area": "Derbyshire",
         "country": "England",
         "dispense": "H",
-        "last": "2026 Q3",
+        "last": "2026 Q4",
         "notes": "",
         "pg": "Perm",
         "place_name": "Derby: Central",
@@ -85231,6 +87543,39 @@
         "lng": -1.46790779375,
         "source": "openstreetmap-gb-extract"
       }
+    },
+    "v-904f3702-2d9f-5a94-9a08-766db95b67b3": {
+      "aliases": [
+        "cricketers|epsom|kt18 7sr"
+      ],
+      "current_key": "cricketers|epsom|kt18 7sr",
+      "listing": {
+        "area": "Surrey",
+        "country": "England",
+        "dispense": "H",
+        "last": "2026 Q4",
+        "notes": "",
+        "pg": "Guest",
+        "place_name": "Epsom",
+        "postcode": "KT18 7SR",
+        "pub_name": "Cricketers"
+      },
+      "verification_attempt": {
+        "checked_at": "2026-11-03",
+        "reason": "FSA matching business coordinates are missing or disagree; CAMRA not checked",
+        "sources": {
+          "camra": {
+            "status": "not_checked"
+          },
+          "fsa": {
+            "name_matches": 1,
+            "postcode_matches": 1,
+            "records_returned": 1,
+            "status": "missing_or_ambiguous_coordinates"
+          }
+        }
+      },
+      "verified_pin": null
     },
     "v-907056b1-7744-5174-8871-52dc93927a88": {
       "aliases": [
@@ -85583,7 +87928,7 @@
         "area": "Greater London",
         "country": "England",
         "dispense": "H",
-        "last": "2026 Q3",
+        "last": "2026 Q4",
         "notes": "",
         "pg": "Guest",
         "place_name": "Islington N1",
@@ -86118,7 +88463,7 @@
         "area": "Derbyshire",
         "country": "England",
         "dispense": "H",
-        "last": "2026 Q3",
+        "last": "2026 Q4",
         "notes": "",
         "pg": "Perm",
         "place_name": "Derby: Spondon",
@@ -86216,6 +88561,46 @@
         "source": "owner-reviewed-google-maps"
       }
     },
+    "v-91dc9a73-c434-5a18-968f-d2f88b9edca7": {
+      "aliases": [
+        "marstons sports and social club (pmc)|burton u-t: central|de14 2bg"
+      ],
+      "current_key": "marstons sports and social club (pmc)|burton u-t: central|de14 2bg",
+      "listing": {
+        "area": "Staffordshire",
+        "country": "England",
+        "dispense": "H",
+        "last": "2026 Q4",
+        "notes": "",
+        "pg": "Guest",
+        "place_name": "Burton U-T: Central",
+        "postcode": "DE14 2BG",
+        "pub_name": "Marstons Sports and Social Club (PMC)"
+      },
+      "verification_attempt": {
+        "checked_at": "2026-11-03",
+        "reason": "CAMRA venue found, but its coordinate is 252.7 metres from FSA (maximum 50)",
+        "sources": {
+          "camra": {
+            "address": "Shobnall Road",
+            "difference_metres": 252.7,
+            "lat": 52.8081,
+            "lng": -1.6604,
+            "name": "Marston's Sports & Social Club, Burton upon Trent",
+            "postcode": "DE14 2BG",
+            "status": "coordinate_disagreement",
+            "url": "https://camra.org.uk/pubs/124072"
+          },
+          "fsa": {
+            "lat": 52.807258605957,
+            "lng": -1.65690696239471,
+            "status": "matched",
+            "url": "https://ratings.food.gov.uk/business/1649665"
+          }
+        }
+      },
+      "verified_pin": null
+    },
     "v-91e39428-ed67-5c5a-a37f-02632da45d70": {
       "aliases": [
         "birch brewhouse|cardiff: birchgrove|cf14 4ae"
@@ -86304,7 +88689,7 @@
         "area": "Nottinghamshire",
         "country": "England",
         "dispense": "H",
-        "last": "2026 Q3",
+        "last": "2026 Q4",
         "notes": "",
         "pg": "Guest",
         "place_name": "Mansfield",
@@ -87437,7 +89822,7 @@
         "area": "Hampshire",
         "country": "England",
         "dispense": "H",
-        "last": "2026 Q3",
+        "last": "2026 Q4",
         "notes": "",
         "pg": "Perm",
         "place_name": "Portsmouth",
@@ -87860,7 +90245,7 @@
         "area": "Staffordshire",
         "country": "England",
         "dispense": "H",
-        "last": "2026 Q3",
+        "last": "2026 Q4",
         "notes": "",
         "pg": "Perm",
         "place_name": "Dilhorne",
@@ -88576,6 +90961,74 @@
         "lat": 52.348839500000004,
         "lng": -1.5897321875000001,
         "source": "openstreetmap-gb-extract"
+      }
+    },
+    "v-962bf5fc-54cc-5aa2-8250-ca9a3f1a8086": {
+      "aliases": [
+        "pattenmakers  arms|duffield|de56 4ey"
+      ],
+      "current_key": "pattenmakers  arms|duffield|de56 4ey",
+      "listing": {
+        "area": "Derbyshire",
+        "country": "England",
+        "dispense": "H",
+        "last": "2026 Q4",
+        "notes": "Listed as on via RAF Nov 26",
+        "pg": "Guest",
+        "place_name": "Duffield",
+        "postcode": "DE56 4EY",
+        "pub_name": "Pattenmakers  Arms"
+      },
+      "verification_attempt": {
+        "checked_at": "2026-11-03",
+        "reason": "FSA and CAMRA agree on named venue, full postcode and location",
+        "sources": {
+          "camra": {
+            "address": "4 Crown Street",
+            "lat": 52.988505,
+            "lng": -1.490493,
+            "name": "Pattenmakers Arms, Duffield - Edwardian Gastro-Pub",
+            "postcode": "DE56 4EY",
+            "status": "matched",
+            "url": "https://camra.org.uk/pubs/143511"
+          },
+          "fsa": {
+            "lat": 52.988429,
+            "lng": -1.490783,
+            "status": "matched",
+            "url": "https://ratings.food.gov.uk/business/790"
+          }
+        }
+      },
+      "verified_pin": {
+        "evidence": [
+          {
+            "checked_at": "2026-11-03",
+            "match": "unique_name_and_full_postcode",
+            "reference_coordinate": {
+              "lat": 52.988429,
+              "lng": -1.490783
+            },
+            "reference_postcode": "DE56 4EY",
+            "source": "food-standards-agency-fhrs",
+            "url": "https://ratings.food.gov.uk/business/790"
+          },
+          {
+            "checked_at": "2026-11-03",
+            "match": "named_venue_full_postcode_and_independent_fsa_agreement",
+            "reference_coordinate": {
+              "lat": 52.988505,
+              "lng": -1.490493
+            },
+            "reference_name": "Pattenmakers Arms, Duffield - Edwardian Gastro-Pub",
+            "reference_postcode": "DE56 4EY",
+            "source": "camra",
+            "url": "https://camra.org.uk/pubs/143511"
+          }
+        ],
+        "lat": 52.988505,
+        "lng": -1.490493,
+        "source": "camra-and-fhrs"
       }
     },
     "v-96c69280-8350-5291-9fb1-4267938024b9": {
@@ -89349,7 +91802,7 @@
         "area": "Derbyshire",
         "country": "England",
         "dispense": "H",
-        "last": "2026 Q2",
+        "last": "2026 Q4",
         "notes": "",
         "pg": "Perm",
         "place_name": "Horsley Woodhouse",
@@ -89765,7 +92218,7 @@
         "area": "Leicestershire",
         "country": "England",
         "dispense": "H",
-        "last": "2026 Q3",
+        "last": "2026 Q4",
         "notes": "",
         "pg": "Perm",
         "place_name": "Ashby-de-la-Zouch",
@@ -92851,7 +95304,7 @@
         "area": "Nottinghamshire",
         "country": "England",
         "dispense": "H/B",
-        "last": "2026 Q3",
+        "last": "2026 Q4",
         "notes": "Available Banked",
         "pg": "Perm",
         "place_name": "Nottingham: Central",
@@ -93150,7 +95603,7 @@
         "area": "Derbyshire",
         "country": "England",
         "dispense": "H",
-        "last": "2026 Q3",
+        "last": "2026 Q4",
         "notes": "",
         "pg": "Perm",
         "place_name": "Newton Solney",
@@ -95223,7 +97676,7 @@
         "area": "Leicestershire",
         "country": "England",
         "dispense": "H/J",
-        "last": "2026 Q2",
+        "last": "2026 Q4",
         "notes": "",
         "pg": "Guest",
         "place_name": "Melton Mowbray",
@@ -95746,7 +98199,7 @@
         "area": "Greater Manchester",
         "country": "England",
         "dispense": "H",
-        "last": "2026 Q3",
+        "last": "2026 Q4",
         "notes": "",
         "pg": "Perm",
         "place_name": "Wigan",
@@ -96011,6 +98464,46 @@
         "source": "food-standards-agency-fhrs"
       }
     },
+    "v-a4b4ccce-07e8-508f-8508-4461b5cea58c": {
+      "aliases": [
+        "stag and hounds|burrough on the hill|le14 2jq"
+      ],
+      "current_key": "stag and hounds|burrough on the hill|le14 2jq",
+      "listing": {
+        "area": "Leicestershire",
+        "country": "England",
+        "dispense": "H",
+        "last": "2026 Q4",
+        "notes": "",
+        "pg": "Guest",
+        "place_name": "Burrough on the Hill",
+        "postcode": "LE14 2JQ",
+        "pub_name": "Stag and Hounds"
+      },
+      "verification_attempt": {
+        "checked_at": "2026-11-03",
+        "reason": "CAMRA venue found, but its coordinate is 123.3 metres from FSA (maximum 50)",
+        "sources": {
+          "camra": {
+            "address": "4, Main Street",
+            "difference_metres": 123.3,
+            "lat": 52.68812,
+            "lng": -0.88267,
+            "name": "Stag & Hounds, Burrough on the Hill - Local Food Pub",
+            "postcode": "LE14 2JQ",
+            "status": "coordinate_disagreement",
+            "url": "https://camra.org.uk/pubs/192223"
+          },
+          "fsa": {
+            "lat": 52.688714,
+            "lng": -0.881126,
+            "status": "matched",
+            "url": "https://ratings.food.gov.uk/business/1999586"
+          }
+        }
+      },
+      "verified_pin": null
+    },
     "v-a53a96f3-3672-5b95-a6f6-c15ee1b976eb": {
       "aliases": [
         "black lion|oswestry|sy11 2rj"
@@ -96063,7 +98556,7 @@
         "area": "Shropshire",
         "country": "England",
         "dispense": "H",
-        "last": "2026 Q3",
+        "last": "2026 Q4",
         "notes": "",
         "pg": "Guest",
         "place_name": "Oswestry",
@@ -96444,7 +98937,7 @@
         "area": "Staffordshire",
         "country": "England",
         "dispense": "H",
-        "last": "2026 Q3",
+        "last": "2026 Q4",
         "notes": "",
         "pg": "Perm",
         "place_name": "Stoke: Hanley",
@@ -97154,7 +99647,7 @@
         "area": "Warwickshire",
         "country": "England",
         "dispense": "H",
-        "last": "2026 Q3",
+        "last": "2026 Q4",
         "notes": "",
         "pg": "Perm",
         "place_name": "Warton",
@@ -97443,6 +99936,74 @@
         "source": "food-standards-agency-fhrs"
       }
     },
+    "v-a818cc8e-ea76-5657-bf3b-1844eaacc4b5": {
+      "aliases": [
+        "fox and hounds|belgravia sw1w|sw1w 8hr"
+      ],
+      "current_key": "fox and hounds|belgravia sw1w|sw1w 8hr",
+      "listing": {
+        "area": "Greater London",
+        "country": "England",
+        "dispense": "H",
+        "last": "2026 Q4",
+        "notes": "",
+        "pg": "Guest",
+        "place_name": "Belgravia SW1W",
+        "postcode": "SW1W 8HR",
+        "pub_name": "Fox and Hounds"
+      },
+      "verification_attempt": {
+        "checked_at": "2026-11-03",
+        "reason": "FSA and CAMRA agree on named venue, full postcode and location",
+        "sources": {
+          "camra": {
+            "address": "29 Passmore Street",
+            "lat": 51.491074,
+            "lng": -0.154886,
+            "name": "Fox & Hounds, London - Small Wet-Led Pub",
+            "postcode": "SW1W 8HR",
+            "status": "matched",
+            "url": "https://camra.org.uk/pubs/128834"
+          },
+          "fsa": {
+            "lat": 51.4910775,
+            "lng": -0.1549315,
+            "status": "matched",
+            "url": "https://ratings.food.gov.uk/business/411148"
+          }
+        }
+      },
+      "verified_pin": {
+        "evidence": [
+          {
+            "checked_at": "2026-11-03",
+            "match": "unique_name_and_full_postcode",
+            "reference_coordinate": {
+              "lat": 51.4910775,
+              "lng": -0.1549315
+            },
+            "reference_postcode": "SW1W 8HR",
+            "source": "food-standards-agency-fhrs",
+            "url": "https://ratings.food.gov.uk/business/411148"
+          },
+          {
+            "checked_at": "2026-11-03",
+            "match": "named_venue_full_postcode_and_independent_fsa_agreement",
+            "reference_coordinate": {
+              "lat": 51.491074,
+              "lng": -0.154886
+            },
+            "reference_name": "Fox & Hounds, London - Small Wet-Led Pub",
+            "reference_postcode": "SW1W 8HR",
+            "source": "camra",
+            "url": "https://camra.org.uk/pubs/128834"
+          }
+        ],
+        "lat": 51.491074,
+        "lng": -0.154886,
+        "source": "camra-and-fhrs"
+      }
+    },
     "v-a829ca94-ad6b-5ad5-856e-65e75b429b0d": {
       "aliases": [
         "ye old elm tree|durham|dh1 4ps"
@@ -97487,7 +100048,7 @@
         "area": "Durham",
         "country": "England",
         "dispense": "H",
-        "last": "2026 Q2",
+        "last": "2026 Q4",
         "notes": "\"every now and again, try to get some for National Bass Day\"",
         "pg": "Guest",
         "place_name": "Durham",
@@ -97663,7 +100224,7 @@
         "area": "Lincolnshire",
         "country": "England",
         "dispense": "H",
-        "last": "2026 Q2",
+        "last": "2026 Q4",
         "notes": "",
         "pg": "Perm",
         "place_name": "Louth",
@@ -98051,7 +100612,7 @@
         "area": "Staffordshire",
         "country": "England",
         "dispense": "H",
-        "last": "2026 Q2",
+        "last": "2026 Q4",
         "notes": "",
         "pg": "Perm",
         "place_name": "Burton U-T: Central",
@@ -98309,7 +100870,7 @@
         "area": "Derbyshire",
         "country": "England",
         "dispense": "H",
-        "last": "2026 Q2",
+        "last": "2026 Q4",
         "notes": "",
         "pg": "Perm",
         "place_name": "Kings Newton",
@@ -98511,7 +101072,7 @@
         "area": "Staffordshire",
         "country": "England",
         "dispense": "H",
-        "last": "2026 Q3",
+        "last": "2026 Q4",
         "notes": "Was Weighbridge",
         "pg": "Perm",
         "place_name": "Burton U-T: Central",
@@ -98997,7 +101558,7 @@
         "area": "Nottinghamshire",
         "country": "England",
         "dispense": "H",
-        "last": "2026 Q3",
+        "last": "2026 Q4",
         "notes": "\"guest beer which he has twice a month\"",
         "pg": "Guest",
         "place_name": "Giltbrook",
@@ -99048,6 +101609,74 @@
         "lat": 53.006680100000004,
         "lng": -1.2820710166666667,
         "source": "openstreetmap-gb-extract"
+      }
+    },
+    "v-aa44b1b0-91be-5ffb-8583-1b0f7dfd4781": {
+      "aliases": [
+        "greyhound hotel|cromford|de4 3qe"
+      ],
+      "current_key": "greyhound hotel|cromford|de4 3qe",
+      "listing": {
+        "area": "Derbyshire",
+        "country": "England",
+        "dispense": "H",
+        "last": "2026 Q4",
+        "notes": "",
+        "pg": "Guest",
+        "place_name": "Cromford",
+        "postcode": "DE4 3QE",
+        "pub_name": "Greyhound Hotel"
+      },
+      "verification_attempt": {
+        "checked_at": "2026-11-03",
+        "reason": "FSA and CAMRA agree on named venue, full postcode and location",
+        "sources": {
+          "camra": {
+            "address": "Market Place",
+            "lat": 53.108651,
+            "lng": -1.560486,
+            "name": "Greyhound, Cromford - Market Place Pub",
+            "postcode": "DE4 3QE",
+            "status": "matched",
+            "url": "https://camra.org.uk/pubs/165758"
+          },
+          "fsa": {
+            "lat": 53.108873,
+            "lng": -1.560228,
+            "status": "matched",
+            "url": "https://ratings.food.gov.uk/business/1993992"
+          }
+        }
+      },
+      "verified_pin": {
+        "evidence": [
+          {
+            "checked_at": "2026-11-03",
+            "match": "unique_name_and_full_postcode",
+            "reference_coordinate": {
+              "lat": 53.108873,
+              "lng": -1.560228
+            },
+            "reference_postcode": "DE4 3QE",
+            "source": "food-standards-agency-fhrs",
+            "url": "https://ratings.food.gov.uk/business/1993992"
+          },
+          {
+            "checked_at": "2026-11-03",
+            "match": "named_venue_full_postcode_and_independent_fsa_agreement",
+            "reference_coordinate": {
+              "lat": 53.108651,
+              "lng": -1.560486
+            },
+            "reference_name": "Greyhound, Cromford - Market Place Pub",
+            "reference_postcode": "DE4 3QE",
+            "source": "camra",
+            "url": "https://camra.org.uk/pubs/165758"
+          }
+        ],
+        "lat": 53.108651,
+        "lng": -1.560486,
+        "source": "camra-and-fhrs"
       }
     },
     "v-aa8fe83d-60ba-5937-9a59-ede918725a5c": {
@@ -99530,7 +102159,7 @@
         "area": "Greater Manchester",
         "country": "England",
         "dispense": "H",
-        "last": "2026 Q3",
+        "last": "2026 Q4",
         "notes": "",
         "pg": "Perm",
         "place_name": "Salford",
@@ -99635,7 +102264,7 @@
         "area": "Tyne and Wear",
         "country": "England",
         "dispense": "H",
-        "last": "2026 Q3",
+        "last": "2026 Q4",
         "notes": "",
         "pg": "Perm",
         "place_name": "Newcastle: Central",
@@ -99687,6 +102316,39 @@
         "lng": -1.6045721,
         "source": "openstreetmap-gb-extract"
       }
+    },
+    "v-ac3d5f12-6e5e-5205-b8e0-74f09dfa9e6c": {
+      "aliases": [
+        "windmill inn|ingham|ln1 2yq"
+      ],
+      "current_key": "windmill inn|ingham|ln1 2yq",
+      "listing": {
+        "area": "Lincolnshire",
+        "country": "England",
+        "dispense": "H",
+        "last": "2026 Q4",
+        "notes": "",
+        "pg": "Perm",
+        "place_name": "Ingham",
+        "postcode": "LN1 2YQ",
+        "pub_name": "Windmill Inn"
+      },
+      "verification_attempt": {
+        "checked_at": "2026-11-03",
+        "reason": "FSA returned no businesses at the listed full postcode; CAMRA not checked",
+        "sources": {
+          "camra": {
+            "status": "not_checked"
+          },
+          "fsa": {
+            "name_matches": 0,
+            "postcode_matches": 0,
+            "records_returned": 0,
+            "status": "no_postcode_match"
+          }
+        }
+      },
+      "verified_pin": null
     },
     "v-ac778227-1ccd-5f63-98cd-f4744b9915cf": {
       "aliases": [
@@ -99742,7 +102404,7 @@
         "area": "Derbyshire",
         "country": "England",
         "dispense": "H",
-        "last": "2026 Q3",
+        "last": "2026 Q4",
         "notes": "",
         "pg": "Guest",
         "place_name": "Ripley: Central",
@@ -100076,6 +102738,39 @@
         "source": "openstreetmap-gb-extract"
       }
     },
+    "v-ad1cdbb6-9c64-5a6a-a5ce-53557e5637f7": {
+      "aliases": [
+        "nineteen.57|talybont|ll43 2aq"
+      ],
+      "current_key": "nineteen.57|talybont|ll43 2aq",
+      "listing": {
+        "area": "North Wales",
+        "country": "Wales",
+        "dispense": "H",
+        "last": "2026 Q4",
+        "notes": "Islawrffordd Caravan Park",
+        "pg": "Guest",
+        "place_name": "Talybont",
+        "postcode": "LL43 2AQ",
+        "pub_name": "Nineteen.57"
+      },
+      "verification_attempt": {
+        "checked_at": "2026-11-03",
+        "reason": "FSA businesses at the postcode do not match the pub name; CAMRA not checked",
+        "sources": {
+          "camra": {
+            "status": "not_checked"
+          },
+          "fsa": {
+            "name_matches": 0,
+            "postcode_matches": 4,
+            "records_returned": 4,
+            "status": "no_name_match"
+          }
+        }
+      },
+      "verified_pin": null
+    },
     "v-ad20735b-d2c0-5bbb-9c3e-f80215886e05": {
       "aliases": [
         "swan inn|little haven|sa62 3ul"
@@ -100407,7 +103102,7 @@
         "area": "Derbyshire",
         "country": "England",
         "dispense": "H",
-        "last": "2026 Q3",
+        "last": "2026 Q4",
         "notes": "",
         "pg": "Perm",
         "place_name": "Derby: Central",
@@ -100512,7 +103207,7 @@
         "area": "Derbyshire",
         "country": "England",
         "dispense": "H",
-        "last": "2026 Q2",
+        "last": "2026 Q4",
         "notes": "",
         "pg": "Perm",
         "place_name": "Wirksworth",
@@ -100619,7 +103314,7 @@
         "area": "Cornwall",
         "country": "England",
         "dispense": "H",
-        "last": "2026 Q3",
+        "last": "2026 Q4",
         "notes": "",
         "pg": "Perm",
         "place_name": "Bodmin",
@@ -101221,7 +103916,7 @@
         "area": "Staffordshire",
         "country": "England",
         "dispense": "H",
-        "last": "2026 Q2",
+        "last": "2026 Q4",
         "notes": "",
         "pg": "Perm",
         "place_name": "Newcastle-U-L: Central",
@@ -101566,7 +104261,7 @@
         "area": "Leicestershire",
         "country": "England",
         "dispense": "H",
-        "last": "2026 Q3",
+        "last": "2026 Q4",
         "notes": "",
         "pg": "Perm",
         "place_name": "Loughborough",
@@ -101719,7 +104414,7 @@
         "area": "Staffordshire",
         "country": "England",
         "dispense": "H",
-        "last": "2026 Q3",
+        "last": "2026 Q4",
         "notes": "",
         "pg": "Perm",
         "place_name": "Leek",
@@ -102534,7 +105229,7 @@
         "area": "Derbyshire",
         "country": "England",
         "dispense": "H",
-        "last": "2026 Q2",
+        "last": "2026 Q4",
         "notes": "",
         "pg": "Perm",
         "place_name": "Mickleover",
@@ -102683,6 +105378,39 @@
         "lng": -1.4241331666666666,
         "source": "openstreetmap-gb-extract"
       }
+    },
+    "v-b1f768d3-f5ed-5eae-a199-6b21559ba452": {
+      "aliases": [
+        "fitzgeralds|ashby-de-la-zouch|le65 1ah"
+      ],
+      "current_key": "fitzgeralds|ashby-de-la-zouch|le65 1ah",
+      "listing": {
+        "area": "Leicestershire",
+        "country": "England",
+        "dispense": "H",
+        "last": "2026 Q4",
+        "notes": "",
+        "pg": "Guest",
+        "place_name": "Ashby-de-la-Zouch",
+        "postcode": "LE65 1AH",
+        "pub_name": "Fitzgeralds"
+      },
+      "verification_attempt": {
+        "checked_at": "2026-11-03",
+        "reason": "FSA businesses at the postcode do not match the pub name; CAMRA not checked",
+        "sources": {
+          "camra": {
+            "status": "not_checked"
+          },
+          "fsa": {
+            "name_matches": 0,
+            "postcode_matches": 9,
+            "records_returned": 9,
+            "status": "no_name_match"
+          }
+        }
+      },
+      "verified_pin": null
     },
     "v-b2a14ff0-2325-5d47-8ddf-2b64e60faf3d": {
       "aliases": [
@@ -103028,7 +105756,7 @@
         "area": "Staffordshire",
         "country": "England",
         "dispense": "H",
-        "last": "2026 Q2",
+        "last": "2026 Q4",
         "notes": "",
         "pg": "Perm",
         "place_name": "Stoke: Hanley",
@@ -103650,7 +106378,7 @@
         "area": "Warwickshire",
         "country": "England",
         "dispense": "H",
-        "last": "2026 Q3",
+        "last": "2026 Q4",
         "notes": "",
         "pg": "Perm",
         "place_name": "Nuneaton: Central",
@@ -103818,7 +106546,7 @@
         "area": "Staffordshire",
         "country": "England",
         "dispense": "H",
-        "last": "2026 Q3",
+        "last": "2026 Q4",
         "notes": "",
         "pg": "Perm",
         "place_name": "Hollington",
@@ -104573,7 +107301,7 @@
         "area": "Leicestershire",
         "country": "England",
         "dispense": "H",
-        "last": "2026 Q1",
+        "last": "2026 Q4",
         "notes": "",
         "pg": "Perm",
         "place_name": "Earl Shilton",
@@ -105057,7 +107785,7 @@
         "area": "North Wales",
         "country": "Wales",
         "dispense": "H",
-        "last": "2026 Q3",
+        "last": "2026 Q4",
         "notes": "",
         "pg": "Perm",
         "place_name": "Caernarfon",
@@ -105894,7 +108622,7 @@
         "area": "West Yorkshire",
         "country": "England",
         "dispense": "H",
-        "last": "2026 Q2",
+        "last": "2026 Q4",
         "notes": "\"Anyone can be signed in 3 times after which you have to join\"",
         "pg": "Guest",
         "place_name": "Yeadon",
@@ -106194,7 +108922,7 @@
         "area": "Nottinghamshire",
         "country": "England",
         "dispense": "H",
-        "last": "2026 Q1",
+        "last": "2026 Q4",
         "notes": "",
         "pg": "Guest",
         "place_name": "Mansfield",
@@ -106404,7 +109132,7 @@
         "area": "Northamptonshire",
         "country": "England",
         "dispense": "H",
-        "last": "2026 Q2",
+        "last": "2026 Q4",
         "notes": "",
         "pg": "Guest",
         "place_name": "Northampton",
@@ -107163,7 +109891,7 @@
         "area": "Warwickshire",
         "country": "England",
         "dispense": "H",
-        "last": "2026 Q3",
+        "last": "2026 Q4",
         "notes": "",
         "pg": "Perm",
         "place_name": "Atherstone",
@@ -107912,7 +110640,7 @@
         "area": "Derbyshire",
         "country": "England",
         "dispense": "H",
-        "last": "2026 Q2",
+        "last": "2026 Q4",
         "notes": "",
         "pg": "Perm",
         "place_name": "Derby: Central",
@@ -109070,9 +111798,20 @@
     },
     "v-c31ee814-63f4-513d-8d38-fad12edad41f": {
       "aliases": [
-        "greyhound|woodville|de11 7bu"
+        "greyhound|woodville|de11 7bu",
+        "greyhound|boundary / woodville|de11 7bu"
       ],
-      "current_key": "greyhound|woodville|de11 7bu",
+      "current_key": "greyhound|boundary / woodville|de11 7bu",
+      "identity_reviews": [
+        {
+          "checked_at": "2026-11-03",
+          "previous_key": "greyhound|woodville|de11 7bu",
+          "reason": "November PDF changes only the locality label from Woodville to Boundary / Woodville for Greyhound at DE11 7BU. The owner confirmed the named Google Greyhound Inn building at 149 Ashby Road. Preserve this venue ID and its separately reviewed Google coordinate; the locality wording is not a relocation.",
+          "reference_postcode": "DE11 7BU",
+          "reviewed_by": "Codex identity evidence review following owner building confirmation",
+          "source_url": "https://www.google.com/maps/place/The+Greyhound+Inn/@52.767456,-1.5125223,17z/data=!3m1!4b1!4m6!3m5!1s0x4879feba10708f69:0x3f4eab9b3f5e67f6!8m2!3d52.767456!4d-1.5125223!16s%2Fg%2F1tcx11fl"
+        }
+      ],
       "independent_location_check": {
         "actionable": false,
         "checked_at": "2026-11-02",
@@ -109112,10 +111851,10 @@
         "area": "Derbyshire",
         "country": "England",
         "dispense": "H",
-        "last": "2026 Q3",
+        "last": "2026 Q4",
         "notes": "",
         "pg": "Perm",
-        "place_name": "Woodville",
+        "place_name": "Boundary / Woodville",
         "postcode": "DE11 7BU",
         "pub_name": "Greyhound"
       },
@@ -109730,9 +112469,9 @@
         "area": "Warwickshire",
         "country": "England",
         "dispense": "H",
-        "last": "2026 Q3",
+        "last": "2026 Q4",
         "notes": "",
-        "pg": "Guest",
+        "pg": "Perm",
         "place_name": "Austrey",
         "postcode": "CV9 3EE",
         "pub_name": "Bird in Hand"
@@ -110428,7 +113167,7 @@
         "area": "Staffordshire",
         "country": "England",
         "dispense": "H",
-        "last": "2026 Q3",
+        "last": "2026 Q4",
         "notes": "",
         "pg": "Perm",
         "place_name": "Newborough",
@@ -112207,7 +114946,7 @@
         "area": "Warwickshire",
         "country": "England",
         "dispense": "H",
-        "last": "2026 Q3",
+        "last": "2026 Q4",
         "notes": "",
         "pg": "Guest",
         "place_name": "Nuneaton: Whittleford",
@@ -112560,7 +115299,7 @@
         "area": "Cheshire",
         "country": "England",
         "dispense": "H",
-        "last": "2026 Q3",
+        "last": "2026 Q4",
         "notes": "",
         "pg": "Guest",
         "place_name": "Chester",
@@ -112992,7 +115731,7 @@
         "area": "Derbyshire",
         "country": "England",
         "dispense": "H",
-        "last": "2026 Q3",
+        "last": "2026 Q4",
         "notes": "",
         "pg": "Perm",
         "place_name": "Swanwick",
@@ -113373,7 +116112,7 @@
         "area": "North Yorkshire",
         "country": "England",
         "dispense": "H/B",
-        "last": "2026 Q3",
+        "last": "2026 Q4",
         "notes": "Bankers reported as not available in May 26",
         "pg": "Perm",
         "place_name": "Whitby",
@@ -113583,7 +116322,7 @@
         "area": "Merseyside",
         "country": "England",
         "dispense": "H",
-        "last": "2026 Q2",
+        "last": "2026 Q4",
         "notes": "",
         "pg": "Guest",
         "place_name": "Liverpool: Central",
@@ -113892,7 +116631,7 @@
         "area": "North Yorkshire",
         "country": "England",
         "dispense": "H",
-        "last": "2026 Q3",
+        "last": "2026 Q4",
         "notes": "",
         "pg": "Guest",
         "place_name": "Knaresborough",
@@ -114141,7 +116880,7 @@
         "country": "England",
         "dispense": "H",
         "last": "2026 Q3",
-        "notes": "\"only as an ocassional special\" Jun 26",
+        "notes": "\"as an ocassional special\" Jun 26",
         "pg": "Guest",
         "place_name": "Youlgrave",
         "postcode": "DE45 1UR",
@@ -114245,7 +116984,7 @@
         "area": "North Wales",
         "country": "Wales",
         "dispense": "H",
-        "last": "2026 Q3",
+        "last": "2026 Q4",
         "notes": "",
         "pg": "Perm",
         "place_name": "Ysceifiog",
@@ -115069,7 +117808,7 @@
         "area": "Staffordshire",
         "country": "England",
         "dispense": "H",
-        "last": "2026 Q2",
+        "last": "2026 Q4",
         "notes": "",
         "pg": "Perm",
         "place_name": "Stoke: Burslem",
@@ -115202,6 +117941,74 @@
         "lat": 52.8991217,
         "lng": -1.862908,
         "source": "google-maps-named-place"
+      }
+    },
+    "v-cf926f6f-cb22-5fad-bd20-1895b75f1eb3": {
+      "aliases": [
+        "pembury tavern|hackney e8 1jh|e8 1jh"
+      ],
+      "current_key": "pembury tavern|hackney e8 1jh|e8 1jh",
+      "listing": {
+        "area": "Greater London",
+        "country": "England",
+        "dispense": "H",
+        "last": "2026 Q4",
+        "notes": "",
+        "pg": "Guest",
+        "place_name": "Hackney E8 1JH",
+        "postcode": "E8 1JH",
+        "pub_name": "Pembury Tavern"
+      },
+      "verification_attempt": {
+        "checked_at": "2026-11-03",
+        "reason": "FSA and CAMRA agree on named venue, full postcode and location",
+        "sources": {
+          "camra": {
+            "address": "90 Amhurst Road",
+            "lat": 51.54937,
+            "lng": -0.059414,
+            "name": "Pembury Tavern, Hackney - New York Style Pizza",
+            "postcode": "E8 1JH",
+            "status": "matched",
+            "url": "https://camra.org.uk/pubs/156045"
+          },
+          "fsa": {
+            "lat": 51.549396,
+            "lng": -0.0591928,
+            "status": "matched",
+            "url": "https://ratings.food.gov.uk/business/469610"
+          }
+        }
+      },
+      "verified_pin": {
+        "evidence": [
+          {
+            "checked_at": "2026-11-03",
+            "match": "unique_name_and_full_postcode",
+            "reference_coordinate": {
+              "lat": 51.549396,
+              "lng": -0.0591928
+            },
+            "reference_postcode": "E8 1JH",
+            "source": "food-standards-agency-fhrs",
+            "url": "https://ratings.food.gov.uk/business/469610"
+          },
+          {
+            "checked_at": "2026-11-03",
+            "match": "named_venue_full_postcode_and_independent_fsa_agreement",
+            "reference_coordinate": {
+              "lat": 51.54937,
+              "lng": -0.059414
+            },
+            "reference_name": "Pembury Tavern, Hackney - New York Style Pizza",
+            "reference_postcode": "E8 1JH",
+            "source": "camra",
+            "url": "https://camra.org.uk/pubs/156045"
+          }
+        ],
+        "lat": 51.54937,
+        "lng": -0.059414,
+        "source": "camra-and-fhrs"
       }
     },
     "v-d0199650-f7c0-5287-bb86-dda903baae89": {
@@ -115807,7 +118614,7 @@
         "area": "Leicestershire",
         "country": "England",
         "dispense": "H",
-        "last": "2026 Q3",
+        "last": "2026 Q4",
         "notes": "",
         "pg": "Perm",
         "place_name": "Moira",
@@ -116336,7 +119143,7 @@
         "area": "Staffordshire",
         "country": "England",
         "dispense": "H",
-        "last": "2026 Q2",
+        "last": "2026 Q4",
         "notes": "",
         "pg": "Perm",
         "place_name": "Burton U-T: Central",
@@ -116522,6 +119329,74 @@
         "source": "openstreetmap-gb-extract"
       }
     },
+    "v-d363c840-a147-501a-a4f1-9a027d3cda7c": {
+      "aliases": [
+        "holly bush|makeney|de56 0rx"
+      ],
+      "current_key": "holly bush|makeney|de56 0rx",
+      "listing": {
+        "area": "Derbyshire",
+        "country": "England",
+        "dispense": "H",
+        "last": "2026 Q4",
+        "notes": "",
+        "pg": "Guest",
+        "place_name": "Makeney",
+        "postcode": "DE56 0RX",
+        "pub_name": "Holly Bush"
+      },
+      "verification_attempt": {
+        "checked_at": "2026-11-03",
+        "reason": "FSA and CAMRA agree on named venue, full postcode and location",
+        "sources": {
+          "camra": {
+            "address": "Holly Bush Lane",
+            "lat": 52.998247,
+            "lng": -1.477044,
+            "name": "Holly Bush, Makeney - Grade II Listed Pub",
+            "postcode": "DE56 0RX",
+            "status": "matched",
+            "url": "https://camra.org.uk/pubs/113265"
+          },
+          "fsa": {
+            "lat": 52.99849,
+            "lng": -1.476807,
+            "status": "matched",
+            "url": "https://ratings.food.gov.uk/business/1127"
+          }
+        }
+      },
+      "verified_pin": {
+        "evidence": [
+          {
+            "checked_at": "2026-11-03",
+            "match": "unique_name_and_full_postcode",
+            "reference_coordinate": {
+              "lat": 52.99849,
+              "lng": -1.476807
+            },
+            "reference_postcode": "DE56 0RX",
+            "source": "food-standards-agency-fhrs",
+            "url": "https://ratings.food.gov.uk/business/1127"
+          },
+          {
+            "checked_at": "2026-11-03",
+            "match": "named_venue_full_postcode_and_independent_fsa_agreement",
+            "reference_coordinate": {
+              "lat": 52.998247,
+              "lng": -1.477044
+            },
+            "reference_name": "Holly Bush, Makeney - Grade II Listed Pub",
+            "reference_postcode": "DE56 0RX",
+            "source": "camra",
+            "url": "https://camra.org.uk/pubs/113265"
+          }
+        ],
+        "lat": 52.998247,
+        "lng": -1.477044,
+        "source": "camra-and-fhrs"
+      }
+    },
     "v-d3dbdae2-caf5-55b6-98db-ed067364dbdc": {
       "aliases": [
         "royal standard|derby: central|de1 2ed"
@@ -116576,7 +119451,7 @@
         "area": "Derbyshire",
         "country": "England",
         "dispense": "H",
-        "last": "2026 Q3",
+        "last": "2026 Q4",
         "notes": "",
         "pg": "Guest",
         "place_name": "Derby: Central",
@@ -116891,7 +119766,7 @@
         "area": "Shropshire",
         "country": "England",
         "dispense": "H",
-        "last": "2026 Q3",
+        "last": "2026 Q4",
         "notes": "",
         "pg": "Perm",
         "place_name": "Shrewsbury: Coleham",
@@ -116996,7 +119871,7 @@
         "area": "Staffordshire",
         "country": "England",
         "dispense": "H",
-        "last": "2026 Q3",
+        "last": "2026 Q4",
         "notes": "",
         "pg": "Perm",
         "place_name": "Burton U-T: Stapenhill",
@@ -117292,7 +120167,7 @@
         "area": "Derbyshire",
         "country": "England",
         "dispense": "H",
-        "last": "2026 Q1",
+        "last": "2026 Q3",
         "notes": "",
         "pg": "Perm",
         "place_name": "Willington",
@@ -117506,7 +120381,7 @@
         "area": "Derbyshire",
         "country": "England",
         "dispense": "H",
-        "last": "2026 Q3",
+        "last": "2026 Q4",
         "notes": "",
         "pg": "Guest",
         "place_name": "Ilkeston",
@@ -118917,7 +121792,7 @@
         "area": "Derbyshire",
         "country": "England",
         "dispense": "G",
-        "last": "2026 Q3",
+        "last": "2026 Q4",
         "notes": "",
         "pg": "Guest",
         "place_name": "Ripley: Peasehill",
@@ -119203,9 +122078,9 @@
         "area": "Derbyshire",
         "country": "England",
         "dispense": "H",
-        "last": "2026 Q1",
+        "last": "2026 Q3",
         "notes": "",
-        "pg": "Guest",
+        "pg": "Perm",
         "place_name": "Marston Montgomery",
         "postcode": "DE6 2FF",
         "pub_name": "Crown Inn"
@@ -119627,9 +122502,9 @@
         "area": "Merseyside",
         "country": "England",
         "dispense": "H",
-        "last": "2026 Q3",
+        "last": "2026 Q4",
         "notes": "",
-        "pg": "Guest",
+        "pg": "Perm",
         "place_name": "Liverpool: Central",
         "postcode": "L1 1JQ",
         "pub_name": "Crown Hotel"
@@ -119724,7 +122599,7 @@
         "area": "Derbyshire",
         "country": "England",
         "dispense": "H",
-        "last": "2026 Q3",
+        "last": "2026 Q4",
         "notes": "",
         "pg": "Perm",
         "place_name": "Belper: Central",
@@ -120234,7 +123109,7 @@
         "area": "Nottinghamshire",
         "country": "England",
         "dispense": "H",
-        "last": "2026 Q2",
+        "last": "2026 Q4",
         "notes": "",
         "pg": "Guest",
         "place_name": "Mansfield",
@@ -120529,7 +123404,7 @@
         "area": "Derbyshire",
         "country": "England",
         "dispense": "H",
-        "last": "2026 Q3",
+        "last": "2026 Q4",
         "notes": "",
         "pg": "Guest",
         "place_name": "Belper: Central",
@@ -121129,7 +124004,7 @@
         "area": "Derbyshire",
         "country": "England",
         "dispense": "H",
-        "last": "2026 Q3",
+        "last": "2026 Q4",
         "notes": "",
         "pg": "Perm",
         "place_name": "Hilton",
@@ -121234,7 +124109,7 @@
         "area": "North Wales",
         "country": "Wales",
         "dispense": "H",
-        "last": "2026 Q3",
+        "last": "2026 Q4",
         "notes": "",
         "pg": "Perm",
         "place_name": "Llandudno",
@@ -121806,6 +124681,74 @@
         "lat": 53.085639,
         "lng": -2.200513,
         "source": "food-standards-agency-fhrs"
+      }
+    },
+    "v-dd512b0a-8949-5f61-8a97-a5661a6de57b": {
+      "aliases": [
+        "george and dragon|lichfield|ws13 7aj"
+      ],
+      "current_key": "george and dragon|lichfield|ws13 7aj",
+      "listing": {
+        "area": "Staffordshire",
+        "country": "England",
+        "dispense": "H",
+        "last": "2026 Q4",
+        "notes": "Quality warning Oct 26",
+        "pg": "Guest",
+        "place_name": "Lichfield",
+        "postcode": "WS13 7AJ",
+        "pub_name": "George and Dragon"
+      },
+      "verification_attempt": {
+        "checked_at": "2026-11-03",
+        "reason": "FSA and CAMRA agree on named venue, full postcode and location",
+        "sources": {
+          "camra": {
+            "address": "28 Beacon Street",
+            "lat": 52.686141,
+            "lng": -1.833792,
+            "name": "George & Dragon, Lichfield - Cathedral Beer Garden",
+            "postcode": "WS13 7AJ",
+            "status": "matched",
+            "url": "https://camra.org.uk/pubs/131756"
+          },
+          "fsa": {
+            "lat": 52.6861427,
+            "lng": -1.8337618,
+            "status": "matched",
+            "url": "https://ratings.food.gov.uk/business/1983932"
+          }
+        }
+      },
+      "verified_pin": {
+        "evidence": [
+          {
+            "checked_at": "2026-11-03",
+            "match": "unique_name_and_full_postcode",
+            "reference_coordinate": {
+              "lat": 52.6861427,
+              "lng": -1.8337618
+            },
+            "reference_postcode": "WS13 7AJ",
+            "source": "food-standards-agency-fhrs",
+            "url": "https://ratings.food.gov.uk/business/1983932"
+          },
+          {
+            "checked_at": "2026-11-03",
+            "match": "named_venue_full_postcode_and_independent_fsa_agreement",
+            "reference_coordinate": {
+              "lat": 52.686141,
+              "lng": -1.833792
+            },
+            "reference_name": "George & Dragon, Lichfield - Cathedral Beer Garden",
+            "reference_postcode": "WS13 7AJ",
+            "source": "camra",
+            "url": "https://camra.org.uk/pubs/131756"
+          }
+        ],
+        "lat": 52.686141,
+        "lng": -1.833792,
+        "source": "camra-and-fhrs"
       }
     },
     "v-ddce654b-d48e-5ff2-95f9-180ed7d47a52": {
@@ -122528,7 +125471,7 @@
         "area": "Leicestershire",
         "country": "England",
         "dispense": "H",
-        "last": "2026 Q2",
+        "last": "2026 Q4",
         "notes": "",
         "pg": "Perm",
         "place_name": "Donisthorpe",
@@ -122580,6 +125523,39 @@
         "lng": -1.53664202,
         "source": "openstreetmap-gb-extract"
       }
+    },
+    "v-de948283-fe31-5f55-b16a-547c37e592ce": {
+      "aliases": [
+        "tiger|derby: central|de1 2tq"
+      ],
+      "current_key": "tiger|derby: central|de1 2tq",
+      "listing": {
+        "area": "Derbyshire",
+        "country": "England",
+        "dispense": "H/J",
+        "last": "2026 Q4",
+        "notes": "",
+        "pg": "Guest",
+        "place_name": "Derby: Central",
+        "postcode": "DE1 2TQ",
+        "pub_name": "Tiger"
+      },
+      "verification_attempt": {
+        "checked_at": "2026-11-03",
+        "reason": "FSA returned no businesses at the listed full postcode; CAMRA not checked",
+        "sources": {
+          "camra": {
+            "status": "not_checked"
+          },
+          "fsa": {
+            "name_matches": 0,
+            "postcode_matches": 0,
+            "records_returned": 0,
+            "status": "no_postcode_match"
+          }
+        }
+      },
+      "verified_pin": null
     },
     "v-ded2483d-e3d6-5fcb-b861-5cdf3b53b664": {
       "aliases": [
@@ -123121,7 +126097,7 @@
         "area": "Devon",
         "country": "England",
         "dispense": "G",
-        "last": "2026 Q3",
+        "last": "2026 Q4",
         "notes": "",
         "pg": "Perm",
         "place_name": "Plymouth: Barbican",
@@ -123325,7 +126301,7 @@
         "area": "Durham",
         "country": "England",
         "dispense": "H/B",
-        "last": "2026 Q2",
+        "last": "2026 Q4",
         "notes": "Available Banked",
         "pg": "Perm",
         "place_name": "Wolviston",
@@ -123979,7 +126955,7 @@
         "area": "Staffordshire",
         "country": "England",
         "dispense": "H",
-        "last": "2026 Q2",
+        "last": "2026 Q4",
         "notes": "",
         "pg": "Perm",
         "place_name": "Burton U-T: Central",
@@ -124084,7 +127060,7 @@
         "area": "Greater London",
         "country": "England",
         "dispense": "H",
-        "last": "2026 Q3",
+        "last": "2026 Q4",
         "notes": "",
         "pg": "Guest",
         "place_name": "Soho W1D",
@@ -124403,7 +127379,7 @@
         "area": "Derbyshire",
         "country": "England",
         "dispense": "H",
-        "last": "2026 Q2",
+        "last": "2026 Q4",
         "notes": "Bass is used for the fish & chip batter!",
         "pg": "Perm",
         "place_name": "Pentrich",
@@ -125597,7 +128573,7 @@
         "area": "Leicestershire",
         "country": "England",
         "dispense": "H",
-        "last": "2026 Q1",
+        "last": "2026 Q4",
         "notes": "",
         "pg": "Perm",
         "place_name": "Bruntingthorpe",
@@ -125888,7 +128864,7 @@
         "area": "Greater London",
         "country": "England",
         "dispense": "H",
-        "last": "2026 Q3",
+        "last": "2026 Q4",
         "notes": "",
         "pg": "Guest",
         "place_name": "Soho W1F",
@@ -127347,7 +130323,7 @@
         "area": "Staffordshire",
         "country": "England",
         "dispense": "H",
-        "last": "2026 Q3",
+        "last": "2026 Q4",
         "notes": "\"Newly refurbed, landlord is a fellow Bass lover perm £3.30\" (May 26)",
         "pg": "Perm",
         "place_name": "Heath Hayes",
@@ -127557,7 +130533,7 @@
         "area": "Derbyshire",
         "country": "England",
         "dispense": "H",
-        "last": "2026 Q3",
+        "last": "2026 Q4",
         "notes": "",
         "pg": "Perm",
         "place_name": "Ashbourne",
@@ -127664,9 +130640,9 @@
         "area": "Derbyshire",
         "country": "England",
         "dispense": "H",
-        "last": "2026 Q3",
+        "last": "2026 Q4",
         "notes": "",
-        "pg": "Guest",
+        "pg": "Perm",
         "place_name": "Hurdlow",
         "postcode": "SK17 9QJ",
         "pub_name": "Royal Oak"
@@ -127805,7 +130781,7 @@
         "area": "West Midlands",
         "country": "England",
         "dispense": "H",
-        "last": "2026 Q3",
+        "last": "2026 Q4",
         "notes": "",
         "pg": "Guest",
         "place_name": "Birmingham: Stirchley",
@@ -128800,7 +131776,7 @@
         "area": "Derbyshire",
         "country": "England",
         "dispense": "H",
-        "last": "2026 Q2",
+        "last": "2026 Q4",
         "notes": "",
         "pg": "Guest",
         "place_name": "Somercotes",
@@ -130278,7 +133254,7 @@
         "area": "Leicestershire",
         "country": "England",
         "dispense": "H",
-        "last": "2026 Q3",
+        "last": "2026 Q4",
         "notes": "",
         "pg": "Perm",
         "place_name": "Congerstone",
@@ -130488,7 +133464,7 @@
         "area": "Leicestershire",
         "country": "England",
         "dispense": "H",
-        "last": "2026 Q3",
+        "last": "2026 Q4",
         "notes": "",
         "pg": "Perm",
         "place_name": "Hugglescote",
@@ -131999,7 +134975,7 @@
         "area": "North Yorkshire",
         "country": "England",
         "dispense": "H",
-        "last": "2026 Q1",
+        "last": "2026 Q3",
         "notes": "",
         "pg": "Guest",
         "place_name": "Yarm",
@@ -133468,7 +136444,7 @@
         "area": "Tyne and Wear",
         "country": "England",
         "dispense": "H",
-        "last": "2026 Q3",
+        "last": "2026 Q4",
         "notes": "",
         "pg": "Perm",
         "place_name": "North Shields",
@@ -134384,7 +137360,7 @@
         "area": "West Yorkshire",
         "country": "England",
         "dispense": "H",
-        "last": "2026 Q1",
+        "last": "2026 Q4",
         "notes": "",
         "pg": "Guest",
         "place_name": "Leeds: Central",
@@ -134447,6 +137423,112 @@
         "source": "openstreetmap-gb-extract"
       }
     },
+    "v-f8715c2c-440d-5a56-96bc-95b9dc41b973": {
+      "aliases": [
+        "noahs ark|plymouth: central|pl1 1ep"
+      ],
+      "current_key": "noahs ark|plymouth: central|pl1 1ep",
+      "listing": {
+        "area": "Devon",
+        "country": "England",
+        "dispense": "H",
+        "last": "2026 Q4",
+        "notes": "",
+        "pg": "Guest",
+        "place_name": "Plymouth: Central",
+        "postcode": "PL1 1EP",
+        "pub_name": "Noahs Ark"
+      },
+      "verification_attempt": {
+        "checked_at": "2026-11-03",
+        "reason": "CAMRA venue found, but its coordinate is 62.6 metres from FSA (maximum 50)",
+        "sources": {
+          "camra": {
+            "address": "32A Courtney Street",
+            "difference_metres": 62.6,
+            "lat": 50.370803,
+            "lng": -4.144467,
+            "name": "Noahs Ark, Plymouth - Big Screen Sport Pub",
+            "postcode": "PL1 1EP",
+            "status": "coordinate_disagreement",
+            "url": "https://camra.org.uk/pubs/154207"
+          },
+          "fsa": {
+            "lat": 50.370753,
+            "lng": -4.145346,
+            "status": "matched",
+            "url": "https://ratings.food.gov.uk/business/117458"
+          }
+        }
+      },
+      "verified_pin": null
+    },
+    "v-f8899d25-0fe4-551f-b83c-e47f3ecf0ed6": {
+      "aliases": [
+        "new swan|atherstone|cv9 1fe"
+      ],
+      "current_key": "new swan|atherstone|cv9 1fe",
+      "listing": {
+        "area": "Warwickshire",
+        "country": "England",
+        "dispense": "H",
+        "last": "2026 Q4",
+        "notes": "",
+        "pg": "Perm",
+        "place_name": "Atherstone",
+        "postcode": "CV9 1FE",
+        "pub_name": "New Swan"
+      },
+      "verification_attempt": {
+        "checked_at": "2026-11-03",
+        "reason": "FSA returned no businesses at the listed full postcode; CAMRA not checked",
+        "sources": {
+          "camra": {
+            "status": "not_checked"
+          },
+          "fsa": {
+            "name_matches": 0,
+            "postcode_matches": 0,
+            "records_returned": 0,
+            "status": "no_postcode_match"
+          }
+        }
+      },
+      "verified_pin": null
+    },
+    "v-f8bee24d-ecda-57fd-ba79-92aae52bba74": {
+      "aliases": [
+        "barley mow|southsea|po5 3by"
+      ],
+      "current_key": "barley mow|southsea|po5 3by",
+      "listing": {
+        "area": "Hampshire",
+        "country": "England",
+        "dispense": "H",
+        "last": "2026 Q4",
+        "notes": "",
+        "pg": "Guest",
+        "place_name": "Southsea",
+        "postcode": "PO5 3BY",
+        "pub_name": "Barley Mow"
+      },
+      "verification_attempt": {
+        "checked_at": "2026-11-03",
+        "reason": "FSA businesses at the postcode do not match the pub name; CAMRA not checked",
+        "sources": {
+          "camra": {
+            "status": "not_checked"
+          },
+          "fsa": {
+            "name_matches": 0,
+            "postcode_matches": 2,
+            "records_returned": 2,
+            "status": "no_name_match"
+          }
+        }
+      },
+      "verified_pin": null
+    },
     "v-f8ddf3fe-2e91-5117-a0d3-bfff56f4a0b9": {
       "aliases": [
         "ye olde talbot|uttoxeter|st14 8hf"
@@ -134491,7 +137573,7 @@
         "area": "Staffordshire",
         "country": "England",
         "dispense": "H",
-        "last": "2026 Q3",
+        "last": "2026 Q4",
         "notes": "",
         "pg": "Perm",
         "place_name": "Uttoxeter",
@@ -134684,7 +137766,7 @@
         "country": "Channel Islands",
         "dispense": "H",
         "last": "2026 Q2",
-        "notes": "Was taken out May 25 after email from pub but spotted again Dec 25",
+        "notes": "",
         "pg": "Guest",
         "place_name": "St Brelade, Jersey",
         "postcode": "JE3 8AW",
@@ -135487,6 +138569,46 @@
         "source": "openstreetmap-gb-extract"
       }
     },
+    "v-fa21eb85-2fa0-5cfb-b312-c00af1d392db": {
+      "aliases": [
+        "court oak|birmingham: harborne|b32 2eh"
+      ],
+      "current_key": "court oak|birmingham: harborne|b32 2eh",
+      "listing": {
+        "area": "West Midlands",
+        "country": "England",
+        "dispense": "H",
+        "last": "2026 Q4",
+        "notes": "",
+        "pg": "Guest",
+        "place_name": "Birmingham: Harborne",
+        "postcode": "B32 2EH",
+        "pub_name": "Court Oak"
+      },
+      "verification_attempt": {
+        "checked_at": "2026-11-03",
+        "reason": "CAMRA venue found, but its coordinate is 225.9 metres from FSA (maximum 50)",
+        "sources": {
+          "camra": {
+            "address": "Balden Road",
+            "difference_metres": 225.9,
+            "lat": 52.460961,
+            "lng": -1.974438,
+            "name": "Court Oak, Birmingham - Family Pub with Restaurant",
+            "postcode": "B32 2EH",
+            "status": "coordinate_disagreement",
+            "url": "https://camra.org.uk/pubs/121192"
+          },
+          "fsa": {
+            "lat": 52.461953,
+            "lng": -1.977348,
+            "status": "matched",
+            "url": "https://ratings.food.gov.uk/business/601163"
+          }
+        }
+      },
+      "verified_pin": null
+    },
     "v-fa3089d7-c4fd-5718-a3dd-1cb08d6e6efb": {
       "aliases": [
         "devonshire|soho w1d|w1d 7hw"
@@ -135539,7 +138661,7 @@
         "area": "Greater London",
         "country": "England",
         "dispense": "H",
-        "last": "2026 Q2",
+        "last": "2026 Q4",
         "notes": "",
         "pg": "Guest",
         "place_name": "Soho W1D",
@@ -137253,7 +140375,7 @@
         "area": "Lancashire",
         "country": "England",
         "dispense": "H",
-        "last": "2026 Q3",
+        "last": "2026 Q4",
         "notes": "",
         "pg": "Perm",
         "place_name": "Blackpool: Stanley Park",

@@ -1,7 +1,47 @@
 {
-  "actionable_count": 2,
-  "active_count": 2,
+  "actionable_count": 19,
+  "active_count": 19,
   "records": {
+    "v-0043695f-006e-58fe-adc2-894e5500b940": {
+      "active": true,
+      "first_seen": "2026-11-03",
+      "history": [
+        {
+          "date": "2026-11-03",
+          "reasons": [
+            "FSA matching business coordinates are missing or disagree; CAMRA not checked"
+          ],
+          "status": "unverified"
+        }
+      ],
+      "last_checked": "2026-11-03",
+      "manual_action_required": true,
+      "next_action": "Check the named building or approximate/moved coordinate",
+      "place_name": "Astbury",
+      "postcode": "CW12 4RE",
+      "pub_name": "Astbury Golf Club",
+      "reasons": [
+        "FSA matching business coordinates are missing or disagree; CAMRA not checked"
+      ],
+      "reference": {},
+      "research": {},
+      "review_category": "location_check",
+      "source_checks": {
+        "camra": {
+          "status": "not_checked"
+        },
+        "fsa": {
+          "name_matches": 1,
+          "postcode_matches": 1,
+          "records_returned": 1,
+          "status": "missing_or_ambiguous_coordinates"
+        }
+      },
+      "source_error": null,
+      "status": "unverified",
+      "unverified": true,
+      "venue_id": "v-0043695f-006e-58fe-adc2-894e5500b940"
+    },
     "v-00a08839-2b8a-5782-b6c7-0bdce4cddb2f": {
       "active": false,
       "first_seen": "2026-10-09",
@@ -1006,6 +1046,53 @@
       "unverified": false,
       "venue_id": "v-101e22ce-2e15-5d8d-8f40-64e6ead91ee8"
     },
+    "v-1081a0f5-7955-5f26-933e-2d05487dbf04": {
+      "active": true,
+      "first_seen": "2026-11-03",
+      "history": [
+        {
+          "date": "2026-11-03",
+          "reasons": [
+            "CAMRA venue found, but its coordinate is 550.9 metres from FSA (maximum 50)"
+          ],
+          "status": "unverified"
+        }
+      ],
+      "last_checked": "2026-11-03",
+      "manual_action_required": true,
+      "next_action": "Check the named building or approximate/moved coordinate",
+      "place_name": "Mortimer West End",
+      "postcode": "RG7 2HU",
+      "pub_name": "Red Lion",
+      "reasons": [
+        "CAMRA venue found, but its coordinate is 550.9 metres from FSA (maximum 50)"
+      ],
+      "reference": {},
+      "research": {},
+      "review_category": "location_check",
+      "source_checks": {
+        "camra": {
+          "address": "Church Road",
+          "difference_metres": 550.9,
+          "lat": 51.3671979,
+          "lng": -1.0911012,
+          "name": "Red Lion, Mortimer West End - Traditional Pub",
+          "postcode": "RG7 2HU",
+          "status": "coordinate_disagreement",
+          "url": "https://camra.org.uk/pubs/179271"
+        },
+        "fsa": {
+          "lat": 51.3721504211426,
+          "lng": -1.09090304374695,
+          "status": "matched",
+          "url": "https://ratings.food.gov.uk/business/1942135"
+        }
+      },
+      "source_error": null,
+      "status": "unverified",
+      "unverified": true,
+      "venue_id": "v-1081a0f5-7955-5f26-933e-2d05487dbf04"
+    },
     "v-1180d481-648a-5e00-bc95-6b4c0e4693f0": {
       "active": false,
       "first_seen": "2026-10-09",
@@ -1279,6 +1366,47 @@
       "status": "resolved",
       "unverified": false,
       "venue_id": "v-13a2ad1c-e050-5c7a-944e-064bff66e040"
+    },
+    "v-13b369ca-b0c7-55ae-9466-6c57b35bd624": {
+      "active": true,
+      "first_seen": "2026-11-03",
+      "history": [
+        {
+          "date": "2026-11-03",
+          "reasons": [
+            "CAMRA search returned no same-name/full-postcode venue"
+          ],
+          "status": "unverified"
+        }
+      ],
+      "last_checked": "2026-11-03",
+      "manual_action_required": true,
+      "next_action": "Check the named building or approximate/moved coordinate",
+      "place_name": "Langley Mill",
+      "postcode": "NG16 4AE",
+      "pub_name": "Railway Tavern",
+      "reasons": [
+        "CAMRA search returned no same-name/full-postcode venue"
+      ],
+      "reference": {},
+      "research": {},
+      "review_category": "location_check",
+      "source_checks": {
+        "camra": {
+          "records_returned": 34,
+          "status": "unmatched"
+        },
+        "fsa": {
+          "lat": 53.019852,
+          "lng": -1.327311,
+          "status": "matched",
+          "url": "https://ratings.food.gov.uk/business/936"
+        }
+      },
+      "source_error": null,
+      "status": "unverified",
+      "unverified": true,
+      "venue_id": "v-13b369ca-b0c7-55ae-9466-6c57b35bd624"
     },
     "v-13b39b8a-0c4b-5514-8c6a-8f4ceaf7dc89": {
       "active": false,
@@ -5422,6 +5550,53 @@
       "unverified": false,
       "venue_id": "v-54836fe6-8cdb-55fb-b63e-31051b80fc84"
     },
+    "v-548955f9-8736-595b-9402-0138bf2e770f": {
+      "active": true,
+      "first_seen": "2026-11-03",
+      "history": [
+        {
+          "date": "2026-11-03",
+          "reasons": [
+            "CAMRA venue found, but its coordinate is 54.4 metres from FSA (maximum 50)"
+          ],
+          "status": "unverified"
+        }
+      ],
+      "last_checked": "2026-11-03",
+      "manual_action_required": true,
+      "next_action": "Check the named building or approximate/moved coordinate",
+      "place_name": "Pentraeth (Anglesey)",
+      "postcode": "LL75 8AZ",
+      "pub_name": "Panton Arms",
+      "reasons": [
+        "CAMRA venue found, but its coordinate is 54.4 metres from FSA (maximum 50)"
+      ],
+      "reference": {},
+      "research": {},
+      "review_category": "location_check",
+      "source_checks": {
+        "camra": {
+          "address": "The Square",
+          "difference_metres": 54.4,
+          "lat": 53.281996217982,
+          "lng": -4.215372829361,
+          "name": "Panton Arms, Pentraeth - Coaching Inn with Garden",
+          "postcode": "LL75 8AZ",
+          "status": "coordinate_disagreement",
+          "url": "https://camra.org.uk/pubs/146260"
+        },
+        "fsa": {
+          "lat": 53.281639,
+          "lng": -4.215931,
+          "status": "matched",
+          "url": "https://ratings.food.gov.uk/business/114182"
+        }
+      },
+      "source_error": null,
+      "status": "unverified",
+      "unverified": true,
+      "venue_id": "v-548955f9-8736-595b-9402-0138bf2e770f"
+    },
     "v-54a1b390-c593-5828-a06e-52905548f5ca": {
       "active": false,
       "first_seen": "2026-10-15",
@@ -5884,6 +6059,47 @@
       "status": "resolved",
       "unverified": false,
       "venue_id": "v-59d2541d-6530-562f-96c2-2056496ae55a"
+    },
+    "v-59f0070d-7f4c-559e-b10b-e85d2383e5bc": {
+      "active": true,
+      "first_seen": "2026-11-03",
+      "history": [
+        {
+          "date": "2026-11-03",
+          "reasons": [
+            "CAMRA search returned no same-name/full-postcode venue"
+          ],
+          "status": "unverified"
+        }
+      ],
+      "last_checked": "2026-11-03",
+      "manual_action_required": true,
+      "next_action": "Check the named building or approximate/moved coordinate",
+      "place_name": "Southam",
+      "postcode": "CV47 1PH",
+      "pub_name": "Crown",
+      "reasons": [
+        "CAMRA search returned no same-name/full-postcode venue"
+      ],
+      "reference": {},
+      "research": {},
+      "review_category": "location_check",
+      "source_checks": {
+        "camra": {
+          "records_returned": 202,
+          "status": "unmatched"
+        },
+        "fsa": {
+          "lat": 52.25286901,
+          "lng": -1.38747692,
+          "status": "matched",
+          "url": "https://ratings.food.gov.uk/business/1912629"
+        }
+      },
+      "source_error": null,
+      "status": "unverified",
+      "unverified": true,
+      "venue_id": "v-59f0070d-7f4c-559e-b10b-e85d2383e5bc"
     },
     "v-5af9953b-ee5a-5ecc-9679-35f8477da6d7": {
       "active": false,
@@ -8641,6 +8857,53 @@
       "unverified": false,
       "venue_id": "v-7b7219e5-71e0-524f-8e83-8546cb6673bd"
     },
+    "v-7c328aa9-453e-56d5-afaa-3e6011fb7385": {
+      "active": true,
+      "first_seen": "2026-11-03",
+      "history": [
+        {
+          "date": "2026-11-03",
+          "reasons": [
+            "CAMRA venue found, but its coordinate is 161.6 metres from FSA (maximum 50)"
+          ],
+          "status": "unverified"
+        }
+      ],
+      "last_checked": "2026-11-03",
+      "manual_action_required": true,
+      "next_action": "Check the named building or approximate/moved coordinate",
+      "place_name": "Darley Dale",
+      "postcode": "DE4 2GG",
+      "pub_name": "Church Inn",
+      "reasons": [
+        "CAMRA venue found, but its coordinate is 161.6 metres from FSA (maximum 50)"
+      ],
+      "reference": {},
+      "research": {},
+      "review_category": "location_check",
+      "source_checks": {
+        "camra": {
+          "address": "Church Rd, Darley Dale,, Matlock",
+          "difference_metres": 161.6,
+          "lat": 53.165214,
+          "lng": -1.601077,
+          "name": "Church Inn, Darley Dale - Village Pub with Music",
+          "postcode": "DE4 2GG",
+          "status": "coordinate_disagreement",
+          "url": "https://camra.org.uk/pubs/165764"
+        },
+        "fsa": {
+          "lat": 53.166558,
+          "lng": -1.602001,
+          "status": "matched",
+          "url": "https://ratings.food.gov.uk/business/1931032"
+        }
+      },
+      "source_error": null,
+      "status": "unverified",
+      "unverified": true,
+      "venue_id": "v-7c328aa9-453e-56d5-afaa-3e6011fb7385"
+    },
     "v-7cb03d6d-a981-50bd-83de-76106ba5efac": {
       "active": false,
       "first_seen": "2026-10-19",
@@ -10480,6 +10743,46 @@
       "unverified": false,
       "venue_id": "v-8ed8c1ad-ceb1-56c0-9c67-1218004eb836"
     },
+    "v-904f3702-2d9f-5a94-9a08-766db95b67b3": {
+      "active": true,
+      "first_seen": "2026-11-03",
+      "history": [
+        {
+          "date": "2026-11-03",
+          "reasons": [
+            "FSA matching business coordinates are missing or disagree; CAMRA not checked"
+          ],
+          "status": "unverified"
+        }
+      ],
+      "last_checked": "2026-11-03",
+      "manual_action_required": true,
+      "next_action": "Check the named building or approximate/moved coordinate",
+      "place_name": "Epsom",
+      "postcode": "KT18 7SR",
+      "pub_name": "Cricketers",
+      "reasons": [
+        "FSA matching business coordinates are missing or disagree; CAMRA not checked"
+      ],
+      "reference": {},
+      "research": {},
+      "review_category": "location_check",
+      "source_checks": {
+        "camra": {
+          "status": "not_checked"
+        },
+        "fsa": {
+          "name_matches": 1,
+          "postcode_matches": 1,
+          "records_returned": 1,
+          "status": "missing_or_ambiguous_coordinates"
+        }
+      },
+      "source_error": null,
+      "status": "unverified",
+      "unverified": true,
+      "venue_id": "v-904f3702-2d9f-5a94-9a08-766db95b67b3"
+    },
     "v-914a7527-30f1-5b36-acce-5b36c7210041": {
       "active": false,
       "first_seen": "2026-10-20",
@@ -10589,6 +10892,53 @@
       "status": "resolved",
       "unverified": false,
       "venue_id": "v-9174bee8-338b-54f6-9f95-2f7be830455b"
+    },
+    "v-91dc9a73-c434-5a18-968f-d2f88b9edca7": {
+      "active": true,
+      "first_seen": "2026-11-03",
+      "history": [
+        {
+          "date": "2026-11-03",
+          "reasons": [
+            "CAMRA venue found, but its coordinate is 252.7 metres from FSA (maximum 50)"
+          ],
+          "status": "unverified"
+        }
+      ],
+      "last_checked": "2026-11-03",
+      "manual_action_required": true,
+      "next_action": "Check the named building or approximate/moved coordinate",
+      "place_name": "Burton U-T: Central",
+      "postcode": "DE14 2BG",
+      "pub_name": "Marstons Sports and Social Club (PMC)",
+      "reasons": [
+        "CAMRA venue found, but its coordinate is 252.7 metres from FSA (maximum 50)"
+      ],
+      "reference": {},
+      "research": {},
+      "review_category": "location_check",
+      "source_checks": {
+        "camra": {
+          "address": "Shobnall Road",
+          "difference_metres": 252.7,
+          "lat": 52.8081,
+          "lng": -1.6604,
+          "name": "Marston's Sports & Social Club, Burton upon Trent",
+          "postcode": "DE14 2BG",
+          "status": "coordinate_disagreement",
+          "url": "https://camra.org.uk/pubs/124072"
+        },
+        "fsa": {
+          "lat": 52.807258605957,
+          "lng": -1.65690696239471,
+          "status": "matched",
+          "url": "https://ratings.food.gov.uk/business/1649665"
+        }
+      },
+      "source_error": null,
+      "status": "unverified",
+      "unverified": true,
+      "venue_id": "v-91dc9a73-c434-5a18-968f-d2f88b9edca7"
     },
     "v-93765f1e-9190-594b-9c77-6b96456e5433": {
       "active": false,
@@ -12010,6 +12360,53 @@
       "unverified": false,
       "venue_id": "v-a47a6a56-343d-53ea-b949-31dde357896e"
     },
+    "v-a4b4ccce-07e8-508f-8508-4461b5cea58c": {
+      "active": true,
+      "first_seen": "2026-11-03",
+      "history": [
+        {
+          "date": "2026-11-03",
+          "reasons": [
+            "CAMRA venue found, but its coordinate is 123.3 metres from FSA (maximum 50)"
+          ],
+          "status": "unverified"
+        }
+      ],
+      "last_checked": "2026-11-03",
+      "manual_action_required": true,
+      "next_action": "Check the named building or approximate/moved coordinate",
+      "place_name": "Burrough on the Hill",
+      "postcode": "LE14 2JQ",
+      "pub_name": "Stag and Hounds",
+      "reasons": [
+        "CAMRA venue found, but its coordinate is 123.3 metres from FSA (maximum 50)"
+      ],
+      "reference": {},
+      "research": {},
+      "review_category": "location_check",
+      "source_checks": {
+        "camra": {
+          "address": "4, Main Street",
+          "difference_metres": 123.3,
+          "lat": 52.68812,
+          "lng": -0.88267,
+          "name": "Stag & Hounds, Burrough on the Hill - Local Food Pub",
+          "postcode": "LE14 2JQ",
+          "status": "coordinate_disagreement",
+          "url": "https://camra.org.uk/pubs/192223"
+        },
+        "fsa": {
+          "lat": 52.688714,
+          "lng": -0.881126,
+          "status": "matched",
+          "url": "https://ratings.food.gov.uk/business/1999586"
+        }
+      },
+      "source_error": null,
+      "status": "unverified",
+      "unverified": true,
+      "venue_id": "v-a4b4ccce-07e8-508f-8508-4461b5cea58c"
+    },
     "v-a53a96f3-3672-5b95-a6f6-c15ee1b976eb": {
       "active": false,
       "first_seen": "2026-10-02",
@@ -12520,6 +12917,46 @@
       "unverified": false,
       "venue_id": "v-ab01088f-5062-5b84-b768-e5727529aaab"
     },
+    "v-ac3d5f12-6e5e-5205-b8e0-74f09dfa9e6c": {
+      "active": true,
+      "first_seen": "2026-11-03",
+      "history": [
+        {
+          "date": "2026-11-03",
+          "reasons": [
+            "FSA returned no businesses at the listed full postcode; CAMRA not checked"
+          ],
+          "status": "unverified"
+        }
+      ],
+      "last_checked": "2026-11-03",
+      "manual_action_required": true,
+      "next_action": "Check the named building or approximate/moved coordinate",
+      "place_name": "Ingham",
+      "postcode": "LN1 2YQ",
+      "pub_name": "Windmill Inn",
+      "reasons": [
+        "FSA returned no businesses at the listed full postcode; CAMRA not checked"
+      ],
+      "reference": {},
+      "research": {},
+      "review_category": "location_check",
+      "source_checks": {
+        "camra": {
+          "status": "not_checked"
+        },
+        "fsa": {
+          "name_matches": 0,
+          "postcode_matches": 0,
+          "records_returned": 0,
+          "status": "no_postcode_match"
+        }
+      },
+      "source_error": null,
+      "status": "unverified",
+      "unverified": true,
+      "venue_id": "v-ac3d5f12-6e5e-5205-b8e0-74f09dfa9e6c"
+    },
     "v-ac778227-1ccd-5f63-98cd-f4744b9915cf": {
       "active": false,
       "first_seen": "2026-10-09",
@@ -12628,6 +13065,46 @@
       "status": "resolved",
       "unverified": false,
       "venue_id": "v-ac895bd4-69fd-53ea-89d8-97307a9112c5"
+    },
+    "v-ad1cdbb6-9c64-5a6a-a5ce-53557e5637f7": {
+      "active": true,
+      "first_seen": "2026-11-03",
+      "history": [
+        {
+          "date": "2026-11-03",
+          "reasons": [
+            "FSA businesses at the postcode do not match the pub name; CAMRA not checked"
+          ],
+          "status": "unverified"
+        }
+      ],
+      "last_checked": "2026-11-03",
+      "manual_action_required": true,
+      "next_action": "Check the named building or approximate/moved coordinate",
+      "place_name": "Talybont",
+      "postcode": "LL43 2AQ",
+      "pub_name": "Nineteen.57",
+      "reasons": [
+        "FSA businesses at the postcode do not match the pub name; CAMRA not checked"
+      ],
+      "reference": {},
+      "research": {},
+      "review_category": "location_check",
+      "source_checks": {
+        "camra": {
+          "status": "not_checked"
+        },
+        "fsa": {
+          "name_matches": 0,
+          "postcode_matches": 4,
+          "records_returned": 4,
+          "status": "no_name_match"
+        }
+      },
+      "source_error": null,
+      "status": "unverified",
+      "unverified": true,
+      "venue_id": "v-ad1cdbb6-9c64-5a6a-a5ce-53557e5637f7"
     },
     "v-ad92f484-649e-5618-98b2-57eab539a803": {
       "active": false,
@@ -13134,6 +13611,46 @@
       "status": "resolved",
       "unverified": false,
       "venue_id": "v-b1ed2bf8-2858-5ace-80c6-3c5ae0e5d74c"
+    },
+    "v-b1f768d3-f5ed-5eae-a199-6b21559ba452": {
+      "active": true,
+      "first_seen": "2026-11-03",
+      "history": [
+        {
+          "date": "2026-11-03",
+          "reasons": [
+            "FSA businesses at the postcode do not match the pub name; CAMRA not checked"
+          ],
+          "status": "unverified"
+        }
+      ],
+      "last_checked": "2026-11-03",
+      "manual_action_required": true,
+      "next_action": "Check the named building or approximate/moved coordinate",
+      "place_name": "Ashby-de-la-Zouch",
+      "postcode": "LE65 1AH",
+      "pub_name": "Fitzgeralds",
+      "reasons": [
+        "FSA businesses at the postcode do not match the pub name; CAMRA not checked"
+      ],
+      "reference": {},
+      "research": {},
+      "review_category": "location_check",
+      "source_checks": {
+        "camra": {
+          "status": "not_checked"
+        },
+        "fsa": {
+          "name_matches": 0,
+          "postcode_matches": 9,
+          "records_returned": 9,
+          "status": "no_name_match"
+        }
+      },
+      "source_error": null,
+      "status": "unverified",
+      "unverified": true,
+      "venue_id": "v-b1f768d3-f5ed-5eae-a199-6b21559ba452"
     },
     "v-b2a1d45e-8e0b-5274-acf9-fa3a099ee5dc": {
       "active": false,
@@ -14051,7 +14568,7 @@
       "last_checked": "2026-11-03",
       "manual_action_required": false,
       "next_action": "No pin check requested",
-      "place_name": "Woodville",
+      "place_name": "Boundary / Woodville",
       "postcode": "DE11 7BU",
       "pub_name": "Greyhound",
       "reasons": [],
@@ -16293,6 +16810,46 @@
       "unverified": false,
       "venue_id": "v-de4bb4cf-ba26-5249-bc8a-2d255fabb89c"
     },
+    "v-de948283-fe31-5f55-b16a-547c37e592ce": {
+      "active": true,
+      "first_seen": "2026-11-03",
+      "history": [
+        {
+          "date": "2026-11-03",
+          "reasons": [
+            "FSA returned no businesses at the listed full postcode; CAMRA not checked"
+          ],
+          "status": "unverified"
+        }
+      ],
+      "last_checked": "2026-11-03",
+      "manual_action_required": true,
+      "next_action": "Check the named building or approximate/moved coordinate",
+      "place_name": "Derby: Central",
+      "postcode": "DE1 2TQ",
+      "pub_name": "Tiger",
+      "reasons": [
+        "FSA returned no businesses at the listed full postcode; CAMRA not checked"
+      ],
+      "reference": {},
+      "research": {},
+      "review_category": "location_check",
+      "source_checks": {
+        "camra": {
+          "status": "not_checked"
+        },
+        "fsa": {
+          "name_matches": 0,
+          "postcode_matches": 0,
+          "records_returned": 0,
+          "status": "no_postcode_match"
+        }
+      },
+      "source_error": null,
+      "status": "unverified",
+      "unverified": true,
+      "venue_id": "v-de948283-fe31-5f55-b16a-547c37e592ce"
+    },
     "v-ded2483d-e3d6-5fcb-b861-5cdf3b53b664": {
       "active": false,
       "first_seen": "2026-10-02",
@@ -17860,6 +18417,133 @@
       "unverified": false,
       "venue_id": "v-f66c462f-8eca-5321-885e-56b1bd7e0ee9"
     },
+    "v-f8715c2c-440d-5a56-96bc-95b9dc41b973": {
+      "active": true,
+      "first_seen": "2026-11-03",
+      "history": [
+        {
+          "date": "2026-11-03",
+          "reasons": [
+            "CAMRA venue found, but its coordinate is 62.6 metres from FSA (maximum 50)"
+          ],
+          "status": "unverified"
+        }
+      ],
+      "last_checked": "2026-11-03",
+      "manual_action_required": true,
+      "next_action": "Check the named building or approximate/moved coordinate",
+      "place_name": "Plymouth: Central",
+      "postcode": "PL1 1EP",
+      "pub_name": "Noahs Ark",
+      "reasons": [
+        "CAMRA venue found, but its coordinate is 62.6 metres from FSA (maximum 50)"
+      ],
+      "reference": {},
+      "research": {},
+      "review_category": "location_check",
+      "source_checks": {
+        "camra": {
+          "address": "32A Courtney Street",
+          "difference_metres": 62.6,
+          "lat": 50.370803,
+          "lng": -4.144467,
+          "name": "Noahs Ark, Plymouth - Big Screen Sport Pub",
+          "postcode": "PL1 1EP",
+          "status": "coordinate_disagreement",
+          "url": "https://camra.org.uk/pubs/154207"
+        },
+        "fsa": {
+          "lat": 50.370753,
+          "lng": -4.145346,
+          "status": "matched",
+          "url": "https://ratings.food.gov.uk/business/117458"
+        }
+      },
+      "source_error": null,
+      "status": "unverified",
+      "unverified": true,
+      "venue_id": "v-f8715c2c-440d-5a56-96bc-95b9dc41b973"
+    },
+    "v-f8899d25-0fe4-551f-b83c-e47f3ecf0ed6": {
+      "active": true,
+      "first_seen": "2026-11-03",
+      "history": [
+        {
+          "date": "2026-11-03",
+          "reasons": [
+            "FSA returned no businesses at the listed full postcode; CAMRA not checked"
+          ],
+          "status": "unverified"
+        }
+      ],
+      "last_checked": "2026-11-03",
+      "manual_action_required": true,
+      "next_action": "Check the named building or approximate/moved coordinate",
+      "place_name": "Atherstone",
+      "postcode": "CV9 1FE",
+      "pub_name": "New Swan",
+      "reasons": [
+        "FSA returned no businesses at the listed full postcode; CAMRA not checked"
+      ],
+      "reference": {},
+      "research": {},
+      "review_category": "location_check",
+      "source_checks": {
+        "camra": {
+          "status": "not_checked"
+        },
+        "fsa": {
+          "name_matches": 0,
+          "postcode_matches": 0,
+          "records_returned": 0,
+          "status": "no_postcode_match"
+        }
+      },
+      "source_error": null,
+      "status": "unverified",
+      "unverified": true,
+      "venue_id": "v-f8899d25-0fe4-551f-b83c-e47f3ecf0ed6"
+    },
+    "v-f8bee24d-ecda-57fd-ba79-92aae52bba74": {
+      "active": true,
+      "first_seen": "2026-11-03",
+      "history": [
+        {
+          "date": "2026-11-03",
+          "reasons": [
+            "FSA businesses at the postcode do not match the pub name; CAMRA not checked"
+          ],
+          "status": "unverified"
+        }
+      ],
+      "last_checked": "2026-11-03",
+      "manual_action_required": true,
+      "next_action": "Check the named building or approximate/moved coordinate",
+      "place_name": "Southsea",
+      "postcode": "PO5 3BY",
+      "pub_name": "Barley Mow",
+      "reasons": [
+        "FSA businesses at the postcode do not match the pub name; CAMRA not checked"
+      ],
+      "reference": {},
+      "research": {},
+      "review_category": "location_check",
+      "source_checks": {
+        "camra": {
+          "status": "not_checked"
+        },
+        "fsa": {
+          "name_matches": 0,
+          "postcode_matches": 2,
+          "records_returned": 2,
+          "status": "no_name_match"
+        }
+      },
+      "source_error": null,
+      "status": "unverified",
+      "unverified": true,
+      "venue_id": "v-f8bee24d-ecda-57fd-ba79-92aae52bba74"
+    },
     "v-f8ddf3fe-2e91-5117-a0d3-bfff56f4a0b9": {
       "active": false,
       "first_seen": "2026-10-29",
@@ -18062,6 +18746,53 @@
       "status": "resolved",
       "unverified": false,
       "venue_id": "v-f9c0e9cd-e7eb-554a-8fce-a15454327846"
+    },
+    "v-fa21eb85-2fa0-5cfb-b312-c00af1d392db": {
+      "active": true,
+      "first_seen": "2026-11-03",
+      "history": [
+        {
+          "date": "2026-11-03",
+          "reasons": [
+            "CAMRA venue found, but its coordinate is 225.9 metres from FSA (maximum 50)"
+          ],
+          "status": "unverified"
+        }
+      ],
+      "last_checked": "2026-11-03",
+      "manual_action_required": true,
+      "next_action": "Check the named building or approximate/moved coordinate",
+      "place_name": "Birmingham: Harborne",
+      "postcode": "B32 2EH",
+      "pub_name": "Court Oak",
+      "reasons": [
+        "CAMRA venue found, but its coordinate is 225.9 metres from FSA (maximum 50)"
+      ],
+      "reference": {},
+      "research": {},
+      "review_category": "location_check",
+      "source_checks": {
+        "camra": {
+          "address": "Balden Road",
+          "difference_metres": 225.9,
+          "lat": 52.460961,
+          "lng": -1.974438,
+          "name": "Court Oak, Birmingham - Family Pub with Restaurant",
+          "postcode": "B32 2EH",
+          "status": "coordinate_disagreement",
+          "url": "https://camra.org.uk/pubs/121192"
+        },
+        "fsa": {
+          "lat": 52.461953,
+          "lng": -1.977348,
+          "status": "matched",
+          "url": "https://ratings.food.gov.uk/business/601163"
+        }
+      },
+      "source_error": null,
+      "status": "unverified",
+      "unverified": true,
+      "venue_id": "v-fa21eb85-2fa0-5cfb-b312-c00af1d392db"
     },
     "v-fb304b3f-2aa0-5fa6-9cca-5b4af6a1bb02": {
       "active": false,
@@ -18367,5 +19098,5 @@
   },
   "schema_version": 1,
   "source_warning_count": 0,
-  "unverified_count": 0
+  "unverified_count": 17
 }

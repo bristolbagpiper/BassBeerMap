@@ -1,6 +1,7 @@
 {
   "counts": {
-    "verified_venue": 1044
+    "postcode_approximate": 17,
+    "verified_venue": 1071
   },
   "generated_at": "2026-11-03",
   "policy": {
@@ -828,6 +829,16 @@
       "status": "verified_venue",
       "venue_id": "v-37ce061c-4278-5999-9e12-18871f6248ab"
     },
+    "astbury golf club|astbury|cw12 4re": {
+      "coordinate_source": "postcode",
+      "display_precision": "postcode",
+      "evidence": [],
+      "place_name": "Astbury",
+      "postcode": "CW12 4RE",
+      "pub_name": "Astbury Golf Club",
+      "status": "postcode_approximate",
+      "venue_id": "v-0043695f-006e-58fe-adc2-894e5500b940"
+    },
     "auctioneers arms|caverswall|st11 9eq": {
       "coordinate_source": "openstreetmap-gb-extract",
       "display_precision": "venue",
@@ -1186,6 +1197,16 @@
       "pub_name": "Barley Mow",
       "status": "verified_venue",
       "venue_id": "v-39e372db-cd57-5382-b4a5-0d7f92fd9cf8"
+    },
+    "barley mow|southsea|po5 3by": {
+      "coordinate_source": "postcode",
+      "display_precision": "postcode",
+      "evidence": [],
+      "place_name": "Southsea",
+      "postcode": "PO5 3BY",
+      "pub_name": "Barley Mow",
+      "status": "postcode_approximate",
+      "venue_id": "v-f8bee24d-ecda-57fd-ba79-92aae52bba74"
     },
     "barley mow|warrington|wa1 1qb": {
       "coordinate_source": "openstreetmap-gb-extract",
@@ -1642,6 +1663,42 @@
       "status": "verified_venue",
       "venue_id": "v-3812a807-304d-5adf-b134-5306b3874319"
     },
+    "bell foundry|loughborough|le11 5bl": {
+      "coordinate_source": "camra-and-fhrs",
+      "display_precision": "venue",
+      "evidence": [
+        {
+          "checked_at": "2026-11-03",
+          "match": "unique_name_and_full_postcode",
+          "reference_coordinate": {
+            "lat": 52.772641,
+            "lng": -1.20771
+          },
+          "reference_postcode": "LE11 5BL",
+          "source": "food-standards-agency-fhrs",
+          "url": "https://ratings.food.gov.uk/business/75556"
+        },
+        {
+          "checked_at": "2026-11-03",
+          "match": "named_venue_full_postcode_and_independent_fsa_agreement",
+          "reference_coordinate": {
+            "lat": 52.7726,
+            "lng": -1.2077
+          },
+          "reference_name": "Bell Foundry, Loughborough - Sports Bar",
+          "reference_postcode": "LE11 5BL",
+          "source": "camra",
+          "url": "https://camra.org.uk/pubs/171409"
+        }
+      ],
+      "lat": 52.7726,
+      "lng": -1.2077,
+      "place_name": "Loughborough",
+      "postcode": "LE11 5BL",
+      "pub_name": "Bell Foundry",
+      "status": "verified_venue",
+      "venue_id": "v-7243c93a-08da-53c6-af08-c96618b6a371"
+    },
     "bell inn|whittington|ws14 9jr": {
       "coordinate_source": "openstreetmap-gb-extract",
       "display_precision": "venue",
@@ -1945,6 +2002,42 @@
       "pub_name": "Berkeley Arms",
       "status": "verified_venue",
       "venue_id": "v-8e4d52f7-a08e-5539-90c0-615752999e22"
+    },
+    "berkeley arms|wymondham|le14 2ag": {
+      "coordinate_source": "camra-and-fhrs",
+      "display_precision": "venue",
+      "evidence": [
+        {
+          "checked_at": "2026-11-03",
+          "match": "unique_name_and_full_postcode",
+          "reference_coordinate": {
+            "lat": 52.7603165,
+            "lng": -0.7398496
+          },
+          "reference_postcode": "LE14 2AG",
+          "source": "food-standards-agency-fhrs",
+          "url": "https://ratings.food.gov.uk/business/1101581"
+        },
+        {
+          "checked_at": "2026-11-03",
+          "match": "named_venue_full_postcode_and_independent_fsa_agreement",
+          "reference_coordinate": {
+            "lat": 52.760298838848,
+            "lng": -0.73984550674595
+          },
+          "reference_name": "Berkeley Arms, Wymondham - Village Pub with Fire",
+          "reference_postcode": "LE14 2AG",
+          "source": "camra",
+          "url": "https://camra.org.uk/pubs/192220"
+        }
+      ],
+      "lat": 52.760298838848,
+      "lng": -0.73984550674595,
+      "place_name": "Wymondham",
+      "postcode": "LE14 2AG",
+      "pub_name": "Berkeley Arms",
+      "status": "verified_venue",
+      "venue_id": "v-4ac64929-0f37-5395-9fa7-4c90d72fda85"
     },
     "binary|mickleover|de3 0gr": {
       "coordinate_source": "google-maps-named-place",
@@ -2730,6 +2823,42 @@
       "pub_name": "Black Lion",
       "status": "verified_venue",
       "venue_id": "v-a53a96f3-3672-5b95-a6f6-c15ee1b976eb"
+    },
+    "black swan|belper: central|de56 1fz": {
+      "coordinate_source": "camra-and-fhrs",
+      "display_precision": "venue",
+      "evidence": [
+        {
+          "checked_at": "2026-11-03",
+          "match": "unique_name_and_full_postcode",
+          "reference_coordinate": {
+            "lat": 53.023319,
+            "lng": -1.478952
+          },
+          "reference_postcode": "DE56 1FZ",
+          "source": "food-standards-agency-fhrs",
+          "url": "https://ratings.food.gov.uk/business/1135"
+        },
+        {
+          "checked_at": "2026-11-03",
+          "match": "named_venue_full_postcode_and_independent_fsa_agreement",
+          "reference_coordinate": {
+            "lat": 53.02321,
+            "lng": -1.478868
+          },
+          "reference_name": "Black Swan Ale House, Belper - Seven Cask Ales",
+          "reference_postcode": "DE56 1FZ",
+          "source": "camra",
+          "url": "https://camra.org.uk/pubs/113310"
+        }
+      ],
+      "lat": 53.02321,
+      "lng": -1.478868,
+      "place_name": "Belper: Central",
+      "postcode": "DE56 1FZ",
+      "pub_name": "Black Swan",
+      "status": "verified_venue",
+      "venue_id": "v-377c7ea8-2fc7-5f33-900f-dfc367d0e758"
     },
     "black swan|shepshed|le12 9dl": {
       "coordinate_source": "openstreetmap-gb-extract",
@@ -6011,6 +6140,16 @@
       "status": "verified_venue",
       "venue_id": "v-b0b00604-bff6-58c1-915c-fa3e9eb4292b"
     },
+    "church inn|darley dale|de4 2gg": {
+      "coordinate_source": "postcode",
+      "display_precision": "postcode",
+      "evidence": [],
+      "place_name": "Darley Dale",
+      "postcode": "DE4 2GG",
+      "pub_name": "Church Inn",
+      "status": "postcode_approximate",
+      "venue_id": "v-7c328aa9-453e-56d5-afaa-3e6011fb7385"
+    },
     "cinque ports|seaford|bn25 1pp": {
       "coordinate_source": "openstreetmap-gb-extract",
       "display_precision": "venue",
@@ -7276,6 +7415,16 @@
       "status": "verified_venue",
       "venue_id": "v-e5e26c8d-c7bc-5424-81ba-32a0b892b3eb"
     },
+    "court oak|birmingham: harborne|b32 2eh": {
+      "coordinate_source": "postcode",
+      "display_precision": "postcode",
+      "evidence": [],
+      "place_name": "Birmingham: Harborne",
+      "postcode": "B32 2EH",
+      "pub_name": "Court Oak",
+      "status": "postcode_approximate",
+      "venue_id": "v-fa21eb85-2fa0-5cfb-b312-c00af1d392db"
+    },
     "crafty local ale house|skegness|pe25 2ah": {
       "coordinate_source": "food-standards-agency-fhrs",
       "display_precision": "venue",
@@ -7467,6 +7616,16 @@
       "pub_name": "Cricketers Arms",
       "status": "verified_venue",
       "venue_id": "v-697d698b-e30c-5f9b-a384-573dc1dfa1ad"
+    },
+    "cricketers|epsom|kt18 7sr": {
+      "coordinate_source": "postcode",
+      "display_precision": "postcode",
+      "evidence": [],
+      "place_name": "Epsom",
+      "postcode": "KT18 7SR",
+      "pub_name": "Cricketers",
+      "status": "postcode_approximate",
+      "venue_id": "v-904f3702-2d9f-5a94-9a08-766db95b67b3"
     },
     "cricketers|leicester: aylestone|le2 8ad": {
       "coordinate_source": "openstreetmap-gb-extract",
@@ -8617,6 +8776,52 @@
       "pub_name": "Crown",
       "status": "verified_venue",
       "venue_id": "v-c2444f01-e722-553c-8aba-198828ded1de"
+    },
+    "crown|southam|cv47 1ph": {
+      "coordinate_source": "postcode",
+      "display_precision": "postcode",
+      "evidence": [],
+      "place_name": "Southam",
+      "postcode": "CV47 1PH",
+      "pub_name": "Crown",
+      "status": "postcode_approximate",
+      "venue_id": "v-59f0070d-7f4c-559e-b10b-e85d2383e5bc"
+    },
+    "crown|southport: birkdale|pr8 3bz": {
+      "coordinate_source": "camra-and-fhrs",
+      "display_precision": "venue",
+      "evidence": [
+        {
+          "checked_at": "2026-11-03",
+          "match": "unique_name_and_full_postcode",
+          "reference_coordinate": {
+            "lat": 53.615802,
+            "lng": -3.017414
+          },
+          "reference_postcode": "PR8 3BZ",
+          "source": "food-standards-agency-fhrs",
+          "url": "https://ratings.food.gov.uk/business/102154"
+        },
+        {
+          "checked_at": "2026-11-03",
+          "match": "named_venue_full_postcode_and_independent_fsa_agreement",
+          "reference_coordinate": {
+            "lat": 53.6158,
+            "lng": -3.0174
+          },
+          "reference_name": "Crown Hotel, Southport - Cask Ale Nights",
+          "reference_postcode": "PR8 3BZ",
+          "source": "camra",
+          "url": "https://camra.org.uk/pubs/146987"
+        }
+      ],
+      "lat": 53.6158,
+      "lng": -3.0174,
+      "place_name": "Southport: Birkdale",
+      "postcode": "PR8 3BZ",
+      "pub_name": "Crown",
+      "status": "verified_venue",
+      "venue_id": "v-4636f62a-1e8b-5a4c-a4ce-3ad1fb58c684"
     },
     "crown|stockport|sk4 1ar": {
       "coordinate_source": "camra-pubs-location-audit",
@@ -10392,6 +10597,16 @@
       "status": "verified_venue",
       "venue_id": "v-f3734e56-20a8-5a7e-8441-157b6f375658"
     },
+    "fitzgeralds|ashby-de-la-zouch|le65 1ah": {
+      "coordinate_source": "postcode",
+      "display_precision": "postcode",
+      "evidence": [],
+      "place_name": "Ashby-de-la-Zouch",
+      "postcode": "LE65 1AH",
+      "pub_name": "Fitzgeralds",
+      "status": "postcode_approximate",
+      "venue_id": "v-b1f768d3-f5ed-5eae-a199-6b21559ba452"
+    },
     "five bells|bassingham|ln5 9jz": {
       "coordinate_source": "openstreetmap-gb-extract",
       "display_precision": "venue",
@@ -10716,6 +10931,42 @@
       "status": "verified_venue",
       "venue_id": "v-5243b8c1-722d-51c1-937b-df35caf01b37"
     },
+    "fox and hounds|belgravia sw1w|sw1w 8hr": {
+      "coordinate_source": "camra-and-fhrs",
+      "display_precision": "venue",
+      "evidence": [
+        {
+          "checked_at": "2026-11-03",
+          "match": "unique_name_and_full_postcode",
+          "reference_coordinate": {
+            "lat": 51.4910775,
+            "lng": -0.1549315
+          },
+          "reference_postcode": "SW1W 8HR",
+          "source": "food-standards-agency-fhrs",
+          "url": "https://ratings.food.gov.uk/business/411148"
+        },
+        {
+          "checked_at": "2026-11-03",
+          "match": "named_venue_full_postcode_and_independent_fsa_agreement",
+          "reference_coordinate": {
+            "lat": 51.491074,
+            "lng": -0.154886
+          },
+          "reference_name": "Fox & Hounds, London - Small Wet-Led Pub",
+          "reference_postcode": "SW1W 8HR",
+          "source": "camra",
+          "url": "https://camra.org.uk/pubs/128834"
+        }
+      ],
+      "lat": 51.491074,
+      "lng": -0.154886,
+      "place_name": "Belgravia SW1W",
+      "postcode": "SW1W 8HR",
+      "pub_name": "Fox and Hounds",
+      "status": "verified_venue",
+      "venue_id": "v-a818cc8e-ea76-5657-bf3b-1844eaacc4b5"
+    },
     "fox and hounds|reepham|ln3 4dn": {
       "coordinate_source": "openstreetmap-gb-extract",
       "display_precision": "venue",
@@ -10823,6 +11074,42 @@
       "pub_name": "Fox",
       "status": "verified_venue",
       "venue_id": "v-ff3f62d5-c10b-5e2d-806b-9768ad39bc55"
+    },
+    "fox|oadby|le2 5dl": {
+      "coordinate_source": "camra-and-fhrs",
+      "display_precision": "venue",
+      "evidence": [
+        {
+          "checked_at": "2026-11-03",
+          "match": "unique_name_and_full_postcode",
+          "reference_coordinate": {
+            "lat": 52.597797,
+            "lng": -1.079704
+          },
+          "reference_postcode": "LE2 5DL",
+          "source": "food-standards-agency-fhrs",
+          "url": "https://ratings.food.gov.uk/business/1934108"
+        },
+        {
+          "checked_at": "2026-11-03",
+          "match": "named_venue_full_postcode_and_independent_fsa_agreement",
+          "reference_coordinate": {
+            "lat": 52.597816,
+            "lng": -1.079874
+          },
+          "reference_name": "Fox, Oadby - Traditional Local",
+          "reference_postcode": "LE2 5DL",
+          "source": "camra",
+          "url": "https://camra.org.uk/pubs/174015"
+        }
+      ],
+      "lat": 52.597816,
+      "lng": -1.079874,
+      "place_name": "Oadby",
+      "postcode": "LE2 5DL",
+      "pub_name": "Fox",
+      "status": "verified_venue",
+      "venue_id": "v-1fe3e0a2-850a-5ee3-a037-86d27e598d40"
     },
     "fox|ysceifiog|ch8 8nj": {
       "coordinate_source": "food-standards-agency-fhrs",
@@ -11203,6 +11490,42 @@
       "status": "verified_venue",
       "venue_id": "v-a4884649-8729-514c-a80c-6cb22bece019"
     },
+    "george and dragon|lichfield|ws13 7aj": {
+      "coordinate_source": "camra-and-fhrs",
+      "display_precision": "venue",
+      "evidence": [
+        {
+          "checked_at": "2026-11-03",
+          "match": "unique_name_and_full_postcode",
+          "reference_coordinate": {
+            "lat": 52.6861427,
+            "lng": -1.8337618
+          },
+          "reference_postcode": "WS13 7AJ",
+          "source": "food-standards-agency-fhrs",
+          "url": "https://ratings.food.gov.uk/business/1983932"
+        },
+        {
+          "checked_at": "2026-11-03",
+          "match": "named_venue_full_postcode_and_independent_fsa_agreement",
+          "reference_coordinate": {
+            "lat": 52.686141,
+            "lng": -1.833792
+          },
+          "reference_name": "George & Dragon, Lichfield - Cathedral Beer Garden",
+          "reference_postcode": "WS13 7AJ",
+          "source": "camra",
+          "url": "https://camra.org.uk/pubs/131756"
+        }
+      ],
+      "lat": 52.686141,
+      "lng": -1.833792,
+      "place_name": "Lichfield",
+      "postcode": "WS13 7AJ",
+      "pub_name": "George and Dragon",
+      "status": "verified_venue",
+      "venue_id": "v-dd512b0a-8949-5f61-8a97-a5661a6de57b"
+    },
     "george and dragon|newcastle-u-l: central|st5 1rh": {
       "coordinate_source": "openstreetmap-gb-extract",
       "display_precision": "venue",
@@ -11283,6 +11606,42 @@
       "pub_name": "George and Dragon",
       "status": "verified_venue",
       "venue_id": "v-f3b5abb5-5292-5a3e-9d84-1e24e5a08fba"
+    },
+    "george and the dragon|gnosall|st20 0ex": {
+      "coordinate_source": "camra-and-fhrs",
+      "display_precision": "venue",
+      "evidence": [
+        {
+          "checked_at": "2026-11-03",
+          "match": "unique_name_and_full_postcode",
+          "reference_coordinate": {
+            "lat": 52.785561,
+            "lng": -2.2546397
+          },
+          "reference_postcode": "ST20 0EX",
+          "source": "food-standards-agency-fhrs",
+          "url": "https://ratings.food.gov.uk/business/1195651"
+        },
+        {
+          "checked_at": "2026-11-03",
+          "match": "named_venue_full_postcode_and_independent_fsa_agreement",
+          "reference_coordinate": {
+            "lat": 52.785512,
+            "lng": -2.254677
+          },
+          "reference_name": "George & the Dragon, Gnosall - Steampunk Interior",
+          "reference_postcode": "ST20 0EX",
+          "source": "camra",
+          "url": "https://camra.org.uk/pubs/145996"
+        }
+      ],
+      "lat": 52.785512,
+      "lng": -2.254677,
+      "place_name": "Gnosall",
+      "postcode": "ST20 0EX",
+      "pub_name": "George and the Dragon",
+      "status": "verified_venue",
+      "venue_id": "v-8eb08e1f-62d1-5230-bc83-dee40c6d7495"
     },
     "george inn|coleorton|le67 8hf": {
       "coordinate_source": "camra-pubs-location-audit",
@@ -11728,6 +12087,42 @@
       "status": "verified_venue",
       "venue_id": "v-163491c3-e2cc-54a0-9d36-124f2bd17d8e"
     },
+    "globe|liverpool: central|l1 1hw": {
+      "coordinate_source": "camra-and-fhrs",
+      "display_precision": "venue",
+      "evidence": [
+        {
+          "checked_at": "2026-11-03",
+          "match": "unique_name_and_full_postcode",
+          "reference_coordinate": {
+            "lat": 53.4052351,
+            "lng": -2.9803104
+          },
+          "reference_postcode": "L1 1HW",
+          "source": "food-standards-agency-fhrs",
+          "url": "https://ratings.food.gov.uk/business/1929140"
+        },
+        {
+          "checked_at": "2026-11-03",
+          "match": "named_venue_full_postcode_and_independent_fsa_agreement",
+          "reference_coordinate": {
+            "lat": 53.405213,
+            "lng": -2.980344
+          },
+          "reference_name": "Globe, Liverpool - Cosy City Centre Local",
+          "reference_postcode": "L1 1HW",
+          "source": "camra",
+          "url": "https://camra.org.uk/pubs/166248"
+        }
+      ],
+      "lat": 53.405213,
+      "lng": -2.980344,
+      "place_name": "Liverpool: Central",
+      "postcode": "L1 1HW",
+      "pub_name": "Globe",
+      "status": "verified_venue",
+      "venue_id": "v-6946317f-e8ea-5ab7-a0aa-6ba7d6df8cb8"
+    },
     "globe|stoke: tunstall|st6 5ta": {
       "coordinate_source": "openstreetmap-gb-extract",
       "display_precision": "venue",
@@ -11972,6 +12367,42 @@
       "pub_name": "Great Western",
       "status": "verified_venue",
       "venue_id": "v-33da9387-2aa7-5bdf-b0bb-3e369659eb47"
+    },
+    "great western|wolverhampton: central|wv10 0dg": {
+      "coordinate_source": "camra-and-fhrs",
+      "display_precision": "venue",
+      "evidence": [
+        {
+          "checked_at": "2026-11-03",
+          "match": "unique_name_and_full_postcode",
+          "reference_coordinate": {
+            "lat": 52.587099,
+            "lng": -2.117652
+          },
+          "reference_postcode": "WV10 0DG",
+          "source": "food-standards-agency-fhrs",
+          "url": "https://ratings.food.gov.uk/business/608880"
+        },
+        {
+          "checked_at": "2026-11-03",
+          "match": "named_venue_full_postcode_and_independent_fsa_agreement",
+          "reference_coordinate": {
+            "lat": 52.587103592327,
+            "lng": -2.117662230654
+          },
+          "reference_name": "Great Western, Wolverhampton - Grade II Listed Pub",
+          "reference_postcode": "WV10 0DG",
+          "source": "camra",
+          "url": "https://camra.org.uk/pubs/127008"
+        }
+      ],
+      "lat": 52.587103592327,
+      "lng": -2.117662230654,
+      "place_name": "Wolverhampton: Central",
+      "postcode": "WV10 0DG",
+      "pub_name": "Great Western",
+      "status": "verified_venue",
+      "venue_id": "v-56b3e28f-3fff-5717-be36-519b8e204f0f"
     },
     "green dragon|little stretton|sy6 6re": {
       "coordinate_source": "openstreetmap-gb-extract",
@@ -12310,6 +12741,42 @@
       "status": "verified_venue",
       "venue_id": "v-97a6ff26-33a9-521e-8875-2fa9a26e5f68"
     },
+    "greyhound hotel|cromford|de4 3qe": {
+      "coordinate_source": "camra-and-fhrs",
+      "display_precision": "venue",
+      "evidence": [
+        {
+          "checked_at": "2026-11-03",
+          "match": "unique_name_and_full_postcode",
+          "reference_coordinate": {
+            "lat": 53.108873,
+            "lng": -1.560228
+          },
+          "reference_postcode": "DE4 3QE",
+          "source": "food-standards-agency-fhrs",
+          "url": "https://ratings.food.gov.uk/business/1993992"
+        },
+        {
+          "checked_at": "2026-11-03",
+          "match": "named_venue_full_postcode_and_independent_fsa_agreement",
+          "reference_coordinate": {
+            "lat": 53.108651,
+            "lng": -1.560486
+          },
+          "reference_name": "Greyhound, Cromford - Market Place Pub",
+          "reference_postcode": "DE4 3QE",
+          "source": "camra",
+          "url": "https://camra.org.uk/pubs/165758"
+        }
+      ],
+      "lat": 53.108651,
+      "lng": -1.560486,
+      "place_name": "Cromford",
+      "postcode": "DE4 3QE",
+      "pub_name": "Greyhound Hotel",
+      "status": "verified_venue",
+      "venue_id": "v-aa44b1b0-91be-5ffb-8583-1b0f7dfd4781"
+    },
     "greyhound inn|coventry: sutton stop|cv6 6df": {
       "coordinate_source": "openstreetmap-gb-extract",
       "display_precision": "venue",
@@ -12363,6 +12830,52 @@
       "pub_name": "Greyhound Inn",
       "status": "verified_venue",
       "venue_id": "v-d704b3a8-33c3-553f-b067-e1ed747652da"
+    },
+    "greyhound|boundary / woodville|de11 7bu": {
+      "coordinate_source": "owner-reviewed-google-maps",
+      "display_precision": "venue",
+      "evidence": [
+        {
+          "checked_at": "2026-10-24",
+          "difference_metres": 0.0,
+          "disposition": "superseded_by_owner_building_correction",
+          "disposition_checked_at": "2026-11-03",
+          "disposition_reason": "Owner confirmed the Google named-place building instead of this CAMRA geocode; retained as historical source disagreement, not current coordinate authority.",
+          "match": "venue_name_and_full_postcode",
+          "reference_address": "149 Ashby Road",
+          "reference_coordinate": {
+            "lat": 52.7671,
+            "lng": -1.5111
+          },
+          "reference_name": "Greyhound Inn, Woodville - Free House with Patio",
+          "reference_postcode": "DE11 7BU",
+          "source": "camra",
+          "url": "https://camra.org.uk/pubs/123900"
+        },
+        {
+          "checked_at": "2026-11-03",
+          "evidence_kind": "Owner-confirmed manual Google Maps named-place observation; not an automated Places API check",
+          "match": "owner_reviewed_named_place_and_full_postcode",
+          "owner_instruction": "google is correct",
+          "reference_address": "149 Ashby Road, Woodville, DE11 7BU",
+          "reference_coordinate": {
+            "lat": 52.767456,
+            "lng": -1.5125223
+          },
+          "reference_name": "The Greyhound Inn",
+          "reference_postcode": "DE11 7BU",
+          "reviewed_by": "bristolbagpiper",
+          "source": "google-maps-named-place",
+          "url": "https://www.google.com/maps/place/The+Greyhound+Inn/@52.767456,-1.5125223,17z/data=!3m1!4b1!4m6!3m5!1s0x4879feba10708f69:0x3f4eab9b3f5e67f6!8m2!3d52.767456!4d-1.5125223!16s%2Fg%2F1tcx11fl"
+        }
+      ],
+      "lat": 52.767456,
+      "lng": -1.5125223,
+      "place_name": "Boundary / Woodville",
+      "postcode": "DE11 7BU",
+      "pub_name": "Greyhound",
+      "status": "verified_venue",
+      "venue_id": "v-c31ee814-63f4-513d-8d38-fad12edad41f"
     },
     "greyhound|derby: central|de1 1fn": {
       "coordinate_source": "openstreetmap-gb-extract",
@@ -12444,52 +12957,6 @@
       "pub_name": "Greyhound",
       "status": "verified_venue",
       "venue_id": "v-92423ecf-1b34-5b41-902a-9213e47f7aaf"
-    },
-    "greyhound|woodville|de11 7bu": {
-      "coordinate_source": "owner-reviewed-google-maps",
-      "display_precision": "venue",
-      "evidence": [
-        {
-          "checked_at": "2026-10-24",
-          "difference_metres": 0.0,
-          "disposition": "superseded_by_owner_building_correction",
-          "disposition_checked_at": "2026-11-03",
-          "disposition_reason": "Owner confirmed the Google named-place building instead of this CAMRA geocode; retained as historical source disagreement, not current coordinate authority.",
-          "match": "venue_name_and_full_postcode",
-          "reference_address": "149 Ashby Road",
-          "reference_coordinate": {
-            "lat": 52.7671,
-            "lng": -1.5111
-          },
-          "reference_name": "Greyhound Inn, Woodville - Free House with Patio",
-          "reference_postcode": "DE11 7BU",
-          "source": "camra",
-          "url": "https://camra.org.uk/pubs/123900"
-        },
-        {
-          "checked_at": "2026-11-03",
-          "evidence_kind": "Owner-confirmed manual Google Maps named-place observation; not an automated Places API check",
-          "match": "owner_reviewed_named_place_and_full_postcode",
-          "owner_instruction": "google is correct",
-          "reference_address": "149 Ashby Road, Woodville, DE11 7BU",
-          "reference_coordinate": {
-            "lat": 52.767456,
-            "lng": -1.5125223
-          },
-          "reference_name": "The Greyhound Inn",
-          "reference_postcode": "DE11 7BU",
-          "reviewed_by": "bristolbagpiper",
-          "source": "google-maps-named-place",
-          "url": "https://www.google.com/maps/place/The+Greyhound+Inn/@52.767456,-1.5125223,17z/data=!3m1!4b1!4m6!3m5!1s0x4879feba10708f69:0x3f4eab9b3f5e67f6!8m2!3d52.767456!4d-1.5125223!16s%2Fg%2F1tcx11fl"
-        }
-      ],
-      "lat": 52.767456,
-      "lng": -1.5125223,
-      "place_name": "Woodville",
-      "postcode": "DE11 7BU",
-      "pub_name": "Greyhound",
-      "status": "verified_venue",
-      "venue_id": "v-c31ee814-63f4-513d-8d38-fad12edad41f"
     },
     "griffin|shustoke|b46 2lb": {
       "coordinate_source": "camra-pubs-location-audit",
@@ -12773,6 +13240,42 @@
       "pub_name": "Halfway House",
       "status": "verified_venue",
       "venue_id": "v-de4bb4cf-ba26-5249-bc8a-2d255fabb89c"
+    },
+    "hanbury|islington n1|n1 7du": {
+      "coordinate_source": "camra-and-fhrs",
+      "display_precision": "venue",
+      "evidence": [
+        {
+          "checked_at": "2026-11-03",
+          "match": "unique_name_and_full_postcode",
+          "reference_coordinate": {
+            "lat": 51.5362096,
+            "lng": -0.0934957
+          },
+          "reference_postcode": "N1 7DU",
+          "source": "food-standards-agency-fhrs",
+          "url": "https://ratings.food.gov.uk/business/1380835"
+        },
+        {
+          "checked_at": "2026-11-03",
+          "match": "named_venue_full_postcode_and_independent_fsa_agreement",
+          "reference_coordinate": {
+            "lat": 51.536,
+            "lng": -0.0937
+          },
+          "reference_name": "Hanbury, Islington - Street Corner Pub",
+          "reference_postcode": "N1 7DU",
+          "source": "camra",
+          "url": "https://camra.org.uk/pubs/124756"
+        }
+      ],
+      "lat": 51.536,
+      "lng": -0.0937,
+      "place_name": "Islington N1",
+      "postcode": "N1 7DU",
+      "pub_name": "Hanbury",
+      "status": "verified_venue",
+      "venue_id": "v-8ca08ab9-8611-5132-a7c6-2f7a29f93fc6"
     },
     "hand and heart|nottingham: central|ng1 5ba": {
       "coordinate_source": "openstreetmap-gb-extract",
@@ -13422,6 +13925,42 @@
       "pub_name": "Holly Bush",
       "status": "verified_venue",
       "venue_id": "v-64de191e-b0d6-56c5-b367-6a142d3f746c"
+    },
+    "holly bush|makeney|de56 0rx": {
+      "coordinate_source": "camra-and-fhrs",
+      "display_precision": "venue",
+      "evidence": [
+        {
+          "checked_at": "2026-11-03",
+          "match": "unique_name_and_full_postcode",
+          "reference_coordinate": {
+            "lat": 52.99849,
+            "lng": -1.476807
+          },
+          "reference_postcode": "DE56 0RX",
+          "source": "food-standards-agency-fhrs",
+          "url": "https://ratings.food.gov.uk/business/1127"
+        },
+        {
+          "checked_at": "2026-11-03",
+          "match": "named_venue_full_postcode_and_independent_fsa_agreement",
+          "reference_coordinate": {
+            "lat": 52.998247,
+            "lng": -1.477044
+          },
+          "reference_name": "Holly Bush, Makeney - Grade II Listed Pub",
+          "reference_postcode": "DE56 0RX",
+          "source": "camra",
+          "url": "https://camra.org.uk/pubs/113265"
+        }
+      ],
+      "lat": 52.998247,
+      "lng": -1.477044,
+      "place_name": "Makeney",
+      "postcode": "DE56 0RX",
+      "pub_name": "Holly Bush",
+      "status": "verified_venue",
+      "venue_id": "v-d363c840-a147-501a-a4f1-9a027d3cda7c"
     },
     "hope and anchor|grimsby|dn31 1nx": {
       "coordinate_source": "openstreetmap-gb-extract",
@@ -15641,6 +16180,42 @@
       "status": "verified_venue",
       "venue_id": "v-746b8c68-94ab-58c0-ae78-077c2838325c"
     },
+    "london inn|padstow|pl28 8an": {
+      "coordinate_source": "camra-and-fhrs",
+      "display_precision": "venue",
+      "evidence": [
+        {
+          "checked_at": "2026-11-03",
+          "match": "unique_name_and_full_postcode",
+          "reference_coordinate": {
+            "lat": 50.5411018,
+            "lng": -4.9394906
+          },
+          "reference_postcode": "PL28 8AN",
+          "source": "food-standards-agency-fhrs",
+          "url": "https://ratings.food.gov.uk/business/1935465"
+        },
+        {
+          "checked_at": "2026-11-03",
+          "match": "named_venue_full_postcode_and_independent_fsa_agreement",
+          "reference_coordinate": {
+            "lat": 50.54092,
+            "lng": -4.93958
+          },
+          "reference_name": "London Inn, Padstow - Village Local, Folk Music",
+          "reference_postcode": "PL28 8AN",
+          "source": "camra",
+          "url": "https://camra.org.uk/pubs/139018"
+        }
+      ],
+      "lat": 50.54092,
+      "lng": -4.93958,
+      "place_name": "Padstow",
+      "postcode": "PL28 8AN",
+      "pub_name": "London Inn",
+      "status": "verified_venue",
+      "venue_id": "v-211439b7-a4b0-553c-b44c-5f97f36df38f"
+    },
     "london inn|plympton|pl7 1nh": {
       "coordinate_source": "openstreetmap",
       "display_precision": "venue",
@@ -15829,6 +16404,42 @@
       "pub_name": "Lord Nelson",
       "status": "verified_venue",
       "venue_id": "v-bfceb8b1-0bb7-526d-88b0-1558ef59d1a5"
+    },
+    "lord nelson|beverley|hu17 0np": {
+      "coordinate_source": "camra-and-fhrs",
+      "display_precision": "venue",
+      "evidence": [
+        {
+          "checked_at": "2026-11-03",
+          "match": "unique_name_and_full_postcode",
+          "reference_coordinate": {
+            "lat": 53.839304,
+            "lng": -0.422834
+          },
+          "reference_postcode": "HU17 0NP",
+          "source": "food-standards-agency-fhrs",
+          "url": "https://ratings.food.gov.uk/business/439746"
+        },
+        {
+          "checked_at": "2026-11-03",
+          "match": "named_venue_full_postcode_and_independent_fsa_agreement",
+          "reference_coordinate": {
+            "lat": 53.839115,
+            "lng": -0.422509
+          },
+          "reference_name": "Lord Nelson, Beverley - Grade II* Listed Pub",
+          "reference_postcode": "HU17 0NP",
+          "source": "camra",
+          "url": "https://camra.org.uk/pubs/180778"
+        }
+      ],
+      "lat": 53.839115,
+      "lng": -0.422509,
+      "place_name": "Beverley",
+      "postcode": "HU17 0NP",
+      "pub_name": "Lord Nelson",
+      "status": "verified_venue",
+      "venue_id": "v-56ccfe69-691d-5487-8f64-bee410ee26dc"
     },
     "lord nelson|oakham|le15 6dt": {
       "coordinate_source": "openstreetmap-gb-extract",
@@ -16221,6 +16832,42 @@
       "status": "verified_venue",
       "venue_id": "v-446b9fc7-c4e0-5040-91f3-8dbe02bb46a1"
     },
+    "malt cross|nottingham: central|ng1 6fg": {
+      "coordinate_source": "camra-and-fhrs",
+      "display_precision": "venue",
+      "evidence": [
+        {
+          "checked_at": "2026-11-03",
+          "match": "unique_name_and_full_postcode",
+          "reference_coordinate": {
+            "lat": 52.953193,
+            "lng": -1.152349
+          },
+          "reference_postcode": "NG1 6FG",
+          "source": "food-standards-agency-fhrs",
+          "url": "https://ratings.food.gov.uk/business/1095085"
+        },
+        {
+          "checked_at": "2026-11-03",
+          "match": "named_venue_full_postcode_and_independent_fsa_agreement",
+          "reference_coordinate": {
+            "lat": 52.95311513953,
+            "lng": -1.152296131283
+          },
+          "reference_name": "Malt Cross, Nottingham: Central - Live Music Pub",
+          "reference_postcode": "NG1 6FG",
+          "source": "camra",
+          "url": "https://camra.org.uk/pubs/162522"
+        }
+      ],
+      "lat": 52.95311513953,
+      "lng": -1.152296131283,
+      "place_name": "Nottingham: Central",
+      "postcode": "NG1 6FG",
+      "pub_name": "Malt Cross",
+      "status": "verified_venue",
+      "venue_id": "v-0fe5d7e1-09cd-5359-8a80-61b9df5a9587"
+    },
     "malt shovel|chorley|ws13 8dd": {
       "coordinate_source": "openstreetmap-gb-extract",
       "display_precision": "venue",
@@ -16275,6 +16922,42 @@
       "pub_name": "Malt Shovel",
       "status": "verified_venue",
       "venue_id": "v-bce902a8-ea2b-5c24-86c9-3c7c4f5dd04f"
+    },
+    "malt shovel|worthington|le65 1rq": {
+      "coordinate_source": "camra-and-fhrs",
+      "display_precision": "venue",
+      "evidence": [
+        {
+          "checked_at": "2026-11-03",
+          "match": "unique_name_and_full_postcode",
+          "reference_coordinate": {
+            "lat": 52.780089,
+            "lng": -1.394953
+          },
+          "reference_postcode": "LE65 1RQ",
+          "source": "food-standards-agency-fhrs",
+          "url": "https://ratings.food.gov.uk/business/1094515"
+        },
+        {
+          "checked_at": "2026-11-03",
+          "match": "named_venue_full_postcode_and_independent_fsa_agreement",
+          "reference_coordinate": {
+            "lat": 52.7803,
+            "lng": -1.3949
+          },
+          "reference_name": "Malt Shovel, Worthington - Free House Village Pub",
+          "reference_postcode": "LE65 1RQ",
+          "source": "camra",
+          "url": "https://camra.org.uk/pubs/171277"
+        }
+      ],
+      "lat": 52.7803,
+      "lng": -1.3949,
+      "place_name": "Worthington",
+      "postcode": "LE65 1RQ",
+      "pub_name": "Malt Shovel",
+      "status": "verified_venue",
+      "venue_id": "v-1536960d-c0c6-5571-b3f2-64947d2c6adf"
     },
     "malt|aston on trent|de72 2aa": {
       "coordinate_source": "owner-reviewed-map",
@@ -16603,6 +17286,16 @@
       "pub_name": "Marquis of Ormonde",
       "status": "verified_venue",
       "venue_id": "v-d5b15256-e5b1-54a6-a3ec-0f839d4d90ff"
+    },
+    "marstons sports and social club (pmc)|burton u-t: central|de14 2bg": {
+      "coordinate_source": "postcode",
+      "display_precision": "postcode",
+      "evidence": [],
+      "place_name": "Burton U-T: Central",
+      "postcode": "DE14 2BG",
+      "pub_name": "Marstons Sports and Social Club (PMC)",
+      "status": "postcode_approximate",
+      "venue_id": "v-91dc9a73-c434-5a18-968f-d2f88b9edca7"
     },
     "martins arms|colston bassett|ng12 3fd": {
       "coordinate_source": "camra-and-fsa-location-audit",
@@ -18173,6 +18866,16 @@
       "status": "verified_venue",
       "venue_id": "v-6e6a3ef8-0baa-5d53-927c-a5d1b1044c85"
     },
+    "new swan|atherstone|cv9 1fe": {
+      "coordinate_source": "postcode",
+      "display_precision": "postcode",
+      "evidence": [],
+      "place_name": "Atherstone",
+      "postcode": "CV9 1FE",
+      "pub_name": "New Swan",
+      "status": "postcode_approximate",
+      "venue_id": "v-f8899d25-0fe4-551f-b83c-e47f3ecf0ed6"
+    },
     "new zealand arms|derby: new zealand|de22 3gl": {
       "coordinate_source": "openstreetmap-gb-extract",
       "display_precision": "venue",
@@ -18279,6 +18982,16 @@
       "status": "verified_venue",
       "venue_id": "v-3925df2c-0a5b-5692-9cdb-ad609c4da147"
     },
+    "nineteen.57|talybont|ll43 2aq": {
+      "coordinate_source": "postcode",
+      "display_precision": "postcode",
+      "evidence": [],
+      "place_name": "Talybont",
+      "postcode": "LL43 2AQ",
+      "pub_name": "Nineteen.57",
+      "status": "postcode_approximate",
+      "venue_id": "v-ad1cdbb6-9c64-5a6a-a5ce-53557e5637f7"
+    },
     "no 1 pub|cleethorpes|dn35 8ax": {
       "coordinate_source": "camra-pubs-location-audit",
       "display_precision": "venue",
@@ -18305,6 +19018,16 @@
       "pub_name": "No 1 Pub",
       "status": "verified_venue",
       "venue_id": "v-88baf1bf-439e-5f70-9c45-1cacab7a6c20"
+    },
+    "noahs ark|plymouth: central|pl1 1ep": {
+      "coordinate_source": "postcode",
+      "display_precision": "postcode",
+      "evidence": [],
+      "place_name": "Plymouth: Central",
+      "postcode": "PL1 1EP",
+      "pub_name": "Noahs Ark",
+      "status": "postcode_approximate",
+      "venue_id": "v-f8715c2c-440d-5a56-96bc-95b9dc41b973"
     },
     "nobody inn|grantham|ng31 6nu": {
       "coordinate_source": "openstreetmap-gb-extract",
@@ -19185,6 +19908,42 @@
       "status": "verified_venue",
       "venue_id": "v-2c63d2c6-3539-5152-b5b7-a7eb8d98a657"
     },
+    "old wellington|manchester: central|m3 1sw": {
+      "coordinate_source": "camra-and-fhrs",
+      "display_precision": "venue",
+      "evidence": [
+        {
+          "checked_at": "2026-11-03",
+          "match": "unique_name_and_full_postcode",
+          "reference_coordinate": {
+            "lat": 53.484691619873,
+            "lng": -2.24407291412354
+          },
+          "reference_postcode": "M3 1SW",
+          "source": "food-standards-agency-fhrs",
+          "url": "https://ratings.food.gov.uk/business/1818972"
+        },
+        {
+          "checked_at": "2026-11-03",
+          "match": "named_venue_full_postcode_and_independent_fsa_agreement",
+          "reference_coordinate": {
+            "lat": 53.484676480863,
+            "lng": -2.243988700211
+          },
+          "reference_name": "Old Wellington, Manchester - Real Ale Pub",
+          "reference_postcode": "M3 1SW",
+          "source": "camra",
+          "url": "https://camra.org.uk/pubs/137520"
+        }
+      ],
+      "lat": 53.484676480863,
+      "lng": -2.243988700211,
+      "place_name": "Manchester: Central",
+      "postcode": "M3 1SW",
+      "pub_name": "Old Wellington",
+      "status": "verified_venue",
+      "venue_id": "v-21d5e56e-fe71-5e2a-8008-e2faadf64236"
+    },
     "old windmill|coventry: central|cv1 3ba": {
       "coordinate_source": "openstreetmap-gb-extract",
       "display_precision": "venue",
@@ -19401,6 +20160,88 @@
       "status": "verified_venue",
       "venue_id": "v-1488af46-baed-520b-89f3-b68543720635"
     },
+    "pant yr ardd|tregarth|ll57 4pl": {
+      "coordinate_source": "camra-and-fhrs",
+      "display_precision": "venue",
+      "evidence": [
+        {
+          "checked_at": "2026-11-03",
+          "match": "unique_name_and_full_postcode",
+          "reference_coordinate": {
+            "lat": 53.189826965332,
+            "lng": -4.09012794494629
+          },
+          "reference_postcode": "LL57 4PL",
+          "source": "food-standards-agency-fhrs",
+          "url": "https://ratings.food.gov.uk/business/1436132"
+        },
+        {
+          "checked_at": "2026-11-03",
+          "match": "named_venue_full_postcode_and_independent_fsa_agreement",
+          "reference_coordinate": {
+            "lat": 53.189515,
+            "lng": -4.090606
+          },
+          "reference_name": "Pant Yr Ardd, Tregarth - Freehouse with Beer Garden",
+          "reference_postcode": "LL57 4PL",
+          "source": "camra",
+          "url": "https://camra.org.uk/pubs/146304"
+        }
+      ],
+      "lat": 53.189515,
+      "lng": -4.090606,
+      "place_name": "Tregarth",
+      "postcode": "LL57 4PL",
+      "pub_name": "Pant yr Ardd",
+      "status": "verified_venue",
+      "venue_id": "v-71cd6c30-2d22-51b0-86f0-ffbcc0bf6202"
+    },
+    "panton arms|pentraeth (anglesey)|ll75 8az": {
+      "coordinate_source": "postcode",
+      "display_precision": "postcode",
+      "evidence": [],
+      "place_name": "Pentraeth (Anglesey)",
+      "postcode": "LL75 8AZ",
+      "pub_name": "Panton Arms",
+      "status": "postcode_approximate",
+      "venue_id": "v-548955f9-8736-595b-9402-0138bf2e770f"
+    },
+    "park inn|southampton: shirley|so16 4fn": {
+      "coordinate_source": "camra-and-fhrs",
+      "display_precision": "venue",
+      "evidence": [
+        {
+          "checked_at": "2026-11-03",
+          "match": "unique_name_and_full_postcode",
+          "reference_coordinate": {
+            "lat": 50.923432,
+            "lng": -1.436668
+          },
+          "reference_postcode": "SO16 4FN",
+          "source": "food-standards-agency-fhrs",
+          "url": "https://ratings.food.gov.uk/business/220079"
+        },
+        {
+          "checked_at": "2026-11-03",
+          "match": "named_venue_full_postcode_and_independent_fsa_agreement",
+          "reference_coordinate": {
+            "lat": 50.92359,
+            "lng": -1.43695
+          },
+          "reference_name": "Park Inn, Southampton - Street Corner Local",
+          "reference_postcode": "SO16 4FN",
+          "source": "camra",
+          "url": "https://camra.org.uk/pubs/188748"
+        }
+      ],
+      "lat": 50.92359,
+      "lng": -1.43695,
+      "place_name": "Southampton: Shirley",
+      "postcode": "SO16 4FN",
+      "pub_name": "Park Inn",
+      "status": "verified_venue",
+      "venue_id": "v-8060d339-96cf-553b-8e8f-a43b79ce7db2"
+    },
     "park inn|stoke: dresden|st3 4en": {
       "coordinate_source": "openstreetmap-gb-extract",
       "display_precision": "venue",
@@ -19427,6 +20268,42 @@
       "pub_name": "Park Inn",
       "status": "verified_venue",
       "venue_id": "v-09770c0c-efe5-5589-a6e1-edf4f7ca4a95"
+    },
+    "pattenmakers  arms|duffield|de56 4ey": {
+      "coordinate_source": "camra-and-fhrs",
+      "display_precision": "venue",
+      "evidence": [
+        {
+          "checked_at": "2026-11-03",
+          "match": "unique_name_and_full_postcode",
+          "reference_coordinate": {
+            "lat": 52.988429,
+            "lng": -1.490783
+          },
+          "reference_postcode": "DE56 4EY",
+          "source": "food-standards-agency-fhrs",
+          "url": "https://ratings.food.gov.uk/business/790"
+        },
+        {
+          "checked_at": "2026-11-03",
+          "match": "named_venue_full_postcode_and_independent_fsa_agreement",
+          "reference_coordinate": {
+            "lat": 52.988505,
+            "lng": -1.490493
+          },
+          "reference_name": "Pattenmakers Arms, Duffield - Edwardian Gastro-Pub",
+          "reference_postcode": "DE56 4EY",
+          "source": "camra",
+          "url": "https://camra.org.uk/pubs/143511"
+        }
+      ],
+      "lat": 52.988505,
+      "lng": -1.490493,
+      "place_name": "Duffield",
+      "postcode": "DE56 4EY",
+      "pub_name": "Pattenmakers  Arms",
+      "status": "verified_venue",
+      "venue_id": "v-962bf5fc-54cc-5aa2-8250-ca9a3f1a8086"
     },
     "pavilion|ashbourne|de6 1ej": {
       "coordinate_source": "manual-address-review",
@@ -19606,6 +20483,42 @@
       "pub_name": "Pembroke",
       "status": "verified_venue",
       "venue_id": "v-9530734d-95e2-5236-9ff9-1abe95990a64"
+    },
+    "pembury tavern|hackney e8 1jh|e8 1jh": {
+      "coordinate_source": "camra-and-fhrs",
+      "display_precision": "venue",
+      "evidence": [
+        {
+          "checked_at": "2026-11-03",
+          "match": "unique_name_and_full_postcode",
+          "reference_coordinate": {
+            "lat": 51.549396,
+            "lng": -0.0591928
+          },
+          "reference_postcode": "E8 1JH",
+          "source": "food-standards-agency-fhrs",
+          "url": "https://ratings.food.gov.uk/business/469610"
+        },
+        {
+          "checked_at": "2026-11-03",
+          "match": "named_venue_full_postcode_and_independent_fsa_agreement",
+          "reference_coordinate": {
+            "lat": 51.54937,
+            "lng": -0.059414
+          },
+          "reference_name": "Pembury Tavern, Hackney - New York Style Pizza",
+          "reference_postcode": "E8 1JH",
+          "source": "camra",
+          "url": "https://camra.org.uk/pubs/156045"
+        }
+      ],
+      "lat": 51.54937,
+      "lng": -0.059414,
+      "place_name": "Hackney E8 1JH",
+      "postcode": "E8 1JH",
+      "pub_name": "Pembury Tavern",
+      "status": "verified_venue",
+      "venue_id": "v-cf926f6f-cb22-5fad-bd20-1895b75f1eb3"
     },
     "pen and wig|newport|np20 1jd": {
       "coordinate_source": "openstreetmap-gb-extract",
@@ -20793,6 +21706,16 @@
       "status": "verified_venue",
       "venue_id": "v-99376d26-255f-5a56-bf82-18e850c579ac"
     },
+    "railway tavern|langley mill|ng16 4ae": {
+      "coordinate_source": "postcode",
+      "display_precision": "postcode",
+      "evidence": [],
+      "place_name": "Langley Mill",
+      "postcode": "NG16 4AE",
+      "pub_name": "Railway Tavern",
+      "status": "postcode_approximate",
+      "venue_id": "v-13b369ca-b0c7-55ae-9466-6c57b35bd624"
+    },
     "railway|blackheath se3|se3 9le": {
       "coordinate_source": "openstreetmap-gb-extract",
       "display_precision": "venue",
@@ -21298,6 +22221,42 @@
       "status": "verified_venue",
       "venue_id": "v-2d8ce97a-2eba-59a3-a754-09e4143894b4"
     },
+    "red lion|chinnor|ox39 4dl": {
+      "coordinate_source": "camra-and-fhrs",
+      "display_precision": "venue",
+      "evidence": [
+        {
+          "checked_at": "2026-11-03",
+          "match": "unique_name_and_full_postcode",
+          "reference_coordinate": {
+            "lat": 51.7061,
+            "lng": -0.908203
+          },
+          "reference_postcode": "OX39 4DL",
+          "source": "food-standards-agency-fhrs",
+          "url": "https://ratings.food.gov.uk/business/272264"
+        },
+        {
+          "checked_at": "2026-11-03",
+          "match": "named_venue_full_postcode_and_independent_fsa_agreement",
+          "reference_coordinate": {
+            "lat": 51.706119840027,
+            "lng": -0.908259558197
+          },
+          "reference_name": "Red Lion, Chinnor - Multi-Roomed Pub",
+          "reference_postcode": "OX39 4DL",
+          "source": "camra",
+          "url": "https://camra.org.uk/pubs/115955"
+        }
+      ],
+      "lat": 51.706119840027,
+      "lng": -0.908259558197,
+      "place_name": "Chinnor",
+      "postcode": "OX39 4DL",
+      "pub_name": "Red Lion",
+      "status": "verified_venue",
+      "venue_id": "v-4c931869-1a5b-5007-81c1-6c504c97ef9d"
+    },
     "red lion|dayhills|st15 8ru": {
       "coordinate_source": "camra-pubs-location-audit",
       "display_precision": "venue",
@@ -21610,6 +22569,16 @@
       "status": "verified_venue",
       "venue_id": "v-2a9c653c-1cca-55f6-8947-0798ff330a91"
     },
+    "red lion|mortimer west end|rg7 2hu": {
+      "coordinate_source": "postcode",
+      "display_precision": "postcode",
+      "evidence": [],
+      "place_name": "Mortimer West End",
+      "postcode": "RG7 2HU",
+      "pub_name": "Red Lion",
+      "status": "postcode_approximate",
+      "venue_id": "v-1081a0f5-7955-5f26-933e-2d05487dbf04"
+    },
     "red lion|newborough|de13 8sh": {
       "coordinate_source": "openstreetmap",
       "display_precision": "venue",
@@ -21636,6 +22605,31 @@
       "pub_name": "Red Lion",
       "status": "verified_venue",
       "venue_id": "v-c62d2143-2a1f-54e0-a9f9-9ee5893a5d48"
+    },
+    "red lion|old colwyn|ll29 9pl": {
+      "coordinate_source": "openstreetmap-gb-extract",
+      "display_precision": "venue",
+      "evidence": [
+        {
+          "checked_at": "2026-09-11",
+          "difference_metres": 3.3,
+          "match": "venue_name_and_full_postcode",
+          "reference_coordinate": {
+            "lat": 53.2895136,
+            "lng": -3.6994564
+          },
+          "reference_postcode": "LL29 9PL",
+          "source": "camra",
+          "url": "https://camra.org.uk/pubs/115842"
+        }
+      ],
+      "lat": 53.2895136,
+      "lng": -3.6994564,
+      "place_name": "Old Colwyn",
+      "postcode": "LL29 9PL",
+      "pub_name": "Red Lion",
+      "status": "verified_venue",
+      "venue_id": "v-62e9bbac-7bfc-55a0-9466-342071239fca"
     },
     "red lion|penderyn|cf44 9jr": {
       "coordinate_source": "openstreetmap-gb-extract",
@@ -23492,6 +24486,42 @@
       "status": "verified_venue",
       "venue_id": "v-87bd0095-c521-539d-8a94-b6ec16a2792b"
     },
+    "settle social club|settle|bd24 9dw": {
+      "coordinate_source": "camra-and-fhrs",
+      "display_precision": "venue",
+      "evidence": [
+        {
+          "checked_at": "2026-11-03",
+          "match": "unique_name_and_full_postcode",
+          "reference_coordinate": {
+            "lat": 54.0677438,
+            "lng": -2.2777547
+          },
+          "reference_postcode": "BD24 9DW",
+          "source": "food-standards-agency-fhrs",
+          "url": "https://ratings.food.gov.uk/business/1861243"
+        },
+        {
+          "checked_at": "2026-11-03",
+          "match": "named_venue_full_postcode_and_independent_fsa_agreement",
+          "reference_coordinate": {
+            "lat": 54.067674183528,
+            "lng": -2.27769682209
+          },
+          "reference_name": "Settle Social Club, Settle - Club with Snooker Room",
+          "reference_postcode": "BD24 9DW",
+          "source": "camra",
+          "url": "https://camra.org.uk/pubs/144021"
+        }
+      ],
+      "lat": 54.067674183528,
+      "lng": -2.27769682209,
+      "place_name": "Settle",
+      "postcode": "BD24 9DW",
+      "pub_name": "Settle Social Club",
+      "status": "verified_venue",
+      "venue_id": "v-534bfc5b-7a14-54d0-a235-c918231eb243"
+    },
     "seven stars|derby: central|de1 3ee": {
       "coordinate_source": "openstreetmap-gb-extract",
       "display_precision": "venue",
@@ -24729,6 +25759,16 @@
       "pub_name": "Staffordshire Knot",
       "status": "verified_venue",
       "venue_id": "v-5d1ef228-39c5-5fd3-9d21-f0e8dc91ede1"
+    },
+    "stag and hounds|burrough on the hill|le14 2jq": {
+      "coordinate_source": "postcode",
+      "display_precision": "postcode",
+      "evidence": [],
+      "place_name": "Burrough on the Hill",
+      "postcode": "LE14 2JQ",
+      "pub_name": "Stag and Hounds",
+      "status": "postcode_approximate",
+      "venue_id": "v-a4b4ccce-07e8-508f-8508-4461b5cea58c"
     },
     "stag and scotch|newport|tf10 7au": {
       "coordinate_source": "food-standards-agency-fhrs",
@@ -26895,6 +27935,16 @@
       "status": "verified_venue",
       "venue_id": "v-de3630ba-38b6-59f8-b5fb-01e545c5be29"
     },
+    "tiger|derby: central|de1 2tq": {
+      "coordinate_source": "postcode",
+      "display_precision": "postcode",
+      "evidence": [],
+      "place_name": "Derby: Central",
+      "postcode": "DE1 2TQ",
+      "pub_name": "Tiger",
+      "status": "postcode_approximate",
+      "venue_id": "v-de948283-fe31-5f55-b16a-547c37e592ce"
+    },
     "toby carvery trentham village|stoke: trentham|st4 8bu": {
       "coordinate_source": "food-standards-agency-fhrs",
       "display_precision": "venue",
@@ -27836,6 +28886,42 @@
       "pub_name": "Verulam Arms",
       "status": "verified_venue",
       "venue_id": "v-d571346c-3991-578a-855c-37a93c47aaa3"
+    },
+    "victoria comet|newcastle: central|ne1 5df": {
+      "coordinate_source": "camra-and-fhrs",
+      "display_precision": "venue",
+      "evidence": [
+        {
+          "checked_at": "2026-11-03",
+          "match": "unique_name_and_full_postcode",
+          "reference_coordinate": {
+            "lat": 54.9693959,
+            "lng": -1.617408
+          },
+          "reference_postcode": "NE1 5DF",
+          "source": "food-standards-agency-fhrs",
+          "url": "https://ratings.food.gov.uk/business/237204"
+        },
+        {
+          "checked_at": "2026-11-03",
+          "match": "named_venue_full_postcode_and_independent_fsa_agreement",
+          "reference_coordinate": {
+            "lat": 54.9693325,
+            "lng": -1.6174133
+          },
+          "reference_name": "Victoria Comet, Newcastle upon Tyne",
+          "reference_postcode": "NE1 5DF",
+          "source": "camra",
+          "url": "https://camra.org.uk/pubs/193656"
+        }
+      ],
+      "lat": 54.9693325,
+      "lng": -1.6174133,
+      "place_name": "Newcastle: Central",
+      "postcode": "NE1 5DF",
+      "pub_name": "Victoria Comet",
+      "status": "verified_venue",
+      "venue_id": "v-00bd7539-91ec-537f-b0a5-9a27b8e4b371"
     },
     "victoria inn|alfreton|de55 7gl": {
       "coordinate_source": "manual-address-review",
@@ -30189,6 +31275,16 @@
       "status": "verified_venue",
       "venue_id": "v-32292597-5327-5dc9-8b92-c9d1f100e51a"
     },
+    "windmill inn|ingham|ln1 2yq": {
+      "coordinate_source": "postcode",
+      "display_precision": "postcode",
+      "evidence": [],
+      "place_name": "Ingham",
+      "postcode": "LN1 2YQ",
+      "pub_name": "Windmill Inn",
+      "status": "postcode_approximate",
+      "venue_id": "v-ac3d5f12-6e5e-5205-b8e0-74f09dfa9e6c"
+    },
     "windmill|breadsall|de21 4fy": {
       "coordinate_source": "openstreetmap-gb-extract",
       "display_precision": "venue",
@@ -30631,6 +31727,42 @@
       "pub_name": "Yacht Inn",
       "status": "verified_venue",
       "venue_id": "v-86bdde5b-1bfe-5f34-8a0c-cc12d2d16579"
+    },
+    "ye cracke|liverpool: central|l1 9bb": {
+      "coordinate_source": "camra-and-fhrs",
+      "display_precision": "venue",
+      "evidence": [
+        {
+          "checked_at": "2026-11-03",
+          "match": "unique_name_and_full_postcode",
+          "reference_coordinate": {
+            "lat": 53.4005116,
+            "lng": -2.9720348
+          },
+          "reference_postcode": "L1 9BB",
+          "source": "food-standards-agency-fhrs",
+          "url": "https://ratings.food.gov.uk/business/497141"
+        },
+        {
+          "checked_at": "2026-11-03",
+          "match": "named_venue_full_postcode_and_independent_fsa_agreement",
+          "reference_coordinate": {
+            "lat": 53.400439,
+            "lng": -2.971963
+          },
+          "reference_name": "Cracke, Liverpool - Back-Street Pub with Gallery",
+          "reference_postcode": "L1 9BB",
+          "source": "camra",
+          "url": "https://camra.org.uk/pubs/165590"
+        }
+      ],
+      "lat": 53.400439,
+      "lng": -2.971963,
+      "place_name": "Liverpool: Central",
+      "postcode": "L1 9BB",
+      "pub_name": "Ye Cracke",
+      "status": "verified_venue",
+      "venue_id": "v-5080e2d0-2553-564a-978f-9bbc0a625f1f"
     },
     "ye old elm tree|durham|dh1 4ps": {
       "coordinate_source": "camra-pubs-location-audit",

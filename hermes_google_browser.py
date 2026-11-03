@@ -131,6 +131,34 @@ def _consent_ref(snapshot):
     return None
 
 
+def _search_result_ref(snapshot_text, place_links, expected_name, place_name, ref_names):
+    """Correlate one uniquely named visible place link with one native ref."""
+    by_label = {}
+    for link in place_links if isinstance(place_links, list) else []:
+        if not isinstance(link, dict):
+            continue
+        label = re.sub(r'\s+', ' ', str(link.get('text') or '')).strip()
+        href = str(link.get('href') or '')
+        if label and _valid_place_url(href) and _identity_ok(
+                {'pub_name': expected_name, 'place_name': place_name}, label, ref_names):
+            by_label.setdefault(label.casefold(), {}).setdefault(href, label)
+    candidates = {href: label for links in by_label.values() for href, label in links.items()}
+    if len(candidates) != 1:
+        return None
+    href, label = next(iter(candidates.items()))
+    # Snapshot refs do not expose hrefs. Only correlate by exact observable label
+    # when that label itself identifies one visible DOM URL.
+    labels_for_href = [key for key, links in by_label.items() if href in links]
+    if len(labels_for_href) != 1:
+        return None
+    refs = []
+    for line in str(snapshot_text or '').splitlines():
+        match = re.search(r'\blink\s+["\u201c](.*?)["\u201d]\s+\[(?:ref=)?(e\d+)\]', line, re.I)
+        if match and re.sub(r'\s+', ' ', match.group(1)).strip().casefold() == label.casefold():
+            refs.append(match.group(2))
+    return refs[0] if len(refs) == 1 else None
+
+
 def _extract(browser, task_id):
     result = _response(browser.browser_console(expression=_DOM_READ, task_id=task_id))
     if not result.get('success'):
@@ -146,14 +174,15 @@ def _extract(browser, task_id):
     return data
 
 
-def _resolve_page(browser, task_id, expected_name, expected_postcodes, ref_names, original_url=''):
+def _resolve_page(browser, task_id, expected_name, expected_postcodes, ref_names, original_url='', place_name=''):
     deadline = time.monotonic() + PAGE_DEADLINE
     last = {}
     page_ready = False
-    consent_seen = False
+    on_consent = False
     consent_attempted = False
     consent_scrolls = 0
     consent_wait_deadline = None
+    followed_result = False
     while time.monotonic() < deadline:
         snap = _response(browser.browser_snapshot(full=False, task_id=task_id))
         if not snap.get('success'):
@@ -161,7 +190,6 @@ def _resolve_page(browser, task_id, expected_name, expected_postcodes, ref_names
         snap_text = str(snap.get('snapshot') or snap.get('text') or '')
         on_consent = ('consent.google.com' in str(snap.get('url') or '').lower()
                       or bool(re.search(r'before you continue|choose your privacy settings', snap_text, re.I)))
-        consent_seen = consent_seen or on_consent
         if on_consent and consent_attempted:
             if consent_wait_deadline is None or time.monotonic() >= consent_wait_deadline:
                 return {'category': 'unavailable', 'stop': True}
@@ -199,38 +227,33 @@ def _resolve_page(browser, task_id, expected_name, expected_postcodes, ref_names
             continue
         last = _extract(browser, task_id)
         url = str(last.get('url') or '')
-        # A visible unique result may be followed with the native click API only.
-        if '/maps/search' in urlparse(url).path and not last.get('h1'):
-            # Match one visible accessibility-tree result by full listing name and
-            # full postcode, then click its native ref. A guessed href is never opened.
-            lines = snap_text.splitlines()
-            matches = []
-            for index, line in enumerate(lines):
-                context = ' '.join(lines[index:index + 4])
-                ref_match = re.search(r'\[(?:ref=)?(e\d+)\]', line, re.I)
-                whole_name = bool(re.search(r'(?<![\w])' + re.escape(expected_name) + r'(?![\w])', context, re.I))
-                if (whole_name
-                        and any(_postcode_in_text(pc, context) for pc in expected_postcodes)
-                        and ref_match):
-                    matches.append((context, ref_match.group(1)))
-            unique = {x[1]: x for x in matches}
-            if len(unique) == 1:
-                _, ref = next(iter(unique.values()))
-                click = _response(browser.browser_click(ref, task_id=task_id))
-                if not click.get('success'):
-                    raise RuntimeError('native result click failed')
-                continue
-            if matches:
-                urls = [str(x.get('href', '')) for x in last.get('placeLinks', [])
-                        if isinstance(x, dict) and _valid_place_url(x.get('href'))]
-                return {'category': 'ambiguous', 'result_url': urls[0] if urls else '', 'stop': False}
+        # Results is a normal Maps search heading, not a challenge. Follow a
+        # single named visible candidate only through its correlated native ref;
+        # the detail page must still pass the full identity/postcode checks below.
+        is_search = '/maps/search' in urlparse(url).path
+        is_results_heading = (isinstance(last.get('h1'), list)
+                              and len(last['h1']) == 1
+                              and str(last['h1'][0]).strip().casefold() == 'results')
+        if is_search and (not last.get('h1') or is_results_heading):
+            if not followed_result:
+                ref = _search_result_ref(snap_text, last.get('placeLinks'),
+                                         expected_name, place_name, ref_names)
+                if ref:
+                    click = _response(browser.browser_click(ref, task_id=task_id))
+                    if not click.get('success'):
+                        raise RuntimeError('native result click failed')
+                    followed_result = True
+                    continue
+            urls = [str(x.get('href', '')) for x in last.get('placeLinks', [])
+                    if isinstance(x, dict) and _valid_place_url(x.get('href'))]
+            return {'category': 'ambiguous', 'result_url': original_url or url, 'stop': False}
         if (isinstance(last.get('h1'), list) and len(last['h1']) == 1
                 and isinstance(last.get('addressButtons'), list) and len(last['addressButtons']) == 1
                 and _valid_place_url(url)):
             page_ready = True
             break
         time.sleep(min(1, max(0, deadline - time.monotonic())))
-    if consent_seen and not page_ready:
+    if on_consent and not page_ready:
         return {'category': 'unavailable', 'stop': True}
     if not last:
         return {'category': 'unavailable', 'stop': False}
@@ -247,7 +270,7 @@ def _resolve_page(browser, task_id, expected_name, expected_postcodes, ref_names
         return {'category': 'unavailable', 'stop': False}
     title, address = str(titles[0]), str(addresses[0].get('label') or addresses[0].get('text') or '')
     postcode_ok = any(pc in _postcode(address) for pc in expected_postcodes)
-    identity_ok = _identity_ok({'pub_name': expected_name}, title, ref_names)
+    identity_ok = _identity_ok({'pub_name': expected_name, 'place_name': place_name}, title, ref_names)
     if not identity_ok or not postcode_ok:
         return {'category': 'identity_conflict', 'result_url': url, 'stop': False}
     point = _point_from_url(url)
@@ -353,11 +376,13 @@ def run(root, receipts_path, limit=45, venue_ids=(), debug=False, browser=None, 
                     page = {'category': 'unavailable', 'stop': True}
                 else:
                     names, postcodes = _reference_expectations(item, registry['venues'][item['venue_id']])
-                    page = _resolve_page(browser, task_id, item['pub_name'], postcodes, names, search_url)
+                    page = _resolve_page(browser, task_id, item['pub_name'], postcodes, names, search_url,
+                                         place_name=item.get('place_name', ''))
                 if page['category'] == 'identity_and_pin_consistent':
                     cats = classify(item, registry['venues'][item['venue_id']], page)
+                    checked = clock()
                     for category, result_url in cats:
-                        records.append(_record(item, category, attempted, clock(), result_url, search_url))
+                        records.append(_record(item, category, attempted, checked, result_url, search_url))
                     debug_categories = [category for category, _ in cats]
                 else:
                     checked = None if page['category'] == 'unavailable' else clock()
@@ -378,6 +403,8 @@ def run(root, receipts_path, limit=45, venue_ids=(), debug=False, browser=None, 
                 break
             if time.monotonic() - started >= TOTAL_DEADLINE:
                 break
+        if len({record['venue_id'] for record in records}) != len(selected):
+            stop = True  # A batch deadline is incomplete coverage, not success.
         if any(set(x) != set(OBSERVATION_FIELDS) for x in records):
             raise ValueError('internal receipt schema mismatch')
         payload = json.dumps({'schema_version': 1, 'observations': prior['observations'] + records},

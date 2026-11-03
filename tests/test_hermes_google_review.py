@@ -45,13 +45,32 @@ class HermesGoogleReviewTests(unittest.TestCase):
         self.assertEqual(finding['pub_name'], self.item['pub_name'])
         self.assertNotIn('Named Pub', str(status))
 
+    def test_ambiguous_search_is_not_named_place_confirmation(self):
+        search_url = 'https://www.google.com/maps/search/?api=1&query=Named+Pub'
+        status = self.status([self.observation('ambiguous', result_url=search_url)])
+        self.assertEqual(status['counts']['current'], 0)
+        self.assertIn('ambiguous', status['findings'][0]['reason'])
+        with self.assertRaises(ValueError):
+            self.status([self.observation('identity_and_pin_consistent', result_url=search_url)])
+
+    def test_readable_search_recovers_source_without_approving_a_venue(self):
+        unavailable = self.observation('unavailable', checked_at=None, result_url='',
+                                        source_url='https://www.google.com/maps/search/?q=pub')
+        ambiguous = self.observation('ambiguous', attempted_at='2026-11-03T11:00:00Z',
+                                      checked_at='2026-11-03T11:00:01Z',
+                                      result_url='https://www.google.com/maps/search/?q=pub')
+        status = self.status([unavailable, ambiguous])
+        self.assertEqual(status['counts']['current'], 0)
+        self.assertFalse(any('unavailable' in issue for issue in status['issues']))
+        self.assertIn('ambiguous', status['findings'][0]['reason'])
+
     def test_unavailable_attempt_does_not_clear_conflict_or_refresh_success(self):
         old = self.observation(checked_at='2026-10-01T10:00:00Z', attempted_at='2026-10-01T10:00:00Z')
         failed = self.observation('unavailable', attempted_at='2026-11-03T11:00:00Z', checked_at=None,
                                   result_url='', source_url='https://www.google.com/maps/search/?q=pub')
         status = self.status([old, failed])
         self.assertEqual(status['counts']['current'], 0)
-        self.assertIn('conflicting named business identity', status['findings'][0]['reason'])
+        self.assertIn('differs in business identity or postcode', status['findings'][0]['reason'])
         self.assertTrue(any('unavailable' in issue for issue in status['issues']))
 
     def test_identity_conflict_is_actionable_and_simultaneous_conflicts_combine(self):
@@ -59,7 +78,7 @@ class HermesGoogleReviewTests(unittest.TestCase):
                               self.observation('trading_conflict')])
         self.assertEqual(len(status['findings']), 1)
         reason = status['findings'][0]['reason']
-        self.assertIn('conflicting named business identity', reason)
+        self.assertIn('differs in business identity or postcode', reason)
         self.assertIn('differs by more than 50 metres', reason)
         self.assertIn('possible closure', reason)
         report = with_google(dict(records={}), status, self.get_bundle(), now=NOW)
@@ -75,7 +94,7 @@ class HermesGoogleReviewTests(unittest.TestCase):
         ambiguous = self.observation('ambiguous', attempted_at='2026-11-03T11:00:00Z', checked_at='2026-11-03T11:00:00Z')
         status = self.status([conflict, ambiguous])
         self.assertEqual(len(status['findings']), 2)
-        self.assertTrue(any('conflicting named business identity' in f['reason'] for f in status['findings']))
+        self.assertTrue(any('differs in business identity or postcode' in f['reason'] for f in status['findings']))
         self.assertTrue(any('incomplete or ambiguous' in f['reason'] for f in status['findings']))
 
     def test_newer_consistent_success_clears_prior_conflict(self):

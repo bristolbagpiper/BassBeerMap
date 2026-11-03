@@ -11,7 +11,7 @@ from directory_release import active_evidence
 from owner_location_review import classify_review, current_confirmation, google_finding_assessment, pending_building_review
 
 
-GOOGLE_COVERAGE_ISSUE = 'Google comparison coverage is incomplete; untested or stale pubs remain'
+GOOGLE_COVERAGE_ISSUE = 'Google comparison coverage is incomplete; untested, stale or inconclusive pubs remain'
 GOOGLE_STALE_STATUS_ISSUE = 'Google comparison status is missing or stale; rerun the daily map audit'
 GOOGLE_CONFIGURATION_ISSUE = 'Google comparison is not configured; no live Google checks ran this time'
 
@@ -237,6 +237,8 @@ def with_google(report, status, current_bundle=None, now=None):
     combined['google_counts'] = copy.deepcopy(status['counts'])
     if current_bundle is not None and current_signature != directory_signature:
         combined['google_counts'].update(total=len(current), current=0, unchecked_or_stale=len(current))
+        if 'attempted_venue_count' in combined['google_counts']:
+            combined['google_counts']['attempted_venue_count'] = 0
     combined['google_provider'] = status.get('provider', 'places-api')
     combined['google_hard_failure'] = status.get('hard_failure', False)
     for field in ('run_id', 'run_attempt', 'checked_at', 'run_url'):
@@ -266,7 +268,7 @@ def fingerprint(report):
     return hashlib.sha256(json.dumps(active, sort_keys=True).encode()).hexdigest()
 
 
-def format_report(report):
+def format_report(report, include_google_source_details=False):
     records = report.get('records', {})
     actions = [(identifier, record) for identifier, record in records.items()
                if record.get('active') and record.get('manual_action_required', classify_review(record)['manual_action_required'])]
@@ -289,6 +291,8 @@ def format_report(report):
     if 'google_issues' in report:
         findings = report.get('google_findings', [])
         counts = report.get('google_counts', {})
+        if 'attempted_venue_count' in counts and 'total' in counts:
+            lines.append(f"Google listings with browser attempts recorded: {counts['attempted_venue_count']}/{counts['total']}")
         if 'current' in counts and 'total' in counts:
             lines.append(f"Google comparisons current for this listing and pin: {counts['current']}/{counts['total']}")
         google_actions = [f for f in findings if f.get('manual_action_required', google_finding_assessment(f)['manual_action_required'])]
@@ -297,10 +301,20 @@ def format_report(report):
                   f"Google source warnings — no pin check requested: {report.get('google_source_warning_count', len(google_warnings))}"]
         for issue in report['google_issues']:
             lines.append(f'- Google operational status: {issue}')
-        for finding in findings:
+        if google_actions:
+            lines += ['', '## Google actions', '']
+        for finding in google_actions:
             lines += [f"- {finding['pub_name']} — {finding['place_name']} ({finding['postcode']})",
                       f"  ID: {finding['venue_id']} | {finding['status']}: {finding['reason']}",
                       f"  Category: {finding.get('review_category', google_finding_assessment(finding)['review_category'])}; {finding.get('next_action', google_finding_assessment(finding)['next_action'])}"]
+        if google_warnings:
+            lines += ['', '## Google source warnings — no pin check requested', '']
+            if include_google_source_details:
+                for finding in google_warnings:
+                    lines.append(f"- {finding['pub_name']} — {finding['place_name']} ({finding['postcode']}): {finding['reason']}")
+            else:
+                filename = 'hermes-google-status.json' if report.get('google_provider') == 'hermes-browser' else 'google-places-status.json'
+                lines.append(f"{len(google_warnings)} inconclusive pub results. Full source details: https://github.com/bristolbagpiper/BassBeerMap/blob/main/{filename}")
         lines.append('Google comparisons are diagnostic; they do not approve or move map pins.')
         if report.get('google_run_url'):
             lines.append('Latest Google comparison: ' + report['google_run_url'])

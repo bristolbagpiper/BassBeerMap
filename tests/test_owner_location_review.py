@@ -154,6 +154,14 @@ class AcknowledgedSourceTests(unittest.TestCase):
 
 
 class ReviewClassificationTests(unittest.TestCase):
+    def test_google_combined_marker_and_trading_flags_keep_both_actions(self):
+        result = google_finding_assessment({'reason': 'Google named-place marker differs by more than 50 metres; Google indicates a possible closure; trading status needs review'})
+        self.assertEqual(result['review_category'], 'location_and_trading_check')
+        self.assertTrue(result['manual_action_required'])
+        self.assertIn('building', result['next_action'])
+        self.assertIn('trading', result['next_action'])
+        self.assertNotIn('not the pin position', result['next_action'])
+
     def test_missing_or_source_warning_does_not_call_pin_incorrect(self):
         for record, expected in (
             ({"active": True, "reasons": ["Manual location evidence needs review"]}, "needs_verification"),

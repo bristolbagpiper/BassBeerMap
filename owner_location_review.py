@@ -121,14 +121,19 @@ def classify_review(record):
 
 def google_finding_assessment(finding):
     reason = finding.get('reason', '').casefold()
-    if 'possible closure' in reason or 'trading status needs review' in reason:
+    trading = 'possible closure' in reason or 'trading status needs review' in reason
+    location = 'approximate' in reason or 'differs by more than 50' in reason
+    if trading and location:
+        category, action = ('location_and_trading_check',
+                            'Compare the named building and saved pin, and check trading status; disagreement is not proof of an incorrect pin')
+    elif trading:
         category, action = 'trading_check', 'Check trading status, not the pin position'
-    elif 'approximate' in reason or 'differs by more than 50' in reason:
+    elif location:
         category, action = 'location_check', 'Verify the named building; disagreement is not proof of an incorrect pin'
     elif ('coordinates are missing' in reason or 'conclusive trading status' in reason
           or 'incomplete or ambiguous' in reason or 'did not identify one matching' in reason
           or 'returned no named place' in reason):
         category, action = 'source_warning', 'Source is inconclusive; no pin check requested'
     else:
-        category, action = 'identity_check', 'Check the business identity; no incorrect coordinate has been established'
+        category, action = 'identity_check', 'Check the matched business identity and address; no incorrect coordinate has been established'
     return dict(review_category=category, manual_action_required=category != 'source_warning', next_action=action)

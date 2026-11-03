@@ -41,7 +41,7 @@ def valid_google_url(value, place_required):
 
 def _reason(category):
     return {
-        'identity_conflict': 'Google reports a conflicting named business identity; verify the business identity',
+        'identity_conflict': 'Google named-place result differs in business identity or postcode; verify the matched venue and address',
         'pin_conflict': 'Google named-place marker differs by more than 50 metres; existing pin retained for review',
         'trading_conflict': 'Google indicates a possible closure; trading status needs review',
         'ambiguous': 'Google results are incomplete or ambiguous; no unique place accepted',
@@ -82,8 +82,8 @@ def build_status(root, receipts, now=None):
         if unavailable:
             if result_url != '' or not valid_google_url(source_url, False):
                 raise ValueError(f'Malformed observation at index {index}: unavailable requires checked source URL')
-        elif not valid_google_url(result_url, True) or source_url != '':
-            raise ValueError(f'Malformed observation at index {index}: successful check requires named place URL')
+        elif not valid_google_url(result_url, category != 'ambiguous') or source_url != '':
+            raise ValueError(f'Malformed observation at index {index}: comparison requires a named place, or search URL for ambiguity')
         for field in ('identity_signature', 'point_signature', 'binding_signature'):
             if not isinstance(item[field], str) or not re.fullmatch(r'[0-9a-f]{64}', item[field]):
                 raise ValueError(f'Malformed observation at index {index}: invalid signature')
@@ -135,7 +135,13 @@ def build_status(root, receipts, now=None):
     configured = True
     if current != total:
         issues.append(COVERAGE_ISSUE)
-    if any(identifier in unavailable_attempts and (identifier not in conclusive or unavailable_attempts[identifier] > conclusive[identifier][0])
+    # A later readable results list proves source recovery without verifying a
+    # particular venue or clearing an older unresolved identity/pin conflict.
+    available = {identifier: checked for identifier, (checked, _) in conclusive.items()}
+    for identifier, checked in ambiguous.items():
+        available[identifier] = max(available.get(identifier, checked), checked)
+    if any(identifier in unavailable_attempts and
+           (identifier not in available or unavailable_attempts[identifier] > available[identifier])
            for identifier in by_id):
         issues.append('Hermes Google browser source was unavailable; previous successful checks were retained')
     status = dict(schema_version=1, checked_at=now.isoformat(), configured=configured,

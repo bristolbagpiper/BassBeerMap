@@ -68,7 +68,36 @@ class ConsentBrowser(FakeBrowser):
         return {'success': True, 'clicked': ref}
 
 
+class SearchResultBrowser(FakeBrowser):
+    def __init__(self, search_dom, detail_dom, snapshot_lines):
+        super().__init__(search_dom)
+        self.dom_reads = [search_dom, detail_dom]
+        self.snapshots = [snapshot_lines, '- heading "The Apiary at Castle Donington" [ref=e20]']
+        self.clicked = []
+
+    def browser_snapshot(self, full=False, task_id=None):
+        return {'success': True, 'snapshot': self.snapshots.pop(0)}
+
+    def browser_console(self, expression=None, task_id=None):
+        return {'success': True, 'result': self.dom_reads.pop(0)}
+
+    def browser_click(self, ref, task_id=None):
+        self.clicked.append(ref)
+        return {'success': True, 'clicked': ref}
+
+
 class HermesGoogleBrowserTests(unittest.TestCase):
+    def test_named_place_with_recorded_town_is_matched_without_accepting_another_town(self):
+        dom = {'url': PLACE_URL, 'h1': ['The Apiary at Castle Donington'],
+               'addressButtons': [{'label': 'Address: 38 Borough Street, DE74 2LA'}], 'body': ''}
+        result = _resolve_page(FakeBrowser(dom), 'task', 'Apiary', {'DE742LA'}, set(),
+                               place_name='Castle Donington')
+        self.assertEqual(result['category'], 'identity_and_pin_consistent')
+        wrong_town = dict(dom, h1=['The Apiary at Another Town'])
+        rejected = _resolve_page(FakeBrowser(wrong_town), 'task', 'Apiary', {'DE742LA'}, set(),
+                                 place_name='Castle Donington')
+        self.assertEqual(rejected['category'], 'identity_conflict')
+
     def test_reviewed_trading_name_discards_camra_marketing_and_locality(self):
         entry = {'verified_pin': {'evidence': [{'reference_name': 'Alchemy at The Crown, Southam - Grade II Listed Pub',
                                               'reference_postcode': 'CV47 1PH'}]}}
@@ -170,6 +199,97 @@ class HermesGoogleBrowserTests(unittest.TestCase):
         self.assertEqual(result, {'category': 'unavailable', 'stop': True})
         self.assertEqual(browser.clicked, ['e12'])
         self.assertEqual(browser.scrolls, ['down'])
+
+    def test_cleared_consent_followed_by_results_is_ordinary_ambiguity(self):
+        search_url = 'https://www.google.com/maps/search/?api=1&query=Black+Lion'
+        candidates = [
+            {'href': f'https://www.google.com/maps/place/Black+Lion+Inn/data?cid={n}',
+             'text': 'Black Lion Inn'} for n in range(3)
+        ]
+        dom = {'url': search_url, 'h1': ['Results'], 'addressButtons': [],
+               'placeLinks': candidates, 'body': 'Results'}
+        browser = ConsentBrowser(dom)
+        browser.snapshots[-1] = {'success': True, 'snapshot': (
+            '- heading "Results" [ref=e1]\n'
+            '- link "Black Lion Inn" [ref=e20]\n'
+            '- link "Black Lion Inn" [ref=e21]\n'
+            '- link "Black Lion Inn" [ref=e22]')}
+        browser.dom_reads[-1] = dom
+        result = _resolve_page(browser, 'task', 'Black Lion', {'ST137SP'}, set(),
+                               search_url, place_name='Butterton')
+        self.assertEqual(result['category'], 'ambiguous')
+        self.assertFalse(result['stop'])
+        self.assertEqual(browser.clicked, ['e12'])  # consent only; no branch was selected
+
+    def test_unique_named_result_uses_native_ref_then_checks_detail_postcode(self):
+        search_url = 'https://www.google.com/maps/search/?api=1&query=Apiary'
+        result_url = 'https://www.google.com/maps/place/The+Apiary+at+Castle+Donington/data?cid=1'
+        result_dom = {'url': search_url, 'h1': ['Results'], 'addressButtons': [],
+                      'placeLinks': [{'href': result_url, 'text': 'The Apiary at Castle Donington'}],
+                      'body': 'Results'}
+        detail_dom = {'url': PLACE_URL, 'h1': ['The Apiary at Castle Donington'],
+                      'addressButtons': [{'label': 'Address: 38 Borough Street, DE74 2LA'}], 'body': ''}
+        browser = SearchResultBrowser(result_dom, detail_dom,
+            '- heading "Results" [ref=e1]\n- link "The Apiary at Castle Donington" [ref=e44]')
+        result = _resolve_page(browser, 'task', 'Apiary', {'DE742LA'}, set(), search_url,
+                               place_name='Castle Donington')
+        self.assertEqual(result['category'], 'identity_and_pin_consistent')
+        self.assertEqual(browser.clicked, ['e44'])
+
+    def test_two_matching_named_results_remain_ambiguous_without_click(self):
+        search_url = 'https://www.google.com/maps/search/?api=1&query=Black+Lion'
+        result_dom = {'url': search_url, 'h1': ['Results'], 'addressButtons': [],
+                      'placeLinks': [
+                          {'href': 'https://www.google.com/maps/place/Black+Lion+Inn/data?cid=1',
+                           'text': 'Black Lion Inn'},
+                          {'href': 'https://www.google.com/maps/place/Black+Lion+Inn/data?cid=2',
+                           'text': 'Black Lion Inn'}], 'body': 'Results'}
+        browser = SearchResultBrowser(result_dom, {},
+            '- heading "Results" [ref=e1]\n- link "Black Lion Inn" [ref=e30]\n'
+            '- link "Black Lion Inn" [ref=e31]')
+        result = _resolve_page(browser, 'task', 'Black Lion', {'ST137SP'}, set(), search_url,
+                               place_name='Butterton')
+        self.assertEqual(result['category'], 'ambiguous')
+        self.assertFalse(result['stop'])
+        self.assertEqual(browser.clicked, [])
+
+    def test_ambiguous_results_flow_through_the_receipt_consumer(self):
+        dom = {'url': 'https://www.google.com/maps/search/?api=1&query=Example',
+               'h1': ['Results'], 'addressButtons': [], 'placeLinks': [], 'body': 'Results'}
+        browser = FakeBrowser(dom)
+        with tempfile.TemporaryDirectory() as temp:
+            target = Path(temp) / 'receipts.json'
+            result = run(ROOT, target, limit=1, venue_ids=[self.item['venue_id']], browser=browser,
+                         cleanup=lambda task: None,
+                         clock=iter(['2026-11-03T12:00:00Z', '2026-11-03T12:00:01Z']).__next__)
+            self.assertFalse(result['stopped'])
+            document = json.loads(target.read_text(encoding='utf-8'))
+            status = build_status(ROOT, document,
+                                  now=datetime.fromisoformat('2026-11-03T12:01:00+00:00'))
+            self.assertEqual(status['counts']['current'], 0)
+            self.assertIn('ambiguous', status['findings'][0]['reason'])
+
+    def test_deadline_cannot_report_a_complete_unattempted_batch(self):
+        browser = FakeBrowser({})
+        with tempfile.TemporaryDirectory() as temp, patch('hermes_google_browser.TOTAL_DEADLINE', 0):
+            target = Path(temp) / 'receipts.json'
+            result = run(ROOT, target, limit=1, venue_ids=[self.item['venue_id']],
+                         browser=browser, cleanup=lambda task: None)
+            self.assertEqual(result, {'attempted': 0, 'stopped': True})
+            self.assertEqual(browser.navigations, [])
+
+    def test_one_page_has_one_check_time_for_all_conflict_categories(self):
+        dom = {'url': PLACE_URL, 'h1': [self.item['pub_name']],
+               'addressButtons': [{'label': 'Address: ' + self.item['postcode']}],
+               'body': 'Temporarily closed'}
+        with tempfile.TemporaryDirectory() as temp:
+            target = Path(temp) / 'receipts.json'
+            run(ROOT, target, limit=1, venue_ids=[self.item['venue_id']], browser=FakeBrowser(dom),
+                cleanup=lambda task: None,
+                clock=iter(['2026-11-03T12:00:00Z', '2026-11-03T12:00:01Z']).__next__)
+            document = json.loads(target.read_text(encoding='utf-8'))
+            self.assertEqual({o['category'] for o in document['observations']}, {'pin_conflict', 'trading_conflict'})
+            self.assertEqual({o['checked_at'] for o in document['observations']}, {'2026-11-03T12:00:01Z'})
 
     def test_run_uses_native_mock_and_appends_minimal_receipt(self):
         bundle = read_json(ROOT / 'directory-release.json')

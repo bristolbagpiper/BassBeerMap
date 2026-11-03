@@ -94,6 +94,8 @@ def _hermes_status(root, bundle, now):
                         if active.get(finding['venue_id']) == finding['binding_signature']]
             counts.update(total=total, current=0, unchecked_or_stale=total,
                           checked_this_run=0, review_count=len(findings))
+            if 'attempted_venue_count' in counts:
+                counts['attempted_venue_count'] = 0
             status['counts'] = counts
             status['findings'] = findings
             issues = set(source['issues'])

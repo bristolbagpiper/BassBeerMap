@@ -29,7 +29,7 @@ MAX_REQUESTS_PER_DAY = 45
 MAX_REQUESTS_PER_MONTH = 1400
 MAX_CHECK_AGE_DAYS = 30
 CONFIGURATION_ISSUE = 'Google comparison is not configured; no live Google checks ran this time'
-COVERAGE_ISSUE = 'Google comparison coverage is incomplete; untested or stale pubs remain'
+COVERAGE_ISSUE = 'Google comparison coverage is incomplete; untested, stale or inconclusive pubs remain'
 SAFE_PROVIDER_CODES = frozenset(('response_too_large', 'invalid_response', 'network_unavailable',
                                  'invalid_json', 'invalid_place', 'invalid_address'))
 

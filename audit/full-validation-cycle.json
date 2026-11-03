@@ -1,0 +1,65 @@
+{
+  "camra": {
+    "attempted": 1087,
+    "categories": {
+      "confirmed": 1018,
+      "manual_review": 67,
+      "unavailable": 2
+    },
+    "execution_id": "07304d9a-50cc-45e9-8ea4-32449ba43539"
+  },
+  "cycle_id": "5a2784fd022e4dad883d56ef21dac8d8",
+  "finished_at": "2026-11-03T18:53:32.697298+00:00",
+  "fsa": {
+    "attempted": 1087,
+    "categories": {
+      "ambiguous_or_missing_coordinates": 67,
+      "coordinate_agreement": 479,
+      "coordinate_disagreement": 254,
+      "nearby": 108,
+      "no_name_match": 179
+    },
+    "execution_id": "d2742f0af3c549f9885606629692d010",
+    "lookup_failures": 0,
+    "supporting_source_only": true
+  },
+  "google": {
+    "actionable_categories": {
+      "identity_check": 103,
+      "location_and_trading_check": 1,
+      "location_check": 48,
+      "trading_check": 8
+    },
+    "categories": {
+      "ambiguous": 179,
+      "identity_and_pin_consistent": 748,
+      "identity_conflict": 103,
+      "pin_conflict": 49,
+      "trading_conflict": 9
+    },
+    "category_counts_can_overlap": true,
+    "coverage": {
+      "attempted_venue_count": 1087,
+      "checked_this_run": 908,
+      "current": 908,
+      "review_count": 339,
+      "total": 1087,
+      "unchecked_or_stale": 179
+    },
+    "execution_id": "7036db73a5714872b8787329bc709846",
+    "fresh_attempted_venues": 1087,
+    "inconclusive_is_not_an_incorrect_pin": true
+  },
+  "notes": [
+    "All active IDs freshly attempted; attempt coverage does not certify every pin.",
+    "CAMRA and Google are primary comparisons; FSA differences are supporting information.",
+    "Google identity and marker disagreements require review, not automatic pin movement.",
+    "Inconclusive Google and manual-only CAMRA results are source coverage gaps, not proven defects."
+  ],
+  "owner_confirmations_preserved": true,
+  "pins_moved": 0,
+  "schema_version": 1,
+  "source_commit": "74719dc47522852dac1858853ae01d52809f9321",
+  "started_at": "2026-11-03T16:21:33+00:00",
+  "total_active_venues": 1087
+}

@@ -9,7 +9,7 @@ from datetime import date, datetime, timezone
 from pathlib import Path
 
 from coordinate_sources import fetch_text, recheck_pin, resolve_new_pin
-from directory_release import (RELEASE_FILES, evidence_valid, read_json, read_rows,
+from directory_release import (RELEASE_FILES, active_evidence, evidence_valid, read_json, read_rows,
                                validate_release, write_json, write_release)
 
 
@@ -18,7 +18,7 @@ def select_batch(rows, registry, state, limit):
         identifier = row['venue_id']
         previous = state.get('checks', {}).get(identifier, {})
         pin = registry['venues'][identifier].get('verified_pin')
-        checked = max((e.get('checked_at', '') for e in (pin or {}).get('evidence', [])), default='')
+        checked = max((e.get('checked_at', '') for e in active_evidence(pin)), default='')
         return (previous.get('attempted_at', ''), checked, identifier)
     unresolved = sorted([r for r in rows if not registry['venues'][r['venue_id']].get('verified_pin')], key=priority)
     verified = sorted([r for r in rows if registry['venues'][r['venue_id']].get('verified_pin')], key=priority)
@@ -31,8 +31,18 @@ def select_batch(rows, registry, state, limit):
 def apply_check(entry, result):
     pin = entry.get('verified_pin')
     if result['status'] == 'confirmed' and pin and not pin.get('review_required'):
-        evidence = result['evidence']
-        pin['evidence'] = [e for e in pin['evidence'] if e['url'] != evidence['url']] + [evidence]
+        evidence = copy.deepcopy(result['evidence'])
+        if not active_evidence({'evidence': [evidence]}):
+            raise ValueError('Confirmed source evidence must be active')
+        previous = pin.get('evidence', [])
+        replaced = [e for e in active_evidence(pin) if e.get('url') == evidence['url']]
+        retained = [e for e in previous if e not in replaced]
+        for item in replaced:
+            if item != evidence:
+                historical = dict(item, disposition='superseded_by_source_refresh')
+                if historical not in retained:
+                    retained.append(historical)
+        pin['evidence'] = retained + [evidence]
     elif result['status'] == 'conflict' and pin:
         # Keep the historical coordinate and evidence, but stop displaying it
         # as precise. Restoration requires a reviewed registry correction.
@@ -86,8 +96,14 @@ def health_audit(root, staging, limit=30, check_live=True):
             report['source_warnings'].append(f'{identifier}: {result.get("reason", "unknown error")}; {retained}')
         state['checks'][identifier] = dict(result, attempted_at=date.today().isoformat())
         if entry.get('verified_pin'):
-            sources = {e['source']: {'status': result['status'], 'url': e['url']}
-                       for e in entry['verified_pin'].get('evidence', [])}
+            checked_url = (result.get('evidence') or {}).get('url') or result.get('source_url')
+            sources = {}
+            for item in active_evidence(entry['verified_pin']):
+                source_status = result['status'] if checked_url and item['url'] == checked_url else 'not_checked'
+                # A provider can have several retained readings. Prefer the
+                # specific checked URL over another unqueried reference.
+                if item['source'] not in sources or source_status != 'not_checked':
+                    sources[item['source']] = {'status': source_status, 'url': item['url']}
             entry['verification_attempt'] = dict(result, checked_at=date.today().isoformat(), sources=sources)
         else:
             # Retain lookup diagnostics, including an outage before any pin exists.

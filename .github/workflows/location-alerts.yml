@@ -11,6 +11,7 @@ on:
     paths: ['.github/workflows/location-alerts.yml', 'notify_location_review.py', 'location_review.py', 'apply_closed_reviews.py', 'audit/closed-review-decisions.json']
 
 permissions:
+  actions: read
   contents: write
   issues: write
 
@@ -47,7 +48,7 @@ jobs:
       - name: Write the complete review queue
         # Read main's current durable status, including failed health runs; a
         # delayed workflow_run event must not replace it with an old artifact.
-        run: python -c "from directory_release import read_json, write_json; from location_review import format_report, load_health_status, with_health; from pathlib import Path; report = with_health(read_json('location-review.json'), load_health_status('map-health-status.json')); write_json('notification-report.json', report); Path('location-review-report.md').write_text(format_report(report), encoding='utf-8')"
+        run: python -c "from directory_release import read_json, write_json; from location_review import format_report, load_google_status, load_health_status, with_google, with_health; from pathlib import Path; report = with_google(with_health(read_json('location-review.json'), load_health_status('map-health-status.json')), load_google_status('google-places-status.json'), read_json('directory-release.json')); write_json('notification-report.json', report); Path('location-review-report.md').write_text(format_report(report), encoding='utf-8')"
       - name: Update the persistent GitHub review issue
         uses: actions/github-script@v7
         with:
@@ -70,12 +71,39 @@ jobs:
             // A failure after the status commit (for example artifact upload)
             // is still visible. A recovered newer run/attempt supersedes it.
             const representedHealth = isHealth && (newerHealth || (sameHealthAttempt && report.health_count));
-            const failed = source && !representedHealth && ['failure', 'timed_out', 'action_required'].includes(source.conclusion);
+            const sameGoogleAttempt = source && Number(report.google_run_id || 0) === Number(source.id)
+              && Number(report.google_run_attempt || 1) === Number(source.run_attempt || 1);
+            // Suppress only a proven Google-only failure. Persistence/upload
+            // failures after the saved API result still need a pipeline alert.
+            let representedGoogle = false;
+            if (isHealth && sameHealthAttempt && sameGoogleAttempt && report.google_hard_failure && report.google_count) {
+              try {
+                const {data} = await github.rest.actions.listJobsForWorkflowRunAttempt({
+                  ...context.repo, run_id: source.id, attempt_number: Number(source.run_attempt || 1), per_page: 100
+                });
+                const failedConclusions = new Set(['failure', 'timed_out', 'action_required']);
+                const knownConclusions = new Set(['success', 'skipped', 'neutral', ...failedConclusions]);
+                const jobs = data.jobs;
+                const complete = Array.isArray(jobs) && jobs.length > 0 && data.total_count === jobs.length
+                  && jobs.every(job => job.status === 'completed' && knownConclusions.has(job.conclusion));
+                const failedJobs = complete ? jobs.filter(job => failedConclusions.has(job.conclusion)) : [];
+                representedGoogle = failedJobs.length > 0 && failedJobs.every(job => {
+                  if (!Array.isArray(job.steps) || !job.steps.length
+                      || !job.steps.every(step => step.status === 'completed' && knownConclusions.has(step.conclusion))) return false;
+                  const failedSteps = job.steps.filter(step => failedConclusions.has(step.conclusion));
+                  return failedSteps.length > 0 && failedSteps.every(step => step.name === 'Rotate Google Places comparisons');
+                });
+              } catch {
+                // Missing API permission or unavailable/incomplete evidence is inconclusive.
+                representedGoogle = false;
+              }
+            }
+            const failed = source && !representedHealth && !representedGoogle && ['failure', 'timed_out', 'action_required'].includes(source.conclusion);
             core.exportVariable('FAILURE_URL', failed ? source.html_url : '');
             const fullBody = (failed ? `Import or audit failed: ${source.html_url}\n\n` : '') + fs.readFileSync('location-review-report.md', 'utf8');
             const body = fullBody.length > 60000 ? fullBody.slice(0, 58000) + '\n\nReport shortened for GitHub. Full audit: https://github.com/bristolbagpiper/BassBeerMap/blob/main/audit/full-location-audit.md' : fullBody;
             const existing = (await github.rest.issues.get({...context.repo, issue_number:5})).data;
-            if (report.active_count || report.health_count || failed) {
+            if (report.active_count || report.google_count || report.health_count || failed) {
               if (existing.state !== 'open' || existing.body !== body) await github.rest.issues.update({...context.repo, issue_number:existing.number, state:'open', body});
             } else if (existing.state !== 'closed' || existing.body !== body) {
               await github.rest.issues.update({...context.repo, issue_number:existing.number, body, state:'closed', state_reason:'completed'});

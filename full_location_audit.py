@@ -11,6 +11,7 @@ from pathlib import Path
 from directory_release import RELEASE_FILES, distance_metres, point_valid, read_json, read_rows, validate_release, write_json, write_release
 from resolve_venue_coordinates_from_fhrs import search, choose_match, names_match
 from location_review import postcode_issue_reviewed
+from owner_location_review import current_confirmation
 
 
 def checkpoint(path, checks):
@@ -64,13 +65,15 @@ def assess(row, entry, lookup=search):
     result = min(usable, key=lambda c: c['difference_metres']) if usable else comparisons[0]
     source_urls = [e.get('url', '') for e in pin.get('evidence', [])]
     independent_of_pin = any(url and 'ratings.food.gov.uk' not in url for url in source_urls) and not any('ratings.food.gov.uk' in url for url in source_urls)
-    owner_reviewed = bool(entry.get('location_approvals'))
+    owner_reviewed = (bool(current_confirmation(row, pin)) if 'owner_confirmation' in pin
+                      else bool(entry.get('location_approvals')))
     confidence = ('owner_reviewed' if owner_reviewed else
                   'independent_coordinate_agreement' if result['status'] == 'coordinate_agreement' and independent_of_pin else
                   'existing_evidence_needs_corroboration')
     check = dict(checked_at=date.today().isoformat(), pin=pin_signature(pin), listing=listing_signature(row), status=result['status'],
                  confidence=confidence, owner_reviewed=owner_reviewed, independent_of_pin=independent_of_pin,
                  comparisons=comparisons, reference=result)
+    check['owner_pin_confirmed'] = bool(current_confirmation(row, pin))
     return classify(check, pin)
 
 
@@ -87,14 +90,35 @@ def classify(check, pin):
     if status == 'no_accepted_pin':
         reasons.append('No accepted venue coordinate yet; postcode pin remains approximate')
     elif status == 'unavailable':
-        reasons.append('Independent FSA comparison unavailable; last accepted pin retained')
+        warnings.append('FSA comparison source unavailable; last accepted pin retained; no pub-pin check requested')
     elif status == 'coordinate_disagreement':
         warnings.append(f"FSA coordinate is {check['reference']['difference_metres']}m from the accepted pin; informational only because the FSA geocode may be approximate")
     elif status == 'nearby':
         warnings.append('FSA coordinate is 25-50m away; informational only')
     elif status != 'coordinate_agreement':
         warnings.append('FSA comparison is inconclusive; absence of a match does not contradict accepted evidence')
-    check.update(reasons=reasons, warnings=warnings, actionable=bool(reasons),
+    manual_action_required = bool(reasons)
+    if issue.get('reference') and not postcode_issue_reviewed(issue, pin, check.get('listing', {}).get('pub_name')):
+        review_category = 'address_metadata'
+        next_action = 'Check the listing address and postcode against the reviewed reference postcode.'
+    elif status == 'no_accepted_pin':
+        review_category = 'needs_verification'
+        next_action = 'Verify the pub location from an independent source; no accepted pin evidence is recorded yet.'
+    elif manual_action_required:
+        review_category = 'needs_verification'
+        next_action = 'Review the stated finding and verify from an independent source.'
+    elif status == 'unavailable':
+        review_category = 'source_warning'
+        next_action = 'Retry the unavailable source; no pub-pin check requested.'
+    elif check.get('owner_pin_confirmed'):
+        review_category = 'owner_confirmed'
+        next_action = 'Owner confirmed this exact pin; no pin check requested.'
+    else:
+        review_category = 'informational'
+        next_action = 'No pin check requested.'
+    check.update(reasons=reasons, warnings=warnings, actionable=manual_action_required,
+                 review_category=review_category, manual_action_required=manual_action_required,
+                 next_action=next_action,
                  priority=0 if reasons else 2 if warnings else 3)
     return check
 
@@ -117,33 +141,40 @@ def report(rows, registry, checks, output):
         entry = registry['venues'][row['venue_id']]
         check = checks.get(row['venue_id'], {})
         if check.get('pin') != pin_signature(entry.get('verified_pin') or {}) or check.get('listing') != listing_signature(row):
-            check = {'status': 'not_checked', 'priority': 0, 'actionable': False, 'reasons': [], 'warnings': ['Current pin has not been independently compared']}
+            check = {'status': 'not_checked', 'priority': 0, 'actionable': False, 'reasons': [], 'warnings': ['Current pin has not been independently compared'], 'review_category': 'informational', 'manual_action_required': False, 'next_action': 'No pin check requested.'}
         records.append(dict(row, **check))
     records.sort(key=lambda r: (r['priority'], r['pub_name'], r['venue_id']))
     summary = dict(total=len(rows), counts=dict(Counter(r['status'] for r in records)),
                    confidence_counts=dict(Counter(r.get('confidence', 'not_checked') for r in records)),
                    actionable_count=sum(bool(r.get('actionable')) for r in records),
                    informational_count=sum(bool(r.get('warnings')) for r in records),
+                   action_required_count=sum(bool(r.get('manual_action_required')) for r in records),
+                   information_no_pin_check_count=sum(not r.get('manual_action_required') for r in records),
                    limitations=['Coordinate agreement does not prove the correct building or current Bass availability.',
                                 'Owner-approved coordinates take priority; CAMRA remains the primary automated reference.',
                                 'FSA coordinate differences alone are informational and do not create location review alerts.',
                                 'FSA geocodes may be postcode centres. Missing matches and outages are inconclusive.',
                                 'No coordinates or owner approvals are changed by this audit.'])
     write_json(output / 'full-location-audit.json', dict(schema_version=1, summary=summary, records=records))
-    fields = ['venue_id', 'pub_name', 'place_name', 'postcode', 'priority', 'status', 'confidence', 'checked_at', 'actionable', 'reasons', 'warnings']
+    fields = ['venue_id', 'pub_name', 'place_name', 'postcode', 'priority', 'status', 'confidence', 'checked_at', 'review_category', 'manual_action_required', 'next_action', 'actionable', 'reasons', 'warnings']
     with (output / 'full-location-audit.csv').open('w', encoding='utf-8', newline='') as stream:
         writer = csv.DictWriter(stream, fieldnames=fields, extrasaction='ignore', lineterminator='\n')
         writer.writeheader()
         writer.writerows(dict(r, reasons='; '.join(r.get('reasons', [])), warnings='; '.join(r.get('warnings', []))) for r in records)
-    lines = ['# Full location audit', '', f"Locations: {len(rows)}", '', f"Actionable findings: {summary['actionable_count']}", f"Locations with informational observations: {summary['informational_count']} (may also have an actionable finding)", '', '## Results', '',
+    lines = ['# Full location audit', '', f"Locations: {len(rows)}", '', f"Action required: {summary['action_required_count']}", f"Information — no pin check requested: {summary['information_no_pin_check_count']}", f"Locations with informational observations: {summary['informational_count']} (may also have an actionable finding)", '', '## Results', '',
              *[f'- {k}: {v}' for k, v in summary['counts'].items()], '', '## Confidence', '',
              *[f'- {k}: {v}' for k, v in summary['confidence_counts'].items()], '', '## Limits', '',
-             *[f'- {value}' for value in summary['limitations']], '', '## Actionable findings and informational observations', '',
-             '| Pub | Place | Postcode | Result | Classification | Detail |', '|---|---|---|---|---|---|']
+             *[f'- {value}' for value in summary['limitations']], '', '## Action required', '',
+             '| Pub | Place | Postcode | Category | Result | Required action | Finding |', '|---|---|---|---|---|---|---|']
     for r in records:
-        if r['priority'] < 3:
+        if r.get('manual_action_required'):
             clean = lambda value: str(value).replace('|', '/').replace('\n', ' ')
-            lines.append('| ' + ' | '.join(map(clean, [r['pub_name'], r['place_name'], r['postcode'], r['status'], 'Actionable' if r.get('actionable') else 'Informational', '; '.join(r.get('reasons', []) + r.get('warnings', []))])) + ' |')
+            lines.append('| ' + ' | '.join(map(clean, [r['pub_name'], r['place_name'], r['postcode'], r.get('review_category'), r['status'], r.get('next_action'), '; '.join(r.get('reasons', []))])) + ' |')
+    lines.extend(['', '## Information — no pin check requested', '', '| Pub | Place | Postcode | Result | Information |', '|---|---|---|---|---|'])
+    for r in records:
+        if not r.get('manual_action_required'):
+            clean = lambda value: str(value).replace('|', '/').replace('\n', ' ')
+            lines.append('| ' + ' | '.join(map(clean, [r['pub_name'], r['place_name'], r['postcode'], r['status'], '; '.join(r.get('warnings', [])) or r.get('next_action')])) + ' |')
     (output / 'full-location-audit.md').write_text('\n'.join(lines) + '\n', encoding='utf-8')
     return summary
 
@@ -156,10 +187,13 @@ def reclassify_checks(rows, registry, checks):
         if not check:
             continue
         entry = registry['venues'][identifier]
+        check['owner_pin_confirmed'] = bool(current_confirmation(row, entry.get('verified_pin') or {}))
         urls = [e.get('url', '') for e in (entry.get('verified_pin') or {}).get('evidence', [])]
         independent = any(url and 'ratings.food.gov.uk' not in url for url in urls) and not any('ratings.food.gov.uk' in url for url in urls)
         check['independent_of_pin'] = independent
-        check['owner_reviewed'] = bool(entry.get('location_approvals'))
+        pin = entry.get('verified_pin') or {}
+        check['owner_reviewed'] = (bool(current_confirmation(row, pin)) if 'owner_confirmation' in pin
+                                   else bool(entry.get('location_approvals')))
         check['confidence'] = ('owner_reviewed' if check['owner_reviewed'] else 'independent_coordinate_agreement' if check['status'] == 'coordinate_agreement' and independent else 'existing_evidence_needs_corroboration')
         classify(check, entry.get('verified_pin') or {})
 

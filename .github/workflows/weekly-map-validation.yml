@@ -16,12 +16,14 @@ concurrency:
 jobs:
   map-health:
     runs-on: ubuntu-latest
-    timeout-minutes: 25
+    timeout-minutes: 40
     steps:
       - uses: actions/checkout@v4
+        id: checkout
         with:
           ref: main
       - uses: actions/setup-python@v5
+        id: python
         with:
           python-version: '3.13'
       - name: Validate all committed map assets
@@ -61,6 +63,29 @@ jobs:
           git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
           git commit -m 'Record latest map health result' -- map-health-status.json
           git push
+      - name: Rotate Google Places comparisons
+        id: google
+        # Run after safe CAMRA results publish, even if that source failed.
+        # Google failures cannot prevent those results from being committed.
+        if: always() && steps.checkout.outcome == 'success' && steps.python.outcome == 'success'
+        env:
+          GOOGLE_PLACES_ENABLED: ${{ vars.GOOGLE_PLACES_ENABLED }}
+          GOOGLE_PLACES_API_KEY: ${{ secrets.GOOGLE_PLACES_API_KEY }}
+          AUDIT_RUN_ID: ${{ github.run_id }}
+          AUDIT_RUN_ATTEMPT: ${{ github.run_attempt }}
+          AUDIT_RUN_URL: https://github.com/${{ github.repository }}/actions/runs/${{ github.run_id }}
+        run: python audit_google_places.py --root . --state google-places-state.json --status google-places-status.json --limit 45
+      - name: Persist Google comparison status and rotation, including partial failures
+        if: always() && steps.google.outcome != 'skipped' && steps.checkout.outcome == 'success' && steps.python.outcome == 'success'
+        run: |
+          files=(google-places-status.json)
+          if [ -f google-places-state.json ]; then files+=(google-places-state.json); fi
+          git add -- "${files[@]}"
+          if git diff --cached --quiet -- "${files[@]}"; then exit 0; fi
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git commit -m 'Record Google comparison results' -- "${files[@]}"
+          git push
       - name: Upload health report and candidate artifacts
         if: always()
         uses: actions/upload-artifact@v4
@@ -69,4 +94,7 @@ jobs:
           path: |
             candidate-health/
             map-health-status.json
+            google-places-state.json
+            google-places-status.json
+          retention-days: 7
           if-no-files-found: warn

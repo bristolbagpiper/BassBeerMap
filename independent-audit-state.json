@@ -215,38 +215,50 @@
     },
     "v-01386b13-1f71-5e2b-ac42-1431c3dacb83": {
       "actionable": false,
-      "checked_at": "2026-10-10",
+      "checked_at": "2026-11-02",
       "comparisons": [
         {
-          "name_matches": 0,
-          "postcode_matches": 3,
+          "address": "102 Rose Lane, , Liverpool",
+          "difference_metres": 0.8,
+          "lat": 53.3784681,
+          "lng": -2.916633,
+          "name": "Black Cat",
+          "postcode": "L18 8AG",
           "queried_postcode": "L18 8AG",
-          "status": "no_name_match"
+          "status": "coordinate_agreement",
+          "url": "https://ratings.food.gov.uk/business/2001128"
         }
       ],
       "confidence": "existing_evidence_needs_corroboration",
-      "independent_of_pin": true,
+      "independent_of_pin": false,
       "listing": {
         "postcode": "L18 8AG",
         "pub_name": "Black Cat"
       },
+      "manual_action_required": false,
+      "next_action": "No pin check requested.",
+      "owner_pin_confirmed": false,
       "owner_reviewed": false,
       "pin": {
         "lat": 53.3784743,
         "lng": -2.9166268
       },
-      "priority": 2,
+      "priority": 3,
       "reasons": [],
       "reference": {
-        "name_matches": 0,
-        "postcode_matches": 3,
+        "address": "102 Rose Lane, , Liverpool",
+        "difference_metres": 0.8,
+        "lat": 53.3784681,
+        "lng": -2.916633,
+        "name": "Black Cat",
+        "postcode": "L18 8AG",
         "queried_postcode": "L18 8AG",
-        "status": "no_name_match"
+        "status": "coordinate_agreement",
+        "url": "https://ratings.food.gov.uk/business/2001128"
       },
-      "status": "no_name_match",
-      "warnings": [
-        "FSA comparison is inconclusive; absence of a match does not contradict accepted evidence"
-      ]
+      "review_category": "informational",
+      "status": "coordinate_agreement",
+      "warnings": []
     },
     "v-01dd87fe-80c7-51ce-8410-45c3664e8b45": {
       "actionable": false,

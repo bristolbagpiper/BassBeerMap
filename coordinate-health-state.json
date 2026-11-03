@@ -91,10 +91,23 @@
       "status": "confirmed"
     },
     "v-01386b13-1f71-5e2b-ac42-1431c3dacb83": {
-      "attempted_at": "2026-10-31",
-      "reason": "Reference venue name changed",
-      "source_url": "https://camra.org.uk/pubs/166207",
-      "status": "conflict"
+      "attempted_at": "2026-11-02",
+      "evidence": {
+        "checked_at": "2026-11-02",
+        "difference_metres": 6.2,
+        "match": "venue_name_and_full_postcode",
+        "reference_address": "102 Rose Lane",
+        "reference_coordinate": {
+          "lat": 53.378427,
+          "lng": -2.916676
+        },
+        "reference_name": "Black Cat Rose Lane, Liverpool - Rotating Cask Beers",
+        "reference_postcode": "L18 8AG",
+        "review_reason": "Human review: CAMRA includes locality/street in the same venue name; exact named address and mapped point agree.",
+        "source": "camra",
+        "url": "https://camra.org.uk/pubs/166207"
+      },
+      "status": "confirmed"
     },
     "v-01dd87fe-80c7-51ce-8410-45c3664e8b45": {
       "attempted_at": "2026-10-31",
@@ -1197,10 +1210,9 @@
       "status": "confirmed"
     },
     "v-101e22ce-2e15-5d8d-8f40-64e6ead91ee8": {
-      "attempted_at": "2026-10-10",
-      "reason": "Reference venue name changed",
-      "source_url": "https://camra.org.uk/pubs/120146",
-      "status": "conflict"
+      "attempted_at": "2026-11-02",
+      "reason": "Manual map evidence needs a fresh human address/map check",
+      "status": "manual_review"
     },
     "v-1099e58b-6e60-5619-b6b7-d5943139f761": {
       "attempted_at": "2026-11-02",
@@ -3167,9 +3179,9 @@
       "status": "confirmed"
     },
     "v-30313510-91a5-5adf-b5da-4f48d83379f8": {
-      "attempted_at": "2026-10-12",
+      "attempted_at": "2026-11-02",
       "evidence": {
-        "checked_at": "2026-10-12",
+        "checked_at": "2026-11-02",
         "difference_metres": 10.1,
         "match": "venue_name_and_full_postcode",
         "reference_address": "19 Burton Road",
@@ -3177,7 +3189,7 @@
           "lat": 52.74872760074,
           "lng": -1.642356326389
         },
-        "reference_name": "Bull's Head, Rosliston - Victorian Freehouse",
+        "reference_name": "Bull's Head, Rosliston - Victorian Free House",
         "reference_postcode": "DE12 8JU",
         "source": "camra",
         "url": "https://camra.org.uk/pubs/124058"
@@ -4897,9 +4909,9 @@
       "status": "confirmed"
     },
     "v-4b8ef389-7cfb-5e6e-b7f7-0aec7dc933fe": {
-      "attempted_at": "2026-10-14",
+      "attempted_at": "2026-11-02",
       "evidence": {
-        "checked_at": "2026-10-14",
+        "checked_at": "2026-11-02",
         "difference_metres": 8.5,
         "match": "venue_name_and_full_postcode",
         "reference_address": "Warwick Road",
@@ -7361,9 +7373,9 @@
       "status": "confirmed"
     },
     "v-6e62d9c7-aa04-5175-9a9e-cbaebb8bd359": {
-      "attempted_at": "2026-10-17",
+      "attempted_at": "2026-11-02",
       "evidence": {
-        "checked_at": "2026-10-17",
+        "checked_at": "2026-11-02",
         "difference_metres": 0.0,
         "match": "venue_name_and_full_postcode",
         "reference_address": "1 Wilfred Place",
@@ -7371,7 +7383,7 @@
           "lat": 52.744405395367,
           "lng": -1.475100964308
         },
-        "reference_name": "Ivanhoe Social Club, Ashby De La Zouch - Membe",
+        "reference_name": "Ivanhoe Social Club1, Ashby de la Zouch",
         "reference_postcode": "LE65 2GW",
         "source": "camra",
         "url": "https://camra.org.uk/pubs/196238"
@@ -8052,10 +8064,22 @@
       "status": "confirmed"
     },
     "v-7860bb0f-0624-57b4-b298-427b0b8e62fb": {
-      "attempted_at": "2026-10-18",
-      "reason": "Reference venue name changed",
-      "source_url": "https://camra.org.uk/pubs/162510",
-      "status": "conflict"
+      "attempted_at": "2026-11-02",
+      "evidence": {
+        "checked_at": "2026-11-02",
+        "difference_metres": 0.0,
+        "match": "venue_name_and_full_postcode",
+        "reference_address": "44 Mosley Street, New Basford",
+        "reference_coordinate": {
+          "lat": 52.971823,
+          "lng": -1.172655
+        },
+        "reference_name": "Lion at Basford, Nottingham - Freehouse with Garden",
+        "reference_postcode": "NG7 7FQ",
+        "source": "camra",
+        "url": "https://camra.org.uk/pubs/162510"
+      },
+      "status": "confirmed"
     },
     "v-790cd688-0b91-5adf-81cc-75528dd143fe": {
       "attempted_at": "2026-10-18",
@@ -8664,10 +8688,22 @@
       "status": "confirmed"
     },
     "v-804d57d4-1953-5654-88fa-fc20c0ce6910": {
-      "attempted_at": "2026-10-19",
-      "reason": "Reference venue name changed",
-      "source_url": "https://camra.org.uk/pubs/123211",
-      "status": "conflict"
+      "attempted_at": "2026-11-02",
+      "evidence": {
+        "checked_at": "2026-11-02",
+        "difference_metres": 0.0,
+        "match": "venue_name_and_full_postcode",
+        "reference_address": "Bradwell Lane",
+        "reference_coordinate": {
+          "lat": 53.041765,
+          "lng": -2.23436
+        },
+        "reference_name": "Bradwell & District Working Mens Club, Bradwell",
+        "reference_postcode": "ST5 8JA",
+        "source": "camra",
+        "url": "https://camra.org.uk/pubs/123211"
+      },
+      "status": "confirmed"
     },
     "v-809531b4-2e54-53fe-a824-d4187ca7d360": {
       "attempted_at": "2026-10-19",
@@ -8922,10 +8958,22 @@
       "status": "confirmed"
     },
     "v-8427c0da-bdf7-5db8-9be9-0a7d5981de31": {
-      "attempted_at": "2026-10-19",
-      "reason": "Reference venue name changed",
-      "source_url": "https://camra.org.uk/pubs/124090",
-      "status": "conflict"
+      "attempted_at": "2026-11-02",
+      "evidence": {
+        "checked_at": "2026-11-02",
+        "difference_metres": 0.0,
+        "match": "venue_name_and_full_postcode",
+        "reference_address": "43 Ashby Road East",
+        "reference_coordinate": {
+          "lat": 52.7988,
+          "lng": -1.5851
+        },
+        "reference_name": "Burton-on-Trent Golf Club, Bretby",
+        "reference_postcode": "DE15 0PS",
+        "source": "camra",
+        "url": "https://camra.org.uk/pubs/124090"
+      },
+      "status": "confirmed"
     },
     "v-8437cb49-dd3e-5c8c-a924-f3ca32bcd323": {
       "attempted_at": "2026-11-01",
@@ -10520,9 +10568,9 @@
       "status": "confirmed"
     },
     "v-9b0214b5-0b89-530a-9485-b8662012f510": {
-      "attempted_at": "2026-10-31",
+      "attempted_at": "2026-11-02",
       "evidence": {
-        "checked_at": "2026-10-31",
+        "checked_at": "2026-11-02",
         "difference_metres": 0.0,
         "match": "venue_name_and_coordinate; listing_postcode_conflicts",
         "reference_address": "143 London Road",
@@ -11585,9 +11633,9 @@
       "status": "confirmed"
     },
     "v-a85befda-a05a-5b5a-b360-5ee70601ef2d": {
-      "attempted_at": "2026-10-23",
+      "attempted_at": "2026-11-02",
       "evidence": {
-        "checked_at": "2026-10-23",
+        "checked_at": "2026-11-02",
         "difference_metres": 7.9,
         "match": "venue_name_and_full_postcode",
         "reference_address": "Thames Street",
@@ -13321,10 +13369,23 @@
       "status": "confirmed"
     },
     "v-c62f31b0-c5b0-546c-979e-12fac920a47a": {
-      "attempted_at": "2026-10-25",
-      "reason": "Reference venue name changed",
-      "source_url": "https://camra.org.uk/pubs/180027",
-      "status": "conflict"
+      "attempted_at": "2026-11-02",
+      "evidence": {
+        "checked_at": "2026-11-02",
+        "match": "owner_confirmed_saved_point_corroborated_by_named_camra_venue",
+        "reference_address": "63-67 Chapel Street",
+        "reference_coordinate": {
+          "lat": 53.652569,
+          "lng": -2.628662
+        },
+        "reference_name": "Shepherds' Hall Ale House & Victoria Rooms, Chorley",
+        "reference_postcode": "PR7 1BS",
+        "review_url": "https://github.com/bristolbagpiper/BassBeerMap/issues/5#issuecomment-6505084384",
+        "reviewed_by": "bristolbagpiper",
+        "source": "camra",
+        "url": "https://camra.org.uk/pubs/180027"
+      },
+      "status": "confirmed"
     },
     "v-c63814fd-52c2-5e7a-bca3-131e9aa35dfa": {
       "attempted_at": "2026-10-25",
@@ -13890,9 +13951,9 @@
       "status": "confirmed"
     },
     "v-cd0de5c3-353f-509e-9016-344a9d177fcf": {
-      "attempted_at": "2026-10-25",
+      "attempted_at": "2026-11-02",
       "evidence": {
-        "checked_at": "2026-10-25",
+        "checked_at": "2026-11-02",
         "difference_metres": 4.1,
         "match": "venue_name_and_full_postcode",
         "reference_address": "1 Breach Road",
@@ -14291,10 +14352,23 @@
       "status": "confirmed"
     },
     "v-d440d36d-80af-56b5-9fd0-8a15f6211abc": {
-      "attempted_at": "2026-10-26",
-      "reason": "Reference venue name changed",
-      "source_url": "https://camra.org.uk/pubs/124102",
-      "status": "conflict"
+      "attempted_at": "2026-11-02",
+      "evidence": {
+        "checked_at": "2026-11-02",
+        "match": "owner_confirmed_saved_point_corroborated_by_named_camra_venue",
+        "reference_address": "23 Main Street, Stapenhill",
+        "reference_coordinate": {
+          "lat": 52.7936,
+          "lng": -1.6231
+        },
+        "reference_name": "Stapenhill Institute Club, Burton upon Trent",
+        "reference_postcode": "DE15 9AP",
+        "review_url": "https://github.com/bristolbagpiper/BassBeerMap/issues/5#issuecomment-6505337978",
+        "reviewed_by": "bristolbagpiper",
+        "source": "camra",
+        "url": "https://camra.org.uk/pubs/124102"
+      },
+      "status": "confirmed"
     },
     "v-d4791829-cd62-5610-8557-722e5a52f60a": {
       "attempted_at": "2026-10-26",
@@ -16717,10 +16791,23 @@
       "status": "confirmed"
     },
     "v-f5aec448-8eee-52d9-abb9-75adbf3dbdbf": {
-      "attempted_at": "2026-10-29",
-      "reason": "Reference venue name changed",
-      "source_url": "https://camra.org.uk/pubs/145783",
-      "status": "conflict"
+      "attempted_at": "2026-11-02",
+      "evidence": {
+        "checked_at": "2026-11-02",
+        "match": "owner_confirmed_saved_point_corroborated_by_named_camra_venue",
+        "reference_address": "5 Salter Street",
+        "reference_coordinate": {
+          "lat": 52.807928,
+          "lng": -2.11676
+        },
+        "reference_name": "Pickled Pig, at the Bankhouse, Stafford - Live Music",
+        "reference_postcode": "ST16 2JU",
+        "review_url": "https://github.com/bristolbagpiper/BassBeerMap/issues/5#issuecomment-6504919666",
+        "reviewed_by": "bristolbagpiper",
+        "source": "camra",
+        "url": "https://camra.org.uk/pubs/145783"
+      },
+      "status": "confirmed"
     },
     "v-f5fe3c75-9372-5c5b-ad97-c2a9d3b158de": {
       "attempted_at": "2026-10-29",
@@ -17458,5 +17545,5 @@
       "status": "confirmed"
     }
   },
-  "issue_fingerprint": "d48266c8e73915dc0af300837c7d1310ab9f1da1e70c539f5918dd1b83fde329"
+  "issue_fingerprint": "971febc7e63462d54a03bc322575a016c86a33b4e8e5df0d59462321dd99b84c"
 }

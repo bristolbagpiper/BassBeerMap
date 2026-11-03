@@ -66,12 +66,26 @@ def distance_metres(left, right):
     return 6371000 * 2 * math.asin(min(1, math.sqrt(a)))
 
 
+def active_evidence(pin):
+    """Read current evidence without removing historical records from the pin.
+
+    The current schema marks inactive records with a disposition. Only an
+    absent disposition carries current authority; unknown explicit values fail
+    closed rather than silently reviving superseded or rejected evidence.
+    """
+    evidence = pin.get('evidence', []) if isinstance(pin, dict) else []
+    if not isinstance(evidence, list):
+        return []
+    return [item for item in evidence if isinstance(item, dict) and 'disposition' not in item]
+
+
 def evidence_valid(pin, today=None, allow_expired=False):
     today = today or date.today()
-    if not point_valid(pin) or not pin.get('evidence') or pin.get('review_required'):
+    evidence = active_evidence(pin)
+    if not point_valid(pin) or not evidence or pin.get('review_required'):
         return False
     valid = []
-    for item in pin['evidence']:
+    for item in evidence:
         try:
             checked = date.fromisoformat(item['checked_at'])
             reference = item.get('reference_coordinate')
@@ -232,7 +246,7 @@ def build_ledger(rows, registry, allow_expired=False):
             if pin.get('metadata_issue'):
                 record['metadata_issue'] = dict(pin['metadata_issue'], listed=row['postcode'])
         records[venue_key(row)] = record
-    evidence_dates = [e['checked_at'] for r in records.values() for e in r['evidence'] if e.get('checked_at')]
+    evidence_dates = [e['checked_at'] for r in records.values() for e in active_evidence(r) if e.get('checked_at')]
     return {
         'schema_version': 2, 'generated_at': max(evidence_dates, default=''),
         'policy': {'max_evidence_age_days': MAX_EVIDENCE_AGE_DAYS, 'venue_pin': 'Evidence-backed venue coordinates; unresolved venues use explicitly approximate postcode pins.'},
@@ -254,7 +268,7 @@ def build_bundle(rows, metadata, postcodes, ledger):
             raise ValueError(f'{venue_key(row)}: postcode fallback is invalid or unavailable')
         locations[row['venue_id']]['postcode_location'] = fallback
         if precision == 'venue':
-            locations[row['venue_id']]['checked_at'] = max(e['checked_at'] for e in record['evidence'])
+            locations[row['venue_id']]['checked_at'] = max(e['checked_at'] for e in active_evidence(record))
         if record.get('metadata_issue'):
             locations[row['venue_id']]['metadata_issue'] = record['metadata_issue']
     payload = {'schema_version': 1, 'metadata': metadata, 'rows': rows, 'locations': locations,
@@ -336,7 +350,7 @@ def validate_release(root, previous_root=None, allow_review_downgrades=False, al
             accepted_postcodes = [record['postcode']]
             if issue.get('listed') == record['postcode'] and issue.get('source_url'):
                 accepted_postcodes.append(issue.get('reference', ''))
-            if not any(any(postcodes_match(e.get('reference_postcode'), pc) for pc in accepted_postcodes) for e in record['evidence']):
+            if not any(any(postcodes_match(e.get('reference_postcode'), pc) for pc in accepted_postcodes) for e in active_evidence(record)):
                 errors.append(f'{key}: coordinate evidence belongs to a different address')
     try:
         if bundle != build_bundle(rows, metadata, postcodes, expected):

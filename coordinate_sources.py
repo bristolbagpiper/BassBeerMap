@@ -6,7 +6,8 @@ from datetime import date
 from functools import lru_cache
 from urllib.request import Request, urlopen
 
-from directory_release import distance_metres, point_valid
+from directory_release import active_evidence, distance_metres, point_valid
+from owner_location_review import source_identity_title, source_name_acknowledged
 from resolve_venue_coordinates_from_fhrs import choose_match, names_match, search
 
 
@@ -48,9 +49,13 @@ def name_matches(listing, reference, place_name=''):
     # distinctive listing name at the start; do not accept substring matches.
     def normal(value):
         value = re.sub(r'\brugby\s+football\s+club\b', 'rugby club', value.casefold())
-        return re.sub(r'[^a-z0-9]', '', re.sub(r'\band\b|&', '', re.sub(r'^the\s+', '', value)))
+        return re.sub(r'[^a-z0-9]', '', re.sub(r'\band\b|&', '', re.sub(r'^(?:the|ye)\s+', '', value)))
     wanted = normal(re.sub(r'\s*\(PMC\)', '', listing, flags=re.I))
-    actual = normal(reference.split(',')[0].split(' - ')[0])
+    title = reference.split(',')[0].split(' - ')[0].strip()
+    # CAMRA may append an explicit alias to the primary title. The alias is
+    # never itself a match; other parenthetical qualifiers retain their force.
+    title = re.sub(r'\s+\(also known as [^()]+\)$', '', title, flags=re.I)
+    actual = normal(title)
     if (wanted == actual or (place_name and normal(f'{listing} {place_name}') == actual)
             or (place_name and normal(f'{listing} at {place_name}') == actual)):
         return True
@@ -67,12 +72,24 @@ def name_matches(listing, reference, place_name=''):
 
 def recheck_pin(row, pin):
     """A reachable page alone never refreshes the verification date."""
-    evidence = pin.get('evidence', [])
-    item = next((e for e in evidence if e.get('url', '').startswith('https://camra.org.uk/pubs/')), None)
+    evidence = active_evidence(pin)
+    def priority(item):
+        try:
+            checked = date.fromisoformat(item.get('checked_at', ''))
+            if checked > date.today():
+                checked = date.min
+        except (TypeError, ValueError):
+            checked = date.min
+        return (checked, bool(item.get('reference_name')), bool(item.get('reviewed_by')),
+                bool(item.get('reference_address')), bool(item.get('reference_coordinate')))
+    item = max((e for e in evidence if e.get('url', '').startswith('https://camra.org.uk/pubs/')),
+               key=priority, default=None)
     if item:
         observed = parse_camra(fetch_text(item['url']))
         reviewed_name = item.get('reference_name', '')
-        if not name_matches(row['pub_name'], observed['name'], row.get('place_name', '')) and observed['name'] != reviewed_name:
+        reviewed_match = bool(reviewed_name and source_identity_title(reviewed_name) == source_identity_title(observed['name']))
+        acknowledged = source_name_acknowledged(row, pin, item['url'], observed)
+        if not name_matches(row['pub_name'], observed['name'], row.get('place_name', '')) and not reviewed_match and not acknowledged:
             return {'status': 'conflict', 'reason': 'Reference venue name changed', 'source_url': item['url']}
         expected_postcode = item.get('reference_postcode') or pin.get('metadata_issue', {}).get('reference') or row['postcode']
         compact = lambda value: re.sub(r'\s+', '', value).upper()

@@ -1,7 +1,7 @@
 {
   "counts": {
-    "postcode_approximate": 17,
-    "verified_venue": 1071
+    "postcode_approximate": 7,
+    "verified_venue": 1081
   },
   "generated_at": "2026-11-03",
   "policy": {
@@ -830,13 +830,30 @@
       "venue_id": "v-37ce061c-4278-5999-9e12-18871f6248ab"
     },
     "astbury golf club|astbury|cw12 4re": {
-      "coordinate_source": "postcode",
-      "display_precision": "postcode",
-      "evidence": [],
+      "coordinate_source": "camra-primary",
+      "display_precision": "venue",
+      "evidence": [
+        {
+          "checked_at": "2026-11-03",
+          "match": "primary_named_venue_full_postcode_and_address",
+          "reference_address": "Peel Lane",
+          "reference_coordinate": {
+            "lat": 53.14802203,
+            "lng": -2.21073847
+          },
+          "reference_locality": "Astbury",
+          "reference_name": "Astbury Golf Club, Astbury",
+          "reference_postcode": "CW12 4RE",
+          "source": "camra",
+          "url": "https://camra.org.uk/pubs/173370"
+        }
+      ],
+      "lat": 53.14802203,
+      "lng": -2.21073847,
       "place_name": "Astbury",
       "postcode": "CW12 4RE",
       "pub_name": "Astbury Golf Club",
-      "status": "postcode_approximate",
+      "status": "verified_venue",
       "venue_id": "v-0043695f-006e-58fe-adc2-894e5500b940"
     },
     "auctioneers arms|caverswall|st11 9eq": {
@@ -6141,13 +6158,30 @@
       "venue_id": "v-b0b00604-bff6-58c1-915c-fa3e9eb4292b"
     },
     "church inn|darley dale|de4 2gg": {
-      "coordinate_source": "postcode",
-      "display_precision": "postcode",
-      "evidence": [],
+      "coordinate_source": "camra-primary",
+      "display_precision": "venue",
+      "evidence": [
+        {
+          "checked_at": "2026-11-03",
+          "match": "primary_named_venue_full_postcode_and_address",
+          "reference_address": "Church Rd, Darley Dale,, Matlock",
+          "reference_coordinate": {
+            "lat": 53.165214,
+            "lng": -1.601077
+          },
+          "reference_locality": "Darley Dale",
+          "reference_name": "Church Inn, Darley Dale - Village Pub with Music",
+          "reference_postcode": "DE4 2GG",
+          "source": "camra",
+          "url": "https://camra.org.uk/pubs/165764"
+        }
+      ],
+      "lat": 53.165214,
+      "lng": -1.601077,
       "place_name": "Darley Dale",
       "postcode": "DE4 2GG",
       "pub_name": "Church Inn",
-      "status": "postcode_approximate",
+      "status": "verified_venue",
       "venue_id": "v-7c328aa9-453e-56d5-afaa-3e6011fb7385"
     },
     "cinque ports|seaford|bn25 1pp": {
@@ -7416,13 +7450,30 @@
       "venue_id": "v-e5e26c8d-c7bc-5424-81ba-32a0b892b3eb"
     },
     "court oak|birmingham: harborne|b32 2eh": {
-      "coordinate_source": "postcode",
-      "display_precision": "postcode",
-      "evidence": [],
+      "coordinate_source": "camra-primary",
+      "display_precision": "venue",
+      "evidence": [
+        {
+          "checked_at": "2026-11-03",
+          "match": "primary_named_venue_full_postcode_and_address",
+          "reference_address": "Balden Road",
+          "reference_coordinate": {
+            "lat": 52.460961,
+            "lng": -1.974438
+          },
+          "reference_locality": "Birmingham",
+          "reference_name": "Court Oak, Birmingham - Family Pub with Restaurant",
+          "reference_postcode": "B32 2EH",
+          "source": "camra",
+          "url": "https://camra.org.uk/pubs/121192"
+        }
+      ],
+      "lat": 52.460961,
+      "lng": -1.974438,
       "place_name": "Birmingham: Harborne",
       "postcode": "B32 2EH",
       "pub_name": "Court Oak",
-      "status": "postcode_approximate",
+      "status": "verified_venue",
       "venue_id": "v-fa21eb85-2fa0-5cfb-b312-c00af1d392db"
     },
     "crafty local ale house|skegness|pe25 2ah": {
@@ -7618,13 +7669,30 @@
       "venue_id": "v-697d698b-e30c-5f9b-a384-573dc1dfa1ad"
     },
     "cricketers|epsom|kt18 7sr": {
-      "coordinate_source": "postcode",
-      "display_precision": "postcode",
-      "evidence": [],
+      "coordinate_source": "camra-primary",
+      "display_precision": "venue",
+      "evidence": [
+        {
+          "checked_at": "2026-11-03",
+          "match": "primary_named_venue_full_postcode_and_address",
+          "reference_address": "1 Stamford Green Road",
+          "reference_coordinate": {
+            "lat": 51.33328,
+            "lng": -0.28195
+          },
+          "reference_locality": "Epsom",
+          "reference_name": "Cricketers, Epsom - Pub by the Cricket Green",
+          "reference_postcode": "KT18 7SR",
+          "source": "camra",
+          "url": "https://camra.org.uk/pubs/179753"
+        }
+      ],
+      "lat": 51.33328,
+      "lng": -0.28195,
       "place_name": "Epsom",
       "postcode": "KT18 7SR",
       "pub_name": "Cricketers",
-      "status": "postcode_approximate",
+      "status": "verified_venue",
       "venue_id": "v-904f3702-2d9f-5a94-9a08-766db95b67b3"
     },
     "cricketers|leicester: aylestone|le2 8ad": {
@@ -17288,13 +17356,30 @@
       "venue_id": "v-d5b15256-e5b1-54a6-a3ec-0f839d4d90ff"
     },
     "marstons sports and social club (pmc)|burton u-t: central|de14 2bg": {
-      "coordinate_source": "postcode",
-      "display_precision": "postcode",
-      "evidence": [],
+      "coordinate_source": "camra-primary",
+      "display_precision": "venue",
+      "evidence": [
+        {
+          "checked_at": "2026-11-03",
+          "match": "primary_named_venue_full_postcode_and_address",
+          "reference_address": "Shobnall Road",
+          "reference_coordinate": {
+            "lat": 52.8081,
+            "lng": -1.6604
+          },
+          "reference_locality": "Burton upon Trent",
+          "reference_name": "Marston's Sports & Social Club, Burton upon Trent",
+          "reference_postcode": "DE14 2BG",
+          "source": "camra",
+          "url": "https://camra.org.uk/pubs/124072"
+        }
+      ],
+      "lat": 52.8081,
+      "lng": -1.6604,
       "place_name": "Burton U-T: Central",
       "postcode": "DE14 2BG",
       "pub_name": "Marstons Sports and Social Club (PMC)",
-      "status": "postcode_approximate",
+      "status": "verified_venue",
       "venue_id": "v-91dc9a73-c434-5a18-968f-d2f88b9edca7"
     },
     "martins arms|colston bassett|ng12 3fd": {
@@ -19020,13 +19105,30 @@
       "venue_id": "v-88baf1bf-439e-5f70-9c45-1cacab7a6c20"
     },
     "noahs ark|plymouth: central|pl1 1ep": {
-      "coordinate_source": "postcode",
-      "display_precision": "postcode",
-      "evidence": [],
+      "coordinate_source": "camra-primary",
+      "display_precision": "venue",
+      "evidence": [
+        {
+          "checked_at": "2026-11-03",
+          "match": "primary_named_venue_full_postcode_and_address",
+          "reference_address": "32A Courtney Street",
+          "reference_coordinate": {
+            "lat": 50.370803,
+            "lng": -4.144467
+          },
+          "reference_locality": "Plymouth",
+          "reference_name": "Noahs Ark, Plymouth - Big Screen Sport Pub",
+          "reference_postcode": "PL1 1EP",
+          "source": "camra",
+          "url": "https://camra.org.uk/pubs/154207"
+        }
+      ],
+      "lat": 50.370803,
+      "lng": -4.144467,
       "place_name": "Plymouth: Central",
       "postcode": "PL1 1EP",
       "pub_name": "Noahs Ark",
-      "status": "postcode_approximate",
+      "status": "verified_venue",
       "venue_id": "v-f8715c2c-440d-5a56-96bc-95b9dc41b973"
     },
     "nobody inn|grantham|ng31 6nu": {
@@ -20197,13 +20299,30 @@
       "venue_id": "v-71cd6c30-2d22-51b0-86f0-ffbcc0bf6202"
     },
     "panton arms|pentraeth (anglesey)|ll75 8az": {
-      "coordinate_source": "postcode",
-      "display_precision": "postcode",
-      "evidence": [],
+      "coordinate_source": "camra-primary",
+      "display_precision": "venue",
+      "evidence": [
+        {
+          "checked_at": "2026-11-03",
+          "match": "primary_named_venue_full_postcode_and_address",
+          "reference_address": "The Square",
+          "reference_coordinate": {
+            "lat": 53.281996217982,
+            "lng": -4.215372829361
+          },
+          "reference_locality": "Pentraeth",
+          "reference_name": "Panton Arms, Pentraeth - Coaching Inn with Garden",
+          "reference_postcode": "LL75 8AZ",
+          "source": "camra",
+          "url": "https://camra.org.uk/pubs/146260"
+        }
+      ],
+      "lat": 53.281996217982,
+      "lng": -4.215372829361,
       "place_name": "Pentraeth (Anglesey)",
       "postcode": "LL75 8AZ",
       "pub_name": "Panton Arms",
-      "status": "postcode_approximate",
+      "status": "verified_venue",
       "venue_id": "v-548955f9-8736-595b-9402-0138bf2e770f"
     },
     "park inn|southampton: shirley|so16 4fn": {
@@ -22570,13 +22689,30 @@
       "venue_id": "v-2a9c653c-1cca-55f6-8947-0798ff330a91"
     },
     "red lion|mortimer west end|rg7 2hu": {
-      "coordinate_source": "postcode",
-      "display_precision": "postcode",
-      "evidence": [],
+      "coordinate_source": "camra-primary",
+      "display_precision": "venue",
+      "evidence": [
+        {
+          "checked_at": "2026-11-03",
+          "match": "primary_named_venue_full_postcode_and_address",
+          "reference_address": "Church Road",
+          "reference_coordinate": {
+            "lat": 51.3671979,
+            "lng": -1.0911012
+          },
+          "reference_locality": "Mortimer West End",
+          "reference_name": "Red Lion, Mortimer West End - Traditional Pub",
+          "reference_postcode": "RG7 2HU",
+          "source": "camra",
+          "url": "https://camra.org.uk/pubs/179271"
+        }
+      ],
+      "lat": 51.3671979,
+      "lng": -1.0911012,
       "place_name": "Mortimer West End",
       "postcode": "RG7 2HU",
       "pub_name": "Red Lion",
-      "status": "postcode_approximate",
+      "status": "verified_venue",
       "venue_id": "v-1081a0f5-7955-5f26-933e-2d05487dbf04"
     },
     "red lion|newborough|de13 8sh": {
@@ -25761,13 +25897,30 @@
       "venue_id": "v-5d1ef228-39c5-5fd3-9d21-f0e8dc91ede1"
     },
     "stag and hounds|burrough on the hill|le14 2jq": {
-      "coordinate_source": "postcode",
-      "display_precision": "postcode",
-      "evidence": [],
+      "coordinate_source": "camra-primary",
+      "display_precision": "venue",
+      "evidence": [
+        {
+          "checked_at": "2026-11-03",
+          "match": "primary_named_venue_full_postcode_and_address",
+          "reference_address": "4, Main Street",
+          "reference_coordinate": {
+            "lat": 52.68812,
+            "lng": -0.88267
+          },
+          "reference_locality": "Burrough on the Hill",
+          "reference_name": "Stag & Hounds, Burrough on the Hill - Local Food Pub",
+          "reference_postcode": "LE14 2JQ",
+          "source": "camra",
+          "url": "https://camra.org.uk/pubs/192223"
+        }
+      ],
+      "lat": 52.68812,
+      "lng": -0.88267,
       "place_name": "Burrough on the Hill",
       "postcode": "LE14 2JQ",
       "pub_name": "Stag and Hounds",
-      "status": "postcode_approximate",
+      "status": "verified_venue",
       "venue_id": "v-a4b4ccce-07e8-508f-8508-4461b5cea58c"
     },
     "stag and scotch|newport|tf10 7au": {
@@ -31276,13 +31429,30 @@
       "venue_id": "v-32292597-5327-5dc9-8b92-c9d1f100e51a"
     },
     "windmill inn|ingham|ln1 2yq": {
-      "coordinate_source": "postcode",
-      "display_precision": "postcode",
-      "evidence": [],
+      "coordinate_source": "camra-primary",
+      "display_precision": "venue",
+      "evidence": [
+        {
+          "checked_at": "2026-11-03",
+          "match": "primary_named_venue_full_postcode_and_address",
+          "reference_address": "The Cliff, Middle Street",
+          "reference_coordinate": {
+            "lat": 53.337788990786,
+            "lng": -0.5630488932037
+          },
+          "reference_locality": "Ingham",
+          "reference_name": "Windmill Inn, Ingham - Friendly Locals Pub",
+          "reference_postcode": "LN1 2YQ",
+          "source": "camra",
+          "url": "https://camra.org.uk/pubs/191962"
+        }
+      ],
+      "lat": 53.337788990786,
+      "lng": -0.5630488932037,
       "place_name": "Ingham",
       "postcode": "LN1 2YQ",
       "pub_name": "Windmill Inn",
-      "status": "postcode_approximate",
+      "status": "verified_venue",
       "venue_id": "v-ac3d5f12-6e5e-5205-b8e0-74f09dfa9e6c"
     },
     "windmill|breadsall|de21 4fy": {

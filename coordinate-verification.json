@@ -2,7 +2,7 @@
   "counts": {
     "verified_venue": 1087
   },
-  "generated_at": "2026-11-03",
+  "generated_at": "2026-11-04",
   "policy": {
     "max_evidence_age_days": 400,
     "venue_pin": "Evidence-backed venue coordinates; unresolved venues use explicitly approximate postcode pins."
@@ -286,7 +286,7 @@
       "venue_id": "v-051ceacd-e5d7-58d1-81ce-dec99892c1e7"
     },
     "allestree club|derby: allestree|de22 2fs": {
-      "coordinate_source": "camra-pubs-location-audit",
+      "coordinate_source": "reviewed-named-building",
       "display_precision": "venue",
       "evidence": [
         {
@@ -307,6 +307,7 @@
         {
           "checked_at": "2026-11-03",
           "difference_metres": 0.0,
+          "disposition": "superseded_by_building_review",
           "match": "venue_name_and_full_postcode",
           "reference_address": "39 Cornhill",
           "reference_coordinate": {
@@ -317,10 +318,24 @@
           "reference_postcode": "DE22 2FS",
           "source": "camra",
           "url": "https://camra.org.uk/pubs/143356"
+        },
+        {
+          "address_source_url": "https://camra.org.uk/pubs/143356",
+          "checked_at": "2026-11-04",
+          "match": "reviewed_named_building_and_camra_address",
+          "reference_address": "39 Cornhill",
+          "reference_coordinate": {
+            "lat": 52.9542796,
+            "lng": -1.48772303
+          },
+          "reference_name": "Allestree Club",
+          "reference_postcode": "DE22 2FS",
+          "source": "openstreetmap-named-venue",
+          "url": "https://www.openstreetmap.org/way/344743137"
         }
       ],
-      "lat": 52.9541,
-      "lng": -1.48871,
+      "lat": 52.9542796,
+      "lng": -1.48772303,
       "place_name": "Derby: Allestree",
       "postcode": "DE22 2FS",
       "pub_name": "Allestree Club",
@@ -485,7 +500,7 @@
       "venue_id": "v-ec13b2c3-01a7-5b02-8729-8cfc02ae51bf"
     },
     "anchor inn|walton on the wolds|le12 8ht": {
-      "coordinate_source": "camra-and-fsa-location-audit",
+      "coordinate_source": "reviewed-named-building",
       "display_precision": "venue",
       "evidence": [
         {
@@ -506,6 +521,7 @@
         {
           "checked_at": "2026-11-03",
           "difference_metres": 0.0,
+          "disposition": "superseded_by_building_review",
           "match": "venue_name_and_full_postcode",
           "reference_address": "2 Loughborough Road",
           "reference_coordinate": {
@@ -516,10 +532,24 @@
           "reference_postcode": "LE12 8HT",
           "source": "camra",
           "url": "https://camra.org.uk/pubs/171263"
+        },
+        {
+          "address_source_url": "https://camra.org.uk/pubs/171263",
+          "checked_at": "2026-11-04",
+          "match": "reviewed_named_building_and_camra_address",
+          "reference_address": "2 Loughborough Road",
+          "reference_coordinate": {
+            "lat": 52.77295603,
+            "lng": -1.12295346
+          },
+          "reference_name": "Anchor Inn",
+          "reference_postcode": "LE12 8HT",
+          "source": "openstreetmap-named-venue",
+          "url": "https://www.openstreetmap.org/way/142457116"
         }
       ],
-      "lat": 52.7733,
-      "lng": -1.1249,
+      "lat": 52.77295603,
+      "lng": -1.12295346,
       "place_name": "Walton on the Wolds",
       "postcode": "LE12 8HT",
       "pub_name": "Anchor Inn",
@@ -872,7 +902,7 @@
       "venue_id": "v-baab4f7f-7a7e-57bd-b902-8967f59f3867"
     },
     "apiary|castle donington|de74 2la": {
-      "coordinate_source": "camra-and-fsa-location-audit",
+      "coordinate_source": "reviewed-named-building",
       "display_precision": "venue",
       "evidence": [
         {
@@ -893,6 +923,7 @@
         {
           "checked_at": "2026-11-03",
           "difference_metres": 0.0,
+          "disposition": "superseded_by_building_review",
           "match": "venue_name_and_full_postcode",
           "reference_address": "38 Borough Street",
           "reference_coordinate": {
@@ -903,10 +934,24 @@
           "reference_postcode": "DE74 2LA",
           "source": "camra",
           "url": "https://camra.org.uk/pubs/171290"
+        },
+        {
+          "address_source_url": "https://camra.org.uk/pubs/171290",
+          "checked_at": "2026-11-04",
+          "match": "reviewed_named_building_and_camra_address",
+          "reference_address": "38 Borough Street",
+          "reference_coordinate": {
+            "lat": 52.84228837,
+            "lng": -1.33773634
+          },
+          "reference_name": "Apiary",
+          "reference_postcode": "DE74 2LA",
+          "source": "openstreetmap-named-venue",
+          "url": "https://www.openstreetmap.org/way/320753975"
         }
       ],
-      "lat": 52.8421,
-      "lng": -1.33845,
+      "lat": 52.84228837,
+      "lng": -1.33773634,
       "place_name": "Castle Donington",
       "postcode": "DE74 2LA",
       "pub_name": "Apiary",
@@ -3534,7 +3579,7 @@
       "venue_id": "v-135d3035-b596-53c6-8c4d-0414770ab49f"
     },
     "black horse|appleby magna|de12 7ah": {
-      "coordinate_source": "camra-pubs-location-audit",
+      "coordinate_source": "reviewed-named-building",
       "display_precision": "venue",
       "evidence": [
         {
@@ -3555,6 +3600,7 @@
         {
           "checked_at": "2026-11-03",
           "difference_metres": 0.0,
+          "disposition": "superseded_by_building_review",
           "match": "venue_name_and_full_postcode",
           "reference_address": "2 Top Street",
           "reference_coordinate": {
@@ -3565,10 +3611,24 @@
           "reference_postcode": "DE12 7AH",
           "source": "camra",
           "url": "https://camra.org.uk/pubs/181767"
+        },
+        {
+          "address_source_url": "https://camra.org.uk/pubs/181767",
+          "checked_at": "2026-11-04",
+          "match": "reviewed_named_building_and_camra_address",
+          "reference_address": "2 Top Street",
+          "reference_coordinate": {
+            "lat": 52.6848086,
+            "lng": -1.5311072
+          },
+          "reference_name": "Black Horse",
+          "reference_postcode": "DE12 7AH",
+          "source": "openstreetmap-named-venue",
+          "url": "https://www.openstreetmap.org/node/1151202089"
         }
       ],
-      "lat": 52.68363,
-      "lng": -1.53233,
+      "lat": 52.6848086,
+      "lng": -1.5311072,
       "place_name": "Appleby Magna",
       "postcode": "DE12 7AH",
       "pub_name": "Black Horse",
@@ -5379,7 +5439,7 @@
       "venue_id": "v-ee7d0ee2-cbc1-50cc-b108-7412c6245ced"
     },
     "botanical arms|sheffield: ecclesall road|s11 8pr": {
-      "coordinate_source": "camra-pubs-location-audit",
+      "coordinate_source": "reviewed-named-building",
       "display_precision": "venue",
       "evidence": [
         {
@@ -5400,6 +5460,7 @@
         {
           "checked_at": "2026-11-03",
           "difference_metres": 0.0,
+          "disposition": "superseded_by_building_review",
           "match": "venue_name_and_full_postcode",
           "reference_address": "507 Ecclesall Road",
           "reference_coordinate": {
@@ -5410,10 +5471,24 @@
           "reference_postcode": "S11 8PR",
           "source": "camra",
           "url": "https://camra.org.uk/pubs/199580"
+        },
+        {
+          "address_source_url": "https://camra.org.uk/pubs/199580",
+          "checked_at": "2026-11-04",
+          "match": "reviewed_named_building_and_camra_address",
+          "reference_address": "507 Ecclesall Road",
+          "reference_coordinate": {
+            "lat": 53.36890716,
+            "lng": -1.4960797
+          },
+          "reference_name": "Botanical Arms",
+          "reference_postcode": "S11 8PR",
+          "source": "openstreetmap-named-venue",
+          "url": "https://www.openstreetmap.org/way/1075359643"
         }
       ],
-      "lat": 53.3688,
-      "lng": -1.49693,
+      "lat": 53.36890716,
+      "lng": -1.4960797,
       "place_name": "Sheffield: Ecclesall Road",
       "postcode": "S11 8PR",
       "pub_name": "Botanical Arms",
@@ -11609,7 +11684,7 @@
       "venue_id": "v-8627142a-ac1d-5f2d-9602-8a2777baa6b9"
     },
     "cross keys|penrhynside|ll30 3dd": {
-      "coordinate_source": "camra-pubs-location-audit",
+      "coordinate_source": "reviewed-named-building",
       "display_precision": "venue",
       "evidence": [
         {
@@ -11630,6 +11705,7 @@
         {
           "checked_at": "2026-11-03",
           "difference_metres": 0.0,
+          "disposition": "superseded_by_building_review",
           "match": "venue_name_and_full_postcode",
           "reference_address": "Pendre Road (off B5115)",
           "reference_coordinate": {
@@ -11640,10 +11716,24 @@
           "reference_postcode": "LL30 3DD",
           "source": "camra",
           "url": "https://camra.org.uk/pubs/115848"
+        },
+        {
+          "address_source_url": "https://camra.org.uk/pubs/115848",
+          "checked_at": "2026-11-04",
+          "match": "reviewed_named_building_and_camra_address",
+          "reference_address": "Pendre Road (off B5115)",
+          "reference_coordinate": {
+            "lat": 53.31740262,
+            "lng": -3.7819601
+          },
+          "reference_name": "Cross Keys",
+          "reference_postcode": "LL30 3DD",
+          "source": "openstreetmap-named-venue",
+          "url": "https://www.openstreetmap.org/way/525333526"
         }
       ],
-      "lat": 53.31756,
-      "lng": -3.78107,
+      "lat": 53.31740262,
+      "lng": -3.7819601,
       "place_name": "Penrhynside",
       "postcode": "LL30 3DD",
       "pub_name": "Cross Keys",
@@ -12912,11 +13002,12 @@
       "venue_id": "v-59f0070d-7f4c-559e-b10b-e85d2383e5bc"
     },
     "crown|southport: birkdale|pr8 3bz": {
-      "coordinate_source": "camra-and-fhrs",
+      "coordinate_source": "reviewed-named-building",
       "display_precision": "venue",
       "evidence": [
         {
           "checked_at": "2026-11-03",
+          "disposition": "superseded_by_building_review",
           "match": "unique_name_and_full_postcode",
           "reference_coordinate": {
             "lat": 53.615802,
@@ -12941,6 +13032,7 @@
         },
         {
           "checked_at": "2026-11-03",
+          "disposition": "superseded_by_building_review",
           "match": "named_venue_full_postcode_and_independent_fsa_agreement",
           "reference_address": "304 Liverpool Road",
           "reference_coordinate": {
@@ -12951,10 +13043,24 @@
           "reference_postcode": "PR8 3BZ",
           "source": "camra",
           "url": "https://camra.org.uk/pubs/146987"
+        },
+        {
+          "address_source_url": "https://camra.org.uk/pubs/146987",
+          "checked_at": "2026-11-04",
+          "match": "reviewed_named_building_and_camra_address",
+          "reference_address": "304 Liverpool Road",
+          "reference_coordinate": {
+            "lat": 53.61749025,
+            "lng": -3.01673978
+          },
+          "reference_name": "Crown",
+          "reference_postcode": "PR8 3BZ",
+          "source": "openstreetmap-named-venue",
+          "url": "https://www.openstreetmap.org/way/369856719"
         }
       ],
-      "lat": 53.6158,
-      "lng": -3.0174,
+      "lat": 53.61749025,
+      "lng": -3.01673978,
       "place_name": "Southport: Birkdale",
       "postcode": "PR8 3BZ",
       "pub_name": "Crown",
@@ -13308,7 +13414,7 @@
       "venue_id": "v-52a12f7c-0669-503c-bb15-8e1b988ccd10"
     },
     "devonport hotel|middleton one row|dl2 1as": {
-      "coordinate_source": "food-standards-agency-fhrs",
+      "coordinate_source": "reviewed-named-building",
       "display_precision": "venue",
       "evidence": [
         {
@@ -13329,6 +13435,7 @@
         {
           "checked_at": "2026-11-03",
           "difference_metres": 1.9,
+          "disposition": "superseded_by_building_review",
           "match": "venue_name_and_full_postcode",
           "reference_address": "17 The Front",
           "reference_coordinate": {
@@ -13339,10 +13446,24 @@
           "reference_postcode": "DL2 1AS",
           "source": "camra",
           "url": "https://camra.org.uk/pubs/186665"
+        },
+        {
+          "address_source_url": "https://camra.org.uk/pubs/186665",
+          "checked_at": "2026-11-04",
+          "match": "reviewed_named_building_and_camra_address",
+          "reference_address": "17 The Front",
+          "reference_coordinate": {
+            "lat": 54.50479834,
+            "lng": -1.45747069
+          },
+          "reference_name": "Devonport Hotel",
+          "reference_postcode": "DL2 1AS",
+          "source": "openstreetmap-named-venue",
+          "url": "https://www.openstreetmap.org/way/372530328"
         }
       ],
-      "lat": 54.504289,
-      "lng": -1.456022,
+      "lat": 54.50479834,
+      "lng": -1.45747069,
       "place_name": "Middleton One Row",
       "postcode": "DL2 1AS",
       "pub_name": "Devonport Hotel",
@@ -13672,7 +13793,7 @@
       "venue_id": "v-45ee8f54-501a-5688-8b29-c66374492475"
     },
     "dick turpin|newcastle-u-l: higherland|st5 2qs": {
-      "coordinate_source": "camra-and-fsa-location-audit",
+      "coordinate_source": "reviewed-named-building",
       "display_precision": "venue",
       "evidence": [
         {
@@ -13693,6 +13814,7 @@
         {
           "checked_at": "2026-11-03",
           "difference_metres": 0.0,
+          "disposition": "superseded_by_building_review",
           "match": "venue_name_and_full_postcode",
           "reference_address": "1 Gallowstree Lane",
           "reference_coordinate": {
@@ -13703,10 +13825,24 @@
           "reference_postcode": "ST5 2QS",
           "source": "camra",
           "url": "https://camra.org.uk/pubs/123061"
+        },
+        {
+          "address_source_url": "https://camra.org.uk/pubs/123061",
+          "checked_at": "2026-11-04",
+          "match": "reviewed_named_building_and_camra_address",
+          "reference_address": "1 Gallowstree Lane",
+          "reference_coordinate": {
+            "lat": 53.00344701,
+            "lng": -2.24783466
+          },
+          "reference_name": "Dick Turpin",
+          "reference_postcode": "ST5 2QS",
+          "source": "openstreetmap-named-venue",
+          "url": "https://www.openstreetmap.org/way/118739099"
         }
       ],
-      "lat": 53.0038,
-      "lng": -2.24873,
+      "lat": 53.00344701,
+      "lng": -2.24783466,
       "place_name": "Newcastle-U-L: Higherland",
       "postcode": "ST5 2QS",
       "pub_name": "Dick Turpin",
@@ -13840,7 +13976,7 @@
       "venue_id": "v-5ca777eb-7c87-5fbe-bcc1-3c2512fc29ac"
     },
     "dog and partridge|packmoor|st7 4qf": {
-      "coordinate_source": "food-standards-agency-fhrs",
+      "coordinate_source": "reviewed-named-building",
       "display_precision": "venue",
       "evidence": [
         {
@@ -13861,6 +13997,7 @@
         {
           "checked_at": "2026-11-03",
           "difference_metres": 4.4,
+          "disposition": "superseded_by_building_review",
           "match": "venue_name_and_full_postcode",
           "reference_address": "508 Turnhurst Road",
           "reference_coordinate": {
@@ -13871,10 +14008,24 @@
           "reference_postcode": "ST7 4QF",
           "source": "camra",
           "url": "https://camra.org.uk/pubs/122955"
+        },
+        {
+          "address_source_url": "https://camra.org.uk/pubs/122955",
+          "checked_at": "2026-11-04",
+          "match": "reviewed_named_building_and_camra_address",
+          "reference_address": "508 Turnhurst Road",
+          "reference_coordinate": {
+            "lat": 53.0864053,
+            "lng": -2.2010135
+          },
+          "reference_name": "Dog and Partridge",
+          "reference_postcode": "ST7 4QF",
+          "source": "reviewed-building-source",
+          "url": "https://caldmoretaverns.co.uk/pubs/dog-and-partridge-packmoor/"
         }
       ],
-      "lat": 53.085639,
-      "lng": -2.200513,
+      "lat": 53.0864053,
+      "lng": -2.2010135,
       "place_name": "Packmoor",
       "postcode": "ST7 4QF",
       "pub_name": "Dog and Partridge",
@@ -15862,7 +16013,7 @@
       "venue_id": "v-42bee9d3-42f7-57d3-94c2-addff8ba2a4b"
     },
     "flying childers|stanton in peak|de4 2lw": {
-      "coordinate_source": "camra-pubs-location-audit",
+      "coordinate_source": "reviewed-named-building",
       "display_precision": "venue",
       "evidence": [
         {
@@ -15883,6 +16034,7 @@
         {
           "checked_at": "2026-11-03",
           "difference_metres": 0.0,
+          "disposition": "superseded_by_building_review",
           "match": "venue_name_and_full_postcode",
           "reference_address": "Main Street",
           "reference_coordinate": {
@@ -15893,10 +16045,24 @@
           "reference_postcode": "DE4 2LW",
           "source": "camra",
           "url": "https://camra.org.uk/pubs/165810"
+        },
+        {
+          "address_source_url": "https://camra.org.uk/pubs/165810",
+          "checked_at": "2026-11-04",
+          "match": "reviewed_named_building_and_camra_address",
+          "reference_address": "Main Street",
+          "reference_coordinate": {
+            "lat": 53.1753378,
+            "lng": -1.6416433
+          },
+          "reference_name": "Flying Childers",
+          "reference_postcode": "DE4 2LW",
+          "source": "openstreetmap-named-venue",
+          "url": "https://www.openstreetmap.org/node/422649680"
         }
       ],
-      "lat": 53.17555,
-      "lng": -1.64561,
+      "lat": 53.1753378,
+      "lng": -1.6416433,
       "place_name": "Stanton in Peak",
       "postcode": "DE4 2LW",
       "pub_name": "Flying Childers",
@@ -16592,7 +16758,7 @@
       "venue_id": "v-552c7fa1-965e-525c-9c6d-00f7d8e85446"
     },
     "gate inn|hugglescote|le67 2hg": {
-      "coordinate_source": "food-standards-agency-fhrs",
+      "coordinate_source": "reviewed-named-building",
       "display_precision": "venue",
       "evidence": [
         {
@@ -16613,6 +16779,7 @@
         {
           "checked_at": "2026-11-03",
           "difference_metres": 4.0,
+          "disposition": "superseded_by_building_review",
           "match": "venue_name_and_full_postcode",
           "reference_address": "108 Fairfield Road",
           "reference_coordinate": {
@@ -16623,10 +16790,24 @@
           "reference_postcode": "LE67 2HG",
           "source": "camra",
           "url": "https://camra.org.uk/pubs/171391"
+        },
+        {
+          "address_source_url": "https://camra.org.uk/pubs/171391",
+          "checked_at": "2026-11-04",
+          "match": "reviewed_named_building_and_camra_address",
+          "reference_address": "108 Fairfield Road",
+          "reference_coordinate": {
+            "lat": 52.71217393,
+            "lng": -1.3739047
+          },
+          "reference_name": "Gate Inn",
+          "reference_postcode": "LE67 2HG",
+          "source": "openstreetmap-named-venue",
+          "url": "https://www.openstreetmap.org/way/753819034"
         }
       ],
-      "lat": 52.713666,
-      "lng": -1.372869,
+      "lat": 52.71217393,
+      "lng": -1.3739047,
       "place_name": "Hugglescote",
       "postcode": "LE67 2HG",
       "pub_name": "Gate Inn",
@@ -16718,7 +16899,7 @@
       "venue_id": "v-e5f76eb5-7724-5a20-9332-98a295f50c7c"
     },
     "gate|tansley|de4 5fn": {
-      "coordinate_source": "food-standards-agency-fhrs",
+      "coordinate_source": "reviewed-named-building",
       "display_precision": "venue",
       "evidence": [
         {
@@ -16739,6 +16920,7 @@
         {
           "checked_at": "2026-11-03",
           "difference_metres": 3.4,
+          "disposition": "superseded_by_building_review",
           "match": "venue_name_and_full_postcode",
           "reference_address": "The Knoll",
           "reference_coordinate": {
@@ -16749,10 +16931,24 @@
           "reference_postcode": "DE4 5FN",
           "source": "camra",
           "url": "https://camra.org.uk/pubs/165814"
+        },
+        {
+          "address_source_url": "https://camra.org.uk/pubs/165814",
+          "checked_at": "2026-11-04",
+          "match": "reviewed_named_building_and_camra_address",
+          "reference_address": "The Knoll",
+          "reference_coordinate": {
+            "lat": 53.13792069,
+            "lng": -1.51964125
+          },
+          "reference_name": "Gate",
+          "reference_postcode": "DE4 5FN",
+          "source": "openstreetmap-named-venue",
+          "url": "https://www.openstreetmap.org/way/362275427"
         }
       ],
-      "lat": 53.138426,
-      "lng": -1.522227,
+      "lat": 53.13792069,
+      "lng": -1.51964125,
       "place_name": "Tansley",
       "postcode": "DE4 5FN",
       "pub_name": "Gate",
@@ -17156,7 +17352,7 @@
       "venue_id": "v-8eb08e1f-62d1-5230-bc83-dee40c6d7495"
     },
     "george inn|coleorton|le67 8hf": {
-      "coordinate_source": "camra-pubs-location-audit",
+      "coordinate_source": "reviewed-named-building",
       "display_precision": "venue",
       "evidence": [
         {
@@ -17177,6 +17373,7 @@
         {
           "checked_at": "2026-11-03",
           "difference_metres": 0.0,
+          "disposition": "superseded_by_building_review",
           "match": "venue_name_and_full_postcode",
           "reference_address": "Loughborough Road",
           "reference_coordinate": {
@@ -17187,10 +17384,24 @@
           "reference_postcode": "LE67 8HF",
           "source": "camra",
           "url": "https://camra.org.uk/pubs/171371"
+        },
+        {
+          "address_source_url": "https://camra.org.uk/pubs/171371",
+          "checked_at": "2026-11-04",
+          "match": "reviewed_named_building_and_camra_address",
+          "reference_address": "Loughborough Road",
+          "reference_coordinate": {
+            "lat": 52.7517834,
+            "lng": -1.398739
+          },
+          "reference_name": "George Inn",
+          "reference_postcode": "LE67 8HF",
+          "source": "openstreetmap-named-venue",
+          "url": "https://www.openstreetmap.org/node/910436401"
         }
       ],
-      "lat": 52.7527,
-      "lng": -1.3917,
+      "lat": 52.7517834,
+      "lng": -1.398739,
       "place_name": "Coleorton",
       "postcode": "LE67 8HF",
       "pub_name": "George Inn",
@@ -18087,7 +18298,7 @@
       "venue_id": "v-b81d683f-d115-5e3b-bfce-7cf833ef9e75"
     },
     "goodmanham arms|goodmanham|yo43 3ja": {
-      "coordinate_source": "camra-and-fsa-location-audit",
+      "coordinate_source": "reviewed-named-building",
       "display_precision": "venue",
       "evidence": [
         {
@@ -18108,6 +18319,7 @@
         {
           "checked_at": "2026-11-03",
           "difference_metres": 0.0,
+          "disposition": "superseded_by_building_review",
           "match": "venue_name_and_full_postcode",
           "reference_address": "Main Street",
           "reference_coordinate": {
@@ -18118,10 +18330,24 @@
           "reference_postcode": "YO43 3JA",
           "source": "camra",
           "url": "https://camra.org.uk/pubs/181037"
+        },
+        {
+          "address_source_url": "https://camra.org.uk/pubs/181037",
+          "checked_at": "2026-11-04",
+          "match": "reviewed_named_building_and_camra_address",
+          "reference_address": "Main Street",
+          "reference_coordinate": {
+            "lat": 53.8762611,
+            "lng": -0.6493173
+          },
+          "reference_name": "Goodmanham Arms",
+          "reference_postcode": "YO43 3JA",
+          "source": "openstreetmap-named-venue",
+          "url": "https://www.openstreetmap.org/node/158697593"
         }
       ],
-      "lat": 53.877,
-      "lng": -0.6467,
+      "lat": 53.8762611,
+      "lng": -0.6493173,
       "place_name": "Goodmanham",
       "postcode": "YO43 3JA",
       "pub_name": "Goodmanham Arms",
@@ -19180,7 +19406,7 @@
       "venue_id": "v-0d4203e8-3483-5683-893a-ef4bd63e6c15"
     },
     "grove|burton u-t: stapenhill|de15 9dq": {
-      "coordinate_source": "food-standards-agency-fhrs",
+      "coordinate_source": "reviewed-named-building",
       "display_precision": "venue",
       "evidence": [
         {
@@ -19201,7 +19427,35 @@
         {
           "checked_at": "2026-11-03",
           "difference_metres": 47.2,
+          "disposition": "superseded_by_building_review",
           "match": "venue_name_and_full_postcode",
+          "reference_address": "1 Merrydale Road",
+          "reference_coordinate": {
+            "lat": 52.794486469474,
+            "lng": -1.615689823418
+          },
+          "reference_name": "Grove, Burton upon Trent - Two-Roomed Local",
+          "reference_postcode": "DE15 9DQ",
+          "source": "camra",
+          "url": "https://camra.org.uk/pubs/123961"
+        },
+        {
+          "address_source_url": "https://camra.org.uk/pubs/123961",
+          "checked_at": "2026-11-04",
+          "match": "reviewed_named_building_and_camra_address",
+          "reference_address": "1 Merrydale Road",
+          "reference_coordinate": {
+            "lat": 52.7944889,
+            "lng": -1.61573725
+          },
+          "reference_name": "Grove",
+          "reference_postcode": "DE15 9DQ",
+          "source": "openstreetmap-named-venue",
+          "url": "https://www.openstreetmap.org/way/737849677"
+        },
+        {
+          "checked_at": "2026-11-04",
+          "match": "reviewed_named_building_within_50m",
           "reference_address": "1 Merrydale Road",
           "reference_coordinate": {
             "lat": 52.794486469474,
@@ -19213,8 +19467,8 @@
           "url": "https://camra.org.uk/pubs/123961"
         }
       ],
-      "lat": 52.7946166992188,
-      "lng": -1.61502194404602,
+      "lat": 52.7944889,
+      "lng": -1.61573725,
       "place_name": "Burton U-T: Stapenhill",
       "postcode": "DE15 9DQ",
       "pub_name": "Grove",
@@ -20180,7 +20434,7 @@
       "venue_id": "v-994e2b34-f768-5cab-8d73-34ff2ba30bab"
     },
     "hesketh arms|rufford|l40 1sb": {
-      "coordinate_source": "camra-and-fsa-location-audit",
+      "coordinate_source": "reviewed-named-building",
       "display_precision": "venue",
       "evidence": [
         {
@@ -20201,6 +20455,7 @@
         {
           "checked_at": "2026-11-03",
           "difference_metres": 0.0,
+          "disposition": "superseded_by_building_review",
           "match": "venue_name_and_full_postcode",
           "reference_address": "81 Liverpool Road",
           "reference_coordinate": {
@@ -20211,10 +20466,24 @@
           "reference_postcode": "L40 1SB",
           "source": "camra",
           "url": "https://camra.org.uk/pubs/146970"
+        },
+        {
+          "address_source_url": "https://camra.org.uk/pubs/146970",
+          "checked_at": "2026-11-04",
+          "match": "reviewed_named_building_and_camra_address",
+          "reference_address": "81 Liverpool Road",
+          "reference_coordinate": {
+            "lat": 53.6335857,
+            "lng": -2.8170963
+          },
+          "reference_name": "Hesketh Arms",
+          "reference_postcode": "L40 1SB",
+          "source": "openstreetmap-named-venue",
+          "url": "https://www.openstreetmap.org/node/937953635"
         }
       ],
-      "lat": 53.6337,
-      "lng": -2.81593,
+      "lat": 53.6335857,
+      "lng": -2.8170963,
       "place_name": "Rufford",
       "postcode": "L40 1SB",
       "pub_name": "Hesketh Arms",
@@ -21028,7 +21297,7 @@
       "venue_id": "v-6ff1af18-0bdf-512e-bb3d-6c5317a59334"
     },
     "horse and trumpet|sileby|le12 7lp": {
-      "coordinate_source": "camra-and-fsa-location-audit",
+      "coordinate_source": "reviewed-named-building",
       "display_precision": "venue",
       "evidence": [
         {
@@ -21049,6 +21318,7 @@
         {
           "checked_at": "2026-11-03",
           "difference_metres": 0.0,
+          "disposition": "superseded_by_building_review",
           "match": "venue_name_and_full_postcode",
           "reference_address": "4 Barrow Road",
           "reference_coordinate": {
@@ -21059,10 +21329,24 @@
           "reference_postcode": "LE12 7LP",
           "source": "camra",
           "url": "https://camra.org.uk/pubs/171250"
+        },
+        {
+          "address_source_url": "https://camra.org.uk/pubs/171250",
+          "checked_at": "2026-11-04",
+          "match": "reviewed_named_building_and_camra_address",
+          "reference_address": "4 Barrow Road",
+          "reference_coordinate": {
+            "lat": 52.7312214,
+            "lng": -1.1118085
+          },
+          "reference_name": "Horse and Trumpet",
+          "reference_postcode": "LE12 7LP",
+          "source": "openstreetmap-named-venue",
+          "url": "https://www.openstreetmap.org/node/2121859104"
         }
       ],
-      "lat": 52.7323,
-      "lng": -1.1123,
+      "lat": 52.7312214,
+      "lng": -1.1118085,
       "place_name": "Sileby",
       "postcode": "LE12 7LP",
       "pub_name": "Horse and Trumpet",
@@ -21112,7 +21396,7 @@
       "venue_id": "v-09253a78-877d-51d9-bcf3-2189fa846e2b"
     },
     "horse|shepshed|le12 9ef": {
-      "coordinate_source": "camra-pubs-location-audit",
+      "coordinate_source": "reviewed-named-building",
       "display_precision": "venue",
       "evidence": [
         {
@@ -21133,6 +21417,7 @@
         {
           "checked_at": "2026-11-03",
           "difference_metres": 0.0,
+          "disposition": "superseded_by_building_review",
           "match": "venue_name_and_full_postcode",
           "reference_address": "196 Ashby Road West",
           "reference_coordinate": {
@@ -21143,10 +21428,24 @@
           "reference_postcode": "LE12 9EF",
           "source": "camra",
           "url": "https://camra.org.uk/pubs/171247"
+        },
+        {
+          "address_source_url": "https://camra.org.uk/pubs/171247",
+          "checked_at": "2026-11-04",
+          "match": "reviewed_named_building_and_camra_address",
+          "reference_address": "196 Ashby Road West",
+          "reference_coordinate": {
+            "lat": 52.7601349,
+            "lng": -1.3065147
+          },
+          "reference_name": "Horse",
+          "reference_postcode": "LE12 9EF",
+          "source": "openstreetmap-named-venue",
+          "url": "https://www.openstreetmap.org/node/6486705646"
         }
       ],
-      "lat": 52.7597,
-      "lng": -1.30536,
+      "lat": 52.7601349,
+      "lng": -1.3065147,
       "place_name": "Shepshed",
       "postcode": "LE12 9EF",
       "pub_name": "Horse",
@@ -21406,7 +21705,7 @@
       "venue_id": "v-2aef880b-a959-5ffb-83cc-e930ecc4b567"
     },
     "hunting lodge|monkseaton|ne25 9sx": {
-      "coordinate_source": "camra-pubs-location-audit",
+      "coordinate_source": "reviewed-named-building",
       "display_precision": "venue",
       "evidence": [
         {
@@ -21427,6 +21726,7 @@
         {
           "checked_at": "2026-11-03",
           "difference_metres": 0.0,
+          "disposition": "superseded_by_building_review",
           "match": "venue_name_and_full_postcode",
           "reference_address": "Earsdon Road",
           "reference_coordinate": {
@@ -21437,10 +21737,24 @@
           "reference_postcode": "NE25 9SX",
           "source": "camra",
           "url": "https://camra.org.uk/pubs/193740"
+        },
+        {
+          "address_source_url": "https://camra.org.uk/pubs/193740",
+          "checked_at": "2026-11-04",
+          "match": "reviewed_named_building_and_camra_address",
+          "reference_address": "Earsdon Road",
+          "reference_coordinate": {
+            "lat": 55.03834575,
+            "lng": -1.47346716
+          },
+          "reference_name": "Hunting Lodge",
+          "reference_postcode": "NE25 9SX",
+          "source": "openstreetmap-named-venue",
+          "url": "https://www.openstreetmap.org/way/403520192"
         }
       ],
-      "lat": 55.034795160892,
-      "lng": -1.4739452866012,
+      "lat": 55.03834575,
+      "lng": -1.47346716,
       "place_name": "Monkseaton",
       "postcode": "NE25 9SX",
       "pub_name": "Hunting Lodge",
@@ -21873,7 +22187,7 @@
       "venue_id": "v-0a1afb42-ef83-5d3a-ac66-0f68788a05b3"
     },
     "john marston|stoke: blurton|st3 2nq": {
-      "coordinate_source": "camra-pubs-location-audit",
+      "coordinate_source": "reviewed-named-building",
       "display_precision": "venue",
       "evidence": [
         {
@@ -21894,6 +22208,7 @@
         {
           "checked_at": "2026-11-03",
           "difference_metres": 0.0,
+          "disposition": "superseded_by_building_review",
           "match": "venue_name_and_full_postcode",
           "reference_address": "44 Longton Hall Road",
           "reference_coordinate": {
@@ -21904,10 +22219,24 @@
           "reference_postcode": "ST3 2NQ",
           "source": "camra",
           "url": "https://camra.org.uk/pubs/123111"
+        },
+        {
+          "address_source_url": "https://camra.org.uk/pubs/123111",
+          "checked_at": "2026-11-04",
+          "match": "reviewed_named_building_and_camra_address",
+          "reference_address": "44 Longton Hall Road",
+          "reference_coordinate": {
+            "lat": 52.9858587,
+            "lng": -2.1482014
+          },
+          "reference_name": "John Marston",
+          "reference_postcode": "ST3 2NQ",
+          "source": "reviewed-building-source",
+          "url": "https://www.pubsgalore.co.uk/pubmap/32413/"
         }
       ],
-      "lat": 52.9863,
-      "lng": -2.14687,
+      "lat": 52.9858587,
+      "lng": -2.1482014,
       "place_name": "Stoke: Blurton",
       "postcode": "ST3 2NQ",
       "pub_name": "John Marston",
@@ -22050,7 +22379,7 @@
       "venue_id": "v-5840e7d1-6ac4-5d2f-b0b8-9875ccbde7dc"
     },
     "jolly potters|castle donington|de74 2nh": {
-      "coordinate_source": "camra-and-fsa-location-audit",
+      "coordinate_source": "reviewed-named-building",
       "display_precision": "venue",
       "evidence": [
         {
@@ -22071,6 +22400,7 @@
         {
           "checked_at": "2026-11-03",
           "difference_metres": 0.0,
+          "disposition": "superseded_by_building_review",
           "match": "venue_name_and_full_postcode",
           "reference_address": "36 Hillside",
           "reference_coordinate": {
@@ -22081,10 +22411,24 @@
           "reference_postcode": "DE74 2NH",
           "source": "camra",
           "url": "https://camra.org.uk/pubs/171357"
+        },
+        {
+          "address_source_url": "https://camra.org.uk/pubs/171357",
+          "checked_at": "2026-11-04",
+          "match": "reviewed_named_building_and_camra_address",
+          "reference_address": "36 Hillside",
+          "reference_coordinate": {
+            "lat": 52.84311894,
+            "lng": -1.33716514
+          },
+          "reference_name": "Jolly Potters",
+          "reference_postcode": "DE74 2NH",
+          "source": "openstreetmap-named-venue",
+          "url": "https://www.openstreetmap.org/way/320753965"
         }
       ],
-      "lat": 52.8437,
-      "lng": -1.3373,
+      "lat": 52.84311894,
+      "lng": -1.33716514,
       "place_name": "Castle Donington",
       "postcode": "DE74 2NH",
       "pub_name": "Jolly Potters",
@@ -23304,7 +23648,7 @@
       "venue_id": "v-fd97cf72-faf0-54aa-bce6-e9fd40262cc0"
     },
     "leek golf club|leek|st13 5re": {
-      "coordinate_source": "camra-pubs-location-audit",
+      "coordinate_source": "reviewed-named-building",
       "display_precision": "venue",
       "evidence": [
         {
@@ -23325,6 +23669,7 @@
         {
           "checked_at": "2026-11-03",
           "difference_metres": 0.0,
+          "disposition": "superseded_by_building_review",
           "match": "venue_name_and_full_postcode",
           "reference_address": "Cheddleton road, Birchall",
           "reference_coordinate": {
@@ -23335,10 +23680,24 @@
           "reference_postcode": "ST13 5RE",
           "source": "camra",
           "url": "https://camra.org.uk/pubs/143984"
+        },
+        {
+          "address_source_url": "https://camra.org.uk/pubs/143984",
+          "checked_at": "2026-11-04",
+          "match": "reviewed_named_building_and_camra_address",
+          "reference_address": "Cheddleton road, Birchall",
+          "reference_coordinate": {
+            "lat": 53.09031222,
+            "lng": -2.02248863
+          },
+          "reference_name": "Leek Golf Club",
+          "reference_postcode": "ST13 5RE",
+          "source": "openstreetmap-named-venue",
+          "url": "https://www.openstreetmap.org/way/429722895"
         }
       ],
-      "lat": 53.0934,
-      "lng": -2.02209,
+      "lat": 53.09031222,
+      "lng": -2.02248863,
       "place_name": "Leek",
       "postcode": "ST13 5RE",
       "pub_name": "Leek Golf Club",
@@ -23707,7 +24066,7 @@
       "venue_id": "v-9e80fe9d-739c-5f2a-b74c-de930970278d"
     },
     "llanover arms|pontypridd|cf37 4pe": {
-      "coordinate_source": "camra-pubs-location-audit",
+      "coordinate_source": "reviewed-named-building",
       "display_precision": "venue",
       "evidence": [
         {
@@ -23728,6 +24087,7 @@
         {
           "checked_at": "2026-11-03",
           "difference_metres": 0.0,
+          "disposition": "superseded_by_building_review",
           "match": "venue_name_and_full_postcode",
           "reference_address": "20 Bridge Street",
           "reference_coordinate": {
@@ -23738,10 +24098,24 @@
           "reference_postcode": "CF37 4PE",
           "source": "camra",
           "url": "https://camra.org.uk/pubs/170296"
+        },
+        {
+          "address_source_url": "https://camra.org.uk/pubs/170296",
+          "checked_at": "2026-11-04",
+          "match": "reviewed_named_building_and_camra_address",
+          "reference_address": "20 Bridge Street",
+          "reference_coordinate": {
+            "lat": 51.6046117,
+            "lng": -3.3363418
+          },
+          "reference_name": "Llanover Arms",
+          "reference_postcode": "CF37 4PE",
+          "source": "openstreetmap-named-venue",
+          "url": "https://www.openstreetmap.org/node/2841436367"
         }
       ],
-      "lat": 51.6045,
-      "lng": -3.3372,
+      "lat": 51.6046117,
+      "lng": -3.3363418,
       "place_name": "Pontypridd",
       "postcode": "CF37 4PE",
       "pub_name": "Llanover Arms",
@@ -24933,11 +25307,12 @@
       "venue_id": "v-bce902a8-ea2b-5c24-86c9-3c7c4f5dd04f"
     },
     "malt shovel|worthington|le65 1rq": {
-      "coordinate_source": "camra-and-fhrs",
+      "coordinate_source": "reviewed-named-building",
       "display_precision": "venue",
       "evidence": [
         {
           "checked_at": "2026-11-03",
+          "disposition": "superseded_by_building_review",
           "match": "unique_name_and_full_postcode",
           "reference_coordinate": {
             "lat": 52.780089,
@@ -24962,6 +25337,7 @@
         },
         {
           "checked_at": "2026-11-03",
+          "disposition": "superseded_by_building_review",
           "match": "named_venue_full_postcode_and_independent_fsa_agreement",
           "reference_address": "29 Main Street",
           "reference_coordinate": {
@@ -24972,10 +25348,24 @@
           "reference_postcode": "LE65 1RQ",
           "source": "camra",
           "url": "https://camra.org.uk/pubs/171277"
+        },
+        {
+          "address_source_url": "https://camra.org.uk/pubs/171277",
+          "checked_at": "2026-11-04",
+          "match": "reviewed_named_building_and_camra_address",
+          "reference_address": "29 Main Street",
+          "reference_coordinate": {
+            "lat": 52.7793138,
+            "lng": -1.3950916
+          },
+          "reference_name": "Malt Shovel",
+          "reference_postcode": "LE65 1RQ",
+          "source": "openstreetmap-named-venue",
+          "url": "https://www.openstreetmap.org/node/1157307820"
         }
       ],
-      "lat": 52.7803,
-      "lng": -1.3949,
+      "lat": 52.7793138,
+      "lng": -1.3950916,
       "place_name": "Worthington",
       "postcode": "LE65 1RQ",
       "pub_name": "Malt Shovel",
@@ -25013,7 +25403,7 @@
       "venue_id": "v-c593e9bc-9520-503e-8267-a8896f8d375e"
     },
     "man in space|stoke: trentham|st4 8pz": {
-      "coordinate_source": "camra-and-fsa-location-audit",
+      "coordinate_source": "reviewed-named-building",
       "display_precision": "venue",
       "evidence": [
         {
@@ -25034,6 +25424,7 @@
         {
           "checked_at": "2026-11-03",
           "difference_metres": 0.0,
+          "disposition": "superseded_by_building_review",
           "match": "venue_name_and_full_postcode",
           "reference_address": "New Inn Lane",
           "reference_coordinate": {
@@ -25044,10 +25435,24 @@
           "reference_postcode": "ST4 8PZ",
           "source": "camra",
           "url": "https://camra.org.uk/pubs/122989"
+        },
+        {
+          "address_source_url": "https://camra.org.uk/pubs/122989",
+          "checked_at": "2026-11-04",
+          "match": "reviewed_named_building_and_camra_address",
+          "reference_address": "New Inn Lane",
+          "reference_coordinate": {
+            "lat": 52.97037072,
+            "lng": -2.19064938
+          },
+          "reference_name": "Man In Space",
+          "reference_postcode": "ST4 8PZ",
+          "source": "openstreetmap-named-venue",
+          "url": "https://www.openstreetmap.org/way/237417987"
         }
       ],
-      "lat": 52.9711,
-      "lng": -2.19117,
+      "lat": 52.97037072,
+      "lng": -2.19064938,
       "place_name": "Stoke: Trentham",
       "postcode": "ST4 8PZ",
       "pub_name": "Man In Space",
@@ -26289,7 +26694,7 @@
       "venue_id": "v-05f63181-ba5a-5063-9c9f-09ede7663351"
     },
     "moorland inn|stoke: burslem|st6 1jp": {
-      "coordinate_source": "camra-and-fsa-location-audit",
+      "coordinate_source": "reviewed-named-building",
       "display_precision": "venue",
       "evidence": [
         {
@@ -26310,6 +26715,7 @@
         {
           "checked_at": "2026-11-03",
           "difference_metres": 0.0,
+          "disposition": "superseded_by_building_review",
           "match": "venue_name_and_full_postcode",
           "reference_address": "Moorland Road",
           "reference_coordinate": {
@@ -26320,10 +26726,24 @@
           "reference_postcode": "ST6 1JP",
           "source": "camra",
           "url": "https://camra.org.uk/pubs/122972"
+        },
+        {
+          "address_source_url": "https://camra.org.uk/pubs/122972",
+          "checked_at": "2026-11-04",
+          "match": "reviewed_named_building_and_camra_address",
+          "reference_address": "Moorland Road",
+          "reference_coordinate": {
+            "lat": 53.04835962,
+            "lng": -2.17989586
+          },
+          "reference_name": "Moorland Inn",
+          "reference_postcode": "ST6 1JP",
+          "source": "openstreetmap-named-venue",
+          "url": "https://www.openstreetmap.org/way/525253749"
         }
       ],
-      "lat": 53.048,
-      "lng": -2.18236,
+      "lat": 53.04835962,
+      "lng": -2.17989586,
       "place_name": "Stoke: Burslem",
       "postcode": "ST6 1JP",
       "pub_name": "Moorland Inn",
@@ -27326,7 +27746,7 @@
       "venue_id": "v-4cd5d0e9-609e-58d3-8951-651bca1d9625"
     },
     "new inn|alphington|ex2 8ta": {
-      "coordinate_source": "camra-pubs-location-audit",
+      "coordinate_source": "reviewed-named-building",
       "display_precision": "venue",
       "evidence": [
         {
@@ -27347,6 +27767,7 @@
         {
           "checked_at": "2026-11-03",
           "difference_metres": 0.0,
+          "disposition": "superseded_by_building_review",
           "match": "venue_name_and_full_postcode",
           "reference_address": "76 Church Road",
           "reference_coordinate": {
@@ -27357,10 +27778,24 @@
           "reference_postcode": "EX2 8TA",
           "source": "camra",
           "url": "https://camra.org.uk/pubs/166222"
+        },
+        {
+          "address_source_url": "https://camra.org.uk/pubs/166222",
+          "checked_at": "2026-11-04",
+          "match": "reviewed_named_building_and_camra_address",
+          "reference_address": "76 Church Road",
+          "reference_coordinate": {
+            "lat": 50.69983161,
+            "lng": -3.53400166
+          },
+          "reference_name": "New Inn",
+          "reference_postcode": "EX2 8TA",
+          "source": "openstreetmap-named-venue",
+          "url": "https://www.openstreetmap.org/way/339435118"
         }
       ],
-      "lat": 50.700404,
-      "lng": -3.533785,
+      "lat": 50.69983161,
+      "lng": -3.53400166,
       "place_name": "Alphington",
       "postcode": "EX2 8TA",
       "pub_name": "New Inn",
@@ -27678,7 +28113,7 @@
       "venue_id": "v-0342b90c-d4c1-5faf-996a-58dc2512e334"
     },
     "new storey|osgathorpe|le12 9ta": {
-      "coordinate_source": "camra-pubs-location-audit",
+      "coordinate_source": "reviewed-named-building",
       "display_precision": "venue",
       "evidence": [
         {
@@ -27699,6 +28134,7 @@
         {
           "checked_at": "2026-11-03",
           "difference_metres": 0.0,
+          "disposition": "superseded_by_building_review",
           "match": "venue_name_and_full_postcode",
           "reference_address": "41 Main Street",
           "reference_coordinate": {
@@ -27709,10 +28145,24 @@
           "reference_postcode": "LE12 9TA",
           "source": "camra",
           "url": "https://camra.org.uk/pubs/171216"
+        },
+        {
+          "address_source_url": "https://camra.org.uk/pubs/171216",
+          "checked_at": "2026-11-04",
+          "match": "reviewed_named_building_and_camra_address",
+          "reference_address": "41 Main Street",
+          "reference_coordinate": {
+            "lat": 52.7701886,
+            "lng": -1.3692471
+          },
+          "reference_name": "New Storey",
+          "reference_postcode": "LE12 9TA",
+          "source": "openstreetmap-named-venue",
+          "url": "https://www.openstreetmap.org/node/5034608228"
         }
       ],
-      "lat": 52.7709,
-      "lng": -1.3697,
+      "lat": 52.7701886,
+      "lng": -1.3692471,
       "place_name": "Osgathorpe",
       "postcode": "LE12 9TA",
       "pub_name": "New Storey",
@@ -28652,7 +29102,7 @@
       "venue_id": "v-3523bd42-6eb0-59b6-8911-30887c06db82"
     },
     "old crown|shardlow|de72 2hl": {
-      "coordinate_source": "camra-pubs-location-audit",
+      "coordinate_source": "reviewed-named-building",
       "display_precision": "venue",
       "evidence": [
         {
@@ -28673,6 +29123,7 @@
         {
           "checked_at": "2026-11-03",
           "difference_metres": 0.0,
+          "disposition": "superseded_by_building_review",
           "match": "venue_name_and_full_postcode",
           "reference_address": "",
           "reference_coordinate": {
@@ -28683,10 +29134,24 @@
           "reference_postcode": "DE72 2HL",
           "source": "camra",
           "url": "https://camra.org.uk/pubs/171362"
+        },
+        {
+          "address_source_url": "https://camra.org.uk/pubs/171362",
+          "checked_at": "2026-11-04",
+          "match": "reviewed_named_building_and_camra_address",
+          "reference_address": "",
+          "reference_coordinate": {
+            "lat": 52.86400673,
+            "lng": -1.33925288
+          },
+          "reference_name": "Old Crown",
+          "reference_postcode": "DE72 2HL",
+          "source": "openstreetmap-named-venue",
+          "url": "https://www.openstreetmap.org/way/319192046"
         }
       ],
-      "lat": 52.8638,
-      "lng": -1.3354,
+      "lat": 52.86400673,
+      "lng": -1.33925288,
       "place_name": "Shardlow",
       "postcode": "DE72 2HL",
       "pub_name": "Old Crown",
@@ -29032,7 +29497,7 @@
       "venue_id": "v-d5a95fe5-2d9e-5854-9a27-0fda70c5267a"
     },
     "old red lion|litchborough|nn12 8jf": {
-      "coordinate_source": "camra-pubs-location-audit",
+      "coordinate_source": "reviewed-named-building",
       "display_precision": "venue",
       "evidence": [
         {
@@ -29053,6 +29518,7 @@
         {
           "checked_at": "2026-11-03",
           "difference_metres": 0.0,
+          "disposition": "superseded_by_building_review",
           "match": "venue_name_and_full_postcode",
           "reference_address": "4 Banbury Road",
           "reference_coordinate": {
@@ -29063,10 +29529,24 @@
           "reference_postcode": "NN12 8JF",
           "source": "camra",
           "url": "https://camra.org.uk/pubs/160706"
+        },
+        {
+          "address_source_url": "https://camra.org.uk/pubs/160706",
+          "checked_at": "2026-11-04",
+          "match": "reviewed_named_building_and_camra_address",
+          "reference_address": "4 Banbury Road",
+          "reference_coordinate": {
+            "lat": 52.183364,
+            "lng": -1.076345
+          },
+          "reference_name": "Old Red Lion",
+          "reference_postcode": "NN12 8JF",
+          "source": "reviewed-building-source",
+          "url": "https://www.planning.data.gov.uk/entity/31498756"
         }
       ],
-      "lat": 52.1821,
-      "lng": -1.0789,
+      "lat": 52.183364,
+      "lng": -1.076345,
       "place_name": "Litchborough",
       "postcode": "NN12 8JF",
       "pub_name": "Old Red Lion",
@@ -29931,7 +30411,7 @@
       "venue_id": "v-962bf5fc-54cc-5aa2-8250-ca9a3f1a8086"
     },
     "pavilion|ashbourne|de6 1ej": {
-      "coordinate_source": "manual-address-review",
+      "coordinate_source": "reviewed-named-building",
       "display_precision": "venue",
       "evidence": [
         {
@@ -29952,6 +30432,7 @@
         {
           "checked_at": "2026-11-03",
           "difference_metres": 1.9,
+          "disposition": "superseded_by_building_review",
           "match": "venue_name_and_full_postcode",
           "reference_address": "19 Cokayne Avenue",
           "reference_coordinate": {
@@ -29962,10 +30443,24 @@
           "reference_postcode": "DE6 1EJ",
           "source": "camra",
           "url": "https://camra.org.uk/pubs/195909"
+        },
+        {
+          "address_source_url": "https://camra.org.uk/pubs/195909",
+          "checked_at": "2026-11-04",
+          "match": "reviewed_named_building_and_camra_address",
+          "reference_address": "19 Cokayne Avenue",
+          "reference_coordinate": {
+            "lat": 53.01906937,
+            "lng": -1.72664482
+          },
+          "reference_name": "Pavilion",
+          "reference_postcode": "DE6 1EJ",
+          "source": "openstreetmap-named-venue",
+          "url": "https://www.openstreetmap.org/way/156849741"
         }
       ],
-      "lat": 53.019817,
-      "lng": -1.728245,
+      "lat": 53.01906937,
+      "lng": -1.72664482,
       "place_name": "Ashbourne",
       "postcode": "DE6 1EJ",
       "pub_name": "Pavilion",
@@ -32617,7 +33112,7 @@
       "venue_id": "v-790cd688-0b91-5adf-81cc-75528dd143fe"
     },
     "red lion|broughton|dn20 0hy": {
-      "coordinate_source": "camra-pubs-location-audit",
+      "coordinate_source": "reviewed-named-building",
       "display_precision": "venue",
       "evidence": [
         {
@@ -32638,6 +33133,7 @@
         {
           "checked_at": "2026-11-03",
           "difference_metres": 0.0,
+          "disposition": "superseded_by_building_review",
           "match": "venue_name_and_full_postcode",
           "reference_address": "45 High Street",
           "reference_coordinate": {
@@ -32648,10 +33144,24 @@
           "reference_postcode": "DN20 0HY",
           "source": "camra",
           "url": "https://camra.org.uk/pubs/150588"
+        },
+        {
+          "address_source_url": "https://camra.org.uk/pubs/150588",
+          "checked_at": "2026-11-04",
+          "match": "reviewed_named_building_and_camra_address",
+          "reference_address": "45 High Street",
+          "reference_coordinate": {
+            "lat": 53.56569245,
+            "lng": -0.55013755
+          },
+          "reference_name": "Red Lion",
+          "reference_postcode": "DN20 0HY",
+          "source": "openstreetmap-named-venue",
+          "url": "https://www.openstreetmap.org/way/670443753"
         }
       ],
-      "lat": 53.566,
-      "lng": -0.550787,
+      "lat": 53.56569245,
+      "lng": -0.55013755,
       "place_name": "Broughton",
       "postcode": "DN20 0HY",
       "pub_name": "Red Lion",
@@ -34922,7 +35432,7 @@
       "venue_id": "v-379ea64d-386c-5b45-be0f-561f501307aa"
     },
     "royal oak|attleborough|cv11 4jy": {
-      "coordinate_source": "camra-pubs-location-audit",
+      "coordinate_source": "reviewed-named-building",
       "display_precision": "venue",
       "evidence": [
         {
@@ -34943,6 +35453,7 @@
         {
           "checked_at": "2026-11-03",
           "difference_metres": 0.0,
+          "disposition": "superseded_by_building_review",
           "match": "venue_name_and_full_postcode",
           "reference_address": "The Square",
           "reference_coordinate": {
@@ -34953,10 +35464,24 @@
           "reference_postcode": "CV11 4JY",
           "source": "camra",
           "url": "https://camra.org.uk/pubs/158300"
+        },
+        {
+          "address_source_url": "https://camra.org.uk/pubs/158300",
+          "checked_at": "2026-11-04",
+          "match": "reviewed_named_building_and_camra_address",
+          "reference_address": "The Square",
+          "reference_coordinate": {
+            "lat": 52.51376172,
+            "lng": -1.45568405
+          },
+          "reference_name": "Royal Oak",
+          "reference_postcode": "CV11 4JY",
+          "source": "openstreetmap-named-venue",
+          "url": "https://www.openstreetmap.org/way/636918057"
         }
       ],
-      "lat": 52.5132,
-      "lng": -1.4558,
+      "lat": 52.51376172,
+      "lng": -1.45568405,
       "place_name": "Attleborough",
       "postcode": "CV11 4JY",
       "pub_name": "Royal Oak",
@@ -35771,7 +36296,7 @@
       "venue_id": "v-160fbb94-1552-5a9a-94ae-942b4861aa2b"
     },
     "rutland cottage|ilkeston|de7 8te": {
-      "coordinate_source": "camra-and-fsa-location-audit",
+      "coordinate_source": "reviewed-named-building",
       "display_precision": "venue",
       "evidence": [
         {
@@ -35792,6 +36317,7 @@
         {
           "checked_at": "2026-11-03",
           "difference_metres": 0.0,
+          "disposition": "superseded_by_building_review",
           "match": "venue_name_and_full_postcode",
           "reference_address": "Heanor Road",
           "reference_coordinate": {
@@ -35802,10 +36328,24 @@
           "reference_postcode": "DE7 8TE",
           "source": "camra",
           "url": "https://camra.org.uk/pubs/161309"
+        },
+        {
+          "address_source_url": "https://camra.org.uk/pubs/161309",
+          "checked_at": "2026-11-04",
+          "match": "reviewed_named_building_and_camra_address",
+          "reference_address": "Heanor Road",
+          "reference_coordinate": {
+            "lat": 52.98509108,
+            "lng": -1.31622255
+          },
+          "reference_name": "Rutland Cottage",
+          "reference_postcode": "DE7 8TE",
+          "source": "openstreetmap-named-venue",
+          "url": "https://www.openstreetmap.org/way/66841835"
         }
       ],
-      "lat": 52.9856,
-      "lng": -1.3168,
+      "lat": 52.98509108,
+      "lng": -1.31622255,
       "place_name": "Ilkeston",
       "postcode": "DE7 8TE",
       "pub_name": "Rutland Cottage",
@@ -36023,7 +36563,7 @@
       "venue_id": "v-01dd87fe-80c7-51ce-8410-45c3664e8b45"
     },
     "seabridge|newcastle-u-l: clayton|st5 3ha": {
-      "coordinate_source": "camra-and-fsa-location-audit",
+      "coordinate_source": "reviewed-named-building",
       "display_precision": "venue",
       "evidence": [
         {
@@ -36044,6 +36584,7 @@
         {
           "checked_at": "2026-11-03",
           "difference_metres": 0.0,
+          "disposition": "superseded_by_building_review",
           "match": "venue_name_and_full_postcode",
           "reference_address": "174 Seabridge Lane",
           "reference_coordinate": {
@@ -36054,10 +36595,24 @@
           "reference_postcode": "ST5 3HA",
           "source": "camra",
           "url": "https://camra.org.uk/pubs/123014"
+        },
+        {
+          "address_source_url": "https://camra.org.uk/pubs/123014",
+          "checked_at": "2026-11-04",
+          "match": "reviewed_named_building_and_camra_address",
+          "reference_address": "174 Seabridge Lane",
+          "reference_coordinate": {
+            "lat": 52.99037264,
+            "lng": -2.23586104
+          },
+          "reference_name": "Seabridge",
+          "reference_postcode": "ST5 3HA",
+          "source": "openstreetmap-named-venue",
+          "url": "https://www.openstreetmap.org/way/119499841"
         }
       ],
-      "lat": 52.9904,
-      "lng": -2.2342,
+      "lat": 52.99037264,
+      "lng": -2.23586104,
       "place_name": "Newcastle-U-L: Clayton",
       "postcode": "ST5 3HA",
       "pub_name": "Seabridge",
@@ -40169,7 +40724,7 @@
       "venue_id": "v-987fcc7a-f8d9-5347-9919-b45b4a520d5a"
     },
     "tempest arms|coleby|ln5 0ag": {
-      "coordinate_source": "camra-pubs-location-audit",
+      "coordinate_source": "reviewed-named-building",
       "display_precision": "venue",
       "evidence": [
         {
@@ -40190,6 +40745,7 @@
         {
           "checked_at": "2026-11-03",
           "difference_metres": 0.0,
+          "disposition": "superseded_by_building_review",
           "match": "venue_name_and_full_postcode",
           "reference_address": "High Street",
           "reference_coordinate": {
@@ -40200,10 +40756,24 @@
           "reference_postcode": "LN5 0AG",
           "source": "camra",
           "url": "https://camra.org.uk/pubs/191829"
+        },
+        {
+          "address_source_url": "https://camra.org.uk/pubs/191829",
+          "checked_at": "2026-11-04",
+          "match": "reviewed_named_building_and_camra_address",
+          "reference_address": "High Street",
+          "reference_coordinate": {
+            "lat": 53.1317859,
+            "lng": -0.5431966
+          },
+          "reference_name": "Tempest Arms",
+          "reference_postcode": "LN5 0AG",
+          "source": "openstreetmap-named-venue",
+          "url": "https://www.openstreetmap.org/node/484538644"
         }
       ],
-      "lat": 53.131313,
-      "lng": -0.543641,
+      "lat": 53.1317859,
+      "lng": -0.5431966,
       "place_name": "Coleby",
       "postcode": "LN5 0AG",
       "pub_name": "Tempest Arms",
@@ -40253,7 +40823,7 @@
       "venue_id": "v-45011594-aabe-5007-96d9-67ce9c7832cf"
     },
     "terrace inn|stoke: fenton|st4 4nb": {
-      "coordinate_source": "camra-pubs-location-audit",
+      "coordinate_source": "reviewed-named-building",
       "display_precision": "venue",
       "evidence": [
         {
@@ -40274,6 +40844,7 @@
         {
           "checked_at": "2026-11-03",
           "difference_metres": 0.0,
+          "disposition": "superseded_by_building_review",
           "match": "venue_name_and_full_postcode",
           "reference_address": "192 City Road",
           "reference_coordinate": {
@@ -40284,10 +40855,24 @@
           "reference_postcode": "ST4 4NB",
           "source": "camra",
           "url": "https://camra.org.uk/pubs/122906"
+        },
+        {
+          "address_source_url": "https://camra.org.uk/pubs/122906",
+          "checked_at": "2026-11-04",
+          "match": "reviewed_named_building_and_camra_address",
+          "reference_address": "192 City Road",
+          "reference_coordinate": {
+            "lat": 53.0001167,
+            "lng": -2.16845
+          },
+          "reference_name": "Terrace Inn",
+          "reference_postcode": "ST4 4NB",
+          "source": "reviewed-building-source",
+          "url": "https://waymarking.com/waymarks/wm1DHYF_The_Terrace_Inn_Fenton_Stoke_on_Trent_Staffordshire_UK"
         }
       ],
-      "lat": 53.0002,
-      "lng": -2.16932,
+      "lat": 53.0001167,
+      "lng": -2.16845,
       "place_name": "Stoke: Fenton",
       "postcode": "ST4 4NB",
       "pub_name": "Terrace Inn",
@@ -43209,7 +43794,7 @@
       "venue_id": "v-99412060-4aa7-5602-85e3-0ddf38526a87"
     },
     "vine inn|newcastle-u-l: silverdale|st5 6lx": {
-      "coordinate_source": "camra-pubs-location-audit",
+      "coordinate_source": "reviewed-named-building",
       "display_precision": "venue",
       "evidence": [
         {
@@ -43230,6 +43815,7 @@
         {
           "checked_at": "2026-11-03",
           "difference_metres": 0.0,
+          "disposition": "superseded_by_building_review",
           "match": "venue_name_and_full_postcode",
           "reference_address": "130 High Street",
           "reference_coordinate": {
@@ -43240,10 +43826,24 @@
           "reference_postcode": "ST5 6LX",
           "source": "camra",
           "url": "https://camra.org.uk/pubs/123056"
+        },
+        {
+          "address_source_url": "https://camra.org.uk/pubs/123056",
+          "checked_at": "2026-11-04",
+          "match": "reviewed_named_building_and_camra_address",
+          "reference_address": "130 High Street",
+          "reference_coordinate": {
+            "lat": 53.01528358,
+            "lng": -2.26958293
+          },
+          "reference_name": "Vine Inn",
+          "reference_postcode": "ST5 6LX",
+          "source": "openstreetmap-named-venue",
+          "url": "https://www.openstreetmap.org/way/143065369"
         }
       ],
-      "lat": 53.0149,
-      "lng": -2.27005,
+      "lat": 53.01528358,
+      "lng": -2.26958293,
       "place_name": "Newcastle-U-L: Silverdale",
       "postcode": "ST5 6LX",
       "pub_name": "Vine Inn",
@@ -43251,7 +43851,7 @@
       "venue_id": "v-0803178b-4a33-589f-b849-5522ad78d5d9"
     },
     "vine inn|silverdale|st5 6lx": {
-      "coordinate_source": "camra-pubs-location-audit",
+      "coordinate_source": "reviewed-named-building",
       "display_precision": "venue",
       "evidence": [
         {
@@ -43272,6 +43872,7 @@
         {
           "checked_at": "2026-11-03",
           "difference_metres": 0.0,
+          "disposition": "superseded_by_building_review",
           "match": "venue_name_and_full_postcode",
           "reference_address": "130 High Street",
           "reference_coordinate": {
@@ -43282,10 +43883,24 @@
           "reference_postcode": "ST5 6LX",
           "source": "camra",
           "url": "https://camra.org.uk/pubs/123056"
+        },
+        {
+          "address_source_url": "https://camra.org.uk/pubs/123056",
+          "checked_at": "2026-11-04",
+          "match": "reviewed_named_building_and_camra_address",
+          "reference_address": "130 High Street",
+          "reference_coordinate": {
+            "lat": 53.01528358,
+            "lng": -2.26958293
+          },
+          "reference_name": "Vine Inn",
+          "reference_postcode": "ST5 6LX",
+          "source": "openstreetmap-named-venue",
+          "url": "https://www.openstreetmap.org/way/143065369"
         }
       ],
-      "lat": 53.0149,
-      "lng": -2.27005,
+      "lat": 53.01528358,
+      "lng": -2.26958293,
       "place_name": "Silverdale",
       "postcode": "ST5 6LX",
       "pub_name": "Vine Inn",
@@ -44346,7 +44961,7 @@
       "venue_id": "v-e47f59cf-447a-50fc-b24d-67f8b13b54a4"
     },
     "wheatsheaf stores|stoke: northwood|st1 6pb": {
-      "coordinate_source": "food-standards-agency-fhrs",
+      "coordinate_source": "reviewed-named-building",
       "display_precision": "venue",
       "evidence": [
         {
@@ -44367,6 +44982,7 @@
         {
           "checked_at": "2026-11-03",
           "difference_metres": 4.8,
+          "disposition": "superseded_by_building_review",
           "match": "venue_name_and_full_postcode",
           "reference_address": "78 Keelings Road",
           "reference_coordinate": {
@@ -44377,10 +44993,24 @@
           "reference_postcode": "ST1 6PB",
           "source": "camra",
           "url": "https://camra.org.uk/pubs/123093"
+        },
+        {
+          "address_source_url": "https://camra.org.uk/pubs/123093",
+          "checked_at": "2026-11-04",
+          "match": "reviewed_named_building_and_camra_address",
+          "reference_address": "78 Keelings Road",
+          "reference_coordinate": {
+            "lat": 53.03051707,
+            "lng": -2.16615238
+          },
+          "reference_name": "Wheatsheaf Stores",
+          "reference_postcode": "ST1 6PB",
+          "source": "openstreetmap-named-venue",
+          "url": "https://www.openstreetmap.org/way/335130526"
         }
       ],
-      "lat": 53.030678,
-      "lng": -2.167021,
+      "lat": 53.03051707,
+      "lng": -2.16615238,
       "place_name": "Stoke: Northwood",
       "postcode": "ST1 6PB",
       "pub_name": "Wheatsheaf Stores",
@@ -44981,7 +45611,7 @@
       "venue_id": "v-95b88dcf-eb87-53c8-8629-a0630c553722"
     },
     "white hart|measham|de12 7lg": {
-      "coordinate_source": "camra-and-fsa-location-audit",
+      "coordinate_source": "reviewed-named-building",
       "display_precision": "venue",
       "evidence": [
         {
@@ -45002,6 +45632,7 @@
         {
           "checked_at": "2026-11-03",
           "difference_metres": 0.0,
+          "disposition": "superseded_by_building_review",
           "match": "venue_name_and_full_postcode",
           "reference_address": "13 Bosworth Road",
           "reference_coordinate": {
@@ -45012,10 +45643,24 @@
           "reference_postcode": "DE12 7LG",
           "source": "camra",
           "url": "https://camra.org.uk/pubs/171205"
+        },
+        {
+          "address_source_url": "https://camra.org.uk/pubs/171205",
+          "checked_at": "2026-11-04",
+          "match": "reviewed_named_building_and_camra_address",
+          "reference_address": "13 Bosworth Road",
+          "reference_coordinate": {
+            "lat": 52.7059408,
+            "lng": -1.505946
+          },
+          "reference_name": "White Hart",
+          "reference_postcode": "DE12 7LG",
+          "source": "openstreetmap-named-venue",
+          "url": "https://www.openstreetmap.org/node/6738085745"
         }
       ],
-      "lat": 52.7059,
-      "lng": -1.5051,
+      "lat": 52.7059408,
+      "lng": -1.505946,
       "place_name": "Measham",
       "postcode": "DE12 7LG",
       "pub_name": "White Hart",
@@ -45107,7 +45752,7 @@
       "venue_id": "v-6fb21920-b78c-5e7b-bc03-94536439ac36"
     },
     "white hart|stanley|de7 6ex": {
-      "coordinate_source": "camra-pubs-location-audit",
+      "coordinate_source": "reviewed-named-building",
       "display_precision": "venue",
       "evidence": [
         {
@@ -45128,6 +45773,7 @@
         {
           "checked_at": "2026-11-03",
           "difference_metres": 0.0,
+          "disposition": "superseded_by_building_review",
           "match": "venue_name_and_full_postcode",
           "reference_address": "Derby Road",
           "reference_coordinate": {
@@ -45138,10 +45784,24 @@
           "reference_postcode": "DE7 6EX",
           "source": "camra",
           "url": "https://camra.org.uk/pubs/161434"
+        },
+        {
+          "address_source_url": "https://camra.org.uk/pubs/161434",
+          "checked_at": "2026-11-04",
+          "match": "reviewed_named_building_and_camra_address",
+          "reference_address": "Derby Road",
+          "reference_coordinate": {
+            "lat": 52.95865641,
+            "lng": -1.38008298
+          },
+          "reference_name": "White Hart",
+          "reference_postcode": "DE7 6EX",
+          "source": "openstreetmap-named-venue",
+          "url": "https://www.openstreetmap.org/way/126546711"
         }
       ],
-      "lat": 52.9556,
-      "lng": -1.3811,
+      "lat": 52.95865641,
+      "lng": -1.38008298,
       "place_name": "Stanley",
       "postcode": "DE7 6EX",
       "pub_name": "White Hart",
@@ -46193,7 +46853,7 @@
       "venue_id": "v-fd115553-cf17-5115-8e6d-d1b1d77c52dd"
     },
     "wilmslow conservative club|wilmslow|sk9 5eg": {
-      "coordinate_source": "camra-pubs-location-audit",
+      "coordinate_source": "reviewed-named-building",
       "display_precision": "venue",
       "evidence": [
         {
@@ -46214,6 +46874,7 @@
         {
           "checked_at": "2026-11-03",
           "difference_metres": 0.0,
+          "disposition": "superseded_by_building_review",
           "match": "venue_name_and_full_postcode",
           "reference_address": "15 Grove Avenue,",
           "reference_coordinate": {
@@ -46224,10 +46885,24 @@
           "reference_postcode": "SK9 5EG",
           "source": "camra",
           "url": "https://camra.org.uk/pubs/173322"
+        },
+        {
+          "address_source_url": "https://camra.org.uk/pubs/173322",
+          "checked_at": "2026-11-04",
+          "match": "reviewed_named_building_and_camra_address",
+          "reference_address": "15 Grove Avenue,",
+          "reference_coordinate": {
+            "lat": 53.32725969,
+            "lng": -2.23562096
+          },
+          "reference_name": "Wilmslow Conservative Club",
+          "reference_postcode": "SK9 5EG",
+          "source": "openstreetmap-named-venue",
+          "url": "https://www.openstreetmap.org/way/626338309"
         }
       ],
-      "lat": 53.3276,
-      "lng": -2.2343,
+      "lat": 53.32725969,
+      "lng": -2.23562096,
       "place_name": "Wilmslow",
       "postcode": "SK9 5EG",
       "pub_name": "Wilmslow Conservative Club",
@@ -46277,11 +46952,12 @@
       "venue_id": "v-32292597-5327-5dc9-8b92-c9d1f100e51a"
     },
     "windmill inn|ingham|ln1 2yq": {
-      "coordinate_source": "camra-primary",
+      "coordinate_source": "reviewed-named-building",
       "display_precision": "venue",
       "evidence": [
         {
           "checked_at": "2026-11-03",
+          "disposition": "superseded_by_building_review",
           "match": "primary_named_venue_full_postcode_and_address",
           "reference_address": "The Cliff, Middle Street",
           "reference_coordinate": {
@@ -46293,10 +46969,24 @@
           "reference_postcode": "LN1 2YQ",
           "source": "camra",
           "url": "https://camra.org.uk/pubs/191962"
+        },
+        {
+          "address_source_url": "https://camra.org.uk/pubs/191962",
+          "checked_at": "2026-11-04",
+          "match": "reviewed_named_building_and_camra_address",
+          "reference_address": "The Cliff, Middle Street",
+          "reference_coordinate": {
+            "lat": 53.3374119,
+            "lng": -0.5623709
+          },
+          "reference_name": "Windmill Inn",
+          "reference_postcode": "LN1 2YQ",
+          "source": "openstreetmap-named-venue",
+          "url": "https://www.openstreetmap.org/node/597413100"
         }
       ],
-      "lat": 53.337788990786,
-      "lng": -0.5630488932037,
+      "lat": 53.3374119,
+      "lng": -0.5623709,
       "place_name": "Ingham",
       "postcode": "LN1 2YQ",
       "pub_name": "Windmill Inn",
@@ -46346,7 +47036,7 @@
       "venue_id": "v-e4c27846-67c7-53b3-a224-aa715a6a73f9"
     },
     "windmill|southport: central|pr9 0el": {
-      "coordinate_source": "camra-and-fsa-location-audit",
+      "coordinate_source": "reviewed-named-building",
       "display_precision": "venue",
       "evidence": [
         {
@@ -46367,6 +47057,7 @@
         {
           "checked_at": "2026-11-03",
           "difference_metres": 0.0,
+          "disposition": "superseded_by_building_review",
           "match": "venue_name_and_full_postcode",
           "reference_address": "12-16 Seabank Road",
           "reference_coordinate": {
@@ -46377,10 +47068,24 @@
           "reference_postcode": "PR9 0EL",
           "source": "camra",
           "url": "https://camra.org.uk/pubs/147050"
+        },
+        {
+          "address_source_url": "https://camra.org.uk/pubs/147050",
+          "checked_at": "2026-11-04",
+          "match": "reviewed_named_building_and_camra_address",
+          "reference_address": "12-16 Seabank Road",
+          "reference_coordinate": {
+            "lat": 53.6520621,
+            "lng": -3.0025542
+          },
+          "reference_name": "Windmill",
+          "reference_postcode": "PR9 0EL",
+          "source": "openstreetmap-named-venue",
+          "url": "https://www.openstreetmap.org/node/3607862370"
         }
       ],
-      "lat": 53.652545928955,
-      "lng": -3.0029489994049,
+      "lat": 53.6520621,
+      "lng": -3.0025542,
       "place_name": "Southport: Central",
       "postcode": "PR9 0EL",
       "pub_name": "Windmill",

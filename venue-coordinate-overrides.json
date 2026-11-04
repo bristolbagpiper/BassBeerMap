@@ -49,30 +49,26 @@
       "source_url": "https://camra.org.uk/pubs/154126"
     },
     "allestree club|derby: allestree|de22 2fs": {
-      "audit_reason": "postcode_fallback_replaced",
-      "checked_at": "2026-09-11",
-      "lat": 52.9541,
-      "lng": -1.48871,
-      "previous_difference_metres": 4.3,
-      "previous_lat": 52.954135,
-      "previous_lng": -1.488682,
-      "previous_source": "postcode",
-      "source": "camra-pubs-location-audit",
-      "source_url": "https://camra.org.uk/pubs/143356"
+      "audit_reason": "reviewed_named_building_and_camra_address",
+      "checked_at": "2026-11-04",
+      "lat": 52.9542796,
+      "lng": -1.48772303,
+      "reference_address": "39 Cornhill",
+      "reference_name": "Allestree Club",
+      "review_note": "The saved point falls on/next to a separate 39A building; CAMRA identifies 39 Cornhill and the OSM named Royal British Legion Allestree Club footprint is 8.9 m from the alternative and contains it. Replace with the named club building centroid.",
+      "source": "reviewed-named-building",
+      "source_url": "https://www.openstreetmap.org/way/344743137"
     },
     "anchor inn|walton on the wolds|le12 8ht": {
-      "audit_reason": "camra_and_fsa_agree_within_50m_current_pin_does_not",
-      "camra_to_fsa_metres": 7.5,
-      "checked_at": "2026-09-11",
-      "corroborating_source_url": "https://api.ratings.food.gov.uk/Establishments?address=LE12+8HT&pageSize=100&pageNumber=1",
-      "lat": 52.7733,
-      "lng": -1.1249,
-      "previous_difference_metres": 135.1,
-      "previous_lat": 52.77296120999999,
-      "previous_lng": -1.12297142,
-      "previous_source": "openstreetmap-gb-extract",
-      "source": "camra-and-fsa-location-audit",
-      "source_url": "https://camra.org.uk/pubs/171263"
+      "audit_reason": "reviewed_named_building_and_camra_address",
+      "checked_at": "2026-11-04",
+      "lat": 52.77295603,
+      "lng": -1.12295346,
+      "reference_address": "2 Loughborough Road",
+      "reference_name": "Anchor Inn",
+      "review_note": "The current CAMRA listing identifies 2 Loughborough Road. Its saved point is 136 m from the OSM Anchor Inn pub footprint, while the alternative lies inside that named footprint (5.5 m from its representative point). FSA agrees with the saved point, so this is a real source conflict; the building-specific OSM geometry favors the alternative.",
+      "source": "reviewed-named-building",
+      "source_url": "https://www.openstreetmap.org/way/142457116"
     },
     "anchorage hotel|four mile bridge (anglesey)|ll65 2ez": {
       "audit_reason": "existing_pin_over_50m_from_matching_venue",
@@ -99,18 +95,15 @@
       "source_url": "https://camra.org.uk/pubs/118991"
     },
     "apiary|castle donington|de74 2la": {
-      "audit_reason": "camra_and_fsa_agree_within_50m_current_pin_does_not",
-      "camra_to_fsa_metres": 7.5,
-      "checked_at": "2026-09-11",
-      "corroborating_source_url": "https://api.ratings.food.gov.uk/Establishments?address=DE74+2LA&pageSize=100&pageNumber=1",
-      "lat": 52.8421,
-      "lng": -1.33845,
-      "previous_difference_metres": 51.6,
-      "previous_lat": 52.84228542727272,
-      "previous_lng": -1.3377456818181819,
-      "previous_source": "openstreetmap-gb-extract",
-      "source": "camra-and-fsa-location-audit",
-      "source_url": "https://camra.org.uk/pubs/171290"
+      "audit_reason": "reviewed_named_building_and_camra_address",
+      "checked_at": "2026-11-04",
+      "lat": 52.84228837,
+      "lng": -1.33773634,
+      "reference_address": "38 Borough Street",
+      "reference_name": "Apiary",
+      "review_note": "CAMRA lists 38 Borough Street. The named OSM Apiary building is 2.2 m from the alternative and contains it; the saved point is 52 m from that footprint. The OSM feature supports the alternative as the venue building.",
+      "source": "reviewed-named-building",
+      "source_url": "https://www.openstreetmap.org/way/320753975"
     },
     "arkwrights|belper: central|de56 1up": {
       "audit_reason": "manual_named_place_address_and_map_check",
@@ -257,16 +250,15 @@
       "source_url": "https://www.google.com/maps/place/Black+Cat+Parr+Street/@53.4016502,-2.9822168,512m/data=!3m2!1e3!4b1!4m14!1m7!3m6!1s0x487b21e290e5b141:0xf01add51fe76ea7!2sBlack+Cat+Parr+Street!8m2!3d53.4016502!4d-2.9796419!16s%2Fg%2F11zkc1n1lr!3m5!1s0x487b21e290e5b141:0xf01add51fe76ea7!8m2!3d53.4016502!4d-2.9796419!16s%2Fg%2F11zkc1n1lr?entry=ttu&g_ep=EgoyMDI2MTAxOC4wIKXMDSoASAFQAw%3D%3D"
     },
     "black horse|appleby magna|de12 7ah": {
-      "audit_reason": "existing_pin_over_50m_from_matching_venue",
-      "checked_at": "2026-09-11",
-      "lat": 52.68363,
-      "lng": -1.53233,
-      "previous_difference_metres": 154.8,
-      "previous_lat": 52.6848086,
-      "previous_lng": -1.5311072,
-      "previous_source": "openstreetmap-gb-extract",
-      "source": "camra-pubs-location-audit",
-      "source_url": "https://camra.org.uk/pubs/181767"
+      "audit_reason": "reviewed_named_building_and_camra_address",
+      "checked_at": "2026-11-04",
+      "lat": 52.6848086,
+      "lng": -1.5311072,
+      "reference_address": "2 Top Street",
+      "reference_name": "Black Horse",
+      "review_note": "CAMRA identifies 2 Top Street. The named OSM Black Horse pub node is 15.7 m from the alternative and 155 m from the saved pin. FSA also places the same-address listing away from the saved pin, though its geocode is approximate; use the named pub feature point. This resolves the building location despite imprecise supporting geocodes.",
+      "source": "reviewed-named-building",
+      "source_url": "https://www.openstreetmap.org/node/1151202089"
     },
     "black lion|butterton|st13 7sp": {
       "audit_reason": "existing_pin_over_50m_from_matching_venue",
@@ -372,16 +364,15 @@
       "source_url": "https://camra.org.uk/pubs/143503"
     },
     "botanical arms|sheffield: ecclesall road|s11 8pr": {
-      "audit_reason": "existing_pin_over_50m_from_matching_venue",
-      "checked_at": "2026-09-11",
-      "lat": 53.3688,
-      "lng": -1.49693,
-      "previous_difference_metres": 58.0,
-      "previous_lat": 53.3689048,
-      "previous_lng": -1.4960742875,
-      "previous_source": "openstreetmap-gb-extract",
-      "source": "camra-pubs-location-audit",
-      "source_url": "https://camra.org.uk/pubs/199580"
+      "audit_reason": "reviewed_named_building_and_camra_address",
+      "checked_at": "2026-11-04",
+      "lat": 53.36890716,
+      "lng": -1.4960797,
+      "reference_address": "507 Ecclesall Road",
+      "reference_name": "Botanical Arms",
+      "review_note": "CAMRA lists 507 Ecclesall Road. The OSM building tagged The Botanical Arms at that address is 7.6 m from the alternative; the saved point is by the adjacent 533 Ecclesall Road building. The alternative is the venue building.",
+      "source": "reviewed-named-building",
+      "source_url": "https://www.openstreetmap.org/way/1075359643"
     },
     "bottle and glass|normanby|ln8 2he": {
       "audit_reason": "postcode_fallback_replaced",
@@ -808,16 +799,15 @@
       "source_url": "https://camra.org.uk/pubs/171213"
     },
     "cross keys|penrhynside|ll30 3dd": {
-      "audit_reason": "existing_pin_over_50m_from_matching_venue",
-      "checked_at": "2026-09-11",
-      "lat": 53.31756,
-      "lng": -3.78107,
-      "previous_difference_metres": 60.6,
-      "previous_lat": 53.317404,
-      "previous_lng": -3.781944771428571,
-      "previous_source": "openstreetmap-gb-extract",
-      "source": "camra-pubs-location-audit",
-      "source_url": "https://camra.org.uk/pubs/115848"
+      "audit_reason": "reviewed_named_building_and_camra_address",
+      "checked_at": "2026-11-04",
+      "lat": 53.31740262,
+      "lng": -3.7819601,
+      "reference_address": "Pendre Road (off B5115)",
+      "reference_name": "Cross Keys",
+      "review_note": "CAMRA lists the Cross Keys on Pendre Road. The named OSM pub footprint contains the alternative and is 4.2 m from its representative point; the saved point is 61.7 m away. Replace with the footprint centroid.",
+      "source": "reviewed-named-building",
+      "source_url": "https://www.openstreetmap.org/way/525333526"
     },
     "crossbar|chellaston|de73 6tq": {
       "audit_reason": "manual_named_place_address_and_map_check",
@@ -1022,18 +1012,15 @@
       "source_url": "https://www.google.com/maps/place/The+Dial/@52.803817,-1.633027,643m/data=!3m2!1e3!4b1!4m6!3m5!1s0x487a024677e400d3:0x620ba200efa8668!8m2!3d52.803817!4d-1.633027!16s%2Fg%2F1th09zf7?entry=ttu&g_ep=EgoyMDI2MTAxOS4wIKXMDSoASAFQAw%3D%3D"
     },
     "dick turpin|newcastle-u-l: higherland|st5 2qs": {
-      "audit_reason": "camra_and_fsa_agree_within_50m_current_pin_does_not",
-      "camra_to_fsa_metres": 5.2,
-      "checked_at": "2026-09-11",
-      "corroborating_source_url": "https://api.ratings.food.gov.uk/Establishments?address=ST5+2QS&pageSize=100&pageNumber=1",
-      "lat": 53.0038,
-      "lng": -2.24873,
-      "previous_difference_metres": 69.5,
-      "previous_lat": 53.00346105555556,
-      "previous_lng": -2.247857766666667,
-      "previous_source": "openstreetmap-gb-extract",
-      "source": "camra-and-fsa-location-audit",
-      "source_url": "https://camra.org.uk/pubs/123061"
+      "audit_reason": "reviewed_named_building_and_camra_address",
+      "checked_at": "2026-11-04",
+      "lat": 53.00344701,
+      "lng": -2.24783466,
+      "reference_address": "1 Gallowstree Lane",
+      "reference_name": "Dick Turpin",
+      "review_note": "CAMRA lists 1 Gallowstree Lane. The named Dick Turpin OSM pub building contains the alternative (9.9 m from its representative point) and is 71.6 m from the saved pin. Its OSM record also links the operator's venue page.",
+      "source": "reviewed-named-building",
+      "source_url": "https://www.openstreetmap.org/way/118739099"
     },
     "dinas rock hotel|glynneath|sa11 5ap": {
       "audit_reason": "existing_pin_over_50m_from_matching_venue",
@@ -1194,16 +1181,15 @@
       "source_url": "https://camra.org.uk/pubs/141046"
     },
     "flying childers|stanton in peak|de4 2lw": {
-      "audit_reason": "existing_pin_over_250m_from_matching_venue",
-      "checked_at": "2026-09-11",
-      "lat": 53.17555,
-      "lng": -1.64561,
-      "previous_difference_metres": 265.4,
-      "previous_lat": 53.1753378,
-      "previous_lng": -1.6416433,
-      "previous_source": "openstreetmap-gb-extract",
-      "source": "camra-pubs-location-audit",
-      "source_url": "https://camra.org.uk/pubs/165810"
+      "audit_reason": "reviewed_named_building_and_camra_address",
+      "checked_at": "2026-11-04",
+      "lat": 53.1753378,
+      "lng": -1.6416433,
+      "reference_address": "Main Street",
+      "reference_name": "Flying Childers",
+      "review_note": "CAMRA lists the Flying Childers on Main Street. The OSM named pub node and linked venue website place the building at the alternative (4.8 m away); the saved point is 265 m from it. Replace with the named pub feature point.",
+      "source": "reviewed-named-building",
+      "source_url": "https://www.openstreetmap.org/node/422649680"
     },
     "gate inn|ratcliffe culey|cv9 3ny": {
       "audit_reason": "existing_pin_over_50m_from_matching_venue",
@@ -1230,16 +1216,15 @@
       "source_url": "https://camra.org.uk/pubs/171379"
     },
     "george inn|coleorton|le67 8hf": {
-      "audit_reason": "existing_pin_over_250m_from_matching_venue",
-      "checked_at": "2026-09-11",
-      "lat": 52.7527,
-      "lng": -1.3917,
-      "previous_difference_metres": 484.6,
-      "previous_lat": 52.7517834,
-      "previous_lng": -1.398739,
-      "previous_source": "openstreetmap-gb-extract",
-      "source": "camra-pubs-location-audit",
-      "source_url": "https://camra.org.uk/pubs/171371"
+      "audit_reason": "reviewed_named_building_and_camra_address",
+      "checked_at": "2026-11-04",
+      "lat": 52.7517834,
+      "lng": -1.398739,
+      "reference_address": "Loughborough Road",
+      "reference_name": "George Inn",
+      "review_note": "CAMRA and the operator's current site identify the George Inn on Loughborough Road. The named OSM George Inn feature at that address is 1.3 m from the alternative; the saved point is 485 m away. FSA's same-address geocode matches the saved point, a material conflict, but the named pub feature and operator venue address place the actual pub at the alternative.",
+      "source": "reviewed-named-building",
+      "source_url": "https://www.openstreetmap.org/node/910436401"
     },
     "george|youlgrave|de45 1uw": {
       "audit_reason": "manual_named_place_address_and_map_check",
@@ -1265,18 +1250,15 @@
       "source_url": "https://camra.org.uk/pubs/gj-muckers-macclesfield-197659"
     },
     "goodmanham arms|goodmanham|yo43 3ja": {
-      "audit_reason": "camra_and_fsa_agree_within_50m_current_pin_does_not",
-      "camra_to_fsa_metres": 2.9,
-      "checked_at": "2026-09-11",
-      "corroborating_source_url": "https://api.ratings.food.gov.uk/Establishments?address=YO43+3JA&pageSize=100&pageNumber=1",
-      "lat": 53.877,
-      "lng": -0.6467,
-      "previous_difference_metres": 190.2,
-      "previous_lat": 53.8762611,
-      "previous_lng": -0.6493173,
-      "previous_source": "openstreetmap-gb-extract",
-      "source": "camra-and-fsa-location-audit",
-      "source_url": "https://camra.org.uk/pubs/181037"
+      "audit_reason": "reviewed_named_building_and_camra_address",
+      "checked_at": "2026-11-04",
+      "lat": 53.8762611,
+      "lng": -0.6493173,
+      "reference_address": "Main Street",
+      "reference_name": "Goodmanham Arms",
+      "review_note": "CAMRA and the official Goodmanham Arms site identify the venue on Main Street. The named OSM pub node is 6.3 m from the alternative; the saved point is 190 m away. Replace with the mapped pub feature point.",
+      "source": "reviewed-named-building",
+      "source_url": "https://www.openstreetmap.org/node/158697593"
     },
     "great western|deppers bridge|cv47 2st": {
       "audit_reason": "manual_named_place_address_and_map_check",
@@ -1380,18 +1362,15 @@
       "source_url": "https://camra.org.uk/pubs/124673"
     },
     "hesketh arms|rufford|l40 1sb": {
-      "audit_reason": "camra_and_fsa_agree_within_50m_current_pin_does_not",
-      "camra_to_fsa_metres": 4.6,
-      "checked_at": "2026-09-11",
-      "corroborating_source_url": "https://api.ratings.food.gov.uk/Establishments?address=L40+1SB&pageSize=100&pageNumber=1",
-      "lat": 53.6337,
-      "lng": -2.81593,
-      "previous_difference_metres": 77.9,
-      "previous_lat": 53.6335857,
-      "previous_lng": -2.8170963,
-      "previous_source": "openstreetmap-gb-extract",
-      "source": "camra-and-fsa-location-audit",
-      "source_url": "https://camra.org.uk/pubs/146970"
+      "audit_reason": "reviewed_named_building_and_camra_address",
+      "checked_at": "2026-11-04",
+      "lat": 53.6335857,
+      "lng": -2.8170963,
+      "reference_address": "81 Liverpool Road",
+      "reference_name": "Hesketh Arms",
+      "review_note": "Named Hesketh Arms feature beside the mapped building at 81 Liverpool Road. The saved point is on a different building.",
+      "source": "reviewed-named-building",
+      "source_url": "https://www.openstreetmap.org/node/937953635"
     },
     "hive|hesketh bank|pr4 6sn": {
       "audit_reason": "existing_pin_over_50m_from_matching_venue",
@@ -1418,30 +1397,26 @@
       "source_url": "https://camra.org.uk/pubs/168237"
     },
     "horse and trumpet|sileby|le12 7lp": {
-      "audit_reason": "camra_and_fsa_agree_within_50m_current_pin_does_not",
-      "camra_to_fsa_metres": 6.5,
-      "checked_at": "2026-09-11",
-      "corroborating_source_url": "https://api.ratings.food.gov.uk/Establishments?address=LE12+7LP&pageSize=100&pageNumber=1",
-      "lat": 52.7323,
-      "lng": -1.1123,
-      "previous_difference_metres": 124.4,
-      "previous_lat": 52.7312214,
-      "previous_lng": -1.1118085,
-      "previous_source": "openstreetmap-gb-extract",
-      "source": "camra-and-fsa-location-audit",
-      "source_url": "https://camra.org.uk/pubs/171250"
+      "audit_reason": "reviewed_named_building_and_camra_address",
+      "checked_at": "2026-11-04",
+      "lat": 52.7312214,
+      "lng": -1.1118085,
+      "reference_address": "4 Barrow Road",
+      "reference_name": "Horse and Trumpet",
+      "review_note": "Named Horse and Trumpet at 4 Barrow Road, approximately 120 metres from the saved point.",
+      "source": "reviewed-named-building",
+      "source_url": "https://www.openstreetmap.org/node/2121859104"
     },
     "horse|shepshed|le12 9ef": {
-      "audit_reason": "existing_pin_over_50m_from_matching_venue",
-      "checked_at": "2026-09-11",
-      "lat": 52.7597,
-      "lng": -1.30536,
-      "previous_difference_metres": 91.5,
-      "previous_lat": 52.7601349,
-      "previous_lng": -1.3065147,
-      "previous_source": "openstreetmap-gb-extract",
-      "source": "camra-pubs-location-audit",
-      "source_url": "https://camra.org.uk/pubs/171247"
+      "audit_reason": "reviewed_named_building_and_camra_address",
+      "checked_at": "2026-11-04",
+      "lat": 52.7601349,
+      "lng": -1.3065147,
+      "reference_address": "196 Ashby Road West",
+      "reference_name": "Horse",
+      "review_note": "Named Horse pub at 196 Ashby Road West. The mapped venue feature is about 90 metres from the saved point.",
+      "source": "reviewed-named-building",
+      "source_url": "https://www.openstreetmap.org/node/6486705646"
     },
     "hq pencadlys|prestatyn|ll19 9dt": {
       "audit_reason": "existing_pin_over_50m_from_matching_venue",
@@ -1456,16 +1431,15 @@
       "source_url": "https://camra.org.uk/pubs/136447"
     },
     "hunting lodge|monkseaton|ne25 9sx": {
-      "audit_reason": "existing_pin_over_250m_from_matching_venue",
-      "checked_at": "2026-09-11",
-      "lat": 55.034795160892,
-      "lng": -1.4739452866012,
-      "previous_difference_metres": 396.0,
-      "previous_lat": 55.038345409523814,
-      "previous_lng": -1.4734588857142856,
-      "previous_source": "openstreetmap-gb-extract",
-      "source": "camra-pubs-location-audit",
-      "source_url": "https://camra.org.uk/pubs/193740"
+      "audit_reason": "reviewed_named_building_and_camra_address",
+      "checked_at": "2026-11-04",
+      "lat": 55.03834575,
+      "lng": -1.47346716,
+      "reference_address": "Earsdon Road",
+      "reference_name": "Hunting Lodge",
+      "review_note": "Named Hunting Lodge building on Earsdon Road, consistent with the operator address. The saved point is nearly 400 metres away.",
+      "source": "reviewed-named-building",
+      "source_url": "https://www.openstreetmap.org/way/403520192"
     },
     "h|angel inn|l1 4hy": {
       "audit_reason": "manual_named_place_address_and_map_check",
@@ -1519,30 +1493,26 @@
       "source_url": "https://camra.org.uk/pubs/196238"
     },
     "john marston|stoke: blurton|st3 2nq": {
-      "audit_reason": "existing_pin_over_50m_from_matching_venue",
-      "checked_at": "2026-09-11",
-      "lat": 52.9863,
-      "lng": -2.14687,
-      "previous_difference_metres": 97.3,
-      "previous_lat": 52.9859456,
-      "previous_lng": -2.1481986,
-      "previous_source": "food-standards-agency-fhrs",
-      "source": "camra-pubs-location-audit",
-      "source_url": "https://camra.org.uk/pubs/123111"
+      "audit_reason": "reviewed_named_building_and_camra_address",
+      "checked_at": "2026-11-04",
+      "lat": 52.9858587,
+      "lng": -2.1482014,
+      "reference_address": "44 Longton Hall Road",
+      "reference_name": "John Marston",
+      "review_note": "Pubs Galore’s contributor-corrected map at 44 Longton Hall Road corroborates the named result. The mapped John Marston bus stop is immediately south of the venue.",
+      "source": "reviewed-named-building",
+      "source_url": "https://www.pubsgalore.co.uk/pubmap/32413/"
     },
     "jolly potters|castle donington|de74 2nh": {
-      "audit_reason": "camra_and_fsa_agree_within_50m_current_pin_does_not",
-      "camra_to_fsa_metres": 8.9,
-      "checked_at": "2026-09-11",
-      "corroborating_source_url": "https://api.ratings.food.gov.uk/Establishments?address=DE74+2NH&pageSize=100&pageNumber=1",
-      "lat": 52.8437,
-      "lng": -1.3373,
-      "previous_difference_metres": 65.6,
-      "previous_lat": 52.8431149125,
-      "previous_lng": -1.337179175,
-      "previous_source": "openstreetmap-gb-extract",
-      "source": "camra-and-fsa-location-audit",
-      "source_url": "https://camra.org.uk/pubs/171357"
+      "audit_reason": "reviewed_named_building_and_camra_address",
+      "checked_at": "2026-11-04",
+      "lat": 52.84311894,
+      "lng": -1.33716514,
+      "reference_address": "36 Hillside",
+      "reference_name": "Jolly Potters",
+      "review_note": "The named Jolly Potters building at 36 Hillside lies about 67 metres from the saved point.",
+      "source": "reviewed-named-building",
+      "source_url": "https://www.openstreetmap.org/way/320753965"
     },
     "jolly sailor|hemington|de74 2rb": {
       "audit_reason": "existing_pin_over_50m_from_matching_venue",
@@ -1628,16 +1598,15 @@
       "source_url": "https://www.google.com/maps/search/?api=1&query=The+Inn+at+Woodhall+Spa+LN10+6ST"
     },
     "leek golf club|leek|st13 5re": {
-      "audit_reason": "existing_pin_over_250m_from_matching_venue",
-      "checked_at": "2026-09-11",
-      "lat": 53.0934,
-      "lng": -2.02209,
-      "previous_difference_metres": 582.6,
-      "previous_lat": 53.088523814285715,
-      "previous_lng": -2.0252799714285716,
-      "previous_source": "openstreetmap-gb-extract",
-      "source": "camra-pubs-location-audit",
-      "source_url": "https://camra.org.uk/pubs/143984"
+      "audit_reason": "reviewed_named_building_and_camra_address",
+      "checked_at": "2026-11-04",
+      "lat": 53.09031222,
+      "lng": -2.02248863,
+      "reference_address": "Cheddleton road, Birchall",
+      "reference_name": "Leek Golf Club",
+      "review_note": "The candidate building is tagged for golf and inside the mapped Leek Golf Club grounds. The old point is inside the separate council playing-fields sports pavilion, which shares the postcode.",
+      "source": "reviewed-named-building",
+      "source_url": "https://www.openstreetmap.org/way/429722895"
     },
     "liberal club (pmc)|derby: spondon|de21 7ea": {
       "audit_reason": "manual_named_place_address_and_map_check",
@@ -1671,16 +1640,15 @@
       "source_url": "https://www.google.com/maps/place/52%C2%B058'18.8%22N+1%C2%B010'21.0%22W/@52.9718889,-1.1731451,150m/data=!3m2!1e3!4b1!4m4!3m3!8m2!3d52.9718889!4d-1.1725?entry=ttu&g_ep=EgoyMDI2MTAxMy4wIKXMDSoASAFQAw%3D%3D"
     },
     "llanover arms|pontypridd|cf37 4pe": {
-      "audit_reason": "existing_pin_over_50m_from_matching_venue",
-      "checked_at": "2026-09-11",
-      "lat": 51.6045,
-      "lng": -3.3372,
-      "previous_difference_metres": 60.6,
-      "previous_lat": 51.6046117,
-      "previous_lng": -3.3363418,
-      "previous_source": "openstreetmap-gb-extract",
-      "source": "camra-pubs-location-audit",
-      "source_url": "https://camra.org.uk/pubs/170296"
+      "audit_reason": "reviewed_named_building_and_camra_address",
+      "checked_at": "2026-11-04",
+      "lat": 51.6046117,
+      "lng": -3.3363418,
+      "reference_address": "20 Bridge Street",
+      "reference_name": "Llanover Arms",
+      "review_note": "The mapped named Llanover Arms at 20 Bridge Street is at the pub building. The old point is on a different building.",
+      "source": "reviewed-named-building",
+      "source_url": "https://www.openstreetmap.org/node/2841436367"
     },
     "loaf and cheese|burton u-t: central|de14 2nf": {
       "audit_reason": "postcode_fallback_replaced",
@@ -1723,18 +1691,15 @@
       "source_url": "https://www.google.com/maps/place/The+Malt+Shovel+Tavern/@52.2329507,-0.8973703,163m/data=!3m1!1e3!4m6!3m5!1s0x48770edfafba4b91:0xbcb3ad9f0895d610!8m2!3d52.2330589!4d-0.8969778!16s%2Fg%2F1tmxqhxy?entry=ttu&g_ep=EgoyMDI2MTAyMC4wIKXMDSoASAFQAw%3D%3D"
     },
     "man in space|stoke: trentham|st4 8pz": {
-      "audit_reason": "camra_and_fsa_agree_within_50m_current_pin_does_not",
-      "camra_to_fsa_metres": 1.0,
-      "checked_at": "2026-09-11",
-      "corroborating_source_url": "https://api.ratings.food.gov.uk/Establishments?address=ST4+8PZ&pageSize=100&pageNumber=1",
-      "lat": 52.9711,
-      "lng": -2.19117,
-      "previous_difference_metres": 90.1,
-      "previous_lat": 52.97034605454546,
-      "previous_lng": -2.1906779636363636,
-      "previous_source": "openstreetmap-gb-extract",
-      "source": "camra-and-fsa-location-audit",
-      "source_url": "https://camra.org.uk/pubs/122989"
+      "audit_reason": "reviewed_named_building_and_camra_address",
+      "checked_at": "2026-11-04",
+      "lat": 52.97037072,
+      "lng": -2.19064938,
+      "reference_address": "New Inn Lane",
+      "reference_name": "Man In Space",
+      "review_note": "The named Man in Space pub building on New Inn Lane is approximately 90 metres from the saved point.",
+      "source": "reviewed-named-building",
+      "source_url": "https://www.openstreetmap.org/way/237417987"
     },
     "manor house|quorn|le12 8al": {
       "audit_reason": "existing_pin_over_50m_from_matching_venue",
@@ -1834,18 +1799,15 @@
       "source_url": "https://camra.org.uk/pubs/166467"
     },
     "moorland inn|stoke: burslem|st6 1jp": {
-      "audit_reason": "camra_and_fsa_agree_within_50m_current_pin_does_not",
-      "camra_to_fsa_metres": 30.2,
-      "checked_at": "2026-09-11",
-      "corroborating_source_url": "https://api.ratings.food.gov.uk/Establishments?address=ST6+1JP&pageSize=100&pageNumber=1",
-      "lat": 53.048,
-      "lng": -2.18236,
-      "previous_difference_metres": 168.7,
-      "previous_lat": 53.04837069285714,
-      "previous_lng": -2.1799124,
-      "previous_source": "openstreetmap-gb-extract",
-      "source": "camra-and-fsa-location-audit",
-      "source_url": "https://camra.org.uk/pubs/122972"
+      "audit_reason": "reviewed_named_building_and_camra_address",
+      "checked_at": "2026-11-04",
+      "lat": 53.04835962,
+      "lng": -2.17989586,
+      "reference_address": "Moorland Road",
+      "reference_name": "Moorland Inn",
+      "review_note": "The named Moorland Inn building on Moorland Road is approximately 170 metres from the saved point.",
+      "source": "reviewed-named-building",
+      "source_url": "https://www.openstreetmap.org/way/525253749"
     },
     "mount pleasant inn|castle gresley|de11 9je": {
       "audit_reason": "manual_named_place_address_and_map_check",
@@ -1950,16 +1912,15 @@
       "source_url": "https://camra.org.uk/pubs/161716"
     },
     "new inn|alphington|ex2 8ta": {
-      "audit_reason": "existing_pin_over_50m_from_matching_venue",
-      "checked_at": "2026-09-11",
-      "lat": 50.700404,
-      "lng": -3.533785,
-      "previous_difference_metres": 64.6,
-      "previous_lat": 50.69983964166667,
-      "previous_lng": -3.5340048250000002,
-      "previous_source": "openstreetmap-gb-extract",
-      "source": "camra-pubs-location-audit",
-      "source_url": "https://camra.org.uk/pubs/166222"
+      "audit_reason": "reviewed_named_building_and_camra_address",
+      "checked_at": "2026-11-04",
+      "lat": 50.69983161,
+      "lng": -3.53400166,
+      "reference_address": "76 Church Road",
+      "reference_name": "New Inn",
+      "review_note": "The named New Inn building at 76 Church Road is approximately 60 metres from the saved point.",
+      "source": "reviewed-named-building",
+      "source_url": "https://www.openstreetmap.org/way/339435118"
     },
     "new inn|north thoresby|dn36 5qs": {
       "lat": 53.4680288,
@@ -1983,16 +1944,15 @@
       "source_url": "https://www.google.com/maps/place/New+Inn/@52.7551812,-1.3908858,68m/data=!3m1!1e3!4m6!3m5!1s0x4879e334ebdfad2f:0x7853b17e20e86ac6!8m2!3d52.7551846!4d-1.3908139!16s%2Fg%2F1tvdj9s5?entry=ttu"
     },
     "new storey|osgathorpe|le12 9ta": {
-      "audit_reason": "existing_pin_over_50m_from_matching_venue",
-      "checked_at": "2026-09-11",
-      "lat": 52.7709,
-      "lng": -1.3697,
-      "previous_difference_metres": 84.8,
-      "previous_lat": 52.7701886,
-      "previous_lng": -1.3692471,
-      "previous_source": "openstreetmap-gb-extract",
-      "source": "camra-pubs-location-audit",
-      "source_url": "https://camra.org.uk/pubs/171216"
+      "audit_reason": "reviewed_named_building_and_camra_address",
+      "checked_at": "2026-11-04",
+      "lat": 52.7701886,
+      "lng": -1.3692471,
+      "reference_address": "41 Main Street",
+      "reference_name": "New Storey",
+      "review_note": "The named New Storey pub at 41 Main Street is approximately 96 metres from the saved point.",
+      "source": "reviewed-named-building",
+      "source_url": "https://www.openstreetmap.org/node/5034608228"
     },
     "newcastle town fc (pmc)|newcastle-u-l: central|st5 3bx": {
       "audit_reason": "manual_named_place_address_and_map_check",
@@ -2050,28 +2010,26 @@
       "source_url": "https://www.google.com/maps/place/The+Oat+Hill/@52.4767156,-0.9110755,648m/data=!3m2!1e3!4b1!4m6!3m5!1s0x48777119b6f1a78f:0x4ce77f13a87ea623!8m2!3d52.4767156!4d-0.9110755!16s%2Fg%2F1hc1hhvdk?entry=ttu"
     },
     "old crown|shardlow|de72 2hl": {
-      "audit_reason": "existing_pin_over_50m_from_matching_venue",
-      "checked_at": "2026-09-11",
-      "lat": 52.8638,
-      "lng": -1.3354,
-      "previous_difference_metres": 206.4,
-      "previous_lat": 52.864226,
-      "previous_lng": -1.338393,
-      "previous_source": "food-standards-agency-fhrs",
-      "source": "camra-pubs-location-audit",
-      "source_url": "https://camra.org.uk/pubs/171362"
+      "audit_reason": "reviewed_named_building_and_camra_address",
+      "checked_at": "2026-11-04",
+      "lat": 52.86400673,
+      "lng": -1.33925288,
+      "reference_address": "",
+      "reference_name": "Old Crown",
+      "review_note": "The named Old Crown building in Cavendish Bridge, Shardlow is over 250 metres from the saved point.",
+      "source": "reviewed-named-building",
+      "source_url": "https://www.openstreetmap.org/way/319192046"
     },
     "old red lion|litchborough|nn12 8jf": {
-      "audit_reason": "existing_pin_over_50m_from_matching_venue",
-      "checked_at": "2026-09-11",
-      "lat": 52.1821,
-      "lng": -1.0789,
-      "previous_difference_metres": 230.6,
-      "previous_lat": 52.1834042,
-      "previous_lng": -1.0762703,
-      "previous_source": "openstreetmap-gb-extract",
-      "source": "camra-pubs-location-audit",
-      "source_url": "https://camra.org.uk/pubs/160706"
+      "audit_reason": "reviewed_named_building_and_camra_address",
+      "checked_at": "2026-11-04",
+      "lat": 52.183364,
+      "lng": -1.076345,
+      "reference_address": "4 Banbury Road",
+      "reference_name": "Old Red Lion",
+      "review_note": "Government listed-building coordinates and the named OpenStreetMap pub agree on 4 Banbury Road, about 230 metres from the saved point.",
+      "source": "reviewed-named-building",
+      "source_url": "https://www.planning.data.gov.uk/entity/31498756"
     },
     "old smugglers inn|st brelade, jersey|je3 8aw": {
       "checked_at": "2026-09-08",
@@ -2105,11 +2063,15 @@
       "source_url": "https://www.google.com/maps/search/?api=1&query=Patricksbar+Bangor+LL57+2HE"
     },
     "pavilion|ashbourne|de6 1ej": {
-      "checked_at": "2026-09-08",
-      "lat": 53.019817,
-      "lng": -1.728245,
-      "source": "manual-address-review",
-      "source_url": "https://www.discoverashbourne.com/listing/recreation-grounds"
+      "audit_reason": "reviewed_named_building_and_camra_address",
+      "checked_at": "2026-11-04",
+      "lat": 53.01906937,
+      "lng": -1.72664482,
+      "reference_address": "19 Cokayne Avenue",
+      "reference_name": "Pavilion",
+      "review_note": "The new 2022 community bar is in the named sports pavilion by the recreation ground. The saved point is on an unrelated building farther west on the same street.",
+      "source": "reviewed-named-building",
+      "source_url": "https://www.openstreetmap.org/way/156849741"
     },
     "peacock inn|derby: central|de1 3qs": {
       "audit_reason": "postcode_fallback_replaced",
@@ -2405,16 +2367,15 @@
       "source_url": "https://camra.org.uk/pubs/131750"
     },
     "red lion|broughton|dn20 0hy": {
-      "audit_reason": "existing_pin_over_50m_from_matching_venue",
-      "checked_at": "2026-09-11",
-      "lat": 53.566,
-      "lng": -0.550787,
-      "previous_difference_metres": 55.8,
-      "previous_lat": 53.5656797,
-      "previous_lng": -0.5501359,
-      "previous_source": "food-standards-agency-fhrs",
-      "source": "camra-pubs-location-audit",
-      "source_url": "https://camra.org.uk/pubs/150588"
+      "audit_reason": "reviewed_named_building_and_camra_address",
+      "checked_at": "2026-11-04",
+      "lat": 53.56569245,
+      "lng": -0.55013755,
+      "reference_address": "45 High Street",
+      "reference_name": "Red Lion",
+      "review_note": "The named Red Lion pub building at 45 High Street is distinct from the building under the old point. The council planning record identifies the same premises.",
+      "source": "reviewed-named-building",
+      "source_url": "https://www.openstreetmap.org/way/670443753"
     },
     "red lion|earl shilton|le9 7lq": {
       "audit_reason": "existing_pin_over_250m_from_matching_venue",
@@ -2606,16 +2567,15 @@
       "source_url": "https://www.google.com/maps/place/Royal+Oak+-+The+Tiddly+Weds/@52.7995576,-2.5902823,519m/data=!3m2!1e3!4b1!4m6!3m5!1s0x487a84e3c066a67d:0xe544c25788012f2c!8m2!3d52.7995576!4d-2.5902823!16s%2Fg%2F1tfz9qrb?entry=ttu&g_ep=EgoyMDI2MTAyMC4wIKXMDSoASAFQAw%3D%3D"
     },
     "royal oak|attleborough|cv11 4jy": {
-      "audit_reason": "existing_pin_over_250m_from_matching_venue",
-      "checked_at": "2026-09-11",
-      "lat": 52.5132,
-      "lng": -1.4558,
-      "previous_difference_metres": 3465.0,
-      "previous_lat": 52.51567262857143,
-      "previous_lng": -1.5068433857142856,
-      "previous_source": "openstreetmap-gb-extract",
-      "source": "camra-pubs-location-audit",
-      "source_url": "https://camra.org.uk/pubs/158300"
+      "audit_reason": "reviewed_named_building_and_camra_address",
+      "checked_at": "2026-11-04",
+      "lat": 52.51376172,
+      "lng": -1.45568405,
+      "reference_address": "The Square",
+      "reference_name": "Royal Oak",
+      "review_note": "The current CAMRA listing and local branch page identify the Royal Oak on The Square; CAMRA's exterior photograph and the Heineken/Star Pubs property photograph both show the signed Royal Oak frontage. Star Pubs' property report is explicitly for CV11 4JY. The saved point sits in the square by the mapped Green/bus-stop feature, while the Google alternative falls inside the only nearby mapped building footprint north of the square (8.1 m from its representative point). The venue's frontage and address correspond to that building, so replace the square-center pin with the footprint centroid. The FSA geocode is address-level support for the saved location and does not locate the pub frontage.",
+      "source": "reviewed-named-building",
+      "source_url": "https://www.openstreetmap.org/way/636918057"
     },
     "royal oak|little cawthorpe|ln11 8lz": {
       "audit_reason": "manual_named_place_address_and_map_check",
@@ -2658,18 +2618,15 @@
       "source_url": "https://www.google.com/maps/search/?api=1&query=Rushden+Historical+Transport+Society+NN10+0AW"
     },
     "rutland cottage|ilkeston|de7 8te": {
-      "audit_reason": "camra_and_fsa_agree_within_50m_current_pin_does_not",
-      "camra_to_fsa_metres": 8.0,
-      "checked_at": "2026-09-11",
-      "corroborating_source_url": "https://api.ratings.food.gov.uk/Establishments?address=DE7+8TE&pageSize=100&pageNumber=1",
-      "lat": 52.9856,
-      "lng": -1.3168,
-      "previous_difference_metres": 68.2,
-      "previous_lat": 52.98508877857143,
-      "previous_lng": -1.3162366,
-      "previous_source": "openstreetmap-gb-extract",
-      "source": "camra-and-fsa-location-audit",
-      "source_url": "https://camra.org.uk/pubs/161309"
+      "audit_reason": "reviewed_named_building_and_camra_address",
+      "checked_at": "2026-11-04",
+      "lat": 52.98509108,
+      "lng": -1.31622255,
+      "reference_address": "Heanor Road",
+      "reference_name": "Rutland Cottage",
+      "review_note": "The pub is number 162 Heanor Road, as the council register confirms. The saved point lands on number 176.",
+      "source": "reviewed-named-building",
+      "source_url": "https://www.openstreetmap.org/way/66841835"
     },
     "saddle inn|blackpool: stanley park|fy3 9ph": {
       "audit_reason": "existing_pin_over_50m_from_matching_venue",
@@ -2696,18 +2653,15 @@
       "source_url": "https://camra.org.uk/pubs/199651"
     },
     "seabridge|newcastle-u-l: clayton|st5 3ha": {
-      "audit_reason": "camra_and_fsa_agree_within_50m_current_pin_does_not",
-      "camra_to_fsa_metres": 5.2,
-      "checked_at": "2026-09-11",
-      "corroborating_source_url": "https://api.ratings.food.gov.uk/Establishments?address=ST5+3HA&pageSize=100&pageNumber=1",
-      "lat": 52.9904,
-      "lng": -2.2342,
-      "previous_difference_metres": 111.7,
-      "previous_lat": 52.990379440000005,
-      "previous_lng": -2.23586882,
-      "previous_source": "openstreetmap-gb-extract",
-      "source": "camra-and-fsa-location-audit",
-      "source_url": "https://camra.org.uk/pubs/123014"
+      "audit_reason": "reviewed_named_building_and_camra_address",
+      "checked_at": "2026-11-04",
+      "lat": 52.99037264,
+      "lng": -2.23586104,
+      "reference_address": "174 Seabridge Lane",
+      "reference_name": "Seabridge",
+      "review_note": "The named Seabridge building at 174 Seabridge Lane is about 111 metres from the saved point, which lands on a different building.",
+      "source": "reviewed-named-building",
+      "source_url": "https://www.openstreetmap.org/way/119499841"
     },
     "shakespeare (summer row)|birmingham: central|b3 1jj": {
       "audit_reason": "manual_named_place_address_and_map_check",
@@ -2973,28 +2927,26 @@
       "source_url": "https://camra.org.uk/pubs/113335"
     },
     "tempest arms|coleby|ln5 0ag": {
-      "audit_reason": "existing_pin_over_50m_from_matching_venue",
-      "checked_at": "2026-09-11",
-      "lat": 53.131313,
-      "lng": -0.543641,
-      "previous_difference_metres": 60.4,
-      "previous_lat": 53.1317859,
-      "previous_lng": -0.5431966,
-      "previous_source": "openstreetmap-gb-extract",
-      "source": "camra-pubs-location-audit",
-      "source_url": "https://camra.org.uk/pubs/191829"
+      "audit_reason": "reviewed_named_building_and_camra_address",
+      "checked_at": "2026-11-04",
+      "lat": 53.1317859,
+      "lng": -0.5431966,
+      "reference_address": "High Street",
+      "reference_name": "Tempest Arms",
+      "review_note": "The named Tempest Arms feature locates the pub just south of the High Street in line with published descriptions. The old point is 60 metres away.",
+      "source": "reviewed-named-building",
+      "source_url": "https://www.openstreetmap.org/node/484538644"
     },
     "terrace inn|stoke: fenton|st4 4nb": {
-      "audit_reason": "existing_pin_over_250m_from_matching_venue",
-      "checked_at": "2026-09-11",
-      "lat": 53.0002,
-      "lng": -2.16932,
-      "previous_difference_metres": 1677.0,
-      "previous_lat": 53.0010587,
-      "previous_lng": -2.1943394,
-      "previous_source": "openstreetmap-gb-extract",
-      "source": "camra-pubs-location-audit",
-      "source_url": "https://camra.org.uk/pubs/122906"
+      "audit_reason": "reviewed_named_building_and_camra_address",
+      "checked_at": "2026-11-04",
+      "lat": 53.0001167,
+      "lng": -2.16845,
+      "reference_address": "192 City Road",
+      "reference_name": "Terrace Inn",
+      "review_note": "The geotagged pub-sign survey and the historic streetscape locate the Terrace Inn at the Smithpool Road corner opposite the former Newtown. The saved point is farther west, away from this junction.",
+      "source": "reviewed-named-building",
+      "source_url": "https://waymarking.com/waymarks/wm1DHYF_The_Terrace_Inn_Fenton_Stoke_on_Trent_Staffordshire_UK"
     },
     "thorn tree|waingroves|de5 9te": {
       "audit_reason": "existing_pin_over_250m_from_matching_venue",
@@ -3282,28 +3234,26 @@
       "source_url": "https://camra.org.uk/pubs/143292"
     },
     "vine inn|newcastle-u-l: silverdale|st5 6lx": {
-      "audit_reason": "existing_pin_over_50m_from_matching_venue",
-      "checked_at": "2026-09-11",
-      "lat": 53.0149,
-      "lng": -2.27005,
-      "previous_difference_metres": 52.9,
-      "previous_lat": 53.01528296428571,
-      "previous_lng": -2.269579821428571,
-      "previous_source": "openstreetmap-gb-extract",
-      "source": "camra-pubs-location-audit",
-      "source_url": "https://camra.org.uk/pubs/123056"
+      "audit_reason": "reviewed_named_building_and_camra_address",
+      "checked_at": "2026-11-04",
+      "lat": 53.01528358,
+      "lng": -2.26958293,
+      "reference_address": "130 High Street",
+      "reference_name": "Vine Inn",
+      "review_note": "Both directory entries refer to the named Vine Inn building at 130 High Street. The council heritage register corroborates the same building.",
+      "source": "reviewed-named-building",
+      "source_url": "https://www.openstreetmap.org/way/143065369"
     },
     "vine inn|silverdale|st5 6lx": {
-      "audit_reason": "existing_pin_over_50m_from_matching_venue",
-      "checked_at": "2026-09-11",
-      "lat": 53.0149,
-      "lng": -2.27005,
-      "previous_difference_metres": 52.9,
-      "previous_lat": 53.01528296428571,
-      "previous_lng": -2.269579821428571,
-      "previous_source": "openstreetmap-gb-extract",
-      "source": "camra-pubs-location-audit",
-      "source_url": "https://camra.org.uk/pubs/123056"
+      "audit_reason": "reviewed_named_building_and_camra_address",
+      "checked_at": "2026-11-04",
+      "lat": 53.01528358,
+      "lng": -2.26958293,
+      "reference_address": "130 High Street",
+      "reference_name": "Vine Inn",
+      "review_note": "Both directory entries refer to the named Vine Inn building at 130 High Street. The council heritage register corroborates the same building.",
+      "source": "reviewed-named-building",
+      "source_url": "https://www.openstreetmap.org/way/143065369"
     },
     "vine|market deeping|pe6 8an": {
       "audit_reason": "existing_pin_over_50m_from_matching_venue",
@@ -3378,18 +3328,15 @@
       "source_url": "https://camra.org.uk/pubs/158206"
     },
     "white hart|measham|de12 7lg": {
-      "audit_reason": "camra_and_fsa_agree_within_50m_current_pin_does_not",
-      "camra_to_fsa_metres": 4.9,
-      "checked_at": "2026-09-11",
-      "corroborating_source_url": "https://api.ratings.food.gov.uk/Establishments?address=DE12+7LG&pageSize=100&pageNumber=1",
-      "lat": 52.7059,
-      "lng": -1.5051,
-      "previous_difference_metres": 57.2,
-      "previous_lat": 52.7059408,
-      "previous_lng": -1.505946,
-      "previous_source": "openstreetmap-gb-extract",
-      "source": "camra-and-fsa-location-audit",
-      "source_url": "https://camra.org.uk/pubs/171205"
+      "audit_reason": "reviewed_named_building_and_camra_address",
+      "checked_at": "2026-11-04",
+      "lat": 52.7059408,
+      "lng": -1.505946,
+      "reference_address": "13 Bosworth Road",
+      "reference_name": "White Hart",
+      "review_note": "The named White Hart feature is at 13 Bosworth Road, confirmed by the conservation appraisal. The saved point is by Peggs Close.",
+      "source": "reviewed-named-building",
+      "source_url": "https://www.openstreetmap.org/node/6738085745"
     },
     "white hart|midsomer norton|ba3 2hq": {
       "lat": 51.2851882,
@@ -3397,16 +3344,15 @@
       "source": "openstreetmap"
     },
     "white hart|stanley|de7 6ex": {
-      "audit_reason": "existing_pin_over_250m_from_matching_venue",
-      "checked_at": "2026-09-11",
-      "lat": 52.9556,
-      "lng": -1.3811,
-      "previous_difference_metres": 347.2,
-      "previous_lat": 52.9586613875,
-      "previous_lng": -1.3800820375,
-      "previous_source": "openstreetmap-gb-extract",
-      "source": "camra-pubs-location-audit",
-      "source_url": "https://camra.org.uk/pubs/161434"
+      "audit_reason": "reviewed_named_building_and_camra_address",
+      "checked_at": "2026-11-04",
+      "lat": 52.95865641,
+      "lng": -1.38008298,
+      "reference_address": "Derby Road",
+      "reference_name": "White Hart",
+      "review_note": "The named White Hart building at Derby Road is at the operator’s location. The saved point lands on a detached property at number 82.",
+      "source": "reviewed-named-building",
+      "source_url": "https://www.openstreetmap.org/way/126546711"
     },
     "white horse inn / tafarn penllan|capel garmon|ll26 0rw": {
       "audit_reason": "postcode_fallback_replaced",
@@ -3433,30 +3379,26 @@
       "source_url": "https://camra.org.uk/pubs/167794"
     },
     "wilmslow conservative club|wilmslow|sk9 5eg": {
-      "audit_reason": "existing_pin_over_50m_from_matching_venue",
-      "checked_at": "2026-09-11",
-      "lat": 53.3276,
-      "lng": -2.2343,
-      "previous_difference_metres": 94.8,
-      "previous_lat": 53.327283806666664,
-      "previous_lng": -2.2356258,
-      "previous_source": "openstreetmap-gb-extract",
-      "source": "camra-pubs-location-audit",
-      "source_url": "https://camra.org.uk/pubs/173322"
+      "audit_reason": "reviewed_named_building_and_camra_address",
+      "checked_at": "2026-11-04",
+      "lat": 53.32725969,
+      "lng": -2.23562096,
+      "reference_address": "15 Grove Avenue,",
+      "reference_name": "Wilmslow Conservative Club",
+      "review_note": "The club website confirms the current 1992 clubhouse, which is the named mapped building. The saved point falls within Canterbury Grange apartments.",
+      "source": "reviewed-named-building",
+      "source_url": "https://www.openstreetmap.org/way/626338309"
     },
     "windmill|southport: central|pr9 0el": {
-      "audit_reason": "camra_and_fsa_agree_within_50m_current_pin_does_not",
-      "camra_to_fsa_metres": 34.3,
-      "checked_at": "2026-09-11",
-      "corroborating_source_url": "https://api.ratings.food.gov.uk/Establishments?address=PR9+0EL&pageSize=100&pageNumber=1",
-      "lat": 53.652545928955,
-      "lng": -3.0029489994049,
-      "previous_difference_metres": 59.8,
-      "previous_lat": 53.6520621,
-      "previous_lng": -3.0025542,
-      "previous_source": "openstreetmap-gb-extract",
-      "source": "camra-and-fsa-location-audit",
-      "source_url": "https://camra.org.uk/pubs/147050"
+      "audit_reason": "reviewed_named_building_and_camra_address",
+      "checked_at": "2026-11-04",
+      "lat": 53.6520621,
+      "lng": -3.0025542,
+      "reference_address": "12-16 Seabank Road",
+      "reference_name": "Windmill",
+      "review_note": "The named Windmill pub feature matches the operator’s 12–14 Seabank Road premises and is about 60 metres from the saved point.",
+      "source": "reviewed-named-building",
+      "source_url": "https://www.openstreetmap.org/node/3607862370"
     },
     "wyggeston hotel|burton u-t: central|de13 0un": {
       "audit_reason": "existing_pin_over_50m_from_matching_venue",

@@ -1,11 +1,12 @@
 from datetime import datetime, timezone
 from pathlib import Path
+from tempfile import TemporaryDirectory
 import unittest
 
 from build_place_review_queue import build_queue
 from build_place_review_queue import digest
-from directory_release import read_json
-from hermes_google_review import build_status
+from directory_release import read_json, write_json
+from hermes_google_review import build_status, marker_signature
 from location_review import with_google
 
 
@@ -103,6 +104,27 @@ class HermesGoogleReviewTests(unittest.TestCase):
         status = self.status([old, fresh])
         self.assertEqual(status['counts']['current'], 1)
         self.assertFalse(status['findings'])
+
+    def test_reviewed_marker_keeps_trading_and_reopens_for_a_new_point(self):
+        url = 'https://www.google.com/maps/place/Pub/data=!1s0x1:0x2!3d52.1!4d-1.2'
+        marker = self.observation('pin_conflict', result_url=url)
+        trading = self.observation('trading_conflict', result_url=url)
+        with TemporaryDirectory() as folder:
+            root = Path(folder)
+            registry = read_json(ROOT / 'venue-registry.json')
+            registry['venues'][self.item['venue_id']]['google_marker_review'] = {
+                'decision': 'keep_saved_pin', 'reviewed_at': '2026-11-03',
+                'marker_signature': marker_signature(marker['binding_signature'], url),
+            }
+            write_json(root / 'venue-registry.json', registry)
+            write_json(root / 'directory-release.json', self.bundle)
+            status = build_status(root, dict(schema_version=1, observations=[marker, trading]), now=NOW)
+            self.assertEqual(status['counts']['current'], 1)
+            self.assertIn('possible closure', status['findings'][0]['reason'])
+            self.assertNotIn('differs by more than 50 metres', status['findings'][0]['reason'])
+            changed = dict(marker, result_url=url.replace('!4d-1.2', '!4d-1.3'))
+            status = build_status(root, dict(schema_version=1, observations=[changed]), now=NOW)
+            self.assertIn('differs by more than 50 metres', status['findings'][0]['reason'])
 
     def test_tampered_unknown_fields_bad_dates_and_rebound_are_discarded_or_rejected(self):
         for changes in ({'unknown': 'extra'}, {'attempted_at': 'not-a-date'},

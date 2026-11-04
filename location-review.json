@@ -1,6 +1,6 @@
 {
-  "actionable_count": 2,
-  "active_count": 3,
+  "actionable_count": 3,
+  "active_count": 4,
   "records": {
     "v-0043695f-006e-58fe-adc2-894e5500b940": {
       "active": false,
@@ -43,6 +43,56 @@
       "status": "resolved",
       "unverified": false,
       "venue_id": "v-0043695f-006e-58fe-adc2-894e5500b940"
+    },
+    "v-009a7c6e-3950-55bb-8a3c-eaf89ba0737e": {
+      "active": true,
+      "first_seen": "2026-11-04",
+      "history": [
+        {
+          "date": "2026-11-04",
+          "reasons": [
+            "Trading status needs review: Google Maps indicated a possible closure before the pin correction"
+          ],
+          "status": "review_needed"
+        }
+      ],
+      "last_checked": "2026-11-04",
+      "manual_action_required": true,
+      "next_action": "Check trading/Bass availability; do not move the pin from closure information alone",
+      "place_name": "Newcastle-U-L: Higherland",
+      "postcode": "ST5 2QS",
+      "pub_name": "Dick Turpin",
+      "reasons": [
+        "Trading status needs review: Google Maps indicated a possible closure before the pin correction"
+      ],
+      "reference": {},
+      "research": {},
+      "review_category": "trading_check",
+      "source_checks": {
+        "camra": {
+          "status": "address_confirmed_marker_differs",
+          "url": "https://camra.org.uk/pubs/123061"
+        },
+        "openstreetmap-named-venue": {
+          "status": "confirmed",
+          "url": "https://www.openstreetmap.org/way/118739099"
+        }
+      },
+      "source_error": null,
+      "status": "review_needed",
+      "trading_status_review": {
+        "evidence": [
+          {
+            "checked_at": "2026-11-03T17:18:57Z",
+            "claim": "Trading status remains unverified after correcting the pin",
+            "url": "https://github.com/bristolbagpiper/BassBeerMap/blob/4a6edbfdd9e5ca26762e15bfdd9eb5552071e535/hermes-google-status.json"
+          }
+        ],
+        "reason": "Google Maps indicated a possible closure before the pin correction",
+        "status": "needs_review"
+      },
+      "unverified": false,
+      "venue_id": "v-009a7c6e-3950-55bb-8a3c-eaf89ba0737e"
     },
     "v-00a08839-2b8a-5782-b6c7-0bdce4cddb2f": {
       "active": false,
@@ -1816,7 +1866,7 @@
           "status": "resolved"
         }
       ],
-      "last_checked": "2026-11-03",
+      "last_checked": "2026-11-04",
       "manual_action_required": false,
       "next_action": "No pin check requested",
       "place_name": "Sheffield: Ecclesall Road",
@@ -1828,12 +1878,12 @@
       "review_category": "confirmed",
       "source_checks": {
         "camra": {
-          "status": "confirmed",
+          "status": "address_confirmed_marker_differs",
           "url": "https://camra.org.uk/pubs/199580"
         },
-        "fsa_independent": {
-          "status": "coordinate_disagreement",
-          "url": "https://ratings.food.gov.uk/business/1794138"
+        "openstreetmap-named-venue": {
+          "status": "confirmed",
+          "url": "https://www.openstreetmap.org/way/1075359643"
         }
       },
       "source_error": null,
@@ -2269,7 +2319,7 @@
           "status": "resolved"
         }
       ],
-      "last_checked": "2026-11-03",
+      "last_checked": "2026-11-04",
       "manual_action_required": false,
       "next_action": "No pin check requested",
       "place_name": "Broughton",
@@ -2281,12 +2331,12 @@
       "review_category": "confirmed",
       "source_checks": {
         "camra": {
-          "status": "confirmed",
+          "status": "address_confirmed_marker_differs",
           "url": "https://camra.org.uk/pubs/150588"
         },
-        "fsa_independent": {
-          "status": "coordinate_disagreement",
-          "url": "https://ratings.food.gov.uk/business/1940825"
+        "openstreetmap-named-venue": {
+          "status": "confirmed",
+          "url": "https://www.openstreetmap.org/way/670443753"
         }
       },
       "source_error": null,
@@ -3056,7 +3106,7 @@
           "status": "resolved"
         }
       ],
-      "last_checked": "2026-11-03",
+      "last_checked": "2026-11-04",
       "manual_action_required": false,
       "next_action": "No pin check requested",
       "place_name": "Shardlow",
@@ -3068,12 +3118,12 @@
       "review_category": "confirmed",
       "source_checks": {
         "camra": {
-          "status": "confirmed",
+          "status": "address_confirmed_marker_differs",
           "url": "https://camra.org.uk/pubs/171362"
         },
-        "fsa_independent": {
-          "status": "coordinate_disagreement",
-          "url": "https://ratings.food.gov.uk/business/6634"
+        "openstreetmap-named-venue": {
+          "status": "confirmed",
+          "url": "https://www.openstreetmap.org/way/319192046"
         }
       },
       "source_error": null,
@@ -4202,7 +4252,7 @@
           "status": "resolved"
         }
       ],
-      "last_checked": "2026-11-03",
+      "last_checked": "2026-11-04",
       "manual_action_required": false,
       "next_action": "No pin check requested",
       "place_name": "Alphington",
@@ -4214,12 +4264,12 @@
       "review_category": "confirmed",
       "source_checks": {
         "camra": {
-          "status": "confirmed",
+          "status": "address_confirmed_marker_differs",
           "url": "https://camra.org.uk/pubs/166222"
         },
-        "fsa_independent": {
-          "status": "coordinate_disagreement",
-          "url": "https://ratings.food.gov.uk/business/1651216"
+        "openstreetmap-named-venue": {
+          "status": "confirmed",
+          "url": "https://www.openstreetmap.org/way/339435118"
         }
       },
       "source_error": null,
@@ -8226,7 +8276,7 @@
           "status": "resolved"
         }
       ],
-      "last_checked": "2026-11-03",
+      "last_checked": "2026-11-04",
       "manual_action_required": false,
       "next_action": "No pin check requested",
       "place_name": "Osgathorpe",
@@ -8238,12 +8288,12 @@
       "review_category": "confirmed",
       "source_checks": {
         "camra": {
-          "status": "confirmed",
+          "status": "address_confirmed_marker_differs",
           "url": "https://camra.org.uk/pubs/171216"
         },
-        "fsa_independent": {
-          "status": "coordinate_disagreement",
-          "url": "https://ratings.food.gov.uk/business/1814148"
+        "openstreetmap-named-venue": {
+          "status": "confirmed",
+          "url": "https://www.openstreetmap.org/node/5034608228"
         }
       },
       "source_error": null,
@@ -10393,7 +10443,7 @@
           "status": "resolved"
         }
       ],
-      "last_checked": "2026-11-03",
+      "last_checked": "2026-11-04",
       "manual_action_required": false,
       "next_action": "No pin check requested",
       "place_name": "Stanton in Peak",
@@ -10405,12 +10455,12 @@
       "review_category": "confirmed",
       "source_checks": {
         "camra": {
-          "status": "confirmed",
+          "status": "address_confirmed_marker_differs",
           "url": "https://camra.org.uk/pubs/165810"
         },
-        "fsa_independent": {
-          "status": "coordinate_disagreement",
-          "url": "https://ratings.food.gov.uk/business/1834492"
+        "openstreetmap-named-venue": {
+          "status": "confirmed",
+          "url": "https://www.openstreetmap.org/node/422649680"
         }
       },
       "source_error": null,
@@ -12375,7 +12425,7 @@
           "status": "resolved"
         }
       ],
-      "last_checked": "2026-11-03",
+      "last_checked": "2026-11-04",
       "manual_action_required": false,
       "next_action": "No pin check requested",
       "place_name": "Stoke: Blurton",
@@ -12387,12 +12437,12 @@
       "review_category": "confirmed",
       "source_checks": {
         "camra": {
-          "status": "confirmed",
+          "status": "address_confirmed_marker_differs",
           "url": "https://camra.org.uk/pubs/123111"
         },
-        "fsa_independent": {
-          "status": "coordinate_disagreement",
-          "url": "https://ratings.food.gov.uk/business/1660318"
+        "reviewed-building-source": {
+          "status": "confirmed",
+          "url": "https://www.pubsgalore.co.uk/pubmap/32413/"
         }
       },
       "source_error": null,
@@ -13045,7 +13095,7 @@
           "status": "resolved"
         }
       ],
-      "last_checked": "2026-11-03",
+      "last_checked": "2026-11-04",
       "manual_action_required": false,
       "next_action": "No pin check requested",
       "place_name": "Ingham",
@@ -13057,12 +13107,12 @@
       "review_category": "confirmed",
       "source_checks": {
         "camra": {
-          "status": "confirmed",
+          "status": "address_confirmed_marker_differs",
           "url": "https://camra.org.uk/pubs/191962"
         },
-        "fsa_independent": {
-          "status": "no_name_match",
-          "url": ""
+        "openstreetmap-named-venue": {
+          "status": "confirmed",
+          "url": "https://www.openstreetmap.org/node/597413100"
         }
       },
       "source_error": null,
@@ -13672,7 +13722,7 @@
           "status": "resolved"
         }
       ],
-      "last_checked": "2026-11-03",
+      "last_checked": "2026-11-04",
       "manual_action_required": false,
       "next_action": "No pin check requested",
       "place_name": "Litchborough",
@@ -13684,12 +13734,12 @@
       "review_category": "confirmed",
       "source_checks": {
         "camra": {
-          "status": "confirmed",
+          "status": "address_confirmed_marker_differs",
           "url": "https://camra.org.uk/pubs/160706"
         },
-        "fsa_independent": {
-          "status": "coordinate_disagreement",
-          "url": "https://ratings.food.gov.uk/business/2002727"
+        "reviewed-building-source": {
+          "status": "confirmed",
+          "url": "https://www.planning.data.gov.uk/entity/31498756"
         }
       },
       "source_error": null,
@@ -14236,7 +14286,7 @@
           "status": "resolved"
         }
       ],
-      "last_checked": "2026-11-03",
+      "last_checked": "2026-11-04",
       "manual_action_required": false,
       "next_action": "No pin check requested",
       "place_name": "Monkseaton",
@@ -14248,12 +14298,12 @@
       "review_category": "confirmed",
       "source_checks": {
         "camra": {
-          "status": "confirmed",
+          "status": "address_confirmed_marker_differs",
           "url": "https://camra.org.uk/pubs/193740"
         },
-        "fsa_independent": {
-          "status": "coordinate_disagreement",
-          "url": "https://ratings.food.gov.uk/business/65669"
+        "openstreetmap-named-venue": {
+          "status": "confirmed",
+          "url": "https://www.openstreetmap.org/way/403520192"
         }
       },
       "source_error": null,
@@ -15223,7 +15273,7 @@
           "status": "resolved"
         }
       ],
-      "last_checked": "2026-11-03",
+      "last_checked": "2026-11-04",
       "manual_action_required": false,
       "next_action": "No pin check requested",
       "place_name": "Appleby Magna",
@@ -15235,12 +15285,12 @@
       "review_category": "confirmed",
       "source_checks": {
         "camra": {
-          "status": "confirmed",
+          "status": "address_confirmed_marker_differs",
           "url": "https://camra.org.uk/pubs/181767"
         },
-        "fsa_independent": {
-          "status": "coordinate_disagreement",
-          "url": "https://ratings.food.gov.uk/business/1679371"
+        "openstreetmap-named-venue": {
+          "status": "confirmed",
+          "url": "https://www.openstreetmap.org/node/1151202089"
         }
       },
       "source_error": null,
@@ -16049,7 +16099,7 @@
           "status": "resolved"
         }
       ],
-      "last_checked": "2026-11-03",
+      "last_checked": "2026-11-04",
       "manual_action_required": false,
       "next_action": "No pin check requested",
       "place_name": "Leek",
@@ -16061,12 +16111,12 @@
       "review_category": "confirmed",
       "source_checks": {
         "camra": {
-          "status": "confirmed",
+          "status": "address_confirmed_marker_differs",
           "url": "https://camra.org.uk/pubs/143984"
         },
-        "fsa_independent": {
-          "status": "coordinate_disagreement",
-          "url": "https://ratings.food.gov.uk/business/1979266"
+        "openstreetmap-named-venue": {
+          "status": "confirmed",
+          "url": "https://www.openstreetmap.org/way/429722895"
         }
       },
       "source_error": null,

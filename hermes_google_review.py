@@ -6,11 +6,12 @@ listing fields and bounded review classifications; it never copies Google data.
 import argparse
 import json
 import re
-from datetime import datetime, timedelta, timezone
+from datetime import date, datetime, timedelta, timezone
 from pathlib import Path
 from audit_google_places import COVERAGE_ISSUE
 from build_place_review_queue import build_queue, digest, valid_google_result_url
 from directory_release import read_json, write_json
+from hermes_google_browser import _point_from_url
 
 MAX_AGE = timedelta(days=30)
 CATEGORIES = frozenset(('identity_and_pin_consistent', 'identity_conflict', 'pin_conflict',
@@ -37,6 +38,29 @@ def parse_utc(value, nullable=False):
 
 def valid_google_url(value, place_required):
     return isinstance(value, str) and valid_google_result_url(value, place_required)
+
+
+def marker_signature(binding_signature, result_url):
+    """Bind a review to this directory pin and the exact named Google marker."""
+    if not valid_google_url(result_url, True):
+        return None
+    place_ids = re.findall(r'!1s(0x[0-9a-f]+:0x[0-9a-f]+)(?=!|$)', result_url, re.I)
+    point = _point_from_url(result_url)
+    if len(place_ids) == 1 and point:
+        return digest([binding_signature, place_ids[0].lower(), point])
+    return None
+
+
+def _reviewed_marker(entry, item, now):
+    review = entry.get('google_marker_review')
+    if not isinstance(review, dict) or review.get('decision') != 'keep_saved_pin':
+        return False
+    try:
+        age = now.date() - date.fromisoformat(review['reviewed_at'])
+    except (KeyError, TypeError, ValueError):
+        return False
+    signature = marker_signature(item['binding_signature'], item['result_url'])
+    return bool(signature and signature == review.get('marker_signature') and 0 <= age.days <= 180)
 
 
 def _reason(category):
@@ -101,11 +125,14 @@ def build_status(root, receipts, now=None):
             unavailable_attempts[item['venue_id']] = max(unavailable_attempts.get(item['venue_id'], attempted), attempted)
         if checked:
             if category in CONFLICTS or category == 'identity_and_pin_consistent':
+                categories = {category}
+                if category == 'pin_conflict' and _reviewed_marker(registry['venues'][item['venue_id']], item, now):
+                    categories.clear()
                 prior = conclusive.get(item['venue_id'])
                 if prior is None or checked > prior[0]:
-                    conclusive[item['venue_id']] = (checked, {category})
+                    conclusive[item['venue_id']] = (checked, categories)
                 elif checked == prior[0]:
-                    prior[1].add(category)
+                    prior[1].update(categories)
             elif category == 'ambiguous':
                 prior = ambiguous.get(item['venue_id'])
                 if prior is None or checked > prior:

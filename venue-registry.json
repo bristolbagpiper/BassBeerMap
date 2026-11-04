@@ -74,6 +74,10 @@
             "status": "address_confirmed_marker_differs",
             "url": "https://camra.org.uk/pubs/123061"
           },
+          "fsa_independent": {
+            "status": "coordinate_disagreement",
+            "url": "https://ratings.food.gov.uk/business/131886"
+          },
           "openstreetmap-named-venue": {
             "status": "confirmed",
             "url": "https://www.openstreetmap.org/way/118739099"
@@ -1882,6 +1886,10 @@
             "status": "address_confirmed_marker_differs",
             "url": "https://camra.org.uk/pubs/199580"
           },
+          "fsa_independent": {
+            "status": "coordinate_agreement",
+            "url": "https://ratings.food.gov.uk/business/1794138"
+          },
           "openstreetmap-named-venue": {
             "status": "confirmed",
             "url": "https://www.openstreetmap.org/way/1075359643"
@@ -2334,6 +2342,10 @@
           "camra": {
             "status": "address_confirmed_marker_differs",
             "url": "https://camra.org.uk/pubs/150588"
+          },
+          "fsa_independent": {
+            "status": "coordinate_agreement",
+            "url": "https://ratings.food.gov.uk/business/1940825"
           },
           "openstreetmap-named-venue": {
             "status": "confirmed",
@@ -3121,6 +3133,10 @@
           "camra": {
             "status": "address_confirmed_marker_differs",
             "url": "https://camra.org.uk/pubs/171362"
+          },
+          "fsa_independent": {
+            "status": "coordinate_disagreement",
+            "url": "https://ratings.food.gov.uk/business/6634"
           },
           "openstreetmap-named-venue": {
             "status": "confirmed",
@@ -4267,6 +4283,10 @@
           "camra": {
             "status": "address_confirmed_marker_differs",
             "url": "https://camra.org.uk/pubs/166222"
+          },
+          "fsa_independent": {
+            "status": "coordinate_agreement",
+            "url": "https://ratings.food.gov.uk/business/1651216"
           },
           "openstreetmap-named-venue": {
             "status": "confirmed",
@@ -8292,6 +8312,10 @@
             "status": "address_confirmed_marker_differs",
             "url": "https://camra.org.uk/pubs/171216"
           },
+          "fsa_independent": {
+            "status": "coordinate_agreement",
+            "url": "https://ratings.food.gov.uk/business/1814148"
+          },
           "openstreetmap-named-venue": {
             "status": "confirmed",
             "url": "https://www.openstreetmap.org/node/5034608228"
@@ -10459,6 +10483,10 @@
             "status": "address_confirmed_marker_differs",
             "url": "https://camra.org.uk/pubs/165810"
           },
+          "fsa_independent": {
+            "status": "coordinate_disagreement",
+            "url": "https://ratings.food.gov.uk/business/1834492"
+          },
           "openstreetmap-named-venue": {
             "status": "confirmed",
             "url": "https://www.openstreetmap.org/node/422649680"
@@ -12441,6 +12469,10 @@
             "status": "address_confirmed_marker_differs",
             "url": "https://camra.org.uk/pubs/123111"
           },
+          "fsa_independent": {
+            "status": "coordinate_agreement",
+            "url": "https://ratings.food.gov.uk/business/1660318"
+          },
           "reviewed-building-source": {
             "status": "confirmed",
             "url": "https://www.pubsgalore.co.uk/pubmap/32413/"
@@ -13111,6 +13143,10 @@
             "status": "address_confirmed_marker_differs",
             "url": "https://camra.org.uk/pubs/191962"
           },
+          "fsa_independent": {
+            "status": "no_name_match",
+            "url": ""
+          },
           "openstreetmap-named-venue": {
             "status": "confirmed",
             "url": "https://www.openstreetmap.org/node/597413100"
@@ -13738,6 +13774,10 @@
             "status": "address_confirmed_marker_differs",
             "url": "https://camra.org.uk/pubs/160706"
           },
+          "fsa_independent": {
+            "status": "coordinate_agreement",
+            "url": "https://ratings.food.gov.uk/business/2002727"
+          },
           "reviewed-building-source": {
             "status": "confirmed",
             "url": "https://www.planning.data.gov.uk/entity/31498756"
@@ -14301,6 +14341,10 @@
           "camra": {
             "status": "address_confirmed_marker_differs",
             "url": "https://camra.org.uk/pubs/193740"
+          },
+          "fsa_independent": {
+            "status": "coordinate_disagreement",
+            "url": "https://ratings.food.gov.uk/business/65669"
           },
           "openstreetmap-named-venue": {
             "status": "confirmed",
@@ -15289,6 +15333,10 @@
             "status": "address_confirmed_marker_differs",
             "url": "https://camra.org.uk/pubs/181767"
           },
+          "fsa_independent": {
+            "status": "coordinate_disagreement",
+            "url": "https://ratings.food.gov.uk/business/1679371"
+          },
           "openstreetmap-named-venue": {
             "status": "confirmed",
             "url": "https://www.openstreetmap.org/node/1151202089"
@@ -16114,6 +16162,10 @@
           "camra": {
             "status": "address_confirmed_marker_differs",
             "url": "https://camra.org.uk/pubs/143984"
+          },
+          "fsa_independent": {
+            "status": "coordinate_disagreement",
+            "url": "https://ratings.food.gov.uk/business/1979266"
           },
           "openstreetmap-named-venue": {
             "status": "confirmed",
@@ -19560,21 +19612,21 @@
       "current_key": "dick turpin|newcastle-u-l: higherland|st5 2qs",
       "independent_location_check": {
         "actionable": false,
-        "checked_at": "2026-11-03",
+        "checked_at": "2026-11-04",
         "comparisons": [
           {
             "address": "1 Gallows Tree Lane, Newcastle Under Lyme, Staffordshire",
-            "difference_metres": 5.2,
+            "difference_metres": 75.2,
             "lat": 53.003846,
             "lng": -2.248743,
             "name": "DICK TURPIN",
             "postcode": "ST5 2QS",
             "queried_postcode": "ST5 2QS",
-            "status": "coordinate_agreement",
+            "status": "coordinate_disagreement",
             "url": "https://ratings.food.gov.uk/business/131886"
           }
         ],
-        "confidence": "independent_coordinate_agreement",
+        "confidence": "existing_evidence_needs_corroboration",
         "independent_of_pin": true,
         "listing": {
           "postcode": "ST5 2QS",
@@ -19585,25 +19637,27 @@
         "owner_pin_confirmed": false,
         "owner_reviewed": false,
         "pin": {
-          "lat": 53.0038,
-          "lng": -2.24873
+          "lat": 53.00344701,
+          "lng": -2.24783466
         },
-        "priority": 3,
+        "priority": 2,
         "reasons": [],
         "reference": {
           "address": "1 Gallows Tree Lane, Newcastle Under Lyme, Staffordshire",
-          "difference_metres": 5.2,
+          "difference_metres": 75.2,
           "lat": 53.003846,
           "lng": -2.248743,
           "name": "DICK TURPIN",
           "postcode": "ST5 2QS",
           "queried_postcode": "ST5 2QS",
-          "status": "coordinate_agreement",
+          "status": "coordinate_disagreement",
           "url": "https://ratings.food.gov.uk/business/131886"
         },
         "review_category": "informational",
-        "status": "coordinate_agreement",
-        "warnings": []
+        "status": "coordinate_disagreement",
+        "warnings": [
+          "FSA coordinate is 75.2m from the accepted pin; informational only because the FSA geocode may be approximate"
+        ]
       },
       "listing": {
         "area": "Staffordshire",
@@ -21699,21 +21753,21 @@
       "current_key": "jolly potters|castle donington|de74 2nh",
       "independent_location_check": {
         "actionable": false,
-        "checked_at": "2026-11-03",
+        "checked_at": "2026-11-04",
         "comparisons": [
           {
             "address": "36 Hillside, Castle Donington, Derby",
-            "difference_metres": 8.9,
+            "difference_metres": 73.6,
             "lat": 52.843769,
             "lng": -1.337368,
             "name": "The Jolly Potters",
             "postcode": "DE74 2NH",
             "queried_postcode": "DE74 2NH",
-            "status": "coordinate_agreement",
+            "status": "coordinate_disagreement",
             "url": "https://ratings.food.gov.uk/business/430241"
           }
         ],
-        "confidence": "independent_coordinate_agreement",
+        "confidence": "existing_evidence_needs_corroboration",
         "independent_of_pin": true,
         "listing": {
           "postcode": "DE74 2NH",
@@ -21724,25 +21778,27 @@
         "owner_pin_confirmed": false,
         "owner_reviewed": false,
         "pin": {
-          "lat": 52.8437,
-          "lng": -1.3373
+          "lat": 52.84311894,
+          "lng": -1.33716514
         },
-        "priority": 3,
+        "priority": 2,
         "reasons": [],
         "reference": {
           "address": "36 Hillside, Castle Donington, Derby",
-          "difference_metres": 8.9,
+          "difference_metres": 73.6,
           "lat": 52.843769,
           "lng": -1.337368,
           "name": "The Jolly Potters",
           "postcode": "DE74 2NH",
           "queried_postcode": "DE74 2NH",
-          "status": "coordinate_agreement",
+          "status": "coordinate_disagreement",
           "url": "https://ratings.food.gov.uk/business/430241"
         },
         "review_category": "informational",
-        "status": "coordinate_agreement",
-        "warnings": []
+        "status": "coordinate_disagreement",
+        "warnings": [
+          "FSA coordinate is 73.6m from the accepted pin; informational only because the FSA geocode may be approximate"
+        ]
       },
       "listing": {
         "area": "Leicestershire",
@@ -23517,21 +23573,21 @@
       "current_key": "george inn|coleorton|le67 8hf",
       "independent_location_check": {
         "actionable": false,
-        "checked_at": "2026-11-03",
+        "checked_at": "2026-11-04",
         "comparisons": [
           {
             "address": "George Inn, Loughborough Road, Coleorton, Coalville",
-            "difference_metres": 5.3,
+            "difference_metres": 483.5,
             "lat": 52.752744,
             "lng": -1.391732,
             "name": "The George Inn",
             "postcode": "LE67 8HF",
             "queried_postcode": "LE67 8HF",
-            "status": "coordinate_agreement",
+            "status": "coordinate_disagreement",
             "url": "https://ratings.food.gov.uk/business/1082528"
           }
         ],
-        "confidence": "independent_coordinate_agreement",
+        "confidence": "existing_evidence_needs_corroboration",
         "independent_of_pin": true,
         "listing": {
           "postcode": "LE67 8HF",
@@ -23542,25 +23598,27 @@
         "owner_pin_confirmed": false,
         "owner_reviewed": false,
         "pin": {
-          "lat": 52.7527,
-          "lng": -1.3917
+          "lat": 52.7517834,
+          "lng": -1.398739
         },
-        "priority": 3,
+        "priority": 2,
         "reasons": [],
         "reference": {
           "address": "George Inn, Loughborough Road, Coleorton, Coalville",
-          "difference_metres": 5.3,
+          "difference_metres": 483.5,
           "lat": 52.752744,
           "lng": -1.391732,
           "name": "The George Inn",
           "postcode": "LE67 8HF",
           "queried_postcode": "LE67 8HF",
-          "status": "coordinate_agreement",
+          "status": "coordinate_disagreement",
           "url": "https://ratings.food.gov.uk/business/1082528"
         },
         "review_category": "informational",
-        "status": "coordinate_agreement",
-        "warnings": []
+        "status": "coordinate_disagreement",
+        "warnings": [
+          "FSA coordinate is 483.5m from the accepted pin; informational only because the FSA geocode may be approximate"
+        ]
       },
       "listing": {
         "area": "Leicestershire",
@@ -24108,21 +24166,21 @@
       "current_key": "vine inn|newcastle-u-l: silverdale|st5 6lx",
       "independent_location_check": {
         "actionable": false,
-        "checked_at": "2026-11-03",
+        "checked_at": "2026-11-04",
         "comparisons": [
           {
             "address": "130 High Street, Silverdale, Newcastle Under Lyme",
-            "difference_metres": 13.7,
+            "difference_metres": 41.1,
             "lat": 53.014956,
             "lng": -2.269868,
             "name": "THE VINE",
             "postcode": "ST5 6LX",
             "queried_postcode": "ST5 6LX",
-            "status": "coordinate_agreement",
+            "status": "nearby",
             "url": "https://ratings.food.gov.uk/business/524899"
           }
         ],
-        "confidence": "independent_coordinate_agreement",
+        "confidence": "existing_evidence_needs_corroboration",
         "independent_of_pin": true,
         "listing": {
           "postcode": "ST5 6LX",
@@ -24133,25 +24191,27 @@
         "owner_pin_confirmed": false,
         "owner_reviewed": false,
         "pin": {
-          "lat": 53.0149,
-          "lng": -2.27005
+          "lat": 53.01528358,
+          "lng": -2.26958293
         },
-        "priority": 3,
+        "priority": 2,
         "reasons": [],
         "reference": {
           "address": "130 High Street, Silverdale, Newcastle Under Lyme",
-          "difference_metres": 13.7,
+          "difference_metres": 41.1,
           "lat": 53.014956,
           "lng": -2.269868,
           "name": "THE VINE",
           "postcode": "ST5 6LX",
           "queried_postcode": "ST5 6LX",
-          "status": "coordinate_agreement",
+          "status": "nearby",
           "url": "https://ratings.food.gov.uk/business/524899"
         },
         "review_category": "informational",
-        "status": "coordinate_agreement",
-        "warnings": []
+        "status": "nearby",
+        "warnings": [
+          "FSA coordinate is 25-50m away; informational only"
+        ]
       },
       "listing": {
         "area": "Staffordshire",
@@ -28841,21 +28901,21 @@
       "current_key": "white hart|stanley|de7 6ex",
       "independent_location_check": {
         "actionable": false,
-        "checked_at": "2026-11-03",
+        "checked_at": "2026-11-04",
         "comparisons": [
           {
             "address": "Derby Road, , Stanley",
-            "difference_metres": 6.7,
+            "difference_metres": 342.5,
             "lat": 52.955646,
             "lng": -1.381165,
             "name": "The White Hart Inn",
             "postcode": "DE7 6EX",
             "queried_postcode": "DE7 6EX",
-            "status": "coordinate_agreement",
+            "status": "coordinate_disagreement",
             "url": "https://ratings.food.gov.uk/business/1157419"
           }
         ],
-        "confidence": "independent_coordinate_agreement",
+        "confidence": "existing_evidence_needs_corroboration",
         "independent_of_pin": true,
         "listing": {
           "postcode": "DE7 6EX",
@@ -28866,25 +28926,27 @@
         "owner_pin_confirmed": false,
         "owner_reviewed": false,
         "pin": {
-          "lat": 52.9556,
-          "lng": -1.3811
+          "lat": 52.95865641,
+          "lng": -1.38008298
         },
-        "priority": 3,
+        "priority": 2,
         "reasons": [],
         "reference": {
           "address": "Derby Road, , Stanley",
-          "difference_metres": 6.7,
+          "difference_metres": 342.5,
           "lat": 52.955646,
           "lng": -1.381165,
           "name": "The White Hart Inn",
           "postcode": "DE7 6EX",
           "queried_postcode": "DE7 6EX",
-          "status": "coordinate_agreement",
+          "status": "coordinate_disagreement",
           "url": "https://ratings.food.gov.uk/business/1157419"
         },
         "review_category": "informational",
-        "status": "coordinate_agreement",
-        "warnings": []
+        "status": "coordinate_disagreement",
+        "warnings": [
+          "FSA coordinate is 342.5m from the accepted pin; informational only because the FSA geocode may be approximate"
+        ]
       },
       "listing": {
         "area": "Derbyshire",
@@ -29191,7 +29253,7 @@
       "current_key": "llanover arms|pontypridd|cf37 4pe",
       "independent_location_check": {
         "actionable": false,
-        "checked_at": "2026-11-03",
+        "checked_at": "2026-11-04",
         "comparisons": [
           {
             "name_matches": 0,
@@ -29211,8 +29273,8 @@
         "owner_pin_confirmed": false,
         "owner_reviewed": false,
         "pin": {
-          "lat": 51.6045,
-          "lng": -3.3372
+          "lat": 51.6046117,
+          "lng": -3.3363418
         },
         "priority": 2,
         "reasons": [],
@@ -33827,17 +33889,17 @@
       "current_key": "malt shovel|worthington|le65 1rq",
       "independent_location_check": {
         "actionable": false,
-        "checked_at": "2026-11-03",
+        "checked_at": "2026-11-04",
         "comparisons": [
           {
             "address": "29 Main Street, Worthington, Ashby-De-La-Zouch, Leicestershire",
-            "difference_metres": 23.7,
+            "difference_metres": 86.7,
             "lat": 52.780089,
             "lng": -1.394953,
             "name": "The Malt Shovel",
             "postcode": "LE65 1RQ",
             "queried_postcode": "LE65 1RQ",
-            "status": "coordinate_agreement",
+            "status": "coordinate_disagreement",
             "url": "https://ratings.food.gov.uk/business/1094515"
           }
         ],
@@ -33852,25 +33914,27 @@
         "owner_pin_confirmed": false,
         "owner_reviewed": false,
         "pin": {
-          "lat": 52.7803,
-          "lng": -1.3949
+          "lat": 52.7793138,
+          "lng": -1.3950916
         },
-        "priority": 3,
+        "priority": 2,
         "reasons": [],
         "reference": {
           "address": "29 Main Street, Worthington, Ashby-De-La-Zouch, Leicestershire",
-          "difference_metres": 23.7,
+          "difference_metres": 86.7,
           "lat": 52.780089,
           "lng": -1.394953,
           "name": "The Malt Shovel",
           "postcode": "LE65 1RQ",
           "queried_postcode": "LE65 1RQ",
-          "status": "coordinate_agreement",
+          "status": "coordinate_disagreement",
           "url": "https://ratings.food.gov.uk/business/1094515"
         },
         "review_category": "informational",
-        "status": "coordinate_agreement",
-        "warnings": []
+        "status": "coordinate_disagreement",
+        "warnings": [
+          "FSA coordinate is 86.7m from the accepted pin; informational only because the FSA geocode may be approximate"
+        ]
       },
       "listing": {
         "area": "Leicestershire",
@@ -34831,21 +34895,21 @@
       "current_key": "botanical arms|sheffield: ecclesall road|s11 8pr",
       "independent_location_check": {
         "actionable": false,
-        "checked_at": "2026-11-03",
+        "checked_at": "2026-11-04",
         "comparisons": [
           {
             "address": "507 Ecclesall Road, Sheffield",
-            "difference_metres": 57.5,
+            "difference_metres": 2.3,
             "lat": 53.3689268,
             "lng": -1.4960899,
             "name": "Botanical Arms",
             "postcode": "S11 8PR",
             "queried_postcode": "S11 8PR",
-            "status": "coordinate_disagreement",
+            "status": "coordinate_agreement",
             "url": "https://ratings.food.gov.uk/business/1794138"
           }
         ],
-        "confidence": "existing_evidence_needs_corroboration",
+        "confidence": "independent_coordinate_agreement",
         "independent_of_pin": true,
         "listing": {
           "postcode": "S11 8PR",
@@ -34856,27 +34920,25 @@
         "owner_pin_confirmed": false,
         "owner_reviewed": false,
         "pin": {
-          "lat": 53.3688,
-          "lng": -1.49693
+          "lat": 53.36890716,
+          "lng": -1.4960797
         },
-        "priority": 2,
+        "priority": 3,
         "reasons": [],
         "reference": {
           "address": "507 Ecclesall Road, Sheffield",
-          "difference_metres": 57.5,
+          "difference_metres": 2.3,
           "lat": 53.3689268,
           "lng": -1.4960899,
           "name": "Botanical Arms",
           "postcode": "S11 8PR",
           "queried_postcode": "S11 8PR",
-          "status": "coordinate_disagreement",
+          "status": "coordinate_agreement",
           "url": "https://ratings.food.gov.uk/business/1794138"
         },
         "review_category": "informational",
-        "status": "coordinate_disagreement",
-        "warnings": [
-          "FSA coordinate is 57.5m from the accepted pin; informational only because the FSA geocode may be approximate"
-        ]
+        "status": "coordinate_agreement",
+        "warnings": []
       },
       "listing": {
         "area": "South Yorkshire",
@@ -37091,21 +37153,21 @@
       "current_key": "red lion|broughton|dn20 0hy",
       "independent_location_check": {
         "actionable": false,
-        "checked_at": "2026-11-03",
+        "checked_at": "2026-11-04",
         "comparisons": [
           {
             "address": "The Red Lion, 45 High Street, Broughton, Brigg",
-            "difference_metres": 55.8,
+            "difference_metres": 1.4,
             "lat": 53.5656797,
             "lng": -0.5501359,
             "name": "Red Lion",
             "postcode": "DN20 0HY",
             "queried_postcode": "DN20 0HY",
-            "status": "coordinate_disagreement",
+            "status": "coordinate_agreement",
             "url": "https://ratings.food.gov.uk/business/1940825"
           }
         ],
-        "confidence": "existing_evidence_needs_corroboration",
+        "confidence": "independent_coordinate_agreement",
         "independent_of_pin": true,
         "listing": {
           "postcode": "DN20 0HY",
@@ -37116,27 +37178,25 @@
         "owner_pin_confirmed": false,
         "owner_reviewed": false,
         "pin": {
-          "lat": 53.566,
-          "lng": -0.550787
+          "lat": 53.56569245,
+          "lng": -0.55013755
         },
-        "priority": 2,
+        "priority": 3,
         "reasons": [],
         "reference": {
           "address": "The Red Lion, 45 High Street, Broughton, Brigg",
-          "difference_metres": 55.8,
+          "difference_metres": 1.4,
           "lat": 53.5656797,
           "lng": -0.5501359,
           "name": "Red Lion",
           "postcode": "DN20 0HY",
           "queried_postcode": "DN20 0HY",
-          "status": "coordinate_disagreement",
+          "status": "coordinate_agreement",
           "url": "https://ratings.food.gov.uk/business/1940825"
         },
         "review_category": "informational",
-        "status": "coordinate_disagreement",
-        "warnings": [
-          "FSA coordinate is 55.8m from the accepted pin; informational only because the FSA geocode may be approximate"
-        ]
+        "status": "coordinate_agreement",
+        "warnings": []
       },
       "listing": {
         "area": "Lincolnshire",
@@ -40978,21 +41038,21 @@
       "current_key": "devonport hotel|middleton one row|dl2 1as",
       "independent_location_check": {
         "actionable": false,
-        "checked_at": "2026-11-03",
+        "checked_at": "2026-11-04",
         "comparisons": [
           {
             "address": "Devonport Hotel, 16 - 18 The Front, MIDDLETON ONE ROW, DARLINGTON",
-            "difference_metres": 0.0,
+            "difference_metres": 109.3,
             "lat": 54.504289,
             "lng": -1.456022,
             "name": "The Devonport",
             "postcode": "DL2 1AS",
             "queried_postcode": "DL2 1AS",
-            "status": "coordinate_agreement",
+            "status": "coordinate_disagreement",
             "url": "https://ratings.food.gov.uk/business/1100412"
           }
         ],
-        "confidence": "independent_coordinate_agreement",
+        "confidence": "existing_evidence_needs_corroboration",
         "independent_of_pin": true,
         "listing": {
           "postcode": "DL2 1AS",
@@ -41003,25 +41063,27 @@
         "owner_pin_confirmed": false,
         "owner_reviewed": false,
         "pin": {
-          "lat": 54.504289,
-          "lng": -1.456022
+          "lat": 54.50479834,
+          "lng": -1.45747069
         },
-        "priority": 3,
+        "priority": 2,
         "reasons": [],
         "reference": {
           "address": "Devonport Hotel, 16 - 18 The Front, MIDDLETON ONE ROW, DARLINGTON",
-          "difference_metres": 0.0,
+          "difference_metres": 109.3,
           "lat": 54.504289,
           "lng": -1.456022,
           "name": "The Devonport",
           "postcode": "DL2 1AS",
           "queried_postcode": "DL2 1AS",
-          "status": "coordinate_agreement",
+          "status": "coordinate_disagreement",
           "url": "https://ratings.food.gov.uk/business/1100412"
         },
         "review_category": "informational",
-        "status": "coordinate_agreement",
-        "warnings": []
+        "status": "coordinate_disagreement",
+        "warnings": [
+          "FSA coordinate is 109.3m from the accepted pin; informational only because the FSA geocode may be approximate"
+        ]
       },
       "listing": {
         "area": "North Yorkshire",
@@ -41765,21 +41827,21 @@
       "current_key": "grove|burton u-t: stapenhill|de15 9dq",
       "independent_location_check": {
         "actionable": false,
-        "checked_at": "2026-11-03",
+        "checked_at": "2026-11-04",
         "comparisons": [
           {
             "address": "Grove Hotel, 1 Merrydale Road, Stapenhill, Burton upon Trent",
-            "difference_metres": 0.0,
+            "difference_metres": 50.2,
             "lat": 52.7946166992188,
             "lng": -1.61502194404602,
             "name": "THE GROVE",
             "postcode": "DE15 9DQ",
             "queried_postcode": "DE15 9DQ",
-            "status": "coordinate_agreement",
+            "status": "coordinate_disagreement",
             "url": "https://ratings.food.gov.uk/business/1248075"
           }
         ],
-        "confidence": "independent_coordinate_agreement",
+        "confidence": "existing_evidence_needs_corroboration",
         "independent_of_pin": true,
         "listing": {
           "postcode": "DE15 9DQ",
@@ -41790,25 +41852,27 @@
         "owner_pin_confirmed": false,
         "owner_reviewed": false,
         "pin": {
-          "lat": 52.7946166992188,
-          "lng": -1.61502194404602
+          "lat": 52.7944889,
+          "lng": -1.61573725
         },
-        "priority": 3,
+        "priority": 2,
         "reasons": [],
         "reference": {
           "address": "Grove Hotel, 1 Merrydale Road, Stapenhill, Burton upon Trent",
-          "difference_metres": 0.0,
+          "difference_metres": 50.2,
           "lat": 52.7946166992188,
           "lng": -1.61502194404602,
           "name": "THE GROVE",
           "postcode": "DE15 9DQ",
           "queried_postcode": "DE15 9DQ",
-          "status": "coordinate_agreement",
+          "status": "coordinate_disagreement",
           "url": "https://ratings.food.gov.uk/business/1248075"
         },
         "review_category": "informational",
-        "status": "coordinate_agreement",
-        "warnings": []
+        "status": "coordinate_disagreement",
+        "warnings": [
+          "FSA coordinate is 50.2m from the accepted pin; informational only because the FSA geocode may be approximate"
+        ]
       },
       "listing": {
         "area": "Staffordshire",
@@ -46085,11 +46149,11 @@
       "current_key": "old crown|shardlow|de72 2hl",
       "independent_location_check": {
         "actionable": false,
-        "checked_at": "2026-11-03",
+        "checked_at": "2026-11-04",
         "comparisons": [
           {
             "address": "Old Crown Inn, Cavendish Bridge, Shardlow, Derby",
-            "difference_metres": 206.4,
+            "difference_metres": 62.7,
             "lat": 52.864226,
             "lng": -1.338393,
             "name": "Old Crown Inn",
@@ -46110,14 +46174,14 @@
         "owner_pin_confirmed": false,
         "owner_reviewed": false,
         "pin": {
-          "lat": 52.8638,
-          "lng": -1.3354
+          "lat": 52.86400673,
+          "lng": -1.33925288
         },
         "priority": 2,
         "reasons": [],
         "reference": {
           "address": "Old Crown Inn, Cavendish Bridge, Shardlow, Derby",
-          "difference_metres": 206.4,
+          "difference_metres": 62.7,
           "lat": 52.864226,
           "lng": -1.338393,
           "name": "Old Crown Inn",
@@ -46129,7 +46193,7 @@
         "review_category": "informational",
         "status": "coordinate_disagreement",
         "warnings": [
-          "FSA coordinate is 206.4m from the accepted pin; informational only because the FSA geocode may be approximate"
+          "FSA coordinate is 62.7m from the accepted pin; informational only because the FSA geocode may be approximate"
         ]
       },
       "listing": {
@@ -48684,21 +48748,21 @@
       "current_key": "rutland cottage|ilkeston|de7 8te",
       "independent_location_check": {
         "actionable": false,
-        "checked_at": "2026-11-03",
+        "checked_at": "2026-11-04",
         "comparisons": [
           {
             "address": "Rutland Cottage, 162 Heanor Road, , Ilkeston",
-            "difference_metres": 8.0,
+            "difference_metres": 76.2,
             "lat": 52.985669,
             "lng": -1.316833,
             "name": "Rutland Cottage Inn",
             "postcode": "DE7 8TE",
             "queried_postcode": "DE7 8TE",
-            "status": "coordinate_agreement",
+            "status": "coordinate_disagreement",
             "url": "https://ratings.food.gov.uk/business/251830"
           }
         ],
-        "confidence": "independent_coordinate_agreement",
+        "confidence": "existing_evidence_needs_corroboration",
         "independent_of_pin": true,
         "listing": {
           "postcode": "DE7 8TE",
@@ -48709,25 +48773,27 @@
         "owner_pin_confirmed": false,
         "owner_reviewed": false,
         "pin": {
-          "lat": 52.9856,
-          "lng": -1.3168
+          "lat": 52.98509108,
+          "lng": -1.31622255
         },
-        "priority": 3,
+        "priority": 2,
         "reasons": [],
         "reference": {
           "address": "Rutland Cottage, 162 Heanor Road, , Ilkeston",
-          "difference_metres": 8.0,
+          "difference_metres": 76.2,
           "lat": 52.985669,
           "lng": -1.316833,
           "name": "Rutland Cottage Inn",
           "postcode": "DE7 8TE",
           "queried_postcode": "DE7 8TE",
-          "status": "coordinate_agreement",
+          "status": "coordinate_disagreement",
           "url": "https://ratings.food.gov.uk/business/251830"
         },
         "review_category": "informational",
-        "status": "coordinate_agreement",
-        "warnings": []
+        "status": "coordinate_disagreement",
+        "warnings": [
+          "FSA coordinate is 76.2m from the accepted pin; informational only because the FSA geocode may be approximate"
+        ]
       },
       "listing": {
         "area": "Derbyshire",
@@ -49199,21 +49265,21 @@
       "current_key": "royal oak|attleborough|cv11 4jy",
       "independent_location_check": {
         "actionable": false,
-        "checked_at": "2026-11-03",
+        "checked_at": "2026-11-04",
         "comparisons": [
           {
             "address": "The Royal Oak, 4 The Square, , Nuneaton",
-            "difference_metres": 9.5,
+            "difference_metres": 54.9,
             "lat": 52.513279,
             "lng": -1.455855,
             "name": "The Royal Oak",
             "postcode": "CV11 4JY",
             "queried_postcode": "CV11 4JY",
-            "status": "coordinate_agreement",
+            "status": "coordinate_disagreement",
             "url": "https://ratings.food.gov.uk/business/362180"
           }
         ],
-        "confidence": "independent_coordinate_agreement",
+        "confidence": "existing_evidence_needs_corroboration",
         "independent_of_pin": true,
         "listing": {
           "postcode": "CV11 4JY",
@@ -49224,25 +49290,27 @@
         "owner_pin_confirmed": false,
         "owner_reviewed": false,
         "pin": {
-          "lat": 52.5132,
-          "lng": -1.4558
+          "lat": 52.51376172,
+          "lng": -1.45568405
         },
-        "priority": 3,
+        "priority": 2,
         "reasons": [],
         "reference": {
           "address": "The Royal Oak, 4 The Square, , Nuneaton",
-          "difference_metres": 9.5,
+          "difference_metres": 54.9,
           "lat": 52.513279,
           "lng": -1.455855,
           "name": "The Royal Oak",
           "postcode": "CV11 4JY",
           "queried_postcode": "CV11 4JY",
-          "status": "coordinate_agreement",
+          "status": "coordinate_disagreement",
           "url": "https://ratings.food.gov.uk/business/362180"
         },
         "review_category": "informational",
-        "status": "coordinate_agreement",
-        "warnings": []
+        "status": "coordinate_disagreement",
+        "warnings": [
+          "FSA coordinate is 54.9m from the accepted pin; informational only because the FSA geocode may be approximate"
+        ]
       },
       "listing": {
         "area": "Warwickshire",
@@ -50448,7 +50516,7 @@
       "current_key": "cross keys|penrhynside|ll30 3dd",
       "independent_location_check": {
         "actionable": false,
-        "checked_at": "2026-11-03",
+        "checked_at": "2026-11-04",
         "comparisons": [
           {
             "name_matches": 1,
@@ -50468,8 +50536,8 @@
         "owner_pin_confirmed": false,
         "owner_reviewed": false,
         "pin": {
-          "lat": 53.31756,
-          "lng": -3.78107
+          "lat": 53.31740262,
+          "lng": -3.7819601
         },
         "priority": 2,
         "reasons": [],
@@ -55331,21 +55399,21 @@
       "current_key": "new inn|alphington|ex2 8ta",
       "independent_location_check": {
         "actionable": false,
-        "checked_at": "2026-11-03",
+        "checked_at": "2026-11-04",
         "comparisons": [
           {
             "address": "74 Church Road, Alphington, Exeter",
-            "difference_metres": 63.3,
+            "difference_metres": 2.2,
             "lat": 50.6998508,
             "lng": -3.5339942,
             "name": "The New Inn",
             "postcode": "EX2 8TA",
             "queried_postcode": "EX2 8TA",
-            "status": "coordinate_disagreement",
+            "status": "coordinate_agreement",
             "url": "https://ratings.food.gov.uk/business/1651216"
           }
         ],
-        "confidence": "existing_evidence_needs_corroboration",
+        "confidence": "independent_coordinate_agreement",
         "independent_of_pin": true,
         "listing": {
           "postcode": "EX2 8TA",
@@ -55356,27 +55424,25 @@
         "owner_pin_confirmed": false,
         "owner_reviewed": false,
         "pin": {
-          "lat": 50.700404,
-          "lng": -3.533785
+          "lat": 50.69983161,
+          "lng": -3.53400166
         },
-        "priority": 2,
+        "priority": 3,
         "reasons": [],
         "reference": {
           "address": "74 Church Road, Alphington, Exeter",
-          "difference_metres": 63.3,
+          "difference_metres": 2.2,
           "lat": 50.6998508,
           "lng": -3.5339942,
           "name": "The New Inn",
           "postcode": "EX2 8TA",
           "queried_postcode": "EX2 8TA",
-          "status": "coordinate_disagreement",
+          "status": "coordinate_agreement",
           "url": "https://ratings.food.gov.uk/business/1651216"
         },
         "review_category": "informational",
-        "status": "coordinate_disagreement",
-        "warnings": [
-          "FSA coordinate is 63.3m from the accepted pin; informational only because the FSA geocode may be approximate"
-        ]
+        "status": "coordinate_agreement",
+        "warnings": []
       },
       "listing": {
         "area": "Devon",
@@ -58612,17 +58678,17 @@
       "current_key": "crown|southport: birkdale|pr8 3bz",
       "independent_location_check": {
         "actionable": false,
-        "checked_at": "2026-11-03",
+        "checked_at": "2026-11-04",
         "comparisons": [
           {
             "address": "304 Liverpool Road, Birkdale, Merseyside",
-            "difference_metres": 0.9,
+            "difference_metres": 192.9,
             "lat": 53.615802,
             "lng": -3.017414,
             "name": "Crown Hotel",
             "postcode": "PR8 3BZ",
             "queried_postcode": "PR8 3BZ",
-            "status": "coordinate_agreement",
+            "status": "coordinate_disagreement",
             "url": "https://ratings.food.gov.uk/business/102154"
           }
         ],
@@ -58637,25 +58703,27 @@
         "owner_pin_confirmed": false,
         "owner_reviewed": false,
         "pin": {
-          "lat": 53.6158,
-          "lng": -3.0174
+          "lat": 53.61749025,
+          "lng": -3.01673978
         },
-        "priority": 3,
+        "priority": 2,
         "reasons": [],
         "reference": {
           "address": "304 Liverpool Road, Birkdale, Merseyside",
-          "difference_metres": 0.9,
+          "difference_metres": 192.9,
           "lat": 53.615802,
           "lng": -3.017414,
           "name": "Crown Hotel",
           "postcode": "PR8 3BZ",
           "queried_postcode": "PR8 3BZ",
-          "status": "coordinate_agreement",
+          "status": "coordinate_disagreement",
           "url": "https://ratings.food.gov.uk/business/102154"
         },
         "review_category": "informational",
-        "status": "coordinate_agreement",
-        "warnings": []
+        "status": "coordinate_disagreement",
+        "warnings": [
+          "FSA coordinate is 192.9m from the accepted pin; informational only because the FSA geocode may be approximate"
+        ]
       },
       "listing": {
         "area": "Merseyside",
@@ -58847,21 +58915,21 @@
       "current_key": "wheatsheaf stores|stoke: northwood|st1 6pb",
       "independent_location_check": {
         "actionable": false,
-        "checked_at": "2026-11-03",
+        "checked_at": "2026-11-04",
         "comparisons": [
           {
             "address": "78 Keelings Road, Hanley, Stoke-On-Trent",
-            "difference_metres": 0.0,
+            "difference_metres": 60.8,
             "lat": 53.030678,
             "lng": -2.167021,
             "name": "Wheatsheaf Stores",
             "postcode": "ST1 6PB",
             "queried_postcode": "ST1 6PB",
-            "status": "coordinate_agreement",
+            "status": "coordinate_disagreement",
             "url": "https://ratings.food.gov.uk/business/681168"
           }
         ],
-        "confidence": "independent_coordinate_agreement",
+        "confidence": "existing_evidence_needs_corroboration",
         "independent_of_pin": true,
         "listing": {
           "postcode": "ST1 6PB",
@@ -58872,25 +58940,27 @@
         "owner_pin_confirmed": false,
         "owner_reviewed": false,
         "pin": {
-          "lat": 53.030678,
-          "lng": -2.167021
+          "lat": 53.03051707,
+          "lng": -2.16615238
         },
-        "priority": 3,
+        "priority": 2,
         "reasons": [],
         "reference": {
           "address": "78 Keelings Road, Hanley, Stoke-On-Trent",
-          "difference_metres": 0.0,
+          "difference_metres": 60.8,
           "lat": 53.030678,
           "lng": -2.167021,
           "name": "Wheatsheaf Stores",
           "postcode": "ST1 6PB",
           "queried_postcode": "ST1 6PB",
-          "status": "coordinate_agreement",
+          "status": "coordinate_disagreement",
           "url": "https://ratings.food.gov.uk/business/681168"
         },
         "review_category": "informational",
-        "status": "coordinate_agreement",
-        "warnings": []
+        "status": "coordinate_disagreement",
+        "warnings": [
+          "FSA coordinate is 60.8m from the accepted pin; informational only because the FSA geocode may be approximate"
+        ]
       },
       "listing": {
         "area": "Staffordshire",
@@ -67263,17 +67333,17 @@
       "current_key": "windmill|southport: central|pr9 0el",
       "independent_location_check": {
         "actionable": false,
-        "checked_at": "2026-11-03",
+        "checked_at": "2026-11-04",
         "comparisons": [
           {
             "address": "12-14 Seabank Road, Southport, Merseyside",
-            "difference_metres": 34.3,
+            "difference_metres": 64.0,
             "lat": 53.652369,
             "lng": -3.003376,
             "name": "The Windmill",
             "postcode": "PR9 0EL",
             "queried_postcode": "PR9 0EL",
-            "status": "nearby",
+            "status": "coordinate_disagreement",
             "url": "https://ratings.food.gov.uk/business/124078"
           }
         ],
@@ -67288,26 +67358,26 @@
         "owner_pin_confirmed": false,
         "owner_reviewed": false,
         "pin": {
-          "lat": 53.652545928955,
-          "lng": -3.0029489994049
+          "lat": 53.6520621,
+          "lng": -3.0025542
         },
         "priority": 2,
         "reasons": [],
         "reference": {
           "address": "12-14 Seabank Road, Southport, Merseyside",
-          "difference_metres": 34.3,
+          "difference_metres": 64.0,
           "lat": 53.652369,
           "lng": -3.003376,
           "name": "The Windmill",
           "postcode": "PR9 0EL",
           "queried_postcode": "PR9 0EL",
-          "status": "nearby",
+          "status": "coordinate_disagreement",
           "url": "https://ratings.food.gov.uk/business/124078"
         },
         "review_category": "informational",
-        "status": "nearby",
+        "status": "coordinate_disagreement",
         "warnings": [
-          "FSA coordinate is 25-50m away; informational only"
+          "FSA coordinate is 64.0m from the accepted pin; informational only because the FSA geocode may be approximate"
         ]
       },
       "listing": {
@@ -71781,21 +71851,21 @@
       "current_key": "seabridge|newcastle-u-l: clayton|st5 3ha",
       "independent_location_check": {
         "actionable": false,
-        "checked_at": "2026-11-03",
+        "checked_at": "2026-11-04",
         "comparisons": [
           {
             "address": "174 Seabridge Lane, Newcastle Under Lyme, Staffordshire",
-            "difference_metres": 5.2,
+            "difference_metres": 110.5,
             "lat": 52.990446,
             "lng": -2.234215,
             "name": "THE SEABRIDGE",
             "postcode": "ST5 3HA",
             "queried_postcode": "ST5 3HA",
-            "status": "coordinate_agreement",
+            "status": "coordinate_disagreement",
             "url": "https://ratings.food.gov.uk/business/571852"
           }
         ],
-        "confidence": "independent_coordinate_agreement",
+        "confidence": "existing_evidence_needs_corroboration",
         "independent_of_pin": true,
         "listing": {
           "postcode": "ST5 3HA",
@@ -71806,25 +71876,27 @@
         "owner_pin_confirmed": false,
         "owner_reviewed": false,
         "pin": {
-          "lat": 52.9904,
-          "lng": -2.2342
+          "lat": 52.99037264,
+          "lng": -2.23586104
         },
-        "priority": 3,
+        "priority": 2,
         "reasons": [],
         "reference": {
           "address": "174 Seabridge Lane, Newcastle Under Lyme, Staffordshire",
-          "difference_metres": 5.2,
+          "difference_metres": 110.5,
           "lat": 52.990446,
           "lng": -2.234215,
           "name": "THE SEABRIDGE",
           "postcode": "ST5 3HA",
           "queried_postcode": "ST5 3HA",
-          "status": "coordinate_agreement",
+          "status": "coordinate_disagreement",
           "url": "https://ratings.food.gov.uk/business/571852"
         },
         "review_category": "informational",
-        "status": "coordinate_agreement",
-        "warnings": []
+        "status": "coordinate_disagreement",
+        "warnings": [
+          "FSA coordinate is 110.5m from the accepted pin; informational only because the FSA geocode may be approximate"
+        ]
       },
       "listing": {
         "area": "Staffordshire",
@@ -82924,21 +82996,21 @@
       "current_key": "new storey|osgathorpe|le12 9ta",
       "independent_location_check": {
         "actionable": false,
-        "checked_at": "2026-11-03",
+        "checked_at": "2026-11-04",
         "comparisons": [
           {
             "address": "The Storey Arms, 41 Main Street, Osgathorpe, Loughborough",
-            "difference_metres": 81.5,
+            "difference_metres": 3.5,
             "lat": 52.7702201,
             "lng": -1.3692481,
             "name": "The New Storey",
             "postcode": "LE12 9TA",
             "queried_postcode": "LE12 9TA",
-            "status": "coordinate_disagreement",
+            "status": "coordinate_agreement",
             "url": "https://ratings.food.gov.uk/business/1814148"
           }
         ],
-        "confidence": "existing_evidence_needs_corroboration",
+        "confidence": "independent_coordinate_agreement",
         "independent_of_pin": true,
         "listing": {
           "postcode": "LE12 9TA",
@@ -82949,27 +83021,25 @@
         "owner_pin_confirmed": false,
         "owner_reviewed": false,
         "pin": {
-          "lat": 52.7709,
-          "lng": -1.3697
+          "lat": 52.7701886,
+          "lng": -1.3692471
         },
-        "priority": 2,
+        "priority": 3,
         "reasons": [],
         "reference": {
           "address": "The Storey Arms, 41 Main Street, Osgathorpe, Loughborough",
-          "difference_metres": 81.5,
+          "difference_metres": 3.5,
           "lat": 52.7702201,
           "lng": -1.3692481,
           "name": "The New Storey",
           "postcode": "LE12 9TA",
           "queried_postcode": "LE12 9TA",
-          "status": "coordinate_disagreement",
+          "status": "coordinate_agreement",
           "url": "https://ratings.food.gov.uk/business/1814148"
         },
         "review_category": "informational",
-        "status": "coordinate_disagreement",
-        "warnings": [
-          "FSA coordinate is 81.5m from the accepted pin; informational only because the FSA geocode may be approximate"
-        ]
+        "status": "coordinate_agreement",
+        "warnings": []
       },
       "listing": {
         "area": "Leicestershire",
@@ -84475,21 +84545,21 @@
       "current_key": "white hart|measham|de12 7lg",
       "independent_location_check": {
         "actionable": false,
-        "checked_at": "2026-11-03",
+        "checked_at": "2026-11-04",
         "comparisons": [
           {
             "address": "White Hart Public House, 13 Bosworth Road, Measham, Swadlincote",
-            "difference_metres": 4.9,
+            "difference_metres": 59.0,
             "lat": 52.70594,
             "lng": -1.505071,
             "name": "White Hart Inn",
             "postcode": "DE12 7LG",
             "queried_postcode": "DE12 7LG",
-            "status": "coordinate_agreement",
+            "status": "coordinate_disagreement",
             "url": "https://ratings.food.gov.uk/business/158682"
           }
         ],
-        "confidence": "independent_coordinate_agreement",
+        "confidence": "existing_evidence_needs_corroboration",
         "independent_of_pin": true,
         "listing": {
           "postcode": "DE12 7LG",
@@ -84500,25 +84570,27 @@
         "owner_pin_confirmed": false,
         "owner_reviewed": false,
         "pin": {
-          "lat": 52.7059,
-          "lng": -1.5051
+          "lat": 52.7059408,
+          "lng": -1.505946
         },
-        "priority": 3,
+        "priority": 2,
         "reasons": [],
         "reference": {
           "address": "White Hart Public House, 13 Bosworth Road, Measham, Swadlincote",
-          "difference_metres": 4.9,
+          "difference_metres": 59.0,
           "lat": 52.70594,
           "lng": -1.505071,
           "name": "White Hart Inn",
           "postcode": "DE12 7LG",
           "queried_postcode": "DE12 7LG",
-          "status": "coordinate_agreement",
+          "status": "coordinate_disagreement",
           "url": "https://ratings.food.gov.uk/business/158682"
         },
         "review_category": "informational",
-        "status": "coordinate_agreement",
-        "warnings": []
+        "status": "coordinate_disagreement",
+        "warnings": [
+          "FSA coordinate is 59.0m from the accepted pin; informational only because the FSA geocode may be approximate"
+        ]
       },
       "listing": {
         "area": "Leicestershire",
@@ -89264,21 +89336,21 @@
       "current_key": "gate|tansley|de4 5fn",
       "independent_location_check": {
         "actionable": false,
-        "checked_at": "2026-11-03",
+        "checked_at": "2026-11-04",
         "comparisons": [
           {
             "address": "The Knoll, Tansley, Derbyshire",
-            "difference_metres": 0.0,
+            "difference_metres": 181.4,
             "lat": 53.138426,
             "lng": -1.522227,
             "name": "Gate Inn",
             "postcode": "DE4 5FN",
             "queried_postcode": "DE4 5FN",
-            "status": "coordinate_agreement",
+            "status": "coordinate_disagreement",
             "url": "https://ratings.food.gov.uk/business/1626149"
           }
         ],
-        "confidence": "independent_coordinate_agreement",
+        "confidence": "existing_evidence_needs_corroboration",
         "independent_of_pin": true,
         "listing": {
           "postcode": "DE4 5FN",
@@ -89289,25 +89361,27 @@
         "owner_pin_confirmed": false,
         "owner_reviewed": false,
         "pin": {
-          "lat": 53.138426,
-          "lng": -1.522227
+          "lat": 53.13792069,
+          "lng": -1.51964125
         },
-        "priority": 3,
+        "priority": 2,
         "reasons": [],
         "reference": {
           "address": "The Knoll, Tansley, Derbyshire",
-          "difference_metres": 0.0,
+          "difference_metres": 181.4,
           "lat": 53.138426,
           "lng": -1.522227,
           "name": "Gate Inn",
           "postcode": "DE4 5FN",
           "queried_postcode": "DE4 5FN",
-          "status": "coordinate_agreement",
+          "status": "coordinate_disagreement",
           "url": "https://ratings.food.gov.uk/business/1626149"
         },
         "review_category": "informational",
-        "status": "coordinate_agreement",
-        "warnings": []
+        "status": "coordinate_disagreement",
+        "warnings": [
+          "FSA coordinate is 181.4m from the accepted pin; informational only because the FSA geocode may be approximate"
+        ]
       },
       "listing": {
         "area": "Derbyshire",
@@ -91123,7 +91197,7 @@
       "current_key": "allestree club|derby: allestree|de22 2fs",
       "independent_location_check": {
         "actionable": false,
-        "checked_at": "2026-11-03",
+        "checked_at": "2026-11-04",
         "comparisons": [
           {
             "name_matches": 0,
@@ -91143,8 +91217,8 @@
         "owner_pin_confirmed": false,
         "owner_reviewed": false,
         "pin": {
-          "lat": 52.9541,
-          "lng": -1.48871
+          "lat": 52.9542796,
+          "lng": -1.48772303
         },
         "priority": 2,
         "reasons": [],
@@ -94498,21 +94572,21 @@
       "current_key": "hesketh arms|rufford|l40 1sb",
       "independent_location_check": {
         "actionable": false,
-        "checked_at": "2026-11-03",
+        "checked_at": "2026-11-04",
         "comparisons": [
           {
             "address": "81 Liverpool Road, Rufford, Lancashire",
-            "difference_metres": 4.6,
+            "difference_metres": 76.2,
             "lat": 53.63366,
             "lng": -2.815947,
             "name": "Hesketh Arms",
             "postcode": "L40 1SB",
             "queried_postcode": "L40 1SB",
-            "status": "coordinate_agreement",
+            "status": "coordinate_disagreement",
             "url": "https://ratings.food.gov.uk/business/182365"
           }
         ],
-        "confidence": "independent_coordinate_agreement",
+        "confidence": "existing_evidence_needs_corroboration",
         "independent_of_pin": true,
         "listing": {
           "postcode": "L40 1SB",
@@ -94523,25 +94597,27 @@
         "owner_pin_confirmed": false,
         "owner_reviewed": false,
         "pin": {
-          "lat": 53.6337,
-          "lng": -2.81593
+          "lat": 53.6335857,
+          "lng": -2.8170963
         },
-        "priority": 3,
+        "priority": 2,
         "reasons": [],
         "reference": {
           "address": "81 Liverpool Road, Rufford, Lancashire",
-          "difference_metres": 4.6,
+          "difference_metres": 76.2,
           "lat": 53.63366,
           "lng": -2.815947,
           "name": "Hesketh Arms",
           "postcode": "L40 1SB",
           "queried_postcode": "L40 1SB",
-          "status": "coordinate_agreement",
+          "status": "coordinate_disagreement",
           "url": "https://ratings.food.gov.uk/business/182365"
         },
         "review_category": "informational",
-        "status": "coordinate_agreement",
-        "warnings": []
+        "status": "coordinate_disagreement",
+        "warnings": [
+          "FSA coordinate is 76.2m from the accepted pin; informational only because the FSA geocode may be approximate"
+        ]
       },
       "listing": {
         "area": "Lancashire",
@@ -95129,7 +95205,7 @@
       "current_key": "tempest arms|coleby|ln5 0ag",
       "independent_location_check": {
         "actionable": false,
-        "checked_at": "2026-11-03",
+        "checked_at": "2026-11-04",
         "comparisons": [
           {
             "name_matches": 0,
@@ -95149,8 +95225,8 @@
         "owner_pin_confirmed": false,
         "owner_reviewed": false,
         "pin": {
-          "lat": 53.131313,
-          "lng": -0.543641
+          "lat": 53.1317859,
+          "lng": -0.5431966
         },
         "priority": 2,
         "reasons": [],
@@ -100434,11 +100510,11 @@
       "current_key": "flying childers|stanton in peak|de4 2lw",
       "independent_location_check": {
         "actionable": false,
-        "checked_at": "2026-11-03",
+        "checked_at": "2026-11-04",
         "comparisons": [
           {
             "address": "Main Road, Stanton In Peak, Derbyshire",
-            "difference_metres": 91.5,
+            "difference_metres": 356.2,
             "lat": 53.175509,
             "lng": -1.646981,
             "name": "Flying Childers Inn",
@@ -100459,14 +100535,14 @@
         "owner_pin_confirmed": false,
         "owner_reviewed": false,
         "pin": {
-          "lat": 53.17555,
-          "lng": -1.64561
+          "lat": 53.1753378,
+          "lng": -1.6416433
         },
         "priority": 2,
         "reasons": [],
         "reference": {
           "address": "Main Road, Stanton In Peak, Derbyshire",
-          "difference_metres": 91.5,
+          "difference_metres": 356.2,
           "lat": 53.175509,
           "lng": -1.646981,
           "name": "Flying Childers Inn",
@@ -100478,7 +100554,7 @@
         "review_category": "informational",
         "status": "coordinate_disagreement",
         "warnings": [
-          "FSA coordinate is 91.5m from the accepted pin; informational only because the FSA geocode may be approximate"
+          "FSA coordinate is 356.2m from the accepted pin; informational only because the FSA geocode may be approximate"
         ]
       },
       "listing": {
@@ -101295,21 +101371,21 @@
       "current_key": "horse and trumpet|sileby|le12 7lp",
       "independent_location_check": {
         "actionable": false,
-        "checked_at": "2026-11-03",
+        "checked_at": "2026-11-04",
         "comparisons": [
           {
             "address": "4 Barrow Road, , Sileby",
-            "difference_metres": 6.5,
+            "difference_metres": 129.9,
             "lat": 52.732339,
             "lng": -1.112372,
             "name": "Horse & Trumpet",
             "postcode": "LE12 7LP",
             "queried_postcode": "LE12 7LP",
-            "status": "coordinate_agreement",
+            "status": "coordinate_disagreement",
             "url": "https://ratings.food.gov.uk/business/92953"
           }
         ],
-        "confidence": "independent_coordinate_agreement",
+        "confidence": "existing_evidence_needs_corroboration",
         "independent_of_pin": true,
         "listing": {
           "postcode": "LE12 7LP",
@@ -101320,25 +101396,27 @@
         "owner_pin_confirmed": false,
         "owner_reviewed": false,
         "pin": {
-          "lat": 52.7323,
-          "lng": -1.1123
+          "lat": 52.7312214,
+          "lng": -1.1118085
         },
-        "priority": 3,
+        "priority": 2,
         "reasons": [],
         "reference": {
           "address": "4 Barrow Road, , Sileby",
-          "difference_metres": 6.5,
+          "difference_metres": 129.9,
           "lat": 52.732339,
           "lng": -1.112372,
           "name": "Horse & Trumpet",
           "postcode": "LE12 7LP",
           "queried_postcode": "LE12 7LP",
-          "status": "coordinate_agreement",
+          "status": "coordinate_disagreement",
           "url": "https://ratings.food.gov.uk/business/92953"
         },
         "review_category": "informational",
-        "status": "coordinate_agreement",
-        "warnings": []
+        "status": "coordinate_disagreement",
+        "warnings": [
+          "FSA coordinate is 129.9m from the accepted pin; informational only because the FSA geocode may be approximate"
+        ]
       },
       "listing": {
         "area": "Leicestershire",
@@ -103897,7 +103975,7 @@
       "current_key": "wilmslow conservative club|wilmslow|sk9 5eg",
       "independent_location_check": {
         "actionable": false,
-        "checked_at": "2026-11-03",
+        "checked_at": "2026-11-04",
         "comparisons": [
           {
             "name_matches": 0,
@@ -103917,8 +103995,8 @@
         "owner_pin_confirmed": false,
         "owner_reviewed": false,
         "pin": {
-          "lat": 53.3276,
-          "lng": -2.2343
+          "lat": 53.32725969,
+          "lng": -2.23562096
         },
         "priority": 2,
         "reasons": [],
@@ -111877,21 +111955,21 @@
       "current_key": "vine inn|silverdale|st5 6lx",
       "independent_location_check": {
         "actionable": false,
-        "checked_at": "2026-11-03",
+        "checked_at": "2026-11-04",
         "comparisons": [
           {
             "address": "130 High Street, Silverdale, Newcastle Under Lyme",
-            "difference_metres": 13.7,
+            "difference_metres": 41.1,
             "lat": 53.014956,
             "lng": -2.269868,
             "name": "THE VINE",
             "postcode": "ST5 6LX",
             "queried_postcode": "ST5 6LX",
-            "status": "coordinate_agreement",
+            "status": "nearby",
             "url": "https://ratings.food.gov.uk/business/524899"
           }
         ],
-        "confidence": "independent_coordinate_agreement",
+        "confidence": "existing_evidence_needs_corroboration",
         "independent_of_pin": true,
         "listing": {
           "postcode": "ST5 6LX",
@@ -111902,25 +111980,27 @@
         "owner_pin_confirmed": false,
         "owner_reviewed": false,
         "pin": {
-          "lat": 53.0149,
-          "lng": -2.27005
+          "lat": 53.01528358,
+          "lng": -2.26958293
         },
-        "priority": 3,
+        "priority": 2,
         "reasons": [],
         "reference": {
           "address": "130 High Street, Silverdale, Newcastle Under Lyme",
-          "difference_metres": 13.7,
+          "difference_metres": 41.1,
           "lat": 53.014956,
           "lng": -2.269868,
           "name": "THE VINE",
           "postcode": "ST5 6LX",
           "queried_postcode": "ST5 6LX",
-          "status": "coordinate_agreement",
+          "status": "nearby",
           "url": "https://ratings.food.gov.uk/business/524899"
         },
         "review_category": "informational",
-        "status": "coordinate_agreement",
-        "warnings": []
+        "status": "nearby",
+        "warnings": [
+          "FSA coordinate is 25-50m away; informational only"
+        ]
       },
       "listing": {
         "area": "Staffordshire",
@@ -113015,21 +113095,21 @@
       "current_key": "man in space|stoke: trentham|st4 8pz",
       "independent_location_check": {
         "actionable": false,
-        "checked_at": "2026-11-03",
+        "checked_at": "2026-11-04",
         "comparisons": [
           {
             "address": "316 New Inn Lane, Hanford, Stoke-on-Trent",
-            "difference_metres": 1.0,
+            "difference_metres": 89.2,
             "lat": 52.971106,
             "lng": -2.191182,
             "name": "Man in Space",
             "postcode": "ST4 8PZ",
             "queried_postcode": "ST4 8PZ",
-            "status": "coordinate_agreement",
+            "status": "coordinate_disagreement",
             "url": "https://ratings.food.gov.uk/business/113448"
           }
         ],
-        "confidence": "independent_coordinate_agreement",
+        "confidence": "existing_evidence_needs_corroboration",
         "independent_of_pin": true,
         "listing": {
           "postcode": "ST4 8PZ",
@@ -113040,25 +113120,27 @@
         "owner_pin_confirmed": false,
         "owner_reviewed": false,
         "pin": {
-          "lat": 52.9711,
-          "lng": -2.19117
+          "lat": 52.97037072,
+          "lng": -2.19064938
         },
-        "priority": 3,
+        "priority": 2,
         "reasons": [],
         "reference": {
           "address": "316 New Inn Lane, Hanford, Stoke-on-Trent",
-          "difference_metres": 1.0,
+          "difference_metres": 89.2,
           "lat": 52.971106,
           "lng": -2.191182,
           "name": "Man in Space",
           "postcode": "ST4 8PZ",
           "queried_postcode": "ST4 8PZ",
-          "status": "coordinate_agreement",
+          "status": "coordinate_disagreement",
           "url": "https://ratings.food.gov.uk/business/113448"
         },
         "review_category": "informational",
-        "status": "coordinate_agreement",
-        "warnings": []
+        "status": "coordinate_disagreement",
+        "warnings": [
+          "FSA coordinate is 89.2m from the accepted pin; informational only because the FSA geocode may be approximate"
+        ]
       },
       "listing": {
         "area": "Staffordshire",
@@ -115204,21 +115286,21 @@
       "current_key": "apiary|castle donington|de74 2la",
       "independent_location_check": {
         "actionable": false,
-        "checked_at": "2026-11-03",
+        "checked_at": "2026-11-04",
         "comparisons": [
           {
             "address": "38 Borough Street, Castle Donington, Derby",
-            "difference_metres": 7.5,
+            "difference_metres": 51.5,
             "lat": 52.842166,
             "lng": -1.338476,
             "name": "The Apiary",
             "postcode": "DE74 2LA",
             "queried_postcode": "DE74 2LA",
-            "status": "coordinate_agreement",
+            "status": "coordinate_disagreement",
             "url": "https://ratings.food.gov.uk/business/495828"
           }
         ],
-        "confidence": "independent_coordinate_agreement",
+        "confidence": "existing_evidence_needs_corroboration",
         "independent_of_pin": true,
         "listing": {
           "postcode": "DE74 2LA",
@@ -115229,25 +115311,27 @@
         "owner_pin_confirmed": false,
         "owner_reviewed": false,
         "pin": {
-          "lat": 52.8421,
-          "lng": -1.33845
+          "lat": 52.84228837,
+          "lng": -1.33773634
         },
-        "priority": 3,
+        "priority": 2,
         "reasons": [],
         "reference": {
           "address": "38 Borough Street, Castle Donington, Derby",
-          "difference_metres": 7.5,
+          "difference_metres": 51.5,
           "lat": 52.842166,
           "lng": -1.338476,
           "name": "The Apiary",
           "postcode": "DE74 2LA",
           "queried_postcode": "DE74 2LA",
-          "status": "coordinate_agreement",
+          "status": "coordinate_disagreement",
           "url": "https://ratings.food.gov.uk/business/495828"
         },
         "review_category": "informational",
-        "status": "coordinate_agreement",
-        "warnings": []
+        "status": "coordinate_disagreement",
+        "warnings": [
+          "FSA coordinate is 51.5m from the accepted pin; informational only because the FSA geocode may be approximate"
+        ]
       },
       "listing": {
         "area": "Leicestershire",
@@ -116296,21 +116380,21 @@
       "current_key": "john marston|stoke: blurton|st3 2nq",
       "independent_location_check": {
         "actionable": false,
-        "checked_at": "2026-11-03",
+        "checked_at": "2026-11-04",
         "comparisons": [
           {
             "address": "44 Longton Hall Road, Blurton, Stoke-On-Trent",
-            "difference_metres": 97.3,
+            "difference_metres": 9.7,
             "lat": 52.9859456,
             "lng": -2.1481986,
             "name": "The John Marston",
             "postcode": "ST3 2NQ",
             "queried_postcode": "ST3 2NQ",
-            "status": "coordinate_disagreement",
+            "status": "coordinate_agreement",
             "url": "https://ratings.food.gov.uk/business/1660318"
           }
         ],
-        "confidence": "existing_evidence_needs_corroboration",
+        "confidence": "independent_coordinate_agreement",
         "independent_of_pin": true,
         "listing": {
           "postcode": "ST3 2NQ",
@@ -116321,27 +116405,25 @@
         "owner_pin_confirmed": false,
         "owner_reviewed": false,
         "pin": {
-          "lat": 52.9863,
-          "lng": -2.14687
+          "lat": 52.9858587,
+          "lng": -2.1482014
         },
-        "priority": 2,
+        "priority": 3,
         "reasons": [],
         "reference": {
           "address": "44 Longton Hall Road, Blurton, Stoke-On-Trent",
-          "difference_metres": 97.3,
+          "difference_metres": 9.7,
           "lat": 52.9859456,
           "lng": -2.1481986,
           "name": "The John Marston",
           "postcode": "ST3 2NQ",
           "queried_postcode": "ST3 2NQ",
-          "status": "coordinate_disagreement",
+          "status": "coordinate_agreement",
           "url": "https://ratings.food.gov.uk/business/1660318"
         },
         "review_category": "informational",
-        "status": "coordinate_disagreement",
-        "warnings": [
-          "FSA coordinate is 97.3m from the accepted pin; informational only because the FSA geocode may be approximate"
-        ]
+        "status": "coordinate_agreement",
+        "warnings": []
       },
       "listing": {
         "area": "Staffordshire",
@@ -120233,21 +120315,21 @@
       "current_key": "terrace inn|stoke: fenton|st4 4nb",
       "independent_location_check": {
         "actionable": false,
-        "checked_at": "2026-11-03",
+        "checked_at": "2026-11-04",
         "comparisons": [
           {
             "address": "192 City Road, Fenton, Stoke-On-Trent",
-            "difference_metres": 2.3,
+            "difference_metres": 60.1,
             "lat": 53.000219,
             "lng": -2.169332,
             "name": "The Terrace Inn",
             "postcode": "ST4 4NB",
             "queried_postcode": "ST4 4NB",
-            "status": "coordinate_agreement",
+            "status": "coordinate_disagreement",
             "url": "https://ratings.food.gov.uk/business/1893875"
           }
         ],
-        "confidence": "independent_coordinate_agreement",
+        "confidence": "existing_evidence_needs_corroboration",
         "independent_of_pin": true,
         "listing": {
           "postcode": "ST4 4NB",
@@ -120258,25 +120340,27 @@
         "owner_pin_confirmed": false,
         "owner_reviewed": false,
         "pin": {
-          "lat": 53.0002,
-          "lng": -2.16932
+          "lat": 53.0001167,
+          "lng": -2.16845
         },
-        "priority": 3,
+        "priority": 2,
         "reasons": [],
         "reference": {
           "address": "192 City Road, Fenton, Stoke-On-Trent",
-          "difference_metres": 2.3,
+          "difference_metres": 60.1,
           "lat": 53.000219,
           "lng": -2.169332,
           "name": "The Terrace Inn",
           "postcode": "ST4 4NB",
           "queried_postcode": "ST4 4NB",
-          "status": "coordinate_agreement",
+          "status": "coordinate_disagreement",
           "url": "https://ratings.food.gov.uk/business/1893875"
         },
         "review_category": "informational",
-        "status": "coordinate_agreement",
-        "warnings": []
+        "status": "coordinate_disagreement",
+        "warnings": [
+          "FSA coordinate is 60.1m from the accepted pin; informational only because the FSA geocode may be approximate"
+        ]
       },
       "listing": {
         "area": "Staffordshire",
@@ -122004,7 +122088,7 @@
       },
       "independent_location_check": {
         "actionable": false,
-        "checked_at": "2026-11-03",
+        "checked_at": "2026-11-04",
         "comparisons": [
           {
             "name_matches": 0,
@@ -122024,8 +122108,8 @@
         "owner_pin_confirmed": false,
         "owner_reviewed": false,
         "pin": {
-          "lat": 53.337788990786,
-          "lng": -0.5630488932037
+          "lat": 53.3374119,
+          "lng": -0.5623709
         },
         "priority": 2,
         "reasons": [],
@@ -125306,21 +125390,21 @@
       "current_key": "old red lion|litchborough|nn12 8jf",
       "independent_location_check": {
         "actionable": false,
-        "checked_at": "2026-11-03",
+        "checked_at": "2026-11-04",
         "comparisons": [
           {
             "address": "4 Banbury Road, , Litchborough, West Northamptonshire",
-            "difference_metres": 223.1,
+            "difference_metres": 1.0,
             "lat": 52.1833643,
             "lng": -1.0763598,
             "name": "The Old Red Lion",
             "postcode": "NN12 8JF",
             "queried_postcode": "NN12 8JF",
-            "status": "coordinate_disagreement",
+            "status": "coordinate_agreement",
             "url": "https://ratings.food.gov.uk/business/2002727"
           }
         ],
-        "confidence": "existing_evidence_needs_corroboration",
+        "confidence": "independent_coordinate_agreement",
         "independent_of_pin": true,
         "listing": {
           "postcode": "NN12 8JF",
@@ -125331,27 +125415,25 @@
         "owner_pin_confirmed": false,
         "owner_reviewed": false,
         "pin": {
-          "lat": 52.1821,
-          "lng": -1.0789
+          "lat": 52.183364,
+          "lng": -1.076345
         },
-        "priority": 2,
+        "priority": 3,
         "reasons": [],
         "reference": {
           "address": "4 Banbury Road, , Litchborough, West Northamptonshire",
-          "difference_metres": 223.1,
+          "difference_metres": 1.0,
           "lat": 52.1833643,
           "lng": -1.0763598,
           "name": "The Old Red Lion",
           "postcode": "NN12 8JF",
           "queried_postcode": "NN12 8JF",
-          "status": "coordinate_disagreement",
+          "status": "coordinate_agreement",
           "url": "https://ratings.food.gov.uk/business/2002727"
         },
         "review_category": "informational",
-        "status": "coordinate_disagreement",
-        "warnings": [
-          "FSA coordinate is 223.1m from the accepted pin; informational only because the FSA geocode may be approximate"
-        ]
+        "status": "coordinate_agreement",
+        "warnings": []
       },
       "listing": {
         "area": "Northamptonshire",
@@ -129049,11 +129131,11 @@
       "current_key": "hunting lodge|monkseaton|ne25 9sx",
       "independent_location_check": {
         "actionable": false,
-        "checked_at": "2026-11-03",
+        "checked_at": "2026-11-04",
         "comparisons": [
           {
             "address": "17 Earsdon Road, Whitley Bay, Tyne And Wear",
-            "difference_metres": 331.2,
+            "difference_metres": 79.6,
             "lat": 55.037711,
             "lng": -1.472888,
             "name": "The Hunting Lodge",
@@ -129074,14 +129156,14 @@
         "owner_pin_confirmed": false,
         "owner_reviewed": false,
         "pin": {
-          "lat": 55.034795160892,
-          "lng": -1.4739452866012
+          "lat": 55.03834575,
+          "lng": -1.47346716
         },
         "priority": 2,
         "reasons": [],
         "reference": {
           "address": "17 Earsdon Road, Whitley Bay, Tyne And Wear",
-          "difference_metres": 331.2,
+          "difference_metres": 79.6,
           "lat": 55.037711,
           "lng": -1.472888,
           "name": "The Hunting Lodge",
@@ -129093,7 +129175,7 @@
         "review_category": "informational",
         "status": "coordinate_disagreement",
         "warnings": [
-          "FSA coordinate is 331.2m from the accepted pin; informational only because the FSA geocode may be approximate"
+          "FSA coordinate is 79.6m from the accepted pin; informational only because the FSA geocode may be approximate"
         ]
       },
       "listing": {
@@ -130764,21 +130846,21 @@
       "current_key": "anchor inn|walton on the wolds|le12 8ht",
       "independent_location_check": {
         "actionable": false,
-        "checked_at": "2026-11-03",
+        "checked_at": "2026-11-04",
         "comparisons": [
           {
             "address": "2 Loughborough Road, , Walton On The Wolds",
-            "difference_metres": 7.5,
+            "difference_metres": 142.6,
             "lat": 52.773354,
             "lng": -1.124968,
             "name": "The Anchor Inn",
             "postcode": "LE12 8HT",
             "queried_postcode": "LE12 8HT",
-            "status": "coordinate_agreement",
+            "status": "coordinate_disagreement",
             "url": "https://ratings.food.gov.uk/business/101074"
           }
         ],
-        "confidence": "independent_coordinate_agreement",
+        "confidence": "existing_evidence_needs_corroboration",
         "independent_of_pin": true,
         "listing": {
           "postcode": "LE12 8HT",
@@ -130789,25 +130871,27 @@
         "owner_pin_confirmed": false,
         "owner_reviewed": false,
         "pin": {
-          "lat": 52.7733,
-          "lng": -1.1249
+          "lat": 52.77295603,
+          "lng": -1.12295346
         },
-        "priority": 3,
+        "priority": 2,
         "reasons": [],
         "reference": {
           "address": "2 Loughborough Road, , Walton On The Wolds",
-          "difference_metres": 7.5,
+          "difference_metres": 142.6,
           "lat": 52.773354,
           "lng": -1.124968,
           "name": "The Anchor Inn",
           "postcode": "LE12 8HT",
           "queried_postcode": "LE12 8HT",
-          "status": "coordinate_agreement",
+          "status": "coordinate_disagreement",
           "url": "https://ratings.food.gov.uk/business/101074"
         },
         "review_category": "informational",
-        "status": "coordinate_agreement",
-        "warnings": []
+        "status": "coordinate_disagreement",
+        "warnings": [
+          "FSA coordinate is 142.6m from the accepted pin; informational only because the FSA geocode may be approximate"
+        ]
       },
       "listing": {
         "area": "Leicestershire",
@@ -135662,21 +135746,21 @@
       "current_key": "goodmanham arms|goodmanham|yo43 3ja",
       "independent_location_check": {
         "actionable": false,
-        "checked_at": "2026-11-03",
+        "checked_at": "2026-11-04",
         "comparisons": [
           {
             "address": "Goodmanham Road, Goodmanham, York",
-            "difference_metres": 2.9,
+            "difference_metres": 187.9,
             "lat": 53.876977,
             "lng": -0.64672,
             "name": "Goodmanham Arms",
             "postcode": "YO43 3JA",
             "queried_postcode": "YO43 3JA",
-            "status": "coordinate_agreement",
+            "status": "coordinate_disagreement",
             "url": "https://ratings.food.gov.uk/business/113670"
           }
         ],
-        "confidence": "independent_coordinate_agreement",
+        "confidence": "existing_evidence_needs_corroboration",
         "independent_of_pin": true,
         "listing": {
           "postcode": "YO43 3JA",
@@ -135687,25 +135771,27 @@
         "owner_pin_confirmed": false,
         "owner_reviewed": false,
         "pin": {
-          "lat": 53.877,
-          "lng": -0.6467
+          "lat": 53.8762611,
+          "lng": -0.6493173
         },
-        "priority": 3,
+        "priority": 2,
         "reasons": [],
         "reference": {
           "address": "Goodmanham Road, Goodmanham, York",
-          "difference_metres": 2.9,
+          "difference_metres": 187.9,
           "lat": 53.876977,
           "lng": -0.64672,
           "name": "Goodmanham Arms",
           "postcode": "YO43 3JA",
           "queried_postcode": "YO43 3JA",
-          "status": "coordinate_agreement",
+          "status": "coordinate_disagreement",
           "url": "https://ratings.food.gov.uk/business/113670"
         },
         "review_category": "informational",
-        "status": "coordinate_agreement",
-        "warnings": []
+        "status": "coordinate_disagreement",
+        "warnings": [
+          "FSA coordinate is 187.9m from the accepted pin; informational only because the FSA geocode may be approximate"
+        ]
       },
       "listing": {
         "area": "East Yorkshire",
@@ -137485,11 +137571,11 @@
       "current_key": "black horse|appleby magna|de12 7ah",
       "independent_location_check": {
         "actionable": false,
-        "checked_at": "2026-11-03",
+        "checked_at": "2026-11-04",
         "comparisons": [
           {
             "address": "Black Horse Inn, 2 Top Street, Appleby Magna, Swadlincote",
-            "difference_metres": 197.8,
+            "difference_metres": 351.8,
             "lat": 52.682008,
             "lng": -1.533535,
             "name": "The Black Horse",
@@ -137510,14 +137596,14 @@
         "owner_pin_confirmed": false,
         "owner_reviewed": false,
         "pin": {
-          "lat": 52.68363,
-          "lng": -1.53233
+          "lat": 52.6848086,
+          "lng": -1.5311072
         },
         "priority": 2,
         "reasons": [],
         "reference": {
           "address": "Black Horse Inn, 2 Top Street, Appleby Magna, Swadlincote",
-          "difference_metres": 197.8,
+          "difference_metres": 351.8,
           "lat": 52.682008,
           "lng": -1.533535,
           "name": "The Black Horse",
@@ -137529,7 +137615,7 @@
         "review_category": "informational",
         "status": "coordinate_disagreement",
         "warnings": [
-          "FSA coordinate is 197.8m from the accepted pin; informational only because the FSA geocode may be approximate"
+          "FSA coordinate is 351.8m from the accepted pin; informational only because the FSA geocode may be approximate"
         ]
       },
       "listing": {
@@ -140758,17 +140844,17 @@
       "current_key": "moorland inn|stoke: burslem|st6 1jp",
       "independent_location_check": {
         "actionable": false,
-        "checked_at": "2026-11-03",
+        "checked_at": "2026-11-04",
         "comparisons": [
           {
             "address": "Moorland Road, Burslem, Stoke-On-Trent",
-            "difference_metres": 30.2,
+            "difference_metres": 199.2,
             "lat": 53.047986,
             "lng": -2.182811,
             "name": "Moorland Inn",
             "postcode": "ST6 1JP",
             "queried_postcode": "ST6 1JP",
-            "status": "nearby",
+            "status": "coordinate_disagreement",
             "url": "https://ratings.food.gov.uk/business/110506"
           }
         ],
@@ -140783,26 +140869,26 @@
         "owner_pin_confirmed": false,
         "owner_reviewed": false,
         "pin": {
-          "lat": 53.048,
-          "lng": -2.18236
+          "lat": 53.04835962,
+          "lng": -2.17989586
         },
         "priority": 2,
         "reasons": [],
         "reference": {
           "address": "Moorland Road, Burslem, Stoke-On-Trent",
-          "difference_metres": 30.2,
+          "difference_metres": 199.2,
           "lat": 53.047986,
           "lng": -2.182811,
           "name": "Moorland Inn",
           "postcode": "ST6 1JP",
           "queried_postcode": "ST6 1JP",
-          "status": "nearby",
+          "status": "coordinate_disagreement",
           "url": "https://ratings.food.gov.uk/business/110506"
         },
         "review_category": "informational",
-        "status": "nearby",
+        "status": "coordinate_disagreement",
         "warnings": [
-          "FSA coordinate is 25-50m away; informational only"
+          "FSA coordinate is 199.2m from the accepted pin; informational only because the FSA geocode may be approximate"
         ]
       },
       "listing": {
@@ -144340,11 +144426,11 @@
       "current_key": "leek golf club|leek|st13 5re",
       "independent_location_check": {
         "actionable": false,
-        "checked_at": "2026-11-03",
+        "checked_at": "2026-11-04",
         "comparisons": [
           {
             "address": "Cheddleton Road, Leek, Staffordshire",
-            "difference_metres": 264.2,
+            "difference_metres": 590.8,
             "lat": 53.0955772399902,
             "lng": -2.02367401123047,
             "name": "Baileys at leek Golf Club",
@@ -144365,14 +144451,14 @@
         "owner_pin_confirmed": false,
         "owner_reviewed": false,
         "pin": {
-          "lat": 53.0934,
-          "lng": -2.02209
+          "lat": 53.09031222,
+          "lng": -2.02248863
         },
         "priority": 2,
         "reasons": [],
         "reference": {
           "address": "Cheddleton Road, Leek, Staffordshire",
-          "difference_metres": 264.2,
+          "difference_metres": 590.8,
           "lat": 53.0955772399902,
           "lng": -2.02367401123047,
           "name": "Baileys at leek Golf Club",
@@ -144384,7 +144470,7 @@
         "review_category": "informational",
         "status": "coordinate_disagreement",
         "warnings": [
-          "FSA coordinate is 264.2m from the accepted pin; informational only because the FSA geocode may be approximate"
+          "FSA coordinate is 590.8m from the accepted pin; informational only because the FSA geocode may be approximate"
         ]
       },
       "listing": {
@@ -149000,21 +149086,21 @@
       "current_key": "dog and partridge|packmoor|st7 4qf",
       "independent_location_check": {
         "actionable": false,
-        "checked_at": "2026-11-03",
+        "checked_at": "2026-11-04",
         "comparisons": [
           {
             "address": "508 Turnhurst Road, Chell, Stoke-On-Trent",
-            "difference_metres": 0.0,
+            "difference_metres": 91.5,
             "lat": 53.085639,
             "lng": -2.200513,
             "name": "The Dog & Partridge",
             "postcode": "ST7 4QF",
             "queried_postcode": "ST7 4QF",
-            "status": "coordinate_agreement",
+            "status": "coordinate_disagreement",
             "url": "https://ratings.food.gov.uk/business/785402"
           }
         ],
-        "confidence": "independent_coordinate_agreement",
+        "confidence": "existing_evidence_needs_corroboration",
         "independent_of_pin": true,
         "listing": {
           "postcode": "ST7 4QF",
@@ -149025,25 +149111,27 @@
         "owner_pin_confirmed": false,
         "owner_reviewed": false,
         "pin": {
-          "lat": 53.085639,
-          "lng": -2.200513
+          "lat": 53.0864053,
+          "lng": -2.2010135
         },
-        "priority": 3,
+        "priority": 2,
         "reasons": [],
         "reference": {
           "address": "508 Turnhurst Road, Chell, Stoke-On-Trent",
-          "difference_metres": 0.0,
+          "difference_metres": 91.5,
           "lat": 53.085639,
           "lng": -2.200513,
           "name": "The Dog & Partridge",
           "postcode": "ST7 4QF",
           "queried_postcode": "ST7 4QF",
-          "status": "coordinate_agreement",
+          "status": "coordinate_disagreement",
           "url": "https://ratings.food.gov.uk/business/785402"
         },
         "review_category": "informational",
-        "status": "coordinate_agreement",
-        "warnings": []
+        "status": "coordinate_disagreement",
+        "warnings": [
+          "FSA coordinate is 91.5m from the accepted pin; informational only because the FSA geocode may be approximate"
+        ]
       },
       "listing": {
         "area": "Staffordshire",
@@ -158196,7 +158284,7 @@
       "current_key": "pavilion|ashbourne|de6 1ej",
       "independent_location_check": {
         "actionable": false,
-        "checked_at": "2026-11-03",
+        "checked_at": "2026-11-04",
         "comparisons": [
           {
             "name_matches": 0,
@@ -158216,8 +158304,8 @@
         "owner_pin_confirmed": false,
         "owner_reviewed": false,
         "pin": {
-          "lat": 53.019817,
-          "lng": -1.728245
+          "lat": 53.01906937,
+          "lng": -1.72664482
         },
         "priority": 2,
         "reasons": [],
@@ -158667,7 +158755,7 @@
       "current_key": "horse|shepshed|le12 9ef",
       "independent_location_check": {
         "actionable": false,
-        "checked_at": "2026-11-03",
+        "checked_at": "2026-11-04",
         "comparisons": [
           {
             "name_matches": 0,
@@ -158687,8 +158775,8 @@
         "owner_pin_confirmed": false,
         "owner_reviewed": false,
         "pin": {
-          "lat": 52.7597,
-          "lng": -1.30536
+          "lat": 52.7601349,
+          "lng": -1.3065147
         },
         "priority": 2,
         "reasons": [],

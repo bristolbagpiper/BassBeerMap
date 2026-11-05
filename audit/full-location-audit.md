@@ -9,8 +9,7 @@ Locations with informational observations: 641 (may also have an actionable find
 ## Results
 
 - no_name_match: 179
-- not_checked: 1
-- coordinate_disagreement: 272
+- coordinate_disagreement: 273
 - ambiguous_or_missing_coordinates: 67
 - nearby: 108
 - coordinate_agreement: 460
@@ -18,8 +17,7 @@ Locations with informational observations: 641 (may also have an actionable find
 ## Confidence
 
 - owner_reviewed: 137
-- not_checked: 1
-- existing_evidence_needs_corroboration: 549
+- existing_evidence_needs_corroboration: 550
 - independent_coordinate_agreement: 400
 
 ## Limits
@@ -40,7 +38,6 @@ Locations with informational observations: 641 (may also have an actionable find
 
 | Pub | Place | Postcode | Result | Information |
 |---|---|---|---|---|
-| Gate Inn | Hugglescote | LE67 2HG | not_checked | Current pin has not been independently compared |
 | 1852 Brewery Co | Leicester: South Wigston | LE18 2DH | no_name_match | FSA comparison is inconclusive; absence of a match does not contradict accepted evidence |
 | 45 Club (PMC) | Newcastle-U-L: Central | ST5 1DS | no_name_match | FSA comparison is inconclusive; absence of a match does not contradict accepted evidence |
 | Adelphi | Leeds: Central | LS10 1JQ | coordinate_disagreement | FSA coordinate is 158.8m from the accepted pin; informational only because the FSA geocode may be approximate |
@@ -271,6 +268,7 @@ Locations with informational observations: 641 (may also have an actionable find
 | Gate Hangs Well | Carlton | CV13 0DB | coordinate_disagreement | FSA coordinate is 97.5m from the accepted pin; informational only because the FSA geocode may be approximate |
 | Gate Inn | Burton U-T: Branston | DE14 3EY | coordinate_disagreement | FSA coordinate is 173.9m from the accepted pin; informational only because the FSA geocode may be approximate |
 | Gate Inn | Ratcliffe Culey | CV9 3NY | coordinate_disagreement | FSA coordinate is 88.6m from the accepted pin; informational only because the FSA geocode may be approximate |
+| Gate Inn | Hugglescote | LE67 2HG | coordinate_disagreement | FSA coordinate is 180.0m from the accepted pin; informational only because the FSA geocode may be approximate |
 | Gatehouse Tavern | Coventry: Central | CV1 4AN | ambiguous_or_missing_coordinates | FSA comparison is inconclusive; absence of a match does not contradict accepted evidence |
 | Gelsmoor | Newbold | LE67 8HP | coordinate_disagreement | FSA coordinate is 474.3m from the accepted pin; informational only because the FSA geocode may be approximate |
 | General Havelock | Ilkeston | DE7 5FW | coordinate_disagreement | FSA coordinate is 171.8m from the accepted pin; informational only because the FSA geocode may be approximate |

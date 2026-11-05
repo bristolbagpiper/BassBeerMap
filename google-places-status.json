@@ -1,16 +1,25 @@
 {
-  "checked_at": "2026-11-04T09:15:57.944631+00:00",
+  "checked_at": "2026-11-05T07:44:06.720578+00:00",
   "configured": true,
   "counts": {
-    "attempted_venue_count": 1041,
-    "checked_this_run": 39,
-    "current": 862,
-    "review_count": 296,
+    "attempted_venue_count": 1086,
+    "checked_this_run": 36,
+    "current": 898,
+    "review_count": 307,
     "total": 1087,
-    "unchecked_or_stale": 225
+    "unchecked_or_stale": 189
   },
   "directory_binding_signature": "a4e1a678d68b57b2e41fd11f5e03d280512f9f4ff8d486fff2a8e5e899a899c0",
   "findings": [
+    {
+      "binding_signature": "eb6677d18e8e55f842c81147bf193219a1a944543e276e9074ad0fc609900240",
+      "place_name": "Newcastle-U-L: Higherland",
+      "postcode": "ST5 2QS",
+      "pub_name": "Dick Turpin",
+      "reason": "Google indicates a possible closure; trading status needs review",
+      "status": "review_needed",
+      "venue_id": "v-009a7c6e-3950-55bb-8a3c-eaf89ba0737e"
+    },
     {
       "binding_signature": "386f45bf7ec53e25e654ae5815c3e5c6c2ee2d3060dde2ad2324376e429645ce",
       "place_name": "Derby: Allestree",
@@ -55,6 +64,15 @@
       "reason": "Google results are incomplete or ambiguous; no unique place accepted",
       "status": "review_needed",
       "venue_id": "v-06881285-f96c-5a29-8e8a-360e1849ab6f"
+    },
+    {
+      "binding_signature": "2a9985035bc246158b732f307a09da83560d83a182f2e67605e53c88d2e99c2d",
+      "place_name": "Coleorton",
+      "postcode": "LE67 8HF",
+      "pub_name": "George Inn",
+      "reason": "Google named-place result differs in business identity or postcode; verify the matched venue and address",
+      "status": "review_needed",
+      "venue_id": "v-06c00503-a853-59d7-9f3c-6a81833d25be"
     },
     {
       "binding_signature": "f7dc9b9bcb6862c6d461f11552ceb0af7d36e3fd86ee5044f26bbbaba1a818b3",
@@ -300,6 +318,15 @@
       "venue_id": "v-1a28aea9-7f77-5dea-9deb-48833794dc32"
     },
     {
+      "binding_signature": "3cbd3a63a5b8d1d298dee2089666e7d7485a23228c353f0fe724375705f5b353",
+      "place_name": "Broughton",
+      "postcode": "DN20 0HY",
+      "pub_name": "Red Lion",
+      "reason": "Google results are incomplete or ambiguous; no unique place accepted",
+      "status": "review_needed",
+      "venue_id": "v-1c5553ae-f896-5b2e-ae71-9e62972431bf"
+    },
+    {
       "binding_signature": "0984740970215de68a1e98458f5e6005a8c97ac9f544f8b4dd7ce28828b4e741",
       "place_name": "Bath",
       "postcode": "BA1 2DA",
@@ -397,6 +424,15 @@
       "reason": "Google results are incomplete or ambiguous; no unique place accepted",
       "status": "review_needed",
       "venue_id": "v-25c8ed6f-bb10-5204-a12d-a706011d440d"
+    },
+    {
+      "binding_signature": "0fcee8b96b5a3fc041cecce27000fa5d0cc4ea5331b575791707d5ab75c202e2",
+      "place_name": "Burton U-T: Stapenhill",
+      "postcode": "DE15 9DQ",
+      "pub_name": "Grove",
+      "reason": "Google results are incomplete or ambiguous; no unique place accepted",
+      "status": "review_needed",
+      "venue_id": "v-260ba96e-3d65-5a01-bac5-53f76e6e5123"
     },
     {
       "binding_signature": "4bb42e038a03a9570e3ac3ed2cb3d8be40ab7e84c9b12990d8759231ab19919c",
@@ -759,6 +795,15 @@
       "venue_id": "v-45ee8f54-501a-5688-8b29-c66374492475"
     },
     {
+      "binding_signature": "fcbd91c23726ebd110ce607370f18579f9ef17ac57a188e851f10292b7deb380",
+      "place_name": "Southport: Birkdale",
+      "postcode": "PR8 3BZ",
+      "pub_name": "Crown",
+      "reason": "Google results are incomplete or ambiguous; no unique place accepted",
+      "status": "review_needed",
+      "venue_id": "v-4636f62a-1e8b-5a4c-a4ce-3ad1fb58c684"
+    },
+    {
       "binding_signature": "0add3d7723a4897b2618b33aabf81d3c794bce84690d2f3225179bf62e016f28",
       "place_name": "Uttoxeter",
       "postcode": "ST14 8HP",
@@ -1029,6 +1074,15 @@
       "venue_id": "v-5b7a8e74-1d57-5edf-a58b-f3445daf1ea1"
     },
     {
+      "binding_signature": "7c1abeba4db7937aeb2ee8943c934fc5a22f1da595ed74270c3bf841d40e8ae5",
+      "place_name": "Newcastle-U-L: Clayton",
+      "postcode": "ST5 3HA",
+      "pub_name": "Seabridge",
+      "reason": "Google results are incomplete or ambiguous; no unique place accepted",
+      "status": "review_needed",
+      "venue_id": "v-5c396bdc-3097-5b38-904f-c1cd4ecdf0ad"
+    },
+    {
       "binding_signature": "c0c66170583a7242335b92294949907c3eb15d8e2ce8d4c289c0852a6c8e0476",
       "place_name": "Louth",
       "postcode": "LN11 9NP",
@@ -1198,6 +1252,15 @@
       "reason": "Google results are incomplete or ambiguous; no unique place accepted",
       "status": "review_needed",
       "venue_id": "v-6d80852f-ae91-5cd5-b2f0-5d93e9943bb2"
+    },
+    {
+      "binding_signature": "7e18772983fb5a4bac7bd74b2944b61ea9ed4667471cdc700597c9b491c94a15",
+      "place_name": "Osgathorpe",
+      "postcode": "LE12 9TA",
+      "pub_name": "New Storey",
+      "reason": "Google results are incomplete or ambiguous; no unique place accepted",
+      "status": "review_needed",
+      "venue_id": "v-6e6a3ef8-0baa-5d53-927c-a5d1b1044c85"
     },
     {
       "binding_signature": "52b4b6b45d0088f8efd9b047e59282118f793962c0c8d60aa37cc13f17204bea",
@@ -1515,6 +1578,15 @@
       "venue_id": "v-8d2818cb-e170-5dac-b542-68f88c22abd1"
     },
     {
+      "binding_signature": "76cd966c6de3b8bae7e35d22246adf607964b0b6b47b83616c9d5fa1f1850d72",
+      "place_name": "Wilmslow",
+      "postcode": "SK9 5EG",
+      "pub_name": "Wilmslow Conservative Club",
+      "reason": "Google results are incomplete or ambiguous; no unique place accepted",
+      "status": "review_needed",
+      "venue_id": "v-907056b1-7744-5174-8871-52dc93927a88"
+    },
+    {
       "binding_signature": "621ad61d3c05ac04916cb9f2442732b73b3f29b8a5cd44380103adec26a0e542",
       "place_name": "Tutbury",
       "postcode": "DE13 9NR",
@@ -1666,6 +1738,15 @@
       "reason": "Google results are incomplete or ambiguous; no unique place accepted",
       "status": "review_needed",
       "venue_id": "v-9c371802-e429-545b-9a10-442578fd7672"
+    },
+    {
+      "binding_signature": "f0e511c0a704c3a42761cf0923c152a20266a90d6d72e45761d537096088eb6d",
+      "place_name": "Silverdale",
+      "postcode": "ST5 6LX",
+      "pub_name": "Vine Inn",
+      "reason": "Google results are incomplete or ambiguous; no unique place accepted",
+      "status": "review_needed",
+      "venue_id": "v-9cb0c695-0ec7-598d-a436-b6f524253b69"
     },
     {
       "binding_signature": "1c64a0c4ad6114d1dd61e2dbf760d62b54259a02dd181da6e2d5b6b89d58f284",
@@ -1828,6 +1909,15 @@
       "reason": "Google named-place result differs in business identity or postcode; verify the matched venue and address",
       "status": "review_needed",
       "venue_id": "v-a8485c5d-3d4a-57e4-ac77-6e1235d3eeb1"
+    },
+    {
+      "binding_signature": "f85fd185b299eb3d89b65ca872326fd94e7d437201bbc3c98ce2441a8962fc52",
+      "place_name": "Stoke: Fenton",
+      "postcode": "ST4 4NB",
+      "pub_name": "Terrace Inn",
+      "reason": "Google results are incomplete or ambiguous; no unique place accepted",
+      "status": "review_needed",
+      "venue_id": "v-a93f6769-6b04-5835-b1ec-a53616b164e7"
     },
     {
       "binding_signature": "12e33f631727a454cfbfe3e266dbbe1d34aca286efd4bd2a7b6f74b1408f6b2b",
@@ -2514,6 +2604,15 @@
       "venue_id": "v-f1c9a984-7cec-51a0-ba02-1041b5f3a7c5"
     },
     {
+      "binding_signature": "4925820545fab65479808b509fdc7da65374ff838c924f59e3165ec5cca4ac35",
+      "place_name": "Hugglescote",
+      "postcode": "LE67 2HG",
+      "pub_name": "Gate Inn",
+      "reason": "Google results are incomplete or ambiguous; no unique place accepted",
+      "status": "review_needed",
+      "venue_id": "v-f20419be-325a-5f06-bbac-876206d3b735"
+    },
+    {
       "binding_signature": "2f4e2e46b4b2c8475b594a8bacc6d3ddb4bdc49f5ac147928d0c92e74f82bbef",
       "place_name": "Trumpington",
       "postcode": "CB2 9HZ",
@@ -2682,8 +2781,8 @@
   ],
   "provider": "hermes-browser",
   "run_attempt": 1,
-  "run_id": "41852121249",
-  "run_url": "https://github.com/bristolbagpiper/BassBeerMap/actions/runs/41852121249",
+  "run_id": "42050260012",
+  "run_url": "https://github.com/bristolbagpiper/BassBeerMap/actions/runs/42050260012",
   "schema_version": 1,
-  "source_execution_finished_at": "2026-11-04T07:44:25.254859+00:00"
+  "source_execution_finished_at": "2026-11-05T07:44:06.720578+00:00"
 }

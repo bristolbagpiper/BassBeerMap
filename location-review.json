@@ -10237,7 +10237,7 @@
           "status": "resolved"
         }
       ],
-      "last_checked": "2026-11-03",
+      "last_checked": "2026-11-06",
       "manual_action_required": false,
       "next_action": "No pin check requested",
       "place_name": "Newbold",
@@ -10271,16 +10271,12 @@
       "review_category": "confirmed",
       "source_checks": {
         "camra": {
-          "status": "confirmed",
+          "status": "address_confirmed_marker_differs",
           "url": "https://camra.org.uk/pubs/171213"
         },
-        "food-standards-agency-fhrs": {
-          "status": "not_checked",
-          "url": "https://ratings.food.gov.uk/business/720517"
-        },
-        "fsa_independent": {
-          "status": "nearby",
-          "url": "https://ratings.food.gov.uk/business/720517"
+        "reviewed-named-building": {
+          "status": "confirmed",
+          "url": "https://www.openstreetmap.org/node/373813039"
         }
       },
       "source_error": null,

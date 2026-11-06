@@ -10238,7 +10238,7 @@
             "status": "resolved"
           }
         ],
-        "last_checked": "2026-11-03",
+        "last_checked": "2026-11-06",
         "manual_action_required": false,
         "next_action": "No pin check requested",
         "place_name": "Newbold",
@@ -10272,16 +10272,12 @@
         "review_category": "confirmed",
         "source_checks": {
           "camra": {
-            "status": "confirmed",
+            "status": "address_confirmed_marker_differs",
             "url": "https://camra.org.uk/pubs/171213"
           },
-          "food-standards-agency-fhrs": {
-            "status": "not_checked",
-            "url": "https://ratings.food.gov.uk/business/720517"
-          },
-          "fsa_independent": {
-            "status": "nearby",
-            "url": "https://ratings.food.gov.uk/business/720517"
+          "reviewed-named-building": {
+            "status": "confirmed",
+            "url": "https://www.openstreetmap.org/node/373813039"
           }
         },
         "source_error": null,
@@ -23962,6 +23958,17 @@
         "george inn|coleorton|le67 8hf"
       ],
       "current_key": "george inn|coleorton|le67 8hf",
+      "google_identity_review": {
+        "conclusion": "same_venue",
+        "decision": "verified_directory_identity",
+        "identity_review_signature": "0245e841ba4ac0f83350bc49b94e1d2432e4782a23c7c0837c33a7aa7a10c4f1",
+        "reason": "Named OSM venue and CAMRA address evidence identify George Inn at the same building and full postcode; Google result title is a common-name variant. No supported address or pin correction identified. Live OSM has a named pub at 1.3m from the Google point, corroborating the mapped premises.",
+        "reviewed_at": "2026-11-06",
+        "source_urls": [
+          "https://www.openstreetmap.org/node/910436401",
+          "https://camra.org.uk/pubs/171371"
+        ]
+      },
       "independent_location_check": {
         "actionable": false,
         "checked_at": "2026-11-04",
@@ -24461,6 +24468,17 @@
         "hand and heart|nottingham: central|ng1 5ba"
       ],
       "current_key": "hand and heart|nottingham: central|ng1 5ba",
+      "google_identity_review": {
+        "conclusion": "same_venue",
+        "decision": "verified_directory_identity",
+        "identity_review_signature": "83b8d5b140027090fe7752a0ba38147679d62251e588d9b7c52aa4dc3973d1d2",
+        "reason": "Named evidence matches the distinctive venue and full postcode; Google point is 7.6m from the CAMRA/reference point, consistent with the same premises. No supported address or pin correction identified. Live OSM has a named pub at 7.3m from the Google point, corroborating the mapped premises.",
+        "reviewed_at": "2026-11-06",
+        "source_urls": [
+          "https://camra.org.uk/pubs/162477",
+          "https://www.openstreetmap.org/way/222378689"
+        ]
+      },
       "independent_location_check": {
         "actionable": false,
         "checked_at": "2026-11-03",
@@ -26591,6 +26609,17 @@
         "jawbone|liverpool: bootle|l20 3bz"
       ],
       "current_key": "jawbone|liverpool: bootle|l20 3bz",
+      "google_identity_review": {
+        "conclusion": "same_venue",
+        "decision": "verified_directory_identity",
+        "identity_review_signature": "100ad8d4943e815d14dfba80e4bcff0ec793994febec48a4cc6b183d89128f61",
+        "reason": "The council licence identifies the Jawbone Tavern at 12 Litherland Road, L20 3BZ. The named result is at the existing owner-reviewed point.",
+        "reviewed_at": "2026-11-06",
+        "source_urls": [
+          "https://modgov.sefton.gov.uk/Data/Licensing%20and%20Regulatory%20Committee/20051128/Agenda/Appendix%2006.pdf",
+          "https://find-and-update.company-information.service.gov.uk/company/05888522"
+        ]
+      },
       "independent_location_check": {
         "actionable": false,
         "checked_at": "2026-11-03",
@@ -28383,6 +28412,17 @@
         "lord hop|nuneaton: central|cv11 5jx"
       ],
       "current_key": "lord hop|nuneaton: central|cv11 5jx",
+      "google_identity_review": {
+        "conclusion": "same_venue",
+        "decision": "verified_directory_identity",
+        "identity_review_signature": "c49e23c1d8ab35fb1b2499fcd851f47a70a4d6efed375c2af7f9ae7f39740309",
+        "reason": "Named evidence matches the distinctive venue and full postcode; Google point is 8.8m from the CAMRA/reference point, consistent with the same premises. No supported address or pin correction identified. Live OSM has a named pub at 8.8m from the Google point, corroborating the mapped premises.",
+        "reviewed_at": "2026-11-06",
+        "source_urls": [
+          "https://camra.org.uk/pubs/158316",
+          "https://www.openstreetmap.org/node/6216544732"
+        ]
+      },
       "independent_location_check": {
         "actionable": false,
         "checked_at": "2026-11-03",
@@ -29249,6 +29289,18 @@
         "snowdonia parc|waunfawr|ll55 4aq"
       ],
       "current_key": "snowdonia parc|waunfawr|ll55 4aq",
+      "google_identity_review": {
+        "conclusion": "wrong_google_result",
+        "decision": "verified_directory_identity",
+        "identity_review_signature": "7d99ad52b06ad7d75d200ac98b3b8713d769180f94ba2cc654c72933fe7476b8",
+        "reason": "The saved point is inside the mapped pub. The comparison is for the larger campsite site, 107 metres away.",
+        "reviewed_at": "2026-11-06",
+        "source_urls": [
+          "https://camra.org.uk/pubs/146316",
+          "https://www.welshhighlandrailway.net/access.htm",
+          "https://www.openstreetmap.org/way/481473742"
+        ]
+      },
       "independent_location_check": {
         "actionable": false,
         "checked_at": "2026-11-03",
@@ -35172,6 +35224,17 @@
         "social club (pmc)|rolleston-on-dove|de13 9dn"
       ],
       "current_key": "social club (pmc)|rolleston-on-dove|de13 9dn",
+      "google_identity_review": {
+        "conclusion": "same_venue",
+        "decision": "verified_directory_identity",
+        "identity_review_signature": "f9f493b0de15812f92c33fc0d3f4d01f857e1fd04128d462f1c2a4c6504f3f64",
+        "reason": "The local club directory names Rolleston Club at 15 Burnside, matching the venue label and mapped premises.",
+        "reviewed_at": "2026-11-06",
+        "source_urls": [
+          "https://www.rolleston.org.uk/rclub/index.htm",
+          "https://www.openstreetmap.org/node/13876295973"
+        ]
+      },
       "independent_location_check": {
         "actionable": false,
         "checked_at": "2026-11-03",
@@ -35258,6 +35321,17 @@
         "plough|bedworth heath|cv12 0lg"
       ],
       "current_key": "plough|bedworth heath|cv12 0lg",
+      "google_identity_review": {
+        "conclusion": "same_venue",
+        "decision": "verified_directory_identity",
+        "identity_review_signature": "a705ccc198ae649c711e1599a211b186b43c46d74622e2dcb4c1952c1b9cafad",
+        "reason": "Named evidence matches the distinctive venue and full postcode; Google point is 11.4m from the CAMRA/reference point, consistent with the same premises. No supported address or pin correction identified. Live OSM has a named pub at 10.7m from the Google point, corroborating the mapped premises.",
+        "reviewed_at": "2026-11-06",
+        "source_urls": [
+          "https://camra.org.uk/pubs/158195",
+          "https://www.openstreetmap.org/way/256208208"
+        ]
+      },
       "independent_location_check": {
         "actionable": false,
         "checked_at": "2026-11-03",
@@ -35737,9 +35811,31 @@
     },
     "v-160fbb94-1552-5a9a-94ae-942b4861aa2b": {
       "aliases": [
-        "rushden historic transport society|rushden|nn10 0aw"
+        "rushden historic transport society|rushden|nn10 0aw",
+        "rushden historical transport society|rushden|nn10 0aw"
       ],
-      "current_key": "rushden historic transport society|rushden|nn10 0aw",
+      "current_key": "rushden historical transport society|rushden|nn10 0aw",
+      "google_identity_review": {
+        "conclusion": "listing_error",
+        "decision": "verified_directory_identity",
+        "identity_review_signature": "fed2cb86b5eb7533cb06cf33ef877c156c36f99ed8c9af3841142ca729f31926",
+        "reason": "The society and CAMRA use Historical in its name and identify the Station Bar inside the station building.",
+        "reviewed_at": "2026-11-06",
+        "source_urls": [
+          "https://www.rhts.co.uk/station-bar/",
+          "https://camra.org.uk/pubs/160960",
+          "https://www.openstreetmap.org/way/109441042"
+        ]
+      },
+      "identity_reviews": [
+        {
+          "checked_at": "2026-11-06",
+          "previous_key": "rushden historic transport society|rushden|nn10 0aw",
+          "reason": "The society and CAMRA use Historical in its name and identify the Station Bar inside the station building.",
+          "reference_postcode": "NN10 0AW",
+          "source_url": "https://www.rhts.co.uk/station-bar/"
+        }
+      ],
       "independent_location_check": {
         "actionable": false,
         "checked_at": "2026-11-03",
@@ -35788,8 +35884,40 @@
         "pg": "Guest",
         "place_name": "Rushden",
         "postcode": "NN10 0AW",
-        "pub_name": "Rushden Historic Transport Society"
+        "pub_name": "Rushden Historical Transport Society"
       },
+      "listing_reviews": [
+        {
+          "decision": {
+            "changes": {
+              "pub_name": "Rushden Historical Transport Society"
+            },
+            "checked_at": "2026-11-06",
+            "expected": {
+              "place_name": "Rushden",
+              "postcode": "NN10 0AW",
+              "pub_name": "Rushden Historic Transport Society"
+            },
+            "reason": "The society and CAMRA use Historical in its name and identify the Station Bar inside the station building.",
+            "reference_postcode": "NN10 0AW",
+            "reviewed_by": "Codex venue evidence review authorised by map owner",
+            "source_url": "https://www.rhts.co.uk/station-bar/"
+          },
+          "kind": "correction",
+          "original": {
+            "area": "Northamptonshire",
+            "country": "England",
+            "dispense": "H",
+            "last": "2026 Q3",
+            "notes": "",
+            "pg": "Guest",
+            "place_name": "Rushden",
+            "postcode": "NN10 0AW",
+            "pub_name": "Rushden Historic Transport Society"
+          },
+          "original_key": "rushden historic transport society|rushden|nn10 0aw"
+        }
+      ],
       "verification_attempt": {
         "checked_at": "2026-11-04",
         "reason": "Manual map evidence needs a fresh human address/map check",
@@ -39337,6 +39465,18 @@
         "barton rovers social (pmc)|barton le clay|mk45 4sd"
       ],
       "current_key": "barton rovers social (pmc)|barton le clay|mk45 4sd",
+      "google_identity_review": {
+        "conclusion": "same_venue",
+        "decision": "verified_directory_identity",
+        "identity_review_signature": "79cfc1c354bb6a785f9d10177e71f60cf159083030acc2374243e6e63ac83a82",
+        "reason": "The club operates its bar at the Sharpenhoe Road ground. The FA and local food hygiene record give MK45 4SD for the football ground and bar, while the club’s directions page uses the sports-field postcode.",
+        "reviewed_at": "2026-11-06",
+        "source_urls": [
+          "https://www.bartonrovers.com/the-bar",
+          "https://www.thefa.com/-/media/cfa/bedfordshirefa/images/about/handbook/8-directories/club-handbook-2019-20.ashx",
+          "https://ratings.food.gov.uk/business/450244"
+        ]
+      },
       "independent_location_check": {
         "actionable": false,
         "checked_at": "2026-11-03",
@@ -43471,6 +43611,17 @@
         "olde chequers inn|bulkington|cv12 9nh"
       ],
       "current_key": "olde chequers inn|bulkington|cv12 9nh",
+      "google_identity_review": {
+        "conclusion": "same_venue",
+        "decision": "verified_directory_identity",
+        "identity_review_signature": "a429c17556ae1f7972a78713c4840a6b67ad5eed635112bd13645a3ca8fa3bd3",
+        "reason": "Named evidence matches the distinctive venue and full postcode; Google point is 17.4m from the CAMRA/reference point, consistent with the same premises. No supported address or pin correction identified. Live OSM has a named pub at 18.8m from the Google point, corroborating the mapped premises.",
+        "reviewed_at": "2026-11-06",
+        "source_urls": [
+          "https://camra.org.uk/pubs/158205",
+          "https://www.openstreetmap.org/way/307445981"
+        ]
+      },
       "independent_location_check": {
         "actionable": false,
         "checked_at": "2026-11-03",
@@ -44169,6 +44320,18 @@
         "village cat|liverpool: woolton|l25 7ra"
       ],
       "current_key": "village cat|liverpool: woolton|l25 7ra",
+      "google_identity_review": {
+        "conclusion": "same_venue",
+        "decision": "verified_directory_identity",
+        "identity_review_signature": "8c47ad8adec4c2334475b96659cd6f0c8c271710a53c04991f98536e127c18c1",
+        "reason": "The operator identifies this Woolton branch at 5–7 Allerton Road. The saved point lies inside the corner premises, while the comparison point is by the road.",
+        "reviewed_at": "2026-11-06",
+        "source_urls": [
+          "https://camra.org.uk/pubs/200241",
+          "https://www.blackcatbar.co.uk/",
+          "https://www.openstreetmap.org/way/844287461"
+        ]
+      },
       "independent_location_check": {
         "actionable": false,
         "checked_at": "2026-11-03",
@@ -45631,6 +45794,17 @@
         "kenilworth|edinburgh: central|eh2 3jd"
       ],
       "current_key": "kenilworth|edinburgh: central|eh2 3jd",
+      "google_identity_review": {
+        "conclusion": "same_venue",
+        "decision": "verified_directory_identity",
+        "identity_review_signature": "1b2a0a706e85f1461b19b837948fff3e05c9c252270212c7175f0dc3cea826c3",
+        "reason": "Named evidence matches the distinctive venue and full postcode; Google point is 5.9m from the CAMRA/reference point, consistent with the same premises. No supported address or pin correction identified. Live OSM has a named pub at 5.9m from the Google point, corroborating the mapped premises.",
+        "reviewed_at": "2026-11-06",
+        "source_urls": [
+          "https://camra.org.uk/pubs/150749",
+          "https://www.openstreetmap.org/node/41483847"
+        ]
+      },
       "independent_location_check": {
         "actionable": false,
         "checked_at": "2026-11-03",
@@ -51904,6 +52078,17 @@
         "gate hangs well|carlton|cv13 0db"
       ],
       "current_key": "gate hangs well|carlton|cv13 0db",
+      "google_identity_review": {
+        "conclusion": "same_venue",
+        "decision": "verified_directory_identity",
+        "identity_review_signature": "6e4173dd8f5332c50d004b4735d8b918997572d91b18b794c066151be1e2a5d8",
+        "reason": "Named evidence matches the distinctive venue and full postcode; Google point is 21.7m from the CAMRA/reference point, consistent with the same premises. No supported address or pin correction identified. Live OSM has a named pub at 24.4m from the Google point, corroborating the mapped premises.",
+        "reviewed_at": "2026-11-06",
+        "source_urls": [
+          "https://camra.org.uk/pubs/181790",
+          "https://www.openstreetmap.org/way/887754815"
+        ]
+      },
       "independent_location_check": {
         "actionable": false,
         "checked_at": "2026-11-03",
@@ -52722,6 +52907,17 @@
         "bell and harp|little eaton|de21 5ae"
       ],
       "current_key": "bell and harp|little eaton|de21 5ae",
+      "google_identity_review": {
+        "conclusion": "same_venue",
+        "decision": "verified_directory_identity",
+        "identity_review_signature": "1edb6d2f9caf48fc8f237616460fb3697f3ac37a744677f769e25e613d2088ac",
+        "reason": "CAMRA and OSM identify the Bell and Harp at 227 Alfreton Road, DE21 5AE; Google point is nearby on the same frontage.",
+        "reviewed_at": "2026-11-06",
+        "source_urls": [
+          "https://camra.org.uk/pubs/143620",
+          "https://www.openstreetmap.org/node/1211291147"
+        ]
+      },
       "independent_location_check": {
         "actionable": false,
         "checked_at": "2026-11-03",
@@ -53341,9 +53537,31 @@
     },
     "v-399d86f9-f10f-51a5-aca2-2a7d139ed2ca": {
       "aliases": [
-        "red monkey|bristol: redlands|bs6 6pf"
+        "red monkey|bristol: redlands|bs6 6pf",
+        "red monkey|bristol: redland|bs6 6pf"
       ],
-      "current_key": "red monkey|bristol: redlands|bs6 6pf",
+      "current_key": "red monkey|bristol: redland|bs6 6pf",
+      "google_identity_review": {
+        "conclusion": "listing_error",
+        "decision": "verified_directory_identity",
+        "identity_review_signature": "b2c3e5674e332dd5136026edae36839e5930ec27ba628b4c024eb1ea2466427f",
+        "reason": "CAMRA and the named building agree on 22 Chandos Road. The council identifies the neighbourhood as Redland.",
+        "reviewed_at": "2026-11-06",
+        "source_urls": [
+          "https://camra.org.uk/pubs/113785",
+          "https://www.bristol.gov.uk/files/467-redland-rps-area-map",
+          "https://www.openstreetmap.org/way/272704914"
+        ]
+      },
+      "identity_reviews": [
+        {
+          "checked_at": "2026-11-06",
+          "previous_key": "red monkey|bristol: redlands|bs6 6pf",
+          "reason": "CAMRA and the named building agree on 22 Chandos Road. The council identifies the neighbourhood as Redland.",
+          "reference_postcode": "BS6 6PF",
+          "source_url": "https://camra.org.uk/pubs/113785"
+        }
+      ],
       "independent_location_check": {
         "actionable": false,
         "checked_at": "2026-11-03",
@@ -53390,10 +53608,42 @@
         "last": "2026 Q2",
         "notes": "",
         "pg": "Guest",
-        "place_name": "Bristol: Redlands",
+        "place_name": "Bristol: Redland",
         "postcode": "BS6 6PF",
         "pub_name": "Red Monkey"
       },
+      "listing_reviews": [
+        {
+          "decision": {
+            "changes": {
+              "place_name": "Bristol: Redland"
+            },
+            "checked_at": "2026-11-06",
+            "expected": {
+              "place_name": "Bristol: Redlands",
+              "postcode": "BS6 6PF",
+              "pub_name": "Red Monkey"
+            },
+            "reason": "CAMRA and the named building agree on 22 Chandos Road. The council identifies the neighbourhood as Redland.",
+            "reference_postcode": "BS6 6PF",
+            "reviewed_by": "Codex venue evidence review authorised by map owner",
+            "source_url": "https://camra.org.uk/pubs/113785"
+          },
+          "kind": "correction",
+          "original": {
+            "area": "Gloucs & Bristol",
+            "country": "England",
+            "dispense": "H",
+            "last": "2026 Q2",
+            "notes": "",
+            "pg": "Guest",
+            "place_name": "Bristol: Redlands",
+            "postcode": "BS6 6PF",
+            "pub_name": "Red Monkey"
+          },
+          "original_key": "red monkey|bristol: redlands|bs6 6pf"
+        }
+      ],
       "verification_attempt": {
         "checked_at": "2026-11-03",
         "evidence": {
@@ -53584,6 +53834,17 @@
         "barley mow|marylebone w1u|w1u 6qw"
       ],
       "current_key": "barley mow|marylebone w1u|w1u 6qw",
+      "google_identity_review": {
+        "conclusion": "same_venue",
+        "decision": "verified_directory_identity",
+        "identity_review_signature": "539ee10f0098eaf0fffe41f56df8f22836c1b85d18860288be878532ec7a4912",
+        "reason": "CAMRA and OSM identify The Barley Mow at 8 Dorset Street, W1U 6QW; Google title points to the same pub.",
+        "reviewed_at": "2026-11-06",
+        "source_urls": [
+          "https://camra.org.uk/pubs/129395",
+          "https://www.openstreetmap.org/way/148011247"
+        ]
+      },
       "independent_location_check": {
         "actionable": false,
         "checked_at": "2026-11-03",
@@ -54497,6 +54758,17 @@
         "king lud|ryde|po33 2dy"
       ],
       "current_key": "king lud|ryde|po33 2dy",
+      "google_identity_review": {
+        "conclusion": "same_venue",
+        "decision": "verified_directory_identity",
+        "identity_review_signature": "22006b085125c414d58f52717709e71112dff092f7ccfe063da984a81e822ab3",
+        "reason": "Named evidence matches the distinctive venue and full postcode; Google point is 7.3m from the CAMRA/reference point, consistent with the same premises. No supported address or pin correction identified. Live OSM has a named pub at 7.3m from the Google point, corroborating the mapped premises.",
+        "reviewed_at": "2026-11-06",
+        "source_urls": [
+          "https://camra.org.uk/pubs/176559",
+          "https://www.openstreetmap.org/node/34358800"
+        ]
+      },
       "independent_location_check": {
         "actionable": false,
         "checked_at": "2026-11-03",
@@ -55748,6 +56020,17 @@
         "pick & davy|eastwood|ng16 3gs"
       ],
       "current_key": "pick & davy|eastwood|ng16 3gs",
+      "google_identity_review": {
+        "conclusion": "same_venue",
+        "decision": "verified_directory_identity",
+        "identity_review_signature": "9af93e2299bfbaead1e1810e59f77ffcd1bb289ceb7c53abc0938cc1a7d3e9be",
+        "reason": "Named evidence matches the distinctive venue and full postcode; Google point is 0.7m from the CAMRA/reference point, consistent with the same premises. No supported address or pin correction identified. Live OSM has a named pub at 1.2m from the Google point, corroborating the mapped premises.",
+        "reviewed_at": "2026-11-06",
+        "source_urls": [
+          "https://camra.org.uk/pubs/163088",
+          "https://www.openstreetmap.org/way/327495190"
+        ]
+      },
       "independent_location_check": {
         "actionable": false,
         "checked_at": "2026-11-03",
@@ -57554,6 +57837,17 @@
         "flowerpot|walthamstow e17|e17 3hx"
       ],
       "current_key": "flowerpot|walthamstow e17|e17 3hx",
+      "google_identity_review": {
+        "conclusion": "same_venue",
+        "decision": "verified_directory_identity",
+        "identity_review_signature": "9c35bc8d9552c16c349d4c23a910c909a75e0176da2467bd2e4ad87e468fa3cc",
+        "reason": "Named evidence matches the distinctive venue and full postcode; Google point is 5.4m from the CAMRA/reference point, consistent with the same premises. No supported address or pin correction identified. Live OSM has a named pub at 6.9m from the Google point, corroborating the mapped premises.",
+        "reviewed_at": "2026-11-06",
+        "source_urls": [
+          "https://camra.org.uk/pubs/155363",
+          "https://www.openstreetmap.org/way/205593042"
+        ]
+      },
       "independent_location_check": {
         "actionable": false,
         "checked_at": "2026-11-03",
@@ -57930,6 +58224,17 @@
         "yr alex|caernarfon|ll55 1ba"
       ],
       "current_key": "yr alex|caernarfon|ll55 1ba",
+      "google_identity_review": {
+        "conclusion": "same_venue",
+        "decision": "verified_directory_identity",
+        "identity_review_signature": "78352e3e8d618de40e42db9448dcfe045a3967d9854ec8b7c4f89c64a62f8247",
+        "reason": "The named CAMRA venue and branch address agree on North Road and LL55 1BA; the two markers are 21 metres apart.",
+        "reviewed_at": "2026-11-06",
+        "source_urls": [
+          "https://camra.org.uk/pubs/146148",
+          "https://gwyneddamon.camra.org.uk/pubguide"
+        ]
+      },
       "independent_location_check": {
         "actionable": false,
         "checked_at": "2026-11-03",
@@ -58470,6 +58775,19 @@
         "swan|betley|cw3 9ab"
       ],
       "current_key": "swan|betley|cw3 9ab",
+      "google_identity_review": {
+        "conclusion": "pin_error",
+        "decision": "verified_directory_identity",
+        "identity_review_signature": "b2568f768ec11260fc0f24e63980a41dd3502d453efac0f3b9c55889d31ec79c",
+        "reason": "The operator and council give the same Main Road address and CW3 9AB. The named pub feature is 117 metres from the saved point and next to the operator’s premises.",
+        "reviewed_at": "2026-11-06",
+        "source_urls": [
+          "https://camra.org.uk/pubs/123006",
+          "https://theswanbetley.co.uk/contact-us/",
+          "https://moderngov.newcastle-staffs.gov.uk/mgConvert2PDF.aspx?ID=540&T=6",
+          "https://www.openstreetmap.org/node/30215958"
+        ]
+      },
       "independent_location_check": {
         "actionable": false,
         "checked_at": "2026-11-03",
@@ -58528,29 +58846,111 @@
         "postcode": "CW3 9AB",
         "pub_name": "Swan"
       },
-      "verification_attempt": {
-        "checked_at": "2026-11-03",
-        "evidence": {
-          "checked_at": "2026-11-03",
-          "difference_metres": 0.0,
-          "match": "venue_name_and_full_postcode",
-          "reference_address": "Main Road",
-          "reference_coordinate": {
-            "lat": 53.0352,
-            "lng": -2.36878
+      "location_corrections": [
+        {
+          "checked_at": "2026-11-06",
+          "corrected_coordinate": {
+            "lat": 53.0341531,
+            "lng": -2.36861
           },
-          "reference_name": "Swan, Betley - Community Local",
-          "reference_postcode": "CW3 9AB",
-          "source": "camra",
-          "url": "https://camra.org.uk/pubs/123006"
-        },
+          "previous_override": {
+            "audit_reason": "camra_and_fsa_agree_within_50m_current_pin_does_not",
+            "camra_to_fsa_metres": 13.5,
+            "checked_at": "2026-09-11",
+            "corroborating_source_url": "https://api.ratings.food.gov.uk/Establishments?address=CW3+9AB&pageSize=100&pageNumber=1",
+            "lat": 53.0352,
+            "lng": -2.36878,
+            "previous_difference_metres": 117.0,
+            "previous_lat": 53.0341531,
+            "previous_lng": -2.36861,
+            "previous_source": "openstreetmap-gb-extract",
+            "source": "camra-and-fsa-location-audit",
+            "source_url": "https://camra.org.uk/pubs/123006"
+          },
+          "previous_pin": {
+            "evidence": [
+              {
+                "checked_at": "2026-10-14",
+                "difference_metres": 0.0,
+                "disposition": "superseded_by_source_refresh",
+                "match": "venue_name_and_full_postcode",
+                "reference_address": "Main Road",
+                "reference_coordinate": {
+                  "lat": 53.0352,
+                  "lng": -2.36878
+                },
+                "reference_name": "Swan, Betley - Village Pub with Cask Ales",
+                "reference_postcode": "CW3 9AB",
+                "source": "camra",
+                "url": "https://camra.org.uk/pubs/123006"
+              },
+              {
+                "checked_at": "2026-11-03",
+                "difference_metres": 0.0,
+                "match": "venue_name_and_full_postcode",
+                "reference_address": "Main Road",
+                "reference_coordinate": {
+                  "lat": 53.0352,
+                  "lng": -2.36878
+                },
+                "reference_name": "Swan, Betley - Community Local",
+                "reference_postcode": "CW3 9AB",
+                "source": "camra",
+                "url": "https://camra.org.uk/pubs/123006"
+              }
+            ],
+            "lat": 53.0352,
+            "lng": -2.36878,
+            "source": "camra-and-fsa-location-audit"
+          },
+          "previous_verification_attempt": {
+            "checked_at": "2026-11-03",
+            "evidence": {
+              "checked_at": "2026-11-03",
+              "difference_metres": 0.0,
+              "match": "venue_name_and_full_postcode",
+              "reference_address": "Main Road",
+              "reference_coordinate": {
+                "lat": 53.0352,
+                "lng": -2.36878
+              },
+              "reference_name": "Swan, Betley - Community Local",
+              "reference_postcode": "CW3 9AB",
+              "source": "camra",
+              "url": "https://camra.org.uk/pubs/123006"
+            },
+            "sources": {
+              "camra": {
+                "status": "confirmed",
+                "url": "https://camra.org.uk/pubs/123006"
+              }
+            },
+            "status": "confirmed"
+          },
+          "reason": "The operator and council give the same Main Road address and CW3 9AB. The named pub feature is 117 metres from the saved point and next to the operator’s premises.",
+          "reviewed_by": "Codex venue evidence review authorised by map owner",
+          "source_urls": [
+            "https://camra.org.uk/pubs/123006",
+            "https://theswanbetley.co.uk/contact-us/",
+            "https://moderngov.newcastle-staffs.gov.uk/mgConvert2PDF.aspx?ID=540&T=6",
+            "https://www.openstreetmap.org/node/30215958"
+          ]
+        }
+      ],
+      "verification_attempt": {
+        "checked_at": "2026-11-06",
+        "reason": "Reviewed named building and corroborated venue address",
         "sources": {
           "camra": {
-            "status": "confirmed",
+            "status": "address_confirmed_marker_differs",
             "url": "https://camra.org.uk/pubs/123006"
+          },
+          "reviewed-named-building": {
+            "status": "confirmed",
+            "url": "https://www.openstreetmap.org/node/30215958"
           }
         },
-        "status": "confirmed"
+        "status": "manual_review"
       },
       "verified_pin": {
         "evidence": [
@@ -58572,6 +58972,7 @@
           {
             "checked_at": "2026-11-03",
             "difference_metres": 0.0,
+            "disposition": "superseded_by_building_review",
             "match": "venue_name_and_full_postcode",
             "reference_address": "Main Road",
             "reference_coordinate": {
@@ -58582,11 +58983,25 @@
             "reference_postcode": "CW3 9AB",
             "source": "camra",
             "url": "https://camra.org.uk/pubs/123006"
+          },
+          {
+            "address_source_url": "https://camra.org.uk/pubs/123006",
+            "checked_at": "2026-11-06",
+            "match": "reviewed_named_building_and_camra_address",
+            "reference_address": "Main Road",
+            "reference_coordinate": {
+              "lat": 53.0341531,
+              "lng": -2.36861
+            },
+            "reference_name": "Swan",
+            "reference_postcode": "CW3 9AB",
+            "source": "reviewed-named-building",
+            "url": "https://www.openstreetmap.org/node/30215958"
           }
         ],
-        "lat": 53.0352,
-        "lng": -2.36878,
-        "source": "camra-and-fsa-location-audit"
+        "lat": 53.0341531,
+        "lng": -2.36861,
+        "source": "reviewed-named-building"
       }
     },
     "v-446b9fc7-c4e0-5040-91f3-8dbe02bb46a1": {
@@ -58917,6 +59332,17 @@
         "blind jacks|knaresborough|hg5 8al"
       ],
       "current_key": "blind jacks|knaresborough|hg5 8al",
+      "google_identity_review": {
+        "conclusion": "same_venue",
+        "decision": "verified_directory_identity",
+        "identity_review_signature": "72ba6102e5dec0cb018b14918166e486a2019cdecaf02ca6138b0e635fa7cc17",
+        "reason": "CAMRA and OSM identify Blind Jack’s at 19 Market Place, HG5 8AL; markers fall on the named venue.",
+        "reviewed_at": "2026-11-06",
+        "source_urls": [
+          "https://camra.org.uk/pubs/181539",
+          "https://www.openstreetmap.org/node/626949300"
+        ]
+      },
       "independent_location_check": {
         "actionable": false,
         "checked_at": "2026-11-03",
@@ -59436,6 +59862,17 @@
         "queens head|ashby-de-la-zouch|le65 1ah"
       ],
       "current_key": "queens head|ashby-de-la-zouch|le65 1ah",
+      "google_identity_review": {
+        "conclusion": "same_venue",
+        "decision": "verified_directory_identity",
+        "identity_review_signature": "c8e032877c6acdf2c5882841dacc3ac5bbbc73140f8d99f6e8ab9e0622a1202f",
+        "reason": "Named CAMRA listing at 79 Market Street, LE65 1AH, corroborates the premises. The comparison is 3.3 metres from the saved point. The mapped venue feature corroborates the location.",
+        "reviewed_at": "2026-11-06",
+        "source_urls": [
+          "https://camra.org.uk/pubs/171421",
+          "https://www.openstreetmap.org/node/2768085209"
+        ]
+      },
       "independent_location_check": {
         "actionable": false,
         "checked_at": "2026-11-03",
@@ -60660,6 +61097,17 @@
         "vaults|uttoxeter|st14 8hp"
       ],
       "current_key": "vaults|uttoxeter|st14 8hp",
+      "google_identity_review": {
+        "conclusion": "same_venue",
+        "decision": "verified_directory_identity",
+        "identity_review_signature": "ea9132bd3e1efb0153686ac009474f519c0b2d2ae0bf0c413e30fcf4567a27a6",
+        "reason": "Named CAMRA listing at 22 Market Place, ST14 8HP, corroborates the premises. The comparison is 10.6 metres from the saved point. The mapped venue feature corroborates the location.",
+        "reviewed_at": "2026-11-06",
+        "source_urls": [
+          "https://camra.org.uk/pubs/128039",
+          "https://www.openstreetmap.org/way/414458834"
+        ]
+      },
       "independent_location_check": {
         "actionable": false,
         "checked_at": "2026-11-03",
@@ -60776,6 +61224,17 @@
         "cricket club|rolleston-on-dove|de13 9au"
       ],
       "current_key": "cricket club|rolleston-on-dove|de13 9au",
+      "google_identity_review": {
+        "conclusion": "same_venue",
+        "decision": "verified_directory_identity",
+        "identity_review_signature": "df15958a0506f8b5610345c00f6933f0da00590f9fa62468d7160bed9f14da9f",
+        "reason": "MCC lists Rolleston Cricket Club at The Willows, Dovecliff Road, DE13 9AU. The club identifies a clubhouse and bar at that ground, and the comparison point matches the saved point.",
+        "reviewed_at": "2026-11-06",
+        "source_urls": [
+          "https://www.lords.org/mcc/mcc-cricket/fixtures-and-results?display=results&matchid=13800",
+          "https://milesr.webnode.page/contact-us/"
+        ]
+      },
       "independent_location_check": {
         "actionable": false,
         "checked_at": "2026-11-03",
@@ -61138,6 +61597,17 @@
         "white lion|stockport|sk1 1lw"
       ],
       "current_key": "white lion|stockport|sk1 1lw",
+      "google_identity_review": {
+        "conclusion": "same_venue",
+        "decision": "verified_directory_identity",
+        "identity_review_signature": "abfd74adb61e3d78e08548550804aae5b7288dc190300f16ef74b62d7c0aa4a4",
+        "reason": "Named CAMRA listing at 20 Great Underbank, SK1 1LW, corroborates the premises. The comparison is 4.4 metres from the saved point. The mapped venue feature corroborates the location.",
+        "reviewed_at": "2026-11-06",
+        "source_urls": [
+          "https://camra.org.uk/pubs/167794",
+          "https://www.openstreetmap.org/way/979785514"
+        ]
+      },
       "independent_location_check": {
         "actionable": false,
         "checked_at": "2026-11-03",
@@ -61262,6 +61732,17 @@
         "unicorn|manchester: central|m4 1pn"
       ],
       "current_key": "unicorn|manchester: central|m4 1pn",
+      "google_identity_review": {
+        "conclusion": "same_venue",
+        "decision": "verified_directory_identity",
+        "identity_review_signature": "03197867b8b1f038851a26833a9e33377adc140d2df15e1e59c4ad0b5b734341",
+        "reason": "Named CAMRA listing at 26 Church Street, Manchester, M4 1PN, corroborates the premises. The comparison is 10.9 metres from the saved point. The mapped venue feature corroborates the location.",
+        "reviewed_at": "2026-11-06",
+        "source_urls": [
+          "https://camra.org.uk/pubs/137566",
+          "https://www.openstreetmap.org/node/2866944386"
+        ]
+      },
       "independent_location_check": {
         "actionable": false,
         "checked_at": "2026-11-03",
@@ -61757,6 +62238,18 @@
         "binary|mickleover|de3 0gr"
       ],
       "current_key": "binary|mickleover|de3 0gr",
+      "google_identity_review": {
+        "conclusion": "same_venue",
+        "decision": "verified_directory_identity",
+        "identity_review_signature": "d72e1716b79f3acc8a24707b1a81ae410e3225f118eebdeae142ccda2af0e217",
+        "reason": "The named building and operator site identify Binary Bar and Restaurant at the same site. Owner review explicitly confirms this building and postcode DE3 0GR; retain it. CAMRA currently shows DE3 0BZ, so preserve that conflict as provenance rather than substituting it.",
+        "reviewed_at": "2026-11-06",
+        "source_urls": [
+          "https://camra.org.uk/pubs/196347",
+          "https://www.openstreetmap.org/way/725887596",
+          "https://binarybarandrestaurant.co.uk/"
+        ]
+      },
       "independent_location_check": {
         "actionable": false,
         "checked_at": "2026-11-05",
@@ -62472,6 +62965,16 @@
         "drum and monkey|glasgow: central|g2 5tf"
       ],
       "current_key": "drum and monkey|glasgow: central|g2 5tf",
+      "google_identity_review": {
+        "conclusion": "same_venue",
+        "decision": "verified_directory_identity",
+        "identity_review_signature": "0dadfa20e8c4a9dc12f05cb69c5617801566a195fe0ebbad2771f443430863fa",
+        "reason": "CAMRA identifies Drum and Monkey at 91 St Vincent Street, G2 5TF; OSM pub node is same venue despite adjacent house-number discrepancy.",
+        "reviewed_at": "2026-11-06",
+        "source_urls": [
+          "https://camra.org.uk/pubs/168762"
+        ]
+      },
       "independent_location_check": {
         "actionable": false,
         "checked_at": "2026-11-03",
@@ -63098,6 +63601,17 @@
         "meynell ingram arms|hoar cross|de13 8rb"
       ],
       "current_key": "meynell ingram arms|hoar cross|de13 8rb",
+      "google_identity_review": {
+        "conclusion": "same_venue",
+        "decision": "verified_directory_identity",
+        "identity_review_signature": "4e22e1d820faea2edf89facd9caa19541dac9d18dcbd754d174e13ee83071b43",
+        "reason": "Named evidence matches the distinctive venue and full postcode; Google point is 3.4m from the CAMRA/reference point, consistent with the same premises. No supported address or pin correction identified. Live OSM has a named pub at 3.4m from the Google point, corroborating the mapped premises.",
+        "reviewed_at": "2026-11-06",
+        "source_urls": [
+          "https://camra.org.uk/pubs/124036",
+          "https://www.openstreetmap.org/node/173093395"
+        ]
+      },
       "independent_location_check": {
         "actionable": false,
         "checked_at": "2026-11-03",
@@ -63724,6 +64238,18 @@
         "star|thrussington|le7 4uh"
       ],
       "current_key": "star|thrussington|le7 4uh",
+      "google_identity_review": {
+        "conclusion": "pin_error",
+        "decision": "verified_directory_identity",
+        "identity_review_signature": "e4d48957e57dec7500d353ef2f3750fb8350a06ac6b68160c89d5c48ec860106",
+        "reason": "The operator confirms 37 The Green. The named Star Inn feature at the opposite end of the village green is about 50 metres from the saved point.",
+        "reviewed_at": "2026-11-06",
+        "source_urls": [
+          "https://camra.org.uk/pubs/171262",
+          "https://book.thestarinn1744.co.uk/en-US/contact-us",
+          "https://www.openstreetmap.org/node/2995471143"
+        ]
+      },
       "independent_location_check": {
         "actionable": false,
         "checked_at": "2026-11-03",
@@ -63774,29 +64300,108 @@
         "postcode": "LE7 4UH",
         "pub_name": "Star"
       },
-      "verification_attempt": {
-        "checked_at": "2026-11-03",
-        "evidence": {
-          "checked_at": "2026-11-03",
-          "difference_metres": 0.0,
-          "match": "venue_name_and_full_postcode",
-          "reference_address": "37 The Green",
-          "reference_coordinate": {
-            "lat": 52.7371,
-            "lng": -1.04255
+      "location_corrections": [
+        {
+          "checked_at": "2026-11-06",
+          "corrected_coordinate": {
+            "lat": 52.7373613,
+            "lng": -1.0419448
           },
-          "reference_name": "Star Inn, Thrussington - Village Green Pub",
-          "reference_postcode": "LE7 4UH",
-          "source": "camra",
-          "url": "https://camra.org.uk/pubs/171262"
-        },
+          "previous_override": {
+            "audit_reason": "postcode_fallback_replaced",
+            "checked_at": "2026-09-11",
+            "lat": 52.7371,
+            "lng": -1.04255,
+            "previous_difference_metres": 3.6,
+            "previous_lat": 52.737128,
+            "previous_lng": -1.042524,
+            "previous_source": "postcode",
+            "source": "camra-pubs-location-audit",
+            "source_url": "https://camra.org.uk/pubs/171262"
+          },
+          "previous_pin": {
+            "evidence": [
+              {
+                "checked_at": "2026-10-14",
+                "difference_metres": 0.0,
+                "disposition": "superseded_by_source_refresh",
+                "match": "venue_name_and_full_postcode",
+                "reference_address": "37 The Green",
+                "reference_coordinate": {
+                  "lat": 52.7371,
+                  "lng": -1.04255
+                },
+                "reference_name": "Star Inn, Thrussington - Historic 1744 Village Pub",
+                "reference_postcode": "LE7 4UH",
+                "source": "camra",
+                "url": "https://camra.org.uk/pubs/171262"
+              },
+              {
+                "checked_at": "2026-11-03",
+                "difference_metres": 0.0,
+                "match": "venue_name_and_full_postcode",
+                "reference_address": "37 The Green",
+                "reference_coordinate": {
+                  "lat": 52.7371,
+                  "lng": -1.04255
+                },
+                "reference_name": "Star Inn, Thrussington - Village Green Pub",
+                "reference_postcode": "LE7 4UH",
+                "source": "camra",
+                "url": "https://camra.org.uk/pubs/171262"
+              }
+            ],
+            "lat": 52.7371,
+            "lng": -1.04255,
+            "source": "camra-pubs-location-audit"
+          },
+          "previous_verification_attempt": {
+            "checked_at": "2026-11-03",
+            "evidence": {
+              "checked_at": "2026-11-03",
+              "difference_metres": 0.0,
+              "match": "venue_name_and_full_postcode",
+              "reference_address": "37 The Green",
+              "reference_coordinate": {
+                "lat": 52.7371,
+                "lng": -1.04255
+              },
+              "reference_name": "Star Inn, Thrussington - Village Green Pub",
+              "reference_postcode": "LE7 4UH",
+              "source": "camra",
+              "url": "https://camra.org.uk/pubs/171262"
+            },
+            "sources": {
+              "camra": {
+                "status": "confirmed",
+                "url": "https://camra.org.uk/pubs/171262"
+              }
+            },
+            "status": "confirmed"
+          },
+          "reason": "The operator confirms 37 The Green. The named Star Inn feature at the opposite end of the village green is about 50 metres from the saved point.",
+          "reviewed_by": "Codex venue evidence review authorised by map owner",
+          "source_urls": [
+            "https://camra.org.uk/pubs/171262",
+            "https://book.thestarinn1744.co.uk/en-US/contact-us",
+            "https://www.openstreetmap.org/node/2995471143"
+          ]
+        }
+      ],
+      "verification_attempt": {
+        "checked_at": "2026-11-06",
+        "reason": "Reviewed named building and corroborated venue address",
         "sources": {
           "camra": {
-            "status": "confirmed",
+            "status": "address_confirmed_marker_differs",
             "url": "https://camra.org.uk/pubs/171262"
+          },
+          "reviewed-named-building": {
+            "status": "confirmed",
+            "url": "https://www.openstreetmap.org/node/2995471143"
           }
         },
-        "status": "confirmed"
+        "status": "manual_review"
       },
       "verified_pin": {
         "evidence": [
@@ -63818,6 +64423,7 @@
           {
             "checked_at": "2026-11-03",
             "difference_metres": 0.0,
+            "disposition": "superseded_by_building_review",
             "match": "venue_name_and_full_postcode",
             "reference_address": "37 The Green",
             "reference_coordinate": {
@@ -63828,11 +64434,25 @@
             "reference_postcode": "LE7 4UH",
             "source": "camra",
             "url": "https://camra.org.uk/pubs/171262"
+          },
+          {
+            "address_source_url": "https://camra.org.uk/pubs/171262",
+            "checked_at": "2026-11-06",
+            "match": "reviewed_named_building_and_camra_address",
+            "reference_address": "37 The Green",
+            "reference_coordinate": {
+              "lat": 52.7373613,
+              "lng": -1.0419448
+            },
+            "reference_name": "Star",
+            "reference_postcode": "LE7 4UH",
+            "source": "reviewed-named-building",
+            "url": "https://www.openstreetmap.org/node/2995471143"
           }
         ],
-        "lat": 52.7371,
-        "lng": -1.04255,
-        "source": "camra-pubs-location-audit"
+        "lat": 52.7373613,
+        "lng": -1.0419448,
+        "source": "reviewed-named-building"
       }
     },
     "v-4da1164e-8693-5978-a306-17b5847ca7fe": {
@@ -64828,6 +65448,17 @@
         "castle|farringdon ec1m|ec1m 6db"
       ],
       "current_key": "castle|farringdon ec1m|ec1m 6db",
+      "google_identity_review": {
+        "conclusion": "same_venue",
+        "decision": "verified_directory_identity",
+        "identity_review_signature": "6a60d5eea0c1f2dfcfa129638d4b64e427a33d535dd9e40891a084513db0734c",
+        "reason": "CAMRA and OSM identify The Castle at 34–35 Cowcross Street, EC1M 6DB; same building.",
+        "reviewed_at": "2026-11-06",
+        "source_urls": [
+          "https://camra.org.uk/pubs/156309",
+          "https://www.openstreetmap.org/node/475933772"
+        ]
+      },
       "independent_location_check": {
         "actionable": false,
         "checked_at": "2026-11-03",
@@ -66790,6 +67421,18 @@
         "white swan|birmingham: digbeth|b12 0qy"
       ],
       "current_key": "white swan|birmingham: digbeth|b12 0qy",
+      "google_identity_review": {
+        "conclusion": "same_venue",
+        "decision": "verified_directory_identity",
+        "identity_review_signature": "801583be95ec0539731d6d1372e87f5501b6fc1bfe02086dfa01ac657d267776",
+        "reason": "The council planning record verifies 276 Bradford Street and B12 0QY. Both points land inside the named building.",
+        "reviewed_at": "2026-11-06",
+        "source_urls": [
+          "https://camra.org.uk/pubs/121124",
+          "https://eplanning.birmingham.gov.uk/Northgate/PlanningExplorer/Generic/StdDetails.aspx?DAURI=PLANNING&FT=Planning+Application+Details&PARAM0=1285068&PT=Planning+Applications+On-Line&PUBLIC=Y&TYPE=PL%2FPlanningPK.xml&XMLSIDE=%2FNorthgate%2FPlanningExplorer%2FSiteFiles%2FSkins%2FBirmingham%2FMenus%2FPL.xml&XSLT=%2FNorthgate%2FPlanningExplorer%2FSiteFiles%2FSkins%2FBirmingham%2Fxslt%2FPL%2FPLDetails.xslt",
+          "https://www.openstreetmap.org/way/73028934"
+        ]
+      },
       "independent_location_check": {
         "actionable": false,
         "checked_at": "2026-11-03",
@@ -67946,6 +68589,17 @@
         "swadlincote constitutional club|swadlincote: central|de11 0an"
       ],
       "current_key": "constitutional club (pmc)|swadlincote: central|de11 0an",
+      "google_identity_review": {
+        "conclusion": "same_venue",
+        "decision": "verified_directory_identity",
+        "identity_review_signature": "961c6ceda56a43f06f1e02b20a9bc63cfedd51e5c2e59fcd14e3f8d3b61ba713",
+        "reason": "CAMRA identifies Swadlincote Constitutional Club at 7 Midland Road, DE11 0AN; OSM maps the same named club building. OSM address/postcode tags differ, so no correction is inferred.",
+        "reviewed_at": "2026-11-06",
+        "source_urls": [
+          "https://camra.org.uk/pubs/124097",
+          "https://www.openstreetmap.org/way/544298961"
+        ]
+      },
       "independent_location_check": {
         "actionable": false,
         "checked_at": "2026-11-03",
@@ -68165,9 +68819,30 @@
     },
     "v-552acf01-151c-5ab2-8479-b5c3eaeea9cb": {
       "aliases": [
-        "chaddesen park social club (pmc)|derby: chaddesden|de21 6pd"
+        "chaddesen park social club (pmc)|derby: chaddesden|de21 6pd",
+        "chaddesden park social club (pmc)|derby: chaddesden|de21 6pd"
       ],
-      "current_key": "chaddesen park social club (pmc)|derby: chaddesden|de21 6pd",
+      "current_key": "chaddesden park social club (pmc)|derby: chaddesden|de21 6pd",
+      "google_identity_review": {
+        "conclusion": "listing_error",
+        "decision": "verified_directory_identity",
+        "identity_review_signature": "03fccd990e7b6a43054acb5f9a4d3289c00ab734f843c84608971abcdaf47003",
+        "reason": "The mapped club building and full address identify Chaddesden Park Social Club at 389–391 Nottingham Road, DE21 6PD. Correct the spelling while retaining the club’s original venue ID.",
+        "reviewed_at": "2026-11-06",
+        "source_urls": [
+          "https://www.openstreetmap.org/way/111597336",
+          "https://www.derby.org.uk/local/Society_and_Culture/Social_Clubs/"
+        ]
+      },
+      "identity_reviews": [
+        {
+          "checked_at": "2026-11-06",
+          "previous_key": "chaddesen park social club (pmc)|derby: chaddesden|de21 6pd",
+          "reason": "The mapped club building and full address identify Chaddesden Park Social Club at 389–391 Nottingham Road, DE21 6PD. Correct the spelling while retaining the club’s original venue ID.",
+          "reference_postcode": "DE21 6PD",
+          "source_url": "https://www.openstreetmap.org/way/111597336"
+        }
+      ],
       "independent_location_check": {
         "actionable": false,
         "checked_at": "2026-11-03",
@@ -68216,8 +68891,40 @@
         "pg": "Perm",
         "place_name": "Derby: Chaddesden",
         "postcode": "DE21 6PD",
-        "pub_name": "Chaddesen Park Social Club (PMC)"
+        "pub_name": "Chaddesden Park Social Club (PMC)"
       },
+      "listing_reviews": [
+        {
+          "decision": {
+            "changes": {
+              "pub_name": "Chaddesden Park Social Club (PMC)"
+            },
+            "checked_at": "2026-11-06",
+            "expected": {
+              "place_name": "Derby: Chaddesden",
+              "postcode": "DE21 6PD",
+              "pub_name": "Chaddesen Park Social Club (PMC)"
+            },
+            "reason": "The mapped club building and full address identify Chaddesden Park Social Club at 389–391 Nottingham Road, DE21 6PD. Correct the spelling while retaining the club’s original venue ID.",
+            "reference_postcode": "DE21 6PD",
+            "reviewed_by": "Codex venue evidence review authorised by map owner",
+            "source_url": "https://www.openstreetmap.org/way/111597336"
+          },
+          "kind": "correction",
+          "original": {
+            "area": "Derbyshire",
+            "country": "England",
+            "dispense": "H",
+            "last": "2026 Q3",
+            "notes": "",
+            "pg": "Perm",
+            "place_name": "Derby: Chaddesden",
+            "postcode": "DE21 6PD",
+            "pub_name": "Chaddesen Park Social Club (PMC)"
+          },
+          "original_key": "chaddesen park social club (pmc)|derby: chaddesden|de21 6pd"
+        }
+      ],
       "verification_attempt": {
         "checked_at": "2026-11-04",
         "reason": "Manual map evidence needs a fresh human address/map check",
@@ -68254,6 +68961,17 @@
         "gate inn|burton u-t: branston|de14 3ey"
       ],
       "current_key": "gate inn|burton u-t: branston|de14 3ey",
+      "google_identity_review": {
+        "conclusion": "same_venue",
+        "decision": "verified_directory_identity",
+        "identity_review_signature": "92029186adfa40d64e584e6758b603bdcf78e71168424687b6634952b4e107ed",
+        "reason": "Named evidence matches the distinctive venue and full postcode; Google point is 8.8m from the CAMRA/reference point, consistent with the same premises. No supported address or pin correction identified. Live OSM has a named pub at 8.4m from the Google point, corroborating the mapped premises.",
+        "reviewed_at": "2026-11-06",
+        "source_urls": [
+          "https://camra.org.uk/pubs/124002",
+          "https://www.openstreetmap.org/way/241899793"
+        ]
+      },
       "independent_location_check": {
         "actionable": false,
         "checked_at": "2026-11-03",
@@ -68887,6 +69605,17 @@
         "melbourne inn|melbourne|de73 8gj"
       ],
       "current_key": "melbourne inn|melbourne|de73 8gj",
+      "google_identity_review": {
+        "conclusion": "same_venue",
+        "decision": "verified_directory_identity",
+        "identity_review_signature": "24ee52ff52ec8e6ec36192803d54448d8f9ee79af99971d9dbabeae781d158aa",
+        "reason": "Named evidence matches the distinctive venue and full postcode; Google point is 10.3m from the CAMRA/reference point, consistent with the same premises. No supported address or pin correction identified. Live OSM has a named pub at 12.1m from the Google point, corroborating the mapped premises.",
+        "reviewed_at": "2026-11-06",
+        "source_urls": [
+          "https://camra.org.uk/pubs/143240",
+          "https://www.openstreetmap.org/way/188351479"
+        ]
+      },
       "independent_location_check": {
         "actionable": false,
         "checked_at": "2026-11-03",
@@ -69891,6 +70620,17 @@
         "bench and bar|stoke: fenton|st4 3aj"
       ],
       "current_key": "bench and bar|stoke: fenton|st4 3aj",
+      "google_identity_review": {
+        "conclusion": "pin_error",
+        "decision": "verified_directory_identity",
+        "identity_review_signature": "5c1eb52d85ad64429f10f19543fbc14138fb41911993e4866f604ae05f8abe56",
+        "reason": "The named Bench & Bar map feature matches CAMRA’s 93 Christchurch Street and ST4 3AJ. It is 70 metres from the saved point.",
+        "reviewed_at": "2026-11-06",
+        "source_urls": [
+          "https://www.openstreetmap.org/node/1657343511",
+          "https://camra.org.uk/pubs/122897"
+        ]
+      },
       "independent_location_check": {
         "actionable": false,
         "checked_at": "2026-11-03",
@@ -69949,29 +70689,109 @@
         "postcode": "ST4 3AJ",
         "pub_name": "Bench and Bar"
       },
-      "verification_attempt": {
-        "checked_at": "2026-11-03",
-        "evidence": {
-          "checked_at": "2026-11-03",
-          "difference_metres": 0.0,
-          "match": "venue_name_and_full_postcode",
-          "reference_address": "93 Christchurch Street",
-          "reference_coordinate": {
-            "lat": 52.9973,
-            "lng": -2.16473
+      "location_corrections": [
+        {
+          "checked_at": "2026-11-06",
+          "corrected_coordinate": {
+            "lat": 52.9967778,
+            "lng": -2.1641508
           },
-          "reference_name": "Bench & Bar, Stoke-on-Trent - Community Local",
-          "reference_postcode": "ST4 3AJ",
-          "source": "camra",
-          "url": "https://camra.org.uk/pubs/122897"
-        },
+          "previous_override": {
+            "audit_reason": "camra_and_fsa_agree_within_50m_current_pin_does_not",
+            "camra_to_fsa_metres": 12.1,
+            "checked_at": "2026-09-11",
+            "corroborating_source_url": "https://api.ratings.food.gov.uk/Establishments?address=ST4+3AJ&pageSize=100&pageNumber=1",
+            "lat": 52.9973,
+            "lng": -2.16473,
+            "previous_difference_metres": 69.8,
+            "previous_lat": 52.9967778,
+            "previous_lng": -2.1641508,
+            "previous_source": "openstreetmap-gb-extract",
+            "source": "camra-and-fsa-location-audit",
+            "source_url": "https://camra.org.uk/pubs/122897"
+          },
+          "previous_pin": {
+            "evidence": [
+              {
+                "checked_at": "2026-10-15",
+                "difference_metres": 0.0,
+                "disposition": "superseded_by_source_refresh",
+                "match": "venue_name_and_full_postcode",
+                "reference_address": "93 Christchurch Street",
+                "reference_coordinate": {
+                  "lat": 52.9973,
+                  "lng": -2.16473
+                },
+                "reference_name": "Bench & Bar, Stoke-on-trent - Camra-awarded Local",
+                "reference_postcode": "ST4 3AJ",
+                "source": "camra",
+                "url": "https://camra.org.uk/pubs/122897"
+              },
+              {
+                "checked_at": "2026-11-03",
+                "difference_metres": 0.0,
+                "match": "venue_name_and_full_postcode",
+                "reference_address": "93 Christchurch Street",
+                "reference_coordinate": {
+                  "lat": 52.9973,
+                  "lng": -2.16473
+                },
+                "reference_name": "Bench & Bar, Stoke-on-Trent - Community Local",
+                "reference_postcode": "ST4 3AJ",
+                "source": "camra",
+                "url": "https://camra.org.uk/pubs/122897"
+              }
+            ],
+            "lat": 52.9973,
+            "lng": -2.16473,
+            "source": "camra-and-fsa-location-audit"
+          },
+          "previous_verification_attempt": {
+            "checked_at": "2026-11-03",
+            "evidence": {
+              "checked_at": "2026-11-03",
+              "difference_metres": 0.0,
+              "match": "venue_name_and_full_postcode",
+              "reference_address": "93 Christchurch Street",
+              "reference_coordinate": {
+                "lat": 52.9973,
+                "lng": -2.16473
+              },
+              "reference_name": "Bench & Bar, Stoke-on-Trent - Community Local",
+              "reference_postcode": "ST4 3AJ",
+              "source": "camra",
+              "url": "https://camra.org.uk/pubs/122897"
+            },
+            "sources": {
+              "camra": {
+                "status": "confirmed",
+                "url": "https://camra.org.uk/pubs/122897"
+              }
+            },
+            "status": "confirmed"
+          },
+          "reason": "The named Bench & Bar map feature matches CAMRA’s 93 Christchurch Street and ST4 3AJ. It is 70 metres from the saved point.",
+          "reviewed_by": "Codex venue evidence review authorised by map owner",
+          "source_urls": [
+            "https://www.openstreetmap.org/node/1657343511",
+            "https://camra.org.uk/pubs/122897"
+          ]
+        }
+      ],
+      "verification_attempt": {
+        "checked_at": "2026-11-06",
+        "reason": "Reviewed named building and corroborated venue address",
         "sources": {
           "camra": {
-            "status": "confirmed",
+            "status": "address_confirmed_marker_differs",
             "url": "https://camra.org.uk/pubs/122897"
+          },
+          "reviewed-named-building": {
+            "status": "confirmed",
+            "url": "https://www.openstreetmap.org/node/1657343511"
           }
         },
-        "status": "confirmed"
+        "status": "manual_review"
       },
       "verified_pin": {
         "evidence": [
@@ -69993,6 +70813,7 @@
           {
             "checked_at": "2026-11-03",
             "difference_metres": 0.0,
+            "disposition": "superseded_by_building_review",
             "match": "venue_name_and_full_postcode",
             "reference_address": "93 Christchurch Street",
             "reference_coordinate": {
@@ -70003,11 +70824,25 @@
             "reference_postcode": "ST4 3AJ",
             "source": "camra",
             "url": "https://camra.org.uk/pubs/122897"
+          },
+          {
+            "address_source_url": "https://camra.org.uk/pubs/122897",
+            "checked_at": "2026-11-06",
+            "match": "reviewed_named_building_and_camra_address",
+            "reference_address": "93 Christchurch Street",
+            "reference_coordinate": {
+              "lat": 52.9967778,
+              "lng": -2.1641508
+            },
+            "reference_name": "Bench and Bar",
+            "reference_postcode": "ST4 3AJ",
+            "source": "reviewed-named-building",
+            "url": "https://www.openstreetmap.org/node/1657343511"
           }
         ],
-        "lat": 52.9973,
-        "lng": -2.16473,
-        "source": "camra-and-fsa-location-audit"
+        "lat": 52.9967778,
+        "lng": -2.1641508,
+        "source": "reviewed-named-building"
       }
     },
     "v-5840e7d1-6ac4-5d2f-b0b8-9875ccbde7dc": {
@@ -71074,6 +71909,16 @@
         "dinas rock hotel|glynneath|sa11 5ap"
       ],
       "current_key": "dinas rock hotel|glynneath|sa11 5ap",
+      "google_identity_review": {
+        "conclusion": "same_venue",
+        "decision": "verified_directory_identity",
+        "identity_review_signature": "db3a9e2f1c9d6524909eebe2392dfa985e565cba9ff6147903b7f35c974bfc15",
+        "reason": "CAMRA and OSM identify Dinas Rock Hotel at the listed postcode; same pub building.",
+        "reviewed_at": "2026-11-06",
+        "source_urls": [
+          "https://camra.org.uk/pubs/164938"
+        ]
+      },
       "independent_location_check": {
         "actionable": false,
         "checked_at": "2026-11-03",
@@ -71668,6 +72513,17 @@
         "lord clyde|borough se1|se1 1er"
       ],
       "current_key": "lord clyde|borough se1|se1 1er",
+      "google_identity_review": {
+        "conclusion": "same_venue",
+        "decision": "verified_directory_identity",
+        "identity_review_signature": "3bb9746ba81dbe3f2f996d4ca408bb43dbad3723f66cdc247632a75da37c5f00",
+        "reason": "Named evidence matches the distinctive venue and full postcode; Google point is 5m from the CAMRA/reference point, consistent with the same premises. No supported address or pin correction identified. Live OSM has a named pub at 4.3m from the Google point, corroborating the mapped premises.",
+        "reviewed_at": "2026-11-06",
+        "source_urls": [
+          "https://camra.org.uk/pubs/158358",
+          "https://www.openstreetmap.org/way/99869588"
+        ]
+      },
       "independent_location_check": {
         "actionable": false,
         "checked_at": "2026-11-03",
@@ -75623,6 +76479,17 @@
         "grapes|chipping sodbury|bs37 6as"
       ],
       "current_key": "grapes|chipping sodbury|bs37 6as",
+      "google_identity_review": {
+        "conclusion": "same_venue",
+        "decision": "verified_directory_identity",
+        "identity_review_signature": "490e6b94992abb4ba92e9754761b4f5ef7b3d6b9e7f5fd990d6e8fc9b3a0ae58",
+        "reason": "Named evidence matches the distinctive venue and full postcode; Google point is 6.7m from the CAMRA/reference point, consistent with the same premises. No supported address or pin correction identified. Live OSM has a named pub at 6.1m from the Google point, corroborating the mapped premises.",
+        "reviewed_at": "2026-11-06",
+        "source_urls": [
+          "https://camra.org.uk/pubs/114240",
+          "https://www.openstreetmap.org/way/771685007"
+        ]
+      },
       "independent_location_check": {
         "actionable": false,
         "checked_at": "2026-11-03",
@@ -76004,6 +76871,17 @@
         "black cat|weston-super-mare|bs23 1hn"
       ],
       "current_key": "black cat|weston-super-mare|bs23 1hn",
+      "google_identity_review": {
+        "conclusion": "same_venue",
+        "decision": "verified_directory_identity",
+        "identity_review_signature": "e3cec3127fdfdaf9f5d6198c1e1969535f2f2b7387dd33ef7c99138ef019f273",
+        "reason": "CAMRA and OSM identify The Black Cat at 135 High Street, BS23 1HN; both markers fall at the pub building.",
+        "reviewed_at": "2026-11-06",
+        "source_urls": [
+          "https://camra.org.uk/pubs/117143",
+          "https://www.openstreetmap.org/way/1499351951"
+        ]
+      },
       "independent_location_check": {
         "actionable": false,
         "checked_at": "2026-11-03",
@@ -77104,6 +77982,17 @@
         "garibaldi|redhill|rh1 6pa"
       ],
       "current_key": "garibaldi|redhill|rh1 6pa",
+      "google_identity_review": {
+        "conclusion": "same_venue",
+        "decision": "verified_directory_identity",
+        "identity_review_signature": "6cdd5bb5b5157246242b25a04ebb52204341d91ace9ece7bf99b36be4bc1ba54",
+        "reason": "Named evidence matches the distinctive venue and full postcode; Google point is 1.7m from the CAMRA/reference point, consistent with the same premises. No supported address or pin correction identified. Live OSM has a named pub at 1.7m from the Google point, corroborating the mapped premises.",
+        "reviewed_at": "2026-11-06",
+        "source_urls": [
+          "https://camra.org.uk/pubs/191301",
+          "https://www.openstreetmap.org/node/25067147"
+        ]
+      },
       "independent_location_check": {
         "actionable": false,
         "checked_at": "2026-11-03",
@@ -78247,6 +79136,17 @@
         "boars head|louth|ln11 9hh"
       ],
       "current_key": "boars head|louth|ln11 9hh",
+      "google_identity_review": {
+        "conclusion": "same_venue",
+        "decision": "verified_directory_identity",
+        "identity_review_signature": "ea8afebe33cd55cfc1ea80507ad5d70a82a63e97dbd7dab55abc349bc8045a7c",
+        "reason": "CAMRA and OSM identify the Boars Head at 12 Newmarket, Louth. OSM postcode differs from CAMRA/listing, so no postcode change is supported; named venue and address match.",
+        "reviewed_at": "2026-11-06",
+        "source_urls": [
+          "https://camra.org.uk/pubs/172386",
+          "https://www.openstreetmap.org/way/111990215"
+        ]
+      },
       "independent_location_check": {
         "actionable": false,
         "checked_at": "2026-11-03",
@@ -81298,6 +82198,17 @@
         "bottle and glass|normanby|ln8 2he"
       ],
       "current_key": "bottle and glass|normanby|ln8 2he",
+      "google_identity_review": {
+        "conclusion": "pin_error",
+        "decision": "verified_directory_identity",
+        "identity_review_signature": "bf81d6d1738fc1c046e224a090592844fb6def74a88768dcdb4b6432a0f49af0",
+        "reason": "Lincolnshire County Council’s surveyed building record places the Bottle and Glass at OS grid TF 00124 88076. Its point is about 112 metres north of the saved pin and matches the pub on Main Street.",
+        "reviewed_at": "2026-11-06",
+        "source_urls": [
+          "https://heritage-explorer.lincolnshire.gov.uk/Monument/MLI126319",
+          "https://camra.org.uk/pubs/191802"
+        ]
+      },
       "independent_location_check": {
         "actionable": false,
         "checked_at": "2026-11-03",
@@ -81358,29 +82269,107 @@
         "postcode": "LN8 2HE",
         "pub_name": "Bottle and Glass"
       },
-      "verification_attempt": {
-        "checked_at": "2026-11-03",
-        "evidence": {
-          "checked_at": "2026-11-03",
-          "difference_metres": 0.0,
-          "match": "venue_name_and_full_postcode",
-          "reference_address": "Main Street",
-          "reference_coordinate": {
-            "lat": 53.379045999533,
-            "lng": -0.49631071163935
+      "location_corrections": [
+        {
+          "checked_at": "2026-11-06",
+          "corrected_coordinate": {
+            "lat": 53.38005591,
+            "lng": -0.49627806
           },
-          "reference_name": "Bottle & Glass, Normanby By Spital - Village Pub",
-          "reference_postcode": "LN8 2HE",
-          "source": "camra",
-          "url": "https://camra.org.uk/pubs/191802"
-        },
+          "previous_override": {
+            "audit_reason": "postcode_fallback_replaced",
+            "checked_at": "2026-09-11",
+            "lat": 53.379045999533,
+            "lng": -0.49631071163935,
+            "previous_difference_metres": 5.5,
+            "previous_lat": 53.379071,
+            "previous_lng": -0.49624,
+            "previous_source": "postcode",
+            "source": "camra-pubs-location-audit",
+            "source_url": "https://camra.org.uk/pubs/191802"
+          },
+          "previous_pin": {
+            "evidence": [
+              {
+                "checked_at": "2026-10-17",
+                "difference_metres": 0.0,
+                "disposition": "superseded_by_source_refresh",
+                "match": "venue_name_and_full_postcode",
+                "reference_address": "Main Street",
+                "reference_coordinate": {
+                  "lat": 53.379045999533,
+                  "lng": -0.49631071163935
+                },
+                "reference_name": "Bottle & Glass, Normanby By Spital",
+                "reference_postcode": "LN8 2HE",
+                "source": "camra",
+                "url": "https://camra.org.uk/pubs/191802"
+              },
+              {
+                "checked_at": "2026-11-03",
+                "difference_metres": 0.0,
+                "match": "venue_name_and_full_postcode",
+                "reference_address": "Main Street",
+                "reference_coordinate": {
+                  "lat": 53.379045999533,
+                  "lng": -0.49631071163935
+                },
+                "reference_name": "Bottle & Glass, Normanby By Spital - Village Pub",
+                "reference_postcode": "LN8 2HE",
+                "source": "camra",
+                "url": "https://camra.org.uk/pubs/191802"
+              }
+            ],
+            "lat": 53.379045999533,
+            "lng": -0.49631071163935,
+            "source": "camra-pubs-location-audit"
+          },
+          "previous_verification_attempt": {
+            "checked_at": "2026-11-03",
+            "evidence": {
+              "checked_at": "2026-11-03",
+              "difference_metres": 0.0,
+              "match": "venue_name_and_full_postcode",
+              "reference_address": "Main Street",
+              "reference_coordinate": {
+                "lat": 53.379045999533,
+                "lng": -0.49631071163935
+              },
+              "reference_name": "Bottle & Glass, Normanby By Spital - Village Pub",
+              "reference_postcode": "LN8 2HE",
+              "source": "camra",
+              "url": "https://camra.org.uk/pubs/191802"
+            },
+            "sources": {
+              "camra": {
+                "status": "confirmed",
+                "url": "https://camra.org.uk/pubs/191802"
+              }
+            },
+            "status": "confirmed"
+          },
+          "reason": "Lincolnshire County Council’s surveyed building record places the Bottle and Glass at OS grid TF 00124 88076. Its point is about 112 metres north of the saved pin and matches the pub on Main Street.",
+          "reviewed_by": "Codex venue evidence review authorised by map owner",
+          "source_urls": [
+            "https://heritage-explorer.lincolnshire.gov.uk/Monument/MLI126319",
+            "https://camra.org.uk/pubs/191802"
+          ]
+        }
+      ],
+      "verification_attempt": {
+        "checked_at": "2026-11-06",
+        "reason": "Reviewed named building and corroborated venue address",
         "sources": {
           "camra": {
-            "status": "confirmed",
+            "status": "address_confirmed_marker_differs",
             "url": "https://camra.org.uk/pubs/191802"
+          },
+          "reviewed-named-building": {
+            "status": "confirmed",
+            "url": "https://heritage-explorer.lincolnshire.gov.uk/Monument/MLI126319"
           }
         },
-        "status": "confirmed"
+        "status": "manual_review"
       },
       "verified_pin": {
         "evidence": [
@@ -81402,6 +82391,7 @@
           {
             "checked_at": "2026-11-03",
             "difference_metres": 0.0,
+            "disposition": "superseded_by_building_review",
             "match": "venue_name_and_full_postcode",
             "reference_address": "Main Street",
             "reference_coordinate": {
@@ -81412,11 +82402,25 @@
             "reference_postcode": "LN8 2HE",
             "source": "camra",
             "url": "https://camra.org.uk/pubs/191802"
+          },
+          {
+            "address_source_url": "https://camra.org.uk/pubs/191802",
+            "checked_at": "2026-11-06",
+            "match": "reviewed_named_building_and_camra_address",
+            "reference_address": "Main Street",
+            "reference_coordinate": {
+              "lat": 53.38005591,
+              "lng": -0.49627806
+            },
+            "reference_name": "Bottle and Glass",
+            "reference_postcode": "LN8 2HE",
+            "source": "reviewed-named-building",
+            "url": "https://heritage-explorer.lincolnshire.gov.uk/Monument/MLI126319"
           }
         ],
-        "lat": 53.379045999533,
-        "lng": -0.49631071163935,
-        "source": "camra-pubs-location-audit"
+        "lat": 53.38005591,
+        "lng": -0.49627806,
+        "source": "reviewed-named-building"
       }
     },
     "v-6ae627b5-b066-5e24-9051-0a7d621d382c": {
@@ -81424,6 +82428,17 @@
         "newhall arms|cannock|ws11 1bn"
       ],
       "current_key": "newhall arms|cannock|ws11 1bn",
+      "google_identity_review": {
+        "conclusion": "same_venue",
+        "decision": "verified_directory_identity",
+        "identity_review_signature": "fbcaaa7dd09d011ee62306a91c1cc1adffe0f4138a44eafcb3aef36edfec50ff",
+        "reason": "Named evidence matches the distinctive venue and full postcode; Google point is 16.1m from the CAMRA/reference point, consistent with the same premises. No supported address or pin correction identified. Live OSM has a named pub at 16.1m from the Google point, corroborating the mapped premises.",
+        "reviewed_at": "2026-11-06",
+        "source_urls": [
+          "https://camra.org.uk/pubs/140929",
+          "https://www.openstreetmap.org/node/5313775134"
+        ]
+      },
       "independent_location_check": {
         "actionable": false,
         "checked_at": "2026-11-03",
@@ -84632,6 +85647,17 @@
         "somerset and dorset|burnham-on-sea|ta8 1nz"
       ],
       "current_key": "somerset and dorset|burnham-on-sea|ta8 1nz",
+      "google_identity_review": {
+        "conclusion": "same_venue",
+        "decision": "verified_directory_identity",
+        "identity_review_signature": "7e9b5b4f2e448e4f2ba82ebba53f0f91543a254f70c7a97b378759d8c2d22756",
+        "reason": "The existing owner decision covers the exact postcode discrepancy and saved point. The current comparison lands at that same point.",
+        "reviewed_at": "2026-11-06",
+        "source_urls": [
+          "https://camra.org.uk/pubs/134015",
+          "https://www.openstreetmap.org/node/1905133595"
+        ]
+      },
       "independent_location_check": {
         "actionable": false,
         "checked_at": "2026-11-05",
@@ -88084,6 +89110,16 @@
         "cock inn|stowe by chartley|st18 0lf"
       ],
       "current_key": "cock inn|stowe by chartley|st18 0lf",
+      "google_identity_review": {
+        "conclusion": "same_venue",
+        "decision": "verified_directory_identity",
+        "identity_review_signature": "bfa087051813a95cf9c5b349bebca7550f68a9fccd87d1a3403b01cf6554c42a",
+        "reason": "CAMRA and OSM identify the Cock Inn at Station Road, Stowe-by-Chartley, ST18 0LF; alternate Google title is the same pub.",
+        "reviewed_at": "2026-11-06",
+        "source_urls": [
+          "https://camra.org.uk/pubs/145888"
+        ]
+      },
       "independent_location_check": {
         "actionable": false,
         "checked_at": "2026-11-03",
@@ -88332,6 +89368,17 @@
         "earl grey|leek|st13 5at"
       ],
       "current_key": "earl grey|leek|st13 5at",
+      "google_identity_review": {
+        "conclusion": "same_venue",
+        "decision": "verified_directory_identity",
+        "identity_review_signature": "6ca904fb10144e348a485313363ebc925d52e4b2a637229cfaf9da2851452d93",
+        "reason": "Named evidence matches the distinctive venue and full postcode; Google point is 4.1m from the CAMRA/reference point, consistent with the same premises. No supported address or pin correction identified. Live OSM has a named pub at 4.3m from the Google point, corroborating the mapped premises.",
+        "reviewed_at": "2026-11-06",
+        "source_urls": [
+          "https://camra.org.uk/pubs/143964",
+          "https://www.openstreetmap.org/way/558914470"
+        ]
+      },
       "independent_location_check": {
         "actionable": false,
         "checked_at": "2026-11-03",
@@ -89885,6 +90932,17 @@
         "red lion|boundary|st10 2nu"
       ],
       "current_key": "red lion|boundary|st10 2nu",
+      "google_identity_review": {
+        "conclusion": "same_venue",
+        "decision": "verified_directory_identity",
+        "identity_review_signature": "6d8cbde92a9a5517d4097c47b9d53eb590cd2ed3d1cf5bde5e567c42243cff97",
+        "reason": "The saved point is inside the mapped Red Lion building. The comparison point is farther along the premises.",
+        "reviewed_at": "2026-11-06",
+        "source_urls": [
+          "https://camra.org.uk/pubs/143862",
+          "https://www.openstreetmap.org/node/1258017027"
+        ]
+      },
       "independent_location_check": {
         "actionable": false,
         "checked_at": "2026-11-03",
@@ -90724,6 +91782,17 @@
         "royal oak|nuneaton: hartshill|cv10 0td"
       ],
       "current_key": "royal oak|nuneaton: hartshill|cv10 0td",
+      "google_identity_review": {
+        "conclusion": "same_venue",
+        "decision": "verified_directory_identity",
+        "identity_review_signature": "82dbb936de075932ce667554e807d0ab61d47451c833adbf45d95f557d4e7468",
+        "reason": "Named CAMRA listing at 56 Oldbury Road, CV10 0TD, corroborates the premises. The comparison is 5.2 metres from the saved point. The mapped venue feature corroborates the location.",
+        "reviewed_at": "2026-11-06",
+        "source_urls": [
+          "https://camra.org.uk/pubs/158210",
+          "https://www.openstreetmap.org/way/512207273"
+        ]
+      },
       "independent_location_check": {
         "actionable": false,
         "checked_at": "2026-11-03",
@@ -92461,6 +93530,17 @@
         "white horse inn / tafarn penllan|capel garmon|ll26 0rw"
       ],
       "current_key": "white horse inn / tafarn penllan|capel garmon|ll26 0rw",
+      "google_identity_review": {
+        "conclusion": "same_venue",
+        "decision": "verified_directory_identity",
+        "identity_review_signature": "51a8c7c957ac0dd35e3fcdfbe6ed735782c51ffe2d551a1742526afdc37b43f5",
+        "reason": "Named CAMRA listing at Capel Garmon, LL26 0RW, corroborates the premises. The comparison is 5.6 metres from the saved point. The mapped venue feature corroborates the location.",
+        "reviewed_at": "2026-11-06",
+        "source_urls": [
+          "https://camra.org.uk/pubs/115768",
+          "https://www.openstreetmap.org/way/732946507"
+        ]
+      },
       "independent_location_check": {
         "actionable": false,
         "checked_at": "2026-11-03",
@@ -93480,6 +94560,16 @@
         "bulls head|nailstone|cv13 0qe"
       ],
       "current_key": "bulls head|nailstone|cv13 0qe",
+      "google_identity_review": {
+        "conclusion": "same_venue",
+        "decision": "verified_directory_identity",
+        "identity_review_signature": "6db3499d306cd4246570d205217f90daf1c6410761aec9769a3c924a6340e90c",
+        "reason": "Owner review visually confirms the Bulls Head at 88 Main Street and says retain the pin. CAMRA also identifies the venue; its postcode differs from packet, but owner review preserves packet postcode as source provenance.",
+        "reviewed_at": "2026-11-06",
+        "source_urls": [
+          "https://camra.org.uk/pubs/181822"
+        ]
+      },
       "independent_location_check": {
         "actionable": false,
         "checked_at": "2026-11-05",
@@ -93837,6 +94927,18 @@
         "carpenters|newport|np20 1fq"
       ],
       "current_key": "carpenters|newport|np20 1fq",
+      "google_identity_review": {
+        "conclusion": "same_venue",
+        "decision": "verified_directory_identity",
+        "identity_review_signature": "7c247f99c8fc415141915e8248e41b98c6b5866ddd36611303499908624956fd",
+        "reason": "CAMRA and OSM identify the Carpenters/Carpenters Arms at 9 High Street, NP20 1FQ; same building and postcode, with operator-linked pub feature.",
+        "reviewed_at": "2026-11-06",
+        "source_urls": [
+          "https://camra.org.uk/pubs/161491",
+          "https://www.openstreetmap.org/node/6871293501",
+          "https://www.jwbpubs.com/"
+        ]
+      },
       "independent_location_check": {
         "actionable": false,
         "checked_at": "2026-11-03",
@@ -94877,6 +95979,18 @@
         "donington arms|donington le heath|le67 2ge"
       ],
       "current_key": "donington arms|donington le heath|le67 2ge",
+      "google_identity_review": {
+        "conclusion": "pin_error",
+        "decision": "verified_directory_identity",
+        "identity_review_signature": "d92dbd5a2df54a702cbef91b615b1c803203215ac9f3b5c5095b29377002226a",
+        "reason": "The named Donington Arms footprint lies about 111 metres from the saved point. The parish and CAMRA agree on The Green and LE67 2GE for the pub, while the map feature uses the adjoining road’s postcode.",
+        "reviewed_at": "2026-11-06",
+        "source_urls": [
+          "https://www.openstreetmap.org/way/753819023",
+          "https://hugglescote-and-donington-le-heath.parish.uk/heritage",
+          "https://camra.org.uk/pubs/171284"
+        ]
+      },
       "independent_location_check": {
         "actionable": false,
         "checked_at": "2026-11-03",
@@ -94927,29 +96041,108 @@
         "postcode": "LE67 2GE",
         "pub_name": "Donington Arms"
       },
-      "verification_attempt": {
-        "checked_at": "2026-11-03",
-        "evidence": {
-          "checked_at": "2026-11-03",
-          "difference_metres": 0.0,
-          "match": "venue_name_and_full_postcode",
-          "reference_address": "The Green",
-          "reference_coordinate": {
-            "lat": 52.7066,
-            "lng": -1.37599
+      "location_corrections": [
+        {
+          "checked_at": "2026-11-06",
+          "corrected_coordinate": {
+            "lat": 52.70635982,
+            "lng": -1.37758816
           },
-          "reference_name": "Donington Arms, Donington le Heath - Quiz & Carvery",
-          "reference_postcode": "LE67 2GE",
-          "source": "camra",
-          "url": "https://camra.org.uk/pubs/171284"
-        },
+          "previous_override": {
+            "audit_reason": "existing_pin_over_50m_from_matching_venue",
+            "checked_at": "2026-09-11",
+            "lat": 52.7066,
+            "lng": -1.37599,
+            "previous_difference_metres": 110.4,
+            "previous_lat": 52.70635281818181,
+            "previous_lng": -1.3775763727272727,
+            "previous_source": "openstreetmap-gb-extract",
+            "source": "camra-pubs-location-audit",
+            "source_url": "https://camra.org.uk/pubs/171284"
+          },
+          "previous_pin": {
+            "evidence": [
+              {
+                "checked_at": "2026-10-19",
+                "difference_metres": 0.0,
+                "disposition": "superseded_by_source_refresh",
+                "match": "venue_name_and_full_postcode",
+                "reference_address": "The Green",
+                "reference_coordinate": {
+                  "lat": 52.7066,
+                  "lng": -1.37599
+                },
+                "reference_name": "Donington Arms, Donington Le Heath - Changing C",
+                "reference_postcode": "LE67 2GE",
+                "source": "camra",
+                "url": "https://camra.org.uk/pubs/171284"
+              },
+              {
+                "checked_at": "2026-11-03",
+                "difference_metres": 0.0,
+                "match": "venue_name_and_full_postcode",
+                "reference_address": "The Green",
+                "reference_coordinate": {
+                  "lat": 52.7066,
+                  "lng": -1.37599
+                },
+                "reference_name": "Donington Arms, Donington le Heath - Quiz & Carvery",
+                "reference_postcode": "LE67 2GE",
+                "source": "camra",
+                "url": "https://camra.org.uk/pubs/171284"
+              }
+            ],
+            "lat": 52.7066,
+            "lng": -1.37599,
+            "source": "camra-pubs-location-audit"
+          },
+          "previous_verification_attempt": {
+            "checked_at": "2026-11-03",
+            "evidence": {
+              "checked_at": "2026-11-03",
+              "difference_metres": 0.0,
+              "match": "venue_name_and_full_postcode",
+              "reference_address": "The Green",
+              "reference_coordinate": {
+                "lat": 52.7066,
+                "lng": -1.37599
+              },
+              "reference_name": "Donington Arms, Donington le Heath - Quiz & Carvery",
+              "reference_postcode": "LE67 2GE",
+              "source": "camra",
+              "url": "https://camra.org.uk/pubs/171284"
+            },
+            "sources": {
+              "camra": {
+                "status": "confirmed",
+                "url": "https://camra.org.uk/pubs/171284"
+              }
+            },
+            "status": "confirmed"
+          },
+          "reason": "The named Donington Arms footprint lies about 111 metres from the saved point. The parish and CAMRA agree on The Green and LE67 2GE for the pub, while the map feature uses the adjoining road’s postcode.",
+          "reviewed_by": "Codex venue evidence review authorised by map owner",
+          "source_urls": [
+            "https://www.openstreetmap.org/way/753819023",
+            "https://hugglescote-and-donington-le-heath.parish.uk/heritage",
+            "https://camra.org.uk/pubs/171284"
+          ]
+        }
+      ],
+      "verification_attempt": {
+        "checked_at": "2026-11-06",
+        "reason": "Reviewed named building and corroborated venue address",
         "sources": {
           "camra": {
-            "status": "confirmed",
+            "status": "address_confirmed_marker_differs",
             "url": "https://camra.org.uk/pubs/171284"
+          },
+          "reviewed-named-building": {
+            "status": "confirmed",
+            "url": "https://www.openstreetmap.org/way/753819023"
           }
         },
-        "status": "confirmed"
+        "status": "manual_review"
       },
       "verified_pin": {
         "evidence": [
@@ -94971,6 +96164,7 @@
           {
             "checked_at": "2026-11-03",
             "difference_metres": 0.0,
+            "disposition": "superseded_by_building_review",
             "match": "venue_name_and_full_postcode",
             "reference_address": "The Green",
             "reference_coordinate": {
@@ -94981,11 +96175,25 @@
             "reference_postcode": "LE67 2GE",
             "source": "camra",
             "url": "https://camra.org.uk/pubs/171284"
+          },
+          {
+            "address_source_url": "https://camra.org.uk/pubs/171284",
+            "checked_at": "2026-11-06",
+            "match": "reviewed_named_building_and_camra_address",
+            "reference_address": "The Green",
+            "reference_coordinate": {
+              "lat": 52.70635982,
+              "lng": -1.37758816
+            },
+            "reference_name": "Donington Arms",
+            "reference_postcode": "LE67 2GE",
+            "source": "reviewed-named-building",
+            "url": "https://www.openstreetmap.org/way/753819023"
           }
         ],
-        "lat": 52.7066,
-        "lng": -1.37599,
-        "source": "camra-pubs-location-audit"
+        "lat": 52.70635982,
+        "lng": -1.37758816,
+        "source": "reviewed-named-building"
       }
     },
     "v-804d57d4-1953-5654-88fa-fc20c0ce6910": {
@@ -95848,6 +97056,17 @@
         "george|liverpool: crosby|l23 2se"
       ],
       "current_key": "george|liverpool: crosby|l23 2se",
+      "google_identity_review": {
+        "conclusion": "same_venue",
+        "decision": "verified_directory_identity",
+        "identity_review_signature": "e1efdd44bb233e766c1a527507c5904a2c8877e3dfa225d21f8f8a1e583c1fae",
+        "reason": "Named evidence matches the distinctive venue and full postcode; Google point is 2.4m from the CAMRA/reference point, consistent with the same premises. No supported address or pin correction identified. Live OSM has a named pub at 1.8m from the Google point, corroborating the mapped premises.",
+        "reviewed_at": "2026-11-06",
+        "source_urls": [
+          "https://camra.org.uk/pubs/165591",
+          "https://www.openstreetmap.org/way/1419684239"
+        ]
+      },
       "independent_location_check": {
         "actionable": false,
         "checked_at": "2026-11-03",
@@ -96470,6 +97689,17 @@
         "redemption ale house|heanor|de75 7ge"
       ],
       "current_key": "redemption ale house|heanor|de75 7ge",
+      "google_identity_review": {
+        "conclusion": "same_venue",
+        "decision": "verified_directory_identity",
+        "identity_review_signature": "5c36e6ce302af761a6e104a42b12077bb5f83579f076458280fed3fc448827de",
+        "reason": "Named CAMRA listing at 3 Ray Street, DE75 7GE, corroborates the premises. The comparison is 3.7 metres from the saved point. The mapped venue feature corroborates the location.",
+        "reviewed_at": "2026-11-06",
+        "source_urls": [
+          "https://camra.org.uk/pubs/161438",
+          "https://www.openstreetmap.org/way/389628869"
+        ]
+      },
       "independent_location_check": {
         "actionable": false,
         "checked_at": "2026-11-03",
@@ -99066,6 +100296,17 @@
         "cross keys|newbold|le67 8pj"
       ],
       "current_key": "cross keys|newbold|le67 8pj",
+      "google_identity_review": {
+        "conclusion": "pin_error",
+        "decision": "verified_directory_identity",
+        "identity_review_signature": "3b9fc5bd573337b002b5c8560601eec2cb01259cd80525c9b9ff58678380e0a1",
+        "reason": "The named Cross Keys feature at 9 Worthington Lane matches the full CAMRA address and postcode. The saved point lies about 265 metres farther north.",
+        "reviewed_at": "2026-11-06",
+        "source_urls": [
+          "https://www.openstreetmap.org/node/373813039",
+          "https://camra.org.uk/pubs/171213"
+        ]
+      },
       "independent_location_check": {
         "actionable": false,
         "checked_at": "2026-11-03",
@@ -99126,6 +100367,94 @@
         "postcode": "LE67 8PJ",
         "pub_name": "Cross Keys"
       },
+      "location_corrections": [
+        {
+          "checked_at": "2026-11-06",
+          "corrected_coordinate": {
+            "lat": 52.7685136,
+            "lng": -1.4061836
+          },
+          "previous_override": null,
+          "previous_pin": {
+            "evidence": [
+              {
+                "checked_at": "2026-10-02",
+                "match": "unique_name_and_full_postcode",
+                "reference_coordinate": {
+                  "lat": 52.770671,
+                  "lng": -1.406364
+                },
+                "reference_postcode": "LE67 8PJ",
+                "source": "food-standards-agency-fhrs",
+                "url": "https://ratings.food.gov.uk/business/720517"
+              },
+              {
+                "checked_at": "2026-11-01",
+                "disposition": "superseded_by_source_refresh",
+                "match": "named_venue_full_postcode_and_independent_fsa_agreement",
+                "reference_address": "9 Worthington Lane",
+                "reference_coordinate": {
+                  "lat": 52.7709,
+                  "lng": -1.4062
+                },
+                "reference_name": "Cross Keys, Newbold Coleorton - Live Music Pub",
+                "reference_postcode": "LE67 8PJ",
+                "source": "camra",
+                "url": "https://camra.org.uk/pubs/171213"
+              },
+              {
+                "checked_at": "2026-11-03",
+                "match": "named_venue_full_postcode_and_independent_fsa_agreement",
+                "reference_address": "9 Worthington Lane",
+                "reference_coordinate": {
+                  "lat": 52.7709,
+                  "lng": -1.4062
+                },
+                "reference_name": "Cross Keys, Newbold Coleorton - Live Music Pub",
+                "reference_postcode": "LE67 8PJ",
+                "source": "camra",
+                "url": "https://camra.org.uk/pubs/171213"
+              }
+            ],
+            "lat": 52.7709,
+            "lng": -1.4062,
+            "source": "camra-and-fhrs"
+          },
+          "previous_verification_attempt": {
+            "checked_at": "2026-11-03",
+            "evidence": {
+              "checked_at": "2026-11-03",
+              "match": "named_venue_full_postcode_and_independent_fsa_agreement",
+              "reference_address": "9 Worthington Lane",
+              "reference_coordinate": {
+                "lat": 52.7709,
+                "lng": -1.4062
+              },
+              "reference_name": "Cross Keys, Newbold Coleorton - Live Music Pub",
+              "reference_postcode": "LE67 8PJ",
+              "source": "camra",
+              "url": "https://camra.org.uk/pubs/171213"
+            },
+            "sources": {
+              "camra": {
+                "status": "confirmed",
+                "url": "https://camra.org.uk/pubs/171213"
+              },
+              "food-standards-agency-fhrs": {
+                "status": "not_checked",
+                "url": "https://ratings.food.gov.uk/business/720517"
+              }
+            },
+            "status": "confirmed"
+          },
+          "reason": "The named Cross Keys feature at 9 Worthington Lane matches the full CAMRA address and postcode. The saved point lies about 265 metres farther north.",
+          "reviewed_by": "Codex venue evidence review authorised by map owner",
+          "source_urls": [
+            "https://www.openstreetmap.org/node/373813039",
+            "https://camra.org.uk/pubs/171213"
+          ]
+        }
+      ],
       "location_research": {
         "checked_at": "2026-10-02",
         "coverage": {
@@ -99150,36 +100479,25 @@
         "status": "candidates_found"
       },
       "verification_attempt": {
-        "checked_at": "2026-11-03",
-        "evidence": {
-          "checked_at": "2026-11-03",
-          "match": "named_venue_full_postcode_and_independent_fsa_agreement",
-          "reference_address": "9 Worthington Lane",
-          "reference_coordinate": {
-            "lat": 52.7709,
-            "lng": -1.4062
-          },
-          "reference_name": "Cross Keys, Newbold Coleorton - Live Music Pub",
-          "reference_postcode": "LE67 8PJ",
-          "source": "camra",
-          "url": "https://camra.org.uk/pubs/171213"
-        },
+        "checked_at": "2026-11-06",
+        "reason": "Reviewed named building and corroborated venue address",
         "sources": {
           "camra": {
-            "status": "confirmed",
+            "status": "address_confirmed_marker_differs",
             "url": "https://camra.org.uk/pubs/171213"
           },
-          "food-standards-agency-fhrs": {
-            "status": "not_checked",
-            "url": "https://ratings.food.gov.uk/business/720517"
+          "reviewed-named-building": {
+            "status": "confirmed",
+            "url": "https://www.openstreetmap.org/node/373813039"
           }
         },
-        "status": "confirmed"
+        "status": "manual_review"
       },
       "verified_pin": {
         "evidence": [
           {
             "checked_at": "2026-10-02",
+            "disposition": "superseded_by_building_review",
             "match": "unique_name_and_full_postcode",
             "reference_coordinate": {
               "lat": 52.770671,
@@ -99205,6 +100523,7 @@
           },
           {
             "checked_at": "2026-11-03",
+            "disposition": "superseded_by_building_review",
             "match": "named_venue_full_postcode_and_independent_fsa_agreement",
             "reference_address": "9 Worthington Lane",
             "reference_coordinate": {
@@ -99215,11 +100534,25 @@
             "reference_postcode": "LE67 8PJ",
             "source": "camra",
             "url": "https://camra.org.uk/pubs/171213"
+          },
+          {
+            "address_source_url": "https://camra.org.uk/pubs/171213",
+            "checked_at": "2026-11-06",
+            "match": "reviewed_named_building_and_camra_address",
+            "reference_address": "9 Worthington Lane",
+            "reference_coordinate": {
+              "lat": 52.7685136,
+              "lng": -1.4061836
+            },
+            "reference_name": "Cross Keys",
+            "reference_postcode": "LE67 8PJ",
+            "source": "reviewed-named-building",
+            "url": "https://www.openstreetmap.org/node/373813039"
           }
         ],
-        "lat": 52.7709,
-        "lng": -1.4062,
-        "source": "camra-and-fhrs"
+        "lat": 52.7685136,
+        "lng": -1.4061836,
+        "source": "reviewed-named-building"
       }
     },
     "v-863b0850-5678-56fc-b581-b7e856e50968": {
@@ -102151,6 +103484,17 @@
         "whillows|hartford|cw8 1ql"
       ],
       "current_key": "whillows|hartford|cw8 1ql",
+      "google_identity_review": {
+        "conclusion": "same_venue",
+        "decision": "verified_directory_identity",
+        "identity_review_signature": "934b086d0b5342589352e00516712a511c823625c0556b9d60db78d12d5aa45a",
+        "reason": "The operator identifies Whillows at 279 Chester Road. The mapped building has the same number and a historical business label.",
+        "reviewed_at": "2026-11-06",
+        "source_urls": [
+          "https://www.whillows.co.uk/",
+          "https://www.openstreetmap.org/way/325651440"
+        ]
+      },
       "independent_location_check": {
         "actionable": false,
         "checked_at": "2026-11-03",
@@ -105488,6 +106832,17 @@
         "hen and chickens|islington n1|n1 2na"
       ],
       "current_key": "hen and chickens|islington n1|n1 2na",
+      "google_identity_review": {
+        "conclusion": "same_venue",
+        "decision": "verified_directory_identity",
+        "identity_review_signature": "687a7287b479821da37235a03dbba3cfc3bc352de054de6bcde8c62da6a4b8b4",
+        "reason": "Named evidence matches the distinctive venue and full postcode; Google point is 8.8m from the CAMRA/reference point, consistent with the same premises. No supported address or pin correction identified. Live OSM has a named pub at 4.1m from the Google point, corroborating the mapped premises.",
+        "reviewed_at": "2026-11-06",
+        "source_urls": [
+          "https://camra.org.uk/pubs/124673",
+          "https://www.openstreetmap.org/node/175684023"
+        ]
+      },
       "independent_location_check": {
         "actionable": false,
         "checked_at": "2026-11-03",
@@ -107374,6 +108729,17 @@
         "rising sun|middleton by wirksworth|de4 4ls"
       ],
       "current_key": "rising sun|middleton by wirksworth|de4 4ls",
+      "google_identity_review": {
+        "conclusion": "same_venue",
+        "decision": "verified_directory_identity",
+        "identity_review_signature": "9de354e4d9aa9bf6a72afc7c8f532548b5d904c0c184f7aba21a6396e4f46aac",
+        "reason": "Named CAMRA listing at Rise End, DE4 4LS, corroborates the premises. The comparison is 8.0 metres from the saved point. The mapped venue feature corroborates the location.",
+        "reviewed_at": "2026-11-06",
+        "source_urls": [
+          "https://camra.org.uk/pubs/165669",
+          "https://www.openstreetmap.org/way/118326567"
+        ]
+      },
       "independent_location_check": {
         "actionable": false,
         "checked_at": "2026-11-03",
@@ -111045,6 +112411,17 @@
         "fox|hanwell w7|w7 2pj"
       ],
       "current_key": "fox|hanwell w7|w7 2pj",
+      "google_identity_review": {
+        "conclusion": "same_venue",
+        "decision": "verified_directory_identity",
+        "identity_review_signature": "f12b4e98b8272b692a90d368f9c5341058e3dd276386df5eb3be21940b778853",
+        "reason": "Named evidence matches the distinctive venue and full postcode; Google point is 5.1m from the CAMRA/reference point, consistent with the same premises. No supported address or pin correction identified. Live OSM has a named pub at 5.1m from the Google point, corroborating the mapped premises.",
+        "reviewed_at": "2026-11-06",
+        "source_urls": [
+          "https://camra.org.uk/pubs/164342",
+          "https://www.openstreetmap.org/node/242925119"
+        ]
+      },
       "independent_location_check": {
         "actionable": false,
         "checked_at": "2026-11-03",
@@ -111205,6 +112582,17 @@
         "toby carvery|derby: chaddesden|de21 6lz"
       ],
       "current_key": "toby carvery|derby: chaddesden|de21 6lz",
+      "google_identity_review": {
+        "conclusion": "same_venue",
+        "decision": "verified_directory_identity",
+        "identity_review_signature": "23d81aa3129d2e5be81206885880012c7d4b4c7c7be0009688ae8660cb9ea225",
+        "reason": "Named CAMRA listing at Nottingham Road, DE21 6LZ, corroborates the premises. The comparison is 10.1 metres from the saved point. The mapped venue feature corroborates the location.",
+        "reviewed_at": "2026-11-06",
+        "source_urls": [
+          "https://camra.org.uk/pubs/143315",
+          "https://www.openstreetmap.org/way/111662224"
+        ]
+      },
       "independent_location_check": {
         "actionable": false,
         "checked_at": "2026-11-03",
@@ -113534,6 +114922,17 @@
         "firefly|worcester: central|wr1 2se"
       ],
       "current_key": "firefly|worcester: central|wr1 2se",
+      "google_identity_review": {
+        "conclusion": "same_venue",
+        "decision": "verified_directory_identity",
+        "identity_review_signature": "c0478f309940852dbea4d56a9e5bdabe1ccaa37039e3e441c7f638a4efe833ef",
+        "reason": "Named evidence matches the distinctive venue and full postcode; Google point is 2.9m from the CAMRA/reference point, consistent with the same premises. No supported address or pin correction identified. Live OSM has a named pub at 3.5m from the Google point, corroborating the mapped premises.",
+        "reviewed_at": "2026-11-06",
+        "source_urls": [
+          "https://camra.org.uk/pubs/111423",
+          "https://www.openstreetmap.org/way/257605175"
+        ]
+      },
       "independent_location_check": {
         "actionable": false,
         "checked_at": "2026-11-03",
@@ -116209,6 +117608,17 @@
         "old silk mill|derby: central|de1 3af"
       ],
       "current_key": "old silk mill|derby: central|de1 3af",
+      "google_identity_review": {
+        "conclusion": "same_venue",
+        "decision": "verified_directory_identity",
+        "identity_review_signature": "c9176097f6507e8a0826bcd6508bc449ccfdaf02fa4b4286d027a05c6505baa1",
+        "reason": "Named evidence matches the distinctive venue and full postcode; Google point is 5.2m from the CAMRA/reference point, consistent with the same premises. No supported address or pin correction identified. Live OSM has a named pub at 4.6m from the Google point, corroborating the mapped premises.",
+        "reviewed_at": "2026-11-06",
+        "source_urls": [
+          "https://camra.org.uk/pubs/143279",
+          "https://www.openstreetmap.org/way/55082687"
+        ]
+      },
       "independent_location_check": {
         "actionable": false,
         "checked_at": "2026-11-03",
@@ -116563,6 +117973,17 @@
         "beaufort arms|mumbles|sa3 5tf"
       ],
       "current_key": "beaufort arms|mumbles|sa3 5tf",
+      "google_identity_review": {
+        "conclusion": "same_venue",
+        "decision": "verified_directory_identity",
+        "identity_review_signature": "b4c1129a65cc41060cb2b6aa99d7967549dacc0b8e474ffdb2cc387dcef2478a",
+        "reason": "CAMRA and OSM identify The Beaufort Arms at 1 Castle Road, Mumbles, SA3 5TF; Google slug’s Norton locality conflicts, but the point is on the mapped Mumbles pub.",
+        "reviewed_at": "2026-11-06",
+        "source_urls": [
+          "https://camra.org.uk/pubs/183750",
+          "https://www.openstreetmap.org/node/89494199"
+        ]
+      },
       "independent_location_check": {
         "actionable": false,
         "checked_at": "2026-11-03",
@@ -117779,6 +119200,17 @@
         "1852 brewery co|leicester: south wigston|le18 2dh"
       ],
       "current_key": "1852 brewery co|leicester: south wigston|le18 2dh",
+      "google_identity_review": {
+        "conclusion": "same_venue",
+        "decision": "verified_directory_identity",
+        "identity_review_signature": "a1a85c03f145f6e435cc0ae59c0c01cd318cff81545f7175a046e08806dcca59",
+        "reason": "CAMRA gives 1852 Brewery Co at 2 Station Road, LE18 2DH; OSM maps the named pub at the same address and postcode. Google title variant does not indicate another venue.",
+        "reviewed_at": "2026-11-06",
+        "source_urls": [
+          "https://camra.org.uk/pubs/174102",
+          "https://www.openstreetmap.org/way/490291463"
+        ]
+      },
       "independent_location_check": {
         "actionable": false,
         "checked_at": "2026-11-03",
@@ -118515,6 +119947,17 @@
         "black lion|oswestry|sy11 2rj"
       ],
       "current_key": "black lion|oswestry|sy11 2rj",
+      "google_identity_review": {
+        "conclusion": "same_venue",
+        "decision": "verified_directory_identity",
+        "identity_review_signature": "fcfaf4d92efbe615c7aad119b6c0900fae179f656ddcacafcb11bdc7fe5dfd0c",
+        "reason": "CAMRA and OSM identify the Black Lion at 59 Salop Road, SY11 2RJ; slug wording is noisy but maps to this building.",
+        "reviewed_at": "2026-11-06",
+        "source_urls": [
+          "https://camra.org.uk/pubs/144652",
+          "https://www.openstreetmap.org/way/845791667"
+        ]
+      },
       "independent_location_check": {
         "actionable": false,
         "checked_at": "2026-11-03",
@@ -118674,6 +120117,17 @@
         "swan inn|milton|de65 6ef"
       ],
       "current_key": "swan inn|milton|de65 6ef",
+      "google_identity_review": {
+        "conclusion": "same_venue",
+        "decision": "verified_directory_identity",
+        "identity_review_signature": "9ce5793942c2594969b0a4c5a641cb0a4ba10ed01eb5b13e1c78dbbf1ac6fecf",
+        "reason": "Named CAMRA listing at 49 Main Street, DE65 6EF, corroborates the premises. The comparison is 3.5 metres from the saved point. The mapped venue feature corroborates the location.",
+        "reviewed_at": "2026-11-06",
+        "source_urls": [
+          "https://camra.org.uk/pubs/143598",
+          "https://www.openstreetmap.org/node/276212345"
+        ]
+      },
       "independent_location_check": {
         "actionable": false,
         "checked_at": "2026-11-03",
@@ -120621,6 +122075,17 @@
         "crossways inn|west huntspill|ta9 3ra"
       ],
       "current_key": "crossways inn|west huntspill|ta9 3ra",
+      "google_identity_review": {
+        "conclusion": "same_venue",
+        "decision": "verified_directory_identity",
+        "identity_review_signature": "d2ae5f4a6a3136c73d9d6bae399a876895ae64c9fc388dc430cecd70fc97966e",
+        "reason": "CAMRA and OSM identify Crossways Inn at Withy Road, TA9 3RA; Google point is within normal frontage distance of the same premises.",
+        "reviewed_at": "2026-11-06",
+        "source_urls": [
+          "https://camra.org.uk/pubs/134097",
+          "https://www.openstreetmap.org/node/3282505742"
+        ]
+      },
       "independent_location_check": {
         "actionable": false,
         "checked_at": "2026-11-03",
@@ -121917,6 +123382,17 @@
         "bmi club|upton st leonards|gl4 8ag"
       ],
       "current_key": "bmi club|upton st leonards|gl4 8ag",
+      "google_identity_review": {
+        "conclusion": "same_venue",
+        "decision": "verified_directory_identity",
+        "identity_review_signature": "2dec31251dac6bdbf0055253756e6034601b6c0273dff4efacfb2f8df5e8fb3e",
+        "reason": "CAMRA identifies BMI Club at 8 Bondend Road, GL4 8AG; its official site expands BMI as Birchall Memorial Institute and confirms the full address.",
+        "reviewed_at": "2026-11-06",
+        "source_urls": [
+          "https://bmiclub.co.uk/contact-us/",
+          "https://www.openstreetmap.org/way/989246496"
+        ]
+      },
       "independent_location_check": {
         "actionable": false,
         "checked_at": "2026-11-03",
@@ -122149,6 +123625,17 @@
         "caught and bowled|giltbrook|ng16 2gg"
       ],
       "current_key": "caught and bowled|giltbrook|ng16 2gg",
+      "google_identity_review": {
+        "conclusion": "same_venue",
+        "decision": "verified_directory_identity",
+        "identity_review_signature": "4e745bf9cb44be9d75641cfef7904ee5f32af2adbc6daa207e0a24958fcf46c4",
+        "reason": "CAMRA and OSM identify Caught and Bowled at 493 Nottingham Road, NG16 2GG; same building and postcode.",
+        "reviewed_at": "2026-11-06",
+        "source_urls": [
+          "https://camra.org.uk/pubs/163068",
+          "https://www.openstreetmap.org/way/327495197"
+        ]
+      },
       "independent_location_check": {
         "actionable": false,
         "checked_at": "2026-11-03",
@@ -125906,6 +127393,17 @@
         "chilworth arms|chilworth|so16 7jz"
       ],
       "current_key": "chilworth arms|chilworth|so16 7jz",
+      "google_identity_review": {
+        "conclusion": "same_venue",
+        "decision": "verified_directory_identity",
+        "identity_review_signature": "45d5e999cedc6c317ab8a8af8cb1a22657412ffbb339b4bd4e9c47cc1998a52d",
+        "reason": "CAMRA and OSM identify the Chilworth Arms at the listed Southampton postcode; mapped pub is operator-linked.",
+        "reviewed_at": "2026-11-06",
+        "source_urls": [
+          "https://camra.org.uk/pubs/188013",
+          "https://chilwortharms.co.uk/"
+        ]
+      },
       "independent_location_check": {
         "actionable": false,
         "checked_at": "2026-11-03",
@@ -127687,6 +129185,17 @@
         "railway|glenfield|le3 8br"
       ],
       "current_key": "railway|glenfield|le3 8br",
+      "google_identity_review": {
+        "conclusion": "same_venue",
+        "decision": "verified_directory_identity",
+        "identity_review_signature": "9f4984ed82b2385cb0862943b0cae4929f84973dffd1ce30b0a26c068745df6a",
+        "reason": "Named CAMRA listing at 152 Station Road, LE3 8BR, corroborates the premises. The comparison is 2.7 metres from the saved point. The mapped venue feature corroborates the location.",
+        "reviewed_at": "2026-11-06",
+        "source_urls": [
+          "https://camra.org.uk/pubs/174411",
+          "https://www.openstreetmap.org/node/251451006"
+        ]
+      },
       "independent_location_check": {
         "actionable": false,
         "checked_at": "2026-11-03",
@@ -128183,6 +129692,17 @@
         "victoria inn|mumbles|sa3 4db"
       ],
       "current_key": "victoria inn|mumbles|sa3 4db",
+      "google_identity_review": {
+        "conclusion": "same_venue",
+        "decision": "verified_directory_identity",
+        "identity_review_signature": "f2be3c0711301d683988cb425d9200f3d992dc1d5be40d0b9899c743483c1b04",
+        "reason": "The saved point lies inside the mapped Victoria Inn. The comparison is a small frontage offset at the adjacent mapped address.",
+        "reviewed_at": "2026-11-06",
+        "source_urls": [
+          "https://camra.org.uk/pubs/183765",
+          "https://www.openstreetmap.org/way/1084322438"
+        ]
+      },
       "independent_location_check": {
         "actionable": false,
         "checked_at": "2026-11-03",
@@ -131010,6 +132530,17 @@
         "royal air forces association (pmc)|yeadon|ls19 7na"
       ],
       "current_key": "royal air forces association (pmc)|yeadon|ls19 7na",
+      "google_identity_review": {
+        "conclusion": "same_venue",
+        "decision": "verified_directory_identity",
+        "identity_review_signature": "e27722bdfbe26b77fa7e28dab4d4bf045f02885329e0da12adaffeaa920ff1bf",
+        "reason": "The charity register gives the full association name and the address of the mapped RAFA Club at 56 New Road.",
+        "reviewed_at": "2026-11-06",
+        "source_urls": [
+          "https://register-of-charities.charitycommission.gov.uk/en/charity-search/-/charity-details/501010/contact-information",
+          "https://www.openstreetmap.org/way/406050858"
+        ]
+      },
       "independent_location_check": {
         "actionable": false,
         "checked_at": "2026-11-03",
@@ -137147,6 +138678,18 @@
         "crossways (bottlecraft)|newcastle-u-l: central|st5 1rw"
       ],
       "current_key": "crossways (bottlecraft)|newcastle-u-l: central|st5 1rw",
+      "google_identity_review": {
+        "conclusion": "same_venue",
+        "decision": "verified_directory_identity",
+        "identity_review_signature": "3e42aea08282c8a57c1bee2337416b12cbf9201bcf0bfdb22bb09fe83093e17f",
+        "reason": "Owner review visually confirms Crossways (Bottlecraft) at 36 Ironmarket. Operator site and CAMRA use ST5 1RP; preserve packet postcode ST5 1RW as source provenance rather than infer postal delivery correction.",
+        "reviewed_at": "2026-11-06",
+        "source_urls": [
+          "https://camra.org.uk/pubs/195497",
+          "https://www.openstreetmap.org/way/1525473595",
+          "https://bottlecraft.beer/the-crossways"
+        ]
+      },
       "independent_location_check": {
         "actionable": false,
         "checked_at": "2026-11-05",
@@ -138492,6 +140035,17 @@
         "miners arms|nuneaton: whittleford|cv10 9hu"
       ],
       "current_key": "miners arms|nuneaton: whittleford|cv10 9hu",
+      "google_identity_review": {
+        "conclusion": "same_venue",
+        "decision": "verified_directory_identity",
+        "identity_review_signature": "ca425dd14d3a5004acc8b736585bb0d7dcfec8d46ca689021da36f5e66bde339",
+        "reason": "CAMRA named listing matches the full postcode and Whittleford Road; Google point is 48.2m away, a small same-site displacement. No evidence indicates a different venue or a confirmed pin correction. Live OSM has a named pub at 0.3m from the Google point, corroborating the mapped premises.",
+        "reviewed_at": "2026-11-06",
+        "source_urls": [
+          "https://camra.org.uk/pubs/158289",
+          "https://www.openstreetmap.org/node/4791454321"
+        ]
+      },
       "independent_location_check": {
         "actionable": false,
         "checked_at": "2026-11-03",
@@ -142341,6 +143895,17 @@
         "green house|mere green|b74 2ud"
       ],
       "current_key": "green house|mere green|b74 2ud",
+      "google_identity_review": {
+        "conclusion": "same_venue",
+        "decision": "verified_directory_identity",
+        "identity_review_signature": "0ef7a6b4dd4772f870ae8ec590e3b0cfd305022a3e52ad73bdb5e44c3ae5b491",
+        "reason": "Named evidence matches the distinctive venue and full postcode; Google point is 7.6m from the CAMRA/reference point, consistent with the same premises. No supported address or pin correction identified. Live OSM has a named pub at 7.6m from the Google point, corroborating the mapped premises.",
+        "reviewed_at": "2026-11-06",
+        "source_urls": [
+          "https://camra.org.uk/pubs/131802",
+          "https://www.openstreetmap.org/way/184934594"
+        ]
+      },
       "independent_location_check": {
         "actionable": false,
         "checked_at": "2026-11-03",
@@ -143487,6 +145052,16 @@
         "twelve-sixty bar and lounge|liscard|ch44 5xh"
       ],
       "current_key": "twelve-sixty bar and lounge|liscard|ch44 5xh",
+      "google_identity_review": {
+        "conclusion": "same_venue",
+        "decision": "verified_directory_identity",
+        "identity_review_signature": "cd2d104d74f9109a1f948930b985b3aeecd9a30faa0a6f05a49d424e1c63c012",
+        "reason": "Named CAMRA listing at 45-51 St Albans Road, CH44 5XH, corroborates the premises. The comparison is 4.7 metres from the saved point.",
+        "reviewed_at": "2026-11-06",
+        "source_urls": [
+          "https://camra.org.uk/pubs/196483"
+        ]
+      },
       "independent_location_check": {
         "actionable": false,
         "checked_at": "2026-11-03",
@@ -144274,6 +145849,17 @@
         "new zealand arms|derby: new zealand|de22 3gl"
       ],
       "current_key": "new zealand arms|derby: new zealand|de22 3gl",
+      "google_identity_review": {
+        "conclusion": "same_venue",
+        "decision": "verified_directory_identity",
+        "identity_review_signature": "661bbe6eaf22ab24f72e74ba52ff192c8552cee15fd0e130e67f24e13d760a39",
+        "reason": "Named evidence matches the distinctive venue and full postcode; Google point is 11.7m from the CAMRA/reference point, consistent with the same premises. No supported address or pin correction identified. Live OSM has a named pub at 11.8m from the Google point, corroborating the mapped premises.",
+        "reviewed_at": "2026-11-06",
+        "source_urls": [
+          "https://camra.org.uk/pubs/143270",
+          "https://www.openstreetmap.org/way/118352200"
+        ]
+      },
       "independent_location_check": {
         "actionable": false,
         "checked_at": "2026-11-03",
@@ -145233,6 +146819,17 @@
         "kings arms|newent|gl18 1bd"
       ],
       "current_key": "kings arms|newent|gl18 1bd",
+      "google_identity_review": {
+        "conclusion": "same_venue",
+        "decision": "verified_directory_identity",
+        "identity_review_signature": "61f9f65b98a2ef3d104cc81d47169fe5d56cb546e4a488abb8b14f4d2b5dd8df",
+        "reason": "Named evidence matches the distinctive venue and full postcode; Google point is 10.2m from the CAMRA/reference point, consistent with the same premises. No supported address or pin correction identified. Live OSM has a named pub at 11.6m from the Google point, corroborating the mapped premises.",
+        "reviewed_at": "2026-11-06",
+        "source_urls": [
+          "https://camra.org.uk/pubs/130871",
+          "https://www.openstreetmap.org/way/998192555"
+        ]
+      },
       "independent_location_check": {
         "actionable": false,
         "checked_at": "2026-11-03",
@@ -146046,6 +147643,17 @@
         "marquis of ormonde|crosshill|de5 9sp"
       ],
       "current_key": "marquis of ormonde|crosshill|de5 9sp",
+      "google_identity_review": {
+        "conclusion": "same_venue",
+        "decision": "verified_directory_identity",
+        "identity_review_signature": "e9f412d31d635c47221e350dae5ec21c8997ae15c041095ee88b252869903edd",
+        "reason": "Named evidence matches the distinctive venue and full postcode; Google point is 8.5m from the CAMRA/reference point, consistent with the same premises. No supported address or pin correction identified. Live OSM has a named pub at 6.9m from the Google point, corroborating the mapped premises.",
+        "reviewed_at": "2026-11-06",
+        "source_urls": [
+          "https://camra.org.uk/pubs/113347",
+          "https://www.openstreetmap.org/node/441347243"
+        ]
+      },
       "independent_location_check": {
         "actionable": false,
         "checked_at": "2026-11-03",
@@ -146253,6 +147861,17 @@
         "royal oak|radcliffe on trent|ng12 2fd"
       ],
       "current_key": "royal oak|radcliffe on trent|ng12 2fd",
+      "google_identity_review": {
+        "conclusion": "same_venue",
+        "decision": "verified_directory_identity",
+        "identity_review_signature": "e7f54e30087c06036db0e5a00cd8071a7f71386dfb7bb92f981e2920cfe21a01",
+        "reason": "Named CAMRA listing at Main Road, NG12 2FD, corroborates the premises. The comparison is 5.1 metres from the saved point. The mapped venue feature corroborates the location.",
+        "reviewed_at": "2026-11-06",
+        "source_urls": [
+          "https://camra.org.uk/pubs/162878",
+          "https://www.openstreetmap.org/way/204082379"
+        ]
+      },
       "independent_location_check": {
         "actionable": false,
         "checked_at": "2026-11-03",
@@ -147814,9 +149433,32 @@
     },
     "v-d8f002a1-4ed3-5ffb-8de9-c9cdbef55a1b": {
       "aliases": [
-        "arkwrights|belper: central|de56 1up"
+        "arkwrights|belper: central|de56 1up",
+        "arkwrights|belper: central|de56 1ap"
       ],
-      "current_key": "arkwrights|belper: central|de56 1up",
+      "current_key": "arkwrights|belper: central|de56 1ap",
+      "google_identity_review": {
+        "conclusion": "listing_error",
+        "decision": "verified_directory_identity",
+        "identity_review_signature": "d09976ed96185b032301e3654ae5dff275ac5d773c4507ebba96756c14374220",
+        "reason": "CAMRA, the town council guide and the local food hygiene record all identify Arkwright’s at 6 Campbell Street, DE56 1AP. Correct the directory postcode and retain the building pin.",
+        "reviewed_at": "2026-11-06",
+        "source_urls": [
+          "https://camra.org.uk/pubs/113191",
+          "https://www.belpertowncouncil.gov.uk/wp-content/uploads/sites/103/2025/05/Belper-Town-Guide-2025-26.pdf",
+          "https://ratings.food.gov.uk/business/611164",
+          "https://www.openstreetmap.org/node/4006536737"
+        ]
+      },
+      "identity_reviews": [
+        {
+          "checked_at": "2026-11-06",
+          "previous_key": "arkwrights|belper: central|de56 1up",
+          "reason": "CAMRA, the town council guide and the local food hygiene record all identify Arkwright’s at 6 Campbell Street, DE56 1AP. Correct the directory postcode and retain the building pin.",
+          "reference_postcode": "DE56 1AP",
+          "source_url": "https://camra.org.uk/pubs/113191"
+        }
+      ],
       "independent_location_check": {
         "actionable": false,
         "checked_at": "2026-11-03",
@@ -147864,9 +149506,41 @@
         "notes": "",
         "pg": "Perm",
         "place_name": "Belper: Central",
-        "postcode": "DE56 1UP",
+        "postcode": "DE56 1AP",
         "pub_name": "Arkwrights"
       },
+      "listing_reviews": [
+        {
+          "decision": {
+            "changes": {
+              "postcode": "DE56 1AP"
+            },
+            "checked_at": "2026-11-06",
+            "expected": {
+              "place_name": "Belper: Central",
+              "postcode": "DE56 1UP",
+              "pub_name": "Arkwrights"
+            },
+            "reason": "CAMRA, the town council guide and the local food hygiene record all identify Arkwright’s at 6 Campbell Street, DE56 1AP. Correct the directory postcode and retain the building pin.",
+            "reference_postcode": "DE56 1AP",
+            "reviewed_by": "Codex venue evidence review authorised by map owner",
+            "source_url": "https://camra.org.uk/pubs/113191"
+          },
+          "kind": "correction",
+          "original": {
+            "area": "Derbyshire",
+            "country": "England",
+            "dispense": "H",
+            "last": "2026 Q4",
+            "notes": "",
+            "pg": "Perm",
+            "place_name": "Belper: Central",
+            "postcode": "DE56 1UP",
+            "pub_name": "Arkwrights"
+          },
+          "original_key": "arkwrights|belper: central|de56 1up"
+        }
+      ],
       "verification_attempt": {
         "checked_at": "2026-11-04",
         "reason": "Manual map evidence needs a fresh human address/map check",
@@ -147891,6 +149565,19 @@
             "reference_postcode": "DE56 1UP",
             "source": "google-maps-named-place",
             "url": "https://www.google.com/maps/search/?api=1&query=Arkwrights+Real+Ale+Bar+DE56+1UP"
+          },
+          {
+            "checked_at": "2026-11-06",
+            "match": "reviewed_named_building_and_corrected_postcode",
+            "reference_address": "6 Campbell Street",
+            "reference_coordinate": {
+              "lat": 53.022654,
+              "lng": -1.483247
+            },
+            "reference_name": "Arkwright's Real Ale Bar, Belper - Beer Festivals",
+            "reference_postcode": "DE56 1AP",
+            "source": "camra",
+            "url": "https://camra.org.uk/pubs/113191"
           }
         ],
         "lat": 53.0227293,
@@ -148197,6 +149884,17 @@
         "green man|middleton|b78 2an"
       ],
       "current_key": "green man|middleton|b78 2an",
+      "google_identity_review": {
+        "conclusion": "same_venue",
+        "decision": "verified_directory_identity",
+        "identity_review_signature": "d36766a36bea76d1c04c3a1d49fa5186cf1d771897461fb30350858a63db6b0a",
+        "reason": "Named evidence matches the distinctive venue and full postcode; Google point is 4.2m from the CAMRA/reference point, consistent with the same premises. No supported address or pin correction identified. Live OSM has a named pub at 4.5m from the Google point, corroborating the mapped premises.",
+        "reviewed_at": "2026-11-06",
+        "source_urls": [
+          "https://camra.org.uk/pubs/131672",
+          "https://www.openstreetmap.org/way/221952348"
+        ]
+      },
       "independent_location_check": {
         "actionable": false,
         "checked_at": "2026-11-03",
@@ -151402,6 +153100,17 @@
         "tiger|derby: central|de1 2dq"
       ],
       "current_key": "tiger|derby: central|de1 2dq",
+      "google_identity_review": {
+        "conclusion": "same_venue",
+        "decision": "verified_directory_identity",
+        "identity_review_signature": "3228ee35b1fcceb414e202f1a03a732b2d25913bc2d61a67533242f048a21d2d",
+        "reason": "Both points are inside the named Tiger building at Lock Up Yard, whose full postcode agrees with CAMRA.",
+        "reviewed_at": "2026-11-06",
+        "source_urls": [
+          "https://camra.org.uk/pubs/143461",
+          "https://www.openstreetmap.org/way/127787980"
+        ]
+      },
       "identity_reviews": [
         {
           "checked_at": "2026-11-03",
@@ -153879,6 +155588,17 @@
         "prince of wales|sheffield: ecclesall road|s11 9ph"
       ],
       "current_key": "prince of wales|sheffield: ecclesall road|s11 9ph",
+      "google_identity_review": {
+        "conclusion": "same_venue",
+        "decision": "verified_directory_identity",
+        "identity_review_signature": "747773735d0c12155982f40d70023d5227e831a458c1310d876ff84ee89c0925",
+        "reason": "Named CAMRA listing at 95 Ecclesall Road South, S11 9PH, corroborates the premises. The comparison is 10.9 metres from the saved point. The mapped venue feature corroborates the location.",
+        "reviewed_at": "2026-11-06",
+        "source_urls": [
+          "https://camra.org.uk/pubs/147512",
+          "https://www.openstreetmap.org/way/1115605306"
+        ]
+      },
       "independent_location_check": {
         "actionable": false,
         "checked_at": "2026-11-03",
@@ -154129,6 +155849,17 @@
         "windmill|breadsall|de21 4fy"
       ],
       "current_key": "windmill|breadsall|de21 4fy",
+      "google_identity_review": {
+        "conclusion": "same_venue",
+        "decision": "verified_directory_identity",
+        "identity_review_signature": "180acfef1e13433594080bc16980f51b61ce4f5d4a1fce9c0fa0698b2b9e1f57",
+        "reason": "Named CAMRA listing at Hilltop, DE21 4FY, corroborates the premises. The comparison is 4.5 metres from the saved point. The mapped venue feature corroborates the location.",
+        "reviewed_at": "2026-11-06",
+        "source_urls": [
+          "https://camra.org.uk/pubs/143230",
+          "https://www.openstreetmap.org/way/400666379"
+        ]
+      },
       "independent_location_check": {
         "actionable": false,
         "checked_at": "2026-11-03",
@@ -154255,6 +155986,16 @@
         "chadwick arms|hill ridware|ws15 3qx"
       ],
       "current_key": "chadwick arms|hill ridware|ws15 3qx",
+      "google_identity_review": {
+        "conclusion": "same_venue",
+        "decision": "verified_directory_identity",
+        "identity_review_signature": "f075f53919f3492a0c30e9d4a4a0e872ff6ed75d904ba38b1d4ced491ff0e234",
+        "reason": "CAMRA and OSM identify the Chadwick Arms at 81 Uttoxeter Road, WS15 3QX; same pub building.",
+        "reviewed_at": "2026-11-06",
+        "source_urls": [
+          "https://camra.org.uk/pubs/124006"
+        ]
+      },
       "independent_location_check": {
         "actionable": false,
         "checked_at": "2026-11-03",
@@ -154371,6 +156112,17 @@
         "cinque ports|seaford|bn25 1pp"
       ],
       "current_key": "cinque ports|seaford|bn25 1pp",
+      "google_identity_review": {
+        "conclusion": "same_venue",
+        "decision": "verified_directory_identity",
+        "identity_review_signature": "b31751d1cc34b71e5e6b090ef1169b073775f662624548ca63b3bad512261ae2",
+        "reason": "CAMRA and OSM identify the Cinque Ports at 49 High Street, BN25 1PP; pub building and postcode match.",
+        "reviewed_at": "2026-11-06",
+        "source_urls": [
+          "https://camra.org.uk/pubs/127497",
+          "https://www.openstreetmap.org/way/713925561"
+        ]
+      },
       "independent_location_check": {
         "actionable": false,
         "checked_at": "2026-11-03",
@@ -154682,6 +156434,16 @@
         "county hotel|lytham st annes|fy8 5lh"
       ],
       "current_key": "county hotel|lytham st annes|fy8 5lh",
+      "google_identity_review": {
+        "conclusion": "same_venue",
+        "decision": "verified_directory_identity",
+        "identity_review_signature": "994b31ed7088573155f67a32b006f251e9fcdfbfbff5744cd02cbd32d1f5876b",
+        "reason": "CAMRA and OSM identify the County Hotel at 1 Church Road, FY8 5LH; same venue footprint.",
+        "reviewed_at": "2026-11-06",
+        "source_urls": [
+          "https://camra.org.uk/pubs/120127"
+        ]
+      },
       "independent_location_check": {
         "actionable": false,
         "checked_at": "2026-11-03",
@@ -155550,6 +157312,17 @@
         "congleton rugby club (pmc)|congleton|cw12 1eg"
       ],
       "current_key": "congleton rugby club (pmc)|congleton|cw12 1eg",
+      "google_identity_review": {
+        "conclusion": "same_venue",
+        "decision": "verified_directory_identity",
+        "identity_review_signature": "d05d0ecad8d72b1fbc615ef8f3d6446f9d64cd59a8c45992441950b282e8156d",
+        "reason": "CAMRA and OSM identify Congleton Rugby Club at Park Street, CW12 1EG; Google’s longer club description refers to the same venue.",
+        "reviewed_at": "2026-11-06",
+        "source_urls": [
+          "https://camra.org.uk/pubs/173359",
+          "https://www.openstreetmap.org/node/12386186884"
+        ]
+      },
       "independent_location_check": {
         "actionable": false,
         "checked_at": "2026-11-03",
@@ -156433,6 +158206,18 @@
         "duchess|stamford brook|w6 0xf"
       ],
       "current_key": "duchess|stamford brook|w6 0xf",
+      "google_identity_review": {
+        "conclusion": "same_venue",
+        "decision": "verified_directory_identity",
+        "identity_review_signature": "cf4d2337e791ca90bcddcf303b94dd2346dd339318829092bd392c95fcd08c73",
+        "reason": "West London CAMRA identifies The Queen as the planned new name of the Duchess at 320 Goldhawk Road after refurbishment. The mapped building is the same premises. Reopening has a separate timetable.",
+        "reviewed_at": "2026-11-06",
+        "source_urls": [
+          "https://westlondon.camra.org.uk/branch/branch-news/214-news-and-events-update-21-sep-2026",
+          "https://camra.org.uk/pubs/128959",
+          "https://www.openstreetmap.org/way/961791327"
+        ]
+      },
       "independent_location_check": {
         "actionable": false,
         "checked_at": "2026-11-03",
@@ -157469,6 +159254,17 @@
         "royal oak|hurdlow|sk17 9qj"
       ],
       "current_key": "royal oak|hurdlow|sk17 9qj",
+      "google_identity_review": {
+        "conclusion": "same_venue",
+        "decision": "verified_directory_identity",
+        "identity_review_signature": "e1eb3a567ebde6457203dbfd4b06701de93a0183d5feca028d599e9505b9d717",
+        "reason": "Named CAMRA listing at Hurdlow, SK17 9QJ, corroborates the premises. The comparison is 3.6 metres from the saved point. The mapped venue feature corroborates the location.",
+        "reviewed_at": "2026-11-06",
+        "source_urls": [
+          "https://camra.org.uk/pubs/134744",
+          "https://www.openstreetmap.org/way/80504062"
+        ]
+      },
       "independent_location_check": {
         "actionable": false,
         "checked_at": "2026-11-03",
@@ -158920,6 +160716,16 @@
         "stag and scotch|newport|tf10 7au"
       ],
       "current_key": "stag and scotch|newport|tf10 7au",
+      "google_identity_review": {
+        "conclusion": "same_venue",
+        "decision": "verified_directory_identity",
+        "identity_review_signature": "1d0e819da7895d21d05e3b3993eb9355ace54492942c9155c208b6e2a4e7fc00",
+        "reason": "Named CAMRA listing at High Street, TF10 7AU, corroborates the premises. The comparison is 8.3 metres from the saved point.",
+        "reviewed_at": "2026-11-06",
+        "source_urls": [
+          "https://camra.org.uk/pubs/198609"
+        ]
+      },
       "independent_location_check": {
         "actionable": false,
         "checked_at": "2026-11-03",
@@ -161288,6 +163094,17 @@
         "green man|trumpington|cb2 9hz"
       ],
       "current_key": "green man|trumpington|cb2 9hz",
+      "google_identity_review": {
+        "conclusion": "same_venue",
+        "decision": "verified_directory_identity",
+        "identity_review_signature": "c45493bd270d19af507fa89c3d5fb1f9b579404c181c05261a4df563bfe8241b",
+        "reason": "Named evidence matches the distinctive venue and full postcode; Google point is 7.9m from the CAMRA/reference point, consistent with the same premises. No supported address or pin correction identified. Live OSM has a named pub at 7.9m from the Google point, corroborating the mapped premises.",
+        "reviewed_at": "2026-11-06",
+        "source_urls": [
+          "https://camra.org.uk/pubs/131504",
+          "https://www.openstreetmap.org/node/21642213"
+        ]
+      },
       "independent_location_check": {
         "actionable": false,
         "checked_at": "2026-11-03",
@@ -162924,6 +164741,17 @@
         "pilot inn|mumbles|sa3 4el"
       ],
       "current_key": "pilot inn|mumbles|sa3 4el",
+      "google_identity_review": {
+        "conclusion": "same_venue",
+        "decision": "verified_directory_identity",
+        "identity_review_signature": "2ca4945b544bfb8e5a4dbadeeb2ab3b9e75cfc8b075a8c8ebfdf1229b3034a15",
+        "reason": "Named evidence matches the distinctive venue and full postcode; Google point is 17.4m from the CAMRA/reference point, consistent with the same premises. No supported address or pin correction identified. Live OSM has a named pub at 7.3m from the Google point, corroborating the mapped premises.",
+        "reviewed_at": "2026-11-06",
+        "source_urls": [
+          "https://camra.org.uk/pubs/183760",
+          "https://www.openstreetmap.org/way/1084322437"
+        ]
+      },
       "independent_location_check": {
         "actionable": false,
         "checked_at": "2026-11-03",
@@ -164608,6 +166436,17 @@
         "market tavern tap|atherstone|cv9 1et"
       ],
       "current_key": "market tavern tap|atherstone|cv9 1et",
+      "google_identity_review": {
+        "conclusion": "same_venue",
+        "decision": "verified_directory_identity",
+        "identity_review_signature": "b551064d1fff80cda9158f4eeada357344fd7cf3bf815f194cfaf840871e4471",
+        "reason": "Named evidence matches the distinctive venue and full postcode; Google point is 1.7m from the CAMRA/reference point, consistent with the same premises. No supported address or pin correction identified. Live OSM has a named pub at 4.7m from the Google point, corroborating the mapped premises.",
+        "reviewed_at": "2026-11-06",
+        "source_urls": [
+          "https://camra.org.uk/pubs/131753",
+          "https://www.openstreetmap.org/way/300554959"
+        ]
+      },
       "independent_location_check": {
         "actionable": false,
         "checked_at": "2026-11-03",
@@ -164982,6 +166821,17 @@
         "o'neills|watford: centre|wd17 1et"
       ],
       "current_key": "o'neills|watford: centre|wd17 1et",
+      "google_identity_review": {
+        "conclusion": "same_venue",
+        "decision": "verified_directory_identity",
+        "identity_review_signature": "00614c6fc88831eddb0e9445ebf3a31cf2fe8071dba51a8b55fd4aba667da6dd",
+        "reason": "Named evidence matches the distinctive venue and full postcode; Google point is 16.3m from the CAMRA/reference point, consistent with the same premises. No supported address or pin correction identified. Live OSM has a named pub at 14.2m from the Google point, corroborating the mapped premises.",
+        "reviewed_at": "2026-11-06",
+        "source_urls": [
+          "https://camra.org.uk/pubs/194095",
+          "https://www.openstreetmap.org/way/394986582"
+        ]
+      },
       "independent_location_check": {
         "actionable": false,
         "checked_at": "2026-11-03",
@@ -166204,6 +168054,17 @@
         "ye olde talbot|uttoxeter|st14 8hf"
       ],
       "current_key": "ye olde talbot|uttoxeter|st14 8hf",
+      "google_identity_review": {
+        "conclusion": "same_venue",
+        "decision": "verified_directory_identity",
+        "identity_review_signature": "d5913aa3673bb727b40aed0a0857a1536a7d7e2dbc8e5b5c2d039844ebc13b77",
+        "reason": "Named CAMRA listing at 43 Market Place, ST14 8HF, corroborates the premises. The comparison is 5.5 metres from the saved point. The mapped venue feature corroborates the location.",
+        "reviewed_at": "2026-11-06",
+        "source_urls": [
+          "https://camra.org.uk/pubs/128046",
+          "https://www.openstreetmap.org/way/414824039"
+        ]
+      },
       "independent_location_check": {
         "actionable": false,
         "checked_at": "2026-11-03",
@@ -169298,6 +171159,17 @@
         "bay horse|manchester: central|m4 1na"
       ],
       "current_key": "bay horse|manchester: central|m4 1na",
+      "google_identity_review": {
+        "conclusion": "same_venue",
+        "decision": "verified_directory_identity",
+        "identity_review_signature": "1e153b419cbfa14d2c657619dbddcfc3fa449435d9d78926c9f47ffe45eeed1d",
+        "reason": "CAMRA and OSM identify The Bay Horse Tavern at 35–37 Thomas Street, M4 1NA.",
+        "reviewed_at": "2026-11-06",
+        "source_urls": [
+          "https://camra.org.uk/pubs/137402",
+          "https://www.openstreetmap.org/node/357190247"
+        ]
+      },
       "independent_location_check": {
         "actionable": false,
         "checked_at": "2026-11-03",
@@ -170035,9 +171907,30 @@
     },
     "v-fd97cf72-faf0-54aa-bce6-e9fd40262cc0": {
       "aliases": [
-        "lancaster inn|woodhall spa|ln10 6st"
+        "lancaster inn|woodhall spa|ln10 6st",
+        "inn at woodhall spa|woodhall spa|ln10 6st"
       ],
-      "current_key": "lancaster inn|woodhall spa|ln10 6st",
+      "current_key": "inn at woodhall spa|woodhall spa|ln10 6st",
+      "google_identity_review": {
+        "conclusion": "listing_error",
+        "decision": "verified_directory_identity",
+        "identity_review_signature": "662a1842d2282b58f89341ae5e788146305672d9fe1cd2485ae34a163f91c0f1",
+        "reason": "The operator confirms that the Lancaster Bar is inside the Inn at Woodhall Spa, The Broadway, LN10 6ST. CAMRA lists the inn under its current name.",
+        "reviewed_at": "2026-11-06",
+        "source_urls": [
+          "https://www.theinnatwoodhallspa.co.uk/dine/",
+          "https://camra.org.uk/pubs/191850"
+        ]
+      },
+      "identity_reviews": [
+        {
+          "checked_at": "2026-11-06",
+          "previous_key": "lancaster inn|woodhall spa|ln10 6st",
+          "reason": "The operator confirms that the Lancaster Bar is inside the Inn at Woodhall Spa, The Broadway, LN10 6ST. CAMRA lists the inn under its current name.",
+          "reference_postcode": "LN10 6ST",
+          "source_url": "https://www.theinnatwoodhallspa.co.uk/dine/"
+        }
+      ],
       "independent_location_check": {
         "actionable": false,
         "checked_at": "2026-11-03",
@@ -170086,8 +171979,40 @@
         "pg": "Guest",
         "place_name": "Woodhall Spa",
         "postcode": "LN10 6ST",
-        "pub_name": "Lancaster Inn"
+        "pub_name": "Inn at Woodhall Spa"
       },
+      "listing_reviews": [
+        {
+          "decision": {
+            "changes": {
+              "pub_name": "Inn at Woodhall Spa"
+            },
+            "checked_at": "2026-11-06",
+            "expected": {
+              "place_name": "Woodhall Spa",
+              "postcode": "LN10 6ST",
+              "pub_name": "Lancaster Inn"
+            },
+            "reason": "The operator confirms that the Lancaster Bar is inside the Inn at Woodhall Spa, The Broadway, LN10 6ST. CAMRA lists the inn under its current name.",
+            "reference_postcode": "LN10 6ST",
+            "reviewed_by": "Codex venue evidence review authorised by map owner",
+            "source_url": "https://www.theinnatwoodhallspa.co.uk/dine/"
+          },
+          "kind": "correction",
+          "original": {
+            "area": "Lincolnshire",
+            "country": "England",
+            "dispense": "H",
+            "last": "2026 Q1",
+            "notes": "",
+            "pg": "Guest",
+            "place_name": "Woodhall Spa",
+            "postcode": "LN10 6ST",
+            "pub_name": "Lancaster Inn"
+          },
+          "original_key": "lancaster inn|woodhall spa|ln10 6st"
+        }
+      ],
       "verification_attempt": {
         "checked_at": "2026-11-04",
         "reason": "Manual map evidence needs a fresh human address/map check",
@@ -170284,6 +172209,17 @@
         "tap house|smisby|le65 2ta"
       ],
       "current_key": "tap house|smisby|le65 2ta",
+      "google_identity_review": {
+        "conclusion": "same_venue",
+        "decision": "verified_directory_identity",
+        "identity_review_signature": "6e168a3159bc403b0aae748776a8d0d10dbd7fce761d9182041a1a987d8fe82f",
+        "reason": "Named CAMRA listing at Annwell Lane, LE65 2TA, corroborates the premises. The comparison is 7.1 metres from the saved point. The mapped venue feature corroborates the location.",
+        "reviewed_at": "2026-11-06",
+        "source_urls": [
+          "https://camra.org.uk/pubs/124029",
+          "https://www.openstreetmap.org/node/6093257682"
+        ]
+      },
       "independent_location_check": {
         "actionable": false,
         "checked_at": "2026-11-03",
@@ -170660,6 +172596,16 @@
         "vine|stoke: pittshill|st6 6ls"
       ],
       "current_key": "vine|stoke: pittshill|st6 6ls",
+      "google_identity_review": {
+        "conclusion": "same_venue",
+        "decision": "verified_directory_identity",
+        "identity_review_signature": "29948fecc9a7f9493d15923a5fa02b2a0c15081ecea747fe9e670e4e4899cb39",
+        "reason": "Named CAMRA listing at 13 Naylor Street, ST6 6LS, corroborates the premises. The comparison is 26.4 metres from the saved point.",
+        "reviewed_at": "2026-11-06",
+        "source_urls": [
+          "https://camra.org.uk/pubs/123167"
+        ]
+      },
       "independent_location_check": {
         "actionable": false,
         "checked_at": "2026-11-03",

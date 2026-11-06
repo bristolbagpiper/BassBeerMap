@@ -2,7 +2,7 @@
   "counts": {
     "verified_venue": 1087
   },
-  "generated_at": "2026-11-05",
+  "generated_at": "2026-11-06",
   "policy": {
     "max_evidence_age_days": 400,
     "venue_pin": "Evidence-backed venue coordinates; unresolved venues use explicitly approximate postcode pins."
@@ -1170,7 +1170,7 @@
       "status": "verified_venue",
       "venue_id": "v-e68ede49-f87d-5c23-ba09-269eafa95b85"
     },
-    "arkwrights|belper: central|de56 1up": {
+    "arkwrights|belper: central|de56 1ap": {
       "coordinate_source": "google-maps-named-place",
       "display_precision": "venue",
       "evidence": [
@@ -1185,12 +1185,25 @@
           "reference_postcode": "DE56 1UP",
           "source": "google-maps-named-place",
           "url": "https://www.google.com/maps/search/?api=1&query=Arkwrights+Real+Ale+Bar+DE56+1UP"
+        },
+        {
+          "checked_at": "2026-11-06",
+          "match": "reviewed_named_building_and_corrected_postcode",
+          "reference_address": "6 Campbell Street",
+          "reference_coordinate": {
+            "lat": 53.022654,
+            "lng": -1.483247
+          },
+          "reference_name": "Arkwright's Real Ale Bar, Belper - Beer Festivals",
+          "reference_postcode": "DE56 1AP",
+          "source": "camra",
+          "url": "https://camra.org.uk/pubs/113191"
         }
       ],
       "lat": 53.0227293,
       "lng": -1.4832821,
       "place_name": "Belper: Central",
-      "postcode": "DE56 1UP",
+      "postcode": "DE56 1AP",
       "pub_name": "Arkwrights",
       "status": "verified_venue",
       "venue_id": "v-d8f002a1-4ed3-5ffb-8de9-c9cdbef55a1b"
@@ -3092,7 +3105,7 @@
       "venue_id": "v-daf05614-68d7-51cb-810d-549409054f62"
     },
     "bench and bar|stoke: fenton|st4 3aj": {
-      "coordinate_source": "camra-and-fsa-location-audit",
+      "coordinate_source": "reviewed-named-building",
       "display_precision": "venue",
       "evidence": [
         {
@@ -3113,6 +3126,7 @@
         {
           "checked_at": "2026-11-03",
           "difference_metres": 0.0,
+          "disposition": "superseded_by_building_review",
           "match": "venue_name_and_full_postcode",
           "reference_address": "93 Christchurch Street",
           "reference_coordinate": {
@@ -3123,10 +3137,24 @@
           "reference_postcode": "ST4 3AJ",
           "source": "camra",
           "url": "https://camra.org.uk/pubs/122897"
+        },
+        {
+          "address_source_url": "https://camra.org.uk/pubs/122897",
+          "checked_at": "2026-11-06",
+          "match": "reviewed_named_building_and_camra_address",
+          "reference_address": "93 Christchurch Street",
+          "reference_coordinate": {
+            "lat": 52.9967778,
+            "lng": -2.1641508
+          },
+          "reference_name": "Bench and Bar",
+          "reference_postcode": "ST4 3AJ",
+          "source": "reviewed-named-building",
+          "url": "https://www.openstreetmap.org/node/1657343511"
         }
       ],
-      "lat": 52.9973,
-      "lng": -2.16473,
+      "lat": 52.9967778,
+      "lng": -2.1641508,
       "place_name": "Stoke: Fenton",
       "postcode": "ST4 3AJ",
       "pub_name": "Bench and Bar",
@@ -5707,7 +5735,7 @@
       "venue_id": "v-1639d0fb-54f0-58b5-8ce4-08eb9e335e87"
     },
     "bottle and glass|normanby|ln8 2he": {
-      "coordinate_source": "camra-pubs-location-audit",
+      "coordinate_source": "reviewed-named-building",
       "display_precision": "venue",
       "evidence": [
         {
@@ -5728,6 +5756,7 @@
         {
           "checked_at": "2026-11-03",
           "difference_metres": 0.0,
+          "disposition": "superseded_by_building_review",
           "match": "venue_name_and_full_postcode",
           "reference_address": "Main Street",
           "reference_coordinate": {
@@ -5738,10 +5767,24 @@
           "reference_postcode": "LN8 2HE",
           "source": "camra",
           "url": "https://camra.org.uk/pubs/191802"
+        },
+        {
+          "address_source_url": "https://camra.org.uk/pubs/191802",
+          "checked_at": "2026-11-06",
+          "match": "reviewed_named_building_and_camra_address",
+          "reference_address": "Main Street",
+          "reference_coordinate": {
+            "lat": 53.38005591,
+            "lng": -0.49627806
+          },
+          "reference_name": "Bottle and Glass",
+          "reference_postcode": "LN8 2HE",
+          "source": "reviewed-named-building",
+          "url": "https://heritage-explorer.lincolnshire.gov.uk/Monument/MLI126319"
         }
       ],
-      "lat": 53.379045999533,
-      "lng": -0.49631071163935,
+      "lat": 53.38005591,
+      "lng": -0.49627806,
       "place_name": "Normanby",
       "postcode": "LN8 2HE",
       "pub_name": "Bottle and Glass",
@@ -8489,7 +8532,7 @@
       "status": "verified_venue",
       "venue_id": "v-aa3471ae-ad37-5208-8523-f8231e943888"
     },
-    "chaddesen park social club (pmc)|derby: chaddesden|de21 6pd": {
+    "chaddesden park social club (pmc)|derby: chaddesden|de21 6pd": {
       "coordinate_source": "google-maps-named-place",
       "display_precision": "venue",
       "evidence": [
@@ -8510,7 +8553,7 @@
       "lng": -1.4458378,
       "place_name": "Derby: Chaddesden",
       "postcode": "DE21 6PD",
-      "pub_name": "Chaddesen Park Social Club (PMC)",
+      "pub_name": "Chaddesden Park Social Club (PMC)",
       "status": "verified_venue",
       "venue_id": "v-552acf01-151c-5ab2-8479-b5c3eaeea9cb"
     },
@@ -11919,11 +11962,12 @@
       "venue_id": "v-da368401-dfbb-5300-8382-e75e3237f5db"
     },
     "cross keys|newbold|le67 8pj": {
-      "coordinate_source": "camra-and-fhrs",
+      "coordinate_source": "reviewed-named-building",
       "display_precision": "venue",
       "evidence": [
         {
           "checked_at": "2026-10-02",
+          "disposition": "superseded_by_building_review",
           "match": "unique_name_and_full_postcode",
           "reference_coordinate": {
             "lat": 52.770671,
@@ -11949,6 +11993,7 @@
         },
         {
           "checked_at": "2026-11-03",
+          "disposition": "superseded_by_building_review",
           "match": "named_venue_full_postcode_and_independent_fsa_agreement",
           "reference_address": "9 Worthington Lane",
           "reference_coordinate": {
@@ -11959,10 +12004,24 @@
           "reference_postcode": "LE67 8PJ",
           "source": "camra",
           "url": "https://camra.org.uk/pubs/171213"
+        },
+        {
+          "address_source_url": "https://camra.org.uk/pubs/171213",
+          "checked_at": "2026-11-06",
+          "match": "reviewed_named_building_and_camra_address",
+          "reference_address": "9 Worthington Lane",
+          "reference_coordinate": {
+            "lat": 52.7685136,
+            "lng": -1.4061836
+          },
+          "reference_name": "Cross Keys",
+          "reference_postcode": "LE67 8PJ",
+          "source": "reviewed-named-building",
+          "url": "https://www.openstreetmap.org/node/373813039"
         }
       ],
-      "lat": 52.7709,
-      "lng": -1.4062,
+      "lat": 52.7685136,
+      "lng": -1.4061836,
       "place_name": "Newbold",
       "postcode": "LE67 8PJ",
       "pub_name": "Cross Keys",
@@ -14517,7 +14576,7 @@
       "venue_id": "v-df6d2b46-d775-57a3-9172-6ab51e523b58"
     },
     "donington arms|donington le heath|le67 2ge": {
-      "coordinate_source": "camra-pubs-location-audit",
+      "coordinate_source": "reviewed-named-building",
       "display_precision": "venue",
       "evidence": [
         {
@@ -14538,6 +14597,7 @@
         {
           "checked_at": "2026-11-03",
           "difference_metres": 0.0,
+          "disposition": "superseded_by_building_review",
           "match": "venue_name_and_full_postcode",
           "reference_address": "The Green",
           "reference_coordinate": {
@@ -14548,10 +14608,24 @@
           "reference_postcode": "LE67 2GE",
           "source": "camra",
           "url": "https://camra.org.uk/pubs/171284"
+        },
+        {
+          "address_source_url": "https://camra.org.uk/pubs/171284",
+          "checked_at": "2026-11-06",
+          "match": "reviewed_named_building_and_camra_address",
+          "reference_address": "The Green",
+          "reference_coordinate": {
+            "lat": 52.70635982,
+            "lng": -1.37758816
+          },
+          "reference_name": "Donington Arms",
+          "reference_postcode": "LE67 2GE",
+          "source": "reviewed-named-building",
+          "url": "https://www.openstreetmap.org/way/753819023"
         }
       ],
-      "lat": 52.7066,
-      "lng": -1.37599,
+      "lat": 52.70635982,
+      "lng": -1.37758816,
       "place_name": "Donington Le Heath",
       "postcode": "LE67 2GE",
       "pub_name": "Donington Arms",
@@ -22324,6 +22398,31 @@
       "status": "verified_venue",
       "venue_id": "v-6040a12f-787d-5099-a640-bc3a1fdc1c6c"
     },
+    "inn at woodhall spa|woodhall spa|ln10 6st": {
+      "coordinate_source": "google-maps-and-official-address",
+      "display_precision": "venue",
+      "evidence": [
+        {
+          "checked_at": "2026-09-13",
+          "difference_metres": 0,
+          "match": "manual_named_place_address_and_map_check",
+          "reference_coordinate": {
+            "lat": 53.1518516,
+            "lng": -0.2141953
+          },
+          "reference_postcode": "LN10 6ST",
+          "source": "google-maps-and-official-address",
+          "url": "https://www.google.com/maps/search/?api=1&query=The+Inn+at+Woodhall+Spa+LN10+6ST"
+        }
+      ],
+      "lat": 53.1518516,
+      "lng": -0.2141953,
+      "place_name": "Woodhall Spa",
+      "postcode": "LN10 6ST",
+      "pub_name": "Inn at Woodhall Spa",
+      "status": "verified_venue",
+      "venue_id": "v-fd97cf72-faf0-54aa-bce6-e9fd40262cc0"
+    },
     "irby mill|greasby|ch49 3nt": {
       "coordinate_source": "openstreetmap-gb-extract",
       "display_precision": "venue",
@@ -24087,31 +24186,6 @@
       "pub_name": "Ladybrook",
       "status": "verified_venue",
       "venue_id": "v-135ca874-2542-5da4-a0b9-7c783ceb513e"
-    },
-    "lancaster inn|woodhall spa|ln10 6st": {
-      "coordinate_source": "google-maps-and-official-address",
-      "display_precision": "venue",
-      "evidence": [
-        {
-          "checked_at": "2026-09-13",
-          "difference_metres": 0,
-          "match": "manual_named_place_address_and_map_check",
-          "reference_coordinate": {
-            "lat": 53.1518516,
-            "lng": -0.2141953
-          },
-          "reference_postcode": "LN10 6ST",
-          "source": "google-maps-and-official-address",
-          "url": "https://www.google.com/maps/search/?api=1&query=The+Inn+at+Woodhall+Spa+LN10+6ST"
-        }
-      ],
-      "lat": 53.1518516,
-      "lng": -0.2141953,
-      "place_name": "Woodhall Spa",
-      "postcode": "LN10 6ST",
-      "pub_name": "Lancaster Inn",
-      "status": "verified_venue",
-      "venue_id": "v-fd97cf72-faf0-54aa-bce6-e9fd40262cc0"
     },
     "leek golf club|leek|st13 5re": {
       "coordinate_source": "reviewed-named-building",
@@ -35002,7 +35076,7 @@
       "status": "verified_venue",
       "venue_id": "v-c9e11474-128f-555c-8988-f4002725ad26"
     },
-    "red monkey|bristol: redlands|bs6 6pf": {
+    "red monkey|bristol: redland|bs6 6pf": {
       "coordinate_source": "openstreetmap-gb-extract",
       "display_precision": "venue",
       "evidence": [
@@ -35038,7 +35112,7 @@
       ],
       "lat": 51.4678495,
       "lng": -2.6052992125000003,
-      "place_name": "Bristol: Redlands",
+      "place_name": "Bristol: Redland",
       "postcode": "BS6 6PF",
       "pub_name": "Red Monkey",
       "status": "verified_venue",
@@ -37065,7 +37139,7 @@
       "status": "verified_venue",
       "venue_id": "v-ded2483d-e3d6-5fcb-b861-5cdf3b53b664"
     },
-    "rushden historic transport society|rushden|nn10 0aw": {
+    "rushden historical transport society|rushden|nn10 0aw": {
       "coordinate_source": "google-maps-named-place",
       "display_precision": "venue",
       "evidence": [
@@ -37086,7 +37160,7 @@
       "lng": -0.5980484,
       "place_name": "Rushden",
       "postcode": "NN10 0AW",
-      "pub_name": "Rushden Historic Transport Society",
+      "pub_name": "Rushden Historical Transport Society",
       "status": "verified_venue",
       "venue_id": "v-160fbb94-1552-5a9a-94ae-942b4861aa2b"
     },
@@ -39940,7 +40014,7 @@
       "venue_id": "v-19fbdb30-c92b-5c79-831a-6a7ab0c194fb"
     },
     "star|thrussington|le7 4uh": {
-      "coordinate_source": "camra-pubs-location-audit",
+      "coordinate_source": "reviewed-named-building",
       "display_precision": "venue",
       "evidence": [
         {
@@ -39961,6 +40035,7 @@
         {
           "checked_at": "2026-11-03",
           "difference_metres": 0.0,
+          "disposition": "superseded_by_building_review",
           "match": "venue_name_and_full_postcode",
           "reference_address": "37 The Green",
           "reference_coordinate": {
@@ -39971,10 +40046,24 @@
           "reference_postcode": "LE7 4UH",
           "source": "camra",
           "url": "https://camra.org.uk/pubs/171262"
+        },
+        {
+          "address_source_url": "https://camra.org.uk/pubs/171262",
+          "checked_at": "2026-11-06",
+          "match": "reviewed_named_building_and_camra_address",
+          "reference_address": "37 The Green",
+          "reference_coordinate": {
+            "lat": 52.7373613,
+            "lng": -1.0419448
+          },
+          "reference_name": "Star",
+          "reference_postcode": "LE7 4UH",
+          "source": "reviewed-named-building",
+          "url": "https://www.openstreetmap.org/node/2995471143"
         }
       ],
-      "lat": 52.7371,
-      "lng": -1.04255,
+      "lat": 52.7373613,
+      "lng": -1.0419448,
       "place_name": "Thrussington",
       "postcode": "LE7 4UH",
       "pub_name": "Star",
@@ -40984,7 +41073,7 @@
       "venue_id": "v-a59604b7-f6a6-56bb-9338-723cc17f70b0"
     },
     "swan|betley|cw3 9ab": {
-      "coordinate_source": "camra-and-fsa-location-audit",
+      "coordinate_source": "reviewed-named-building",
       "display_precision": "venue",
       "evidence": [
         {
@@ -41005,6 +41094,7 @@
         {
           "checked_at": "2026-11-03",
           "difference_metres": 0.0,
+          "disposition": "superseded_by_building_review",
           "match": "venue_name_and_full_postcode",
           "reference_address": "Main Road",
           "reference_coordinate": {
@@ -41015,10 +41105,24 @@
           "reference_postcode": "CW3 9AB",
           "source": "camra",
           "url": "https://camra.org.uk/pubs/123006"
+        },
+        {
+          "address_source_url": "https://camra.org.uk/pubs/123006",
+          "checked_at": "2026-11-06",
+          "match": "reviewed_named_building_and_camra_address",
+          "reference_address": "Main Road",
+          "reference_coordinate": {
+            "lat": 53.0341531,
+            "lng": -2.36861
+          },
+          "reference_name": "Swan",
+          "reference_postcode": "CW3 9AB",
+          "source": "reviewed-named-building",
+          "url": "https://www.openstreetmap.org/node/30215958"
         }
       ],
-      "lat": 53.0352,
-      "lng": -2.36878,
+      "lat": 53.0341531,
+      "lng": -2.36861,
       "place_name": "Betley",
       "postcode": "CW3 9AB",
       "pub_name": "Swan",

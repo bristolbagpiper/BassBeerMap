@@ -105,6 +105,18 @@
       "source": "reviewed-named-building",
       "source_url": "https://www.openstreetmap.org/way/320753975"
     },
+    "arkwrights|belper: central|de56 1ap": {
+      "audit_reason": "manual_named_place_address_and_map_check",
+      "checked_at": "2026-09-13",
+      "lat": 53.0227293,
+      "lng": -1.4832821,
+      "previous_source": "postcode",
+      "reference_address": "6 Campbell St, Belper DE56 1UP",
+      "reference_name": "Arkwright's Real Ale Bar",
+      "review_note": "name and full postcode agree",
+      "source": "google-maps-named-place",
+      "source_url": "https://www.google.com/maps/search/?api=1&query=Arkwrights+Real+Ale+Bar+DE56+1UP"
+    },
     "arkwrights|belper: central|de56 1up": {
       "audit_reason": "manual_named_place_address_and_map_check",
       "checked_at": "2026-09-13",
@@ -182,18 +194,13 @@
       "source_url": "https://camra.org.uk/pubs/124103"
     },
     "bench and bar|stoke: fenton|st4 3aj": {
-      "audit_reason": "camra_and_fsa_agree_within_50m_current_pin_does_not",
-      "camra_to_fsa_metres": 12.1,
-      "checked_at": "2026-09-11",
-      "corroborating_source_url": "https://api.ratings.food.gov.uk/Establishments?address=ST4+3AJ&pageSize=100&pageNumber=1",
-      "lat": 52.9973,
-      "lng": -2.16473,
-      "previous_difference_metres": 69.8,
-      "previous_lat": 52.9967778,
-      "previous_lng": -2.1641508,
-      "previous_source": "openstreetmap-gb-extract",
-      "source": "camra-and-fsa-location-audit",
-      "source_url": "https://camra.org.uk/pubs/122897"
+      "audit_reason": "reviewed_named_building_and_camra_address",
+      "checked_at": "2026-11-06",
+      "lat": 52.9967778,
+      "lng": -2.1641508,
+      "review_note": "The named Bench & Bar map feature matches CAMRA’s 93 Christchurch Street and ST4 3AJ. It is 70 metres from the saved point.",
+      "source": "reviewed-named-building",
+      "source_url": "https://www.openstreetmap.org/node/1657343511"
     },
     "benks|leek|st13 6dh": {
       "audit_reason": "postcode_fallback_replaced",
@@ -375,16 +382,13 @@
       "source_url": "https://www.openstreetmap.org/way/1075359643"
     },
     "bottle and glass|normanby|ln8 2he": {
-      "audit_reason": "postcode_fallback_replaced",
-      "checked_at": "2026-09-11",
-      "lat": 53.379045999533,
-      "lng": -0.49631071163935,
-      "previous_difference_metres": 5.5,
-      "previous_lat": 53.379071,
-      "previous_lng": -0.49624,
-      "previous_source": "postcode",
-      "source": "camra-pubs-location-audit",
-      "source_url": "https://camra.org.uk/pubs/191802"
+      "audit_reason": "reviewed_named_building_and_camra_address",
+      "checked_at": "2026-11-06",
+      "lat": 53.38005591,
+      "lng": -0.49627806,
+      "review_note": "Lincolnshire County Council’s surveyed building record places the Bottle and Glass at OS grid TF 00124 88076. Its point is about 112 metres north of the saved pin and matches the pub on Main Street.",
+      "source": "reviewed-named-building",
+      "source_url": "https://heritage-explorer.lincolnshire.gov.uk/Monument/MLI126319"
     },
     "bowls club (pmc)|barton-under-needwood|de13 8ax": {
       "audit_reason": "manual_named_place_address_and_map_check",
@@ -562,6 +566,18 @@
       "previous_source": "food-standards-agency-fhrs",
       "source": "camra-pubs-location-audit",
       "source_url": "https://camra.org.uk/pubs/168221"
+    },
+    "chaddesden park social club (pmc)|derby: chaddesden|de21 6pd": {
+      "audit_reason": "manual_named_place_address_and_map_check",
+      "checked_at": "2026-09-13",
+      "lat": 52.927228,
+      "lng": -1.4458378,
+      "previous_source": "postcode",
+      "reference_address": "391 Nottingham Rd, Chaddesden DE21 6PD",
+      "reference_name": "Chaddesden Park Social Club",
+      "review_note": "obvious source-name typo; club and full postcode agree",
+      "source": "google-maps-named-place",
+      "source_url": "https://www.google.com/maps/search/?api=1&query=Chaddesden+Park+Social+Club+DE21+6PD"
     },
     "chaddesen park social club (pmc)|derby: chaddesden|de21 6pd": {
       "audit_reason": "manual_named_place_address_and_map_check",
@@ -1047,16 +1063,13 @@
       "source_url": "https://camra.org.uk/pubs/113268"
     },
     "donington arms|donington le heath|le67 2ge": {
-      "audit_reason": "existing_pin_over_50m_from_matching_venue",
-      "checked_at": "2026-09-11",
-      "lat": 52.7066,
-      "lng": -1.37599,
-      "previous_difference_metres": 110.4,
-      "previous_lat": 52.70635281818181,
-      "previous_lng": -1.3775763727272727,
-      "previous_source": "openstreetmap-gb-extract",
-      "source": "camra-pubs-location-audit",
-      "source_url": "https://camra.org.uk/pubs/171284"
+      "audit_reason": "reviewed_named_building_and_camra_address",
+      "checked_at": "2026-11-06",
+      "lat": 52.70635982,
+      "lng": -1.37758816,
+      "review_note": "The named Donington Arms footprint lies about 111 metres from the saved point. The parish and CAMRA agree on The Green and LE67 2GE for the pub, while the map feature uses the adjoining road’s postcode.",
+      "source": "reviewed-named-building",
+      "source_url": "https://www.openstreetmap.org/way/753819023"
     },
     "doveside social club (pmc)|hatton|de65 5ez": {
       "audit_reason": "manual_named_place_address_and_map_check",
@@ -1479,6 +1492,19 @@
       "review_note": "Repository owner confirmed the named-place marker and full address in issue #5.",
       "source": "google-maps-named-place",
       "source_url": "https://www.google.com/maps/place/The+Inkspot/@53.1059036,-2.0238296,95m/data=!3m2!1e3!5s0x487a3f5708b8ffcd:0x514a0dc200a55888!4m6!3m5!1s0x487a3f8bc732c89f:0xf91504a8d7f902c!8m2!3d53.1059391!4d-2.023426!16s%2Fg%2F11mdp812nj?entry=ttu&g_ep=EgoyMDI2MTAxOS4wIKXMDSoASAFQAw%3D%3D"
+    },
+    "inn at woodhall spa|woodhall spa|ln10 6st": {
+      "audit_reason": "manual_named_place_address_and_map_check",
+      "checked_at": "2026-09-13",
+      "corroborating_source_url": "https://www.theinnatwoodhallspa.co.uk/dine/",
+      "lat": 53.1518516,
+      "lng": -0.2141953,
+      "previous_source": "postcode",
+      "reference_address": "The Broadway, Woodhall Spa LN10 6ST",
+      "reference_name": "The Inn at Woodhall Spa / Lancaster Bar",
+      "review_note": "official site identifies Lancaster Bar at this exact venue and postcode",
+      "source": "google-maps-and-official-address",
+      "source_url": "https://www.google.com/maps/search/?api=1&query=The+Inn+at+Woodhall+Spa+LN10+6ST"
     },
     "ivanhoe social club (pmc)|ashby-de-la-zouch|le65 2gw": {
       "audit_reason": "existing_pin_over_50m_from_matching_venue",
@@ -2617,6 +2643,18 @@
       "source": "google-maps-named-place",
       "source_url": "https://www.google.com/maps/search/?api=1&query=Rushden+Historical+Transport+Society+NN10+0AW"
     },
+    "rushden historical transport society|rushden|nn10 0aw": {
+      "audit_reason": "manual_named_place_address_and_map_check",
+      "checked_at": "2026-09-13",
+      "lat": 52.2943013,
+      "lng": -0.5980484,
+      "previous_source": "postcode",
+      "reference_address": "Station Approach, Rushden NN10 0AW",
+      "reference_name": "Rushden Historical Transport Society & Goods Shed",
+      "review_note": "organisation identity and full postcode agree",
+      "source": "google-maps-named-place",
+      "source_url": "https://www.google.com/maps/search/?api=1&query=Rushden+Historical+Transport+Society+NN10+0AW"
+    },
     "rutland cottage|ilkeston|de7 8te": {
       "audit_reason": "reviewed_named_building_and_camra_address",
       "checked_at": "2026-11-04",
@@ -2803,16 +2841,13 @@
       "source_url": "https://camra.org.uk/pubs/162883"
     },
     "star|thrussington|le7 4uh": {
-      "audit_reason": "postcode_fallback_replaced",
-      "checked_at": "2026-09-11",
-      "lat": 52.7371,
-      "lng": -1.04255,
-      "previous_difference_metres": 3.6,
-      "previous_lat": 52.737128,
-      "previous_lng": -1.042524,
-      "previous_source": "postcode",
-      "source": "camra-pubs-location-audit",
-      "source_url": "https://camra.org.uk/pubs/171262"
+      "audit_reason": "reviewed_named_building_and_camra_address",
+      "checked_at": "2026-11-06",
+      "lat": 52.7373613,
+      "lng": -1.0419448,
+      "review_note": "The operator confirms 37 The Green. The named Star Inn feature at the opposite end of the village green is about 50 metres from the saved point.",
+      "source": "reviewed-named-building",
+      "source_url": "https://www.openstreetmap.org/node/2995471143"
     },
     "station inn|swannington|le67 8re": {
       "audit_reason": "camra_and_fsa_agree_within_50m_current_pin_does_not",
@@ -2877,18 +2912,13 @@
       "source_url": "https://camra.org.uk/pubs/172439"
     },
     "swan|betley|cw3 9ab": {
-      "audit_reason": "camra_and_fsa_agree_within_50m_current_pin_does_not",
-      "camra_to_fsa_metres": 13.5,
-      "checked_at": "2026-09-11",
-      "corroborating_source_url": "https://api.ratings.food.gov.uk/Establishments?address=CW3+9AB&pageSize=100&pageNumber=1",
-      "lat": 53.0352,
-      "lng": -2.36878,
-      "previous_difference_metres": 117.0,
-      "previous_lat": 53.0341531,
-      "previous_lng": -2.36861,
-      "previous_source": "openstreetmap-gb-extract",
-      "source": "camra-and-fsa-location-audit",
-      "source_url": "https://camra.org.uk/pubs/123006"
+      "audit_reason": "reviewed_named_building_and_camra_address",
+      "checked_at": "2026-11-06",
+      "lat": 53.0341531,
+      "lng": -2.36861,
+      "review_note": "The operator and council give the same Main Road address and CW3 9AB. The named pub feature is 117 metres from the saved point and next to the operator’s premises.",
+      "source": "reviewed-named-building",
+      "source_url": "https://www.openstreetmap.org/node/30215958"
     },
     "swan|draycott-in-the-clay|de6 5gz": {
       "audit_reason": "existing_pin_over_250m_from_matching_venue",

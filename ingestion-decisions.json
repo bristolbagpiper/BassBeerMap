@@ -56,6 +56,21 @@
     }
   },
   "listing_corrections": {
+    "arkwrights|belper: central|de56 1up": {
+      "changes": {
+        "postcode": "DE56 1AP"
+      },
+      "checked_at": "2026-11-06",
+      "expected": {
+        "place_name": "Belper: Central",
+        "postcode": "DE56 1UP",
+        "pub_name": "Arkwrights"
+      },
+      "reason": "CAMRA, the town council guide and the local food hygiene record all identify Arkwright’s at 6 Campbell Street, DE56 1AP. Correct the directory postcode and retain the building pin.",
+      "reference_postcode": "DE56 1AP",
+      "reviewed_by": "Codex venue evidence review authorised by map owner",
+      "source_url": "https://camra.org.uk/pubs/113191"
+    },
     "barley mow|southsea|po5 3by": {
       "changes": {
         "postcode": "PO5 3DE"
@@ -72,6 +87,36 @@
       "reviewed_by": "Codex source review authorised by map owner",
       "source_url": "https://camra.org.uk/pubs/190766"
     },
+    "chaddesen park social club (pmc)|derby: chaddesden|de21 6pd": {
+      "changes": {
+        "pub_name": "Chaddesden Park Social Club (PMC)"
+      },
+      "checked_at": "2026-11-06",
+      "expected": {
+        "place_name": "Derby: Chaddesden",
+        "postcode": "DE21 6PD",
+        "pub_name": "Chaddesen Park Social Club (PMC)"
+      },
+      "reason": "The mapped club building and full address identify Chaddesden Park Social Club at 389–391 Nottingham Road, DE21 6PD. Correct the spelling while retaining the club’s original venue ID.",
+      "reference_postcode": "DE21 6PD",
+      "reviewed_by": "Codex venue evidence review authorised by map owner",
+      "source_url": "https://www.openstreetmap.org/way/111597336"
+    },
+    "lancaster inn|woodhall spa|ln10 6st": {
+      "changes": {
+        "pub_name": "Inn at Woodhall Spa"
+      },
+      "checked_at": "2026-11-06",
+      "expected": {
+        "place_name": "Woodhall Spa",
+        "postcode": "LN10 6ST",
+        "pub_name": "Lancaster Inn"
+      },
+      "reason": "The operator confirms that the Lancaster Bar is inside the Inn at Woodhall Spa, The Broadway, LN10 6ST. CAMRA lists the inn under its current name.",
+      "reference_postcode": "LN10 6ST",
+      "reviewed_by": "Codex venue evidence review authorised by map owner",
+      "source_url": "https://www.theinnatwoodhallspa.co.uk/dine/"
+    },
     "new swan|atherstone|cv9 1fe": {
       "changes": {
         "postcode": "CV9 1HA"
@@ -87,6 +132,36 @@
       "reference_postcode": "CV9 1HA",
       "reviewed_by": "Codex source review authorised by map owner",
       "source_url": "https://camra.org.uk/pubs/131584"
+    },
+    "red monkey|bristol: redlands|bs6 6pf": {
+      "changes": {
+        "place_name": "Bristol: Redland"
+      },
+      "checked_at": "2026-11-06",
+      "expected": {
+        "place_name": "Bristol: Redlands",
+        "postcode": "BS6 6PF",
+        "pub_name": "Red Monkey"
+      },
+      "reason": "CAMRA and the named building agree on 22 Chandos Road. The council identifies the neighbourhood as Redland.",
+      "reference_postcode": "BS6 6PF",
+      "reviewed_by": "Codex venue evidence review authorised by map owner",
+      "source_url": "https://camra.org.uk/pubs/113785"
+    },
+    "rushden historic transport society|rushden|nn10 0aw": {
+      "changes": {
+        "pub_name": "Rushden Historical Transport Society"
+      },
+      "checked_at": "2026-11-06",
+      "expected": {
+        "place_name": "Rushden",
+        "postcode": "NN10 0AW",
+        "pub_name": "Rushden Historic Transport Society"
+      },
+      "reason": "The society and CAMRA use Historical in its name and identify the Station Bar inside the station building.",
+      "reference_postcode": "NN10 0AW",
+      "reviewed_by": "Codex venue evidence review authorised by map owner",
+      "source_url": "https://www.rhts.co.uk/station-bar/"
     },
     "shepherds hall ale house|chorley|pr7 1bs": {
       "changes": {

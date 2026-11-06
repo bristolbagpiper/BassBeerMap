@@ -8,6 +8,7 @@ import json
 import re
 from datetime import date, datetime, timedelta, timezone
 from pathlib import Path
+from urllib.parse import unquote_plus, urlsplit
 from audit_google_places import COVERAGE_ISSUE
 from build_place_review_queue import build_queue, digest, valid_google_result_url
 from directory_release import read_json, write_json
@@ -51,16 +52,32 @@ def marker_signature(binding_signature, result_url):
     return None
 
 
-def _reviewed_marker(entry, item, now):
-    review = entry.get('google_marker_review')
-    if not isinstance(review, dict) or review.get('decision') != 'keep_saved_pin':
+def identity_review_signature(binding_signature, result_url):
+    """Bind the decision to the saved location, named result and its URL label."""
+    marker = marker_signature(binding_signature, result_url)
+    if not marker:
+        return None
+    label = urlsplit(result_url).path.split('/place/', 1)[-1].split('/', 1)[0]
+    return digest([marker, unquote_plus(label).casefold()]) if label else None
+
+
+def _reviewed_conflict(entry, item, now):
+    if item['category'] == 'pin_conflict':
+        review = entry.get('google_marker_review')
+        decision, signature_key, fingerprint = 'keep_saved_pin', 'marker_signature', marker_signature
+    elif item['category'] == 'identity_conflict':
+        review = entry.get('google_identity_review')
+        decision, signature_key, fingerprint = 'verified_directory_identity', 'identity_review_signature', identity_review_signature
+    else:
+        return False
+    if not isinstance(review, dict) or review.get('decision') != decision:
         return False
     try:
         age = now.date() - date.fromisoformat(review['reviewed_at'])
     except (KeyError, TypeError, ValueError):
         return False
-    signature = marker_signature(item['binding_signature'], item['result_url'])
-    return bool(signature and signature == review.get('marker_signature') and 0 <= age.days <= 180)
+    signature = fingerprint(item['binding_signature'], item['result_url'])
+    return bool(signature and signature == review.get(signature_key) and 0 <= age.days <= 180)
 
 
 def _reason(category):
@@ -126,7 +143,7 @@ def build_status(root, receipts, now=None):
         if checked:
             if category in CONFLICTS or category == 'identity_and_pin_consistent':
                 categories = {category}
-                if category == 'pin_conflict' and _reviewed_marker(registry['venues'][item['venue_id']], item, now):
+                if _reviewed_conflict(registry['venues'][item['venue_id']], item, now):
                     categories.clear()
                 prior = conclusive.get(item['venue_id'])
                 if prior is None or checked > prior[0]:

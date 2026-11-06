@@ -203,7 +203,7 @@ def reconcile(rows, registry, decisions):
                                   for field in ('pub_name', 'place_name', 'postcode')) and
                               all(field in FIELDS for field in expected))
             valid_changes = (isinstance(changes_to_apply, dict) and bool(changes_to_apply) and
-                             set(changes_to_apply) <= {'postcode', 'notes'} and
+                              set(changes_to_apply) <= {'pub_name', 'place_name', 'postcode', 'notes'} and
                              all(isinstance(value, str) and (value.strip() or field == 'notes')
                                  for field, value in changes_to_apply.items()))
             known_id = aliases_before.get(key)

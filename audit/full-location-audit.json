@@ -213,6 +213,28 @@
     },
     {
       "actionable": false,
+      "area": "Staffordshire",
+      "country": "England",
+      "dispense": "H",
+      "last": "2026 Q3",
+      "manual_action_required": false,
+      "next_action": "No pin check requested.",
+      "notes": "",
+      "pg": "Perm",
+      "place_name": "Stoke: Burslem",
+      "postcode": "ST6 3QJ",
+      "priority": 0,
+      "pub_name": "Jolly Carter",
+      "reasons": [],
+      "review_category": "informational",
+      "status": "not_checked",
+      "venue_id": "v-5840e7d1-6ac4-5d2f-b0b8-9875ccbde7dc",
+      "warnings": [
+        "Current pin has not been independently compared"
+      ]
+    },
+    {
+      "actionable": false,
       "area": "Northamptonshire",
       "country": "England",
       "dispense": "H",
@@ -47121,63 +47143,6 @@
     },
     {
       "actionable": false,
-      "area": "Staffordshire",
-      "checked_at": "2026-11-03",
-      "comparisons": [
-        {
-          "address": "197 Newcastle Street, Burslem, Stoke-on-Trent",
-          "difference_metres": 10.6,
-          "lat": 53.043195,
-          "lng": -2.204984,
-          "name": "The Jolly Carter",
-          "postcode": "ST6 3QJ",
-          "queried_postcode": "ST6 3QJ",
-          "status": "coordinate_agreement",
-          "url": "https://ratings.food.gov.uk/business/534270"
-        }
-      ],
-      "confidence": "existing_evidence_needs_corroboration",
-      "country": "England",
-      "dispense": "H",
-      "independent_of_pin": false,
-      "last": "2026 Q3",
-      "listing": {
-        "postcode": "ST6 3QJ",
-        "pub_name": "Jolly Carter"
-      },
-      "manual_action_required": false,
-      "next_action": "No pin check requested.",
-      "notes": "",
-      "owner_pin_confirmed": false,
-      "owner_reviewed": false,
-      "pg": "Perm",
-      "pin": {
-        "lat": 53.0431,
-        "lng": -2.20498
-      },
-      "place_name": "Stoke: Burslem",
-      "postcode": "ST6 3QJ",
-      "priority": 3,
-      "pub_name": "Jolly Carter",
-      "reasons": [],
-      "reference": {
-        "address": "197 Newcastle Street, Burslem, Stoke-on-Trent",
-        "difference_metres": 10.6,
-        "lat": 53.043195,
-        "lng": -2.204984,
-        "name": "The Jolly Carter",
-        "postcode": "ST6 3QJ",
-        "queried_postcode": "ST6 3QJ",
-        "status": "coordinate_agreement",
-        "url": "https://ratings.food.gov.uk/business/534270"
-      },
-      "review_category": "informational",
-      "status": "coordinate_agreement",
-      "venue_id": "v-5840e7d1-6ac4-5d2f-b0b8-9875ccbde7dc",
-      "warnings": []
-    },
-    {
-      "actionable": false,
       "area": "Cheshire",
       "checked_at": "2026-11-03",
       "comparisons": [
@@ -60748,21 +60713,21 @@
     "action_required_count": 1,
     "actionable_count": 1,
     "confidence_counts": {
-      "existing_evidence_needs_corroboration": 542,
+      "existing_evidence_needs_corroboration": 541,
       "independent_coordinate_agreement": 398,
-      "not_checked": 10,
+      "not_checked": 11,
       "owner_reviewed": 137
     },
     "counts": {
       "ambiguous_or_missing_coordinates": 67,
-      "coordinate_agreement": 458,
+      "coordinate_agreement": 457,
       "coordinate_disagreement": 272,
       "nearby": 107,
       "no_name_match": 173,
-      "not_checked": 10
+      "not_checked": 11
     },
     "information_no_pin_check_count": 1086,
-    "informational_count": 643,
+    "informational_count": 644,
     "limitations": [
       "Coordinate agreement does not prove the correct building or current Bass availability.",
       "Owner-approved coordinates take priority; CAMRA remains the primary automated reference.",

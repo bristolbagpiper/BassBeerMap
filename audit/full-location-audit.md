@@ -4,22 +4,22 @@ Locations: 1087
 
 Action required: 1
 Information — no pin check requested: 1086
-Locations with informational observations: 643 (may also have an actionable finding)
+Locations with informational observations: 644 (may also have an actionable finding)
 
 ## Results
 
-- not_checked: 10
+- not_checked: 11
 - no_name_match: 173
 - coordinate_disagreement: 272
 - ambiguous_or_missing_coordinates: 67
 - nearby: 107
-- coordinate_agreement: 458
+- coordinate_agreement: 457
 
 ## Confidence
 
-- not_checked: 10
+- not_checked: 11
 - owner_reviewed: 137
-- existing_evidence_needs_corroboration: 542
+- existing_evidence_needs_corroboration: 541
 - independent_coordinate_agreement: 398
 
 ## Limits
@@ -47,6 +47,7 @@ Locations with informational observations: 643 (may also have an actionable find
 | Cross Keys | Newbold | LE67 8PJ | not_checked | Current pin has not been independently compared |
 | Donington Arms | Donington Le Heath | LE67 2GE | not_checked | Current pin has not been independently compared |
 | Inn at Woodhall Spa | Woodhall Spa | LN10 6ST | not_checked | Current pin has not been independently compared |
+| Jolly Carter | Stoke: Burslem | ST6 3QJ | not_checked | Current pin has not been independently compared |
 | Rushden Historical Transport Society | Rushden | NN10 0AW | not_checked | Current pin has not been independently compared |
 | Star | Thrussington | LE7 4UH | not_checked | Current pin has not been independently compared |
 | Swan | Betley | CW3 9AB | not_checked | Current pin has not been independently compared |
@@ -887,7 +888,6 @@ Locations with informational observations: 643 (may also have an actionable find
 | Jawbone | Liverpool: Bootle | L20 3BZ | coordinate_agreement | No pin check requested. |
 | John Marston | Stoke: Blurton | ST3 2NQ | coordinate_agreement | No pin check requested. |
 | Joiners Arms | Morpeth | NE61 1XZ | coordinate_agreement | No pin check requested. |
-| Jolly Carter | Stoke: Burslem | ST6 3QJ | coordinate_agreement | No pin check requested. |
 | Jolly Sailor | Macclesfield | SK11 6HN | coordinate_agreement | No pin check requested. |
 | Jolly Sailor | Hemington | DE74 2RB | coordinate_agreement | No pin check requested. |
 | Jug and Glass | Lea | DE4 5GJ | coordinate_agreement | No pin check requested. |

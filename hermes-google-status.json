@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "checked_at": "2026-11-05T07:44:06.720578+00:00",
+  "checked_at": "2026-11-06T08:17:22.991041+00:00",
   "configured": true,
   "directory_binding_signature": "a4e1a678d68b57b2e41fd11f5e03d280512f9f4ff8d486fff2a8e5e899a899c0",
   "issues": [
@@ -355,7 +355,7 @@
       "place_name": "Barton le Clay",
       "postcode": "MK45 4SD",
       "status": "review_needed",
-      "reason": "Google results are incomplete or ambiguous; no unique place accepted",
+      "reason": "Google named-place result differs in business identity or postcode; verify the matched venue and address",
       "binding_signature": "db29d15838c3ba69923bed309f84b9437b697424c8c5371fdaa3283fa53d6496"
     },
     {
@@ -1799,15 +1799,6 @@
       "binding_signature": "75bfed809f2afca9df178e8d5eea370cdfc0182ab6d9bcceeb61a06aedfe15e3"
     },
     {
-      "venue_id": "v-a130b558-0e74-5f25-bf27-3a0ac1c18b7c",
-      "pub_name": "Amber Hotel",
-      "place_name": "Ripley: Oakerthorpe",
-      "postcode": "DE55 7LL",
-      "status": "review_needed",
-      "reason": "Google results are incomplete or ambiguous; no unique place accepted",
-      "binding_signature": "784dcc108a0a5034d7b977814b1fa60f01c17db0b25dede168f7c03f75b6ae26"
-    },
-    {
       "venue_id": "v-a19b34aa-f6de-58c5-8c27-314b8d16cf69",
       "pub_name": "Manor House",
       "place_name": "Quorn",
@@ -2773,16 +2764,16 @@
   ],
   "counts": {
     "total": 1087,
-    "current": 898,
-    "unchecked_or_stale": 189,
-    "checked_this_run": 36,
-    "attempted_venue_count": 1086,
-    "review_count": 307
+    "current": 901,
+    "unchecked_or_stale": 186,
+    "checked_this_run": 32,
+    "attempted_venue_count": 1087,
+    "review_count": 306
   },
   "hard_failure": false,
   "provider": "hermes-browser",
-  "run_id": "58ba79211d00483e8d6430b192c91422",
+  "run_id": "db286002edb04f6f985d361f3496942e",
   "run_attempt": 1,
   "run_url": "",
-  "source_execution_finished_at": "2026-11-05T07:44:06.720578+00:00"
+  "source_execution_finished_at": "2026-11-06T07:46:19.615148+00:00"
 }

@@ -6020,7 +6020,7 @@
             "status": "resolved"
           }
         ],
-        "last_checked": "2026-11-03",
+        "last_checked": "2026-11-06",
         "manual_action_required": false,
         "next_action": "No pin check requested",
         "place_name": "Stoke: Burslem",
@@ -6054,16 +6054,12 @@
         "review_category": "confirmed",
         "source_checks": {
           "camra": {
-            "status": "confirmed",
+            "status": "address_confirmed_marker_differs",
             "url": "https://camra.org.uk/pubs/122938"
           },
-          "food-standards-agency-fhrs": {
-            "status": "not_checked",
-            "url": "https://ratings.food.gov.uk/business/534270"
-          },
-          "fsa_independent": {
-            "status": "coordinate_agreement",
-            "url": "https://ratings.food.gov.uk/business/534270"
+          "google-maps-named-place": {
+            "status": "confirmed",
+            "url": "https://www.google.com/maps/place/Jolly+Carter/@53.043313,-2.206404,17z/data=!3m1!4b1!4m6!3m5!1s0x487a42bef67a4625:0x8d43971a45f8817!8m2!3d53.043313!4d-2.206404!16s%2Fg%2F11gy83schx"
           }
         },
         "source_error": null,
@@ -71587,6 +71583,67 @@
         "postcode": "ST6 3QJ",
         "pub_name": "Jolly Carter"
       },
+      "location_corrections": [
+        {
+          "checked_at": "2026-11-06",
+          "corrected_coordinate": {
+            "lat": 53.043313,
+            "lng": -2.206404
+          },
+          "owner_instruction": "google. how did the bass pin even get there?",
+          "previous_pin": {
+            "evidence": [
+              {
+                "checked_at": "2026-10-02",
+                "match": "unique_name_and_full_postcode",
+                "reference_coordinate": {
+                  "lat": 53.043195,
+                  "lng": -2.204984
+                },
+                "reference_postcode": "ST6 3QJ",
+                "source": "food-standards-agency-fhrs",
+                "url": "https://ratings.food.gov.uk/business/534270"
+              },
+              {
+                "checked_at": "2026-11-01",
+                "disposition": "superseded_by_source_refresh",
+                "match": "named_venue_full_postcode_and_independent_fsa_agreement",
+                "reference_address": "197 Newcastle Street",
+                "reference_coordinate": {
+                  "lat": 53.0431,
+                  "lng": -2.20498
+                },
+                "reference_name": "Jolly Carter, Stoke-on-Trent - Community Local",
+                "reference_postcode": "ST6 3QJ",
+                "source": "camra",
+                "url": "https://camra.org.uk/pubs/122938"
+              },
+              {
+                "checked_at": "2026-11-03",
+                "match": "named_venue_full_postcode_and_independent_fsa_agreement",
+                "reference_address": "197 Newcastle Street",
+                "reference_coordinate": {
+                  "lat": 53.0431,
+                  "lng": -2.20498
+                },
+                "reference_name": "Jolly Carter, Stoke-on-Trent - Community Local",
+                "reference_postcode": "ST6 3QJ",
+                "source": "camra",
+                "url": "https://camra.org.uk/pubs/122938"
+              }
+            ],
+            "lat": 53.0431,
+            "lng": -2.20498,
+            "source": "camra-and-fhrs"
+          },
+          "reason": "The owner confirmed the Google marker on the signed pub frontage. The previously published CAMRA point was selected because it was within 10.6 metres of the named FSA coordinate.",
+          "reviewed_by": "Bass Beer Map owner via Codex conversation",
+          "source_urls": [
+            "https://www.google.com/maps/place/Jolly+Carter/@53.043313,-2.206404,17z/data=!3m1!4b1!4m6!3m5!1s0x487a42bef67a4625:0x8d43971a45f8817!8m2!3d53.043313!4d-2.206404!16s%2Fg%2F11gy83schx",
+            "https://camra.org.uk/pubs/122938"
+          ]
+        }
+      ],
       "location_research": {
         "checked_at": "2026-10-02",
         "coverage": {
@@ -71611,36 +71668,25 @@
         "status": "candidates_found"
       },
       "verification_attempt": {
-        "checked_at": "2026-11-03",
-        "evidence": {
-          "checked_at": "2026-11-03",
-          "match": "named_venue_full_postcode_and_independent_fsa_agreement",
-          "reference_address": "197 Newcastle Street",
-          "reference_coordinate": {
-            "lat": 53.0431,
-            "lng": -2.20498
-          },
-          "reference_name": "Jolly Carter, Stoke-on-Trent - Community Local",
-          "reference_postcode": "ST6 3QJ",
-          "source": "camra",
-          "url": "https://camra.org.uk/pubs/122938"
-        },
+        "checked_at": "2026-11-06",
+        "reason": "Owner confirmed the signed pub frontage",
         "sources": {
           "camra": {
-            "status": "confirmed",
+            "status": "address_confirmed_marker_differs",
             "url": "https://camra.org.uk/pubs/122938"
           },
-          "food-standards-agency-fhrs": {
-            "status": "not_checked",
-            "url": "https://ratings.food.gov.uk/business/534270"
+          "google-maps-named-place": {
+            "status": "confirmed",
+            "url": "https://www.google.com/maps/place/Jolly+Carter/@53.043313,-2.206404,17z/data=!3m1!4b1!4m6!3m5!1s0x487a42bef67a4625:0x8d43971a45f8817!8m2!3d53.043313!4d-2.206404!16s%2Fg%2F11gy83schx"
           }
         },
-        "status": "confirmed"
+        "status": "manual_review"
       },
       "verified_pin": {
         "evidence": [
           {
             "checked_at": "2026-10-02",
+            "disposition": "superseded_by_owner_building_review",
             "match": "unique_name_and_full_postcode",
             "reference_coordinate": {
               "lat": 53.043195,
@@ -71666,6 +71712,7 @@
           },
           {
             "checked_at": "2026-11-03",
+            "disposition": "superseded_by_owner_building_review",
             "match": "named_venue_full_postcode_and_independent_fsa_agreement",
             "reference_address": "197 Newcastle Street",
             "reference_coordinate": {
@@ -71676,11 +71723,53 @@
             "reference_postcode": "ST6 3QJ",
             "source": "camra",
             "url": "https://camra.org.uk/pubs/122938"
+          },
+          {
+            "address_source_url": "https://camra.org.uk/pubs/122938",
+            "checked_at": "2026-11-06",
+            "match": "owner_reviewed_named_place_and_full_postcode",
+            "reference_address": "197 Newcastle Street, Stoke-on-Trent, ST6 3QJ",
+            "reference_coordinate": {
+              "lat": 53.043313,
+              "lng": -2.206404
+            },
+            "reference_name": "Jolly Carter",
+            "reference_postcode": "ST6 3QJ",
+            "reviewed_by": "Bass Beer Map owner via Codex conversation",
+            "source": "google-maps-named-place",
+            "url": "https://www.google.com/maps/place/Jolly+Carter/@53.043313,-2.206404,17z/data=!3m1!4b1!4m6!3m5!1s0x487a42bef67a4625:0x8d43971a45f8817!8m2!3d53.043313!4d-2.206404!16s%2Fg%2F11gy83schx"
           }
         ],
-        "lat": 53.0431,
-        "lng": -2.20498,
-        "source": "camra-and-fhrs"
+        "lat": 53.043313,
+        "lng": -2.206404,
+        "owner_confirmation": {
+          "approved_coordinate": {
+            "lat": 53.043313,
+            "lng": -2.206404
+          },
+          "checked_at": "2026-11-06",
+          "listing": {
+            "area": "Staffordshire",
+            "country": "England",
+            "place_name": "Stoke: Burslem",
+            "postcode": "ST6 3QJ",
+            "pub_name": "Jolly Carter",
+            "venue_id": "v-5840e7d1-6ac4-5d2f-b0b8-9875ccbde7dc"
+          },
+          "owner_instruction": "google. how did the bass pin even get there?",
+          "reviewed_by": "Bass Beer Map owner via Codex conversation",
+          "schema_version": 1,
+          "scope": "displayed_venue_building",
+          "source_snapshots": [
+            {
+              "address": "197 Newcastle Street, Stoke-on-Trent, ST6 3QJ",
+              "name": "Jolly Carter",
+              "postcode": "ST6 3QJ",
+              "url": "https://www.google.com/maps/place/Jolly+Carter/@53.043313,-2.206404,17z/data=!3m1!4b1!4m6!3m5!1s0x487a42bef67a4625:0x8d43971a45f8817!8m2!3d53.043313!4d-2.206404!16s%2Fg%2F11gy83schx"
+            }
+          ]
+        },
+        "source": "owner-reviewed-google-maps"
       }
     },
     "v-5852e82b-8b37-5674-9779-d668b3a8c4d6": {

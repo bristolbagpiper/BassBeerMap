@@ -1,15 +1,15 @@
 {
-  "checked_at": "2026-11-06T09:53:31.591663+00:00",
+  "checked_at": "2026-11-06T10:47:17.535190+00:00",
   "configured": true,
   "counts": {
-    "attempted_venue_count": 1076,
+    "attempted_venue_count": 1075,
     "checked_this_run": 30,
-    "current": 890,
-    "review_count": 201,
+    "current": 889,
+    "review_count": 200,
     "total": 1087,
-    "unchecked_or_stale": 197
+    "unchecked_or_stale": 198
   },
-  "directory_binding_signature": "cfc84f3f37ca1f95debea1d1d34af2060c1a5bae2b44b84a8e16f3ae01542f63",
+  "directory_binding_signature": "c4e872c6e84a5dad9dc7a674cc63d3bacd9e46c695364cfc1c5a5f4b9a7a28ee",
   "findings": [
     {
       "binding_signature": "eb6677d18e8e55f842c81147bf193219a1a944543e276e9074ad0fc609900240",
@@ -667,15 +667,6 @@
       "reason": "Google results are incomplete or ambiguous; no unique place accepted",
       "status": "review_needed",
       "venue_id": "v-53a80306-e3ec-508f-906a-02584800fd48"
-    },
-    {
-      "binding_signature": "f9e1c06da92249e5c7137fe3061ec887e74637b69e57ef3503fe9504c3c38596",
-      "place_name": "Stoke: Burslem",
-      "postcode": "ST6 3QJ",
-      "pub_name": "Jolly Carter",
-      "reason": "Google named-place marker differs by more than 50 metres; existing pin retained for review",
-      "status": "review_needed",
-      "venue_id": "v-5840e7d1-6ac4-5d2f-b0b8-9875ccbde7dc"
     },
     {
       "binding_signature": "511cd2d2faca4d55c7fbf4b9d1d2759ca4f7e734462564ce742aef6d868000c5",

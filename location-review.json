@@ -6019,7 +6019,7 @@
           "status": "resolved"
         }
       ],
-      "last_checked": "2026-11-03",
+      "last_checked": "2026-11-06",
       "manual_action_required": false,
       "next_action": "No pin check requested",
       "place_name": "Stoke: Burslem",
@@ -6053,16 +6053,12 @@
       "review_category": "confirmed",
       "source_checks": {
         "camra": {
-          "status": "confirmed",
+          "status": "address_confirmed_marker_differs",
           "url": "https://camra.org.uk/pubs/122938"
         },
-        "food-standards-agency-fhrs": {
-          "status": "not_checked",
-          "url": "https://ratings.food.gov.uk/business/534270"
-        },
-        "fsa_independent": {
-          "status": "coordinate_agreement",
-          "url": "https://ratings.food.gov.uk/business/534270"
+        "google-maps-named-place": {
+          "status": "confirmed",
+          "url": "https://www.google.com/maps/place/Jolly+Carter/@53.043313,-2.206404,17z/data=!3m1!4b1!4m6!3m5!1s0x487a42bef67a4625:0x8d43971a45f8817!8m2!3d53.043313!4d-2.206404!16s%2Fg%2F11gy83schx"
         }
       },
       "source_error": null,

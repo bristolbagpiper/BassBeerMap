@@ -23134,11 +23134,12 @@
       "venue_id": "v-616d4c5c-be34-59fb-b716-0ce10d322ac5"
     },
     "jolly carter|stoke: burslem|st6 3qj": {
-      "coordinate_source": "camra-and-fhrs",
+      "coordinate_source": "owner-reviewed-google-maps",
       "display_precision": "venue",
       "evidence": [
         {
           "checked_at": "2026-10-02",
+          "disposition": "superseded_by_owner_building_review",
           "match": "unique_name_and_full_postcode",
           "reference_coordinate": {
             "lat": 53.043195,
@@ -23164,6 +23165,7 @@
         },
         {
           "checked_at": "2026-11-03",
+          "disposition": "superseded_by_owner_building_review",
           "match": "named_venue_full_postcode_and_independent_fsa_agreement",
           "reference_address": "197 Newcastle Street",
           "reference_coordinate": {
@@ -23174,10 +23176,25 @@
           "reference_postcode": "ST6 3QJ",
           "source": "camra",
           "url": "https://camra.org.uk/pubs/122938"
+        },
+        {
+          "address_source_url": "https://camra.org.uk/pubs/122938",
+          "checked_at": "2026-11-06",
+          "match": "owner_reviewed_named_place_and_full_postcode",
+          "reference_address": "197 Newcastle Street, Stoke-on-Trent, ST6 3QJ",
+          "reference_coordinate": {
+            "lat": 53.043313,
+            "lng": -2.206404
+          },
+          "reference_name": "Jolly Carter",
+          "reference_postcode": "ST6 3QJ",
+          "reviewed_by": "Bass Beer Map owner via Codex conversation",
+          "source": "google-maps-named-place",
+          "url": "https://www.google.com/maps/place/Jolly+Carter/@53.043313,-2.206404,17z/data=!3m1!4b1!4m6!3m5!1s0x487a42bef67a4625:0x8d43971a45f8817!8m2!3d53.043313!4d-2.206404!16s%2Fg%2F11gy83schx"
         }
       ],
-      "lat": 53.0431,
-      "lng": -2.20498,
+      "lat": 53.043313,
+      "lng": -2.206404,
       "place_name": "Stoke: Burslem",
       "postcode": "ST6 3QJ",
       "pub_name": "Jolly Carter",

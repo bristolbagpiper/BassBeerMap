@@ -4,23 +4,23 @@ Locations: 1087
 
 Action required: 1
 Information — no pin check requested: 1086
-Locations with informational observations: 641 (may also have an actionable finding)
+Locations with informational observations: 644 (may also have an actionable finding)
 
 ## Results
 
-- no_name_match: 175
-- not_checked: 1
-- coordinate_disagreement: 278
+- not_checked: 7
+- no_name_match: 174
+- coordinate_disagreement: 277
 - ambiguous_or_missing_coordinates: 67
-- nearby: 107
-- coordinate_agreement: 459
+- nearby: 106
+- coordinate_agreement: 456
 
 ## Confidence
 
+- not_checked: 7
 - owner_reviewed: 137
-- not_checked: 1
-- existing_evidence_needs_corroboration: 548
-- independent_coordinate_agreement: 401
+- existing_evidence_needs_corroboration: 545
+- independent_coordinate_agreement: 398
 
 ## Limits
 
@@ -40,7 +40,13 @@ Locations with informational observations: 641 (may also have an actionable find
 
 | Pub | Place | Postcode | Result | Information |
 |---|---|---|---|---|
+| Bank House Hotel | Uttoxeter | ST14 8AG | not_checked | Current pin has not been independently compared |
+| Glen | Haverfordwest | SA61 1XA | not_checked | Current pin has not been independently compared |
+| Laburnum | Matlock | DE4 2PW | not_checked | Current pin has not been independently compared |
+| Manor House | Quorn | LE12 8AL | not_checked | Current pin has not been independently compared |
 | Navigation | Shardlow | DE72 2HA | not_checked | Current pin has not been independently compared |
+| Navigation | Breaston | DE72 3BP | not_checked | Current pin has not been independently compared |
+| Queens Head | Belton | LE12 9TP | not_checked | Current pin has not been independently compared |
 | 1852 Brewery Co | Leicester: South Wigston | LE18 2DH | no_name_match | FSA comparison is inconclusive; absence of a match does not contradict accepted evidence |
 | 45 Club (PMC) | Newcastle-U-L: Central | ST5 1DS | no_name_match | FSA comparison is inconclusive; absence of a match does not contradict accepted evidence |
 | Adelphi | Leeds: Central | LS10 1JQ | coordinate_disagreement | FSA coordinate is 158.8m from the accepted pin; informational only because the FSA geocode may be approximate |
@@ -64,7 +70,6 @@ Locations with informational observations: 641 (may also have an actionable find
 | Avon Packet | Bristol: Southville | BS3 1RF | coordinate_disagreement | FSA coordinate is 69.7m from the accepted pin; informational only because the FSA geocode may be approximate |
 | BMI Club | Upton St Leonards | GL4 8AG | no_name_match | FSA comparison is inconclusive; absence of a match does not contradict accepted evidence |
 | Bakers Arms | Dorchester | DT1 2DH | coordinate_disagreement | FSA coordinate is 67.0m from the accepted pin; informational only because the FSA geocode may be approximate |
-| Bamk House Hotel | Uttoxeter | ST14 8AG | no_name_match | FSA comparison is inconclusive; absence of a match does not contradict accepted evidence |
 | Barge | Grimsby | DN31 1NH | coordinate_disagreement | FSA coordinate is 203.5m from the accepted pin; informational only because the FSA geocode may be approximate |
 | Barrel Inn | Breton | S32 5QD | nearby | FSA coordinate is 25-50m away; informational only |
 | Barrels | Berwick-upon-Tweed | TD15 1ES | coordinate_disagreement | FSA coordinate is 72.9m from the accepted pin; informational only because the FSA geocode may be approximate |
@@ -384,7 +389,6 @@ Locations with informational observations: 641 (may also have an actionable find
 | Malt Shovel | Chorley | WS13 8DD | coordinate_disagreement | FSA coordinate is 57.1m from the accepted pin; informational only because the FSA geocode may be approximate |
 | Man In Space | Stoke: Trentham | ST4 8PZ | coordinate_disagreement | FSA coordinate is 89.2m from the accepted pin; informational only because the FSA geocode may be approximate |
 | Manifold Inn | Hulme End | SK17 0EX | coordinate_disagreement | FSA coordinate is 78.8m from the accepted pin; informational only because the FSA geocode may be approximate |
-| Manor House | Quorn | LE12 8AL | coordinate_disagreement | FSA coordinate is 493.4m from the accepted pin; informational only because the FSA geocode may be approximate |
 | Marine | South Shields | NE33 2JQ | no_name_match | FSA comparison is inconclusive; absence of a match does not contradict accepted evidence |
 | Market Inn | Sutton in Ashfield: Huthwaite | NG17 2QW | nearby | FSA coordinate is 25-50m away; informational only |
 | Marquis of Ormonde | Crosshill | DE5 9SP | no_name_match | FSA comparison is inconclusive; absence of a match does not contradict accepted evidence |
@@ -463,7 +467,6 @@ Locations with informational observations: 641 (may also have an actionable find
 | Quarryman | Wirksworth | DE4 4ET | nearby | FSA coordinate is 25-50m away; informational only |
 | Queens Arms | Bakewell | DE45 1DS | ambiguous_or_missing_coordinates | FSA comparison is inconclusive; absence of a match does not contradict accepted evidence |
 | Queens Head | Meriden | CV7 7JP | ambiguous_or_missing_coordinates | FSA comparison is inconclusive; absence of a match does not contradict accepted evidence |
-| Queens Head | Belton | LE12 9TP | nearby | FSA coordinate is 25-50m away; informational only |
 | Queens Head | Marlpool | DE75 7NJ | coordinate_disagreement | FSA coordinate is 110.2m from the accepted pin; informational only because the FSA geocode may be approximate |
 | Queens Head Hotel | Congleton | CW12 3DE | ambiguous_or_missing_coordinates | FSA comparison is inconclusive; absence of a match does not contradict accepted evidence |
 | Raddle | Hollington | ST10 4HQ | coordinate_disagreement | FSA coordinate is 224.2m from the accepted pin; informational only because the FSA geocode may be approximate |
@@ -843,7 +846,6 @@ Locations with informational observations: 641 (may also have an actionable find
 | George and Dragon | Yarm | TS15 9AH | coordinate_agreement | No pin check requested. |
 | George and the Dragon | Gnosall | ST20 0EX | coordinate_agreement | No pin check requested. |
 | Gipsy Moth | Greenwich SE10 | SE10 9BL | coordinate_agreement | No pin check requested. |
-| Glen | Haverfordwest | SA61 1XA | coordinate_agreement | No pin check requested. |
 | Glenhills Sports and Social Club (PMC) | Glen Parva | LE2 9JB | coordinate_agreement | No pin check requested. |
 | Globe | Liverpool: Central | L1 1HW | coordinate_agreement | No pin check requested. |
 | Golden Eagle | Lincoln | LN5 8BD | coordinate_agreement | No pin check requested. |
@@ -900,7 +902,6 @@ Locations with informational observations: 641 (may also have an actionable find
 | Kings Head | Shrewsbury: Central | SY1 1PP | coordinate_agreement | No pin check requested. |
 | Kings Way | Stoke: Central | ST4 1JB | coordinate_agreement | No pin check requested. |
 | Kingston Arms | Cambridge | CB1 2NU | coordinate_agreement | No pin check requested. |
-| Laburnum | Matlock | DE4 2PW | coordinate_agreement | No pin check requested. |
 | Leopard | Doncaster | DN1 3AA | coordinate_agreement | No pin check requested. |
 | London Inn | Plympton | PL7 1NH | coordinate_agreement | No pin check requested. |
 | London Inn | Padstow | PL28 8AN | coordinate_agreement | No pin check requested. |
@@ -930,7 +931,6 @@ Locations with informational observations: 641 (may also have an actionable find
 | Museum | Newcastle-U-L: Central | ST5 1JU | coordinate_agreement | No pin check requested. |
 | Myrtle Tree | Bristol: Hotwells | BS1 5UW | coordinate_agreement | No pin check requested. |
 | Nags Head | Keelby | DN41 8EF | coordinate_agreement | No pin check requested. |
-| Navigation | Breaston | DE72 3BP | coordinate_agreement | No pin check requested. |
 | Neptune | Derby: Central | DE1 2HR | coordinate_agreement | No pin check requested. |
 | New Court Inn | Usk | NP15 1AD | coordinate_agreement | No pin check requested. |
 | New Inn | Alphington | EX2 8TA | coordinate_agreement | No pin check requested. |

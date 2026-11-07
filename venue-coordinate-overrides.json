@@ -2512,16 +2512,25 @@
       "source_url": "https://camra.org.uk/pubs/142686"
     },
     "robin hood|swannington|le67 8qq": {
-      "audit_reason": "postcode_fallback_replaced",
-      "checked_at": "2026-09-11",
-      "lat": 52.739,
-      "lng": -1.3856,
-      "previous_difference_metres": 6.4,
-      "previous_lat": 52.739057,
-      "previous_lng": -1.38559,
-      "previous_source": "postcode",
-      "source": "camra-pubs-location-audit",
-      "source_url": "https://camra.org.uk/pubs/171254"
+      "audit_reason": "owner_confirmed_property_listing_frontage",
+      "checked_at": "2026-11-07",
+      "corroborating_source_url": "https://www.geograph.org.uk/photo/4592373",
+      "lat": 52.739613,
+      "lng": -1.387084,
+      "previous_override": {
+        "audit_reason": "postcode_fallback_replaced",
+        "checked_at": "2026-09-11",
+        "lat": 52.739,
+        "lng": -1.3856,
+        "previous_difference_metres": 6.4,
+        "previous_lat": 52.739057,
+        "previous_lng": -1.38559,
+        "previous_source": "postcode",
+        "source": "camra-pubs-location-audit",
+        "source_url": "https://camra.org.uk/pubs/171254"
+      },
+      "source": "owner-reviewed-property-listing",
+      "source_url": "https://www.myhospitalitysolutions.co.uk/properties/3033/robin-hood-swannington"
     },
     "rock inn|porthcawl|cf36 3dt": {
       "audit_reason": "manual_named_place_address_and_map_check",

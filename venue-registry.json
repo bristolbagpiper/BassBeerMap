@@ -31828,6 +31828,72 @@
         "postcode": "LE67 8QQ",
         "pub_name": "Robin Hood"
       },
+      "location_corrections": [
+        {
+          "checked_at": "2026-11-07",
+          "new_coordinate": {
+            "lat": 52.739613,
+            "lng": -1.387084
+          },
+          "previous_pin": {
+            "evidence": [
+              {
+                "checked_at": "2026-11-02",
+                "difference_metres": 0.0,
+                "disposition": "superseded_by_source_refresh",
+                "match": "venue_name_and_full_postcode",
+                "reference_address": "2 Spring Lane",
+                "reference_coordinate": {
+                  "lat": 52.739,
+                  "lng": -1.3856
+                },
+                "reference_name": "Robin Hood, Swannington - Traditional Village Local",
+                "reference_postcode": "LE67 8QQ",
+                "source": "camra",
+                "url": "https://camra.org.uk/pubs/171254"
+              },
+              {
+                "checked_at": "2026-11-03",
+                "difference_metres": 0.0,
+                "disposition": "superseded_by_source_refresh",
+                "match": "venue_name_and_full_postcode",
+                "reference_address": "2 Spring Lane",
+                "reference_coordinate": {
+                  "lat": 52.739,
+                  "lng": -1.3856
+                },
+                "reference_name": "Robin Hood, Swannington - Traditional Village Local",
+                "reference_postcode": "LE67 8QQ",
+                "source": "camra",
+                "url": "https://camra.org.uk/pubs/171254"
+              },
+              {
+                "checked_at": "2026-11-05",
+                "difference_metres": 0.0,
+                "match": "venue_name_and_full_postcode",
+                "reference_address": "2 Spring Lane",
+                "reference_coordinate": {
+                  "lat": 52.739,
+                  "lng": -1.3856
+                },
+                "reference_name": "Robin Hood, Swannington - Traditional Village Local",
+                "reference_postcode": "LE67 8QQ",
+                "source": "camra",
+                "url": "https://camra.org.uk/pubs/171254"
+              }
+            ],
+            "lat": 52.739,
+            "lng": -1.3856,
+            "source": "camra-pubs-location-audit"
+          },
+          "reason": "The owner confirmed the property listing point for the Robin Hood frontage at 2 Spring Lane after comparing it with the old point, the Google listing point and the geotagged frontage photo.",
+          "reviewed_by": "Bass Beer Map owner via Codex conversation",
+          "source_urls": [
+            "https://www.myhospitalitysolutions.co.uk/properties/3033/robin-hood-swannington",
+            "https://www.geograph.org.uk/photo/4592373"
+          ]
+        }
+      ],
       "verification_attempt": {
         "checked_at": "2026-11-05",
         "evidence": {
@@ -31887,6 +31953,7 @@
           {
             "checked_at": "2026-11-05",
             "difference_metres": 0.0,
+            "disposition": "superseded_by_owner_building_review",
             "match": "venue_name_and_full_postcode",
             "reference_address": "2 Spring Lane",
             "reference_coordinate": {
@@ -31897,11 +31964,53 @@
             "reference_postcode": "LE67 8QQ",
             "source": "camra",
             "url": "https://camra.org.uk/pubs/171254"
+          },
+          {
+            "checked_at": "2026-11-07",
+            "corroborating_source_url": "https://www.geograph.org.uk/photo/4592373",
+            "match": "owner_confirmed_property_listing_frontage",
+            "reference_address": "2 Spring Lane, Swannington, LE67 8QQ",
+            "reference_coordinate": {
+              "lat": 52.739613,
+              "lng": -1.387084
+            },
+            "reference_name": "Robin Hood",
+            "reference_postcode": "LE67 8QQ",
+            "reviewed_by": "Bass Beer Map owner via Codex conversation",
+            "source": "owner-reviewed-property-listing",
+            "url": "https://www.myhospitalitysolutions.co.uk/properties/3033/robin-hood-swannington"
           }
         ],
-        "lat": 52.739,
-        "lng": -1.3856,
-        "source": "camra-pubs-location-audit"
+        "lat": 52.739613,
+        "lng": -1.387084,
+        "owner_confirmation": {
+          "approved_coordinate": {
+            "lat": 52.739613,
+            "lng": -1.387084
+          },
+          "checked_at": "2026-11-07",
+          "listing": {
+            "area": "Leicestershire",
+            "country": "England",
+            "place_name": "Swannington",
+            "postcode": "LE67 8QQ",
+            "pub_name": "Robin Hood",
+            "venue_id": "v-12016874-b271-5032-9ed9-e7c2669740f3"
+          },
+          "owner_instruction": "the property listing pin is the right one, move the Robin Hood pin there and push it",
+          "reviewed_by": "Bass Beer Map owner via Codex conversation",
+          "schema_version": 1,
+          "scope": "displayed_venue_building",
+          "source_snapshots": [
+            {
+              "address": "2 Spring Lane, Swannington, LE67 8QQ",
+              "name": "Robin Hood",
+              "postcode": "LE67 8QQ",
+              "url": "https://www.myhospitalitysolutions.co.uk/properties/3033/robin-hood-swannington"
+            }
+          ]
+        },
+        "source": "owner-reviewed-property-listing"
       }
     },
     "v-12224361-c352-56ce-914a-4df8cc9b38d2": {

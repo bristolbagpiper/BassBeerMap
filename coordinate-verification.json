@@ -37685,7 +37685,7 @@
       "venue_id": "v-84149bd1-cc27-59d6-9c95-6fc859cc80f8"
     },
     "robin hood|swannington|le67 8qq": {
-      "coordinate_source": "camra-pubs-location-audit",
+      "coordinate_source": "owner-reviewed-property-listing",
       "display_precision": "venue",
       "evidence": [
         {
@@ -37721,6 +37721,7 @@
         {
           "checked_at": "2026-11-05",
           "difference_metres": 0.0,
+          "disposition": "superseded_by_owner_building_review",
           "match": "venue_name_and_full_postcode",
           "reference_address": "2 Spring Lane",
           "reference_coordinate": {
@@ -37731,10 +37732,25 @@
           "reference_postcode": "LE67 8QQ",
           "source": "camra",
           "url": "https://camra.org.uk/pubs/171254"
+        },
+        {
+          "checked_at": "2026-11-07",
+          "corroborating_source_url": "https://www.geograph.org.uk/photo/4592373",
+          "match": "owner_confirmed_property_listing_frontage",
+          "reference_address": "2 Spring Lane, Swannington, LE67 8QQ",
+          "reference_coordinate": {
+            "lat": 52.739613,
+            "lng": -1.387084
+          },
+          "reference_name": "Robin Hood",
+          "reference_postcode": "LE67 8QQ",
+          "reviewed_by": "Bass Beer Map owner via Codex conversation",
+          "source": "owner-reviewed-property-listing",
+          "url": "https://www.myhospitalitysolutions.co.uk/properties/3033/robin-hood-swannington"
         }
       ],
-      "lat": 52.739,
-      "lng": -1.3856,
+      "lat": 52.739613,
+      "lng": -1.387084,
       "place_name": "Swannington",
       "postcode": "LE67 8QQ",
       "pub_name": "Robin Hood",

@@ -9,14 +9,16 @@ Locations with informational observations: 641 (may also have an actionable find
 ## Results
 
 - no_name_match: 175
+- not_checked: 1
 - coordinate_disagreement: 278
 - ambiguous_or_missing_coordinates: 67
 - nearby: 107
-- coordinate_agreement: 460
+- coordinate_agreement: 459
 
 ## Confidence
 
-- owner_reviewed: 138
+- owner_reviewed: 137
+- not_checked: 1
 - existing_evidence_needs_corroboration: 548
 - independent_coordinate_agreement: 401
 
@@ -38,6 +40,7 @@ Locations with informational observations: 641 (may also have an actionable find
 
 | Pub | Place | Postcode | Result | Information |
 |---|---|---|---|---|
+| Navigation | Shardlow | DE72 2HA | not_checked | Current pin has not been independently compared |
 | 1852 Brewery Co | Leicester: South Wigston | LE18 2DH | no_name_match | FSA comparison is inconclusive; absence of a match does not contradict accepted evidence |
 | 45 Club (PMC) | Newcastle-U-L: Central | ST5 1DS | no_name_match | FSA comparison is inconclusive; absence of a match does not contradict accepted evidence |
 | Adelphi | Leeds: Central | LS10 1JQ | coordinate_disagreement | FSA coordinate is 158.8m from the accepted pin; informational only because the FSA geocode may be approximate |
@@ -405,7 +408,6 @@ Locations with informational observations: 641 (may also have an actionable find
 | Nags Head | Henley-in-Arden | B95 5BA | coordinate_disagreement | FSA coordinate is 57.8m from the accepted pin; informational only because the FSA geocode may be approximate |
 | Navigation | Burton U-T: Horninglow | DE14 2PT | coordinate_disagreement | FSA coordinate is 140.8m from the accepted pin; informational only because the FSA geocode may be approximate |
 | Navigation | Newark | NG24 4TS | no_name_match | FSA comparison is inconclusive; absence of a match does not contradict accepted evidence |
-| Navigation | Shardlow | DE72 2WA | coordinate_agreement | Owner reviewed this postcode discrepancy and confirmed the displayed pub building; listing postcode retained for provenance |
 | Needle and Pin | Loughborough | LE11 5BG | coordinate_agreement | Owner reviewed this postcode discrepancy and confirmed the displayed pub building; listing postcode retained for provenance |
 | Needles | Derby: Alvaston | DE24 0UQ | coordinate_disagreement | FSA coordinate is 129.6m from the accepted pin; informational only because the FSA geocode may be approximate |
 | Nelson Inn | Brown Lees | ST8 6PH | coordinate_agreement | Owner reviewed this postcode discrepancy and confirmed the displayed pub building; listing postcode retained for provenance |

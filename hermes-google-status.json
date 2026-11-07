@@ -1,11 +1,11 @@
 {
-  "checked_at": "2026-11-06T16:39:29.476452+00:00",
+  "checked_at": "2026-11-07T10:20:59.214120+00:00",
   "configured": true,
   "counts": {
     "attempted_venue_count": 1087,
-    "checked_this_run": 227,
+    "checked_this_run": 42,
     "current": 1086,
-    "review_count": 75,
+    "review_count": 78,
     "total": 1087,
     "unchecked_or_stale": 1
   },
@@ -208,6 +208,15 @@
       "reason": "Google indicates a possible closure; trading status needs review",
       "status": "review_needed",
       "venue_id": "v-48a81b2b-55c8-55a4-a952-41a881ed7ddf"
+    },
+    {
+      "binding_signature": "9f8ea0655169f56b7e7de44b58e621d201424d21d8a7a2a780350b1bd560b74d",
+      "place_name": "Leek",
+      "postcode": "ST13 6LJ",
+      "pub_name": "Blue Mugge",
+      "reason": "Google results are incomplete or ambiguous; no unique place accepted",
+      "status": "review_needed",
+      "venue_id": "v-4acb6f16-6372-5492-adaa-19dc33655733"
     },
     {
       "binding_signature": "383725ec6de8bf02974e40a73c7e05ec0f3fad47c5be47a6786709efd8f5b9c7",
@@ -570,6 +579,24 @@
       "venue_id": "v-c7a13100-edc5-57a1-9f94-29a2a28c21c1"
     },
     {
+      "binding_signature": "7fc01cfbfc7806efcceeeafbf3905ea52b92ed93843a13be16561ff8027ba592",
+      "place_name": "Rowley Regis",
+      "postcode": "B65 9AT",
+      "pub_name": "Britannia",
+      "reason": "Google results are incomplete or ambiguous; no unique place accepted",
+      "status": "review_needed",
+      "venue_id": "v-cacf3fb6-4c21-5cfc-a537-056e0f6876b4"
+    },
+    {
+      "binding_signature": "0efc82905974ede44fe2e8ea66cceb0a1dfd2509011470446fbdd08a2844a26e",
+      "place_name": "Burton U-T: Branston",
+      "postcode": "DE14 3EY",
+      "pub_name": "Blacksmiths",
+      "reason": "Google results are incomplete or ambiguous; no unique place accepted",
+      "status": "review_needed",
+      "venue_id": "v-cbc4b5d0-edd1-5be4-b287-9b1646ae7624"
+    },
+    {
       "binding_signature": "85fb55d395ac0c98617a1f8580449ebee3a98051f14600ef8c4afac04322fec2",
       "place_name": "Spalding",
       "postcode": "PE11 1SU",
@@ -693,8 +720,8 @@
   ],
   "provider": "hermes-browser",
   "run_attempt": 1,
-  "run_id": "61e39ce0a80d4b1385c769fe3fb0913b",
+  "run_id": "edac326a45ae4ee4a8b0b050458a5c49",
   "run_url": "",
   "schema_version": 1,
-  "source_execution_finished_at": "2026-11-06T16:39:08.742562+00:00"
+  "source_execution_finished_at": "2026-11-07T07:44:35.756021+00:00"
 }

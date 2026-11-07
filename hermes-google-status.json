@@ -1,15 +1,15 @@
 {
-  "checked_at": "2026-11-07T10:39:09.770235+00:00",
+  "checked_at": "2026-11-07T10:56:12.078459+00:00",
   "configured": true,
   "counts": {
     "attempted_venue_count": 1087,
-    "checked_this_run": 43,
+    "checked_this_run": 50,
     "current": 1087,
-    "review_count": 77,
+    "review_count": 70,
     "total": 1087,
     "unchecked_or_stale": 0
   },
-  "directory_binding_signature": "dc83c51382632b2d80ba4dd19e1ffaa265c05f4340871a76f4959dbcf063f2e7",
+  "directory_binding_signature": "70a49025f725da9ad7308ede6d88515d9f26d4fbe1a2289689c384a1c7e561f5",
   "findings": [
     {
       "binding_signature": "eb6677d18e8e55f842c81147bf193219a1a944543e276e9074ad0fc609900240",
@@ -145,15 +145,6 @@
       "reason": "Google named-place marker differs by more than 50 metres; existing pin retained for review",
       "status": "review_needed",
       "venue_id": "v-32beb565-ed3a-5330-a1c1-23421ac706ac"
-    },
-    {
-      "binding_signature": "62b188cd9de456834f43aeec4213d146be80e955a370683235b782eb0176b39b",
-      "place_name": "Deppers Bridge",
-      "postcode": "CV47 2ST",
-      "pub_name": "Great Western",
-      "reason": "Google named-place marker differs by more than 50 metres; existing pin retained for review",
-      "status": "review_needed",
-      "venue_id": "v-33da9387-2aa7-5bdf-b0bb-3e369659eb47"
     },
     {
       "binding_signature": "25b29fc3b029017dcf1d4a17fb26f83e978094be2030b4ad52217c67e8e37a7f",
@@ -399,15 +390,6 @@
       "venue_id": "v-7deef57e-74e9-5154-b94e-32380988c487"
     },
     {
-      "binding_signature": "76bd949bb4e9553958c95fd5956d48812c0f2fce95d43b0047a6307cc3cff2d0",
-      "place_name": "Belton",
-      "postcode": "LE12 9TP",
-      "pub_name": "Queens Head",
-      "reason": "Google named-place marker differs by more than 50 metres; existing pin retained for review",
-      "status": "review_needed",
-      "venue_id": "v-82777cf0-8056-52f2-a4a8-5ddd173fcfac"
-    },
-    {
       "binding_signature": "935267d71f52bf754753d9cc6b857d896b5de36d7cd331cba7bd754e00a6ab26",
       "place_name": "Newhall",
       "postcode": "DE11 0EA",
@@ -453,15 +435,6 @@
       "venue_id": "v-97a6ff26-33a9-521e-8875-2fa9a26e5f68"
     },
     {
-      "binding_signature": "3a0f2b82955d39ba6cf187b7ae11bb06453d3595528e86b6b6c7914168a84673",
-      "place_name": "Haverfordwest",
-      "postcode": "SA61 1XA",
-      "pub_name": "Glen",
-      "reason": "Google named-place marker differs by more than 50 metres; existing pin retained for review",
-      "status": "review_needed",
-      "venue_id": "v-97eec8ed-44c6-5087-bbba-d95dc4a624e2"
-    },
-    {
       "binding_signature": "ce3976e4b75c01f8b06afec0061ece0fe75b98f27c7db875c4a8d37cada733b5",
       "place_name": "Derby: Spondon",
       "postcode": "DE21 7JP",
@@ -487,15 +460,6 @@
       "reason": "Google named-place result differs in business identity or postcode; verify the matched venue and address",
       "status": "review_needed",
       "venue_id": "v-9fc56ee2-e106-5f12-8f10-2eebbea068ef"
-    },
-    {
-      "binding_signature": "7cbb3a1d85c452d806311f367e624ca2e322de1e0bdbfb76edc2fe988ecafe88",
-      "place_name": "Quorn",
-      "postcode": "LE12 8AL",
-      "pub_name": "Manor House",
-      "reason": "Google named-place marker differs by more than 50 metres; existing pin retained for review",
-      "status": "review_needed",
-      "venue_id": "v-a19b34aa-f6de-58c5-8c27-314b8d16cf69"
     },
     {
       "binding_signature": "12e33f631727a454cfbfe3e266dbbe1d34aca286efd4bd2a7b6f74b1408f6b2b",
@@ -597,24 +561,6 @@
       "venue_id": "v-cc4be9e4-0760-5865-a0bd-4c279c6fc777"
     },
     {
-      "binding_signature": "1b43e5fbb4b8f9cc59c346e6d2bb178faaa11aac198085d4eeb3581f1444ef98",
-      "place_name": "Uttoxeter",
-      "postcode": "ST14 8AG",
-      "pub_name": "Bamk House Hotel",
-      "reason": "Google named-place result differs in business identity or postcode; verify the matched venue and address",
-      "status": "review_needed",
-      "venue_id": "v-cf84f078-89c5-5106-a4d2-5b91a780f2d6"
-    },
-    {
-      "binding_signature": "7e69f3e29ce18a1c8805a85b50622c4ce48933c12efd84610c8f867d0e3e639c",
-      "place_name": "Matlock",
-      "postcode": "DE4 2PW",
-      "pub_name": "Laburnum",
-      "reason": "Google named-place marker differs by more than 50 metres; existing pin retained for review",
-      "status": "review_needed",
-      "venue_id": "v-d4791829-cd62-5610-8557-722e5a52f60a"
-    },
-    {
       "binding_signature": "1d2711e008ecb6552e5e4447506405c6e8b1f6a59fa384fea6523890389c6e9a",
       "place_name": "Leeds: Central",
       "postcode": "LS10 1JQ",
@@ -687,15 +633,6 @@
       "venue_id": "v-f4485d10-20f9-5178-a539-cbade7e5b9a3"
     },
     {
-      "binding_signature": "59d4f6a430744100e626574c636aec533429b3fc9fe253c1a214a11ec4b226f7",
-      "place_name": "Breaston",
-      "postcode": "DE72 3BP",
-      "pub_name": "Navigation",
-      "reason": "Google named-place marker differs by more than 50 metres; existing pin retained for review",
-      "status": "review_needed",
-      "venue_id": "v-f46f3203-92c8-588b-b523-8e0a32ee1524"
-    },
-    {
       "binding_signature": "d334b5f116679616e6b6c8beba627b79d3ecc2ee792be72cc3396c16821ad7fe",
       "place_name": "Manchester: Central",
       "postcode": "M1 3AQ",
@@ -709,8 +646,8 @@
   "issues": [],
   "provider": "hermes-browser",
   "run_attempt": 1,
-  "run_id": "a0d0b8820aa14875923a96db8ac171ca",
+  "run_id": "5cace9f9112c47a6ba2e2aa211d87436",
   "run_url": "",
   "schema_version": 1,
-  "source_execution_finished_at": "2026-11-07T10:37:56.681876+00:00"
+  "source_execution_finished_at": "2026-11-07T10:53:40.891376+00:00"
 }

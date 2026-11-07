@@ -12301,7 +12301,7 @@
             "status": "resolved"
           }
         ],
-        "last_checked": "2026-11-03",
+        "last_checked": "2026-11-07",
         "manual_action_required": false,
         "next_action": "No pin check requested",
         "place_name": "Quorn",
@@ -12315,10 +12315,6 @@
           "camra": {
             "status": "confirmed",
             "url": "https://camra.org.uk/pubs/171223"
-          },
-          "fsa_independent": {
-            "status": "coordinate_disagreement",
-            "url": "https://ratings.food.gov.uk/business/87506"
           }
         },
         "source_error": null,
@@ -100282,6 +100278,57 @@
         "postcode": "LE12 9TP",
         "pub_name": "Queens Head"
       },
+      "location_corrections": [
+        {
+          "checked_at": "2026-11-07",
+          "new_coordinate": {
+            "lat": 52.78289307,
+            "lng": -1.33945421
+          },
+          "previous_pin": {
+            "evidence": [
+              {
+                "checked_at": "2026-10-19",
+                "difference_metres": 0.0,
+                "disposition": "superseded_by_source_refresh",
+                "match": "venue_name_and_full_postcode",
+                "reference_address": "2 Long Street",
+                "reference_coordinate": {
+                  "lat": 52.7816,
+                  "lng": -1.3398
+                },
+                "reference_name": "Queens Head, Belton - Historic 18th Century Coac",
+                "reference_postcode": "LE12 9TP",
+                "source": "camra",
+                "url": "https://camra.org.uk/pubs/171321"
+              },
+              {
+                "checked_at": "2026-11-03",
+                "difference_metres": 0.0,
+                "match": "venue_name_and_full_postcode",
+                "reference_address": "2 Long Street",
+                "reference_coordinate": {
+                  "lat": 52.7816,
+                  "lng": -1.3398
+                },
+                "reference_name": "Queens Head, Belton - Pub with Accommodation",
+                "reference_postcode": "LE12 9TP",
+                "source": "camra",
+                "url": "https://camra.org.uk/pubs/171321"
+              }
+            ],
+            "lat": 52.7816,
+            "lng": -1.3398,
+            "source": "camra-and-fsa-location-audit"
+          },
+          "reason": "The Google review identified the discrepancy. The named OpenStreetMap building footprint and independent address identify the pub. The replacement point is inside that footprint.",
+          "reviewed_by": "Codex source review",
+          "source_urls": [
+            "https://www.openstreetmap.org/way/366276012",
+            "https://camra.org.uk/pubs/171321"
+          ]
+        }
+      ],
       "verification_attempt": {
         "checked_at": "2026-11-03",
         "evidence": {
@@ -100326,6 +100373,7 @@
           {
             "checked_at": "2026-11-03",
             "difference_metres": 0.0,
+            "disposition": "superseded_by_named_building_review",
             "match": "venue_name_and_full_postcode",
             "reference_address": "2 Long Street",
             "reference_coordinate": {
@@ -100336,11 +100384,26 @@
             "reference_postcode": "LE12 9TP",
             "source": "camra",
             "url": "https://camra.org.uk/pubs/171321"
+          },
+          {
+            "address_source_url": "https://camra.org.uk/pubs/171321",
+            "checked_at": "2026-11-07",
+            "match": "named_pub_building_and_independent_address",
+            "reference_address": "2 Long Street, Belton",
+            "reference_coordinate": {
+              "lat": 52.78289307,
+              "lng": -1.33945421
+            },
+            "reference_name": "Queen's Head",
+            "reference_postcode": "LE12 9TP",
+            "reviewed_by": "Codex source review",
+            "source": "openstreetmap-named-building",
+            "url": "https://www.openstreetmap.org/way/366276012"
           }
         ],
-        "lat": 52.7816,
-        "lng": -1.3398,
-        "source": "camra-and-fsa-location-audit"
+        "lat": 52.78289307,
+        "lng": -1.33945421,
+        "source": "reviewed-openstreetmap-named-building"
       }
     },
     "v-82d27ed9-bb32-515b-a67d-b4ddfc98eb6c": {
@@ -113201,6 +113264,57 @@
         "postcode": "SA61 1XA",
         "pub_name": "Glen"
       },
+      "location_corrections": [
+        {
+          "checked_at": "2026-11-07",
+          "new_coordinate": {
+            "lat": 51.79339694,
+            "lng": -4.97936424
+          },
+          "previous_pin": {
+            "evidence": [
+              {
+                "checked_at": "2026-10-21",
+                "difference_metres": 5.2,
+                "disposition": "superseded_by_source_refresh",
+                "match": "venue_name_and_full_postcode",
+                "reference_address": "Merlins Hill",
+                "reference_coordinate": {
+                  "lat": 51.794,
+                  "lng": -4.9782
+                },
+                "reference_name": "Glen, Haverfordwest - Pub with Good Food",
+                "reference_postcode": "SA61 1XA",
+                "source": "camra",
+                "url": "https://camra.org.uk/pubs/160028"
+              },
+              {
+                "checked_at": "2026-11-03",
+                "difference_metres": 5.2,
+                "match": "venue_name_and_full_postcode",
+                "reference_address": "Merlins Hill",
+                "reference_coordinate": {
+                  "lat": 51.794,
+                  "lng": -4.9782
+                },
+                "reference_name": "Glen, Haverfordwest - Pub with Good Food",
+                "reference_postcode": "SA61 1XA",
+                "source": "camra",
+                "url": "https://camra.org.uk/pubs/160028"
+              }
+            ],
+            "lat": 51.794044,
+            "lng": -4.978174,
+            "source": "food-standards-agency-fhrs"
+          },
+          "reason": "The Google review identified the discrepancy. The named OpenStreetMap building footprint and independent address identify the pub. The replacement point is inside that footprint.",
+          "reviewed_by": "Codex source review",
+          "source_urls": [
+            "https://www.openstreetmap.org/way/1150536075",
+            "https://camra.org.uk/pubs/160028"
+          ]
+        }
+      ],
       "verification_attempt": {
         "checked_at": "2026-11-03",
         "evidence": {
@@ -113245,6 +113359,7 @@
           {
             "checked_at": "2026-11-03",
             "difference_metres": 5.2,
+            "disposition": "superseded_by_named_building_review",
             "match": "venue_name_and_full_postcode",
             "reference_address": "Merlins Hill",
             "reference_coordinate": {
@@ -113255,11 +113370,26 @@
             "reference_postcode": "SA61 1XA",
             "source": "camra",
             "url": "https://camra.org.uk/pubs/160028"
+          },
+          {
+            "address_source_url": "https://camra.org.uk/pubs/160028",
+            "checked_at": "2026-11-07",
+            "match": "named_pub_building_and_independent_address",
+            "reference_address": "Merlins Hill, Haverfordwest",
+            "reference_coordinate": {
+              "lat": 51.79339694,
+              "lng": -4.97936424
+            },
+            "reference_name": "The Glen Hotel",
+            "reference_postcode": "SA61 1XA",
+            "reviewed_by": "Codex source review",
+            "source": "openstreetmap-named-building",
+            "url": "https://www.openstreetmap.org/way/1150536075"
           }
         ],
-        "lat": 51.794044,
-        "lng": -4.978174,
-        "source": "food-standards-agency-fhrs"
+        "lat": 51.79339694,
+        "lng": -4.97936424,
+        "source": "reviewed-openstreetmap-named-building"
       }
     },
     "v-98217540-8d77-5352-aff2-83846e1183a8": {
@@ -119584,6 +119714,57 @@
         "postcode": "LE12 8AL",
         "pub_name": "Manor House"
       },
+      "location_corrections": [
+        {
+          "checked_at": "2026-11-07",
+          "new_coordinate": {
+            "lat": 52.74147758,
+            "lng": -1.18652997
+          },
+          "previous_pin": {
+            "evidence": [
+              {
+                "checked_at": "2026-10-22",
+                "difference_metres": 0.0,
+                "disposition": "superseded_by_source_refresh",
+                "match": "venue_name_and_full_postcode",
+                "reference_address": "Woodhouse Road",
+                "reference_coordinate": {
+                  "lat": 52.741721,
+                  "lng": -1.187223
+                },
+                "reference_name": "Manor House, Quorn - Steam Railway Pub",
+                "reference_postcode": "LE12 8AL",
+                "source": "camra",
+                "url": "https://camra.org.uk/pubs/171223"
+              },
+              {
+                "checked_at": "2026-11-03",
+                "difference_metres": 0.0,
+                "match": "venue_name_and_full_postcode",
+                "reference_address": "Woodhouse Road",
+                "reference_coordinate": {
+                  "lat": 52.741721,
+                  "lng": -1.187223
+                },
+                "reference_name": "Manor House, Quorn - Steam Railway Pub",
+                "reference_postcode": "LE12 8AL",
+                "source": "camra",
+                "url": "https://camra.org.uk/pubs/171223"
+              }
+            ],
+            "lat": 52.741721,
+            "lng": -1.187223,
+            "source": "camra-pubs-location-audit"
+          },
+          "reason": "The Google review identified the discrepancy. The named OpenStreetMap building footprint and independent address identify the pub. The replacement point is inside that footprint.",
+          "reviewed_by": "Codex source review",
+          "source_urls": [
+            "https://www.openstreetmap.org/way/171536190",
+            "https://www.themanorhouseatquorn.co.uk/contact/"
+          ]
+        }
+      ],
       "verification_attempt": {
         "checked_at": "2026-11-03",
         "evidence": {
@@ -119628,6 +119809,7 @@
           {
             "checked_at": "2026-11-03",
             "difference_metres": 0.0,
+            "disposition": "superseded_by_named_building_review",
             "match": "venue_name_and_full_postcode",
             "reference_address": "Woodhouse Road",
             "reference_coordinate": {
@@ -119638,11 +119820,26 @@
             "reference_postcode": "LE12 8AL",
             "source": "camra",
             "url": "https://camra.org.uk/pubs/171223"
+          },
+          {
+            "address_source_url": "https://www.themanorhouseatquorn.co.uk/contact/",
+            "checked_at": "2026-11-07",
+            "match": "named_pub_building_and_independent_address",
+            "reference_address": "Woodhouse Road, Quorn",
+            "reference_coordinate": {
+              "lat": 52.74147758,
+              "lng": -1.18652997
+            },
+            "reference_name": "The Manor House",
+            "reference_postcode": "LE12 8AL",
+            "reviewed_by": "Codex source review",
+            "source": "openstreetmap-named-building",
+            "url": "https://www.openstreetmap.org/way/171536190"
           }
         ],
-        "lat": 52.741721,
-        "lng": -1.187223,
-        "source": "camra-pubs-location-audit"
+        "lat": 52.74147758,
+        "lng": -1.18652997,
+        "source": "reviewed-openstreetmap-named-building"
       }
     },
     "v-a19c4459-296d-5c67-8cee-17a94b1714da": {
@@ -145837,9 +146034,19 @@
     },
     "v-cf84f078-89c5-5106-a4d2-5b91a780f2d6": {
       "aliases": [
-        "bamk house hotel|uttoxeter|st14 8ag"
+        "bamk house hotel|uttoxeter|st14 8ag",
+        "bank house hotel|uttoxeter|st14 8ag"
       ],
-      "current_key": "bamk house hotel|uttoxeter|st14 8ag",
+      "current_key": "bank house hotel|uttoxeter|st14 8ag",
+      "identity_reviews": [
+        {
+          "checked_at": "2026-11-07",
+          "previous_key": "bamk house hotel|uttoxeter|st14 8ag",
+          "reason": "Correct the one-letter transcription error. The operator identifies this venue as Bank House Hotel. Retain its permanent venue ID and pin.",
+          "reference_postcode": "ST14 8AG",
+          "source_url": "https://www.bankhousehotel.uk/contact/"
+        }
+      ],
       "independent_location_check": {
         "actionable": false,
         "checked_at": "2026-11-03",
@@ -145888,8 +146095,40 @@
         "pg": "Perm",
         "place_name": "Uttoxeter",
         "postcode": "ST14 8AG",
-        "pub_name": "Bamk House Hotel"
+        "pub_name": "Bank House Hotel"
       },
+      "listing_reviews": [
+        {
+          "decision": {
+            "changes": {
+              "pub_name": "Bank House Hotel"
+            },
+            "checked_at": "2026-11-07",
+            "expected": {
+              "place_name": "Uttoxeter",
+              "postcode": "ST14 8AG",
+              "pub_name": "Bamk House Hotel"
+            },
+            "reason": "Correct the one-letter transcription error. The operator identifies this venue as Bank House Hotel. Retain its permanent venue ID and pin.",
+            "reference_postcode": "ST14 8AG",
+            "reviewed_by": "Codex source review",
+            "source_url": "https://www.bankhousehotel.uk/contact/"
+          },
+          "kind": "correction",
+          "original": {
+            "area": "Staffordshire",
+            "country": "England",
+            "dispense": "H",
+            "last": "2026 Q3",
+            "notes": "",
+            "pg": "Perm",
+            "place_name": "Uttoxeter",
+            "postcode": "ST14 8AG",
+            "pub_name": "Bamk House Hotel"
+          },
+          "original_key": "bamk house hotel|uttoxeter|st14 8ag"
+        }
+      ],
       "verification_attempt": {
         "checked_at": "2026-11-04",
         "reason": "Manual map evidence needs a fresh human address/map check",
@@ -148543,6 +148782,57 @@
         "postcode": "DE4 2PW",
         "pub_name": "Laburnum"
       },
+      "location_corrections": [
+        {
+          "checked_at": "2026-11-07",
+          "new_coordinate": {
+            "lat": 53.14843182,
+            "lng": -1.56432913
+          },
+          "previous_pin": {
+            "evidence": [
+              {
+                "checked_at": "2026-10-26",
+                "difference_metres": 30.5,
+                "disposition": "superseded_by_source_refresh",
+                "match": "venue_name_and_full_postcode",
+                "reference_address": "2 Hackney Rd",
+                "reference_coordinate": {
+                  "lat": 53.1489,
+                  "lng": -1.5651
+                },
+                "reference_name": "Laburnum Inn, Matlock - Friendly Locals Pub",
+                "reference_postcode": "DE4 2PW",
+                "source": "camra",
+                "url": "https://camra.org.uk/pubs/165780"
+              },
+              {
+                "checked_at": "2026-11-03",
+                "difference_metres": 30.5,
+                "match": "venue_name_and_full_postcode",
+                "reference_address": "2 Hackney Rd",
+                "reference_coordinate": {
+                  "lat": 53.1489,
+                  "lng": -1.5651
+                },
+                "reference_name": "Laburnum Inn, Matlock - Friendly Locals Pub",
+                "reference_postcode": "DE4 2PW",
+                "source": "camra",
+                "url": "https://camra.org.uk/pubs/165780"
+              }
+            ],
+            "lat": 53.149135,
+            "lng": -1.565335,
+            "source": "food-standards-agency-fhrs"
+          },
+          "reason": "The Google review identified the discrepancy. The named OpenStreetMap building footprint and independent address identify the pub. The replacement point is inside that footprint.",
+          "reviewed_by": "Codex source review",
+          "source_urls": [
+            "https://www.openstreetmap.org/way/316658030",
+            "https://www.laburnuminn.co.uk/opening-times"
+          ]
+        }
+      ],
       "verification_attempt": {
         "checked_at": "2026-11-03",
         "evidence": {
@@ -148587,6 +148877,7 @@
           {
             "checked_at": "2026-11-03",
             "difference_metres": 30.5,
+            "disposition": "superseded_by_named_building_review",
             "match": "venue_name_and_full_postcode",
             "reference_address": "2 Hackney Rd",
             "reference_coordinate": {
@@ -148597,11 +148888,26 @@
             "reference_postcode": "DE4 2PW",
             "source": "camra",
             "url": "https://camra.org.uk/pubs/165780"
+          },
+          {
+            "address_source_url": "https://www.laburnuminn.co.uk/opening-times",
+            "checked_at": "2026-11-07",
+            "match": "named_pub_building_and_independent_address",
+            "reference_address": "2 Hackney Road, Matlock",
+            "reference_coordinate": {
+              "lat": 53.14843182,
+              "lng": -1.56432913
+            },
+            "reference_name": "Laburnum Inn",
+            "reference_postcode": "DE4 2PW",
+            "reviewed_by": "Codex source review",
+            "source": "openstreetmap-named-building",
+            "url": "https://www.openstreetmap.org/way/316658030"
           }
         ],
-        "lat": 53.149135,
-        "lng": -1.565335,
-        "source": "food-standards-agency-fhrs"
+        "lat": 53.14843182,
+        "lng": -1.56432913,
+        "source": "reviewed-openstreetmap-named-building"
       }
     },
     "v-d4ae7288-15b0-57dd-815a-74d153746742": {
@@ -167508,6 +167814,57 @@
         "postcode": "DE72 3BP",
         "pub_name": "Navigation"
       },
+      "location_corrections": [
+        {
+          "checked_at": "2026-11-07",
+          "new_coordinate": {
+            "lat": 52.90173968,
+            "lng": -1.31710521
+          },
+          "previous_pin": {
+            "evidence": [
+              {
+                "checked_at": "2026-10-28",
+                "difference_metres": 0.0,
+                "disposition": "superseded_by_source_refresh",
+                "match": "venue_name_and_full_postcode",
+                "reference_address": "Risley Lane",
+                "reference_coordinate": {
+                  "lat": 52.9024,
+                  "lng": -1.3172
+                },
+                "reference_name": "Navigation Inn, Breaston - Village Inn with Food",
+                "reference_postcode": "DE72 3BP",
+                "source": "camra",
+                "url": "https://camra.org.uk/pubs/161229"
+              },
+              {
+                "checked_at": "2026-11-03",
+                "difference_metres": 0.0,
+                "match": "venue_name_and_full_postcode",
+                "reference_address": "Risley Lane",
+                "reference_coordinate": {
+                  "lat": 52.9024,
+                  "lng": -1.3172
+                },
+                "reference_name": "Navigation Inn, Breaston - Village Inn with Food",
+                "reference_postcode": "DE72 3BP",
+                "source": "camra",
+                "url": "https://camra.org.uk/pubs/161229"
+              }
+            ],
+            "lat": 52.9024,
+            "lng": -1.3172,
+            "source": "camra-and-fsa-location-audit"
+          },
+          "reason": "The Google review identified the discrepancy. The named OpenStreetMap building footprint and independent address identify the pub. The replacement point is inside that footprint.",
+          "reviewed_by": "Codex source review",
+          "source_urls": [
+            "https://www.openstreetmap.org/way/136939713",
+            "https://www.navigationinnbreaston.co.uk/find"
+          ]
+        }
+      ],
       "verification_attempt": {
         "checked_at": "2026-11-03",
         "evidence": {
@@ -167552,6 +167909,7 @@
           {
             "checked_at": "2026-11-03",
             "difference_metres": 0.0,
+            "disposition": "superseded_by_named_building_review",
             "match": "venue_name_and_full_postcode",
             "reference_address": "Risley Lane",
             "reference_coordinate": {
@@ -167562,11 +167920,26 @@
             "reference_postcode": "DE72 3BP",
             "source": "camra",
             "url": "https://camra.org.uk/pubs/161229"
+          },
+          {
+            "address_source_url": "https://www.navigationinnbreaston.co.uk/find",
+            "checked_at": "2026-11-07",
+            "match": "named_pub_building_and_independent_address",
+            "reference_address": "Risley Lane, Breaston",
+            "reference_coordinate": {
+              "lat": 52.90173968,
+              "lng": -1.31710521
+            },
+            "reference_name": "The Navigation",
+            "reference_postcode": "DE72 3BP",
+            "reviewed_by": "Codex source review",
+            "source": "openstreetmap-named-building",
+            "url": "https://www.openstreetmap.org/way/136939713"
           }
         ],
-        "lat": 52.9024,
-        "lng": -1.3172,
-        "source": "camra-and-fsa-location-audit"
+        "lat": 52.90173968,
+        "lng": -1.31710521,
+        "source": "reviewed-openstreetmap-named-building"
       }
     },
     "v-f51208c4-412a-5581-9e4d-cc17a72caaac": {

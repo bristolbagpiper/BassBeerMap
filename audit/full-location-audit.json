@@ -106,6 +106,28 @@
       "area": "Leicestershire",
       "country": "England",
       "dispense": "H",
+      "last": "2026 Q2",
+      "manual_action_required": false,
+      "next_action": "No pin check requested.",
+      "notes": "",
+      "pg": "Perm",
+      "place_name": "Swannington",
+      "postcode": "LE67 8QQ",
+      "priority": 0,
+      "pub_name": "Robin Hood",
+      "reasons": [],
+      "review_category": "informational",
+      "status": "not_checked",
+      "venue_id": "v-12016874-b271-5032-9ed9-e7c2669740f3",
+      "warnings": [
+        "Current pin has not been independently compared"
+      ]
+    },
+    {
+      "actionable": false,
+      "area": "Leicestershire",
+      "country": "England",
+      "dispense": "H",
       "last": "2026 Q3",
       "manual_action_required": false,
       "next_action": "No pin check requested.",
@@ -25869,55 +25891,6 @@
       "venue_id": "v-912ad3bb-befd-535b-b0c3-30ad8236317c",
       "warnings": [
         "FSA coordinate is 25-50m away; informational only"
-      ]
-    },
-    {
-      "actionable": false,
-      "area": "Leicestershire",
-      "checked_at": "2026-11-07",
-      "comparisons": [
-        {
-          "name_matches": 0,
-          "postcode_matches": 0,
-          "queried_postcode": "LE67 8QQ",
-          "status": "no_name_match"
-        }
-      ],
-      "confidence": "existing_evidence_needs_corroboration",
-      "country": "England",
-      "dispense": "H",
-      "independent_of_pin": true,
-      "last": "2026 Q2",
-      "listing": {
-        "postcode": "LE67 8QQ",
-        "pub_name": "Robin Hood"
-      },
-      "manual_action_required": false,
-      "next_action": "No pin check requested.",
-      "notes": "",
-      "owner_pin_confirmed": false,
-      "owner_reviewed": false,
-      "pg": "Perm",
-      "pin": {
-        "lat": 52.739,
-        "lng": -1.3856
-      },
-      "place_name": "Swannington",
-      "postcode": "LE67 8QQ",
-      "priority": 2,
-      "pub_name": "Robin Hood",
-      "reasons": [],
-      "reference": {
-        "name_matches": 0,
-        "postcode_matches": 0,
-        "queried_postcode": "LE67 8QQ",
-        "status": "no_name_match"
-      },
-      "review_category": "informational",
-      "status": "no_name_match",
-      "venue_id": "v-12016874-b271-5032-9ed9-e7c2669740f3",
-      "warnings": [
-        "FSA comparison is inconclusive; absence of a match does not contradict accepted evidence"
       ]
     },
     {
@@ -60995,9 +60968,9 @@
     "action_required_count": 1,
     "actionable_count": 1,
     "confidence_counts": {
-      "existing_evidence_needs_corroboration": 550,
+      "existing_evidence_needs_corroboration": 549,
       "independent_coordinate_agreement": 396,
-      "not_checked": 3,
+      "not_checked": 4,
       "owner_reviewed": 138
     },
     "counts": {
@@ -61005,8 +60978,8 @@
       "coordinate_agreement": 455,
       "coordinate_disagreement": 281,
       "nearby": 107,
-      "no_name_match": 174,
-      "not_checked": 3
+      "no_name_match": 173,
+      "not_checked": 4
     },
     "information_no_pin_check_count": 1086,
     "informational_count": 645,

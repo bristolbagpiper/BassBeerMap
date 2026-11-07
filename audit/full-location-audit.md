@@ -8,8 +8,8 @@ Locations with informational observations: 645 (may also have an actionable find
 
 ## Results
 
-- not_checked: 3
-- no_name_match: 174
+- not_checked: 4
+- no_name_match: 173
 - coordinate_disagreement: 281
 - ambiguous_or_missing_coordinates: 67
 - nearby: 107
@@ -17,9 +17,9 @@ Locations with informational observations: 645 (may also have an actionable find
 
 ## Confidence
 
-- not_checked: 3
+- not_checked: 4
 - owner_reviewed: 138
-- existing_evidence_needs_corroboration: 550
+- existing_evidence_needs_corroboration: 549
 - independent_coordinate_agreement: 396
 
 ## Limits
@@ -42,6 +42,7 @@ Locations with informational observations: 645 (may also have an actionable find
 |---|---|---|---|---|
 | Crown | Great Casterton | PE9 4AP | not_checked | Current pin has not been independently compared |
 | Jug and Glass | Lea | DE4 5GJ | not_checked | Current pin has not been independently compared |
+| Robin Hood | Swannington | LE67 8QQ | not_checked | Current pin has not been independently compared |
 | Station Inn | Swannington | LE67 8RE | not_checked | Current pin has not been independently compared |
 | 1852 Brewery Co | Leicester: South Wigston | LE18 2DH | no_name_match | FSA comparison is inconclusive; absence of a match does not contradict accepted evidence |
 | 45 Club (PMC) | Newcastle-U-L: Central | ST5 1DS | no_name_match | FSA comparison is inconclusive; absence of a match does not contradict accepted evidence |
@@ -506,7 +507,6 @@ Locations with informational observations: 645 (may also have an actionable find
 | Rising Sun | Middleton by Wirksworth | DE4 4LS | coordinate_disagreement | FSA coordinate is 58.9m from the accepted pin; informational only because the FSA geocode may be approximate |
 | Rising Sun | Church Gresley | DE11 9LY | coordinate_agreement | Owner reviewed this postcode discrepancy and confirmed the displayed pub building; listing postcode retained for provenance |
 | Roaring Meg | Biddulph | ST8 7EA | nearby | FSA coordinate is 25-50m away; informational only |
-| Robin Hood | Swannington | LE67 8QQ | no_name_match | FSA comparison is inconclusive; absence of a match does not contradict accepted evidence |
 | Robin Hood | Amblecote | DY8 4EQ | coordinate_disagreement | FSA coordinate is 54.2m from the accepted pin; informational only because the FSA geocode may be approximate |
 | Rockcliffe Arms | Whitley Bay | NE26 2DT | no_name_match | FSA comparison is inconclusive; absence of a match does not contradict accepted evidence |
 | Roebuck | Silverdale | ST5 6JH | coordinate_disagreement | FSA coordinate is 95.4m from the accepted pin; informational only because the FSA geocode may be approximate |

@@ -905,16 +905,25 @@
       "source_url": "https://camra.org.uk/pubs/150989"
     },
     "crown|great casterton|pe9 4ap": {
-      "audit_reason": "existing_pin_over_50m_from_matching_venue",
-      "checked_at": "2026-09-11",
-      "lat": 52.668826,
-      "lng": -0.520953,
-      "previous_difference_metres": 83.6,
-      "previous_lat": 52.6681116,
-      "previous_lng": -0.520565,
-      "previous_source": "openstreetmap-gb-extract",
-      "source": "camra-pubs-location-audit",
-      "source_url": "https://camra.org.uk/pubs/182867"
+      "audit_reason": "named_listed_pub_building_and_operator_address",
+      "checked_at": "2026-11-07",
+      "corroborating_source_url": "https://www.thecrowngreatcasterton.com/",
+      "lat": 52.6681028,
+      "lng": -0.52052412,
+      "previous_override": {
+        "audit_reason": "existing_pin_over_50m_from_matching_venue",
+        "checked_at": "2026-09-11",
+        "lat": 52.668826,
+        "lng": -0.520953,
+        "previous_difference_metres": 83.6,
+        "previous_lat": 52.6681116,
+        "previous_lng": -0.520565,
+        "previous_source": "openstreetmap-gb-extract",
+        "source": "camra-pubs-location-audit",
+        "source_url": "https://camra.org.uk/pubs/182867"
+      },
+      "source": "reviewed-historic-england-listed-building",
+      "source_url": "https://historicengland.org.uk/listing/the-list/list-entry/1073838"
     },
     "crown|llandegla|ll11 3ad": {
       "audit_reason": "postcode_fallback_replaced",
@@ -2877,18 +2886,27 @@
       "source_url": "https://www.openstreetmap.org/node/2995471143"
     },
     "station inn|swannington|le67 8re": {
-      "audit_reason": "camra_and_fsa_agree_within_50m_current_pin_does_not",
-      "camra_to_fsa_metres": 5.1,
-      "checked_at": "2026-09-11",
-      "corroborating_source_url": "https://api.ratings.food.gov.uk/Establishments?address=LE67+8RE&pageSize=100&pageNumber=1",
-      "lat": 52.7346,
-      "lng": -1.3936,
-      "previous_difference_metres": 99.2,
-      "previous_lat": 52.7354486,
-      "previous_lng": -1.393147,
-      "previous_source": "openstreetmap-gb-extract",
-      "source": "camra-and-fsa-location-audit",
-      "source_url": "https://camra.org.uk/pubs/171255"
+      "audit_reason": "corroborated_named_pub_location",
+      "checked_at": "2026-11-07",
+      "corroborating_source_url": "https://www.pubsgalore.co.uk/pubmap/63647/",
+      "lat": 52.7354486,
+      "lng": -1.393147,
+      "previous_override": {
+        "audit_reason": "camra_and_fsa_agree_within_50m_current_pin_does_not",
+        "camra_to_fsa_metres": 5.1,
+        "checked_at": "2026-09-11",
+        "corroborating_source_url": "https://api.ratings.food.gov.uk/Establishments?address=LE67+8RE&pageSize=100&pageNumber=1",
+        "lat": 52.7346,
+        "lng": -1.3936,
+        "previous_difference_metres": 99.2,
+        "previous_lat": 52.7354486,
+        "previous_lng": -1.393147,
+        "previous_source": "openstreetmap-gb-extract",
+        "source": "camra-and-fsa-location-audit",
+        "source_url": "https://camra.org.uk/pubs/171255"
+      },
+      "source": "reviewed-openstreetmap-named-venue",
+      "source_url": "https://www.openstreetmap.org/node/1934121876"
     },
     "steampacket inn|swanwick|de55 1ab": {
       "audit_reason": "existing_pin_over_50m_from_matching_venue",

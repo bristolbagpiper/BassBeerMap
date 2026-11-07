@@ -16781,7 +16781,7 @@
             "status": "resolved"
           }
         ],
-        "last_checked": "2026-11-03",
+        "last_checked": "2026-11-07",
         "manual_action_required": false,
         "next_action": "No pin check requested",
         "place_name": "Great Casterton",
@@ -16795,10 +16795,6 @@
           "camra": {
             "status": "confirmed",
             "url": "https://camra.org.uk/pubs/182867"
-          },
-          "fsa_independent": {
-            "status": "coordinate_disagreement",
-            "url": "https://ratings.food.gov.uk/business/1153539"
           }
         },
         "source_error": null,
@@ -39726,6 +39722,73 @@
         "postcode": "LE67 8RE",
         "pub_name": "Station Inn"
       },
+      "location_corrections": [
+        {
+          "checked_at": "2026-11-07",
+          "new_coordinate": {
+            "lat": 52.7354486,
+            "lng": -1.393147
+          },
+          "previous_pin": {
+            "evidence": [
+              {
+                "checked_at": "2026-10-11",
+                "difference_metres": 0.0,
+                "disposition": "superseded_by_source_refresh",
+                "match": "venue_name_and_full_postcode",
+                "reference_address": "6 Hough Hill",
+                "reference_coordinate": {
+                  "lat": 52.7346,
+                  "lng": -1.3936
+                },
+                "reference_name": "Station, Swannington - Changing Well Kept Ales",
+                "reference_postcode": "LE67 8RE",
+                "source": "camra",
+                "url": "https://camra.org.uk/pubs/171255"
+              },
+              {
+                "checked_at": "2026-11-03",
+                "difference_metres": 0.0,
+                "disposition": "superseded_by_source_refresh",
+                "match": "venue_name_and_full_postcode",
+                "reference_address": "6 Hough Hill",
+                "reference_coordinate": {
+                  "lat": 52.7346,
+                  "lng": -1.3936
+                },
+                "reference_name": "Station, Swannington - Changing Beers",
+                "reference_postcode": "LE67 8RE",
+                "source": "camra",
+                "url": "https://camra.org.uk/pubs/171255"
+              },
+              {
+                "checked_at": "2026-11-06",
+                "difference_metres": 0.0,
+                "match": "venue_name_and_full_postcode",
+                "reference_address": "6 Hough Hill",
+                "reference_coordinate": {
+                  "lat": 52.7346,
+                  "lng": -1.3936
+                },
+                "reference_name": "Station, Swannington - Changing Beers",
+                "reference_postcode": "LE67 8RE",
+                "source": "camra",
+                "url": "https://camra.org.uk/pubs/171255"
+              }
+            ],
+            "lat": 52.7346,
+            "lng": -1.3936,
+            "source": "camra-and-fsa-location-audit"
+          },
+          "reason": "The old point is near the postcode centroid. The named OSM pub marker and Pubs Galore pub map agree at 6 Hough Hill, consistent with Swannington Heritage Trust's description of the pub on the western side of the road.",
+          "reviewed_by": "Codex source review",
+          "source_urls": [
+            "https://www.openstreetmap.org/node/1934121876",
+            "https://www.pubsgalore.co.uk/pubmap/63647/",
+            "https://swannington-heritage.co.uk/swannington-history/public-houses/station-inn/"
+          ]
+        }
+      ],
       "verification_attempt": {
         "checked_at": "2026-11-06",
         "evidence": {
@@ -39785,6 +39848,7 @@
           {
             "checked_at": "2026-11-06",
             "difference_metres": 0.0,
+            "disposition": "superseded_by_named_venue_review",
             "match": "venue_name_and_full_postcode",
             "reference_address": "6 Hough Hill",
             "reference_coordinate": {
@@ -39795,11 +39859,27 @@
             "reference_postcode": "LE67 8RE",
             "source": "camra",
             "url": "https://camra.org.uk/pubs/171255"
+          },
+          {
+            "address_source_url": "https://swannington-heritage.co.uk/swannington-history/public-houses/station-inn/",
+            "checked_at": "2026-11-07",
+            "corroborating_source_url": "https://www.pubsgalore.co.uk/pubmap/63647/",
+            "match": "named_pub_marker_corroborated_by_pub_map_and_heritage_address",
+            "reference_address": "6 Hough Hill, Swannington",
+            "reference_coordinate": {
+              "lat": 52.7354486,
+              "lng": -1.393147
+            },
+            "reference_name": "Station Inn",
+            "reference_postcode": "LE67 8RE",
+            "reviewed_by": "Codex source review",
+            "source": "openstreetmap-named-venue",
+            "url": "https://www.openstreetmap.org/node/1934121876"
           }
         ],
-        "lat": 52.7346,
-        "lng": -1.3936,
-        "source": "camra-and-fsa-location-audit"
+        "lat": 52.7354486,
+        "lng": -1.393147,
+        "source": "reviewed-openstreetmap-named-venue"
       }
     },
     "v-1d6b0673-6a76-5c00-b89e-e0edef98a229": {
@@ -54297,6 +54377,73 @@
         "postcode": "DE4 5GJ",
         "pub_name": "Jug and Glass"
       },
+      "location_corrections": [
+        {
+          "checked_at": "2026-11-07",
+          "new_coordinate": {
+            "lat": 53.11430113,
+            "lng": -1.51369486
+          },
+          "previous_pin": {
+            "evidence": [
+              {
+                "checked_at": "2026-10-13",
+                "difference_metres": 31.5,
+                "disposition": "superseded_by_source_refresh",
+                "match": "venue_name_and_full_postcode",
+                "reference_address": "Main Road",
+                "reference_coordinate": {
+                  "lat": 53.1142,
+                  "lng": -1.5133
+                },
+                "reference_name": "Jug & Glass, Lea - Built 1781 Country Inn with Rooms",
+                "reference_postcode": "DE4 5GJ",
+                "source": "camra",
+                "url": "https://camra.org.uk/pubs/165832"
+              },
+              {
+                "checked_at": "2026-11-03",
+                "difference_metres": 31.5,
+                "disposition": "superseded_by_source_refresh",
+                "match": "venue_name_and_full_postcode",
+                "reference_address": "Main Road",
+                "reference_coordinate": {
+                  "lat": 53.1142,
+                  "lng": -1.5133
+                },
+                "reference_name": "Jug & Glass, Lea - White Peak Country Inn",
+                "reference_postcode": "DE4 5GJ",
+                "source": "camra",
+                "url": "https://camra.org.uk/pubs/165832"
+              },
+              {
+                "checked_at": "2026-11-06",
+                "difference_metres": 31.5,
+                "match": "venue_name_and_full_postcode",
+                "reference_address": "Main Road",
+                "reference_coordinate": {
+                  "lat": 53.1142,
+                  "lng": -1.5133
+                },
+                "reference_name": "Jug & Glass, Lea - White Peak Country Inn",
+                "reference_postcode": "DE4 5GJ",
+                "source": "camra",
+                "url": "https://camra.org.uk/pubs/165832"
+              }
+            ],
+            "lat": 53.114352,
+            "lng": -1.512902,
+            "source": "food-standards-agency-fhrs"
+          },
+          "reason": "Historic England locates the named pub at National Grid Reference SK 32648 57568. Its published point falls inside the mapped building outline at the operator's confirmed address.",
+          "reviewed_by": "Codex source review",
+          "source_urls": [
+            "https://historicengland.org.uk/listing/the-list/list-entry/1335319",
+            "https://jugandglasslea.uk/",
+            "https://www.openstreetmap.org/way/626734771"
+          ]
+        }
+      ],
       "verification_attempt": {
         "checked_at": "2026-11-06",
         "evidence": {
@@ -54356,6 +54503,7 @@
           {
             "checked_at": "2026-11-06",
             "difference_metres": 31.5,
+            "disposition": "superseded_by_named_venue_review",
             "match": "venue_name_and_full_postcode",
             "reference_address": "Main Road",
             "reference_coordinate": {
@@ -54366,11 +54514,28 @@
             "reference_postcode": "DE4 5GJ",
             "source": "camra",
             "url": "https://camra.org.uk/pubs/165832"
+          },
+          {
+            "address_source_url": "https://jugandglasslea.uk/",
+            "building_footprint_url": "https://www.openstreetmap.org/way/626734771",
+            "checked_at": "2026-11-07",
+            "match": "named_listed_pub_building_and_operator_address",
+            "national_grid_reference": "SK 32648 57568",
+            "reference_address": "Main Road, Lea",
+            "reference_coordinate": {
+              "lat": 53.11430113,
+              "lng": -1.51369486
+            },
+            "reference_name": "The Jug and Glass Public House",
+            "reference_postcode": "DE4 5GJ",
+            "reviewed_by": "Codex source review",
+            "source": "historic-england-listed-building",
+            "url": "https://historicengland.org.uk/listing/the-list/list-entry/1335319"
           }
         ],
-        "lat": 53.114352,
-        "lng": -1.512902,
-        "source": "food-standards-agency-fhrs"
+        "lat": 53.11430113,
+        "lng": -1.51369486,
+        "source": "reviewed-historic-england-listed-building"
       }
     },
     "v-379ea64d-386c-5b45-be0f-561f501307aa": {
@@ -154683,6 +154848,58 @@
         "postcode": "PE9 4AP",
         "pub_name": "Crown"
       },
+      "location_corrections": [
+        {
+          "checked_at": "2026-11-07",
+          "new_coordinate": {
+            "lat": 52.6681028,
+            "lng": -0.52052412
+          },
+          "previous_pin": {
+            "evidence": [
+              {
+                "checked_at": "2026-10-26",
+                "difference_metres": 0.0,
+                "disposition": "superseded_by_source_refresh",
+                "match": "venue_name_and_full_postcode",
+                "reference_address": "Main Street",
+                "reference_coordinate": {
+                  "lat": 52.668826,
+                  "lng": -0.520953
+                },
+                "reference_name": "Crown, Great Casterton - Dog Friendly Pub",
+                "reference_postcode": "PE9 4AP",
+                "source": "camra",
+                "url": "https://camra.org.uk/pubs/182867"
+              },
+              {
+                "checked_at": "2026-11-03",
+                "difference_metres": 0.0,
+                "match": "venue_name_and_full_postcode",
+                "reference_address": "Main Street",
+                "reference_coordinate": {
+                  "lat": 52.668826,
+                  "lng": -0.520953
+                },
+                "reference_name": "Crown, Great Casterton - Dog Friendly Pub",
+                "reference_postcode": "PE9 4AP",
+                "source": "camra",
+                "url": "https://camra.org.uk/pubs/182867"
+              }
+            ],
+            "lat": 52.668826,
+            "lng": -0.520953,
+            "source": "camra-pubs-location-audit"
+          },
+          "reason": "Historic England locates the named pub at National Grid Reference TF 00145 08848. Its published point falls inside the mapped building outline at the operator's confirmed address.",
+          "reviewed_by": "Codex source review",
+          "source_urls": [
+            "https://historicengland.org.uk/listing/the-list/list-entry/1073838",
+            "https://www.thecrowngreatcasterton.com/",
+            "https://www.openstreetmap.org/way/1294720185"
+          ]
+        }
+      ],
       "verification_attempt": {
         "checked_at": "2026-11-03",
         "evidence": {
@@ -154727,6 +154944,7 @@
           {
             "checked_at": "2026-11-03",
             "difference_metres": 0.0,
+            "disposition": "superseded_by_named_venue_review",
             "match": "venue_name_and_full_postcode",
             "reference_address": "Main Street",
             "reference_coordinate": {
@@ -154737,11 +154955,28 @@
             "reference_postcode": "PE9 4AP",
             "source": "camra",
             "url": "https://camra.org.uk/pubs/182867"
+          },
+          {
+            "address_source_url": "https://www.thecrowngreatcasterton.com/",
+            "building_footprint_url": "https://www.openstreetmap.org/way/1294720185",
+            "checked_at": "2026-11-07",
+            "match": "named_listed_pub_building_and_operator_address",
+            "national_grid_reference": "TF 00145 08848",
+            "reference_address": "Main Street, Great Casterton",
+            "reference_coordinate": {
+              "lat": 52.6681028,
+              "lng": -0.52052412
+            },
+            "reference_name": "The Crown Inn",
+            "reference_postcode": "PE9 4AP",
+            "reviewed_by": "Codex source review",
+            "source": "historic-england-listed-building",
+            "url": "https://historicengland.org.uk/listing/the-list/list-entry/1073838"
           }
         ],
-        "lat": 52.668826,
-        "lng": -0.520953,
-        "source": "camra-pubs-location-audit"
+        "lat": 52.6681028,
+        "lng": -0.52052412,
+        "source": "reviewed-historic-england-listed-building"
       }
     },
     "v-dc8686e7-6bc9-527e-9a90-7f72211c77ba": {

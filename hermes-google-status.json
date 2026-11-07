@@ -1,13 +1,13 @@
 {
-  "checked_at": "2026-11-07T10:20:59.214120+00:00",
+  "checked_at": "2026-11-07T10:32:38.895485+00:00",
   "configured": true,
   "counts": {
     "attempted_venue_count": 1087,
-    "checked_this_run": 42,
-    "current": 1086,
-    "review_count": 78,
+    "checked_this_run": 43,
+    "current": 1087,
+    "review_count": 77,
     "total": 1087,
-    "unchecked_or_stale": 1
+    "unchecked_or_stale": 0
   },
   "directory_binding_signature": "c4e872c6e84a5dad9dc7a674cc63d3bacd9e46c695364cfc1c5a5f4b9a7a28ee",
   "findings": [
@@ -471,15 +471,6 @@
       "venue_id": "v-99412060-4aa7-5602-85e3-0ddf38526a87"
     },
     {
-      "binding_signature": "d5b22eaf807b952afbc9e9a0040f52642896d02aec45be3573136dd0fdc83f1c",
-      "place_name": "Shardlow",
-      "postcode": "DE72 2WA",
-      "pub_name": "Navigation",
-      "reason": "Google results are incomplete or ambiguous; no unique place accepted",
-      "status": "review_needed",
-      "venue_id": "v-9b0214b5-0b89-530a-9485-b8662012f510"
-    },
-    {
       "binding_signature": "5ed55c1c78458d0c02e4b3fd07a22a18d763c395f0eff08a2ec0b152a55dbe25",
       "place_name": "Derby: Alvaston",
       "postcode": "DE24 0UQ",
@@ -715,13 +706,11 @@
     }
   ],
   "hard_failure": false,
-  "issues": [
-    "Google comparison coverage is incomplete; untested, stale or inconclusive pubs remain"
-  ],
+  "issues": [],
   "provider": "hermes-browser",
   "run_attempt": 1,
-  "run_id": "edac326a45ae4ee4a8b0b050458a5c49",
+  "run_id": "cb600f309e5243a8940ce0c407f51fa7",
   "run_url": "",
   "schema_version": 1,
-  "source_execution_finished_at": "2026-11-07T07:44:35.756021+00:00"
+  "source_execution_finished_at": "2026-11-07T10:32:34.271402+00:00"
 }

@@ -1,6 +1,28 @@
 {
   "records": [
     {
+      "actionable": false,
+      "area": "Rutland",
+      "country": "England",
+      "dispense": "H",
+      "last": "2026 Q1",
+      "manual_action_required": false,
+      "next_action": "No pin check requested.",
+      "notes": "",
+      "pg": "Perm",
+      "place_name": "Great Casterton",
+      "postcode": "PE9 4AP",
+      "priority": 0,
+      "pub_name": "Crown",
+      "reasons": [],
+      "review_category": "informational",
+      "status": "not_checked",
+      "venue_id": "v-dc3f2dcb-ee6f-59fa-8966-a9fab3cfca5b",
+      "warnings": [
+        "Current pin has not been independently compared"
+      ]
+    },
+    {
       "actionable": true,
       "area": "Leicestershire",
       "checked_at": "2026-11-05",
@@ -55,6 +77,50 @@
       "venue_id": "v-b1f768d3-f5ed-5eae-a199-6b21559ba452",
       "warnings": [
         "FSA comparison is inconclusive; absence of a match does not contradict accepted evidence"
+      ]
+    },
+    {
+      "actionable": false,
+      "area": "Derbyshire",
+      "country": "England",
+      "dispense": "H",
+      "last": "2026 Q2",
+      "manual_action_required": false,
+      "next_action": "No pin check requested.",
+      "notes": "",
+      "pg": "Perm",
+      "place_name": "Lea",
+      "postcode": "DE4 5GJ",
+      "priority": 0,
+      "pub_name": "Jug and Glass",
+      "reasons": [],
+      "review_category": "informational",
+      "status": "not_checked",
+      "venue_id": "v-37880b55-26dd-518b-a31f-17f42d71a286",
+      "warnings": [
+        "Current pin has not been independently compared"
+      ]
+    },
+    {
+      "actionable": false,
+      "area": "Leicestershire",
+      "country": "England",
+      "dispense": "H",
+      "last": "2026 Q3",
+      "manual_action_required": false,
+      "next_action": "No pin check requested.",
+      "notes": "",
+      "pg": "Guest",
+      "place_name": "Swannington",
+      "postcode": "LE67 8RE",
+      "priority": 0,
+      "pub_name": "Station Inn",
+      "reasons": [],
+      "review_category": "informational",
+      "status": "not_checked",
+      "venue_id": "v-1d20ec43-7322-51f1-87f4-86272f796d0c",
+      "warnings": [
+        "Current pin has not been independently compared"
       ]
     },
     {
@@ -9507,65 +9573,6 @@
       "venue_id": "v-c95b7113-75f0-55ea-8270-b86498db90e7",
       "warnings": [
         "FSA coordinate is 25-50m away; informational only"
-      ]
-    },
-    {
-      "actionable": false,
-      "area": "Rutland",
-      "checked_at": "2026-11-03",
-      "comparisons": [
-        {
-          "address": "The Crown Inn, Old Great North Road, Great Casterton, Stamford",
-          "difference_metres": 72.5,
-          "lat": 52.66926,
-          "lng": -0.521756,
-          "name": "The Crown Inn",
-          "postcode": "PE9 4AP",
-          "queried_postcode": "PE9 4AP",
-          "status": "coordinate_disagreement",
-          "url": "https://ratings.food.gov.uk/business/1153539"
-        }
-      ],
-      "confidence": "existing_evidence_needs_corroboration",
-      "country": "England",
-      "dispense": "H",
-      "independent_of_pin": true,
-      "last": "2026 Q1",
-      "listing": {
-        "postcode": "PE9 4AP",
-        "pub_name": "Crown"
-      },
-      "manual_action_required": false,
-      "next_action": "No pin check requested.",
-      "notes": "",
-      "owner_pin_confirmed": false,
-      "owner_reviewed": false,
-      "pg": "Perm",
-      "pin": {
-        "lat": 52.668826,
-        "lng": -0.520953
-      },
-      "place_name": "Great Casterton",
-      "postcode": "PE9 4AP",
-      "priority": 2,
-      "pub_name": "Crown",
-      "reasons": [],
-      "reference": {
-        "address": "The Crown Inn, Old Great North Road, Great Casterton, Stamford",
-        "difference_metres": 72.5,
-        "lat": 52.66926,
-        "lng": -0.521756,
-        "name": "The Crown Inn",
-        "postcode": "PE9 4AP",
-        "queried_postcode": "PE9 4AP",
-        "status": "coordinate_disagreement",
-        "url": "https://ratings.food.gov.uk/business/1153539"
-      },
-      "review_category": "informational",
-      "status": "coordinate_disagreement",
-      "venue_id": "v-dc3f2dcb-ee6f-59fa-8966-a9fab3cfca5b",
-      "warnings": [
-        "FSA coordinate is 72.5m from the accepted pin; informational only because the FSA geocode may be approximate"
       ]
     },
     {
@@ -47646,63 +47653,6 @@
     },
     {
       "actionable": false,
-      "area": "Derbyshire",
-      "checked_at": "2026-11-03",
-      "comparisons": [
-        {
-          "address": "Lea Main Road Lea Matlock Derbyshire",
-          "difference_metres": 0.0,
-          "lat": 53.114352,
-          "lng": -1.512902,
-          "name": "The Jug And Glass",
-          "postcode": "DE4 5GJ",
-          "queried_postcode": "DE4 5GJ",
-          "status": "coordinate_agreement",
-          "url": "https://ratings.food.gov.uk/business/780"
-        }
-      ],
-      "confidence": "independent_coordinate_agreement",
-      "country": "England",
-      "dispense": "H",
-      "independent_of_pin": true,
-      "last": "2026 Q2",
-      "listing": {
-        "postcode": "DE4 5GJ",
-        "pub_name": "Jug and Glass"
-      },
-      "manual_action_required": false,
-      "next_action": "No pin check requested.",
-      "notes": "",
-      "owner_pin_confirmed": false,
-      "owner_reviewed": false,
-      "pg": "Perm",
-      "pin": {
-        "lat": 53.114352,
-        "lng": -1.512902
-      },
-      "place_name": "Lea",
-      "postcode": "DE4 5GJ",
-      "priority": 3,
-      "pub_name": "Jug and Glass",
-      "reasons": [],
-      "reference": {
-        "address": "Lea Main Road Lea Matlock Derbyshire",
-        "difference_metres": 0.0,
-        "lat": 53.114352,
-        "lng": -1.512902,
-        "name": "The Jug And Glass",
-        "postcode": "DE4 5GJ",
-        "queried_postcode": "DE4 5GJ",
-        "status": "coordinate_agreement",
-        "url": "https://ratings.food.gov.uk/business/780"
-      },
-      "review_category": "informational",
-      "status": "coordinate_agreement",
-      "venue_id": "v-37880b55-26dd-518b-a31f-17f42d71a286",
-      "warnings": []
-    },
-    {
-      "actionable": false,
       "area": "Nottinghamshire",
       "checked_at": "2026-11-03",
       "comparisons": [
@@ -56652,63 +56602,6 @@
     },
     {
       "actionable": false,
-      "area": "Leicestershire",
-      "checked_at": "2026-11-03",
-      "comparisons": [
-        {
-          "address": "6 Hough Hill, Swannington, Coalville, Leicestershire",
-          "difference_metres": 5.1,
-          "lat": 52.73463,
-          "lng": -1.393657,
-          "name": "Station Inn",
-          "postcode": "LE67 8RE",
-          "queried_postcode": "LE67 8RE",
-          "status": "coordinate_agreement",
-          "url": "https://ratings.food.gov.uk/business/25392"
-        }
-      ],
-      "confidence": "independent_coordinate_agreement",
-      "country": "England",
-      "dispense": "H",
-      "independent_of_pin": true,
-      "last": "2026 Q3",
-      "listing": {
-        "postcode": "LE67 8RE",
-        "pub_name": "Station Inn"
-      },
-      "manual_action_required": false,
-      "next_action": "No pin check requested.",
-      "notes": "",
-      "owner_pin_confirmed": false,
-      "owner_reviewed": false,
-      "pg": "Guest",
-      "pin": {
-        "lat": 52.7346,
-        "lng": -1.3936
-      },
-      "place_name": "Swannington",
-      "postcode": "LE67 8RE",
-      "priority": 3,
-      "pub_name": "Station Inn",
-      "reasons": [],
-      "reference": {
-        "address": "6 Hough Hill, Swannington, Coalville, Leicestershire",
-        "difference_metres": 5.1,
-        "lat": 52.73463,
-        "lng": -1.393657,
-        "name": "Station Inn",
-        "postcode": "LE67 8RE",
-        "queried_postcode": "LE67 8RE",
-        "status": "coordinate_agreement",
-        "url": "https://ratings.food.gov.uk/business/25392"
-      },
-      "review_category": "informational",
-      "status": "coordinate_agreement",
-      "venue_id": "v-1d20ec43-7322-51f1-87f4-86272f796d0c",
-      "warnings": []
-    },
-    {
-      "actionable": false,
       "area": "Devon",
       "checked_at": "2026-11-03",
       "comparisons": [
@@ -61102,19 +60995,21 @@
     "action_required_count": 1,
     "actionable_count": 1,
     "confidence_counts": {
-      "existing_evidence_needs_corroboration": 551,
-      "independent_coordinate_agreement": 398,
+      "existing_evidence_needs_corroboration": 550,
+      "independent_coordinate_agreement": 396,
+      "not_checked": 3,
       "owner_reviewed": 138
     },
     "counts": {
       "ambiguous_or_missing_coordinates": 67,
-      "coordinate_agreement": 457,
-      "coordinate_disagreement": 282,
+      "coordinate_agreement": 455,
+      "coordinate_disagreement": 281,
       "nearby": 107,
-      "no_name_match": 174
+      "no_name_match": 174,
+      "not_checked": 3
     },
     "information_no_pin_check_count": 1086,
-    "informational_count": 643,
+    "informational_count": 645,
     "limitations": [
       "Coordinate agreement does not prove the correct building or current Bass availability.",
       "Owner-approved coordinates take priority; CAMRA remains the primary automated reference.",

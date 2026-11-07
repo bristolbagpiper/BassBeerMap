@@ -4,21 +4,23 @@ Locations: 1087
 
 Action required: 1
 Information — no pin check requested: 1086
-Locations with informational observations: 643 (may also have an actionable finding)
+Locations with informational observations: 645 (may also have an actionable finding)
 
 ## Results
 
+- not_checked: 3
 - no_name_match: 174
-- coordinate_disagreement: 282
+- coordinate_disagreement: 281
 - ambiguous_or_missing_coordinates: 67
 - nearby: 107
-- coordinate_agreement: 457
+- coordinate_agreement: 455
 
 ## Confidence
 
+- not_checked: 3
 - owner_reviewed: 138
-- existing_evidence_needs_corroboration: 551
-- independent_coordinate_agreement: 398
+- existing_evidence_needs_corroboration: 550
+- independent_coordinate_agreement: 396
 
 ## Limits
 
@@ -38,6 +40,9 @@ Locations with informational observations: 643 (may also have an actionable find
 
 | Pub | Place | Postcode | Result | Information |
 |---|---|---|---|---|
+| Crown | Great Casterton | PE9 4AP | not_checked | Current pin has not been independently compared |
+| Jug and Glass | Lea | DE4 5GJ | not_checked | Current pin has not been independently compared |
+| Station Inn | Swannington | LE67 8RE | not_checked | Current pin has not been independently compared |
 | 1852 Brewery Co | Leicester: South Wigston | LE18 2DH | no_name_match | FSA comparison is inconclusive; absence of a match does not contradict accepted evidence |
 | 45 Club (PMC) | Newcastle-U-L: Central | ST5 1DS | no_name_match | FSA comparison is inconclusive; absence of a match does not contradict accepted evidence |
 | Adelphi | Leeds: Central | LS10 1JQ | coordinate_disagreement | FSA coordinate is 158.8m from the accepted pin; informational only because the FSA geocode may be approximate |
@@ -210,7 +215,6 @@ Locations with informational observations: 643 (may also have an actionable find
 | Crown | Chilton | OX11 0RZ | no_name_match | FSA comparison is inconclusive; absence of a match does not contradict accepted evidence |
 | Crown | Oxford: Central | OX1 3HB | nearby | FSA coordinate is 25-50m away; informational only |
 | Crown | Elford | B79 9DB | nearby | FSA coordinate is 25-50m away; informational only |
-| Crown | Great Casterton | PE9 4AP | coordinate_disagreement | FSA coordinate is 72.5m from the accepted pin; informational only because the FSA geocode may be approximate |
 | Crown | Yoxall | DE13 8NQ | coordinate_disagreement | FSA coordinate is 123.2m from the accepted pin; informational only because the FSA geocode may be approximate |
 | Crown Inn | Manfield | DL2 2RF | ambiguous_or_missing_coordinates | FSA comparison is inconclusive; absence of a match does not contradict accepted evidence |
 | Crown Inn | Marston Montgomery | DE6 2FF | coordinate_disagreement | FSA coordinate is 146.1m from the accepted pin; informational only because the FSA geocode may be approximate |
@@ -888,7 +892,6 @@ Locations with informational observations: 643 (may also have an actionable find
 | Joiners Arms | Morpeth | NE61 1XZ | coordinate_agreement | No pin check requested. |
 | Jolly Sailor | Macclesfield | SK11 6HN | coordinate_agreement | No pin check requested. |
 | Jolly Sailor | Hemington | DE74 2RB | coordinate_agreement | No pin check requested. |
-| Jug and Glass | Lea | DE4 5GJ | coordinate_agreement | No pin check requested. |
 | Keans Head | Nottingham: Central | NG1 1QA | coordinate_agreement | No pin check requested. |
 | King William IV | St Albans: Bernards Heath | AL1 4AH | coordinate_agreement | No pin check requested. |
 | King of Prussia | Kingsbridge | TQ7 1JB | coordinate_agreement | No pin check requested. |
@@ -1046,7 +1049,6 @@ Locations with informational observations: 643 (may also have an actionable find
 | Station Hotel | Abergavenny/Y Fenni | NP7 5UH | coordinate_agreement | No pin check requested. |
 | Station Hotel | Oakengates | TF2 6DU | coordinate_agreement | No pin check requested. |
 | Station House | Durham | DH1 4SE | coordinate_agreement | No pin check requested. |
-| Station Inn | Swannington | LE67 8RE | coordinate_agreement | No pin check requested. |
 | Stoke Canon | Stoke Canon | EX5 4AR | coordinate_agreement | No pin check requested. |
 | Stretton Fox | Stretton | WA4 4NU | coordinate_agreement | No pin check requested. |
 | Sun | Stockton-on-Tees | TS18 1SU | coordinate_agreement | No pin check requested. |

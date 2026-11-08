@@ -1,9 +1,9 @@
 {
-  "checked_at": "2026-11-07T11:38:42.535381+00:00",
+  "checked_at": "2026-11-08T08:14:18.387000+00:00",
   "configured": true,
   "counts": {
     "attempted_venue_count": 1087,
-    "checked_this_run": 54,
+    "checked_this_run": 40,
     "current": 1087,
     "review_count": 67,
     "total": 1087,
@@ -616,11 +616,13 @@
     }
   ],
   "hard_failure": false,
-  "issues": [],
+  "issues": [
+    "Hermes Google browser source was unavailable; previous successful checks were retained"
+  ],
   "provider": "hermes-browser",
   "run_attempt": 1,
-  "run_id": "f523c4ed659e440c88d29ce022a6799b",
+  "run_id": "d871d5920de4446d83318165e7df9edd",
   "run_url": "",
   "schema_version": 1,
-  "source_execution_finished_at": "2026-11-07T11:38:26.673191+00:00"
+  "source_execution_finished_at": "2026-11-08T07:44:40.177528+00:00"
 }

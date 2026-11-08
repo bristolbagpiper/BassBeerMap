@@ -1,28 +1,6 @@
 {
   "records": [
     {
-      "actionable": false,
-      "area": "Rutland",
-      "country": "England",
-      "dispense": "H",
-      "last": "2026 Q1",
-      "manual_action_required": false,
-      "next_action": "No pin check requested.",
-      "notes": "",
-      "pg": "Perm",
-      "place_name": "Great Casterton",
-      "postcode": "PE9 4AP",
-      "priority": 0,
-      "pub_name": "Crown",
-      "reasons": [],
-      "review_category": "informational",
-      "status": "not_checked",
-      "venue_id": "v-dc3f2dcb-ee6f-59fa-8966-a9fab3cfca5b",
-      "warnings": [
-        "Current pin has not been independently compared"
-      ]
-    },
-    {
       "actionable": true,
       "area": "Leicestershire",
       "checked_at": "2026-11-05",
@@ -77,72 +55,6 @@
       "venue_id": "v-b1f768d3-f5ed-5eae-a199-6b21559ba452",
       "warnings": [
         "FSA comparison is inconclusive; absence of a match does not contradict accepted evidence"
-      ]
-    },
-    {
-      "actionable": false,
-      "area": "Derbyshire",
-      "country": "England",
-      "dispense": "H",
-      "last": "2026 Q2",
-      "manual_action_required": false,
-      "next_action": "No pin check requested.",
-      "notes": "",
-      "pg": "Perm",
-      "place_name": "Lea",
-      "postcode": "DE4 5GJ",
-      "priority": 0,
-      "pub_name": "Jug and Glass",
-      "reasons": [],
-      "review_category": "informational",
-      "status": "not_checked",
-      "venue_id": "v-37880b55-26dd-518b-a31f-17f42d71a286",
-      "warnings": [
-        "Current pin has not been independently compared"
-      ]
-    },
-    {
-      "actionable": false,
-      "area": "Leicestershire",
-      "country": "England",
-      "dispense": "H",
-      "last": "2026 Q2",
-      "manual_action_required": false,
-      "next_action": "No pin check requested.",
-      "notes": "",
-      "pg": "Perm",
-      "place_name": "Swannington",
-      "postcode": "LE67 8QQ",
-      "priority": 0,
-      "pub_name": "Robin Hood",
-      "reasons": [],
-      "review_category": "informational",
-      "status": "not_checked",
-      "venue_id": "v-12016874-b271-5032-9ed9-e7c2669740f3",
-      "warnings": [
-        "Current pin has not been independently compared"
-      ]
-    },
-    {
-      "actionable": false,
-      "area": "Leicestershire",
-      "country": "England",
-      "dispense": "H",
-      "last": "2026 Q3",
-      "manual_action_required": false,
-      "next_action": "No pin check requested.",
-      "notes": "",
-      "pg": "Guest",
-      "place_name": "Swannington",
-      "postcode": "LE67 8RE",
-      "priority": 0,
-      "pub_name": "Station Inn",
-      "reasons": [],
-      "review_category": "informational",
-      "status": "not_checked",
-      "venue_id": "v-1d20ec43-7322-51f1-87f4-86272f796d0c",
-      "warnings": [
-        "Current pin has not been independently compared"
       ]
     },
     {
@@ -2728,7 +2640,7 @@
     {
       "actionable": false,
       "area": "Merseyside",
-      "checked_at": "2026-11-03",
+      "checked_at": "2026-11-08",
       "comparisons": [
         {
           "name_matches": 1,
@@ -3805,7 +3717,7 @@
     {
       "actionable": false,
       "area": "Derbyshire",
-      "checked_at": "2026-11-03",
+      "checked_at": "2026-11-08",
       "comparisons": [
         {
           "name_matches": 0,
@@ -4571,7 +4483,7 @@
     {
       "actionable": false,
       "area": "Nottinghamshire",
-      "checked_at": "2026-11-03",
+      "checked_at": "2026-11-08",
       "comparisons": [
         {
           "address": "Bread And Bitter Public House, Woodthorpe Drive, Woodthorpe, Nottinghamshire",
@@ -8991,7 +8903,7 @@
     {
       "actionable": false,
       "area": "North Wales",
-      "checked_at": "2026-11-03",
+      "checked_at": "2026-11-08",
       "comparisons": [
         {
           "name_matches": 1,
@@ -9595,6 +9507,65 @@
       "venue_id": "v-c95b7113-75f0-55ea-8270-b86498db90e7",
       "warnings": [
         "FSA coordinate is 25-50m away; informational only"
+      ]
+    },
+    {
+      "actionable": false,
+      "area": "Rutland",
+      "checked_at": "2026-11-08",
+      "comparisons": [
+        {
+          "address": "The Crown Inn, Old Great North Road, Great Casterton, Stamford",
+          "difference_metres": 153.2,
+          "lat": 52.66926,
+          "lng": -0.521756,
+          "name": "The Crown Inn",
+          "postcode": "PE9 4AP",
+          "queried_postcode": "PE9 4AP",
+          "status": "coordinate_disagreement",
+          "url": "https://ratings.food.gov.uk/business/1153539"
+        }
+      ],
+      "confidence": "existing_evidence_needs_corroboration",
+      "country": "England",
+      "dispense": "H",
+      "independent_of_pin": true,
+      "last": "2026 Q1",
+      "listing": {
+        "postcode": "PE9 4AP",
+        "pub_name": "Crown"
+      },
+      "manual_action_required": false,
+      "next_action": "No pin check requested.",
+      "notes": "",
+      "owner_pin_confirmed": false,
+      "owner_reviewed": false,
+      "pg": "Perm",
+      "pin": {
+        "lat": 52.6681028,
+        "lng": -0.52052412
+      },
+      "place_name": "Great Casterton",
+      "postcode": "PE9 4AP",
+      "priority": 2,
+      "pub_name": "Crown",
+      "reasons": [],
+      "reference": {
+        "address": "The Crown Inn, Old Great North Road, Great Casterton, Stamford",
+        "difference_metres": 153.2,
+        "lat": 52.66926,
+        "lng": -0.521756,
+        "name": "The Crown Inn",
+        "postcode": "PE9 4AP",
+        "queried_postcode": "PE9 4AP",
+        "status": "coordinate_disagreement",
+        "url": "https://ratings.food.gov.uk/business/1153539"
+      },
+      "review_category": "informational",
+      "status": "coordinate_disagreement",
+      "venue_id": "v-dc3f2dcb-ee6f-59fa-8966-a9fab3cfca5b",
+      "warnings": [
+        "FSA coordinate is 153.2m from the accepted pin; informational only because the FSA geocode may be approximate"
       ]
     },
     {
@@ -12002,7 +11973,7 @@
     {
       "actionable": false,
       "area": "Lincolnshire",
-      "checked_at": "2026-11-03",
+      "checked_at": "2026-11-08",
       "comparisons": [
         {
           "address": "Five Horse Shoes Inn, Horse Shoe Lane, Barholm, Lincolnshire",
@@ -13480,7 +13451,7 @@
     {
       "actionable": false,
       "area": "Staffordshire",
-      "checked_at": "2026-11-03",
+      "checked_at": "2026-11-08",
       "comparisons": [
         {
           "name_matches": 0,
@@ -16910,6 +16881,65 @@
     },
     {
       "actionable": false,
+      "area": "Derbyshire",
+      "checked_at": "2026-11-08",
+      "comparisons": [
+        {
+          "address": "Lea Main Road Lea Matlock Derbyshire",
+          "difference_metres": 53.2,
+          "lat": 53.114352,
+          "lng": -1.512902,
+          "name": "The Jug And Glass",
+          "postcode": "DE4 5GJ",
+          "queried_postcode": "DE4 5GJ",
+          "status": "coordinate_disagreement",
+          "url": "https://ratings.food.gov.uk/business/780"
+        }
+      ],
+      "confidence": "existing_evidence_needs_corroboration",
+      "country": "England",
+      "dispense": "H",
+      "independent_of_pin": true,
+      "last": "2026 Q2",
+      "listing": {
+        "postcode": "DE4 5GJ",
+        "pub_name": "Jug and Glass"
+      },
+      "manual_action_required": false,
+      "next_action": "No pin check requested.",
+      "notes": "",
+      "owner_pin_confirmed": false,
+      "owner_reviewed": false,
+      "pg": "Perm",
+      "pin": {
+        "lat": 53.11430113,
+        "lng": -1.51369486
+      },
+      "place_name": "Lea",
+      "postcode": "DE4 5GJ",
+      "priority": 2,
+      "pub_name": "Jug and Glass",
+      "reasons": [],
+      "reference": {
+        "address": "Lea Main Road Lea Matlock Derbyshire",
+        "difference_metres": 53.2,
+        "lat": 53.114352,
+        "lng": -1.512902,
+        "name": "The Jug And Glass",
+        "postcode": "DE4 5GJ",
+        "queried_postcode": "DE4 5GJ",
+        "status": "coordinate_disagreement",
+        "url": "https://ratings.food.gov.uk/business/780"
+      },
+      "review_category": "informational",
+      "status": "coordinate_disagreement",
+      "venue_id": "v-37880b55-26dd-518b-a31f-17f42d71a286",
+      "warnings": [
+        "FSA coordinate is 53.2m from the accepted pin; informational only because the FSA geocode may be approximate"
+      ]
+    },
+    {
+      "actionable": false,
       "area": "",
       "checked_at": "2026-11-03",
       "comparisons": [
@@ -17746,7 +17776,7 @@
     {
       "actionable": false,
       "area": "Greater Manchester",
-      "checked_at": "2026-11-03",
+      "checked_at": "2026-11-08",
       "comparisons": [
         {
           "address": "18 Fir Road, Bramhall, Stockport",
@@ -19782,7 +19812,7 @@
     {
       "actionable": false,
       "area": "Derbyshire",
-      "checked_at": "2026-11-03",
+      "checked_at": "2026-11-08",
       "comparisons": [
         {
           "name_matches": 0,
@@ -21740,7 +21770,7 @@
     {
       "actionable": false,
       "area": "Somerset",
-      "checked_at": "2026-11-03",
+      "checked_at": "2026-11-08",
       "comparisons": [
         {
           "name_matches": 1,
@@ -22280,7 +22310,7 @@
     {
       "actionable": false,
       "area": "Cambridgeshire",
-      "checked_at": "2026-11-03",
+      "checked_at": "2026-11-08",
       "comparisons": [
         {
           "address": "82 Oundle Road, Woodston, Peterborough",
@@ -22899,7 +22929,7 @@
     {
       "actionable": false,
       "area": "Warwickshire",
-      "checked_at": "2026-11-03",
+      "checked_at": "2026-11-08",
       "comparisons": [
         {
           "address": "The Plough Inn, Smorrall Lane, , Bedworth",
@@ -22958,7 +22988,7 @@
     {
       "actionable": false,
       "area": "Leicestershire",
-      "checked_at": "2026-11-03",
+      "checked_at": "2026-11-08",
       "comparisons": [
         {
           "address": "33 Hall Gate, Diseworth, Derby",
@@ -23243,7 +23273,7 @@
     {
       "actionable": false,
       "area": "Staffordshire",
-      "checked_at": "2026-11-03",
+      "checked_at": "2026-11-08",
       "comparisons": [
         {
           "address": "Atherstone Street, Fazeley, Tamworth, Staffordshire",
@@ -23479,7 +23509,7 @@
     {
       "actionable": false,
       "area": "Tyne and Wear",
-      "checked_at": "2026-11-03",
+      "checked_at": "2026-11-08",
       "comparisons": [
         {
           "address": "Marden Road South, Whitley Bay, Tyne And Wear",
@@ -23813,7 +23843,7 @@
     {
       "actionable": false,
       "area": "Cheshire",
-      "checked_at": "2026-11-03",
+      "checked_at": "2026-11-08",
       "comparisons": [
         {
           "name_matches": 1,
@@ -23921,7 +23951,7 @@
     {
       "actionable": false,
       "area": "Greater London",
-      "checked_at": "2026-11-03",
+      "checked_at": "2026-11-08",
       "comparisons": [
         {
           "address": "16 Blackheath Village, London",
@@ -24196,7 +24226,7 @@
     {
       "actionable": false,
       "area": "Derbyshire",
-      "checked_at": "2026-11-03",
+      "checked_at": "2026-11-08",
       "comparisons": [
         {
           "address": "188 Station Road Langley Mill Heanor Derbyshire",
@@ -24547,7 +24577,7 @@
     {
       "actionable": false,
       "area": "Derbyshire",
-      "checked_at": "2026-11-03",
+      "checked_at": "2026-11-08",
       "comparisons": [
         {
           "address": "Main Street, Kniveton, Derbyshire",
@@ -25654,7 +25684,7 @@
     {
       "actionable": false,
       "area": "Leicestershire",
-      "checked_at": "2026-11-03",
+      "checked_at": "2026-11-08",
       "comparisons": [
         {
           "address": "28 Church Road, Shackerstone, Nuneaton, Leicestershire",
@@ -25895,6 +25925,55 @@
     },
     {
       "actionable": false,
+      "area": "Leicestershire",
+      "checked_at": "2026-11-08",
+      "comparisons": [
+        {
+          "name_matches": 0,
+          "postcode_matches": 0,
+          "queried_postcode": "LE67 8QQ",
+          "status": "no_name_match"
+        }
+      ],
+      "confidence": "owner_reviewed",
+      "country": "England",
+      "dispense": "H",
+      "independent_of_pin": true,
+      "last": "2026 Q2",
+      "listing": {
+        "postcode": "LE67 8QQ",
+        "pub_name": "Robin Hood"
+      },
+      "manual_action_required": false,
+      "next_action": "Owner confirmed this exact pin; no pin check requested.",
+      "notes": "",
+      "owner_pin_confirmed": true,
+      "owner_reviewed": true,
+      "pg": "Perm",
+      "pin": {
+        "lat": 52.739613,
+        "lng": -1.387084
+      },
+      "place_name": "Swannington",
+      "postcode": "LE67 8QQ",
+      "priority": 2,
+      "pub_name": "Robin Hood",
+      "reasons": [],
+      "reference": {
+        "name_matches": 0,
+        "postcode_matches": 0,
+        "queried_postcode": "LE67 8QQ",
+        "status": "no_name_match"
+      },
+      "review_category": "owner_confirmed",
+      "status": "no_name_match",
+      "venue_id": "v-12016874-b271-5032-9ed9-e7c2669740f3",
+      "warnings": [
+        "FSA comparison is inconclusive; absence of a match does not contradict accepted evidence"
+      ]
+    },
+    {
+      "actionable": false,
       "area": "West Midlands",
       "checked_at": "2026-11-03",
       "comparisons": [
@@ -25955,7 +26034,7 @@
     {
       "actionable": false,
       "area": "Tyne and Wear",
-      "checked_at": "2026-11-03",
+      "checked_at": "2026-11-08",
       "comparisons": [
         {
           "name_matches": 0,
@@ -28045,7 +28124,7 @@
     {
       "actionable": false,
       "area": "Derbyshire",
-      "checked_at": "2026-11-03",
+      "checked_at": "2026-11-08",
       "comparisons": [
         {
           "address": "Moor Lane, Osmaston, Derbyshire",
@@ -28320,7 +28399,7 @@
     {
       "actionable": false,
       "area": "Staffordshire",
-      "checked_at": "2026-11-03",
+      "checked_at": "2026-11-08",
       "comparisons": [
         {
           "name_matches": 0,
@@ -28710,7 +28789,7 @@
     {
       "actionable": false,
       "area": "South Yorkshire",
-      "checked_at": "2026-11-03",
+      "checked_at": "2026-11-08",
       "comparisons": [
         {
           "name_matches": 0,
@@ -29265,6 +29344,65 @@
       "venue_id": "v-49e1b16b-7b7c-5cbf-95c0-d8b426401a37",
       "warnings": [
         "FSA coordinate is 25-50m away; informational only"
+      ]
+    },
+    {
+      "actionable": false,
+      "area": "Leicestershire",
+      "checked_at": "2026-11-08",
+      "comparisons": [
+        {
+          "address": "6 Hough Hill, Swannington, Coalville, Leicestershire",
+          "difference_metres": 97.3,
+          "lat": 52.73463,
+          "lng": -1.393657,
+          "name": "Station Inn",
+          "postcode": "LE67 8RE",
+          "queried_postcode": "LE67 8RE",
+          "status": "coordinate_disagreement",
+          "url": "https://ratings.food.gov.uk/business/25392"
+        }
+      ],
+      "confidence": "existing_evidence_needs_corroboration",
+      "country": "England",
+      "dispense": "H",
+      "independent_of_pin": true,
+      "last": "2026 Q3",
+      "listing": {
+        "postcode": "LE67 8RE",
+        "pub_name": "Station Inn"
+      },
+      "manual_action_required": false,
+      "next_action": "No pin check requested.",
+      "notes": "",
+      "owner_pin_confirmed": false,
+      "owner_reviewed": false,
+      "pg": "Guest",
+      "pin": {
+        "lat": 52.7354486,
+        "lng": -1.393147
+      },
+      "place_name": "Swannington",
+      "postcode": "LE67 8RE",
+      "priority": 2,
+      "pub_name": "Station Inn",
+      "reasons": [],
+      "reference": {
+        "address": "6 Hough Hill, Swannington, Coalville, Leicestershire",
+        "difference_metres": 97.3,
+        "lat": 52.73463,
+        "lng": -1.393657,
+        "name": "Station Inn",
+        "postcode": "LE67 8RE",
+        "queried_postcode": "LE67 8RE",
+        "status": "coordinate_disagreement",
+        "url": "https://ratings.food.gov.uk/business/25392"
+      },
+      "review_category": "informational",
+      "status": "coordinate_disagreement",
+      "venue_id": "v-1d20ec43-7322-51f1-87f4-86272f796d0c",
+      "warnings": [
+        "FSA coordinate is 97.3m from the accepted pin; informational only because the FSA geocode may be approximate"
       ]
     },
     {
@@ -31753,7 +31891,7 @@
     {
       "actionable": false,
       "area": "Tyne and Wear",
-      "checked_at": "2026-11-03",
+      "checked_at": "2026-11-08",
       "comparisons": [
         {
           "name_matches": 0,
@@ -33259,7 +33397,7 @@
     {
       "actionable": false,
       "area": "Derbyshire",
-      "checked_at": "2026-11-03",
+      "checked_at": "2026-11-08",
       "comparisons": [
         {
           "name_matches": 0,
@@ -35506,7 +35644,7 @@
     {
       "actionable": false,
       "area": "Staffordshire",
-      "checked_at": "2026-11-03",
+      "checked_at": "2026-11-08",
       "comparisons": [
         {
           "address": "Old Buxton Road, Upper Hulme, Leek",
@@ -36569,7 +36707,7 @@
     {
       "actionable": false,
       "area": "Gloucs & Bristol",
-      "checked_at": "2026-11-03",
+      "checked_at": "2026-11-08",
       "comparisons": [
         {
           "address": "The Bank Tavern, 8 John Street, City Centre, Bristol",
@@ -36683,7 +36821,7 @@
     {
       "actionable": false,
       "area": "Staffordshire",
-      "checked_at": "2026-11-03",
+      "checked_at": "2026-11-08",
       "comparisons": [
         {
           "address": "83 Haywood Street, Leek, Staffordshire",
@@ -37595,7 +37733,7 @@
     {
       "actionable": false,
       "area": "Greater London",
-      "checked_at": "2026-11-03",
+      "checked_at": "2026-11-08",
       "comparisons": [
         {
           "address": "Blackfriars Tavern, 174 Queen Victoria Street, London",
@@ -40958,7 +41096,7 @@
     {
       "actionable": false,
       "area": "Staffordshire",
-      "checked_at": "2026-11-03",
+      "checked_at": "2026-11-08",
       "comparisons": [
         {
           "address": "65 Lichfield Street, Hanley, Stoke-On-Trent",
@@ -41585,7 +41723,7 @@
     {
       "actionable": false,
       "area": "West Wales",
-      "checked_at": "2026-11-03",
+      "checked_at": "2026-11-08",
       "comparisons": [
         {
           "address": "Corvus Inn, Station Road, St Clears, Carmarthen",
@@ -41927,7 +42065,7 @@
     {
       "actionable": false,
       "area": "Staffordshire",
-      "checked_at": "2026-11-03",
+      "checked_at": "2026-11-08",
       "comparisons": [
         {
           "address": "33 Cheadle Road, Upper Tean, Stoke On Trent Staffordshire",
@@ -42782,7 +42920,7 @@
     {
       "actionable": false,
       "area": "Lincolnshire",
-      "checked_at": "2026-11-03",
+      "checked_at": "2026-11-08",
       "comparisons": [
         {
           "address": "The Dambusters, 23 High Street, , Scampton",
@@ -48254,7 +48392,7 @@
     {
       "actionable": false,
       "area": "Devon",
-      "checked_at": "2026-11-03",
+      "checked_at": "2026-11-08",
       "comparisons": [
         {
           "address": "London Inn, 8 Church Road, Plympton, Plymouth",
@@ -52871,7 +53009,7 @@
     {
       "actionable": false,
       "area": "West Midlands",
-      "checked_at": "2026-11-03",
+      "checked_at": "2026-11-08",
       "comparisons": [
         {
           "address": "Queslett Road, Streetly, Walsall, West Midlands",
@@ -56291,7 +56429,7 @@
     {
       "actionable": false,
       "area": "Oxfordshire",
-      "checked_at": "2026-11-03",
+      "checked_at": "2026-11-08",
       "comparisons": [
         {
           "address": "The Star Royal, 20 - 21 Rectory Road, Oxford, Oxfordshire",
@@ -56861,7 +56999,7 @@
     {
       "actionable": false,
       "area": "Derbyshire",
-      "checked_at": "2026-11-03",
+      "checked_at": "2026-11-08",
       "comparisons": [
         {
           "address": "40 High Street, Buxton, Derbyshire",
@@ -57887,7 +58025,7 @@
     {
       "actionable": false,
       "area": "Somerset",
-      "checked_at": "2026-11-03",
+      "checked_at": "2026-11-08",
       "comparisons": [
         {
           "address": "The Trinity Inn, 49 James Street West, City Centre, Bath",
@@ -58115,7 +58253,7 @@
     {
       "actionable": false,
       "area": "Staffordshire",
-      "checked_at": "2026-11-03",
+      "checked_at": "2026-11-08",
       "comparisons": [
         {
           "address": "47 Main Street, Barton under Needwood, Burton upon Trent",
@@ -59255,7 +59393,7 @@
     {
       "actionable": false,
       "area": "Greater Manchester",
-      "checked_at": "2026-11-03",
+      "checked_at": "2026-11-08",
       "comparisons": [
         {
           "address": "59-61 Wellington Road South, Stockport",
@@ -59597,7 +59735,7 @@
     {
       "actionable": false,
       "area": "Somerset",
-      "checked_at": "2026-11-03",
+      "checked_at": "2026-11-08",
       "comparisons": [
         {
           "address": "5 Palmer Row, Weston-Super-Mare, North Somerset",
@@ -60968,18 +61106,16 @@
     "action_required_count": 1,
     "actionable_count": 1,
     "confidence_counts": {
-      "existing_evidence_needs_corroboration": 549,
+      "existing_evidence_needs_corroboration": 552,
       "independent_coordinate_agreement": 396,
-      "not_checked": 4,
-      "owner_reviewed": 138
+      "owner_reviewed": 139
     },
     "counts": {
       "ambiguous_or_missing_coordinates": 67,
       "coordinate_agreement": 455,
-      "coordinate_disagreement": 281,
+      "coordinate_disagreement": 284,
       "nearby": 107,
-      "no_name_match": 173,
-      "not_checked": 4
+      "no_name_match": 174
     },
     "information_no_pin_check_count": 1086,
     "informational_count": 645,

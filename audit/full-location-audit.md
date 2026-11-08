@@ -8,18 +8,16 @@ Locations with informational observations: 645 (may also have an actionable find
 
 ## Results
 
-- not_checked: 4
-- no_name_match: 173
-- coordinate_disagreement: 281
+- no_name_match: 174
+- coordinate_disagreement: 284
 - ambiguous_or_missing_coordinates: 67
 - nearby: 107
 - coordinate_agreement: 455
 
 ## Confidence
 
-- not_checked: 4
-- owner_reviewed: 138
-- existing_evidence_needs_corroboration: 549
+- owner_reviewed: 139
+- existing_evidence_needs_corroboration: 552
 - independent_coordinate_agreement: 396
 
 ## Limits
@@ -40,10 +38,6 @@ Locations with informational observations: 645 (may also have an actionable find
 
 | Pub | Place | Postcode | Result | Information |
 |---|---|---|---|---|
-| Crown | Great Casterton | PE9 4AP | not_checked | Current pin has not been independently compared |
-| Jug and Glass | Lea | DE4 5GJ | not_checked | Current pin has not been independently compared |
-| Robin Hood | Swannington | LE67 8QQ | not_checked | Current pin has not been independently compared |
-| Station Inn | Swannington | LE67 8RE | not_checked | Current pin has not been independently compared |
 | 1852 Brewery Co | Leicester: South Wigston | LE18 2DH | no_name_match | FSA comparison is inconclusive; absence of a match does not contradict accepted evidence |
 | 45 Club (PMC) | Newcastle-U-L: Central | ST5 1DS | no_name_match | FSA comparison is inconclusive; absence of a match does not contradict accepted evidence |
 | Adelphi | Leeds: Central | LS10 1JQ | coordinate_disagreement | FSA coordinate is 158.8m from the accepted pin; informational only because the FSA geocode may be approximate |
@@ -216,6 +210,7 @@ Locations with informational observations: 645 (may also have an actionable find
 | Crown | Chilton | OX11 0RZ | no_name_match | FSA comparison is inconclusive; absence of a match does not contradict accepted evidence |
 | Crown | Oxford: Central | OX1 3HB | nearby | FSA coordinate is 25-50m away; informational only |
 | Crown | Elford | B79 9DB | nearby | FSA coordinate is 25-50m away; informational only |
+| Crown | Great Casterton | PE9 4AP | coordinate_disagreement | FSA coordinate is 153.2m from the accepted pin; informational only because the FSA geocode may be approximate |
 | Crown | Yoxall | DE13 8NQ | coordinate_disagreement | FSA coordinate is 123.2m from the accepted pin; informational only because the FSA geocode may be approximate |
 | Crown Inn | Manfield | DL2 2RF | ambiguous_or_missing_coordinates | FSA comparison is inconclusive; absence of a match does not contradict accepted evidence |
 | Crown Inn | Marston Montgomery | DE6 2FF | coordinate_disagreement | FSA coordinate is 146.1m from the accepted pin; informational only because the FSA geocode may be approximate |
@@ -346,6 +341,7 @@ Locations with informational observations: 645 (may also have an actionable find
 | John Thompson Inn | Ingleby | DE73 7HW | ambiguous_or_missing_coordinates | FSA comparison is inconclusive; absence of a match does not contradict accepted evidence |
 | Jolly Carter | Stoke: Burslem | ST6 3QJ | coordinate_disagreement | FSA coordinate is 95.8m from the accepted pin; informational only because the FSA geocode may be approximate |
 | Jolly Potters | Castle Donington | DE74 2NH | coordinate_disagreement | FSA coordinate is 73.6m from the accepted pin; informational only because the FSA geocode may be approximate |
+| Jug and Glass | Lea | DE4 5GJ | coordinate_disagreement | FSA coordinate is 53.2m from the accepted pin; informational only because the FSA geocode may be approximate |
 | Kenilworth | Edinburgh: Central | EH2 3JD | nearby | FSA coordinate is 25-50m away; informational only |
 | Kenilworth Sporting Ground | Kenilworth | CV8 1FA | no_name_match | FSA comparison is inconclusive; absence of a match does not contradict accepted evidence |
 | Ketton Ox | Yarm | TS15 9AU | coordinate_disagreement | FSA coordinate is 66.9m from the accepted pin; informational only because the FSA geocode may be approximate |
@@ -507,6 +503,7 @@ Locations with informational observations: 645 (may also have an actionable find
 | Rising Sun | Middleton by Wirksworth | DE4 4LS | coordinate_disagreement | FSA coordinate is 58.9m from the accepted pin; informational only because the FSA geocode may be approximate |
 | Rising Sun | Church Gresley | DE11 9LY | coordinate_agreement | Owner reviewed this postcode discrepancy and confirmed the displayed pub building; listing postcode retained for provenance |
 | Roaring Meg | Biddulph | ST8 7EA | nearby | FSA coordinate is 25-50m away; informational only |
+| Robin Hood | Swannington | LE67 8QQ | no_name_match | FSA comparison is inconclusive; absence of a match does not contradict accepted evidence |
 | Robin Hood | Amblecote | DY8 4EQ | coordinate_disagreement | FSA coordinate is 54.2m from the accepted pin; informational only because the FSA geocode may be approximate |
 | Rockcliffe Arms | Whitley Bay | NE26 2DT | no_name_match | FSA comparison is inconclusive; absence of a match does not contradict accepted evidence |
 | Roebuck | Silverdale | ST5 6JH | coordinate_disagreement | FSA coordinate is 95.4m from the accepted pin; informational only because the FSA geocode may be approximate |
@@ -567,6 +564,7 @@ Locations with informational observations: 645 (may also have an actionable find
 | Star Inn | Whitby | YO21 3PP | nearby | FSA coordinate is 25-50m away; informational only |
 | Star Inn | Eccleshall | ST21 6EW | coordinate_disagreement | FSA coordinate is 329.9m from the accepted pin; informational only because the FSA geocode may be approximate |
 | Station | Didsbury | M20 2DN | nearby | FSA coordinate is 25-50m away; informational only |
+| Station Inn | Swannington | LE67 8RE | coordinate_disagreement | FSA coordinate is 97.3m from the accepted pin; informational only because the FSA geocode may be approximate |
 | Staunton Arms | Staunton in the Vale | NG13 9PE | no_name_match | FSA comparison is inconclusive; absence of a match does not contradict accepted evidence |
 | Steampacket Inn | Swanwick | DE55 1AB | coordinate_disagreement | FSA coordinate is 74.5m from the accepted pin; informational only because the FSA geocode may be approximate |
 | Stella Taps | Mansfield | NG18 4AL | coordinate_agreement | Owner reviewed this postcode discrepancy and confirmed the displayed pub building; listing postcode retained for provenance |

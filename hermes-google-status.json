@@ -1,11 +1,11 @@
 {
-  "checked_at": "2026-11-08T08:14:18.387000+00:00",
+  "checked_at": "2026-11-09T08:18:42.689000+00:00",
   "configured": true,
   "counts": {
     "attempted_venue_count": 1087,
-    "checked_this_run": 40,
+    "checked_this_run": 44,
     "current": 1087,
-    "review_count": 67,
+    "review_count": 68,
     "total": 1087,
     "unchecked_or_stale": 0
   },
@@ -244,6 +244,15 @@
       "reason": "Google named-place marker differs by more than 50 metres; existing pin retained for review",
       "status": "review_needed",
       "venue_id": "v-5e9138e0-7352-55f1-b255-7397c00900a8"
+    },
+    {
+      "binding_signature": "5ebe71a89f8fd6c93288b1126226bdca501b30f917a9ff685b1b4064e476a0cf",
+      "place_name": "Soho W1B",
+      "postcode": "W1B 5QH",
+      "pub_name": "Clachan",
+      "reason": "Google results are incomplete or ambiguous; no unique place accepted",
+      "status": "review_needed",
+      "venue_id": "v-60c963ee-8aa8-5392-95bc-ef90d15abb5e"
     },
     {
       "binding_signature": "fafd1f1660f5e31a267adf5f9f26d1e86033fd51285e185560cbea1de93610c8",
@@ -621,8 +630,8 @@
   ],
   "provider": "hermes-browser",
   "run_attempt": 1,
-  "run_id": "d871d5920de4446d83318165e7df9edd",
+  "run_id": "626ff8da0e254dd29c611097e6fd88c0",
   "run_url": "",
   "schema_version": 1,
-  "source_execution_finished_at": "2026-11-08T07:44:40.177528+00:00"
+  "source_execution_finished_at": "2026-11-09T07:44:33.595229+00:00"
 }

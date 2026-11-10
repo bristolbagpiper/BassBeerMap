@@ -1,60 +1,25 @@
 {
   "records": [
     {
-      "actionable": true,
+      "actionable": false,
       "area": "Leicestershire",
-      "checked_at": "2026-11-05",
-      "comparisons": [
-        {
-          "name_matches": 0,
-          "postcode_matches": 9,
-          "queried_postcode": "LE65 1AH",
-          "status": "no_name_match"
-        },
-        {
-          "name_matches": 0,
-          "postcode_matches": 11,
-          "queried_postcode": "LE65 1AN",
-          "status": "no_name_match"
-        }
-      ],
-      "confidence": "owner_reviewed",
       "country": "England",
       "dispense": "H",
-      "independent_of_pin": true,
       "last": "2026 Q4",
-      "listing": {
-        "postcode": "LE65 1AH",
-        "pub_name": "Fitzgeralds"
-      },
-      "manual_action_required": true,
-      "next_action": "Check the listing address and postcode against the reviewed reference postcode.",
+      "manual_action_required": false,
+      "next_action": "No pin check requested.",
       "notes": "",
-      "owner_pin_confirmed": true,
-      "owner_reviewed": true,
       "pg": "Guest",
-      "pin": {
-        "lat": 52.7471038,
-        "lng": -1.4705552
-      },
       "place_name": "Ashby-de-la-Zouch",
-      "postcode": "LE65 1AH",
+      "postcode": "LE65 1AN",
       "priority": 0,
       "pub_name": "Fitzgeralds",
-      "reasons": [
-        "Directory postcode differs from reviewed reference postcode"
-      ],
-      "reference": {
-        "name_matches": 0,
-        "postcode_matches": 9,
-        "queried_postcode": "LE65 1AH",
-        "status": "no_name_match"
-      },
-      "review_category": "address_metadata",
-      "status": "no_name_match",
+      "reasons": [],
+      "review_category": "informational",
+      "status": "not_checked",
       "venue_id": "v-b1f768d3-f5ed-5eae-a199-6b21559ba452",
       "warnings": [
-        "FSA comparison is inconclusive; absence of a match does not contradict accepted evidence"
+        "Current pin has not been independently compared"
       ]
     },
     {
@@ -61103,21 +61068,23 @@
   ],
   "schema_version": 1,
   "summary": {
-    "action_required_count": 1,
-    "actionable_count": 1,
+    "action_required_count": 0,
+    "actionable_count": 0,
     "confidence_counts": {
       "existing_evidence_needs_corroboration": 552,
       "independent_coordinate_agreement": 396,
-      "owner_reviewed": 139
+      "not_checked": 1,
+      "owner_reviewed": 138
     },
     "counts": {
       "ambiguous_or_missing_coordinates": 67,
       "coordinate_agreement": 455,
       "coordinate_disagreement": 284,
       "nearby": 107,
-      "no_name_match": 174
+      "no_name_match": 173,
+      "not_checked": 1
     },
-    "information_no_pin_check_count": 1086,
+    "information_no_pin_check_count": 1087,
     "informational_count": 645,
     "limitations": [
       "Coordinate agreement does not prove the correct building or current Bass availability.",

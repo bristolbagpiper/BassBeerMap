@@ -2,13 +2,14 @@
 
 Locations: 1087
 
-Action required: 1
-Information — no pin check requested: 1086
+Action required: 0
+Information — no pin check requested: 1087
 Locations with informational observations: 645 (may also have an actionable finding)
 
 ## Results
 
-- no_name_match: 174
+- not_checked: 1
+- no_name_match: 173
 - coordinate_disagreement: 284
 - ambiguous_or_missing_coordinates: 67
 - nearby: 107
@@ -16,8 +17,9 @@ Locations with informational observations: 645 (may also have an actionable find
 
 ## Confidence
 
-- owner_reviewed: 139
+- not_checked: 1
 - existing_evidence_needs_corroboration: 552
+- owner_reviewed: 138
 - independent_coordinate_agreement: 396
 
 ## Limits
@@ -32,12 +34,12 @@ Locations with informational observations: 645 (may also have an actionable find
 
 | Pub | Place | Postcode | Category | Result | Required action | Finding |
 |---|---|---|---|---|---|---|
-| Fitzgeralds | Ashby-de-la-Zouch | LE65 1AH | address_metadata | no_name_match | Check the listing address and postcode against the reviewed reference postcode. | Directory postcode differs from reviewed reference postcode |
 
 ## Information — no pin check requested
 
 | Pub | Place | Postcode | Result | Information |
 |---|---|---|---|---|
+| Fitzgeralds | Ashby-de-la-Zouch | LE65 1AN | not_checked | Current pin has not been independently compared |
 | 1852 Brewery Co | Leicester: South Wigston | LE18 2DH | no_name_match | FSA comparison is inconclusive; absence of a match does not contradict accepted evidence |
 | 45 Club (PMC) | Newcastle-U-L: Central | ST5 1DS | no_name_match | FSA comparison is inconclusive; absence of a match does not contradict accepted evidence |
 | Adelphi | Leeds: Central | LS10 1JQ | coordinate_disagreement | FSA coordinate is 158.8m from the accepted pin; informational only because the FSA geocode may be approximate |

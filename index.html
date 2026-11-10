@@ -443,7 +443,7 @@
     .popup h3 { margin: 0 0 6px; font-size: 1rem; }
     .popup p { margin: 4px 0; color: var(--muted); }
     .popup .approximate-location { color: #7a4d11; font-weight: 600; }
-    .trading-notice { color: #7a4d11; font-weight: 600; }
+    .popup .trading-notice, .footer-note.trading-notice { color: #7a4d11; font-weight: 600; }
     .approximate-marker {
       background: transparent;
       border: 0;
@@ -1559,6 +1559,15 @@
     const VENUE_COORDINATE_OVERRIDES_URL = './venue-coordinate-overrides.json';
     const COORDINATE_VERIFICATION_URL = './coordinate-verification.json';
     const DIRECTORY_RELEASE_URL = './directory-release.json';
+    const GOOGLE_REVIEW_URL = './hermes-google-status.json';
+    const POSSIBLE_CLOSURE_REASON = 'Google indicates a possible closure; trading status needs review';
+    const TRADING_NOTICES = {
+      // Charles Roe, Macclesfield (CAMRA 199589).
+      'v-5b7a8e74-1d57-5edf-a58b-f3445daf1ea1': 'CAMRA reports this pub closed. Check before travelling. Bass availability is unconfirmed.',
+      // Operator notices checked on 7 November 2026.
+      'v-586bfe86-d3ed-5c11-ac30-4f31b328b362': 'The pub reports a temporary closure for refurbishment (checked 7 November 2026). Check before travelling.',
+      'v-7acff0ac-109f-5c52-83e8-add11cb06319': 'The operator says the Hanging Gate stopped trading as a pub on 20 September 2026.'
+    };
     const DATA_FETCH_OPTIONS = { cache: 'no-cache' };
     let activeDirectoryLabel = 'latest Bass directory';
     const map = L.map('map', { zoomControl: true, preferCanvas: true }).setView([54.5, -2.5], 6);
@@ -1759,9 +1768,26 @@
       els.directoryLabel.textContent = label;
     }
 
+    async function loadPossibleClosures() {
+      try {
+        const response = await fetch(GOOGLE_REVIEW_URL, {
+          ...DATA_FETCH_OPTIONS, signal: AbortSignal.timeout(3000)
+        });
+        if (!response.ok) return new Map();
+        const report = await response.json();
+        if (report?.schema_version !== 1 || !report.configured || !Array.isArray(report.findings)) return new Map();
+        return new Map(report.findings.filter(finding => finding?.status === 'review_needed'
+          && typeof finding.reason === 'string' && finding.reason.includes(POSSIBLE_CLOSURE_REASON))
+          .map(finding => [finding.venue_id, finding]));
+      } catch {
+        return new Map();
+      }
+    }
+
     async function loadPubData() {
       setStatus('Loading the directory...', 6);
 
+      const possibleClosures = loadPossibleClosures();
       const response = await fetch(DIRECTORY_RELEASE_URL, DATA_FETCH_OPTIONS);
       if (!response.ok) {
         throw new Error(`Directory release load failed with status ${response.status}`);
@@ -1786,6 +1812,12 @@
       applyDirectoryMetadata(release.metadata);
 
       preparePubData(release.rows);
+      const findings = await possibleClosures;
+      for (const item of pubData) {
+        const finding = findings.get(item.venue_id);
+        item.possibleClosure = Boolean(finding && finding.pub_name === item.pub_name
+          && finding.place_name === item.place_name && finding.postcode === (item.directoryPostcode || item.postcode));
+      }
       updateCountryCounts();
       updateStats();
     }
@@ -1871,8 +1903,11 @@
     }
 
     function tradingNotice(item) {
-      if (item.venue_id !== 'v-5b7a8e74-1d57-5edf-a58b-f3445daf1ea1') return '';
-      return 'Trading status uncertain: CAMRA reports this pub closed. Check before travelling; Bass availability is unconfirmed.';
+      const notice = TRADING_NOTICES[item.venue_id];
+      if (notice) return notice;
+      // Shepherds Hall already has a dated CAMRA closure notice in the directory notes.
+      if (item.venue_id === 'v-c62f31b0-c5b0-546c-979e-12fac920a47a' && item.notes.startsWith('CAMRA reports temporary closure')) return '';
+      return item.possibleClosure ? 'Possible closure. Check opening and Bass availability before travelling.' : '';
     }
 
     function makePopup(item) {

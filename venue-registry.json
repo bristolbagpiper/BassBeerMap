@@ -1,7 +1,7 @@
 {
   "location_review": {
-    "actionable_count": 3,
-    "active_count": 4,
+    "actionable_count": 2,
+    "active_count": 3,
     "records": {
       "v-0043695f-006e-58fe-adc2-894e5500b940": {
         "active": false,
@@ -13808,7 +13808,7 @@
         "venue_id": "v-b1ed2bf8-2858-5ace-80c6-3c5ae0e5d74c"
       },
       "v-b1f768d3-f5ed-5eae-a199-6b21559ba452": {
-        "active": true,
+        "active": false,
         "first_seen": "2026-11-03",
         "history": [
           {
@@ -13831,26 +13831,21 @@
               "Directory postcode LE65 1AH conflicts with reference address LE65 1AN"
             ],
             "status": "review_needed"
+          },
+          {
+            "date": "2026-11-10",
+            "reasons": [],
+            "status": "resolved"
           }
         ],
-        "last_checked": "2026-11-05",
-        "manual_action_required": true,
-        "next_action": "Check the conflicting address/postcode; this does not prove the pin is wrong",
+        "last_checked": "2026-11-03",
+        "manual_action_required": false,
+        "next_action": "No pin check requested",
         "place_name": "Ashby-de-la-Zouch",
-        "postcode": "LE65 1AH",
+        "postcode": "LE65 1AN",
         "pub_name": "Fitzgeralds",
-        "reasons": [
-          "Directory postcode LE65 1AH conflicts with reference address LE65 1AN"
-        ],
-        "reference": {
-          "field": "postcode",
-          "listed": "LE65 1AH",
-          "operator_postcode": "LE65 1AH",
-          "operator_url": "https://fitzgeraldsashby.co.uk/contact/",
-          "reference": "LE65 1AN",
-          "review_reason": "Keep operator/PDF LE65 1AH while Google says LE65 1AN. The named building marker is resolved; postal-code disagreement remains an address review.",
-          "source_url": "https://www.google.com/maps/place/Fitzgeralds+Ashby/@52.7471038,-1.4705552,17z/data=!3m1!4b1!4m6!3m5!1s0x4879fd6287892107:0xc6b7c50a88009f92!8m2!3d52.7471038!4d-1.4705552!16s%2Fg%2F11zy8xb2rv?entry=ttu&g_ep=EgoyMDI2MTAyOC4wIKXMDSoASAFQAw%3D%3D"
-        },
+        "reasons": [],
+        "reference": {},
         "research": {
           "checked_at": "2026-11-03",
           "coverage": {
@@ -13861,19 +13856,15 @@
           "proposals": [],
           "status": "no_candidate"
         },
-        "review_category": "address_metadata",
+        "review_category": "confirmed",
         "source_checks": {
-          "fsa_independent": {
-            "status": "no_name_match",
-            "url": ""
-          },
           "google-maps-named-place": {
             "status": "not_checked",
             "url": "https://www.google.com/maps/place/Fitzgeralds+Ashby/@52.7471038,-1.4705552,17z/data=!3m1!4b1!4m6!3m5!1s0x4879fd6287892107:0xc6b7c50a88009f92!8m2!3d52.7471038!4d-1.4705552!16s%2Fg%2F11zy8xb2rv?entry=ttu&g_ep=EgoyMDI2MTAyOC4wIKXMDSoASAFQAw%3D%3D"
           }
         },
         "source_error": null,
-        "status": "review_needed",
+        "status": "resolved",
         "unverified": false,
         "venue_id": "v-b1f768d3-f5ed-5eae-a199-6b21559ba452"
       },
@@ -134582,9 +134573,19 @@
     },
     "v-b1f768d3-f5ed-5eae-a199-6b21559ba452": {
       "aliases": [
-        "fitzgeralds|ashby-de-la-zouch|le65 1ah"
+        "fitzgeralds|ashby-de-la-zouch|le65 1ah",
+        "fitzgeralds|ashby-de-la-zouch|le65 1an"
       ],
-      "current_key": "fitzgeralds|ashby-de-la-zouch|le65 1ah",
+      "current_key": "fitzgeralds|ashby-de-la-zouch|le65 1an",
+      "identity_reviews": [
+        {
+          "checked_at": "2026-11-10",
+          "previous_key": "fitzgeralds|ashby-de-la-zouch|le65 1ah",
+          "reason": "The map owner chose the Google-listed postcode for Fitzgeralds at 60A Market Street and instructed us to retain its existing pin. Preserve the original directory postcode in listing history.",
+          "reference_postcode": "LE65 1AN",
+          "source_url": "https://www.google.com/maps/place/Fitzgeralds+Ashby/@52.7471038,-1.4705552,17z/data=!3m1!4b1!4m6!3m5!1s0x4879fd6287892107:0xc6b7c50a88009f92!8m2!3d52.7471038!4d-1.4705552!16s%2Fg%2F11zy8xb2rv?entry=ttu&g_ep=EgoyMDI2MTAyOC4wIKXMDSoASAFQAw%3D%3D"
+        }
+      ],
       "independent_location_check": {
         "actionable": true,
         "checked_at": "2026-11-05",
@@ -134640,9 +134641,63 @@
         "notes": "",
         "pg": "Guest",
         "place_name": "Ashby-de-la-Zouch",
-        "postcode": "LE65 1AH",
+        "postcode": "LE65 1AN",
         "pub_name": "Fitzgeralds"
       },
+      "listing_reviews": [
+        {
+          "decision": {
+            "changes": {
+              "postcode": "LE65 1AN"
+            },
+            "checked_at": "2026-11-10",
+            "expected": {
+              "place_name": "Ashby-de-la-Zouch",
+              "postcode": "LE65 1AH",
+              "pub_name": "Fitzgeralds"
+            },
+            "previous_building_confirmation": {
+              "approved_coordinate": {
+                "lat": 52.7471038,
+                "lng": -1.4705552
+              },
+              "bass_availability_verified": false,
+              "checked_at": "2026-11-03",
+              "listing": {
+                "area": "Leicestershire",
+                "country": "England",
+                "place_name": "Ashby-de-la-Zouch",
+                "postcode": "LE65 1AH",
+                "pub_name": "Fitzgeralds",
+                "venue_id": "v-b1f768d3-f5ed-5eae-a199-6b21559ba452"
+              },
+              "owner_instruction": "those all look correct too, record them as checked",
+              "postal_delivery_verified": false,
+              "reviewed_by": "repository owner in Codex chat",
+              "schema_version": 1,
+              "scope": "displayed_venue_building",
+              "source_snapshots": []
+            },
+            "reason": "The map owner chose the Google-listed postcode for Fitzgeralds at 60A Market Street and instructed us to retain its existing pin. Preserve the original directory postcode in listing history.",
+            "reference_postcode": "LE65 1AN",
+            "reviewed_by": "repository owner in Codex chat",
+            "source_url": "https://www.google.com/maps/place/Fitzgeralds+Ashby/@52.7471038,-1.4705552,17z/data=!3m1!4b1!4m6!3m5!1s0x4879fd6287892107:0xc6b7c50a88009f92!8m2!3d52.7471038!4d-1.4705552!16s%2Fg%2F11zy8xb2rv?entry=ttu&g_ep=EgoyMDI2MTAyOC4wIKXMDSoASAFQAw%3D%3D"
+          },
+          "kind": "correction",
+          "original": {
+            "area": "Leicestershire",
+            "country": "England",
+            "dispense": "H",
+            "last": "2026 Q4",
+            "notes": "",
+            "pg": "Guest",
+            "place_name": "Ashby-de-la-Zouch",
+            "postcode": "LE65 1AH",
+            "pub_name": "Fitzgeralds"
+          },
+          "original_key": "fitzgeralds|ashby-de-la-zouch|le65 1ah"
+        }
+      ],
       "location_corrections": [
         {
           "approved_coordinate": {
@@ -134716,31 +134771,22 @@
         ],
         "lat": 52.7471038,
         "lng": -1.4705552,
-        "metadata_issue": {
-          "field": "postcode",
-          "listed": "LE65 1AH",
-          "operator_postcode": "LE65 1AH",
-          "operator_url": "https://fitzgeraldsashby.co.uk/contact/",
-          "reference": "LE65 1AN",
-          "review_reason": "Keep operator/PDF LE65 1AH while Google says LE65 1AN. The named building marker is resolved; postal-code disagreement remains an address review.",
-          "source_url": "https://www.google.com/maps/place/Fitzgeralds+Ashby/@52.7471038,-1.4705552,17z/data=!3m1!4b1!4m6!3m5!1s0x4879fd6287892107:0xc6b7c50a88009f92!8m2!3d52.7471038!4d-1.4705552!16s%2Fg%2F11zy8xb2rv?entry=ttu&g_ep=EgoyMDI2MTAyOC4wIKXMDSoASAFQAw%3D%3D"
-        },
         "owner_confirmation": {
           "approved_coordinate": {
             "lat": 52.7471038,
             "lng": -1.4705552
           },
           "bass_availability_verified": false,
-          "checked_at": "2026-11-03",
+          "checked_at": "2026-11-10",
           "listing": {
             "area": "Leicestershire",
             "country": "England",
             "place_name": "Ashby-de-la-Zouch",
-            "postcode": "LE65 1AH",
+            "postcode": "LE65 1AN",
             "pub_name": "Fitzgeralds",
             "venue_id": "v-b1f768d3-f5ed-5eae-a199-6b21559ba452"
           },
-          "owner_instruction": "those all look correct too, record them as checked",
+          "owner_instruction": "google looks right, change the Fitzgeralds postcode to LE65 1AN and leave the pin where it is",
           "postal_delivery_verified": false,
           "reviewed_by": "repository owner in Codex chat",
           "schema_version": 1,

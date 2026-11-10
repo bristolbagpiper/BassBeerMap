@@ -117,6 +117,43 @@
       "reviewed_by": "Codex venue evidence review authorised by map owner",
       "source_url": "https://www.openstreetmap.org/way/111597336"
     },
+    "fitzgeralds|ashby-de-la-zouch|le65 1ah": {
+      "changes": {
+        "postcode": "LE65 1AN"
+      },
+      "checked_at": "2026-11-10",
+      "expected": {
+        "place_name": "Ashby-de-la-Zouch",
+        "postcode": "LE65 1AH",
+        "pub_name": "Fitzgeralds"
+      },
+      "previous_building_confirmation": {
+        "approved_coordinate": {
+          "lat": 52.7471038,
+          "lng": -1.4705552
+        },
+        "bass_availability_verified": false,
+        "checked_at": "2026-11-03",
+        "listing": {
+          "area": "Leicestershire",
+          "country": "England",
+          "place_name": "Ashby-de-la-Zouch",
+          "postcode": "LE65 1AH",
+          "pub_name": "Fitzgeralds",
+          "venue_id": "v-b1f768d3-f5ed-5eae-a199-6b21559ba452"
+        },
+        "owner_instruction": "those all look correct too, record them as checked",
+        "postal_delivery_verified": false,
+        "reviewed_by": "repository owner in Codex chat",
+        "schema_version": 1,
+        "scope": "displayed_venue_building",
+        "source_snapshots": []
+      },
+      "reason": "The map owner chose the Google-listed postcode for Fitzgeralds at 60A Market Street and instructed us to retain its existing pin. Preserve the original directory postcode in listing history.",
+      "reference_postcode": "LE65 1AN",
+      "reviewed_by": "repository owner in Codex chat",
+      "source_url": "https://www.google.com/maps/place/Fitzgeralds+Ashby/@52.7471038,-1.4705552,17z/data=!3m1!4b1!4m6!3m5!1s0x4879fd6287892107:0xc6b7c50a88009f92!8m2!3d52.7471038!4d-1.4705552!16s%2Fg%2F11zy8xb2rv?entry=ttu&g_ep=EgoyMDI2MTAyOC4wIKXMDSoASAFQAw%3D%3D"
+    },
     "lancaster inn|woodhall spa|ln10 6st": {
       "changes": {
         "pub_name": "Inn at Woodhall Spa"

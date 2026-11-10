@@ -470,7 +470,6 @@
     }
     .mobile-venue-header h2 { margin: 0; font-size: 1.1rem; overflow-wrap: anywhere; }
     .mobile-venue-header button { flex: none; width: auto; min-height: 44px; }
-    .mobile-venue-header button:focus-visible { outline: 2px solid var(--accent-2); outline-offset: 2px; }
     .mobile-venue-content {
       min-height: 0;
       overflow: auto;
@@ -1190,6 +1189,28 @@
       font-size: 0.75rem;
     }
     .location-status:empty { display: none; }
+    .skip-link {
+      position: absolute;
+      z-index: 2;
+      top: 8px;
+      left: 8px;
+      padding: 10px 14px;
+      transform: translateY(-150%);
+      border-radius: 8px;
+      background: #fff;
+      color: var(--text);
+    }
+    .skip-link:focus { transform: none; }
+    .skip-link:focus-visible,
+    .sidebar :is(input, select, button, a, h2):focus-visible,
+    .mobile-venue :is(button, a):focus-visible,
+    .map-wrap :is(button, a, [role="button"], h3):focus-visible,
+    #map:focus-visible {
+      outline: 3px solid #70151b;
+      outline-offset: 2px;
+    }
+    #map:focus-visible { outline-offset: -3px; }
+    #map .leaflet-marker-icon:focus-visible { z-index: 1000 !important; }
     .search-help { margin: 0; color: var(--muted); font-size: 0.75rem; line-height: 1.35; }
     .nearby-scope {
       padding: 8px;
@@ -1512,6 +1533,8 @@
   </div>
 
   <div class="topbar">
+    <a id="skipToSearch" class="skip-link" href="#searchBox">Skip to pub search</a>
+    <a class="skip-link" href="#map">Skip to map</a>
     <div class="title-row">
       <div class="brand-row">
         <img class="bass-logo" src="bass-logo.svg" alt="Bass logo" />
@@ -1604,7 +1627,7 @@
         <div class="group">
           <div class="list-header">
             <h2 id="resultsHeading" tabindex="-1">Results</h2>
-            <div id="resultCount" class="count" aria-live="polite"></div>
+            <div id="resultCount" class="count" role="status" aria-atomic="true"></div>
           </div>
           <div id="mobileActiveFilters" class="mobile-active-filters" hidden>
             <span id="activeFilterSummary"></span>
@@ -1619,7 +1642,7 @@
     <main class="map-wrap">
       <button id="openPanelBtn" class="mobile-open-btn" type="button" aria-controls="sidebarPanel">Search pubs</button>
       <button id="mobileResetBtn" class="mobile-reset-btn" type="button">Reset filters</button>
-      <div id="map"></div>
+       <div id="map" role="region" aria-label="Pub map" tabindex="0"></div>
       <div id="mapNotice" class="map-notice hidden" role="status"></div>
       <div id="helpLegend" class="legend">
         <div class="legend-header">
@@ -1697,6 +1720,7 @@
     const DATA_FETCH_OPTIONS = { cache: 'no-cache' };
     let activeDirectoryLabel = 'latest Bass directory';
     let mobileVenueOrigin = null;
+    let desktopVenueOrigin = null;
     const mobileViewport = window.matchMedia('(max-width: 980px)');
     const map = L.map('map', { zoomControl: true, preferCanvas: true }).setView([54.5, -2.5], 6);
     L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
@@ -1715,12 +1739,28 @@
     const markerLayer = L.markerClusterGroup({
       maxClusterRadius: 50,
       spiderfyOnMaxZoom: true,
-      showCoverageOnHover: false
+      showCoverageOnHover: false,
+      iconCreateFunction(cluster) {
+        const count = cluster.getChildCount();
+        const size = count < 10 ? 'small' : (count < 100 ? 'medium' : 'large');
+        return L.divIcon({
+          html: `<div aria-hidden="true"><span>${count}</span></div><span class="sr-only">${count} pubs, expand group</span>`,
+          className: `marker-cluster marker-cluster-${size}`,
+          iconSize: [40, 40]
+        });
+      }
     });
     map.addLayer(markerLayer);
+    markerLayer.on('clusterkeydown', event => {
+      if (event.originalEvent.key !== ' ') return;
+      event.originalEvent.preventDefault();
+      event.layer.fire('click', { originalEvent: event.originalEvent }, true);
+      map.getContainer().focus({ preventScroll: true });
+    });
 
     const els = {
       searchBox: document.getElementById('searchBox'),
+      skipToSearch: document.getElementById('skipToSearch'),
       countryFilter: document.getElementById('countryFilter'),
       areaFilter: document.getElementById('areaFilter'),
       typeFilter: document.getElementById('typeFilter'),
@@ -1764,6 +1804,7 @@
       radiusFilter: document.getElementById('radiusFilter'),
       sidebarPanel: document.getElementById('sidebarPanel'),
       sidebarInner: document.querySelector('.sidebar-inner'),
+      mobilePanelBackground: document.querySelectorAll('.topbar, .map-wrap'),
       mapNotice: document.getElementById('mapNotice'),
       reportDialog: document.getElementById('reportDialog'),
       openProblemReportBtn: document.getElementById('openProblemReportBtn'),
@@ -1996,13 +2037,24 @@
           item.lat = coords.lat;
           item.lng = coords.lng;
           item.locationPrecision = precise ? 'venue' : 'postcode';
+          const label = `${venueLabel(item)}${precise ? '' : ', approximate postcode location'}`;
           item.marker = L.marker([item.lat, item.lng], item.locationPrecision === 'postcode'
             ? { icon: approximatePostcodeIcon, title: 'Approximate postcode location' }
-            : undefined
+            : { alt: label }
           );
+          item.marker.on('add', () => item.marker.getElement().setAttribute('aria-label', label));
           configureVenuePopup(item);
+          item.marker.on('popupopen', ({ popup }) => focusDesktopVenue(popup, item.marker.getElement()));
+          item.marker.on('popupclose', ({ popup }) => restoreDesktopVenueFocus(popup));
           item.marker.on('click keydown', event => {
-            if (!isMobileView()) return;
+            if (!isMobileView()) {
+              if (event.type === 'keydown' && event.originalEvent.key === ' ') {
+                event.originalEvent.preventDefault();
+                if (item.marker.isPopupOpen()) item.marker.closePopup();
+                else item.marker.openPopup();
+              }
+              return;
+            }
             if (event.type === 'keydown') {
               if (!['Enter', ' '].includes(event.originalEvent.key)) return;
               event.originalEvent.preventDefault();
@@ -2067,6 +2119,14 @@
       return item.possibleClosure ? 'Possible closure. Check opening and Bass availability before travelling.' : '';
     }
 
+    function venueLabel(item) {
+      return [item.pub_name, item.place_name].filter(Boolean).join(', ');
+    }
+
+    function availabilityLabel(item) {
+      return item.pg === 'Perm' ? 'Permanent' : 'Guest / occasional';
+    }
+
     function makeVenueDetails(item) {
       const directions = directionsUrl(item);
       return `
@@ -2076,9 +2136,9 @@
           ${item.locationPrecision === 'postcode' ? '<p class="approximate-location"><strong>Map location:</strong> Approximate postcode area — not the exact venue.</p>' : ''}
           ${!item.postcodeIssueReviewed && item.locationIssue ? `<p class="approximate-location">The directory postcode differs from the reference address (${escapeHtml(item.locationIssue.reference)}). ${item.locationPrecision === 'venue' ? 'The pin marks the verified venue.' : 'The precise venue location needs review.'}</p>` : ''}
           <p><strong>Area:</strong> ${escapeHtml(item.area || '—')} | <strong>Country:</strong> ${escapeHtml(item.country)}</p>
-          <p><strong>Status:</strong> ${escapeHtml(item.pg)} | <strong>Last confirmed:</strong> ${escapeHtml(item.last)} | <strong>Dispense:</strong> ${escapeHtml(dispenseLabel(item.dispense))}</p>
+          <p><strong>Availability:</strong> ${availabilityLabel(item)} | <strong>Last confirmed:</strong> ${escapeHtml(item.last)} | <strong>Dispense:</strong> ${escapeHtml(dispenseLabel(item.dispense))}</p>
           ${item.notes ? `<p><strong>Notes:</strong> ${escapeHtml(item.notes)}</p>` : ''}
-          <p><a href="${directions}" target="_blank" rel="noopener noreferrer">Get directions</a></p>
+          <p><a href="${directions}" target="_blank" rel="noopener noreferrer" aria-label="Get directions to ${escapeHtml(venueLabel(item))}">Get directions</a></p>
       `;
     }
 
@@ -2099,6 +2159,35 @@
       els.mobileVenueContent.innerHTML = makeVenueDetails(item);
       els.mobileVenue.showModal();
       els.mobileVenueContent.scrollTop = 0;
+    }
+
+    function focusDesktopVenue(popup, element) {
+      const panel = popup.getElement();
+      const heading = panel.querySelector('h3');
+      desktopVenueOrigin = { popup, element };
+      panel.setAttribute('role', 'dialog');
+      panel.setAttribute('aria-label', heading.textContent);
+      panel.addEventListener('keydown', handleDesktopVenueKeydown);
+      heading.tabIndex = -1;
+      heading.focus({ preventScroll: true });
+    }
+
+    function handleDesktopVenueKeydown(event) {
+      if (event.key !== 'Escape') return;
+      event.preventDefault();
+      event.stopPropagation();
+      map.closePopup();
+    }
+
+    function restoreDesktopVenueFocus(popup) {
+      if (desktopVenueOrigin?.popup !== popup) return;
+      const { element } = desktopVenueOrigin;
+      desktopVenueOrigin = null;
+      const focus = document.activeElement;
+      if (focus !== document.body && !popup.getElement().contains(focus)) return;
+      if (element?.isConnected && !element.closest('[inert]')) element.focus();
+      else if (isMobileView()) els.openPanelBtn.focus();
+      else map.getContainer().focus();
     }
 
     function fillCountryOptions() {
@@ -2214,13 +2303,14 @@
 
     function createResultCard(item) {
       const card = document.createElement('article');
+      const label = escapeHtml(venueLabel(item));
       card.className = 'card';
       card.innerHTML = `
         <div class="card-title">${escapeHtml(item.pub_name)}</div>
         ${tradingNotice(item) ? `<div class="footer-note trading-notice">${escapeHtml(tradingNotice(item))}</div>` : ''}
         <div class="meta">${escapeHtml(item.place_name)} · ${escapeHtml(item.postcode)}<br>${escapeHtml(item.area || '—')} · ${escapeHtml(item.country)}</div>
         <div class="chips">
-          <span class="chip ${item.pg === 'Perm' ? 'perm' : 'guest'}">${item.pg === 'Perm' ? 'Permanent' : 'Guest / occasional'}</span>
+          <span class="chip ${item.pg === 'Perm' ? 'perm' : 'guest'}">${availabilityLabel(item)}</span>
           <span class="chip ${isOlderListing(item) ? 'older' : ''}">Last confirmed ${escapeHtml(item.last)}</span>
           <span class="chip">${escapeHtml(dispenseLabel(item.dispense))}</span>
         </div>
@@ -2230,8 +2320,8 @@
         ${!item.marker ? '<div class="footer-note">Location unavailable on the map.</div>' : ''}
         ${item.notes ? `<div class="footer-note">${escapeHtml(item.notes)}</div>` : ''}
         <div class="card-actions">
-          ${item.marker ? '<button class="secondary card-map-button" type="button">View on map</button>' : ''}
-          <a href="${directionsUrl(item)}" target="_blank" rel="noopener noreferrer">Directions</a>
+          ${item.marker ? `<button class="secondary card-map-button" type="button" aria-label="View on map, ${label}">View on map</button>` : ''}
+          <a href="${directionsUrl(item)}" target="_blank" rel="noopener noreferrer" aria-label="Directions to ${label}">Directions</a>
         </div>
       `;
       const mapButton = card.querySelector('.card-map-button');
@@ -2241,7 +2331,10 @@
         markerLayer.zoomToShowLayer(item.marker, () => {
           map.setView([item.lat, item.lng], Math.max(map.getZoom(), 14));
           if (isMobileView()) openMobileVenue(item, mapButton, scrollTop);
-          else item.marker.openPopup();
+          else {
+            item.marker.openPopup();
+            if (item.marker.isPopupOpen()) focusDesktopVenue(item.marker.getPopup(), mapButton);
+          }
         });
       });
 
@@ -2258,7 +2351,8 @@
         if (item.marker) markerLayer.addLayer(item.marker);
       });
 
-      els.resultCount.textContent = `${filtered.length.toLocaleString()} ${filtered.length === 1 ? 'match' : 'matches'}`;
+      const countText = `${filtered.length.toLocaleString()} ${filtered.length === 1 ? 'match' : 'matches'}`;
+      if (els.resultCount.textContent !== countText) els.resultCount.textContent = countText;
       if (!filtered.length) {
         renderEmptyState();
       }
@@ -2337,6 +2431,7 @@
       els.sidebarPanel.removeAttribute('inert');
       els.sidebarPanel.setAttribute('role', 'dialog');
       els.sidebarPanel.setAttribute('aria-modal', 'true');
+      els.mobilePanelBackground.forEach(element => { element.inert = true; });
       if (origin) {
         els.sidebarInner.scrollTop = origin.scrollTop;
         const panel = els.sidebarInner.getBoundingClientRect();
@@ -2364,6 +2459,9 @@
     }
 
     function closeMobilePanel() {
+      if (document.body.classList.contains('mobile-panel-open')) {
+        els.mobilePanelBackground.forEach(element => { element.inert = false; });
+      }
       document.body.classList.remove('mobile-panel-open');
       els.openPanelBtn.setAttribute('aria-expanded', 'false');
       els.sidebarPanel.removeAttribute('role');
@@ -2497,6 +2595,11 @@
       }
     }
 
+    els.skipToSearch.addEventListener('click', event => {
+      event.preventDefault();
+      if (isMobileView()) openMobilePanel();
+      else els.searchBox.focus();
+    });
     els.openPanelBtn.addEventListener('click', () => openMobilePanel());
     els.nearMeBtn.addEventListener('click', requestUserLocation);
     els.mobileResetBtn.addEventListener('click', resetFilters);

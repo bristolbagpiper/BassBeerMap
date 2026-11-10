@@ -250,6 +250,7 @@ class FrontendSmokeTests(unittest.TestCase):
         self.resize_viewport(360, 640)
         self.load_directory()
         driver.find_element(By.ID, 'openPanelBtn').click()
+        self.assertTrue(driver.execute_script("return document.querySelector('.map-wrap').inert && document.querySelector('.topbar').inert;"))
         search = wait.until(EC.element_to_be_clickable((By.ID, 'searchBox')))
         search.send_keys('Bank Tavern')
         wait.until(lambda d: d.find_element(By.ID, 'resultCount').text == '1 match')
@@ -293,6 +294,7 @@ class FrontendSmokeTests(unittest.TestCase):
         self.assertEqual(driver.execute_script("return document.querySelector('.sidebar-inner').scrollTop;"), scroll_position)
 
         result.send_keys(Keys.ESCAPE)
+        self.assertFalse(driver.execute_script("return document.querySelector('.map-wrap').inert;"))
         pin = wait.until(EC.element_to_be_clickable((By.CSS_SELECTOR, '#map .leaflet-marker-icon')))
         pin.send_keys(Keys.ENTER)
         wait.until(EC.visibility_of(close))
@@ -368,7 +370,86 @@ class FrontendSmokeTests(unittest.TestCase):
         self.assertFalse(toggle.is_displayed())
         self.assertEqual(search.get_attribute('value'), 'Bank Tavern')
 
+    def test_keyboard_navigation_and_map_control_names(self):
+        from selenium.webdriver.common.by import By
+        from selenium.webdriver.common.keys import Keys
+        from selenium.webdriver.support import expected_conditions as EC
+        from selenium.webdriver.support.ui import WebDriverWait
+
+        self.load_directory()
+        driver = self.driver
+        wait = WebDriverWait(driver, 10)
+
+        def press(key):
+            driver.switch_to.active_element.send_keys(key)
+
+        press(Keys.TAB)
+        self.assertEqual(driver.switch_to.active_element.accessible_name, 'Skip to pub search')
+        press(Keys.TAB)
+        self.assertEqual(driver.switch_to.active_element.accessible_name, 'Skip to map')
+        press(Keys.ENTER)
+        self.assertEqual(driver.switch_to.active_element.get_attribute('id'), 'map')
+
+        cluster = driver.find_element(By.CSS_SELECTOR, '#map .marker-cluster-large')
+        self.assertRegex(cluster.accessible_name, r'^\d+ pubs, expand group$')
+        self.assertEqual(cluster.get_attribute('tabindex'), '0')
+        zoom = driver.execute_script('return map.getZoom();')
+        cluster.send_keys(Keys.SPACE)
+        wait.until(lambda d: d.execute_script('return map.getZoom();') > zoom)
+        self.assertEqual(driver.switch_to.active_element.get_attribute('id'), 'map')
+
+        driver.find_element(By.ID, 'skipToSearch').send_keys(Keys.ENTER)
+        search = driver.find_element(By.ID, 'searchBox')
+        self.assertEqual(driver.switch_to.active_element, search)
+        search.send_keys('Bank Tavern')
+        count = driver.find_element(By.ID, 'resultCount')
+        wait.until(lambda d: count.text == '1 match')
+        self.assertEqual(count.aria_role, 'status')
+        self.assertEqual(count.get_attribute('aria-atomic'), 'true')
+        self.assertEqual(driver.switch_to.active_element, search)
+
+        for element_id in ('nearMeBtn', 'countryFilter', 'areaFilter', 'typeFilter'):
+            press(Keys.TAB)
+            self.assertEqual(driver.switch_to.active_element.get_attribute('id'), element_id)
+        press(Keys.HOME)
+        press(Keys.DOWN)
+        self.assertEqual(driver.switch_to.active_element.get_attribute('value'), 'Perm')
+        for element_id in ('dispenseFilter', 'resetBtn', 'fitBtn'):
+            press(Keys.TAB)
+            self.assertEqual(driver.switch_to.active_element.get_attribute('id'), element_id)
+        press(Keys.TAB)
+        result = driver.switch_to.active_element
+        self.assertEqual(result.accessible_name, 'View on map, Bank Tavern, Bristol: Central')
+        self.assertEqual(driver.find_element(By.LINK_TEXT, 'Directions').accessible_name,
+                         'Directions to Bank Tavern, Bristol: Central')
+        press(Keys.ENTER)
+        heading = wait.until(EC.visibility_of_element_located((By.CSS_SELECTOR, '.leaflet-popup h3')))
+        self.assertEqual(driver.switch_to.active_element, heading)
+        self.assertEqual(heading.text, 'Bank Tavern')
+        wait.until(lambda d: d.execute_script("""
+            const heading = arguments[0];
+            const r = heading.getBoundingClientRect();
+            return getComputedStyle(heading.closest('.leaflet-popup')).opacity === '1'
+                && getComputedStyle(heading).outlineStyle === 'solid'
+                && heading.contains(document.elementFromPoint(r.x + r.width/2, r.y + r.height/2));
+        """, heading))
+        self.save_review_screenshot('keyboard-venue-focus.png')
+        press(Keys.TAB)
+        self.assertEqual(driver.switch_to.active_element.accessible_name, 'Get directions to Bank Tavern, Bristol: Central')
+        press(Keys.ESCAPE)
+        self.assertEqual(driver.switch_to.active_element, result)
+
+        pin = driver.find_element(By.CSS_SELECTOR, '#map .leaflet-marker-icon[role="button"]')
+        self.assertEqual(pin.accessible_name, 'Bank Tavern, Bristol: Central')
+        pin.send_keys(Keys.ENTER)
+        wait.until(lambda d: d.switch_to.active_element.text == 'Bank Tavern')
+        press(Keys.ESCAPE)
+        self.assertEqual(driver.switch_to.active_element, pin)
+
     def test_expired_evidence_falls_back_to_approximate_pin(self):
+        from selenium.webdriver.common.by import By
+        from selenium.webdriver.support.ui import WebDriverWait
+
         payload = json.loads((self.data_root / 'directory-release.json').read_text(encoding='utf-8'))
         row = next(r for r in payload['rows'] if r['pub_name'] == 'GJ Muckers')
         payload['locations'][row['venue_id']]['checked_at'] = '2000-01-01'
@@ -376,6 +457,11 @@ class FrontendSmokeTests(unittest.TestCase):
         self.load_directory()
         precision = self.driver.execute_script("return pubData.find(p => p.pub_name === 'GJ Muckers').locationPrecision")
         self.assertEqual(precision, 'postcode')
+        self.driver.find_element(By.ID, 'searchBox').send_keys('GJ Muckers')
+        WebDriverWait(self.driver, 10).until(lambda d: d.find_element(By.ID, 'resultCount').text == '1 match')
+        pin = self.driver.find_element(By.CSS_SELECTOR, '#map .approximate-marker')
+        self.assertIn('GJ Muckers', pin.accessible_name)
+        self.assertTrue(pin.accessible_name.endswith('approximate postcode location'))
 
     def test_corrupt_release_does_not_render_a_wrong_pin(self):
         payload = json.loads((self.data_root / 'directory-release.json').read_text(encoding='utf-8'))

@@ -1561,7 +1561,9 @@
     const DIRECTORY_RELEASE_URL = './directory-release.json';
     const GOOGLE_REVIEW_URL = './hermes-google-status.json';
     const POSSIBLE_CLOSURE_REASON = 'Google indicates a possible closure; trading status needs review';
+    const SHEPHERDS_HALL_ID = 'v-c62f31b0-c5b0-546c-979e-12fac920a47a';
     const TRADING_NOTICES = {
+      [SHEPHERDS_HALL_ID]: 'Appears to have reopened. Draught Bass availability unconfirmed.',
       // Dick Turpin, Newcastle-under-Lyme. Operator booking notice checked on 10 November 2026.
       'v-009a7c6e-3950-55bb-8a3c-eaf89ba0737e': 'Open from 19 November 2026.',
       // Charles Roe, Macclesfield (CAMRA 199589).
@@ -1723,6 +1725,10 @@
         if (correction && normalised.postcode.toUpperCase() === correction.listed) {
           normalised.directoryPostcode = normalised.postcode;
           normalised.postcode = correction.corrected;
+        }
+        if (normalised.venue_id === SHEPHERDS_HALL_ID
+          && normalised.notes.startsWith('CAMRA reports temporary closure since 2 July 2026')) {
+          normalised.notes = '';
         }
         normalised.searchText = [
           normalised.pub_name,
@@ -1907,8 +1913,6 @@
     function tradingNotice(item) {
       const notice = TRADING_NOTICES[item.venue_id];
       if (notice) return notice;
-      // Shepherds Hall already has a dated CAMRA closure notice in the directory notes.
-      if (item.venue_id === 'v-c62f31b0-c5b0-546c-979e-12fac920a47a' && item.notes.startsWith('CAMRA reports temporary closure')) return '';
       return item.possibleClosure ? 'Possible closure. Check opening and Bass availability before travelling.' : '';
     }
 

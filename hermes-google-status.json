@@ -1,13 +1,13 @@
 {
-  "checked_at": "2026-11-10T20:43:59+00:00",
+  "checked_at": "2026-11-10T20:54:44.766526+00:00",
   "configured": true,
   "counts": {
-    "attempted_venue_count": 1086,
-    "checked_this_run": 40,
-    "current": 1086,
+    "attempted_venue_count": 1087,
+    "checked_this_run": 41,
+    "current": 1087,
     "review_count": 74,
     "total": 1087,
-    "unchecked_or_stale": 1
+    "unchecked_or_stale": 0
   },
   "directory_binding_signature": "7e0d2c012ac84c183fd2ade4775f969455f6c97003a43eb1586542a68d3b1f9e",
   "findings": [
@@ -679,13 +679,11 @@
     }
   ],
   "hard_failure": false,
-  "issues": [
-    "Google comparison coverage is incomplete; untested, stale or inconclusive pubs remain"
-  ],
+  "issues": [],
   "provider": "hermes-browser",
   "run_attempt": 1,
-  "run_id": "3ede0d2487fe4e778f035752092dad56",
+  "run_id": "d26153e570664aab9e3dbec41a35ea41",
   "run_url": "",
   "schema_version": 1,
-  "source_execution_finished_at": "2026-11-10T07:45:11.584159+00:00"
+  "source_execution_finished_at": "2026-11-10T20:54:44.766526+00:00"
 }

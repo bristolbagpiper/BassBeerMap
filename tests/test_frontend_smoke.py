@@ -103,21 +103,108 @@ class FrontendSmokeTests(unittest.TestCase):
         result = self.driver.execute_script("return pubData.filter(p => p.pub_name === 'Black Lion' && p.place_name === 'Blackfordby').map(p => p.pg)")
         self.assertEqual(result, ['Guest'])
 
-    def test_nearby_status_tracks_guest_all_and_radius_filters(self):
+    def test_nearby_scope_keeps_radius_and_availability_independent(self):
         from selenium.webdriver.common.by import By
         from selenium.webdriver.support.ui import Select
         self.load_directory()
-        Select(self.driver.find_element(By.ID, 'typeFilter')).select_by_value('Guest')
-        self.driver.execute_script("setUserLocation(51.45593, -2.593993, 'Test postcode');")
-        self.assertIn('closest guest listings within 25 miles', self.driver.find_element(By.ID, 'locationStatus').text)
-        self.assertNotIn('permanent', self.driver.find_element(By.ID, 'locationStatus').text)
-        self.save_review_screenshot('Bass Map nearby Guest preview.png')
-        Select(self.driver.find_element(By.ID, 'typeFilter')).select_by_value('')
-        Select(self.driver.find_element(By.ID, 'radiusFilter')).select_by_value('')
-        self.assertIn('closest all listings at any distance', self.driver.find_element(By.ID, 'locationStatus').text)
-        Select(self.driver.find_element(By.ID, 'typeFilter')).select_by_value('Perm')
-        Select(self.driver.find_element(By.ID, 'radiusFilter')).select_by_value('10')
-        self.assertIn('closest permanent listings within 10 miles', self.driver.find_element(By.ID, 'locationStatus').text)
+        driver = self.driver
+        availability = Select(driver.find_element(By.ID, 'typeFilter'))
+        availability.select_by_value('Guest')
+        driver.execute_script("setUserLocation(51.45593, -2.593993, 'Nearby BS1 2HR');")
+        scope = driver.find_element(By.ID, 'nearbyScope')
+        radius = Select(scope.find_element(By.ID, 'radiusFilter'))
+        self.assertEqual(scope.find_element(By.ID, 'nearbyOrigin').text, 'Nearby BS1 2HR')
+        self.assertEqual(availability.first_selected_option.text, 'Guest')
+        self.assertEqual(radius.first_selected_option.text, 'Within 25 miles')
+        radius.select_by_value('')
+        self.assertEqual(availability.first_selected_option.text, 'Guest')
+        self.assertEqual(radius.first_selected_option.text, 'Any distance')
+        availability.select_by_value('')
+        self.assertEqual(radius.first_selected_option.text, 'Any distance')
+        self.assertEqual(availability.first_selected_option.text, 'All types')
+        radius.select_by_value('10')
+        availability.select_by_value('Perm')
+        self.assertEqual(radius.first_selected_option.text, 'Within 10 miles')
+        self.assertEqual(availability.first_selected_option.text, 'Permanent')
+
+    def test_mobile_search_all_listings_keeps_the_pub_name(self):
+        from selenium.webdriver.common.by import By
+        from selenium.webdriver.common.keys import Keys
+        from selenium.webdriver.support.ui import Select, WebDriverWait
+
+        driver = self.driver
+        wait = WebDriverWait(driver, 10)
+
+        def by_id(element_id):
+            return driver.find_element(By.ID, element_id)
+
+        self.addCleanup(driver.execute_cdp_cmd, 'Emulation.clearDeviceMetricsOverride', {})
+        self.resize_viewport(360, 640)
+        self.load_directory()
+        driver.execute_script("""
+            const fetchFromNetwork = window.fetch;
+            window.fetch = (url, ...options) => {
+                if (url === 'https://api.postcodes.io/postcodes/BS1%205AH') {
+                    const response = Response.json({
+                        result: {postcode: 'BS1 5AH', latitude: 51.4532, longitude: -2.6008}
+                    });
+                    if (window.delayTestPostcode) {
+                        return new Promise(resolve => { window.finishTestPostcode = () => resolve(response); });
+                    }
+                    return Promise.resolve(response);
+                }
+                if (url === 'https://api.postcodes.io/postcodes/ZZ99%209ZZ') {
+                    return Promise.resolve(new Response(null, {status: 404}));
+                }
+                return fetchFromNetwork(url, ...options);
+            };
+        """)
+        by_id('openPanelBtn').click()
+        search = by_id('searchBox')
+        wait.until(lambda d: 'full UK postcode to search nearby' in by_id('searchHelp').text)
+        search.send_keys('BS1 5AH', Keys.ENTER)
+        wait.until(lambda d: by_id('nearbyOrigin').text == 'Nearby BS1 5AH')
+        scope = by_id('nearbyScope')
+        radius = Select(scope.find_element(By.ID, 'radiusFilter'))
+        availability = Select(scope.find_element(By.ID, 'typeFilter'))
+        self.assertEqual(radius.first_selected_option.text, 'Within 25 miles')
+        self.assertEqual(availability.first_selected_option.text, 'Permanent')
+
+        search.send_keys('Brew Tavern')
+        wait.until(lambda d: by_id('resultCount').text == '0 matches')
+        self.assertIn('Nothing within 25 miles', by_id('results').text)
+        self.assertIn('Brew Tavern in Nottingham', by_id('results').text)
+        self.save_review_screenshot('nearby-brew-tavern-360x640.png')
+        driver.find_element(By.XPATH, "//button[normalize-space()='Show closest listings']").click()
+        self.assertEqual(radius.first_selected_option.text, 'Any distance')
+        self.assertEqual(availability.first_selected_option.text, 'Permanent')
+        self.assertIn('miles away', by_id('results').text)
+        radius.select_by_value('25')
+        by_id('searchAllListingsBtn').click()
+        self.assertEqual(search.get_attribute('value'), 'Brew Tavern')
+        self.assertEqual(by_id('resultCount').text, '1 match')
+        self.assertIn('Brew Tavern', by_id('results').text)
+        self.assertFalse(scope.is_displayed())
+        self.assertEqual(by_id('typeFilter').get_attribute('value'), '')
+        self.assertEqual(driver.switch_to.active_element, by_id('resultsHeading'))
+        self.save_review_screenshot('all-listings-brew-tavern-360x640.png')
+
+        search.send_keys(Keys.CONTROL, 'a', Keys.NULL, 'ZZ99 9ZZ', Keys.ENTER)
+        wait.until(lambda d: 'That postcode could not be located' in by_id('locationStatus').text)
+        self.assertEqual(search.get_attribute('value'), 'ZZ99 9ZZ')
+        search.send_keys(Keys.CONTROL, 'a', Keys.NULL, 'Bank Tavern')
+        wait.until(lambda d: by_id('resultCount').text == '1 match')
+        self.assertIn('Bank Tavern', by_id('results').text)
+        self.assertEqual(by_id('locationStatus').text, '')
+
+        driver.execute_script('window.delayTestPostcode = true;')
+        search.send_keys(Keys.CONTROL, 'a', Keys.NULL, 'BS1 5AH', Keys.ENTER)
+        wait.until(lambda d: 'Finding that postcode' in by_id('locationStatus').text)
+        search.send_keys(Keys.CONTROL, 'a', Keys.NULL, 'Brew Tavern')
+        driver.execute_script('window.finishTestPostcode();')
+        wait.until(lambda d: 'Brew Tavern' in by_id('results').text)
+        self.assertEqual(search.get_attribute('value'), 'Brew Tavern')
+        self.assertFalse(scope.is_displayed())
 
     def test_report_dialog_keeps_keyboard_focus_and_restores_background(self):
         from selenium.webdriver.common.by import By

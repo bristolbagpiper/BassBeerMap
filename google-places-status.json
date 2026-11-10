@@ -1,11 +1,11 @@
 {
-  "checked_at": "2026-11-09T08:18:42.689000+00:00",
+  "checked_at": "2026-11-10T08:13:07.013000+00:00",
   "configured": true,
   "counts": {
     "attempted_venue_count": 1087,
-    "checked_this_run": 44,
+    "checked_this_run": 39,
     "current": 1087,
-    "review_count": 68,
+    "review_count": 74,
     "total": 1087,
     "unchecked_or_stale": 0
   },
@@ -64,6 +64,15 @@
       "reason": "Google named-place marker differs by more than 50 metres; existing pin retained for review",
       "status": "review_needed",
       "venue_id": "v-151c6a0f-d18e-5884-868f-b95b6d6c6f14"
+    },
+    {
+      "binding_signature": "1bb7c86097327ab85609edaff7a3808135f6567bf8a4ea3e4c0aca1928edd22e",
+      "place_name": "Llandegla",
+      "postcode": "LL11 3AD",
+      "pub_name": "Crown",
+      "reason": "Google results are incomplete or ambiguous; no unique place accepted",
+      "status": "review_needed",
+      "venue_id": "v-196f3701-3d8b-50c7-bb6a-0167ba6a6bfc"
     },
     {
       "binding_signature": "dc5e9a77a4975f10e41ff93213d2175fcd43a26403df1a04cdb26dcf796cffbf",
@@ -417,6 +426,15 @@
       "venue_id": "v-97a6ff26-33a9-521e-8875-2fa9a26e5f68"
     },
     {
+      "binding_signature": "af511f8bd93e254a136608cd4e2b8570e7efcde8ea8bf79cc3603bc31ad65b68",
+      "place_name": "Hednesford",
+      "postcode": "WS12 2DN",
+      "pub_name": "Cross Keys Hotel",
+      "reason": "Google results are incomplete or ambiguous; no unique place accepted",
+      "status": "review_needed",
+      "venue_id": "v-98c9c146-6069-548e-9386-bd971dc8e282"
+    },
+    {
       "binding_signature": "ce3976e4b75c01f8b06afec0061ece0fe75b98f27c7db875c4a8d37cada733b5",
       "place_name": "Derby: Spondon",
       "postcode": "DE21 7JP",
@@ -442,6 +460,15 @@
       "reason": "Google named-place result differs in business identity or postcode; verify the matched venue and address",
       "status": "review_needed",
       "venue_id": "v-9fc56ee2-e106-5f12-8f10-2eebbea068ef"
+    },
+    {
+      "binding_signature": "f7c68fbccecf060507aadbad1f4001669af7e01177f0ac47e0180c0321f7f18f",
+      "place_name": "West Huntspill",
+      "postcode": "TA9 3RA",
+      "pub_name": "Crossways Inn",
+      "reason": "Google results are incomplete or ambiguous; no unique place accepted",
+      "status": "review_needed",
+      "venue_id": "v-a8485c5d-3d4a-57e4-ac77-6e1235d3eeb1"
     },
     {
       "binding_signature": "12e33f631727a454cfbfe3e266dbbe1d34aca286efd4bd2a7b6f74b1408f6b2b",
@@ -561,6 +588,24 @@
       "venue_id": "v-d662d0c4-a468-53cd-89b2-f7305f033e3c"
     },
     {
+      "binding_signature": "8f16b7da46ce174dc6897d194b077cb3aff0b964949579963af9d84fac86c89c",
+      "place_name": "Marston Montgomery",
+      "postcode": "DE6 2FF",
+      "pub_name": "Crown Inn",
+      "reason": "Google results are incomplete or ambiguous; no unique place accepted",
+      "status": "review_needed",
+      "venue_id": "v-d7a5ca84-76d7-5f19-ad38-9b3f8bc3e3f3"
+    },
+    {
+      "binding_signature": "6d5477dd6c22720944e7ee1c2d7c5066b397b49b2a7735d7a512ed444114058d",
+      "place_name": "Liverpool: Central",
+      "postcode": "L1 1JQ",
+      "pub_name": "Crown Hotel",
+      "reason": "Google results are incomplete or ambiguous; no unique place accepted",
+      "status": "review_needed",
+      "venue_id": "v-d87d7238-4c39-56eb-8021-0599d9585515"
+    },
+    {
       "binding_signature": "6968f48798dbe8ea040fa3f7a041dfe979a943ae14f5ee141c76e572664e1bf3",
       "place_name": "Great Casterton",
       "postcode": "PE9 4AP",
@@ -586,6 +631,15 @@
       "reason": "Google named-place result differs in business identity or postcode; verify the matched venue and address",
       "status": "review_needed",
       "venue_id": "v-e1529c31-a528-53b2-a01e-e18c1fb2a58e"
+    },
+    {
+      "binding_signature": "f0efebeee34c74a96893fb7f9c32dd055653e77c6ba2453e4a5cb98652167983",
+      "place_name": "Shotley Bridge",
+      "postcode": "DH8 0HU",
+      "pub_name": "Crown and Crossed Swords",
+      "reason": "Google results are incomplete or ambiguous; no unique place accepted",
+      "status": "review_needed",
+      "venue_id": "v-e6679625-95b2-50be-92e0-187d41170ed6"
     },
     {
       "binding_signature": "1e0550d38dc5fec629d481fcc0277cea34e5d3be975b0eff06a3ee7547b0116c",
@@ -630,8 +684,8 @@
   ],
   "provider": "hermes-browser",
   "run_attempt": 1,
-  "run_id": "42659310960",
-  "run_url": "https://github.com/bristolbagpiper/BassBeerMap/actions/runs/42659310960",
+  "run_id": "42842395235",
+  "run_url": "https://github.com/bristolbagpiper/BassBeerMap/actions/runs/42842395235",
   "schema_version": 1,
-  "source_execution_finished_at": "2026-11-09T07:44:33.595229+00:00"
+  "source_execution_finished_at": "2026-11-10T07:45:11.584159+00:00"
 }

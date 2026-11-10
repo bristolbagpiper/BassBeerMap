@@ -444,6 +444,47 @@
     .popup p { margin: 4px 0; color: var(--muted); }
     .popup .approximate-location { color: #7a4d11; font-weight: 600; }
     .popup .trading-notice, .footer-note.trading-notice { color: #7a4d11; font-weight: 600; }
+    .mobile-venue {
+      position: fixed;
+      inset: var(--header-height) 12px 12px;
+      margin: auto auto 0;
+      width: min(440px, calc(100% - 24px));
+      max-height: calc(100% - var(--header-height) - 24px);
+      padding: 0;
+      overflow: hidden;
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      background: #fff;
+      color: var(--text);
+      box-shadow: 0 8px 24px rgba(58, 34, 25, 0.25);
+    }
+    .mobile-venue[open] { display: flex; flex-direction: column; }
+    .mobile-venue::backdrop { background: rgba(33, 29, 28, 0.25); }
+    .mobile-venue-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 12px;
+      padding: 8px 14px;
+      border-bottom: 1px solid var(--border);
+    }
+    .mobile-venue-header h2 { margin: 0; font-size: 1.1rem; overflow-wrap: anywhere; }
+    .mobile-venue-header button { flex: none; width: auto; min-height: 44px; }
+    .mobile-venue-header button:focus-visible { outline: 2px solid var(--accent-2); outline-offset: 2px; }
+    .mobile-venue-content {
+      min-height: 0;
+      overflow: auto;
+      overscroll-behavior: contain;
+      padding: 8px 14px 12px;
+      overflow-wrap: anywhere;
+    }
+    @media (orientation: landscape) and (max-height: 480px) {
+      .mobile-venue {
+        inset-block-start: 12px;
+        margin-block-end: auto;
+        max-height: calc(100% - 24px);
+      }
+    }
     .approximate-marker {
       background: transparent;
       border: 0;
@@ -518,7 +559,6 @@
     .footer-note { margin-top: 10px; color: var(--muted); font-size: 0.82rem; line-height: 1.45; }
     .loading-bar { height: 8px; background: rgba(58,34,25,0.08); border-radius: 999px; overflow: hidden; margin-top: 10px; }
     .loading-bar > div { height: 100%; width: 0%; background: linear-gradient(90deg, #ce9834, #e94136); transition: width 0.2s ease; }
-    .sheet-handle { display: none; }
     .leaflet-control-zoom a,
     .leaflet-control-zoom a:hover {
       background: rgba(255,255,255,0.92);
@@ -572,13 +612,6 @@
       font-weight: 800;
       box-shadow: 0 18px 38px rgba(157,22,29,0.28);
     }
-    .mobile-open-btn .small {
-      display: block;
-      font-size: 0.78rem;
-      font-weight: 600;
-      color: rgba(255,241,220,0.88);
-      margin-top: 2px;
-    }
     .mobile-reset-btn {
       display: none;
       position: absolute;
@@ -596,8 +629,6 @@
       backdrop-filter: blur(10px);
     }
     .mobile-reset-btn.visible { display: inline-flex; }
-    .mobile-close-row { display: none; }
-    .mobile-close-btn { border-radius: 999px; }
     body.mobile-panel-open .mobile-reset-btn { display: none; }
     body.mobile-panel-open { overflow: hidden; }
     @media (max-width: 1600px), (max-height: 980px) {
@@ -781,21 +812,6 @@
         height: 100%;
         overflow: auto;
         padding: 14px 14px 20px;
-      }
-      .sheet-handle {
-        display: block;
-        width: 56px;
-        height: 6px;
-        border-radius: 999px;
-        background: rgba(255,255,255,0.18);
-        margin: 10px auto 14px;
-      }
-      .mobile-close-row {
-        display: grid;
-        grid-template-columns: 1fr auto;
-        gap: 10px;
-        align-items: center;
-        margin-bottom: 14px;
       }
       .mobile-open-btn { display: block; }
       .mobile-reset-btn {
@@ -1174,6 +1190,10 @@
       font-size: 0.75rem;
     }
     .location-status:empty { display: none; }
+    .mobile-close-btn,
+    .mobile-filters-btn,
+    .mobile-show-results,
+    .mobile-active-filters { display: none; }
     .list-header { margin-bottom: 9px; }
     .count {
       color: var(--muted);
@@ -1342,7 +1362,7 @@
       .map-wrap { height: 100%; border-radius: 0; }
       .sidebar {
         position: fixed;
-        inset: var(--header-height) 0 0;
+        inset: var(--header-height) 0 var(--visual-viewport-inset, 0px);
         z-index: 1300;
         width: auto;
         height: auto;
@@ -1355,9 +1375,36 @@
       body.mobile-panel-open .mobile-open-btn,
       body.mobile-panel-open .mobile-reset-btn { display: none; }
       .sidebar-inner { padding: 10px 14px 22px; }
-      .sheet-handle { width: 42px; height: 4px; margin: 0 auto 10px; background: #c7c1bb; }
-      .mobile-close-row { margin-bottom: 12px; }
-      .mobile-close-btn { width: auto; border-radius: 8px; }
+      .desktop-filters-heading { display: none; }
+      .search-row, .search-actions {
+        display: grid;
+        grid-template-columns: minmax(0, 1fr) auto;
+        gap: 8px;
+      }
+      .search-row input { min-width: 0; min-height: 44px; font-size: 1rem; }
+      .search-actions { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+      .search-actions button { min-height: 44px; }
+      .search-actions .primary {
+        background: var(--panel-2);
+        border-color: var(--border);
+        color: var(--text);
+        box-shadow: none;
+      }
+      .mobile-close-btn, .mobile-filters-btn, .mobile-show-results { display: block; }
+      .mobile-close-btn { width: auto; min-height: 44px; }
+      .secondary-filters:not(.expanded) { display: none; }
+      .secondary-filters { padding-block: 4px; }
+      .mobile-active-filters:not([hidden]) {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        margin-bottom: 8px;
+        color: var(--muted);
+        font-size: 0.8rem;
+      }
+      .mobile-active-filters button { flex: none; width: auto; min-height: 44px; margin-left: auto; }
+      .mobile-active-filters:not([hidden]) ~ .results .empty-clear-filters { display: none; }
+      .group + .group { margin-top: 12px; padding-top: 10px; }
       .mobile-open-btn {
         display: block;
         bottom: 14px;
@@ -1369,7 +1416,6 @@
         background: var(--accent-2);
         box-shadow: 0 8px 24px rgba(82, 18, 23, 0.3);
       }
-      .mobile-open-btn .small { display: none; }
       .mobile-reset-btn { top: 10px; right: 10px; border-radius: 8px; }
       .page-footer { display: none; }
       .leaflet-control-zoom { margin-left: 10px !important; }
@@ -1396,13 +1442,34 @@
     }
 
     @media (max-width: 640px) {
-      body { --header-height: 164px; }
-      .sub { display: block; }
+      body { --header-height: 104px; }
+      .title-row { padding: 8px 12px; }
+      .topbar .bass-logo { width: 50px; height: 68px; }
+      .sub-detail { display: none; }
       .credit-line { display: none; }
       .header-actions { grid-row: 1 / 4; }
       .control-row,
       .button-row { grid-template-columns: 1fr; }
       .sidebar-inner { padding-inline: 12px; }
+    }
+
+    @media (max-width: 980px) and (orientation: landscape) and (max-height: 500px) {
+      body { --header-height: 60px; }
+      .title-row { padding: 4px 12px; }
+      .topbar .bass-logo { width: 34px; height: 44px; filter: none; }
+      .brand-lockup { grid-template-rows: auto; }
+      .header-actions { grid-row: 1; }
+      .header-actions .stats, .sub, .credit-line { display: none; }
+      .report-listing-link { min-height: 44px; padding: 6px 10px; font-size: 0.74rem; }
+      .search-actions { grid-template-columns: repeat(2, auto); justify-content: start; }
+      .secondary-filters .control-row, .secondary-filters .button-row {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+    }
+    @media (min-width: 560px) and (max-width: 980px) and (orientation: landscape) and (max-height: 500px) {
+      .discovery-controls { grid-template-columns: minmax(0, 1fr) auto; }
+      .discovery-controls > .location-status,
+      .discovery-controls > .secondary-filters { grid-column: 1 / -1; }
     }
   </style>
 </head>
@@ -1425,7 +1492,7 @@
         <img class="bass-logo" src="bass-logo.svg" alt="Bass logo" />
         <div class="brand-lockup">
           <h1>Draught Bass Directory Interactive Map</h1>
-          <div class="sub">Find draught Bass near you or search the <span id="directoryLabel">latest Bass directory</span>. Guest listings are occasional: check before travelling.</div>
+          <div class="sub"><span class="sub-detail">Find draught Bass near you or search the </span><span id="directoryLabel">latest Bass directory</span><span class="sub-detail">. Guest listings are occasional: check before travelling.</span></div>
           <div class="header-actions">
             <div class="stats">
               <div class="stat"><strong id="stat-total">Loading...</strong><span class="stat-label">current entries</span></div>
@@ -1440,70 +1507,77 @@
   </div>
 
   <div class="layout">
-    <aside class="sidebar" id="sidebarPanel" aria-label="Filters and results">
+    <aside class="sidebar" id="sidebarPanel" aria-label="Search and results">
       <div class="sidebar-inner">
-        <div class="sheet-handle"></div>
-        <div class="mobile-close-row">
-          <div>
-            <strong>Filters & results</strong>
-            <div class="tiny">Use this panel, then go back to the map.</div>
+        <div class="group">
+          <h2 class="desktop-filters-heading">Filters</h2>
+          <div class="controls discovery-controls">
+            <div class="search-row">
+              <label class="sr-only" for="searchBox">Search listings</label>
+              <input id="searchBox" type="search" placeholder="Search pub, place or postcode" />
+              <button id="closePanelBtn" class="secondary mobile-close-btn" type="button">Back to map</button>
+            </div>
+            <div class="search-actions">
+              <button id="nearMeBtn" class="primary" type="button">Use my location</button>
+              <button id="mobileFiltersBtn" class="secondary mobile-filters-btn" type="button"
+                aria-expanded="false" aria-controls="secondaryFilters">Filters</button>
+            </div>
+            <div id="locationStatus" class="location-status" aria-live="polite"></div>
+            <div class="controls secondary-filters" id="secondaryFilters">
+              <div class="control-row">
+                <label class="sr-only" for="countryFilter">Country or territory</label><select id="countryFilter"></select>
+                <label class="sr-only" for="areaFilter">Area</label><select id="areaFilter"></select>
+              </div>
+              <label class="sr-only" for="radiusFilter">Search radius</label>
+              <select id="radiusFilter" disabled>
+                <option value="">Any distance</option>
+                <option value="5">Within 5 miles</option>
+                <option value="10">Within 10 miles</option>
+                <option value="25">Within 25 miles</option>
+                <option value="50">Within 50 miles</option>
+              </select>
+              <div class="control-row">
+                <label class="sr-only" for="typeFilter">Bass availability type</label><select id="typeFilter">
+                  <option value="">All types</option>
+                  <option value="Perm">Permanent</option>
+                  <option value="Guest">Guest</option>
+                </select>
+                <label class="sr-only" for="dispenseFilter">Dispense method</label><select id="dispenseFilter">
+                  <option value="">All dispense</option>
+                  <option value="H">Handpump</option>
+                  <option value="G">Gravity</option>
+                  <option value="E">Electric</option>
+                  <option value="J">Jug</option>
+                  <option value="B">Banked</option>
+                  <option value="P">Powered pump</option>
+                </select>
+              </div>
+              <div class="button-row">
+                <button id="resetBtn" class="secondary" type="button">Reset filters</button>
+                <button id="fitBtn" class="primary" type="button">Fit to results</button>
+              </div>
+              <button id="mobileShowResultsBtn" class="secondary mobile-show-results" type="button">Show results</button>
+            </div>
           </div>
-          <button id="closePanelBtn" class="secondary mobile-close-btn">Back to map</button>
         </div>
-      <div class="group">
-        <h2>Filters</h2>
-        <div class="controls">
-          <label class="sr-only" for="searchBox">Search listings</label>
-          <input id="searchBox" type="search" placeholder="Search pub, place or postcode" />
-          <button id="nearMeBtn" class="primary" type="button">Use my location</button>
-          <div id="locationStatus" class="location-status" aria-live="polite"></div>
-          <div class="control-row">
-            <label class="sr-only" for="countryFilter">Country or territory</label><select id="countryFilter"></select>
-            <label class="sr-only" for="areaFilter">Area</label><select id="areaFilter"></select>
-          </div>
-          <label class="sr-only" for="radiusFilter">Search radius</label>
-          <select id="radiusFilter" disabled>
-            <option value="">Any distance</option>
-            <option value="5">Within 5 miles</option>
-            <option value="10">Within 10 miles</option>
-            <option value="25">Within 25 miles</option>
-            <option value="50">Within 50 miles</option>
-          </select>
-          <div class="control-row">
-            <label class="sr-only" for="typeFilter">Bass availability type</label><select id="typeFilter">
-              <option value="">All types</option>
-              <option value="Perm">Permanent</option>
-              <option value="Guest">Guest</option>
-            </select>
-            <label class="sr-only" for="dispenseFilter">Dispense method</label><select id="dispenseFilter">
-              <option value="">All dispense</option>
-              <option value="H">Handpump</option>
-              <option value="G">Gravity</option>
-              <option value="E">Electric</option>
-              <option value="J">Jug</option>
-              <option value="B">Banked</option>
-              <option value="P">Powered pump</option>
-            </select>
-          </div>
-          <div class="button-row">
-            <button id="resetBtn" class="secondary">Reset filters</button>
-            <button id="fitBtn" class="primary">Fit to results</button>
-          </div>
-        </div>
-      </div>
 
-      <div class="group">
-        <div class="list-header">
-          <h2 style="margin:0">Results</h2>
-          <div id="resultCount" class="count" aria-live="polite"></div>
+        <div class="group">
+          <div class="list-header">
+            <h2 id="resultsHeading" tabindex="-1">Results</h2>
+            <div id="resultCount" class="count" aria-live="polite"></div>
+          </div>
+          <div id="mobileActiveFilters" class="mobile-active-filters" hidden>
+            <span id="activeFilterSummary"></span>
+            <button id="clearMobileFiltersBtn" class="secondary" type="button">Clear filters</button>
+          </div>
+          <div id="results" class="results"></div>
+          <div id="moreNotice" class="footer-note"></div>
         </div>
-        <div id="results" class="results"></div>
-        <div id="moreNotice" class="footer-note"></div>
       </div>
     </aside>
 
     <main class="map-wrap">
-          <button id="openPanelBtn" class="mobile-open-btn" aria-controls="sidebarPanel">Filters & results<span class="small">Search, narrow down, then jump back to the map</span></button>
+      <button id="openPanelBtn" class="mobile-open-btn" type="button" aria-controls="sidebarPanel">Search pubs</button>
       <button id="mobileResetBtn" class="mobile-reset-btn" type="button">Reset filters</button>
       <div id="map"></div>
       <div id="mapNotice" class="map-notice hidden" role="status"></div>
@@ -1521,6 +1595,14 @@
   <footer class="page-footer">
     <div class="footer-disclaimer">Independent, unofficial fan-made map. Directory information can change—especially Guest listings—so check before travelling. Not affiliated with AB InBev or Bass.</div>
   </footer>
+
+  <dialog id="mobileVenue" class="mobile-venue" aria-labelledby="mobileVenueTitle">
+    <div class="mobile-venue-header">
+      <h2 id="mobileVenueTitle"></h2>
+      <button id="closeMobileVenueBtn" class="secondary" type="button" autofocus>Close</button>
+    </div>
+    <div id="mobileVenueContent" class="popup mobile-venue-content"></div>
+  </dialog>
 
   <div id="reportDialog" class="report-dialog" hidden aria-hidden="true">
     <div class="report-dialog-card" role="dialog" aria-modal="true" aria-labelledby="reportDialogTitle">
@@ -1574,6 +1656,8 @@
     };
     const DATA_FETCH_OPTIONS = { cache: 'no-cache' };
     let activeDirectoryLabel = 'latest Bass directory';
+    let mobileVenueOrigin = null;
+    const mobileViewport = window.matchMedia('(max-width: 980px)');
     const map = L.map('map', { zoomControl: true, preferCanvas: true }).setView([54.5, -2.5], 6);
     L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
       maxZoom: 19,
@@ -1604,6 +1688,7 @@
       resetBtn: document.getElementById('resetBtn'),
       fitBtn: document.getElementById('fitBtn'),
       results: document.getElementById('results'),
+      resultsHeading: document.getElementById('resultsHeading'),
       resultCount: document.getElementById('resultCount'),
       moreNotice: document.getElementById('moreNotice'),
       directoryLabel: document.getElementById('directoryLabel'),
@@ -1613,6 +1698,16 @@
       openPanelBtn: document.getElementById('openPanelBtn'),
       mobileResetBtn: document.getElementById('mobileResetBtn'),
       closePanelBtn: document.getElementById('closePanelBtn'),
+      mobileFiltersBtn: document.getElementById('mobileFiltersBtn'),
+      secondaryFilters: document.getElementById('secondaryFilters'),
+      mobileShowResultsBtn: document.getElementById('mobileShowResultsBtn'),
+      mobileActiveFilters: document.getElementById('mobileActiveFilters'),
+      activeFilterSummary: document.getElementById('activeFilterSummary'),
+      clearMobileFiltersBtn: document.getElementById('clearMobileFiltersBtn'),
+      mobileVenue: document.getElementById('mobileVenue'),
+      mobileVenueTitle: document.getElementById('mobileVenueTitle'),
+      mobileVenueContent: document.getElementById('mobileVenueContent'),
+      closeMobileVenueBtn: document.getElementById('closeMobileVenueBtn'),
       helpLegend: document.getElementById('helpLegend'),
       hideHelpBtn: document.getElementById('hideHelpBtn'),
       showHelpBtn: document.getElementById('showHelpBtn'),
@@ -1622,6 +1717,7 @@
       locationStatus: document.getElementById('locationStatus'),
       radiusFilter: document.getElementById('radiusFilter'),
       sidebarPanel: document.getElementById('sidebarPanel'),
+      sidebarInner: document.querySelector('.sidebar-inner'),
       mapNotice: document.getElementById('mapNotice'),
       reportDialog: document.getElementById('reportDialog'),
       openProblemReportBtn: document.getElementById('openProblemReportBtn'),
@@ -1857,7 +1953,16 @@
           item.marker = L.marker([item.lat, item.lng], item.locationPrecision === 'postcode'
             ? { icon: approximatePostcodeIcon, title: 'Approximate postcode location' }
             : undefined
-          ).bindPopup(makePopup(item));
+          );
+          configureVenuePopup(item);
+          item.marker.on('click keydown', event => {
+            if (!isMobileView()) return;
+            if (event.type === 'keydown') {
+              if (!['Enter', ' '].includes(event.originalEvent.key)) return;
+              event.originalEvent.preventDefault();
+            }
+            openMobileVenue(item, item.marker.getElement());
+          });
         } else {
           item.lat = null;
           item.lng = null;
@@ -1916,11 +2021,9 @@
       return item.possibleClosure ? 'Possible closure. Check opening and Bass availability before travelling.' : '';
     }
 
-    function makePopup(item) {
+    function makeVenueDetails(item) {
       const directions = directionsUrl(item);
       return `
-        <div class="popup">
-          <h3>${escapeHtml(item.pub_name)}</h3>
           ${tradingNotice(item) ? `<p class="trading-notice">${escapeHtml(tradingNotice(item))}</p>` : ''}
           <p><strong>Place:</strong> ${escapeHtml(item.place_name)}</p>
           <p><strong>Postcode:</strong> ${escapeHtml(item.postcode)}</p>
@@ -1930,8 +2033,26 @@
           <p><strong>Status:</strong> ${escapeHtml(item.pg)} | <strong>Last confirmed:</strong> ${escapeHtml(item.last)} | <strong>Dispense:</strong> ${escapeHtml(dispenseLabel(item.dispense))}</p>
           ${item.notes ? `<p><strong>Notes:</strong> ${escapeHtml(item.notes)}</p>` : ''}
           <p><a href="${directions}" target="_blank" rel="noopener noreferrer">Get directions</a></p>
-        </div>
       `;
+    }
+
+    function configureVenuePopup(item) {
+      if (isMobileView()) {
+        item.marker.unbindPopup();
+      } else {
+        item.marker.bindPopup(() => `<div class="popup">
+          <h3>${escapeHtml(item.pub_name)}</h3>
+          ${makeVenueDetails(item)}
+        </div>`);
+      }
+    }
+
+    function openMobileVenue(item, element, scrollTop) {
+      mobileVenueOrigin = { element, scrollTop };
+      els.mobileVenueTitle.textContent = item.pub_name;
+      els.mobileVenueContent.innerHTML = makeVenueDetails(item);
+      els.mobileVenue.showModal();
+      els.mobileVenueContent.scrollTop = 0;
     }
 
     function fillCountryOptions() {
@@ -1979,6 +2100,19 @@
 
     function updateMobileResetButton() {
       els.mobileResetBtn.classList.toggle('visible', isMobileView() && hasActiveFilters());
+    }
+
+    function updateActiveFilterSummary() {
+      const { country, area, type, dispense, radius } = getActiveFilters();
+      const labels = [
+        country,
+        area,
+        type === 'Perm' ? 'Permanent' : type,
+        dispense && dispenseLabel(dispense),
+        radius ? `Within ${radius} miles` : (userLocation ? 'Nearby search' : '')
+      ].filter(Boolean);
+      els.activeFilterSummary.textContent = labels.join(' · ');
+      els.mobileActiveFilters.hidden = !labels.length;
     }
 
     function hasCoordinates(item) {
@@ -2056,11 +2190,13 @@
       `;
       const mapButton = card.querySelector('.card-map-button');
       mapButton?.addEventListener('click', () => {
+        const scrollTop = els.sidebarInner.scrollTop;
+        if (isMobileView()) closeMobilePanel();
         markerLayer.zoomToShowLayer(item.marker, () => {
           map.setView([item.lat, item.lng], Math.max(map.getZoom(), 14));
-          item.marker.openPopup();
+          if (isMobileView()) openMobileVenue(item, mapButton, scrollTop);
+          else item.marker.openPopup();
         });
-        if (isMobileView()) closeMobilePanel();
       });
 
       return card;
@@ -2076,7 +2212,7 @@
         if (item.marker) markerLayer.addLayer(item.marker);
       });
 
-      els.resultCount.textContent = `${filtered.length.toLocaleString()} matches`;
+      els.resultCount.textContent = `${filtered.length.toLocaleString()} ${filtered.length === 1 ? 'match' : 'matches'}`;
       if (!filtered.length) {
         renderEmptyState();
       }
@@ -2115,7 +2251,7 @@
         emptyState.innerHTML = '<strong>No listings match these filters.</strong><br>Try broadening the search or clearing the filters.';
         const resetButton = document.createElement('button');
         resetButton.type = 'button';
-        resetButton.className = 'secondary';
+        resetButton.className = 'secondary empty-clear-filters';
         resetButton.textContent = 'Clear filters';
         resetButton.addEventListener('click', resetFilters);
         emptyState.appendChild(resetButton);
@@ -2129,27 +2265,51 @@
       const filtered = pubData.filter(matchesFilters);
       renderResults(filtered);
       updateMobileResetButton();
+      updateActiveFilterSummary();
+      if (!fit) return false;
       const withCoords = getItemsWithCoordinates(filtered);
-      if (fit && withCoords.length) {
-        const bounds = L.latLngBounds(withCoords.map(item => [item.lat, item.lng]));
-        map.fitBounds(bounds.pad(0.08), { maxZoom: 15 });
-        if (isMobileView()) closeMobilePanel();
-      }
+      if (!withCoords.length) return false;
+      const bounds = L.latLngBounds(withCoords.map(item => [item.lat, item.lng]));
+      map.fitBounds(bounds.pad(0.08), { maxZoom: 15 });
+      return true;
     }
 
 
 
     function isMobileView() {
-      return window.matchMedia('(max-width: 980px)').matches;
+      return mobileViewport.matches;
     }
 
-    function openMobilePanel() {
+    function openMobilePanel(origin = null) {
       document.body.classList.add('mobile-panel-open');
       els.openPanelBtn.setAttribute('aria-expanded', 'true');
       els.sidebarPanel.removeAttribute('inert');
       els.sidebarPanel.setAttribute('role', 'dialog');
       els.sidebarPanel.setAttribute('aria-modal', 'true');
-      window.setTimeout(() => els.searchBox.focus(), 250);
+      if (origin) {
+        els.sidebarInner.scrollTop = origin.scrollTop;
+        const panel = els.sidebarInner.getBoundingClientRect();
+        const result = origin.element.getBoundingClientRect();
+        if (result.bottom > panel.bottom) els.sidebarInner.scrollTop += result.bottom - panel.bottom;
+        else if (result.top < panel.top) els.sidebarInner.scrollTop -= panel.top - result.top;
+        origin.element.focus({ preventScroll: true });
+      } else {
+        setMobileFiltersOpen(false);
+        els.sidebarInner.scrollTop = 0;
+        els.searchBox.focus({ preventScroll: true });
+      }
+    }
+
+    function setMobileFiltersOpen(open) {
+      els.secondaryFilters.classList.toggle('expanded', open);
+      els.mobileFiltersBtn.setAttribute('aria-expanded', String(open));
+      els.mobileFiltersBtn.textContent = open ? 'Hide filters' : 'Filters';
+    }
+
+    function showMobileResults() {
+      setMobileFiltersOpen(false);
+      els.sidebarInner.scrollTop = 0;
+      els.resultsHeading.focus({ preventScroll: true });
     }
 
     function closeMobilePanel() {
@@ -2158,6 +2318,17 @@
       els.sidebarPanel.removeAttribute('role');
       els.sidebarPanel.removeAttribute('aria-modal');
       if (isMobileView()) els.sidebarPanel.setAttribute('inert', '');
+    }
+
+    function returnToMap() {
+      closeMobilePanel();
+      els.openPanelBtn.focus({ preventScroll: true });
+    }
+
+    function updateSidebarViewport() {
+      const viewport = window.visualViewport;
+      const inset = viewport.scale === 1 ? Math.max(0, innerHeight - viewport.height - viewport.offsetTop) : 0;
+      els.sidebarPanel.style.setProperty('--visual-viewport-inset', `${inset}px`);
     }
 
     function setHelpVisible(visible, persist = true) {
@@ -2181,6 +2352,10 @@
 
     function resetFilters() {
       els.searchBox.value = '';
+      clearFilters();
+    }
+
+    function clearFilters() {
       els.countryFilter.value = '';
       fillAreaOptions();
       els.areaFilter.value = '';
@@ -2220,7 +2395,6 @@
       if (!els.radiusFilter.value) els.radiusFilter.value = '25';
       map.setView([lat, lng], 11);
       applyFilters(true);
-      if (isMobileView()) closeMobilePanel();
     }
 
     function requestUserLocation() {
@@ -2258,17 +2432,44 @@
       }
     }
 
-    els.openPanelBtn.addEventListener('click', openMobilePanel);
+    els.openPanelBtn.addEventListener('click', () => openMobilePanel());
     els.nearMeBtn.addEventListener('click', requestUserLocation);
     els.mobileResetBtn.addEventListener('click', resetFilters);
-    els.closePanelBtn.addEventListener('click', closeMobilePanel);
+    els.closePanelBtn.addEventListener('click', returnToMap);
+    els.mobileFiltersBtn.addEventListener('click', () => {
+      setMobileFiltersOpen(els.mobileFiltersBtn.getAttribute('aria-expanded') === 'false');
+    });
+    els.mobileShowResultsBtn.addEventListener('click', showMobileResults);
+    els.clearMobileFiltersBtn.addEventListener('click', () => {
+      clearFilters();
+      showMobileResults();
+    });
+    window.visualViewport?.addEventListener('resize', updateSidebarViewport);
+    window.visualViewport?.addEventListener('scroll', updateSidebarViewport);
+    els.closeMobileVenueBtn.addEventListener('click', () => els.mobileVenue.close());
+    els.mobileVenue.addEventListener('close', () => {
+      const origin = mobileVenueOrigin;
+      mobileVenueOrigin = null;
+      if (origin?.element?.isConnected) {
+        if (isMobileView() && els.sidebarPanel.contains(origin.element)) openMobilePanel(origin);
+        else origin.element.focus({ preventScroll: true });
+      } else if (isMobileView()) {
+        els.openPanelBtn.focus({ preventScroll: true });
+      }
+    });
+    mobileViewport.addEventListener('change', () => {
+      if (isMobileView()) map.closePopup();
+      else els.mobileVenue.close();
+      pubData.forEach(item => {
+        if (item.marker) configureVenuePopup(item);
+      });
+    });
     els.hideHelpBtn.addEventListener('click', () => setHelpVisible(false));
     els.showHelpBtn.addEventListener('click', () => setHelpVisible(true));
     window.addEventListener('keydown', event => {
       if (!isMobileView() || !document.body.classList.contains('mobile-panel-open')) return;
       if (event.key === 'Escape') {
-        closeMobilePanel();
-        els.openPanelBtn.focus();
+        returnToMap();
         return;
       }
       if (event.key === 'Tab') {
@@ -2437,8 +2638,13 @@
         findNearbyFromPostcode();
       }
     });
-    els.resetBtn.addEventListener('click', resetFilters);
-    els.fitBtn.addEventListener('click', () => applyFilters(true));
+    els.resetBtn.addEventListener('click', () => {
+      if (isMobileView()) clearFilters();
+      else resetFilters();
+    });
+    els.fitBtn.addEventListener('click', () => {
+      if (applyFilters(true) && isMobileView()) returnToMap();
+    });
 
     initialiseHelpVisibility();
     if (isMobileView()) els.sidebarPanel.setAttribute('inert', '');

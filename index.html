@@ -1046,6 +1046,7 @@
       line-height: 1.35;
     }
     .credit-line a { color: #7c1d25; font-weight: 700; }
+    .credit-compact { display: none; }
     .report-listing-link {
       display: flex;
       flex-direction: column;
@@ -1511,20 +1512,34 @@
       .title-row { padding: 8px 12px; }
       .topbar .bass-logo { width: 50px; height: 68px; }
       .sub-detail { display: none; }
-      .credit-line { display: none; }
       .header-actions { grid-row: 1 / 4; }
       .control-row,
       .button-row { grid-template-columns: 1fr; }
       .sidebar-inner { padding-inline: 12px; }
     }
 
+    @media (max-width: 359px) {
+      .title-row { padding-inline: 8px; }
+      .brand-row { gap: 6px; }
+      .topbar .bass-logo { width: 38px; height: 54px; }
+    }
+
+    @media (max-width: 640px),
+           (max-width: 980px) and (orientation: landscape) and (max-height: 500px) {
+      .credit-line { margin-top: 3px; font-size: 0.7rem; }
+      .credit-line a { text-decoration: underline; }
+      .credit-full { display: none; }
+      .credit-compact { display: inline; }
+    }
+
     @media (max-width: 980px) and (orientation: landscape) and (max-height: 500px) {
       body { --header-height: 60px; }
       .title-row { padding: 4px 12px; }
       .topbar .bass-logo { width: 34px; height: 44px; filter: none; }
-      .brand-lockup { grid-template-rows: auto; }
-      .header-actions { grid-row: 1; }
-      .header-actions .stats, .sub, .credit-line { display: none; }
+      .brand-lockup { grid-template-rows: auto auto; }
+      .header-actions { grid-row: 1 / 3; }
+      .header-actions .stats, .sub { display: none; }
+      .credit-line { grid-row: 2; }
       .report-listing-link { min-height: 44px; padding: 6px 10px; font-size: 0.74rem; }
       .search-actions { grid-template-columns: repeat(2, auto); justify-content: start; }
       .secondary-filters .control-row, .secondary-filters .button-row {
@@ -1572,7 +1587,11 @@
             </div>
             <button id="openProblemReportBtn" class="report-listing-link" type="button">Report map issue<span>Send a private report</span></button>
           </div>
-          <div class="credit-line">A big thank you to Quinno for putting together and keeping the <a href="https://nationalbassdirectory.wordpress.com/" target="_blank" rel="noopener noreferrer">UK National Bass Directory</a> up to date. His work makes this map possible. Know a pub serving Bass that should be listed, or spotted a listing that needs updating? Please let Quinno know through the directory.</div>
+          <div class="credit-line">
+            <span class="credit-full">A big thank you to Quinno for putting together and keeping the </span>
+            <span class="credit-compact">Thanks, Quinno · </span>
+            <a href="https://nationalbassdirectory.wordpress.com/" target="_blank" rel="noopener noreferrer" aria-label="UK National Bass Directory"><span class="credit-full">UK National Bass </span>Directory</a><span class="credit-full"> up to date. His work makes this map possible. Know a pub serving Bass that should be listed, or spotted a listing that needs updating? Please let Quinno know through the directory.</span>
+          </div>
         </div>
       </div>
     </div>

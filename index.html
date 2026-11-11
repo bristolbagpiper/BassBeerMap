@@ -2125,7 +2125,9 @@
       if (item.directionsStreet) {
         const locality = item.place_name.split(':')[0].trim();
         const hasPostcode = item.directionsStreet.toUpperCase().includes(item.postcode.toUpperCase());
-        const address = hasPostcode ? item.directionsStreet : [item.directionsStreet, locality, item.postcode].filter(Boolean).join(', ');
+        const hasLocality = item.directionsStreet.split(',').some(part => part.trim().toLowerCase() === locality.toLowerCase());
+        const address = hasPostcode ? item.directionsStreet
+          : [item.directionsStreet, hasLocality ? '' : locality, item.postcode].filter(Boolean).join(', ');
         return googleMapsLink('dir', 'destination', `${item.pub_name}, ${address}`, directionsLabel, `${directionsLabel} to ${venue}`);
       }
       const query = [item.pub_name, item.place_name, item.postcode].filter(Boolean).join(', ');

@@ -117,6 +117,7 @@ class FrontendSmokeTests(unittest.TestCase):
             ('Brew Tavern', "Brew Tavern, Cabman's Shelter, 1a Queens Road, Nottingham, NG2 3AS"),
             ('Anchor Newhall', 'Anchor, 211 High Street, Newhall, DE11 0EA'),
             ('Anchor Teanford', 'Anchor, Breach Lane, Teanford, ST10 4EW'),
+            ('Old Down Inn Emborough', 'Old Down Inn, Emborough, BA3 4SA'),
         ]
         driver = self.driver
         wait = WebDriverWait(driver, 10)

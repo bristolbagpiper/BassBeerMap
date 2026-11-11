@@ -15,18 +15,19 @@ from owner_location_review import google_finding_assessment
 
 
 def _mail(executable, config, account, command, backend, run, content=None):
+    # Himalaya splits config paths on colons, including Windows drive letters.
     return run(
-        [executable, *command, '--config', str(config), '--account', account,
+        [executable, *command, '--config', config.name, '--account', account,
          '--backend', backend, '--json'],
-        input=content, capture_output=True, timeout=45, check=False,
+        cwd=config.parent, input=content, capture_output=True, timeout=45, check=False,
     )
 
 
 def _inbox_has_reference(executable, config, account, reference, run):
     result = run(
-        [executable, 'envelope', 'search', '--config', str(config), '--account', account,
+        [executable, 'envelope', 'search', '--config', config.name, '--account', account,
          '--backend', 'imap', '--json', 'subject', reference],
-        capture_output=True, timeout=45, check=False,
+        cwd=config.parent, capture_output=True, timeout=45, check=False,
     )
     if result.returncode != 0:
         return False

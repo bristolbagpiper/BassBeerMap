@@ -30,6 +30,9 @@ class HermesGoogleAlertsTests(unittest.TestCase):
         self.assertEqual(notify(self.state, self.status, self.execution, atomic_json, run=mail)['state'],
                          'unchanged')
         self.assertEqual(mail.call_count, 2)
+        args = mail.call_args.args[0]
+        self.assertEqual(args[args.index('--config') + 1], 'config.toml')
+        self.assertEqual(mail.call_args.kwargs['cwd'], self.state)
         message = mail.call_args.kwargs['input']
         self.assertIn(b'To: owner@example.com', message)
         self.assertIn(b'Coverage incomplete', message)

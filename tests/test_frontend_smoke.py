@@ -321,19 +321,22 @@ class FrontendSmokeTests(unittest.TestCase):
         self.assertTrue(venue.get_property('readOnly'))
         cancel.click()
         self.assertEqual(driver.switch_to.active_element, card_report)
-        driver.find_element(By.CSS_SELECTOR, '#results .card-map-button').click()
+        result = driver.find_element(By.CSS_SELECTOR, '#results .card-map-button')
+        result.click()
         desktop_report = wait.until(EC.visibility_of_element_located((By.CSS_SELECTOR, '.leaflet-popup .venue-report-btn')))
         desktop_report.click()
         self.assertEqual(venue.get_property('value'), context)
         driver.switch_to.active_element.send_keys(Keys.ESCAPE)
         self.assertEqual(driver.switch_to.active_element, desktop_report)
 
+        desktop_report.click()
         self.resize_viewport(360, 640)
         wait.until(lambda d: d.execute_script('return isMobileView();'))
-        driver.find_element(By.ID, 'openPanelBtn').click()
-        result = wait.until(EC.element_to_be_clickable((By.CSS_SELECTOR, '#results .card-map-button')))
-        result.click()
+        self.assertTrue(driver.find_element(By.ID, 'reportDialog').get_property('open'))
+        self.assertEqual(venue.get_property('value'), context)
+        cancel.click()
         mobile_report = wait.until(EC.visibility_of_element_located((By.CSS_SELECTOR, '#mobileVenue .venue-report-btn')))
+        self.assertEqual(driver.switch_to.active_element, mobile_report)
         mobile_report.click()
         self.assertEqual(venue.get_property('value'), context)
         self.assertTrue(driver.find_element(By.ID, 'mobileVenue').get_property('open'))
@@ -472,6 +475,73 @@ class FrontendSmokeTests(unittest.TestCase):
         wait.until(lambda d: d.execute_script('return !isMobileView();'))
         wait.until(EC.element_to_be_clickable((By.CSS_SELECTOR, '#results .card-map-button'))).click()
         self.assertEqual(wait.until(EC.visibility_of_element_located((By.CSS_SELECTOR, '.leaflet-popup h3'))).text, 'Bank Tavern')
+
+    def test_tablet_rotation_preserves_the_open_venue_and_focus(self):
+        from selenium.webdriver.common.by import By
+        from selenium.webdriver.common.keys import Keys
+        from selenium.webdriver.support import expected_conditions as EC
+        from selenium.webdriver.support.ui import WebDriverWait
+
+        driver = self.driver
+        wait = WebDriverWait(driver, 10)
+        self.addCleanup(driver.execute_cdp_cmd, 'Emulation.clearDeviceMetricsOverride', {})
+        self.resize_viewport(768, 1024)
+        self.load_directory()
+        driver.find_element(By.ID, 'openPanelBtn').click()
+        search = driver.find_element(By.ID, 'searchBox')
+        search.send_keys('Bank Tavern')
+        wait.until(lambda d: d.find_element(By.ID, 'resultCount').text == '1 match')
+        result = driver.find_element(By.CSS_SELECTOR, '#results .card-map-button')
+        result.send_keys(Keys.ENTER)
+
+        dialog = driver.find_element(By.ID, 'mobileVenue')
+        wait.until(EC.visibility_of(dialog))
+        close = dialog.find_element(By.ID, 'closeMobileVenueBtn')
+        directions = dialog.find_element(By.LINK_TEXT, 'Get directions')
+        href = directions.get_attribute('href')
+        close.send_keys(Keys.TAB)
+        self.assertEqual(driver.switch_to.active_element, directions)
+        self.save_review_screenshot('tablet-venue-portrait.png')
+
+        for width, height in [(1024, 768), (768, 1024)]:
+            with self.subTest(width=width, height=height):
+                self.resize_viewport(width, height)
+                wait.until(lambda d: d.execute_script('return innerWidth') == width)
+                self.assertTrue(dialog.get_property('open'))
+                self.assertEqual(dialog.find_element(By.TAG_NAME, 'h2').text, 'Bank Tavern')
+                self.assertEqual(directions.get_attribute('href'), href)
+                self.assertEqual(driver.switch_to.active_element, directions)
+                self.assertEqual(search.get_property('value'), 'Bank Tavern')
+                for control in [close, directions]:
+                    self.assertTrue(driver.execute_script("""
+                        const element = arguments[0];
+                        const rect = element.getBoundingClientRect();
+                        return element.contains(document.elementFromPoint(
+                            rect.left + rect.width / 2, rect.top + rect.height / 2));
+                    """, control))
+                name = 'landscape' if width > height else 'portrait-return'
+                self.save_review_screenshot(f'tablet-venue-{name}.png')
+
+        close.click()
+        wait.until(lambda d: d.switch_to.active_element == result)
+        self.assertEqual(search.get_property('value'), 'Bank Tavern')
+
+        self.resize_viewport(1024, 768)
+        wait.until(lambda d: d.execute_script('return !isMobileView();'))
+        result.send_keys(Keys.ENTER)
+        desktop_title = (By.CSS_SELECTOR, '.leaflet-popup h3')
+        heading = wait.until(EC.visibility_of_element_located(desktop_title))
+        self.assertEqual(heading.text, 'Bank Tavern')
+        heading.send_keys(Keys.TAB)
+        self.assertEqual(driver.switch_to.active_element.text, 'Get directions')
+        self.resize_viewport(768, 1024)
+        wait.until(EC.visibility_of(dialog))
+        self.assertEqual(dialog.find_element(By.TAG_NAME, 'h2').text, 'Bank Tavern')
+        compact_directions = dialog.find_element(By.LINK_TEXT, 'Get directions')
+        self.assertEqual(compact_directions.get_attribute('href'), href)
+        self.assertEqual(driver.switch_to.active_element, compact_directions)
+        close.click()
+        wait.until(lambda d: d.switch_to.active_element == result)
 
     def test_mobile_search_shows_results_before_secondary_filters(self):
         from selenium.webdriver.common.by import By

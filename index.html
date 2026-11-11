@@ -2102,7 +2102,7 @@
           configureVenuePopup(item);
           item.marker.on('popupopen', ({ popup }) => {
             bindVenueReport(popup.getElement(), item);
-            focusDesktopVenue(popup, item.marker.getElement());
+            focusDesktopVenue(popup, item, item.marker.getElement());
           });
           item.marker.on('popupclose', ({ popup }) => restoreDesktopVenueFocus(popup));
           item.marker.on('click keydown', event => {
@@ -2257,10 +2257,10 @@
       els.mobileVenueContent.scrollTop = 0;
     }
 
-    function focusDesktopVenue(popup, element) {
+    function focusDesktopVenue(popup, item, element, scrollTop) {
       const panel = popup.getElement();
       const heading = panel.querySelector('h3');
-      desktopVenueOrigin = { popup, element };
+      desktopVenueOrigin = { popup, item, element, scrollTop };
       panel.setAttribute('role', 'dialog');
       panel.setAttribute('aria-label', heading.textContent);
       panel.addEventListener('keydown', handleDesktopVenueKeydown);
@@ -2284,6 +2284,27 @@
       if (element?.isConnected && !element.closest('[inert]')) element.focus();
       else if (isMobileView()) els.openPanelBtn.focus();
       else map.getContainer().focus();
+    }
+
+    function updateVenueLayout(focusedControl = document.activeElement) {
+      const desktopVenue = desktopVenueOrigin;
+      if (isMobileView() && desktopVenue && !els.reportDialog.open) {
+        const { popup, item, element, scrollTop } = desktopVenue;
+        const label = popup.getElement().contains(focusedControl) && focusedControl.getAttribute('aria-label');
+        desktopVenueOrigin = null;
+        map.closePopup(popup);
+        openMobileVenue(item, element, scrollTop);
+        if (label) {
+          const replacement = [...els.mobileVenueContent.querySelectorAll('[aria-label]')]
+            .find(control => control.getAttribute('aria-label') === label);
+          replacement?.focus();
+        }
+      }
+      // An existing dialog can resize in place. Keep a popup behind an open report
+      // until the report closes, so changing the layout does not interrupt the form.
+      pubData.forEach(item => {
+        if (item.marker && item !== desktopVenueOrigin?.item) configureVenuePopup(item);
+      });
     }
 
     function fillCountryOptions() {
@@ -2432,7 +2453,7 @@
           if (isMobileView()) openMobileVenue(item, mapButton, scrollTop);
           else {
             item.marker.openPopup();
-            if (item.marker.isPopupOpen()) focusDesktopVenue(item.marker.getPopup(), mapButton);
+            if (item.marker.isPopupOpen()) focusDesktopVenue(item.marker.getPopup(), item, mapButton, scrollTop);
           }
         });
       });
@@ -2729,13 +2750,7 @@
         els.openPanelBtn.focus({ preventScroll: true });
       }
     });
-    mobileViewport.addEventListener('change', () => {
-      if (isMobileView()) map.closePopup();
-      else els.mobileVenue.close();
-      pubData.forEach(item => {
-        if (item.marker) configureVenuePopup(item);
-      });
-    });
+    mobileViewport.addEventListener('change', () => updateVenueLayout());
     els.hideHelpBtn.addEventListener('click', () => setHelpVisible(false));
     els.showHelpBtn.addEventListener('click', () => setHelpVisible(true));
     window.addEventListener('keydown', event => {
@@ -2842,6 +2857,10 @@
       const opener = activeReport?.opener;
       activeReport = null;
       els.reportDialog.close();
+      if (isMobileView() && desktopVenueOrigin) {
+        updateVenueLayout(opener ?? document.activeElement);
+        return;
+      }
       if (opener?.isConnected) opener.focus({ preventScroll: true });
     }
 

@@ -1769,6 +1769,7 @@
   <script>
     let pubData = [];
     let directoryRelease = null;
+    let possibleClosureFindings = new Map();
     let countryCounts = {};
     let latestVerificationQuarter = 0;
     let userLocation = null;
@@ -1782,7 +1783,6 @@
     const DIRECTORY_RELEASE_URL = './directory-release.json';
     const GOOGLE_REVIEW_URL = './hermes-google-status.json';
     const APPROXIMATE_MAP_NOTE = 'The pin shows the postcode area. Confirm the pub’s exact location before travelling.';
-    const POSSIBLE_CLOSURE_REASON = 'Google indicates a possible closure; trading status needs review';
     const SHEPHERDS_HALL_ID = 'v-c62f31b0-c5b0-546c-979e-12fac920a47a';
     const TRADING_NOTICES = {
       [SHEPHERDS_HALL_ID]: 'Appears to have reopened. Draught Bass availability unconfirmed.',
@@ -1901,6 +1901,7 @@
     };
 
     const MAX_RESULT_CARDS = 100;
+    const MAX_PUBLIC_CLOSURE_AGE_MS = 30 * 24 * 60 * 60 * 1000;
     const HELP_HIDDEN_KEY = 'bass_directory_help_hidden_v1';
     const REPORT_PROBLEM_ENDPOINT = 'https://bassbeermap.bristolbagpiper.workers.dev/api/report-problem';
     let problemReportTurnstileToken = '';
@@ -2041,6 +2042,26 @@
       els.directoryLabel.textContent = label;
     }
 
+    function isCurrentPublicClosureEvidence(finding, now = Date.now()) {
+      if (finding?.status !== 'review_needed'
+        || !['CLOSED_TEMPORARILY', 'CLOSED_PERMANENTLY'].includes(finding.business_status)
+        || typeof finding.binding_signature !== 'string' || !/^[a-f0-9]{64}$/i.test(finding.binding_signature)
+        || !finding.current_pin || !Number.isFinite(finding.current_pin.lat) || !Number.isFinite(finding.current_pin.lng)
+        || finding.current_pin.lat < 49 || finding.current_pin.lat > 61
+        || finding.current_pin.lng < -9 || finding.current_pin.lng > 3
+        || typeof finding.checked_at !== 'string' || !/T.*(?:Z|[+-]\d{2}:\d{2})$/i.test(finding.checked_at)) return false;
+      const checkedAt = Date.parse(finding.checked_at);
+      return Number.isFinite(checkedAt) && checkedAt <= now && now - checkedAt <= MAX_PUBLIC_CLOSURE_AGE_MS;
+    }
+
+    function closureEvidenceMatchesVenue(finding, item) {
+      return Boolean(finding && item?.locationPrecision === 'venue' && finding.venue_id === item.venue_id
+        && finding.pub_name === item.pub_name
+        && finding.place_name === item.place_name
+        && finding.postcode === (item.directoryPostcode || item.postcode)
+        && finding.current_pin?.lat === item.lat && finding.current_pin?.lng === item.lng);
+    }
+
     async function loadPossibleClosures() {
       try {
         const response = await fetch(GOOGLE_REVIEW_URL, {
@@ -2049,8 +2070,8 @@
         if (!response.ok) return new Map();
         const report = await response.json();
         if (report?.schema_version !== 1 || !report.configured || !Array.isArray(report.findings)) return new Map();
-        return new Map(report.findings.filter(finding => finding?.status === 'review_needed'
-          && typeof finding.reason === 'string' && finding.reason.includes(POSSIBLE_CLOSURE_REASON))
+        const now = Date.now();
+        return new Map(report.findings.filter(finding => isCurrentPublicClosureEvidence(finding, now))
           .map(finding => [finding.venue_id, finding]));
       } catch {
         return new Map();
@@ -2085,12 +2106,7 @@
       applyDirectoryMetadata(release.metadata);
 
       preparePubData(release.rows);
-      const findings = await possibleClosures;
-      for (const item of pubData) {
-        const finding = findings.get(item.venue_id);
-        item.possibleClosure = Boolean(finding && finding.pub_name === item.pub_name
-          && finding.place_name === item.place_name && finding.postcode === (item.directoryPostcode || item.postcode));
-      }
+      possibleClosureFindings = await possibleClosures;
       updateCountryCounts();
       updateStats();
     }
@@ -2126,6 +2142,8 @@
           item.lat = coords.lat;
           item.lng = coords.lng;
           item.locationPrecision = precise ? 'venue' : 'postcode';
+          const closure = possibleClosureFindings.get(item.venue_id);
+          item.possibleClosure = closureEvidenceMatchesVenue(closure, item);
           const label = `${venueLabel(item)}${precise ? '' : ', approximate postcode location'}`;
           item.marker = L.marker([item.lat, item.lng], item.locationPrecision === 'postcode'
             ? { icon: approximatePostcodeIcon, title: 'Approximate postcode location' }
@@ -2158,6 +2176,7 @@
           item.lat = null;
           item.lng = null;
           item.locationPrecision = null;
+          item.possibleClosure = false;
           item.marker = null;
         }
       });

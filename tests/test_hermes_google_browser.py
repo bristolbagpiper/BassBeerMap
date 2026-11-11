@@ -196,7 +196,8 @@ class HermesGoogleBrowserTests(unittest.TestCase):
         with patch('hermes_google_browser.PAGE_DEADLINE', 0.02), patch('hermes_google_browser.time.sleep', lambda _: None):
             result = _resolve_page(browser, 'task', 'Example Inn', {'BS11AA'}, set(),
                                    'https://www.google.com/maps/search/?api=1&query=Example')
-        self.assertEqual(result, {'category': 'unavailable', 'stop': True})
+        self.assertEqual(result, {'category': 'unavailable', 'stop': True,
+                                  'detail': 'Google consent screen stayed open'})
         self.assertEqual(browser.clicked, ['e12'])
         self.assertEqual(browser.scrolls, ['down'])
 
@@ -275,7 +276,9 @@ class HermesGoogleBrowserTests(unittest.TestCase):
             target = Path(temp) / 'receipts.json'
             result = run(ROOT, target, limit=1, venue_ids=[self.item['venue_id']],
                          browser=browser, cleanup=lambda task: None)
-            self.assertEqual(result, {'attempted': 0, 'stopped': True})
+            self.assertEqual(result, {'attempted': 0, 'stopped': True,
+                                      'selected': 1, 'checked': 0, 'ambiguous': 0, 'unavailable': 0,
+                                      'detail': 'Browser batch deadline reached before all selected venues were attempted'})
             self.assertEqual(browser.navigations, [])
 
     def test_one_page_has_one_check_time_for_all_conflict_categories(self):
@@ -305,7 +308,8 @@ class HermesGoogleBrowserTests(unittest.TestCase):
                          cleanup=lambda task: setattr(browser, 'closed_task', task),
                          clock=iter(['2026-11-03T12:00:00Z', '2026-11-03T12:00:01Z']).__next__)
             document = json.loads(target.read_text(encoding='utf-8'))
-            self.assertEqual(result, {'attempted': 1, 'stopped': False})
+            self.assertEqual(result, {'attempted': 1, 'stopped': False, 'selected': 1,
+                                      'checked': 1, 'ambiguous': 0, 'unavailable': 0})
             self.assertEqual(document['observations'][0]['category'], 'identity_conflict')
             self.assertEqual(document['observations'][0]['source_url'], '')
             self.assertEqual(set(document['observations'][0]), {
@@ -316,6 +320,43 @@ class HermesGoogleBrowserTests(unittest.TestCase):
             status = build_status(ROOT, document,
                                   now=datetime.fromisoformat('2026-11-03T12:01:00+00:00'))
             self.assertEqual(status['counts']['attempted_venue_count'], 1)
+
+    def test_temporary_navigation_error_retries_once_and_records_one_observation(self):
+        browser = FakeBrowser({'url': PLACE_URL, 'h1': [self.item['pub_name']],
+                               'addressButtons': [{'label': 'Address: ' + self.item['postcode']}], 'body': ''})
+        pauses = []
+        with tempfile.TemporaryDirectory() as temp:
+            target = Path(temp) / 'receipts.json'
+            with patch.object(browser, 'browser_navigate', side_effect=[
+                {'success': False, 'error': 'net::ERR_CONNECTION_RESET'}, {'success': True},
+            ]) as calls:
+                result = run(ROOT, target, limit=1, venue_ids=[self.item['venue_id']], browser=browser,
+                             sleeper=pauses.append)
+            observations = read_json(target)['observations']
+        self.assertEqual(result, {'attempted': 1, 'stopped': False, 'selected': 1,
+                                  'checked': 1, 'ambiguous': 0, 'unavailable': 0})
+        self.assertEqual(calls.call_count, 2)
+        self.assertEqual(calls.call_args_list[0], calls.call_args_list[1])
+        self.assertEqual(pauses, [2])
+        self.assertEqual(len(observations), 1)
+        self.assertIsNotNone(observations[0]['checked_at'])
+
+    def test_navigation_challenge_stops_without_retry_and_records_only_safe_detail(self):
+        browser = FakeBrowser({})
+        with tempfile.TemporaryDirectory() as temp:
+            target = Path(temp) / 'receipts.json'
+            with patch.object(browser, 'browser_navigate', return_value={
+                'success': False, 'error': 'Command timed out after 30 seconds',
+                'bot_detection_warning': 'Page text to keep out of the receipt',
+            }) as calls:
+                result = run(ROOT, target, limit=1, venue_ids=[self.item['venue_id']], browser=browser)
+            observation = read_json(target)['observations'][0]
+        self.assertEqual(calls.call_count, 1)
+        self.assertEqual(result, {'attempted': 1, 'stopped': True,
+                                  'selected': 1, 'checked': 0, 'ambiguous': 0, 'unavailable': 1,
+                                  'detail': 'Google presented an automated-traffic challenge'})
+        self.assertEqual(observation['category'], 'unavailable')
+        self.assertIsNone(observation['checked_at'])
 
     def test_invalid_existing_receipts_fail_before_browser_navigation(self):
         browser = FakeBrowser({'url': PLACE_URL, 'h1': ['Example Inn'],

@@ -35,8 +35,9 @@ coordinates retain the movement and identity protections.
 
 ## Recurring jobs
 
-- **Daily map validation**: 45 rotating source checks at 06:47 UTC; checks committed assets and the live release, refreshes confirmed evidence and quarantines source conflicts under the existing policy. The same job then rotates up to 45 Google Places comparisons after publishing safe CAMRA results, within a combined 40-minute job deadline.
-- **Independent location audit**: 45 rotating FSA comparisons at 04:17 UTC. With 1,044 locations this covers the directory in about 24 daily runs. Oldest checks take precedence, so persistent conflicts do not starve the rotation.
+- **Daily map validation** checks up to 45 rotating sources at 06:47 UTC. It checks the committed assets and live release, refreshes confirmed evidence and quarantines source conflicts under the existing policy.
+- **Hermes Google browser checks** run separately at 07:40 Europe/London. The Windows job saves its results locally and sends changes through the configured owner mailbox.
+- **Independent location audit** checks up to 45 FSA comparisons at 04:17 UTC. Oldest checks take precedence, so persistent conflicts do not starve the rotation.
 - A complete independent audit can also be started with the workflow's `full` option.
 - Changed actionable postcode/source conflicts, source outages and failed jobs use the existing review issue and SMTP notification pipeline. Unchanged issues stay quiet. Nearby and missing-name results remain visible in the full report for manual review.
 
@@ -56,7 +57,9 @@ changed name, postcode or point still requires review.
 Provider diagnostics attach confirmation only to the URL actually checked;
 retained Google, FSA or other references are labelled `not_checked`.
 
-Google live checks are **not active until configured**: set the repository
+The current `hermes-local` provider delegates Google checks and alerts to Hermes.
+The rest of this section describes the optional GitHub `places-api` provider.
+To enable that provider, set the repository
 variable `GOOGLE_PLACES_ENABLED` to `true` and supply the Actions secret
 `GOOGLE_PLACES_API_KEY` for an appropriately enabled Google Places API project.
 Google billing, quotas and key restrictions must be configured for that project;

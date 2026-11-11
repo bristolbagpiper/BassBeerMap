@@ -105,6 +105,20 @@ class GoogleComparisonsTests(unittest.TestCase):
         self.assertEqual(code, 0)
         self.assertEqual(status['provider'], 'places-api')
 
+    def test_hermes_local_mode_skips_github_google_processing_and_keeps_old_status_untouched(self):
+        write_json(self.root / 'google-review-provider.json', {'provider': 'hermes-local'})
+        old_status = self.source_status(checked_at='2026-10-01T10:00:00Z')
+        source = self.root / 'hermes-google-status.json'
+        before = source.read_bytes()
+
+        status, code = self.run_route()
+
+        self.assertEqual(code, 0)
+        self.assertTrue(status['locally_handled'])
+        self.assertFalse((self.root / 'out.json').exists())
+        self.assertEqual(source.read_bytes(), before)
+        self.assertEqual(json.loads(before), old_status)
+
 
 if __name__ == '__main__':
     unittest.main()

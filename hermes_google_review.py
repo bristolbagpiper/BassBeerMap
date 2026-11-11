@@ -89,7 +89,7 @@ def _reason(category):
     }.get(category)
 
 
-def build_status(root, receipts, now=None):
+def build_status(root, receipts, now=None, *, batch=None):
     root = Path(root)
     now = now or datetime.now(timezone.utc)
     if now.tzinfo is None or now.utcoffset() != timedelta(0):
@@ -102,10 +102,10 @@ def build_status(root, receipts, now=None):
     by_id = {item['venue_id']: item for item in queue}
     if not isinstance(receipts, dict) or set(receipts) != {'schema_version', 'observations'} or type(receipts['schema_version']) is not int or receipts['schema_version'] != 1 or not isinstance(receipts['observations'], list):
         raise ValueError('Invalid Hermes receipt document')
-    attempts, unavailable_attempts, conclusive, ambiguous = {}, {}, {}, {}
+    attempts, unavailable_attempts, conclusive, ambiguous, closures = {}, {}, {}, {}, {}
     seen = set()
     for index, item in enumerate(receipts['observations']):
-        if not isinstance(item, dict) or set(item) != OBSERVATION_FIELDS:
+        if not isinstance(item, dict) or set(item) not in (OBSERVATION_FIELDS, OBSERVATION_FIELDS | {'business_status'}):
             raise ValueError(f'Malformed observation at index {index}: unsupported fields')
         if (type(item['schema_version']) is not int or item['schema_version'] != 1
                 or item['provider'] != 'hermes-browser' or item['category'] not in CATEGORIES
@@ -116,6 +116,9 @@ def build_status(root, receipts, now=None):
         if attempted > now or (checked and (checked > now or checked < attempted)):
             raise ValueError(f'Malformed observation at index {index}: future or reversed dates')
         category = item['category']
+        if 'business_status' in item and (category != 'trading_conflict' or item['business_status'] not in
+                                           ('CLOSED_TEMPORARILY', 'CLOSED_PERMANENTLY')):
+            raise ValueError(f'Malformed observation at index {index}: invalid trading evidence')
         unavailable = category == 'unavailable'
         if (unavailable and checked is not None) or (not unavailable and checked is None):
             raise ValueError(f'Malformed observation at index {index}: invalid checked_at')
@@ -141,6 +144,8 @@ def build_status(root, receipts, now=None):
         if unavailable:
             unavailable_attempts[item['venue_id']] = max(unavailable_attempts.get(item['venue_id'], attempted), attempted)
         if checked:
+            if 'business_status' in item:
+                closures[(item['venue_id'], checked)] = item['business_status']
             if category in CONFLICTS or category == 'identity_and_pin_consistent':
                 categories = {category}
                 if _reviewed_conflict(registry['venues'][item['venue_id']], item, now):
@@ -165,9 +170,15 @@ def build_status(root, receipts, now=None):
         reasons = [_reason(category) for category in sorted(categories) if category in CONFLICTS]
         if reasons:
             item = by_id[identifier]
-            findings.append(dict(venue_id=identifier, pub_name=item['pub_name'], place_name=item['place_name'],
-                                 postcode=item['postcode'], status='review_needed', reason='; '.join(reasons),
-                                 binding_signature=item['binding_signature']))
+            finding = dict(venue_id=identifier, pub_name=item['pub_name'], place_name=item['place_name'],
+                           postcode=item['postcode'], status='review_needed', reason='; '.join(reasons),
+                           binding_signature=item['binding_signature'])
+            closure = closures.get((identifier, checked))
+            if (fresh and closure and 'trading_conflict' in categories and 'pin_conflict' not in categories
+                    and ambiguous.get(identifier, checked) <= checked):
+                finding.update(checked_at=checked.isoformat(), current_pin=item['current_pin'],
+                               business_status=closure)
+            findings.append(finding)
     for identifier, checked in ambiguous.items():
         if identifier not in conclusive or checked > conclusive[identifier][0]:
             item = by_id[identifier]
@@ -184,16 +195,17 @@ def build_status(root, receipts, now=None):
     available = {identifier: checked for identifier, (checked, _) in conclusive.items()}
     for identifier, checked in ambiguous.items():
         available[identifier] = max(available.get(identifier, checked), checked)
-    if any(identifier in unavailable_attempts and
-           (identifier not in available or unavailable_attempts[identifier] > available[identifier])
-           for identifier in by_id):
-        issues.append('Hermes Google browser source was unavailable; previous successful checks were retained')
+    pending = sum(attempted > available.get(identifier, datetime.min.replace(tzinfo=timezone.utc))
+                  for identifier, attempted in unavailable_attempts.items())
+    if batch and batch.get('unavailable'):
+        issues.append('Google Maps could not be read for one or more venues in this batch')
     status = dict(schema_version=1, checked_at=now.isoformat(), configured=configured,
                   directory_binding_signature=digest(sorted((item['venue_id'], item['binding_signature']) for item in queue)),
                   issues=issues, findings=sorted(findings, key=lambda f: f['venue_id']),
                   counts=dict(total=total, current=current, unchecked_or_stale=total-current,
-                              checked_this_run=sum(1 for checked, _ in conclusive.values() if checked.date() == now.date()),
-                              attempted_venue_count=len(attempts), review_count=len(findings)), hard_failure=False)
+                              checked_this_run=batch['checked'] if batch else 0,
+                              attempted_venue_count=len(attempts), review_count=len(findings),
+                              retained_unavailable=pending), hard_failure=False)
     return status
 
 

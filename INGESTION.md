@@ -80,24 +80,23 @@ Repeated identical health problems stay quiet, while a changed problem or
 recovery is emailed once after SMTP accepts it. The daily job does not write a
 second competing version of the review issue.
 
-The Google provider is selected in `google-review-provider.json`. The configured
-`hermes-browser` route reads dated results from the local Hermes browser worker;
-the GitHub job makes no Google Places API requests, even if an API key exists.
+The Google provider is selected in `google-review-provider.json`. With
+`hermes-local`, Hermes owns the Google review and sends changes privately. The
+GitHub job continues its directory and coordinate checks and leaves Google
+comparison and email to Hermes.
 Hermes compares the visible named business, full postcode and actual place marker
 with the saved pin. It rotates the oldest exact-bound attempts, up to 45 per run.
 A marker more than 50 metres away, conflicting identity or possible closure is
 flagged separately for review. A failed browser or consent/CAPTCHA block stops
 the batch and leaves untouched venues unchecked. It never bypasses challenges.
 
-Private receipts contain only venue IDs, binding signatures, dated categories
-and source links. They are explicitly machine observations, not owner approvals.
-The public `hermes-google-status.json` contains derived classifications and
-coverage only. The connected publisher validates the execution receipt and
-current directory bindings before uploading that status. Source names,
-addresses and coordinates are not copied into the public Google report.
-Google checks expire after 30 days. Missing, blocked and stale coverage is an
-explicit source warning, rather than a request to recheck every correct pin.
-Neither source disagreements nor browser results can automatically move pins.
+Private receipts contain venue IDs, binding signatures, dated categories and
+source links. Google checks expire after 30 days. The local report separates
+the selected, attempted, checked, ambiguous and unavailable counts for the
+execution from current coverage and prior unresolved attempts. Findings require
+review before any listing or pin changes. The public map only displays possible
+closure warnings with explicit dated evidence for the same venue and displayed
+point. Legacy snapshots lack these fields.
 
 The alternative `places-api` provider remains available but is not enabled by
 this route. It requires both `GOOGLE_PLACES_ENABLED=true` and
@@ -108,12 +107,25 @@ Google API key or API billing and depends on the local computer being available.
 The installed native Hermes job `1353548e1bb7` runs daily at 07:40 Europe/London,
 using a separate clean local browser and a script-only job (no model calls).
 State and private receipts live under `%LOCALAPPDATA%\hermes\profiles\mcjeeves\bass-map-google`.
-The connected Codex report handoff runs at 08:15 in this chat, using the existing
-GitHub connection so the Hermes worker needs no new GitHub token. It checks the
-terminal execution receipt and status hash, recomputes against current published
-identities/pins, and publishes only `hermes-google-status.json`. Unchanged results
-stay quiet. Both local scheduling hosts must be available; a stale/missing batch
-remains incomplete coverage rather than a successful unattended check.
+Install a tested Git revision with `python install_hermes_google.py --revision
+<commit> --state-dir <state-directory> --launcher <existing-cron-script>`.
+The installer stages versioned Python files from Git, writes a file-hash manifest
+and switches the launcher after validation. The previous version stays available
+for rollback through the same command.
+
+For private email, put a local `notification.json` in the state directory with
+`executable` and `config` set to the absolute Himalaya executable and TOML
+paths, and `account` set to the owner mailbox's account name. Hermes sends
+from and to that account. Authentication stays in the existing mail client
+configuration. Keep that file and all observations outside Git.
+
+Read `last-run.json` for the fetched data commit, installed code commit, batch
+result and separate notification outcome. `notification-state.json` records
+SMTP acceptance and suppresses unchanged findings. If a send ends without a
+confirmed outcome, the next execution searches that mailbox for the delivery
+reference before any repeat. An unresolved send stays visible as unconfirmed
+and can be checked by reference in the mailbox. GitHub continues to send its
+directory and map-health alerts through its configured SMTP account.
 
 ## Location tracking and alerts
 

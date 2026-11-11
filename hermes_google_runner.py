@@ -1,19 +1,18 @@
-"""Local Hermes entry point: fetch published data, browse, and save review status.
-
-This script cannot publish to GitHub or move a pin. The connected publisher
-uploads the derived status after checking its execution receipt and bindings.
-"""
+"""Fetch the public directory, record local Google checks and send private alerts."""
 import argparse
 import hashlib
 import json
 import os
 from pathlib import Path
 import tempfile
+import time
 from datetime import datetime, timezone
+from urllib.error import HTTPError, URLError
 from urllib.request import Request, urlopen
 import uuid
 
 from directory_release import read_json
+from hermes_google_alerts import notify
 from hermes_google_browser import run as browse
 from hermes_google_review import build_status
 
@@ -43,8 +42,19 @@ def atomic_json(path, value):
 
 def public_json(url, max_bytes=12_000_000):
     request = Request(url, headers={'User-Agent': 'BassBeerMap Hermes location review'})
-    with urlopen(request, timeout=30) as response:
-        data = response.read(max_bytes + 1)
+    for attempt in range(2):
+        try:
+            with urlopen(request, timeout=30) as response:
+                data = response.read(max_bytes + 1)
+            break
+        except HTTPError as error:
+            if attempt or error.code not in (500, 502, 503, 504) or error.headers.get('Retry-After'):
+                raise
+        except (TimeoutError, URLError) as error:
+            reason = error.reason if isinstance(error, URLError) else error
+            if attempt or not isinstance(reason, (TimeoutError, ConnectionResetError, ConnectionAbortedError)):
+                raise
+        time.sleep(2)
     if len(data) > max_bytes:
         raise ValueError('Public source exceeds size limit')
     return json.loads(data)
@@ -85,7 +95,8 @@ def fetch_inputs(destination, lookup=public_json):
     return commit
 
 
-def execute(state_dir=DEFAULT_STATE, limit=45, venue_ids=(), fetch=True, browser_run=browse):
+def execute(state_dir=DEFAULT_STATE, limit=45, venue_ids=(), fetch=True, browser_run=browse,
+            send_notification=notify):
     state_dir = Path(state_dir).resolve()
     state_dir.mkdir(parents=True, exist_ok=True)
     lock = state_dir / 'runner.lock'
@@ -94,11 +105,16 @@ def execute(state_dir=DEFAULT_STATE, limit=45, venue_ids=(), fetch=True, browser
     receipt_path = state_dir / 'observations.json'
     execution = dict(schema_version=1, provider='hermes-browser', execution_id=uuid.uuid4().hex,
                      started_at=now(), finished_at=None, state='running')
+    stage = 'fetch published directory'
+    status = None
     try:
+        version = read_json(Path(__file__).with_name('implementation.json'), {})
+        execution['implementation_commit'] = version.get('commit')
         atomic_json(state_dir / 'last-run.json', execution)
         data = state_dir / 'data'
         data.mkdir(exist_ok=True)
         commit = fetch_inputs(data) if fetch else None
+        stage = 'configure browser'
         browser_home = state_dir / 'browser-home'
         browser_home.mkdir(exist_ok=True)
         config = browser_home / 'config.yaml'
@@ -111,23 +127,42 @@ def execute(state_dir=DEFAULT_STATE, limit=45, venue_ids=(), fetch=True, browser
         for key in ('BROWSERBASE_API_KEY', 'BROWSER_USE_API_KEY', 'FIRECRAWL_API_KEY',
                     'FIRECRAWL_API_URL', 'AGENT_BROWSER_CDP', 'AGENT_BROWSER_PROFILE'):
             os.environ.pop(key, None)
+        stage = 'compare venues in Google Maps'
         result = browser_run(data, receipt_path, limit=limit, venue_ids=venue_ids)
-        status = build_status(data, read_json(receipt_path))
+        stage = 'build review report'
+        batch = {key: result.get(key, 0) for key in ('selected', 'attempted', 'checked', 'ambiguous', 'unavailable')}
+        status = build_status(data, read_json(receipt_path), batch=batch)
         execution.update(finished_at=now(), state='blocked' if result['stopped'] else 'complete',
                          source_commit=commit, release_id=read_json(data / 'directory-release.json')['release_id'],
-                         observations_written=result['attempted'], coverage=status['counts'])
-        status.update(provider='hermes-browser', run_id=execution['execution_id'], run_attempt=1,
+                         observations_written=result['attempted'], batch=batch,
+                         coverage={key: value for key, value in status['counts'].items() if key != 'checked_this_run'})
+        if result['stopped'] and result.get('detail'):
+            execution['detail'] = result['detail']
+        status.update(provider='hermes-browser', run_id=execution['execution_id'], run_attempt=1, batch=batch,
                       run_url='', source_execution_finished_at=execution['finished_at'])
+        stage = 'save review report'
         atomic_json(state_dir / 'hermes-google-status.json', status)
         execution['status_sha256'] = hashlib.sha256((state_dir / 'hermes-google-status.json').read_bytes()).hexdigest()
-        atomic_json(state_dir / 'last-run.json', execution)
-        return execution
     except Exception as error:
-        execution.update(finished_at=now(), state='failed', failure_code=type(error).__name__)
-        atomic_json(state_dir / 'last-run.json', execution)
-        raise RuntimeError('Hermes Google comparison failed; inspect the local execution receipt') from None
+        execution.update(finished_at=now(), state='failed', failure_code=type(error).__name__,
+                         detail=f'Could not {stage} ({type(error).__name__})')
+        status = None
     finally:
-        lock.unlink(missing_ok=True)
+        try:
+            atomic_json(state_dir / 'last-run.json', execution)
+            try:
+                delivery = send_notification(state_dir, status, execution, atomic_json)
+            except Exception as error:
+                delivery = {'state': 'failed', 'detail': f'Mail processing failed ({type(error).__name__})'}
+            execution['notification'] = delivery
+            if delivery['state'] in ('failed', 'unconfirmed', 'not_configured'):
+                execution['success'] = False
+                reason = delivery.get('detail', f"Private email {delivery['state'].replace('_', ' ')}")
+                execution['detail'] = '. '.join(filter(None, (execution.get('detail'), reason)))
+            atomic_json(state_dir / 'last-run.json', execution)
+        finally:
+            lock.unlink(missing_ok=True)
+    return execution
 
 
 def main():

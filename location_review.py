@@ -139,6 +139,13 @@ def load_google_status(path):
     provider_path = path.parent / 'google-review-provider.json'
     if provider_path.exists():
         provider = json.loads(provider_path.read_text(encoding='utf-8'))
+        if (not isinstance(provider, dict) or set(provider) != {'provider'}
+                or provider['provider'] not in ('places-api', 'hermes-browser', 'hermes-local')):
+            raise ValueError('Invalid Google review provider configuration')
+        if provider == {'provider': 'hermes-local'}:
+            # Google review and private notification happen in the local
+            # Hermes execution. Ignore retained public snapshots in this mode.
+            return {'_google_handled_locally': True}
         if provider == {'provider': 'hermes-browser'}:
             # A newly published browser batch must reach the same review issue
             # immediately, without waiting for the next scheduled API/router run.
@@ -156,6 +163,8 @@ def load_google_status(path):
 def with_google(report, status, current_bundle=None, now=None):
     """Attach derived Google review flags, never provider names or coordinates."""
     combined = copy.deepcopy(report)
+    if status == {'_google_handled_locally': True}:
+        return combined
     if status is None:
         # Google is a required comparison source. Absence of a saved run is a
         # coverage gap, never an all-clear or a reason to recheck correct pins.
@@ -165,6 +174,7 @@ def with_google(report, status, current_bundle=None, now=None):
                         google_hard_failure=False)
         return combined
     fields = {'venue_id', 'pub_name', 'place_name', 'postcode', 'status', 'reason', 'binding_signature'}
+    optional_fields = {'checked_at', 'current_pin', 'business_status'}
     if (not isinstance(status, dict) or type(status.get('schema_version')) is not int
             or status['schema_version'] != 1 or not isinstance(status.get('configured'), bool)
             or not isinstance(status.get('hard_failure', False), bool)
@@ -174,8 +184,8 @@ def with_google(report, status, current_bundle=None, now=None):
             or not all(isinstance(key, str) and type(value) is int and value >= 0
                        for key, value in status['counts'].items())
             or not isinstance(status.get('findings'), list)
-            or not all(isinstance(finding, dict) and set(finding) == fields
-                       and all(isinstance(value, str) for value in finding.values())
+            or not all(isinstance(finding, dict) and fields <= finding.keys() <= fields | optional_fields
+                       and all(isinstance(finding[key], str) for key in fields)
                        and all(finding[key] for key in ('venue_id', 'pub_name', 'status', 'reason'))
                        and re.fullmatch(r'[0-9a-f]{64}', finding['binding_signature'])
                        for finding in status['findings'])):
@@ -215,6 +225,7 @@ def with_google(report, status, current_bundle=None, now=None):
             issues.add(GOOGLE_COVERAGE_ISSUE)
             continue
         row = row_and_signature[0]
+        finding = {field: finding[field] for field in fields}
         findings.append(dict(finding, **{field: row.get(field, '') for field in ('pub_name', 'place_name', 'postcode')}))
     try:
         checked_at = datetime.fromisoformat(status.get('checked_at', '').replace('Z', '+00:00'))

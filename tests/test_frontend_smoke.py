@@ -17,6 +17,7 @@ class FrontendSmokeTests(unittest.TestCase):
         os.chdir(cls.repo_root)
         cls.data_root = (cls.repo_root / os.environ.get('DIRECTORY_TEST_ROOT', '.')).resolve()
         cls.release_override = None
+        cls.google_status_override = None
         cls.received_reports = []
 
         class Handler(SimpleHTTPRequestHandler):
@@ -29,6 +30,8 @@ class FrontendSmokeTests(unittest.TestCase):
             def do_GET(self):
                 if self.path == '/api/report-problem?config=1':
                     self.send_json({'turnstileSiteKey': 'local-test-key'})
+                elif urlsplit(self.path).path == '/hermes-google-status.json' and cls.google_status_override is not None:
+                    self.send_json(cls.google_status_override)
                 elif urlsplit(self.path).path == '/directory-release.json' and cls.release_override is not None:
                     self.send_json(cls.release_override)
                 else:
@@ -80,6 +83,54 @@ class FrontendSmokeTests(unittest.TestCase):
         self.driver.execute_script("setUserLocation(51.5, -0.1, 'Test location');")
         self.assertEqual(self.driver.find_element(By.ID, "typeFilter").get_attribute("value"), "Perm")
 
+    def test_possible_closure_warning_requires_fresh_identity_and_point_binding(self):
+        from datetime import datetime, timedelta, timezone
+
+        release = json.loads((self.data_root / 'directory-release.json').read_text(encoding='utf-8'))
+        row = release['rows'][0]
+        venue_id = row['venue_id']
+        now = datetime.now(timezone.utc)
+        checked_at = now.isoformat()
+        point = {'lat': 51.5, 'lng': -0.1}
+        release['locations'][venue_id].update(point, precision='venue', checked_at=checked_at,
+                                              postcode_location=dict(point))
+        type(self).release_override = release
+        finding = {
+            'venue_id': venue_id,
+            'pub_name': row['pub_name'],
+            'place_name': row['place_name'],
+            'postcode': row['postcode'],
+            'status': 'review_needed',
+            'reason': 'Google indicates a possible closure; trading status needs review',
+            'binding_signature': 'a' * 64,
+            'business_status': 'CLOSED_TEMPORARILY',
+            'checked_at': checked_at,
+            'current_pin': dict(point),
+        }
+
+        def load_with(candidate):
+            type(self).google_status_override = {
+                'schema_version': 1, 'configured': True, 'findings': [candidate]
+            }
+            self.load_directory()
+            return self.driver.execute_script(
+                'return pubData.find(item => item.venue_id === arguments[0]).possibleClosure;', venue_id)
+
+        self.assertTrue(load_with(dict(finding)))
+        stale = dict(finding, checked_at=(now - timedelta(days=31)).isoformat())
+        self.assertFalse(load_with(stale))
+        future = dict(finding, checked_at=(now + timedelta(minutes=1)).isoformat())
+        self.assertFalse(load_with(future))
+        changed_identity = dict(finding, place_name='Different place')
+        self.assertFalse(load_with(changed_identity))
+        changed_point = dict(finding, current_pin={'lat': 51.500001, 'lng': -0.1})
+        self.assertFalse(load_with(changed_point))
+        inconclusive = dict(finding, business_status='OPERATIONAL')
+        self.assertFalse(load_with(inconclusive))
+        legacy = {key: value for key, value in finding.items()
+                  if key not in ('checked_at', 'business_status', 'current_pin')}
+        self.assertFalse(load_with(legacy))
+
     def load_directory(self):
         from selenium.webdriver.common.by import By
         from selenium.webdriver.support.ui import WebDriverWait
@@ -88,6 +139,7 @@ class FrontendSmokeTests(unittest.TestCase):
 
     def tearDown(self):
         type(self).release_override = None
+        type(self).google_status_override = None
         type(self).received_reports.clear()
 
     def save_review_screenshot(self, name):

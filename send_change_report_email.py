@@ -14,7 +14,8 @@ def listing_label(row):
 def format_report(report):
     summary = report["summary"]
     lines = [
-        "Bass directory release validated and committed; check the Pages deployment and live map for visibility.",
+        "Bass directory release passed validation and was committed to the repository.",
+        "Pages deployment and live-map availability are checked separately.",
         "",
         f"Listings: {summary['previous_listing_count']} → {summary['candidate_listing_count']}",
         f"Added: {summary['added_count']} | Removed: {summary['removed_count']} | Updated: {summary['updated_count']}",
@@ -31,29 +32,39 @@ def format_report(report):
     return "\n".join(lines)
 
 
-def main():
-    parser = argparse.ArgumentParser(description="Send a validated Bass directory change report.")
-    parser.add_argument("--report", required=True)
-    args = parser.parse_args()
-    report = json.loads(Path(args.report).read_text(encoding="utf-8"))
-    smtp_host = os.environ["SMTP_HOST"]
-    smtp_port = int(os.environ.get("SMTP_PORT", "587"))
-    smtp_username = os.environ["SMTP_USERNAME"]
-    smtp_password = os.environ["SMTP_PASSWORD"]
-    recipient = os.environ["CHANGE_REPORT_TO"]
+def send_report(report, smtp_factory=smtplib.SMTP, environ=None):
+    """Send a report and fail unless the configured SMTP server accepts it."""
+    environ = os.environ if environ is None else environ
+    smtp_host = environ["SMTP_HOST"]
+    smtp_port = int(environ.get("SMTP_PORT", "587"))
+    smtp_username = environ["SMTP_USERNAME"]
+    smtp_password = environ["SMTP_PASSWORD"]
+    recipient = environ["CHANGE_REPORT_TO"]
+
     message = EmailMessage()
     message["Subject"] = (
         "Bass directory update: validated changes"
         if report["summary"]["has_changes"]
         else "Bass directory update: no listing changes"
     )
-    message["From"] = os.environ.get("ALERT_FROM", smtp_username)
+    message["From"] = environ.get("ALERT_FROM") or smtp_username
     message["To"] = recipient
     message.set_content(format_report(report))
-    with smtplib.SMTP(smtp_host, smtp_port) as server:
+    with smtp_factory(smtp_host, smtp_port, timeout=30) as server:
         server.starttls()
         server.login(smtp_username, smtp_password)
-        server.send_message(message)
+        refused = server.send_message(message)
+    if refused:
+        raise RuntimeError("SMTP refused one or more change-report recipients; delivery was not accepted")
+
+
+def main(argv=None):
+    parser = argparse.ArgumentParser(description="Send a validated Bass directory change report.")
+    parser.add_argument("--report", required=True)
+    args = parser.parse_args(argv)
+    report = json.loads(Path(args.report).read_text(encoding="utf-8"))
+    send_report(report)
+    print("Change report accepted by configured SMTP server.")
 
 
 if __name__ == "__main__":

@@ -121,9 +121,13 @@ def route(root='.', state='google-places-state.json', status='google-places-stat
     provider = 'places-api'
     if config_path.exists():
         config = read_json(config_path)
-        if not isinstance(config, dict) or set(config) != {'provider'} or config['provider'] not in ('places-api', 'hermes-browser'):
+        if not isinstance(config, dict) or set(config) != {'provider'} or config['provider'] not in ('places-api', 'hermes-browser', 'hermes-local'):
             raise ValueError('Invalid Google review provider configuration')
         provider = config['provider']
+    if provider == 'hermes-local':
+        # Hermes sends its private report during the local execution. Do not
+        # copy a prior browser/API snapshot into GitHub status or artifacts.
+        return dict(provider=provider, locally_handled=True), 0
     if provider == 'hermes-browser':
         bundle = read_json(root / 'directory-release.json')
         result, code = _hermes_status(root, bundle, now)

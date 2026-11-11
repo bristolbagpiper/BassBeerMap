@@ -152,6 +152,7 @@ jobs:
         run: python ingest_directory.py candidate-pubs.csv --staging candidate-release
 
       - name: Validate candidate files again before publication
+        id: candidate_validation
         run: python validate_directory_release.py --root candidate-release --previous .
 
       - name: Guard against unexpected changes from an unchanged PDF
@@ -179,12 +180,14 @@ jobs:
           if-no-files-found: warn
 
       - name: Publish the complete validated release
+        id: publication
         run: |
           python validate_directory_release.py --root candidate-release --previous .
           python -c "from pathlib import Path; from shutil import copyfile; from directory_release import RELEASE_FILES; [copyfile(Path('candidate-release') / name, name) for name in RELEASE_FILES]"
           python validate_directory_release.py
           if git diff --quiet -- '*.pdf' pubs.csv directory-meta.json pub-coordinates.json venue-coordinates.json coordinate-verification.json venue-registry.json directory-release.json location-review.json; then
             echo "No directory changes detected."
+            echo "state=unchanged" >> "$GITHUB_OUTPUT"
             exit 0
           fi
           git config user.name "github-actions[bot]"
@@ -192,9 +195,14 @@ jobs:
           git add -A '*.pdf' pubs.csv directory-meta.json pub-coordinates.json venue-coordinates.json coordinate-verification.json venue-registry.json directory-release.json location-review.json
           git commit -m "Publish validated directory release"
           git push
+          echo "state=published" >> "$GITHUB_OUTPUT"
 
       - name: Email the validated change report when configured
+        id: change_report_email
+        # A mail failure has its own visible outcome and issue below. The data
+        # workflow must still trigger post-import validation after publication.
         continue-on-error: true
+        if: always() && steps.candidate_validation.outcome == 'success' && steps.publication.outcome == 'success'
         env:
           SMTP_HOST: ${{ secrets.SMTP_HOST }}
           SMTP_PORT: ${{ secrets.SMTP_PORT }}
@@ -203,11 +211,24 @@ jobs:
           CHANGE_REPORT_TO: ${{ secrets.CHANGE_REPORT_TO }}
           ALERT_FROM: ${{ secrets.ALERT_FROM }}
         run: |
-          if [ -n "$SMTP_HOST" ] && [ -n "$SMTP_USERNAME" ] && [ -n "$SMTP_PASSWORD" ] && [ -n "$CHANGE_REPORT_TO" ]; then
-            python -c "import json,sys; r=json.load(open('candidate-release/change-report.json')); sys.exit(0 if r['summary']['has_changes'] or '${{ github.event_name }}' == 'workflow_dispatch' else 1)" && python send_change_report_email.py --report candidate-release/change-report.json || exit 0
+          if [ -z "$SMTP_HOST" ] || [ -z "$SMTP_USERNAME" ] || [ -z "$SMTP_PASSWORD" ] || [ -z "$CHANGE_REPORT_TO" ]; then
+            echo "state=not_configured" >> "$GITHUB_OUTPUT"
+            echo "Import email: not configured; validated release processing continues without a change-report email." >> "$GITHUB_STEP_SUMMARY"
+            exit 0
           fi
+          has_changes=$(python -c "import json; print(str(bool(json.load(open('candidate-release/change-report.json'))['summary']['has_changes'])).lower())")
+          if [ "$has_changes" != "true" ] && [ "${{ github.event_name }}" != "workflow_dispatch" ]; then
+            echo "state=suppressed_no_changes" >> "$GITHUB_OUTPUT"
+            echo "Import email: no listing changes; notification suppressed." >> "$GITHUB_STEP_SUMMARY"
+            exit 0
+          fi
+          echo "state=attempted" >> "$GITHUB_OUTPUT"
+          python send_change_report_email.py --report candidate-release/change-report.json
+          echo "state=accepted" >> "$GITHUB_OUTPUT"
+          echo "Import email: accepted by the configured SMTP server." >> "$GITHUB_STEP_SUMMARY"
 
       - name: Close resolved import alerts
+        if: always() && steps.candidate_validation.outcome == 'success' && steps.publication.outcome == 'success'
         uses: actions/github-script@v7
         with:
           script: |
@@ -217,7 +238,7 @@ jobs:
             }
 
       - name: Report rejected import
-        if: failure()
+        if: failure() && steps.change_report_email.outcome != 'failure' && (steps.candidate_validation.outcome != 'success' || steps.publication.outcome != 'success')
         uses: actions/github-script@v7
         with:
           script: |
@@ -231,4 +252,44 @@ jobs:
             const existing = issues.find(i => i.title === title);
             if (existing) await github.rest.issues.createComment({...context.repo, issue_number: existing.number, body});
             else await github.rest.issues.create({...context.repo, title, body});
+
+      - name: Report import email delivery failure
+        if: always() && steps.change_report_email.outcome == 'failure'
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const title = 'BassBeerMap import email delivery failed';
+            const body = ['The import candidate was validated and the repository publication step completed, but change-report email delivery was not acknowledged by SMTP.', '', 'Check the failed email step and SMTP configuration. This records server acceptance only; it does not prove inbox delivery.', '', `Run: https://github.com/${context.repo.owner}/${context.repo.repo}/actions/runs/${context.runId}`].join('\n');
+            const { data: issues } = await github.rest.issues.listForRepo({...context.repo, state: 'open'});
+            const existing = issues.find(i => i.title === title);
+            if (existing) await github.rest.issues.update({...context.repo, issue_number: existing.number, body});
+            else await github.rest.issues.create({...context.repo, title, body});
+
+      - name: Close recovered import email failures
+        if: success() && steps.change_report_email.outputs.state == 'accepted'
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const issues = await github.paginate(github.rest.issues.listForRepo, {...context.repo, state: 'open'});
+            for (const issue of issues.filter(i => i.title === 'BassBeerMap import email delivery failed')) {
+              await github.rest.issues.update({...context.repo, issue_number: issue.number, state: 'closed', state_reason: 'completed'});
+            }
+
+      - name: Summarize import, publication and email states
+        if: always()
+        env:
+          CANDIDATE_INGEST_OUTCOME: ${{ steps.candidate.outcome }}
+          CANDIDATE_VALIDATION_OUTCOME: ${{ steps.candidate_validation.outcome }}
+          PUBLICATION_OUTCOME: ${{ steps.publication.outcome }}
+          PUBLICATION_STATE: ${{ steps.publication.outputs.state }}
+          EMAIL_OUTCOME: ${{ steps.change_report_email.outcome }}
+          EMAIL_STATE: ${{ steps.change_report_email.outputs.state }}
+        run: |
+          {
+            echo "## Import outcome"
+            echo "- Candidate ingestion: ${CANDIDATE_INGEST_OUTCOME:-not reached}"
+            echo "- Candidate validation: ${CANDIDATE_VALIDATION_OUTCOME:-not reached}"
+            echo "- Repository publication: ${PUBLICATION_STATE:-${PUBLICATION_OUTCOME:-not reached}}"
+            echo "- Change-report email: ${EMAIL_STATE:-${EMAIL_OUTCOME:-not reached}}"
+          } >> "$GITHUB_STEP_SUMMARY"
 

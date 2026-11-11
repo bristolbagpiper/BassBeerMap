@@ -27,11 +27,16 @@ from owner_location_review import primary_title
 MAX_BATCH = 45
 PAGE_DEADLINE = 20
 TOTAL_DEADLINE = 20 * 60
+TRANSIENT_NAVIGATION_ERROR = re.compile(
+    r'\bERR_(?:TIMED_OUT|CONNECTION_TIMED_OUT|CONNECTION_RESET|NETWORK_CHANGED|INTERNET_DISCONNECTED)\b'
+    r'|\bCommand timed out after \d+ seconds\b|\bTimeout \d+ms exceeded\b',
+    re.IGNORECASE,
+)
+GOOGLE_CHALLENGE = re.compile(
+    r'captcha|unusual traffic|automated quer|not a robot|sorry,? we can.t process', re.IGNORECASE
+)
 CATEGORIES = {'identity_and_pin_consistent', 'identity_conflict', 'pin_conflict',
               'trading_conflict', 'ambiguous', 'unavailable'}
-OBSERVATION_FIELDS = ('schema_version', 'provider', 'venue_id', 'identity_signature',
-                      'point_signature', 'binding_signature', 'category', 'attempted_at',
-                      'checked_at', 'result_url', 'source_url')
 _DOM_READ = r"""JSON.stringify((()=>{const vis=e=>!!(e.getClientRects().length)&&getComputedStyle(e).visibility!=='hidden'&&getComputedStyle(e).display!=='none';const text=e=>(e.innerText||e.getAttribute('aria-label')||'').trim();const inView=e=>{const r=e.getBoundingClientRect();return r.width>0&&r.height>0&&r.top>=0&&r.bottom<=innerHeight&&r.left>=0&&r.right<=innerWidth};return {url:location.href,title:document.title,h1:[...document.querySelectorAll('h1')].filter(vis).map(text),addressButtons:[...document.querySelectorAll('button')].filter(vis).map(e=>({label:(e.getAttribute('aria-label')||'').trim(),text:text(e)})).filter(x=>/^address\s*:/i.test(x.label)),consentButtons:[...document.querySelectorAll('button')].filter(vis).map(e=>({label:(e.getAttribute('aria-label')||'').trim(),text:text(e),inViewport:inView(e)})).filter(x=>/reject\s+all/i.test(x.label+' '+x.text)),placeLinks:[...document.querySelectorAll('a[href*="/maps/place/"]')].filter(vis).map(e=>({href:e.href,text:text(e)})).slice(0,30),body:(document.body?.innerText||'').slice(0,12000)}})())"""
 
 
@@ -46,6 +51,25 @@ def _response(raw):
         return json.loads(raw)
     except (TypeError, json.JSONDecodeError):
         return {'success': False, 'error': 'invalid native browser response'}
+
+
+class BrowserStepError(RuntimeError):
+    """A failed browser step with a safe description for the local receipt."""
+
+
+def _navigate(browser, url, task_id, deadline, sleeper):
+    for attempt in range(2):
+        reply = _response(browser.browser_navigate(url, task_id=task_id))
+        error = str(reply.get('error') or '')
+        if reply.get('bot_detection_warning') or GOOGLE_CHALLENGE.search(error):
+            return 'Google presented an automated-traffic challenge'
+        if reply.get('success'):
+            return None
+        if not TRANSIENT_NAVIGATION_ERROR.search(error):
+            return 'Browser navigation failed'
+        if attempt or time.monotonic() + 2 >= deadline:
+            return 'Temporary browser navigation error persisted or the batch deadline prevented a retry'
+        sleeper(2)
 
 
 def _runtime_tools():
@@ -162,15 +186,15 @@ def _search_result_ref(snapshot_text, place_links, expected_name, place_name, re
 def _extract(browser, task_id):
     result = _response(browser.browser_console(expression=_DOM_READ, task_id=task_id))
     if not result.get('success'):
-        raise RuntimeError('native browser DOM read failed')
+        raise BrowserStepError('Browser could not read the page')
     data = result.get('result')
     if isinstance(data, str):
         try:
             data = json.loads(data)
         except json.JSONDecodeError:
-            raise RuntimeError('native browser DOM read was not structured')
+            raise BrowserStepError('Browser returned an invalid page response') from None
     if not isinstance(data, dict):
-        raise RuntimeError('native browser DOM read was not structured')
+        raise BrowserStepError('Browser returned an invalid page response')
     return data
 
 
@@ -186,27 +210,29 @@ def _resolve_page(browser, task_id, expected_name, expected_postcodes, ref_names
     while time.monotonic() < deadline:
         snap = _response(browser.browser_snapshot(full=False, task_id=task_id))
         if not snap.get('success'):
-            raise RuntimeError('native browser snapshot failed')
+            raise BrowserStepError('Browser could not take a page snapshot')
         snap_text = str(snap.get('snapshot') or snap.get('text') or '')
         on_consent = ('consent.google.com' in str(snap.get('url') or '').lower()
                       or bool(re.search(r'before you continue|choose your privacy settings', snap_text, re.I)))
         if on_consent and consent_attempted:
             if consent_wait_deadline is None or time.monotonic() >= consent_wait_deadline:
-                return {'category': 'unavailable', 'stop': True}
+                return {'category': 'unavailable', 'stop': True, 'detail': 'Google consent screen stayed open'}
             time.sleep(min(1, max(0, consent_wait_deadline - time.monotonic())))
             continue
-        if re.search(r'captcha|unusual traffic|automated quer|not a robot|sorry,? we can.t process', snap_text, re.I):
-            return {'category': 'unavailable', 'stop': True}
+        if GOOGLE_CHALLENGE.search(snap_text):
+            return {'category': 'unavailable', 'stop': True,
+                    'detail': 'Google presented an automated-traffic challenge'}
         if on_consent and not consent_attempted:
             dom = _extract(browser, task_id)
             visible = any(x.get('inViewport') is True for x in dom.get('consentButtons', [])
                           if isinstance(x, dict))
             if not visible:
                 if consent_scrolls >= 3:
-                    return {'category': 'unavailable', 'stop': True}
+                    return {'category': 'unavailable', 'stop': True,
+                            'detail': 'Google consent controls were not visible'}
                 scroll = _response(browser.browser_scroll('down', task_id=task_id))
                 if not scroll.get('success'):
-                    raise RuntimeError('native consent scroll failed')
+                    raise BrowserStepError('Browser could not scroll the Google consent screen')
                 consent_scrolls += 1
                 time.sleep(min(.25, max(0, deadline - time.monotonic())))
                 continue
@@ -214,13 +240,13 @@ def _resolve_page(browser, task_id, expected_name, expected_postcodes, ref_names
             # before the one native click.
             fresh = _response(browser.browser_snapshot(full=False, task_id=task_id))
             if not fresh.get('success'):
-                raise RuntimeError('native consent refresh snapshot failed')
+                raise BrowserStepError('Browser could not refresh the Google consent snapshot')
             fresh_ref = _consent_ref(fresh)
             if not fresh_ref:
                 continue
             click = _response(browser.browser_click(fresh_ref, task_id=task_id))
             if not click.get('success'):
-                raise RuntimeError('native consent click failed')
+                raise BrowserStepError('Browser could not select the Google consent option')
             consent_attempted = True
             consent_wait_deadline = min(deadline, time.monotonic() + 8)
             time.sleep(min(1, max(0, deadline - time.monotonic())))
@@ -241,7 +267,7 @@ def _resolve_page(browser, task_id, expected_name, expected_postcodes, ref_names
                 if ref:
                     click = _response(browser.browser_click(ref, task_id=task_id))
                     if not click.get('success'):
-                        raise RuntimeError('native result click failed')
+                        raise BrowserStepError('Browser could not open the matching Google result')
                     followed_result = True
                     continue
             urls = [str(x.get('href', '')) for x in last.get('placeLinks', [])
@@ -254,7 +280,7 @@ def _resolve_page(browser, task_id, expected_name, expected_postcodes, ref_names
             break
         time.sleep(min(1, max(0, deadline - time.monotonic())))
     if on_consent and not page_ready:
-        return {'category': 'unavailable', 'stop': True}
+        return {'category': 'unavailable', 'stop': True, 'detail': 'Google consent screen stayed open'}
     if not last:
         return {'category': 'unavailable', 'stop': False}
     url = str(last.get('url') or '')
@@ -290,21 +316,32 @@ def classify(item, registry_entry, page):
     out = []
     if distance_metres(item['current_pin'], page['point']) > 50:
         out.append(('pin_conflict', page['result_url']))
-    body = page.get('body', '').casefold()
-    if any(label in body for label in ('permanently closed', 'temporarily closed', 'closed permanently')):
+    if closure_status(page):
         out.append(('trading_conflict', page['result_url']))
     if not out:
         out.append(('identity_and_pin_consistent', page['result_url']))
     return out
 
 
-def _record(item, category, attempted_at, checked_at, result_url, search_url):
-    return dict(schema_version=1, provider='hermes-browser', venue_id=item['venue_id'],
+def closure_status(page):
+    labels = {line.strip().casefold() for line in page.get('body', '').splitlines()}
+    if labels & {'permanently closed', 'closed permanently'}:
+        return 'CLOSED_PERMANENTLY'
+    if 'temporarily closed' in labels:
+        return 'CLOSED_TEMPORARILY'
+    return None
+
+
+def _record(item, category, attempted_at, checked_at, result_url, search_url, business_status=None):
+    record = dict(schema_version=1, provider='hermes-browser', venue_id=item['venue_id'],
                 identity_signature=item['identity_signature'], point_signature=item['point_signature'],
                 binding_signature=item['binding_signature'], category=category,
                 attempted_at=attempted_at, checked_at=checked_at,
                 result_url=result_url if category != 'unavailable' else '',
                 source_url='' if category != 'unavailable' else search_url)
+    if category == 'trading_conflict':
+        record['business_status'] = business_status
+    return record
 
 
 def _validate_prior(root, document):
@@ -346,9 +383,9 @@ def run(root, receipts_path, limit=45, venue_ids=(), debug=False, browser=None, 
         raise RuntimeError('another browser receipt writer holds the local lock') from exc
     task_id = 'hermes-google-' + uuid.uuid4().hex
     records = []
-    stop = False
+    stop_detail = None
     temporary = None
-    started = time.monotonic()
+    deadline = time.monotonic() + TOTAL_DEADLINE
     try:
         os.write(lock_fd, task_id.encode())
         os.close(lock_fd)
@@ -366,14 +403,14 @@ def run(root, receipts_path, limit=45, venue_ids=(), debug=False, browser=None, 
         if browser is None:
             browser, cleanup = _runtime_tools()
         for item in selected:
-            if time.monotonic() - started >= TOTAL_DEADLINE:
+            if time.monotonic() >= deadline:
                 break
             search_url = item['google_named_search_url']
             attempted = clock()
             try:
-                nav = _response(browser.browser_navigate(search_url, task_id=task_id))
-                if not nav.get('success') or nav.get('bot_detection_warning'):
-                    page = {'category': 'unavailable', 'stop': True}
+                navigation_error = _navigate(browser, search_url, task_id, deadline, sleeper)
+                if navigation_error:
+                    page = {'category': 'unavailable', 'stop': True, 'detail': navigation_error}
                 else:
                     names, postcodes = _reference_expectations(item, registry['venues'][item['venue_id']])
                     page = _resolve_page(browser, task_id, item['pub_name'], postcodes, names, search_url,
@@ -382,7 +419,8 @@ def run(root, receipts_path, limit=45, venue_ids=(), debug=False, browser=None, 
                     cats = classify(item, registry['venues'][item['venue_id']], page)
                     checked = clock()
                     for category, result_url in cats:
-                        records.append(_record(item, category, attempted, checked, result_url, search_url))
+                        records.append(_record(item, category, attempted, checked, result_url, search_url,
+                                               closure_status(page) if category == 'trading_conflict' else None))
                     debug_categories = [category for category, _ in cats]
                 else:
                     checked = None if page['category'] == 'unavailable' else clock()
@@ -392,21 +430,18 @@ def run(root, receipts_path, limit=45, venue_ids=(), debug=False, browser=None, 
                 if debug:
                     print(json.dumps({'venue_id': item['venue_id'], 'categories': debug_categories}))
                 if page.get('stop'):
-                    stop = True
+                    stop_detail = page['detail']
                     break
             except Exception as exc:
                 records.append(_record(item, 'unavailable', attempted, None, '', search_url))
                 if debug:
                     print(json.dumps({'venue_id': item['venue_id'], 'category': 'unavailable',
                                       'reason': type(exc).__name__}))
-                stop = True
+                stop_detail = str(exc) if isinstance(exc, BrowserStepError) else type(exc).__name__
                 break
-            if time.monotonic() - started >= TOTAL_DEADLINE:
-                break
-        if len({record['venue_id'] for record in records}) != len(selected):
-            stop = True  # A batch deadline is incomplete coverage, not success.
-        if any(set(x) != set(OBSERVATION_FIELDS) for x in records):
-            raise ValueError('internal receipt schema mismatch')
+        attempted_count = len({record['venue_id'] for record in records})
+        if stop_detail is None and attempted_count != len(selected):
+            stop_detail = 'Browser batch deadline reached before all selected venues were attempted'
         payload = json.dumps({'schema_version': 1, 'observations': prior['observations'] + records},
                              ensure_ascii=False, indent=2) + '\n'
         with tempfile.NamedTemporaryFile('w', encoding='utf-8', newline='\n',
@@ -435,7 +470,14 @@ def run(root, receipts_path, limit=45, venue_ids=(), debug=False, browser=None, 
                 lock_path.unlink()
             except FileNotFoundError:
                 pass
-    return {'attempted': len({record['venue_id'] for record in records}), 'stopped': stop}
+    result = {'attempted': attempted_count, 'stopped': stop_detail is not None,
+              'selected': len(selected),
+              'checked': len({record['venue_id'] for record in records if record['checked_at']}),
+              'ambiguous': sum(record['category'] == 'ambiguous' for record in records),
+              'unavailable': sum(record['category'] == 'unavailable' for record in records)}
+    if stop_detail is not None:
+        result['detail'] = stop_detail
+    return result
 
 
 def main():

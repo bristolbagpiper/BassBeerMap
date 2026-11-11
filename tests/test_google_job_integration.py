@@ -95,6 +95,22 @@ class GoogleJobIntegrationTests(unittest.TestCase):
             (root / 'hermes-google-status.json').write_text(json.dumps(self.status(run_id='browser-new')), encoding='utf-8')
             self.assertEqual(load_google_status(root / 'google-places-status.json')['run_id'], 'browser-new')
 
+    def test_hermes_local_mode_ignores_retained_public_google_report(self):
+        with tempfile.TemporaryDirectory() as directory:
+            root = Path(directory)
+            (root / 'google-review-provider.json').write_text('{"provider":"hermes-local"}', encoding='utf-8')
+            (root / 'google-places-status.json').write_text(json.dumps(self.status(
+                findings=[self.finding()], issues=['old warning'])), encoding='utf-8')
+            (root / 'hermes-google-status.json').write_text(json.dumps(self.status(
+                findings=[self.finding()], issues=['old warning'])), encoding='utf-8')
+
+            status = load_google_status(root / 'google-places-status.json')
+            attached = self.attach(self.report(), status)
+
+        self.assertEqual(attached, self.report())
+        self.assertEqual(fingerprint(attached), fingerprint(self.report()))
+        self.assertNotIn('Google', format_report(attached))
+
     def test_google_changes_send_once_and_recovery_once_with_mock_smtp(self):
         healthy = self.attach(self.report(), self.status())
         failed = self.attach(self.report(), self.status(findings=[self.finding()]))
@@ -197,7 +213,8 @@ class GoogleJobIntegrationTests(unittest.TestCase):
         self.assertLess(google, persisted)
         self.assertLess(persisted, workflow.index('actions/upload-artifact'))
         self.assertIn('timeout-minutes: 40', workflow)
-        self.assertIn("if: always() && steps.checkout.outcome == 'success' && steps.python.outcome == 'success'", workflow)
+        self.assertIn("id: google_provider", workflow)
+        self.assertIn("steps.google_provider.outputs.provider != 'hermes-local'", workflow)
         self.assertIn("if: always() && steps.google.outcome != 'skipped'", workflow)
         self.assertIn('python audit_google_comparisons.py --root . --state google-places-state.json --status google-places-status.json --limit 45', workflow)
         self.assertIn('GOOGLE_PLACES_ENABLED: ${{ vars.GOOGLE_PLACES_ENABLED }}', workflow)
@@ -205,10 +222,12 @@ class GoogleJobIntegrationTests(unittest.TestCase):
         self.assertIn('files=(google-places-status.json)', workflow)
         self.assertIn('if [ -f google-places-state.json ]; then files+=(google-places-state.json); fi', workflow)
         self.assertIn('git add -- "${files[@]}"', workflow)
-        artifact = workflow.split('uses: actions/upload-artifact@v4', 1)[1]
-        self.assertIn('google-places-state.json', artifact)
-        self.assertIn('google-places-status.json', artifact)
-        self.assertIn('retention-days: 7', artifact)
+        artifacts = workflow.split('      - name: Upload Google comparison artifacts', 1)[1]
+        self.assertIn('google-places-state.json', artifacts)
+        self.assertIn('google-places-status.json', artifacts)
+        self.assertIn("if: always() && steps.google.outcome != 'skipped'", artifacts)
+        self.assertIn('retention-days: 7', artifacts)
+        self.assertNotIn('google-places-state.json', workflow.split('      - name: Upload health report and candidate artifacts', 1)[1].split('      - name:', 1)[0])
         notifications = (ROOT / '.github/workflows/location-alerts.yml').read_text()
         self.assertIn("load_google_status('google-places-status.json')", notifications)
         self.assertIn('report.google_count || report.health_count || failed', notifications)

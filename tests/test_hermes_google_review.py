@@ -72,7 +72,25 @@ class HermesGoogleReviewTests(unittest.TestCase):
         status = self.status([old, failed])
         self.assertEqual(status['counts']['current'], 0)
         self.assertIn('differs in business identity or postcode', status['findings'][0]['reason'])
-        self.assertTrue(any('unavailable' in issue for issue in status['issues']))
+        self.assertEqual(status['counts']['retained_unavailable'], 1)
+        self.assertFalse(any('could not be read' in issue for issue in status['issues']))
+        current = build_status(ROOT, dict(schema_version=1, observations=[old, failed]), now=NOW,
+                               batch={'unavailable': 1, 'checked': 0})
+        self.assertTrue(any('could not be read' in issue for issue in current['issues']))
+
+    def test_public_closure_fields_require_fresh_exact_trading_evidence(self):
+        closure = self.observation('trading_conflict', business_status='CLOSED_TEMPORARILY')
+        fresh = self.status([closure])
+        finding = fresh['findings'][0]
+        self.assertEqual(finding['business_status'], 'CLOSED_TEMPORARILY')
+        self.assertEqual(finding['current_pin'], self.item['current_pin'])
+        self.assertEqual(finding['checked_at'], '2026-11-03T10:00:00+00:00')
+        legacy_consumer = with_google(dict(records={}), fresh, self.get_bundle(), now=NOW)
+        self.assertNotIn('checked_at', legacy_consumer['google_findings'][0])
+        legacy = self.status([self.observation('trading_conflict')])['findings'][0]
+        mismatched = self.status([closure, self.observation('pin_conflict')])['findings'][0]
+        for withheld in (legacy, mismatched):
+            self.assertNotIn('business_status', withheld)
 
     def test_identity_conflict_is_actionable_and_simultaneous_conflicts_combine(self):
         status = self.status([self.observation(), self.observation('pin_conflict'),

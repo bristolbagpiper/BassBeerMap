@@ -70,11 +70,17 @@ jobs:
           git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
           git commit -m 'Record latest map health result' -- map-health-status.json
           git push
+      - name: Read configured Google review provider
+        id: google_provider
+        if: always() && steps.checkout.outcome == 'success' && steps.python.outcome == 'success'
+        run: |
+          provider=$(python -c "import json; from pathlib import Path; p=Path('google-review-provider.json'); c=json.loads(p.read_text()) if p.exists() else {'provider':'places-api'}; v=c.get('provider') if isinstance(c,dict) else None; assert set(c)=={'provider'} and v in ('places-api','hermes-browser','hermes-local'); print(v)")
+          echo "provider=$provider" >> "$GITHUB_OUTPUT"
       - name: Rotate Google Places comparisons
         id: google
         # Run after safe CAMRA results publish, even if that source failed.
         # Google failures cannot prevent those results from being committed.
-        if: always() && steps.checkout.outcome == 'success' && steps.python.outcome == 'success'
+        if: always() && steps.checkout.outcome == 'success' && steps.python.outcome == 'success' && steps.google_provider.outcome == 'success' && steps.google_provider.outputs.provider != 'hermes-local'
         env:
           GOOGLE_PLACES_ENABLED: ${{ vars.GOOGLE_PLACES_ENABLED }}
           GOOGLE_PLACES_API_KEY: ${{ secrets.GOOGLE_PLACES_API_KEY }}
@@ -101,6 +107,14 @@ jobs:
           path: |
             candidate-health/
             map-health-status.json
+          retention-days: 7
+          if-no-files-found: warn
+      - name: Upload Google comparison artifacts
+        if: always() && steps.google.outcome != 'skipped'
+        uses: actions/upload-artifact@v4
+        with:
+          name: google-comparison-review
+          path: |
             google-places-state.json
             google-places-status.json
           retention-days: 7

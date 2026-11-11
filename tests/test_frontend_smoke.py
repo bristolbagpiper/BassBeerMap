@@ -17,6 +17,7 @@ class FrontendSmokeTests(unittest.TestCase):
         os.chdir(cls.repo_root)
         cls.data_root = (cls.repo_root / os.environ.get('DIRECTORY_TEST_ROOT', '.')).resolve()
         cls.release_override = None
+        cls.received_reports = []
 
         class Handler(SimpleHTTPRequestHandler):
             def translate_path(self, path):
@@ -26,15 +27,27 @@ class FrontendSmokeTests(unittest.TestCase):
                 return super().translate_path(path)
 
             def do_GET(self):
-                if urlsplit(self.path).path == '/directory-release.json' and cls.release_override is not None:
-                    content = json.dumps(cls.release_override).encode()
-                    self.send_response(200)
-                    self.send_header('Content-Type', 'application/json')
-                    self.send_header('Content-Length', str(len(content)))
-                    self.end_headers()
-                    self.wfile.write(content)
+                if self.path == '/api/report-problem?config=1':
+                    self.send_json({'turnstileSiteKey': 'local-test-key'})
+                elif urlsplit(self.path).path == '/directory-release.json' and cls.release_override is not None:
+                    self.send_json(cls.release_override)
                 else:
                     super().do_GET()
+
+            def do_POST(self):
+                if self.path != '/api/report-problem':
+                    self.send_error(404)
+                    return
+                cls.received_reports.append(json.loads(self.rfile.read(int(self.headers['Content-Length']))))
+                self.send_json({'ok': True})
+
+            def send_json(self, data):
+                content = json.dumps(data).encode()
+                self.send_response(200)
+                self.send_header('Content-Type', 'application/json')
+                self.send_header('Content-Length', str(len(content)))
+                self.end_headers()
+                self.wfile.write(content)
 
         cls.server = ThreadingHTTPServer(("127.0.0.1", 0), Handler)
         cls.thread = threading.Thread(target=cls.server.serve_forever, daemon=True)
@@ -75,6 +88,7 @@ class FrontendSmokeTests(unittest.TestCase):
 
     def tearDown(self):
         type(self).release_override = None
+        type(self).received_reports.clear()
 
     def save_review_screenshot(self, name):
         directory = os.environ.get('DIRECTORY_TEST_SCREENSHOTS')
@@ -250,20 +264,136 @@ class FrontendSmokeTests(unittest.TestCase):
         # This test exercises only local modal behavior. No report service or
         # challenge request is needed and the form is never submitted.
         self.driver.execute_script('loadTurnstile = async () => {};')
-        self.driver.find_element(By.ID, 'openProblemReportBtn').click()
-        self.assertEqual(self.driver.switch_to.active_element.get_attribute('id'), 'problemMessage')
-        self.assertTrue(self.driver.execute_script("return document.querySelector('.layout').inert"))
+        opener = self.driver.find_element(By.ID, 'openProblemReportBtn')
+        opener.click()
+        self.assertEqual(self.driver.switch_to.active_element.get_attribute('id'), 'reportDialogTitle')
+        self.assertTrue(self.driver.execute_script("return document.getElementById('reportDialog').matches(':modal')"))
+        self.driver.execute_script("document.getElementById('searchBox').focus()")
+        self.assertEqual(self.driver.switch_to.active_element.get_attribute('id'), 'reportDialogTitle')
+        routes = self.driver.find_element(By.ID, 'reportRoute')
+        self.assertIn('misplaced pin, wrong directions', routes.text)
+        self.assertIn('pub additions or directory corrections, including Bass availability and closures', routes.text)
+        self.assertEqual(routes.find_element(By.LINK_TEXT, 'National Bass Directory').get_attribute('href'),
+                         'https://nationalbassdirectory.wordpress.com/')
+        self.assertEqual(routes.find_element(By.LINK_TEXT, 'Great Stuff This Bass group').get_attribute('href'),
+                         'https://www.facebook.com/groups/nationalbassday/')
         self.driver.find_element(By.ID, 'submitProblemReportBtn').send_keys(Keys.TAB)
         self.assertEqual(self.driver.switch_to.active_element.get_attribute('id'), 'closeProblemReportBtn')
         self.driver.switch_to.active_element.send_keys(Keys.SHIFT, Keys.TAB)
         self.assertEqual(self.driver.switch_to.active_element.get_attribute('id'), 'submitProblemReportBtn')
-        self.driver.set_window_size(390, 844)
-        self.save_review_screenshot('Bass Map report dialog preview.png')
         self.driver.switch_to.active_element.send_keys(Keys.ESCAPE)
-        self.assertTrue(self.driver.execute_script('return document.getElementById("reportDialog").hidden'))
-        self.assertFalse(self.driver.execute_script("return document.querySelector('.layout').inert"))
-        self.assertEqual(self.driver.switch_to.active_element.get_attribute('id'), 'openProblemReportBtn')
-        self.driver.set_window_size(1440, 1000)
+        self.assertFalse(self.driver.find_element(By.ID, 'reportDialog').is_displayed())
+        self.assertEqual(self.driver.switch_to.active_element, opener)
+
+    def test_listing_report_keeps_context_and_submits_only_to_local_receiver(self):
+        from selenium.webdriver.common.by import By
+        from selenium.webdriver.common.keys import Keys
+        from selenium.webdriver.support import expected_conditions as EC
+        from selenium.webdriver.support.ui import WebDriverWait
+
+        driver = self.driver
+        wait = WebDriverWait(driver, 10)
+        self.addCleanup(driver.execute_cdp_cmd, 'Emulation.clearDeviceMetricsOverride', {})
+        self.load_directory()
+        driver.execute_script("""
+            const originalFetch = window.fetch.bind(window);
+            window.fetch = (input, options) => {
+                const url = new URL(input, location.href);
+                if (url.pathname === '/api/report-problem') {
+                    return originalFetch(url.pathname + url.search, options);
+                }
+                return originalFetch(input, options);
+            };
+            window.turnstile = {
+                render: (container, options) => { options.callback('local-test-token'); return 0; },
+                reset: () => {}
+            };
+        """)
+        search = driver.find_element(By.ID, 'searchBox')
+        search.send_keys('Bank Tavern')
+        wait.until(lambda d: d.find_element(By.ID, 'resultCount').text == '1 match')
+        venue = driver.find_element(By.ID, 'problemVenue')
+        cancel = driver.find_element(By.ID, 'cancelProblemReportBtn')
+        context = 'Bank Tavern, Bristol: Central, BS1 2HR'
+        card_report = driver.find_element(By.CSS_SELECTOR, '#results .venue-report-btn')
+        card_report.click()
+        self.assertEqual(venue.get_property('value'), context)
+        self.assertTrue(venue.get_property('readOnly'))
+        cancel.click()
+        self.assertEqual(driver.switch_to.active_element, card_report)
+        driver.find_element(By.CSS_SELECTOR, '#results .card-map-button').click()
+        desktop_report = wait.until(EC.visibility_of_element_located((By.CSS_SELECTOR, '.leaflet-popup .venue-report-btn')))
+        desktop_report.click()
+        self.assertEqual(venue.get_property('value'), context)
+        driver.switch_to.active_element.send_keys(Keys.ESCAPE)
+        self.assertEqual(driver.switch_to.active_element, desktop_report)
+
+        self.resize_viewport(360, 640)
+        wait.until(lambda d: d.execute_script('return isMobileView();'))
+        driver.find_element(By.ID, 'openPanelBtn').click()
+        result = wait.until(EC.element_to_be_clickable((By.CSS_SELECTOR, '#results .card-map-button')))
+        result.click()
+        mobile_report = wait.until(EC.visibility_of_element_located((By.CSS_SELECTOR, '#mobileVenue .venue-report-btn')))
+        mobile_report.click()
+        self.assertEqual(venue.get_property('value'), context)
+        self.assertTrue(driver.find_element(By.ID, 'mobileVenue').get_property('open'))
+        self.save_review_screenshot('venue-report-360x640.png')
+        cancel.click()
+        self.assertEqual(driver.switch_to.active_element, mobile_report)
+        mobile_report.click()
+        driver.find_element(By.ID, 'problemMessage').send_keys('Local verification of the map report.')
+        driver.find_element(By.ID, 'submitProblemReportBtn').click()
+        wait.until(EC.text_to_be_present_in_element((By.ID, 'problemReportStatus'), 'your report has been sent'))
+        self.assertEqual(self.received_reports, [{
+            'venue': context, 'message': 'Local verification of the map report.', 'contact': '',
+            'website': '', 'turnstileToken': 'local-test-token', 'page': self.base_url,
+        }])
+        self.assertEqual(venue.get_property('value'), context)
+        cancel.click()
+        driver.find_element(By.ID, 'closeMobileVenueBtn').click()
+        wait.until(lambda d: d.switch_to.active_element == result)
+        result.send_keys(Keys.ESCAPE)
+        wait.until(EC.element_to_be_clickable((By.ID, 'openProblemReportBtn'))).click()
+        self.assertEqual(venue.get_property('value'), '')
+        self.assertFalse(venue.get_property('readOnly'))
+        cancel.click()
+
+    def test_confirmation_period_and_availability_are_readable_on_phone(self):
+        from selenium.webdriver.common.by import By
+        from selenium.webdriver.support import expected_conditions as EC
+        from selenium.webdriver.support.ui import WebDriverWait
+
+        driver = self.driver
+        wait = WebDriverWait(driver, 10)
+        self.addCleanup(driver.execute_cdp_cmd, 'Emulation.clearDeviceMetricsOverride', {})
+        self.resize_viewport(360, 640)
+        for name, availability in [('Bank Tavern', 'Permanent'), ('Black Lion Blackfordby', 'Guest / occasional')]:
+            with self.subTest(venue=name):
+                self.load_directory()
+                driver.find_element(By.ID, 'openPanelBtn').click()
+                driver.find_element(By.ID, 'searchBox').send_keys(name)
+                wait.until(lambda d: d.find_element(By.ID, 'resultCount').text == '1 match')
+                card = driver.find_element(By.CSS_SELECTOR, '#results .card')
+                self.assertIn(availability, card.text)
+                confirmation = card.find_element(By.CLASS_NAME, 'card-confirmation')
+                period = confirmation.text.removeprefix('Last confirmed:').strip()
+                self.assertRegex(period, r'^[A-Z][a-z]{2} to [A-Z][a-z]{2} 20\d{2}$')
+                if availability == 'Guest / occasional':
+                    self.save_review_screenshot('guest-confirmation-360x640.png')
+                card.find_element(By.CSS_SELECTOR, '.card-map-button').click()
+                details = wait.until(EC.visibility_of_element_located((By.ID, 'mobileVenueContent')))
+                self.assertIn(f'Availability: {availability}', details.text)
+                detail_confirmation = details.find_element(By.CLASS_NAME, 'venue-confirmation')
+                self.assertIn(period, detail_confirmation.text)
+                driver.execute_script("document.documentElement.style.fontSize = '200%'")
+                for element in [confirmation, detail_confirmation]:
+                    self.assertTrue(driver.execute_script("""
+                        const element = arguments[0];
+                        return parseFloat(getComputedStyle(element).fontSize) >= 20
+                            && element.scrollWidth <= element.clientWidth + 1;
+                    """, element))
+                driver.execute_script("arguments[0].scrollIntoView({block: 'nearest'})", detail_confirmation)
+                self.save_review_screenshot('venue-confirmation-200-percent.png')
 
     def test_mobile_venue_details_fit_and_restore_focus(self):
         from selenium.webdriver.common.by import By
@@ -502,7 +632,7 @@ class FrontendSmokeTests(unittest.TestCase):
         self.assertIn('Bank Tavern', pin.accessible_name)
         self.assertTrue(pin.accessible_name.endswith('approximate postcode location'))
         card = self.driver.find_element(By.CSS_SELECTOR, '#results .card')
-        warning = 'The pin marks the approximate postcode area. Confirm the venue before travelling.'
+        warning = 'The pin shows the postcode area. Confirm the pub’s exact location before travelling.'
         self.assertIn(warning, card.text)
         link = card.find_element(By.LINK_TEXT, 'Find in Google Maps')
         self.assertIn('Bank Tavern', link.accessible_name)

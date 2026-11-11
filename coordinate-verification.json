@@ -2,7 +2,7 @@
   "counts": {
     "verified_venue": 1087
   },
-  "generated_at": "2026-11-10",
+  "generated_at": "2026-11-11",
   "policy": {
     "max_evidence_age_days": 400,
     "venue_pin": "Evidence-backed venue coordinates; unresolved venues use explicitly approximate postcode pins."
@@ -29,6 +29,21 @@
         },
         {
           "checked_at": "2026-11-03",
+          "difference_metres": 0.0,
+          "disposition": "superseded_by_source_refresh",
+          "match": "venue_name_and_full_postcode",
+          "reference_address": "2 Station Road",
+          "reference_coordinate": {
+            "lat": 52.581962,
+            "lng": -1.12209
+          },
+          "reference_name": "1852 Brewery Co, Wigston - Pub with Garden",
+          "reference_postcode": "LE18 2DH",
+          "source": "camra",
+          "url": "https://camra.org.uk/pubs/174102"
+        },
+        {
+          "checked_at": "2026-11-11",
           "difference_metres": 0.0,
           "match": "venue_name_and_full_postcode",
           "reference_address": "2 Station Road",
@@ -2821,6 +2836,21 @@
         {
           "checked_at": "2026-11-03",
           "difference_metres": 5.7,
+          "disposition": "superseded_by_source_refresh",
+          "match": "venue_name_and_full_postcode",
+          "reference_address": "1 Castle Road",
+          "reference_coordinate": {
+            "lat": 51.58002,
+            "lng": -4.004517
+          },
+          "reference_name": "Beaufort Arms, Mumbles - Back Street Local",
+          "reference_postcode": "SA3 5TF",
+          "source": "camra",
+          "url": "https://camra.org.uk/pubs/183750"
+        },
+        {
+          "checked_at": "2026-11-11",
+          "difference_metres": 5.7,
           "match": "venue_name_and_full_postcode",
           "reference_address": "1 Castle Road",
           "reference_coordinate": {
@@ -3464,6 +3494,21 @@
         },
         {
           "checked_at": "2026-11-03",
+          "difference_metres": 0.0,
+          "disposition": "superseded_by_source_refresh",
+          "match": "venue_name_and_full_postcode",
+          "reference_address": "Belmont Street",
+          "reference_coordinate": {
+            "lat": 52.7741,
+            "lng": -1.5563
+          },
+          "reference_name": "Belmont Services Club, Swadlincote - Community Club",
+          "reference_postcode": "DE11 8JU",
+          "source": "camra",
+          "url": "https://camra.org.uk/pubs/124103"
+        },
+        {
+          "checked_at": "2026-11-11",
           "difference_metres": 0.0,
           "match": "venue_name_and_full_postcode",
           "reference_address": "Belmont Street",
@@ -5109,6 +5154,20 @@
         },
         {
           "checked_at": "2026-11-03",
+          "disposition": "superseded_by_source_refresh",
+          "match": "named_venue_full_postcode_and_independent_fsa_agreement",
+          "reference_address": "59 Salop Road",
+          "reference_coordinate": {
+            "lat": 52.85682,
+            "lng": -3.05094
+          },
+          "reference_name": "Black Lion, Oswestry - Pub with Games Area",
+          "reference_postcode": "SY11 2RJ",
+          "source": "camra",
+          "url": "https://camra.org.uk/pubs/144652"
+        },
+        {
+          "checked_at": "2026-11-11",
           "match": "named_venue_full_postcode_and_independent_fsa_agreement",
           "reference_address": "59 Salop Road",
           "reference_coordinate": {
@@ -5919,6 +5978,21 @@
         },
         {
           "checked_at": "2026-11-03",
+          "difference_metres": 0.0,
+          "disposition": "superseded_by_source_refresh",
+          "match": "venue_name_and_full_postcode",
+          "reference_address": "8 Bondend Road",
+          "reference_coordinate": {
+            "lat": 51.832273219705,
+            "lng": -2.199973328242
+          },
+          "reference_name": "BMI Club, Upton St Leonards - Skittles & Snooker",
+          "reference_postcode": "GL4 8AG",
+          "source": "camra",
+          "url": "https://camra.org.uk/pubs/197663"
+        },
+        {
+          "checked_at": "2026-11-11",
           "difference_metres": 0.0,
           "match": "venue_name_and_full_postcode",
           "reference_address": "8 Bondend Road",
@@ -7730,6 +7804,21 @@
         },
         {
           "checked_at": "2026-11-03",
+          "difference_metres": 14.0,
+          "disposition": "superseded_by_source_refresh",
+          "match": "venue_name_and_full_postcode",
+          "reference_address": "25 Broad Chare",
+          "reference_coordinate": {
+            "lat": 54.9699293,
+            "lng": -1.6045694
+          },
+          "reference_name": "Broad Chare, Newcastle upon Tyne",
+          "reference_postcode": "NE1 3DQ",
+          "source": "camra",
+          "url": "https://camra.org.uk/pubs/193420"
+        },
+        {
+          "checked_at": "2026-11-11",
           "difference_metres": 14.0,
           "match": "venue_name_and_full_postcode",
           "reference_address": "25 Broad Chare",
@@ -10057,6 +10146,21 @@
         {
           "checked_at": "2026-11-03",
           "difference_metres": 0.9,
+          "disposition": "superseded_by_source_refresh",
+          "match": "venue_name_and_full_postcode",
+          "reference_address": "493 Nottingham Road",
+          "reference_coordinate": {
+            "lat": 53.006672,
+            "lng": -1.282071
+          },
+          "reference_name": "Caught & Bowled, Giltbrook - Cricket Micro-Pub",
+          "reference_postcode": "NG16 2GG",
+          "source": "camra",
+          "url": "https://camra.org.uk/pubs/163068"
+        },
+        {
+          "checked_at": "2026-11-11",
+          "difference_metres": 0.9,
           "match": "venue_name_and_full_postcode",
           "reference_address": "493 Nottingham Road",
           "reference_coordinate": {
@@ -10743,6 +10847,21 @@
         {
           "checked_at": "2026-11-03",
           "difference_metres": 10.5,
+          "disposition": "superseded_by_source_refresh",
+          "match": "venue_name_and_full_postcode",
+          "reference_address": "211 Chester Road North",
+          "reference_coordinate": {
+            "lat": 52.387687712837,
+            "lng": -2.233631372452
+          },
+          "reference_name": "Chester Tavern, Kidderminster - Acoustic Music Venue",
+          "reference_postcode": "DY10 1TN",
+          "source": "camra",
+          "url": "https://camra.org.uk/pubs/180891"
+        },
+        {
+          "checked_at": "2026-11-11",
+          "difference_metres": 10.5,
           "match": "venue_name_and_full_postcode",
           "reference_address": "211 Chester Road North",
           "reference_coordinate": {
@@ -10895,6 +11014,21 @@
         },
         {
           "checked_at": "2026-11-03",
+          "difference_metres": 1.9,
+          "disposition": "superseded_by_source_refresh",
+          "match": "venue_name_and_full_postcode",
+          "reference_address": "Golf Lane, Duffield",
+          "reference_coordinate": {
+            "lat": 52.9949,
+            "lng": -1.48974
+          },
+          "reference_name": "Chevin Golf Club, Duffield",
+          "reference_postcode": "DE56 4EE",
+          "source": "camra",
+          "url": "https://camra.org.uk/pubs/113196"
+        },
+        {
+          "checked_at": "2026-11-11",
           "difference_metres": 1.9,
           "match": "venue_name_and_full_postcode",
           "reference_address": "Golf Lane, Duffield",
@@ -12850,6 +12984,21 @@
         {
           "checked_at": "2026-11-03",
           "difference_metres": 0.0,
+          "disposition": "superseded_by_source_refresh",
+          "match": "venue_name_and_full_postcode",
+          "reference_address": "Grain Warehouse Yard, Derby Street",
+          "reference_coordinate": {
+            "lat": 52.807350953069,
+            "lng": -1.642810728836
+          },
+          "reference_name": "Coppersmiths Inn, Burton upon Trent - Micropub",
+          "reference_postcode": "DE14 2JJ",
+          "source": "camra",
+          "url": "https://camra.org.uk/pubs/124083"
+        },
+        {
+          "checked_at": "2026-11-11",
+          "difference_metres": 0.0,
           "match": "venue_name_and_full_postcode",
           "reference_address": "Grain Warehouse Yard, Derby Street",
           "reference_coordinate": {
@@ -14607,6 +14756,21 @@
         {
           "checked_at": "2026-11-03",
           "difference_metres": 9.9,
+          "disposition": "superseded_by_source_refresh",
+          "match": "venue_name_and_full_postcode",
+          "reference_address": "Withy Road",
+          "reference_coordinate": {
+            "lat": 51.2033,
+            "lng": -2.98873
+          },
+          "reference_name": "Crossways Inn, West Huntspill - 17th-Century Inn",
+          "reference_postcode": "TA9 3RA",
+          "source": "camra",
+          "url": "https://camra.org.uk/pubs/134097"
+        },
+        {
+          "checked_at": "2026-11-11",
+          "difference_metres": 9.9,
           "match": "venue_name_and_full_postcode",
           "reference_address": "Withy Road",
           "reference_coordinate": {
@@ -14748,6 +14912,7 @@
         {
           "checked_at": "2026-11-03",
           "difference_metres": 2.8,
+          "disposition": "superseded_by_source_refresh",
           "match": "venue_name_and_full_postcode",
           "reference_address": "143 Liverpool Road",
           "reference_coordinate": {
@@ -14755,6 +14920,20 @@
             "lng": -2.233881604824
           },
           "reference_name": "Crown & Thistle, Kidsgrove - Terraced Beer Garden",
+          "reference_postcode": "ST7 4EY",
+          "source": "camra",
+          "url": "https://camra.org.uk/pubs/123129"
+        },
+        {
+          "checked_at": "2026-11-11",
+          "difference_metres": 2.8,
+          "match": "venue_name_and_full_postcode",
+          "reference_address": "143 Liverpool Road",
+          "reference_coordinate": {
+            "lat": 53.084553164048,
+            "lng": -2.233881604824
+          },
+          "reference_name": "Crown & Thistle, Kidsgrove - Pub with Beer Garden",
           "reference_postcode": "ST7 4EY",
           "source": "camra",
           "url": "https://camra.org.uk/pubs/123129"
@@ -15579,6 +15758,21 @@
         },
         {
           "checked_at": "2026-11-03",
+          "difference_metres": 0.0,
+          "disposition": "superseded_by_source_refresh",
+          "match": "venue_name_and_full_postcode",
+          "reference_address": "10, Burton Street",
+          "reference_coordinate": {
+            "lat": 52.76392536611,
+            "lng": -0.88581306964545
+          },
+          "reference_name": "Crown, Melton Mowbray - Georgian Town Pub",
+          "reference_postcode": "LE13 1AE",
+          "source": "camra",
+          "url": "https://camra.org.uk/pubs/192238"
+        },
+        {
+          "checked_at": "2026-11-11",
           "difference_metres": 0.0,
           "match": "venue_name_and_full_postcode",
           "reference_address": "10, Burton Street",
@@ -17014,6 +17208,21 @@
         },
         {
           "checked_at": "2026-11-03",
+          "difference_metres": 3.3,
+          "disposition": "superseded_by_source_refresh",
+          "match": "venue_name_and_full_postcode",
+          "reference_address": "2 Main Street",
+          "reference_coordinate": {
+            "lat": 52.671923,
+            "lng": -1.763533
+          },
+          "reference_name": "Dog Inn, Whittington - Dog Friendly Village Pub",
+          "reference_postcode": "WS14 9JU",
+          "source": "camra",
+          "url": "https://camra.org.uk/pubs/131741"
+        },
+        {
+          "checked_at": "2026-11-11",
           "difference_metres": 3.3,
           "match": "venue_name_and_full_postcode",
           "reference_address": "2 Main Street",
@@ -19551,6 +19760,20 @@
         },
         {
           "checked_at": "2026-11-03",
+          "disposition": "superseded_by_source_refresh",
+          "match": "named_venue_full_postcode_and_independent_fsa_agreement",
+          "reference_address": "29 Passmore Street",
+          "reference_coordinate": {
+            "lat": 51.491074,
+            "lng": -0.154886
+          },
+          "reference_name": "Fox & Hounds, London - Small Wet-Led Pub",
+          "reference_postcode": "SW1W 8HR",
+          "source": "camra",
+          "url": "https://camra.org.uk/pubs/128834"
+        },
+        {
+          "checked_at": "2026-11-11",
           "match": "named_venue_full_postcode_and_independent_fsa_agreement",
           "reference_address": "29 Passmore Street",
           "reference_coordinate": {
@@ -20523,6 +20746,21 @@
         },
         {
           "checked_at": "2026-11-03",
+          "difference_metres": 43.5,
+          "disposition": "superseded_by_source_refresh",
+          "match": "venue_name_and_full_postcode",
+          "reference_address": "117 Bridge Street",
+          "reference_coordinate": {
+            "lat": 53.026642,
+            "lng": -1.485582
+          },
+          "reference_name": "George & Dragon, Belper - Grade II Listed Pub",
+          "reference_postcode": "DE56 1BA",
+          "source": "camra",
+          "url": "https://camra.org.uk/pubs/113342"
+        },
+        {
+          "checked_at": "2026-11-11",
           "difference_metres": 43.5,
           "match": "venue_name_and_full_postcode",
           "reference_address": "117 Bridge Street",
@@ -21806,6 +22044,21 @@
         {
           "checked_at": "2026-11-03",
           "difference_metres": 46.0,
+          "disposition": "superseded_by_source_refresh",
+          "match": "venue_name_and_full_postcode",
+          "reference_address": "65 Old Town Road",
+          "reference_coordinate": {
+            "lat": 53.03,
+            "lng": -2.17398
+          },
+          "reference_name": "Golden Cup Inn, Stoke-on-Trent - Traditional Pub",
+          "reference_postcode": "ST1 2JS",
+          "source": "camra",
+          "url": "https://camra.org.uk/pubs/122913"
+        },
+        {
+          "checked_at": "2026-11-11",
+          "difference_metres": 46.0,
           "match": "venue_name_and_full_postcode",
           "reference_address": "65 Old Town Road",
           "reference_coordinate": {
@@ -21847,6 +22100,21 @@
         },
         {
           "checked_at": "2026-11-03",
+          "difference_metres": 11.9,
+          "disposition": "superseded_by_source_refresh",
+          "match": "venue_name_and_full_postcode",
+          "reference_address": "18 Castle Street",
+          "reference_coordinate": {
+            "lat": 53.187049,
+            "lng": -2.891644
+          },
+          "reference_name": "Golden Eagle, Chester - Victorian Pub with Juke-box",
+          "reference_postcode": "CH1 2DS",
+          "source": "camra",
+          "url": "https://camra.org.uk/pubs/137115"
+        },
+        {
+          "checked_at": "2026-11-11",
           "difference_metres": 11.9,
           "match": "venue_name_and_full_postcode",
           "reference_address": "18 Castle Street",
@@ -22766,6 +23034,20 @@
         },
         {
           "checked_at": "2026-11-03",
+          "disposition": "superseded_by_source_refresh",
+          "match": "named_venue_full_postcode_and_independent_fsa_agreement",
+          "reference_address": "Market Place",
+          "reference_coordinate": {
+            "lat": 53.108651,
+            "lng": -1.560486
+          },
+          "reference_name": "Greyhound, Cromford - Market Place Pub",
+          "reference_postcode": "DE4 3QE",
+          "source": "camra",
+          "url": "https://camra.org.uk/pubs/165758"
+        },
+        {
+          "checked_at": "2026-11-11",
           "match": "named_venue_full_postcode_and_independent_fsa_agreement",
           "reference_address": "Market Place",
           "reference_coordinate": {
@@ -23123,6 +23405,21 @@
         },
         {
           "checked_at": "2026-11-03",
+          "difference_metres": 0.0,
+          "disposition": "superseded_by_source_refresh",
+          "match": "venue_name_and_full_postcode",
+          "reference_address": "Church Road",
+          "reference_coordinate": {
+            "lat": 52.515446,
+            "lng": -1.645283
+          },
+          "reference_name": "Griffin Inn, Shustoke - Destination Rural Pub",
+          "reference_postcode": "B46 2LB",
+          "source": "camra",
+          "url": "https://camra.org.uk/pubs/131752"
+        },
+        {
+          "checked_at": "2026-11-11",
           "difference_metres": 0.0,
           "match": "venue_name_and_full_postcode",
           "reference_address": "Church Road",
@@ -23892,6 +24189,21 @@
         },
         {
           "checked_at": "2026-11-03",
+          "difference_metres": 2.5,
+          "disposition": "superseded_by_source_refresh",
+          "match": "venue_name_and_full_postcode",
+          "reference_address": "Main Street",
+          "reference_coordinate": {
+            "lat": 52.83168,
+            "lng": -1.426131
+          },
+          "reference_name": "Hardinge Arms, Kings Newton",
+          "reference_postcode": "DE73 8BX",
+          "source": "camra",
+          "url": "https://camra.org.uk/pubs/143658"
+        },
+        {
+          "checked_at": "2026-11-11",
           "difference_metres": 2.5,
           "match": "venue_name_and_full_postcode",
           "reference_address": "Main Street",
@@ -25205,6 +25517,21 @@
         },
         {
           "checked_at": "2026-11-03",
+          "difference_metres": 21.2,
+          "disposition": "superseded_by_source_refresh",
+          "match": "venue_name_and_full_postcode",
+          "reference_address": "Rotherham Road",
+          "reference_coordinate": {
+            "lat": 53.212625039809,
+            "lng": -1.267738044262
+          },
+          "reference_name": "Horse & Groom, Scarcliffe - 1800s Coaching Inn",
+          "reference_postcode": "S44 6SU",
+          "source": "camra",
+          "url": "https://camra.org.uk/pubs/165169"
+        },
+        {
+          "checked_at": "2026-11-11",
           "difference_metres": 21.2,
           "match": "venue_name_and_full_postcode",
           "reference_address": "Rotherham Road",
@@ -27435,6 +27762,21 @@
         },
         {
           "checked_at": "2026-11-03",
+          "difference_metres": 7.9,
+          "disposition": "superseded_by_source_refresh",
+          "match": "venue_name_and_full_postcode",
+          "reference_address": "Thames Street",
+          "reference_coordinate": {
+            "lat": 50.712444,
+            "lng": -1.98947
+          },
+          "reference_name": "King Charles Inn, Poole - Medieval Banquet Hall",
+          "reference_postcode": "BH15 1JN",
+          "source": "camra",
+          "url": "https://camra.org.uk/pubs/149540"
+        },
+        {
+          "checked_at": "2026-11-11",
           "difference_metres": 7.9,
           "match": "venue_name_and_full_postcode",
           "reference_address": "Thames Street",
@@ -31542,6 +31884,21 @@
         {
           "checked_at": "2026-11-03",
           "difference_metres": 0.0,
+          "disposition": "superseded_by_source_refresh",
+          "match": "venue_name_and_full_postcode",
+          "reference_address": "2 Hallwood Road",
+          "reference_coordinate": {
+            "lat": 52.410623,
+            "lng": -0.721973
+          },
+          "reference_name": "Kettering Midland Band Social Club, Kettering",
+          "reference_postcode": "NN16 9RG",
+          "source": "camra",
+          "url": "https://camra.org.uk/pubs/161018"
+        },
+        {
+          "checked_at": "2026-11-11",
+          "difference_metres": 0.0,
           "match": "venue_name_and_full_postcode",
           "reference_address": "2 Hallwood Road",
           "reference_coordinate": {
@@ -33580,6 +33937,21 @@
         {
           "checked_at": "2026-11-03",
           "difference_metres": 0.9,
+          "disposition": "superseded_by_source_refresh",
+          "match": "venue_name_and_full_postcode",
+          "reference_address": "11 Bexley Square",
+          "reference_coordinate": {
+            "lat": 53.483709,
+            "lng": -2.259299
+          },
+          "reference_name": "New Oxford, Salford - 1830s Corner Pub",
+          "reference_postcode": "M3 6DB",
+          "source": "camra",
+          "url": "https://camra.org.uk/pubs/170923"
+        },
+        {
+          "checked_at": "2026-11-11",
+          "difference_metres": 0.9,
           "match": "venue_name_and_full_postcode",
           "reference_address": "11 Bexley Square",
           "reference_coordinate": {
@@ -34554,6 +34926,21 @@
         {
           "checked_at": "2026-11-03",
           "difference_metres": 7.8,
+          "disposition": "superseded_by_source_refresh",
+          "match": "venue_name_and_full_postcode",
+          "reference_address": "Church Road",
+          "reference_coordinate": {
+            "lat": 52.630049,
+            "lng": -1.583749
+          },
+          "reference_name": "Office At Warton, Warton - Suntrap Beer Terrace",
+          "reference_postcode": "B79 0JN",
+          "source": "camra",
+          "url": "https://camra.org.uk/pubs/131734"
+        },
+        {
+          "checked_at": "2026-11-11",
+          "difference_metres": 7.8,
           "match": "venue_name_and_full_postcode",
           "reference_address": "Church Road",
           "reference_coordinate": {
@@ -34726,6 +35113,21 @@
         },
         {
           "checked_at": "2026-11-03",
+          "difference_metres": 7.2,
+          "disposition": "superseded_by_source_refresh",
+          "match": "venue_name_and_coordinate; listing_postcode_conflicts",
+          "reference_address": "6 Bowns Hill",
+          "reference_coordinate": {
+            "lat": 53.084596222142,
+            "lng": -1.478505364418
+          },
+          "reference_name": "Old Black Swan, Crich - Mock-Tudor Pub",
+          "reference_postcode": "DE4 5DG",
+          "source": "camra",
+          "url": "https://camra.org.uk/pubs/165834"
+        },
+        {
+          "checked_at": "2026-11-11",
           "difference_metres": 7.2,
           "match": "venue_name_and_coordinate; listing_postcode_conflicts",
           "reference_address": "6 Bowns Hill",
@@ -37962,6 +38364,21 @@
         },
         {
           "checked_at": "2026-11-03",
+          "difference_metres": 8.6,
+          "disposition": "superseded_by_source_refresh",
+          "match": "venue_name_and_full_postcode",
+          "reference_address": "",
+          "reference_coordinate": {
+            "lat": 51.522368,
+            "lng": -3.725818
+          },
+          "reference_name": "Prince of Wales, Kenfig - 15th-Century Inn",
+          "reference_postcode": "CF33 4PR",
+          "source": "camra",
+          "url": "https://camra.org.uk/pubs/127903"
+        },
+        {
+          "checked_at": "2026-11-11",
           "difference_metres": 8.6,
           "match": "venue_name_and_full_postcode",
           "reference_address": "",
@@ -41857,6 +42274,21 @@
         {
           "checked_at": "2026-11-03",
           "difference_metres": 0.0,
+          "disposition": "superseded_by_source_refresh",
+          "match": "venue_name_and_full_postcode",
+          "reference_address": "101 Station Street",
+          "reference_coordinate": {
+            "lat": 52.805907701845,
+            "lng": -1.639602011657
+          },
+          "reference_name": "Roebuck Inn, Burton upon Trent - Friendly Locals Pub",
+          "reference_postcode": "DE14 1BT",
+          "source": "camra",
+          "url": "https://camra.org.uk/pubs/123922"
+        },
+        {
+          "checked_at": "2026-11-11",
+          "difference_metres": 0.0,
           "match": "venue_name_and_full_postcode",
           "reference_address": "101 Station Street",
           "reference_coordinate": {
@@ -42644,6 +43076,21 @@
         {
           "checked_at": "2026-11-03",
           "difference_metres": 10.1,
+          "disposition": "superseded_by_source_refresh",
+          "match": "venue_name_and_full_postcode",
+          "reference_address": "74 The Green",
+          "reference_coordinate": {
+            "lat": 52.7596,
+            "lng": -1.7315
+          },
+          "reference_name": "Royal Oak, Barton-under-Needwood - Community Local",
+          "reference_postcode": "DE13 8JD",
+          "source": "camra",
+          "url": "https://camra.org.uk/pubs/124048"
+        },
+        {
+          "checked_at": "2026-11-11",
+          "difference_metres": 10.1,
           "match": "venue_name_and_full_postcode",
           "reference_address": "74 The Green",
           "reference_coordinate": {
@@ -42685,6 +43132,21 @@
         },
         {
           "checked_at": "2026-11-03",
+          "difference_metres": 6.8,
+          "disposition": "superseded_by_source_refresh",
+          "match": "venue_name_and_full_postcode",
+          "reference_address": "1 Station Road",
+          "reference_coordinate": {
+            "lat": 53.117275,
+            "lng": -2.175832
+          },
+          "reference_name": "Royal Oak, Biddulph - Pub with Beer Garden",
+          "reference_postcode": "ST8 6BL",
+          "source": "camra",
+          "url": "https://camra.org.uk/pubs/143995"
+        },
+        {
+          "checked_at": "2026-11-11",
           "difference_metres": 6.8,
           "match": "venue_name_and_full_postcode",
           "reference_address": "1 Station Road",
@@ -43067,6 +43529,21 @@
         },
         {
           "checked_at": "2026-11-03",
+          "difference_metres": 5.1,
+          "disposition": "superseded_by_source_refresh",
+          "match": "venue_name_and_full_postcode",
+          "reference_address": "55 Green Lane",
+          "reference_coordinate": {
+            "lat": 52.923473,
+            "lng": -1.372957
+          },
+          "reference_name": "Royal Oak, Ockbrook - Characterful Old Village Pub",
+          "reference_postcode": "DE72 3SE",
+          "source": "camra",
+          "url": "https://camra.org.uk/pubs/143436"
+        },
+        {
+          "checked_at": "2026-11-11",
           "difference_metres": 5.1,
           "match": "venue_name_and_full_postcode",
           "reference_address": "55 Green Lane",
@@ -43655,6 +44132,21 @@
         {
           "checked_at": "2026-11-03",
           "difference_metres": 4.8,
+          "disposition": "superseded_by_source_refresh",
+          "match": "venue_name_and_full_postcode",
+          "reference_address": "Front Street",
+          "reference_coordinate": {
+            "lat": 55.017363163877,
+            "lng": -1.4233588895493
+          },
+          "reference_name": "Salutation, Tynemouth - Pub with Separate Areas",
+          "reference_postcode": "NE30 4BT",
+          "source": "camra",
+          "url": "https://camra.org.uk/pubs/193256"
+        },
+        {
+          "checked_at": "2026-11-11",
+          "difference_metres": 4.8,
           "match": "venue_name_and_full_postcode",
           "reference_address": "Front Street",
           "reference_coordinate": {
@@ -43988,6 +44480,21 @@
         },
         {
           "checked_at": "2026-11-03",
+          "difference_metres": 3.8,
+          "disposition": "superseded_by_source_refresh",
+          "match": "venue_name_and_full_postcode",
+          "reference_address": "97 King Street",
+          "reference_coordinate": {
+            "lat": 52.927539,
+            "lng": -1.481006
+          },
+          "reference_name": "Seven Stars Inn, Derby - Timber-Framed Pub",
+          "reference_postcode": "DE1 3EE",
+          "source": "camra",
+          "url": "https://camra.org.uk/pubs/143440"
+        },
+        {
+          "checked_at": "2026-11-11",
           "difference_metres": 3.8,
           "match": "venue_name_and_full_postcode",
           "reference_address": "97 King Street",
@@ -45794,6 +46301,21 @@
         {
           "checked_at": "2026-11-03",
           "difference_metres": 2.1,
+          "disposition": "superseded_by_source_refresh",
+          "match": "venue_name_and_full_postcode",
+          "reference_address": "11 High Street",
+          "reference_coordinate": {
+            "lat": 52.620363218683,
+            "lng": -1.613007460327
+          },
+          "reference_name": "Spread Eagle, Polesworth - Timbered Pub",
+          "reference_postcode": "B78 1DX",
+          "source": "camra",
+          "url": "https://camra.org.uk/pubs/131681"
+        },
+        {
+          "checked_at": "2026-11-11",
+          "difference_metres": 2.1,
           "match": "venue_name_and_full_postcode",
           "reference_address": "11 High Street",
           "reference_coordinate": {
@@ -46159,6 +46681,21 @@
       "evidence": [
         {
           "checked_at": "2026-11-03",
+          "disposition": "superseded_by_source_refresh",
+          "match": "primary_named_venue_full_postcode_and_address",
+          "reference_address": "4, Main Street",
+          "reference_coordinate": {
+            "lat": 52.68812,
+            "lng": -0.88267
+          },
+          "reference_locality": "Burrough on the Hill",
+          "reference_name": "Stag & Hounds, Burrough on the Hill - Local Food Pub",
+          "reference_postcode": "LE14 2JQ",
+          "source": "camra",
+          "url": "https://camra.org.uk/pubs/192223"
+        },
+        {
+          "checked_at": "2026-11-11",
           "match": "primary_named_venue_full_postcode_and_address",
           "reference_address": "4, Main Street",
           "reference_coordinate": {
@@ -46898,6 +47435,21 @@
         },
         {
           "checked_at": "2026-11-03",
+          "difference_metres": 14.2,
+          "disposition": "superseded_by_source_refresh",
+          "match": "venue_name_and_full_postcode",
+          "reference_address": "37 Brecon Road",
+          "reference_coordinate": {
+            "lat": 51.82490158081,
+            "lng": -3.0244901180267
+          },
+          "reference_name": "Station Hotel, Abergavenny - Weekly Guest Ales",
+          "reference_postcode": "NP7 5UH",
+          "source": "camra",
+          "url": "https://camra.org.uk/pubs/161656"
+        },
+        {
+          "checked_at": "2026-11-11",
           "difference_metres": 14.2,
           "match": "venue_name_and_full_postcode",
           "reference_address": "37 Brecon Road",
@@ -47941,6 +48493,21 @@
         {
           "checked_at": "2026-11-03",
           "difference_metres": 10.1,
+          "disposition": "superseded_by_source_refresh",
+          "match": "venue_name_and_full_postcode",
+          "reference_address": "80 Wallgate",
+          "reference_coordinate": {
+            "lat": 53.5439,
+            "lng": -2.63396
+          },
+          "reference_name": "Swan & Railway Hotel, Wigan - Stained-Glass Window",
+          "reference_postcode": "WN1 1BA",
+          "source": "camra",
+          "url": "https://camra.org.uk/pubs/172297"
+        },
+        {
+          "checked_at": "2026-11-11",
+          "difference_metres": 10.1,
           "match": "venue_name_and_full_postcode",
           "reference_address": "80 Wallgate",
           "reference_coordinate": {
@@ -48024,6 +48591,21 @@
         },
         {
           "checked_at": "2026-11-03",
+          "difference_metres": 3.3,
+          "disposition": "superseded_by_source_refresh",
+          "match": "venue_name_and_full_postcode",
+          "reference_address": "49 Main Street",
+          "reference_coordinate": {
+            "lat": 52.833326,
+            "lng": -1.525124
+          },
+          "reference_name": "Swan Inn, Milton - Village Inn with Restaurant",
+          "reference_postcode": "DE65 6EF",
+          "source": "camra",
+          "url": "https://camra.org.uk/pubs/143598"
+        },
+        {
+          "checked_at": "2026-11-11",
           "difference_metres": 3.3,
           "match": "venue_name_and_full_postcode",
           "reference_address": "49 Main Street",
@@ -48337,6 +48919,21 @@
         {
           "checked_at": "2026-11-03",
           "difference_metres": 18.2,
+          "disposition": "superseded_by_source_refresh",
+          "match": "venue_name_and_full_postcode",
+          "reference_address": "60 Windsor Street",
+          "reference_coordinate": {
+            "lat": 52.5264,
+            "lng": -1.35206
+          },
+          "reference_name": "Sycamores, Burbage - Village Pub with Patio",
+          "reference_postcode": "LE10 2EF",
+          "source": "camra",
+          "url": "https://camra.org.uk/pubs/181780"
+        },
+        {
+          "checked_at": "2026-11-11",
+          "difference_metres": 18.2,
           "match": "venue_name_and_full_postcode",
           "reference_address": "60 Windsor Street",
           "reference_coordinate": {
@@ -48462,6 +49059,22 @@
         },
         {
           "checked_at": "2026-11-03",
+          "disposition": "superseded_by_source_refresh",
+          "match": "owner_confirmed_saved_point_corroborated_by_named_camra_venue",
+          "reference_address": "1 Butterley Hill",
+          "reference_coordinate": {
+            "lat": 53.053271,
+            "lng": -1.405467
+          },
+          "reference_name": "Talbot, Ripley - Victorian Flat Iron Pub",
+          "reference_postcode": "DE5 3LT",
+          "review_url": "https://github.com/bristolbagpiper/BassBeerMap/issues/5#issuecomment-6505925353",
+          "reviewed_by": "bristolbagpiper",
+          "source": "camra",
+          "url": "https://camra.org.uk/pubs/113335"
+        },
+        {
+          "checked_at": "2026-11-11",
           "match": "owner_confirmed_saved_point_corroborated_by_named_camra_venue",
           "reference_address": "1 Butterley Hill",
           "reference_coordinate": {
@@ -49082,6 +49695,21 @@
         },
         {
           "checked_at": "2026-11-03",
+          "difference_metres": 5.2,
+          "disposition": "superseded_by_source_refresh",
+          "match": "venue_name_and_full_postcode",
+          "reference_address": "48 Jackson Rd",
+          "reference_coordinate": {
+            "lat": 53.1443,
+            "lng": -1.5536
+          },
+          "reference_name": "Thorn Tree Inn, Matlock - Pub with Valley Views",
+          "reference_postcode": "DE4 3JQ",
+          "source": "camra",
+          "url": "https://camra.org.uk/pubs/165788"
+        },
+        {
+          "checked_at": "2026-11-11",
           "difference_metres": 5.2,
           "match": "venue_name_and_full_postcode",
           "reference_address": "48 Jackson Rd",
@@ -53892,6 +54520,21 @@
         {
           "checked_at": "2026-11-03",
           "difference_metres": 8.2,
+          "disposition": "superseded_by_source_refresh",
+          "match": "venue_name_and_full_postcode",
+          "reference_address": "62 Westgate",
+          "reference_coordinate": {
+            "lat": 53.3663733,
+            "lng": -0.009323571
+          },
+          "reference_name": "Wheatsheaf, Louth - Pub with Beer Garden",
+          "reference_postcode": "LN11 9YD",
+          "source": "camra",
+          "url": "https://camra.org.uk/pubs/172388"
+        },
+        {
+          "checked_at": "2026-11-11",
+          "difference_metres": 8.2,
           "match": "venue_name_and_full_postcode",
           "reference_address": "62 Westgate",
           "reference_coordinate": {
@@ -55288,6 +55931,21 @@
         },
         {
           "checked_at": "2026-11-03",
+          "difference_metres": 39.2,
+          "disposition": "superseded_by_source_refresh",
+          "match": "venue_name_and_full_postcode",
+          "reference_address": "Main Street",
+          "reference_coordinate": {
+            "lat": 52.8134,
+            "lng": -1.1448
+          },
+          "reference_name": "White Lion, Rempstone - Village Local",
+          "reference_postcode": "LE12 6RH",
+          "source": "camra",
+          "url": "https://camra.org.uk/pubs/162895"
+        },
+        {
+          "checked_at": "2026-11-11",
           "difference_metres": 39.2,
           "match": "venue_name_and_full_postcode",
           "reference_address": "Main Street",
@@ -57088,6 +57746,22 @@
         },
         {
           "checked_at": "2026-11-03",
+          "disposition": "superseded_by_source_refresh",
+          "match": "owner_confirmed_saved_point_corroborated_by_named_camra_venue",
+          "reference_address": "12 Crossgate",
+          "reference_coordinate": {
+            "lat": 54.775832,
+            "lng": -1.5815745
+          },
+          "reference_name": "Old Elm Tree, Durham - Acoustic Nights & Patio",
+          "reference_postcode": "DH1 4PS",
+          "review_url": "https://github.com/bristolbagpiper/BassBeerMap/issues/5#issuecomment-6530920777",
+          "reviewed_by": "bristolbagpiper",
+          "source": "camra",
+          "url": "https://camra.org.uk/pubs/186936"
+        },
+        {
+          "checked_at": "2026-11-11",
           "match": "owner_confirmed_saved_point_corroborated_by_named_camra_venue",
           "reference_address": "12 Crossgate",
           "reference_coordinate": {

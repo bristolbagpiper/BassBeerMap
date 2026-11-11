@@ -6,7 +6,7 @@ import threading
 import unittest
 from http.server import SimpleHTTPRequestHandler, ThreadingHTTPServer
 from pathlib import Path
-from urllib.parse import urlsplit
+from urllib.parse import parse_qs, urlsplit
 
 
 @unittest.skipUnless(os.environ.get("RUN_BROWSER_TESTS") == "1", "Browser smoke tests run in CI")
@@ -89,14 +89,50 @@ class FrontendSmokeTests(unittest.TestCase):
         })
 
     def test_muckers_keeps_verified_pin_and_directions_despite_postcode_conflict(self):
+        from selenium.webdriver.common.by import By
+        from selenium.webdriver.support.ui import WebDriverWait
+
         self.load_directory()
-        result = self.driver.execute_script("const p = pubData.find(p => p.pub_name === 'GJ Muckers'); return {precision:p.locationPrecision, lat:p.lat, lng:p.lng, issue:p.locationIssue, directions:directionsUrl(p)};")
+        result = self.driver.execute_script("const p = pubData.find(p => p.pub_name === 'GJ Muckers'); return {precision:p.locationPrecision, lat:p.lat, lng:p.lng, issue:p.locationIssue};")
         self.assertEqual(result['precision'], 'venue')
         self.assertAlmostEqual(result['lat'], 53.25777)
         self.assertAlmostEqual(result['lng'], -2.12237)
         self.assertEqual(result['issue']['reference'], 'SK11 6JL')
-        self.assertIn('destination=53.25777', result['directions'])
-        self.assertNotIn('SK11', result['directions'])
+        self.driver.find_element(By.ID, 'searchBox').send_keys('GJ Muckers')
+        WebDriverWait(self.driver, 10).until(lambda d: d.find_element(By.ID, 'resultCount').text == '1 match')
+        search_url = urlsplit(self.driver.find_element(By.LINK_TEXT, 'Find in Google Maps').get_attribute('href'))
+        pin_url = urlsplit(self.driver.find_element(By.LINK_TEXT, 'Directions to pin').get_attribute('href'))
+        self.assertEqual(search_url.path, '/maps/search/')
+        self.assertEqual(pin_url.path, '/maps/dir/')
+        self.assertEqual(parse_qs(pin_url.query)['destination'], ['53.25777,-2.12237'])
+        self.save_review_screenshot('google-maps-search-and-pin.png')
+
+    def test_address_directions_distinguish_venues_in_results_and_popups(self):
+        from selenium.webdriver.common.by import By
+        from selenium.webdriver.support import expected_conditions as EC
+        from selenium.webdriver.support.ui import WebDriverWait
+
+        venues = [
+            ('Bank Tavern', 'Bank Tavern, 8 John Street, Bristol, BS1 2HR'),
+            ('Brew Tavern', "Brew Tavern, Cabman's Shelter, 1a Queens Road, Nottingham, NG2 3AS"),
+            ('Anchor Newhall', 'Anchor, 211 High Street, Newhall, DE11 0EA'),
+            ('Anchor Teanford', 'Anchor, Breach Lane, Teanford, ST10 4EW'),
+        ]
+        driver = self.driver
+        wait = WebDriverWait(driver, 10)
+        for search, address in venues:
+            with self.subTest(venue=search):
+                self.load_directory()
+                driver.find_element(By.ID, 'searchBox').send_keys(search)
+                wait.until(lambda d: d.find_element(By.ID, 'resultCount').text == '1 match')
+                url = driver.find_element(By.LINK_TEXT, 'Directions').get_attribute('href')
+                parts = urlsplit(url)
+                self.assertEqual((parts.scheme, parts.netloc, parts.path), ('https', 'www.google.com', '/maps/dir/'))
+                self.assertEqual(parse_qs(parts.query), {'api': ['1'], 'destination': [address]})
+                self.assertTrue(driver.find_element(By.LINK_TEXT, 'Directions to pin').is_displayed())
+                driver.find_element(By.CSS_SELECTOR, '#results .card-map-button').click()
+                popup_link = wait.until(EC.visibility_of_element_located((By.LINK_TEXT, 'Get directions')))
+                self.assertEqual(popup_link.get_attribute('href'), url)
 
     def test_black_lion_is_one_listing(self):
         self.load_directory()
@@ -448,20 +484,39 @@ class FrontendSmokeTests(unittest.TestCase):
 
     def test_expired_evidence_falls_back_to_approximate_pin(self):
         from selenium.webdriver.common.by import By
+        from selenium.webdriver.support import expected_conditions as EC
         from selenium.webdriver.support.ui import WebDriverWait
 
         payload = json.loads((self.data_root / 'directory-release.json').read_text(encoding='utf-8'))
-        row = next(r for r in payload['rows'] if r['pub_name'] == 'GJ Muckers')
+        row = next(r for r in payload['rows'] if r['pub_name'] == 'Bank Tavern')
         payload['locations'][row['venue_id']]['checked_at'] = '2000-01-01'
         type(self).release_override = payload
         self.load_directory()
-        precision = self.driver.execute_script("return pubData.find(p => p.pub_name === 'GJ Muckers').locationPrecision")
+        precision = self.driver.execute_script("return pubData.find(p => p.pub_name === 'Bank Tavern').locationPrecision")
         self.assertEqual(precision, 'postcode')
-        self.driver.find_element(By.ID, 'searchBox').send_keys('GJ Muckers')
-        WebDriverWait(self.driver, 10).until(lambda d: d.find_element(By.ID, 'resultCount').text == '1 match')
+        self.driver.find_element(By.ID, 'searchBox').send_keys('Bank Tavern')
+        wait = WebDriverWait(self.driver, 10)
+        wait.until(lambda d: d.find_element(By.ID, 'resultCount').text == '1 match')
         pin = self.driver.find_element(By.CSS_SELECTOR, '#map .approximate-marker')
-        self.assertIn('GJ Muckers', pin.accessible_name)
+        self.assertIn('Bank Tavern', pin.accessible_name)
         self.assertTrue(pin.accessible_name.endswith('approximate postcode location'))
+        card = self.driver.find_element(By.CSS_SELECTOR, '#results .card')
+        warning = 'The pin marks the approximate postcode area. Confirm the venue before travelling.'
+        self.assertIn(warning, card.text)
+        link = card.find_element(By.LINK_TEXT, 'Find in Google Maps')
+        self.assertIn('Bank Tavern', link.accessible_name)
+        self.assertFalse(card.find_elements(By.LINK_TEXT, 'Directions to pin'))
+        url = link.get_attribute('href')
+        parts = urlsplit(url)
+        self.assertEqual((parts.scheme, parts.netloc, parts.path), ('https', 'www.google.com', '/maps/search/'))
+        self.assertEqual(parse_qs(parts.query), {'api': ['1'], 'query': ['Bank Tavern, Bristol: Central, BS1 2HR']})
+        self.save_review_screenshot('approximate-location-handoff.png')
+
+        card.find_element(By.CSS_SELECTOR, '.card-map-button').click()
+        popup_link = wait.until(EC.visibility_of_element_located((By.CSS_SELECTOR, '.leaflet-popup a[target="_blank"]')))
+        self.assertEqual(popup_link.text, 'Find in Google Maps')
+        self.assertEqual(popup_link.get_attribute('href'), url)
+        self.assertIn(warning, self.driver.find_element(By.CSS_SELECTOR, '.leaflet-popup .popup').text)
 
     def test_corrupt_release_does_not_render_a_wrong_pin(self):
         payload = json.loads((self.data_root / 'directory-release.json').read_text(encoding='utf-8'))

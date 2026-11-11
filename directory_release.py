@@ -386,6 +386,26 @@ def build_ledger(rows, registry, allow_expired=False):
     }
 
 
+def directions_address(record):
+    """Choose a street address supported by the evidence for this venue pin."""
+    if record.get('metadata_issue'):
+        return None
+    postcode = record['postcode']
+    compact_postcode = ''.join(postcode.upper().split())
+    candidates = []
+    for item in active_evidence(record):
+        street = item.get('reference_address')
+        if not isinstance(street, str):
+            continue
+        street = ' '.join(street.split())
+        reference_postcode = ''.join(str(item.get('reference_postcode') or '').upper().split())
+        if (street and reference_postcode == compact_postcode
+                and evidence_valid(dict(record, evidence=[item]), allow_expired=True)):
+            candidates.append({'street': street, 'postcode': postcode, 'checked_at': item['checked_at']})
+    # The browser checks the address date separately from the pin's date.
+    return max(candidates, key=lambda address: address['checked_at'], default=None)
+
+
 def build_bundle(rows, metadata, postcodes, ledger):
     locations = {}
     for row in rows:
@@ -401,6 +421,9 @@ def build_bundle(rows, metadata, postcodes, ledger):
         locations[row['venue_id']]['postcode_location'] = fallback
         if precision == 'venue':
             locations[row['venue_id']]['checked_at'] = max(e['checked_at'] for e in active_evidence(record))
+            address = directions_address(record)
+            if address:
+                locations[row['venue_id']]['directions_address'] = address
         if record.get('metadata_issue'):
             locations[row['venue_id']]['metadata_issue'] = record['metadata_issue']
     payload = {'schema_version': 1, 'metadata': metadata, 'rows': rows, 'locations': locations,

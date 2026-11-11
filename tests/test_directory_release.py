@@ -153,6 +153,24 @@ class ReleaseGateTests(unittest.TestCase):
         write_release(self.stage, self.rows, registry, self.metadata, self.postcodes)
         self.assertTrue(any('different address' in error for error in validate_release(self.stage)))
 
+    def test_directions_address_uses_current_evidence_for_the_same_building(self):
+        rows = [row()]
+        registry = registry_for(rows)
+        identifier = rows[0]['venue_id']
+        venue_pin = registry['venues'][identifier]['verified_pin']
+        evidence = venue_pin['evidence'][0]
+        older = (date.today() - timedelta(days=1)).isoformat()
+        venue_pin['evidence'] = [
+            dict(evidence, reference_address='Wrong Postcode Road', reference_postcode='BS9 9ZZ'),
+            dict(evidence, reference_address='Other Building Road', reference_coordinate={'lat': 51.46, 'lng': -2.58}),
+            dict(evidence, reference_address='Old Address Road', disposition='superseded'),
+            dict(evidence, reference_address='8 John Street', checked_at=older),
+        ]
+        bundle = build_bundle(rows, self.metadata, self.postcodes, build_ledger(rows, registry))
+        self.assertEqual(bundle['locations'][identifier]['directions_address'], {
+            'street': '8 John Street', 'postcode': 'BS1 1AA', 'checked_at': older,
+        })
+
     def test_corrupt_ledger_or_map_bundle_is_rejected(self):
         path = self.root / 'coordinate-verification.json'
         ledger = read_json(path)

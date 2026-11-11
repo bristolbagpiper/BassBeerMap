@@ -102,7 +102,24 @@ class FrontendSmokeTests(unittest.TestCase):
             'width': width, 'height': height, 'deviceScaleFactor': 1, 'mobile': False,
         })
 
-    def test_muckers_keeps_verified_pin_and_directions_despite_postcode_conflict(self):
+    def focused_map_pin(self):
+        from selenium.webdriver.common.by import By
+        from selenium.webdriver.support import expected_conditions as EC
+        from selenium.webdriver.support.ui import WebDriverWait
+
+        return WebDriverWait(self.driver, 10).until(
+            EC.visibility_of_element_located((By.CSS_SELECTOR, '#map .leaflet-marker-icon[role="button"]:focus')))
+
+    def open_result_pin_details(self):
+        from selenium.webdriver.common.by import By
+        from selenium.webdriver.common.keys import Keys
+
+        self.driver.find_element(By.CSS_SELECTOR, '#results .card-map-button').click()
+        pin = self.focused_map_pin()
+        pin.send_keys(Keys.ENTER)
+        return pin
+
+    def test_muckers_opens_verified_pin_despite_postcode_conflict(self):
         from selenium.webdriver.common.by import By
         from selenium.webdriver.support.ui import WebDriverWait
 
@@ -114,14 +131,14 @@ class FrontendSmokeTests(unittest.TestCase):
         self.assertEqual(result['issue']['reference'], 'SK11 6JL')
         self.driver.find_element(By.ID, 'searchBox').send_keys('GJ Muckers')
         WebDriverWait(self.driver, 10).until(lambda d: d.find_element(By.ID, 'resultCount').text == '1 match')
-        search_url = urlsplit(self.driver.find_element(By.LINK_TEXT, 'Find in Google Maps').get_attribute('href'))
-        pin_url = urlsplit(self.driver.find_element(By.LINK_TEXT, 'Directions to pin').get_attribute('href'))
-        self.assertEqual(search_url.path, '/maps/search/')
-        self.assertEqual(pin_url.path, '/maps/dir/')
-        self.assertEqual(parse_qs(pin_url.query)['destination'], ['53.25777,-2.12237'])
-        self.save_review_screenshot('google-maps-search-and-pin.png')
+        card = self.driver.find_element(By.CSS_SELECTOR, '#results .card')
+        links = card.find_elements(By.TAG_NAME, 'a')
+        self.assertEqual([link.text for link in links], ['Open in Google Maps'])
+        pin_url = urlsplit(links[0].get_attribute('href'))
+        self.assertEqual(pin_url.path, '/maps/search/')
+        self.assertEqual(parse_qs(pin_url.query), {'api': ['1'], 'query': ['53.25777,-2.12237']})
 
-    def test_address_directions_distinguish_venues_in_results_and_popups(self):
+    def test_one_google_maps_link_uses_verified_address_in_results_and_popups(self):
         from selenium.webdriver.common.by import By
         from selenium.webdriver.support import expected_conditions as EC
         from selenium.webdriver.support.ui import WebDriverWait
@@ -140,14 +157,18 @@ class FrontendSmokeTests(unittest.TestCase):
                 self.load_directory()
                 driver.find_element(By.ID, 'searchBox').send_keys(search)
                 wait.until(lambda d: d.find_element(By.ID, 'resultCount').text == '1 match')
-                url = driver.find_element(By.LINK_TEXT, 'Directions').get_attribute('href')
+                card = driver.find_element(By.CSS_SELECTOR, '#results .card')
+                links = card.find_elements(By.TAG_NAME, 'a')
+                self.assertEqual([link.text for link in links], ['Open in Google Maps'])
+                url = links[0].get_attribute('href')
                 parts = urlsplit(url)
-                self.assertEqual((parts.scheme, parts.netloc, parts.path), ('https', 'www.google.com', '/maps/dir/'))
-                self.assertEqual(parse_qs(parts.query), {'api': ['1'], 'destination': [address]})
-                self.assertTrue(driver.find_element(By.LINK_TEXT, 'Directions to pin').is_displayed())
-                driver.find_element(By.CSS_SELECTOR, '#results .card-map-button').click()
-                popup_link = wait.until(EC.visibility_of_element_located((By.LINK_TEXT, 'Get directions')))
-                self.assertEqual(popup_link.get_attribute('href'), url)
+                self.assertEqual((parts.scheme, parts.netloc, parts.path), ('https', 'www.google.com', '/maps/search/'))
+                self.assertEqual(parse_qs(parts.query), {'api': ['1'], 'query': [address]})
+                self.open_result_pin_details()
+                popup = wait.until(EC.visibility_of_element_located((By.CSS_SELECTOR, '.leaflet-popup .popup')))
+                popup_links = popup.find_elements(By.TAG_NAME, 'a')
+                self.assertEqual([link.text for link in popup_links], ['Open in Google Maps'])
+                self.assertEqual(popup_links[0].get_attribute('href'), url)
 
     def test_black_lion_is_one_listing(self):
         self.load_directory()
@@ -321,8 +342,7 @@ class FrontendSmokeTests(unittest.TestCase):
         self.assertTrue(venue.get_property('readOnly'))
         cancel.click()
         self.assertEqual(driver.switch_to.active_element, card_report)
-        result = driver.find_element(By.CSS_SELECTOR, '#results .card-map-button')
-        result.click()
+        pin = self.open_result_pin_details()
         desktop_report = wait.until(EC.visibility_of_element_located((By.CSS_SELECTOR, '.leaflet-popup .venue-report-btn')))
         desktop_report.click()
         self.assertEqual(venue.get_property('value'), context)
@@ -354,8 +374,7 @@ class FrontendSmokeTests(unittest.TestCase):
         self.assertEqual(venue.get_property('value'), context)
         cancel.click()
         driver.find_element(By.ID, 'closeMobileVenueBtn').click()
-        wait.until(lambda d: d.switch_to.active_element == result)
-        result.send_keys(Keys.ESCAPE)
+        wait.until(lambda d: d.switch_to.active_element == pin)
         wait.until(EC.element_to_be_clickable((By.ID, 'openProblemReportBtn'))).click()
         self.assertEqual(venue.get_property('value'), '')
         self.assertFalse(venue.get_property('readOnly'))
@@ -383,7 +402,7 @@ class FrontendSmokeTests(unittest.TestCase):
                 self.assertRegex(period, r'^[A-Z][a-z]{2} to [A-Z][a-z]{2} 20\d{2}$')
                 if availability == 'Guest / occasional':
                     self.save_review_screenshot('guest-confirmation-360x640.png')
-                card.find_element(By.CSS_SELECTOR, '.card-map-button').click()
+                self.open_result_pin_details()
                 details = wait.until(EC.visibility_of_element_located((By.ID, 'mobileVenueContent')))
                 self.assertIn(f'Availability: {availability}', details.text)
                 detail_confirmation = details.find_element(By.CLASS_NAME, 'venue-confirmation')
@@ -397,6 +416,56 @@ class FrontendSmokeTests(unittest.TestCase):
                     """, element))
                 driver.execute_script("arguments[0].scrollIntoView({block: 'nearest'})", detail_confirmation)
                 self.save_review_screenshot('venue-confirmation-200-percent.png')
+
+    def test_view_on_map_centres_the_pin_and_leaves_the_map_free_to_pan(self):
+        from selenium.webdriver.common.actions.action_builder import ActionBuilder
+        from selenium.webdriver.common.actions.interaction import POINTER_TOUCH
+        from selenium.webdriver.common.actions.pointer_input import PointerInput
+        from selenium.webdriver.common.by import By
+        from selenium.webdriver.support.ui import WebDriverWait
+
+        driver = self.driver
+        wait = WebDriverWait(driver, 10)
+        self.addCleanup(driver.execute_cdp_cmd, 'Emulation.clearDeviceMetricsOverride', {})
+        self.addCleanup(driver.execute_cdp_cmd, 'Emulation.setTouchEmulationEnabled', {'enabled': False})
+        driver.execute_cdp_cmd('Emulation.setTouchEmulationEnabled', {'enabled': True})
+        for width, height in [(360, 640), (640, 360)]:
+            with self.subTest(width=width, height=height):
+                self.resize_viewport(width, height)
+                self.load_directory()
+                driver.find_element(By.ID, 'openPanelBtn').click()
+                search = driver.find_element(By.ID, 'searchBox')
+                search.send_keys('Bank Tavern')
+                wait.until(lambda d: d.find_element(By.ID, 'resultCount').text == '1 match')
+                self.save_review_screenshot(f'map-result-{width}x{height}.png')
+                driver.find_element(By.CSS_SELECTOR, '#results .card-map-button').click()
+                pin = self.focused_map_pin()
+                self.assertEqual(pin.accessible_name, 'Bank Tavern, Bristol: Central')
+                wait.until(lambda d: d.execute_script(
+                    "return document.getElementById('sidebarPanel').getBoundingClientRect().top >= innerHeight - 1;"))
+                self.assertTrue(driver.execute_script("""
+                    const mapBox = document.getElementById('map').getBoundingClientRect();
+                    const pinBox = arguments[0].getBoundingClientRect();
+                    return Math.abs(pinBox.left + pinBox.width / 2 - (mapBox.left + mapBox.width / 2)) <= 2
+                        && Math.abs(pinBox.bottom - (mapBox.top + mapBox.height / 2)) <= 2;
+                """, pin))
+                self.assertFalse(driver.find_element(By.ID, 'mobileVenue').get_property('open'))
+                self.assertFalse(driver.find_elements(By.CSS_SELECTOR, '.leaflet-popup'))
+                self.save_review_screenshot(f'centred-pin-{width}x{height}.png')
+
+                position = 'return [map.getCenter().lat, map.getCenter().lng];'
+                centre = driver.execute_script(position)
+                map_element = driver.find_element(By.ID, 'map')
+                touch = ActionBuilder(driver, mouse=PointerInput(POINTER_TOUCH, 'finger'))
+                touch.pointer_action.move_to(map_element, 70, 35)
+                touch.pointer_action.pointer_down()
+                touch.pointer_action.move_by(55, 15)
+                touch.pointer_action.pointer_up()
+                touch.perform()
+                wait.until(lambda d: d.execute_script(position) != centre)
+                self.assertFalse(driver.find_element(By.ID, 'mobileVenue').get_property('open'))
+                driver.find_element(By.ID, 'openPanelBtn').click()
+                self.assertEqual(search.get_property('value'), 'Bank Tavern')
 
     def test_mobile_venue_details_fit_and_restore_focus(self):
         from selenium.webdriver.common.by import By
@@ -424,20 +493,17 @@ class FrontendSmokeTests(unittest.TestCase):
         search = wait.until(EC.element_to_be_clickable((By.ID, 'searchBox')))
         search.send_keys('Bank Tavern')
         wait.until(lambda d: d.find_element(By.ID, 'resultCount').text == '1 match')
-        result = driver.find_element(By.CSS_SELECTOR, '#results .card-map-button')
-        result_directions = driver.find_element(By.CSS_SELECTOR, '#results .card-actions a').get_attribute('href')
-        driver.execute_script("arguments[0].scrollIntoView({block: 'nearest'});", result)
-        scroll_position = driver.execute_script("return document.querySelector('.sidebar-inner').scrollTop;")
-        result.send_keys(Keys.ENTER)
+        result_maps = driver.find_element(By.CSS_SELECTOR, '#results .card-actions a').get_attribute('href')
+        pin = self.open_result_pin_details()
 
         close = wait.until(EC.visibility_of_element_located((By.ID, 'closeMobileVenueBtn')))
         title = driver.find_element(By.ID, 'mobileVenueTitle')
-        directions = driver.find_element(By.LINK_TEXT, 'Get directions')
+        maps_link = driver.find_element(By.CSS_SELECTOR, '#mobileVenue a[target="_blank"]')
         self.assertEqual(title.text, 'Bank Tavern')
         self.assertLess(title.size['height'], 40)
         self.assertEqual(close, driver.switch_to.active_element)
-        self.assertEqual(directions.get_attribute('href'), result_directions)
-        self.assertTrue(reachable(directions))
+        self.assertEqual(maps_link.get_attribute('href'), result_maps)
+        self.assertTrue(reachable(maps_link))
         wait.until(lambda d: d.execute_script(
             "return document.getElementById('sidebarPanel').getBoundingClientRect().top >= innerHeight;"
         ))
@@ -449,23 +515,19 @@ class FrontendSmokeTests(unittest.TestCase):
                 self.assertTrue(reachable(title))
                 self.assertTrue(reachable(close))
                 if width == 640:
-                    self.assertTrue(reachable(directions))
+                    self.assertTrue(reachable(maps_link))
                     self.save_review_screenshot('mobile-venue-640x360.png')
-                driver.execute_script("arguments[0].scrollIntoView({block: 'nearest'});", directions)
-                self.assertTrue(reachable(directions))
+                driver.execute_script("arguments[0].scrollIntoView({block: 'nearest'});", maps_link)
+                self.assertTrue(reachable(maps_link))
 
         self.resize_viewport(360, 640)
         position = "return [map.getCenter().lat, map.getCenter().lng, map.getZoom()];"
         centre = driver.execute_script(position)
         close.click()
-        wait.until(lambda d: result == d.switch_to.active_element)
+        wait.until(lambda d: pin == d.switch_to.active_element)
         self.assertEqual(search.get_attribute('value'), 'Bank Tavern')
         self.assertEqual(driver.execute_script(position), centre)
-        self.assertEqual(driver.execute_script("return document.querySelector('.sidebar-inner').scrollTop;"), scroll_position)
-
-        result.send_keys(Keys.ESCAPE)
         self.assertFalse(driver.execute_script("return document.querySelector('.map-wrap').inert;"))
-        pin = wait.until(EC.element_to_be_clickable((By.CSS_SELECTOR, '#map .leaflet-marker-icon')))
         pin.send_keys(Keys.ENTER)
         wait.until(EC.visibility_of(close))
         close.send_keys(Keys.ESCAPE)
@@ -473,7 +535,7 @@ class FrontendSmokeTests(unittest.TestCase):
 
         driver.execute_cdp_cmd('Emulation.clearDeviceMetricsOverride', {})
         wait.until(lambda d: d.execute_script('return !isMobileView();'))
-        wait.until(EC.element_to_be_clickable((By.CSS_SELECTOR, '#results .card-map-button'))).click()
+        self.open_result_pin_details()
         self.assertEqual(wait.until(EC.visibility_of_element_located((By.CSS_SELECTOR, '.leaflet-popup h3'))).text, 'Bank Tavern')
 
     def test_tablet_rotation_preserves_the_open_venue_and_focus(self):
@@ -491,16 +553,15 @@ class FrontendSmokeTests(unittest.TestCase):
         search = driver.find_element(By.ID, 'searchBox')
         search.send_keys('Bank Tavern')
         wait.until(lambda d: d.find_element(By.ID, 'resultCount').text == '1 match')
-        result = driver.find_element(By.CSS_SELECTOR, '#results .card-map-button')
-        result.send_keys(Keys.ENTER)
+        pin = self.open_result_pin_details()
 
         dialog = driver.find_element(By.ID, 'mobileVenue')
         wait.until(EC.visibility_of(dialog))
         close = dialog.find_element(By.ID, 'closeMobileVenueBtn')
-        directions = dialog.find_element(By.LINK_TEXT, 'Get directions')
-        href = directions.get_attribute('href')
+        maps_link = dialog.find_element(By.LINK_TEXT, 'Open in Google Maps')
+        href = maps_link.get_attribute('href')
         close.send_keys(Keys.TAB)
-        self.assertEqual(driver.switch_to.active_element, directions)
+        self.assertEqual(driver.switch_to.active_element, maps_link)
         self.save_review_screenshot('tablet-venue-portrait.png')
 
         for width, height in [(1024, 768), (768, 1024)]:
@@ -509,10 +570,10 @@ class FrontendSmokeTests(unittest.TestCase):
                 wait.until(lambda d: d.execute_script('return innerWidth') == width)
                 self.assertTrue(dialog.get_property('open'))
                 self.assertEqual(dialog.find_element(By.TAG_NAME, 'h2').text, 'Bank Tavern')
-                self.assertEqual(directions.get_attribute('href'), href)
-                self.assertEqual(driver.switch_to.active_element, directions)
+                self.assertEqual(maps_link.get_attribute('href'), href)
+                self.assertEqual(driver.switch_to.active_element, maps_link)
                 self.assertEqual(search.get_property('value'), 'Bank Tavern')
-                for control in [close, directions]:
+                for control in [close, maps_link]:
                     self.assertTrue(driver.execute_script("""
                         const element = arguments[0];
                         const rect = element.getBoundingClientRect();
@@ -523,25 +584,25 @@ class FrontendSmokeTests(unittest.TestCase):
                 self.save_review_screenshot(f'tablet-venue-{name}.png')
 
         close.click()
-        wait.until(lambda d: d.switch_to.active_element == result)
+        wait.until(lambda d: d.switch_to.active_element == pin)
         self.assertEqual(search.get_property('value'), 'Bank Tavern')
 
         self.resize_viewport(1024, 768)
         wait.until(lambda d: d.execute_script('return !isMobileView();'))
-        result.send_keys(Keys.ENTER)
+        pin = self.open_result_pin_details()
         desktop_title = (By.CSS_SELECTOR, '.leaflet-popup h3')
         heading = wait.until(EC.visibility_of_element_located(desktop_title))
         self.assertEqual(heading.text, 'Bank Tavern')
         heading.send_keys(Keys.TAB)
-        self.assertEqual(driver.switch_to.active_element.text, 'Get directions')
+        self.assertEqual(driver.switch_to.active_element.text, 'Open in Google Maps')
         self.resize_viewport(768, 1024)
         wait.until(EC.visibility_of(dialog))
         self.assertEqual(dialog.find_element(By.TAG_NAME, 'h2').text, 'Bank Tavern')
-        compact_directions = dialog.find_element(By.LINK_TEXT, 'Get directions')
-        self.assertEqual(compact_directions.get_attribute('href'), href)
-        self.assertEqual(driver.switch_to.active_element, compact_directions)
+        compact_maps_link = dialog.find_element(By.LINK_TEXT, 'Open in Google Maps')
+        self.assertEqual(compact_maps_link.get_attribute('href'), href)
+        self.assertEqual(driver.switch_to.active_element, compact_maps_link)
         close.click()
-        wait.until(lambda d: d.switch_to.active_element == result)
+        wait.until(lambda d: d.switch_to.active_element == pin)
 
     def test_mobile_search_shows_results_before_secondary_filters(self):
         from selenium.webdriver.common.by import By
@@ -657,8 +718,13 @@ class FrontendSmokeTests(unittest.TestCase):
         press(Keys.TAB)
         result = driver.switch_to.active_element
         self.assertEqual(result.accessible_name, 'View on map, Bank Tavern, Bristol: Central')
-        self.assertEqual(driver.find_element(By.LINK_TEXT, 'Directions').accessible_name,
-                         'Directions to Bank Tavern, Bristol: Central')
+        maps_accessible_name = 'Open in Google Maps, Bank Tavern, Bristol: Central'
+        self.assertEqual(driver.find_element(By.LINK_TEXT, 'Open in Google Maps').accessible_name,
+                         maps_accessible_name)
+        press(Keys.ENTER)
+        pin = self.focused_map_pin()
+        self.assertEqual(pin.accessible_name, 'Bank Tavern, Bristol: Central')
+        self.assertFalse(driver.find_elements(By.CSS_SELECTOR, '.leaflet-popup'))
         press(Keys.ENTER)
         heading = wait.until(EC.visibility_of_element_located((By.CSS_SELECTOR, '.leaflet-popup h3')))
         self.assertEqual(driver.switch_to.active_element, heading)
@@ -672,14 +738,7 @@ class FrontendSmokeTests(unittest.TestCase):
         """, heading))
         self.save_review_screenshot('keyboard-venue-focus.png')
         press(Keys.TAB)
-        self.assertEqual(driver.switch_to.active_element.accessible_name, 'Get directions to Bank Tavern, Bristol: Central')
-        press(Keys.ESCAPE)
-        self.assertEqual(driver.switch_to.active_element, result)
-
-        pin = driver.find_element(By.CSS_SELECTOR, '#map .leaflet-marker-icon[role="button"]')
-        self.assertEqual(pin.accessible_name, 'Bank Tavern, Bristol: Central')
-        pin.send_keys(Keys.ENTER)
-        wait.until(lambda d: d.switch_to.active_element.text == 'Bank Tavern')
+        self.assertEqual(driver.switch_to.active_element.accessible_name, maps_accessible_name)
         press(Keys.ESCAPE)
         self.assertEqual(driver.switch_to.active_element, pin)
 
@@ -706,14 +765,14 @@ class FrontendSmokeTests(unittest.TestCase):
         self.assertIn(warning, card.text)
         link = card.find_element(By.LINK_TEXT, 'Find in Google Maps')
         self.assertIn('Bank Tavern', link.accessible_name)
-        self.assertFalse(card.find_elements(By.LINK_TEXT, 'Directions to pin'))
+        self.assertEqual(card.find_elements(By.TAG_NAME, 'a'), [link])
         url = link.get_attribute('href')
         parts = urlsplit(url)
         self.assertEqual((parts.scheme, parts.netloc, parts.path), ('https', 'www.google.com', '/maps/search/'))
         self.assertEqual(parse_qs(parts.query), {'api': ['1'], 'query': ['Bank Tavern, Bristol: Central, BS1 2HR']})
         self.save_review_screenshot('approximate-location-handoff.png')
 
-        card.find_element(By.CSS_SELECTOR, '.card-map-button').click()
+        self.open_result_pin_details()
         popup_link = wait.until(EC.visibility_of_element_located((By.CSS_SELECTOR, '.leaflet-popup a[target="_blank"]')))
         self.assertEqual(popup_link.text, 'Find in Google Maps')
         self.assertEqual(popup_link.get_attribute('href'), url)

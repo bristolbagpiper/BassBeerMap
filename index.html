@@ -2165,29 +2165,21 @@
         .replaceAll("'", '&#39;');
     }
 
-    function googleMapsLink(action, parameter, value, label, accessibleName) {
-      const params = new URLSearchParams({api: '1', [parameter]: value});
-      const url = `https://www.google.com/maps/${action}/?${params}`;
-      return `<a href="${escapeHtml(url)}" target="_blank" rel="noopener noreferrer" aria-label="${escapeHtml(accessibleName)}">${label}</a>`;
-    }
-
-    function venueDirectionsLink(item, directionsLabel) {
-      const venue = venueLabel(item);
+    function venueMapsLink(item) {
+      const precise = item.locationPrecision === 'venue' && hasCoordinates(item);
+      const label = precise ? 'Open in Google Maps' : 'Find in Google Maps';
+      let query = precise ? `${item.lat},${item.lng}` : [item.pub_name, item.place_name, item.postcode].filter(Boolean).join(', ');
       if (item.directionsStreet) {
         const locality = item.place_name.split(':')[0].trim();
         const hasPostcode = item.directionsStreet.toUpperCase().includes(item.postcode.toUpperCase());
         const hasLocality = item.directionsStreet.split(',').some(part => part.trim().toLowerCase() === locality.toLowerCase());
         const address = hasPostcode ? item.directionsStreet
           : [item.directionsStreet, hasLocality ? '' : locality, item.postcode].filter(Boolean).join(', ');
-        return googleMapsLink('dir', 'destination', `${item.pub_name}, ${address}`, directionsLabel, `${directionsLabel} to ${venue}`);
+        query = `${item.pub_name}, ${address}`;
       }
-      const query = [item.pub_name, item.place_name, item.postcode].filter(Boolean).join(', ');
-      return googleMapsLink('search', 'query', query, 'Find in Google Maps', `Find in Google Maps, ${venue}`);
-    }
-
-    function pinDirectionsLink(item) {
-      if (item.locationPrecision !== 'venue' || !hasCoordinates(item)) return '';
-      return googleMapsLink('dir', 'destination', `${item.lat},${item.lng}`, 'Directions to pin', `Directions to pin, ${venueLabel(item)}`);
+      const params = new URLSearchParams({api: '1', query});
+      const url = `https://www.google.com/maps/search/?${params}`;
+      return `<a href="${escapeHtml(url)}" target="_blank" rel="noopener noreferrer" aria-label="${label}, ${escapeHtml(venueLabel(item))}">${label}</a>`;
     }
 
     function tradingNotice(item) {
@@ -2221,7 +2213,6 @@
     }
 
     function makeVenueDetails(item) {
-      const pinLink = pinDirectionsLink(item);
       return `
           ${tradingNotice(item) ? `<p class="trading-notice">${escapeHtml(tradingNotice(item))}</p>` : ''}
           <p><strong>Place:</strong> ${escapeHtml(item.place_name)} · <strong>Postcode:</strong> ${escapeHtml(item.postcode)}</p>
@@ -2231,8 +2222,7 @@
           <p><strong>Availability:</strong> ${availabilityLabel(item)} · <strong>Dispense:</strong> ${escapeHtml(dispenseLabel(item.dispense))}</p>
           <p class="venue-confirmation"><strong>Last confirmed:</strong> ${escapeHtml(confirmationPeriod(item.last))}</p>
           ${item.notes ? `<p><strong>Notes:</strong> ${escapeHtml(item.notes)}</p>` : ''}
-          <p>${venueDirectionsLink(item, 'Get directions')}</p>
-          ${pinLink ? `<p>${pinLink}</p>` : ''}
+          <p>${venueMapsLink(item)}</p>
           ${venueReportButton(item)}
       `;
     }
@@ -2248,8 +2238,8 @@
       }
     }
 
-    function openMobileVenue(item, element, scrollTop) {
-      mobileVenueOrigin = { element, scrollTop };
+    function openMobileVenue(item, element) {
+      mobileVenueOrigin = element;
       els.mobileVenueTitle.textContent = item.pub_name;
       els.mobileVenueContent.innerHTML = makeVenueDetails(item);
       bindVenueReport(els.mobileVenueContent, item);
@@ -2257,10 +2247,10 @@
       els.mobileVenueContent.scrollTop = 0;
     }
 
-    function focusDesktopVenue(popup, item, element, scrollTop) {
+    function focusDesktopVenue(popup, item, element) {
       const panel = popup.getElement();
       const heading = panel.querySelector('h3');
-      desktopVenueOrigin = { popup, item, element, scrollTop };
+      desktopVenueOrigin = { popup, item, element };
       panel.setAttribute('role', 'dialog');
       panel.setAttribute('aria-label', heading.textContent);
       panel.addEventListener('keydown', handleDesktopVenueKeydown);
@@ -2289,11 +2279,11 @@
     function updateVenueLayout(focusedControl = document.activeElement) {
       const desktopVenue = desktopVenueOrigin;
       if (isMobileView() && desktopVenue && !els.reportDialog.open) {
-        const { popup, item, element, scrollTop } = desktopVenue;
+        const { popup, item, element } = desktopVenue;
         const label = popup.getElement().contains(focusedControl) && focusedControl.getAttribute('aria-label');
         desktopVenueOrigin = null;
         map.closePopup(popup);
-        openMobileVenue(item, element, scrollTop);
+        openMobileVenue(item, element);
         if (label) {
           const replacement = [...els.mobileVenueContent.querySelectorAll('[aria-label]')]
             .find(control => control.getAttribute('aria-label') === label);
@@ -2421,7 +2411,6 @@
     function createResultCard(item) {
       const card = document.createElement('article');
       const label = escapeHtml(venueLabel(item));
-      const pinLink = pinDirectionsLink(item);
       card.className = 'card';
       card.innerHTML = `
         <div class="card-title">${escapeHtml(item.pub_name)}</div>
@@ -2439,22 +2428,21 @@
         ${item.notes ? `<div class="footer-note">${escapeHtml(item.notes)}</div>` : ''}
         <div class="card-actions">
           ${item.marker ? `<button class="secondary card-map-button" type="button" aria-label="View on map, ${label}">View on map</button>` : ''}
-          ${venueDirectionsLink(item, 'Directions')}
+          ${venueMapsLink(item)}
         </div>
-        <div class="footer-note">${pinLink ? `${pinLink} · ` : ''}${venueReportButton(item)}</div>
+        <div class="footer-note">${venueReportButton(item)}</div>
       `;
       bindVenueReport(card, item);
       const mapButton = card.querySelector('.card-map-button');
       mapButton?.addEventListener('click', () => {
-        const scrollTop = els.sidebarInner.scrollTop;
         if (isMobileView()) closeMobilePanel();
+        map.closePopup();
+        map.invalidateSize({ pan: false });
+        map.setView(item.marker.getLatLng(), Math.max(map.getZoom(), 14), { animate: false });
         markerLayer.zoomToShowLayer(item.marker, () => {
-          map.setView([item.lat, item.lng], Math.max(map.getZoom(), 14));
-          if (isMobileView()) openMobileVenue(item, mapButton, scrollTop);
-          else {
-            item.marker.openPopup();
-            if (item.marker.isPopupOpen()) focusDesktopVenue(item.marker.getPopup(), item, mapButton, scrollTop);
-          }
+          if (!mapButton.isConnected) return;
+          map.panTo(item.marker.getLatLng(), { animate: false });
+          item.marker.getElement()?.focus({ preventScroll: true });
         });
       });
 
@@ -2545,25 +2533,16 @@
       return mobileViewport.matches;
     }
 
-    function openMobilePanel(origin = null) {
+    function openMobilePanel() {
       document.body.classList.add('mobile-panel-open');
       els.openPanelBtn.setAttribute('aria-expanded', 'true');
       els.sidebarPanel.removeAttribute('inert');
       els.sidebarPanel.setAttribute('role', 'dialog');
       els.sidebarPanel.setAttribute('aria-modal', 'true');
       els.mobilePanelBackground.forEach(element => { element.inert = true; });
-      if (origin) {
-        els.sidebarInner.scrollTop = origin.scrollTop;
-        const panel = els.sidebarInner.getBoundingClientRect();
-        const result = origin.element.getBoundingClientRect();
-        if (result.bottom > panel.bottom) els.sidebarInner.scrollTop += result.bottom - panel.bottom;
-        else if (result.top < panel.top) els.sidebarInner.scrollTop -= panel.top - result.top;
-        origin.element.focus({ preventScroll: true });
-      } else {
-        setMobileFiltersOpen(false);
-        els.sidebarInner.scrollTop = 0;
-        els.searchBox.focus({ preventScroll: true });
-      }
+      setMobileFiltersOpen(false);
+      els.sidebarInner.scrollTop = 0;
+      els.searchBox.focus({ preventScroll: true });
     }
 
     function setMobileFiltersOpen(open) {
@@ -2743,9 +2722,8 @@
     els.mobileVenue.addEventListener('close', () => {
       const origin = mobileVenueOrigin;
       mobileVenueOrigin = null;
-      if (origin?.element?.isConnected) {
-        if (isMobileView() && els.sidebarPanel.contains(origin.element)) openMobilePanel(origin);
-        else origin.element.focus({ preventScroll: true });
+      if (origin?.isConnected) {
+        origin.focus({ preventScroll: true });
       } else if (isMobileView()) {
         els.openPanelBtn.focus({ preventScroll: true });
       }

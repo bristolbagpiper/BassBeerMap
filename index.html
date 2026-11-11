@@ -446,11 +446,12 @@
     .popup .approximate-location { color: #7a4d11; font-weight: 600; }
     .popup .trading-notice, .footer-note.trading-notice { color: #7a4d11; font-weight: 600; }
     .mobile-venue {
-      position: fixed;
-      inset: var(--header-height) 12px 12px;
+      position: absolute;
+      z-index: 950;
+      inset: auto 10px 12px;
       margin: auto auto 0;
-      width: min(440px, calc(100% - 24px));
-      max-height: calc(100% - var(--header-height) - 24px);
+      width: min(440px, calc(100% - 20px));
+      max-height: calc(50% - 20px);
       padding: 0;
       overflow: hidden;
       border: 1px solid var(--border);
@@ -460,7 +461,7 @@
       box-shadow: 0 8px 24px rgba(58, 34, 25, 0.25);
     }
     .mobile-venue[open] { display: flex; flex-direction: column; }
-    .mobile-venue::backdrop { background: rgba(33, 29, 28, 0.25); }
+    .map-wrap:has(.mobile-venue[open]) :is(.legend, .help-reopen-btn) { display: none; }
     .mobile-venue-header {
       display: flex;
       justify-content: space-between;
@@ -475,14 +476,45 @@
       min-height: 0;
       overflow: auto;
       overscroll-behavior: contain;
-      padding: 8px 14px 12px;
+      padding: 4px 14px;
+      font-size: 0.875rem;
       overflow-wrap: anywhere;
     }
-    @media (orientation: landscape) and (max-height: 480px) {
+    .mobile-venue-actions {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 0 12px;
+      padding: 0 14px;
+      border-top: 1px solid var(--border);
+      font-size: 0.85rem;
+    }
+    .mobile-venue-actions a { padding-block: 9px; }
+    .mobile-venue-actions .venue-report-btn { padding-inline: 0; }
+    @media (max-width: 980px) {
       .mobile-venue {
-        inset-block-start: 12px;
-        margin-block-end: auto;
+        inset-block-end: 66px;
+        max-height: calc(50% - 76px);
+      }
+    }
+    @media (orientation: landscape) {
+      .mobile-venue {
+        inset: 12px 10px 12px auto;
+        margin: 0;
+        width: min(310px, 43%);
         max-height: calc(100% - 24px);
+      }
+    }
+    @media (max-width: 980px) and (orientation: landscape) {
+      .mobile-venue {
+        inset-block: 58px 16px;
+        max-height: calc(100% - 74px);
+      }
+      .map-wrap:has(.mobile-venue[open]) .mobile-open-btn {
+        left: 10px;
+        right: auto;
+        width: min(42%, 320px);
+        transform: none;
       }
     }
     .approximate-marker {
@@ -1695,20 +1727,20 @@
         <div class="tiny">Blue pins are verified venue locations. Brown pins mark approximate postcode areas. Guest means Bass is occasional, not guaranteed today. Check before travelling.</div>
       </div>
       <button id="showHelpBtn" class="help-reopen-btn" type="button">Show help</button>
+      <dialog id="mobileVenue" class="mobile-venue" aria-labelledby="mobileVenueTitle">
+        <div class="mobile-venue-header">
+          <h2 id="mobileVenueTitle"></h2>
+          <button id="closeMobileVenueBtn" class="secondary" type="button" autofocus>Close</button>
+        </div>
+        <div id="mobileVenueContent" class="popup mobile-venue-content" role="region" tabindex="0" aria-label="Venue facts"></div>
+        <div id="mobileVenueActions" class="mobile-venue-actions"></div>
+      </dialog>
     </main>
   </div>
 
   <footer class="page-footer">
     <div class="footer-disclaimer">Independent, unofficial fan-made map. Directory information can change—especially Guest listings—so check before travelling. Not affiliated with AB InBev or Bass.</div>
   </footer>
-
-  <dialog id="mobileVenue" class="mobile-venue" aria-labelledby="mobileVenueTitle">
-    <div class="mobile-venue-header">
-      <h2 id="mobileVenueTitle"></h2>
-      <button id="closeMobileVenueBtn" class="secondary" type="button" autofocus>Close</button>
-    </div>
-    <div id="mobileVenueContent" class="popup mobile-venue-content"></div>
-  </dialog>
 
   <dialog id="reportDialog" class="report-dialog" aria-labelledby="reportDialogTitle" aria-describedby="reportRoute">
     <div class="report-dialog-card">
@@ -1832,6 +1864,7 @@
       mobileVenue: document.getElementById('mobileVenue'),
       mobileVenueTitle: document.getElementById('mobileVenueTitle'),
       mobileVenueContent: document.getElementById('mobileVenueContent'),
+      mobileVenueActions: document.getElementById('mobileVenueActions'),
       closeMobileVenueBtn: document.getElementById('closeMobileVenueBtn'),
       helpLegend: document.getElementById('helpLegend'),
       hideHelpBtn: document.getElementById('hideHelpBtn'),
@@ -2101,6 +2134,7 @@
           item.marker.on('add', () => item.marker.getElement().setAttribute('aria-label', label));
           configureVenuePopup(item);
           item.marker.on('popupopen', ({ popup }) => {
+            els.mobileVenue.close();
             bindVenueReport(popup.getElement(), item);
             focusDesktopVenue(popup, item, item.marker.getElement());
           });
@@ -2218,12 +2252,10 @@
           <p><strong>Place:</strong> ${escapeHtml(item.place_name)} · <strong>Postcode:</strong> ${escapeHtml(item.postcode)}</p>
           ${item.locationPrecision === 'postcode' ? `<p class="approximate-location"><strong>Map location:</strong> ${APPROXIMATE_MAP_NOTE}</p>` : ''}
           ${!item.postcodeIssueReviewed && item.locationIssue ? `<p class="approximate-location">The directory postcode differs from the reference address (${escapeHtml(item.locationIssue.reference)}). ${item.locationPrecision === 'venue' ? 'The pin marks the verified venue.' : 'The precise venue location needs review.'}</p>` : ''}
-          <p><strong>Area:</strong> ${escapeHtml(item.area || '—')} | <strong>Country:</strong> ${escapeHtml(item.country)}</p>
           <p><strong>Availability:</strong> ${availabilityLabel(item)} · <strong>Dispense:</strong> ${escapeHtml(dispenseLabel(item.dispense))}</p>
           <p class="venue-confirmation"><strong>Last confirmed:</strong> ${escapeHtml(confirmationPeriod(item.last))}</p>
+          <p><strong>Area:</strong> ${escapeHtml(item.area || '—')} | <strong>Country:</strong> ${escapeHtml(item.country)}</p>
           ${item.notes ? `<p><strong>Notes:</strong> ${escapeHtml(item.notes)}</p>` : ''}
-          <p>${venueMapsLink(item)}</p>
-          ${venueReportButton(item)}
       `;
     }
 
@@ -2234,6 +2266,8 @@
         item.marker.bindPopup(() => `<div class="popup">
           <h3>${escapeHtml(item.pub_name)}</h3>
           ${makeVenueDetails(item)}
+          <p>${venueMapsLink(item)}</p>
+          ${venueReportButton(item)}
         </div>`);
       }
     }
@@ -2242,8 +2276,13 @@
       mobileVenueOrigin = element;
       els.mobileVenueTitle.textContent = item.pub_name;
       els.mobileVenueContent.innerHTML = makeVenueDetails(item);
-      bindVenueReport(els.mobileVenueContent, item);
-      els.mobileVenue.showModal();
+      els.mobileVenueActions.innerHTML = venueMapsLink(item) + venueReportButton(item);
+      bindVenueReport(els.mobileVenueActions, item);
+      if (!els.mobileVenue.open) {
+        element?.focus({ preventScroll: true });
+        els.mobileVenue.show();
+      }
+      els.closeMobileVenueBtn.focus({ preventScroll: true });
       els.mobileVenueContent.scrollTop = 0;
     }
 
@@ -2285,7 +2324,7 @@
         map.closePopup(popup);
         openMobileVenue(item, element);
         if (label) {
-          const replacement = [...els.mobileVenueContent.querySelectorAll('[aria-label]')]
+          const replacement = [...els.mobileVenueActions.querySelectorAll('[aria-label]')]
             .find(control => control.getAttribute('aria-label') === label);
           replacement?.focus();
         }
@@ -2442,7 +2481,7 @@
         markerLayer.zoomToShowLayer(item.marker, () => {
           if (!mapButton.isConnected) return;
           map.panTo(item.marker.getLatLng(), { animate: false });
-          item.marker.getElement()?.focus({ preventScroll: true });
+          openMobileVenue(item, item.marker.getElement());
         });
       });
 
@@ -2450,6 +2489,7 @@
     }
 
     function renderResults(filtered) {
+      els.mobileVenue.close();
       markerLayer.clearLayers();
       els.results.innerHTML = '';
 
@@ -2534,6 +2574,7 @@
     }
 
     function openMobilePanel() {
+      els.mobileVenue.close();
       document.body.classList.add('mobile-panel-open');
       els.openPanelBtn.setAttribute('aria-expanded', 'true');
       els.sidebarPanel.removeAttribute('inert');
@@ -2719,9 +2760,17 @@
     window.visualViewport?.addEventListener('resize', updateSidebarViewport);
     window.visualViewport?.addEventListener('scroll', updateSidebarViewport);
     els.closeMobileVenueBtn.addEventListener('click', () => els.mobileVenue.close());
+    els.mobileVenue.addEventListener('keydown', event => {
+      if (event.key !== 'Escape') return;
+      event.preventDefault();
+      els.mobileVenue.close();
+    });
     els.mobileVenue.addEventListener('close', () => {
+      if (els.mobileVenue.open) return;
       const origin = mobileVenueOrigin;
       mobileVenueOrigin = null;
+      const focus = document.activeElement;
+      if (focus !== document.body && !els.mobileVenue.contains(focus)) return;
       if (origin?.isConnected) {
         origin.focus({ preventScroll: true });
       } else if (isMobileView()) {

@@ -3,28 +3,6 @@
     {
       "actionable": false,
       "area": "Leicestershire",
-      "country": "England",
-      "dispense": "H",
-      "last": "2026 Q4",
-      "manual_action_required": false,
-      "next_action": "No pin check requested.",
-      "notes": "",
-      "pg": "Guest",
-      "place_name": "Ashby-de-la-Zouch",
-      "postcode": "LE65 1AN",
-      "priority": 0,
-      "pub_name": "Fitzgeralds",
-      "reasons": [],
-      "review_category": "informational",
-      "status": "not_checked",
-      "venue_id": "v-b1f768d3-f5ed-5eae-a199-6b21559ba452",
-      "warnings": [
-        "Current pin has not been independently compared"
-      ]
-    },
-    {
-      "actionable": false,
-      "area": "Leicestershire",
       "checked_at": "2026-11-03",
       "comparisons": [
         {
@@ -329,7 +307,7 @@
     {
       "actionable": false,
       "area": "Staffordshire",
-      "checked_at": "2026-11-03",
+      "checked_at": "2026-11-11",
       "comparisons": [
         {
           "name_matches": 0,
@@ -2071,7 +2049,7 @@
     {
       "actionable": false,
       "area": "Derbyshire",
-      "checked_at": "2026-11-03",
+      "checked_at": "2026-11-11",
       "comparisons": [
         {
           "address": "Alfreton Road, , Little Eaton",
@@ -3263,7 +3241,7 @@
     {
       "actionable": false,
       "area": "Staffordshire",
-      "checked_at": "2026-11-03",
+      "checked_at": "2026-11-11",
       "comparisons": [
         {
           "address": "Black Swan Inn, 4 Market Street, Uttoxeter",
@@ -5113,7 +5091,7 @@
     {
       "actionable": false,
       "area": "Warwickshire",
-      "checked_at": "2026-11-03",
+      "checked_at": "2026-11-11",
       "comparisons": [
         {
           "name_matches": 1,
@@ -5647,7 +5625,7 @@
     {
       "actionable": false,
       "area": "Lincolnshire",
-      "checked_at": "2026-11-03",
+      "checked_at": "2026-11-11",
       "comparisons": [
         {
           "address": "Carre Arms Hotel, 1 Mareham Lane, , Sleaford",
@@ -5706,7 +5684,7 @@
     {
       "actionable": false,
       "area": "Derbyshire",
-      "checked_at": "2026-11-03",
+      "checked_at": "2026-11-11",
       "comparisons": [
         {
           "address": "Castle Street, Castleton, Hope Valley Derbyshire",
@@ -5765,7 +5743,7 @@
     {
       "actionable": false,
       "area": "Cheshire",
-      "checked_at": "2026-11-03",
+      "checked_at": "2026-11-11",
       "comparisons": [
         {
           "name_matches": 1,
@@ -6682,7 +6660,7 @@
     {
       "actionable": false,
       "area": "Derbyshire",
-      "checked_at": "2026-11-03",
+      "checked_at": "2026-11-11",
       "comparisons": [
         {
           "address": "Town End Crich Matlock Derbyshire",
@@ -7438,7 +7416,7 @@
     {
       "actionable": false,
       "area": "Staffordshire",
-      "checked_at": "2026-11-03",
+      "checked_at": "2026-11-11",
       "comparisons": [
         {
           "address": "14 Sutherland Road, Longton, Stoke-On-Trent",
@@ -8917,7 +8895,7 @@
     {
       "actionable": false,
       "area": "Greater Manchester",
-      "checked_at": "2026-11-03",
+      "checked_at": "2026-11-11",
       "comparisons": [
         {
           "address": "The Crown Inn, 154 Heaton Lane, Stockport",
@@ -11878,6 +11856,55 @@
     },
     {
       "actionable": false,
+      "area": "Leicestershire",
+      "checked_at": "2026-11-11",
+      "comparisons": [
+        {
+          "name_matches": 0,
+          "postcode_matches": 11,
+          "queried_postcode": "LE65 1AN",
+          "status": "no_name_match"
+        }
+      ],
+      "confidence": "owner_reviewed",
+      "country": "England",
+      "dispense": "H",
+      "independent_of_pin": true,
+      "last": "2026 Q4",
+      "listing": {
+        "postcode": "LE65 1AN",
+        "pub_name": "Fitzgeralds"
+      },
+      "manual_action_required": false,
+      "next_action": "Owner confirmed this exact pin; no pin check requested.",
+      "notes": "",
+      "owner_pin_confirmed": true,
+      "owner_reviewed": true,
+      "pg": "Guest",
+      "pin": {
+        "lat": 52.7471038,
+        "lng": -1.4705552
+      },
+      "place_name": "Ashby-de-la-Zouch",
+      "postcode": "LE65 1AN",
+      "priority": 2,
+      "pub_name": "Fitzgeralds",
+      "reasons": [],
+      "reference": {
+        "name_matches": 0,
+        "postcode_matches": 11,
+        "queried_postcode": "LE65 1AN",
+        "status": "no_name_match"
+      },
+      "review_category": "owner_confirmed",
+      "status": "no_name_match",
+      "venue_id": "v-b1f768d3-f5ed-5eae-a199-6b21559ba452",
+      "warnings": [
+        "FSA comparison is inconclusive; absence of a match does not contradict accepted evidence"
+      ]
+    },
+    {
+      "actionable": false,
       "area": "Lincolnshire",
       "checked_at": "2026-11-03",
       "comparisons": [
@@ -14617,7 +14644,7 @@
     {
       "actionable": false,
       "area": "North Yorkshire",
-      "checked_at": "2026-11-03",
+      "checked_at": "2026-11-11",
       "comparisons": [
         {
           "address": "Hales Bar 1 Crescent Road, , , Harrogate",
@@ -15452,7 +15479,7 @@
     {
       "actionable": false,
       "area": "Lincolnshire",
-      "checked_at": "2026-11-03",
+      "checked_at": "2026-11-11",
       "comparisons": [
         {
           "address": "148 Victoria Street, , Grimsby",
@@ -17181,7 +17208,7 @@
     {
       "actionable": false,
       "area": "Isle of Wight",
-      "checked_at": "2026-11-03",
+      "checked_at": "2026-11-11",
       "comparisons": [
         {
           "address": "2 Esplanade, Ryde, Isle Of Wight",
@@ -17466,7 +17493,7 @@
     {
       "actionable": false,
       "area": "Nottinghamshire",
-      "checked_at": "2026-11-03",
+      "checked_at": "2026-11-11",
       "comparisons": [
         {
           "address": "75 Main Street, Sutton Bonington, Nottinghamshire",
@@ -20864,7 +20891,7 @@
     {
       "actionable": false,
       "area": "Leicestershire",
-      "checked_at": "2026-11-03",
+      "checked_at": "2026-11-11",
       "comparisons": [
         {
           "name_matches": 0,
@@ -24866,7 +24893,7 @@
     {
       "actionable": false,
       "area": "Warwickshire",
-      "checked_at": "2026-11-03",
+      "checked_at": "2026-11-11",
       "comparisons": [
         {
           "address": "Red Lion, Main Street, , Hunningham",
@@ -25394,7 +25421,7 @@
     {
       "actionable": false,
       "area": "Gloucs & Bristol",
-      "checked_at": "2026-11-03",
+      "checked_at": "2026-11-11",
       "comparisons": [
         {
           "name_matches": 0,
@@ -26841,7 +26868,7 @@
     {
       "actionable": false,
       "area": "West Midlands",
-      "checked_at": "2026-11-03",
+      "checked_at": "2026-11-11",
       "comparisons": [
         {
           "address": "The Royal Oak Public House, 70 Compton Road, Wolverhampton, West Midlands",
@@ -27303,7 +27330,7 @@
     {
       "actionable": false,
       "area": "Greater London",
-      "checked_at": "2026-11-03",
+      "checked_at": "2026-11-11",
       "comparisons": [
         {
           "address": "Royal Standard 44 Vanbrugh Park, , Blackheath, Greenwich",
@@ -27647,7 +27674,7 @@
     {
       "actionable": false,
       "area": "Gloucs & Bristol",
-      "checked_at": "2026-11-03",
+      "checked_at": "2026-11-11",
       "comparisons": [
         {
           "address": "The Sandringham Hotel, 8 Sandy Park Road, Brislington, Bristol",
@@ -28911,7 +28938,7 @@
     {
       "actionable": false,
       "area": "Somerset",
-      "checked_at": "2026-11-03",
+      "checked_at": "2026-11-11",
       "comparisons": [
         {
           "address": "23 Vineyards, Walcot, Bath",
@@ -28970,7 +28997,7 @@
     {
       "actionable": false,
       "area": "Nottinghamshire",
-      "checked_at": "2026-11-03",
+      "checked_at": "2026-11-11",
       "comparisons": [
         {
           "address": "Melton Lane, Sutton Bonington, Nottinghamshire",
@@ -29373,7 +29400,7 @@
     {
       "actionable": false,
       "area": "Nottinghamshire",
-      "checked_at": "2026-11-03",
+      "checked_at": "2026-11-11",
       "comparisons": [
         {
           "name_matches": 0,
@@ -29605,7 +29632,7 @@
     {
       "actionable": false,
       "area": "Lancashire",
-      "checked_at": "2026-11-03",
+      "checked_at": "2026-11-11",
       "comparisons": [
         {
           "address": "16 Alder Lane, Parbold, Lancashire",
@@ -30978,7 +31005,7 @@
     {
       "actionable": false,
       "area": "Nottinghamshire",
-      "checked_at": "2026-11-03",
+      "checked_at": "2026-11-11",
       "comparisons": [
         {
           "address": "51 Upper Parliament Street, , Nottingham",
@@ -35128,7 +35155,7 @@
     {
       "actionable": false,
       "area": "Nottinghamshire",
-      "checked_at": "2026-11-03",
+      "checked_at": "2026-11-11",
       "comparisons": [
         {
           "address": "Woodlark Inn, Church Street, Lambley, Nottinghamshire",
@@ -35825,7 +35852,7 @@
     {
       "actionable": false,
       "area": "North Wales",
-      "checked_at": "2026-11-03",
+      "checked_at": "2026-11-11",
       "comparisons": [
         {
           "name_matches": 0,
@@ -36843,7 +36870,7 @@
     {
       "actionable": false,
       "area": "Greater London",
-      "checked_at": "2026-11-03",
+      "checked_at": "2026-11-11",
       "comparisons": [
         {
           "address": "BARLEY MOW 8 DORSET STREET, , LONDON",
@@ -37527,7 +37554,7 @@
     {
       "actionable": false,
       "area": "Cambridgeshire",
-      "checked_at": "2026-11-03",
+      "checked_at": "2026-11-11",
       "comparisons": [
         {
           "address": "Public House The Black Bull 32 Post Street, , Godmanchester, Cambridgeshire",
@@ -38097,7 +38124,7 @@
     {
       "actionable": false,
       "area": "North Yorkshire",
-      "checked_at": "2026-11-03",
+      "checked_at": "2026-11-11",
       "comparisons": [
         {
           "address": "Blind Jacks 19 Market Place, , , Knaresborough",
@@ -38154,7 +38181,7 @@
     {
       "actionable": false,
       "area": "Leicestershire",
-      "checked_at": "2026-11-03",
+      "checked_at": "2026-11-11",
       "comparisons": [
         {
           "address": "The Blue Bell, 23 The Callis, Ashby De La Zouch, Leicestershire",
@@ -38781,7 +38808,7 @@
     {
       "actionable": false,
       "area": "Surrey",
-      "checked_at": "2026-11-03",
+      "checked_at": "2026-11-11",
       "comparisons": [
         {
           "address": "Bricklayers Arms, 6 Queens Road, Hersham, Walton-On-Thames",
@@ -38895,7 +38922,7 @@
     {
       "actionable": false,
       "area": "Durham",
-      "checked_at": "2026-11-03",
+      "checked_at": "2026-11-11",
       "comparisons": [
         {
           "address": "Britannia Inn, 1 Archer Street, DARLINGTON",
@@ -39693,7 +39720,7 @@
     {
       "actionable": false,
       "area": "Staffordshire",
-      "checked_at": "2026-11-03",
+      "checked_at": "2026-11-11",
       "comparisons": [
         {
           "address": "24 Bridge Street, Burton upon Trent",
@@ -40035,7 +40062,7 @@
     {
       "actionable": false,
       "area": "Derbyshire",
-      "checked_at": "2026-11-03",
+      "checked_at": "2026-11-11",
       "comparisons": [
         {
           "address": "Moor Lane, , Dale Abbey",
@@ -41574,7 +41601,7 @@
     {
       "actionable": false,
       "area": "Staffordshire",
-      "checked_at": "2026-11-03",
+      "checked_at": "2026-11-11",
       "comparisons": [
         {
           "address": "Coopers Tavern, 43 Cross Street, Burton upon Trent",
@@ -44082,7 +44109,7 @@
     {
       "actionable": false,
       "area": "Greater London",
-      "checked_at": "2026-11-03",
+      "checked_at": "2026-11-11",
       "comparisons": [
         {
           "address": "The Flower Pot Public House 126 - 128 Wood Street, , Walthamstow, London",
@@ -48699,7 +48726,7 @@
     {
       "actionable": false,
       "area": "Rutland",
-      "checked_at": "2026-11-03",
+      "checked_at": "2026-11-11",
       "comparisons": [
         {
           "address": "11 Market Place, Oakham",
@@ -48984,7 +49011,7 @@
     {
       "actionable": false,
       "area": "Warwickshire",
-      "checked_at": "2026-11-03",
+      "checked_at": "2026-11-11",
       "comparisons": [
         {
           "address": "83 Coleshill Road, , Atherstone, Warwickshire",
@@ -50580,7 +50607,7 @@
     {
       "actionable": false,
       "area": "Isle of Wight",
-      "checked_at": "2026-11-03",
+      "checked_at": "2026-11-11",
       "comparisons": [
         {
           "address": "24A Holyrood Street, Newport, Isle Of Wight",
@@ -52176,7 +52203,7 @@
     {
       "actionable": false,
       "area": "Merseyside",
-      "checked_at": "2026-11-03",
+      "checked_at": "2026-11-11",
       "comparisons": [
         {
           "address": "34 Hope Street, , Liverpool",
@@ -52233,7 +52260,7 @@
     {
       "actionable": false,
       "area": "Nottinghamshire",
-      "checked_at": "2026-11-03",
+      "checked_at": "2026-11-11",
       "comparisons": [
         {
           "address": "237A Nottingham Road, Eastwood, Nottinghamshire",
@@ -54000,7 +54027,7 @@
     {
       "actionable": false,
       "area": "South Wales",
-      "checked_at": "2026-11-03",
+      "checked_at": "2026-11-11",
       "comparisons": [
         {
           "address": "Rock Inn 98 John Street, , Porthcawl, Bridgend",
@@ -57249,7 +57276,7 @@
     {
       "actionable": false,
       "area": "Derbyshire",
-      "checked_at": "2026-11-03",
+      "checked_at": "2026-11-11",
       "comparisons": [
         {
           "address": "161 Church Street Waingroves Ripley Derbyshire",
@@ -61073,16 +61100,14 @@
     "confidence_counts": {
       "existing_evidence_needs_corroboration": 552,
       "independent_coordinate_agreement": 396,
-      "not_checked": 1,
-      "owner_reviewed": 138
+      "owner_reviewed": 139
     },
     "counts": {
       "ambiguous_or_missing_coordinates": 67,
       "coordinate_agreement": 455,
       "coordinate_disagreement": 284,
       "nearby": 107,
-      "no_name_match": 173,
-      "not_checked": 1
+      "no_name_match": 174
     },
     "information_no_pin_check_count": 1087,
     "informational_count": 645,

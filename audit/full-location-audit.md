@@ -8,8 +8,7 @@ Locations with informational observations: 645 (may also have an actionable find
 
 ## Results
 
-- not_checked: 1
-- no_name_match: 173
+- no_name_match: 174
 - coordinate_disagreement: 284
 - ambiguous_or_missing_coordinates: 67
 - nearby: 107
@@ -17,9 +16,8 @@ Locations with informational observations: 645 (may also have an actionable find
 
 ## Confidence
 
-- not_checked: 1
 - existing_evidence_needs_corroboration: 552
-- owner_reviewed: 138
+- owner_reviewed: 139
 - independent_coordinate_agreement: 396
 
 ## Limits
@@ -39,7 +37,6 @@ Locations with informational observations: 645 (may also have an actionable find
 
 | Pub | Place | Postcode | Result | Information |
 |---|---|---|---|---|
-| Fitzgeralds | Ashby-de-la-Zouch | LE65 1AN | not_checked | Current pin has not been independently compared |
 | 1852 Brewery Co | Leicester: South Wigston | LE18 2DH | no_name_match | FSA comparison is inconclusive; absence of a match does not contradict accepted evidence |
 | 45 Club (PMC) | Newcastle-U-L: Central | ST5 1DS | no_name_match | FSA comparison is inconclusive; absence of a match does not contradict accepted evidence |
 | Adelphi | Leeds: Central | LS10 1JQ | coordinate_disagreement | FSA coordinate is 158.8m from the accepted pin; informational only because the FSA geocode may be approximate |
@@ -255,6 +252,7 @@ Locations with informational observations: 645 (may also have an actionable find
 | Fieldhouse | Solihull | B91 3JU | no_name_match | FSA comparison is inconclusive; absence of a match does not contradict accepted evidence |
 | Final Whistle | Southwell | NG25 0ET | nearby | FSA coordinate is 25-50m away; informational only |
 | Firefly | Worcester: Central | WR1 2SE | ambiguous_or_missing_coordinates | FSA comparison is inconclusive; absence of a match does not contradict accepted evidence |
+| Fitzgeralds | Ashby-de-la-Zouch | LE65 1AN | no_name_match | FSA comparison is inconclusive; absence of a match does not contradict accepted evidence |
 | Five Bells | Bassingham | LN5 9JZ | nearby | FSA coordinate is 25-50m away; informational only |
 | Five Horseshoes | Barholm | PE9 4RA | coordinate_disagreement | FSA coordinate is 65.5m from the accepted pin; informational only because the FSA geocode may be approximate |
 | Five Ways | Heath Hayes | WS12 3HU | no_name_match | FSA comparison is inconclusive; absence of a match does not contradict accepted evidence |

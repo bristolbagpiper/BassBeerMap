@@ -41,6 +41,10 @@ class GoogleComparisonsTests(unittest.TestCase):
     def source_status(self, checked_at='2026-11-03T10:00:00Z', **changes):
         total = len(self.bundle['rows'])
         record = dict(schema_version=1, provider='hermes-browser', checked_at=checked_at, configured=True,
+                      run_id='local-run-1', source_commit='a' * 40, source_release_id='b' * 64,
+                      validated_release_id=self.bundle['release_id'], source_status_sha256='c' * 64,
+                      execution_state='complete', source_execution_finished_at=checked_at,
+                      batch=dict(selected=1, attempted=1, checked=1),
                       directory_binding_signature=directory_binding(self.bundle), issues=[],
                       findings=[self.finding()],
                       counts=dict(total=total, current=1, unchecked_or_stale=total-1,
@@ -71,7 +75,7 @@ class GoogleComparisonsTests(unittest.TestCase):
         self.assertEqual(status['checked_at'], '2026-10-01T10:00:00Z')
         attached = with_google(dict(records={}), status, self.bundle, now=NOW)
         self.assertIn(GOOGLE_STALE_STATUS_ISSUE, attached['google_issues'])
-        self.assertEqual(status['findings'], [self.finding()])
+        self.assertEqual(status['findings'], [])
 
     def test_invalid_status_writes_safe_hard_failure_and_exits_one(self):
         write_json(self.root / 'hermes-google-status.json', {'provider': 'hermes-browser', 'checked_at': 'bad'})
@@ -92,7 +96,7 @@ class GoogleComparisonsTests(unittest.TestCase):
         self.assertEqual(status['counts']['current'], 0)
         self.assertEqual(status['counts']['unchecked_or_stale'], len(changed['rows']))
         self.assertEqual(status['findings'], [])
-        self.assertNotEqual(source['directory_binding_signature'], status['directory_binding_signature'])
+        self.assertEqual(source['directory_binding_signature'], status['directory_binding_signature'])
 
     def test_unknown_configuration_keeps_api_default_for_back_compatibility(self):
         (self.root / 'google-review-provider.json').unlink()

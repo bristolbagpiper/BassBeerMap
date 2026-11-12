@@ -6,9 +6,14 @@ on:
     types: [completed]
     branches: [main]
   workflow_dispatch:
+    inputs:
+      expected_google_run_id:
+        description: Optional exact local Google execution ID to verify before notification
+        required: false
+        type: string
   push:
     branches: [main]
-    paths: ['.github/workflows/location-alerts.yml', 'notify_location_review.py', 'location_review.py', 'apply_closed_reviews.py', 'audit/closed-review-decisions.json', 'hermes-google-status.json']
+    paths: ['.github/workflows/location-alerts.yml', 'notify_location_review.py', 'location_review.py', 'apply_closed_reviews.py', 'audit/closed-review-decisions.json', 'hermes-google-status.json', 'google-review-provider.json', 'directory-release.json']
 
 permissions:
   actions: read
@@ -49,6 +54,33 @@ jobs:
         # Read main's current durable status, including failed health runs; a
         # delayed workflow_run event must not replace it with an old artifact.
         run: python -c "from directory_release import read_json, write_json; from location_review import format_report, load_google_status, load_health_status, with_google, with_health; from pathlib import Path; report = with_google(with_health(read_json('location-review.json'), load_health_status('map-health-status.json')), load_google_status('google-places-status.json'), read_json('directory-release.json')); write_json('notification-report.json', report); Path('location-review-report.md').write_text(format_report(report), encoding='utf-8')"
+      - name: Verify requested Google execution and record receipt
+        env:
+          EXPECTED_GOOGLE_RUN_ID: ${{ inputs.expected_google_run_id }}
+        run: |
+          python - <<'PY'
+          import json, os
+          expected = os.environ.get('EXPECTED_GOOGLE_RUN_ID', '').strip()
+          try:
+              status = json.load(open('hermes-google-status.json', encoding='utf-8'))
+          except FileNotFoundError:
+              if expected:
+                  raise SystemExit('Requested Google report is not present on current main')
+              status = {}
+          if expected and (status.get('provider') != 'hermes-browser' or str(status.get('run_id')) != expected):
+              raise SystemExit('Google report run_id did not match the requested execution')
+          if status.get('provider') == 'hermes-browser':
+              report = json.load(open('notification-report.json', encoding='utf-8'))
+              print(f"Hermes execution {report['google_run_id']}: {len(report['google_findings'])} review flags; "
+                    f"{len(report['google_issues'])} source issues")
+              with open(os.environ['GITHUB_STEP_SUMMARY'], 'a', encoding='utf-8') as summary:
+                  summary.write('## Google report receipt\n\n')
+                  summary.write(f"- execution ID: `{status.get('run_id', '')}`\n")
+                  summary.write(f"- execution state: `{status.get('execution_state', '')}`\n")
+                  summary.write(f"- source commit: `{status.get('source_commit') or 'unavailable'}`\n")
+                  summary.write(f"- validated release: `{status.get('validated_release_id', '')}`\n")
+                  summary.write(f"- completed at: `{status.get('source_execution_finished_at', '')}`\n")
+          PY
       - name: Update the persistent GitHub review issue
         uses: actions/github-script@v7
         with:
@@ -127,7 +159,12 @@ jobs:
           git config user.name 'github-actions[bot]'
           git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
           git commit -m 'Record successful location alert delivery'
-          git push
+          if ! git push; then
+            # A new handoff or directory commit can land during SMTP delivery.
+            # Replay only this acknowledgement onto current main, without resending.
+            git pull --rebase origin main
+            git push
+          fi
       - name: Upload review report
         if: always()
         uses: actions/upload-artifact@v4

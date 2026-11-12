@@ -80,10 +80,10 @@ Repeated identical health problems stay quiet, while a changed problem or
 recovery is emailed once after SMTP accepts it. The daily job does not write a
 second competing version of the review issue.
 
-The Google provider is selected in `google-review-provider.json`. With
-`hermes-local`, Hermes owns the Google review and sends changes privately. The
-GitHub job continues its directory and coordinate checks and leaves Google
-comparison and email to Hermes.
+The `hermes-browser` provider combines the Windows Hermes Google checks with
+the existing GitHub location review. Hermes records browser evidence locally.
+GitHub validates the derived report against its current directory and sends
+the consolidated alert through `Location review notifications`.
 Hermes compares the visible named business, full postcode and actual place marker
 with the saved pin. It rotates the oldest exact-bound attempts, up to 45 per run.
 A marker more than 50 metres away, conflicting identity or possible closure is
@@ -113,19 +113,27 @@ The installer stages versioned Python files from Git, writes a file-hash manifes
 and switches the launcher after validation. The previous version stays available
 for rollback through the same command.
 
-For private email, put a local `notification.json` in the state directory with
-`executable` and `config` set to the absolute Himalaya executable and TOML
-paths, and `account` set to the owner mailbox's account name. Hermes sends
-from and to that account. Authentication stays in the existing mail client
-configuration. Keep that file and all observations outside Git.
-
 Read `last-run.json` for the fetched data commit, installed code commit, batch
-result and separate notification outcome. `notification-state.json` records
-SMTP acceptance and suppresses unchanged findings. If a send ends without a
-confirmed outcome, the next execution searches that mailbox for the delivery
-reference before any repeat. An unresolved send stays visible as unconfirmed
-and can be checked by reference in the mailbox. GitHub continues to send its
-directory and map-health alerts through its configured SMTP account.
+outcome and local report hash. The authenticated Codex handoff stages the
+current GitHub release and registry at a single `main` commit, then prepares a
+filtered report with `hermes_google_publish.py`. It checks the execution receipt
+and rebuilds findings for the current identities and pins. The handoff updates
+only `hermes-google-status.json`, with an expected parent commit. If the parent
+moves, stage the new release and rebuild the candidate before retrying.
+
+Publish a new execution only after checking its timestamp against the current
+committed report. A repeated execution with an identical directory binding
+needs only a review readback. Confirm that GitHub ran `Location review
+notifications` for the new commit and consumed the expected Google execution.
+The workflow also supports dispatch for a specific report ID. The publication
+receipt records both the report commit and the review run. GitHub records SMTP
+acceptance separately and suppresses unchanged consolidated findings.
+
+Keep the local observation journal and source URLs outside Git. The handoff
+publishes directory fields, derived review reasons and binding metadata.
+Visitor-visible closure warnings require a separate dated finding for the
+exact displayed venue and pin. Hermes review findings require corroboration
+before any public listing or coordinate change.
 
 ## Location tracking and alerts
 

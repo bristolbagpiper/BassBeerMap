@@ -136,6 +136,7 @@ def with_health(report, status):
 
 def load_google_status(path):
     path = Path(path)
+    browser = False
     provider_path = path.parent / 'google-review-provider.json'
     if provider_path.exists():
         provider = json.loads(provider_path.read_text(encoding='utf-8'))
@@ -149,14 +150,15 @@ def load_google_status(path):
         if provider == {'provider': 'hermes-browser'}:
             # A newly published browser batch must reach the same review issue
             # immediately, without waiting for the next scheduled API/router run.
-            browser_status = path.parent / 'hermes-google-status.json'
-            if browser_status.exists():
-                path = browser_status
+            browser = True
+            path = path.parent / 'hermes-google-status.json'
     if not path.exists():
         return None  # Older checkouts have no Google snapshot yet.
     status = json.loads(path.read_text(encoding='utf-8'))
     if status is None:
         raise ValueError('Invalid Google comparison status: null snapshot')
+    if browser and (not isinstance(status, dict) or status.get('provider') != 'hermes-browser'):
+        raise ValueError('Invalid Google browser receipt; unexpected provider')
     return status
 
 
@@ -190,9 +192,35 @@ def with_google(report, status, current_bundle=None, now=None):
                        and re.fullmatch(r'[0-9a-f]{64}', finding['binding_signature'])
                        for finding in status['findings'])):
         raise ValueError('Invalid Google comparison status; rerun the daily map audit')
+    browser = status.get('provider') == 'hermes-browser'
+    if browser:
+        required_receipt = ('run_id', 'source_commit', 'source_release_id', 'validated_release_id',
+                            'source_status_sha256', 'execution_state', 'source_execution_finished_at',
+                            'checked_at', 'batch')
+        if any(key not in status for key in required_receipt):
+            raise ValueError('Invalid Google browser receipt; rerun the local comparison')
+        if not isinstance(status['run_id'], str) or not status['run_id']:
+            raise ValueError('Invalid Google browser receipt; missing run id')
+        if status['execution_state'] not in ('complete', 'blocked', 'failed'):
+            raise ValueError('Invalid Google browser receipt; invalid execution state')
+        for key, pattern in (('source_commit', r'[0-9a-f]{40}'),
+                             ('source_release_id', r'[0-9a-f]{64}'),
+                             ('source_status_sha256', r'[0-9a-f]{64}')):
+            value = status[key]
+            if value is not None and (not isinstance(value, str) or not re.fullmatch(pattern, value)):
+                raise ValueError('Invalid Google browser receipt; malformed source identity')
+        if status['execution_state'] == 'complete' and any(status[key] is None for key in
+                ('source_commit', 'source_release_id', 'source_status_sha256')):
+            raise ValueError('Invalid Google browser receipt; complete result lacks source identity')
+        if not isinstance(status['validated_release_id'], str) or not status['validated_release_id']:
+            raise ValueError('Invalid Google browser receipt; missing validated release')
+        if not re.fullmatch(r'[0-9a-f]{64}', status['validated_release_id']):
+            raise ValueError('Invalid Google browser receipt; malformed validated release')
+        if not isinstance(status['batch'], dict):
+            raise ValueError('Invalid Google browser receipt; malformed batch')
     directory_signature = status.get('directory_binding_signature')
     if (not isinstance(directory_signature, str) or not re.fullmatch(r'[0-9a-f]{64}', directory_signature)):
-        if directory_signature is not None or not status.get('hard_failure'):
+        if browser or directory_signature is not None or not status.get('hard_failure'):
             raise ValueError('Invalid Google comparison status; missing directory binding')
     issues = set(status['issues'])
     if not status['configured']:
@@ -219,7 +247,11 @@ def with_google(report, status, current_bundle=None, now=None):
     else:
         issues.add(GOOGLE_COVERAGE_ISSUE)
     findings = []
-    for finding in status['findings']:
+    diagnostic_only = browser and (status['execution_state'] != 'complete' or status.get('hard_failure', False))
+    if diagnostic_only:
+        issues.add(GOOGLE_COVERAGE_ISSUE)
+        issues.add(GOOGLE_STALE_STATUS_ISSUE)
+    for finding in ([] if diagnostic_only else status['findings']):
         row_and_signature = current.get(finding['venue_id'])
         if row_and_signature is None or finding['binding_signature'] != row_and_signature[1]:
             issues.add(GOOGLE_COVERAGE_ISSUE)
@@ -233,8 +265,26 @@ def with_google(report, status, current_bundle=None, now=None):
         stale = checked_at.tzinfo is None or not timedelta(0) <= age <= timedelta(days=30)
     except (TypeError, ValueError, AttributeError):
         stale = True
+    if browser:
+        try:
+            finished = datetime.fromisoformat(status['source_execution_finished_at'].replace('Z', '+00:00'))
+            age = (now or datetime.now(timezone.utc)) - finished
+            stale = (stale or finished.utcoffset() != timedelta(0) or checked_at.utcoffset() != timedelta(0)
+                     or not timedelta(0) <= age <= timedelta(hours=48)
+                     or checked_at > finished + timedelta(minutes=5))
+        except (TypeError, ValueError, AttributeError):
+            stale = True
     if stale:
         issues.update((GOOGLE_STALE_STATUS_ISSUE, GOOGLE_COVERAGE_ISSUE))
+    if browser and current_bundle is not None:
+        # The projection is tied to exact venue bindings. Bundle-only metadata
+        # can change its release hash without invalidating those observations;
+        # only an exact binding mismatch invalidates projected findings.
+        if current_signature != directory_signature:
+            issues.update((GOOGLE_COVERAGE_ISSUE, GOOGLE_STALE_STATUS_ISSUE))
+            findings = []
+    if stale:
+        findings = []
     combined['google_issues'] = sorted(issues)
     # Only the directory's own listing and derived review flags are reportable.
     combined['google_findings'] = sorted(findings,
@@ -250,14 +300,22 @@ def with_google(report, status, current_bundle=None, now=None):
         combined['google_counts'].update(total=len(current), current=0, unchecked_or_stale=len(current))
         if 'attempted_venue_count' in combined['google_counts']:
             combined['google_counts']['attempted_venue_count'] = 0
+    elif stale or diagnostic_only:
+        total = combined['google_counts'].get('total', 0)
+        combined['google_counts'].update(current=0, unchecked_or_stale=total)
+        if 'attempted_venue_count' in combined['google_counts']:
+            combined['google_counts']['attempted_venue_count'] = 0
     combined['google_provider'] = status.get('provider', 'places-api')
     combined['google_hard_failure'] = status.get('hard_failure', False)
+    if browser:
+        combined['google_execution_state'] = status['execution_state']
+        combined['google_counts']['review_count'] = len(findings)
     for field in ('run_id', 'run_attempt', 'checked_at', 'run_url'):
         combined['google_' + field] = status.get(field, '')
     return combined
 
 
-def fingerprint(report):
+def fingerprint(report, pipeline_failure=False):
     # Check dates and repeated identical attempts do not create repeated emails.
     active = {identifier: {k: r.get(k) for k in ('pub_name', 'place_name', 'postcode', 'status', 'reasons', 'review_category', 'manual_action_required')}
               for identifier, r in report['records'].items() if r['active']}
@@ -276,6 +334,8 @@ def fingerprint(report):
     if report.get('google_issues') or report.get('google_findings'):
         active['google_comparison'] = dict(issues=sorted(set(report.get('google_issues', []))),
             findings=sorted(report.get('google_findings', []), key=lambda finding: json.dumps(finding, sort_keys=True)))
+    if pipeline_failure:
+        active['pipeline_failure'] = True
     return hashlib.sha256(json.dumps(active, sort_keys=True).encode()).hexdigest()
 
 

@@ -27,17 +27,22 @@ class GoogleJobIntegrationTests(unittest.TestCase):
     def bundle(self):
         return dict(rows=[dict(venue_id='venue-test', pub_name='Directory Pub', place_name='Directory Town',
                               postcode='BS1 1AA')],
-                    locations={'venue-test': dict(lat=51.45, lng=-2.58, precision='venue')})
+                    locations={'venue-test': dict(lat=51.45, lng=-2.58, precision='venue')}, release_id='d' * 64)
 
     def attach(self, report, status):
         return with_google(report, status, self.bundle(), now=datetime(2026, 11, 2, 12, tzinfo=timezone.utc))
 
     def status(self, **changes):
         binding = signatures(self.bundle()['rows'][0], self.bundle()['locations']['venue-test'])['binding_signature']
-        return dict(dict(schema_version=1, configured=True, checked_at='2026-11-02T10:00:00Z',
+        return dict(dict(schema_version=1, provider='hermes-browser', configured=True, checked_at='2026-11-02T10:00:00Z',
                          run_id='10', run_attempt='1', run_url='https://example.test/run/10',
+                         source_commit='a' * 40, source_release_id='b' * 64,
+                         validated_release_id=self.bundle()['release_id'], source_status_sha256='c' * 64,
+                         execution_state='complete', source_execution_finished_at='2026-11-02T10:00:00Z',
+                         batch=dict(selected=1, attempted=1, checked=1),
                          directory_binding_signature=digest([('venue-test', binding)]),
-                         counts={'checked': 1}, issues=[], findings=[]), **changes)
+                         counts={'total': 1, 'current': 1, 'unchecked_or_stale': 0,
+                                 'checked_this_run': 1, 'review_count': 0}, issues=[], findings=[]), **changes)
 
     def report(self, **changes):
         return dict(dict(records={}, active_count=0, unverified_count=0), **changes)
@@ -87,11 +92,38 @@ class GoogleJobIntegrationTests(unittest.TestCase):
             with self.subTest(status=status), self.assertRaisesRegex(ValueError, 'Invalid Google comparison'):
                 self.attach(self.report(), status)
 
+    def test_browser_receipt_is_required_and_diagnostics_never_expose_findings(self):
+        legacy = self.status()
+        legacy.pop('source_status_sha256')
+        with self.assertRaisesRegex(ValueError, 'browser receipt'):
+            self.attach(self.report(), legacy)
+        blocked = self.status(execution_state='blocked', findings=[self.finding()])
+        blocked.update(source_commit=None, source_release_id=None, source_status_sha256=None)
+        report = self.attach(self.report(), blocked)
+        self.assertEqual(report['google_findings'], [])
+        self.assertEqual(report['google_counts']['current'], 0)
+        self.assertIn(GOOGLE_COVERAGE_ISSUE, report['google_issues'])
+
+    def test_release_metadata_change_is_allowed_when_current_bindings_match(self):
+        report = self.attach(self.report(), self.status(validated_release_id='e' * 64))
+        self.assertEqual(report['google_findings'], [])
+        self.assertEqual(report['google_counts']['current'], 1)
+        self.assertNotIn(GOOGLE_COVERAGE_ISSUE, report['google_issues'])
+
+    def test_missed_daily_browser_runs_expire_after_two_days(self):
+        status = self.status(findings=[self.finding()])
+        report = with_google(self.report(), status, self.bundle(),
+                             now=datetime(2026, 11, 4, 11, tzinfo=timezone.utc))
+        self.assertEqual(report['google_findings'], [])
+        self.assertEqual(report['google_counts']['current'], 0)
+        self.assertIn(GOOGLE_STALE_STATUS_ISSUE, report['google_issues'])
+
     def test_hermes_provider_publishes_new_browser_batch_without_waiting_for_daily_job(self):
         with tempfile.TemporaryDirectory() as directory:
             root = Path(directory)
             (root / 'google-review-provider.json').write_text('{"provider":"hermes-browser"}', encoding='utf-8')
             (root / 'google-places-status.json').write_text(json.dumps(self.status(run_id='old')), encoding='utf-8')
+            self.assertIsNone(load_google_status(root / 'google-places-status.json'))
             (root / 'hermes-google-status.json').write_text(json.dumps(self.status(run_id='browser-new')), encoding='utf-8')
             self.assertEqual(load_google_status(root / 'google-places-status.json')['run_id'], 'browser-new')
 
@@ -125,13 +157,28 @@ class GoogleJobIntegrationTests(unittest.TestCase):
             message = smtp.return_value.__enter__.return_value.send_message.call_args.args[0]
             self.assertIn('1 Google pub actions', message['Subject'])
             later = self.attach(self.report(), self.status(findings=[self.finding()], run_id='11',
-                                checked_at='2026-11-02T11:00:00Z', run_url='https://example.test/run/11'))
+                                checked_at='2026-11-02T11:00:00Z', source_execution_finished_at='2026-11-02T11:00:00Z',
+                                run_url='https://example.test/run/11'))
             self.assertFalse(notify(later, state, smtp_factory=smtp))
             changed = self.attach(self.report(), self.status(findings=[self.finding(reason='New review reason')]))
             self.assertTrue(notify(changed, state, smtp_factory=smtp))
             self.assertTrue(notify(healthy, state, smtp_factory=smtp))
             self.assertFalse(notify(healthy, state, smtp_factory=smtp))
             self.assertEqual(smtp.call_count, 3)
+
+    def test_pipeline_failure_suppression_is_stable_and_recovery_is_one_transition(self):
+        report = self.attach(self.report(), self.status())
+        settings = dict(SMTP_HOST='smtp.example.test', SMTP_USERNAME='test', SMTP_PASSWORD='test',
+                        ALERT_TO='test@example.test')
+        with tempfile.TemporaryDirectory() as directory, patch.dict(os.environ, settings, clear=True):
+            state = Path(directory) / 'delivery.json'
+            smtp = MagicMock()
+            smtp.return_value.__enter__.return_value.send_message.return_value = {}
+            self.assertTrue(notify(report, state, 'https://example.test/run/1', smtp_factory=smtp))
+            self.assertFalse(notify(report, state, 'https://example.test/run/2', smtp_factory=smtp))
+            self.assertTrue(notify(report, state, smtp_factory=smtp))
+            self.assertFalse(notify(report, state, smtp_factory=smtp))
+            self.assertEqual(smtp.call_count, 2)
 
     def test_configuration_issue_alerts_without_active_venue_or_health_reviews(self):
         issue = GOOGLE_CONFIGURATION_ISSUE
@@ -193,8 +240,11 @@ class GoogleJobIntegrationTests(unittest.TestCase):
                                          self.bundle(), now=now)
                     self.assertIn(GOOGLE_COVERAGE_ISSUE, report['google_issues'])
                     self.assertIn(GOOGLE_STALE_STATUS_ISSUE, report['google_issues'])
-                    self.assertEqual(len(report['google_findings']), len(findings))
-        fallback = self.status(hard_failure=True, directory_binding_signature=None)
+                    self.assertEqual(len(report['google_findings']), 0)
+        fallback = self.status(hard_failure=True)
+        fallback['execution_state'] = 'failed'
+        fallback['source_commit'] = fallback['source_release_id'] = fallback['source_status_sha256'] = None
+        fallback['findings'] = []
         self.assertIn(GOOGLE_COVERAGE_ISSUE, self.attach(self.report(), fallback)['google_issues'])
         for status in (self.status(directory_binding_signature='bad'), self.status(directory_binding_signature=None),
                        self.status(findings=[self.finding(binding_signature='z' * 64)])):
@@ -231,6 +281,11 @@ class GoogleJobIntegrationTests(unittest.TestCase):
         notifications = (ROOT / '.github/workflows/location-alerts.yml').read_text()
         self.assertIn("load_google_status('google-places-status.json')", notifications)
         self.assertIn('report.google_count || report.health_count || failed', notifications)
+        self.assertIn('expected_google_run_id', notifications)
+        self.assertIn('str(status.get(\'run_id\')) != expected', notifications)
+        self.assertIn('hermes-google-status.json', notifications.split('paths:', 1)[1].split('\n', 1)[0])
+        self.assertIn('GITHUB_STEP_SUMMARY', notifications)
+        self.assertIn('ALERT_TO: ${{ secrets.ALERT_TO }}', notifications)
 
     @unittest.skipUnless(GIT and BASH, 'Git and Bash execute the actual persistence step offline')
     def test_persistence_step_commits_status_even_when_failure_precedes_state_creation(self):

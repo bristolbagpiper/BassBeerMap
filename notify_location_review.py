@@ -15,9 +15,9 @@ def notify(report, state_path, failure_url='', smtp_factory=smtplib.SMTP):
     if os.environ.get('SOURCE_CONCLUSION') == 'cancelled':
         failure_url = ''  # A deliberately/superseded canceled run is not a failed import.
     state = read_json(state_path, {})
-    digest = fingerprint(report)
-    if not failure_url and (state.get('email_fingerprint') == digest or (
-            not report['active_count'] and not report.get('health_count') and not report.get('google_count') and not state)):
+    digest = fingerprint(report, pipeline_failure=bool(failure_url))
+    if state.get('email_fingerprint') == digest or (
+            not failure_url and not report['active_count'] and not report.get('health_count') and not report.get('google_count') and not state):
         print('No changed actionable location report; email remains quiet.')
         return False
     required = ('SMTP_HOST', 'SMTP_USERNAME', 'SMTP_PASSWORD', 'ALERT_TO')
@@ -52,14 +52,21 @@ def notify(report, state_path, failure_url='', smtp_factory=smtplib.SMTP):
     if failure_url:
         body = 'A directory import or weekly audit failed. Inspect its validation report:\n' + failure_url + '\n\n' + body
     message.set_content(body)
-    with smtp_factory(os.environ['SMTP_HOST'], int(os.environ.get('SMTP_PORT') or '587'), timeout=30) as server:
-        server.starttls()
-        server.login(os.environ['SMTP_USERNAME'], os.environ['SMTP_PASSWORD'])
-        refused = server.send_message(message)
-        if refused:
-            raise RuntimeError('SMTP refused an alert recipient; delivery has not been acknowledged')
+    accepted = False
+    try:
+        with smtp_factory(os.environ['SMTP_HOST'], int(os.environ.get('SMTP_PORT') or '587'), timeout=30) as server:
+            server.starttls()
+            server.login(os.environ['SMTP_USERNAME'], os.environ['SMTP_PASSWORD'])
+            refused = server.send_message(message)
+            if refused:
+                raise RuntimeError('SMTP refused an alert recipient; delivery has not been acknowledged')
+            accepted = True
+    except OSError:
+        if not accepted:
+            raise
+        print('The SMTP connection closed after accepting the alert.')
     write_json(state_path, dict(email_fingerprint=digest, emailed_at=datetime.now(timezone.utc).isoformat()))
-    print('Location alert accepted by configured SMTP server; delivery recorded.')
+    print('Location alert accepted by configured SMTP server; inbox delivery is not confirmed.')
     return True
 
 

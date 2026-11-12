@@ -1,4 +1,4 @@
-"""Fetch the public directory, record local Google checks and send private alerts."""
+"""Fetch the public directory and record local Google checks for the GitHub review."""
 import argparse
 import hashlib
 import json
@@ -12,7 +12,6 @@ from urllib.request import Request, urlopen
 import uuid
 
 from directory_release import read_json
-from hermes_google_alerts import notify
 from hermes_google_browser import run as browse
 from hermes_google_review import build_status
 
@@ -95,8 +94,7 @@ def fetch_inputs(destination, lookup=public_json):
     return commit
 
 
-def execute(state_dir=DEFAULT_STATE, limit=45, venue_ids=(), fetch=True, browser_run=browse,
-            send_notification=notify):
+def execute(state_dir=DEFAULT_STATE, limit=45, venue_ids=(), fetch=True, browser_run=browse):
     state_dir = Path(state_dir).resolve()
     state_dir.mkdir(parents=True, exist_ok=True)
     lock = state_dir / 'runner.lock'
@@ -106,7 +104,6 @@ def execute(state_dir=DEFAULT_STATE, limit=45, venue_ids=(), fetch=True, browser
     execution = dict(schema_version=1, provider='hermes-browser', execution_id=uuid.uuid4().hex,
                      started_at=now(), finished_at=None, state='running')
     stage = 'fetch published directory'
-    status = None
     try:
         version = read_json(Path(__file__).with_name('implementation.json'), {})
         execution['implementation_commit'] = version.get('commit')
@@ -131,10 +128,12 @@ def execute(state_dir=DEFAULT_STATE, limit=45, venue_ids=(), fetch=True, browser
         result = browser_run(data, receipt_path, limit=limit, venue_ids=venue_ids)
         stage = 'build review report'
         batch = {key: result.get(key, 0) for key in ('selected', 'attempted', 'checked', 'ambiguous', 'unavailable')}
-        status = build_status(data, read_json(receipt_path), batch=batch)
+        observations = receipt_path.read_bytes()
+        status = build_status(data, json.loads(observations), batch=batch)
         execution.update(finished_at=now(), state='blocked' if result['stopped'] else 'complete',
                          source_commit=commit, release_id=read_json(data / 'directory-release.json')['release_id'],
                          observations_written=result['attempted'], batch=batch,
+                         observations_sha256=hashlib.sha256(observations).hexdigest(),
                          coverage={key: value for key, value in status['counts'].items() if key != 'checked_this_run'})
         if result['stopped'] and result.get('detail'):
             execution['detail'] = result['detail']
@@ -146,19 +145,8 @@ def execute(state_dir=DEFAULT_STATE, limit=45, venue_ids=(), fetch=True, browser
     except Exception as error:
         execution.update(finished_at=now(), state='failed', failure_code=type(error).__name__,
                          detail=f'Could not {stage} ({type(error).__name__})')
-        status = None
     finally:
         try:
-            atomic_json(state_dir / 'last-run.json', execution)
-            try:
-                delivery = send_notification(state_dir, status, execution, atomic_json)
-            except Exception as error:
-                delivery = {'state': 'failed', 'detail': f'Mail processing failed ({type(error).__name__})'}
-            execution['notification'] = delivery
-            if delivery['state'] in ('failed', 'unconfirmed', 'not_configured'):
-                execution['success'] = False
-                reason = delivery.get('detail', f"Private email {delivery['state'].replace('_', ' ')}")
-                execution['detail'] = '. '.join(filter(None, (execution.get('detail'), reason)))
             atomic_json(state_dir / 'last-run.json', execution)
         finally:
             lock.unlink(missing_ok=True)

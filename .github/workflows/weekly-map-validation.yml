@@ -80,6 +80,9 @@ jobs:
         id: google
         # Run after safe CAMRA results publish, even if that source failed.
         # Google failures cannot prevent those results from being committed.
+        # In hermes-browser mode this routes and validates the sanitized local
+        # execution receipt; the local run_id is preserved for exact dispatch
+        # verification, while this Actions run is recorded separately.
         if: always() && steps.checkout.outcome == 'success' && steps.python.outcome == 'success' && steps.google_provider.outcome == 'success' && steps.google_provider.outputs.provider != 'hermes-local'
         env:
           GOOGLE_PLACES_ENABLED: ${{ vars.GOOGLE_PLACES_ENABLED }}
@@ -89,7 +92,7 @@ jobs:
           AUDIT_RUN_URL: https://github.com/${{ github.repository }}/actions/runs/${{ github.run_id }}
         run: python audit_google_comparisons.py --root . --state google-places-state.json --status google-places-status.json --limit 45
       - name: Persist Google comparison status and rotation, including partial failures
-        if: always() && steps.google.outcome != 'skipped' && steps.checkout.outcome == 'success' && steps.python.outcome == 'success'
+        if: always() && steps.google_provider.outputs.provider == 'places-api' && steps.google.outcome != 'skipped' && steps.checkout.outcome == 'success' && steps.python.outcome == 'success'
         run: |
           files=(google-places-status.json)
           if [ -f google-places-state.json ]; then files+=(google-places-state.json); fi

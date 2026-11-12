@@ -1,15 +1,24 @@
 {
-  "checked_at": "2026-11-10T20:54:44.766526+00:00",
+  "batch": {
+    "ambiguous": 6,
+    "attempted": 45,
+    "checked": 45,
+    "selected": 45,
+    "unavailable": 0
+  },
+  "checked_at": "2026-11-12T07:44:33.411709+00:00",
   "configured": true,
   "counts": {
     "attempted_venue_count": 1087,
-    "checked_this_run": 41,
+    "checked_this_run": 45,
     "current": 1087,
-    "review_count": 74,
+    "retained_unavailable": 1,
+    "review_count": 85,
     "total": 1087,
     "unchecked_or_stale": 0
   },
   "directory_binding_signature": "7e0d2c012ac84c183fd2ade4775f969455f6c97003a43eb1586542a68d3b1f9e",
+  "execution_state": "complete",
   "findings": [
     {
       "binding_signature": "eb6677d18e8e55f842c81147bf193219a1a944543e276e9074ad0fc609900240",
@@ -19,6 +28,24 @@
       "reason": "Google indicates a possible closure; trading status needs review",
       "status": "review_needed",
       "venue_id": "v-009a7c6e-3950-55bb-8a3c-eaf89ba0737e"
+    },
+    {
+      "binding_signature": "21cfce58523b33b6cf7b412036083bde19a4aad3c6ecb0c2975939eb6b40ba50",
+      "place_name": "Doncaster",
+      "postcode": "DN1 3AA",
+      "pub_name": "Leopard",
+      "reason": "Google results are incomplete or ambiguous; no unique place accepted",
+      "status": "review_needed",
+      "venue_id": "v-05c2ff04-bf80-50f1-9eac-c1e10af638ea"
+    },
+    {
+      "binding_signature": "94e8e79bdfa1ed0b1124aa335e0847f0a809dfd239a0f886232c43515a114fb5",
+      "place_name": "Ingleby",
+      "postcode": "DE73 7HW",
+      "pub_name": "John Thompson Inn",
+      "reason": "Google indicates a possible closure; trading status needs review",
+      "status": "review_needed",
+      "venue_id": "v-05f27f28-8a8a-5653-83c7-15e3cf7bc2e1"
     },
     {
       "binding_signature": "55a9767cdbc3ec5b1b414cb3e91981b4e0d1194d3d59785b1eef34610aa87ebd",
@@ -66,6 +93,15 @@
       "venue_id": "v-151c6a0f-d18e-5884-868f-b95b6d6c6f14"
     },
     {
+      "binding_signature": "47fb24cc250f41cbf9c25d3a4ae711954e0de8883714b1fc488029fd79695a83",
+      "place_name": "Tamworth",
+      "postcode": "B79 7AT",
+      "pub_name": "Globe Inn",
+      "reason": "Google results are incomplete or ambiguous; no unique place accepted",
+      "status": "review_needed",
+      "venue_id": "v-163491c3-e2cc-54a0-9d36-124f2bd17d8e"
+    },
+    {
       "binding_signature": "1bb7c86097327ab85609edaff7a3808135f6567bf8a4ea3e4c0aca1928edd22e",
       "place_name": "Llandegla",
       "postcode": "LL11 3AD",
@@ -111,6 +147,15 @@
       "venue_id": "v-266abb0a-a295-51bf-a246-e258c7af258a"
     },
     {
+      "binding_signature": "169a7aaf4af40bc2660188cfee65aa426e1e896e91b4e6b4e2f9992640150321",
+      "place_name": "Norwich",
+      "postcode": "NR2 4NA",
+      "pub_name": "Fat Cat",
+      "reason": "Google results are incomplete or ambiguous; no unique place accepted",
+      "status": "review_needed",
+      "venue_id": "v-282b4121-c19d-51ad-bb24-ee3aa2de5f0d"
+    },
+    {
       "binding_signature": "ff0f79d7d3ee6da28ff3dfbd45d8409fe8b0cd75f57ba71eb0cff634b887b695",
       "place_name": "Brading",
       "postcode": "PO36 0DQ",
@@ -118,6 +163,15 @@
       "reason": "Google indicates a possible closure; trading status needs review",
       "status": "review_needed",
       "venue_id": "v-29ccd3db-ade7-5997-a028-2726603f1580"
+    },
+    {
+      "binding_signature": "d6879fcc6839ea8f4efe17f27c2370c94c7a2e67119df0e175e9fa1ef03d53d7",
+      "place_name": "Kilburn",
+      "postcode": "DE56 0LU",
+      "pub_name": "Hunters Arms",
+      "reason": "Google results are incomplete or ambiguous; no unique place accepted",
+      "status": "review_needed",
+      "venue_id": "v-2aef880b-a959-5ffb-83cc-e930ecc4b567"
     },
     {
       "binding_signature": "92e7d94c5aebb230bd83e7d688d383e3b393a79e74f4537f1f8efe3ef4469823",
@@ -165,6 +219,15 @@
       "venue_id": "v-3d45b887-884b-518b-b14f-3343d73e77f0"
     },
     {
+      "binding_signature": "a7314e89e981b647d1d5a33cc4a7f9f060354a1d0ff980167c50d3ad30c895df",
+      "place_name": "Sutton Bonington",
+      "postcode": "LE12 5PE",
+      "pub_name": "Kings Head",
+      "reason": "Google results are incomplete or ambiguous; no unique place accepted",
+      "status": "review_needed",
+      "venue_id": "v-440ca4d2-973b-5646-9501-536f739eb035"
+    },
+    {
       "binding_signature": "6ddcb21d64ed460ba95e9582bda0d5d332fa5408d909edad6c63047aca88700e",
       "place_name": "Sleaford",
       "postcode": "NG34 7JP",
@@ -199,6 +262,15 @@
       "reason": "Google named-place marker differs by more than 50 metres; existing pin retained for review",
       "status": "review_needed",
       "venue_id": "v-4ad99162-ec0b-5942-9dd9-ffcfc7d58c55"
+    },
+    {
+      "binding_signature": "46c0fa86596bd276b599f6660f7d4ffe1c164772030e36b2fa546dd3d30e46f3",
+      "place_name": "Wragby",
+      "postcode": "LN8 5QU",
+      "pub_name": "Ivy",
+      "reason": "Google results are incomplete or ambiguous; no unique place accepted",
+      "status": "review_needed",
+      "venue_id": "v-4fdbbe30-ceca-579f-be80-35ec84942cdf"
     },
     {
       "binding_signature": "d024a612d86f1beed238be60c189da39f2e463d2181fcc941699a85c3309660a",
@@ -325,6 +397,33 @@
       "reason": "Google named-place marker differs by more than 50 metres; existing pin retained for review",
       "status": "review_needed",
       "venue_id": "v-6d80852f-ae91-5cd5-b2f0-5d93e9943bb2"
+    },
+    {
+      "binding_signature": "aaf4524e9ae4e6cebb7dbd7e3f1b229236cc0e4590edd4482a0b1d303adc9127",
+      "place_name": "Cambridge",
+      "postcode": "CB1 2NU",
+      "pub_name": "Kingston Arms",
+      "reason": "Google results are incomplete or ambiguous; no unique place accepted",
+      "status": "review_needed",
+      "venue_id": "v-6f596460-a688-5196-acb3-b4fdc1f6f6cd"
+    },
+    {
+      "binding_signature": "0efbbedb22df0e0fe577226415968755c49c944be4f6a5df2cb5d2eebf6d7ab4",
+      "place_name": "North Weald",
+      "postcode": "CM16 6BU",
+      "pub_name": "Kings Head",
+      "reason": "Google indicates a possible closure; trading status needs review",
+      "status": "review_needed",
+      "venue_id": "v-71fc939a-ab26-5da5-a03b-420f0b9dfcc9"
+    },
+    {
+      "binding_signature": "813b527f08f8222936217e20191e0e38e707f7a03fded31f3b2ee04b4687627e",
+      "place_name": "Hay on Wye",
+      "postcode": "HR3 5AG",
+      "pub_name": "Kilverts",
+      "reason": "Google results are incomplete or ambiguous; no unique place accepted",
+      "status": "review_needed",
+      "venue_id": "v-72ccc6ea-0b34-5d9c-a77b-32fbea62b16e"
     },
     {
       "binding_signature": "3e50d8e9b1a3d7ee4f03364d7fc180bc7be11ff4b0e98320f2ad9930527328a9",
@@ -469,6 +568,15 @@
       "reason": "Google results are incomplete or ambiguous; no unique place accepted",
       "status": "review_needed",
       "venue_id": "v-a8485c5d-3d4a-57e4-ac77-6e1235d3eeb1"
+    },
+    {
+      "binding_signature": "5ae0763748f2157bcb6d1adce7cc5052c208937d00ce4c64b0bf5620cf73a828",
+      "place_name": "Kings Newton",
+      "postcode": "DE73 8BX",
+      "pub_name": "Hardinge Arms",
+      "reason": "Google results are incomplete or ambiguous; no unique place accepted",
+      "status": "review_needed",
+      "venue_id": "v-a931934c-04a6-5c62-9e77-c493603da229"
     },
     {
       "binding_signature": "12e33f631727a454cfbfe3e266dbbe1d34aca286efd4bd2a7b6f74b1408f6b2b",
@@ -682,8 +790,11 @@
   "issues": [],
   "provider": "hermes-browser",
   "run_attempt": 1,
-  "run_id": "d26153e570664aab9e3dbec41a35ea41",
-  "run_url": "",
+  "run_id": "d0f1a2baf4594ea287d74846ad7dc002",
   "schema_version": 1,
-  "source_execution_finished_at": "2026-11-10T20:54:44.766526+00:00"
+  "source_commit": "3b65735f724769f997b08dbc61a3f891093388d7",
+  "source_execution_finished_at": "2026-11-12T07:44:33.732790+00:00",
+  "source_release_id": "50302dd439eb42127272f81b8f42a336eaa0f1b405db8ed13e24dcc1997ea052",
+  "source_status_sha256": "915748d058e966794af014eef4b4b1459a93e0142fc34eaf6bd73a157b579181",
+  "validated_release_id": "50302dd439eb42127272f81b8f42a336eaa0f1b405db8ed13e24dcc1997ea052"
 }

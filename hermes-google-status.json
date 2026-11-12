@@ -1,19 +1,19 @@
 {
   "batch": {
-    "ambiguous": 6,
+    "ambiguous": 2,
     "attempted": 45,
     "checked": 45,
     "selected": 45,
     "unavailable": 0
   },
-  "checked_at": "2026-11-12T07:44:33.411709+00:00",
+  "checked_at": "2026-11-12T13:36:07.467186+00:00",
   "configured": true,
   "counts": {
     "attempted_venue_count": 1087,
     "checked_this_run": 45,
     "current": 1087,
     "retained_unavailable": 1,
-    "review_count": 85,
+    "review_count": 87,
     "total": 1087,
     "unchecked_or_stale": 0
   },
@@ -172,6 +172,15 @@
       "reason": "Google results are incomplete or ambiguous; no unique place accepted",
       "status": "review_needed",
       "venue_id": "v-2aef880b-a959-5ffb-83cc-e930ecc4b567"
+    },
+    {
+      "binding_signature": "6e0ff1e53a1a8eecd6d015ea586b9c5121c34e53a4a3cdedd33a2c98c69d6c6a",
+      "place_name": "Barton-under-Needwood",
+      "postcode": "DE13 8AA",
+      "pub_name": "Middle Bell",
+      "reason": "Google results are incomplete or ambiguous; no unique place accepted",
+      "status": "review_needed",
+      "venue_id": "v-2dcd6fcc-9d91-5181-b91c-7be8dbc2e64c"
     },
     {
       "binding_signature": "92e7d94c5aebb230bd83e7d688d383e3b393a79e74f4537f1f8efe3ef4469823",
@@ -516,6 +525,15 @@
       "venue_id": "v-92de2df6-e97e-5ce0-a462-5ca74b066b2e"
     },
     {
+      "binding_signature": "0020c17312027e1bd813efb9beb13acef5c7fa305ed7c04d5774b5aa94b37784",
+      "place_name": "Hulme End",
+      "postcode": "SK17 0EX",
+      "pub_name": "Manifold Inn",
+      "reason": "Google results are incomplete or ambiguous; no unique place accepted",
+      "status": "review_needed",
+      "venue_id": "v-93cef072-fe89-5716-82cc-0382b3448476"
+    },
+    {
       "binding_signature": "8a420fb98348bedf3562ea492f2be8160bba84b62251d0d5f7036d1a490799f0",
       "place_name": "Consett",
       "postcode": "DH8 6NF",
@@ -790,11 +808,11 @@
   "issues": [],
   "provider": "hermes-browser",
   "run_attempt": 1,
-  "run_id": "d0f1a2baf4594ea287d74846ad7dc002",
+  "run_id": "6a192081381a4f57a852fad90bdbc539",
   "schema_version": 1,
-  "source_commit": "3b65735f724769f997b08dbc61a3f891093388d7",
-  "source_execution_finished_at": "2026-11-12T07:44:33.732790+00:00",
+  "source_commit": "62eb3806b938e404b7c87385f504c5cad567d4f7",
+  "source_execution_finished_at": "2026-11-12T13:36:07.821397+00:00",
   "source_release_id": "50302dd439eb42127272f81b8f42a336eaa0f1b405db8ed13e24dcc1997ea052",
-  "source_status_sha256": "915748d058e966794af014eef4b4b1459a93e0142fc34eaf6bd73a157b579181",
-  "validated_release_id": "50302dd439eb42127272f81b8f42a336eaa0f1b405db8ed13e24dcc1997ea052"
+  "source_status_sha256": "dbe5ee3b382a5bf9dd043d1d94de2eb6a32eb98d9dbb75e704251baa680847f5",
+  "validated_release_id": "b020a82256a711d7c43d139878678c87e5d641f3586d526f5cf2757cda406cd8"
 }

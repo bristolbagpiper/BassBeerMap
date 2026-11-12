@@ -218,17 +218,26 @@ def _read_execution(state_dir):
     return last_run_snapshot, execution, started, finished
 
 
+def git_executable():
+    if os.name == 'nt' and os.environ.get('LOCALAPPDATA'):
+        bundled = Path(os.environ['LOCALAPPDATA'], 'hermes', 'git', 'cmd', 'git.exe')
+        if bundled.is_file():
+            return str(bundled)
+    return 'git'
+
+
 def _git_object_json(repository, commit, relative, *, required=False):
     """Read one exact commit object without changing the repository checkout."""
     repository = Path(repository).resolve()
     object_name = f'{commit}:{relative}'
-    exists = subprocess.run(['git', 'cat-file', '-e', object_name], cwd=repository,
+    git = git_executable()
+    exists = subprocess.run([git, 'cat-file', '-e', object_name], cwd=repository,
                             stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL, check=False)
     if exists.returncode != 0:
         if required:
             raise ValueError(f'Requested commit is unavailable locally: {relative}')
         return None
-    result = subprocess.run(['git', 'show', object_name], cwd=repository,
+    result = subprocess.run([git, 'show', object_name], cwd=repository,
                             stdout=subprocess.PIPE, stderr=subprocess.DEVNULL, check=False)
     if result.returncode != 0 or len(result.stdout) > 24_000_000:
         raise ValueError(f'Could not read bounded Git object: {relative}')

@@ -46,7 +46,7 @@ def install(repo, revision, state, launcher):
             'import sys\n'
             f'sys.path.insert(0, {str(app)!r})\n'
             'from hermes_google_runner import main\n'
-            'main()\n')
+            'raise SystemExit(main())\n')
     with tempfile.NamedTemporaryFile('w', encoding='utf-8', dir=launcher.parent, delete=False) as handle:
         handle.write(code)
         staged_launcher = Path(handle.name)

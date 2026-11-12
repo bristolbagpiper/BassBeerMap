@@ -153,14 +153,29 @@ def execute(state_dir=DEFAULT_STATE, limit=45, venue_ids=(), fetch=True, browser
     return execution
 
 
-def main():
+def main(argv=None):
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument('--state-dir', type=Path, default=DEFAULT_STATE)
     parser.add_argument('--limit', type=int, default=45)
     parser.add_argument('--venue-id', action='append', default=[])
-    args = parser.parse_args()
-    print(json.dumps(execute(args.state_dir, args.limit, args.venue_id)))
+    mode = parser.add_mutually_exclusive_group()
+    mode.add_argument('--publish-only', action='store_true', help='Retry the saved execution without a browser run')
+    mode.add_argument('--local-only', action='store_true', help='Save local diagnostics without publishing')
+    args = parser.parse_args(argv)
+
+    execution = {} if args.publish_only else execute(args.state_dir, args.limit, args.venue_id)
+    output = dict(execution)
+    publication_ok = True
+    if not args.local_only:
+        # Publication reads the finished receipt after execute releases the runner lock.
+        from hermes_google_handoff import publish_latest
+
+        publication = publish_latest(args.state_dir, expected_execution_id=execution.get('execution_id'))
+        output['publication'] = publication
+        publication_ok = publication['state'] in ('published', 'unchanged', 'review_pending')
+    print(json.dumps(output))
+    return int(not publication_ok or (bool(execution) and execution['state'] != 'complete'))
 
 
 if __name__ == '__main__':
-    main()
+    raise SystemExit(main())

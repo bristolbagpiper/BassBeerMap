@@ -114,20 +114,27 @@ and switches the launcher after validation. The previous version stays available
 for rollback through the same command.
 
 Read `last-run.json` for the fetched data commit, installed code commit, batch
-outcome and local report hash. The authenticated Codex handoff stages the
-current GitHub release and registry at a single `main` commit, then prepares a
-filtered report with `hermes_google_publish.py`. It checks the execution receipt
-and rebuilds findings for the current identities and pins. The handoff updates
-only `hermes-google-status.json`, with an expected parent commit. If the parent
-moves, stage the new release and rebuild the candidate before retrying.
+outcome and local report hash. After the browser finishes, the same native job
+uses `hermes_google_publish.py` to rebuild the filtered report against the
+current GitHub release. It publishes only `hermes-google-status.json`. The push
+requires the exact expected parent. If `main` advances, the publisher checks
+the new release and rebuilds the report before retrying.
 
-Publish a new execution only after checking its timestamp against the current
-committed report. A repeated execution with an identical directory binding
-needs only a review readback. Confirm that GitHub ran `Location review
-notifications` for the new commit and consumed the expected Google execution.
-The workflow also supports dispatch for a specific report ID. The publication
-receipt records both the report commit and the review run. GitHub records SMTP
-acceptance separately and suppresses unchanged consolidated findings.
+The publisher uses a BassBeerMap-only SSH deploy key. The private key and pinned
+GitHub host configuration are stored under `publication-ssh` in the local
+state directory with Windows permissions restricted to the scheduled account.
+`publication-auth.json` refers to the SSH configuration and contains no key
+material. `publication-repo.git` caches the public Git objects used for validation.
+
+`publication-attempt.json` records the last attempt, including a safe failure
+reason. `publication-receipt.json` records the verified push and any observed
+GitHub review run. Run the installed launcher with `--publish-only` to retry a
+saved execution without making another set of browser requests. Repeated
+evidence is published only when the bindings, findings or coverage change or
+the GitHub report needs a freshness update. GitHub suppresses unchanged email
+and records SMTP acceptance separately. Its own daily validation flags an
+absent report or a browser execution older than 48 hours, even if the Windows
+host has stopped running.
 
 Keep the local observation journal and source URLs outside Git. The handoff
 publishes directory fields, derived review reasons and binding metadata.

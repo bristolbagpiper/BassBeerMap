@@ -36,7 +36,7 @@ coordinates retain the movement and identity protections.
 ## Recurring jobs
 
 - **Daily map validation** checks up to 45 rotating sources at 06:47 UTC. It checks the committed assets and live release, refreshes confirmed evidence and quarantines source conflicts under the existing policy.
-- **Hermes Google browser checks** run at 07:40 Europe/London. The Windows job saves its results locally, and the authenticated handoff feeds the filtered report into the same GitHub review as the directory and coordinate checks.
+- **Hermes Google browser checks** run at 07:40 Europe/London. The native Windows job saves its results locally and publishes a filtered report to the same GitHub review as the directory and coordinate checks. The GitHub-hosted daily review flags an absent or stale handoff.
 - **Independent location audit** checks up to 45 FSA comparisons at 04:17 UTC. Oldest checks take precedence, so persistent conflicts do not starve the rotation.
 - A complete independent audit can also be started with the workflow's `full` option.
 - Changed actionable postcode/source conflicts, source outages and failed jobs use the existing review issue and SMTP notification pipeline. Unchanged issues stay quiet. Nearby and missing-name results remain visible in the full report for manual review.

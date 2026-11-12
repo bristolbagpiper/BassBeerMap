@@ -1,5 +1,7 @@
 import copy
 import hashlib
+from io import StringIO
+import json
 import os
 from pathlib import Path
 import tempfile
@@ -7,7 +9,7 @@ import unittest
 from unittest.mock import patch
 
 from directory_release import read_json
-from hermes_google_runner import atomic_json, execute, fetch_inputs, validate_inputs
+from hermes_google_runner import atomic_json, execute, fetch_inputs, main, validate_inputs
 
 ROOT = Path(__file__).resolve().parents[1]
 
@@ -99,6 +101,27 @@ class HermesRunnerTests(unittest.TestCase):
             self.assertFalse((state / 'notification-state.json').exists())
             self.assertEqual(status['counts']['checked_this_run'], 1)
             self.assertEqual(status['batch']['unavailable'], 1)
+
+    def test_default_job_hands_off_the_exact_execution_after_local_checks(self):
+        execution = {'state': 'complete', 'execution_id': '1' * 32}
+        with tempfile.TemporaryDirectory() as temp, patch('hermes_google_runner.execute', return_value=execution) as run:
+            def publish(state, expected_execution_id):
+                run.assert_called_once_with(Path(temp), 45, [])
+                self.assertEqual(state, Path(temp))
+                self.assertEqual(expected_execution_id, execution['execution_id'])
+                return {'state': 'published'}
+
+            with patch('hermes_google_handoff.publish_latest', side_effect=publish), patch('sys.stdout', new_callable=StringIO) as output:
+                self.assertEqual(main(['--state-dir', temp]), 0)
+                self.assertEqual(json.loads(output.getvalue())['publication'], {'state': 'published'})
+
+    def test_publish_only_retries_without_running_the_browser(self):
+        with tempfile.TemporaryDirectory() as temp, patch('hermes_google_runner.execute') as run:
+            with patch('hermes_google_handoff.publish_latest', return_value={'state': 'blocked'}) as publish:
+                with patch('sys.stdout', new_callable=StringIO):
+                    self.assertEqual(main(['--state-dir', temp, '--publish-only']), 1)
+            run.assert_not_called()
+            publish.assert_called_once_with(Path(temp), expected_execution_id=None)
 
 
 if __name__ == '__main__':

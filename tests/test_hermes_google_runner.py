@@ -149,7 +149,7 @@ class HermesRunnerTests(unittest.TestCase):
                     with patch('hermes_google_runner.read_json', side_effect=[{'commit': '2' * 40}, saved]):
                         self.assertEqual(run_production(temp, 'jobs.json', 'launcher'), expected)
             execute_batch.assert_called_with(Path(temp))
-            publish.assert_called_with(Path(temp), expected_execution_id=state['execution_id'])
+            publish.assert_called_with(Path(temp), expected_execution_id=state['execution_id'], force_publish=True)
 
     def test_installation_checks_live_scheduler_target_and_launcher(self):
         with tempfile.TemporaryDirectory() as temp:

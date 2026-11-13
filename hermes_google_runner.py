@@ -177,7 +177,7 @@ def run_production(state_dir, jobs_file, launcher):
     from hermes_google_handoff import publish_latest
 
     execution = execute(state_dir)
-    publication = publish_latest(state_dir, expected_execution_id=execution['execution_id'])
+    publication = publish_latest(state_dir, expected_execution_id=execution['execution_id'], force_publish=True)
     output.update(execution, publication=publication)
     attempt = read_json(state_dir / 'publication-attempt.json', {})
     commit = publication.get('published_commit')

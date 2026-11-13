@@ -470,7 +470,7 @@ def _report_commit(git, cache, parent, env):
     return output
 
 
-def _run_locked(state_dir, expected_execution_id, cache, *, now,
+def _run_locked(state_dir, expected_execution_id, cache, *, now, force_publish=False,
                 actions_lookup, actions_wait_seconds, deadline):
     receipt = _receipt(state_dir)
     execution = _read_json(Path(state_dir) / 'last-run.json')
@@ -517,7 +517,7 @@ def _run_locked(state_dir, expected_execution_id, cache, *, now,
                     raise HandoffError('compare_remote', 'same_run_content_mismatch')
                 return {'state': 'unchanged', 'execution_id': candidate['run_id'],
                         'published_commit': _report_commit(git, cache, parent, env)}
-            if (same_meaning and _fresh_existing(existing, _utc_now())
+            if (not force_publish and same_meaning and _fresh_existing(existing, _utc_now())
                     and receipt.get('transport') == 'native-ssh'):
                 return {'state': 'unchanged', 'execution_id': candidate['run_id'],
                         'published_commit': _report_commit(git, cache, parent, env)}
@@ -574,7 +574,7 @@ def _run_locked(state_dir, expected_execution_id, cache, *, now,
     raise HandoffError('push_with_lease', 'push_failed')
 
 
-def publish_latest(state_dir, expected_execution_id=None, *, repository=None,
+def publish_latest(state_dir, expected_execution_id=None, *, repository=None, force_publish=False,
                    now=None, actions_lookup=None, actions_wait_seconds=20):
     """Publish the latest complete local run; return a compact safe outcome."""
     state_dir = Path(state_dir).resolve()
@@ -598,6 +598,7 @@ def publish_latest(state_dir, expected_execution_id=None, *, repository=None,
                 raise HandoffError('validate_local_run', 'execution_mismatch')
             lookup = actions_lookup or _latest_action_run
             result = _run_locked(state_dir, expected_execution_id, cache, now=started,
+                                 force_publish=force_publish,
                                  actions_lookup=lookup,
                                  actions_wait_seconds=actions_wait_seconds, deadline=deadline)
             _attempt(state_dir, execution_id, result['state'], state=result['state'], now=_utc_now(),

@@ -1,7 +1,9 @@
+import hashlib
 import json
 import subprocess
 import tempfile
 import unittest
+from datetime import datetime, timedelta, timezone
 from pathlib import Path
 from unittest.mock import patch
 
@@ -56,17 +58,44 @@ class HermesGoogleHandoffTests(unittest.TestCase):
         self.addCleanup(runtime.cleanup)
         return state_dir, remote
 
-    def call_publish(self, state_dir, remote, *, lookup=None):
+    def call_publish(self, state_dir, remote, *, lookup=None, force_publish=False):
         with patch.object(handoff, 'PUBLIC_ORIGIN', str(remote)), \
              patch.object(handoff, 'PUSH_URL', str(remote)), \
              patch.object(handoff, '_load_auth', return_value={
                  'push_url': str(remote), 'ssh_command': None,
              }):
             return handoff.publish_latest(
-                state_dir, actions_lookup=lookup or (lambda sha: {
+                state_dir, force_publish=force_publish, actions_lookup=lookup or (lambda sha: {
                     'id': 7, 'url': 'https://github.com/example/run/7',
                     'status': 'queued', 'conclusion': None,
                 }), actions_wait_seconds=0)
+
+    def make_fresh_run(self, state_dir, execution_id, finished):
+        from hermes_google_review import build_status
+
+        execution_path = state_dir / 'last-run.json'
+        execution = json.loads(execution_path.read_text(encoding='utf-8'))
+        started = finished - timedelta(minutes=3)
+        checked = finished - timedelta(minutes=2)
+        attempted = finished - timedelta(minutes=2, seconds=30)
+        observations_path = state_dir / 'observations.json'
+        observations = json.loads(observations_path.read_text(encoding='utf-8'))
+        observations['observations'][0]['attempted_at'] = attempted.isoformat().replace('+00:00', 'Z')
+        observations['observations'][0]['checked_at'] = checked.isoformat().replace('+00:00', 'Z')
+        write_exact_json(observations_path, observations)
+        batch = execution['batch']
+        status = build_status(state_dir / 'data', observations, now=checked, batch=batch)
+        status.update(provider='hermes-browser', run_id=execution_id, run_attempt=1, run_url='',
+                      batch=batch, source_execution_finished_at=finished.isoformat().replace('+00:00', 'Z'))
+        status_path = state_dir / 'hermes-google-status.json'
+        write_exact_json(status_path, status)
+        execution.update(execution_id=execution_id,
+                         started_at=started.isoformat().replace('+00:00', 'Z'),
+                         finished_at=finished.isoformat().replace('+00:00', 'Z'),
+                         observations_sha256=hashlib.sha256(observations_path.read_bytes()).hexdigest(),
+                         observations_written=batch['attempted'],
+                         status_sha256=hashlib.sha256(status_path.read_bytes()).hexdigest())
+        write_exact_json(execution_path, execution)
 
     def test_publishes_only_status_and_receipt_tracks_actual_commit(self):
         state_dir, remote = self.make_case()
@@ -90,6 +119,35 @@ class HermesGoogleHandoffTests(unittest.TestCase):
         self.assertEqual(second['state'], 'unchanged')
         self.assertEqual(receipt_path.read_bytes(), before)
         self.assertEqual(first['published_commit'], second['published_commit'])
+
+    def test_scheduler_force_refresh_publishes_distinct_run_with_same_content(self):
+        first_state, remote = self.make_case()
+        now = datetime.now(timezone.utc).replace(microsecond=0)
+        self.make_fresh_run(first_state, 'c' * 32, now - timedelta(minutes=1))
+        first = self.call_publish(first_state, remote)
+        self.assertEqual(first['state'], 'published')
+        first_status = json.loads(git(['show', 'main:hermes-google-status.json'], remote))
+
+        second_state, _ = self.make_case()
+        second_id = 'd' * 32
+        self.make_fresh_run(second_state, second_id, now)
+        second_execution = json.loads((second_state / 'last-run.json').read_text(encoding='utf-8'))
+        self.assertNotEqual(first['execution_id'], second_execution['execution_id'])
+        write_exact_json(second_state / 'publication-receipt.json',
+                         json.loads((first_state / 'publication-receipt.json').read_text(encoding='utf-8')))
+
+        ordinary = self.call_publish(second_state, remote)
+        self.assertEqual(ordinary['state'], 'unchanged', ordinary)
+        self.assertEqual(ordinary['execution_id'], second_execution['execution_id'])
+        still_old = json.loads(git(['show', 'main:hermes-google-status.json'], remote))
+        self.assertEqual(still_old['run_id'], first_status['run_id'])
+
+        refreshed = self.call_publish(second_state, remote, force_publish=True)
+        self.assertEqual(refreshed['state'], 'published')
+        self.assertEqual(refreshed['execution_id'], second_execution['execution_id'])
+        current = json.loads(git(['show', 'main:hermes-google-status.json'], remote))
+        self.assertEqual(current['run_id'], second_execution['execution_id'])
+        self.assertNotEqual(refreshed['published_commit'], first['published_commit'])
 
     def test_blocked_run_publishes_diagnostic_only_snapshot(self):
         state_dir, remote = self.make_case('blocked')

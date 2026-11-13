@@ -70,10 +70,11 @@ def build_review(rows, registry, ledger):
         trading = entry.get('trading_status_review') or {}
         trading_snapshot = {key: trading.get(key) for key in ('status', 'reason', 'evidence')}
         acknowledged = entry.get('acknowledged_trading_review') or {}
-        if trading.get('status') == 'needs_review' and acknowledged.get('snapshot') != trading_snapshot:
+        trading_acknowledged = acknowledged.get('snapshot') == trading_snapshot
+        if trading.get('status') == 'needs_review' and not trading_acknowledged:
             reasons.append('Trading status needs review: ' + trading.get('reason', 'conflicting opening or closure information'))
         active = bool(reasons)
-        if not active and identifier not in records:
+        if not active and not trading_acknowledged and identifier not in records:
             continue
         previous = records.get(identifier, {})
         history = previous.get('history', [])
@@ -94,6 +95,8 @@ def build_review(rows, registry, ledger):
         records[identifier].update(classify_review(records[identifier]))
         if trading:
             records[identifier]['trading_status_review'] = copy.deepcopy(trading)
+        if trading_acknowledged and acknowledged.get('google_finding'):
+            records[identifier]['acknowledged_google_trading_finding'] = copy.deepcopy(acknowledged['google_finding'])
     active_ids = {row['venue_id'] for row in rows}
     for identifier, record in records.items():
         if identifier not in active_ids and record.get('status') != 'removed':
@@ -255,6 +258,10 @@ def with_google(report, status, current_bundle=None, now=None):
         row_and_signature = current.get(finding['venue_id'])
         if row_and_signature is None or finding['binding_signature'] != row_and_signature[1]:
             issues.add(GOOGLE_COVERAGE_ISSUE)
+            continue
+        acknowledged = report.get('records', {}).get(finding['venue_id'], {}).get('acknowledged_google_trading_finding')
+        if (acknowledged and google_finding_assessment(finding)['review_category'] == 'trading_check'
+                and acknowledged == {key: finding.get(key) for key in ('binding_signature', 'status', 'reason', 'business_status')}):
             continue
         row = row_and_signature[0]
         finding = {field: finding[field] for field in fields}

@@ -98,6 +98,24 @@ class GoogleComparisonsTests(unittest.TestCase):
         self.assertEqual(status['findings'], [])
         self.assertEqual(source['directory_binding_signature'], status['directory_binding_signature'])
 
+    def test_acknowledged_google_closure_is_scoped_to_matching_finding(self):
+        closure = self.finding()
+        closure['reason'] = 'Google indicates a possible closure; trading status needs review'
+        acknowledgement = {key: closure.get(key) for key in ('binding_signature', 'status', 'reason', 'business_status')}
+        report = dict(records={closure['venue_id']: dict(acknowledged_google_trading_finding=acknowledgement)})
+        other = self.finding(self.bundle['rows'][1])
+        status = self.source_status(findings=[closure, other])
+        attached = with_google(report, status, self.bundle, now=NOW)
+        self.assertEqual([finding['venue_id'] for finding in attached['google_findings']], [other['venue_id']])
+        for updated in (
+            dict(closure, business_status='CLOSED_PERMANENTLY'),
+            dict(closure, reason=closure['reason'] + '; Google named-place marker differs by more than 50 metres'),
+        ):
+            with self.subTest(updated=updated):
+                status['findings'] = [updated, other]
+                attached = with_google(report, status, self.bundle, now=NOW)
+                self.assertEqual(attached['google_actionable_count'], 2)
+
     def test_unknown_configuration_keeps_api_default_for_back_compatibility(self):
         (self.root / 'google-review-provider.json').unlink()
         expected = dict(schema_version=1, configured=False, checked_at=NOW.isoformat(), issues=[],

@@ -107,7 +107,59 @@
       "reviewed_by": "bristolbagpiper",
       "checked_at": "2026-10-31",
       "owner_instruction": "Close review, keep public closure warning and follow-up discrepancy"
+    },
+    {
+      "venue_id": "v-c62f31b0-c5b0-546c-979e-12fac920a47a",
+      "snapshot": {
+        "status": "needs_review",
+        "reason": "CAMRA reports temporary closure; reopening has not been verified",
+        "evidence": [
+          {
+            "checked_at": "2026-11-02",
+            "claim": "CAMRA reports temporarily closed since 2 July 2026 with reopening expected by 7 November 2026; actual reopening unverified",
+            "url": "https://camra.org.uk/pubs/180027"
+          },
+          {
+            "checked_at": "2026-11-03",
+            "claim": "Live CAMRA page checked 3 November: temporarily closed since 2 July 2026; expected reopen on/before 7 November 2026. No reopening confirmation found.",
+            "url": "https://camra.org.uk/pubs/180027"
+          }
+        ]
+      },
+      "google_finding": {
+        "binding_signature": "8e2f8c0b360c82704114c7cee969521d8672b1c40e8133f716ec93f74ffb770c",
+        "status": "review_needed",
+        "reason": "Google indicates a possible closure; trading status needs review",
+        "business_status": null
+      },
+      "reviewed_by": "bristolbagpiper",
+      "checked_at": "2026-11-13",
+      "owner_instruction": "Close the map review. CAMRA records the November reopening and lists Draught Bass as a regular beer.",
+      "source_url": "https://camra.org.uk/pubs/180027"
+    },
+    {
+      "venue_id": "v-009a7c6e-3950-55bb-8a3c-eaf89ba0737e",
+      "snapshot": {
+        "status": "needs_review",
+        "reason": "Google Maps indicated a possible closure before the pin correction",
+        "evidence": [
+          {
+            "checked_at": "2026-11-03T17:18:57Z",
+            "claim": "Trading status remains unverified after correcting the pin",
+            "url": "https://github.com/bristolbagpiper/BassBeerMap/blob/4a6edbfdd9e5ca26762e15bfdd9eb5552071e535/hermes-google-status.json"
+          }
+        ]
+      },
+      "google_finding": {
+        "binding_signature": "eb6677d18e8e55f842c81147bf193219a1a944543e276e9074ad0fc609900240",
+        "status": "review_needed",
+        "reason": "Google indicates a possible closure; trading status needs review",
+        "business_status": null
+      },
+      "reviewed_by": "bristolbagpiper",
+      "checked_at": "2026-11-13",
+      "owner_instruction": "Close the current map review at the owner’s request. The operator lists a 19 November reopening after refurbishment.",
+      "source_url": "https://www.sizzlingpubs.co.uk/findapub/northeast/thedickturpinclayton/"
     }
   ]
 }
-

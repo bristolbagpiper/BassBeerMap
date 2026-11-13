@@ -1,7 +1,7 @@
 import json
 import tempfile
 import unittest
-from datetime import datetime
+from datetime import datetime, timezone
 from pathlib import Path
 from unittest.mock import patch
 
@@ -151,6 +151,22 @@ class HermesGoogleBrowserTests(unittest.TestCase):
         self.assertEqual([x['venue_id'] for x in selected[1:3]],
                          [queue[1]['venue_id'], queue[2]['venue_id']])  # equal timestamp
         self.assertEqual(selected[3]['venue_id'], queue[0]['venue_id'])
+
+    def test_due_closures_rechecked_without_displacing_ordinary_rotation(self):
+        queue = self.queue[:5]
+        now = datetime(2026, 11, 13, 8, tzinfo=timezone.utc)
+        prior = {'observations': [
+            dict(queue[0], attempted_at='2026-11-10T07:40:00Z', category='trading_conflict'),
+            dict(queue[0], attempted_at='2026-11-10T07:40:00Z', category='pin_conflict'),
+            dict(queue[0], attempted_at='2026-11-10T07:41:00Z', category='unavailable'),
+            dict(queue[1], attempted_at='2026-11-09T08:00:00Z', category='trading_conflict'),
+            dict(queue[1], attempted_at='2026-11-10T08:00:00Z', category='identity_and_pin_consistent'),
+            dict(queue[2], attempted_at='2026-11-12T08:00:00Z', category='trading_conflict'),
+            dict(queue[3], attempted_at='2026-11-09T08:00:00Z', category='trading_conflict',
+                 binding_signature='old binding'),
+        ]}
+        self.assertEqual(_rotated(queue, prior, 2, now=now), [queue[0], queue[3]])
+        self.assertEqual(_rotated(queue, prior, 1, now=now), [queue[3]])
 
     def test_only_active_evidence_names_and_postcodes_are_retained(self):
         entry = {'verified_pin': {'evidence': [

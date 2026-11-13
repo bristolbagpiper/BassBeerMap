@@ -86,6 +86,9 @@ GitHub validates the derived report against its current directory and sends
 the consolidated alert through `Location review notifications`.
 Hermes compares the visible named business, full postcode and actual place marker
 with the saved pin. It rotates the oldest exact-bound attempts, up to 45 per run.
+Up to five slots go to outstanding closure flags due for a follow-up after
+three days. A newer conclusive comparison without a closure flag returns the
+venue to the ordinary rotation.
 A marker more than 50 metres away, conflicting identity or possible closure is
 flagged separately for review. A failed browser or consent/CAPTCHA block stops
 the batch and leaves untouched venues unchecked. It never bypasses challenges.

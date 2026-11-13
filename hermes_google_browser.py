@@ -15,7 +15,7 @@ import sys
 import tempfile
 import time
 import uuid
-from datetime import datetime, timezone
+from datetime import datetime, timedelta, timezone
 from pathlib import Path
 from urllib.parse import urlencode, urlparse
 
@@ -25,6 +25,8 @@ from directory_release import active_evidence, distance_metres, point_valid, rea
 from owner_location_review import primary_title
 
 MAX_BATCH = 45
+MAX_CLOSURE_RECHECKS = 5
+CLOSURE_RECHECK_INTERVAL = timedelta(days=3)
 PAGE_DEADLINE = 20
 TOTAL_DEADLINE = 20 * 60
 TRANSIENT_NAVIGATION_ERROR = re.compile(
@@ -354,20 +356,30 @@ def _validate_prior(root, document):
     return document
 
 
-def _rotated(queue, prior, limit):
-    """Oldest exact-bound attempts first; preserve risk order for timestamp ties."""
+def _rotated(queue, prior, limit, now=None):
+    """Recheck outstanding closures in a bounded share of the oldest-first batch."""
+    now = now or datetime.now(timezone.utc)
     attempted = {}
+    latest = {}
     current = {item['venue_id']: item for item in queue}
     for observation in prior['observations']:
         item = current.get(observation.get('venue_id'))
         if item and all(observation.get(field) == item[field] for field in
                         ('identity_signature', 'point_signature', 'binding_signature')):
+            identifier = item['venue_id']
             value = datetime.fromisoformat(observation['attempted_at'].replace('Z', '+00:00')).astimezone(timezone.utc)
-            previous = attempted.get(item['venue_id'])
-            if previous is None or value > previous:
-                attempted[item['venue_id']] = value
-    return [item for _, item in sorted(enumerate(queue),
-                                       key=lambda pair: (attempted.get(pair[1]['venue_id'], datetime.min.replace(tzinfo=timezone.utc)), pair[0]))[:limit]]
+            attempted[identifier] = max(attempted.get(identifier, value), value)
+            category = observation.get('category')
+            if category in CATEGORIES and category not in ('ambiguous', 'unavailable'):
+                closure = category == 'trading_conflict'
+                # A single visit can record both a marker discrepancy and a closure.
+                latest[identifier] = max(latest.get(identifier, (value, closure)), (value, closure))
+    oldest = sorted(queue, key=lambda item: attempted.get(item['venue_id'], datetime.min.replace(tzinfo=timezone.utc)))
+    due = [item for item in oldest if latest.get(item['venue_id'], (None, False))[1]
+           and now.date() - attempted[item['venue_id']].date() >= CLOSURE_RECHECK_INTERVAL]
+    followups = due[:min(MAX_CLOSURE_RECHECKS, limit // 2)]
+    selected = {item['venue_id'] for item in followups}
+    return (followups + [item for item in oldest if item['venue_id'] not in selected])[:limit]
 
 
 def run(root, receipts_path, limit=45, venue_ids=(), debug=False, browser=None, cleanup=None,

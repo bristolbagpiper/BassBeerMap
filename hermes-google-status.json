@@ -1,19 +1,19 @@
 {
   "batch": {
-    "ambiguous": 1,
+    "ambiguous": 2,
     "attempted": 45,
     "checked": 45,
     "selected": 45,
     "unavailable": 0
   },
-  "checked_at": "2026-11-13T20:14:25.412476+00:00",
+  "checked_at": "2026-11-13T21:32:36.975074+00:00",
   "configured": true,
   "counts": {
     "attempted_venue_count": 1087,
     "checked_this_run": 45,
     "current": 1087,
     "retained_unavailable": 1,
-    "review_count": 87,
+    "review_count": 89,
     "total": 1087,
     "unchecked_or_stale": 0
   },
@@ -381,6 +381,15 @@
       "venue_id": "v-68fdd6da-3328-5d9a-9b1c-91e7f0444b97"
     },
     {
+      "binding_signature": "ddb13b591dc58f312bdabac09756924fe55a179c363ab3c6cbbf40c6d9e1eb92",
+      "place_name": "Cromford",
+      "postcode": "DE4 3QF",
+      "pub_name": "Boat",
+      "reason": "Google results are incomplete or ambiguous; no unique place accepted",
+      "status": "review_needed",
+      "venue_id": "v-68fdd6da-3328-5d9a-9b1c-91e7f0444b97"
+    },
+    {
       "binding_signature": "d12e7be25d8588d5de4c081f4eeb25c3f80bf9c61f53359e2691201d5d5cbab4",
       "place_name": "Newbold",
       "postcode": "LE67 8HP",
@@ -548,6 +557,15 @@
       "postcode": "DE21 7JP",
       "pub_name": "Village/Conservative Club (PMC)",
       "reason": "Google indicates a possible closure; trading status needs review",
+      "status": "review_needed",
+      "venue_id": "v-99412060-4aa7-5602-85e3-0ddf38526a87"
+    },
+    {
+      "binding_signature": "ce3976e4b75c01f8b06afec0061ece0fe75b98f27c7db875c4a8d37cada733b5",
+      "place_name": "Derby: Spondon",
+      "postcode": "DE21 7JP",
+      "pub_name": "Village/Conservative Club (PMC)",
+      "reason": "Google results are incomplete or ambiguous; no unique place accepted",
       "status": "review_needed",
       "venue_id": "v-99412060-4aa7-5602-85e3-0ddf38526a87"
     },
@@ -808,11 +826,11 @@
   "issues": [],
   "provider": "hermes-browser",
   "run_attempt": 1,
-  "run_id": "dcd6793c249f48c49fa460095f5059ee",
+  "run_id": "cd8a08fd8a084263b3cbdb711d8c9b33",
   "schema_version": 1,
-  "source_commit": "6b952ad8b2aeb05c5827f7ef59b000837978508d",
-  "source_execution_finished_at": "2026-11-13T20:14:25.659044+00:00",
-  "source_release_id": "7f4e6c68a9272d0d6ef62beac2580cbbb78239838c5ca2e7da37da453336d966",
-  "source_status_sha256": "23ce99be44fc0f5aa132f6f89ab07ec4e38da03725c1bd3e938e5f646dac0cb6",
-  "validated_release_id": "7f4e6c68a9272d0d6ef62beac2580cbbb78239838c5ca2e7da37da453336d966"
+  "source_commit": "8e5e665adeef1c9920186f5e2b9ca50b2af36986",
+  "source_execution_finished_at": "2026-11-13T21:32:37.258757+00:00",
+  "source_release_id": "a0c99b3ec7a53efbc552bc316eb47ead13d58cd1640c15e99546c47928085e21",
+  "source_status_sha256": "0f32f23c1555e8957914c77028d65dab93cdd2e5e2481c0c3a1ddf2dc22f72c4",
+  "validated_release_id": "a0c99b3ec7a53efbc552bc316eb47ead13d58cd1640c15e99546c47928085e21"
 }

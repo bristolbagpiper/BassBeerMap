@@ -1,12 +1,12 @@
 {
   "batch": {
-    "ambiguous": 2,
+    "ambiguous": 1,
     "attempted": 45,
     "checked": 45,
     "selected": 45,
     "unavailable": 0
   },
-  "checked_at": "2026-11-12T13:36:07.467186+00:00",
+  "checked_at": "2026-11-13T20:14:25.412476+00:00",
   "configured": true,
   "counts": {
     "attempted_venue_count": 1087,
@@ -154,15 +154,6 @@
       "reason": "Google results are incomplete or ambiguous; no unique place accepted",
       "status": "review_needed",
       "venue_id": "v-282b4121-c19d-51ad-bb24-ee3aa2de5f0d"
-    },
-    {
-      "binding_signature": "ff0f79d7d3ee6da28ff3dfbd45d8409fe8b0cd75f57ba71eb0cff634b887b695",
-      "place_name": "Brading",
-      "postcode": "PO36 0DQ",
-      "pub_name": "Wheatsheaf",
-      "reason": "Google indicates a possible closure; trading status needs review",
-      "status": "review_needed",
-      "venue_id": "v-29ccd3db-ade7-5997-a028-2726603f1580"
     },
     {
       "binding_signature": "d6879fcc6839ea8f4efe17f27c2370c94c7a2e67119df0e175e9fa1ef03d53d7",
@@ -642,6 +633,15 @@
       "venue_id": "v-b609342b-02d8-5a22-ad62-a02a50c2f76d"
     },
     {
+      "binding_signature": "f80369711b35aa488a8a12cc8ff8f1af499180e26b550c8331ffca52618b2961",
+      "place_name": "Hollington",
+      "postcode": "ST10 4HQ",
+      "pub_name": "Raddle",
+      "reason": "Google results are incomplete or ambiguous; no unique place accepted",
+      "status": "review_needed",
+      "venue_id": "v-b6c5ba97-eae0-51eb-92fe-7af9eba24354"
+    },
+    {
       "binding_signature": "981926a9fb6f0e49f8afb5cb2372391119e00dc42a67b03fc0790cea81ebd53e",
       "place_name": "Caernarfon",
       "postcode": "LL55 1RW",
@@ -808,11 +808,11 @@
   "issues": [],
   "provider": "hermes-browser",
   "run_attempt": 1,
-  "run_id": "6a192081381a4f57a852fad90bdbc539",
+  "run_id": "dcd6793c249f48c49fa460095f5059ee",
   "schema_version": 1,
-  "source_commit": "62eb3806b938e404b7c87385f504c5cad567d4f7",
-  "source_execution_finished_at": "2026-11-12T13:36:07.821397+00:00",
-  "source_release_id": "50302dd439eb42127272f81b8f42a336eaa0f1b405db8ed13e24dcc1997ea052",
-  "source_status_sha256": "dbe5ee3b382a5bf9dd043d1d94de2eb6a32eb98d9dbb75e704251baa680847f5",
-  "validated_release_id": "b020a82256a711d7c43d139878678c87e5d641f3586d526f5cf2757cda406cd8"
+  "source_commit": "6b952ad8b2aeb05c5827f7ef59b000837978508d",
+  "source_execution_finished_at": "2026-11-13T20:14:25.659044+00:00",
+  "source_release_id": "7f4e6c68a9272d0d6ef62beac2580cbbb78239838c5ca2e7da37da453336d966",
+  "source_status_sha256": "23ce99be44fc0f5aa132f6f89ab07ec4e38da03725c1bd3e938e5f646dac0cb6",
+  "validated_release_id": "7f4e6c68a9272d0d6ef62beac2580cbbb78239838c5ca2e7da37da453336d966"
 }

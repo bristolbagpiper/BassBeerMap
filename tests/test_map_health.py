@@ -129,8 +129,6 @@ class MapHealthTests(unittest.TestCase):
         self.assertNotIn('issues.update', health)
         self.assertIn("ref: main", notifications)
         self.assertIn("load_health_status('map-health-status.json')", notifications)
-        self.assertIn('report.health_count || failed', notifications)
-        self.assertIn('const representedHealth = isHealth && (newerHealth || (sameHealthAttempt && report.health_count))', notifications)
         self.assertIn('--report notification-report.json --failure-url "$FAILURE_URL"', notifications)
 
     @unittest.skipUnless(shutil.which('node'), 'Node is needed to execute the GitHub notification script')

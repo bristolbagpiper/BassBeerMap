@@ -280,7 +280,6 @@ class GoogleJobIntegrationTests(unittest.TestCase):
         self.assertNotIn('google-places-state.json', workflow.split('      - name: Upload health report and candidate artifacts', 1)[1].split('      - name:', 1)[0])
         notifications = (ROOT / '.github/workflows/location-alerts.yml').read_text()
         self.assertIn("load_google_status('google-places-status.json')", notifications)
-        self.assertIn('report.google_count || report.trading_notice_reviews?.length || report.health_count || failed', notifications)
         self.assertIn('expected_google_run_id', notifications)
         self.assertIn('str(status.get(\'run_id\')) != expected', notifications)
         self.assertIn('hermes-google-status.json', notifications.split('paths:', 1)[1].split('\n', 1)[0])
@@ -313,7 +312,7 @@ class GoogleJobIntegrationTests(unittest.TestCase):
                 self.assertEqual('google-places-state.json' in files, state_exists)
 
     @unittest.skipUnless(shutil.which('node'), 'Node executes the actual GitHub notification script')
-    def test_google_only_issues_open_review_and_saved_failures_do_not_force_repeat_alerts(self):
+    def test_issue_state_and_saved_failures_in_the_notification_script(self):
         workflow = (ROOT / '.github/workflows/location-alerts.yml').read_text()
         script = textwrap.dedent(workflow.split('      - name: Update the persistent GitHub review issue', 1)[1]
                                  .split('          script: |', 1)[1].split('      - name:', 1)[0])
@@ -324,8 +323,12 @@ class GoogleJobIntegrationTests(unittest.TestCase):
             return dict(dict(total_count=1, jobs=[dict(status='completed', conclusion='failure',
                          steps=steps if steps is not None else [google_step])]), **changes)
         cases = [
-            # Google-only findings keep the persistent issue open.
+            # Each source can keep the persistent issue open on its own.
             ({'google_count': 1}, {'conclusion': 'success'}, None, '', 'open'),
+            ({'trading_notice_reviews': [{}]}, {'conclusion': 'success'}, None, '', 'open'),
+            ({'health_count': 1}, {'conclusion': 'success'}, None, '', 'open'),
+            ({'active_count': 1}, {'conclusion': 'success'}, None, '', 'open'),
+            ({}, {}, None, 'https://example.test/run', 'open'),
             # Matching receipts plus execution-linked Google-only failure evidence deduplicate.
             (receipt, {}, evidence(), '', 'open'),
             (receipt, {}, evidence([dict(google_step, conclusion='timed_out')]), '', 'open'),
@@ -350,7 +353,8 @@ class GoogleJobIntegrationTests(unittest.TestCase):
             ({'google_count': 1, 'google_run_id': '10', 'google_run_attempt': 1,
               'health_run_id': '10', 'health_run_attempt': 1}, {'run_attempt': 2}, evidence(), 'https://example.test/run', 'open'),
             ({'google_count': 1, 'google_run_id': '10'}, {}, evidence(), 'https://example.test/run', 'open'),
-            ({'google_count': 0, 'health_run_id': '10'}, {'conclusion': 'success'}, None, '', 'closed'),
+            ({'google_count': 0, 'trading_notice_reviews': [], 'health_count': 0},
+             {'conclusion': 'success'}, None, '', 'closed'),
         ]
         harness = '''
         const {script, cases} = JSON.parse(require('fs').readFileSync(0, 'utf8'));
@@ -359,7 +363,7 @@ class GoogleJobIntegrationTests(unittest.TestCase):
           const outputs = [];
           for (const [snapshot, event, evidence] of cases) {
             const updates = [], exported = {};
-            const report = {...snapshot, active_count: 0};
+            const report = {active_count: 0, ...snapshot};
             const fs = {readFileSync: path => path.endsWith('.json') ? JSON.stringify(report) : 'Current report'};
             const github = {rest: {issues: {
               get: async () => ({data: {number: 5, state: 'open', body: 'Old'}}),

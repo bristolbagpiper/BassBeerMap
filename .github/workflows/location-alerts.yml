@@ -147,7 +147,7 @@ jobs:
             const fullBody = (failed ? `Import or audit failed: ${source.html_url}\n\n` : '') + fs.readFileSync('location-review-report.md', 'utf8');
             const body = fullBody.length > 60000 ? fullBody.slice(0, 58000) + '\n\nReport shortened for GitHub. Full audit: https://github.com/bristolbagpiper/BassBeerMap/blob/main/audit/full-location-audit.md' : fullBody;
             const existing = (await github.rest.issues.get({...context.repo, issue_number:5})).data;
-            if (report.active_count || report.google_count || report.health_count || report.trading_notice_reviews?.length || failed) {
+            if (report.active_count || report.google_count || report.trading_notice_reviews?.length || report.health_count || failed) {
               if (existing.state !== 'open' || existing.body !== body) await github.rest.issues.update({...context.repo, issue_number:existing.number, state:'open', body});
             } else if (existing.state !== 'closed' || existing.body !== body) {
               await github.rest.issues.update({...context.repo, issue_number:existing.number, body, state:'closed', state_reason:'completed'});

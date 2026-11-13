@@ -83,6 +83,31 @@ class FrontendSmokeTests(unittest.TestCase):
         self.driver.execute_script("setUserLocation(51.5, -0.1, 'Test location');")
         self.assertEqual(self.driver.find_element(By.ID, "typeFilter").get_attribute("value"), "Perm")
 
+    def test_dated_trading_notices_expire_to_review_prompt_and_manual_hides_remain(self):
+        self.load_directory()
+        manifest = json.loads((self.repo_root / 'trading-notices.json').read_text(encoding='utf-8'))
+        notice = next(item for item in manifest['notices']
+                      if item['venue_id'] == 'v-48a81b2b-55c8-55a4-a952-41a881ed7ddf')
+        self.assertEqual(notice['published_at'], '2026-11-13')
+        self.assertEqual(notice['review_by'], '2026-11-20')
+        self.assertIn('Google Maps', notice['source'])
+
+        shown = self.driver.execute_script('''
+          const venue = pubData.find(item => item.venue_id === arguments[0]);
+          const originalNow = Date.now;
+          Date.now = () => Date.parse('2026-11-20T23:59:59Z');
+          const beforeDeadline = tradingNotice(venue);
+          Date.now = () => Date.parse('2026-11-21T00:00:00Z');
+          const afterDeadline = tradingNotice(venue);
+          Date.now = originalNow;
+          const hiddenVenue = pubData.find(item => item.venue_id === arguments[1]);
+          return {beforeDeadline, afterDeadline, hidden: tradingNotice(hiddenVenue)};
+        ''', notice['venue_id'], manifest['manual_hides'][0])
+        self.assertIn('Google Maps showed', shown['beforeDeadline'])
+        self.assertEqual(shown['afterDeadline'],
+                         'This trading status notice is due for review. Check before travelling.')
+        self.assertEqual(shown['hidden'], '')
+
     def test_possible_closure_warning_requires_fresh_identity_and_point_binding(self):
         from datetime import datetime, timedelta, timezone
 

@@ -1782,22 +1782,11 @@
     const COORDINATE_VERIFICATION_URL = './coordinate-verification.json';
     const DIRECTORY_RELEASE_URL = './directory-release.json';
     const GOOGLE_REVIEW_URL = './hermes-google-status.json';
+    const TRADING_NOTICES_URL = './trading-notices.json';
     const APPROXIMATE_MAP_NOTE = 'The pin shows the postcode area. Confirm the pub’s exact location before travelling.';
     const SHEPHERDS_HALL_ID = 'v-c62f31b0-c5b0-546c-979e-12fac920a47a';
-    const TRADING_NOTICES = {
-      // Hide trading notices and the automatic closure warning for these venues.
-      [SHEPHERDS_HALL_ID]: '',
-      'v-009a7c6e-3950-55bb-8a3c-eaf89ba0737e': '', // Dick Turpin, Newcastle-under-Lyme.
-      // Trading checks reviewed on 13 November 2026.
-      'v-48a81b2b-55c8-55a4-a952-41a881ed7ddf': 'Google Maps showed this pub as temporarily closed on 13 November 2026. Check before travelling.', // Carpenters Arms, Ilsington.
-      'v-05f27f28-8a8a-5653-83c7-15e3cf7bc2e1': 'Google Maps showed a temporary closure on 13 November 2026. The pub’s website says the kitchen is closed. Check bar opening and Bass availability before travelling.', // John Thompson Inn, Ingleby.
-      'v-67013296-99b4-57d1-ab62-78ed1bf2852a': 'Google Maps showed a temporary closure on 13 November 2026, and the freehold was advertised for sale. Check before travelling.', // Quarryman, Wirksworth.
-      // Charles Roe, Macclesfield (CAMRA 199589).
-      'v-5b7a8e74-1d57-5edf-a58b-f3445daf1ea1': 'CAMRA reports this pub closed. Check before travelling. Bass availability is unconfirmed.',
-      // Operator notices checked on 7 November 2026.
-      'v-586bfe86-d3ed-5c11-ac30-4f31b328b362': 'The pub reports a temporary closure for refurbishment (checked 7 November 2026). Check before travelling.',
-      'v-7acff0ac-109f-5c52-83e8-add11cb06319': 'The operator says the Hanging Gate stopped trading as a pub on 20 September 2026.'
-    };
+    let tradingNoticeEntries = new Map();
+    let hiddenTradingNoticeVenueIds = new Set();
     const DATA_FETCH_OPTIONS = { cache: 'no-cache' };
     let activeDirectoryLabel = 'latest Bass directory';
     let mobileVenueOrigin = null;
@@ -2082,10 +2071,29 @@
       }
     }
 
+    async function loadTradingNotices() {
+      try {
+        const response = await fetch(TRADING_NOTICES_URL, {
+          ...DATA_FETCH_OPTIONS, signal: AbortSignal.timeout(3000)
+        });
+        if (!response.ok) return;
+        const manifest = await response.json();
+        if (manifest?.schema_version !== 1 || !Array.isArray(manifest.notices)
+          || !Array.isArray(manifest.manual_hides)) return;
+        tradingNoticeEntries = new Map(manifest.notices
+          .filter(notice => typeof notice?.venue_id === 'string' && typeof notice?.text === 'string')
+          .map(notice => [notice.venue_id, notice]));
+        hiddenTradingNoticeVenueIds = new Set(manifest.manual_hides.filter(id => typeof id === 'string'));
+      } catch {
+        // The directory remains usable when the optional notice manifest is unavailable.
+      }
+    }
+
     async function loadPubData() {
       setStatus('Loading the directory...', 6);
 
       const possibleClosures = loadPossibleClosures();
+      const tradingNotices = loadTradingNotices();
       const response = await fetch(DIRECTORY_RELEASE_URL, DATA_FETCH_OPTIONS);
       if (!response.ok) {
         throw new Error(`Directory release load failed with status ${response.status}`);
@@ -2110,6 +2118,7 @@
       applyDirectoryMetadata(release.metadata);
 
       preparePubData(release.rows);
+      await tradingNotices;
       possibleClosureFindings = await possibleClosures;
       updateCountryCounts();
       updateStats();
@@ -2240,8 +2249,17 @@
     }
 
     function tradingNotice(item) {
-      const notice = TRADING_NOTICES[item.venue_id];
-      return notice ?? (item.possibleClosure ? 'Possible closure. Check opening and Bass availability before travelling.' : '');
+      if (hiddenTradingNoticeVenueIds.has(item.venue_id)) return '';
+      const notice = tradingNoticeEntries.get(item.venue_id);
+      if (notice) {
+        const reviewBy = typeof notice.review_by === 'string' && /^\d{4}-\d{2}-\d{2}$/.test(notice.review_by)
+          ? Date.parse(`${notice.review_by}T00:00:00Z`) : NaN;
+        if (Number.isFinite(reviewBy) && Date.now() >= reviewBy + 86400000) {
+          return 'This trading status notice is due for review. Check before travelling.';
+        }
+        return notice.text;
+      }
+      return item.possibleClosure ? 'Possible closure. Check opening and Bass availability before travelling.' : '';
     }
 
     function venueLabel(item) {

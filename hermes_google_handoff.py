@@ -202,7 +202,8 @@ def _publish_lock(state_dir, timeout=18):
         handle.close()
 
 
-def _attempt(state_dir, execution_id, phase, *, state='running', failure_code=None, now=None):
+def _attempt(state_dir, execution_id, phase, *, state='running', failure_code=None, now=None,
+             published_commit=None):
     value = {
         'schema_version': 1,
         'state': state,
@@ -211,6 +212,8 @@ def _attempt(state_dir, execution_id, phase, *, state='running', failure_code=No
         'failure_code': failure_code,
         'updated_at': _iso(now or _utc_now()),
     }
+    if published_commit is not None:
+        value['published_commit'] = published_commit
     _write_json_atomic(Path(state_dir) / 'publication-attempt.json', value)
     return value
 
@@ -597,7 +600,8 @@ def publish_latest(state_dir, expected_execution_id=None, *, repository=None,
             result = _run_locked(state_dir, expected_execution_id, cache, now=started,
                                  actions_lookup=lookup,
                                  actions_wait_seconds=actions_wait_seconds, deadline=deadline)
-            _attempt(state_dir, execution_id, result['state'], state=result['state'], now=_utc_now())
+            _attempt(state_dir, execution_id, result['state'], state=result['state'], now=_utc_now(),
+                     published_commit=result['published_commit'])
             return result
     except HandoffError as error:
         failure = error.code

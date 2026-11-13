@@ -13,7 +13,7 @@ on:
         type: string
   push:
     branches: [main]
-    paths: ['.github/workflows/location-alerts.yml', 'notify_location_review.py', 'location_review.py', 'apply_closed_reviews.py', 'audit/closed-review-decisions.json', 'hermes-google-status.json', 'google-review-provider.json', 'directory-release.json']
+    paths: ['.github/workflows/location-alerts.yml', 'notify_location_review.py', 'location_review.py', 'apply_closed_reviews.py', 'audit/closed-review-decisions.json', 'hermes-google-status.json', 'google-review-provider.json', 'directory-release.json', 'trading-notices.json']
 
 permissions:
   actions: read
@@ -53,7 +53,19 @@ jobs:
       - name: Write the complete review queue
         # Read main's current durable status, including failed health runs; a
         # delayed workflow_run event must not replace it with an old artifact.
-        run: python -c "from directory_release import read_json, write_json; from location_review import format_report, load_google_status, load_health_status, with_google, with_health; from pathlib import Path; report = with_google(with_health(read_json('location-review.json'), load_health_status('map-health-status.json')), load_google_status('google-places-status.json'), read_json('directory-release.json')); write_json('notification-report.json', report); Path('location-review-report.md').write_text(format_report(report), encoding='utf-8')"
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+          from directory_release import read_json, write_json
+          from location_review import (format_report, load_google_status, load_health_status,
+                                       with_google, with_health, with_trading_notice_reviews)
+          bundle = read_json('directory-release.json')
+          report = with_health(read_json('location-review.json'), load_health_status('map-health-status.json'))
+          report = with_google(report, load_google_status('google-places-status.json'), bundle)
+          report = with_trading_notice_reviews(report, read_json('trading-notices.json'), bundle)
+          write_json('notification-report.json', report)
+          Path('location-review-report.md').write_text(format_report(report), encoding='utf-8')
+          PY
       - name: Verify requested Google execution and record receipt
         env:
           EXPECTED_GOOGLE_RUN_ID: ${{ inputs.expected_google_run_id }}
@@ -135,7 +147,7 @@ jobs:
             const fullBody = (failed ? `Import or audit failed: ${source.html_url}\n\n` : '') + fs.readFileSync('location-review-report.md', 'utf8');
             const body = fullBody.length > 60000 ? fullBody.slice(0, 58000) + '\n\nReport shortened for GitHub. Full audit: https://github.com/bristolbagpiper/BassBeerMap/blob/main/audit/full-location-audit.md' : fullBody;
             const existing = (await github.rest.issues.get({...context.repo, issue_number:5})).data;
-            if (report.active_count || report.google_count || report.health_count || failed) {
+            if (report.active_count || report.google_count || report.health_count || report.trading_notice_reviews?.length || failed) {
               if (existing.state !== 'open' || existing.body !== body) await github.rest.issues.update({...context.repo, issue_number:existing.number, state:'open', body});
             } else if (existing.state !== 'closed' || existing.body !== body) {
               await github.rest.issues.update({...context.repo, issue_number:existing.number, body, state:'closed', state_reason:'completed'});

@@ -1,14 +1,27 @@
 import os
 import tempfile
 import unittest
+from datetime import date
 from pathlib import Path
 from unittest.mock import MagicMock, patch
 
-from location_review import format_report
+from location_review import fingerprint, format_report, with_trading_notice_reviews
 from notify_location_review import notify
 
 
 class ReviewReportSectionTests(unittest.TestCase):
+    def test_due_public_notice_changes_the_consolidated_report_once(self):
+        report = dict(records={}, active_count=0)
+        bundle = {'rows': [{'venue_id': 'venue', 'pub_name': 'Pub', 'place_name': 'Town'}]}
+        notices = {'notices': [{'venue_id': 'venue', 'review_by': '2026-11-20'}]}
+        active = with_trading_notice_reviews(report, notices, bundle, date(2026, 11, 20))
+        due = with_trading_notice_reviews(report, notices, bundle, date(2026, 11, 21))
+        still_due = with_trading_notice_reviews(report, notices, bundle, date(2026, 11, 22))
+        self.assertEqual(active['trading_notice_reviews'], [])
+        self.assertIn('Pub — Town (venue); review due 2026-11-20.', format_report(due))
+        self.assertNotEqual(fingerprint(active), fingerprint(due))
+        self.assertEqual(fingerprint(due), fingerprint(still_due))
+
     def test_active_source_outage_is_warning_while_identity_and_trading_are_actions(self):
         records = {
             'source': dict(pub_name='Source Pub', place_name='Town', postcode='BS1', active=True,

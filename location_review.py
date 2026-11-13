@@ -341,9 +341,24 @@ def fingerprint(report, pipeline_failure=False):
     if report.get('google_issues') or report.get('google_findings'):
         active['google_comparison'] = dict(issues=sorted(set(report.get('google_issues', []))),
             findings=sorted(report.get('google_findings', []), key=lambda finding: json.dumps(finding, sort_keys=True)))
+    if report.get('trading_notice_reviews'):
+        active['trading_notice_reviews'] = report['trading_notice_reviews']
     if pipeline_failure:
         active['pipeline_failure'] = True
     return hashlib.sha256(json.dumps(active, sort_keys=True).encode()).hexdigest()
+
+
+def with_trading_notice_reviews(report, notices, bundle, today=None):
+    """Request owner review when a dated public notice reaches its review date."""
+    today = today or datetime.now(timezone.utc).date()
+    rows = {row['venue_id']: row for row in bundle['rows']}
+    reviews = []
+    for notice in notices.get('notices', []):
+        row = rows.get(notice['venue_id'])
+        if row and notice.get('review_by') and date.fromisoformat(notice['review_by']) < today:
+            reviews.append({**{field: row[field] for field in ('venue_id', 'pub_name', 'place_name')},
+                            'review_by': notice['review_by']})
+    return dict(report, trading_notice_reviews=sorted(reviews, key=lambda review: review['venue_id']))
 
 
 def format_report(report, include_google_source_details=False):
@@ -397,6 +412,12 @@ def format_report(report, include_google_source_details=False):
         if report.get('google_run_url'):
             lines.append('Latest Google comparison: ' + report['google_run_url'])
         lines.append('')
+    if report.get('trading_notice_reviews'):
+        lines += ['## Public trading notices due for review', '']
+        for review in report['trading_notice_reviews']:
+            lines.append(f"- {review['pub_name']} — {review['place_name']} ({review['venue_id']}); review due {review['review_by']}.")
+        lines += ['Check current trading evidence, then update or withdraw the dated notice.',
+                  'Notices: https://github.com/bristolbagpiper/BassBeerMap/blob/main/trading-notices.json', '']
     def render_record(identifier, record):
         lines.extend([f"{record['pub_name']} — {record['place_name']} ({record['postcode']})",
                       f"ID: {identifier} | First seen: {record['first_seen']} | Last checked: {record.get('last_checked') or 'not checked'}",

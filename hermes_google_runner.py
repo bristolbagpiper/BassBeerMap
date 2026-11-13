@@ -3,6 +3,8 @@ import argparse
 import hashlib
 import json
 import os
+import re
+import sys
 from pathlib import Path
 import tempfile
 import time
@@ -14,6 +16,7 @@ import uuid
 from directory_release import read_json
 from hermes_google_browser import run as browse
 from hermes_google_review import build_status
+from install_hermes_google import BASS_JOB_ID, verify_installation
 
 REPOSITORY = 'bristolbagpiper/BassBeerMap'
 DEFAULT_STATE = Path(os.environ.get('LOCALAPPDATA', Path.home() / 'AppData' / 'Local')) / 'hermes' / 'profiles' / 'mcjeeves' / 'bass-map-google'
@@ -153,6 +156,43 @@ def execute(state_dir=DEFAULT_STATE, limit=45, venue_ids=(), fetch=True, browser
     return execution
 
 
+def run_production(state_dir, jobs_file, launcher):
+    """Scheduler entry point with a fixed batch and a required publication receipt."""
+    state_dir = Path(state_dir).resolve()
+    cron_execution_id = os.environ.get('HERMES_CRON_EXECUTION_ID')
+    output = dict(mode='production', scheduler_job_id=BASS_JOB_ID,
+                  scheduler_execution_id=cron_execution_id, production_state='failed')
+    try:
+        if os.environ.get('HERMES_CRON_JOB_ID') != BASS_JOB_ID or not cron_execution_id:
+            raise ValueError('Production entry point requires the native BassBeerMap scheduler')
+        if len(sys.argv) != 1:
+            raise ValueError('Production launcher accepts no arguments')
+        revision = read_json(Path(__file__).with_name('implementation.json'))['commit']
+        verify_installation(state_dir, Path(launcher).resolve(), Path(jobs_file).resolve(), revision)
+    except (OSError, ValueError, KeyError, TypeError) as error:
+        output.update(phase='verify_installation', error=str(error))
+        print(json.dumps(output))
+        return 1
+
+    from hermes_google_handoff import publish_latest
+
+    execution = execute(state_dir)
+    publication = publish_latest(state_dir, expected_execution_id=execution['execution_id'])
+    output.update(execution, publication=publication)
+    attempt = read_json(state_dir / 'publication-attempt.json', {})
+    commit = publication.get('published_commit')
+    if (execution['state'] == 'complete'
+            and execution.get('implementation_commit') == revision
+            and publication.get('state') in ('published', 'unchanged', 'review_pending')
+            and isinstance(commit, str) and re.fullmatch(r'[0-9a-f]{40}', commit)
+            and attempt.get('published_commit') == commit
+            and attempt.get('state') == publication['state']
+            and attempt.get('execution_id') == publication.get('execution_id') == execution['execution_id']):
+        output['production_state'] = 'publication_verified'
+    print(json.dumps(output))
+    return int(output['production_state'] != 'publication_verified')
+
+
 def main(argv=None):
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument('--state-dir', type=Path, default=DEFAULT_STATE)
@@ -163,8 +203,12 @@ def main(argv=None):
     mode.add_argument('--local-only', action='store_true', help='Save local diagnostics without publishing')
     args = parser.parse_args(argv)
 
+    if os.environ.get('HERMES_CRON_JOB_ID') == BASS_JOB_ID:
+        parser.error('The native BassBeerMap job must use the guarded production launcher')
+
     execution = {} if args.publish_only else execute(args.state_dir, args.limit, args.venue_id)
     output = dict(execution)
+    output['mode'] = 'local_diagnostic' if args.local_only else 'publication_retry' if args.publish_only else 'manual'
     publication_ok = True
     if not args.local_only:
         # Publication reads the finished receipt after execute releases the runner lock.

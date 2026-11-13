@@ -9,7 +9,8 @@ import unittest
 from unittest.mock import patch
 
 from directory_release import read_json
-from hermes_google_runner import atomic_json, execute, fetch_inputs, main, validate_inputs
+from hermes_google_runner import atomic_json, execute, fetch_inputs, main, run_production, validate_inputs
+from install_hermes_google import BASS_JOB_ID, production_launcher, verify_installation
 
 ROOT = Path(__file__).resolve().parents[1]
 
@@ -122,6 +123,58 @@ class HermesRunnerTests(unittest.TestCase):
                     self.assertEqual(main(['--state-dir', temp, '--publish-only']), 1)
             run.assert_not_called()
             publish.assert_called_once_with(Path(temp), expected_execution_id=None)
+
+    def test_scheduler_rejects_diagnostic_cli_and_extra_production_arguments(self):
+        identity = {'HERMES_CRON_JOB_ID': BASS_JOB_ID, 'HERMES_CRON_EXECUTION_ID': 'native-run'}
+        with patch.dict(os.environ, identity), patch('hermes_google_runner.execute') as run:
+            with patch('sys.stderr', new_callable=StringIO), self.assertRaises(SystemExit):
+                main(['--local-only'])
+            with patch('sys.argv', ['launcher', '--local-only']), patch('sys.stdout', new_callable=StringIO):
+                self.assertEqual(run_production('.', 'jobs.json', 'launcher'), 1)
+            run.assert_not_called()
+
+    def test_production_requires_same_execution_publication_receipt(self):
+        state = {'state': 'complete', 'execution_id': '1' * 32, 'implementation_commit': '2' * 40}
+        result = {'state': 'unchanged', 'execution_id': state['execution_id'], 'published_commit': '3' * 40}
+        with tempfile.TemporaryDirectory() as temp, \
+                patch.dict(os.environ, {'HERMES_CRON_JOB_ID': BASS_JOB_ID, 'HERMES_CRON_EXECUTION_ID': 'native-run'}), \
+                patch('sys.argv', ['launcher']), patch('sys.stdout', new_callable=StringIO), \
+                patch('hermes_google_runner.verify_installation'), \
+                patch('hermes_google_runner.execute', return_value=state) as execute_batch, \
+                patch('hermes_google_handoff.publish_latest', return_value=result) as publish:
+            attempt = Path(temp) / 'publication-attempt.json'
+            for saved, expected in (({}, 1), (dict(result, execution_id='4' * 32), 1), (result, 0)):
+                with self.subTest(saved=saved):
+                    atomic_json(attempt, saved)
+                    with patch('hermes_google_runner.read_json', side_effect=[{'commit': '2' * 40}, saved]):
+                        self.assertEqual(run_production(temp, 'jobs.json', 'launcher'), expected)
+            execute_batch.assert_called_with(Path(temp))
+            publish.assert_called_with(Path(temp), expected_execution_id=state['execution_id'])
+
+    def test_installation_checks_live_scheduler_target_and_launcher(self):
+        with tempfile.TemporaryDirectory() as temp:
+            state = Path(temp).resolve()
+            revision = 'a' * 40
+            app = state / ('app-' + revision)
+            app.mkdir()
+            module = app / 'worker.py'
+            module.write_bytes(b'pass\n')
+            atomic_json(app / 'implementation.json', {
+                'commit': revision, 'files': {module.name: hashlib.sha256(module.read_bytes()).hexdigest()}})
+            launcher = state / 'launch.py'
+            jobs_file = state / 'jobs.json'
+            job = dict(id=BASS_JOB_ID, enabled=True, no_agent=True, state='scheduled',
+                       schedule={'kind': 'cron'}, script=str(launcher), interpreter=str(module))
+            atomic_json(jobs_file, {'jobs': [job]})
+            launcher.write_bytes(production_launcher(app, jobs_file))
+            verify_installation(state, launcher, jobs_file, revision)
+            atomic_json(jobs_file, {'jobs': [dict(job, script=str(state / 'other.py'))]})
+            with self.assertRaisesRegex(ValueError, 'must run the production launcher'):
+                verify_installation(state, launcher, jobs_file, revision)
+            atomic_json(jobs_file, {'jobs': [job]})
+            launcher.write_bytes(b'raise SystemExit(main(["--local-only"]))\n')
+            with self.assertRaisesRegex(ValueError, 'differs from the publishing launcher'):
+                verify_installation(state, launcher, jobs_file, revision)
 
 
 if __name__ == '__main__':

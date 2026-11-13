@@ -110,11 +110,13 @@ Google API key or API billing and depends on the local computer being available.
 The installed native Hermes job `1353548e1bb7` runs daily at 07:40 Europe/London,
 using a separate clean local browser and a script-only job (no model calls).
 State and private receipts live under `%LOCALAPPDATA%\hermes\profiles\mcjeeves\bass-map-google`.
-Install a tested Git revision with `python install_hermes_google.py --revision
-<commit> --state-dir <state-directory> --launcher <existing-cron-script>`.
-The installer stages versioned Python files from Git, writes a file-hash manifest
-and switches the launcher after validation. The previous version stays available
-for rollback through the same command.
+Use the scheduled job's Python to run `install_hermes_google.py --revision
+<commit> --state-dir <state-directory> --launcher <existing-cron-script>
+--scheduler-jobs <Hermes-home>/cron/jobs.json`. The installer checks the live
+job, stages and hashes committed files, then switches the launcher under the
+native job lock. Add `--check` and use the full installed commit to verify the
+scheduler, launcher and code without changes. The production launcher accepts
+no arguments.
 
 Read `last-run.json` for the fetched data commit, installed code commit, batch
 outcome and local report hash. After the browser finishes, the same native job
@@ -122,6 +124,10 @@ uses `hermes_google_publish.py` to rebuild the filtered report against the
 current GitHub release. It publishes only `hermes-google-status.json`. The push
 requires the exact expected parent. If `main` advances, the publisher checks
 the new release and rebuilds the report before retrying.
+The native execution succeeds only when the browser batch completes and the
+publication attempt records the same execution, outcome and verified GitHub
+commit. `review_pending` records a verified push while Actions confirmation
+is still pending.
 
 The publisher uses a BassBeerMap-only SSH deploy key. The private key and pinned
 GitHub host configuration are stored under `publication-ssh` in the local
@@ -131,8 +137,9 @@ material. `publication-repo.git` caches the public Git objects used for validati
 
 `publication-attempt.json` records the last attempt, including a safe failure
 reason. `publication-receipt.json` records the verified push and any observed
-GitHub review run. Run the installed launcher with `--publish-only` to retry a
-saved execution without making another set of browser requests. Repeated
+GitHub review run. Run `hermes_google_runner.py --state-dir <state-directory>
+--publish-only` outside the scheduler to retry a saved execution. Keep
+`--local-only` diagnostics in a separate state directory. Repeated
 evidence is published only when the bindings, findings or coverage change or
 the GitHub report needs a freshness update. GitHub suppresses unchanged email
 and records SMTP acceptance separately. Its own daily validation flags an
@@ -144,6 +151,37 @@ publishes directory fields, derived review reasons and binding metadata.
 Visitor-visible closure warnings require a separate dated finding for the
 exact displayed venue and pin. Hermes review findings require corroboration
 before any public listing or coordinate change.
+
+## Production acceptance after changes
+
+1. Run the affected tests and the existing browser, handoff and location
+   notification tests. Compare venue IDs and displayed coordinates before and
+   after any release or frontend change.
+2. For worker changes, install the tested commit and run the installer with
+   `--check`. Confirm job `1353548e1bb7` is the enabled 07:40 native job. Use
+   `hermes cron run 1353548e1bb7` for an acceptance run through that scheduler.
+3. Match the scheduler execution ID and installed revision in the native run
+   output. Check the 45-venue limit and the hashes in `last-run.json` against
+   `observations.json` and `hermes-google-status.json`. Require a matching
+   `publication-attempt.json` and its verified GitHub report commit, even for
+   `unchanged`. A successful browser batch alone is insufficient.
+4. Check daily validation and the consolidated review for the resulting public
+   report. For a changed report, follow the push-triggered review and compare
+   its email acknowledgement and primary inbox when an alert is due. For an
+   unchanged report check the existing review or run it against the currently
+   published report ID and confirm no repeat email. Exercise changed-finding
+   and deduplication cases with test data when production findings are unchanged.
+5. Open the live map, search for a venue and open its pin. For trading notice
+   changes, also check active, due and removed notice behaviour. Store the
+   commit, native execution, publication outcome and Actions run links.
+
+Trading notices are maintained in `trading-notices.json`. Dated notices show
+through `review_by` in UTC and then become a neutral prompt to check before
+travelling. The same review workflow lists due notices in issue #5. Review
+new Google findings and corroborating evidence, then edit or remove the notice
+and check the deployed map. An inconclusive or missing Google result does not
+establish reopening, and a property sale or closed kitchen does not establish
+pub closure.
 
 ## Location tracking and alerts
 

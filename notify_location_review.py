@@ -17,7 +17,8 @@ def notify(report, state_path, failure_url='', smtp_factory=smtplib.SMTP):
     state = read_json(state_path, {})
     digest = fingerprint(report, pipeline_failure=bool(failure_url))
     if state.get('email_fingerprint') == digest or (
-            not failure_url and not report['active_count'] and not report.get('health_count') and not report.get('google_count') and not state):
+            not failure_url and not report['active_count'] and not report.get('health_count')
+            and not report.get('google_count') and not report.get('trading_notice_reviews') and not state):
         print('No changed actionable location report; email remains quiet.')
         return False
     required = ('SMTP_HOST', 'SMTP_USERNAME', 'SMTP_PASSWORD', 'ALERT_TO')
@@ -32,6 +33,9 @@ def notify(report, state_path, failure_url='', smtp_factory=smtplib.SMTP):
         message.replace_header('Subject', message['Subject'] + f", {source_warning_count} source warnings")
     if report.get('health_count'):
         message.replace_header('Subject', message['Subject'] + f", {report['health_count']} map health checks")
+    if report.get('trading_notice_reviews'):
+        count = len(report['trading_notice_reviews'])
+        message.replace_header('Subject', message['Subject'] + f", {count} trading notices due for review")
     google_actionable_count = report.get('google_actionable_count')
     if google_actionable_count is None:
         from owner_location_review import google_finding_assessment

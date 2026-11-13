@@ -1,6 +1,6 @@
 {
-  "actionable_count": 2,
-  "active_count": 3,
+  "actionable_count": 0,
+  "active_count": 1,
   "records": {
     "v-0043695f-006e-58fe-adc2-894e5500b940": {
       "active": false,
@@ -45,7 +45,13 @@
       "venue_id": "v-0043695f-006e-58fe-adc2-894e5500b940"
     },
     "v-009a7c6e-3950-55bb-8a3c-eaf89ba0737e": {
-      "active": true,
+      "acknowledged_google_trading_finding": {
+        "binding_signature": "eb6677d18e8e55f842c81147bf193219a1a944543e276e9074ad0fc609900240",
+        "business_status": null,
+        "reason": "Google indicates a possible closure; trading status needs review",
+        "status": "review_needed"
+      },
+      "active": false,
       "first_seen": "2026-11-04",
       "history": [
         {
@@ -54,20 +60,23 @@
             "Trading status needs review: Google Maps indicated a possible closure before the pin correction"
           ],
           "status": "review_needed"
+        },
+        {
+          "date": "2026-11-13",
+          "reasons": [],
+          "status": "resolved"
         }
       ],
       "last_checked": "2026-11-11",
-      "manual_action_required": true,
-      "next_action": "Check trading/Bass availability; do not move the pin from closure information alone",
+      "manual_action_required": false,
+      "next_action": "No pin check requested",
       "place_name": "Newcastle-U-L: Higherland",
       "postcode": "ST5 2QS",
       "pub_name": "Dick Turpin",
-      "reasons": [
-        "Trading status needs review: Google Maps indicated a possible closure before the pin correction"
-      ],
+      "reasons": [],
       "reference": {},
       "research": {},
-      "review_category": "trading_check",
+      "review_category": "confirmed",
       "source_checks": {
         "fsa_independent": {
           "status": "coordinate_disagreement",
@@ -79,7 +88,7 @@
         }
       },
       "source_error": null,
-      "status": "review_needed",
+      "status": "resolved",
       "trading_status_review": {
         "evidence": [
           {
@@ -15056,7 +15065,13 @@
       "venue_id": "v-c62d2143-2a1f-54e0-a9f9-9ee5893a5d48"
     },
     "v-c62f31b0-c5b0-546c-979e-12fac920a47a": {
-      "active": true,
+      "acknowledged_google_trading_finding": {
+        "binding_signature": "8e2f8c0b360c82704114c7cee969521d8672b1c40e8133f716ec93f74ffb770c",
+        "business_status": null,
+        "reason": "Google indicates a possible closure; trading status needs review",
+        "status": "review_needed"
+      },
+      "active": false,
       "first_seen": "2026-10-25",
       "history": [
         {
@@ -15077,17 +15092,20 @@
             "Trading status needs review: CAMRA reports temporary closure; reopening has not been verified"
           ],
           "status": "review_needed"
+        },
+        {
+          "date": "2026-11-13",
+          "reasons": [],
+          "status": "resolved"
         }
       ],
       "last_checked": "2026-11-11",
-      "manual_action_required": true,
-      "next_action": "Check trading/Bass availability; do not move the pin from closure information alone",
+      "manual_action_required": false,
+      "next_action": "No pin check requested",
       "place_name": "Chorley",
       "postcode": "PR7 1BS",
       "pub_name": "Shepherds Hall Ale House",
-      "reasons": [
-        "Trading status needs review: CAMRA reports temporary closure; reopening has not been verified"
-      ],
+      "reasons": [],
       "reference": {},
       "research": {
         "checked_at": "2026-10-27",
@@ -15114,7 +15132,7 @@
         ],
         "status": "candidates_found"
       },
-      "review_category": "trading_check",
+      "review_category": "confirmed",
       "source_checks": {
         "camra": {
           "status": "confirmed",
@@ -15126,7 +15144,7 @@
         }
       },
       "source_error": null,
-      "status": "review_needed",
+      "status": "resolved",
       "trading_status_review": {
         "checked_at": "2026-11-03",
         "evidence": [

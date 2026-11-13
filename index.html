@@ -1785,9 +1785,9 @@
     const APPROXIMATE_MAP_NOTE = 'The pin shows the postcode area. Confirm the pub’s exact location before travelling.';
     const SHEPHERDS_HALL_ID = 'v-c62f31b0-c5b0-546c-979e-12fac920a47a';
     const TRADING_NOTICES = {
-      [SHEPHERDS_HALL_ID]: 'Appears to have reopened. Draught Bass availability unconfirmed.',
-      // Dick Turpin, Newcastle-under-Lyme. Operator booking notice checked on 10 November 2026.
-      'v-009a7c6e-3950-55bb-8a3c-eaf89ba0737e': 'Open from 19 November 2026.',
+      // Hide trading notices and the automatic closure warning for these venues.
+      [SHEPHERDS_HALL_ID]: '',
+      'v-009a7c6e-3950-55bb-8a3c-eaf89ba0737e': '', // Dick Turpin, Newcastle-under-Lyme.
       // Charles Roe, Macclesfield (CAMRA 199589).
       'v-5b7a8e74-1d57-5edf-a58b-f3445daf1ea1': 'CAMRA reports this pub closed. Check before travelling. Bass availability is unconfirmed.',
       // Operator notices checked on 7 November 2026.
@@ -2237,8 +2237,7 @@
 
     function tradingNotice(item) {
       const notice = TRADING_NOTICES[item.venue_id];
-      if (notice) return notice;
-      return item.possibleClosure ? 'Possible closure. Check opening and Bass availability before travelling.' : '';
+      return notice ?? (item.possibleClosure ? 'Possible closure. Check opening and Bass availability before travelling.' : '');
     }
 
     function venueLabel(item) {

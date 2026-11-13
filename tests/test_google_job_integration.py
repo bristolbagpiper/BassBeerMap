@@ -280,7 +280,7 @@ class GoogleJobIntegrationTests(unittest.TestCase):
         self.assertNotIn('google-places-state.json', workflow.split('      - name: Upload health report and candidate artifacts', 1)[1].split('      - name:', 1)[0])
         notifications = (ROOT / '.github/workflows/location-alerts.yml').read_text()
         self.assertIn("load_google_status('google-places-status.json')", notifications)
-        self.assertIn('report.google_count || report.health_count || report.trading_notice_reviews?.length || failed', notifications)
+        self.assertIn('report.google_count || report.trading_notice_reviews?.length || report.health_count || failed', notifications)
         self.assertIn('expected_google_run_id', notifications)
         self.assertIn('str(status.get(\'run_id\')) != expected', notifications)
         self.assertIn('hermes-google-status.json', notifications.split('paths:', 1)[1].split('\n', 1)[0])

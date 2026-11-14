@@ -59,7 +59,11 @@ class HermesGoogleHandoffTests(unittest.TestCase):
         return state_dir, remote
 
     def call_publish(self, state_dir, remote, *, lookup=None, force_publish=False):
-        with patch.object(handoff, 'PUBLIC_ORIGIN', str(remote)), \
+        execution = json.loads((state_dir / 'last-run.json').read_text(encoding='utf-8'))
+        finished = datetime.fromisoformat(execution['finished_at'].replace('Z', '+00:00'))
+        publication_time = finished + timedelta(minutes=1)
+        with patch.object(handoff, '_utc_now', return_value=publication_time), \
+             patch.object(handoff, 'PUBLIC_ORIGIN', str(remote)), \
              patch.object(handoff, 'PUSH_URL', str(remote)), \
              patch.object(handoff, '_load_auth', return_value={
                  'push_url': str(remote), 'ssh_command': None,

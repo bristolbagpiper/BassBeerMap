@@ -21,3 +21,4 @@ jobs:
       - run: python -m unittest tests.test_hermes_google_handoff tests.test_hermes_google_publish
 
 # Isolated code-owner review probe, with no change to workflow behavior.
+# Strict review probe.

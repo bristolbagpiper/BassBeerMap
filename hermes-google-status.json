@@ -6,14 +6,14 @@
     "selected": 45,
     "unavailable": 0
   },
-  "checked_at": "2026-11-13T21:32:36.975074+00:00",
+  "checked_at": "2026-11-14T07:44:42.300413+00:00",
   "configured": true,
   "counts": {
     "attempted_venue_count": 1087,
     "checked_this_run": 45,
     "current": 1087,
     "retained_unavailable": 1,
-    "review_count": 89,
+    "review_count": 91,
     "total": 1087,
     "unchecked_or_stale": 0
   },
@@ -55,6 +55,15 @@
       "reason": "Google named-place marker differs by more than 50 metres; existing pin retained for review",
       "status": "review_needed",
       "venue_id": "v-0abe58cd-4094-5740-a354-9ecfe44df2bc"
+    },
+    {
+      "binding_signature": "ac56443725821c43b861822aa10b779f54509fb75449eca77c02994f284eaa18",
+      "place_name": "Waunfawr",
+      "postcode": "LL55 4AQ",
+      "pub_name": "Snowdonia Parc",
+      "reason": "Google results are incomplete or ambiguous; no unique place accepted",
+      "status": "review_needed",
+      "venue_id": "v-0d6e06da-2598-5e42-abdb-11cebca8ba46"
     },
     {
       "binding_signature": "84ff44d7ee9f2ac016120609969264e7bfb5cb71f256f166a9db86f75e8bb311",
@@ -325,6 +334,15 @@
       "reason": "Google named-place marker differs by more than 50 metres; existing pin retained for review",
       "status": "review_needed",
       "venue_id": "v-5e9138e0-7352-55f1-b255-7397c00900a8"
+    },
+    {
+      "binding_signature": "ad737062000edea570d72666779e68da90b9c9086dcdea82e1648980ee41bc3d",
+      "place_name": "Cleethorpes",
+      "postcode": "DN35 0AG",
+      "pub_name": "Signal Box",
+      "reason": "Google results are incomplete or ambiguous; no unique place accepted",
+      "status": "review_needed",
+      "venue_id": "v-60bf53be-fa5d-5d1d-8312-0e242acae533"
     },
     {
       "binding_signature": "5ebe71a89f8fd6c93288b1126226bdca501b30f917a9ff685b1b4064e476a0cf",
@@ -826,11 +844,11 @@
   "issues": [],
   "provider": "hermes-browser",
   "run_attempt": 1,
-  "run_id": "cd8a08fd8a084263b3cbdb711d8c9b33",
+  "run_id": "1b75bc2444644cc4bb59eab815f3c8d4",
   "schema_version": 1,
-  "source_commit": "8e5e665adeef1c9920186f5e2b9ca50b2af36986",
-  "source_execution_finished_at": "2026-11-13T21:32:37.258757+00:00",
-  "source_release_id": "a0c99b3ec7a53efbc552bc316eb47ead13d58cd1640c15e99546c47928085e21",
-  "source_status_sha256": "0f32f23c1555e8957914c77028d65dab93cdd2e5e2481c0c3a1ddf2dc22f72c4",
-  "validated_release_id": "a0c99b3ec7a53efbc552bc316eb47ead13d58cd1640c15e99546c47928085e21"
+  "source_commit": "c68186766468ea3c446e89473dd0b8e5871c13a3",
+  "source_execution_finished_at": "2026-11-14T07:44:42.620088+00:00",
+  "source_release_id": "fd152c635276f456a53a1bb78e76dbef5a65899eaeac13c243ee4c5a5982892a",
+  "source_status_sha256": "296dda1a8ee3818f387d53fb1579cdda0fa541937662e10ad373189ba586da43",
+  "validated_release_id": "fd152c635276f456a53a1bb78e76dbef5a65899eaeac13c243ee4c5a5982892a"
 }

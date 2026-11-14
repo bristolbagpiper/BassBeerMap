@@ -1,9 +1,14 @@
-# Sensitive handoff policy, validation, and publication implementation.
-/.github/CODEOWNERS @bristolbagpiper
-/.github/workflows/location-alerts.yml @bristolbagpiper
-/validate_google_handoff.py @bristolbagpiper
-/google-review-provider.json @bristolbagpiper
-/location_review.py @bristolbagpiper
-/hermes_google_runner.py @bristolbagpiper
-/hermes_google_handoff.py @bristolbagpiper
-/hermes_google_publish.py @bristolbagpiper
+* @bristolbagpiper
+
+# Exact generated data paths. These are checked by the publication gate.
+/pubs.csv
+/directory-meta.json
+/pub-coordinates.json
+/venue-coordinates.json
+/coordinate-verification.json
+/venue-registry.json
+/directory-release.json
+/location-review.json
+/latest-bass-directory.pdf
+/hermes-google-status.json
+/location-alert-state.json

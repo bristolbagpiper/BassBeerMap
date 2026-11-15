@@ -1,19 +1,19 @@
 {
   "batch": {
-    "ambiguous": 2,
+    "ambiguous": 1,
     "attempted": 45,
     "checked": 45,
     "selected": 45,
     "unavailable": 0
   },
-  "checked_at": "2026-11-14T07:44:42.300413+00:00",
+  "checked_at": "2026-11-15T07:44:45.066036+00:00",
   "configured": true,
   "counts": {
     "attempted_venue_count": 1087,
     "checked_this_run": 45,
     "current": 1087,
     "retained_unavailable": 1,
-    "review_count": 91,
+    "review_count": 92,
     "total": 1087,
     "unchecked_or_stale": 0
   },
@@ -226,6 +226,15 @@
       "reason": "Google named-place result differs in business identity or postcode; verify the matched venue and address",
       "status": "review_needed",
       "venue_id": "v-3d45b887-884b-518b-b14f-3343d73e77f0"
+    },
+    {
+      "binding_signature": "22c40ae660286bfd26f4f4fa2a0598c55e0512548cb1f97e16c83e37deea8f4d",
+      "place_name": "Nottingham: Central",
+      "postcode": "NG1 6LD",
+      "pub_name": "Three Crowns",
+      "reason": "Google results are incomplete or ambiguous; no unique place accepted",
+      "status": "review_needed",
+      "venue_id": "v-3d5087bc-6b35-594c-9de7-5c3bb759802e"
     },
     {
       "binding_signature": "a7314e89e981b647d1d5a33cc4a7f9f060354a1d0ff980167c50d3ad30c895df",
@@ -844,11 +853,11 @@
   "issues": [],
   "provider": "hermes-browser",
   "run_attempt": 1,
-  "run_id": "1b75bc2444644cc4bb59eab815f3c8d4",
+  "run_id": "b93efcaaa2294e008a469b1835551162",
   "schema_version": 1,
-  "source_commit": "c68186766468ea3c446e89473dd0b8e5871c13a3",
-  "source_execution_finished_at": "2026-11-14T07:44:42.620088+00:00",
-  "source_release_id": "fd152c635276f456a53a1bb78e76dbef5a65899eaeac13c243ee4c5a5982892a",
-  "source_status_sha256": "296dda1a8ee3818f387d53fb1579cdda0fa541937662e10ad373189ba586da43",
-  "validated_release_id": "fd152c635276f456a53a1bb78e76dbef5a65899eaeac13c243ee4c5a5982892a"
+  "source_commit": "d12aa27eb6db43feca697648f1047d695d6fa534",
+  "source_execution_finished_at": "2026-11-15T07:44:45.341368+00:00",
+  "source_release_id": "77e8ee436f8d293ac9c47cab630ac3c4b7b36c968779aeb6be37a23d48762aa8",
+  "source_status_sha256": "700be1baebe9b4a5c851024cdaba548f48dedc8048569887e75dbfb8b5edce37",
+  "validated_release_id": "77e8ee436f8d293ac9c47cab630ac3c4b7b36c968779aeb6be37a23d48762aa8"
 }

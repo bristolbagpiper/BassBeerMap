@@ -6,7 +6,7 @@
     "selected": 45,
     "unavailable": 0
   },
-  "checked_at": "2026-11-15T07:44:45.066036+00:00",
+  "checked_at": "2026-11-16T07:43:50.927366+00:00",
   "configured": true,
   "counts": {
     "attempted_venue_count": 1087,
@@ -696,15 +696,6 @@
       "venue_id": "v-ba939dd1-6bb2-5adc-8d1e-3a5f6cdff1ea"
     },
     {
-      "binding_signature": "8e2f8c0b360c82704114c7cee969521d8672b1c40e8133f716ec93f74ffb770c",
-      "place_name": "Chorley",
-      "postcode": "PR7 1BS",
-      "pub_name": "Shepherds Hall Ale House",
-      "reason": "Google indicates a possible closure; trading status needs review",
-      "status": "review_needed",
-      "venue_id": "v-c62f31b0-c5b0-546c-979e-12fac920a47a"
-    },
-    {
       "binding_signature": "563c8bb846f7b3ac2d77abf4baf54c06db46b68b5b9fb86232924e0c93949966",
       "place_name": "Gozzards Ford",
       "postcode": "OX13 6JH",
@@ -775,6 +766,15 @@
       "reason": "Google results are incomplete or ambiguous; no unique place accepted",
       "status": "review_needed",
       "venue_id": "v-d87d7238-4c39-56eb-8021-0599d9585515"
+    },
+    {
+      "binding_signature": "7ce2ecead29b89439831f3cda80f97e3d6c930966c926a8135481e8cc85bdd7e",
+      "place_name": "Nottingham: Central",
+      "postcode": "NG2 3HS",
+      "pub_name": "Trent Navigation",
+      "reason": "Google results are incomplete or ambiguous; no unique place accepted",
+      "status": "review_needed",
+      "venue_id": "v-db7d725b-d3e5-5443-aec0-3dab78a19eae"
     },
     {
       "binding_signature": "6968f48798dbe8ea040fa3f7a041dfe979a943ae14f5ee141c76e572664e1bf3",
@@ -853,11 +853,11 @@
   "issues": [],
   "provider": "hermes-browser",
   "run_attempt": 1,
-  "run_id": "b93efcaaa2294e008a469b1835551162",
+  "run_id": "b1d17f4276cf4c8ab7df01f3e0e6e5a6",
   "schema_version": 1,
-  "source_commit": "d12aa27eb6db43feca697648f1047d695d6fa534",
-  "source_execution_finished_at": "2026-11-15T07:44:45.341368+00:00",
-  "source_release_id": "77e8ee436f8d293ac9c47cab630ac3c4b7b36c968779aeb6be37a23d48762aa8",
-  "source_status_sha256": "700be1baebe9b4a5c851024cdaba548f48dedc8048569887e75dbfb8b5edce37",
-  "validated_release_id": "77e8ee436f8d293ac9c47cab630ac3c4b7b36c968779aeb6be37a23d48762aa8"
+  "source_commit": "ca8e61b2c40ee64500c3c6ef5bbe5ecaeb5b77a2",
+  "source_execution_finished_at": "2026-11-16T07:43:51.240131+00:00",
+  "source_release_id": "fcb3751f617ebc64d583d35ecef828625b6e67cf8ec91f18e94db886af6ac051",
+  "source_status_sha256": "08698b94a8904d6830bdc488200bbf9ddffa97765de09bdb7d5be1952a8b6c59",
+  "validated_release_id": "fcb3751f617ebc64d583d35ecef828625b6e67cf8ec91f18e94db886af6ac051"
 }

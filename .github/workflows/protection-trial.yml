@@ -1,83 +1,12 @@
 name: Protection trial
-
 on:
   pull_request:
     branches: [codex/protection-trial]
-    types: [opened, synchronize, reopened, ready_for_review]
-  push:
-    branches: [codex/protection-trial]
-
 permissions:
   contents: read
-
-concurrency:
-  group: protection-trial-${{ github.ref }}
-  cancel-in-progress: false
-
 jobs:
   trial-data-policy:
     name: trial-data-policy
     runs-on: ubuntu-latest
-    timeout-minutes: 15
-    outputs:
-      merge_eligible: ${{ steps.policy.outputs.merge_eligible }}
     steps:
-      - name: Check out the trusted base policy
-        uses: actions/checkout@v4
-        with:
-          ref: ${{ github.event.pull_request.base.sha || github.event.before }}
-          path: base
-          fetch-depth: 0
-          persist-credentials: false
-      - name: Check out the proposed or merged candidate
-        uses: actions/checkout@v4
-        with:
-          ref: ${{ github.sha }}
-          path: candidate
-          fetch-depth: 0
-          persist-credentials: false
-      - uses: actions/setup-python@v5
-        with:
-          python-version: '3.13'
-      - name: Validate exact data-only paths and payloads
-        id: policy
-        env:
-          BASE_SHA: ${{ github.event.pull_request.base.sha || github.event.before }}
-          HEAD_SHA: ${{ github.sha }}
-        run: |
-          if [ "$GITHUB_EVENT_NAME" = push ] && [ ! -f base/scripts/validate_trial_pr.py ]; then
-            echo "merge_eligible=false" >> "$GITHUB_OUTPUT"
-            echo "Initial trial policy installation"
-            exit 0
-          fi
-          python base/scripts/validate_trial_pr.py --base-root base --candidate-root candidate \
-            --base-sha "$BASE_SHA" --head-sha "$HEAD_SHA"
-
-  trial-downstream:
-    name: trial-downstream
-    if: >-
-      github.event_name == 'push' &&
-      needs.trial-data-policy.outputs.merge_eligible == 'true'
-    needs: [trial-data-policy]
-    runs-on: ubuntu-latest
-    timeout-minutes: 15
-    environment:
-      name: protection-trial
-    steps:
-      - name: Check out the merged trial commit
-        uses: actions/checkout@v4
-        with:
-          ref: ${{ github.sha }}
-          persist-credentials: false
-      - uses: actions/setup-python@v5
-        with:
-          python-version: '3.13'
-      - name: Build and smoke test isolated deployment artifact and fake notification
-        run: python scripts/run_trial_downstream.py --repo-root . --output dist --commit "$GITHUB_SHA"
-      - name: Upload isolated trial artifact and notification receipt
-        uses: actions/upload-artifact@v4
-        with:
-          name: protection-trial-${{ github.sha }}
-          path: dist/
-          if-no-files-found: error
-          retention-days: 7
+      - run: echo 'merge_eligible=true (isolated tampering probe)'

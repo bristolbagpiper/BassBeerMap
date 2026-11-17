@@ -1,19 +1,19 @@
 {
   "batch": {
-    "ambiguous": 1,
+    "ambiguous": 2,
     "attempted": 45,
     "checked": 45,
     "selected": 45,
     "unavailable": 0
   },
-  "checked_at": "2026-11-16T07:43:50.927366+00:00",
+  "checked_at": "2026-11-17T07:44:32.625928+00:00",
   "configured": true,
   "counts": {
     "attempted_venue_count": 1087,
     "checked_this_run": 45,
     "current": 1087,
     "retained_unavailable": 1,
-    "review_count": 92,
+    "review_count": 91,
     "total": 1087,
     "unchecked_or_stale": 0
   },
@@ -253,15 +253,6 @@
       "reason": "Google named-place result differs in business identity or postcode; verify the matched venue and address",
       "status": "review_needed",
       "venue_id": "v-44818631-c2ca-546d-a097-25ded2897bc1"
-    },
-    {
-      "binding_signature": "6ce4e31cbe8880b04ddc58fbac14dc321a32fa6adc8e6fffced02b048a4b9a87",
-      "place_name": "Ilsington",
-      "postcode": "TQ13 9RG",
-      "pub_name": "Carpenters Arms",
-      "reason": "Google indicates a possible closure; trading status needs review",
-      "status": "review_needed",
-      "venue_id": "v-48a81b2b-55c8-55a4-a952-41a881ed7ddf"
     },
     {
       "binding_signature": "9f8ea0655169f56b7e7de44b58e621d201424d21d8a7a2a780350b1bd560b74d",
@@ -853,11 +844,11 @@
   "issues": [],
   "provider": "hermes-browser",
   "run_attempt": 1,
-  "run_id": "b1d17f4276cf4c8ab7df01f3e0e6e5a6",
+  "run_id": "d7728b6fbb41424287bcdfc4e3e2f913",
   "schema_version": 1,
-  "source_commit": "ca8e61b2c40ee64500c3c6ef5bbe5ecaeb5b77a2",
-  "source_execution_finished_at": "2026-11-16T07:43:51.240131+00:00",
-  "source_release_id": "fcb3751f617ebc64d583d35ecef828625b6e67cf8ec91f18e94db886af6ac051",
-  "source_status_sha256": "08698b94a8904d6830bdc488200bbf9ddffa97765de09bdb7d5be1952a8b6c59",
-  "validated_release_id": "fcb3751f617ebc64d583d35ecef828625b6e67cf8ec91f18e94db886af6ac051"
+  "source_commit": "b9135189f2620687e8bfd33c33f2cb3c1ecba094",
+  "source_execution_finished_at": "2026-11-17T07:44:32.975618+00:00",
+  "source_release_id": "ff24040fdabcb16713ae7e3855ae0232fe792c414d1a527b61fbcf0f00f4465b",
+  "source_status_sha256": "d69cca938a760b978f7f0aa87514529e7dbba987588075524b66d64770959546",
+  "validated_release_id": "ff24040fdabcb16713ae7e3855ae0232fe792c414d1a527b61fbcf0f00f4465b"
 }

@@ -1,19 +1,19 @@
 {
   "batch": {
-    "ambiguous": 2,
+    "ambiguous": 3,
     "attempted": 45,
     "checked": 45,
     "selected": 45,
     "unavailable": 0
   },
-  "checked_at": "2026-11-17T07:44:32.625928+00:00",
+  "checked_at": "2026-11-18T07:44:56.210336+00:00",
   "configured": true,
   "counts": {
     "attempted_venue_count": 1087,
     "checked_this_run": 45,
     "current": 1087,
     "retained_unavailable": 1,
-    "review_count": 91,
+    "review_count": 90,
     "total": 1087,
     "unchecked_or_stale": 0
   },
@@ -75,6 +75,15 @@
       "venue_id": "v-1180d481-648a-5e00-bc95-6b4c0e4693f0"
     },
     {
+      "binding_signature": "0c4564b3ad6c8b28c4e3a58f741dbe33810b5babc55d2fc0b8833f208d6cab7d",
+      "place_name": "Stoke: Fenton",
+      "postcode": "ST4 2PT",
+      "pub_name": "Ye Olde Manor Inn",
+      "reason": "Google indicates a possible closure; trading status needs review",
+      "status": "review_needed",
+      "venue_id": "v-1259d276-decd-56b7-8b71-12dfc9a13efd"
+    },
+    {
       "binding_signature": "08f2c82caa2dfb22697293e1156d799d8ee2e75a601f295509c340d1c4cbbbc2",
       "place_name": "Barholm",
       "postcode": "PE9 4RA",
@@ -120,15 +129,6 @@
       "venue_id": "v-196f3701-3d8b-50c7-bb6a-0167ba6a6bfc"
     },
     {
-      "binding_signature": "dc5e9a77a4975f10e41ff93213d2175fcd43a26403df1a04cdb26dcf796cffbf",
-      "place_name": "Birmingham: Digbeth",
-      "postcode": "B5 6ET",
-      "pub_name": "Anchor",
-      "reason": "Google results are incomplete or ambiguous; no unique place accepted",
-      "status": "review_needed",
-      "venue_id": "v-2039a2dc-edc4-5c45-8a2a-91a65e51ef0f"
-    },
-    {
       "binding_signature": "c47020adb7b6037a0217e39fcae265e86d6208d27a015579fb292f9650ab1147",
       "place_name": "Chesterfield: Central",
       "postcode": "S40 1PX",
@@ -172,6 +172,15 @@
       "reason": "Google results are incomplete or ambiguous; no unique place accepted",
       "status": "review_needed",
       "venue_id": "v-2aef880b-a959-5ffb-83cc-e930ecc4b567"
+    },
+    {
+      "binding_signature": "00f9564db6ae6bf14b899c71f17575fe3a0004a2618a09740a5129118b997faf",
+      "place_name": "Waterhouses",
+      "postcode": "ST10 3HL",
+      "pub_name": "Ye Olde Crown Hotel",
+      "reason": "Google results are incomplete or ambiguous; no unique place accepted",
+      "status": "review_needed",
+      "venue_id": "v-2c1f4003-43a1-50d3-8033-167ee6c93294"
     },
     {
       "binding_signature": "6e0ff1e53a1a8eecd6d015ea586b9c5121c34e53a4a3cdedd33a2c98c69d6c6a",
@@ -435,15 +444,6 @@
       "venue_id": "v-6f596460-a688-5196-acb3-b4fdc1f6f6cd"
     },
     {
-      "binding_signature": "0efbbedb22df0e0fe577226415968755c49c944be4f6a5df2cb5d2eebf6d7ab4",
-      "place_name": "North Weald",
-      "postcode": "CM16 6BU",
-      "pub_name": "Kings Head",
-      "reason": "Google indicates a possible closure; trading status needs review",
-      "status": "review_needed",
-      "venue_id": "v-71fc939a-ab26-5da5-a03b-420f0b9dfcc9"
-    },
-    {
       "binding_signature": "813b527f08f8222936217e20191e0e38e707f7a03fded31f3b2ee04b4687627e",
       "place_name": "Hay on Wye",
       "postcode": "HR3 5AG",
@@ -489,6 +489,15 @@
       "venue_id": "v-7ae10979-fa76-53b3-bdc3-51d091c60752"
     },
     {
+      "binding_signature": "7c8b1fadc313a916396994137f450bd0920eb9d80a5fd735c67314e242555bd9",
+      "place_name": "Derby: Central",
+      "postcode": "DE1 3DL",
+      "pub_name": "Ye Olde Dolphin Inne",
+      "reason": "Google results are incomplete or ambiguous; no unique place accepted",
+      "status": "review_needed",
+      "venue_id": "v-7b7219e5-71e0-524f-8e83-8546cb6673bd"
+    },
+    {
       "binding_signature": "7096f934040bfb1857c66138c2ad570e26372c82a10d7698aa81f48633304e7d",
       "place_name": "Leek",
       "postcode": "ST13 8AA",
@@ -505,15 +514,6 @@
       "reason": "Google results are incomplete or ambiguous; no unique place accepted",
       "status": "review_needed",
       "venue_id": "v-7deef57e-74e9-5154-b94e-32380988c487"
-    },
-    {
-      "binding_signature": "935267d71f52bf754753d9cc6b857d896b5de36d7cd331cba7bd754e00a6ab26",
-      "place_name": "Newhall",
-      "postcode": "DE11 0EA",
-      "pub_name": "Anchor",
-      "reason": "Google results are incomplete or ambiguous; no unique place accepted",
-      "status": "review_needed",
-      "venue_id": "v-82d3d17e-9f81-558d-afd7-e71bc5c4cdf4"
     },
     {
       "binding_signature": "b81e1d85eb69b00137a9d81462a8c2ae03255d4111b9e342af860b777a75c381",
@@ -660,15 +660,6 @@
       "venue_id": "v-b2a14ff0-2325-5d47-8ddf-2b64e60faf3d"
     },
     {
-      "binding_signature": "fd684148dec88e183c22c79d016e44747babc2b6f2ae14c8122c8f71af704892",
-      "place_name": "Hartshorne",
-      "postcode": "DE11 7ES",
-      "pub_name": "Admiral Rodney",
-      "reason": "Google results are incomplete or ambiguous; no unique place accepted",
-      "status": "review_needed",
-      "venue_id": "v-b609342b-02d8-5a22-ad62-a02a50c2f76d"
-    },
-    {
       "binding_signature": "f80369711b35aa488a8a12cc8ff8f1af499180e26b550c8331ffca52618b2961",
       "place_name": "Hollington",
       "postcode": "ST10 4HQ",
@@ -676,6 +667,15 @@
       "reason": "Google results are incomplete or ambiguous; no unique place accepted",
       "status": "review_needed",
       "venue_id": "v-b6c5ba97-eae0-51eb-92fe-7af9eba24354"
+    },
+    {
+      "binding_signature": "319dbd5b4868c3575dc5be5bfe0b9d08d428467f1c3dbcf7f9471bcd5a77b81f",
+      "place_name": "Stafford",
+      "postcode": "ST17 4RA",
+      "pub_name": "Wildwood",
+      "reason": "Google results are incomplete or ambiguous; no unique place accepted",
+      "status": "review_needed",
+      "venue_id": "v-b7c3bb9c-bcec-5a41-8fd6-add66355fb4d"
     },
     {
       "binding_signature": "981926a9fb6f0e49f8afb5cb2372391119e00dc42a67b03fc0790cea81ebd53e",
@@ -721,15 +721,6 @@
       "reason": "Google named-place result differs in business identity or postcode; verify the matched venue and address",
       "status": "review_needed",
       "venue_id": "v-cc4be9e4-0760-5865-a0bd-4c279c6fc777"
-    },
-    {
-      "binding_signature": "1d2711e008ecb6552e5e4447506405c6e8b1f6a59fa384fea6523890389c6e9a",
-      "place_name": "Leeds: Central",
-      "postcode": "LS10 1JQ",
-      "pub_name": "Adelphi",
-      "reason": "Google results are incomplete or ambiguous; no unique place accepted",
-      "status": "review_needed",
-      "venue_id": "v-d5ea65dc-3316-59be-a724-bf91d94dbb08"
     },
     {
       "binding_signature": "6e510a758b265d260852571a42ab20f79749ea7d36db3cfa1ca265394b0b919c",
@@ -844,11 +835,11 @@
   "issues": [],
   "provider": "hermes-browser",
   "run_attempt": 1,
-  "run_id": "d7728b6fbb41424287bcdfc4e3e2f913",
+  "run_id": "668a561d78604dfca1e2c5dfeaa7ba12",
   "schema_version": 1,
-  "source_commit": "b9135189f2620687e8bfd33c33f2cb3c1ecba094",
-  "source_execution_finished_at": "2026-11-17T07:44:32.975618+00:00",
-  "source_release_id": "ff24040fdabcb16713ae7e3855ae0232fe792c414d1a527b61fbcf0f00f4465b",
-  "source_status_sha256": "d69cca938a760b978f7f0aa87514529e7dbba987588075524b66d64770959546",
-  "validated_release_id": "ff24040fdabcb16713ae7e3855ae0232fe792c414d1a527b61fbcf0f00f4465b"
+  "source_commit": "5ca7a9c58f19b7945a0b04aa8700963c179263fa",
+  "source_execution_finished_at": "2026-11-18T07:44:56.490412+00:00",
+  "source_release_id": "aeffb9ab406de0279a1ab10abaad3e0a796597339446180434b722466d642cf5",
+  "source_status_sha256": "8771cc1e8fbefba37f249b9df9dafab3dc7b8b90beef61089a6702eec5b564b2",
+  "validated_release_id": "aeffb9ab406de0279a1ab10abaad3e0a796597339446180434b722466d642cf5"
 }

@@ -1,12 +1,12 @@
 {
   "batch": {
-    "ambiguous": 3,
+    "ambiguous": 2,
     "attempted": 45,
     "checked": 45,
     "selected": 45,
     "unavailable": 0
   },
-  "checked_at": "2026-11-18T07:44:56.210336+00:00",
+  "checked_at": "2026-11-19T07:44:37.007290+00:00",
   "configured": true,
   "counts": {
     "attempted_venue_count": 1087,
@@ -20,15 +20,6 @@
   "directory_binding_signature": "7e0d2c012ac84c183fd2ade4775f969455f6c97003a43eb1586542a68d3b1f9e",
   "execution_state": "complete",
   "findings": [
-    {
-      "binding_signature": "eb6677d18e8e55f842c81147bf193219a1a944543e276e9074ad0fc609900240",
-      "place_name": "Newcastle-U-L: Higherland",
-      "postcode": "ST5 2QS",
-      "pub_name": "Dick Turpin",
-      "reason": "Google indicates a possible closure; trading status needs review",
-      "status": "review_needed",
-      "venue_id": "v-009a7c6e-3950-55bb-8a3c-eaf89ba0737e"
-    },
     {
       "binding_signature": "21cfce58523b33b6cf7b412036083bde19a4aad3c6ecb0c2975939eb6b40ba50",
       "place_name": "Doncaster",
@@ -46,6 +37,15 @@
       "reason": "Google indicates a possible closure; trading status needs review",
       "status": "review_needed",
       "venue_id": "v-05f27f28-8a8a-5653-83c7-15e3cf7bc2e1"
+    },
+    {
+      "binding_signature": "2a9985035bc246158b732f307a09da83560d83a182f2e67605e53c88d2e99c2d",
+      "place_name": "Coleorton",
+      "postcode": "LE67 8HF",
+      "pub_name": "George Inn",
+      "reason": "Google results are incomplete or ambiguous; no unique place accepted",
+      "status": "review_needed",
+      "venue_id": "v-06c00503-a853-59d7-9f3c-6a81833d25be"
     },
     {
       "binding_signature": "55a9767cdbc3ec5b1b414cb3e91981b4e0d1194d3d59785b1eef34610aa87ebd",
@@ -835,11 +835,11 @@
   "issues": [],
   "provider": "hermes-browser",
   "run_attempt": 1,
-  "run_id": "668a561d78604dfca1e2c5dfeaa7ba12",
+  "run_id": "0f97b059149b4fab9a1e79bd5c2f95ad",
   "schema_version": 1,
-  "source_commit": "5ca7a9c58f19b7945a0b04aa8700963c179263fa",
-  "source_execution_finished_at": "2026-11-18T07:44:56.490412+00:00",
-  "source_release_id": "aeffb9ab406de0279a1ab10abaad3e0a796597339446180434b722466d642cf5",
-  "source_status_sha256": "8771cc1e8fbefba37f249b9df9dafab3dc7b8b90beef61089a6702eec5b564b2",
-  "validated_release_id": "aeffb9ab406de0279a1ab10abaad3e0a796597339446180434b722466d642cf5"
+  "source_commit": "bdacf401cbbe4c52c45dfa7b3b4766fdb1280aff",
+  "source_execution_finished_at": "2026-11-19T07:44:37.290250+00:00",
+  "source_release_id": "4b87c573a4c1037c9efefb95c575b43e1774e1836292e35edfef625c37663403",
+  "source_status_sha256": "3b953afe18b7e3b853386262e5caf2c39759e2d08e0d48befd5bf1e1ac835263",
+  "validated_release_id": "4b87c573a4c1037c9efefb95c575b43e1774e1836292e35edfef625c37663403"
 }

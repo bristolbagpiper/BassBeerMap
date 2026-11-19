@@ -10,8 +10,8 @@ Locations with informational observations: 645 (may also have an actionable find
 
 - no_name_match: 174
 - coordinate_disagreement: 284
-- ambiguous_or_missing_coordinates: 67
-- nearby: 107
+- ambiguous_or_missing_coordinates: 66
+- nearby: 108
 - coordinate_agreement: 455
 
 ## Confidence
@@ -251,7 +251,7 @@ Locations with informational observations: 645 (may also have an actionable find
 | Fairhaven | Lytham St Annes | FY8 1YD | coordinate_agreement | Owner reviewed this postcode discrepancy and confirmed the displayed pub building; listing postcode retained for provenance |
 | Fieldhouse | Solihull | B91 3JU | no_name_match | FSA comparison is inconclusive; absence of a match does not contradict accepted evidence |
 | Final Whistle | Southwell | NG25 0ET | nearby | FSA coordinate is 25-50m away; informational only |
-| Firefly | Worcester: Central | WR1 2SE | ambiguous_or_missing_coordinates | FSA comparison is inconclusive; absence of a match does not contradict accepted evidence |
+| Firefly | Worcester: Central | WR1 2SE | nearby | FSA coordinate is 25-50m away; informational only |
 | Fitzgeralds | Ashby-de-la-Zouch | LE65 1AN | no_name_match | FSA comparison is inconclusive; absence of a match does not contradict accepted evidence |
 | Five Bells | Bassingham | LN5 9JZ | nearby | FSA coordinate is 25-50m away; informational only |
 | Five Horseshoes | Barholm | PE9 4RA | coordinate_disagreement | FSA coordinate is 65.5m from the accepted pin; informational only because the FSA geocode may be approximate |

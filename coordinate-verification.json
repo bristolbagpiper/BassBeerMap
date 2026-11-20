@@ -2,7 +2,7 @@
   "counts": {
     "verified_venue": 1087
   },
-  "generated_at": "2026-11-19",
+  "generated_at": "2026-11-20",
   "policy": {
     "max_evidence_age_days": 400,
     "venue_pin": "Evidence-backed venue coordinates; unresolved venues use explicitly approximate postcode pins."
@@ -513,6 +513,21 @@
         },
         {
           "checked_at": "2026-11-10",
+          "difference_metres": 0.9,
+          "disposition": "superseded_by_source_refresh",
+          "match": "venue_name_and_full_postcode",
+          "reference_address": "Furnace",
+          "reference_coordinate": {
+            "lat": 53.108579,
+            "lng": -1.419575
+          },
+          "reference_name": "Amber Hotel, Oakerthorpe - Traditional Country Pub",
+          "reference_postcode": "DE55 7LL",
+          "source": "camra",
+          "url": "https://camra.org.uk/pubs/113354"
+        },
+        {
+          "checked_at": "2026-11-20",
           "difference_metres": 0.9,
           "match": "venue_name_and_full_postcode",
           "reference_address": "Furnace",
@@ -11455,6 +11470,21 @@
         },
         {
           "checked_at": "2026-11-10",
+          "difference_metres": 11.0,
+          "disposition": "superseded_by_source_refresh",
+          "match": "venue_name_and_full_postcode",
+          "reference_address": "181 High Lane",
+          "reference_coordinate": {
+            "lat": 53.076559,
+            "lng": -2.137325
+          },
+          "reference_name": "Bush, Brown Edge - Community Pub with Garden",
+          "reference_postcode": "ST6 8QA",
+          "source": "camra",
+          "url": "https://camra.org.uk/pubs/143864"
+        },
+        {
+          "checked_at": "2026-11-20",
           "difference_metres": 11.0,
           "match": "venue_name_and_full_postcode",
           "reference_address": "181 High Lane",
@@ -32134,6 +32164,21 @@
         {
           "checked_at": "2026-11-10",
           "difference_metres": 8.3,
+          "disposition": "superseded_by_source_refresh",
+          "match": "venue_name_and_full_postcode",
+          "reference_address": "Lawrence Road",
+          "reference_coordinate": {
+            "lat": 50.360414,
+            "lng": -4.129775
+          },
+          "reference_name": "Hotel Mount Batten, Plymouth - Waterfront Hotel",
+          "reference_postcode": "PL9 9SJ",
+          "source": "camra",
+          "url": "https://camra.org.uk/pubs/154200"
+        },
+        {
+          "checked_at": "2026-11-20",
+          "difference_metres": 8.3,
           "match": "venue_name_and_full_postcode",
           "reference_address": "Lawrence Road",
           "reference_coordinate": {
@@ -32649,6 +32694,21 @@
         },
         {
           "checked_at": "2026-11-10",
+          "difference_metres": 2.2,
+          "disposition": "superseded_by_source_refresh",
+          "match": "venue_name_and_full_postcode",
+          "reference_address": "59, Northgate Street",
+          "reference_coordinate": {
+            "lat": 51.866733,
+            "lng": -2.243852
+          },
+          "reference_name": "Imperial Inn, Gloucester - Listed Victorian Pub",
+          "reference_postcode": "GL1 2AG",
+          "source": "camra",
+          "url": "https://camra.org.uk/pubs/171559"
+        },
+        {
+          "checked_at": "2026-11-20",
           "difference_metres": 2.2,
           "match": "venue_name_and_full_postcode",
           "reference_address": "59, Northgate Street",
@@ -41494,6 +41554,21 @@
         {
           "checked_at": "2026-11-10",
           "difference_metres": 18.3,
+          "disposition": "superseded_by_source_refresh",
+          "match": "venue_name_and_full_postcode",
+          "reference_address": "21 Market Place",
+          "reference_coordinate": {
+            "lat": 53.910704260172,
+            "lng": -0.174095215939
+          },
+          "reference_name": "New Inn, Hornsea - Live Music Pub",
+          "reference_postcode": "HU18 1AN",
+          "source": "camra",
+          "url": "https://camra.org.uk/pubs/181072"
+        },
+        {
+          "checked_at": "2026-11-20",
+          "difference_metres": 18.3,
           "match": "venue_name_and_full_postcode",
           "reference_address": "21 Market Place",
           "reference_coordinate": {
@@ -44100,6 +44175,21 @@
         },
         {
           "checked_at": "2026-11-10",
+          "difference_metres": 7.4,
+          "disposition": "superseded_by_source_refresh",
+          "match": "venue_name_and_full_postcode",
+          "reference_address": "19 Full Street, Cathedral Quarter",
+          "reference_coordinate": {
+            "lat": 52.925476,
+            "lng": -1.477165
+          },
+          "reference_name": "Old Silk Mill, Derby - Pub with Garden",
+          "reference_postcode": "DE1 3AF",
+          "source": "camra",
+          "url": "https://camra.org.uk/pubs/143279"
+        },
+        {
+          "checked_at": "2026-11-20",
           "difference_metres": 7.4,
           "match": "venue_name_and_full_postcode",
           "reference_address": "19 Full Street, Cathedral Quarter",
@@ -50945,6 +51035,21 @@
         },
         {
           "checked_at": "2026-11-10",
+          "difference_metres": 0.9,
+          "disposition": "superseded_by_source_refresh",
+          "match": "venue_name_and_full_postcode",
+          "reference_address": "18 Stoke Old Road",
+          "reference_coordinate": {
+            "lat": 53.011354602017,
+            "lng": -2.211522679901
+          },
+          "reference_name": "Red Lion, Stoke-on-Trent - Two-Roomed Pub",
+          "reference_postcode": "ST4 6ES",
+          "source": "camra",
+          "url": "https://camra.org.uk/pubs/122928"
+        },
+        {
+          "checked_at": "2026-11-20",
           "difference_metres": 0.9,
           "match": "venue_name_and_full_postcode",
           "reference_address": "18 Stoke Old Road",

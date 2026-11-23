@@ -50,3 +50,12 @@ def release_file_lock(handle):
     except OSError:
         pass
     handle.close()
+
+
+def file_lock_active(path):
+    """Return whether another process currently owns the advisory lock at path."""
+    handle = acquire_file_lock(path)
+    if handle is None:
+        return True
+    release_file_lock(handle)
+    return False

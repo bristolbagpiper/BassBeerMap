@@ -9,6 +9,7 @@ from unittest.mock import patch
 
 import hermes_google_handoff as handoff
 from hermes_google_publish import git_executable
+from hermes_file_lock import acquire_file_lock, release_file_lock
 
 
 def write_exact_json(path, value):
@@ -113,6 +114,25 @@ class HermesGoogleHandoffTests(unittest.TestCase):
         self.assertEqual(receipt['transport'], 'native-ssh')
         self.assertEqual(len(receipt['status_sha256']), 64)
         self.assertEqual(len(receipt['public_status_sha256']), 64)
+
+    def test_idle_persistent_execution_locks_allow_publish_but_held_locks_block_it(self):
+        state_dir, remote = self.make_case()
+        for name in ('runner.lock', 'observations.json.lock'):
+            (state_dir / name).touch()
+        result = self.call_publish(state_dir, remote)
+        self.assertEqual(result['state'], 'published')
+        published_commit = git(['rev-parse', 'main'], remote)
+
+        for name in ('runner.lock', 'observations.json.lock'):
+            lock = acquire_file_lock(state_dir / name)
+            self.assertIsNotNone(lock)
+            try:
+                blocked = self.call_publish(state_dir, remote)
+                self.assertEqual(blocked['state'], 'blocked')
+                self.assertEqual(blocked['failure_code'], 'active_execution')
+                self.assertEqual(git(['rev-parse', 'main'], remote), published_commit)
+            finally:
+                release_file_lock(lock)
 
     def test_exact_replay_is_unchanged_and_preserves_success_receipt(self):
         state_dir, remote = self.make_case()

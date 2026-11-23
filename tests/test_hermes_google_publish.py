@@ -15,6 +15,7 @@ from hermes_google_publish import (
     prepare_candidate,
     write_candidate,
 )
+from hermes_file_lock import acquire_file_lock, release_file_lock
 from hermes_google_review import build_status
 from hermes_google_runner import validate_inputs
 
@@ -210,13 +211,14 @@ class HermesGooglePublishTests(unittest.TestCase):
         stale_now = datetime(2026, 11, 15, tzinfo=timezone.utc)
         with self.assertRaisesRegex(ValueError, 'stale'):
             prepare_candidate(state_dir, current_data, CURRENT_COMMIT, now=stale_now)
-        (state_dir / 'runner.lock').write_text('active', encoding='utf-8')
-        with self.assertRaisesRegex(ValueError, 'active'):
-            prepare_candidate(state_dir, current_data, CURRENT_COMMIT, now=NOW)
-        (state_dir / 'runner.lock').unlink()
-        (state_dir / 'observations.json.lock').write_text('active', encoding='utf-8')
-        with self.assertRaisesRegex(ValueError, 'active'):
-            prepare_candidate(state_dir, current_data, CURRENT_COMMIT, now=NOW)
+        for name in ('runner.lock', 'observations.json.lock'):
+            lock = acquire_file_lock(state_dir / name)
+            self.assertIsNotNone(lock)
+            try:
+                with self.assertRaisesRegex(ValueError, 'active'):
+                    prepare_candidate(state_dir, current_data, CURRENT_COMMIT, now=NOW)
+            finally:
+                release_file_lock(lock)
 
     def test_output_is_create_only_and_forbidden_inside_runtime(self):
         temporary, state_dir, current_data, _ = self.make_case()

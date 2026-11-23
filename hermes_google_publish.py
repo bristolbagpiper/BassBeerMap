@@ -14,6 +14,7 @@ from audit_google_places import COVERAGE_ISSUE
 from hermes_google_runner import validate_inputs
 from hermes_google_review import build_status, parse_utc
 from location_review import with_google
+from hermes_file_lock import file_lock_active
 
 
 MAX_EXECUTION_AGE = timedelta(hours=48)
@@ -267,7 +268,7 @@ def _verify_source_commit_objects(repository, commit, source_bundle, source_regi
 
 def _check_no_active_run(state_dir):
     for name in ('runner.lock', 'observations.json.lock'):
-        if (Path(state_dir) / name).exists():
+        if file_lock_active(Path(state_dir) / name):
             raise ValueError('An active Hermes Google execution is still writing local state')
 
 

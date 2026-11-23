@@ -17,7 +17,8 @@ from urllib.request import Request, urlopen
 
 from hermes_google_publish import _stage_commit_data, git_executable, prepare_candidate
 from hermes_google_review import parse_utc
-from hermes_file_lock import acquire_file_lock as _acquire_file_lock, release_file_lock as _release_file_lock
+from hermes_file_lock import (acquire_file_lock as _acquire_file_lock,
+                              release_file_lock as _release_file_lock, file_lock_active)
 
 
 REPOSITORY = 'bristolbagpiper/BassBeerMap'
@@ -450,7 +451,8 @@ def _run_locked(state_dir, expected_execution_id, cache, *, now, force_publish=F
     _attempt(state_dir, execution_id, 'validate_local_run', now=now)
     if expected_execution_id and execution_id != expected_execution_id:
         raise HandoffError('validate_local_run', 'execution_mismatch')
-    if (Path(state_dir) / 'runner.lock').exists() or (Path(state_dir) / 'observations.json.lock').exists():
+    if any(file_lock_active(Path(state_dir) / name)
+           for name in ('runner.lock', 'observations.json.lock')):
         raise HandoffError('validate_local_run', 'active_execution')
 
     auth = _load_auth(state_dir)

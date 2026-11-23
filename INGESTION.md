@@ -109,7 +109,10 @@ Google API key or API billing and depends on the local computer being available.
 
 The installed native Hermes job `1353548e1bb7` runs daily at 07:40 Europe/London,
 using a separate clean local browser and a script-only job (no model calls).
-State and private receipts live under `%LOCALAPPDATA%\hermes\profiles\mcjeeves\bass-map-google`.
+The standard Hermes `default` profile owns the job. State, observation history,
+private receipts and publication credentials live under
+`%LOCALAPPDATA%\hermes\bass-map-google`. McJeeves is reserved for piping and
+pipe-band responsibilities.
 Use the scheduled job's Python to run `install_hermes_google.py --revision
 <commit> --state-dir <state-directory> --launcher <existing-cron-script>
 --scheduler-jobs <Hermes-home>/cron/jobs.json`. The installer checks the live

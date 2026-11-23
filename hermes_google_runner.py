@@ -20,7 +20,7 @@ from hermes_google_review import build_status
 from install_hermes_google import BASS_JOB_ID, verify_installation
 
 REPOSITORY = 'bristolbagpiper/BassBeerMap'
-DEFAULT_STATE = Path(os.environ.get('LOCALAPPDATA', Path.home() / 'AppData' / 'Local')) / 'hermes' / 'profiles' / 'mcjeeves' / 'bass-map-google'
+DEFAULT_STATE = Path(os.environ.get('LOCALAPPDATA', Path.home() / 'AppData' / 'Local')) / 'hermes' / 'bass-map-google'
 
 
 def now():

@@ -12,6 +12,8 @@ import tarfile
 import tempfile
 from pathlib import Path
 
+from hermes_file_lock import acquire_file_lock as _acquire_file_lock, release_file_lock as _release_file_lock
+
 
 BASS_JOB_ID = '1353548e1bb7'
 
@@ -96,18 +98,27 @@ def install(repo, revision, state, launcher, jobs_file):
     if jobs._current_cron_store().jobs_file.resolve() != jobs_file:
         raise ValueError('Installer resolved a different native scheduler store')
     with jobs._fire_job_lock(BASS_JOB_ID, blocking=False) as acquired:
-        if (not acquired or executions.live_inflight_execution(BASS_JOB_ID)
-                or any((state / name).exists() for name in ('runner.lock', 'observations.json.lock'))):
+        if not acquired or executions.live_inflight_execution(BASS_JOB_ID):
             raise ValueError('Native BassBeerMap job is running or its scheduler lock is unavailable')
-        verify_scheduler(jobs_file, launcher)
-        with tempfile.NamedTemporaryFile('wb', dir=launcher.parent, delete=False) as handle:
-            handle.write(production_launcher(app, jobs_file))
-            staged_launcher = Path(handle.name)
+        state_locks = []
         try:
-            os.replace(staged_launcher, launcher)
+            for name in ('runner.lock', 'observations.json.lock'):
+                handle = _acquire_file_lock(state / name)
+                if handle is None:
+                    raise ValueError('Native BassBeerMap job is running or its scheduler lock is unavailable')
+                state_locks.append(handle)
+            verify_scheduler(jobs_file, launcher)
+            with tempfile.NamedTemporaryFile('wb', dir=launcher.parent, delete=False) as handle:
+                handle.write(production_launcher(app, jobs_file))
+                staged_launcher = Path(handle.name)
+            try:
+                os.replace(staged_launcher, launcher)
+            finally:
+                staged_launcher.unlink(missing_ok=True)
+            verify_installation(state, launcher, jobs_file, commit)
         finally:
-            staged_launcher.unlink(missing_ok=True)
-        verify_installation(state, launcher, jobs_file, commit)
+            for handle in reversed(state_locks):
+                _release_file_lock(handle)
     return commit
 
 

@@ -17,6 +17,7 @@ from urllib.request import Request, urlopen
 
 from hermes_google_publish import _stage_commit_data, git_executable, prepare_candidate
 from hermes_google_review import parse_utc
+from hermes_file_lock import acquire_file_lock as _acquire_file_lock, release_file_lock as _release_file_lock
 
 
 REPOSITORY = 'bristolbagpiper/BassBeerMap'
@@ -164,42 +165,13 @@ def _load_auth(state_dir):
 @contextlib.contextmanager
 def _publish_lock(state_dir, timeout=18):
     path = Path(state_dir) / 'publication.lock'
-    path.parent.mkdir(parents=True, exist_ok=True)
-    handle = path.open('a+b')
-    start = time.monotonic()
-    locked = False
+    handle = _acquire_file_lock(path, timeout)
+    if handle is None:
+        raise HandoffError('lock', 'handoff_busy')
     try:
-        if handle.seek(0, os.SEEK_END) == 0:
-            handle.write(b'0')
-            handle.flush()
-        while not locked and time.monotonic() - start < timeout:
-            try:
-                if os.name == 'nt':
-                    import msvcrt
-                    handle.seek(0)
-                    msvcrt.locking(handle.fileno(), msvcrt.LK_NBLCK, 1)
-                else:
-                    import fcntl
-                    fcntl.flock(handle.fileno(), fcntl.LOCK_EX | fcntl.LOCK_NB)
-                locked = True
-            except (OSError, BlockingIOError):
-                time.sleep(0.2)
-        if not locked:
-            raise HandoffError('lock', 'handoff_busy')
         yield
     finally:
-        if locked:
-            try:
-                if os.name == 'nt':
-                    import msvcrt
-                    handle.seek(0)
-                    msvcrt.locking(handle.fileno(), msvcrt.LK_UNLCK, 1)
-                else:
-                    import fcntl
-                    fcntl.flock(handle.fileno(), fcntl.LOCK_UN)
-            except OSError:
-                pass
-        handle.close()
+        _release_file_lock(handle)
 
 
 def _attempt(state_dir, execution_id, phase, *, state='running', failure_code=None, now=None,

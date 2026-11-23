@@ -15,6 +15,7 @@ import uuid
 
 from directory_release import read_json
 from hermes_google_browser import run as browse
+from hermes_file_lock import acquire_file_lock as _acquire_file_lock, release_file_lock as _release_file_lock
 from hermes_google_review import build_status
 from install_hermes_google import BASS_JOB_ID, verify_installation
 
@@ -101,8 +102,9 @@ def execute(state_dir=DEFAULT_STATE, limit=45, venue_ids=(), fetch=True, browser
     state_dir = Path(state_dir).resolve()
     state_dir.mkdir(parents=True, exist_ok=True)
     lock = state_dir / 'runner.lock'
-    descriptor = os.open(lock, os.O_CREAT | os.O_EXCL | os.O_WRONLY, 0o600)
-    os.close(descriptor)
+    lock_handle = _acquire_file_lock(lock)
+    if lock_handle is None:
+        raise FileExistsError(f'runner is already active: {lock}')
     receipt_path = state_dir / 'observations.json'
     execution = dict(schema_version=1, provider='hermes-browser', execution_id=uuid.uuid4().hex,
                      started_at=now(), finished_at=None, state='running')
@@ -152,7 +154,7 @@ def execute(state_dir=DEFAULT_STATE, limit=45, venue_ids=(), fetch=True, browser
         try:
             atomic_json(state_dir / 'last-run.json', execution)
         finally:
-            lock.unlink(missing_ok=True)
+            _release_file_lock(lock_handle)
     return execution
 
 

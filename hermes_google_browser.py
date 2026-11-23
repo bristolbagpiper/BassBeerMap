@@ -23,6 +23,7 @@ from build_place_review_queue import build_queue, valid_google_result_url
 from coordinate_sources import name_matches
 from directory_release import active_evidence, distance_metres, point_valid, read_json
 from owner_location_review import primary_title
+from hermes_file_lock import acquire_file_lock as _acquire_file_lock, release_file_lock as _release_file_lock
 
 MAX_BATCH = 45
 MAX_CLOSURE_RECHECKS = 5
@@ -389,18 +390,15 @@ def run(root, receipts_path, limit=45, venue_ids=(), debug=False, browser=None, 
     root, receipts_path = Path(root), Path(receipts_path)
     lock_path = receipts_path.with_name(receipts_path.name + '.lock')
     receipts_path.parent.mkdir(parents=True, exist_ok=True)
-    try:
-        lock_fd = os.open(lock_path, os.O_CREAT | os.O_EXCL | os.O_WRONLY, 0o600)
-    except FileExistsError as exc:
-        raise RuntimeError('another browser receipt writer holds the local lock') from exc
+    lock_handle = _acquire_file_lock(lock_path)
+    if lock_handle is None:
+        raise RuntimeError('another browser receipt writer holds the local lock')
     task_id = 'hermes-google-' + uuid.uuid4().hex
     records = []
     stop_detail = None
     temporary = None
     deadline = time.monotonic() + TOTAL_DEADLINE
     try:
-        os.write(lock_fd, task_id.encode())
-        os.close(lock_fd)
         bundle = read_json(root / 'directory-release.json')
         registry = read_json(root / 'venue-registry.json')
         queue = build_queue(bundle, registry, read_json(root / 'audit/full-location-audit.json', {}))
@@ -469,19 +467,12 @@ def run(root, receipts_path, limit=45, venue_ids=(), debug=False, browser=None, 
             if cleanup:
                 cleanup(task_id)
         finally:
-            try:
-                os.close(lock_fd)
-            except OSError:
-                pass
+            _release_file_lock(lock_handle)
             if temporary is not None:
                 try:
                     temporary.unlink()
                 except FileNotFoundError:
                     pass
-            try:
-                lock_path.unlink()
-            except FileNotFoundError:
-                pass
     result = {'attempted': attempted_count, 'stopped': stop_detail is not None,
               'selected': len(selected),
               'checked': len({record['venue_id'] for record in records if record['checked_at']}),

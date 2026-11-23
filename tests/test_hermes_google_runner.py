@@ -3,6 +3,8 @@ import hashlib
 from io import StringIO
 import json
 import os
+import subprocess
+import sys
 from pathlib import Path
 import tempfile
 import unittest
@@ -10,6 +12,7 @@ from unittest.mock import patch
 
 from directory_release import read_json
 from hermes_google_runner import atomic_json, execute, fetch_inputs, main, run_production, validate_inputs
+from hermes_file_lock import acquire_file_lock as _acquire_file_lock, release_file_lock as _release_file_lock
 from install_hermes_google import BASS_JOB_ID, production_launcher, verify_installation
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -45,6 +48,29 @@ class HermesRunnerTests(unittest.TestCase):
         self.assertEqual(len(urls), 3)
         self.assertTrue(all('/' + commit + '/' in url for url in urls[1:]))
 
+    def test_runner_and_browser_locks_reject_concurrent_owner_and_recover_after_kill(self):
+        worker = (
+            'import sys,time; from hermes_file_lock import acquire_file_lock; '
+            'h=acquire_file_lock(sys.argv[1]); assert h is not None; '
+            'print("LOCKED", flush=True); time.sleep(60)'
+        )
+        with tempfile.TemporaryDirectory() as temp:
+            for name in ('runner.lock', 'observations.json.lock'):
+                path = Path(temp) / name
+                process = subprocess.Popen([sys.executable, '-c', worker, str(path)],
+                                           cwd=ROOT, stdout=subprocess.PIPE, text=True)
+                try:
+                    self.assertEqual(process.stdout.readline().strip(), 'LOCKED')
+                    self.assertIsNone(_acquire_file_lock(path), f'{name} allowed a concurrent owner')
+                finally:
+                    process.kill()
+                    process.wait(timeout=5)
+                    process.stdout.close()
+                recovered = _acquire_file_lock(path, timeout=1)
+                self.assertIsNotNone(recovered, f'{name} remained locked after its owner was killed')
+                _release_file_lock(recovered)
+                self.assertTrue(path.exists(), 'advisory lock files should remain reusable')
+
     def stage(self, state):
         data = state / 'data'
         atomic_json(data / 'directory-release.json', self.bundle)
@@ -63,7 +89,9 @@ class HermesRunnerTests(unittest.TestCase):
             self.assertEqual(receipt['state'], 'failed')
             self.assertEqual(receipt['failure_code'], 'RuntimeError')
             self.assertNotIn('Provider text', str(receipt))
-            self.assertFalse((state / 'runner.lock').exists())
+            lock = _acquire_file_lock(state / 'runner.lock')
+            self.assertIsNotNone(lock)
+            _release_file_lock(lock)
 
     def test_execution_receipt_binds_output_and_empty_checks_stay_incomplete(self):
         with tempfile.TemporaryDirectory() as temp, patch.dict(os.environ):

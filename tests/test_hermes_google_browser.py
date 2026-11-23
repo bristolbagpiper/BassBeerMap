@@ -10,6 +10,7 @@ from directory_release import read_json
 from hermes_google_browser import (_identity_ok, _point_from_url, _postcode_in_text, _reference_expectations, _resolve_page,
                                    _rotated, _valid_place_url, classify, run)
 from hermes_google_review import build_status
+from hermes_file_lock import acquire_file_lock, release_file_lock
 
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -384,7 +385,9 @@ class HermesGoogleBrowserTests(unittest.TestCase):
                 run(ROOT, target, limit=1, venue_ids=[self.item['venue_id']], browser=browser,
                     cleanup=lambda _: None)
             self.assertFalse(browser.navigations)
-            self.assertFalse(target.with_name(target.name + '.lock').exists())
+            lock = acquire_file_lock(target.with_name(target.name + '.lock'))
+            self.assertIsNotNone(lock)
+            release_file_lock(lock)
 
 
 if __name__ == '__main__':

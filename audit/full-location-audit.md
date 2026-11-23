@@ -4,15 +4,15 @@ Locations: 1087
 
 Action required: 0
 Information — no pin check requested: 1087
-Locations with informational observations: 645 (may also have an actionable finding)
+Locations with informational observations: 646 (may also have an actionable finding)
 
 ## Results
 
-- no_name_match: 174
+- no_name_match: 175
 - coordinate_disagreement: 284
 - ambiguous_or_missing_coordinates: 66
 - nearby: 108
-- coordinate_agreement: 455
+- coordinate_agreement: 454
 
 ## Confidence
 
@@ -538,6 +538,7 @@ Locations with informational observations: 645 (may also have an actionable find
 | Seabridge | Newcastle-U-L: Clayton | ST5 3HA | coordinate_disagreement | FSA coordinate is 110.5m from the accepted pin; informational only because the FSA geocode may be approximate |
 | Shakespeare (Summer Row) | Birmingham: Central | B3 1JJ | no_name_match | FSA comparison is inconclusive; absence of a match does not contradict accepted evidence |
 | Sheet Anchor | Baldwins Gate | ST5 5BU | coordinate_disagreement | FSA coordinate is 51.4m from the accepted pin; informational only because the FSA geocode may be approximate |
+| Shepherds Hall Ale House | Chorley | PR7 1BS | no_name_match | FSA comparison is inconclusive; absence of a match does not contradict accepted evidence |
 | Ship | Monument EC3V | EC3V 0BP | no_name_match | FSA comparison is inconclusive; absence of a match does not contradict accepted evidence |
 | Ship Inn | Portishead | BS20 8JT | no_name_match | FSA comparison is inconclusive; absence of a match does not contradict accepted evidence |
 | Ship Inn | Red Wharf Bay | LL75 8RJ | coordinate_disagreement | FSA coordinate is 128.9m from the accepted pin; informational only because the FSA geocode may be approximate |
@@ -1018,7 +1019,6 @@ Locations with informational observations: 645 (may also have an actionable find
 | Seven Stars | Falmouth | TR11 3QA | coordinate_agreement | No pin check requested. |
 | Seven Stars | Derby: Central | DE1 3EE | coordinate_agreement | No pin check requested. |
 | Shakespeare Inn | Shardlow | DE72 2GP | coordinate_agreement | No pin check requested. |
-| Shepherds Hall Ale House | Chorley | PR7 1BS | coordinate_agreement | No pin check requested. |
 | Shilton Vaults | Earl Shilton | LE9 7NA | coordinate_agreement | No pin check requested. |
 | Ship | Borough SE1 | SE1 1DX | coordinate_agreement | No pin check requested. |
 | Ship Inn | Fishguard | SA65 9ND | coordinate_agreement | No pin check requested. |

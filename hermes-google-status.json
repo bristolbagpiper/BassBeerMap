@@ -1,19 +1,19 @@
 {
   "batch": {
-    "ambiguous": 2,
+    "ambiguous": 10,
     "attempted": 45,
     "checked": 45,
     "selected": 45,
     "unavailable": 0
   },
-  "checked_at": "2026-11-19T07:44:37.007290+00:00",
+  "checked_at": "2026-11-23T19:41:24.882855+00:00",
   "configured": true,
   "counts": {
     "attempted_venue_count": 1087,
     "checked_this_run": 45,
     "current": 1087,
     "retained_unavailable": 1,
-    "review_count": 90,
+    "review_count": 100,
     "total": 1087,
     "unchecked_or_stale": 0
   },
@@ -129,6 +129,24 @@
       "venue_id": "v-196f3701-3d8b-50c7-bb6a-0167ba6a6bfc"
     },
     {
+      "binding_signature": "0984740970215de68a1e98458f5e6005a8c97ac9f544f8b4dd7ce28828b4e741",
+      "place_name": "Bath",
+      "postcode": "BA1 2DA",
+      "pub_name": "Trinity",
+      "reason": "Google results are incomplete or ambiguous; no unique place accepted",
+      "status": "review_needed",
+      "venue_id": "v-1c738e6e-5b59-5609-b777-bf14e0038c2b"
+    },
+    {
+      "binding_signature": "db29d15838c3ba69923bed309f84b9437b697424c8c5371fdaa3283fa53d6496",
+      "place_name": "Barton le Clay",
+      "postcode": "MK45 4SD",
+      "pub_name": "Barton Rovers Social (PMC)",
+      "reason": "Google results are incomplete or ambiguous; no unique place accepted",
+      "status": "review_needed",
+      "venue_id": "v-1dd21f62-1893-575a-bdad-15ce9c50ac90"
+    },
+    {
       "binding_signature": "c47020adb7b6037a0217e39fcae265e86d6208d27a015579fb292f9650ab1147",
       "place_name": "Chesterfield: Central",
       "postcode": "S40 1PX",
@@ -145,6 +163,15 @@
       "reason": "Google named-place marker differs by more than 50 metres; existing pin retained for review",
       "status": "review_needed",
       "venue_id": "v-22be00dc-148b-58ee-bdd5-b4bcfcc5ccca"
+    },
+    {
+      "binding_signature": "0d67f66aeca8c941feb10c0c3550e4503fc042a7d3ceb439f3c12dd5e3eb85c5",
+      "place_name": "Lowton",
+      "postcode": "WA3 2EY",
+      "pub_name": "Rams Head",
+      "reason": "Google results are incomplete or ambiguous; no unique place accepted",
+      "status": "review_needed",
+      "venue_id": "v-24865350-c8b8-5220-878f-27452e3d1a13"
     },
     {
       "binding_signature": "aefce1d8f710482979a1107628f1ad67d3791aa27f30da39429fd4d539bf46a0",
@@ -264,6 +291,15 @@
       "venue_id": "v-44818631-c2ca-546d-a097-25ded2897bc1"
     },
     {
+      "binding_signature": "a7d21af2f2642ea070a3d9b17f89a391fe5ba307b82e7e9263451be97523cf37",
+      "place_name": "Wymondham",
+      "postcode": "LE14 2AG",
+      "pub_name": "Berkeley Arms",
+      "reason": "Google results are incomplete or ambiguous; no unique place accepted",
+      "status": "review_needed",
+      "venue_id": "v-4ac64929-0f37-5395-9fa7-4c90d72fda85"
+    },
+    {
       "binding_signature": "9f8ea0655169f56b7e7de44b58e621d201424d21d8a7a2a780350b1bd560b74d",
       "place_name": "Leek",
       "postcode": "ST13 6LJ",
@@ -298,6 +334,15 @@
       "reason": "Google named-place marker differs by more than 50 metres; existing pin retained for review",
       "status": "review_needed",
       "venue_id": "v-51fc7d3b-e50e-5d5c-83c1-0068fb4919f6"
+    },
+    {
+      "binding_signature": "0756419e837bfc82b20f6c70397d8fe77d58db4658c92f5db9914fe982dea9e9",
+      "place_name": "Stoke: Fenton",
+      "postcode": "ST4 3AJ",
+      "pub_name": "Bench and Bar",
+      "reason": "Google results are incomplete or ambiguous; no unique place accepted",
+      "status": "review_needed",
+      "venue_id": "v-58016f32-d341-575c-a2d9-875de0d14f22"
     },
     {
       "binding_signature": "511cd2d2faca4d55c7fbf4b9d1d2759ca4f7e734462564ce742aef6d868000c5",
@@ -552,6 +597,15 @@
       "venue_id": "v-93cef072-fe89-5716-82cc-0382b3448476"
     },
     {
+      "binding_signature": "084bf8a855a2065a256ae40e76941e1a1ac325b0a491306a71d236fe02fb7859",
+      "place_name": "Dilhorne",
+      "postcode": "ST10 2PQ",
+      "pub_name": "Charlie Bassetts",
+      "reason": "Google results are incomplete or ambiguous; no unique place accepted",
+      "status": "review_needed",
+      "venue_id": "v-95a10492-5d95-5fd1-85cd-7a9a58882d81"
+    },
+    {
       "binding_signature": "8a420fb98348bedf3562ea492f2be8160bba84b62251d0d5f7036d1a490799f0",
       "place_name": "Consett",
       "postcode": "DH8 6NF",
@@ -606,6 +660,15 @@
       "venue_id": "v-9fc56ee2-e106-5f12-8f10-2eebbea068ef"
     },
     {
+      "binding_signature": "784dcc108a0a5034d7b977814b1fa60f01c17db0b25dede168f7c03f75b6ae26",
+      "place_name": "Ripley: Oakerthorpe",
+      "postcode": "DE55 7LL",
+      "pub_name": "Amber Hotel",
+      "reason": "Google results are incomplete or ambiguous; no unique place accepted",
+      "status": "review_needed",
+      "venue_id": "v-a130b558-0e74-5f25-bf27-3a0ac1c18b7c"
+    },
+    {
       "binding_signature": "f7c68fbccecf060507aadbad1f4001669af7e01177f0ac47e0180c0321f7f18f",
       "place_name": "West Huntspill",
       "postcode": "TA9 3RA",
@@ -649,6 +712,15 @@
       "reason": "Google named-place marker differs by more than 50 metres; existing pin retained for review",
       "status": "review_needed",
       "venue_id": "v-af18b197-586e-5323-8171-e7f9e58f5ec9"
+    },
+    {
+      "binding_signature": "2b9205ab43dcdc3bbd55aa7529b52959bfe1b0b85e032b8db7df6a828342d9a4",
+      "place_name": "Newcastle-U-L: Central",
+      "postcode": "ST5 1HX",
+      "pub_name": "Victoria",
+      "reason": "Google results are incomplete or ambiguous; no unique place accepted",
+      "status": "review_needed",
+      "venue_id": "v-af8d9a7a-0227-5820-8daa-b512b67ea3b6"
     },
     {
       "binding_signature": "fbf0afa7a878164606155770bbadcf34388bb3a7de71bf1e9415d62bbb36d1a4",
@@ -795,6 +867,15 @@
       "venue_id": "v-e6679625-95b2-50be-92e0-187d41170ed6"
     },
     {
+      "binding_signature": "19ce9979e59509172295032c1897815a1c7186a9f7c90d38d008c31b235eae34",
+      "place_name": "Oldbury-on-Severn",
+      "postcode": "BS35 1QA",
+      "pub_name": "Anchor Inn",
+      "reason": "Google results are incomplete or ambiguous; no unique place accepted",
+      "status": "review_needed",
+      "venue_id": "v-ec13b2c3-01a7-5b02-8729-8cfc02ae51bf"
+    },
+    {
       "binding_signature": "1e0550d38dc5fec629d481fcc0277cea34e5d3be975b0eff06a3ee7547b0116c",
       "place_name": "Stoke: Central",
       "postcode": "ST4 1JB",
@@ -829,17 +910,26 @@
       "reason": "Google named-place result differs in business identity or postcode; verify the matched venue and address",
       "status": "review_needed",
       "venue_id": "v-fb5ddb66-cc8e-53b3-bed6-c35c165091be"
+    },
+    {
+      "binding_signature": "d334b5f116679616e6b6c8beba627b79d3ecc2ee792be72cc3396c16821ad7fe",
+      "place_name": "Manchester: Central",
+      "postcode": "M1 3AQ",
+      "pub_name": "Waldorf",
+      "reason": "Google results are incomplete or ambiguous; no unique place accepted",
+      "status": "review_needed",
+      "venue_id": "v-fb5ddb66-cc8e-53b3-bed6-c35c165091be"
     }
   ],
   "hard_failure": false,
   "issues": [],
   "provider": "hermes-browser",
   "run_attempt": 1,
-  "run_id": "0f97b059149b4fab9a1e79bd5c2f95ad",
+  "run_id": "9f830042f9864b1d9686febae4b71493",
   "schema_version": 1,
-  "source_commit": "bdacf401cbbe4c52c45dfa7b3b4766fdb1280aff",
-  "source_execution_finished_at": "2026-11-19T07:44:37.290250+00:00",
-  "source_release_id": "4b87c573a4c1037c9efefb95c575b43e1774e1836292e35edfef625c37663403",
-  "source_status_sha256": "3b953afe18b7e3b853386262e5caf2c39759e2d08e0d48befd5bf1e1ac835263",
-  "validated_release_id": "4b87c573a4c1037c9efefb95c575b43e1774e1836292e35edfef625c37663403"
+  "source_commit": "f3e4e098725586e416964324f2e6f4346a25443c",
+  "source_execution_finished_at": "2026-11-23T19:41:25.225528+00:00",
+  "source_release_id": "0d98cf86a56a4ab3a95abc6cf9f2622db7ca82356deaaa1b48a9913afacf5932",
+  "source_status_sha256": "87d241f8baf8a2c9507117dfdf579fa74f9d35b879416a3833209a4a4d568298",
+  "validated_release_id": "8aa3a3a96cb86ce2f88b158a33d405f4e28b416354121dde5a60364fd7e10e6b"
 }

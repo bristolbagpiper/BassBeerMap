@@ -208,6 +208,20 @@ class RecheckIntegrationTests(unittest.TestCase):
         self.assertEqual(result["status"], "conflict")
         self.assertIn("name changed", result["reason"])
 
+    def test_documented_rename_confirms_at_the_same_premises_only(self):
+        accepted = pin()
+        accepted.pop('owner_confirmation')
+        former_name = '<dt>Previous Names</dt><dd>Black Cat; Other Former Name</dd>'
+        for changes, status in (({}, 'confirmed'), ({'address': '104 Rose Lane'}, 'conflict'),
+                                ({'postcode': 'L18 8AJ'}, 'conflict'), ({'lat': 53.3787}, 'conflict')):
+            with self.subTest(changes=changes):
+                page = self.camra_page(name='New Trading Name, Liverpool', **changes) + former_name
+                with patch('coordinate_sources.fetch_text', return_value=page):
+                    result = recheck_pin(row(), accepted)
+                self.assertEqual(result['status'], status)
+                if status == 'confirmed':
+                    self.assertEqual(result['evidence']['reference_name'], 'New Trading Name, Liverpool')
+
     def test_black_cat_marketing_change_does_not_require_a_new_owner_confirmation(self):
         accepted = pin()
         accepted.pop('owner_confirmation')

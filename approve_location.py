@@ -12,7 +12,7 @@ from pathlib import Path
 from urllib.parse import unquote_plus, urlparse
 from urllib.request import Request, urlopen
 
-from coordinate_sources import fetch_text, name_matches, parse_camra
+from coordinate_sources import camra_previous_name_matches, fetch_text, name_matches, parse_camra
 from directory_release import (
     distance_metres, point_valid, read_json, read_rows, validate_release,
     venue_key, write_json, write_release,
@@ -90,18 +90,6 @@ def approved_commands(event, owner):
     if len({command["venue_id"] for command in commands}) != len(commands):
         raise ValueError("Approve each venue ID only once in a comment")
     return commands
-
-
-def camra_previous_name_matches(page_text, listing):
-    """Only accept an exact former name from CAMRA's Previous Names field."""
-    match = re.search(r'<dt\b[^>]*>\s*Previous Names\s*</dt>\s*<dd\b[^>]*>(.*?)</dd>',
-                      page_text, re.I | re.S)
-    if not match:
-        return False
-    text = html.unescape(re.sub(r'<[^>]+>', ' ', match.group(1)))
-    normalize = lambda value: re.sub(r'[^a-z0-9]', '', value.casefold())
-    expected = normalize(row_name) if (row_name := listing.strip()) else ''
-    return bool(expected and any(normalize(part) == expected for part in re.split(r'[,;]', text)))
 
 
 def camra_heading_confirms_listing_alias(listing, source_name, page_text):

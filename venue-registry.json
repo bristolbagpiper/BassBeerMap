@@ -1,7 +1,7 @@
 {
   "location_review": {
-    "actionable_count": 13,
-    "active_count": 14,
+    "actionable_count": 0,
+    "active_count": 1,
     "records": {
       "v-0043695f-006e-58fe-adc2-894e5500b940": {
         "active": false,
@@ -3337,7 +3337,7 @@
         "venue_id": "v-32646a4c-94da-52da-a73d-1125b6d05ce9"
       },
       "v-32beb565-ed3a-5330-a1c1-23421ac706ac": {
-        "active": true,
+        "active": false,
         "first_seen": "2026-10-09",
         "history": [
           {
@@ -3358,26 +3358,46 @@
               "Directory postcode DE4 4RF conflicts with reference address DE4 4FR"
             ],
             "status": "review_needed"
+          },
+          {
+            "date": "2026-11-24",
+            "reasons": [],
+            "status": "resolved"
           }
         ],
         "last_checked": "2026-11-13",
-        "manual_action_required": true,
-        "next_action": "Check the conflicting address/postcode; this does not prove the pin is wrong",
+        "manual_action_required": false,
+        "next_action": "No pin check requested",
         "place_name": "Wirksworth",
         "postcode": "DE4 4RF",
         "pub_name": "Lime Kiln",
-        "reasons": [
-          "Directory postcode DE4 4RF conflicts with reference address DE4 4FR"
-        ],
+        "reasons": [],
         "reference": {
           "field": "postcode",
           "listed": "DE4 4RF",
+          "owner_review": {
+            "approved_coordinate": {
+              "lat": 53.0853682125,
+              "lng": -1.57258601875
+            },
+            "checked_at": "2026-11-24",
+            "conclusion": "The reviewed evidence identifies the mapped premises at Cromford Road. Record DE4 4FR as a reference postcode for the same building, and retain the PDF postcode DE4 4RF. This review does not establish the postal delivery postcode.",
+            "listed": "DE4 4RF",
+            "owner_instruction": "Record the ten known postcode differences as reviewed geographical metadata where the existing building evidence supports doing so.",
+            "pub_name": "Lime Kiln",
+            "reference": "DE4 4FR",
+            "reviewed_by": "Codex",
+            "source_url": "https://camra.org.uk/pubs/165663",
+            "supporting_address_urls": [
+              "https://camra.org.uk/pubs/165663"
+            ]
+          },
           "reference": "DE4 4FR",
           "source_url": "https://camra.org.uk/pubs/165663",
           "use_reference_for_directions": true
         },
         "research": {},
-        "review_category": "address_metadata",
+        "review_category": "confirmed",
         "source_checks": {
           "camra": {
             "status": "confirmed",
@@ -3385,7 +3405,7 @@
           }
         },
         "source_error": null,
-        "status": "review_needed",
+        "status": "resolved",
         "unverified": false,
         "venue_id": "v-32beb565-ed3a-5330-a1c1-23421ac706ac"
       },
@@ -5488,7 +5508,7 @@
         "venue_id": "v-532b1388-63e1-5b1d-b72b-8f72b038b744"
       },
       "v-5351f1e7-9b90-50e5-a520-f0c9598a6a36": {
-        "active": true,
+        "active": false,
         "first_seen": "2026-10-09",
         "history": [
           {
@@ -5509,26 +5529,46 @@
               "Directory postcode B5 6EP conflicts with reference address B12 0QY"
             ],
             "status": "review_needed"
+          },
+          {
+            "date": "2026-11-24",
+            "reasons": [],
+            "status": "resolved"
           }
         ],
         "last_checked": "2026-11-14",
-        "manual_action_required": true,
-        "next_action": "Check the conflicting address/postcode; this does not prove the pin is wrong",
+        "manual_action_required": false,
+        "next_action": "No pin check requested",
         "place_name": "Birmingham: Digbeth",
         "postcode": "B5 6EP",
         "pub_name": "White Swan",
-        "reasons": [
-          "Directory postcode B5 6EP conflicts with reference address B12 0QY"
-        ],
+        "reasons": [],
         "reference": {
           "field": "postcode",
           "listed": "B5 6EP",
+          "owner_review": {
+            "approved_coordinate": {
+              "lat": 52.47373674000001,
+              "lng": -1.8862870600000001
+            },
+            "checked_at": "2026-11-24",
+            "conclusion": "The reviewed evidence identifies the mapped premises at 276 Bradford Street. Record B12 0QY as a reference postcode for the same building, and retain the PDF postcode B5 6EP. This review does not establish the postal delivery postcode.",
+            "listed": "B5 6EP",
+            "owner_instruction": "Record the ten known postcode differences as reviewed geographical metadata where the existing building evidence supports doing so.",
+            "pub_name": "White Swan",
+            "reference": "B12 0QY",
+            "reviewed_by": "Codex",
+            "source_url": "https://camra.org.uk/pubs/121124",
+            "supporting_address_urls": [
+              "https://camra.org.uk/pubs/121124"
+            ]
+          },
           "reference": "B12 0QY",
           "source_url": "https://camra.org.uk/pubs/121124",
           "use_reference_for_directions": true
         },
         "research": {},
-        "review_category": "address_metadata",
+        "review_category": "confirmed",
         "source_checks": {
           "camra": {
             "status": "confirmed",
@@ -5536,7 +5576,7 @@
           }
         },
         "source_error": null,
-        "status": "review_needed",
+        "status": "resolved",
         "unverified": false,
         "venue_id": "v-5351f1e7-9b90-50e5-a520-f0c9598a6a36"
       },
@@ -5839,7 +5879,7 @@
         "venue_id": "v-552c7fa1-965e-525c-9c6d-00f7d8e85446"
       },
       "v-56b3e28f-3fff-5717-be36-519b8e204f0f": {
-        "active": true,
+        "active": false,
         "first_seen": "2026-11-24",
         "history": [
           {
@@ -5848,26 +5888,46 @@
               "Directory postcode WV10 0DJ conflicts with reference address WV10 0DG"
             ],
             "status": "review_needed"
+          },
+          {
+            "date": "2026-11-24",
+            "reasons": [],
+            "status": "resolved"
           }
         ],
         "last_checked": "2026-11-14",
-        "manual_action_required": true,
-        "next_action": "Check the conflicting address/postcode; this does not prove the pin is wrong",
+        "manual_action_required": false,
+        "next_action": "No pin check requested",
         "place_name": "Wolverhampton: Central",
         "postcode": "WV10 0DJ",
         "pub_name": "Great Western",
-        "reasons": [
-          "Directory postcode WV10 0DJ conflicts with reference address WV10 0DG"
-        ],
+        "reasons": [],
         "reference": {
           "field": "postcode",
           "listed": "WV10 0DJ",
+          "owner_review": {
+            "approved_coordinate": {
+              "lat": 52.587103592327,
+              "lng": -2.117662230654
+            },
+            "checked_at": "2026-11-24",
+            "conclusion": "The reviewed evidence identifies the mapped premises at 9 Sun Street. Record WV10 0DG as a reference postcode for the same building, and retain the PDF postcode WV10 0DJ. This review does not establish the postal delivery postcode.",
+            "listed": "WV10 0DJ",
+            "owner_instruction": "Record the ten known postcode differences as reviewed geographical metadata where the existing building evidence supports doing so.",
+            "pub_name": "Great Western",
+            "reference": "WV10 0DG",
+            "reviewed_by": "Codex",
+            "source_url": "https://camra.org.uk/pubs/127008",
+            "supporting_address_urls": [
+              "https://camra.org.uk/pubs/127008"
+            ]
+          },
           "reference": "WV10 0DG",
           "source_url": "https://camra.org.uk/pubs/127008",
           "use_reference_for_directions": true
         },
         "research": {},
-        "review_category": "address_metadata",
+        "review_category": "confirmed",
         "source_checks": {
           "camra": {
             "status": "confirmed",
@@ -5879,7 +5939,7 @@
           }
         },
         "source_error": null,
-        "status": "review_needed",
+        "status": "resolved",
         "unverified": false,
         "venue_id": "v-56b3e28f-3fff-5717-be36-519b8e204f0f"
       },
@@ -10694,7 +10754,7 @@
         "venue_id": "v-8b99896d-af7b-5f1d-a6aa-6abc98b1ae60"
       },
       "v-8c80b729-ceaf-5912-ab4a-1b51de2fb3f8": {
-        "active": true,
+        "active": false,
         "first_seen": "2026-11-02",
         "history": [
           {
@@ -10724,32 +10784,31 @@
               "Reference venue name changed"
             ],
             "status": "unverified"
+          },
+          {
+            "date": "2026-11-24",
+            "reasons": [],
+            "status": "resolved"
           }
         ],
         "last_checked": "2026-11-24",
-        "manual_action_required": true,
-        "next_action": "Check whether the named business changed; this does not prove the coordinate is wrong",
+        "manual_action_required": false,
+        "next_action": "No pin check requested",
         "place_name": "Nottingham: Central",
         "postcode": "NG1 6FS",
         "pub_name": "Roundhouse",
-        "reasons": [
-          "Reference venue name changed"
-        ],
+        "reasons": [],
         "reference": {},
         "research": {},
-        "review_category": "identity_check",
+        "review_category": "confirmed",
         "source_checks": {
           "camra": {
-            "status": "conflict",
-            "url": "https://camra.org.uk/pubs/162611"
-          },
-          "fsa_independent": {
-            "status": "coordinate_agreement",
-            "url": "https://ratings.food.gov.uk/business/1976925"
+            "status": "confirmed",
+            "url": "https://camra.org.uk/pubs/kova-nottingham-162611"
           }
         },
         "source_error": null,
-        "status": "unverified",
+        "status": "resolved",
         "trading_status_review": {
           "checked_at": "2026-11-03",
           "evidence": [
@@ -10767,7 +10826,7 @@
           "reason": "Former Roundhouse is now Kova restaurant; CAMRA states cask ale unavailable. Exact old listing excluded from active Bass map.",
           "status": "resolved_not_bass_outlet"
         },
-        "unverified": true,
+        "unverified": false,
         "venue_id": "v-8c80b729-ceaf-5912-ab4a-1b51de2fb3f8"
       },
       "v-8cde8d00-9411-5b53-8eb9-fac4cce54dab": {
@@ -12038,7 +12097,7 @@
         "venue_id": "v-9acf6cbe-1e88-5904-af35-f28c20b53738"
       },
       "v-9b0214b5-0b89-530a-9485-b8662012f510": {
-        "active": true,
+        "active": false,
         "first_seen": "2026-10-02",
         "history": [
           {
@@ -12059,26 +12118,46 @@
               "Directory postcode DE72 2WA conflicts with reference address DE72 2HA"
             ],
             "status": "review_needed"
+          },
+          {
+            "date": "2026-11-24",
+            "reasons": [],
+            "status": "resolved"
           }
         ],
         "last_checked": "2026-11-19",
-        "manual_action_required": true,
-        "next_action": "Check the conflicting address/postcode; this does not prove the pin is wrong",
+        "manual_action_required": false,
+        "next_action": "No pin check requested",
         "place_name": "Shardlow",
         "postcode": "DE72 2WA",
         "pub_name": "Navigation",
-        "reasons": [
-          "Directory postcode DE72 2WA conflicts with reference address DE72 2HA"
-        ],
+        "reasons": [],
         "reference": {
           "field": "postcode",
           "listed": "DE72 2WA",
+          "owner_review": {
+            "approved_coordinate": {
+              "lat": 52.868029,
+              "lng": -1.342615
+            },
+            "checked_at": "2026-11-24",
+            "conclusion": "The reviewed evidence identifies the mapped premises at 143 London Road. Record DE72 2HA as a reference postcode for the same building, and retain the PDF postcode DE72 2WA. This review does not establish the postal delivery postcode.",
+            "listed": "DE72 2WA",
+            "owner_instruction": "Record the ten known postcode differences as reviewed geographical metadata where the existing building evidence supports doing so.",
+            "pub_name": "Navigation",
+            "reference": "DE72 2HA",
+            "reviewed_by": "Codex",
+            "source_url": "https://camra.org.uk/pubs/navigation-inn-shardlow-143265",
+            "supporting_address_urls": [
+              "https://camra.org.uk/pubs/143265"
+            ]
+          },
           "reference": "DE72 2HA",
           "source_url": "https://camra.org.uk/pubs/navigation-inn-shardlow-143265",
           "use_reference_for_directions": true
         },
         "research": {},
-        "review_category": "address_metadata",
+        "review_category": "confirmed",
         "source_checks": {
           "camra": {
             "status": "confirmed",
@@ -12094,7 +12173,7 @@
           }
         },
         "source_error": null,
-        "status": "review_needed",
+        "status": "resolved",
         "unverified": false,
         "venue_id": "v-9b0214b5-0b89-530a-9485-b8662012f510"
       },
@@ -12276,7 +12355,7 @@
         "venue_id": "v-9ee32030-d38f-51bb-94b7-64a11d601650"
       },
       "v-9f45e2cc-e10a-59dc-9286-43bc11440990": {
-        "active": true,
+        "active": false,
         "first_seen": "2026-11-24",
         "history": [
           {
@@ -12285,26 +12364,46 @@
               "Directory postcode NG2 2AS conflicts with reference address NG2 3AS"
             ],
             "status": "review_needed"
+          },
+          {
+            "date": "2026-11-24",
+            "reasons": [],
+            "status": "resolved"
           }
         ],
         "last_checked": "2026-11-19",
-        "manual_action_required": true,
-        "next_action": "Check the conflicting address/postcode; this does not prove the pin is wrong",
+        "manual_action_required": false,
+        "next_action": "No pin check requested",
         "place_name": "Nottingham: Central",
         "postcode": "NG2 2AS",
         "pub_name": "Brew Tavern",
-        "reasons": [
-          "Directory postcode NG2 2AS conflicts with reference address NG2 3AS"
-        ],
+        "reasons": [],
         "reference": {
           "field": "postcode",
           "listed": "NG2 2AS",
+          "owner_review": {
+            "approved_coordinate": {
+              "lat": 52.946557142857145,
+              "lng": -1.1465279428571429
+            },
+            "checked_at": "2026-11-24",
+            "conclusion": "The reviewed evidence identifies the mapped premises at Cabman's Shelter, 1a Queens Road. Record NG2 3AS as a reference postcode for the same building, and retain the PDF postcode NG2 2AS. This review does not establish the postal delivery postcode.",
+            "listed": "NG2 2AS",
+            "owner_instruction": "Record the ten known postcode differences as reviewed geographical metadata where the existing building evidence supports doing so.",
+            "pub_name": "Brew Tavern",
+            "reference": "NG2 3AS",
+            "reviewed_by": "Codex",
+            "source_url": "https://camra.org.uk/pubs/163071",
+            "supporting_address_urls": [
+              "https://camra.org.uk/pubs/163071"
+            ]
+          },
           "reference": "NG2 3AS",
           "source_url": "https://camra.org.uk/pubs/163071",
           "use_reference_for_directions": true
         },
         "research": {},
-        "review_category": "address_metadata",
+        "review_category": "confirmed",
         "source_checks": {
           "camra": {
             "status": "confirmed",
@@ -12312,7 +12411,7 @@
           }
         },
         "source_error": null,
-        "status": "review_needed",
+        "status": "resolved",
         "unverified": false,
         "venue_id": "v-9f45e2cc-e10a-59dc-9286-43bc11440990"
       },
@@ -13908,7 +14007,7 @@
         "venue_id": "v-b1ed2bf8-2858-5ace-80c6-3c5ae0e5d74c"
       },
       "v-b1f768d3-f5ed-5eae-a199-6b21559ba452": {
-        "active": true,
+        "active": false,
         "first_seen": "2026-11-03",
         "history": [
           {
@@ -13943,20 +14042,42 @@
               "Directory postcode LE65 1AH conflicts with reference address LE65 1AN"
             ],
             "status": "review_needed"
+          },
+          {
+            "date": "2026-11-24",
+            "reasons": [],
+            "status": "resolved"
           }
         ],
         "last_checked": "2026-11-20",
-        "manual_action_required": true,
-        "next_action": "Check the conflicting address/postcode; this does not prove the pin is wrong",
+        "manual_action_required": false,
+        "next_action": "No pin check requested",
         "place_name": "Ashby-de-la-Zouch",
         "postcode": "LE65 1AH",
         "pub_name": "Fitzgeralds",
-        "reasons": [
-          "Directory postcode LE65 1AH conflicts with reference address LE65 1AN"
-        ],
+        "reasons": [],
         "reference": {
           "field": "postcode",
           "listed": "LE65 1AH",
+          "owner_review": {
+            "approved_coordinate": {
+              "lat": 52.7471038,
+              "lng": -1.4705552
+            },
+            "checked_at": "2026-11-24",
+            "conclusion": "The reviewed evidence identifies the mapped premises at 60A Market Street, Ashby-de-la-Zouch, LE65 1AN. Record LE65 1AN as a reference postcode for the same building, and retain the PDF postcode LE65 1AH. This review does not establish the postal delivery postcode. Council licensing records use LE65 1AN for 60A Market Street and CAMRA uses LE65 1AH for the same building.",
+            "listed": "LE65 1AH",
+            "owner_instruction": "Record the ten known postcode differences as reviewed geographical metadata where the existing building evidence supports doing so.",
+            "pub_name": "Fitzgeralds",
+            "reference": "LE65 1AN",
+            "reviewed_by": "Codex",
+            "source_url": "https://www.google.com/maps/place/Fitzgeralds+Ashby/@52.7471038,-1.4705552,17z/data=!3m1!4b1!4m6!3m5!1s0x4879fd6287892107:0xc6b7c50a88009f92!8m2!3d52.7471038!4d-1.4705552!16s%2Fg%2F11zy8xb2rv?entry=ttu&g_ep=EgoyMDI2MTAyOC4wIKXMDSoASAFQAw%3D%3D",
+            "supporting_address_urls": [
+              "https://camra.org.uk/pubs/fitzgeralds-ashby-de-la-zouch-200535",
+              "https://minutes-1.nwleics.gov.uk/documents/s15320/Appendix%201%20-%20Premises%20Licence.pdf",
+              "https://www.google.com/maps/place/Fitzgeralds+Ashby/@52.7471038,-1.4705552,17z/data=!3m1!4b1!4m6!3m5!1s0x4879fd6287892107:0xc6b7c50a88009f92!8m2!3d52.7471038!4d-1.4705552!16s%2Fg%2F11zy8xb2rv?entry=ttu&g_ep=EgoyMDI2MTAyOC4wIKXMDSoASAFQAw%3D%3D"
+            ]
+          },
           "reference": "LE65 1AN",
           "source_url": "https://www.google.com/maps/place/Fitzgeralds+Ashby/@52.7471038,-1.4705552,17z/data=!3m1!4b1!4m6!3m5!1s0x4879fd6287892107:0xc6b7c50a88009f92!8m2!3d52.7471038!4d-1.4705552!16s%2Fg%2F11zy8xb2rv?entry=ttu&g_ep=EgoyMDI2MTAyOC4wIKXMDSoASAFQAw%3D%3D",
           "use_reference_for_directions": true
@@ -13971,7 +14092,7 @@
           "proposals": [],
           "status": "no_candidate"
         },
-        "review_category": "address_metadata",
+        "review_category": "confirmed",
         "source_checks": {
           "google-maps-named-place": {
             "status": "not_checked",
@@ -13979,7 +14100,7 @@
           }
         },
         "source_error": null,
-        "status": "review_needed",
+        "status": "resolved",
         "unverified": false,
         "venue_id": "v-b1f768d3-f5ed-5eae-a199-6b21559ba452"
       },
@@ -16592,7 +16713,7 @@
         "venue_id": "v-d8070a01-ac91-5ded-a8a4-899851cf5c2b"
       },
       "v-d8f002a1-4ed3-5ffb-8de9-c9cdbef55a1b": {
-        "active": true,
+        "active": false,
         "first_seen": "2026-11-24",
         "history": [
           {
@@ -16601,26 +16722,46 @@
               "Directory postcode DE56 1UP conflicts with reference address DE56 1AP"
             ],
             "status": "review_needed"
+          },
+          {
+            "date": "2026-11-24",
+            "reasons": [],
+            "status": "resolved"
           }
         ],
         "last_checked": "2026-11-12",
-        "manual_action_required": true,
-        "next_action": "Check the conflicting address/postcode; this does not prove the pin is wrong",
+        "manual_action_required": false,
+        "next_action": "No pin check requested",
         "place_name": "Belper: Central",
         "postcode": "DE56 1UP",
         "pub_name": "Arkwrights",
-        "reasons": [
-          "Directory postcode DE56 1UP conflicts with reference address DE56 1AP"
-        ],
+        "reasons": [],
         "reference": {
           "field": "postcode",
           "listed": "DE56 1UP",
+          "owner_review": {
+            "approved_coordinate": {
+              "lat": 53.0227293,
+              "lng": -1.4832821
+            },
+            "checked_at": "2026-11-24",
+            "conclusion": "The reviewed evidence identifies the mapped premises at 6 Campbell Street. Record DE56 1AP as a reference postcode for the same building, and retain the PDF postcode DE56 1UP. This review does not establish the postal delivery postcode.",
+            "listed": "DE56 1UP",
+            "owner_instruction": "Record the ten known postcode differences as reviewed geographical metadata where the existing building evidence supports doing so.",
+            "pub_name": "Arkwrights",
+            "reference": "DE56 1AP",
+            "reviewed_by": "Codex",
+            "source_url": "https://camra.org.uk/pubs/113191",
+            "supporting_address_urls": [
+              "https://camra.org.uk/pubs/113191"
+            ]
+          },
           "reference": "DE56 1AP",
           "source_url": "https://camra.org.uk/pubs/113191",
           "use_reference_for_directions": true
         },
         "research": {},
-        "review_category": "address_metadata",
+        "review_category": "confirmed",
         "source_checks": {
           "camra": {
             "status": "confirmed",
@@ -16632,7 +16773,7 @@
           }
         },
         "source_error": null,
-        "status": "review_needed",
+        "status": "resolved",
         "unverified": false,
         "venue_id": "v-d8f002a1-4ed3-5ffb-8de9-c9cdbef55a1b"
       },
@@ -17199,7 +17340,7 @@
         "venue_id": "v-de4bb4cf-ba26-5249-bc8a-2d255fabb89c"
       },
       "v-de948283-fe31-5f55-b16a-547c37e592ce": {
-        "active": true,
+        "active": false,
         "first_seen": "2026-11-03",
         "history": [
           {
@@ -17227,20 +17368,40 @@
               "Directory postcode DE1 2TQ conflicts with reference address DE1 2DQ"
             ],
             "status": "review_needed"
+          },
+          {
+            "date": "2026-11-24",
+            "reasons": [],
+            "status": "resolved"
           }
         ],
         "last_checked": "2026-11-24",
-        "manual_action_required": true,
-        "next_action": "Check the conflicting address/postcode; this does not prove the pin is wrong",
+        "manual_action_required": false,
+        "next_action": "No pin check requested",
         "place_name": "Derby: Central",
         "postcode": "DE1 2TQ",
         "pub_name": "Tiger",
-        "reasons": [
-          "Directory postcode DE1 2TQ conflicts with reference address DE1 2DQ"
-        ],
+        "reasons": [],
         "reference": {
           "field": "postcode",
           "listed": "DE1 2TQ",
+          "owner_review": {
+            "approved_coordinate": {
+              "lat": 52.922476,
+              "lng": -1.476485
+            },
+            "checked_at": "2026-11-24",
+            "conclusion": "The reviewed evidence identifies the mapped premises at Lockup Yard - Cornmarket. Record DE1 2DQ as a reference postcode for the same building, and retain the PDF postcode DE1 2TQ. This review does not establish the postal delivery postcode.",
+            "listed": "DE1 2TQ",
+            "owner_instruction": "Record the ten known postcode differences as reviewed geographical metadata where the existing building evidence supports doing so.",
+            "pub_name": "Tiger",
+            "reference": "DE1 2DQ",
+            "reviewed_by": "Codex",
+            "source_url": "https://camra.org.uk/pubs/143461",
+            "supporting_address_urls": [
+              "https://camra.org.uk/pubs/143461"
+            ]
+          },
           "reference": "DE1 2DQ",
           "source_url": "https://camra.org.uk/pubs/143461",
           "use_reference_for_directions": true
@@ -17270,7 +17431,7 @@
           ],
           "status": "candidates_found"
         },
-        "review_category": "address_metadata",
+        "review_category": "confirmed",
         "source_checks": {
           "camra": {
             "status": "confirmed",
@@ -17278,7 +17439,7 @@
           }
         },
         "source_error": null,
-        "status": "review_needed",
+        "status": "resolved",
         "unverified": false,
         "venue_id": "v-de948283-fe31-5f55-b16a-547c37e592ce"
       },
@@ -17872,7 +18033,7 @@
         "venue_id": "v-e7af2655-33ef-50e0-beb2-9f67fcbfb565"
       },
       "v-e81d21cc-04bb-56f0-9987-0d081b8c6d47": {
-        "active": true,
+        "active": false,
         "first_seen": "2026-11-24",
         "history": [
           {
@@ -17881,33 +18042,32 @@
               "Reference venue name changed"
             ],
             "status": "unverified"
+          },
+          {
+            "date": "2026-11-24",
+            "reasons": [],
+            "status": "resolved"
           }
         ],
         "last_checked": "2026-11-24",
-        "manual_action_required": true,
-        "next_action": "Check whether the named business changed; this does not prove the coordinate is wrong",
+        "manual_action_required": false,
+        "next_action": "No pin check requested",
         "place_name": "Stamford Brook",
         "postcode": "W6 0XF",
         "pub_name": "Duchess",
-        "reasons": [
-          "Reference venue name changed"
-        ],
+        "reasons": [],
         "reference": {},
         "research": {},
-        "review_category": "identity_check",
+        "review_category": "confirmed",
         "source_checks": {
           "camra": {
-            "status": "conflict",
-            "url": "https://camra.org.uk/pubs/128959"
-          },
-          "fsa_independent": {
-            "status": "no_name_match",
-            "url": ""
+            "status": "confirmed",
+            "url": "https://camra.org.uk/pubs/queen-hammersmith-128959"
           }
         },
         "source_error": null,
-        "status": "unverified",
-        "unverified": true,
+        "status": "resolved",
+        "unverified": false,
         "venue_id": "v-e81d21cc-04bb-56f0-9987-0d081b8c6d47"
       },
       "v-e8284c87-dd05-565a-8112-3742ea66b55e": {
@@ -18406,7 +18566,7 @@
         "venue_id": "v-efaae2bc-47a6-51d0-b153-1da28cc90bc9"
       },
       "v-f1c9a984-7cec-51a0-ba02-1041b5f3a7c5": {
-        "active": true,
+        "active": false,
         "first_seen": "2026-11-24",
         "history": [
           {
@@ -18415,24 +18575,27 @@
               "Reference venue name changed"
             ],
             "status": "unverified"
+          },
+          {
+            "date": "2026-11-24",
+            "reasons": [],
+            "status": "resolved"
           }
         ],
         "last_checked": "2026-11-24",
-        "manual_action_required": true,
-        "next_action": "Check whether the named business changed; this does not prove the coordinate is wrong",
+        "manual_action_required": false,
+        "next_action": "No pin check requested",
         "place_name": "Stoke: Central",
         "postcode": "ST4 1JB",
         "pub_name": "Kings Way",
-        "reasons": [
-          "Reference venue name changed"
-        ],
+        "reasons": [],
         "reference": {},
         "research": {},
-        "review_category": "identity_check",
+        "review_category": "confirmed",
         "source_checks": {
           "camra": {
-            "status": "conflict",
-            "url": "https://camra.org.uk/pubs/123096"
+            "status": "confirmed",
+            "url": "https://camra.org.uk/pubs/six-towns-irish-bar-stoke-on-trent-123096"
           },
           "fsa_independent": {
             "status": "coordinate_agreement",
@@ -18440,8 +18603,8 @@
           }
         },
         "source_error": null,
-        "status": "unverified",
-        "unverified": true,
+        "status": "resolved",
+        "unverified": false,
         "venue_id": "v-f1c9a984-7cec-51a0-ba02-1041b5f3a7c5"
       },
       "v-f2d26093-e5ae-5c53-b055-7cdbf64a45a7": {
@@ -18967,7 +19130,7 @@
         "venue_id": "v-f8715c2c-440d-5a56-96bc-95b9dc41b973"
       },
       "v-f8899d25-0fe4-551f-b83c-e47f3ecf0ed6": {
-        "active": true,
+        "active": false,
         "first_seen": "2026-11-03",
         "history": [
           {
@@ -18995,20 +19158,40 @@
               "Directory postcode CV9 1FE conflicts with reference address CV9 1HA"
             ],
             "status": "review_needed"
+          },
+          {
+            "date": "2026-11-24",
+            "reasons": [],
+            "status": "resolved"
           }
         ],
         "last_checked": "2026-11-11",
-        "manual_action_required": true,
-        "next_action": "Check the conflicting address/postcode; this does not prove the pin is wrong",
+        "manual_action_required": false,
+        "next_action": "No pin check requested",
         "place_name": "Atherstone",
         "postcode": "CV9 1FE",
         "pub_name": "New Swan",
-        "reasons": [
-          "Directory postcode CV9 1FE conflicts with reference address CV9 1HA"
-        ],
+        "reasons": [],
         "reference": {
           "field": "postcode",
           "listed": "CV9 1FE",
+          "owner_review": {
+            "approved_coordinate": {
+              "lat": 52.577782,
+              "lng": -1.547074
+            },
+            "checked_at": "2026-11-24",
+            "conclusion": "The reviewed evidence identifies the mapped premises at Church Street. Record CV9 1HA as a reference postcode for the same building, and retain the PDF postcode CV9 1FE. This review does not establish the postal delivery postcode.",
+            "listed": "CV9 1FE",
+            "owner_instruction": "Record the ten known postcode differences as reviewed geographical metadata where the existing building evidence supports doing so.",
+            "pub_name": "New Swan",
+            "reference": "CV9 1HA",
+            "reviewed_by": "Codex",
+            "source_url": "https://camra.org.uk/pubs/131584",
+            "supporting_address_urls": [
+              "https://camra.org.uk/pubs/131584"
+            ]
+          },
           "reference": "CV9 1HA",
           "source_url": "https://camra.org.uk/pubs/131584",
           "use_reference_for_directions": true
@@ -19038,7 +19221,7 @@
           ],
           "status": "candidates_found"
         },
-        "review_category": "address_metadata",
+        "review_category": "confirmed",
         "source_checks": {
           "camra": {
             "status": "confirmed",
@@ -19046,12 +19229,12 @@
           }
         },
         "source_error": null,
-        "status": "review_needed",
+        "status": "resolved",
         "unverified": false,
         "venue_id": "v-f8899d25-0fe4-551f-b83c-e47f3ecf0ed6"
       },
       "v-f8bee24d-ecda-57fd-ba79-92aae52bba74": {
-        "active": true,
+        "active": false,
         "first_seen": "2026-11-03",
         "history": [
           {
@@ -19079,20 +19262,40 @@
               "Directory postcode PO5 3BY conflicts with reference address PO5 3DE"
             ],
             "status": "review_needed"
+          },
+          {
+            "date": "2026-11-24",
+            "reasons": [],
+            "status": "resolved"
           }
         ],
         "last_checked": "2026-11-11",
-        "manual_action_required": true,
-        "next_action": "Check the conflicting address/postcode; this does not prove the pin is wrong",
+        "manual_action_required": false,
+        "next_action": "No pin check requested",
         "place_name": "Southsea",
         "postcode": "PO5 3BY",
         "pub_name": "Barley Mow",
-        "reasons": [
-          "Directory postcode PO5 3BY conflicts with reference address PO5 3DE"
-        ],
+        "reasons": [],
         "reference": {
           "field": "postcode",
           "listed": "PO5 3BY",
+          "owner_review": {
+            "approved_coordinate": {
+              "lat": 50.789349,
+              "lng": -1.092775
+            },
+            "checked_at": "2026-11-24",
+            "conclusion": "The reviewed evidence identifies the mapped premises at 39 Castle Road. Record PO5 3DE as a reference postcode for the same building, and retain the PDF postcode PO5 3BY. This review does not establish the postal delivery postcode.",
+            "listed": "PO5 3BY",
+            "owner_instruction": "Record the ten known postcode differences as reviewed geographical metadata where the existing building evidence supports doing so.",
+            "pub_name": "Barley Mow",
+            "reference": "PO5 3DE",
+            "reviewed_by": "Codex",
+            "source_url": "https://camra.org.uk/pubs/190766",
+            "supporting_address_urls": [
+              "https://camra.org.uk/pubs/190766"
+            ]
+          },
           "reference": "PO5 3DE",
           "source_url": "https://camra.org.uk/pubs/190766",
           "use_reference_for_directions": true
@@ -19136,7 +19339,7 @@
           ],
           "status": "candidates_found"
         },
-        "review_category": "address_metadata",
+        "review_category": "confirmed",
         "source_checks": {
           "camra": {
             "status": "confirmed",
@@ -19148,7 +19351,7 @@
           }
         },
         "source_error": null,
-        "status": "review_needed",
+        "status": "resolved",
         "unverified": false,
         "venue_id": "v-f8bee24d-ecda-57fd-ba79-92aae52bba74"
       },
@@ -19701,7 +19904,7 @@
     },
     "schema_version": 1,
     "source_warning_count": 1,
-    "unverified_count": 3
+    "unverified_count": 0
   },
   "schema_version": 1,
   "venues": {
@@ -54866,6 +55069,23 @@
         "metadata_issue": {
           "field": "postcode",
           "listed": "DE4 4RF",
+          "owner_review": {
+            "approved_coordinate": {
+              "lat": 53.0853682125,
+              "lng": -1.57258601875
+            },
+            "checked_at": "2026-11-24",
+            "conclusion": "The reviewed evidence identifies the mapped premises at Cromford Road. Record DE4 4FR as a reference postcode for the same building, and retain the PDF postcode DE4 4RF. This review does not establish the postal delivery postcode.",
+            "listed": "DE4 4RF",
+            "owner_instruction": "Record the ten known postcode differences as reviewed geographical metadata where the existing building evidence supports doing so.",
+            "pub_name": "Lime Kiln",
+            "reference": "DE4 4FR",
+            "reviewed_by": "Codex",
+            "source_url": "https://camra.org.uk/pubs/165663",
+            "supporting_address_urls": [
+              "https://camra.org.uk/pubs/165663"
+            ]
+          },
           "reference": "DE4 4FR",
           "source_url": "https://camra.org.uk/pubs/165663",
           "use_reference_for_directions": true
@@ -75853,6 +76073,23 @@
         "metadata_issue": {
           "field": "postcode",
           "listed": "B5 6EP",
+          "owner_review": {
+            "approved_coordinate": {
+              "lat": 52.47373674000001,
+              "lng": -1.8862870600000001
+            },
+            "checked_at": "2026-11-24",
+            "conclusion": "The reviewed evidence identifies the mapped premises at 276 Bradford Street. Record B12 0QY as a reference postcode for the same building, and retain the PDF postcode B5 6EP. This review does not establish the postal delivery postcode.",
+            "listed": "B5 6EP",
+            "owner_instruction": "Record the ten known postcode differences as reviewed geographical metadata where the existing building evidence supports doing so.",
+            "pub_name": "White Swan",
+            "reference": "B12 0QY",
+            "reviewed_by": "Codex",
+            "source_url": "https://camra.org.uk/pubs/121124",
+            "supporting_address_urls": [
+              "https://camra.org.uk/pubs/121124"
+            ]
+          },
           "reference": "B12 0QY",
           "source_url": "https://camra.org.uk/pubs/121124",
           "use_reference_for_directions": true
@@ -78591,6 +78828,23 @@
         "metadata_issue": {
           "field": "postcode",
           "listed": "WV10 0DJ",
+          "owner_review": {
+            "approved_coordinate": {
+              "lat": 52.587103592327,
+              "lng": -2.117662230654
+            },
+            "checked_at": "2026-11-24",
+            "conclusion": "The reviewed evidence identifies the mapped premises at 9 Sun Street. Record WV10 0DG as a reference postcode for the same building, and retain the PDF postcode WV10 0DJ. This review does not establish the postal delivery postcode.",
+            "listed": "WV10 0DJ",
+            "owner_instruction": "Record the ten known postcode differences as reviewed geographical metadata where the existing building evidence supports doing so.",
+            "pub_name": "Great Western",
+            "reference": "WV10 0DG",
+            "reviewed_by": "Codex",
+            "source_url": "https://camra.org.uk/pubs/127008",
+            "supporting_address_urls": [
+              "https://camra.org.uk/pubs/127008"
+            ]
+          },
           "reference": "WV10 0DG",
           "source_url": "https://camra.org.uk/pubs/127008",
           "use_reference_for_directions": true
@@ -119667,6 +119921,78 @@
           "original_key": "roundhouse|nottingham: central|ng1 6fs"
         }
       ],
+      "location_corrections": [
+        {
+          "camra_address_check": {
+            "address": "Royal Standard Place",
+            "lat": 52.9517,
+            "lng": -1.155174,
+            "locality": "Nottingham",
+            "name": "Kova, Nottingham - Asian Restaurant",
+            "postcode": "NG1 6FS"
+          },
+          "checked_at": "2026-11-24",
+          "corrected_coordinate": {
+            "lat": 52.9517,
+            "lng": -1.155174
+          },
+          "previous_pin": {
+            "evidence": [
+              {
+                "checked_at": "2026-10-20",
+                "difference_metres": 48.3,
+                "match": "venue_name_and_full_postcode",
+                "reference_address": "Royal Standard Place",
+                "reference_coordinate": {
+                  "lat": 52.9517,
+                  "lng": -1.155174
+                },
+                "reference_name": "Roundhouse, Nottingham",
+                "reference_postcode": "NG1 6FS",
+                "source": "camra",
+                "url": "https://camra.org.uk/pubs/162611"
+              },
+              {
+                "checked_at": "2026-11-24",
+                "disposition": "pending_pin_review",
+                "reference_address": "Royal Standard Place",
+                "reference_coordinate": {
+                  "lat": 52.9517,
+                  "lng": -1.155174
+                },
+                "reference_name": "The Roundhouse",
+                "reference_postcode": "NG1 6FS",
+                "source": "openstreetmap-building-footprint",
+                "supporting_address_urls": [
+                  "https://camra.org.uk/pubs/kova-nottingham-162611",
+                  "https://www.openstreetmap.org/way/1097822473"
+                ],
+                "url": "https://www.openstreetmap.org/way/1244713923"
+              }
+            ],
+            "lat": 52.9517517089844,
+            "lng": -1.15588998794556,
+            "review_reason": "Reference venue name changed",
+            "review_required": true,
+            "source": "food-standards-agency-fhrs"
+          },
+          "previous_verification_attempt": {
+            "checked_at": "2026-11-24",
+            "reason": "Reference venue name changed",
+            "source_url": "https://camra.org.uk/pubs/162611",
+            "sources": {
+              "camra": {
+                "status": "conflict",
+                "url": "https://camra.org.uk/pubs/162611"
+              }
+            },
+            "status": "conflict"
+          },
+          "reason": "The archived FSA point falls inside the neighbouring Park Row building. The CAMRA point is inside The Roundhouse at Royal Standard Place, where Kova now trades.",
+          "reviewed_by": "Codex",
+          "source_url": "https://www.openstreetmap.org/way/1244713923"
+        }
+      ],
       "trading_status_review": {
         "checked_at": "2026-11-03",
         "evidence": [
@@ -119686,21 +120012,21 @@
       },
       "verification_attempt": {
         "checked_at": "2026-11-24",
-        "reason": "Reference venue name changed",
-        "source_url": "https://camra.org.uk/pubs/162611",
+        "source_url": "https://camra.org.uk/pubs/kova-nottingham-162611",
         "sources": {
           "camra": {
-            "status": "conflict",
-            "url": "https://camra.org.uk/pubs/162611"
+            "status": "confirmed",
+            "url": "https://camra.org.uk/pubs/kova-nottingham-162611"
           }
         },
-        "status": "conflict"
+        "status": "confirmed"
       },
       "verified_pin": {
         "evidence": [
           {
             "checked_at": "2026-10-20",
             "difference_metres": 48.3,
+            "disposition": "superseded_by_building_review",
             "match": "venue_name_and_full_postcode",
             "reference_address": "Royal Standard Place",
             "reference_coordinate": {
@@ -119728,13 +120054,44 @@
               "https://www.openstreetmap.org/way/1097822473"
             ],
             "url": "https://www.openstreetmap.org/way/1244713923"
+          },
+          {
+            "checked_at": "2026-11-24",
+            "match": "named_premises_inside_building_footprint",
+            "reference_address": "Royal Standard Place",
+            "reference_coordinate": {
+              "lat": 52.9517,
+              "lng": -1.155174
+            },
+            "reference_name": "Kova, Nottingham - Asian Restaurant",
+            "reference_postcode": "NG1 6FS",
+            "reviewed_by": "Codex",
+            "source": "openstreetmap-building-footprint",
+            "supporting_address_urls": [
+              "https://camra.org.uk/pubs/kova-nottingham-162611",
+              "https://www.openstreetmap.org/node/786340991"
+            ],
+            "url": "https://www.openstreetmap.org/way/1244713923"
+          },
+          {
+            "checked_at": "2026-11-24",
+            "difference_metres": 0.0,
+            "match": "documented_former_name_and_full_address",
+            "reference_address": "Royal Standard Place",
+            "reference_coordinate": {
+              "lat": 52.9517,
+              "lng": -1.155174
+            },
+            "reference_name": "Kova, Nottingham - Asian Restaurant",
+            "reference_postcode": "NG1 6FS",
+            "reviewed_by": "Codex",
+            "source": "camra",
+            "url": "https://camra.org.uk/pubs/kova-nottingham-162611"
           }
         ],
-        "lat": 52.9517517089844,
-        "lng": -1.15588998794556,
-        "review_reason": "Reference venue name changed",
-        "review_required": true,
-        "source": "food-standards-agency-fhrs"
+        "lat": 52.9517,
+        "lng": -1.155174,
+        "source": "camra-and-openstreetmap-building-review"
       }
     },
     "v-8ca08ab9-8611-5132-a7c6-2f7a29f93fc6": {
@@ -130808,6 +131165,23 @@
         "metadata_issue": {
           "field": "postcode",
           "listed": "DE72 2WA",
+          "owner_review": {
+            "approved_coordinate": {
+              "lat": 52.868029,
+              "lng": -1.342615
+            },
+            "checked_at": "2026-11-24",
+            "conclusion": "The reviewed evidence identifies the mapped premises at 143 London Road. Record DE72 2HA as a reference postcode for the same building, and retain the PDF postcode DE72 2WA. This review does not establish the postal delivery postcode.",
+            "listed": "DE72 2WA",
+            "owner_instruction": "Record the ten known postcode differences as reviewed geographical metadata where the existing building evidence supports doing so.",
+            "pub_name": "Navigation",
+            "reference": "DE72 2HA",
+            "reviewed_by": "Codex",
+            "source_url": "https://camra.org.uk/pubs/navigation-inn-shardlow-143265",
+            "supporting_address_urls": [
+              "https://camra.org.uk/pubs/143265"
+            ]
+          },
           "reference": "DE72 2HA",
           "source_url": "https://camra.org.uk/pubs/navigation-inn-shardlow-143265",
           "use_reference_for_directions": true
@@ -133532,6 +133906,23 @@
         "metadata_issue": {
           "field": "postcode",
           "listed": "NG2 2AS",
+          "owner_review": {
+            "approved_coordinate": {
+              "lat": 52.946557142857145,
+              "lng": -1.1465279428571429
+            },
+            "checked_at": "2026-11-24",
+            "conclusion": "The reviewed evidence identifies the mapped premises at Cabman's Shelter, 1a Queens Road. Record NG2 3AS as a reference postcode for the same building, and retain the PDF postcode NG2 2AS. This review does not establish the postal delivery postcode.",
+            "listed": "NG2 2AS",
+            "owner_instruction": "Record the ten known postcode differences as reviewed geographical metadata where the existing building evidence supports doing so.",
+            "pub_name": "Brew Tavern",
+            "reference": "NG2 3AS",
+            "reviewed_by": "Codex",
+            "source_url": "https://camra.org.uk/pubs/163071",
+            "supporting_address_urls": [
+              "https://camra.org.uk/pubs/163071"
+            ]
+          },
           "reference": "NG2 3AS",
           "source_url": "https://camra.org.uk/pubs/163071",
           "use_reference_for_directions": true
@@ -148753,6 +149144,25 @@
         "metadata_issue": {
           "field": "postcode",
           "listed": "LE65 1AH",
+          "owner_review": {
+            "approved_coordinate": {
+              "lat": 52.7471038,
+              "lng": -1.4705552
+            },
+            "checked_at": "2026-11-24",
+            "conclusion": "The reviewed evidence identifies the mapped premises at 60A Market Street, Ashby-de-la-Zouch, LE65 1AN. Record LE65 1AN as a reference postcode for the same building, and retain the PDF postcode LE65 1AH. This review does not establish the postal delivery postcode. Council licensing records use LE65 1AN for 60A Market Street and CAMRA uses LE65 1AH for the same building.",
+            "listed": "LE65 1AH",
+            "owner_instruction": "Record the ten known postcode differences as reviewed geographical metadata where the existing building evidence supports doing so.",
+            "pub_name": "Fitzgeralds",
+            "reference": "LE65 1AN",
+            "reviewed_by": "Codex",
+            "source_url": "https://www.google.com/maps/place/Fitzgeralds+Ashby/@52.7471038,-1.4705552,17z/data=!3m1!4b1!4m6!3m5!1s0x4879fd6287892107:0xc6b7c50a88009f92!8m2!3d52.7471038!4d-1.4705552!16s%2Fg%2F11zy8xb2rv?entry=ttu&g_ep=EgoyMDI2MTAyOC4wIKXMDSoASAFQAw%3D%3D",
+            "supporting_address_urls": [
+              "https://camra.org.uk/pubs/fitzgeralds-ashby-de-la-zouch-200535",
+              "https://minutes-1.nwleics.gov.uk/documents/s15320/Appendix%201%20-%20Premises%20Licence.pdf",
+              "https://www.google.com/maps/place/Fitzgeralds+Ashby/@52.7471038,-1.4705552,17z/data=!3m1!4b1!4m6!3m5!1s0x4879fd6287892107:0xc6b7c50a88009f92!8m2!3d52.7471038!4d-1.4705552!16s%2Fg%2F11zy8xb2rv?entry=ttu&g_ep=EgoyMDI2MTAyOC4wIKXMDSoASAFQAw%3D%3D"
+            ]
+          },
           "reference": "LE65 1AN",
           "source_url": "https://www.google.com/maps/place/Fitzgeralds+Ashby/@52.7471038,-1.4705552,17z/data=!3m1!4b1!4m6!3m5!1s0x4879fd6287892107:0xc6b7c50a88009f92!8m2!3d52.7471038!4d-1.4705552!16s%2Fg%2F11zy8xb2rv?entry=ttu&g_ep=EgoyMDI2MTAyOC4wIKXMDSoASAFQAw%3D%3D",
           "use_reference_for_directions": true
@@ -173684,6 +174094,23 @@
         "metadata_issue": {
           "field": "postcode",
           "listed": "DE56 1UP",
+          "owner_review": {
+            "approved_coordinate": {
+              "lat": 53.0227293,
+              "lng": -1.4832821
+            },
+            "checked_at": "2026-11-24",
+            "conclusion": "The reviewed evidence identifies the mapped premises at 6 Campbell Street. Record DE56 1AP as a reference postcode for the same building, and retain the PDF postcode DE56 1UP. This review does not establish the postal delivery postcode.",
+            "listed": "DE56 1UP",
+            "owner_instruction": "Record the ten known postcode differences as reviewed geographical metadata where the existing building evidence supports doing so.",
+            "pub_name": "Arkwrights",
+            "reference": "DE56 1AP",
+            "reviewed_by": "Codex",
+            "source_url": "https://camra.org.uk/pubs/113191",
+            "supporting_address_urls": [
+              "https://camra.org.uk/pubs/113191"
+            ]
+          },
           "reference": "DE56 1AP",
           "source_url": "https://camra.org.uk/pubs/113191",
           "use_reference_for_directions": true
@@ -178135,6 +178562,23 @@
         "metadata_issue": {
           "field": "postcode",
           "listed": "DE1 2TQ",
+          "owner_review": {
+            "approved_coordinate": {
+              "lat": 52.922476,
+              "lng": -1.476485
+            },
+            "checked_at": "2026-11-24",
+            "conclusion": "The reviewed evidence identifies the mapped premises at Lockup Yard - Cornmarket. Record DE1 2DQ as a reference postcode for the same building, and retain the PDF postcode DE1 2TQ. This review does not establish the postal delivery postcode.",
+            "listed": "DE1 2TQ",
+            "owner_instruction": "Record the ten known postcode differences as reviewed geographical metadata where the existing building evidence supports doing so.",
+            "pub_name": "Tiger",
+            "reference": "DE1 2DQ",
+            "reviewed_by": "Codex",
+            "source_url": "https://camra.org.uk/pubs/143461",
+            "supporting_address_urls": [
+              "https://camra.org.uk/pubs/143461"
+            ]
+          },
           "reference": "DE1 2DQ",
           "source_url": "https://camra.org.uk/pubs/143461",
           "use_reference_for_directions": true
@@ -184216,17 +184660,113 @@
         "postcode": "W6 0XF",
         "pub_name": "Duchess"
       },
+      "location_corrections": [
+        {
+          "camra_address_check": {
+            "address": "320 Goldhawk Road",
+            "lat": 51.49865,
+            "lng": -0.24375,
+            "locality": "Hammersmith",
+            "name": "Queen, Hammersmith - Real Ale Pub",
+            "postcode": "W6 0XF"
+          },
+          "checked_at": "2026-11-24",
+          "corrected_coordinate": {
+            "lat": 51.4985673,
+            "lng": -0.2439523
+          },
+          "previous_override": {
+            "audit_reason": "postcode_fallback_replaced",
+            "checked_at": "2026-09-11",
+            "lat": 51.49865,
+            "lng": -0.24375,
+            "previous_difference_metres": 157.9,
+            "previous_lat": 51.497269,
+            "previous_lng": -0.244279,
+            "previous_source": "postcode",
+            "source": "camra-pubs-location-audit",
+            "source_url": "https://camra.org.uk/pubs/128959"
+          },
+          "previous_pin": {
+            "evidence": [
+              {
+                "checked_at": "2026-10-27",
+                "difference_metres": 0.0,
+                "disposition": "superseded_by_source_refresh",
+                "match": "venue_name_and_full_postcode",
+                "reference_address": "320 Goldhawk Road",
+                "reference_coordinate": {
+                  "lat": 51.49865,
+                  "lng": -0.24375
+                },
+                "reference_name": "Duchess, Hammersmith",
+                "reference_postcode": "W6 0XF",
+                "source": "camra",
+                "url": "https://camra.org.uk/pubs/128959"
+              },
+              {
+                "checked_at": "2026-11-03",
+                "difference_metres": 0.0,
+                "disposition": "superseded_by_source_refresh",
+                "match": "venue_name_and_full_postcode",
+                "reference_address": "320 Goldhawk Road",
+                "reference_coordinate": {
+                  "lat": 51.49865,
+                  "lng": -0.24375
+                },
+                "reference_name": "Duchess, Hammersmith",
+                "reference_postcode": "W6 0XF",
+                "source": "camra",
+                "url": "https://camra.org.uk/pubs/128959"
+              },
+              {
+                "checked_at": "2026-11-11",
+                "difference_metres": 0.0,
+                "match": "venue_name_and_full_postcode",
+                "reference_address": "320 Goldhawk Road",
+                "reference_coordinate": {
+                  "lat": 51.49865,
+                  "lng": -0.24375
+                },
+                "reference_name": "Duchess, Hammersmith",
+                "reference_postcode": "W6 0XF",
+                "source": "camra",
+                "url": "https://camra.org.uk/pubs/128959"
+              }
+            ],
+            "lat": 51.49865,
+            "lng": -0.24375,
+            "review_reason": "Reference venue name changed",
+            "review_required": true,
+            "source": "camra-pubs-location-audit"
+          },
+          "previous_verification_attempt": {
+            "checked_at": "2026-11-24",
+            "reason": "Reference venue name changed",
+            "source_url": "https://camra.org.uk/pubs/128959",
+            "sources": {
+              "camra": {
+                "status": "conflict",
+                "url": "https://camra.org.uk/pubs/128959"
+              }
+            },
+            "status": "conflict"
+          },
+          "reason": "CAMRA identifies the same 320 Goldhawk Road pub as The Queen. Its old marker is outside the mapped pub building. The replacement is inside the named footprint.",
+          "reviewed_by": "Codex",
+          "source_url": "https://www.openstreetmap.org/way/961791327"
+        }
+      ],
       "verification_attempt": {
         "checked_at": "2026-11-24",
-        "reason": "Reference venue name changed",
-        "source_url": "https://camra.org.uk/pubs/128959",
+        "source_url": "https://camra.org.uk/pubs/queen-hammersmith-128959",
         "sources": {
           "camra": {
-            "status": "conflict",
-            "url": "https://camra.org.uk/pubs/128959"
+            "status": "confirmed",
+            "url": "https://camra.org.uk/pubs/queen-hammersmith-128959"
           }
         },
-        "status": "conflict"
+        "status": "confirmed"
       },
       "verified_pin": {
         "evidence": [
@@ -184263,6 +184803,7 @@
           {
             "checked_at": "2026-11-11",
             "difference_metres": 0.0,
+            "disposition": "superseded_by_building_review",
             "match": "venue_name_and_full_postcode",
             "reference_address": "320 Goldhawk Road",
             "reference_coordinate": {
@@ -184273,13 +184814,44 @@
             "reference_postcode": "W6 0XF",
             "source": "camra",
             "url": "https://camra.org.uk/pubs/128959"
+          },
+          {
+            "checked_at": "2026-11-24",
+            "match": "named_premises_inside_building_footprint",
+            "reference_address": "320 Goldhawk Road",
+            "reference_coordinate": {
+              "lat": 51.4985673,
+              "lng": -0.2439523
+            },
+            "reference_name": "Queen, Hammersmith - Real Ale Pub",
+            "reference_postcode": "W6 0XF",
+            "reviewed_by": "Codex",
+            "source": "openstreetmap-building-footprint",
+            "supporting_address_urls": [
+              "https://camra.org.uk/pubs/queen-hammersmith-128959",
+              "https://democracy.lbhf.gov.uk/documents/s46539/Appendix%202-%20Commercial%20Pubs.pdf"
+            ],
+            "url": "https://www.openstreetmap.org/way/961791327"
+          },
+          {
+            "checked_at": "2026-11-24",
+            "difference_metres": 16.8,
+            "match": "documented_former_name_and_full_address",
+            "reference_address": "320 Goldhawk Road",
+            "reference_coordinate": {
+              "lat": 51.49865,
+              "lng": -0.24375
+            },
+            "reference_name": "Queen, Hammersmith - Real Ale Pub",
+            "reference_postcode": "W6 0XF",
+            "reviewed_by": "Codex",
+            "source": "camra",
+            "url": "https://camra.org.uk/pubs/queen-hammersmith-128959"
           }
         ],
-        "lat": 51.49865,
-        "lng": -0.24375,
-        "review_reason": "Reference venue name changed",
-        "review_required": true,
-        "source": "camra-pubs-location-audit"
+        "lat": 51.4985673,
+        "lng": -0.2439523,
+        "source": "camra-and-openstreetmap-building-review"
       }
     },
     "v-e8284c87-dd05-565a-8112-3742ea66b55e": {
@@ -189442,17 +190014,101 @@
         "postcode": "ST4 1JB",
         "pub_name": "Kings Way"
       },
+      "location_corrections": [
+        {
+          "camra_address_check": {
+            "address": "63 Kingsway",
+            "lat": 53.003941561221,
+            "lng": -2.184319597553,
+            "locality": "Stoke-on-Trent",
+            "name": "Six Towns Irish Bar, Stoke-on-Trent - Town Centre",
+            "postcode": "ST4 1JB"
+          },
+          "checked_at": "2026-11-24",
+          "corrected_coordinate": {
+            "lat": 53.0038306,
+            "lng": -2.1843932
+          },
+          "previous_pin": {
+            "evidence": [
+              {
+                "checked_at": "2026-10-28",
+                "difference_metres": 13.3,
+                "disposition": "superseded_by_source_refresh",
+                "match": "venue_name_and_full_postcode",
+                "reference_address": "63 Kingsway",
+                "reference_coordinate": {
+                  "lat": 53.003941561221,
+                  "lng": -2.184319597553
+                },
+                "reference_name": "King's Way, Stoke-on-Trent",
+                "reference_postcode": "ST4 1JB",
+                "source": "camra",
+                "url": "https://camra.org.uk/pubs/123096"
+              },
+              {
+                "checked_at": "2026-11-03",
+                "difference_metres": 13.3,
+                "disposition": "superseded_by_source_refresh",
+                "match": "venue_name_and_full_postcode",
+                "reference_address": "63 Kingsway",
+                "reference_coordinate": {
+                  "lat": 53.003941561221,
+                  "lng": -2.184319597553
+                },
+                "reference_name": "King's Way, Stoke-on-Trent",
+                "reference_postcode": "ST4 1JB",
+                "source": "camra",
+                "url": "https://camra.org.uk/pubs/123096"
+              },
+              {
+                "checked_at": "2026-11-11",
+                "difference_metres": 13.3,
+                "match": "venue_name_and_full_postcode",
+                "reference_address": "63 Kingsway",
+                "reference_coordinate": {
+                  "lat": 53.003941561221,
+                  "lng": -2.184319597553
+                },
+                "reference_name": "King's Way, Stoke-on-Trent",
+                "reference_postcode": "ST4 1JB",
+                "source": "camra",
+                "url": "https://camra.org.uk/pubs/123096"
+              }
+            ],
+            "lat": 53.0038306,
+            "lng": -2.1843932,
+            "review_reason": "Reference venue name changed",
+            "review_required": true,
+            "source": "openstreetmap-gb-extract"
+          },
+          "previous_verification_attempt": {
+            "checked_at": "2026-11-24",
+            "reason": "Reference venue name changed",
+            "source_url": "https://camra.org.uk/pubs/123096",
+            "sources": {
+              "camra": {
+                "status": "conflict",
+                "url": "https://camra.org.uk/pubs/123096"
+              }
+            },
+            "status": "conflict"
+          },
+          "reason": "CAMRA identifies the former Kings Way as Six Towns Irish Bar at 63 Kingsway. The retained pin and current reference point both fall within the same mapped building.",
+          "reviewed_by": "Codex",
+          "source_url": "https://www.openstreetmap.org/way/1216527942"
+        }
+      ],
       "verification_attempt": {
         "checked_at": "2026-11-24",
-        "reason": "Reference venue name changed",
-        "source_url": "https://camra.org.uk/pubs/123096",
+        "source_url": "https://camra.org.uk/pubs/six-towns-irish-bar-stoke-on-trent-123096",
         "sources": {
           "camra": {
-            "status": "conflict",
-            "url": "https://camra.org.uk/pubs/123096"
+            "status": "confirmed",
+            "url": "https://camra.org.uk/pubs/six-towns-irish-bar-stoke-on-trent-123096"
           }
         },
-        "status": "conflict"
+        "status": "confirmed"
       },
       "verified_pin": {
         "evidence": [
@@ -189489,6 +190145,7 @@
           {
             "checked_at": "2026-11-11",
             "difference_metres": 13.3,
+            "disposition": "superseded_by_building_review",
             "match": "venue_name_and_full_postcode",
             "reference_address": "63 Kingsway",
             "reference_coordinate": {
@@ -189499,12 +190156,43 @@
             "reference_postcode": "ST4 1JB",
             "source": "camra",
             "url": "https://camra.org.uk/pubs/123096"
+          },
+          {
+            "checked_at": "2026-11-24",
+            "match": "named_premises_inside_building_footprint",
+            "reference_address": "63 Kingsway",
+            "reference_coordinate": {
+              "lat": 53.0038306,
+              "lng": -2.1843932
+            },
+            "reference_name": "Six Towns Irish Bar, Stoke-on-Trent - Town Centre",
+            "reference_postcode": "ST4 1JB",
+            "reviewed_by": "Codex",
+            "source": "openstreetmap-building-footprint",
+            "supporting_address_urls": [
+              "https://camra.org.uk/pubs/six-towns-irish-bar-stoke-on-trent-123096",
+              "https://www.openstreetmap.org/node/14182346375"
+            ],
+            "url": "https://www.openstreetmap.org/way/1216527942"
+          },
+          {
+            "checked_at": "2026-11-24",
+            "difference_metres": 13.3,
+            "match": "documented_former_name_and_full_address",
+            "reference_address": "63 Kingsway",
+            "reference_coordinate": {
+              "lat": 53.003941561221,
+              "lng": -2.184319597553
+            },
+            "reference_name": "Six Towns Irish Bar, Stoke-on-Trent - Town Centre",
+            "reference_postcode": "ST4 1JB",
+            "reviewed_by": "Codex",
+            "source": "camra",
+            "url": "https://camra.org.uk/pubs/six-towns-irish-bar-stoke-on-trent-123096"
           }
         ],
         "lat": 53.0038306,
         "lng": -2.1843932,
-        "review_reason": "Reference venue name changed",
-        "review_required": true,
         "source": "openstreetmap-gb-extract"
       }
     },
@@ -195360,6 +196048,23 @@
         "metadata_issue": {
           "field": "postcode",
           "listed": "CV9 1FE",
+          "owner_review": {
+            "approved_coordinate": {
+              "lat": 52.577782,
+              "lng": -1.547074
+            },
+            "checked_at": "2026-11-24",
+            "conclusion": "The reviewed evidence identifies the mapped premises at Church Street. Record CV9 1HA as a reference postcode for the same building, and retain the PDF postcode CV9 1FE. This review does not establish the postal delivery postcode.",
+            "listed": "CV9 1FE",
+            "owner_instruction": "Record the ten known postcode differences as reviewed geographical metadata where the existing building evidence supports doing so.",
+            "pub_name": "New Swan",
+            "reference": "CV9 1HA",
+            "reviewed_by": "Codex",
+            "source_url": "https://camra.org.uk/pubs/131584",
+            "supporting_address_urls": [
+              "https://camra.org.uk/pubs/131584"
+            ]
+          },
           "reference": "CV9 1HA",
           "source_url": "https://camra.org.uk/pubs/131584",
           "use_reference_for_directions": true
@@ -195605,6 +196310,23 @@
         "metadata_issue": {
           "field": "postcode",
           "listed": "PO5 3BY",
+          "owner_review": {
+            "approved_coordinate": {
+              "lat": 50.789349,
+              "lng": -1.092775
+            },
+            "checked_at": "2026-11-24",
+            "conclusion": "The reviewed evidence identifies the mapped premises at 39 Castle Road. Record PO5 3DE as a reference postcode for the same building, and retain the PDF postcode PO5 3BY. This review does not establish the postal delivery postcode.",
+            "listed": "PO5 3BY",
+            "owner_instruction": "Record the ten known postcode differences as reviewed geographical metadata where the existing building evidence supports doing so.",
+            "pub_name": "Barley Mow",
+            "reference": "PO5 3DE",
+            "reviewed_by": "Codex",
+            "source_url": "https://camra.org.uk/pubs/190766",
+            "supporting_address_urls": [
+              "https://camra.org.uk/pubs/190766"
+            ]
+          },
           "reference": "PO5 3DE",
           "source_url": "https://camra.org.uk/pubs/190766",
           "use_reference_for_directions": true

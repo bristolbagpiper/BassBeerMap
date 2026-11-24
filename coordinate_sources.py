@@ -71,6 +71,18 @@ def name_matches(listing, reference, place_name=''):
                for suffix in ('inn', 'hotel', 'pub', 'bar', 'alehouse', 'publichouse'))
 
 
+def camra_previous_name_matches(page_text, listing):
+    """Only accept an exact former name from CAMRA's Previous Names field."""
+    match = re.search(r'<dt\b[^>]*>\s*Previous Names\s*</dt>\s*<dd\b[^>]*>(.*?)</dd>',
+                      page_text, re.I | re.S)
+    if not match:
+        return False
+    text = html.unescape(re.sub(r'<[^>]+>', ' ', match.group(1)))
+    normalize = lambda value: re.sub(r'[^a-z0-9]', '', value.casefold())
+    expected = normalize(listing)
+    return bool(expected and any(normalize(part) == expected for part in re.split(r'[,;]', text)))
+
+
 def recheck_pin(row, pin):
     """A reachable page alone never refreshes the verification date."""
     evidence = active_evidence(pin)
@@ -86,12 +98,21 @@ def recheck_pin(row, pin):
     item = max((e for e in evidence if e.get('url', '').startswith('https://camra.org.uk/pubs/')),
                key=priority, default=None)
     if item:
-        observed = parse_camra(fetch_text(item['url']))
+        page_text = fetch_text(item['url'])
+        observed = parse_camra(page_text)
         reviewed_name = item.get('reference_name', '')
         reviewed_match = bool(reviewed_name and source_identity_title(reviewed_name) == source_identity_title(observed['name']))
         acknowledged = source_name_acknowledged(row, pin, item['url'], observed)
-        if not name_matches(row['pub_name'], observed['name'], row.get('place_name', '')) and not reviewed_match and not acknowledged:
-            return {'status': 'conflict', 'reason': 'Reference venue name changed', 'source_url': item['url']}
+        if not (name_matches(row['pub_name'], observed['name'], row.get('place_name', '')) or reviewed_match or acknowledged):
+            # A documented rename can refresh evidence only at the same named
+            # address and source point. The saved pin is never moved here.
+            previous_address = ' '.join(str(item.get('reference_address') or '').casefold().split())
+            reference_point = item.get('reference_coordinate') or {}
+            same_premises = (previous_address and previous_address == ' '.join(str(observed['address'] or '').casefold().split())
+                             and point_valid(reference_point) and distance_metres(reference_point, observed) <= 5
+                             and camra_previous_name_matches(page_text, row['pub_name']))
+            if not same_premises:
+                return {'status': 'conflict', 'reason': 'Reference venue name changed', 'source_url': item['url']}
         expected_postcode = item.get('reference_postcode') or pin.get('metadata_issue', {}).get('reference') or row['postcode']
         compact = lambda value: re.sub(r'\s+', '', value).upper()
         if compact(observed['postcode']) != compact(expected_postcode):

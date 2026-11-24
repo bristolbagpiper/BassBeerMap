@@ -1,6 +1,6 @@
 {
-  "actionable_count": 11,
-  "active_count": 12,
+  "actionable_count": 13,
+  "active_count": 14,
   "records": {
     "v-0043695f-006e-58fe-adc2-894e5500b940": {
       "active": false,
@@ -10716,23 +10716,30 @@
             "Archived FSA point is inside the neighbouring Park Row building; CAMRA places the premises inside The Roundhouse footprint on Royal Standard Place."
           ],
           "status": "unverified"
+        },
+        {
+          "date": "2026-11-24",
+          "reasons": [
+            "Reference venue name changed"
+          ],
+          "status": "unverified"
         }
       ],
       "last_checked": "2026-11-24",
       "manual_action_required": true,
-      "next_action": "Corroborate missing or expired evidence; no incorrect pin has been established",
+      "next_action": "Check whether the named business changed; this does not prove the coordinate is wrong",
       "place_name": "Nottingham: Central",
       "postcode": "NG1 6FS",
       "pub_name": "Roundhouse",
       "reasons": [
-        "Archived FSA point is inside the neighbouring Park Row building; CAMRA places the premises inside The Roundhouse footprint on Royal Standard Place."
+        "Reference venue name changed"
       ],
       "reference": {},
       "research": {},
-      "review_category": "needs_verification",
+      "review_category": "identity_check",
       "source_checks": {
         "camra": {
-          "status": "confirmed",
+          "status": "conflict",
           "url": "https://camra.org.uk/pubs/162611"
         },
         "fsa_independent": {
@@ -17863,6 +17870,45 @@
       "unverified": false,
       "venue_id": "v-e7af2655-33ef-50e0-beb2-9f67fcbfb565"
     },
+    "v-e81d21cc-04bb-56f0-9987-0d081b8c6d47": {
+      "active": true,
+      "first_seen": "2026-11-24",
+      "history": [
+        {
+          "date": "2026-11-24",
+          "reasons": [
+            "Reference venue name changed"
+          ],
+          "status": "unverified"
+        }
+      ],
+      "last_checked": "2026-11-24",
+      "manual_action_required": true,
+      "next_action": "Check whether the named business changed; this does not prove the coordinate is wrong",
+      "place_name": "Stamford Brook",
+      "postcode": "W6 0XF",
+      "pub_name": "Duchess",
+      "reasons": [
+        "Reference venue name changed"
+      ],
+      "reference": {},
+      "research": {},
+      "review_category": "identity_check",
+      "source_checks": {
+        "camra": {
+          "status": "conflict",
+          "url": "https://camra.org.uk/pubs/128959"
+        },
+        "fsa_independent": {
+          "status": "no_name_match",
+          "url": ""
+        }
+      },
+      "source_error": null,
+      "status": "unverified",
+      "unverified": true,
+      "venue_id": "v-e81d21cc-04bb-56f0-9987-0d081b8c6d47"
+    },
     "v-e8284c87-dd05-565a-8112-3742ea66b55e": {
       "active": false,
       "first_seen": "2026-10-09",
@@ -17880,7 +17926,7 @@
           "status": "resolved"
         }
       ],
-      "last_checked": "2026-11-11",
+      "last_checked": "2026-11-24",
       "manual_action_required": false,
       "next_action": "No pin check requested",
       "place_name": "Chorley",
@@ -17922,7 +17968,7 @@
           "status": "resolved"
         }
       ],
-      "last_checked": "2026-11-11",
+      "last_checked": "2026-11-24",
       "manual_action_required": false,
       "next_action": "No pin check requested",
       "place_name": "Hurdlow",
@@ -18006,7 +18052,7 @@
           "status": "resolved"
         }
       ],
-      "last_checked": "2026-11-11",
+      "last_checked": "2026-11-24",
       "manual_action_required": false,
       "next_action": "No pin check requested",
       "place_name": "Eccleshall",
@@ -18048,7 +18094,7 @@
           "status": "resolved"
         }
       ],
-      "last_checked": "2026-11-11",
+      "last_checked": "2026-11-24",
       "manual_action_required": false,
       "next_action": "No pin check requested",
       "place_name": "Oldbury-on-Severn",
@@ -18090,7 +18136,7 @@
           "status": "resolved"
         }
       ],
-      "last_checked": "2026-11-11",
+      "last_checked": "2026-11-24",
       "manual_action_required": false,
       "next_action": "No pin check requested",
       "place_name": "Stoke: Trentham",
@@ -18132,7 +18178,7 @@
           "status": "resolved"
         }
       ],
-      "last_checked": "2026-11-11",
+      "last_checked": "2026-11-24",
       "manual_action_required": false,
       "next_action": "No pin check requested",
       "place_name": "Somercotes",
@@ -18181,7 +18227,7 @@
           "status": "resolved"
         }
       ],
-      "last_checked": "2026-11-11",
+      "last_checked": "2026-11-24",
       "manual_action_required": false,
       "next_action": "No pin check requested",
       "place_name": "Castle Donington",
@@ -18291,7 +18337,7 @@
           "status": "resolved"
         }
       ],
-      "last_checked": "2026-11-11",
+      "last_checked": "2026-11-24",
       "manual_action_required": false,
       "next_action": "No pin check requested",
       "place_name": "Windsor",
@@ -18333,7 +18379,7 @@
           "status": "resolved"
         }
       ],
-      "last_checked": "2026-11-11",
+      "last_checked": "2026-11-24",
       "manual_action_required": false,
       "next_action": "No pin check requested",
       "place_name": "Chorley",
@@ -18357,6 +18403,45 @@
       "status": "resolved",
       "unverified": false,
       "venue_id": "v-efaae2bc-47a6-51d0-b153-1da28cc90bc9"
+    },
+    "v-f1c9a984-7cec-51a0-ba02-1041b5f3a7c5": {
+      "active": true,
+      "first_seen": "2026-11-24",
+      "history": [
+        {
+          "date": "2026-11-24",
+          "reasons": [
+            "Reference venue name changed"
+          ],
+          "status": "unverified"
+        }
+      ],
+      "last_checked": "2026-11-24",
+      "manual_action_required": true,
+      "next_action": "Check whether the named business changed; this does not prove the coordinate is wrong",
+      "place_name": "Stoke: Central",
+      "postcode": "ST4 1JB",
+      "pub_name": "Kings Way",
+      "reasons": [
+        "Reference venue name changed"
+      ],
+      "reference": {},
+      "research": {},
+      "review_category": "identity_check",
+      "source_checks": {
+        "camra": {
+          "status": "conflict",
+          "url": "https://camra.org.uk/pubs/123096"
+        },
+        "fsa_independent": {
+          "status": "coordinate_agreement",
+          "url": "https://ratings.food.gov.uk/business/1917716"
+        }
+      },
+      "source_error": null,
+      "status": "unverified",
+      "unverified": true,
+      "venue_id": "v-f1c9a984-7cec-51a0-ba02-1041b5f3a7c5"
     },
     "v-f2d26093-e5ae-5c53-b055-7cdbf64a45a7": {
       "active": false,
@@ -18436,7 +18521,7 @@
           "status": "resolved"
         }
       ],
-      "last_checked": "2026-11-11",
+      "last_checked": "2026-11-24",
       "manual_action_required": false,
       "next_action": "No pin check requested",
       "place_name": "Cleethorpes",
@@ -19615,5 +19700,5 @@
   },
   "schema_version": 1,
   "source_warning_count": 1,
-  "unverified_count": 1
+  "unverified_count": 3
 }

@@ -40,7 +40,53 @@ GOOGLE_CHALLENGE = re.compile(
 )
 CATEGORIES = {'identity_and_pin_consistent', 'identity_conflict', 'pin_conflict',
               'trading_conflict', 'ambiguous', 'unavailable'}
-_DOM_READ = r"""JSON.stringify((()=>{const vis=e=>!!(e.getClientRects().length)&&getComputedStyle(e).visibility!=='hidden'&&getComputedStyle(e).display!=='none';const text=e=>(e.innerText||e.getAttribute('aria-label')||'').trim();const inView=e=>{const r=e.getBoundingClientRect();return r.width>0&&r.height>0&&r.top>=0&&r.bottom<=innerHeight&&r.left>=0&&r.right<=innerWidth};return {url:location.href,title:document.title,h1:[...document.querySelectorAll('h1')].filter(vis).map(text),addressButtons:[...document.querySelectorAll('button')].filter(vis).map(e=>({label:(e.getAttribute('aria-label')||'').trim(),text:text(e)})).filter(x=>/^address\s*:/i.test(x.label)),consentButtons:[...document.querySelectorAll('button')].filter(vis).map(e=>({label:(e.getAttribute('aria-label')||'').trim(),text:text(e),inViewport:inView(e)})).filter(x=>/reject\s+all/i.test(x.label+' '+x.text)),placeLinks:[...document.querySelectorAll('a[href*="/maps/place/"]')].filter(vis).map(e=>({href:e.href,text:text(e)})).slice(0,30),body:(document.body?.innerText||'').slice(0,12000)}})())"""
+_DOM_READ = r"""JSON.stringify((() => {
+    const visible = e => !!e.getClientRects().length && getComputedStyle(e).visibility !== 'hidden';
+    const label = e => (e.getAttribute('aria-label') || '').trim();
+    const text = e => (e.innerText || label(e)).trim();
+    const normalize = value => value.replace(/\s+/g, ' ').trim();
+    const pick = (root, selector) => [...root.querySelectorAll(selector)].filter(visible);
+    const addresses = root => pick(root, 'button').filter(e => /^address\s*:/i.test(label(e)));
+    const headings = pick(document, 'h1');
+    const inView = e => {
+        const r = e.getBoundingClientRect();
+        return r.width > 0 && r.height > 0 && r.top >= 0 && r.left >= 0 &&
+            r.bottom <= innerHeight && r.right <= innerWidth;
+    };
+    // Pair the title and address in the same named Maps detail panel. Search
+    // results and sponsored cards may show their own level-one headings.
+    const panels = pick(document, '[role="main"]');
+    const details = [];
+    for (const panel of panels) {
+        const title = normalize(label(panel));
+        const matching = headings.filter(e => e.closest('[role="main"]') === panel &&
+            title && normalize(text(e)) === title);
+        const buttons = addresses(panel).filter(e => e.closest('[role="main"]') === panel);
+        if (matching.length === 1 && buttons.length === 1) {
+            details.push({heading: matching[0], button: buttons[0], panel});
+        }
+    }
+    const detail = details.length === 1 ? details[0] : null;
+    const allAddresses = addresses(document);
+    // A limited Maps view can show a building, crossroads or street address.
+    // Its copyable address can trigger another search, never a verification.
+    const addressOnly = !details.length && headings.length === 1 && !allAddresses.length &&
+        panels.some(panel => !label(panel) && headings[0].closest('[role="main"]') === panel &&
+            pick(panel, '[role="button"]').some(e =>
+                pick(e, '[role="img"][aria-label="Address"]').length === 1 &&
+                pick(e, 'button[aria-label="Copy address"]').length === 1));
+    return {
+        url: location.href,
+        title: document.title,
+        h1: (detail ? [detail.heading] : headings).map(text),
+        addressButtons: (detail ? [detail.button] : allAddresses).map(e => ({label: label(e), text: text(e)})),
+        addressOnly,
+        consentButtons: pick(document, 'button').filter(e => /reject\s+all/i.test(label(e) + ' ' + text(e)))
+            .map(e => ({label: label(e), text: text(e), inViewport: inView(e)})),
+        placeLinks: pick(document, 'a[href*="/maps/place/"]').slice(0, 30).map(e => ({href: e.href, text: text(e)})),
+        body: ((detail ? detail.panel : document.body)?.innerText || '').slice(0, 12000),
+    };
+})())"""
 
 
 def utc_now():
@@ -256,6 +302,8 @@ def _resolve_page(browser, task_id, expected_name, expected_postcodes, ref_names
             continue
         last = _extract(browser, task_id)
         url = str(last.get('url') or '')
+        if last.get('addressOnly') is True and _valid_place_url(url):
+            return {'category': 'ambiguous', 'result_url': url, 'stop': False, 'address_only': True}
         # Results is a normal Maps search heading, not a challenge. Follow a
         # single named visible candidate only through its correlated native ref;
         # the detail page must still pass the full identity/postcode checks below.
@@ -264,6 +312,10 @@ def _resolve_page(browser, task_id, expected_name, expected_postcodes, ref_names
                               and len(last['h1']) == 1
                               and str(last['h1'][0]).strip().casefold() == 'results')
         if is_search and (not last.get('h1') or is_results_heading):
+            if not last.get('h1') and not last.get('placeLinks'):
+                # Maps can expose the search URL before its result panel loads.
+                time.sleep(min(1, max(0, deadline - time.monotonic())))
+                continue
             if not followed_result:
                 ref = _search_result_ref(snap_text, last.get('placeLinks'),
                                          expected_name, place_name, ref_names)
@@ -273,8 +325,6 @@ def _resolve_page(browser, task_id, expected_name, expected_postcodes, ref_names
                         raise BrowserStepError('Browser could not open the matching Google result')
                     followed_result = True
                     continue
-            urls = [str(x.get('href', '')) for x in last.get('placeLinks', [])
-                    if isinstance(x, dict) and _valid_place_url(x.get('href'))]
             return {'category': 'ambiguous', 'result_url': original_url or url, 'stop': False}
         if (isinstance(last.get('h1'), list) and len(last['h1']) == 1
                 and isinstance(last.get('addressButtons'), list) and len(last['addressButtons']) == 1
@@ -296,6 +346,8 @@ def _resolve_page(browser, task_id, expected_name, expected_postcodes, ref_names
                           if isinstance(x, dict) and _valid_place_url(x.get('href'))]
         if visible_places:
             return {'category': 'ambiguous', 'result_url': visible_places[0], 'stop': False}
+        if not titles and valid_google_result_url(url, require_named_place=False):
+            return {'category': 'ambiguous', 'result_url': original_url or url, 'stop': False}
         return {'category': 'unavailable', 'stop': False}
     title, address = str(titles[0]), str(addresses[0].get('label') or addresses[0].get('text') or '')
     postcode_ok = any(pc in _postcode(address) for pc in expected_postcodes)
@@ -307,6 +359,29 @@ def _resolve_page(browser, task_id, expected_name, expected_postcodes, ref_names
         return {'category': 'ambiguous', 'result_url': url, 'stop': False}
     return {'category': 'identity_and_pin_consistent', 'result_url': url,
             'point': point, 'address': address, 'body': str(last.get('body') or ''), 'stop': False}
+
+
+def _observe_venue(browser, task_id, item, entry, deadline, sleeper):
+    search_url = item['google_named_search_url']
+    error = _navigate(browser, search_url, task_id, deadline, sleeper)
+    if error:
+        return {'category': 'unavailable', 'stop': True, 'detail': error}
+    name, town = item['pub_name'], item.get('place_name', '')
+    names, postcodes = _reference_expectations(item, entry)
+    page = _resolve_page(browser, task_id, name, postcodes, names, search_url, place_name=town)
+    if not page.get('address_only') or not town or time.monotonic() + PAGE_DEADLINE >= deadline:
+        return page
+    # An address-heavy query can resolve to a geographic feature. Try the
+    # named business once, then check it against the same full postcode and pin.
+    named_url = 'https://www.google.com/maps/search/?' + urlencode(
+        {'api': 1, 'query': f'{name}, {town}, United Kingdom'})
+    if named_url == search_url:
+        return page
+    error = _navigate(browser, named_url, task_id, deadline, sleeper)
+    if error:
+        return {'category': 'unavailable', 'stop': True, 'detail': error}
+    retry = _resolve_page(browser, task_id, name, postcodes, names, named_url, place_name=town)
+    return page if retry['category'] == 'ambiguous' else retry
 
 
 def classify(item, registry_entry, page):
@@ -418,13 +493,8 @@ def run(root, receipts_path, limit=45, venue_ids=(), debug=False, browser=None, 
             search_url = item['google_named_search_url']
             attempted = clock()
             try:
-                navigation_error = _navigate(browser, search_url, task_id, deadline, sleeper)
-                if navigation_error:
-                    page = {'category': 'unavailable', 'stop': True, 'detail': navigation_error}
-                else:
-                    names, postcodes = _reference_expectations(item, registry['venues'][item['venue_id']])
-                    page = _resolve_page(browser, task_id, item['pub_name'], postcodes, names, search_url,
-                                         place_name=item.get('place_name', ''))
+                page = _observe_venue(browser, task_id, item, registry['venues'][item['venue_id']],
+                                      deadline, sleeper)
                 if page['category'] == 'identity_and_pin_consistent':
                     cats = classify(item, registry['venues'][item['venue_id']], page)
                     checked = clock()

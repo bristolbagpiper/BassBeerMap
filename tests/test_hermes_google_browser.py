@@ -1,5 +1,6 @@
 import json
 import tempfile
+import time
 import unittest
 from datetime import datetime, timezone
 from pathlib import Path
@@ -7,7 +8,7 @@ from unittest.mock import patch
 
 from build_place_review_queue import build_queue
 from directory_release import read_json
-from hermes_google_browser import (_identity_ok, _point_from_url, _postcode_in_text, _reference_expectations, _resolve_page,
+from hermes_google_browser import (_identity_ok, _observe_venue, _point_from_url, _postcode_in_text, _reference_expectations, _resolve_page,
                                    _rotated, _valid_place_url, classify, run)
 from hermes_google_review import build_status
 from hermes_file_lock import acquire_file_lock, release_file_lock
@@ -132,6 +133,34 @@ class HermesGoogleBrowserTests(unittest.TestCase):
             search = dict(dom, url='https://www.google.com/maps/search/?api=1&q=Example')
             self.assertEqual(_resolve_page(FakeBrowser(search), 'task', 'Example Inn',
                                            {'BS11AA'}, set())['category'], 'unavailable')
+
+    def test_address_only_result_retries_once_and_still_checks_full_postcode(self):
+        address = {'url': PLACE_URL, 'h1': ['Example Inn'], 'addressButtons': [],
+                   'addressOnly': True}
+        item = {'pub_name': 'Example Inn', 'place_name': 'Bristol', 'postcode': 'BS1 1AA',
+                'google_named_search_url': 'https://www.google.com/maps/search/?api=1&query=Example+Inn+BS1+1AA'}
+        for retry, expected in (
+            (address, 'ambiguous'),
+            (dict(address, addressOnly=False,
+                  addressButtons=[{'label': 'Address: 12 Main Road, BS1 1AB'}]), 'identity_conflict'),
+            (dict(address, addressOnly=False,
+                  addressButtons=[{'label': 'Address: 1 Main Road, BS1 1AA'}]), 'identity_and_pin_consistent'),
+        ):
+            with self.subTest(expected=expected):
+                browser = SearchResultBrowser(address, retry, '- heading "Example Inn" [ref=e1]')
+                result = _observe_venue(browser, 'task', item, {}, time.monotonic()+60, lambda _: None)
+                self.assertEqual(result['category'], expected)
+                self.assertEqual(len(browser.navigations), 2)
+
+    def test_empty_search_frame_waits_for_the_named_detail(self):
+        search = 'https://www.google.com/maps/search/?api=1&query=Example+Inn'
+        opening = {'url': search, 'h1': [], 'placeLinks': [], 'addressButtons': []}
+        detail = {'url': PLACE_URL, 'h1': ['Example Inn'],
+                  'addressButtons': [{'label': 'Address: 1 Main Road, BS1 1AA'}]}
+        browser = SearchResultBrowser(opening, detail, '- main')
+        with patch('hermes_google_browser.time.sleep'):
+            result = _resolve_page(browser, 'task', 'Example Inn', {'BS11AA'}, set(), search)
+        self.assertEqual(result['category'], 'identity_and_pin_consistent')
 
     def test_pin_and_trading_conflicts_are_separate_categories(self):
         item = dict(self.item, current_pin={'lat': 51.0, 'lng': -2.0})

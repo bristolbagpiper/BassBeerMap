@@ -1,7 +1,7 @@
 {
   "location_review": {
-    "actionable_count": 0,
-    "active_count": 1,
+    "actionable_count": 11,
+    "active_count": 12,
     "records": {
       "v-0043695f-006e-58fe-adc2-894e5500b940": {
         "active": false,
@@ -3337,7 +3337,7 @@
         "venue_id": "v-32646a4c-94da-52da-a73d-1125b6d05ce9"
       },
       "v-32beb565-ed3a-5330-a1c1-23421ac706ac": {
-        "active": false,
+        "active": true,
         "first_seen": "2026-10-09",
         "history": [
           {
@@ -3351,30 +3351,41 @@
             "date": "2026-10-09",
             "reasons": [],
             "status": "resolved"
+          },
+          {
+            "date": "2026-11-24",
+            "reasons": [
+              "Directory postcode DE4 4RF conflicts with reference address DE4 4FR"
+            ],
+            "status": "review_needed"
           }
         ],
         "last_checked": "2026-11-13",
-        "manual_action_required": false,
-        "next_action": "No pin check requested",
+        "manual_action_required": true,
+        "next_action": "Check the conflicting address/postcode; this does not prove the pin is wrong",
         "place_name": "Wirksworth",
-        "postcode": "DE4 4FR",
+        "postcode": "DE4 4RF",
         "pub_name": "Lime Kiln",
-        "reasons": [],
-        "reference": {},
+        "reasons": [
+          "Directory postcode DE4 4RF conflicts with reference address DE4 4FR"
+        ],
+        "reference": {
+          "field": "postcode",
+          "listed": "DE4 4RF",
+          "reference": "DE4 4FR",
+          "source_url": "https://camra.org.uk/pubs/165663",
+          "use_reference_for_directions": true
+        },
         "research": {},
-        "review_category": "confirmed",
+        "review_category": "address_metadata",
         "source_checks": {
           "camra": {
             "status": "confirmed",
             "url": "https://camra.org.uk/pubs/165663"
-          },
-          "fsa_independent": {
-            "status": "coordinate_disagreement",
-            "url": "https://ratings.food.gov.uk/business/1626364"
           }
         },
         "source_error": null,
-        "status": "resolved",
+        "status": "review_needed",
         "unverified": false,
         "venue_id": "v-32beb565-ed3a-5330-a1c1-23421ac706ac"
       },
@@ -5477,7 +5488,7 @@
         "venue_id": "v-532b1388-63e1-5b1d-b72b-8f72b038b744"
       },
       "v-5351f1e7-9b90-50e5-a520-f0c9598a6a36": {
-        "active": false,
+        "active": true,
         "first_seen": "2026-10-09",
         "history": [
           {
@@ -5491,30 +5502,41 @@
             "date": "2026-10-09",
             "reasons": [],
             "status": "resolved"
+          },
+          {
+            "date": "2026-11-24",
+            "reasons": [
+              "Directory postcode B5 6EP conflicts with reference address B12 0QY"
+            ],
+            "status": "review_needed"
           }
         ],
         "last_checked": "2026-11-14",
-        "manual_action_required": false,
-        "next_action": "No pin check requested",
+        "manual_action_required": true,
+        "next_action": "Check the conflicting address/postcode; this does not prove the pin is wrong",
         "place_name": "Birmingham: Digbeth",
-        "postcode": "B12 0QY",
+        "postcode": "B5 6EP",
         "pub_name": "White Swan",
-        "reasons": [],
-        "reference": {},
+        "reasons": [
+          "Directory postcode B5 6EP conflicts with reference address B12 0QY"
+        ],
+        "reference": {
+          "field": "postcode",
+          "listed": "B5 6EP",
+          "reference": "B12 0QY",
+          "source_url": "https://camra.org.uk/pubs/121124",
+          "use_reference_for_directions": true
+        },
         "research": {},
-        "review_category": "confirmed",
+        "review_category": "address_metadata",
         "source_checks": {
           "camra": {
             "status": "confirmed",
             "url": "https://camra.org.uk/pubs/121124"
-          },
-          "fsa_independent": {
-            "status": "coordinate_disagreement",
-            "url": "https://ratings.food.gov.uk/business/598837"
           }
         },
         "source_error": null,
-        "status": "resolved",
+        "status": "review_needed",
         "unverified": false,
         "venue_id": "v-5351f1e7-9b90-50e5-a520-f0c9598a6a36"
       },
@@ -5815,6 +5837,51 @@
         "status": "resolved",
         "unverified": false,
         "venue_id": "v-552c7fa1-965e-525c-9c6d-00f7d8e85446"
+      },
+      "v-56b3e28f-3fff-5717-be36-519b8e204f0f": {
+        "active": true,
+        "first_seen": "2026-11-24",
+        "history": [
+          {
+            "date": "2026-11-24",
+            "reasons": [
+              "Directory postcode WV10 0DJ conflicts with reference address WV10 0DG"
+            ],
+            "status": "review_needed"
+          }
+        ],
+        "last_checked": "2026-11-14",
+        "manual_action_required": true,
+        "next_action": "Check the conflicting address/postcode; this does not prove the pin is wrong",
+        "place_name": "Wolverhampton: Central",
+        "postcode": "WV10 0DJ",
+        "pub_name": "Great Western",
+        "reasons": [
+          "Directory postcode WV10 0DJ conflicts with reference address WV10 0DG"
+        ],
+        "reference": {
+          "field": "postcode",
+          "listed": "WV10 0DJ",
+          "reference": "WV10 0DG",
+          "source_url": "https://camra.org.uk/pubs/127008",
+          "use_reference_for_directions": true
+        },
+        "research": {},
+        "review_category": "address_metadata",
+        "source_checks": {
+          "camra": {
+            "status": "confirmed",
+            "url": "https://camra.org.uk/pubs/127008"
+          },
+          "food-standards-agency-fhrs": {
+            "status": "not_checked",
+            "url": "https://ratings.food.gov.uk/business/608880"
+          }
+        },
+        "source_error": null,
+        "status": "review_needed",
+        "unverified": false,
+        "venue_id": "v-56b3e28f-3fff-5717-be36-519b8e204f0f"
       },
       "v-56d162bc-5e13-58fa-9aec-a23ab8871ab2": {
         "active": false,
@@ -10627,7 +10694,7 @@
         "venue_id": "v-8b99896d-af7b-5f1d-a6aa-6abc98b1ae60"
       },
       "v-8c80b729-ceaf-5912-ab4a-1b51de2fb3f8": {
-        "active": false,
+        "active": true,
         "first_seen": "2026-11-02",
         "history": [
           {
@@ -10643,20 +10710,27 @@
               "Venue removed from the current directory"
             ],
             "status": "removed"
+          },
+          {
+            "date": "2026-11-24",
+            "reasons": [
+              "Archived FSA point is inside the neighbouring Park Row building; CAMRA places the premises inside The Roundhouse footprint on Royal Standard Place."
+            ],
+            "status": "unverified"
           }
         ],
-        "last_checked": "2026-10-23",
+        "last_checked": "2026-11-24",
         "manual_action_required": true,
-        "next_action": "Check trading/Bass availability; do not move the pin from closure information alone",
+        "next_action": "Corroborate missing or expired evidence; no incorrect pin has been established",
         "place_name": "Nottingham: Central",
         "postcode": "NG1 6FS",
         "pub_name": "Roundhouse",
         "reasons": [
-          "Venue removed from the current directory"
+          "Archived FSA point is inside the neighbouring Park Row building; CAMRA places the premises inside The Roundhouse footprint on Royal Standard Place."
         ],
         "reference": {},
         "research": {},
-        "review_category": "trading_check",
+        "review_category": "needs_verification",
         "source_checks": {
           "camra": {
             "status": "confirmed",
@@ -10668,19 +10742,25 @@
           }
         },
         "source_error": null,
-        "status": "removed",
+        "status": "unverified",
         "trading_status_review": {
+          "checked_at": "2026-11-03",
           "evidence": [
             {
               "checked_at": "2026-11-02",
               "claim": "CAMRA lists Kova, former name Roundhouse, conversion to an Asian restaurant and cask ale unavailable; page updated 1 November 2026",
               "url": "https://camra.org.uk/pubs/kova-nottingham-162611"
+            },
+            {
+              "checked_at": "2026-11-03",
+              "claim": "Live named CAMRA page identifies former Roundhouse as Kova Asian restaurant, alcohol with food only, cask ale unavailable. Premises are not described as permanently closed.",
+              "url": "https://camra.org.uk/pubs/kova-nottingham-162611"
             }
           ],
-          "reason": "Source identifies a successor business at the former Roundhouse; current Bass availability needs review",
-          "status": "needs_review"
+          "reason": "Former Roundhouse is now Kova restaurant; CAMRA states cask ale unavailable. Exact old listing excluded from active Bass map.",
+          "status": "resolved_not_bass_outlet"
         },
-        "unverified": false,
+        "unverified": true,
         "venue_id": "v-8c80b729-ceaf-5912-ab4a-1b51de2fb3f8"
       },
       "v-8cde8d00-9411-5b53-8eb9-fac4cce54dab": {
@@ -11951,7 +12031,7 @@
         "venue_id": "v-9acf6cbe-1e88-5904-af35-f28c20b53738"
       },
       "v-9b0214b5-0b89-530a-9485-b8662012f510": {
-        "active": false,
+        "active": true,
         "first_seen": "2026-10-02",
         "history": [
           {
@@ -11965,18 +12045,33 @@
             "date": "2026-10-14",
             "reasons": [],
             "status": "resolved"
+          },
+          {
+            "date": "2026-11-24",
+            "reasons": [
+              "Directory postcode DE72 2WA conflicts with reference address DE72 2HA"
+            ],
+            "status": "review_needed"
           }
         ],
         "last_checked": "2026-11-19",
-        "manual_action_required": false,
-        "next_action": "No pin check requested",
+        "manual_action_required": true,
+        "next_action": "Check the conflicting address/postcode; this does not prove the pin is wrong",
         "place_name": "Shardlow",
-        "postcode": "DE72 2HA",
+        "postcode": "DE72 2WA",
         "pub_name": "Navigation",
-        "reasons": [],
-        "reference": {},
+        "reasons": [
+          "Directory postcode DE72 2WA conflicts with reference address DE72 2HA"
+        ],
+        "reference": {
+          "field": "postcode",
+          "listed": "DE72 2WA",
+          "reference": "DE72 2HA",
+          "source_url": "https://camra.org.uk/pubs/navigation-inn-shardlow-143265",
+          "use_reference_for_directions": true
+        },
         "research": {},
-        "review_category": "confirmed",
+        "review_category": "address_metadata",
         "source_checks": {
           "camra": {
             "status": "confirmed",
@@ -11986,17 +12081,13 @@
             "status": "not_checked",
             "url": "https://camra.org.uk/pubs/navigation-inn-shardlow-143265"
           },
-          "fsa_independent": {
-            "status": "coordinate_agreement",
-            "url": "https://ratings.food.gov.uk/business/241271"
-          },
           "manual_named_place_map": {
             "status": "not_checked",
             "url": "https://www.google.com/maps/search/?api=1&query=52.868029%2C-1.342615"
           }
         },
         "source_error": null,
-        "status": "resolved",
+        "status": "review_needed",
         "unverified": false,
         "venue_id": "v-9b0214b5-0b89-530a-9485-b8662012f510"
       },
@@ -12176,6 +12267,47 @@
         "status": "resolved",
         "unverified": false,
         "venue_id": "v-9ee32030-d38f-51bb-94b7-64a11d601650"
+      },
+      "v-9f45e2cc-e10a-59dc-9286-43bc11440990": {
+        "active": true,
+        "first_seen": "2026-11-24",
+        "history": [
+          {
+            "date": "2026-11-24",
+            "reasons": [
+              "Directory postcode NG2 2AS conflicts with reference address NG2 3AS"
+            ],
+            "status": "review_needed"
+          }
+        ],
+        "last_checked": "2026-11-19",
+        "manual_action_required": true,
+        "next_action": "Check the conflicting address/postcode; this does not prove the pin is wrong",
+        "place_name": "Nottingham: Central",
+        "postcode": "NG2 2AS",
+        "pub_name": "Brew Tavern",
+        "reasons": [
+          "Directory postcode NG2 2AS conflicts with reference address NG2 3AS"
+        ],
+        "reference": {
+          "field": "postcode",
+          "listed": "NG2 2AS",
+          "reference": "NG2 3AS",
+          "source_url": "https://camra.org.uk/pubs/163071",
+          "use_reference_for_directions": true
+        },
+        "research": {},
+        "review_category": "address_metadata",
+        "source_checks": {
+          "camra": {
+            "status": "confirmed",
+            "url": "https://camra.org.uk/pubs/163071"
+          }
+        },
+        "source_error": null,
+        "status": "review_needed",
+        "unverified": false,
+        "venue_id": "v-9f45e2cc-e10a-59dc-9286-43bc11440990"
       },
       "v-a08db6fd-59a5-51ea-84e3-7c9f4ca95768": {
         "active": false,
@@ -13769,7 +13901,7 @@
         "venue_id": "v-b1ed2bf8-2858-5ace-80c6-3c5ae0e5d74c"
       },
       "v-b1f768d3-f5ed-5eae-a199-6b21559ba452": {
-        "active": false,
+        "active": true,
         "first_seen": "2026-11-03",
         "history": [
           {
@@ -13797,16 +13929,31 @@
             "date": "2026-11-10",
             "reasons": [],
             "status": "resolved"
+          },
+          {
+            "date": "2026-11-24",
+            "reasons": [
+              "Directory postcode LE65 1AH conflicts with reference address LE65 1AN"
+            ],
+            "status": "review_needed"
           }
         ],
         "last_checked": "2026-11-20",
-        "manual_action_required": false,
-        "next_action": "No pin check requested",
+        "manual_action_required": true,
+        "next_action": "Check the conflicting address/postcode; this does not prove the pin is wrong",
         "place_name": "Ashby-de-la-Zouch",
-        "postcode": "LE65 1AN",
+        "postcode": "LE65 1AH",
         "pub_name": "Fitzgeralds",
-        "reasons": [],
-        "reference": {},
+        "reasons": [
+          "Directory postcode LE65 1AH conflicts with reference address LE65 1AN"
+        ],
+        "reference": {
+          "field": "postcode",
+          "listed": "LE65 1AH",
+          "reference": "LE65 1AN",
+          "source_url": "https://www.google.com/maps/place/Fitzgeralds+Ashby/@52.7471038,-1.4705552,17z/data=!3m1!4b1!4m6!3m5!1s0x4879fd6287892107:0xc6b7c50a88009f92!8m2!3d52.7471038!4d-1.4705552!16s%2Fg%2F11zy8xb2rv?entry=ttu&g_ep=EgoyMDI2MTAyOC4wIKXMDSoASAFQAw%3D%3D",
+          "use_reference_for_directions": true
+        },
         "research": {
           "checked_at": "2026-11-03",
           "coverage": {
@@ -13817,19 +13964,15 @@
           "proposals": [],
           "status": "no_candidate"
         },
-        "review_category": "confirmed",
+        "review_category": "address_metadata",
         "source_checks": {
-          "fsa_independent": {
-            "status": "no_name_match",
-            "url": ""
-          },
           "google-maps-named-place": {
             "status": "not_checked",
             "url": "https://www.google.com/maps/place/Fitzgeralds+Ashby/@52.7471038,-1.4705552,17z/data=!3m1!4b1!4m6!3m5!1s0x4879fd6287892107:0xc6b7c50a88009f92!8m2!3d52.7471038!4d-1.4705552!16s%2Fg%2F11zy8xb2rv?entry=ttu&g_ep=EgoyMDI2MTAyOC4wIKXMDSoASAFQAw%3D%3D"
           }
         },
         "source_error": null,
-        "status": "resolved",
+        "status": "review_needed",
         "unverified": false,
         "venue_id": "v-b1f768d3-f5ed-5eae-a199-6b21559ba452"
       },
@@ -14326,7 +14469,8 @@
             "source_url": "https://camra.org.uk/pubs/143866"
           },
           "reference": "ST8 6PW",
-          "source_url": "https://camra.org.uk/pubs/143866"
+          "source_url": "https://camra.org.uk/pubs/143866",
+          "use_reference_for_directions": true
         },
         "research": {},
         "review_category": "confirmed",
@@ -16440,6 +16584,51 @@
         "unverified": false,
         "venue_id": "v-d8070a01-ac91-5ded-a8a4-899851cf5c2b"
       },
+      "v-d8f002a1-4ed3-5ffb-8de9-c9cdbef55a1b": {
+        "active": true,
+        "first_seen": "2026-11-24",
+        "history": [
+          {
+            "date": "2026-11-24",
+            "reasons": [
+              "Directory postcode DE56 1UP conflicts with reference address DE56 1AP"
+            ],
+            "status": "review_needed"
+          }
+        ],
+        "last_checked": "2026-11-12",
+        "manual_action_required": true,
+        "next_action": "Check the conflicting address/postcode; this does not prove the pin is wrong",
+        "place_name": "Belper: Central",
+        "postcode": "DE56 1UP",
+        "pub_name": "Arkwrights",
+        "reasons": [
+          "Directory postcode DE56 1UP conflicts with reference address DE56 1AP"
+        ],
+        "reference": {
+          "field": "postcode",
+          "listed": "DE56 1UP",
+          "reference": "DE56 1AP",
+          "source_url": "https://camra.org.uk/pubs/113191",
+          "use_reference_for_directions": true
+        },
+        "research": {},
+        "review_category": "address_metadata",
+        "source_checks": {
+          "camra": {
+            "status": "confirmed",
+            "url": "https://camra.org.uk/pubs/113191"
+          },
+          "google-maps-named-place": {
+            "status": "not_checked",
+            "url": "https://www.google.com/maps/search/?api=1&query=Arkwrights+Real+Ale+Bar+DE56+1UP"
+          }
+        },
+        "source_error": null,
+        "status": "review_needed",
+        "unverified": false,
+        "venue_id": "v-d8f002a1-4ed3-5ffb-8de9-c9cdbef55a1b"
+      },
       "v-d95368c0-934f-5633-8229-7c363143a41c": {
         "active": false,
         "first_seen": "2026-10-02",
@@ -17003,7 +17192,7 @@
         "venue_id": "v-de4bb4cf-ba26-5249-bc8a-2d255fabb89c"
       },
       "v-de948283-fe31-5f55-b16a-547c37e592ce": {
-        "active": false,
+        "active": true,
         "first_seen": "2026-11-03",
         "history": [
           {
@@ -17024,16 +17213,31 @@
             "date": "2026-11-03",
             "reasons": [],
             "status": "resolved"
+          },
+          {
+            "date": "2026-11-24",
+            "reasons": [
+              "Directory postcode DE1 2TQ conflicts with reference address DE1 2DQ"
+            ],
+            "status": "review_needed"
           }
         ],
         "last_checked": "2026-11-24",
-        "manual_action_required": false,
-        "next_action": "No pin check requested",
+        "manual_action_required": true,
+        "next_action": "Check the conflicting address/postcode; this does not prove the pin is wrong",
         "place_name": "Derby: Central",
-        "postcode": "DE1 2DQ",
+        "postcode": "DE1 2TQ",
         "pub_name": "Tiger",
-        "reasons": [],
-        "reference": {},
+        "reasons": [
+          "Directory postcode DE1 2TQ conflicts with reference address DE1 2DQ"
+        ],
+        "reference": {
+          "field": "postcode",
+          "listed": "DE1 2TQ",
+          "reference": "DE1 2DQ",
+          "source_url": "https://camra.org.uk/pubs/143461",
+          "use_reference_for_directions": true
+        },
         "research": {
           "checked_at": "2026-11-03",
           "coverage": {
@@ -17059,19 +17263,15 @@
           ],
           "status": "candidates_found"
         },
-        "review_category": "confirmed",
+        "review_category": "address_metadata",
         "source_checks": {
           "camra": {
             "status": "confirmed",
             "url": "https://camra.org.uk/pubs/143461"
-          },
-          "fsa_independent": {
-            "status": "no_name_match",
-            "url": ""
           }
         },
         "source_error": null,
-        "status": "resolved",
+        "status": "review_needed",
         "unverified": false,
         "venue_id": "v-de948283-fe31-5f55-b16a-547c37e592ce"
       },
@@ -18512,7 +18712,8 @@
             "source_url": "https://camra.org.uk/pubs/131641"
           },
           "reference": "B78 3AF",
-          "source_url": "https://camra.org.uk/pubs/131641"
+          "source_url": "https://camra.org.uk/pubs/131641",
+          "use_reference_for_directions": true
         },
         "research": {
           "checked_at": "2026-10-06",
@@ -18681,7 +18882,7 @@
         "venue_id": "v-f8715c2c-440d-5a56-96bc-95b9dc41b973"
       },
       "v-f8899d25-0fe4-551f-b83c-e47f3ecf0ed6": {
-        "active": false,
+        "active": true,
         "first_seen": "2026-11-03",
         "history": [
           {
@@ -18702,16 +18903,31 @@
             "date": "2026-11-03",
             "reasons": [],
             "status": "resolved"
+          },
+          {
+            "date": "2026-11-24",
+            "reasons": [
+              "Directory postcode CV9 1FE conflicts with reference address CV9 1HA"
+            ],
+            "status": "review_needed"
           }
         ],
         "last_checked": "2026-11-11",
-        "manual_action_required": false,
-        "next_action": "No pin check requested",
+        "manual_action_required": true,
+        "next_action": "Check the conflicting address/postcode; this does not prove the pin is wrong",
         "place_name": "Atherstone",
-        "postcode": "CV9 1HA",
+        "postcode": "CV9 1FE",
         "pub_name": "New Swan",
-        "reasons": [],
-        "reference": {},
+        "reasons": [
+          "Directory postcode CV9 1FE conflicts with reference address CV9 1HA"
+        ],
+        "reference": {
+          "field": "postcode",
+          "listed": "CV9 1FE",
+          "reference": "CV9 1HA",
+          "source_url": "https://camra.org.uk/pubs/131584",
+          "use_reference_for_directions": true
+        },
         "research": {
           "checked_at": "2026-11-03",
           "coverage": {
@@ -18737,24 +18953,20 @@
           ],
           "status": "candidates_found"
         },
-        "review_category": "confirmed",
+        "review_category": "address_metadata",
         "source_checks": {
           "camra": {
             "status": "confirmed",
             "url": "https://camra.org.uk/pubs/131584"
-          },
-          "fsa_independent": {
-            "status": "ambiguous_or_missing_coordinates",
-            "url": ""
           }
         },
         "source_error": null,
-        "status": "resolved",
+        "status": "review_needed",
         "unverified": false,
         "venue_id": "v-f8899d25-0fe4-551f-b83c-e47f3ecf0ed6"
       },
       "v-f8bee24d-ecda-57fd-ba79-92aae52bba74": {
-        "active": false,
+        "active": true,
         "first_seen": "2026-11-03",
         "history": [
           {
@@ -18775,16 +18987,31 @@
             "date": "2026-11-03",
             "reasons": [],
             "status": "resolved"
+          },
+          {
+            "date": "2026-11-24",
+            "reasons": [
+              "Directory postcode PO5 3BY conflicts with reference address PO5 3DE"
+            ],
+            "status": "review_needed"
           }
         ],
         "last_checked": "2026-11-11",
-        "manual_action_required": false,
-        "next_action": "No pin check requested",
+        "manual_action_required": true,
+        "next_action": "Check the conflicting address/postcode; this does not prove the pin is wrong",
         "place_name": "Southsea",
-        "postcode": "PO5 3DE",
+        "postcode": "PO5 3BY",
         "pub_name": "Barley Mow",
-        "reasons": [],
-        "reference": {},
+        "reasons": [
+          "Directory postcode PO5 3BY conflicts with reference address PO5 3DE"
+        ],
+        "reference": {
+          "field": "postcode",
+          "listed": "PO5 3BY",
+          "reference": "PO5 3DE",
+          "source_url": "https://camra.org.uk/pubs/190766",
+          "use_reference_for_directions": true
+        },
         "research": {
           "checked_at": "2026-11-03",
           "coverage": {
@@ -18824,7 +19051,7 @@
           ],
           "status": "candidates_found"
         },
-        "review_category": "confirmed",
+        "review_category": "address_metadata",
         "source_checks": {
           "camra": {
             "status": "confirmed",
@@ -18833,14 +19060,10 @@
           "food-standards-agency-fhrs": {
             "status": "not_checked",
             "url": "https://ratings.food.gov.uk/business/90065"
-          },
-          "fsa_independent": {
-            "status": "coordinate_agreement",
-            "url": "https://ratings.food.gov.uk/business/90065"
           }
         },
         "source_error": null,
-        "status": "resolved",
+        "status": "review_needed",
         "unverified": false,
         "venue_id": "v-f8bee24d-ecda-57fd-ba79-92aae52bba74"
       },
@@ -19393,7 +19616,7 @@
     },
     "schema_version": 1,
     "source_warning_count": 1,
-    "unverified_count": 0
+    "unverified_count": 1
   },
   "schema_version": 1,
   "venues": {
@@ -37545,7 +37768,7 @@
         "rushden historic transport society|rushden|nn10 0aw",
         "rushden historical transport society|rushden|nn10 0aw"
       ],
-      "current_key": "rushden historical transport society|rushden|nn10 0aw",
+      "current_key": "rushden historic transport society|rushden|nn10 0aw",
       "google_identity_review": {
         "conclusion": "listing_error",
         "decision": "verified_directory_identity",
@@ -37623,7 +37846,7 @@
         "pg": "Guest",
         "place_name": "Rushden",
         "postcode": "NN10 0AW",
-        "pub_name": "Rushden Historical Transport Society"
+        "pub_name": "Rushden Historic Transport Society"
       },
       "listing_reviews": [
         {
@@ -54393,9 +54616,20 @@
     },
     "v-32beb565-ed3a-5330-a1c1-23421ac706ac": {
       "aliases": [
-        "lime kiln|wirksworth|de4 4fr"
+        "lime kiln|wirksworth|de4 4fr",
+        "lime kiln|wirksworth|de4 4rf"
       ],
-      "current_key": "lime kiln|wirksworth|de4 4fr",
+      "current_key": "lime kiln|wirksworth|de4 4rf",
+      "identity_reviews": [
+        {
+          "checked_at": "2026-11-13",
+          "previous_key": "lime kiln|wirksworth|de4 4fr",
+          "reason": "The reviewed venue address uses DE4 4FR. Retain DE4 4RF in the PDF listing.",
+          "reference_postcode": "DE4 4FR",
+          "source_url": "https://camra.org.uk/pubs/165663",
+          "use_reference_for_directions": true
+        }
+      ],
       "independent_location_check": {
         "actionable": false,
         "checked_at": "2026-11-10",
@@ -54453,7 +54687,7 @@
         "notes": "",
         "pg": "Perm",
         "place_name": "Wirksworth",
-        "postcode": "DE4 4FR",
+        "postcode": "DE4 4RF",
         "pub_name": "Lime Kiln"
       },
       "verification_attempt": {
@@ -54544,6 +54778,13 @@
         ],
         "lat": 53.0853682125,
         "lng": -1.57258601875,
+        "metadata_issue": {
+          "field": "postcode",
+          "listed": "DE4 4RF",
+          "reference": "DE4 4FR",
+          "source_url": "https://camra.org.uk/pubs/165663",
+          "use_reference_for_directions": true
+        },
         "source": "openstreetmap-gb-extract"
       }
     },
@@ -58802,7 +59043,7 @@
         "red monkey|bristol: redlands|bs6 6pf",
         "red monkey|bristol: redland|bs6 6pf"
       ],
-      "current_key": "red monkey|bristol: redland|bs6 6pf",
+      "current_key": "red monkey|bristol: redlands|bs6 6pf",
       "google_identity_review": {
         "conclusion": "listing_error",
         "decision": "verified_directory_identity",
@@ -58870,7 +59111,7 @@
         "last": "2026 Q2",
         "notes": "",
         "pg": "Guest",
-        "place_name": "Bristol: Redland",
+        "place_name": "Bristol: Redlands",
         "postcode": "BS6 6PF",
         "pub_name": "Red Monkey"
       },
@@ -75350,9 +75591,10 @@
     },
     "v-5351f1e7-9b90-50e5-a520-f0c9598a6a36": {
       "aliases": [
-        "white swan|birmingham: digbeth|b12 0qy"
+        "white swan|birmingham: digbeth|b12 0qy",
+        "white swan|birmingham: digbeth|b5 6ep"
       ],
-      "current_key": "white swan|birmingham: digbeth|b12 0qy",
+      "current_key": "white swan|birmingham: digbeth|b5 6ep",
       "google_identity_review": {
         "conclusion": "same_venue",
         "decision": "verified_directory_identity",
@@ -75365,6 +75607,16 @@
           "https://www.openstreetmap.org/way/73028934"
         ]
       },
+      "identity_reviews": [
+        {
+          "checked_at": "2026-11-14",
+          "previous_key": "white swan|birmingham: digbeth|b12 0qy",
+          "reason": "The reviewed venue address uses B12 0QY. Retain B5 6EP in the PDF listing.",
+          "reference_postcode": "B12 0QY",
+          "source_url": "https://camra.org.uk/pubs/121124",
+          "use_reference_for_directions": true
+        }
+      ],
       "independent_location_check": {
         "actionable": false,
         "checked_at": "2026-11-13",
@@ -75422,7 +75674,7 @@
         "notes": "",
         "pg": "Guest",
         "place_name": "Birmingham: Digbeth",
-        "postcode": "B12 0QY",
+        "postcode": "B5 6EP",
         "pub_name": "White Swan"
       },
       "verification_attempt": {
@@ -75513,6 +75765,13 @@
         ],
         "lat": 52.47373674000001,
         "lng": -1.8862870600000001,
+        "metadata_issue": {
+          "field": "postcode",
+          "listed": "B5 6EP",
+          "reference": "B12 0QY",
+          "source_url": "https://camra.org.uk/pubs/121124",
+          "use_reference_for_directions": true
+        },
         "source": "openstreetmap-gb-extract"
       }
     },
@@ -77034,7 +77293,7 @@
         "chaddesen park social club (pmc)|derby: chaddesden|de21 6pd",
         "chaddesden park social club (pmc)|derby: chaddesden|de21 6pd"
       ],
-      "current_key": "chaddesden park social club (pmc)|derby: chaddesden|de21 6pd",
+      "current_key": "chaddesen park social club (pmc)|derby: chaddesden|de21 6pd",
       "google_identity_review": {
         "conclusion": "listing_error",
         "decision": "verified_directory_identity",
@@ -77113,7 +77372,7 @@
         "pg": "Perm",
         "place_name": "Derby: Chaddesden",
         "postcode": "DE21 6PD",
-        "pub_name": "Chaddesden Park Social Club (PMC)"
+        "pub_name": "Chaddesen Park Social Club (PMC)"
       },
       "listing_reviews": [
         {
@@ -78075,9 +78334,20 @@
     },
     "v-56b3e28f-3fff-5717-be36-519b8e204f0f": {
       "aliases": [
-        "great western|wolverhampton: central|wv10 0dg"
+        "great western|wolverhampton: central|wv10 0dg",
+        "great western|wolverhampton: central|wv10 0dj"
       ],
-      "current_key": "great western|wolverhampton: central|wv10 0dg",
+      "current_key": "great western|wolverhampton: central|wv10 0dj",
+      "identity_reviews": [
+        {
+          "checked_at": "2026-11-14",
+          "previous_key": "great western|wolverhampton: central|wv10 0dg",
+          "reason": "The reviewed venue address uses WV10 0DG. Retain WV10 0DJ in the PDF listing.",
+          "reference_postcode": "WV10 0DG",
+          "source_url": "https://camra.org.uk/pubs/127008",
+          "use_reference_for_directions": true
+        }
+      ],
       "independent_location_check": {
         "actionable": false,
         "checked_at": "2026-11-13",
@@ -78133,7 +78403,7 @@
         "notes": "",
         "pg": "Guest",
         "place_name": "Wolverhampton: Central",
-        "postcode": "WV10 0DG",
+        "postcode": "WV10 0DJ",
         "pub_name": "Great Western"
       },
       "verification_attempt": {
@@ -78233,6 +78503,13 @@
         ],
         "lat": 52.587103592327,
         "lng": -2.117662230654,
+        "metadata_issue": {
+          "field": "postcode",
+          "listed": "WV10 0DJ",
+          "reference": "WV10 0DG",
+          "source_url": "https://camra.org.uk/pubs/127008",
+          "use_reference_for_directions": true
+        },
         "source": "camra-and-fhrs"
       }
     },
@@ -119361,10 +119638,29 @@
             "reference_postcode": "NG1 6FS",
             "source": "camra",
             "url": "https://camra.org.uk/pubs/162611"
+          },
+          {
+            "checked_at": "2026-11-24",
+            "disposition": "pending_pin_review",
+            "reference_address": "Royal Standard Place",
+            "reference_coordinate": {
+              "lat": 52.9517,
+              "lng": -1.155174
+            },
+            "reference_name": "The Roundhouse",
+            "reference_postcode": "NG1 6FS",
+            "source": "openstreetmap-building-footprint",
+            "supporting_address_urls": [
+              "https://camra.org.uk/pubs/kova-nottingham-162611",
+              "https://www.openstreetmap.org/way/1097822473"
+            ],
+            "url": "https://www.openstreetmap.org/way/1244713923"
           }
         ],
         "lat": 52.9517517089844,
         "lng": -1.15588998794556,
+        "review_reason": "Archived FSA point is inside the neighbouring Park Row building; CAMRA places the premises inside The Roundhouse footprint on Royal Standard Place.",
+        "review_required": true,
         "source": "food-standards-agency-fhrs"
       }
     },
@@ -130150,7 +130446,7 @@
         "navigation|shardlow|de72 2wa",
         "navigation|shardlow|de72 2ha"
       ],
-      "current_key": "navigation|shardlow|de72 2ha",
+      "current_key": "navigation|shardlow|de72 2wa",
       "identity_reviews": [
         {
           "checked_at": "2026-11-06",
@@ -130158,6 +130454,14 @@
           "reason": "The map owner confirmed DE72 2HA, matching CAMRA and the operator for 143 London Road. The map owner previously confirmed the building on 14 October 2026. Preserve the original PDF value in listing history and retain the existing permanent venue ID and pin.",
           "reference_postcode": "DE72 2HA",
           "source_url": "https://camra.org.uk/pubs/navigation-inn-shardlow-143265"
+        },
+        {
+          "checked_at": "2026-11-06",
+          "previous_key": "navigation|shardlow|de72 2ha",
+          "reason": "The map owner confirmed DE72 2HA, matching CAMRA and the operator for 143 London Road. The map owner previously confirmed the building on 14 October 2026. Preserve the original PDF value in listing history and retain the existing permanent venue ID and pin.",
+          "reference_postcode": "DE72 2HA",
+          "source_url": "https://camra.org.uk/pubs/navigation-inn-shardlow-143265",
+          "use_reference_for_directions": true
         }
       ],
       "independent_location_check": {
@@ -130215,7 +130519,7 @@
         "notes": "No longer selling from gravity June 2026",
         "pg": "Perm",
         "place_name": "Shardlow",
-        "postcode": "DE72 2HA",
+        "postcode": "DE72 2WA",
         "pub_name": "Navigation"
       },
       "listing_reviews": [
@@ -130428,6 +130732,13 @@
         ],
         "lat": 52.868029,
         "lng": -1.342615,
+        "metadata_issue": {
+          "field": "postcode",
+          "listed": "DE72 2WA",
+          "reference": "DE72 2HA",
+          "source_url": "https://camra.org.uk/pubs/navigation-inn-shardlow-143265",
+          "use_reference_for_directions": true
+        },
         "source": "camra-and-official-address"
       }
     },
@@ -132985,9 +133296,20 @@
     },
     "v-9f45e2cc-e10a-59dc-9286-43bc11440990": {
       "aliases": [
-        "brew tavern|nottingham: central|ng2 3as"
+        "brew tavern|nottingham: central|ng2 3as",
+        "brew tavern|nottingham: central|ng2 2as"
       ],
-      "current_key": "brew tavern|nottingham: central|ng2 3as",
+      "current_key": "brew tavern|nottingham: central|ng2 2as",
+      "identity_reviews": [
+        {
+          "checked_at": "2026-11-19",
+          "previous_key": "brew tavern|nottingham: central|ng2 3as",
+          "reason": "The reviewed venue address uses NG2 3AS. Retain NG2 2AS in the PDF listing.",
+          "reference_postcode": "NG2 3AS",
+          "source_url": "https://camra.org.uk/pubs/163071",
+          "use_reference_for_directions": true
+        }
+      ],
       "independent_location_check": {
         "actionable": false,
         "checked_at": "2026-11-19",
@@ -133043,7 +133365,7 @@
         "notes": "Available Banked",
         "pg": "Perm",
         "place_name": "Nottingham: Central",
-        "postcode": "NG2 3AS",
+        "postcode": "NG2 2AS",
         "pub_name": "Brew Tavern"
       },
       "verification_attempt": {
@@ -133134,6 +133456,13 @@
         ],
         "lat": 52.946557142857145,
         "lng": -1.1465279428571429,
+        "metadata_issue": {
+          "field": "postcode",
+          "listed": "NG2 2AS",
+          "reference": "NG2 3AS",
+          "source_url": "https://camra.org.uk/pubs/163071",
+          "use_reference_for_directions": true
+        },
         "source": "openstreetmap-gb-extract"
       }
     },
@@ -148153,7 +148482,7 @@
         "fitzgeralds|ashby-de-la-zouch|le65 1ah",
         "fitzgeralds|ashby-de-la-zouch|le65 1an"
       ],
-      "current_key": "fitzgeralds|ashby-de-la-zouch|le65 1an",
+      "current_key": "fitzgeralds|ashby-de-la-zouch|le65 1ah",
       "identity_reviews": [
         {
           "checked_at": "2026-11-10",
@@ -148161,6 +148490,14 @@
           "reason": "The map owner chose the Google-listed postcode for Fitzgeralds at 60A Market Street and instructed us to retain its existing pin. Preserve the original directory postcode in listing history.",
           "reference_postcode": "LE65 1AN",
           "source_url": "https://www.google.com/maps/place/Fitzgeralds+Ashby/@52.7471038,-1.4705552,17z/data=!3m1!4b1!4m6!3m5!1s0x4879fd6287892107:0xc6b7c50a88009f92!8m2!3d52.7471038!4d-1.4705552!16s%2Fg%2F11zy8xb2rv?entry=ttu&g_ep=EgoyMDI2MTAyOC4wIKXMDSoASAFQAw%3D%3D"
+        },
+        {
+          "checked_at": "2026-11-10",
+          "previous_key": "fitzgeralds|ashby-de-la-zouch|le65 1an",
+          "reason": "The map owner chose the Google-listed postcode for Fitzgeralds at 60A Market Street and instructed us to retain its existing pin. Preserve the original directory postcode in listing history.",
+          "reference_postcode": "LE65 1AN",
+          "source_url": "https://www.google.com/maps/place/Fitzgeralds+Ashby/@52.7471038,-1.4705552,17z/data=!3m1!4b1!4m6!3m5!1s0x4879fd6287892107:0xc6b7c50a88009f92!8m2!3d52.7471038!4d-1.4705552!16s%2Fg%2F11zy8xb2rv?entry=ttu&g_ep=EgoyMDI2MTAyOC4wIKXMDSoASAFQAw%3D%3D",
+          "use_reference_for_directions": true
         }
       ],
       "independent_location_check": {
@@ -148210,7 +148547,7 @@
         "notes": "",
         "pg": "Guest",
         "place_name": "Ashby-de-la-Zouch",
-        "postcode": "LE65 1AN",
+        "postcode": "LE65 1AH",
         "pub_name": "Fitzgeralds"
       },
       "listing_reviews": [
@@ -148340,6 +148677,13 @@
         ],
         "lat": 52.7471038,
         "lng": -1.4705552,
+        "metadata_issue": {
+          "field": "postcode",
+          "listed": "LE65 1AH",
+          "reference": "LE65 1AN",
+          "source_url": "https://www.google.com/maps/place/Fitzgeralds+Ashby/@52.7471038,-1.4705552,17z/data=!3m1!4b1!4m6!3m5!1s0x4879fd6287892107:0xc6b7c50a88009f92!8m2!3d52.7471038!4d-1.4705552!16s%2Fg%2F11zy8xb2rv?entry=ttu&g_ep=EgoyMDI2MTAyOC4wIKXMDSoASAFQAw%3D%3D",
+          "use_reference_for_directions": true
+        },
         "owner_confirmation": {
           "approved_coordinate": {
             "lat": 52.7471038,
@@ -152415,7 +152759,8 @@
             "source_url": "https://camra.org.uk/pubs/143866"
           },
           "reference": "ST8 6PW",
-          "source_url": "https://camra.org.uk/pubs/143866"
+          "source_url": "https://camra.org.uk/pubs/143866",
+          "use_reference_for_directions": true
         },
         "source": "camra-and-manual-building-review"
       }
@@ -159324,7 +159669,7 @@
         "country": "England",
         "dispense": "H",
         "last": "2026 Q1",
-        "notes": "CAMRA reports temporary closure since 2 July 2026; reopening expected by 7 November but unconfirmed (checked 3 November 2026). Check with the venue before travelling.",
+        "notes": "",
         "pg": "Guest",
         "place_name": "Chorley",
         "postcode": "PR7 1BS",
@@ -166049,7 +166394,7 @@
         "bamk house hotel|uttoxeter|st14 8ag",
         "bank house hotel|uttoxeter|st14 8ag"
       ],
-      "current_key": "bank house hotel|uttoxeter|st14 8ag",
+      "current_key": "bamk house hotel|uttoxeter|st14 8ag",
       "identity_reviews": [
         {
           "checked_at": "2026-11-07",
@@ -166117,7 +166462,7 @@
         "pg": "Perm",
         "place_name": "Uttoxeter",
         "postcode": "ST14 8AG",
-        "pub_name": "Bank House Hotel"
+        "pub_name": "Bamk House Hotel"
       },
       "listing_reviews": [
         {
@@ -173079,7 +173424,7 @@
         "arkwrights|belper: central|de56 1up",
         "arkwrights|belper: central|de56 1ap"
       ],
-      "current_key": "arkwrights|belper: central|de56 1ap",
+      "current_key": "arkwrights|belper: central|de56 1up",
       "google_identity_review": {
         "conclusion": "listing_error",
         "decision": "verified_directory_identity",
@@ -173100,6 +173445,14 @@
           "reason": "CAMRA, the town council guide and the local food hygiene record all identify Arkwright’s at 6 Campbell Street, DE56 1AP. Correct the directory postcode and retain the building pin.",
           "reference_postcode": "DE56 1AP",
           "source_url": "https://camra.org.uk/pubs/113191"
+        },
+        {
+          "checked_at": "2026-11-06",
+          "previous_key": "arkwrights|belper: central|de56 1ap",
+          "reason": "CAMRA, the town council guide and the local food hygiene record all identify Arkwright’s at 6 Campbell Street, DE56 1AP. Correct the directory postcode and retain the building pin.",
+          "reference_postcode": "DE56 1AP",
+          "source_url": "https://camra.org.uk/pubs/113191",
+          "use_reference_for_directions": true
         }
       ],
       "independent_location_check": {
@@ -173149,7 +173502,7 @@
         "notes": "",
         "pg": "Perm",
         "place_name": "Belper: Central",
-        "postcode": "DE56 1AP",
+        "postcode": "DE56 1UP",
         "pub_name": "Arkwrights"
       },
       "listing_reviews": [
@@ -173255,6 +173608,13 @@
         ],
         "lat": 53.0227293,
         "lng": -1.4832821,
+        "metadata_issue": {
+          "field": "postcode",
+          "listed": "DE56 1UP",
+          "reference": "DE56 1AP",
+          "source_url": "https://camra.org.uk/pubs/113191",
+          "use_reference_for_directions": true
+        },
         "source": "google-maps-named-place"
       }
     },
@@ -177481,7 +177841,7 @@
         "tiger|derby: central|de1 2tq",
         "tiger|derby: central|de1 2dq"
       ],
-      "current_key": "tiger|derby: central|de1 2dq",
+      "current_key": "tiger|derby: central|de1 2tq",
       "google_identity_review": {
         "conclusion": "same_venue",
         "decision": "verified_directory_identity",
@@ -177500,6 +177860,14 @@
           "reason": "Same named venue and street address: source postcode DE1 2TQ is incorrect; CAMRA and supporting address evidence give DE1 2DQ. Retain the existing permanent venue ID.",
           "reference_postcode": "DE1 2DQ",
           "source_url": "https://camra.org.uk/pubs/143461"
+        },
+        {
+          "checked_at": "2026-11-03",
+          "previous_key": "tiger|derby: central|de1 2dq",
+          "reason": "Same named venue and street address: source postcode DE1 2TQ is incorrect; CAMRA and supporting address evidence give DE1 2DQ. Retain the existing permanent venue ID.",
+          "reference_postcode": "DE1 2DQ",
+          "source_url": "https://camra.org.uk/pubs/143461",
+          "use_reference_for_directions": true
         }
       ],
       "independent_location_check": {
@@ -177549,7 +177917,7 @@
         "notes": "",
         "pg": "Guest",
         "place_name": "Derby: Central",
-        "postcode": "DE1 2DQ",
+        "postcode": "DE1 2TQ",
         "pub_name": "Tiger"
       },
       "listing_reviews": [
@@ -177691,6 +178059,13 @@
         ],
         "lat": 52.922476,
         "lng": -1.476485,
+        "metadata_issue": {
+          "field": "postcode",
+          "listed": "DE1 2TQ",
+          "reference": "DE1 2DQ",
+          "source_url": "https://camra.org.uk/pubs/143461",
+          "use_reference_for_directions": true
+        },
         "source": "camra-primary"
       }
     },
@@ -192087,7 +192462,8 @@
             "source_url": "https://camra.org.uk/pubs/131641"
           },
           "reference": "B78 3AF",
-          "source_url": "https://camra.org.uk/pubs/131641"
+          "source_url": "https://camra.org.uk/pubs/131641",
+          "use_reference_for_directions": true
         },
         "source": "owner-reviewed-camra"
       }
@@ -194107,7 +194483,7 @@
         "new swan|atherstone|cv9 1fe",
         "new swan|atherstone|cv9 1ha"
       ],
-      "current_key": "new swan|atherstone|cv9 1ha",
+      "current_key": "new swan|atherstone|cv9 1fe",
       "identity_reviews": [
         {
           "checked_at": "2026-11-03",
@@ -194115,6 +194491,14 @@
           "reason": "Same named venue and street address: source postcode CV9 1FE is incorrect; CAMRA and supporting address evidence give CV9 1HA. Retain the existing permanent venue ID.",
           "reference_postcode": "CV9 1HA",
           "source_url": "https://camra.org.uk/pubs/131584"
+        },
+        {
+          "checked_at": "2026-11-03",
+          "previous_key": "new swan|atherstone|cv9 1ha",
+          "reason": "Same named venue and street address: source postcode CV9 1FE is incorrect; CAMRA and supporting address evidence give CV9 1HA. Retain the existing permanent venue ID.",
+          "reference_postcode": "CV9 1HA",
+          "source_url": "https://camra.org.uk/pubs/131584",
+          "use_reference_for_directions": true
         }
       ],
       "independent_location_check": {
@@ -194164,7 +194548,7 @@
         "notes": "",
         "pg": "Perm",
         "place_name": "Atherstone",
-        "postcode": "CV9 1HA",
+        "postcode": "CV9 1FE",
         "pub_name": "New Swan"
       },
       "listing_reviews": [
@@ -194291,6 +194675,13 @@
         ],
         "lat": 52.577782,
         "lng": -1.547074,
+        "metadata_issue": {
+          "field": "postcode",
+          "listed": "CV9 1FE",
+          "reference": "CV9 1HA",
+          "source_url": "https://camra.org.uk/pubs/131584",
+          "use_reference_for_directions": true
+        },
         "source": "camra-primary"
       }
     },
@@ -194299,7 +194690,7 @@
         "barley mow|southsea|po5 3by",
         "barley mow|southsea|po5 3de"
       ],
-      "current_key": "barley mow|southsea|po5 3de",
+      "current_key": "barley mow|southsea|po5 3by",
       "identity_reviews": [
         {
           "checked_at": "2026-11-03",
@@ -194307,6 +194698,14 @@
           "reason": "Same named venue and street address: source postcode PO5 3BY is incorrect; CAMRA and supporting address evidence give PO5 3DE. Retain the existing permanent venue ID.",
           "reference_postcode": "PO5 3DE",
           "source_url": "https://camra.org.uk/pubs/190766"
+        },
+        {
+          "checked_at": "2026-11-03",
+          "previous_key": "barley mow|southsea|po5 3de",
+          "reason": "Same named venue and street address: source postcode PO5 3BY is incorrect; CAMRA and supporting address evidence give PO5 3DE. Retain the existing permanent venue ID.",
+          "reference_postcode": "PO5 3DE",
+          "source_url": "https://camra.org.uk/pubs/190766",
+          "use_reference_for_directions": true
         }
       ],
       "independent_location_check": {
@@ -194364,7 +194763,7 @@
         "notes": "",
         "pg": "Guest",
         "place_name": "Southsea",
-        "postcode": "PO5 3DE",
+        "postcode": "PO5 3BY",
         "pub_name": "Barley Mow"
       },
       "listing_reviews": [
@@ -194521,6 +194920,13 @@
         ],
         "lat": 50.789349,
         "lng": -1.092775,
+        "metadata_issue": {
+          "field": "postcode",
+          "listed": "PO5 3BY",
+          "reference": "PO5 3DE",
+          "source_url": "https://camra.org.uk/pubs/190766",
+          "use_reference_for_directions": true
+        },
         "source": "camra-primary"
       }
     },
@@ -198809,7 +199215,7 @@
         "lancaster inn|woodhall spa|ln10 6st",
         "inn at woodhall spa|woodhall spa|ln10 6st"
       ],
-      "current_key": "inn at woodhall spa|woodhall spa|ln10 6st",
+      "current_key": "lancaster inn|woodhall spa|ln10 6st",
       "google_identity_review": {
         "conclusion": "listing_error",
         "decision": "verified_directory_identity",
@@ -198888,7 +199294,7 @@
         "pg": "Guest",
         "place_name": "Woodhall Spa",
         "postcode": "LN10 6ST",
-        "pub_name": "Inn at Woodhall Spa"
+        "pub_name": "Lancaster Inn"
       },
       "listing_reviews": [
         {

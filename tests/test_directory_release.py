@@ -100,18 +100,16 @@ class IdentityTests(unittest.TestCase):
         self.assertNotEqual(rows[0]['venue_id'], before['venue_id'])
         self.assertIsNone(updated['venues'][rows[0]['venue_id']]['verified_pin'])
 
-    def test_conflicting_duplicate_is_blocked_and_reviewed_exception_cannot_drift(self):
+    def test_duplicate_source_rows_are_retained_and_publication_is_blocked(self):
         one, two = row('Black Lion'), dict(row('Black Lion'), pg='Guest', last='2026 Q2')
-        _, _, report = reconcile([one, two], {'venues': {}}, {})
-        self.assertIn('conflicting duplicate', report['errors'][0])
         decision = {'duplicate_resolutions': {venue_key(one): {'accepted': {'pg': 'Perm', 'last': '2026 Q3'},
                     'rejected': [{'pg': 'Guest', 'last': '2026 Q2'}], 'source_url': 'https://example.test/pdf',
                     'reason': 'reviewed conflicting older record', 'checked_at': date.today().isoformat()}}}
-        rows, _, report = reconcile([one, two], {'venues': {}}, decision)
-        self.assertEqual(len(rows), 1)
-        self.assertEqual(report['errors'], [])
-        _, _, report = reconcile([one, dict(two, last='2026 Q4')], {'venues': {}}, decision)
-        self.assertIn('beyond the reviewed exception', report['errors'][0])
+        for source in ([one, two], [one, one]):
+            with self.subTest(source=source):
+                rows, _, report = reconcile(source, {'venues': {}}, decision)
+                self.assertEqual(rows, source)
+                self.assertIn('duplicate PDF identities', report['errors'][0])
 
     def test_distinct_new_pub_gets_own_id_and_no_verified_pin(self):
         old = row()

@@ -1,10 +1,9 @@
-import json
 import tempfile
 import unittest
 from pathlib import Path
 from unittest.mock import patch
 
-from convert_pdf_to_csv import apply_postcode_overrides
+from ingest_directory import postcode_coordinates
 from build_change_report import build_report
 from send_change_report_email import format_report
 from fetch_latest_pdf import download_latest_pdf
@@ -44,13 +43,12 @@ class ValidationTests(unittest.TestCase):
         self.assertTrue(any("invalid postcode" in error for error in errors))
         self.assertTrue(any("last-verified" in error for error in errors))
 
-    def test_postcode_corrections_are_applied(self):
+    def test_postcode_lookup_uses_reviewed_reference_without_changing_listing(self):
         rows = [row(postcode="DE4 4RF")]
-        with tempfile.TemporaryDirectory() as directory:
-            path = Path(directory) / "overrides.json"
-            path.write_text(json.dumps({"DE4 4RF": {"postcode": "DE4 4FR"}}), encoding="utf-8")
-            apply_postcode_overrides(rows, path)
-        self.assertEqual(rows[0]["postcode"], "DE4 4FR")
+        point = {"lat": 53.08, "lng": -1.57}
+        self.assertEqual(postcode_coordinates(rows, {"DE4 4FR": point}, {"DE4 4RF": {"postcode": "DE4 4FR"}}),
+                         {"DE4 4RF": point})
+        self.assertEqual(rows[0]["postcode"], "DE4 4RF")
 
     def test_change_report_lists_additions_removals_and_field_updates(self):
         previous = [row(), row(pub_name="Old Inn", postcode="BS1 1AB")]

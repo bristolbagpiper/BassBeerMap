@@ -1,8 +1,8 @@
 # Directory imports and pin verification
 
 `venue-registry.json` owns permanent venue IDs and reviewed physical locations.
-CSV names, places and postcodes remain editable metadata. Never create a new ID
-for a venue merely because its name or postcode changes.
+The PDF owns the published listing fields, including names, places and postcodes.
+Link a reviewed name or postcode change to the existing venue ID.
 
 ## Import gate
 
@@ -35,8 +35,8 @@ Use the uploaded reconciliation report, source PDF, and independent named venue
 address/map evidence. Add an explicit decision to `ingestion-decisions.json`
 with source URL, check date and reason. Identity aliases must point to a known
 previous key and record the reference postcode. Do not infer relocation from a
-directory postcode change. Duplicate decisions list the precise accepted and
-rejected field values; changed conflicts require another review.
+directory postcode change. An exact duplicate identity blocks publication until
+all PDF records can be represented without selecting a survivor.
 
 For a confirmed physical relocation, review and update the existing registry
 entry's pin, independent reference coordinates and dated evidence together.
@@ -213,14 +213,20 @@ refreshed. Informational FSA differences do not become active health incidents.
 
 ## Fixing brown pins without AI
 
-Reviewed `listing_corrections` in `ingestion-decisions.json` are scoped to an
-exact venue identity and expected source fields. They can correct a postcode or
-add a dated public note without changing another pub at the same postcode.
-Postcode corrections retain the existing permanent ID and original-row history.
-Exact `listing_exclusions` can remove a reviewed obsolete Bass listing while
-retaining its registry and pin history. If that excluded listing changes in a
-later PDF, publication stops for a fresh review rather than silently restoring
-or discarding a new beer confirmation.
+The PDF governs inclusion and all source listing fields. Import validation
+compares the complete candidate against the PDF and checks the printed total
+when present. If multiple source rows have the same identity and cannot yet be
+represented by the release format, the import stops for review with all input
+rows intact.
+
+Reviewed `identity_aliases` link source spellings and postcodes to the same
+permanent venue and pin. Alternative names and evidence-backed navigation
+addresses are separate from the PDF fields. `postcode-overrides.json` supplies
+lookup references for postcodes that the normal lookup cannot use. Previous
+listing corrections, exclusions and duplicate decisions are kept as historical
+evidence in `ingestion-decisions.json` and the registry. Trading notices use
+`trading-notices.json`. Investigate discrepancies when they affect the identity
+of the mapped building or the accuracy of its pin.
 
 `Research unverified locations` runs Tuesdays at 08:17 UTC and supports manual
 dispatch. It retries CAMRA-primary verification, records supporting FSA checks and searches
@@ -249,7 +255,7 @@ dedicated review rather than bypassing the normal safeguards.
 
 ```
 python -m unittest discover -s tests -v
-python validate_directory_release.py
+python validate_directory_release.py --check-pdf
 python validate_coordinate_verification.py --max-evidence-age-days 400
 ```
 
@@ -259,7 +265,6 @@ HTML. `python ingest_directory.py candidate-pubs.csv --offline` skips external
 venue enrichment; postcode lookups still run for previously unseen postcodes.
 
 The GJ Muckers exception records the PDF's SK11 7NE versus CAMRA's Sunderland
-Street SK11 6JL and preserves the independently checked location. Directions
-for precise pins use coordinates, so conflicting directory postcodes cannot
-send visitors elsewhere. The Black Lion exception retains the newer Q3 guest
-listing rather than the duplicate Q2 permanent listing.
+Street SK11 6JL and preserves the independently checked location. Its directions
+open the reviewed coordinates. Where a separate navigation address is verified,
+the map can use that address while continuing to display the PDF postcode.

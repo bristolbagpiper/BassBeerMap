@@ -25,6 +25,30 @@
     }
   },
   "identity_aliases": {
+    "arkwrights|belper: central|de56 1up": {
+      "checked_at": "2026-11-06",
+      "previous_key": "arkwrights|belper: central|de56 1ap",
+      "reason": "CAMRA, the town council guide and the local food hygiene record all identify Arkwright’s at 6 Campbell Street, DE56 1AP. Correct the directory postcode and retain the building pin.",
+      "reference_postcode": "DE56 1AP",
+      "source_url": "https://camra.org.uk/pubs/113191",
+      "use_reference_for_directions": true
+    },
+    "barley mow|southsea|po5 3by": {
+      "checked_at": "2026-11-03",
+      "previous_key": "barley mow|southsea|po5 3de",
+      "reason": "Same named venue and street address: source postcode PO5 3BY is incorrect; CAMRA and supporting address evidence give PO5 3DE. Retain the existing permanent venue ID.",
+      "reference_postcode": "PO5 3DE",
+      "source_url": "https://camra.org.uk/pubs/190766",
+      "use_reference_for_directions": true
+    },
+    "brew tavern|nottingham: central|ng2 2as": {
+      "checked_at": "2026-11-19",
+      "previous_key": "brew tavern|nottingham: central|ng2 3as",
+      "reason": "The reviewed venue address uses NG2 3AS. Retain NG2 2AS in the PDF listing.",
+      "reference_postcode": "NG2 3AS",
+      "source_url": "https://camra.org.uk/pubs/163071",
+      "use_reference_for_directions": true
+    },
     "britannia|rowley regis|b65 9at": {
       "checked_at": "2026-10-02",
       "previous_key": "britannia|rowley regis|b91 3ju",
@@ -32,12 +56,28 @@
       "reference_postcode": "B65 9AT",
       "source_url": "https://camra.org.uk/pubs/britannia-inn-rowley-regis-146821"
     },
+    "fitzgeralds|ashby-de-la-zouch|le65 1ah": {
+      "checked_at": "2026-11-10",
+      "previous_key": "fitzgeralds|ashby-de-la-zouch|le65 1an",
+      "reason": "The map owner chose the Google-listed postcode for Fitzgeralds at 60A Market Street and instructed us to retain its existing pin. Preserve the original directory postcode in listing history.",
+      "reference_postcode": "LE65 1AN",
+      "source_url": "https://www.google.com/maps/place/Fitzgeralds+Ashby/@52.7471038,-1.4705552,17z/data=!3m1!4b1!4m6!3m5!1s0x4879fd6287892107:0xc6b7c50a88009f92!8m2!3d52.7471038!4d-1.4705552!16s%2Fg%2F11zy8xb2rv?entry=ttu&g_ep=EgoyMDI2MTAyOC4wIKXMDSoASAFQAw%3D%3D",
+      "use_reference_for_directions": true
+    },
     "gj muckers|macclesfield|sk11 7ne": {
       "checked_at": "2026-10-02",
       "previous_key": "gj muckers|macclesfield|sk11 6jl",
       "reason": "CAMRA's named venue at 36-38 Sunderland Street still has the reviewed coordinate 53.25777,-2.12237 and postcode SK11 6JL. Retain the physical venue identity; flag SK11 7NE from the PDF as conflicting metadata, not evidence of relocation.",
       "reference_postcode": "SK11 6JL",
       "source_url": "https://camra.org.uk/pubs/gj-muckers-macclesfield-197659"
+    },
+    "great western|wolverhampton: central|wv10 0dj": {
+      "checked_at": "2026-11-14",
+      "previous_key": "great western|wolverhampton: central|wv10 0dg",
+      "reason": "The reviewed venue address uses WV10 0DG. Retain WV10 0DJ in the PDF listing.",
+      "reference_postcode": "WV10 0DG",
+      "source_url": "https://camra.org.uk/pubs/127008",
+      "use_reference_for_directions": true
     },
     "greyhound|boundary / woodville|de11 7bu": {
       "checked_at": "2026-11-03",
@@ -47,12 +87,52 @@
       "reviewed_by": "Codex identity evidence review following owner building confirmation",
       "source_url": "https://www.google.com/maps/place/The+Greyhound+Inn/@52.767456,-1.5125223,17z/data=!3m1!4b1!4m6!3m5!1s0x4879feba10708f69:0x3f4eab9b3f5e67f6!8m2!3d52.767456!4d-1.5125223!16s%2Fg%2F1tcx11fl"
     },
+    "lime kiln|wirksworth|de4 4rf": {
+      "checked_at": "2026-11-13",
+      "previous_key": "lime kiln|wirksworth|de4 4fr",
+      "reason": "The reviewed venue address uses DE4 4FR. Retain DE4 4RF in the PDF listing.",
+      "reference_postcode": "DE4 4FR",
+      "source_url": "https://camra.org.uk/pubs/165663",
+      "use_reference_for_directions": true
+    },
+    "navigation|shardlow|de72 2wa": {
+      "checked_at": "2026-11-06",
+      "previous_key": "navigation|shardlow|de72 2ha",
+      "reason": "The map owner confirmed DE72 2HA, matching CAMRA and the operator for 143 London Road. The map owner previously confirmed the building on 14 October 2026. Preserve the original PDF value in listing history and retain the existing permanent venue ID and pin.",
+      "reference_postcode": "DE72 2HA",
+      "source_url": "https://camra.org.uk/pubs/navigation-inn-shardlow-143265",
+      "use_reference_for_directions": true
+    },
+    "new swan|atherstone|cv9 1fe": {
+      "checked_at": "2026-11-03",
+      "previous_key": "new swan|atherstone|cv9 1ha",
+      "reason": "Same named venue and street address: source postcode CV9 1FE is incorrect; CAMRA and supporting address evidence give CV9 1HA. Retain the existing permanent venue ID.",
+      "reference_postcode": "CV9 1HA",
+      "source_url": "https://camra.org.uk/pubs/131584",
+      "use_reference_for_directions": true
+    },
     "red lion|dayhills|st15 8ru": {
       "checked_at": "2026-10-02",
       "previous_key": "red lion aka romping cat|dayhills|st15 8ru",
       "reason": "Same named pub, full address and exact mapped point. PDF moved aka Romping Cat into notes.",
       "reference_postcode": "ST15 8RU",
       "source_url": "https://camra.org.uk/pubs/red-lion-dayhills-145933"
+    },
+    "tiger|derby: central|de1 2tq": {
+      "checked_at": "2026-11-03",
+      "previous_key": "tiger|derby: central|de1 2dq",
+      "reason": "Same named venue and street address: source postcode DE1 2TQ is incorrect; CAMRA and supporting address evidence give DE1 2DQ. Retain the existing permanent venue ID.",
+      "reference_postcode": "DE1 2DQ",
+      "source_url": "https://camra.org.uk/pubs/143461",
+      "use_reference_for_directions": true
+    },
+    "white swan|birmingham: digbeth|b5 6ep": {
+      "checked_at": "2026-11-14",
+      "previous_key": "white swan|birmingham: digbeth|b12 0qy",
+      "reason": "The reviewed venue address uses B12 0QY. Retain B5 6EP in the PDF listing.",
+      "reference_postcode": "B12 0QY",
+      "source_url": "https://camra.org.uk/pubs/121124",
+      "use_reference_for_directions": true
     }
   },
   "listing_corrections": {

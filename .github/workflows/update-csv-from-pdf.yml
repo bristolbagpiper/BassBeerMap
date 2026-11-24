@@ -153,7 +153,7 @@ jobs:
 
       - name: Validate candidate files again before publication
         id: candidate_validation
-        run: python validate_directory_release.py --root candidate-release --previous .
+        run: python validate_directory_release.py --root candidate-release --previous . --check-pdf
 
       - name: Guard against unexpected changes from an unchanged PDF
         env:

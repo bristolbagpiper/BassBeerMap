@@ -8,15 +8,18 @@ from urllib.request import Request, urlopen
 
 from coordinate_sources import resolve_new_pin
 from directory_release import (bootstrap_registry, read_json, read_rows, reconcile,
-                               validate_release, write_json, write_release, venue_key)
+                               validate_pdf_listings, validate_release, write_json, write_release, venue_key)
 from build_change_report import build_report
 from build_coordinate_review_queue import build_queue
 import csv
 
 
-def postcode_coordinates(rows, existing):
-    coordinates = {postcode: value for postcode, value in existing.items() if postcode in {row['postcode'] for row in rows}}
-    missing = sorted({row['postcode'] for row in rows} - set(coordinates))
+def postcode_coordinates(rows, existing, overrides=None):
+    overrides = overrides or {}
+    lookups = {postcode: overrides.get(postcode, {}).get('postcode', postcode)
+               for postcode in {row['postcode'] for row in rows}}
+    coordinates = dict(existing)
+    missing = sorted({query for postcode, query in lookups.items() if postcode not in coordinates} - coordinates.keys())
     for offset in range(0, len(missing), 100):
         request = Request('https://api.postcodes.io/postcodes',
                           data=json.dumps({'postcodes': missing[offset:offset + 100]}).encode(),
@@ -27,7 +30,8 @@ def postcode_coordinates(rows, existing):
             value = result.get('result') or {}
             if value.get('latitude') is not None and value.get('longitude') is not None:
                 coordinates[result['query']] = {'lat': value['latitude'], 'lng': value['longitude']}
-    return coordinates
+    return {postcode: coordinates[postcode] if postcode in coordinates else coordinates[query]
+            for postcode, query in lookups.items() if postcode in coordinates or query in coordinates}
 
 
 def stage_import(candidate, root, staging, check_sources=True):
@@ -43,13 +47,19 @@ def stage_import(candidate, root, staging, check_sources=True):
         if reconciliation['errors']:
             report['errors'].extend(reconciliation['errors'])
             return report
+        pdf = root / 'latest-bass-directory.pdf'
+        if pdf.exists():
+            report['errors'].extend(validate_pdf_listings(pdf, rows))
+            if report['errors']:
+                return report
         # Validate listing content before spending time on external enrichment.
         from validate_csv import validate
         valid, errors, _ = validate(previous, rows)
         if not valid:
             report['errors'].extend(errors)
             return report
-        coordinates = postcode_coordinates(rows, read_json(root / 'pub-coordinates.json', {'coordinates': {}})['coordinates'])
+        coordinates = postcode_coordinates(rows, read_json(root / 'pub-coordinates.json', {'coordinates': {}})['coordinates'],
+                                           read_json(root / 'postcode-overrides.json', {}))
         if check_sources:
             for row in rows:
                 entry = registry['venues'][row['venue_id']]
@@ -89,7 +99,6 @@ def stage_import(candidate, root, staging, check_sources=True):
                 entry['verification_attempt'] = attempt
         metadata = read_json(root / 'candidate-directory-meta.json', read_json(root / 'directory-meta.json', {}))
         ledger = write_release(staging, rows, registry, metadata, coordinates)
-        pdf = root / 'latest-bass-directory.pdf'
         if pdf.exists():
             shutil.copyfile(pdf, staging / pdf.name)
         change_report = build_report(previous, rows)

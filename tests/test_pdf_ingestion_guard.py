@@ -2,8 +2,10 @@ import csv
 import tempfile
 import unittest
 from pathlib import Path
+from unittest.mock import patch
 
 from convert_pdf_to_csv import parse_pdf_rows
+from directory_release import validate_pdf_listings
 from guard_unchanged_pdf import needs_approval
 
 
@@ -17,6 +19,15 @@ class Page:
 
 
 class ParserRegressionTests(unittest.TestCase):
+    def test_printed_total_rejects_an_incomplete_extraction(self):
+        class Reader:
+            pages = [Page([('UK Area', 20, 647), ('ENGLAND', 20, 627),
+                           ('Tavern', 150, 590), ('Belper', 320, 590), ('DE56 1UU', 460, 590),
+                           ('Perm', 520, 590), ('2026 Q2', 560, 590),
+                           ('Total', 20, 550), ('2', 735, 550)])]
+        with self.assertRaisesRegex(ValueError, 'total of 2 pubs, but extracted 1'):
+            parse_pdf_rows(Reader())
+
     def test_lowercase_dispense_column_is_normalized_without_polluting_notes(self):
         class Reader:
             pages = [Page([('UK Area', 20, 647), ('Ds', 721, 647), ('Source/Notes', 765, 647), ('ENGLAND', 20, 627),
@@ -46,6 +57,16 @@ class ParserRegressionTests(unittest.TestCase):
 
 
 class GuardTests(unittest.TestCase):
+    def test_source_comparison_rejects_alteration_or_omission(self):
+        source = dict.fromkeys(('country', 'area', 'pub_name', 'place_name', 'postcode',
+                                'pg', 'last', 'dispense', 'notes'), '')
+        source.update(pub_name='Original Inn', pg='Guest')
+        with patch('convert_pdf_to_csv.PdfReader'), patch('convert_pdf_to_csv.parse_pdf_rows', return_value=[source]):
+            self.assertEqual(validate_pdf_listings('directory.pdf', [dict(source, venue_id='v-1')]), [])
+            self.assertIn('1 missing source rows', validate_pdf_listings('directory.pdf', [])[0])
+            self.assertIn('1 added or altered rows',
+                          validate_pdf_listings('directory.pdf', [dict(source, pub_name='Different Inn')])[0])
+
     def test_same_pdf_with_changed_listing_requires_approval(self):
         with tempfile.TemporaryDirectory() as directory:
             old, new = Path(directory) / 'old.csv', Path(directory) / 'new.csv'

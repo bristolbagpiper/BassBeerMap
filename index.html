@@ -1784,7 +1784,6 @@
     const GOOGLE_REVIEW_URL = './hermes-google-status.json';
     const TRADING_NOTICES_URL = './trading-notices.json';
     const APPROXIMATE_MAP_NOTE = 'The pin shows the postcode area. Confirm the pub’s exact location before travelling.';
-    const SHEPHERDS_HALL_ID = 'v-c62f31b0-c5b0-546c-979e-12fac920a47a';
     let tradingNoticeEntries = new Map();
     let hiddenTradingNoticeVenueIds = new Set();
     const DATA_FETCH_OPTIONS = { cache: 'no-cache' };
@@ -1903,12 +1902,6 @@
     let reportVenueId = '';
     let turnstileReady = null;
     const CSV_COLUMNS = ['country', 'area', 'pub_name', 'place_name', 'postcode', 'pg', 'last', 'dispense', 'notes'];
-    // Corrections apply to a specific venue and source postcode, preserving the
-    // directory value for traceability and allowing future directory changes.
-    const POSTCODE_CORRECTIONS = {
-      'v-baef8a0f-c094-5f52-a9c2-3a37df4ca657': { listed: 'ST8 6PH', corrected: 'ST8 6PW' },
-      'v-f5205b00-aadb-5928-870d-674117dbffab': { listed: 'B78 3AB', corrected: 'B78 3AF' }
-    };
     const DISPENSE_LABELS = {
       H: 'Handpump',
       G: 'Gravity',
@@ -1980,15 +1973,6 @@
 
         normalised.id = index + 1;
         normalised.venue_id = String(item.venue_id ?? '');
-        const correction = POSTCODE_CORRECTIONS[normalised.venue_id];
-        if (correction && normalised.postcode.toUpperCase() === correction.listed) {
-          normalised.directoryPostcode = normalised.postcode;
-          normalised.postcode = correction.corrected;
-        }
-        if (normalised.venue_id === SHEPHERDS_HALL_ID
-          && normalised.notes.startsWith('CAMRA reports temporary closure since 2 July 2026')) {
-          normalised.notes = '';
-        }
         normalised.searchText = [
           normalised.pub_name,
           normalised.place_name,
@@ -2051,7 +2035,7 @@
       return Boolean(finding && item?.locationPrecision === 'venue' && finding.venue_id === item.venue_id
         && finding.pub_name === item.pub_name
         && finding.place_name === item.place_name
-        && finding.postcode === (item.directoryPostcode || item.postcode)
+        && finding.postcode === item.postcode
         && finding.current_pin?.lat === item.lat && finding.current_pin?.lng === item.lng);
     }
 
@@ -2140,15 +2124,22 @@
         const review = issue?.owner_review;
         const compact = value => String(value || '').replace(/\s+/g, '').toUpperCase();
         const address = location.directions_address;
+        const referencePostcode = issue?.listed === item.postcode ? issue.reference : item.postcode;
+        item.alternateName = location.alternate_name;
+        const searchAliases = [item.alternateName, referencePostcode].filter(Boolean)
+          .map(value => value.toLowerCase().replace(/[^a-z0-9]/g, ''));
+        item.searchText = [item.searchText, ...searchAliases].join(' ');
         if (precise && typeof address?.street === 'string' && address.street.trim()
-          && compact(address.postcode) === compact(item.postcode) && freshLocationEvidence(address.checked_at)) {
+          && compact(address.postcode) === compact(issue?.use_reference_for_directions ? referencePostcode : item.postcode)
+          && freshLocationEvidence(address.checked_at)) {
           item.directionsStreet = address.street;
+          item.directionsPostcode = address.postcode;
         }
         item.postcodeIssueReviewed = Boolean(precise && issue && review && review.reviewed_by
           && review.checked_at && review.owner_instruction && review.pub_name === item.pub_name
           && compact(review.listed) === compact(issue.listed)
           && compact(review.reference) === compact(issue.reference)
-          && compact(review.listed) === compact(item.directoryPostcode || item.postcode)
+          && compact(review.listed) === compact(item.postcode)
           && review.source_url === issue.source_url
           && review.approved_coordinate?.lat === location.lat && review.approved_coordinate?.lng === location.lng);
         if (coords && Number.isFinite(coords.lat) && Number.isFinite(coords.lng)) {
@@ -2237,11 +2228,11 @@
       let query = precise ? `${item.lat},${item.lng}` : [item.pub_name, item.place_name, item.postcode].filter(Boolean).join(', ');
       if (item.directionsStreet) {
         const locality = item.place_name.split(':')[0].trim();
-        const hasPostcode = item.directionsStreet.toUpperCase().includes(item.postcode.toUpperCase());
+        const hasPostcode = item.directionsStreet.toUpperCase().includes(item.directionsPostcode.toUpperCase());
         const hasLocality = item.directionsStreet.split(',').some(part => part.trim().toLowerCase() === locality.toLowerCase());
         const address = hasPostcode ? item.directionsStreet
-          : [item.directionsStreet, hasLocality ? '' : locality, item.postcode].filter(Boolean).join(', ');
-        query = `${item.pub_name}, ${address}`;
+          : [item.directionsStreet, hasLocality ? '' : locality, item.directionsPostcode].filter(Boolean).join(', ');
+        query = `${item.alternateName || item.pub_name}, ${address}`;
       }
       const params = new URLSearchParams({api: '1', query});
       const url = `https://www.google.com/maps/search/?${params}`;

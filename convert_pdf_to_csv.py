@@ -85,7 +85,6 @@ STOP_PREFIXES = (
     "Removal month",
     "Coverage & Notes",
     "Contact details",
-    "Total 1088",
 )
 
 SKIP_CONTAINS = ("facebook.com/groups/nationalbassday",)
@@ -136,7 +135,7 @@ def parse_pdf_rows(reader: PdfReader) -> list[dict[str, str]]:
             rows.append(current_row)
         current_row = None
 
-    for item in items:
+    for index, item in enumerate(items):
         raw = str(item["text"])
         text = raw.strip()
         x = float(item["x"])
@@ -148,6 +147,16 @@ def parse_pdf_rows(reader: PdfReader) -> list[dict[str, str]]:
 
         if not text or text in SKIP_EXACT:
             continue
+        if started and positioned and x < 100 and (total := re.fullmatch(r"Total(?:\s+(\d+))?", text)):
+            finish_row()
+            count = total[1]
+            if not count:
+                count = next((str(cell['text']).strip() for cell in items[index + 1:]
+                              if cell['page'] == item['page'] and abs(float(cell['y']) - y) < 0.1
+                              and float(cell['x']) > x and str(cell['text']).strip().isdigit()), None)
+            if count is None or len(rows) != int(count):
+                raise ValueError(f"PDF lists a total of {count or 'unknown'} pubs, but extracted {len(rows)}")
+            break
         if any(text.startswith(prefix) for prefix in STOP_PREFIXES):
             finish_row()
             break
@@ -244,17 +253,6 @@ def write_csv(rows: list[dict[str, str]], output_path: Path) -> None:
         writer.writerows(rows)
 
 
-def apply_postcode_overrides(rows: list[dict[str, str]], overrides_path: Path) -> None:
-    """Apply documented source corrections before publishing the CSV."""
-    if not overrides_path.exists():
-        return
-    overrides = json.loads(overrides_path.read_text(encoding="utf-8"))
-    for row in rows:
-        override = overrides.get(row["postcode"])
-        if override and override.get("postcode"):
-            row["postcode"] = str(override["postcode"]).upper()
-
-
 def normalise_month_name(raw: str) -> str | None:
     key = raw.strip().lower()[:3]
     return MONTH_NAMES.get(key)
@@ -319,11 +317,6 @@ def main() -> None:
         help="Path to the source PDF.",
     )
     parser.add_argument(
-        "--postcode-overrides",
-        default="postcode-overrides.json",
-        help="JSON file containing documented postcode corrections.",
-    )
-    parser.add_argument(
         "csv",
         nargs="?",
         default="pubs.csv",
@@ -347,7 +340,6 @@ def main() -> None:
 
     reader = PdfReader(str(pdf_path))
     rows = parse_pdf_rows(reader)
-    apply_postcode_overrides(rows, Path(args.postcode_overrides))
     metadata = extract_directory_metadata(pdf_path, reader, args.source_name or None)
     write_csv(rows, csv_path)
     write_metadata(metadata, metadata_path)

@@ -4,23 +4,23 @@ Locations: 1088
 
 Action required: 0
 Information — no pin check requested: 1088
-Locations with informational observations: 652 (may also have an actionable finding)
+Locations with informational observations: 653 (may also have an actionable finding)
 
 ## Results
 
-- not_checked: 14
-- no_name_match: 172
+- not_checked: 16
+- no_name_match: 171
 - coordinate_disagreement: 280
 - ambiguous_or_missing_coordinates: 66
 - nearby: 107
-- coordinate_agreement: 449
+- coordinate_agreement: 448
 
 ## Confidence
 
-- not_checked: 14
-- existing_evidence_needs_corroboration: 543
+- not_checked: 16
+- existing_evidence_needs_corroboration: 542
 - owner_reviewed: 137
-- independent_coordinate_agreement: 394
+- independent_coordinate_agreement: 393
 
 ## Limits
 
@@ -44,12 +44,14 @@ Locations with informational observations: 652 (may also have an actionable find
 | Barley Mow | Southsea | PO5 3BY | not_checked | Current pin has not been independently compared |
 | Brew Tavern | Nottingham: Central | NG2 2AS | not_checked | Current pin has not been independently compared |
 | Chaddesen Park Social Club (PMC) | Derby: Chaddesden | DE21 6PD | not_checked | Current pin has not been independently compared |
+| Duchess | Stamford Brook | W6 0XF | not_checked | Current pin has not been independently compared |
 | Fitzgeralds | Ashby-de-la-Zouch | LE65 1AH | not_checked | Current pin has not been independently compared |
 | Great Western | Wolverhampton: Central | WV10 0DJ | not_checked | Current pin has not been independently compared |
 | Lancaster Inn | Woodhall Spa | LN10 6ST | not_checked | Current pin has not been independently compared |
 | Lime Kiln | Wirksworth | DE4 4RF | not_checked | Current pin has not been independently compared |
 | Navigation | Shardlow | DE72 2WA | not_checked | Current pin has not been independently compared |
 | New Swan | Atherstone | CV9 1FE | not_checked | Current pin has not been independently compared |
+| Roundhouse | Nottingham: Central | NG1 6FS | not_checked | Current pin has not been independently compared |
 | Rushden Historic Transport Society | Rushden | NN10 0AW | not_checked | Current pin has not been independently compared |
 | Tiger | Derby: Central | DE1 2TQ | not_checked | Current pin has not been independently compared |
 | White Swan | Birmingham: Digbeth | B5 6EP | not_checked | Current pin has not been independently compared |
@@ -249,7 +251,6 @@ Locations with informational observations: 652 (may also have an actionable find
 | Drum and Monkey | Glasgow: Central | G2 5TF | nearby | FSA coordinate is 25-50m away; informational only |
 | Drum and Monkey | Castle Gresley | DE11 9LH | ambiguous_or_missing_coordinates | FSA comparison is inconclusive; absence of a match does not contradict accepted evidence |
 | Drunken Dog | Heanor | DE75 7EF | coordinate_agreement | Owner reviewed this postcode discrepancy and confirmed the displayed pub building; listing postcode retained for provenance |
-| Duchess | Stamford Brook | W6 0XF | no_name_match | FSA comparison is inconclusive; absence of a match does not contradict accepted evidence |
 | Duke of Wellington | Grimsby | DN31 1QD | ambiguous_or_missing_coordinates | FSA comparison is inconclusive; absence of a match does not contradict accepted evidence |
 | Duke of York | Bristol: St Werburghs | BS2 9RS | nearby | FSA coordinate is 25-50m away; informational only |
 | Dyers Arms | Leek | ST13 8JZ | coordinate_agreement | Owner reviewed this postcode discrepancy and confirmed the displayed pub building; listing postcode retained for provenance |
@@ -1009,7 +1010,6 @@ Locations with informational observations: 652 (may also have an actionable find
 | Roebuck | Warwick | CV34 4HU | coordinate_agreement | No pin check requested. |
 | Rose and Crown | Flamborough | YO15 1JY | coordinate_agreement | No pin check requested. |
 | Rose of Denmark | Bristol: Hotwells | BS8 4QL | coordinate_agreement | No pin check requested. |
-| Roundhouse | Nottingham: Central | NG1 6FS | coordinate_agreement | No pin check requested. |
 | Royal Oak | Nuneaton: Hartshill | CV10 0TD | coordinate_agreement | No pin check requested. |
 | Royal Oak | Hartshill | CV10 0TD | coordinate_agreement | No pin check requested. |
 | Royal Oak | Barton-under-Needwood | DE13 8JD | coordinate_agreement | No pin check requested. |

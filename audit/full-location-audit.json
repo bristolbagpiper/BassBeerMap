@@ -112,6 +112,28 @@
     },
     {
       "actionable": false,
+      "area": "Greater London",
+      "country": "England",
+      "dispense": "H",
+      "last": "2026 Q1",
+      "manual_action_required": false,
+      "next_action": "No pin check requested.",
+      "notes": "",
+      "pg": "Guest",
+      "place_name": "Stamford Brook",
+      "postcode": "W6 0XF",
+      "priority": 0,
+      "pub_name": "Duchess",
+      "reasons": [],
+      "review_category": "informational",
+      "status": "not_checked",
+      "venue_id": "v-e81d21cc-04bb-56f0-9987-0d081b8c6d47",
+      "warnings": [
+        "Current pin has not been independently compared"
+      ]
+    },
+    {
+      "actionable": false,
       "area": "Leicestershire",
       "country": "England",
       "dispense": "H",
@@ -238,6 +260,28 @@
       "review_category": "informational",
       "status": "not_checked",
       "venue_id": "v-f8899d25-0fe4-551f-b83c-e47f3ecf0ed6",
+      "warnings": [
+        "Current pin has not been independently compared"
+      ]
+    },
+    {
+      "actionable": false,
+      "area": "Nottinghamshire",
+      "country": "England",
+      "dispense": "H",
+      "last": "2026 Q1",
+      "manual_action_required": false,
+      "next_action": "No pin check requested.",
+      "notes": "",
+      "pg": "Guest",
+      "place_name": "Nottingham: Central",
+      "postcode": "NG1 6FS",
+      "priority": 0,
+      "pub_name": "Roundhouse",
+      "reasons": [],
+      "review_category": "informational",
+      "status": "not_checked",
+      "venue_id": "v-8c80b729-ceaf-5912-ab4a-1b51de2fb3f8",
       "warnings": [
         "Current pin has not been independently compared"
       ]
@@ -11097,55 +11141,6 @@
       "venue_id": "v-62c1c92b-14d0-5967-801f-35f03d3cb24f",
       "warnings": [
         "Owner reviewed this postcode discrepancy and confirmed the displayed pub building; listing postcode retained for provenance"
-      ]
-    },
-    {
-      "actionable": false,
-      "area": "Greater London",
-      "checked_at": "2026-11-03",
-      "comparisons": [
-        {
-          "name_matches": 0,
-          "postcode_matches": 2,
-          "queried_postcode": "W6 0XF",
-          "status": "no_name_match"
-        }
-      ],
-      "confidence": "existing_evidence_needs_corroboration",
-      "country": "England",
-      "dispense": "H",
-      "independent_of_pin": true,
-      "last": "2026 Q1",
-      "listing": {
-        "postcode": "W6 0XF",
-        "pub_name": "Duchess"
-      },
-      "manual_action_required": false,
-      "next_action": "No pin check requested.",
-      "notes": "",
-      "owner_pin_confirmed": false,
-      "owner_reviewed": false,
-      "pg": "Guest",
-      "pin": {
-        "lat": 51.49865,
-        "lng": -0.24375
-      },
-      "place_name": "Stamford Brook",
-      "postcode": "W6 0XF",
-      "priority": 2,
-      "pub_name": "Duchess",
-      "reasons": [],
-      "reference": {
-        "name_matches": 0,
-        "postcode_matches": 2,
-        "queried_postcode": "W6 0XF",
-        "status": "no_name_match"
-      },
-      "review_category": "informational",
-      "status": "no_name_match",
-      "venue_id": "v-e81d21cc-04bb-56f0-9987-0d081b8c6d47",
-      "warnings": [
-        "FSA comparison is inconclusive; absence of a match does not contradict accepted evidence"
       ]
     },
     {
@@ -53951,63 +53946,6 @@
     },
     {
       "actionable": false,
-      "area": "Nottinghamshire",
-      "checked_at": "2026-10-23",
-      "comparisons": [
-        {
-          "address": "The Roundhouse, Royal Standard Place, , Nottingham",
-          "difference_metres": 0.0,
-          "lat": 52.9517517089844,
-          "lng": -1.15588998794556,
-          "name": "The Roundhouse",
-          "postcode": "NG1 6FS",
-          "queried_postcode": "NG1 6FS",
-          "status": "coordinate_agreement",
-          "url": "https://ratings.food.gov.uk/business/1976925"
-        }
-      ],
-      "confidence": "independent_coordinate_agreement",
-      "country": "England",
-      "dispense": "H",
-      "independent_of_pin": true,
-      "last": "2026 Q1",
-      "listing": {
-        "postcode": "NG1 6FS",
-        "pub_name": "Roundhouse"
-      },
-      "manual_action_required": false,
-      "next_action": "No pin check requested.",
-      "notes": "",
-      "owner_pin_confirmed": false,
-      "owner_reviewed": false,
-      "pg": "Guest",
-      "pin": {
-        "lat": 52.9517517089844,
-        "lng": -1.15588998794556
-      },
-      "place_name": "Nottingham: Central",
-      "postcode": "NG1 6FS",
-      "priority": 3,
-      "pub_name": "Roundhouse",
-      "reasons": [],
-      "reference": {
-        "address": "The Roundhouse, Royal Standard Place, , Nottingham",
-        "difference_metres": 0.0,
-        "lat": 52.9517517089844,
-        "lng": -1.15588998794556,
-        "name": "The Roundhouse",
-        "postcode": "NG1 6FS",
-        "queried_postcode": "NG1 6FS",
-        "status": "coordinate_agreement",
-        "url": "https://ratings.food.gov.uk/business/1976925"
-      },
-      "review_category": "informational",
-      "status": "coordinate_agreement",
-      "venue_id": "v-8c80b729-ceaf-5912-ab4a-1b51de2fb3f8",
-      "warnings": []
-    },
-    {
-      "actionable": false,
       "area": "Warwickshire",
       "checked_at": "2026-11-16",
       "comparisons": [
@@ -60681,21 +60619,21 @@
     "action_required_count": 0,
     "actionable_count": 0,
     "confidence_counts": {
-      "existing_evidence_needs_corroboration": 543,
-      "independent_coordinate_agreement": 394,
-      "not_checked": 14,
+      "existing_evidence_needs_corroboration": 542,
+      "independent_coordinate_agreement": 393,
+      "not_checked": 16,
       "owner_reviewed": 137
     },
     "counts": {
       "ambiguous_or_missing_coordinates": 66,
-      "coordinate_agreement": 449,
+      "coordinate_agreement": 448,
       "coordinate_disagreement": 280,
       "nearby": 107,
-      "no_name_match": 172,
-      "not_checked": 14
+      "no_name_match": 171,
+      "not_checked": 16
     },
     "information_no_pin_check_count": 1088,
-    "informational_count": 652,
+    "informational_count": 653,
     "limitations": [
       "Coordinate agreement does not prove the correct building or current Bass availability.",
       "Owner-approved coordinates take priority; CAMRA remains the primary automated reference.",

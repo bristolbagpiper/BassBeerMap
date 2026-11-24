@@ -4,21 +4,21 @@ Locations: 1087
 
 Action required: 0
 Information — no pin check requested: 1087
-Locations with informational observations: 646 (may also have an actionable finding)
+Locations with informational observations: 647 (may also have an actionable finding)
 
 ## Results
 
 - no_name_match: 175
 - coordinate_disagreement: 284
-- ambiguous_or_missing_coordinates: 66
+- ambiguous_or_missing_coordinates: 67
 - nearby: 108
-- coordinate_agreement: 454
+- coordinate_agreement: 453
 
 ## Confidence
 
-- existing_evidence_needs_corroboration: 552
+- existing_evidence_needs_corroboration: 553
 - owner_reviewed: 139
-- independent_coordinate_agreement: 396
+- independent_coordinate_agreement: 395
 
 ## Limits
 
@@ -610,6 +610,7 @@ Locations with informational observations: 646 (may also have an actionable find
 | Trentside Cricket Club (PMC) | Burton U-T: Branston | DE14 3DP | coordinate_disagreement | Owner reviewed this postcode discrepancy and confirmed the displayed pub building; listing postcode retained for provenance; FSA coordinate is 223.9m from the accepted pin; informational only because the FSA geocode may be approximate |
 | Turks Head (Stuffed Dog) | Tynemouth | NE30 4DZ | no_name_match | FSA comparison is inconclusive; absence of a match does not contradict accepted evidence |
 | Tutbury Club (PMC) | Tutbury | DE13 9LS | no_name_match | FSA comparison is inconclusive; absence of a match does not contradict accepted evidence |
+| Twelve-Sixty Bar and Lounge | Liscard | CH44 5XH | ambiguous_or_missing_coordinates | FSA comparison is inconclusive; absence of a match does not contradict accepted evidence |
 | Tynemouth WMC/Social Club (PMC) | Tynemouth | NE30 4DX | no_name_match | FSA comparison is inconclusive; absence of a match does not contradict accepted evidence |
 | Uncle Toms Cabin | Cookham Dean | SL6 9NT | coordinate_disagreement | FSA coordinate is 150.3m from the accepted pin; informational only because the FSA geocode may be approximate |
 | Unicorn | Newton Solney | DE15 0SG | ambiguous_or_missing_coordinates | FSA comparison is inconclusive; absence of a match does not contradict accepted evidence |
@@ -1073,7 +1074,6 @@ Locations with informational observations: 646 (may also have an actionable find
 | Trinity | Bath | BA1 2DA | coordinate_agreement | No pin check requested. |
 | Trubshaws | Rugeley: Bereton | WS15 1HR | coordinate_agreement | No pin check requested. |
 | Twelve Sixty | Hoylake | CH47 2AE | coordinate_agreement | No pin check requested. |
-| Twelve-Sixty Bar and Lounge | Liscard | CH44 5XH | coordinate_agreement | No pin check requested. |
 | Two Pigs | Barton-under-Needwood | DE13 8AA | coordinate_agreement | No pin check requested. |
 | Tynemouth Lodge Hotel | Tynemouth | NE30 4AA | coordinate_agreement | No pin check requested. |
 | Unicorn | Lutterworth | LE17 4AE | coordinate_agreement | No pin check requested. |

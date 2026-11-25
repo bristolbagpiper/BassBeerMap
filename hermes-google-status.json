@@ -1,23 +1,23 @@
 {
   "batch": {
-    "ambiguous": 41,
+    "ambiguous": 18,
     "attempted": 45,
     "checked": 45,
     "selected": 45,
     "unavailable": 0
   },
-  "checked_at": "2026-11-24T07:54:31.076785+00:00",
+  "checked_at": "2026-11-25T07:46:40.540521+00:00",
   "configured": true,
   "counts": {
-    "attempted_venue_count": 1087,
+    "attempted_venue_count": 1088,
     "checked_this_run": 45,
-    "current": 1087,
+    "current": 1086,
     "retained_unavailable": 1,
-    "review_count": 180,
-    "total": 1087,
-    "unchecked_or_stale": 0
+    "review_count": 203,
+    "total": 1088,
+    "unchecked_or_stale": 2
   },
-  "directory_binding_signature": "7e0d2c012ac84c183fd2ade4775f969455f6c97003a43eb1586542a68d3b1f9e",
+  "directory_binding_signature": "ebb4628375c97424effc2b26365e101aa9e4c75a36de6dcb63b3caaffff61b23",
   "execution_state": "complete",
   "findings": [
     {
@@ -100,6 +100,15 @@
       "reason": "Google results are incomplete or ambiguous; no unique place accepted",
       "status": "review_needed",
       "venue_id": "v-0977d392-c24b-5079-bfce-4e3aca2dbbab"
+    },
+    {
+      "binding_signature": "ea9870355e43e5de80e03211832e726cda365aec7f1813545c46ee517f168cb7",
+      "place_name": "Wymeswold",
+      "postcode": "LE12 6TZ",
+      "pub_name": "Three Crowns",
+      "reason": "Google results are incomplete or ambiguous; no unique place accepted",
+      "status": "review_needed",
+      "venue_id": "v-0a6c48e0-630f-5676-bb29-f16729916bea"
     },
     {
       "binding_signature": "55a9767cdbc3ec5b1b414cb3e91981b4e0d1194d3d59785b1eef34610aa87ebd",
@@ -210,6 +219,15 @@
       "venue_id": "v-15ca7fc6-6d97-5ffd-aa39-eec40b4d5a0e"
     },
     {
+      "binding_signature": "f41d3b3eea24cc38731e194a978beaaa9f692059ac4222dd32503bbd0e821c89",
+      "place_name": "Rushden",
+      "postcode": "NN10 0AW",
+      "pub_name": "Rushden Historic Transport Society",
+      "reason": "Google named-place result differs in business identity or postcode; verify the matched venue and address",
+      "status": "review_needed",
+      "venue_id": "v-160fbb94-1552-5a9a-94ae-942b4861aa2b"
+    },
+    {
       "binding_signature": "47fb24cc250f41cbf9c25d3a4ae711954e0de8883714b1fc488029fd79695a83",
       "place_name": "Tamworth",
       "postcode": "B79 7AT",
@@ -309,6 +327,15 @@
       "venue_id": "v-24865350-c8b8-5220-878f-27452e3d1a13"
     },
     {
+      "binding_signature": "161e6fa3936e98dfc9df47778cf187d6fac09e82856c05344165883df7a5f3ad",
+      "place_name": "Exmouth",
+      "postcode": "EX8 1DR",
+      "pub_name": "Beach",
+      "reason": "Google results are incomplete or ambiguous; no unique place accepted",
+      "status": "review_needed",
+      "venue_id": "v-25c8ed6f-bb10-5204-a12d-a706011d440d"
+    },
+    {
       "binding_signature": "4bb42e038a03a9570e3ac3ed2cb3d8be40ab7e84c9b12990d8759231ab19919c",
       "place_name": "Littlethorpe",
       "postcode": "LE19 2HX",
@@ -381,6 +408,15 @@
       "venue_id": "v-2e7ac9bd-d921-57e3-bf97-7d6ea77240a0"
     },
     {
+      "binding_signature": "021fa69be200168d175e9f97c8447290f4d6e230f1075649bb4554673a612b20",
+      "place_name": "Stoke: Milton",
+      "postcode": "ST2 7AQ",
+      "pub_name": "Travellers Rest",
+      "reason": "Google results are incomplete or ambiguous; no unique place accepted",
+      "status": "review_needed",
+      "venue_id": "v-2fb083b1-287a-500c-a101-a30a716d112d"
+    },
+    {
       "binding_signature": "8ece5440460b2671e06c2d3ceb381f266fdf1aacd6cf2e2e4449712d19ee268f",
       "place_name": "Rosliston",
       "postcode": "DE12 8JU",
@@ -417,18 +453,9 @@
       "venue_id": "v-31ec017a-013e-520a-b394-1b72c94b330a"
     },
     {
-      "binding_signature": "b4cbf86030ce9e38b2a6df1d73a910391203dbf1d5033f72f9abe79b9b0c241c",
+      "binding_signature": "2f970682be9c1698ef36f0d54e56558fe025572ffb1764ee1f1d6375829dfe27",
       "place_name": "Wirksworth",
-      "postcode": "DE4 4FR",
-      "pub_name": "Lime Kiln",
-      "reason": "Google named-place marker differs by more than 50 metres; existing pin retained for review",
-      "status": "review_needed",
-      "venue_id": "v-32beb565-ed3a-5330-a1c1-23421ac706ac"
-    },
-    {
-      "binding_signature": "b4cbf86030ce9e38b2a6df1d73a910391203dbf1d5033f72f9abe79b9b0c241c",
-      "place_name": "Wirksworth",
-      "postcode": "DE4 4FR",
+      "postcode": "DE4 4RF",
       "pub_name": "Lime Kiln",
       "reason": "Google results are incomplete or ambiguous; no unique place accepted",
       "status": "review_needed",
@@ -451,6 +478,15 @@
       "reason": "Google results are incomplete or ambiguous; no unique place accepted",
       "status": "review_needed",
       "venue_id": "v-37ebcfb2-01d9-5d6e-9aa4-6409d19b6a39"
+    },
+    {
+      "binding_signature": "bd3dc9b6ae8ce2c315ef75f78624f800ccd66b4b364e1ec99640c809be47750e",
+      "place_name": "Bristol: Redlands",
+      "postcode": "BS6 6PF",
+      "pub_name": "Red Monkey",
+      "reason": "Google named-place result differs in business identity or postcode; verify the matched venue and address",
+      "status": "review_needed",
+      "venue_id": "v-399d86f9-f10f-51a5-aca2-2a7d139ed2ca"
     },
     {
       "binding_signature": "df9363ee3b2e7c5dd1c38e2b3a7d5c14a5bab72b1485440c329a82a1c959439a",
@@ -570,6 +606,15 @@
       "venue_id": "v-44818631-c2ca-546d-a097-25ded2897bc1"
     },
     {
+      "binding_signature": "6fd435898cdb6fa09fae26f8638cbb5cc8654d8785f7d239eb10ab27d8d48e8e",
+      "place_name": "Burton U-T: Central",
+      "postcode": "DE14 1BN",
+      "pub_name": "Dial",
+      "reason": "Google results are incomplete or ambiguous; no unique place accepted",
+      "status": "review_needed",
+      "venue_id": "v-45ee8f54-501a-5688-8b29-c66374492475"
+    },
+    {
       "binding_signature": "a7d21af2f2642ea070a3d9b17f89a391fe5ba307b82e7e9263451be97523cf37",
       "place_name": "Wymondham",
       "postcode": "LE14 2AG",
@@ -624,15 +669,6 @@
       "venue_id": "v-4fdbbe30-ceca-579f-be80-35ec84942cdf"
     },
     {
-      "binding_signature": "d024a612d86f1beed238be60c189da39f2e463d2181fcc941699a85c3309660a",
-      "place_name": "Buxton",
-      "postcode": "SK17 6EU",
-      "pub_name": "Vault",
-      "reason": "Google named-place marker differs by more than 50 metres; existing pin retained for review",
-      "status": "review_needed",
-      "venue_id": "v-51fc7d3b-e50e-5d5c-83c1-0068fb4919f6"
-    },
-    {
       "binding_signature": "f04ef50f73295de67832ab111a1929bce1639108bff0e50ab9e75272b54fba0f",
       "place_name": "Helpston",
       "postcode": "PE6 7ED",
@@ -649,6 +685,24 @@
       "reason": "Google results are incomplete or ambiguous; no unique place accepted",
       "status": "review_needed",
       "venue_id": "v-53a80306-e3ec-508f-906a-02584800fd48"
+    },
+    {
+      "binding_signature": "5ec82f156876e52b7af17bb017ce64324882e84480db0032c1ec5d05dcec5429",
+      "place_name": "Derby: Chaddesden",
+      "postcode": "DE21 6PD",
+      "pub_name": "Chaddesen Park Social Club (PMC)",
+      "reason": "Google named-place result differs in business identity or postcode; verify the matched venue and address",
+      "status": "review_needed",
+      "venue_id": "v-552acf01-151c-5ab2-8479-b5c3eaeea9cb"
+    },
+    {
+      "binding_signature": "0712b5ecf4c826b114f5c998e605fe7f101e5dcb818483445394c0fe1b03d4bb",
+      "place_name": "Wolverhampton: Central",
+      "postcode": "WV10 0DJ",
+      "pub_name": "Great Western",
+      "reason": "Google results are incomplete or ambiguous; no unique place accepted",
+      "status": "review_needed",
+      "venue_id": "v-56b3e28f-3fff-5717-be36-519b8e204f0f"
     },
     {
       "binding_signature": "0756419e837bfc82b20f6c70397d8fe77d58db4658c92f5db9914fe982dea9e9",
@@ -782,6 +836,15 @@
       "postcode": "DE13 0AR",
       "pub_name": "Burton Albion FC (Fan zone)",
       "reason": "Google named-place result differs in business identity or postcode; verify the matched venue and address",
+      "status": "review_needed",
+      "venue_id": "v-64fa4782-f644-52ce-b584-b64ea787647d"
+    },
+    {
+      "binding_signature": "38d988b0a85ca9a6096d8232c449b46c6eac0c908b8eb56bf578fe0230b31eb4",
+      "place_name": "Burton U-T: Central",
+      "postcode": "DE13 0AR",
+      "pub_name": "Burton Albion FC (Fan zone)",
+      "reason": "Google results are incomplete or ambiguous; no unique place accepted",
       "status": "review_needed",
       "venue_id": "v-64fa4782-f644-52ce-b584-b64ea787647d"
     },
@@ -966,6 +1029,15 @@
       "venue_id": "v-7deef57e-74e9-5154-b94e-32380988c487"
     },
     {
+      "binding_signature": "5f20346c76321be984a70e445615ccb36194e47e1fa24c2ccc92922a1952401f",
+      "place_name": "Tean",
+      "postcode": "ST10 4DZ",
+      "pub_name": "White Hart",
+      "reason": "Google results are incomplete or ambiguous; no unique place accepted",
+      "status": "review_needed",
+      "venue_id": "v-7e863132-ef0a-56a7-b5ff-8c1a74015d3c"
+    },
+    {
       "binding_signature": "e01de2aea4f4176eba9645ab9d1f23ff9de5c95bdc760d81af20c5fd03cf89ce",
       "place_name": "Barton-under-Needwood",
       "postcode": "DE13 8AA",
@@ -993,11 +1065,29 @@
       "venue_id": "v-8c65878d-4129-5c59-8793-ad02a031fce5"
     },
     {
+      "binding_signature": "81b5b441e2422c4dd83829f0c1154abe8499fbefc1892eb33ce60b5ce81f4e4d",
+      "place_name": "Nottingham: Central",
+      "postcode": "NG1 6FS",
+      "pub_name": "Roundhouse",
+      "reason": "Google named-place result differs in business identity or postcode; verify the matched venue and address",
+      "status": "review_needed",
+      "venue_id": "v-8c80b729-ceaf-5912-ab4a-1b51de2fb3f8"
+    },
+    {
       "binding_signature": "3941416cb48879c12bfe96b35f6ad504484eb5ff0dc2f111b768838be5db7fd7",
       "place_name": "St Albans: Central",
       "postcode": "AL3 5DG",
       "pub_name": "Boot",
       "reason": "Google named-place result differs in business identity or postcode; verify the matched venue and address",
+      "status": "review_needed",
+      "venue_id": "v-8d2818cb-e170-5dac-b542-68f88c22abd1"
+    },
+    {
+      "binding_signature": "3941416cb48879c12bfe96b35f6ad504484eb5ff0dc2f111b768838be5db7fd7",
+      "place_name": "St Albans: Central",
+      "postcode": "AL3 5DG",
+      "pub_name": "Boot",
+      "reason": "Google results are incomplete or ambiguous; no unique place accepted",
       "status": "review_needed",
       "venue_id": "v-8d2818cb-e170-5dac-b542-68f88c22abd1"
     },
@@ -1272,6 +1362,15 @@
       "venue_id": "v-b2a14ff0-2325-5d47-8ddf-2b64e60faf3d"
     },
     {
+      "binding_signature": "fbf0afa7a878164606155770bbadcf34388bb3a7de71bf1e9415d62bbb36d1a4",
+      "place_name": "Liverpool: Central",
+      "postcode": "L2 6PT",
+      "pub_name": "White Star",
+      "reason": "Google results are incomplete or ambiguous; no unique place accepted",
+      "status": "review_needed",
+      "venue_id": "v-b2a14ff0-2325-5d47-8ddf-2b64e60faf3d"
+    },
+    {
       "binding_signature": "b50d5327d96d28e34c92b564db49949601dfa5dbcb9303c4262c8f287cbb2186",
       "place_name": "Nuneaton: Central",
       "postcode": "CV11 5LA",
@@ -1313,6 +1412,15 @@
       "postcode": "LL55 1RW",
       "pub_name": "Black Boy",
       "reason": "Google named-place result differs in business identity or postcode; verify the matched venue and address",
+      "status": "review_needed",
+      "venue_id": "v-ba939dd1-6bb2-5adc-8d1e-3a5f6cdff1ea"
+    },
+    {
+      "binding_signature": "981926a9fb6f0e49f8afb5cb2372391119e00dc42a67b03fc0790cea81ebd53e",
+      "place_name": "Caernarfon",
+      "postcode": "LL55 1RW",
+      "pub_name": "Black Boy",
+      "reason": "Google results are incomplete or ambiguous; no unique place accepted",
       "status": "review_needed",
       "venue_id": "v-ba939dd1-6bb2-5adc-8d1e-3a5f6cdff1ea"
     },
@@ -1407,11 +1515,56 @@
       "venue_id": "v-cc4be9e4-0760-5865-a0bd-4c279c6fc777"
     },
     {
+      "binding_signature": "1b43e5fbb4b8f9cc59c346e6d2bb178faaa11aac198085d4eeb3581f1444ef98",
+      "place_name": "Uttoxeter",
+      "postcode": "ST14 8AG",
+      "pub_name": "Bamk House Hotel",
+      "reason": "Google named-place result differs in business identity or postcode; verify the matched venue and address",
+      "status": "review_needed",
+      "venue_id": "v-cf84f078-89c5-5106-a4d2-5b91a780f2d6"
+    },
+    {
+      "binding_signature": "cc6f8e972d19d9451c34bdd80f3025f5b85ff174b1150d450b1fd4a21dd06855",
+      "place_name": "Witton le Wear",
+      "postcode": "DL14 0AS",
+      "pub_name": "Victoria Inn",
+      "reason": "Google results are incomplete or ambiguous; no unique place accepted",
+      "status": "review_needed",
+      "venue_id": "v-d0c9c31a-54fa-53e6-9991-737605b36ad3"
+    },
+    {
+      "binding_signature": "0be96b938cbce1d71cffae25ac3dbfefbb426a69e69549234a9ca1b50a17d405",
+      "place_name": "St Albans: Central",
+      "postcode": "AL3 4QE",
+      "pub_name": "Verulam Arms",
+      "reason": "Google results are incomplete or ambiguous; no unique place accepted",
+      "status": "review_needed",
+      "venue_id": "v-d571346c-3991-578a-855c-37a93c47aaa3"
+    },
+    {
+      "binding_signature": "ac02e7d67fd9a0e685dc9769cd2b66496b39e79eb00438242f7d70bf384687d9",
+      "place_name": "Hinckley",
+      "postcode": "LE10 0NQ",
+      "pub_name": "Wharf Inn",
+      "reason": "Google results are incomplete or ambiguous; no unique place accepted",
+      "status": "review_needed",
+      "venue_id": "v-d63ce0bc-e06c-5cae-a586-ef5e0978d05a"
+    },
+    {
       "binding_signature": "6e510a758b265d260852571a42ab20f79749ea7d36db3cfa1ca265394b0b919c",
       "place_name": "Stoke Canon",
       "postcode": "EX5 4AR",
       "pub_name": "Stoke Canon",
       "reason": "Google named-place result differs in business identity or postcode; verify the matched venue and address",
+      "status": "review_needed",
+      "venue_id": "v-d662d0c4-a468-53cd-89b2-f7305f033e3c"
+    },
+    {
+      "binding_signature": "6e510a758b265d260852571a42ab20f79749ea7d36db3cfa1ca265394b0b919c",
+      "place_name": "Stoke Canon",
+      "postcode": "EX5 4AR",
+      "pub_name": "Stoke Canon",
+      "reason": "Google results are incomplete or ambiguous; no unique place accepted",
       "status": "review_needed",
       "venue_id": "v-d662d0c4-a468-53cd-89b2-f7305f033e3c"
     },
@@ -1470,6 +1623,15 @@
       "venue_id": "v-dd512b0a-8949-5f61-8a97-a5661a6de57b"
     },
     {
+      "binding_signature": "e9b0f1fd30ad6577766b2a20b7edceeb1b730635560279dcefce6514f4358965",
+      "place_name": "Derby: Central",
+      "postcode": "DE1 2TQ",
+      "pub_name": "Tiger",
+      "reason": "Google named-place result differs in business identity or postcode; verify the matched venue and address",
+      "status": "review_needed",
+      "venue_id": "v-de948283-fe31-5f55-b16a-547c37e592ce"
+    },
+    {
       "binding_signature": "2741eaef5feb54a70e38e2c7882fe261800480eafdd748abb21d2fb02ce137f5",
       "place_name": "Melbourne",
       "postcode": "DE73 8FE",
@@ -1488,6 +1650,15 @@
       "venue_id": "v-e09e5f24-dcda-5107-9408-6e0f75b68f11"
     },
     {
+      "binding_signature": "63915f79695d2d4b52c35f1e393cee478a8ea550b665add4a1b3a71cd3cb2f9b",
+      "place_name": "Nuneaton: Whitestone",
+      "postcode": "CV11 6NF",
+      "pub_name": "Whitestone",
+      "reason": "Google results are incomplete or ambiguous; no unique place accepted",
+      "status": "review_needed",
+      "venue_id": "v-e09e5f24-dcda-5107-9408-6e0f75b68f11"
+    },
+    {
       "binding_signature": "01732138b7dab9ac7f09f2ed811e0cd1cd1905b373bab36ae74151d20ffdca10",
       "place_name": "Burton U-T: Central",
       "postcode": "DE14 1HA",
@@ -1497,6 +1668,15 @@
       "venue_id": "v-e1529c31-a528-53b2-a01e-e18c1fb2a58e"
     },
     {
+      "binding_signature": "a07f30ff78c224dce23e6082901edfe16cd2c3aa2442a856a82658565f62d90c",
+      "place_name": "Whitchurch",
+      "postcode": "SY13 1AD",
+      "pub_name": "Wheatsheaf Hotel",
+      "reason": "Google results are incomplete or ambiguous; no unique place accepted",
+      "status": "review_needed",
+      "venue_id": "v-e47f59cf-447a-50fc-b24d-67f8b13b54a4"
+    },
+    {
       "binding_signature": "f0efebeee34c74a96893fb7f9c32dd055653e77c6ba2453e4a5cb98652167983",
       "place_name": "Shotley Bridge",
       "postcode": "DH8 0HU",
@@ -1504,6 +1684,15 @@
       "reason": "Google results are incomplete or ambiguous; no unique place accepted",
       "status": "review_needed",
       "venue_id": "v-e6679625-95b2-50be-92e0-187d41170ed6"
+    },
+    {
+      "binding_signature": "19ca907b39f2d5c50f3160014b9847e06f397933b23b963a521ed999f472cbee",
+      "place_name": "Stamford Brook",
+      "postcode": "W6 0XF",
+      "pub_name": "Duchess",
+      "reason": "Google named-place result differs in business identity or postcode; verify the matched venue and address",
+      "status": "review_needed",
+      "venue_id": "v-e81d21cc-04bb-56f0-9987-0d081b8c6d47"
     },
     {
       "binding_signature": "53b7a628b158c3ac80c6af3bea804053d702c2533a0947144563ff9297be68c3",
@@ -1614,6 +1803,15 @@
       "venue_id": "v-f4485d10-20f9-5178-a539-cbade7e5b9a3"
     },
     {
+      "binding_signature": "7430e050e73300c6d32bdccaa5651b70fcaf03c8336542aa0b0478e09a08ff2e",
+      "place_name": "Atherstone",
+      "postcode": "CV9 1AB",
+      "pub_name": "White Horse",
+      "reason": "Google results are incomplete or ambiguous; no unique place accepted",
+      "status": "review_needed",
+      "venue_id": "v-fab7fdfe-dae0-5204-a1bc-e1a6d7000c65"
+    },
+    {
       "binding_signature": "d334b5f116679616e6b6c8beba627b79d3ecc2ee792be72cc3396c16821ad7fe",
       "place_name": "Manchester: Central",
       "postcode": "M1 3AQ",
@@ -1639,17 +1837,28 @@
       "reason": "Google results are incomplete or ambiguous; no unique place accepted",
       "status": "review_needed",
       "venue_id": "v-fc84c170-1f47-59d9-b45d-97825e8b5016"
+    },
+    {
+      "binding_signature": "580668d2380a20286a7d2874b06143cb80b65bc66a479cc3ae6d1c641e06c2e9",
+      "place_name": "Woodhall Spa",
+      "postcode": "LN10 6ST",
+      "pub_name": "Lancaster Inn",
+      "reason": "Google named-place result differs in business identity or postcode; verify the matched venue and address",
+      "status": "review_needed",
+      "venue_id": "v-fd97cf72-faf0-54aa-bce6-e9fd40262cc0"
     }
   ],
   "hard_failure": false,
-  "issues": [],
+  "issues": [
+    "Google comparison coverage is incomplete; untested, stale or inconclusive pubs remain"
+  ],
   "provider": "hermes-browser",
   "run_attempt": 1,
-  "run_id": "35fcebbb32a14459aef6012fd565944c",
+  "run_id": "13c27d22ce3f4def815ce7d7a5c2bfe3",
   "schema_version": 1,
-  "source_commit": "2b6299467c3c6351b6a16b83a57d3e2bd2606cf8",
-  "source_execution_finished_at": "2026-11-24T07:54:31.335571+00:00",
-  "source_release_id": "8aa3a3a96cb86ce2f88b158a33d405f4e28b416354121dde5a60364fd7e10e6b",
-  "source_status_sha256": "47dad302f2221c7901656a25c7ffe22218351399698c70633255cd6411903b2e",
-  "validated_release_id": "8aa3a3a96cb86ce2f88b158a33d405f4e28b416354121dde5a60364fd7e10e6b"
+  "source_commit": "1dda5f7bd8f6bda7518d441403d5496d7b77cfc0",
+  "source_execution_finished_at": "2026-11-25T07:46:40.830076+00:00",
+  "source_release_id": "cc350342231e06736526d4b9305236fe7e2cea7b78d8c13ec65199c991cf989c",
+  "source_status_sha256": "752c7cae438ecfe3f94c9176efbcb5d78fb561822dfca44133526c891aef538f",
+  "validated_release_id": "cc350342231e06736526d4b9305236fe7e2cea7b78d8c13ec65199c991cf989c"
 }

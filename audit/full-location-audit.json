@@ -68,6 +68,28 @@
     },
     {
       "actionable": false,
+      "area": "North Wales",
+      "country": "Wales",
+      "dispense": "H",
+      "last": "2026 Q4",
+      "manual_action_required": false,
+      "next_action": "No pin check requested.",
+      "notes": "",
+      "pg": "Perm",
+      "place_name": "Caernarfon",
+      "postcode": "LL55 1RW",
+      "priority": 0,
+      "pub_name": "Black Boy",
+      "reasons": [],
+      "review_category": "informational",
+      "status": "not_checked",
+      "venue_id": "v-ba939dd1-6bb2-5adc-8d1e-3a5f6cdff1ea",
+      "warnings": [
+        "Current pin has not been independently compared"
+      ]
+    },
+    {
+      "actionable": false,
       "area": "Nottinghamshire",
       "country": "England",
       "dispense": "H/B",
@@ -84,6 +106,28 @@
       "review_category": "informational",
       "status": "not_checked",
       "venue_id": "v-9f45e2cc-e10a-59dc-9286-43bc11440990",
+      "warnings": [
+        "Current pin has not been independently compared"
+      ]
+    },
+    {
+      "actionable": false,
+      "area": "Lincolnshire",
+      "country": "England",
+      "dispense": "H",
+      "last": "2026 Q4",
+      "manual_action_required": false,
+      "next_action": "No pin check requested.",
+      "notes": "",
+      "pg": "Perm",
+      "place_name": "Sleaford",
+      "postcode": "NG34 7JP",
+      "priority": 0,
+      "pub_name": "Carre Arms Hotel",
+      "reasons": [],
+      "review_category": "informational",
+      "status": "not_checked",
+      "venue_id": "v-44818631-c2ca-546d-a097-25ded2897bc1",
       "warnings": [
         "Current pin has not been independently compared"
       ]
@@ -222,6 +266,28 @@
     },
     {
       "actionable": false,
+      "area": "Nottinghamshire",
+      "country": "England",
+      "dispense": "H",
+      "last": "2026 Q3",
+      "manual_action_required": false,
+      "next_action": "No pin check requested.",
+      "notes": "",
+      "pg": "Perm",
+      "place_name": "Colston Bassett",
+      "postcode": "NG12 3FD",
+      "priority": 0,
+      "pub_name": "Martins Arms",
+      "reasons": [],
+      "review_category": "informational",
+      "status": "not_checked",
+      "venue_id": "v-266abb0a-a295-51bf-a246-e258c7af258a",
+      "warnings": [
+        "Current pin has not been independently compared"
+      ]
+    },
+    {
+      "actionable": false,
       "area": "Derbyshire",
       "country": "England",
       "dispense": "H",
@@ -304,6 +370,28 @@
       "review_category": "informational",
       "status": "not_checked",
       "venue_id": "v-160fbb94-1552-5a9a-94ae-942b4861aa2b",
+      "warnings": [
+        "Current pin has not been independently compared"
+      ]
+    },
+    {
+      "actionable": false,
+      "area": "Devon",
+      "country": "England",
+      "dispense": "H",
+      "last": "2026 Q3",
+      "manual_action_required": false,
+      "next_action": "No pin check requested.",
+      "notes": "",
+      "pg": "Guest",
+      "place_name": "Stoke Canon",
+      "postcode": "EX5 4AR",
+      "priority": 0,
+      "pub_name": "Stoke Canon",
+      "reasons": [],
+      "review_category": "informational",
+      "status": "not_checked",
+      "venue_id": "v-d662d0c4-a468-53cd-89b2-f7305f033e3c",
       "warnings": [
         "Current pin has not been independently compared"
       ]
@@ -5864,65 +5952,6 @@
       "venue_id": "v-48a81b2b-55c8-55a4-a952-41a881ed7ddf",
       "warnings": [
         "FSA comparison is inconclusive; absence of a match does not contradict accepted evidence"
-      ]
-    },
-    {
-      "actionable": false,
-      "area": "Lincolnshire",
-      "checked_at": "2026-11-11",
-      "comparisons": [
-        {
-          "address": "Carre Arms Hotel, 1 Mareham Lane, , Sleaford",
-          "difference_metres": 93.4,
-          "lat": 52.994415,
-          "lng": -0.406675,
-          "name": "The Carre Arms Hotel",
-          "postcode": "NG34 7JP",
-          "queried_postcode": "NG34 7JP",
-          "status": "coordinate_disagreement",
-          "url": "https://ratings.food.gov.uk/business/295724"
-        }
-      ],
-      "confidence": "existing_evidence_needs_corroboration",
-      "country": "England",
-      "dispense": "H",
-      "independent_of_pin": true,
-      "last": "2026 Q4",
-      "listing": {
-        "postcode": "NG34 7JP",
-        "pub_name": "Carre Arms Hotel"
-      },
-      "manual_action_required": false,
-      "next_action": "No pin check requested.",
-      "notes": "",
-      "owner_pin_confirmed": false,
-      "owner_reviewed": false,
-      "pg": "Perm",
-      "pin": {
-        "lat": 52.995098114014,
-        "lng": -0.40748700499535
-      },
-      "place_name": "Sleaford",
-      "postcode": "NG34 7JP",
-      "priority": 2,
-      "pub_name": "Carre Arms Hotel",
-      "reasons": [],
-      "reference": {
-        "address": "Carre Arms Hotel, 1 Mareham Lane, , Sleaford",
-        "difference_metres": 93.4,
-        "lat": 52.994415,
-        "lng": -0.406675,
-        "name": "The Carre Arms Hotel",
-        "postcode": "NG34 7JP",
-        "queried_postcode": "NG34 7JP",
-        "status": "coordinate_disagreement",
-        "url": "https://ratings.food.gov.uk/business/295724"
-      },
-      "review_category": "informational",
-      "status": "coordinate_disagreement",
-      "venue_id": "v-44818631-c2ca-546d-a097-25ded2897bc1",
-      "warnings": [
-        "FSA coordinate is 93.4m from the accepted pin; informational only because the FSA geocode may be approximate"
       ]
     },
     {
@@ -19497,65 +19526,6 @@
       "venue_id": "v-91dc9a73-c434-5a18-968f-d2f88b9edca7",
       "warnings": [
         "FSA coordinate is 252.7m from the accepted pin; informational only because the FSA geocode may be approximate"
-      ]
-    },
-    {
-      "actionable": false,
-      "area": "Nottinghamshire",
-      "checked_at": "2026-11-09",
-      "comparisons": [
-        {
-          "address": "School Lane, Colston Bassett, Nottinghamshire",
-          "difference_metres": 38.5,
-          "lat": 52.89071,
-          "lng": -0.964565,
-          "name": "The Martins Arms",
-          "postcode": "NG12 3FD",
-          "queried_postcode": "NG12 3FD",
-          "status": "nearby",
-          "url": "https://ratings.food.gov.uk/business/1914991"
-        }
-      ],
-      "confidence": "existing_evidence_needs_corroboration",
-      "country": "England",
-      "dispense": "H",
-      "independent_of_pin": true,
-      "last": "2026 Q3",
-      "listing": {
-        "postcode": "NG12 3FD",
-        "pub_name": "Martins Arms"
-      },
-      "manual_action_required": false,
-      "next_action": "No pin check requested.",
-      "notes": "",
-      "owner_pin_confirmed": false,
-      "owner_reviewed": false,
-      "pg": "Perm",
-      "pin": {
-        "lat": 52.8905,
-        "lng": -0.964109
-      },
-      "place_name": "Colston Bassett",
-      "postcode": "NG12 3FD",
-      "priority": 2,
-      "pub_name": "Martins Arms",
-      "reasons": [],
-      "reference": {
-        "address": "School Lane, Colston Bassett, Nottinghamshire",
-        "difference_metres": 38.5,
-        "lat": 52.89071,
-        "lng": -0.964565,
-        "name": "The Martins Arms",
-        "postcode": "NG12 3FD",
-        "queried_postcode": "NG12 3FD",
-        "status": "nearby",
-        "url": "https://ratings.food.gov.uk/business/1914991"
-      },
-      "review_category": "informational",
-      "status": "nearby",
-      "venue_id": "v-266abb0a-a295-51bf-a246-e258c7af258a",
-      "warnings": [
-        "FSA coordinate is 25-50m away; informational only"
       ]
     },
     {
@@ -37355,63 +37325,6 @@
       "review_category": "informational",
       "status": "coordinate_agreement",
       "venue_id": "v-4ac64929-0f37-5395-9fa7-4c90d72fda85",
-      "warnings": []
-    },
-    {
-      "actionable": false,
-      "area": "North Wales",
-      "checked_at": "2026-11-22",
-      "comparisons": [
-        {
-          "address": "The Black Boy Inn Stryd Pedwar A Chwech, , Caernarfon, Gwynedd",
-          "difference_metres": 0.0,
-          "lat": 53.1410102844238,
-          "lng": -4.27580976486206,
-          "name": "Black Boy Inn",
-          "postcode": "LL55 1RW",
-          "queried_postcode": "LL55 1RW",
-          "status": "coordinate_agreement",
-          "url": "https://ratings.food.gov.uk/business/200826"
-        }
-      ],
-      "confidence": "independent_coordinate_agreement",
-      "country": "Wales",
-      "dispense": "H",
-      "independent_of_pin": true,
-      "last": "2026 Q4",
-      "listing": {
-        "postcode": "LL55 1RW",
-        "pub_name": "Black Boy"
-      },
-      "manual_action_required": false,
-      "next_action": "No pin check requested.",
-      "notes": "",
-      "owner_pin_confirmed": false,
-      "owner_reviewed": false,
-      "pg": "Perm",
-      "pin": {
-        "lat": 53.1410102844238,
-        "lng": -4.27580976486206
-      },
-      "place_name": "Caernarfon",
-      "postcode": "LL55 1RW",
-      "priority": 3,
-      "pub_name": "Black Boy",
-      "reasons": [],
-      "reference": {
-        "address": "The Black Boy Inn Stryd Pedwar A Chwech, , Caernarfon, Gwynedd",
-        "difference_metres": 0.0,
-        "lat": 53.1410102844238,
-        "lng": -4.27580976486206,
-        "name": "Black Boy Inn",
-        "postcode": "LL55 1RW",
-        "queried_postcode": "LL55 1RW",
-        "status": "coordinate_agreement",
-        "url": "https://ratings.food.gov.uk/business/200826"
-      },
-      "review_category": "informational",
-      "status": "coordinate_agreement",
-      "venue_id": "v-ba939dd1-6bb2-5adc-8d1e-3a5f6cdff1ea",
       "warnings": []
     },
     {
@@ -56283,63 +56196,6 @@
     },
     {
       "actionable": false,
-      "area": "Devon",
-      "checked_at": "2026-11-24",
-      "comparisons": [
-        {
-          "address": "Stoke Canon Inn, High Street, Stoke Canon, Exeter",
-          "difference_metres": 0.0,
-          "lat": 50.771538,
-          "lng": -3.506991,
-          "name": "The Kitchen Stoke Canon Inn",
-          "postcode": "EX5 4AR",
-          "queried_postcode": "EX5 4AR",
-          "status": "coordinate_agreement",
-          "url": "https://ratings.food.gov.uk/business/533916"
-        }
-      ],
-      "confidence": "independent_coordinate_agreement",
-      "country": "England",
-      "dispense": "H",
-      "independent_of_pin": true,
-      "last": "2026 Q3",
-      "listing": {
-        "postcode": "EX5 4AR",
-        "pub_name": "Stoke Canon"
-      },
-      "manual_action_required": false,
-      "next_action": "No pin check requested.",
-      "notes": "",
-      "owner_pin_confirmed": false,
-      "owner_reviewed": false,
-      "pg": "Guest",
-      "pin": {
-        "lat": 50.771538,
-        "lng": -3.506991
-      },
-      "place_name": "Stoke Canon",
-      "postcode": "EX5 4AR",
-      "priority": 3,
-      "pub_name": "Stoke Canon",
-      "reasons": [],
-      "reference": {
-        "address": "Stoke Canon Inn, High Street, Stoke Canon, Exeter",
-        "difference_metres": 0.0,
-        "lat": 50.771538,
-        "lng": -3.506991,
-        "name": "The Kitchen Stoke Canon Inn",
-        "postcode": "EX5 4AR",
-        "queried_postcode": "EX5 4AR",
-        "status": "coordinate_agreement",
-        "url": "https://ratings.food.gov.uk/business/533916"
-      },
-      "review_category": "informational",
-      "status": "coordinate_agreement",
-      "venue_id": "v-d662d0c4-a468-53cd-89b2-f7305f033e3c",
-      "warnings": []
-    },
-    {
-      "actionable": false,
       "area": "Cheshire",
       "checked_at": "2026-11-16",
       "comparisons": [
@@ -60619,21 +60475,21 @@
     "action_required_count": 0,
     "actionable_count": 0,
     "confidence_counts": {
-      "existing_evidence_needs_corroboration": 542,
-      "independent_coordinate_agreement": 393,
-      "not_checked": 16,
+      "existing_evidence_needs_corroboration": 540,
+      "independent_coordinate_agreement": 391,
+      "not_checked": 20,
       "owner_reviewed": 137
     },
     "counts": {
       "ambiguous_or_missing_coordinates": 66,
-      "coordinate_agreement": 448,
-      "coordinate_disagreement": 280,
-      "nearby": 107,
+      "coordinate_agreement": 446,
+      "coordinate_disagreement": 279,
+      "nearby": 106,
       "no_name_match": 171,
-      "not_checked": 16
+      "not_checked": 20
     },
     "information_no_pin_check_count": 1088,
-    "informational_count": 653,
+    "informational_count": 655,
     "limitations": [
       "Coordinate agreement does not prove the correct building or current Bass availability.",
       "Owner-approved coordinates take priority; CAMRA remains the primary automated reference.",

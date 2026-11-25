@@ -4977,25 +4977,20 @@
     },
     "v-160fbb94-1552-5a9a-94ae-942b4861aa2b": {
       "actionable": false,
-      "checked_at": "2026-11-06",
+      "checked_at": "2026-11-25",
       "comparisons": [
         {
-          "address": "Old Railway Station, Station Approach, Rushden",
-          "difference_metres": 5.0,
-          "lat": 52.29426,
-          "lng": -0.59802,
-          "name": "Rushden Historical Transport Society",
-          "postcode": "NN10 0AW",
+          "name_matches": 0,
+          "postcode_matches": 1,
           "queried_postcode": "NN10 0AW",
-          "status": "coordinate_agreement",
-          "url": "https://ratings.food.gov.uk/business/555167"
+          "status": "no_name_match"
         }
       ],
-      "confidence": "independent_coordinate_agreement",
+      "confidence": "existing_evidence_needs_corroboration",
       "independent_of_pin": true,
       "listing": {
         "postcode": "NN10 0AW",
-        "pub_name": "Rushden Historical Transport Society"
+        "pub_name": "Rushden Historic Transport Society"
       },
       "manual_action_required": false,
       "next_action": "No pin check requested.",
@@ -5005,22 +5000,19 @@
         "lat": 52.2943013,
         "lng": -0.5980484
       },
-      "priority": 3,
+      "priority": 2,
       "reasons": [],
       "reference": {
-        "address": "Old Railway Station, Station Approach, Rushden",
-        "difference_metres": 5.0,
-        "lat": 52.29426,
-        "lng": -0.59802,
-        "name": "Rushden Historical Transport Society",
-        "postcode": "NN10 0AW",
+        "name_matches": 0,
+        "postcode_matches": 1,
         "queried_postcode": "NN10 0AW",
-        "status": "coordinate_agreement",
-        "url": "https://ratings.food.gov.uk/business/555167"
+        "status": "no_name_match"
       },
       "review_category": "informational",
-      "status": "coordinate_agreement",
-      "warnings": []
+      "status": "no_name_match",
+      "warnings": [
+        "FSA comparison is inconclusive; absence of a match does not contradict accepted evidence"
+      ]
     },
     "v-163491c3-e2cc-54a0-9d36-124f2bd17d8e": {
       "actionable": false,
@@ -7443,17 +7435,17 @@
     },
     "v-266abb0a-a295-51bf-a246-e258c7af258a": {
       "actionable": false,
-      "checked_at": "2026-11-09",
+      "checked_at": "2026-11-25",
       "comparisons": [
         {
           "address": "School Lane, Colston Bassett, Nottinghamshire",
-          "difference_metres": 38.5,
+          "difference_metres": 111.1,
           "lat": 52.89071,
           "lng": -0.964565,
           "name": "The Martins Arms",
           "postcode": "NG12 3FD",
           "queried_postcode": "NG12 3FD",
-          "status": "nearby",
+          "status": "coordinate_disagreement",
           "url": "https://ratings.food.gov.uk/business/1914991"
         }
       ],
@@ -7468,26 +7460,26 @@
       "owner_pin_confirmed": false,
       "owner_reviewed": false,
       "pin": {
-        "lat": 52.8905,
-        "lng": -0.964109
+        "lat": 52.8915075,
+        "lng": -0.9635661499999999
       },
       "priority": 2,
       "reasons": [],
       "reference": {
         "address": "School Lane, Colston Bassett, Nottinghamshire",
-        "difference_metres": 38.5,
+        "difference_metres": 111.1,
         "lat": 52.89071,
         "lng": -0.964565,
         "name": "The Martins Arms",
         "postcode": "NG12 3FD",
         "queried_postcode": "NG12 3FD",
-        "status": "nearby",
+        "status": "coordinate_disagreement",
         "url": "https://ratings.food.gov.uk/business/1914991"
       },
       "review_category": "informational",
-      "status": "nearby",
+      "status": "coordinate_disagreement",
       "warnings": [
-        "FSA coordinate is 25-50m away; informational only"
+        "FSA coordinate is 111.1m from the accepted pin; informational only because the FSA geocode may be approximate"
       ]
     },
     "v-2674af55-eb10-5ee5-bac1-3c7bf1bf37ac": {
@@ -9701,8 +9693,14 @@
     },
     "v-32beb565-ed3a-5330-a1c1-23421ac706ac": {
       "actionable": false,
-      "checked_at": "2026-11-10",
+      "checked_at": "2026-11-25",
       "comparisons": [
+        {
+          "name_matches": 0,
+          "postcode_matches": 0,
+          "queried_postcode": "DE4 4RF",
+          "status": "no_name_match"
+        },
         {
           "address": "Cromford Road, Wirksworth, Derbyshire",
           "difference_metres": 511.7,
@@ -9718,7 +9716,7 @@
       "confidence": "existing_evidence_needs_corroboration",
       "independent_of_pin": true,
       "listing": {
-        "postcode": "DE4 4FR",
+        "postcode": "DE4 4RF",
         "pub_name": "Lime Kiln"
       },
       "manual_action_required": false,
@@ -9745,6 +9743,7 @@
       "review_category": "informational",
       "status": "coordinate_disagreement",
       "warnings": [
+        "Owner reviewed this postcode discrepancy and confirmed the displayed pub building; listing postcode retained for provenance",
         "FSA coordinate is 511.7m from the accepted pin; informational only because the FSA geocode may be approximate"
       ]
     },
@@ -12850,11 +12849,11 @@
     },
     "v-44818631-c2ca-546d-a097-25ded2897bc1": {
       "actionable": false,
-      "checked_at": "2026-11-11",
+      "checked_at": "2026-11-25",
       "comparisons": [
         {
           "address": "Carre Arms Hotel, 1 Mareham Lane, , Sleaford",
-          "difference_metres": 93.4,
+          "difference_metres": 51.5,
           "lat": 52.994415,
           "lng": -0.406675,
           "name": "The Carre Arms Hotel",
@@ -12875,14 +12874,14 @@
       "owner_pin_confirmed": false,
       "owner_reviewed": false,
       "pin": {
-        "lat": 52.995098114014,
-        "lng": -0.40748700499535
+        "lat": 52.9948426,
+        "lng": -0.406969125
       },
       "priority": 2,
       "reasons": [],
       "reference": {
         "address": "Carre Arms Hotel, 1 Mareham Lane, , Sleaford",
-        "difference_metres": 93.4,
+        "difference_metres": 51.5,
         "lat": 52.994415,
         "lng": -0.406675,
         "name": "The Carre Arms Hotel",
@@ -12894,7 +12893,7 @@
       "review_category": "informational",
       "status": "coordinate_disagreement",
       "warnings": [
-        "FSA coordinate is 93.4m from the accepted pin; informational only because the FSA geocode may be approximate"
+        "FSA coordinate is 51.5m from the accepted pin; informational only because the FSA geocode may be approximate"
       ]
     },
     "v-44a8bebd-4142-572c-97da-028032a73f41": {
@@ -15572,8 +15571,14 @@
     },
     "v-5351f1e7-9b90-50e5-a520-f0c9598a6a36": {
       "actionable": false,
-      "checked_at": "2026-11-13",
+      "checked_at": "2026-11-25",
       "comparisons": [
+        {
+          "name_matches": 0,
+          "postcode_matches": 0,
+          "queried_postcode": "B5 6EP",
+          "status": "no_name_match"
+        },
         {
           "address": "White Swan, 276 Bradford Street, Birmingham",
           "difference_metres": 73.6,
@@ -15589,7 +15594,7 @@
       "confidence": "existing_evidence_needs_corroboration",
       "independent_of_pin": true,
       "listing": {
-        "postcode": "B12 0QY",
+        "postcode": "B5 6EP",
         "pub_name": "White Swan"
       },
       "manual_action_required": false,
@@ -15616,6 +15621,7 @@
       "review_category": "informational",
       "status": "coordinate_disagreement",
       "warnings": [
+        "Owner reviewed this postcode discrepancy and confirmed the displayed pub building; listing postcode retained for provenance",
         "FSA coordinate is 73.6m from the accepted pin; informational only because the FSA geocode may be approximate"
       ]
     },
@@ -15979,25 +15985,20 @@
     },
     "v-552acf01-151c-5ab2-8479-b5c3eaeea9cb": {
       "actionable": false,
-      "checked_at": "2026-11-06",
+      "checked_at": "2026-11-25",
       "comparisons": [
         {
-          "address": "389/391 Nottingham Road, , Derby",
-          "difference_metres": 170.0,
-          "lat": 52.926532,
-          "lng": -1.44358,
-          "name": "Chaddesden Park Social Club",
-          "postcode": "DE21 6PD",
+          "name_matches": 0,
+          "postcode_matches": 1,
           "queried_postcode": "DE21 6PD",
-          "status": "coordinate_disagreement",
-          "url": "https://ratings.food.gov.uk/business/737249"
+          "status": "no_name_match"
         }
       ],
       "confidence": "existing_evidence_needs_corroboration",
       "independent_of_pin": true,
       "listing": {
         "postcode": "DE21 6PD",
-        "pub_name": "Chaddesden Park Social Club (PMC)"
+        "pub_name": "Chaddesen Park Social Club (PMC)"
       },
       "manual_action_required": false,
       "next_action": "No pin check requested.",
@@ -16010,20 +16011,15 @@
       "priority": 2,
       "reasons": [],
       "reference": {
-        "address": "389/391 Nottingham Road, , Derby",
-        "difference_metres": 170.0,
-        "lat": 52.926532,
-        "lng": -1.44358,
-        "name": "Chaddesden Park Social Club",
-        "postcode": "DE21 6PD",
+        "name_matches": 0,
+        "postcode_matches": 1,
         "queried_postcode": "DE21 6PD",
-        "status": "coordinate_disagreement",
-        "url": "https://ratings.food.gov.uk/business/737249"
+        "status": "no_name_match"
       },
       "review_category": "informational",
-      "status": "coordinate_disagreement",
+      "status": "no_name_match",
       "warnings": [
-        "FSA coordinate is 170.0m from the accepted pin; informational only because the FSA geocode may be approximate"
+        "FSA comparison is inconclusive; absence of a match does not contradict accepted evidence"
       ]
     },
     "v-552c7fa1-965e-525c-9c6d-00f7d8e85446": {
@@ -16259,8 +16255,14 @@
     },
     "v-56b3e28f-3fff-5717-be36-519b8e204f0f": {
       "actionable": false,
-      "checked_at": "2026-11-13",
+      "checked_at": "2026-11-25",
       "comparisons": [
+        {
+          "name_matches": 0,
+          "postcode_matches": 0,
+          "queried_postcode": "WV10 0DJ",
+          "status": "no_name_match"
+        },
         {
           "address": "Great Western Public House, 9 Sun Street, Wolverhampton, West Midlands",
           "difference_metres": 0.9,
@@ -16276,7 +16278,7 @@
       "confidence": "existing_evidence_needs_corroboration",
       "independent_of_pin": false,
       "listing": {
-        "postcode": "WV10 0DG",
+        "postcode": "WV10 0DJ",
         "pub_name": "Great Western"
       },
       "manual_action_required": false,
@@ -16287,7 +16289,7 @@
         "lat": 52.587103592327,
         "lng": -2.117662230654
       },
-      "priority": 3,
+      "priority": 2,
       "reasons": [],
       "reference": {
         "address": "Great Western Public House, 9 Sun Street, Wolverhampton, West Midlands",
@@ -16302,7 +16304,9 @@
       },
       "review_category": "informational",
       "status": "coordinate_agreement",
-      "warnings": []
+      "warnings": [
+        "Owner reviewed this postcode discrepancy and confirmed the displayed pub building; listing postcode retained for provenance"
+      ]
     },
     "v-56ccfe69-691d-5487-8f64-bee410ee26dc": {
       "actionable": false,
@@ -27584,21 +27588,21 @@
     },
     "v-8c80b729-ceaf-5912-ab4a-1b51de2fb3f8": {
       "actionable": false,
-      "checked_at": "2026-10-23",
+      "checked_at": "2026-11-25",
       "comparisons": [
         {
           "address": "The Roundhouse, Royal Standard Place, , Nottingham",
-          "difference_metres": 0.0,
+          "difference_metres": 48.3,
           "lat": 52.9517517089844,
           "lng": -1.15588998794556,
           "name": "The Roundhouse",
           "postcode": "NG1 6FS",
           "queried_postcode": "NG1 6FS",
-          "status": "coordinate_agreement",
+          "status": "nearby",
           "url": "https://ratings.food.gov.uk/business/1976925"
         }
       ],
-      "confidence": "independent_coordinate_agreement",
+      "confidence": "existing_evidence_needs_corroboration",
       "independent_of_pin": true,
       "listing": {
         "postcode": "NG1 6FS",
@@ -27609,25 +27613,27 @@
       "owner_pin_confirmed": false,
       "owner_reviewed": false,
       "pin": {
-        "lat": 52.9517517089844,
-        "lng": -1.15588998794556
+        "lat": 52.9517,
+        "lng": -1.155174
       },
-      "priority": 3,
+      "priority": 2,
       "reasons": [],
       "reference": {
         "address": "The Roundhouse, Royal Standard Place, , Nottingham",
-        "difference_metres": 0.0,
+        "difference_metres": 48.3,
         "lat": 52.9517517089844,
         "lng": -1.15588998794556,
         "name": "The Roundhouse",
         "postcode": "NG1 6FS",
         "queried_postcode": "NG1 6FS",
-        "status": "coordinate_agreement",
+        "status": "nearby",
         "url": "https://ratings.food.gov.uk/business/1976925"
       },
       "review_category": "informational",
-      "status": "coordinate_agreement",
-      "warnings": []
+      "status": "nearby",
+      "warnings": [
+        "FSA coordinate is 25-50m away; informational only"
+      ]
     },
     "v-8ca08ab9-8611-5132-a7c6-2f7a29f93fc6": {
       "actionable": false,
@@ -30671,8 +30677,14 @@
     },
     "v-9b0214b5-0b89-530a-9485-b8662012f510": {
       "actionable": false,
-      "checked_at": "2026-11-07",
+      "checked_at": "2026-11-25",
       "comparisons": [
+        {
+          "name_matches": 0,
+          "postcode_matches": 4,
+          "queried_postcode": "DE72 2WA",
+          "status": "no_name_match"
+        },
         {
           "address": "NAVIGATION INN 143 LONDON ROAD, SHARDLOW, DERBY",
           "difference_metres": 6.9,
@@ -30688,7 +30700,7 @@
       "confidence": "owner_reviewed",
       "independent_of_pin": true,
       "listing": {
-        "postcode": "DE72 2HA",
+        "postcode": "DE72 2WA",
         "pub_name": "Navigation"
       },
       "manual_action_required": false,
@@ -30699,7 +30711,7 @@
         "lat": 52.868029,
         "lng": -1.342615
       },
-      "priority": 3,
+      "priority": 2,
       "reasons": [],
       "reference": {
         "address": "NAVIGATION INN 143 LONDON ROAD, SHARDLOW, DERBY",
@@ -30714,7 +30726,9 @@
       },
       "review_category": "informational",
       "status": "coordinate_agreement",
-      "warnings": []
+      "warnings": [
+        "Owner reviewed this postcode discrepancy and confirmed the displayed pub building; listing postcode retained for provenance"
+      ]
     },
     "v-9b9623ec-19a3-5912-987b-13ad5a1babe8": {
       "actionable": false,
@@ -31423,8 +31437,14 @@
     },
     "v-9f45e2cc-e10a-59dc-9286-43bc11440990": {
       "actionable": false,
-      "checked_at": "2026-11-19",
+      "checked_at": "2026-11-25",
       "comparisons": [
+        {
+          "name_matches": 0,
+          "postcode_matches": 0,
+          "queried_postcode": "NG2 2AS",
+          "status": "no_name_match"
+        },
         {
           "address": "1a Queens Road, , Nottingham",
           "difference_metres": 1.0,
@@ -31440,7 +31460,7 @@
       "confidence": "independent_coordinate_agreement",
       "independent_of_pin": true,
       "listing": {
-        "postcode": "NG2 3AS",
+        "postcode": "NG2 2AS",
         "pub_name": "Brew Tavern"
       },
       "manual_action_required": false,
@@ -31451,7 +31471,7 @@
         "lat": 52.946557142857145,
         "lng": -1.1465279428571429
       },
-      "priority": 3,
+      "priority": 2,
       "reasons": [],
       "reference": {
         "address": "1a Queens Road, , Nottingham",
@@ -31466,7 +31486,9 @@
       },
       "review_category": "informational",
       "status": "coordinate_agreement",
-      "warnings": []
+      "warnings": [
+        "Owner reviewed this postcode discrepancy and confirmed the displayed pub building; listing postcode retained for provenance"
+      ]
     },
     "v-9fab66f6-d13e-584c-bcd9-0489b0a9d6b2": {
       "actionable": false,
@@ -35598,8 +35620,14 @@
     },
     "v-b1f768d3-f5ed-5eae-a199-6b21559ba452": {
       "actionable": false,
-      "checked_at": "2026-11-11",
+      "checked_at": "2026-11-25",
       "comparisons": [
+        {
+          "name_matches": 0,
+          "postcode_matches": 9,
+          "queried_postcode": "LE65 1AH",
+          "status": "no_name_match"
+        },
         {
           "name_matches": 0,
           "postcode_matches": 11,
@@ -35607,16 +35635,16 @@
           "status": "no_name_match"
         }
       ],
-      "confidence": "owner_reviewed",
+      "confidence": "existing_evidence_needs_corroboration",
       "independent_of_pin": true,
       "listing": {
-        "postcode": "LE65 1AN",
+        "postcode": "LE65 1AH",
         "pub_name": "Fitzgeralds"
       },
       "manual_action_required": false,
-      "next_action": "Owner confirmed this exact pin; no pin check requested.",
-      "owner_pin_confirmed": true,
-      "owner_reviewed": true,
+      "next_action": "No pin check requested.",
+      "owner_pin_confirmed": false,
+      "owner_reviewed": false,
       "pin": {
         "lat": 52.7471038,
         "lng": -1.4705552
@@ -35625,13 +35653,14 @@
       "reasons": [],
       "reference": {
         "name_matches": 0,
-        "postcode_matches": 11,
-        "queried_postcode": "LE65 1AN",
+        "postcode_matches": 9,
+        "queried_postcode": "LE65 1AH",
         "status": "no_name_match"
       },
-      "review_category": "owner_confirmed",
+      "review_category": "informational",
       "status": "no_name_match",
       "warnings": [
+        "Owner reviewed this postcode discrepancy and confirmed the displayed pub building; listing postcode retained for provenance",
         "FSA comparison is inconclusive; absence of a match does not contradict accepted evidence"
       ]
     },
@@ -36565,21 +36594,21 @@
     },
     "v-ba939dd1-6bb2-5adc-8d1e-3a5f6cdff1ea": {
       "actionable": false,
-      "checked_at": "2026-11-22",
+      "checked_at": "2026-11-25",
       "comparisons": [
         {
           "address": "The Black Boy Inn Stryd Pedwar A Chwech, , Caernarfon, Gwynedd",
-          "difference_metres": 0.0,
+          "difference_metres": 28.6,
           "lat": 53.1410102844238,
           "lng": -4.27580976486206,
           "name": "Black Boy Inn",
           "postcode": "LL55 1RW",
           "queried_postcode": "LL55 1RW",
-          "status": "coordinate_agreement",
+          "status": "nearby",
           "url": "https://ratings.food.gov.uk/business/200826"
         }
       ],
-      "confidence": "independent_coordinate_agreement",
+      "confidence": "existing_evidence_needs_corroboration",
       "independent_of_pin": true,
       "listing": {
         "postcode": "LL55 1RW",
@@ -36590,25 +36619,27 @@
       "owner_pin_confirmed": false,
       "owner_reviewed": false,
       "pin": {
-        "lat": 53.1410102844238,
-        "lng": -4.27580976486206
+        "lat": 53.14116085,
+        "lng": -4.27615662
       },
-      "priority": 3,
+      "priority": 2,
       "reasons": [],
       "reference": {
         "address": "The Black Boy Inn Stryd Pedwar A Chwech, , Caernarfon, Gwynedd",
-        "difference_metres": 0.0,
+        "difference_metres": 28.6,
         "lat": 53.1410102844238,
         "lng": -4.27580976486206,
         "name": "Black Boy Inn",
         "postcode": "LL55 1RW",
         "queried_postcode": "LL55 1RW",
-        "status": "coordinate_agreement",
+        "status": "nearby",
         "url": "https://ratings.food.gov.uk/business/200826"
       },
       "review_category": "informational",
-      "status": "coordinate_agreement",
-      "warnings": []
+      "status": "nearby",
+      "warnings": [
+        "FSA coordinate is 25-50m away; informational only"
+      ]
     },
     "v-baab4f7f-7a7e-57bd-b902-8967f59f3867": {
       "actionable": false,
@@ -40536,25 +40567,20 @@
     },
     "v-cf84f078-89c5-5106-a4d2-5b91a780f2d6": {
       "actionable": false,
-      "checked_at": "2026-11-07",
+      "checked_at": "2026-11-25",
       "comparisons": [
         {
-          "address": "Bank House Hotel, Church Street, Uttoxeter",
-          "difference_metres": 37.4,
-          "lat": 52.8989334106445,
-          "lng": -1.86336994171143,
-          "name": "Bank House Hotel",
-          "postcode": "ST14 8AG",
+          "name_matches": 0,
+          "postcode_matches": 4,
           "queried_postcode": "ST14 8AG",
-          "status": "nearby",
-          "url": "https://ratings.food.gov.uk/business/1619510"
+          "status": "no_name_match"
         }
       ],
       "confidence": "existing_evidence_needs_corroboration",
       "independent_of_pin": true,
       "listing": {
         "postcode": "ST14 8AG",
-        "pub_name": "Bank House Hotel"
+        "pub_name": "Bamk House Hotel"
       },
       "manual_action_required": false,
       "next_action": "No pin check requested.",
@@ -40567,20 +40593,15 @@
       "priority": 2,
       "reasons": [],
       "reference": {
-        "address": "Bank House Hotel, Church Street, Uttoxeter",
-        "difference_metres": 37.4,
-        "lat": 52.8989334106445,
-        "lng": -1.86336994171143,
-        "name": "Bank House Hotel",
-        "postcode": "ST14 8AG",
+        "name_matches": 0,
+        "postcode_matches": 4,
         "queried_postcode": "ST14 8AG",
-        "status": "nearby",
-        "url": "https://ratings.food.gov.uk/business/1619510"
+        "status": "no_name_match"
       },
       "review_category": "informational",
-      "status": "nearby",
+      "status": "no_name_match",
       "warnings": [
-        "FSA coordinate is 25-50m away; informational only"
+        "FSA comparison is inconclusive; absence of a match does not contradict accepted evidence"
       ]
     },
     "v-cf926f6f-cb22-5fad-bd20-1895b75f1eb3": {
@@ -42096,21 +42117,21 @@
     },
     "v-d662d0c4-a468-53cd-89b2-f7305f033e3c": {
       "actionable": false,
-      "checked_at": "2026-11-24",
+      "checked_at": "2026-11-25",
       "comparisons": [
         {
           "address": "Stoke Canon Inn, High Street, Stoke Canon, Exeter",
-          "difference_metres": 0.0,
+          "difference_metres": 34.2,
           "lat": 50.771538,
           "lng": -3.506991,
           "name": "The Kitchen Stoke Canon Inn",
           "postcode": "EX5 4AR",
           "queried_postcode": "EX5 4AR",
-          "status": "coordinate_agreement",
+          "status": "nearby",
           "url": "https://ratings.food.gov.uk/business/533916"
         }
       ],
-      "confidence": "independent_coordinate_agreement",
+      "confidence": "existing_evidence_needs_corroboration",
       "independent_of_pin": true,
       "listing": {
         "postcode": "EX5 4AR",
@@ -42121,25 +42142,27 @@
       "owner_pin_confirmed": false,
       "owner_reviewed": false,
       "pin": {
-        "lat": 50.771538,
-        "lng": -3.506991
+        "lat": 50.771262,
+        "lng": -3.5067762
       },
-      "priority": 3,
+      "priority": 2,
       "reasons": [],
       "reference": {
         "address": "Stoke Canon Inn, High Street, Stoke Canon, Exeter",
-        "difference_metres": 0.0,
+        "difference_metres": 34.2,
         "lat": 50.771538,
         "lng": -3.506991,
         "name": "The Kitchen Stoke Canon Inn",
         "postcode": "EX5 4AR",
         "queried_postcode": "EX5 4AR",
-        "status": "coordinate_agreement",
+        "status": "nearby",
         "url": "https://ratings.food.gov.uk/business/533916"
       },
       "review_category": "informational",
-      "status": "coordinate_agreement",
-      "warnings": []
+      "status": "nearby",
+      "warnings": [
+        "FSA coordinate is 25-50m away; informational only"
+      ]
     },
     "v-d6a59038-f5ef-5bc9-b298-68f7798fe8c6": {
       "actionable": false,
@@ -42480,11 +42503,17 @@
     },
     "v-d8f002a1-4ed3-5ffb-8de9-c9cdbef55a1b": {
       "actionable": false,
-      "checked_at": "2026-11-06",
+      "checked_at": "2026-11-25",
       "comparisons": [
         {
           "name_matches": 0,
-          "postcode_matches": 8,
+          "postcode_matches": 2,
+          "queried_postcode": "DE56 1UP",
+          "status": "no_name_match"
+        },
+        {
+          "name_matches": 0,
+          "postcode_matches": 9,
           "queried_postcode": "DE56 1AP",
           "status": "no_name_match"
         }
@@ -42492,7 +42521,7 @@
       "confidence": "existing_evidence_needs_corroboration",
       "independent_of_pin": true,
       "listing": {
-        "postcode": "DE56 1AP",
+        "postcode": "DE56 1UP",
         "pub_name": "Arkwrights"
       },
       "manual_action_required": false,
@@ -42507,13 +42536,14 @@
       "reasons": [],
       "reference": {
         "name_matches": 0,
-        "postcode_matches": 8,
-        "queried_postcode": "DE56 1AP",
+        "postcode_matches": 2,
+        "queried_postcode": "DE56 1UP",
         "status": "no_name_match"
       },
       "review_category": "informational",
       "status": "no_name_match",
       "warnings": [
+        "Owner reviewed this postcode discrepancy and confirmed the displayed pub building; listing postcode retained for provenance",
         "FSA comparison is inconclusive; absence of a match does not contradict accepted evidence"
       ]
     },
@@ -43080,7 +43110,7 @@
     },
     "v-dc03b99c-c5e0-5026-917a-16ad1f5c1bff": {
       "actionable": false,
-      "checked_at": "2026-11-03",
+      "checked_at": "2026-11-25",
       "comparisons": [
         {
           "address": "Weston Under Penyard, , Ross-On-Wye",
@@ -43176,7 +43206,7 @@
     },
     "v-dc8686e7-6bc9-527e-9a90-7f72211c77ba": {
       "actionable": false,
-      "checked_at": "2026-11-03",
+      "checked_at": "2026-11-25",
       "comparisons": [
         {
           "address": "The Crown Inn, Main Street, Yoxall, Burton upon Trent",
@@ -43225,11 +43255,11 @@
     },
     "v-dccf5b1d-e34e-5468-b42c-d448fdde6136": {
       "actionable": false,
-      "checked_at": "2026-11-03",
+      "checked_at": "2026-11-25",
       "comparisons": [
         {
           "name_matches": 0,
-          "postcode_matches": 2,
+          "postcode_matches": 1,
           "queried_postcode": "DE11 7AS",
           "status": "no_name_match"
         }
@@ -43252,7 +43282,7 @@
       "reasons": [],
       "reference": {
         "name_matches": 0,
-        "postcode_matches": 2,
+        "postcode_matches": 1,
         "queried_postcode": "DE11 7AS",
         "status": "no_name_match"
       },
@@ -43313,7 +43343,7 @@
     },
     "v-dd512b0a-8949-5f61-8a97-a5661a6de57b": {
       "actionable": false,
-      "checked_at": "2026-11-03",
+      "checked_at": "2026-11-25",
       "comparisons": [
         {
           "address": "George And Dragon Inn, 28 Beacon Street, Lichfield, Staffordshire",
@@ -43360,7 +43390,7 @@
     },
     "v-ddce654b-d48e-5ff2-95f9-180ed7d47a52": {
       "actionable": false,
-      "checked_at": "2026-11-03",
+      "checked_at": "2026-11-25",
       "comparisons": [
         {
           "address": "Main Road, Sheepy Magna, Atherstone, Leicestershire",
@@ -43409,7 +43439,7 @@
     },
     "v-ddfb023e-eca4-5ec5-bc0b-3bbc2a8c8aeb": {
       "actionable": false,
-      "checked_at": "2026-11-03",
+      "checked_at": "2026-11-25",
       "comparisons": [
         {
           "address": "2 Stoop Lane, , Quorn",
@@ -43458,7 +43488,7 @@
     },
     "v-de06f22a-12d8-5910-b35e-9d8129aad5a9": {
       "actionable": false,
-      "checked_at": "2026-11-03",
+      "checked_at": "2026-11-25",
       "comparisons": [
         {
           "address": "704-706 Yarm Road, , Stockton-on-Tees",
@@ -43507,7 +43537,7 @@
     },
     "v-de2ec786-9fab-576b-a8db-3aa287f8b5ef": {
       "actionable": false,
-      "checked_at": "2026-11-03",
+      "checked_at": "2026-11-25",
       "comparisons": [
         {
           "address": "3 Compton, Ashbourne, Derbyshire",
@@ -43556,7 +43586,7 @@
     },
     "v-de3630ba-38b6-59f8-b5fb-01e545c5be29": {
       "actionable": false,
-      "checked_at": "2026-11-03",
+      "checked_at": "2026-11-25",
       "comparisons": [
         {
           "address": "16 Barrack Street, , Bridport, Dorset",
@@ -43603,7 +43633,7 @@
     },
     "v-de3aa949-1b8d-570b-b6c2-a27e7db5964e": {
       "actionable": false,
-      "checked_at": "2026-11-03",
+      "checked_at": "2026-11-25",
       "comparisons": [
         {
           "address": "3 Stanley Street, Leek, Staffordshire",
@@ -43650,7 +43680,7 @@
     },
     "v-de4bb4cf-ba26-5249-bc8a-2d255fabb89c": {
       "actionable": false,
-      "checked_at": "2026-11-03",
+      "checked_at": "2026-11-25",
       "comparisons": [
         {
           "address": "Halfway House, 65 Church Street, Donisthorpe, Swadlincote",
@@ -43699,8 +43729,14 @@
     },
     "v-de948283-fe31-5f55-b16a-547c37e592ce": {
       "actionable": false,
-      "checked_at": "2026-11-03",
+      "checked_at": "2026-11-25",
       "comparisons": [
+        {
+          "name_matches": 0,
+          "postcode_matches": 0,
+          "queried_postcode": "DE1 2TQ",
+          "status": "no_name_match"
+        },
         {
           "name_matches": 0,
           "postcode_matches": 0,
@@ -43711,7 +43747,7 @@
       "confidence": "existing_evidence_needs_corroboration",
       "independent_of_pin": true,
       "listing": {
-        "postcode": "DE1 2DQ",
+        "postcode": "DE1 2TQ",
         "pub_name": "Tiger"
       },
       "manual_action_required": false,
@@ -43727,12 +43763,13 @@
       "reference": {
         "name_matches": 0,
         "postcode_matches": 0,
-        "queried_postcode": "DE1 2DQ",
+        "queried_postcode": "DE1 2TQ",
         "status": "no_name_match"
       },
       "review_category": "informational",
       "status": "no_name_match",
       "warnings": [
+        "Owner reviewed this postcode discrepancy and confirmed the displayed pub building; listing postcode retained for provenance",
         "FSA comparison is inconclusive; absence of a match does not contradict accepted evidence"
       ]
     },
@@ -43784,7 +43821,7 @@
     },
     "v-dee50cac-ac0c-5801-a3aa-d5cb9fc35bfd": {
       "actionable": false,
-      "checked_at": "2026-11-03",
+      "checked_at": "2026-11-25",
       "comparisons": [
         {
           "name_matches": 0,
@@ -43823,7 +43860,7 @@
     },
     "v-df417cf2-1194-5613-8414-8dbc8b7760e4": {
       "actionable": false,
-      "checked_at": "2026-11-03",
+      "checked_at": "2026-11-25",
       "comparisons": [
         {
           "name_matches": 0,
@@ -43862,7 +43899,7 @@
     },
     "v-df554200-c89f-5066-8998-b693c85f9a24": {
       "actionable": false,
-      "checked_at": "2026-11-03",
+      "checked_at": "2026-11-25",
       "comparisons": [
         {
           "address": "86 NEW ELVET, , DURHAM",
@@ -43909,7 +43946,7 @@
     },
     "v-df6d2b46-d775-57a3-9172-6ab51e523b58": {
       "actionable": false,
-      "checked_at": "2026-11-03",
+      "checked_at": "2026-11-25",
       "comparisons": [
         {
           "address": "The Dolphin Inn, 14 The Barbican, Plymouth",
@@ -43956,7 +43993,7 @@
     },
     "v-e01e6670-6c03-55e3-9d57-5f25a7a8fbdf": {
       "actionable": false,
-      "checked_at": "2026-11-03",
+      "checked_at": "2026-11-25",
       "comparisons": [
         {
           "name_matches": 0,
@@ -43995,7 +44032,7 @@
     },
     "v-e0384b05-0761-5511-ad08-8bef2af3049c": {
       "actionable": false,
-      "checked_at": "2026-11-03",
+      "checked_at": "2026-11-25",
       "comparisons": [
         {
           "address": "31 High Street, , Wolviston",
@@ -44044,7 +44081,7 @@
     },
     "v-e04311ec-88d7-51a3-8fbd-9a2d667025ca": {
       "actionable": false,
-      "checked_at": "2026-11-03",
+      "checked_at": "2026-11-25",
       "comparisons": [
         {
           "address": "1 Pembroke Road, Norwich",
@@ -44093,7 +44130,7 @@
     },
     "v-e07e9d6f-d8ee-506b-bcd7-f8379224bc4e": {
       "actionable": false,
-      "checked_at": "2026-11-03",
+      "checked_at": "2026-11-25",
       "comparisons": [
         {
           "name_matches": 0,
@@ -44132,7 +44169,7 @@
     },
     "v-e09e5f24-dcda-5107-9408-6e0f75b68f11": {
       "actionable": false,
-      "checked_at": "2026-11-03",
+      "checked_at": "2026-11-25",
       "comparisons": [
         {
           "address": "The Whitestone, Meadowside, , Nuneaton",
@@ -44179,7 +44216,7 @@
     },
     "v-e134de4c-f72e-5e95-b15b-76b3d65b224a": {
       "actionable": false,
-      "checked_at": "2026-11-03",
+      "checked_at": "2026-11-25",
       "comparisons": [
         {
           "name_matches": 0,
@@ -44218,7 +44255,7 @@
     },
     "v-e146d618-c9ba-5fa4-8427-d3a81da5ea85": {
       "actionable": false,
-      "checked_at": "2026-11-03",
+      "checked_at": "2026-11-25",
       "comparisons": [
         {
           "address": "RED LION 3 BURTON ROAD, REPTON, DERBY",
@@ -44265,7 +44302,7 @@
     },
     "v-e1529c31-a528-53b2-a01e-e18c1fb2a58e": {
       "actionable": false,
-      "checked_at": "2026-11-03",
+      "checked_at": "2026-11-25",
       "comparisons": [
         {
           "name_matches": 0,
@@ -44304,7 +44341,7 @@
     },
     "v-e1ce989b-4625-5d8d-93a9-1c92fad41e6a": {
       "actionable": false,
-      "checked_at": "2026-11-03",
+      "checked_at": "2026-11-25",
       "comparisons": [
         {
           "address": "31-32 DEAN STREET, , LONDON",
@@ -44351,7 +44388,7 @@
     },
     "v-e1f5511f-cbbb-556a-ae99-ee2609c8de6c": {
       "actionable": false,
-      "checked_at": "2026-11-03",
+      "checked_at": "2026-11-25",
       "comparisons": [
         {
           "address": "THE MINERS ARMS GEORGE STREET, CHURCH GRESLEY, SWADLINCOTE",
@@ -45412,7 +45449,7 @@
     },
     "v-e81d21cc-04bb-56f0-9987-0d081b8c6d47": {
       "actionable": false,
-      "checked_at": "2026-11-03",
+      "checked_at": "2026-11-25",
       "comparisons": [
         {
           "name_matches": 0,
@@ -45432,8 +45469,8 @@
       "owner_pin_confirmed": false,
       "owner_reviewed": false,
       "pin": {
-        "lat": 51.49865,
-        "lng": -0.24375
+        "lat": 51.4985673,
+        "lng": -0.2439523
       },
       "priority": 2,
       "reasons": [],
@@ -48594,8 +48631,14 @@
     },
     "v-f8899d25-0fe4-551f-b83c-e47f3ecf0ed6": {
       "actionable": false,
-      "checked_at": "2026-11-03",
+      "checked_at": "2026-11-25",
       "comparisons": [
+        {
+          "name_matches": 0,
+          "postcode_matches": 0,
+          "queried_postcode": "CV9 1FE",
+          "status": "no_name_match"
+        },
         {
           "name_matches": 1,
           "postcode_matches": 4,
@@ -48606,7 +48649,7 @@
       "confidence": "existing_evidence_needs_corroboration",
       "independent_of_pin": true,
       "listing": {
-        "postcode": "CV9 1HA",
+        "postcode": "CV9 1FE",
         "pub_name": "New Swan"
       },
       "manual_action_required": false,
@@ -48620,21 +48663,28 @@
       "priority": 2,
       "reasons": [],
       "reference": {
-        "name_matches": 1,
-        "postcode_matches": 4,
-        "queried_postcode": "CV9 1HA",
-        "status": "ambiguous_or_missing_coordinates"
+        "name_matches": 0,
+        "postcode_matches": 0,
+        "queried_postcode": "CV9 1FE",
+        "status": "no_name_match"
       },
       "review_category": "informational",
-      "status": "ambiguous_or_missing_coordinates",
+      "status": "no_name_match",
       "warnings": [
+        "Owner reviewed this postcode discrepancy and confirmed the displayed pub building; listing postcode retained for provenance",
         "FSA comparison is inconclusive; absence of a match does not contradict accepted evidence"
       ]
     },
     "v-f8bee24d-ecda-57fd-ba79-92aae52bba74": {
       "actionable": false,
-      "checked_at": "2026-11-03",
+      "checked_at": "2026-11-25",
       "comparisons": [
+        {
+          "name_matches": 0,
+          "postcode_matches": 2,
+          "queried_postcode": "PO5 3BY",
+          "status": "no_name_match"
+        },
         {
           "address": "Public House, 39 Castle Road, Southsea",
           "difference_metres": 5.8,
@@ -48650,7 +48700,7 @@
       "confidence": "existing_evidence_needs_corroboration",
       "independent_of_pin": false,
       "listing": {
-        "postcode": "PO5 3DE",
+        "postcode": "PO5 3BY",
         "pub_name": "Barley Mow"
       },
       "manual_action_required": false,
@@ -48661,7 +48711,7 @@
         "lat": 50.789349,
         "lng": -1.092775
       },
-      "priority": 3,
+      "priority": 2,
       "reasons": [],
       "reference": {
         "address": "Public House, 39 Castle Road, Southsea",
@@ -48676,7 +48726,9 @@
       },
       "review_category": "informational",
       "status": "coordinate_agreement",
-      "warnings": []
+      "warnings": [
+        "Owner reviewed this postcode discrepancy and confirmed the displayed pub building; listing postcode retained for provenance"
+      ]
     },
     "v-f8ddf3fe-2e91-5117-a0d3-bfff56f4a0b9": {
       "actionable": false,
@@ -49977,25 +50029,20 @@
     },
     "v-fd97cf72-faf0-54aa-bce6-e9fd40262cc0": {
       "actionable": false,
-      "checked_at": "2026-11-06",
+      "checked_at": "2026-11-25",
       "comparisons": [
         {
-          "address": "The Inn At Woodhall Spa, The Broadway, Woodhall Spa",
-          "difference_metres": 104.3,
-          "lat": 53.152583,
-          "lng": -0.213216,
-          "name": "The Inn At Woodhall Spa",
-          "postcode": "LN10 6ST",
+          "name_matches": 0,
+          "postcode_matches": 9,
           "queried_postcode": "LN10 6ST",
-          "status": "coordinate_disagreement",
-          "url": "https://ratings.food.gov.uk/business/572167"
+          "status": "no_name_match"
         }
       ],
       "confidence": "existing_evidence_needs_corroboration",
       "independent_of_pin": true,
       "listing": {
         "postcode": "LN10 6ST",
-        "pub_name": "Inn at Woodhall Spa"
+        "pub_name": "Lancaster Inn"
       },
       "manual_action_required": false,
       "next_action": "No pin check requested.",
@@ -50008,20 +50055,15 @@
       "priority": 2,
       "reasons": [],
       "reference": {
-        "address": "The Inn At Woodhall Spa, The Broadway, Woodhall Spa",
-        "difference_metres": 104.3,
-        "lat": 53.152583,
-        "lng": -0.213216,
-        "name": "The Inn At Woodhall Spa",
-        "postcode": "LN10 6ST",
+        "name_matches": 0,
+        "postcode_matches": 9,
         "queried_postcode": "LN10 6ST",
-        "status": "coordinate_disagreement",
-        "url": "https://ratings.food.gov.uk/business/572167"
+        "status": "no_name_match"
       },
       "review_category": "informational",
-      "status": "coordinate_disagreement",
+      "status": "no_name_match",
       "warnings": [
-        "FSA coordinate is 104.3m from the accepted pin; informational only because the FSA geocode may be approximate"
+        "FSA comparison is inconclusive; absence of a match does not contradict accepted evidence"
       ]
     },
     "v-fe30654c-6eda-5367-99e7-211b1d88ec8b": {

@@ -2,7 +2,7 @@
   "counts": {
     "verified_venue": 1088
   },
-  "generated_at": "2026-11-24",
+  "generated_at": "2026-11-25",
   "policy": {
     "max_evidence_age_days": 400,
     "venue_pin": "Evidence-backed venue coordinates; unresolved venues use explicitly approximate postcode pins."
@@ -5273,7 +5273,7 @@
       "venue_id": "v-c42a1691-cc71-5fac-a7fa-2b3c2112ec0e"
     },
     "black boy|caernarfon|ll55 1rw": {
-      "coordinate_source": "food-standards-agency-fhrs",
+      "coordinate_source": "independent-building-review",
       "display_precision": "venue",
       "evidence": [
         {
@@ -5324,6 +5324,39 @@
         {
           "checked_at": "2026-11-23",
           "difference_metres": 21.5,
+          "disposition": "superseded_by_building_review",
+          "match": "venue_name_and_full_postcode",
+          "reference_address": "Stryd Pedwar a Chwech",
+          "reference_coordinate": {
+            "lat": 53.141100154982,
+            "lng": -4.276095713544
+          },
+          "reference_name": "Black Boy Inn, Caernarfon - Fires and Guest Ales",
+          "reference_postcode": "LL55 1RW",
+          "source": "camra",
+          "url": "https://camra.org.uk/pubs/146145"
+        },
+        {
+          "checked_at": "2026-11-25",
+          "match": "independently_corroborated_named_premises",
+          "reference_address": "Stryd Pedwar a Chwech",
+          "reference_coordinate": {
+            "lat": 53.14116085,
+            "lng": -4.27615662
+          },
+          "reference_name": "Black Boy Inn",
+          "reference_postcode": "LL55 1RW",
+          "reviewed_by": "Codex",
+          "source": "openstreetmap",
+          "supporting_address_urls": [
+            "https://cadwpublic-api.azurewebsites.net/reports/listedbuilding/FullReport?id=3905&lang=en",
+            "https://www.black-boy-inn.com/the-black-boy-inn/"
+          ],
+          "url": "https://www.openstreetmap.org/way/403378980"
+        },
+        {
+          "checked_at": "2026-11-23",
+          "difference_metres": 21.5,
           "match": "venue_name_and_full_postcode",
           "reference_address": "Stryd Pedwar a Chwech",
           "reference_coordinate": {
@@ -5336,8 +5369,8 @@
           "url": "https://camra.org.uk/pubs/146145"
         }
       ],
-      "lat": 53.1410102844238,
-      "lng": -4.27580976486206,
+      "lat": 53.14116085,
+      "lng": -4.27615662,
       "place_name": "Caernarfon",
       "postcode": "LL55 1RW",
       "pub_name": "Black Boy",
@@ -12651,7 +12684,7 @@
       "venue_id": "v-7e57ad1d-272f-53ca-8b18-7f3ac8bf26ee"
     },
     "carre arms hotel|sleaford|ng34 7jp": {
-      "coordinate_source": "camra-pubs-location-audit",
+      "coordinate_source": "independent-building-review",
       "display_precision": "venue",
       "evidence": [
         {
@@ -12702,6 +12735,7 @@
         {
           "checked_at": "2026-11-13",
           "difference_metres": 0.0,
+          "disposition": "superseded_by_building_review",
           "match": "venue_name_and_full_postcode",
           "reference_address": "1 Mareham Lane",
           "reference_coordinate": {
@@ -12712,10 +12746,29 @@
           "reference_postcode": "NG34 7JP",
           "source": "camra",
           "url": "https://camra.org.uk/pubs/168221"
+        },
+        {
+          "checked_at": "2026-11-25",
+          "match": "independently_corroborated_named_premises",
+          "reference_address": "1 Mareham Lane",
+          "reference_coordinate": {
+            "lat": 52.9948426,
+            "lng": -0.406969125
+          },
+          "reference_name": "Carre Arms Hotel",
+          "reference_postcode": "NG34 7JP",
+          "reviewed_by": "Codex",
+          "source": "openstreetmap",
+          "supporting_address_urls": [
+            "https://www.lincolnshire.gov.uk/directory-record/80684/carre-arms-hotel-sleaford",
+            "https://www.carrearms.co.uk/",
+            "https://ratings.food.gov.uk/business/295724"
+          ],
+          "url": "https://www.openstreetmap.org/way/165401973"
         }
       ],
-      "lat": 52.995098114014,
-      "lng": -0.40748700499535,
+      "lat": 52.9948426,
+      "lng": -0.406969125,
       "place_name": "Sleaford",
       "postcode": "NG34 7JP",
       "pub_name": "Carre Arms Hotel",
@@ -41555,7 +41608,7 @@
       "venue_id": "v-91dc9a73-c434-5a18-968f-d2f88b9edca7"
     },
     "martins arms|colston bassett|ng12 3fd": {
-      "coordinate_source": "camra-and-fsa-location-audit",
+      "coordinate_source": "independent-building-review",
       "display_precision": "venue",
       "evidence": [
         {
@@ -41606,6 +41659,7 @@
         {
           "checked_at": "2026-11-13",
           "difference_metres": 0.0,
+          "disposition": "superseded_by_building_review",
           "match": "venue_name_and_full_postcode",
           "reference_address": "School Lane",
           "reference_coordinate": {
@@ -41616,10 +41670,28 @@
           "reference_postcode": "NG12 3FD",
           "source": "camra",
           "url": "https://camra.org.uk/pubs/118959"
+        },
+        {
+          "checked_at": "2026-11-25",
+          "match": "independently_corroborated_named_premises",
+          "reference_address": "School Lane",
+          "reference_coordinate": {
+            "lat": 52.8915075,
+            "lng": -0.9635661499999999
+          },
+          "reference_name": "Martins Arms",
+          "reference_postcode": "NG12 3FD",
+          "reviewed_by": "Codex",
+          "source": "openstreetmap",
+          "supporting_address_urls": [
+            "https://historicengland.org.uk/listing/the-list/list-entry/1370145",
+            "https://www.themartinsarms.co.uk/"
+          ],
+          "url": "https://www.openstreetmap.org/way/414874002"
         }
       ],
-      "lat": 52.8905,
-      "lng": -0.964109,
+      "lat": 52.8915075,
+      "lng": -0.9635661499999999,
       "place_name": "Colston Bassett",
       "postcode": "NG12 3FD",
       "pub_name": "Martins Arms",
@@ -63783,7 +63855,7 @@
       "venue_id": "v-43f8c5b8-55b0-58aa-98cc-fef3699fe311"
     },
     "stoke canon|stoke canon|ex5 4ar": {
-      "coordinate_source": "food-standards-agency-fhrs",
+      "coordinate_source": "independent-building-review",
       "display_precision": "venue",
       "evidence": [
         {
@@ -63834,6 +63906,40 @@
         {
           "checked_at": "2026-11-23",
           "difference_metres": 36.7,
+          "disposition": "superseded_by_building_review",
+          "match": "venue_name_and_full_postcode",
+          "reference_address": "High Street",
+          "reference_coordinate": {
+            "lat": 50.771251977945,
+            "lng": -3.506731748581
+          },
+          "reference_name": "Stoke Canon Inn, Stoke Canon - Community-Owned Pub",
+          "reference_postcode": "EX5 4AR",
+          "source": "camra",
+          "url": "https://camra.org.uk/pubs/166652"
+        },
+        {
+          "checked_at": "2026-11-25",
+          "match": "independently_corroborated_named_premises",
+          "reference_address": "High Street",
+          "reference_coordinate": {
+            "lat": 50.771262,
+            "lng": -3.5067762
+          },
+          "reference_name": "Stoke Canon Inn",
+          "reference_postcode": "EX5 4AR",
+          "reviewed_by": "Codex",
+          "source": "openstreetmap",
+          "supporting_address_urls": [
+            "https://www.stokecanoninn.com/contact",
+            "https://www.geograph.org.uk/photo/7639252",
+            "https://camra.org.uk/pubs/stoke-canon-inn-stoke-canon-166652"
+          ],
+          "url": "https://www.openstreetmap.org/node/1357658105"
+        },
+        {
+          "checked_at": "2026-11-23",
+          "difference_metres": 36.7,
           "match": "venue_name_and_full_postcode",
           "reference_address": "High Street",
           "reference_coordinate": {
@@ -63846,8 +63952,8 @@
           "url": "https://camra.org.uk/pubs/166652"
         }
       ],
-      "lat": 50.771538,
-      "lng": -3.506991,
+      "lat": 50.771262,
+      "lng": -3.5067762,
       "place_name": "Stoke Canon",
       "postcode": "EX5 4AR",
       "pub_name": "Stoke Canon",

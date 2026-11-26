@@ -386,6 +386,16 @@ def notification_items(report):
         item = {key: record.get(key, '') for key in ('pub_name', 'place_name', 'postcode', 'review_category')}
         item['question'] = question
         item['context'] = record.get('next_action') or 'Review the current listing evidence.'
+        reference = record.get('reference') or {}
+        if category == 'address_metadata' and reference.get('listed') and reference.get('reference'):
+            item['context'] = f"The directory gives {reference['listed']}. The venue reference gives {reference['reference']}."
+            if reference.get('source_url'):
+                item['context'] += ' ' + reference['source_url']
+        elif category == 'trading_check':
+            reason = next((r.removeprefix('Trading status needs review: ') for r in record.get('reasons', [])
+                           if r.startswith('Trading status needs review: ')), '')
+            if reason:
+                item['context'] = reason
         items['venue:' + identifier] = item
     for review in report.get('trading_notice_reviews', []):
         identifier = str(review.get('venue_id', ''))
@@ -399,17 +409,25 @@ def notification_items(report):
             'question': f"Can you confirm whether the public trading notice for {review.get('pub_name', 'this venue')} is still accurate?",
             'context': f"The notice review date was {review.get('review_by', 'not recorded')}; update or withdraw it after checking current trading evidence.",
         }
+        if review.get('text'):
+            context = 'The public notice said “' + review['text'] + '”'
+            if review.get('source_url'):
+                context += ' ' + review['source_url']
+            items['notice:' + identifier]['context'] = context
     return items
 
 
 def format_notification(items):
     """Render only newly changed owner questions; omit diagnostics and history."""
     lines = ['These changed items need an owner decision. Reply in the coordinate review issue after checking the current evidence.', '']
-    for key, item in sorted(items.items(), key=lambda pair: (pair[1].get('pub_name', '').casefold(), pair[0])):
+    ordered = sorted(items.items(), key=lambda pair: (pair[1].get('pub_name', '').casefold(), pair[0]))
+    for key, item in ordered[:8]:
         location = ' — '.join(part for part in (item.get('place_name'), item.get('postcode')) if part)
         title = item.get('pub_name') or key
         lines += [f"## {title}" + (f" — {location}" if location else ''), '',
                   'Question: ' + item['question'], '', item['context'], '']
+    if len(ordered) > 8:
+        lines += [f'{len(ordered) - 8} further changed questions are in the review queue and the workflow report.', '']
     lines.append('Review queue: https://github.com/bristolbagpiper/BassBeerMap/issues/5')
     return '\n'.join(lines)
 
@@ -419,11 +437,15 @@ def with_trading_notice_reviews(report, notices, bundle, today=None):
     today = today or datetime.now(timezone.utc).date()
     rows = {row['venue_id']: row for row in bundle['rows']}
     reviews = []
+    hidden = set(notices.get('manual_hides', []))
     for notice in notices.get('notices', []):
+        if notice['venue_id'] in hidden:
+            continue
         row = rows.get(notice['venue_id'])
         if row and notice.get('review_by') and date.fromisoformat(notice['review_by']) < today:
             reviews.append({**{field: row[field] for field in ('venue_id', 'pub_name', 'place_name')},
-                            'review_by': notice['review_by']})
+                            'review_by': notice['review_by'],
+                            **{key: notice[key] for key in ('text', 'source_url') if notice.get(key)}})
     return dict(report, trading_notice_reviews=sorted(reviews, key=lambda review: review['venue_id']))
 
 

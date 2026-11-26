@@ -5,7 +5,7 @@ from datetime import date
 from pathlib import Path
 from unittest.mock import MagicMock, patch
 
-from location_review import fingerprint, format_notification, format_report, with_trading_notice_reviews
+from location_review import fingerprint, format_notification, format_report, notification_items, with_trading_notice_reviews
 from notify_location_review import notify
 
 
@@ -21,6 +21,20 @@ class ReviewReportSectionTests(unittest.TestCase):
         self.assertIn('Pub — Town (venue); review due 2026-11-20.', format_report(due))
         self.assertNotEqual(fingerprint(active), fingerprint(due))
         self.assertEqual(fingerprint(due), fingerprint(still_due))
+
+    def test_owner_can_see_the_conflicting_postcodes_and_original_notice(self):
+        report = {'records': {'a': dict(pub_name='Example', active=True, manual_action_required=True,
+                  review_category='address_metadata', postcode='AB1 2CD',
+                  reference={'listed': 'AB1 2CD', 'reference': 'AB1 2EF', 'source_url': 'https://example.org/licence'})}}
+        listing = {'venue_id':'b', 'pub_name':'Other pub', 'place_name':'Town'}
+        notice = dict(listing, review_by='2026-01-01', text='The kitchen is closed.', source_url='https://example.org/operator')
+        due = with_trading_notice_reviews(report, {'notices':[notice]}, {'rows':[listing]}, date(2026,1,2))
+        message = format_notification(notification_items(due))
+        for detail in ('AB1 2CD', 'AB1 2EF', 'licence', notice['text'], notice['source_url']):
+            self.assertIn(detail, message)
+        hidden = with_trading_notice_reviews(report, {'notices':[notice], 'manual_hides':['b']},
+                                            {'rows':[listing]}, date(2026,1,2))
+        self.assertNotIn('notice:b', notification_items(hidden))
 
     def test_active_source_outage_is_warning_while_identity_and_trading_are_actions(self):
         records = {

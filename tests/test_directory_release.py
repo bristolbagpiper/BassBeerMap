@@ -208,6 +208,23 @@ class ReleaseGateTests(unittest.TestCase):
         self.assertEqual(report['summary']['added_count'], 1)
         self.assertEqual((self.root / 'directory-release.json').read_bytes(), before)
 
+    def test_selected_upload_pdf_is_staged_as_canonical_without_replacing_other_files(self):
+        candidate = Path(self.temporary.name) / 'raw.csv'
+        write_rows(candidate, self.rows)
+        uploaded = Path(self.temporary.name) / 'source upload.pdf'
+        uploaded.write_bytes(b'%PDF-upload')
+        unrelated = self.root / 'reference.pdf'
+        unrelated.write_bytes(b'%PDF-reference')
+        canonical = self.root / 'latest-bass-directory.pdf'
+        canonical.write_bytes(b'%PDF-old-canonical')
+        before = {path.name: path.read_bytes() for path in self.root.iterdir()}
+        with patch('ingest_directory.validate_pdf_listings', return_value=[]):
+            report = stage_import(candidate, self.root, self.stage, check_sources=False, source_pdf=uploaded)
+        self.assertTrue(report['valid'], report['errors'])
+        self.assertEqual((self.stage / 'latest-bass-directory.pdf').read_bytes(), b'%PDF-upload')
+        self.assertEqual({path.name: path.read_bytes() for path in self.root.iterdir()}, before)
+        self.assertEqual(uploaded.read_bytes(), b'%PDF-upload')
+
     def test_failed_import_leaves_published_release_untouched(self):
         candidate = Path(self.temporary.name) / 'raw.csv'
         write_rows(candidate, self.rows + [dict(self.rows[0], pg='Guest')])

@@ -2,6 +2,11 @@ name: Research unverified locations
 
 on:
   workflow_dispatch:
+    inputs:
+      venue_id:
+        description: 'Current venue ID (optional, otherwise check up to 30)'
+        type: string
+        required: false
 
 permissions:
   contents: read
@@ -19,7 +24,9 @@ jobs:
         with:
           python-version: '3.13'
       - name: Build a review candidate for up to 30 unresolved venue locations
-        run: python research_locations.py --limit 30
+        env:
+          VENUE_ID: ${{ inputs.venue_id }}
+        run: python research_locations.py --limit 30 --venue-id "$VENUE_ID"
       - name: Validate the proposed candidate without publishing it
         run: python validate_directory_release.py --root candidate-research --previous .
       - name: Retain research evidence

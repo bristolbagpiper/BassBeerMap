@@ -88,6 +88,43 @@ class FrontendSmokeTests(unittest.TestCase):
         self.driver.execute_script("setUserLocation(51.5, -0.1, 'Test location');")
         self.assertEqual(self.driver.find_element(By.ID, "typeFilter").get_attribute("value"), "Perm")
 
+    def test_every_rendered_pin_matches_the_candidate(self):
+        self.load_directory()
+        release = json.loads((self.data_root / 'directory-release.json').read_text(encoding='utf-8'))
+        actual = self.driver.execute_script("""
+            return pubData.map(item => {
+              const point = item.marker.getLatLng();
+              return [item.venue_id, point.lat, point.lng, item.premisesPrecision, item.newOrReturning];
+            });
+        """)
+        expected = []
+        for row in release['rows']:
+            identifier = row['venue_id']
+            location = release['locations'][identifier]
+            point = location if location['precision'] == 'venue' else location['postcode_location']
+            grade = location.get('premises_precision', 'reference') if location['precision'] == 'venue' else 'postcode'
+            expected.append([identifier, point['lat'], point['lng'], grade, location.get('new_or_returning', False)])
+        self.assertEqual(sorted(actual), sorted(expected))
+
+    def test_legacy_named_pin_keeps_its_location_as_a_reference(self):
+        release = json.loads((self.data_root / 'directory-release.json').read_text(encoding='utf-8'))
+        identifier = release['rows'][0]['venue_id']
+        location = release['locations'][identifier]
+        location.update(precision='venue', checked_at='2000-01-01')
+        for key in ('premises_precision', 'visitor_hint', 'metadata_issue', 'directions_address'):
+            location.pop(key, None)
+        type(self).release_override = release
+        self.load_directory()
+        grade, lat, lng, query = self.driver.execute_script("""
+            const pub = pubData.find(item => item.venue_id === arguments[0]);
+            const box = document.createElement('div');
+            box.innerHTML = venueMapsLink(pub);
+            return [pub.premisesPrecision, pub.marker.getLatLng().lat, pub.marker.getLatLng().lng,
+                    new URL(box.firstElementChild.href).searchParams.get('query')];
+        """, identifier)
+        self.assertEqual((grade, lat, lng), ('reference', location['lat'], location['lng']))
+        self.assertIn(release['rows'][0]['pub_name'], query)
+
     def test_dated_trading_notices_expire_to_review_prompt_and_manual_hides_remain(self):
         release = json.loads((self.data_root / 'directory-release.json').read_text(encoding='utf-8'))
         visible, hidden = (row['venue_id'] for row in release['rows'][:2])
@@ -137,6 +174,22 @@ class FrontendSmokeTests(unittest.TestCase):
         self.assertNotIn('/trading-notices.json', requests)
         self.assertNotIn('/hermes-google-status.json', requests)
 
+    def example_release(self):
+        release = json.loads((self.data_root / 'directory-release.json').read_text(encoding='utf-8'))
+        examples = json.loads((self.repo_root / 'tests/fixtures/browser-venues.json').read_text(encoding='utf-8'))
+        rows = {row['venue_id']: row for row in release['rows']}
+        for example in examples:
+            row = example['row']
+            rows[row['venue_id']] = row
+            release['locations'][row['venue_id']] = example['location']
+            release.get('trading_notices', {}).pop(row['venue_id'], None)
+        release['rows'] = list(rows.values())
+        return release
+
+    def load_example_venues(self):
+        type(self).release_override = self.example_release()
+        self.load_directory()
+
     def load_directory(self):
         from selenium.webdriver.common.by import By
         from selenium.webdriver.support.ui import WebDriverWait
@@ -175,7 +228,7 @@ class FrontendSmokeTests(unittest.TestCase):
         from selenium.webdriver.common.by import By
         from selenium.webdriver.support.ui import WebDriverWait
 
-        self.load_directory()
+        self.load_example_venues()
         result = self.driver.execute_script("const p = pubData.find(p => p.pub_name === 'GJ Muckers'); return {precision:p.locationPrecision, lat:p.lat, lng:p.lng, issue:p.locationIssue};")
         self.assertEqual(result['precision'], 'venue')
         self.assertAlmostEqual(result['lat'], 53.25777)
@@ -206,7 +259,7 @@ class FrontendSmokeTests(unittest.TestCase):
         wait = WebDriverWait(driver, 10)
         for search, address in venues:
             with self.subTest(venue=search):
-                self.load_directory()
+                self.load_example_venues()
                 driver.find_element(By.ID, 'searchBox').send_keys(search)
                 wait.until(lambda d: d.find_element(By.ID, 'resultCount').text == '1 match')
                 card = driver.find_element(By.CSS_SELECTOR, '#results .card')
@@ -225,14 +278,14 @@ class FrontendSmokeTests(unittest.TestCase):
                 self.assertEqual(popup_links[0].get_attribute('href'), url)
 
     def test_black_lion_is_one_listing(self):
-        self.load_directory()
+        self.load_example_venues()
         result = self.driver.execute_script("return pubData.filter(p => p.pub_name === 'Black Lion' && p.place_name === 'Blackfordby').map(p => p.pg)")
         self.assertEqual(result, ['Guest'])
 
     def test_nearby_scope_keeps_radius_and_availability_independent(self):
         from selenium.webdriver.common.by import By
         from selenium.webdriver.support.ui import Select
-        self.load_directory()
+        self.load_example_venues()
         driver = self.driver
         availability = Select(driver.find_element(By.ID, 'typeFilter'))
         availability.select_by_value('Guest')
@@ -266,7 +319,7 @@ class FrontendSmokeTests(unittest.TestCase):
 
         self.addCleanup(driver.execute_cdp_cmd, 'Emulation.clearDeviceMetricsOverride', {})
         self.resize_viewport(360, 640)
-        self.load_directory()
+        self.load_example_venues()
         driver.execute_script("""
             const fetchFromNetwork = window.fetch;
             window.fetch = (url, ...options) => {
@@ -335,7 +388,7 @@ class FrontendSmokeTests(unittest.TestCase):
     def test_report_dialog_keeps_keyboard_focus_and_restores_background(self):
         from selenium.webdriver.common.by import By
         from selenium.webdriver.common.keys import Keys
-        self.load_directory()
+        self.load_example_venues()
         # This test exercises only local modal behavior. No report service or
         # challenge request is needed and the form is never submitted.
         self.driver.execute_script('loadTurnstile = async () => {};')
@@ -369,7 +422,7 @@ class FrontendSmokeTests(unittest.TestCase):
         driver = self.driver
         wait = WebDriverWait(driver, 10)
         self.addCleanup(driver.execute_cdp_cmd, 'Emulation.clearDeviceMetricsOverride', {})
-        self.load_directory()
+        self.load_example_venues()
         driver.execute_script("""
             const originalFetch = window.fetch.bind(window);
             window.fetch = (input, options) => {
@@ -446,7 +499,7 @@ class FrontendSmokeTests(unittest.TestCase):
         self.resize_viewport(360, 640)
         for name, availability in [('Bank Tavern', 'Permanent'), ('Black Lion Blackfordby', 'Guest / occasional')]:
             with self.subTest(venue=name):
-                self.load_directory()
+                self.load_example_venues()
                 driver.find_element(By.ID, 'openPanelBtn').click()
                 driver.find_element(By.ID, 'searchBox').send_keys(name)
                 wait.until(lambda d: d.find_element(By.ID, 'resultCount').text == '1 match')
@@ -487,7 +540,7 @@ class FrontendSmokeTests(unittest.TestCase):
         for width, height in [(360, 640), (640, 360)]:
             with self.subTest(width=width, height=height):
                 self.resize_viewport(width, height)
-                self.load_directory()
+                self.load_example_venues()
                 driver.find_element(By.ID, 'openPanelBtn').click()
                 search = driver.find_element(By.ID, 'searchBox')
                 search.send_keys('Bank Tavern')
@@ -550,7 +603,7 @@ class FrontendSmokeTests(unittest.TestCase):
 
         self.addCleanup(driver.execute_cdp_cmd, 'Emulation.clearDeviceMetricsOverride', {})
         self.resize_viewport(360, 640)
-        self.load_directory()
+        self.load_example_venues()
         driver.find_element(By.ID, 'openPanelBtn').click()
         self.assertTrue(driver.execute_script("return document.querySelector('.map-wrap').inert && document.querySelector('.topbar').inert;"))
         search = wait.until(EC.element_to_be_clickable((By.ID, 'searchBox')))
@@ -611,7 +664,7 @@ class FrontendSmokeTests(unittest.TestCase):
         wait = WebDriverWait(driver, 10)
         self.addCleanup(driver.execute_cdp_cmd, 'Emulation.clearDeviceMetricsOverride', {})
         self.resize_viewport(768, 1024)
-        self.load_directory()
+        self.load_example_venues()
         driver.find_element(By.ID, 'openPanelBtn').click()
         search = driver.find_element(By.ID, 'searchBox')
         search.send_keys('Bank Tavern')
@@ -688,7 +741,7 @@ class FrontendSmokeTests(unittest.TestCase):
 
         self.addCleanup(driver.execute_cdp_cmd, 'Emulation.clearDeviceMetricsOverride', {})
         self.resize_viewport(360, 640)
-        self.load_directory()
+        self.load_example_venues()
         by_id('openPanelBtn').click()
         search = by_id('searchBox')
         search.send_keys('Bank Tavern')
@@ -738,7 +791,7 @@ class FrontendSmokeTests(unittest.TestCase):
         from selenium.webdriver.support import expected_conditions as EC
         from selenium.webdriver.support.ui import WebDriverWait
 
-        self.load_directory()
+        self.load_example_venues()
         driver = self.driver
         wait = WebDriverWait(driver, 10)
 
@@ -810,15 +863,15 @@ class FrontendSmokeTests(unittest.TestCase):
         press(Keys.ESCAPE)
         self.assertEqual(driver.switch_to.active_element, pin)
 
-    def test_legacy_bundle_with_expired_evidence_uses_approximate_pin(self):
+    def test_postcode_pin_links_to_a_named_venue_search(self):
         from selenium.webdriver.common.by import By
         from selenium.webdriver.support import expected_conditions as EC
         from selenium.webdriver.support.ui import WebDriverWait
 
-        payload = json.loads((self.data_root / 'directory-release.json').read_text(encoding='utf-8'))
+        payload = self.example_release()
         row = next(r for r in payload['rows'] if r['pub_name'] == 'Bank Tavern')
         payload['locations'][row['venue_id']].pop('premises_precision', None)
-        payload['locations'][row['venue_id']]['checked_at'] = '2000-01-01'
+        payload['locations'][row['venue_id']]['precision'] = 'postcode'
         type(self).release_override = payload
         self.load_directory()
         precision = self.driver.execute_script("return pubData.find(p => p.pub_name === 'Bank Tavern').locationPrecision")

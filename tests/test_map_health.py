@@ -48,6 +48,13 @@ class MapHealthTests(unittest.TestCase):
         self.assertEqual({path.name: path.read_bytes() for path in self.root.iterdir()}, self.before)
         self.assertFalse(self.stage.exists())
 
+    def test_integrity_rejects_a_changed_point_even_if_served_release_id_matches(self):
+        live = json.loads((self.root / 'directory-release.json').read_text(encoding='utf-8'))
+        first = next(iter(live['locations'].values()))
+        first['lat'] += 0.001
+        with patch('audit_map_health.fetch_text', return_value=json.dumps(live)):
+            self.assertFalse(integrity_check(self.root)['healthy'])
+
     def test_integrity_check_fails_on_live_release_mismatch_or_unreachable_endpoint(self):
         live = read_json(self.root / 'directory-release.json')
         live['release_id'] = 'old-release'

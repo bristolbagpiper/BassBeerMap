@@ -34,7 +34,7 @@ def postcode_coordinates(rows, existing, overrides=None):
             for postcode, query in lookups.items() if postcode in coordinates or query in coordinates}
 
 
-def stage_import(candidate, root, staging, check_sources=True):
+def stage_import(candidate, root, staging, check_sources=True, source_pdf=None):
     root, staging = Path(root), Path(staging)
     staging.mkdir(parents=True, exist_ok=True)
     report = {'valid': False, 'errors': [], 'source_warnings': []}
@@ -48,7 +48,7 @@ def stage_import(candidate, root, staging, check_sources=True):
             report['errors'].extend(reconciliation['errors'])
             return report
         metadata = read_json(root / 'candidate-directory-meta.json', read_json(root / 'directory-meta.json', {}))
-        pdf = root / 'latest-bass-directory.pdf'
+        pdf = Path(source_pdf) if source_pdf else root / 'latest-bass-directory.pdf'
         if pdf.exists():
             report['errors'].extend(validate_pdf_listings(pdf, rows, metadata))
             if report['errors']:
@@ -100,7 +100,7 @@ def stage_import(candidate, root, staging, check_sources=True):
                 entry['verification_attempt'] = attempt
         ledger = write_release(staging, rows, registry, metadata, coordinates, source_root=root)
         if pdf.exists():
-            shutil.copyfile(pdf, staging / pdf.name)
+            shutil.copyfile(pdf, staging / 'latest-bass-directory.pdf')
         change_report = build_report(previous, rows)
         write_json(staging / 'change-report.json', change_report)
         verified = {k: r for k, r in ledger['records'].items() if r['display_precision'] == 'venue'}
@@ -126,8 +126,9 @@ if __name__ == '__main__':
     parser.add_argument('candidate')
     parser.add_argument('--root', type=Path, default=Path('.'))
     parser.add_argument('--staging', type=Path, default=Path('candidate-release'))
+    parser.add_argument('--source-pdf', type=Path, help='Exact selected PDF to validate and include in the candidate release.')
     parser.add_argument('--offline', action='store_true')
     args = parser.parse_args()
-    report = stage_import(args.candidate, args.root, args.staging, not args.offline)
+    report = stage_import(args.candidate, args.root, args.staging, not args.offline, args.source_pdf)
     print(json.dumps(report, indent=2))
     raise SystemExit(not report['valid'])

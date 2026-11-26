@@ -73,6 +73,7 @@ class ImportNotificationTests(unittest.TestCase):
         self.assertIn("state=published", text)
         self.assertIn("state=unchanged", text)
         self.assertIn("id: change_report_email", text)
+        self.assertIn("github.event_name == 'workflow_dispatch' && inputs.email_change_report", text)
         self.assertIn("state=not_configured", text)
         self.assertIn("state=suppressed_no_changes", text)
         self.assertIn("state=accepted", text)

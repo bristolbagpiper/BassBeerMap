@@ -24,7 +24,7 @@ def postcode_issue_reviewed(issue, pin, pub_name, row=None):
         premises = pin['premises_review']
         address = premises.get('postal_address') or {}
         sources = address.get('sources') or []
-        if (premises['precision'] == 'building' and address.get('listed') == row.get('postcode') == issue.get('listed')
+        if (premises['precision'] in ('building', 'site') and address.get('listed') == row.get('postcode') == issue.get('listed')
                 and address.get('reference') == issue.get('reference') and address.get('source_url') == issue.get('source_url')
                 and isinstance(sources, list) and len({urlsplit(u).hostname for u in sources if u in premises['sources']}) >= 2):
             return True

@@ -6,7 +6,7 @@ from pathlib import Path
 from unittest.mock import patch
 
 from audit_map_health import health_audit
-from directory_release import active_evidence, read_json, read_rows, reconcile
+from directory_release import active_evidence, read_json, reconcile, write_release
 from owner_location_review import current_confirmation, pending_building_review
 
 
@@ -17,14 +17,24 @@ POINT = {'lat': 52.767456, 'lng': -1.5125223}
 
 class GreyhoundOwnerCorrectionTests(unittest.TestCase):
     def setUp(self):
-        self.rows = read_rows(ROOT / 'pubs.csv')
-        self.row = next(row for row in self.rows if row['venue_id'] == IDENTIFIER)
-        self.registry = read_json(ROOT / 'venue-registry.json')
+        # The owner decision predates the November locality change. Retain its
+        # original inputs so future authoritative editions may remove or move it.
+        fixture = read_json(ROOT / 'tests/fixtures/greyhound-owner-review.json')
+        self.row = fixture['row']
+        self.rows = [self.row]
+        self.registry = {'schema_version': 1, 'venues': {IDENTIFIER: fixture['venue']},
+                         'location_review': {'records': {IDENTIFIER: fixture['location_review']}}}
+        self.decisions = {'identity_aliases': fixture['identity_aliases']}
+        source = tempfile.TemporaryDirectory()
+        self.addCleanup(source.cleanup)
+        self.source = Path(source.name)
+        write_release(self.source, self.rows, self.registry, {},
+                      {self.row['postcode']: fixture['postcode_point']})
 
     def test_scheduled_job_retains_owner_pin_without_reopening_resolved_comparison(self):
         with tempfile.TemporaryDirectory() as output:
             with patch('audit_map_health.select_batch', return_value=[self.row]), patch('audit_map_health.time.sleep'):
-                report = health_audit(ROOT, output, limit=1, check_live=False)
+                report = health_audit(self.source, output, limit=1, check_live=False)
             self.assertTrue(report['valid'], report['errors'])
             pin = read_json(Path(output) / 'venue-registry.json')['venues'][IDENTIFIER]['verified_pin']
             self.assertEqual(POINT, {key: pin[key] for key in POINT})
@@ -40,7 +50,7 @@ class GreyhoundOwnerCorrectionTests(unittest.TestCase):
     def test_reviewed_pdf_locality_alias_preserves_id_and_google_point(self):
         candidate = copy.deepcopy(self.rows)
         next(row for row in candidate if row['venue_id'] == IDENTIFIER)['place_name'] = 'Boundary / Woodville'
-        rows, registry, report = reconcile(candidate, self.registry, read_json(ROOT / 'ingestion-decisions.json'))
+        rows, registry, report = reconcile(candidate, self.registry, self.decisions)
         self.assertEqual([], report['errors'])
         updated = next(row for row in rows if row['venue_id'] == IDENTIFIER)
         self.assertEqual('Boundary / Woodville', updated['place_name'])

@@ -6,7 +6,7 @@ from unittest.mock import patch
 from ingest_directory import postcode_coordinates
 from build_change_report import build_report
 from send_change_report_email import format_report
-from fetch_latest_pdf import download_latest_pdf
+from fetch_latest_pdf import download_latest_pdf, find_latest_post, find_pdf_url
 from resolve_venue_coordinates import normalise, select_backfill_candidates
 from resolve_venue_coordinates_from_osm import choose_match, listing_name_variants, read_osm_venues
 from build_coordinate_review_queue import build_queue
@@ -135,8 +135,10 @@ class ValidationTests(unittest.TestCase):
         self.assertIn("Added: 0 | Removed: 0 | Updated: 0", format_report(report))
 
     def test_pdf_download_replaces_existing_file_only_after_a_valid_download(self):
-        home_page = '<h2><a href="https://example.test/latest">Latest</a></h2>'
-        post_page = '<a href="https://example.test/directory.pdf">Download</a>'
+        home_page = '<h2><a href="https://example.test/latest">National Bass Directory November 2026</a></h2>'
+        post_page = ('<a href="https://example.test/terms.pdf">Terms</a>'
+                     '<a href="https://example.test/bass-master-directory-november-2026.pdf">Directory edition</a>'
+                     '<a href="https://example.test/bass-master-directory-november-2026.pdf">Download</a>')
         with tempfile.TemporaryDirectory() as directory:
             destination = Path(directory) / "latest-bass-directory.pdf"
             destination.write_bytes(b"old PDF")
@@ -147,6 +149,32 @@ class ValidationTests(unittest.TestCase):
 
             self.assertEqual(destination.read_bytes(), b"%PDF-new")
             self.assertFalse((Path(directory) / ".latest-bass-directory.pdf.download").exists())
+
+    def test_homepage_and_post_select_the_actual_november_edition_link(self):
+        home = '''<h2><a href="/2026/10/01/old/">National Bass Directory October 2026</a></h2>
+                  <h2><a href="/2026/11/01/national-bass-directory-november-2026/">National Bass Directory November 2026</a></h2>'''
+        post_url = 'https://nationalbassdirectory.wordpress.com/2026/11/01/national-bass-directory-november-2026/'
+        post = '''<a href="https://nationalbassdirectory.wordpress.com/wp-content/uploads/2026/11/cover.pdf">Cover</a>
+                  <a href="https://nationalbassdirectory.wordpress.com/wp-content/uploads/2026/11/bass-master-directory-november-2026.pdf">Download</a>'''
+        title, selected_post = find_latest_post(home)
+        self.assertEqual(title, 'National Bass Directory November 2026')
+        self.assertEqual(selected_post, post_url)
+        self.assertEqual(find_pdf_url(post, post_url, title),
+                         'https://nationalbassdirectory.wordpress.com/wp-content/uploads/2026/11/bass-master-directory-november-2026.pdf')
+
+    def test_revision_suffix_is_supported_but_two_plausible_directory_pdfs_fail_closed(self):
+        post_url = 'https://example.test/2026/11/post/'
+        title = 'National Bass Directory November 2026'
+        revision = '<a href="/files/bass-master-directory-november-2026-v2-with-pcodes.pdf">Download</a>'
+        self.assertEqual(find_pdf_url(revision, post_url, title),
+                         'https://example.test/files/bass-master-directory-november-2026-v2-with-pcodes.pdf')
+        ambiguous = revision + '<a href="/files/national-bass-directory-november-2026.pdf">Other</a>'
+        with self.assertRaisesRegex(RuntimeError, 'multiple plausible'):
+            find_pdf_url(ambiguous, post_url, title)
+        mismatched = '<a href="/files/bass-master-directory-october-2026.pdf">Old edition</a>'
+        with self.assertRaisesRegex(RuntimeError, 'does not match'):
+            find_pdf_url(mismatched, post_url, title)
+
 
 
 if __name__ == "__main__":

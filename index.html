@@ -2072,16 +2072,11 @@
       updateStats();
     }
 
-    function freshLocationEvidence(checkedAt) {
-      const age = (Date.now() - Date.parse(checkedAt || '')) / 86400000;
-      return Number.isFinite(age) && age >= -1 && age <= directoryRelease.max_evidence_age_days;
-    }
-
     async function loadCoordinates() {
       setStatus('Loading venue locations…', 35);
       pubData.forEach(item => {
         const location = directoryRelease.locations[item.venue_id];
-        const precise = location.precision === 'venue' && (location.premises_precision || freshLocationEvidence(location.checked_at));
+        const precise = location.precision === 'venue';
         const coords = precise ? location : location.postcode_location;
         item.locationIssue = location.metadata_issue || null;
         const issue = item.locationIssue;
@@ -2095,7 +2090,7 @@
         item.searchText = [item.searchText, ...searchAliases].join(' ');
         if (precise && typeof address?.street === 'string' && address.street.trim()
           && compact(address.postcode) === compact(issue?.use_reference_for_directions ? referencePostcode : item.postcode)
-          && freshLocationEvidence(address.checked_at)) {
+          && Number.isFinite(Date.parse(address.checked_at))) {
           item.directionsStreet = address.street;
           item.directionsPostcode = address.postcode;
         }
@@ -2194,8 +2189,10 @@
 
     function venueMapsLink(item) {
       const precise = item.premisesPrecision === 'building' && hasCoordinates(item);
-      const label = item.locationPrecision === 'venue' ? 'Open in Google Maps' : 'Find in Google Maps';
-      let query = item.locationPrecision === 'venue' && hasCoordinates(item) ? `${item.lat},${item.lng}` : [item.pub_name, item.place_name, item.postcode].filter(Boolean).join(', ');
+      const usePin = hasCoordinates(item) && (precise || item.premisesPrecision === 'site' || item.postcodeIssueReviewed);
+      const label = usePin ? 'Open in Google Maps' : 'Find in Google Maps';
+      const searchPostcode = item.locationIssue?.use_reference_for_directions ? item.locationIssue.reference : item.postcode;
+      let query = usePin ? `${item.lat},${item.lng}` : [item.alternateName || item.pub_name, item.place_name, searchPostcode].filter(Boolean).join(', ');
       if (!precise && item.directionsStreet) {
         const locality = item.place_name.split(':')[0].trim();
         const hasPostcode = item.directionsStreet.toUpperCase().includes(item.directionsPostcode.toUpperCase());

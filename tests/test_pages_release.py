@@ -172,12 +172,12 @@ class PagesReleaseTests(unittest.TestCase):
         self.assertLess(source.index('name: Download latest PDF from WordPress'), fingerprint)
         self.assertLess(source.index('id: source_fingerprint'), source.index('name: Install dependencies'))
         self.assertIn("if: github.event_name == 'schedule' && steps.pdf_source.outputs.mode == 'wordpress'", source)
-        self.assertIn("if: steps.source_fingerprint.outputs.unchanged != 'true'", source)
-        for step in ('Install dependencies', 'Run data pipeline tests', 'Run browser smoke test on the current release',
+        self.assertIn("if: steps.pdf_source.outputs.mode != 'skip' && steps.source_fingerprint.outputs.unchanged != 'true'", source)
+        for step in ('Install dependencies',
                      'Generate candidate CSV', 'Reconcile, enrich and validate the complete candidate release',
                      'Run browser smoke test against the candidate release', 'Publish the complete validated release'):
             block = source.split(f'name: {step}', 1)[1].split('\n      - name:', 1)[0]
-            self.assertIn("steps.source_fingerprint.outputs.unchanged != 'true'", block, step)
+            self.assertIn("steps.pdf_source.outputs.mode != 'skip' && steps.source_fingerprint.outputs.unchanged != 'true'", block, step)
 
 if __name__ == '__main__':
     unittest.main()

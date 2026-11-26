@@ -4,21 +4,21 @@ Locations: 1088
 
 Action required: 0
 Information — no pin check requested: 1088
-Locations with informational observations: 660 (may also have an actionable finding)
+Locations with informational observations: 661 (may also have an actionable finding)
 
 ## Results
 
 - no_name_match: 181
 - coordinate_disagreement: 283
 - ambiguous_or_missing_coordinates: 69
-- nearby: 111
-- coordinate_agreement: 444
+- nearby: 112
+- coordinate_agreement: 443
 
 ## Confidence
 
-- existing_evidence_needs_corroboration: 898
+- existing_evidence_needs_corroboration: 903
 - owner_reviewed: 19
-- different_source_coordinates_agree: 171
+- different_source_coordinates_agree: 166
 
 ## Limits
 
@@ -74,6 +74,7 @@ Locations with informational observations: 660 (may also have an actionable find
 | Beer Engine | Skipton | BD23 1JD | coordinate_disagreement | FSA coordinate is 52.1m from the accepted pin; informational only because the FSA geocode may be approximate |
 | Bell | Halton Holegate | PE23 5NY | coordinate_disagreement | Owner reviewed this postcode discrepancy and confirmed the displayed pub building; listing postcode retained for provenance; FSA coordinate is 728.6m from the accepted pin; informational only because the FSA geocode may be approximate |
 | Bell | Standerwick | BA11 2PR | no_name_match | FSA comparison is inconclusive; absence of a match does not contradict accepted evidence |
+| Bell Foundry | Loughborough | LE11 5BL | nearby | FSA coordinate is 25-50m away; informational only |
 | Bell and Harp | Little Eaton | DE21 5AE | coordinate_disagreement | FSA coordinate is 128.4m from the accepted pin; informational only because the FSA geocode may be approximate |
 | Belmont Services Club (PMC) | Swadlincote: Central | DE11 8JU | ambiguous_or_missing_coordinates | FSA comparison is inconclusive; absence of a match does not contradict accepted evidence |
 | Belper Arms | Newton Burgoland | LE67 2SE | coordinate_disagreement | FSA coordinate is 173.9m from the accepted pin; informational only because the FSA geocode may be approximate |
@@ -721,7 +722,6 @@ Locations with informational observations: 660 (may also have an actionable find
 | Bay Horse | Manchester: Central | M4 1NA | coordinate_agreement | No pin check requested. |
 | Beach | Exmouth | EX8 1DR | coordinate_agreement | No pin check requested. |
 | Bell | Eccleshall | ST21 6BZ | coordinate_agreement | No pin check requested. |
-| Bell Foundry | Loughborough | LE11 5BL | coordinate_agreement | No pin check requested. |
 | Bell Inn | Whittington | WS14 9JR | coordinate_agreement | No pin check requested. |
 | Bell and Bear | Emberton | MK46 5DH | coordinate_agreement | No pin check requested. |
 | Berkeley Arms | Wymondham | LE14 2AG | coordinate_agreement | No pin check requested. |

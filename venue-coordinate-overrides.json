@@ -118,16 +118,16 @@
       "source_url": "https://www.google.com/maps/search/?api=1&query=Arkwrights+Real+Ale+Bar+DE56+1UP"
     },
     "arkwrights|belper: central|de56 1up": {
-      "audit_reason": "manual_named_place_address_and_map_check",
-      "checked_at": "2026-09-13",
-      "lat": 53.0227293,
-      "lng": -1.4832821,
-      "previous_source": "postcode",
-      "reference_address": "6 Campbell St, Belper DE56 1UP",
-      "reference_name": "Arkwright's Real Ale Bar",
-      "review_note": "name and full postcode agree",
-      "source": "google-maps-named-place",
-      "source_url": "https://www.google.com/maps/search/?api=1&query=Arkwrights+Real+Ale+Bar+DE56+1UP"
+      "audit_reason": "The mapped Arkwright’s Bar point lies within two metres of the CAMRA pub-specific visitor coordinate. Farmhouse Kitchen has its own marker and shares the registered street address. The former marker was nearer the café point. The unit boundary is unconfirmed.",
+      "checked_at": "2026-11-26",
+      "lat": 53.0226495,
+      "lng": -1.4832321000000002,
+      "previous_difference_metres": 9.5,
+      "previous_lat": 53.0227293,
+      "previous_lng": -1.4832821,
+      "previous_source": "google-maps-named-place",
+      "source": "reviewed-premises-location",
+      "source_url": "https://www.openstreetmap.org/node/4006536737"
     },
     "bamk house hotel|uttoxeter|st14 8ag": {
       "audit_reason": "manual_named_place_address_and_map_check",

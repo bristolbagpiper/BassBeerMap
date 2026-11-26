@@ -885,7 +885,7 @@
       "confidence": "existing_evidence_needs_corroboration",
       "country": "England",
       "dispense": "H",
-      "independent_of_pin": true,
+      "independent_of_pin": false,
       "last": "2026 Q4",
       "listing": {
         "postcode": "DE56 1UP",
@@ -898,8 +898,8 @@
       "owner_reviewed": false,
       "pg": "Perm",
       "pin": {
-        "lat": 53.0227293,
-        "lng": -1.4832821
+        "lat": 53.0226495,
+        "lng": -1.4832321000000002
       },
       "place_name": "Belper: Central",
       "postcode": "DE56 1UP",
@@ -2047,6 +2047,65 @@
       "venue_id": "v-8a764607-ea97-5632-86d2-fa06d2ef61b9",
       "warnings": [
         "FSA comparison is inconclusive; absence of a match does not contradict accepted evidence"
+      ]
+    },
+    {
+      "actionable": false,
+      "area": "Leicestershire",
+      "checked_at": "2026-11-26",
+      "comparisons": [
+        {
+          "address": "18-21 Swan Street, , Loughborough",
+          "difference_metres": 27.2,
+          "lat": 52.772641,
+          "lng": -1.20771,
+          "name": "Bell Foundry",
+          "postcode": "LE11 5BL",
+          "queried_postcode": "LE11 5BL",
+          "status": "nearby",
+          "url": "https://ratings.food.gov.uk/business/75556"
+        }
+      ],
+      "confidence": "existing_evidence_needs_corroboration",
+      "country": "England",
+      "dispense": "H",
+      "independent_of_pin": false,
+      "last": "2026 Q4",
+      "listing": {
+        "postcode": "LE11 5BL",
+        "pub_name": "Bell Foundry"
+      },
+      "manual_action_required": false,
+      "next_action": "No pin check requested.",
+      "notes": "",
+      "owner_pin_confirmed": false,
+      "owner_reviewed": false,
+      "pg": "Guest",
+      "pin": {
+        "lat": 52.772465,
+        "lng": -1.2074296
+      },
+      "place_name": "Loughborough",
+      "postcode": "LE11 5BL",
+      "priority": 2,
+      "pub_name": "Bell Foundry",
+      "reasons": [],
+      "reference": {
+        "address": "18-21 Swan Street, , Loughborough",
+        "difference_metres": 27.2,
+        "lat": 52.772641,
+        "lng": -1.20771,
+        "name": "Bell Foundry",
+        "postcode": "LE11 5BL",
+        "queried_postcode": "LE11 5BL",
+        "status": "nearby",
+        "url": "https://ratings.food.gov.uk/business/75556"
+      },
+      "review_category": "informational",
+      "status": "nearby",
+      "venue_id": "v-7243c93a-08da-53c6-af08-c96618b6a371",
+      "warnings": [
+        "FSA coordinate is 25-50m away; informational only"
       ]
     },
     {
@@ -21258,10 +21317,10 @@
           "url": "https://ratings.food.gov.uk/business/1559527"
         }
       ],
-      "confidence": "different_source_coordinates_agree",
+      "confidence": "existing_evidence_needs_corroboration",
       "country": "England",
       "dispense": "H",
-      "independent_of_pin": true,
+      "independent_of_pin": false,
       "last": "2026 Q1",
       "listing": {
         "postcode": "ST8 6PH",
@@ -38130,63 +38189,6 @@
     },
     {
       "actionable": false,
-      "area": "Leicestershire",
-      "checked_at": "2026-11-26",
-      "comparisons": [
-        {
-          "address": "18-21 Swan Street, , Loughborough",
-          "difference_metres": 4.6,
-          "lat": 52.772641,
-          "lng": -1.20771,
-          "name": "Bell Foundry",
-          "postcode": "LE11 5BL",
-          "queried_postcode": "LE11 5BL",
-          "status": "coordinate_agreement",
-          "url": "https://ratings.food.gov.uk/business/75556"
-        }
-      ],
-      "confidence": "existing_evidence_needs_corroboration",
-      "country": "England",
-      "dispense": "H",
-      "independent_of_pin": false,
-      "last": "2026 Q4",
-      "listing": {
-        "postcode": "LE11 5BL",
-        "pub_name": "Bell Foundry"
-      },
-      "manual_action_required": false,
-      "next_action": "No pin check requested.",
-      "notes": "",
-      "owner_pin_confirmed": false,
-      "owner_reviewed": false,
-      "pg": "Guest",
-      "pin": {
-        "lat": 52.7726,
-        "lng": -1.2077
-      },
-      "place_name": "Loughborough",
-      "postcode": "LE11 5BL",
-      "priority": 3,
-      "pub_name": "Bell Foundry",
-      "reasons": [],
-      "reference": {
-        "address": "18-21 Swan Street, , Loughborough",
-        "difference_metres": 4.6,
-        "lat": 52.772641,
-        "lng": -1.20771,
-        "name": "Bell Foundry",
-        "postcode": "LE11 5BL",
-        "queried_postcode": "LE11 5BL",
-        "status": "coordinate_agreement",
-        "url": "https://ratings.food.gov.uk/business/75556"
-      },
-      "review_category": "informational",
-      "status": "coordinate_agreement",
-      "venue_id": "v-7243c93a-08da-53c6-af08-c96618b6a371",
-      "warnings": []
-    },
-    {
-      "actionable": false,
       "area": "Staffordshire",
       "checked_at": "2026-11-26",
       "comparisons": [
@@ -38819,7 +38821,7 @@
       "comparisons": [
         {
           "address": "44 Market Place Belper Derbyshire",
-          "difference_metres": 9.8,
+          "difference_metres": 13.3,
           "lat": 53.023319,
           "lng": -1.478952,
           "name": "Black Swan",
@@ -38845,8 +38847,8 @@
       "owner_reviewed": false,
       "pg": "Guest",
       "pin": {
-        "lat": 53.02323215,
-        "lng": -1.47897403
+        "lat": 53.0232034,
+        "lng": -1.4790048
       },
       "place_name": "Belper: Central",
       "postcode": "DE56 1FZ",
@@ -38855,7 +38857,7 @@
       "reasons": [],
       "reference": {
         "address": "44 Market Place Belper Derbyshire",
-        "difference_metres": 9.8,
+        "difference_metres": 13.3,
         "lat": 53.023319,
         "lng": -1.478952,
         "name": "Black Swan",
@@ -39228,10 +39230,10 @@
           "url": "https://ratings.food.gov.uk/business/1105176"
         }
       ],
-      "confidence": "different_source_coordinates_agree",
+      "confidence": "existing_evidence_needs_corroboration",
       "country": "England",
       "dispense": "H",
-      "independent_of_pin": true,
+      "independent_of_pin": false,
       "last": "2026 Q1",
       "listing": {
         "postcode": "WF4 6LP",
@@ -44130,10 +44132,10 @@
           "url": "https://ratings.food.gov.uk/business/209935"
         }
       ],
-      "confidence": "different_source_coordinates_agree",
+      "confidence": "existing_evidence_needs_corroboration",
       "country": "England",
       "dispense": "H",
-      "independent_of_pin": true,
+      "independent_of_pin": false,
       "last": "2026 Q3",
       "listing": {
         "postcode": "CV22 6NJ",
@@ -48006,10 +48008,10 @@
           "url": "https://ratings.food.gov.uk/business/2015129"
         }
       ],
-      "confidence": "different_source_coordinates_agree",
+      "confidence": "existing_evidence_needs_corroboration",
       "country": "England",
       "dispense": "H",
-      "independent_of_pin": true,
+      "independent_of_pin": false,
       "last": "2026 Q1",
       "listing": {
         "postcode": "ST3 2NQ",
@@ -50400,10 +50402,10 @@
           "url": "https://ratings.food.gov.uk/business/234907"
         }
       ],
-      "confidence": "different_source_coordinates_agree",
+      "confidence": "existing_evidence_needs_corroboration",
       "country": "England",
       "dispense": "H",
-      "independent_of_pin": true,
+      "independent_of_pin": false,
       "last": "2026 Q1",
       "listing": {
         "postcode": "DN41 8EF",
@@ -58256,7 +58258,7 @@
       "comparisons": [
         {
           "address": "2A - 2B Market Street, , Hoylake, Wirral",
-          "difference_metres": 0.0,
+          "difference_metres": 14.4,
           "lat": 53.3909994,
           "lng": -3.1791595,
           "name": "Twelve Sixty Hoylake",
@@ -58282,8 +58284,8 @@
       "owner_reviewed": false,
       "pg": "Guest",
       "pin": {
-        "lat": 53.3909994,
-        "lng": -3.1791595
+        "lat": 53.391093265082,
+        "lng": -3.179009151435
       },
       "place_name": "Hoylake",
       "postcode": "CH47 2AE",
@@ -58292,7 +58294,7 @@
       "reasons": [],
       "reference": {
         "address": "2A - 2B Market Street, , Hoylake, Wirral",
-        "difference_metres": 0.0,
+        "difference_metres": 14.4,
         "lat": 53.3909994,
         "lng": -3.1791595,
         "name": "Twelve Sixty Hoylake",
@@ -61162,19 +61164,19 @@
     "action_required_count": 0,
     "actionable_count": 0,
     "confidence_counts": {
-      "different_source_coordinates_agree": 171,
-      "existing_evidence_needs_corroboration": 898,
+      "different_source_coordinates_agree": 166,
+      "existing_evidence_needs_corroboration": 903,
       "owner_reviewed": 19
     },
     "counts": {
       "ambiguous_or_missing_coordinates": 69,
-      "coordinate_agreement": 444,
+      "coordinate_agreement": 443,
       "coordinate_disagreement": 283,
-      "nearby": 111,
+      "nearby": 112,
       "no_name_match": 181
     },
     "information_no_pin_check_count": 1088,
-    "informational_count": 660,
+    "informational_count": 661,
     "limitations": [
       "Different-source agreement means nearby published coordinates. The geocoding origin can still be shared.",
       "Owner-approved coordinates take priority; CAMRA remains the primary automated reference.",

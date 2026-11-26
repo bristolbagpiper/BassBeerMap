@@ -109,9 +109,11 @@ This writes a resumable checkpoint and full report under `candidate-independent/
 
 `python -u full_location_audit.py --reports-only --publish` rebuilds classifications and reports from saved comparisons, without querying sources or updating their check dates. Existing review history is retained when coordinate-only flags are resolved.
 
-The owner-decision notification step refreshes `audit/full-location-audit.*`
-from saved comparisons automatically. Its actionable count describes that
-independent comparison; the complete current location queue also covers
-quarantined pins and other source failures.
+The release writer applies recorded owner decisions when their original facts
+still match. Notifications read the published review register. The building,
+site, reference and postcode totals are in `coordinate-verification.json` under
+`premises_counts`. A building review records its feature, coordinate and sources
+in `venue-registry.json`. Additional matched address, operator, government and
+heritage references are recorded under `external_premises_checks` when available.
 
 An owner can resolve location review of a postcode discrepancy by confirming the pub building. The source postcode and reference postcode remain recorded; this does not assert that the postal delivery postcode was independently proven. The decision covers the exact pub name, postcode pair, reference URL and coordinate. Any change to these reopens review.

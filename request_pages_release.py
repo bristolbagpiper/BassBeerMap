@@ -9,7 +9,7 @@ import urllib.request
 from pathlib import Path
 
 
-API_VERSION = '2022-11-28'
+API_VERSION = '2026-03-10'
 ASSET_PATHS = ('index.html', 'directory-release.json', 'latest-bass-directory.pdf', 'pubs.csv')
 WORKER_CONFIG_URL = 'https://bassbeermap.bristolbagpiper.workers.dev/api/report-problem?config=1'
 VISITOR_CHECKS = {
@@ -36,9 +36,9 @@ def _json_request(url, *, token, method='GET', data=None, opener=urllib.request.
         with opener(request, timeout=20) as response:
             return json.loads(response.read().decode('utf-8'))
     except urllib.error.HTTPError as error:
-        raise PagesReleaseError(f'GitHub Pages API returned HTTP {error.code} for {method} {url.rsplit("/", 1)[-1]}') from None
+        raise PagesReleaseError(f'GitHub API returned HTTP {error.code} for {method} {url.rsplit("/", 1)[-1]}') from None
     except (OSError, ValueError) as error:
-        raise PagesReleaseError(f'GitHub Pages API request failed: {type(error).__name__}') from None
+        raise PagesReleaseError(f'GitHub API request failed: {type(error).__name__}') from None
 
 
 def _asset_bytes(path, *, opener=urllib.request.urlopen):

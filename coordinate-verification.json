@@ -8,9 +8,9 @@
     "venue_pin": "Building, site and reference positions have separate precision labels. Missing positions use the listed postcode."
   },
   "premises_counts": {
-    "building": 869,
-    "reference": 149,
-    "site": 70
+    "building": 875,
+    "reference": 147,
+    "site": 66
   },
   "records": {
     "1852 brewery co|leicester: south wigston|le18 2dh": {
@@ -515,7 +515,7 @@
       "lng": -1.64131295681,
       "place_name": "Burton U-T: Central",
       "postcode": "DE14 2LD",
-      "premises_precision": "site",
+      "premises_precision": "building",
       "pub_name": "Alfred",
       "status": "verified_venue",
       "venue_id": "v-051ceacd-e5d7-58d1-81ce-dec99892c1e7"
@@ -1898,12 +1898,13 @@
       "venue_id": "v-e68ede49-f87d-5c23-ba09-269eafa95b85"
     },
     "arkwrights|belper: central|de56 1up": {
-      "coordinate_source": "google-maps-named-place",
+      "coordinate_source": "reviewed-premises-location",
       "display_precision": "venue",
       "evidence": [
         {
           "checked_at": "2026-09-13",
           "difference_metres": 0,
+          "disposition": "superseded_by_premises_review",
           "match": "manual_named_place_address_and_map_check",
           "reference_coordinate": {
             "lat": 53.0227293,
@@ -1943,6 +1944,7 @@
         },
         {
           "checked_at": "2026-11-26",
+          "disposition": "superseded_by_premises_review",
           "match": "reviewed_named_building_and_corrected_postcode",
           "reference_address": "6 Campbell Street",
           "reference_coordinate": {
@@ -1953,40 +1955,36 @@
           "reference_postcode": "DE56 1AP",
           "source": "camra",
           "url": "https://camra.org.uk/pubs/113191"
+        },
+        {
+          "checked_at": "2026-11-26",
+          "match": "named_venue_visitor_position",
+          "reference_coordinate": {
+            "lat": 53.0226495,
+            "lng": -1.4832321000000002
+          },
+          "reference_name": "Arkwrights",
+          "reference_postcode": "DE56 1AP",
+          "source": "reviewed-premises-location",
+          "url": "https://www.openstreetmap.org/node/4006536737"
         }
       ],
-      "lat": 53.0227293,
-      "lng": -1.4832821,
+      "lat": 53.0226495,
+      "lng": -1.4832321000000002,
       "metadata_issue": {
         "field": "postcode",
         "listed": "DE56 1UP",
-        "owner_review": {
-          "approved_coordinate": {
-            "lat": 53.0227293,
-            "lng": -1.4832821
-          },
-          "checked_at": "2026-11-24",
-          "conclusion": "The reviewed evidence identifies the mapped premises at 6 Campbell Street. Record DE56 1AP as a reference postcode for the same building, and retain the PDF postcode DE56 1UP. This review does not establish the postal delivery postcode.",
-          "listed": "DE56 1UP",
-          "owner_instruction": "Record the ten known postcode differences as reviewed geographical metadata where the existing building evidence supports doing so.",
-          "pub_name": "Arkwrights",
-          "reference": "DE56 1AP",
-          "reviewed_by": "Codex",
-          "source_url": "https://camra.org.uk/pubs/113191",
-          "supporting_address_urls": [
-            "https://camra.org.uk/pubs/113191"
-          ]
-        },
         "reference": "DE56 1AP",
         "source_url": "https://camra.org.uk/pubs/113191",
         "use_reference_for_directions": true
       },
       "place_name": "Belper: Central",
       "postcode": "DE56 1UP",
-      "premises_precision": "building",
+      "premises_precision": "site",
       "pub_name": "Arkwrights",
       "status": "verified_venue",
-      "venue_id": "v-d8f002a1-4ed3-5ffb-8de9-c9cdbef55a1b"
+      "venue_id": "v-d8f002a1-4ed3-5ffb-8de9-c9cdbef55a1b",
+      "visitor_hint": "Look for Arkwright’s Real Ale Bar at 6 Campbell Street. The café shares the address."
     },
     "artillery arms|plymouth: stonehouse|pl1 3rh": {
       "coordinate_source": "openstreetmap-gb-extract",
@@ -4518,11 +4516,12 @@
       "venue_id": "v-3812a807-304d-5adf-b134-5306b3874319"
     },
     "bell foundry|loughborough|le11 5bl": {
-      "coordinate_source": "camra-and-fhrs",
+      "coordinate_source": "reviewed-premises-location",
       "display_precision": "venue",
       "evidence": [
         {
           "checked_at": "2026-11-03",
+          "disposition": "superseded_by_premises_review",
           "match": "unique_name_and_full_postcode",
           "reference_coordinate": {
             "lat": 52.772641,
@@ -4575,6 +4574,7 @@
         },
         {
           "checked_at": "2026-11-16",
+          "disposition": "superseded_by_premises_review",
           "match": "named_venue_full_postcode_and_independent_fsa_agreement",
           "reference_address": "Swan Street",
           "reference_coordinate": {
@@ -4585,16 +4585,29 @@
           "reference_postcode": "LE11 5BL",
           "source": "camra",
           "url": "https://camra.org.uk/pubs/171409"
+        },
+        {
+          "checked_at": "2026-11-26",
+          "match": "named_venue_visitor_position",
+          "reference_coordinate": {
+            "lat": 52.772465,
+            "lng": -1.2074296
+          },
+          "reference_name": "Bell Foundry",
+          "reference_postcode": "LE11 5BL",
+          "source": "reviewed-premises-location",
+          "url": "https://www.openstreetmap.org/node/565377598"
         }
       ],
-      "lat": 52.7726,
-      "lng": -1.2077,
+      "lat": 52.772465,
+      "lng": -1.2074296,
       "place_name": "Loughborough",
       "postcode": "LE11 5BL",
-      "premises_precision": "building",
+      "premises_precision": "site",
       "pub_name": "Bell Foundry",
       "status": "verified_venue",
-      "venue_id": "v-7243c93a-08da-53c6-af08-c96618b6a371"
+      "venue_id": "v-7243c93a-08da-53c6-af08-c96618b6a371",
+      "visitor_hint": "Use the Bell Foundry frontage at 20 Swan Street."
     },
     "bell inn|whittington|ws14 9jr": {
       "coordinate_source": "openstreetmap-gb-extract",
@@ -7443,8 +7456,8 @@
           "checked_at": "2026-11-26",
           "match": "reviewed_mapped_premises",
           "reference_coordinate": {
-            "lat": 53.02323215,
-            "lng": -1.47897403
+            "lat": 53.0232034,
+            "lng": -1.4790048
           },
           "reference_name": "Black Swan",
           "reference_postcode": "DE56 1FZ",
@@ -7452,8 +7465,8 @@
           "url": "https://www.openstreetmap.org/way/337375790"
         }
       ],
-      "lat": 53.02323215,
-      "lng": -1.47897403,
+      "lat": 53.0232034,
+      "lng": -1.4790048,
       "place_name": "Belper: Central",
       "postcode": "DE56 1FZ",
       "premises_precision": "building",
@@ -9077,7 +9090,7 @@
       "lng": -1.555123,
       "place_name": "Horbury",
       "postcode": "WF4 6LP",
-      "premises_precision": "reference",
+      "premises_precision": "site",
       "pub_name": "Boons",
       "status": "verified_venue",
       "venue_id": "v-67971303-be87-57be-b71c-7594fc2db50e"
@@ -12546,7 +12559,7 @@
       "lng": -1.6291705,
       "place_name": "Burton U-T: Central",
       "postcode": "DE14 1JE",
-      "premises_precision": "site",
+      "premises_precision": "building",
       "pub_name": "Burton Constitutional Club (PMC)",
       "status": "verified_venue",
       "venue_id": "v-7b1892e4-b48c-5f5e-a463-5a8f08e40498"
@@ -24952,7 +24965,7 @@
       "lng": -1.2895454,
       "place_name": "Dunchurch",
       "postcode": "CV22 6NJ",
-      "premises_precision": "site",
+      "premises_precision": "building",
       "pub_name": "Dun Cow",
       "status": "verified_venue",
       "venue_id": "v-b55d886d-04ab-59cc-9c90-580abf4de786"
@@ -26600,10 +26613,11 @@
       },
       "place_name": "Ashby-de-la-Zouch",
       "postcode": "LE65 1AH",
-      "premises_precision": "building",
+      "premises_precision": "site",
       "pub_name": "Fitzgeralds",
       "status": "verified_venue",
-      "venue_id": "v-b1f768d3-f5ed-5eae-a199-6b21559ba452"
+      "venue_id": "v-b1f768d3-f5ed-5eae-a199-6b21559ba452",
+      "visitor_hint": "Look for Fitzgeralds at 60A Market Street. The pin marks the shared block."
     },
     "five bells|bassingham|ln5 9jz": {
       "coordinate_source": "openstreetmap-gb-extract",
@@ -37438,7 +37452,7 @@
       "lng": -2.1482014,
       "place_name": "Stoke: Blurton",
       "postcode": "ST3 2NQ",
-      "premises_precision": "site",
+      "premises_precision": "building",
       "pub_name": "John Marston",
       "status": "verified_venue",
       "venue_id": "v-a3668b7e-12cf-5f6b-861c-0e1de6581049"
@@ -42161,7 +42175,7 @@
       "lng": -3.0339572,
       "place_name": "New Brighton",
       "postcode": "CH45 1HP",
-      "premises_precision": "reference",
+      "premises_precision": "building",
       "pub_name": "Magazine Hotel",
       "status": "verified_venue",
       "venue_id": "v-c11c9064-4284-55d3-96b2-678183c5925e"
@@ -43310,7 +43324,7 @@
       "lng": -4.1447606,
       "place_name": "Tavistock",
       "postcode": "PL19 9BB",
-      "premises_precision": "site",
+      "premises_precision": "building",
       "pub_name": "Market Inn",
       "status": "verified_venue",
       "venue_id": "v-f7b45209-1b0e-5523-95d9-81f8739b35f0"
@@ -45681,7 +45695,7 @@
       "lng": -0.245115,
       "place_name": "Keelby",
       "postcode": "DN41 8EF",
-      "premises_precision": "site",
+      "premises_precision": "building",
       "pub_name": "Nags Head",
       "status": "verified_venue",
       "venue_id": "v-0977d392-c24b-5079-bfce-4e3aca2dbbab"
@@ -46351,7 +46365,7 @@
       },
       "place_name": "Brown Lees",
       "postcode": "ST8 6PH",
-      "premises_precision": "site",
+      "premises_precision": "building",
       "pub_name": "Nelson Inn",
       "status": "verified_venue",
       "venue_id": "v-baef8a0f-c094-5f52-a9c2-3a37df4ca657"
@@ -60146,7 +60160,7 @@
       "lng": -2.1759329,
       "place_name": "Biddulph",
       "postcode": "ST8 6BL",
-      "premises_precision": "site",
+      "premises_precision": "building",
       "pub_name": "Royal Oak",
       "status": "verified_venue",
       "venue_id": "v-a78f048e-9c8e-501e-abf7-0047e015bae7"
@@ -71662,7 +71676,7 @@
       "lng": -1.9190594,
       "place_name": "Rugeley: Bereton",
       "postcode": "WS15 1HR",
-      "premises_precision": "site",
+      "premises_precision": "building",
       "pub_name": "Trubshaws",
       "status": "verified_venue",
       "venue_id": "v-87d7e6a3-cfa9-5f8f-a743-d41c521cf28f"
@@ -71837,7 +71851,7 @@
       "venue_id": "v-bff85538-f1b1-5999-b7b3-7f22158dd686"
     },
     "twelve sixty|hoylake|ch47 2ae": {
-      "coordinate_source": "food-standards-agency-fhrs",
+      "coordinate_source": "reviewed-premises-location",
       "display_precision": "venue",
       "evidence": [
         {
@@ -71888,6 +71902,7 @@
         {
           "checked_at": "2026-11-13",
           "difference_metres": 14.4,
+          "disposition": "superseded_by_premises_review",
           "match": "venue_name_and_full_postcode",
           "reference_address": "2 Market Street",
           "reference_coordinate": {
@@ -71898,16 +71913,29 @@
           "reference_postcode": "CH47 2AE",
           "source": "camra",
           "url": "https://camra.org.uk/pubs/199177"
+        },
+        {
+          "checked_at": "2026-11-26",
+          "match": "named_venue_visitor_position",
+          "reference_coordinate": {
+            "lat": 53.391093265082,
+            "lng": -3.179009151435
+          },
+          "reference_name": "Twelve Sixty",
+          "reference_postcode": "CH47 2AE",
+          "source": "reviewed-premises-location",
+          "url": "https://camra.org.uk/pubs/twelve-sixty-hoylake-199177"
         }
       ],
-      "lat": 53.3909994,
-      "lng": -3.1791595,
+      "lat": 53.391093265082,
+      "lng": -3.179009151435,
       "place_name": "Hoylake",
       "postcode": "CH47 2AE",
-      "premises_precision": "building",
+      "premises_precision": "site",
       "pub_name": "Twelve Sixty",
       "status": "verified_venue",
-      "venue_id": "v-4898455e-2503-5f64-a125-2c4bd6530cd8"
+      "venue_id": "v-4898455e-2503-5f64-a125-2c4bd6530cd8",
+      "visitor_hint": "Look for Twelve Sixty on the Market Street frontage at 2 Market Street."
     },
     "twelve-sixty bar and lounge|liscard|ch44 5xh": {
       "coordinate_source": "food-standards-agency-fhrs",

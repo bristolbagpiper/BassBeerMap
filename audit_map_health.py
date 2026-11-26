@@ -38,7 +38,7 @@ def integrity_check(root=Path('.'), live_url='https://bassbeermap.com/directory-
         committed = read_json(root / 'directory-release.json')
         if not isinstance(live, dict) or live.get('schema_version') != 1:
             live_issues.append('The live map release schema is invalid')
-        elif live.get('release_id') != committed.get('release_id'):
+        elif live != committed:
             live_issues.append('The live map is not serving the committed release')
     except Exception as error:
         live_issues.append(f'The live map release could not be checked: {type(error).__name__}')
@@ -86,10 +86,10 @@ def health_audit(root, staging, limit=30, check_live=True):
     if check_live:
         try:
             live = json.loads(fetch_text('https://bassbeermap.com/directory-release.json'))
-            if live.get('release_id') != read_json(root / 'directory-release.json')['release_id']:
-                report['live_issues'].append('The live map is not serving the committed release')
-            if live.get('schema_version') != 1:
+            if not isinstance(live, dict) or live.get('schema_version') != 1:
                 report['live_issues'].append('The live map release schema is invalid')
+            elif live != read_json(root / 'directory-release.json'):
+                report['live_issues'].append('The live map is not serving the committed release')
         except Exception as error:
             report['live_issues'].append(f'The live map release could not be checked: {type(error).__name__}')
     for row in select_batch(rows, registry, state, limit):

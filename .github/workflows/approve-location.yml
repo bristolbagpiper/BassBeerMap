@@ -5,6 +5,7 @@ on:
     types: [created]
 
 permissions:
+  actions: write
   contents: write
   pages: write
   issues: write
@@ -17,7 +18,7 @@ jobs:
       queue: max
       cancel-in-progress: false
     runs-on: ubuntu-latest
-    timeout-minutes: 15
+    timeout-minutes: 45
     steps:
       - uses: actions/checkout@v4
         with:
@@ -36,6 +37,8 @@ jobs:
         run: python -m unittest discover -s tests -p test_frontend_smoke.py -v
       - name: Publish the validated review
         id: publication
+        env:
+          GH_TOKEN: ${{ github.token }}
         run: |
           python validate_directory_release.py --root candidate-approval --previous .
           python -c "from pathlib import Path; from shutil import copyfile; from directory_release import RELEASE_FILES; [copyfile(Path('candidate-approval') / name, name) for name in RELEASE_FILES]"
@@ -49,7 +52,7 @@ jobs:
           git config user.name 'github-actions[bot]'
           git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
           git commit -m 'Publish owner-reviewed venue location'
-          git push
+          python promote_checked_commit.py
           echo "state=published" >> "$GITHUB_OUTPUT"
           echo "commit=$(git rev-parse HEAD)" >> "$GITHUB_OUTPUT"
       - name: Deploy and verify GitHub Pages release

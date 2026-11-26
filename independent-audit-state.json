@@ -1867,8 +1867,8 @@
           "url": "https://ratings.food.gov.uk/business/234907"
         }
       ],
-      "confidence": "different_source_coordinates_agree",
-      "independent_of_pin": true,
+      "confidence": "existing_evidence_needs_corroboration",
+      "independent_of_pin": false,
       "listing": {
         "postcode": "DN41 8EF",
         "pub_name": "Nags Head"
@@ -10474,7 +10474,7 @@
       "comparisons": [
         {
           "address": "44 Market Place Belper Derbyshire",
-          "difference_metres": 9.8,
+          "difference_metres": 13.3,
           "lat": 53.023319,
           "lng": -1.478952,
           "name": "Black Swan",
@@ -10495,14 +10495,14 @@
       "owner_pin_confirmed": false,
       "owner_reviewed": false,
       "pin": {
-        "lat": 53.02323215,
-        "lng": -1.47897403
+        "lat": 53.0232034,
+        "lng": -1.4790048
       },
       "priority": 3,
       "reasons": [],
       "reference": {
         "address": "44 Market Place Belper Derbyshire",
-        "difference_metres": 9.8,
+        "difference_metres": 13.3,
         "lat": 53.023319,
         "lng": -1.478952,
         "name": "Black Swan",
@@ -13524,7 +13524,7 @@
       "comparisons": [
         {
           "address": "2A - 2B Market Street, , Hoylake, Wirral",
-          "difference_metres": 0.0,
+          "difference_metres": 14.4,
           "lat": 53.3909994,
           "lng": -3.1791595,
           "name": "Twelve Sixty Hoylake",
@@ -13545,14 +13545,14 @@
       "owner_pin_confirmed": false,
       "owner_reviewed": false,
       "pin": {
-        "lat": 53.3909994,
-        "lng": -3.1791595
+        "lat": 53.391093265082,
+        "lng": -3.179009151435
       },
       "priority": 3,
       "reasons": [],
       "reference": {
         "address": "2A - 2B Market Street, , Hoylake, Wirral",
-        "difference_metres": 0.0,
+        "difference_metres": 14.4,
         "lat": 53.3909994,
         "lng": -3.1791595,
         "name": "Twelve Sixty Hoylake",
@@ -19782,8 +19782,8 @@
           "url": "https://ratings.food.gov.uk/business/1105176"
         }
       ],
-      "confidence": "different_source_coordinates_agree",
-      "independent_of_pin": true,
+      "confidence": "existing_evidence_needs_corroboration",
+      "independent_of_pin": false,
       "listing": {
         "postcode": "WF4 6LP",
         "pub_name": "Boons"
@@ -22327,13 +22327,13 @@
       "comparisons": [
         {
           "address": "18-21 Swan Street, , Loughborough",
-          "difference_metres": 4.6,
+          "difference_metres": 27.2,
           "lat": 52.772641,
           "lng": -1.20771,
           "name": "Bell Foundry",
           "postcode": "LE11 5BL",
           "queried_postcode": "LE11 5BL",
-          "status": "coordinate_agreement",
+          "status": "nearby",
           "url": "https://ratings.food.gov.uk/business/75556"
         }
       ],
@@ -22348,25 +22348,27 @@
       "owner_pin_confirmed": false,
       "owner_reviewed": false,
       "pin": {
-        "lat": 52.7726,
-        "lng": -1.2077
+        "lat": 52.772465,
+        "lng": -1.2074296
       },
-      "priority": 3,
+      "priority": 2,
       "reasons": [],
       "reference": {
         "address": "18-21 Swan Street, , Loughborough",
-        "difference_metres": 4.6,
+        "difference_metres": 27.2,
         "lat": 52.772641,
         "lng": -1.20771,
         "name": "Bell Foundry",
         "postcode": "LE11 5BL",
         "queried_postcode": "LE11 5BL",
-        "status": "coordinate_agreement",
+        "status": "nearby",
         "url": "https://ratings.food.gov.uk/business/75556"
       },
       "review_category": "informational",
-      "status": "coordinate_agreement",
-      "warnings": []
+      "status": "nearby",
+      "warnings": [
+        "FSA coordinate is 25-50m away; informational only"
+      ]
     },
     "v-72b13551-8faa-53ec-8154-192e09b3a12c": {
       "actionable": false,
@@ -32507,8 +32509,8 @@
           "url": "https://ratings.food.gov.uk/business/2015129"
         }
       ],
-      "confidence": "different_source_coordinates_agree",
-      "independent_of_pin": true,
+      "confidence": "existing_evidence_needs_corroboration",
+      "independent_of_pin": false,
       "listing": {
         "postcode": "ST3 2NQ",
         "pub_name": "John Marston"
@@ -35906,8 +35908,8 @@
           "url": "https://ratings.food.gov.uk/business/209935"
         }
       ],
-      "confidence": "different_source_coordinates_agree",
-      "independent_of_pin": true,
+      "confidence": "existing_evidence_needs_corroboration",
+      "independent_of_pin": false,
       "listing": {
         "postcode": "CV22 6NJ",
         "pub_name": "Dun Cow"
@@ -36750,8 +36752,8 @@
           "url": "https://ratings.food.gov.uk/business/1559527"
         }
       ],
-      "confidence": "different_source_coordinates_agree",
-      "independent_of_pin": true,
+      "confidence": "existing_evidence_needs_corroboration",
+      "independent_of_pin": false,
       "listing": {
         "postcode": "ST8 6PH",
         "pub_name": "Nelson Inn"
@@ -42514,7 +42516,7 @@
         }
       ],
       "confidence": "existing_evidence_needs_corroboration",
-      "independent_of_pin": true,
+      "independent_of_pin": false,
       "listing": {
         "postcode": "DE56 1UP",
         "pub_name": "Arkwrights"
@@ -42524,8 +42526,8 @@
       "owner_pin_confirmed": false,
       "owner_reviewed": false,
       "pin": {
-        "lat": 53.0227293,
-        "lng": -1.4832821
+        "lat": 53.0226495,
+        "lng": -1.4832321000000002
       },
       "priority": 2,
       "reasons": [],

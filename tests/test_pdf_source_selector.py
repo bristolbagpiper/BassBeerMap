@@ -83,7 +83,9 @@ class PdfSourceSelectorTests(unittest.TestCase):
         self.assertNotIn('mv "$uploaded_pdf"', importer)
         self.assertIn("'mode': 'canonical_release'", Path(__file__).resolve().parents[1].joinpath('pdf_source_selector.py').read_text(encoding='utf-8'))
         ci = (repo / '.github' / 'workflows' / 'validate-coordinates.yml').read_text(encoding='utf-8')
-        self.assertIn('pip install pypdf==6.21.4', ci)
+        self.assertIn('pip install -r requirements.txt', ci)
+        self.assertRegex((repo / 'requirements.txt').read_text(encoding='utf-8'),
+                         r'(?m)^pypdf==[0-9]+(?:\.[0-9]+)+$')
         self.assertIn('python validate_directory_release.py --check-pdf', ci)
 
     def test_unchanged_source_guard_uses_event_baseline_and_selected_upload(self):

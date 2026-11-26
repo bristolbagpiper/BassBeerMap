@@ -11,8 +11,8 @@ A blue pin has accepted evidence. It does not guarantee the exact building or th
 Manual building confirmations are saved against the exact venue identity and
 coordinate. They are not postal-delivery or Bass-stock approvals. A recorded
 source-name variant is accepted only while its reviewed identity/address facts
-remain unchanged; a different business, address or point reopens review.
-Manual evidence still receives a freshness reminder after 180 days.
+remain unchanged; a different business, address or point reopens review. Age
+alone does not invalidate fingerprint-bound physical-location evidence.
 
 ## Full independent report
 
@@ -33,20 +33,19 @@ geocode cannot veto that CAMRA match. Conflicting postcodes, incomplete CAMRA
 coverage and ambiguous names stay in review. Existing accepted and owner-reviewed
 coordinates retain the movement and identity protections.
 
-## Recurring jobs
+## Scheduled integrity check and manual research
 
-- **Daily map validation** checks up to 45 rotating sources at 06:47 UTC. It checks the committed assets and live release, refreshes confirmed evidence and quarantines source conflicts under the existing policy.
-- **Hermes Google browser checks** run at 07:40 Europe/London. The native Windows job saves its results locally and publishes a filtered report to the same GitHub review as the directory and coordinate checks. The GitHub-hosted daily review flags an absent or stale handoff.
-- **Independent location audit** checks up to 45 FSA comparisons at 04:17 UTC. Oldest checks take precedence, so persistent conflicts do not starve the rotation.
-- A complete independent audit can also be started with the workflow's `full` option.
-- Changed actionable postcode/source conflicts, source outages and failed jobs use the existing review issue and SMTP notification pipeline. Unchanged issues stay quiet. Nearby and missing-name results remain visible in the full report for manual review.
+- **Map validation** runs daily at 06:47 UTC and can also be dispatched manually. It validates the committed release assets and reads the visitor-facing `directory-release.json` back from the live map. It has read-only repository permission and creates no candidate, publication, map state or alert state. A live mismatch fails the check for operator visibility; it does not send a venue email.
+- **Independent location audit** is manually dispatched, including its optional full-postcode comparison. It compares official FSA records without publishing changes to pins.
+- **Research unverified locations** is manually dispatched and retains a validated candidate artifact. A dispatch does not approve its suggested pins; publish a physical-location correction only through the owner-reviewed correction workflow.
+- A changed directory edition goes through `Update CSV From PDF`; an approved correction goes through `Apply reviewed location`. Rejected imports retain the previous release and open the separate `BassBeerMap update rejected` issue.
+- The Windows Hermes Google browser job remains a separate local operation until its own schedule is approved for change. Its receipt is not a publication or notification gate.
 
-The daily job fails on a live release mismatch, invalid schema or failed fetch,
-and records the result in `map-health-status.json` even when no safe candidate
-can be published. Notifications combine the latest saved health result with the
-location register. Repeated incidents stay quiet; a recovery produces one
-changed-state email. Valid source checks can still publish during a live-site
-failure. The review issue is owned by the notification workflow alone.
+Routine integrity checks do not refresh external evidence, create coordinate
+commits, write a health snapshot or trigger location notifications. Email is
+reserved for changed actionable venue questions and due public notices. Source
+warnings and live-map failures remain visible in their own run or report context
+without repeating already acknowledged venue decisions.
 
 Source checks use current accepted evidence. Superseded and historical readings
 remain in the registry but cannot validate a pin, supply a current address or
@@ -57,24 +56,25 @@ changed name, postcode or point still requires review.
 Provider diagnostics attach confirmation only to the URL actually checked;
 retained Google, FSA or other references are labelled `not_checked`.
 
-The current `hermes-browser` provider takes Google checks from Hermes and
-combines them with directory, map health, CAMRA and FSA evidence for alerts.
-The rest of this section describes the optional GitHub `places-api` provider.
+The `hermes-browser` provider takes Google checks from the local Hermes
+execution. It can be reviewed manually; the normal map integrity workflow and
+venue notification do not require its latest receipt. The rest of this section
+describes the optional GitHub `places-api` provider.
 To enable that provider, set the repository
 variable `GOOGLE_PLACES_ENABLED` to `true` and supply the Actions secret
 `GOOGLE_PLACES_API_KEY` for an appropriately enabled Google Places API project.
 Google billing, quotas and key restrictions must be configured for that project;
 there is no guarantee of free usage. Missing or disabled configuration records
-an explicit limitation in `google-places-status.json` and alerts through the
-existing review pipeline, while CAMRA and FSA work can continue.
+an explicit limitation in `google-places-status.json`; it does not create an
+owner email question.
 
 Google comparisons never automatically approve, quarantine, recolour or move a
 pin. Conflicts and unavailable comparisons need review. The separate
 `google-places-state.json` rotation and `google-places-status.json` snapshot
 persist even when the Google API fails partway through a batch. Their public
 content contains derived review flags and the directory's own listing fields,
-not copied Google names, addresses, coordinates or raw API responses. The same
-daily job uploads these files with its reports for seven days.
+not copied Google names, addresses, coordinates or raw API responses. Manual
+comparison runs may retain these files as workflow artifacts.
 
 Google Places may reuse information from CAMRA or other sources; a Google
 comparison does not establish independent provenance.
@@ -88,11 +88,9 @@ The 50-metre marker tolerance is corroboration, not proof of the exact building
 or current Bass availability. Missing configuration emits a workflow warning
 and a persistent review limitation, rather than reporting a Google pass.
 
-Notifications read main's current saved Google and map-health snapshots.
-Changed Google findings or configuration/provider problems create an alert;
-identical findings remain quiet despite new run IDs or dates, and recovery
-produces one changed-state alert. A Google failure does not suppress safe
-CAMRA publishing or replace the separate map-health result.
+Google findings and configuration/provider diagnostics remain available in
+their comparison artifact. They do not alter the owner-question email, repeat
+as venue questions on schedule changes, or gate map publication.
 
 Each notification rechecks the Google snapshot against the current directory's
 identity and pin signatures. Removed or changed pubs cannot retain an old

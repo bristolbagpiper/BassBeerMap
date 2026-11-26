@@ -7,32 +7,56 @@ from unittest.mock import MagicMock, patch
 
 from coordinate_sources import camra_reference, resolve_new_pin
 from directory_release import build_ledger, permanent_id, read_json, venue_key
-from location_review import build_review, fingerprint, format_report, load_health_status, with_health
+from location_review import (build_review, fingerprint, format_report, legacy_notification_fingerprint,
+                             load_health_status, notification_items, with_health)
 from notify_location_review import notify
 from tests.test_directory_release import row, pin
 
 
 class LocationTrackingTests(unittest.TestCase):
-    def test_health_alerts_deduplicate_and_send_one_recovery_with_mocked_smtp(self):
+    def test_documented_postcode_difference_reopens_when_location_or_reference_changes(self):
+        from location_review import postcode_issue_reviewed
+        venue = row()
+        checked = pin()
+        urls = ['https://ratings.food.gov.uk/business/123', 'https://example.org/contact']
+        issue = {'listed': venue['postcode'], 'reference': 'BS1 1XY', 'source_url': urls[0]}
+        checked['premises_review'] = {'venue_key': venue_key(venue), 'point': {k: checked[k] for k in ('lat', 'lng')},
+                                      'precision': 'building', 'checked_at': '2026-01-01', 'basis': 'Numbered pub building',
+                                      'building_url': 'https://www.openstreetmap.org/way/123', 'geometry_feature': 'way/123',
+                                      'sources': urls + ['https://www.openstreetmap.org/way/123'],
+                                      'postal_address': dict(issue, sources=urls)}
+        self.assertTrue(postcode_issue_reviewed(issue, checked, venue['pub_name'], venue))
+        self.assertFalse(postcode_issue_reviewed(dict(issue, reference='BS1 1ZZ'), checked, venue['pub_name'], venue))
+        self.assertFalse(postcode_issue_reviewed(issue, dict(checked, lat=51), venue['pub_name'], venue))
+
+    def test_health_and_pipeline_failures_do_not_change_owner_question_notifications(self):
         empty = dict(records={}, active_count=0, unverified_count=0)
         healthy = dict(schema_version=1, issues=[], run_id='10', checked_at='2026-10-31T10:00:00Z')
         self.assertEqual(with_health(empty, healthy)['health_checked_at'], healthy['checked_at'])
         failed = dict(schema_version=1, issues=['Live release unreachable: TimeoutError'], run_id='11')
+        actionable = dict(records={'venue-1': dict(active=True, manual_action_required=True,
+            pub_name='Example Inn', place_name='Bristol', postcode='BS1 1AA', review_category='needs_verification',
+            next_action='Corroborate missing evidence', reasons=['Location has not yet been independently verified'])},
+            active_count=1)
         settings = dict(SMTP_HOST='smtp.example.test', SMTP_USERNAME='test', SMTP_PASSWORD='test', ALERT_TO='test@example.test')
         with tempfile.TemporaryDirectory() as directory, patch.dict(os.environ, settings, clear=True):
             state = Path(directory) / 'delivery.json'
             smtp = MagicMock()
             smtp.return_value.__enter__.return_value.send_message.return_value = {}
-            self.assertFalse(notify(with_health(empty, None), state, smtp_factory=smtp))
+            self.assertFalse(notify(with_health(empty, None), state, failure_url='https://example.test/fail', smtp_factory=smtp))
             self.assertFalse(notify(with_health(empty, healthy), state, smtp_factory=smtp))
-            self.assertTrue(notify(with_health(empty, failed), state, smtp_factory=smtp))
+            self.assertTrue(notify(with_health(actionable, failed), state, failure_url='https://example.test/fail', smtp_factory=smtp))
             body = smtp.return_value.__enter__.return_value.send_message.call_args.args[0].get_content()
-            self.assertIn('Live release unreachable', body)
+            self.assertIn('Can you verify the mapped entrance or site for Example Inn?', body)
+            self.assertNotIn('Live release unreachable', body)
+            self.assertNotIn('TimeoutError', body)
+            noisy = copy.deepcopy(actionable)
+            noisy['records']['venue-1']['reasons'] = ['Location not verified', 'Verification source unavailable: timeout']
+            self.assertFalse(notify(with_health(noisy, failed), state, smtp_factory=smtp))
             later = dict(failed, run_id='12', checked_at='2026-11-01', run_url='https://example.test/12')
-            self.assertFalse(notify(with_health(empty, later), state, smtp_factory=smtp))
-            self.assertTrue(notify(with_health(empty, healthy), state, smtp_factory=smtp))
+            self.assertFalse(notify(with_health(actionable, later), state, failure_url='', smtp_factory=smtp))
             self.assertFalse(notify(with_health(empty, healthy), state, smtp_factory=smtp))
-            self.assertEqual(smtp.call_count, 2)
+            self.assertEqual(smtp.call_count, 1)
         self.assertEqual(empty, dict(records={}, active_count=0, unverified_count=0))
 
     def test_corrupt_or_unknown_health_status_fails_visibly(self):
@@ -73,13 +97,16 @@ class LocationTrackingTests(unittest.TestCase):
         self.assertEqual(removed['records'][identifier]['history'][-1]['status'], 'removed')
         self.assertEqual(len(removed['records'][identifier]['history']), 3)
 
-    def test_dates_do_not_duplicate_alerts_but_new_failure_reasons_do(self):
+    def test_dates_and_failure_reasons_do_not_change_the_owner_question(self):
         listing, registry, identifier = self.fixture()
         review = build_review([listing], registry, build_ledger([listing], registry))
         later = copy.deepcopy(review)
         later['records'][identifier]['last_checked'] = '2026-10-09'
         self.assertEqual(fingerprint(review), fingerprint(later))
         later['records'][identifier]['reasons'] = ['CAMRA coordinate disagrees']
+        self.assertEqual(fingerprint(review), fingerprint(later))
+        later['records'][identifier]['review_category'] = 'identity_check'
+        later['records'][identifier]['next_action'] = 'Check whether the named business changed'
         self.assertNotEqual(fingerprint(review), fingerprint(later))
 
     def test_fsa_failure_still_checks_camra_from_postcode_centre(self):
@@ -165,7 +192,7 @@ class LocationTrackingTests(unittest.TestCase):
             working = MagicMock()
             working.return_value.__enter__.return_value.send_message.return_value = {}
             self.assertTrue(notify(review, state, smtp_factory=working))
-            self.assertEqual(read_json(state)['email_fingerprint'], fingerprint(review))
+            self.assertEqual(read_json(state)['items']['venue:' + identifier]['pub_name'], review['records'][identifier]['pub_name'])
             self.assertFalse(notify(review, state, smtp_factory=working))
             self.assertEqual(working.call_count, 1)
 
@@ -177,6 +204,49 @@ class LocationTrackingTests(unittest.TestCase):
             with self.assertRaisesRegex(RuntimeError, 'missing'):
                 notify(review, state)
             self.assertFalse(state.exists())
+
+    def test_real_committed_snapshot_and_legacy_ack_replay_stays_quiet_for_diagnostics(self):
+        root = Path(__file__).resolve().parents[1]
+        report = read_json(root / 'location-review.json')
+        legacy = read_json(root / 'location-alert-state.json')
+        self.assertIn('email_fingerprint', legacy)
+        legacy.pop('items', None)
+        legacy.pop('schema_version', None)
+        replay = dict(report, health_issues=['Live release unreachable: TimeoutError'],
+                      google_issues=['Google comparison status is missing or stale'],
+                      google_findings=[], google_count=2, google_actionable_count=0,
+                      pipeline_failure=True)
+        legacy.pop('items', None)  # Reproduce the pre-migration aggregate-only receipt.
+        legacy['email_fingerprint'] = legacy_notification_fingerprint(replay)
+        with tempfile.TemporaryDirectory() as directory:
+            state = Path(directory) / 'state.json'
+            state.write_text(__import__('json').dumps(legacy), encoding='utf-8')
+            smtp = MagicMock()
+            self.assertFalse(notify(replay, state, failure_url='https://example.test/rejected-import', smtp_factory=smtp))
+            self.assertEqual(smtp.call_count, 0)
+            self.assertEqual(read_json(state)['items'], notification_items(replay))
+
+    def test_seeded_historical_receipt_stays_quiet_and_preserves_original_receipt(self):
+        root = Path(__file__).resolve().parents[1]
+        current = read_json(root / 'location-review.json')
+        bundle = read_json(root / 'directory-release.json')
+        from location_review import with_trading_notice_reviews
+        current = with_trading_notice_reviews(current, read_json(root / 'trading-notices.json'), bundle)
+        state_snapshot = read_json(root / 'location-alert-state.json')
+        self.assertEqual(len(state_snapshot['items']), 12)
+        current_items = notification_items(current)
+        self.assertEqual(len(current_items), 0)
+        self.assertFalse(set(state_snapshot['items']) & set(current_items))
+        smtp = MagicMock()
+        with tempfile.TemporaryDirectory() as directory:
+            state = Path(directory) / 'state.json'
+            state.write_text(__import__('json').dumps(state_snapshot), encoding='utf-8')
+            self.assertFalse(notify(current, state, smtp_factory=smtp))
+            self.assertEqual(smtp.call_count, 0)
+            migrated = read_json(state)
+            self.assertEqual(migrated['items'], {})
+            self.assertEqual(migrated['emailed_at'], state_snapshot['emailed_at'])
+            self.assertEqual(migrated['legacy_ack']['email_fingerprint'], state_snapshot['email_fingerprint'])
 
     def test_owner_postcode_review_resolves_only_exact_approved_case(self):
         listing, registry, identifier = self.fixture()

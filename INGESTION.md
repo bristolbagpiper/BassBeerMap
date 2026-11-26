@@ -6,7 +6,10 @@ Link a reviewed name or postcode change to the existing venue ID.
 
 ## Import gate
 
-The monthly/upload workflow downloads and converts the source PDF, then runs
+The weekly source-check/upload workflow downloads the source PDF before running
+the import pipeline; identical scheduled PDFs skip conversion and tests, while
+later source changes are picked up within a week. Uploads and deliberate
+manual reindex requests still run the release gate. The workflow then runs
 `ingest_directory.py` into `candidate-release/`. It never changes production
 data until candidate validation and candidate browser tests pass. CSV, venue
 registry, coordinates, evidence ledger, metadata and PDF are committed together.
@@ -25,9 +28,11 @@ additional address/coordinate comparison: missing records, outages and coordinat
 disagreements do not veto a clear CAMRA match. A postcode search centre never
 counts as venue-coordinate evidence. Unresolved venues retain an explicitly
 approximate postcode pin and a review queue entry, with CAMRA candidate discovery
-performed in the same import rather than waiting for the weekly research job.
+performed during the import. Additional research can be run manually.
 Source outages preserve existing pins; failures to locate a new postcode reject
-the release. Evidence older than 400 days cannot render as precise.
+the release. Accepted physical-location evidence remains tied to its recorded
+source, address and coordinate; age alone does not turn a known building into a
+postcode-centre pin.
 
 ## Review an identity or duplicate conflict
 
@@ -46,39 +51,32 @@ data/code commit, run release validation and browser tests, and preserve the old
 evidence in Git history. Remove `review_required` only after that human review.
 Do not automatically restore a pin that external checks disputed.
 
-## Daily validation
+## Scheduled integrity and manual research
 
 CAMRA and Google are the two main comparison sources; FSA supplies supporting
 information only. Google disagreements flag a manual review and never move a
 pin automatically. A CAMRA match is not a claim that Google has also checked it.
 
-`Daily map validation` runs every day at 06:47 UTC and supports manual dispatch.
-It also runs after each successful PDF import, against the current main release.
-Its historical filename is `weekly-map-validation.yml`. All GitHub cron times
-are UTC; London summer time is one hour later. Scheduled starts can be delayed.
-It validates every committed release asset and checks the live release ID. It
-then rotates through up to 45 external checks, prioritising older checks while
-reserving capacity for unresolved venues. This checks named addresses and
-coordinates, not just HTTP availability. It retains evidence on source outages
-and never changes a check date merely because a page responded successfully.
+`Map validation` runs daily at 06:47 UTC and supports manual dispatch. Its
+historical filename is `weekly-map-validation.yml`. All GitHub cron times are
+UTC; London summer time is one hour later. Scheduled starts can be delayed. It
+validates committed release assets and reads the visitor-facing release bundle
+back from the live map. It has read-only repository permission: it does not
+recheck sources, create candidate data, write map/alert state, publish, or send
+venue notifications. A live mismatch fails the integrity run visibly.
 
-Confirmed source disagreements quarantine precise pins to approximate locations;
-they never guess a replacement coordinate. Manual map evidence gets a review
-reminder after 180 days and expires after 400 days. Unsupported/changed sources,
-unresolved pins, stale evidence, live deployment mismatches and postcode conflicts
-appear in one GitHub review issue. Unchanged reports remain quiet; the issue is
-updated on meaningful changes and closed when resolved. Reports and staged
-assets are retained as workflow artifacts. Monthly change-report email remains
-available when SMTP secrets are configured.
+The FSA audit, CAMRA research, and Google comparisons remain manually usable.
+Research creates a validated candidate artifact only. It does not approve its
+proposed pins or publish them; physical-location corrections use the existing
+owner-reviewed correction workflow. Changed directory editions publish
+through the import workflow. Routine integrity checks do not move or refresh
+accepted physical evidence.
 
-Release validity and live health are separate results. A stale, unreachable or
-invalid live release fails the audit even when its candidate files are valid.
-Safe source checks can still be committed. `map-health-status.json` records the
-latest live/pipeline result separately from the release bundle; notifications
-read this durable status from current `main`, alongside the venue review queue.
-Repeated identical health problems stay quiet, while a changed problem or
-recovery is emailed once after SMTP accepts it. The daily job does not write a
-second competing version of the review issue.
+Release integrity and live serving are checked separately. An unreachable or
+invalid live release fails the integrity run, but it does not re-publish
+coordinate data or trigger a venue email. A genuinely rejected import creates
+its own durable `BassBeerMap update rejected` issue while retaining the
+previously published release.
 
 The `hermes-browser` provider combines the Windows Hermes Google checks with
 the existing GitHub location review. Hermes records browser evidence locally.
@@ -144,10 +142,9 @@ GitHub review run. Run `hermes_google_runner.py --state-dir <state-directory>
 --publish-only` outside the scheduler to retry a saved execution. Keep
 `--local-only` diagnostics in a separate state directory. Repeated
 evidence is published only when the bindings, findings or coverage change or
-the GitHub report needs a freshness update. GitHub suppresses unchanged email
-and records SMTP acceptance separately. Its own daily validation flags an
-absent report or a browser execution older than 48 hours, even if the Windows
-host has stopped running.
+the GitHub report needs a freshness update. GitHub records SMTP acceptance
+separately from inbox delivery. The scheduled map integrity check does not
+depend on receipt of this local browser execution.
 
 Keep the local observation journal and source URLs outside Git. The handoff
 publishes directory fields, derived review reasons and binding metadata.
@@ -155,28 +152,16 @@ Visitor-visible closure warnings require a separate dated finding for the
 exact displayed venue and pin. Hermes review findings require corroboration
 before any public listing or coordinate change.
 
-## Production acceptance after changes
+## Acceptance evidence after changes
 
 1. Run the affected tests and the existing browser, handoff and location
    notification tests. Compare venue IDs and displayed coordinates before and
    after any release or frontend change.
-2. For worker changes, install the tested commit and run the installer with
-   `--check`. Confirm job `1353548e1bb7` is the enabled 07:40 native job. Use
-   `hermes cron run 1353548e1bb7` for an acceptance run through that scheduler.
-3. Match the scheduler execution ID and installed revision in the native run
-   output. Check the 45-venue limit and the hashes in `last-run.json` against
-   `observations.json` and `hermes-google-status.json`. Require a matching
-   `publication-attempt.json` and its verified GitHub report commit, even for
-   `unchanged`. A successful browser batch alone is insufficient.
-4. Check daily validation and the consolidated review for the resulting public
-   report. For a changed report, follow the push-triggered review and compare
-   its email acknowledgement and primary inbox when an alert is due. For an
-   unchanged report check the existing review or run it against the currently
-   published report ID and confirm no repeat email. Exercise changed-finding
-   and deduplication cases with test data when production findings are unchanged.
-5. Open the live map, search for a venue and open its pin. For trading notice
+2. Any change to the native Hermes schedule is a separate operator action on
+   the exact fenced job; the GitHub integrity workflow does not own that job.
+3. Open the live map, search for a venue and open its pin. For trading notice
    changes, also check active, due and removed notice behaviour. Store the
-   commit, native execution, publication outcome and Actions run links.
+   commit and Actions run links.
 
 Trading notices are maintained in `trading-notices.json`. Dated notices show
 through `review_by` in UTC and then become a neutral prompt to check before
@@ -195,16 +180,25 @@ in the register. The candidate gate requires every approximate pin to appear in
 the active register. Lookup failures never mean a source has no listing unless
 that source was actually searched.
 
-`Location review notifications` runs after imports, daily audits, research and
-owner approvals, including
-failed runs, and can be dispatched manually. It updates the GitHub review issue
-and emails the configured `ALERT_TO` recipient using existing SMTP secrets.
-The initial report includes all outstanding locations; later emails cover new
-locations, changed failure reasons and resolutions. Identical outstanding reports
-remain quiet. `location-alert-state.json` records successful SMTP acceptance only;
-an exception or refused recipient leaves delivery unacknowledged for retry.
+`Location review notifications` runs after successful imports and owner
+approvals, on relevant source pushes (including notice-only changes), and can be
+dispatched manually. Rejected imports keep their separate `BassBeerMap update
+rejected` issue and do not enter the location-email loop. The notification run
+updates issue #5 with the current review queue and emails only newly changed
+owner questions or newly due public notices. Source outages, map-health and
+Google diagnostics, old history and cleared decisions do not create email
+questions. A changed venue is sent by itself; unrelated venue changes do not
+repeat already acknowledged questions. Clearing a decision prunes its email
+acknowledgement so a future recurrence can be sent again.
+
+`location-alert-state.json` records each question after successful SMTP server
+acceptance only; an exception or refused recipient leaves it unacknowledged for
+retry. A quiet run still records current cleared state but sends nothing.
 Notification failures fail visibly and open a separate GitHub issue. Successful
-recovery closes that issue. SMTP acceptance does not prove inbox delivery.
+delivery of a changed question closes that issue. SMTP acceptance does not
+prove inbox delivery. The daily map check keeps its read-only integrity schedule, while
+Google comparisons and the full independent FSA audit remain manually usable;
+weekly research is manual-only.
 
 Owner decisions also rebuild the independent report from saved comparisons,
 including when an acknowledgment was already applied. This updates derived

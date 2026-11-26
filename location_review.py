@@ -7,7 +7,9 @@ from datetime import date, datetime, timedelta, timezone
 from pathlib import Path
 
 from build_place_review_queue import digest, signatures
-from directory_release import active_evidence
+from urllib.parse import urlsplit
+
+from directory_release import active_evidence, premises_review_valid
 from owner_location_review import classify_review, current_confirmation, google_finding_assessment, pending_building_review
 
 
@@ -16,8 +18,16 @@ GOOGLE_STALE_STATUS_ISSUE = 'Google comparison status is missing or stale; rerun
 GOOGLE_CONFIGURATION_ISSUE = 'Google comparison is not configured; no live Google checks ran this time'
 
 
-def postcode_issue_reviewed(issue, pin, pub_name):
-    """A human decision covers only the exact postcode pair, venue and point."""
+def postcode_issue_reviewed(issue, pin, pub_name, row=None):
+    """Recognise the owner's decision or documented addresses for the same premises."""
+    if row and premises_review_valid(row, pin):
+        premises = pin['premises_review']
+        address = premises.get('postal_address') or {}
+        sources = address.get('sources') or []
+        if (premises['precision'] == 'building' and address.get('listed') == row.get('postcode') == issue.get('listed')
+                and address.get('reference') == issue.get('reference') and address.get('source_url') == issue.get('source_url')
+                and isinstance(sources, list) and len({urlsplit(u).hostname for u in sources if u in premises['sources']}) >= 2):
+            return True
     review = issue.get('owner_review') or {}
     compact = lambda value: str(value or '').replace(' ', '').upper()
     return bool(review.get('checked_at') and review.get('reviewed_by') and review.get('owner_instruction')
@@ -48,11 +58,11 @@ def build_review(rows, registry, ledger):
             reasons.append(pin.get('review_reason') or attempt.get('reason') or 'Location has not yet been independently verified')
         issue = pin.get('metadata_issue') or {}
         if (issue.get('listed', '').replace(' ', '').upper() != issue.get('reference', '').replace(' ', '').upper()
-                and not postcode_issue_reviewed(issue, pin, row['pub_name'])):
+                and not postcode_issue_reviewed(issue, pin, row['pub_name'], row)):
             reasons.append(f"Directory postcode {issue.get('listed')} conflicts with reference address {issue.get('reference')}")
         if attempt.get('status') == 'unavailable':
             reasons.append(f"Verification source unavailable: {attempt.get('reason', 'unknown error')}")
-        if attempt.get('status') == 'manual_review':
+        if attempt.get('status') == 'manual_review' and not premises_review_valid(row, pin):
             confirmation = current_confirmation(row, pin)
             dates = [e.get('checked_at', '') for e in active_evidence(pin)]
             if confirmation:
@@ -323,29 +333,85 @@ def with_google(report, status, current_bundle=None, now=None):
 
 
 def fingerprint(report, pipeline_failure=False):
-    # Check dates and repeated identical attempts do not create repeated emails.
-    active = {identifier: {k: r.get(k) for k in ('pub_name', 'place_name', 'postcode', 'status', 'reasons', 'review_category', 'manual_action_required')}
-              for identifier, r in report['records'].items() if r['active']}
-    for identifier, record in report['records'].items():
+    """Fingerprint only current owner decisions, not audit/provider state.
+
+    ``pipeline_failure`` remains accepted for old callers, but failures are
+    surfaced by the import workflow's dedicated rejected-import issue.
+    """
+    del pipeline_failure
+    return hashlib.sha256(json.dumps(notification_items(report), sort_keys=True).encode()).hexdigest()
+
+
+def legacy_notification_fingerprint(report):
+    """Rebuild the former aggregate email digest to migrate old acknowledgements."""
+    active = {identifier: {key: record.get(key) for key in (
+        'pub_name', 'place_name', 'postcode', 'status', 'reasons', 'review_category', 'manual_action_required')}
+        for identifier, record in report.get('records', {}).items() if record.get('active')}
+    for identifier, record in report.get('records', {}).items():
         if identifier not in active:
             continue
         research = record.get('research', {})
         if research.get('proposals'):
-            active[identifier]['proposals'] = [{k: p.get(k) for k in ('name', 'postcode', 'address', 'url', 'lat', 'lng')}
-                                               for p in research['proposals']]
+            active[identifier]['proposals'] = [{key: proposal.get(key) for key in (
+                'name', 'postcode', 'address', 'url', 'lat', 'lng')}
+                for proposal in research['proposals']]
         if research.get('status') == 'unavailable':
             active[identifier]['research_error'] = research.get('error')
     if report.get('health_issues'):
-        # Run IDs and timestamps are receipts, not new incidents.
         active['map_health'] = sorted(set(report['health_issues']))
     if report.get('google_issues') or report.get('google_findings'):
-        active['google_comparison'] = dict(issues=sorted(set(report.get('google_issues', []))),
+        active['google_comparison'] = dict(
+            issues=sorted(set(report.get('google_issues', []))),
             findings=sorted(report.get('google_findings', []), key=lambda finding: json.dumps(finding, sort_keys=True)))
     if report.get('trading_notice_reviews'):
         active['trading_notice_reviews'] = report['trading_notice_reviews']
-    if pipeline_failure:
-        active['pipeline_failure'] = True
     return hashlib.sha256(json.dumps(active, sort_keys=True).encode()).hexdigest()
+
+
+def notification_items(report):
+    """Return current actionable venue questions and due public notices only."""
+    items = {}
+    for identifier, record in report.get('records', {}).items():
+        if not record.get('active') or not record.get('manual_action_required', False):
+            continue
+        category = record.get('review_category', 'location_check')
+        if category == 'trading_check':
+            question = f"Can you confirm the current trading/Bass status for {record.get('pub_name', 'this venue')}?"
+        elif category == 'identity_check':
+            question = f"Can you confirm this is still the correct pub listing for {record.get('pub_name', 'this venue')}?"
+        elif category == 'address_metadata':
+            question = f"Can you confirm the correct address and postcode for {record.get('pub_name', 'this venue')}?"
+        else:
+            question = f"Can you verify the mapped entrance or site for {record.get('pub_name', 'this venue')}?"
+        item = {key: record.get(key, '') for key in ('pub_name', 'place_name', 'postcode', 'review_category')}
+        item['question'] = question
+        item['context'] = record.get('next_action') or 'Review the current listing evidence.'
+        items['venue:' + identifier] = item
+    for review in report.get('trading_notice_reviews', []):
+        identifier = str(review.get('venue_id', ''))
+        if not identifier:
+            continue
+        items['notice:' + identifier] = {
+            'pub_name': review.get('pub_name', ''),
+            'place_name': review.get('place_name', ''),
+            'postcode': '',
+            'review_category': 'trading_notice',
+            'question': f"Can you confirm whether the public trading notice for {review.get('pub_name', 'this venue')} is still accurate?",
+            'context': f"The notice review date was {review.get('review_by', 'not recorded')}; update or withdraw it after checking current trading evidence.",
+        }
+    return items
+
+
+def format_notification(items):
+    """Render only newly changed owner questions; omit diagnostics and history."""
+    lines = ['These changed items need an owner decision. Reply in the coordinate review issue after checking the current evidence.', '']
+    for key, item in sorted(items.items(), key=lambda pair: (pair[1].get('pub_name', '').casefold(), pair[0])):
+        location = ' — '.join(part for part in (item.get('place_name'), item.get('postcode')) if part)
+        title = item.get('pub_name') or key
+        lines += [f"## {title}" + (f" — {location}" if location else ''), '',
+                  'Question: ' + item['question'], '', item['context'], '']
+    lines.append('Review queue: https://github.com/bristolbagpiper/BassBeerMap/issues/5')
+    return '\n'.join(lines)
 
 
 def with_trading_notice_reviews(report, notices, bundle, today=None):

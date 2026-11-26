@@ -1,16 +1,16 @@
 {
   "venues": {
     "1852 brewery co|leicester: south wigston|le18 2dh": {
-      "audit_reason": "postcode_fallback_replaced",
-      "checked_at": "2026-09-11",
-      "lat": 52.581962,
-      "lng": -1.12209,
-      "previous_difference_metres": 38.7,
-      "previous_lat": 52.581852,
-      "previous_lng": -1.121546,
-      "previous_source": "postcode",
-      "source": "camra-pubs-location-audit",
-      "source_url": "https://camra.org.uk/pubs/174102"
+      "audit_reason": "The venue address is 2 Station Road. Its mapped address and reviewed premises identify this building; the former point was outside it.",
+      "checked_at": "2026-11-26",
+      "lat": 52.5818044,
+      "lng": -1.12227925,
+      "previous_difference_metres": 21.7,
+      "previous_lat": 52.581962,
+      "previous_lng": -1.12209,
+      "previous_source": "camra-pubs-location-audit",
+      "source": "reviewed-premises-location",
+      "source_url": "https://www.openstreetmap.org/way/490291463"
     },
     "45 club (pmc)|newcastle-u-l: central|st5 1ds": {
       "audit_reason": "manual_named_place_address_and_map_check",
@@ -71,16 +71,16 @@
       "source_url": "https://www.openstreetmap.org/way/142457116"
     },
     "anchorage hotel|four mile bridge (anglesey)|ll65 2ez": {
-      "audit_reason": "existing_pin_over_50m_from_matching_venue",
-      "checked_at": "2026-09-11",
-      "lat": 53.2723,
-      "lng": -4.58746,
-      "previous_difference_metres": 52.4,
-      "previous_lat": 53.271851172727274,
-      "previous_lng": -4.587698572727273,
-      "previous_source": "openstreetmap-gb-extract",
-      "source": "camra-pubs-location-audit",
-      "source_url": "https://camra.org.uk/pubs/146181"
+      "audit_reason": "The selling agent identifies the main hotel block as containing both bars. The named public house is the large detached building on Kingsland Road. The separate named hotel location falls within four metres of its outline; the previous pin was on a different small building.",
+      "checked_at": "2026-11-26",
+      "lat": 53.27191195,
+      "lng": -4.58758839,
+      "previous_difference_metres": 44.0,
+      "previous_lat": 53.2723,
+      "previous_lng": -4.58746,
+      "previous_source": "camra-pubs-location-audit",
+      "source": "reviewed-premises-location",
+      "source_url": "https://www.openstreetmap.org/way/518866363"
     },
     "anchor|plungar|ng13 0jj": {
       "audit_reason": "existing_pin_over_50m_from_matching_venue",
@@ -242,19 +242,16 @@
       "source_url": "https://www.google.com/maps/search/?api=1&query=Binary+Mickleover+DE3+0GR"
     },
     "black cat bar|liverpool: central|l1 4jn": {
-      "audit_reason": "manual_named_place_address_and_map_check",
-      "checked_at": "2026-10-21",
-      "lat": 53.4016502,
-      "lng": -2.9796419,
-      "previous_difference_metres": 128.1,
-      "previous_lat": 53.4022,
-      "previous_lng": -2.98134,
-      "previous_source": "camra-pubs-location-audit",
-      "reference_address": "25 Parr St, Liverpool L1 4JN",
-      "reference_name": "Black Cat Parr Street",
-      "review_note": "Repository owner confirmed the named-place marker and full address in issue #5.",
-      "source": "google-maps-named-place",
-      "source_url": "https://www.google.com/maps/place/Black+Cat+Parr+Street/@53.4016502,-2.9822168,512m/data=!3m2!1e3!4b1!4m14!1m7!3m6!1s0x487b21e290e5b141:0xf01add51fe76ea7!2sBlack+Cat+Parr+Street!8m2!3d53.4016502!4d-2.9796419!16s%2Fg%2F11zkc1n1lr!3m5!1s0x487b21e290e5b141:0xf01add51fe76ea7!8m2!3d53.4016502!4d-2.9796419!16s%2Fg%2F11zkc1n1lr?entry=ttu&g_ep=EgoyMDI2MTAxOC4wIKXMDSoASAFQAw%3D%3D"
+      "audit_reason": "The venue address is 25 Parr Street. Its mapped address and reviewed premises identify this building; the former point was outside it.",
+      "checked_at": "2026-11-26",
+      "lat": 53.4017711,
+      "lng": -2.9795014,
+      "previous_difference_metres": 16.4,
+      "previous_lat": 53.4016502,
+      "previous_lng": -2.9796419,
+      "previous_source": "google-maps-named-place",
+      "source": "reviewed-premises-location",
+      "source_url": "https://www.openstreetmap.org/way/208578883"
     },
     "black horse|appleby magna|de12 7ah": {
       "audit_reason": "reviewed_named_building_and_camra_address",
@@ -347,16 +344,16 @@
       "source_url": "https://camra.org.uk/pubs/145886"
     },
     "boat|cromford|de4 3qf": {
-      "audit_reason": "existing_pin_over_250m_from_matching_venue",
-      "checked_at": "2026-09-11",
-      "lat": 53.108998,
-      "lng": -1.560742,
-      "previous_difference_metres": 2845.2,
-      "previous_lat": 53.1185340881348,
-      "previous_lng": -1.60029995441437,
-      "previous_source": "food-standards-agency-fhrs",
-      "source": "camra-pubs-location-audit",
-      "source_url": "https://camra.org.uk/pubs/165756"
+      "audit_reason": "Named premises footprint and separately located venue reference coincide on the same imaged roof. Adjusted the former edge or approach point into the mapped building.",
+      "checked_at": "2026-11-26",
+      "lat": 53.10895,
+      "lng": -1.56069876,
+      "previous_difference_metres": 6.1,
+      "previous_lat": 53.108998,
+      "previous_lng": -1.560742,
+      "previous_source": "camra-pubs-location-audit",
+      "source": "reviewed-premises-location",
+      "source_url": "https://www.openstreetmap.org/way/274268759"
     },
     "boot|melbourne|de73 8fe": {
       "audit_reason": "postcode_fallback_replaced",
@@ -477,28 +474,28 @@
       "source_url": "https://www.google.com/maps/search/?api=1&query=Bucknall+Bowling+Recreation+Club"
     },
     "bulls head|beaumaris|ll58 8ap": {
-      "audit_reason": "manual_named_place_address_and_map_check",
-      "checked_at": "2026-09-13",
-      "lat": 53.2634289,
-      "lng": -4.0919821,
-      "previous_source": "postcode",
-      "reference_address": "20 Castle St, Beaumaris LL58 8AP",
-      "reference_name": "The Bull's Head Inn",
-      "review_note": "name place and full postcode agree",
-      "source": "google-maps-named-place",
-      "source_url": "https://www.google.com/maps/search/?api=1&query=Bulls+Head+Beaumaris+LL58+8AP"
+      "audit_reason": "Operator map and named bilingual hotel footprint on Castle Street. Former point is inside the numbered newsagent building.",
+      "checked_at": "2026-11-26",
+      "lat": 53.26370325,
+      "lng": -4.09178646,
+      "previous_difference_metres": 33.2,
+      "previous_lat": 53.2634289,
+      "previous_lng": -4.0919821,
+      "previous_source": "google-maps-named-place",
+      "source": "reviewed-premises-location",
+      "source_url": "https://www.openstreetmap.org/way/303689684"
     },
     "burton albion fc (fan zone)|burton u-t: central|de13 0ar": {
-      "audit_reason": "manual_named_place_address_and_map_check",
-      "checked_at": "2026-09-13",
-      "lat": 52.8215623,
-      "lng": -1.627267,
-      "previous_source": "postcode",
-      "reference_address": "Pirelli Stadium, Princess Way, Burton-on-Trent DE13 0AR",
-      "reference_name": "Burton Albion Football Club",
-      "review_note": "fan zone located at named stadium; full postcode agrees",
-      "source": "google-maps-named-place",
-      "source_url": "https://www.google.com/maps/search/?api=1&query=Burton+Albion+Football+Club+DE13+0AR"
+      "audit_reason": "Visitor arrival point at the junction of Princess Way and the stadium driveway. Club directions identify the right-hand entrance from the Derby Road roundabout. The mapped driveway connects directly to parking beside the club’s artificial pitch. The previous pin was inside the stadium shell.",
+      "checked_at": "2026-11-26",
+      "lat": 52.8232352,
+      "lng": -1.6290547,
+      "previous_difference_metres": 221.4,
+      "previous_lat": 52.8215623,
+      "previous_lng": -1.627267,
+      "previous_source": "google-maps-named-place",
+      "source": "reviewed-premises-location",
+      "source_url": "https://www.openstreetmap.org/node/262570192"
     },
     "burton golf club (pmc)|bretby|de15 0ps": {
       "audit_reason": "manual_named_place_address_and_map_check",
@@ -985,16 +982,16 @@
       "source_url": "https://camra.org.uk/pubs/124011"
     },
     "dambusters|scampton|ln1 2sd": {
-      "audit_reason": "postcode_fallback_replaced",
-      "checked_at": "2026-09-11",
-      "lat": 53.301701234865,
-      "lng": -0.57235232548828,
-      "previous_difference_metres": 15.4,
-      "previous_lat": 53.301592,
-      "previous_lng": -0.572495,
-      "previous_source": "postcode",
-      "source": "camra-pubs-location-audit",
-      "source_url": "https://camra.org.uk/pubs/191819"
+      "audit_reason": "The venue address is 23 High Street. Its mapped address and reviewed premises identify this building; the former point was outside it.",
+      "checked_at": "2026-11-26",
+      "lat": 53.30160905,
+      "lng": -0.57247789,
+      "previous_difference_metres": 13.2,
+      "previous_lat": 53.301701234865,
+      "previous_lng": -0.57235232548828,
+      "previous_source": "camra-pubs-location-audit",
+      "source": "reviewed-premises-location",
+      "source_url": "https://www.openstreetmap.org/way/1290900779"
     },
     "dead dove|worcester: central|wr1 2lt": {
       "audit_reason": "manual_named_place_address_and_map_check",
@@ -1132,16 +1129,16 @@
       "source_url": "https://www.google.com/maps/place/The+Earl+of+Chesterfield/@52.9754979,-1.012228,40m/data=!3m1!1e3!4m6!3m5!1s0x4879c617eaf89019:0x5398220fe768072f!8m2!3d52.9755234!4d-1.0120792!16s%2Fg%2F1v2yyd3r?entry=ttu&g_ep=EgoyMDI2MTAxOS4wIKXMDSoASAFQAw%3D%3D"
     },
     "ecclian|eccleshall|st21 6bw": {
-      "audit_reason": "postcode_fallback_replaced",
-      "checked_at": "2026-09-11",
-      "lat": 52.859517,
-      "lng": -2.253492,
-      "previous_difference_metres": 9.8,
-      "previous_lat": 52.85943,
-      "previous_lng": -2.253513,
-      "previous_source": "postcode",
-      "source": "camra-pubs-location-audit",
-      "source_url": "https://camra.org.uk/pubs/145994"
+      "audit_reason": "The venue address is 27 High Street. Its mapped address and reviewed premises identify this building; the former point was outside it.",
+      "checked_at": "2026-11-26",
+      "lat": 52.8594507,
+      "lng": -2.25352797,
+      "previous_difference_metres": 7.8,
+      "previous_lat": 52.859517,
+      "previous_lng": -2.253492,
+      "previous_source": "camra-pubs-location-audit",
+      "source": "reviewed-premises-location",
+      "source_url": "https://www.openstreetmap.org/way/493397415"
     },
     "engine inn|kenilworth|cv8 2hp": {
       "audit_reason": "existing_pin_over_50m_from_matching_venue",
@@ -1248,16 +1245,16 @@
       "source_url": "https://www.openstreetmap.org/node/910436401"
     },
     "george|youlgrave|de45 1uw": {
-      "audit_reason": "manual_named_place_address_and_map_check",
-      "checked_at": "2026-09-13",
-      "lat": 53.1762642,
-      "lng": -1.684656,
-      "previous_source": "postcode",
-      "reference_address": "Alport Lane, Youlgreave DE45 1WN",
-      "reference_name": "George Hotel Youlgreave",
-      "review_note": "listing postcode conflicts; exact name and village agree",
-      "source": "google-maps-named-place",
-      "source_url": "https://www.google.com/maps/search/?api=1&query=George+Hotel+Youlgreave"
+      "audit_reason": "Named premises footprint and separately located venue reference coincide on the same imaged roof. Adjusted the former edge or approach point into the mapped building.",
+      "checked_at": "2026-11-26",
+      "lat": 53.1763412,
+      "lng": -1.68479647,
+      "previous_difference_metres": 12.7,
+      "previous_lat": 53.1762642,
+      "previous_lng": -1.684656,
+      "previous_source": "google-maps-named-place",
+      "source": "reviewed-premises-location",
+      "source_url": "https://www.openstreetmap.org/way/325413624"
     },
     "gj muckers|macclesfield|sk11 6jl": {
       "audit_reason": "manual_address_and_map_review",
@@ -1324,16 +1321,16 @@
       "source_url": "https://camra.org.uk/pubs/131752"
     },
     "half moon|durham|dh1 3aq": {
-      "audit_reason": "existing_pin_over_250m_from_matching_venue",
-      "checked_at": "2026-09-11",
-      "lat": 54.7754675,
-      "lng": -1.5722234,
-      "previous_difference_metres": 11111.9,
-      "previous_lat": 54.6766662,
-      "previous_lng": -1.5981799,
-      "previous_source": "openstreetmap",
-      "source": "camra-pubs-location-audit",
-      "source_url": "https://camra.org.uk/pubs/186933"
+      "audit_reason": "The venue address is 86 New Elvet. Its mapped address and reviewed premises identify this building; the former point was outside it.",
+      "checked_at": "2026-11-26",
+      "lat": 54.7755613,
+      "lng": -1.57238961,
+      "previous_difference_metres": 14.9,
+      "previous_lat": 54.7754675,
+      "previous_lng": -1.5722234,
+      "previous_source": "camra-pubs-location-audit",
+      "source": "reviewed-premises-location",
+      "source_url": "https://www.openstreetmap.org/way/253513707"
     },
     "hanging gate|higher sutton|sk11 0ng": {
       "checked_at": "2026-09-08",
@@ -1371,16 +1368,16 @@
       "source_url": "https://camra.org.uk/pubs/151911"
     },
     "hen and chickens|islington n1|n1 2na": {
-      "audit_reason": "postcode_fallback_replaced",
-      "checked_at": "2026-09-11",
-      "lat": 51.54597,
-      "lng": -0.10205,
-      "previous_difference_metres": 47.4,
-      "previous_lat": 51.54605,
-      "previous_lng": -0.101377,
-      "previous_source": "postcode",
-      "source": "camra-pubs-location-audit",
-      "source_url": "https://camra.org.uk/pubs/124673"
+      "audit_reason": "The venue address is 109 St. Paul's Road. Its mapped address and reviewed premises identify this building; the former point was outside it.",
+      "checked_at": "2026-11-26",
+      "lat": 51.5460155,
+      "lng": -0.10194854,
+      "previous_difference_metres": 8.6,
+      "previous_lat": 51.54597,
+      "previous_lng": -0.10205,
+      "previous_source": "camra-pubs-location-audit",
+      "source": "reviewed-premises-location",
+      "source_url": "https://www.openstreetmap.org/way/32445594"
     },
     "hesketh arms|rufford|l40 1sb": {
       "audit_reason": "reviewed_named_building_and_camra_address",
@@ -1549,16 +1546,16 @@
       "source_url": "https://www.openstreetmap.org/way/320753965"
     },
     "jolly sailor|hemington|de74 2rb": {
-      "audit_reason": "existing_pin_over_50m_from_matching_venue",
-      "checked_at": "2026-09-11",
-      "lat": 52.847,
-      "lng": -1.3247,
-      "previous_difference_metres": 55.6,
-      "previous_lat": 52.84726659411765,
-      "previous_lng": -1.3254003823529412,
-      "previous_source": "openstreetmap-gb-extract",
-      "source": "camra-pubs-location-audit",
-      "source_url": "https://camra.org.uk/pubs/171387"
+      "audit_reason": "Published point is 42.7 m from the mapped named Jolly Sailor pub footprint and lies within a separate mapped dwelling. The council appraisal documents the pub and records that an attached outbuilding at 23A/23B Main Street was replaced with dwellings; it does not establish that the specific dwelling polygon under the pin is one of them. Operator and FSA confirm the pub identity and 21 Main Street address. The named pub building is the best-supported premises location",
+      "checked_at": "2026-11-26",
+      "lat": 52.84731312,
+      "lng": -1.325444,
+      "previous_difference_metres": 60.9,
+      "previous_lat": 52.847,
+      "previous_lng": -1.3247,
+      "previous_source": "camra-pubs-location-audit",
+      "source": "reviewed-premises-location",
+      "source_url": "https://www.openstreetmap.org/way/463139722"
     },
     "kenilworth sporting ground|kenilworth|cv8 1fa": {
       "audit_reason": "manual_named_place_address_and_map_check",
@@ -1725,15 +1722,16 @@
       "source_url": "https://www.google.com/maps/place/The+Malt+Shovel+Tavern/@52.2329507,-0.8973703,163m/data=!3m1!1e3!4m6!3m5!1s0x48770edfafba4b91:0xbcb3ad9f0895d610!8m2!3d52.2330589!4d-0.8969778!16s%2Fg%2F1tmxqhxy?entry=ttu&g_ep=EgoyMDI2MTAyMC4wIKXMDSoASAFQAw%3D%3D"
     },
     "man in space|stoke: trentham|st4 8pz": {
-      "audit_reason": "reviewed_named_building_and_camra_address",
-      "checked_at": "2026-11-04",
-      "lat": 52.97037072,
-      "lng": -2.19064938,
-      "reference_address": "New Inn Lane",
-      "reference_name": "Man In Space",
-      "review_note": "The named Man in Space pub building on New Inn Lane is approximately 90 metres from the saved point.",
-      "source": "reviewed-named-building",
-      "source_url": "https://www.openstreetmap.org/way/237417987"
+      "audit_reason": "Operator-published venue coordinate falls within the mapped pub building. Former point was outside.",
+      "checked_at": "2026-11-26",
+      "lat": 52.9704025,
+      "lng": -2.19087595,
+      "previous_difference_metres": 15.6,
+      "previous_lat": 52.97037072,
+      "previous_lng": -2.19064938,
+      "previous_source": "reviewed-named-building",
+      "source": "reviewed-premises-location",
+      "source_url": "https://www.openstreetmap.org/way/232538992"
     },
     "manor house|quorn|le12 8al": {
       "audit_reason": "named_building_footprint_and_independent_address",
@@ -1827,16 +1825,16 @@
       "source_url": "https://www.google.com/maps/place/Milford+Social+Club/@53.0027926,-1.4805613,113m/data=!3m1!1e3!4m6!3m5!1s0x4879f30d3be736e7:0xa35191fd161dbc93!8m2!3d53.002819!4d-1.4804092!16s%2Fg%2F11clsg50h9?entry=ttu"
     },
     "monro|liverpool: central|l1 5ag": {
-      "audit_reason": "existing_pin_over_50m_from_matching_venue",
-      "checked_at": "2026-09-11",
-      "lat": 53.401,
-      "lng": -2.97988,
-      "previous_difference_metres": 60.4,
-      "previous_lat": 53.40122065,
-      "previous_lng": -2.9807132375,
-      "previous_source": "openstreetmap-gb-extract",
-      "source": "camra-pubs-location-audit",
-      "source_url": "https://camra.org.uk/pubs/166467"
+      "audit_reason": "The public point lies in a different building 54.1 m from the named pub. The operator and licensing register identify Duke Street and the heritage point lies in the pub.",
+      "checked_at": "2026-11-26",
+      "lat": 53.40131064,
+      "lng": -2.98063408,
+      "previous_difference_metres": 60.8,
+      "previous_lat": 53.401,
+      "previous_lng": -2.97988,
+      "previous_source": "camra-pubs-location-audit",
+      "source": "reviewed-premises-location",
+      "source_url": "https://www.openstreetmap.org/way/279397319"
     },
     "moorland inn|stoke: burslem|st6 1jp": {
       "audit_reason": "reviewed_named_building_and_camra_address",
@@ -1912,29 +1910,28 @@
       "source_url": "https://www.openstreetmap.org/way/136939713"
     },
     "navigation|burton u-t: horninglow|de14 2pt": {
-      "audit_reason": "existing_pin_over_50m_from_matching_venue",
-      "checked_at": "2026-09-11",
-      "lat": 52.8184,
-      "lng": -1.6397,
-      "previous_difference_metres": 140.8,
-      "previous_lat": 52.8171501159668,
-      "previous_lng": -1.63936495780945,
-      "previous_source": "food-standards-agency-fhrs",
-      "source": "camra-pubs-location-audit",
-      "source_url": "https://camra.org.uk/pubs/123939"
+      "audit_reason": "Proposed point uses named pub POI coordinates (52.8180569,-1.6397123), independently checked inside the linked building outline. OSM maps the footprint as residential, so the point is a source POI location inside a linked outline; exact bar entrance remains unverified.",
+      "checked_at": "2026-11-26",
+      "lat": 52.8180569,
+      "lng": -1.6397123,
+      "previous_difference_metres": 38.2,
+      "previous_lat": 52.8184,
+      "previous_lng": -1.6397,
+      "previous_source": "camra-pubs-location-audit",
+      "source": "reviewed-premises-location",
+      "source_url": "https://www.openstreetmap.org/way/717058350"
     },
     "navigation|shardlow|de72 2wa": {
-      "audit_reason": "manual_named_place_address_and_map_check",
-      "checked_at": "2026-09-13",
-      "corroborating_source_url": "https://navigationinnshardlow.com/",
-      "lat": 52.868029,
-      "lng": -1.342615,
-      "previous_source": "postcode",
-      "reference_address": "143 London Road, Shardlow DE72 2HA",
-      "reference_name": "Navigation Inn",
-      "review_note": "listing postcode is wrong; exact name village official address and CAMRA point agree",
-      "source": "camra-and-official-address",
-      "source_url": "https://camra.org.uk/pubs/navigation-inn-shardlow-143265"
+      "audit_reason": "The venue address is 143 London Road. Its mapped address and reviewed premises identify this building; the former point was outside it.",
+      "checked_at": "2026-11-26",
+      "lat": 52.8680732,
+      "lng": -1.3425077,
+      "previous_difference_metres": 8.7,
+      "previous_lat": 52.868029,
+      "previous_lng": -1.342615,
+      "previous_source": "camra-and-official-address",
+      "source": "reviewed-premises-location",
+      "source_url": "https://www.openstreetmap.org/way/254669319"
     },
     "needle and pin|loughborough|le11 5bg": {
       "audit_reason": "manual_named_place_address_and_map_check",
@@ -2529,20 +2526,16 @@
       "source_url": "https://www.myhospitalitysolutions.co.uk/properties/3033/robin-hood-swannington"
     },
     "rock inn|porthcawl|cf36 3dt": {
-      "audit_reason": "manual_named_place_address_and_map_check",
-      "checked_at": "2026-10-28",
-      "corroborating_source_url": "",
-      "lat": 51.4799265,
-      "lng": -3.7031654,
+      "audit_reason": "The venue address is 98 John Street. Its mapped address and reviewed premises identify this building; the former point was outside it.",
+      "checked_at": "2026-11-26",
+      "lat": 51.4798301,
+      "lng": -3.70327355,
       "previous_difference_metres": 13.1,
-      "previous_lat": 51.4798128,
-      "previous_lng": -3.7031183,
-      "previous_source": "openstreetmap-gb-extract",
-      "reference_address": "THE ROCK INN, 98 John St, Porthcawl CF36 3DT",
-      "reference_name": "The Rock Inn",
-      "review_note": "Repository owner confirmed the named-place marker and full address in issue #5.",
-      "source": "google-maps-named-place",
-      "source_url": "https://www.google.com/maps/place/The+Rock+Inn/@51.4799265,-3.7031654,535m/data=!3m2!1e3!4b1!4m6!3m5!1s0x486e65675ce64593:0xcd971b770bb4cff2!8m2!3d51.4799265!4d-3.7031654!16s%2Fg%2F1th0mb14"
+      "previous_lat": 51.4799265,
+      "previous_lng": -3.7031654,
+      "previous_source": "google-maps-named-place",
+      "source": "reviewed-premises-location",
+      "source_url": "https://www.openstreetmap.org/way/1291582855"
     },
     "roebuck inn|forsbrook|st11 9bx": {
       "audit_reason": "existing_pin_over_50m_from_matching_venue",
@@ -2557,16 +2550,16 @@
       "source_url": "https://camra.org.uk/pubs/143885"
     },
     "roebuck|burton u-t: central|de14 1bt": {
-      "audit_reason": "existing_pin_over_50m_from_matching_venue",
-      "checked_at": "2026-09-11",
-      "lat": 52.805907701845,
-      "lng": -1.639602011657,
-      "previous_difference_metres": 123.0,
-      "previous_lat": 52.805305480957,
-      "previous_lng": -1.63806796073914,
-      "previous_source": "food-standards-agency-fhrs",
-      "source": "camra-pubs-location-audit",
-      "source_url": "https://camra.org.uk/pubs/123922"
+      "audit_reason": "The venue address is 101 Station Street. Its mapped address and reviewed premises identify this building; the former point was outside it.",
+      "checked_at": "2026-11-26",
+      "lat": 52.8058842,
+      "lng": -1.63999514,
+      "previous_difference_metres": 26.6,
+      "previous_lat": 52.805907701845,
+      "previous_lng": -1.639602011657,
+      "previous_source": "camra-pubs-location-audit",
+      "source": "reviewed-premises-location",
+      "source_url": "https://www.openstreetmap.org/way/320317638"
     },
     "royal air forces association (pmc)|yeadon|ls19 7na": {
       "audit_reason": "manual_named_place_address_and_map_check",
@@ -2971,16 +2964,16 @@
       "source_url": "https://www.openstreetmap.org/node/30215958"
     },
     "swan|draycott-in-the-clay|de6 5gz": {
-      "audit_reason": "existing_pin_over_250m_from_matching_venue",
-      "checked_at": "2026-09-11",
-      "lat": 52.8571,
-      "lng": -1.7697,
-      "previous_difference_metres": 340.8,
-      "previous_lat": 52.8540420532227,
-      "previous_lng": -1.77004098892212,
-      "previous_source": "food-standards-agency-fhrs",
-      "source": "camra-pubs-location-audit",
-      "source_url": "https://camra.org.uk/pubs/123979"
+      "audit_reason": "Named premises footprint and separately located venue reference coincide on the same imaged roof. Adjusted the former edge or approach point into the mapped building.",
+      "checked_at": "2026-11-26",
+      "lat": 52.85715745,
+      "lng": -1.769755,
+      "previous_difference_metres": 7.4,
+      "previous_lat": 52.8571,
+      "previous_lng": -1.7697,
+      "previous_source": "camra-pubs-location-audit",
+      "source": "reviewed-premises-location",
+      "source_url": "https://www.openstreetmap.org/way/320049599"
     },
     "swan|ullesthorpe|le17 5bt": {
       "audit_reason": "postcode_fallback_replaced",
@@ -3103,16 +3096,16 @@
       "source_url": "https://camra.org.uk/pubs/131799"
     },
     "tides out|woolacombe|ex34 7bp": {
-      "audit_reason": "postcode_fallback_replaced",
-      "checked_at": "2026-09-11",
-      "lat": 51.172685037242,
-      "lng": -4.2054578186163,
-      "previous_difference_metres": 7.0,
-      "previous_lat": 51.172685,
-      "previous_lng": -4.205558,
-      "previous_source": "postcode",
-      "source": "camra-pubs-location-audit",
-      "source_url": "https://camra.org.uk/pubs/188466"
+      "audit_reason": "The Food Standards record identifies the Tides Inn and Tidesout on Beach Road. Its mapped pub feature falls inside the building.",
+      "checked_at": "2026-11-26",
+      "lat": 51.17275745,
+      "lng": -4.20557508,
+      "previous_difference_metres": 11.5,
+      "previous_lat": 51.172685037242,
+      "previous_lng": -4.2054578186163,
+      "previous_source": "camra-pubs-location-audit",
+      "source": "reviewed-premises-location",
+      "source_url": "https://www.openstreetmap.org/way/993607344"
     },
     "town hall|liverpool: wavertree|l15 8hf": {
       "audit_reason": "postcode_fallback_replaced",
@@ -3233,16 +3226,16 @@
       "source_url": "https://camra.org.uk/pubs/victoria-inn-alfreton-113278"
     },
     "victoria inn|witton le wear|dl14 0as": {
-      "audit_reason": "postcode_fallback_replaced",
-      "checked_at": "2026-09-11",
-      "lat": 54.6757947,
-      "lng": -1.7721324,
-      "previous_difference_metres": 1.1,
-      "previous_lat": 54.675803,
-      "previous_lng": -1.772142,
-      "previous_source": "postcode",
-      "source": "camra-pubs-location-audit",
-      "source_url": "https://camra.org.uk/pubs/186973"
+      "audit_reason": "Proposed point (54.67596996,-1.77125653) is the independent exact-name/postcode Overture place location checked inside way/725412142. It lies 0.65 m from the captured polygon edge. This is corroborated site location, not surveyed entrance; Overture provider is Meta.",
+      "checked_at": "2026-11-26",
+      "lat": 54.67593035,
+      "lng": -1.77130955,
+      "previous_difference_metres": 55.0,
+      "previous_lat": 54.6757947,
+      "previous_lng": -1.7721324,
+      "previous_source": "camra-pubs-location-audit",
+      "source": "reviewed-premises-location",
+      "source_url": "https://www.openstreetmap.org/way/725412142"
     },
     "victoria lounge bar|stoke: hanley|st1 3af": {
       "checked_at": "2026-09-08",
@@ -3336,16 +3329,16 @@
       "source_url": "https://www.openstreetmap.org/way/143065369"
     },
     "vine|market deeping|pe6 8an": {
-      "audit_reason": "existing_pin_over_50m_from_matching_venue",
-      "checked_at": "2026-09-11",
-      "lat": 52.677588,
-      "lng": -0.319296,
-      "previous_difference_metres": 142.6,
-      "previous_lat": 52.676551,
-      "previous_lng": -0.318052,
-      "previous_source": "food-standards-agency-fhrs",
-      "source": "camra-pubs-location-audit",
-      "source_url": "https://camra.org.uk/pubs/157272"
+      "audit_reason": "Current coordinate is outside the mapped roof; proposed point is a deterministic maximum-clearance interior point in the named and exact-address pub footprint. A current entrance/approach pin remains possible, so this recommendation is a premises building point rather than a claim that the old pin marks another business.",
+      "checked_at": "2026-11-26",
+      "lat": 52.67757756,
+      "lng": -0.3189804,
+      "previous_difference_metres": 21.3,
+      "previous_lat": 52.677588,
+      "previous_lng": -0.319296,
+      "previous_source": "camra-pubs-location-audit",
+      "source": "reviewed-premises-location",
+      "source_url": "https://www.openstreetmap.org/way/1527158946"
     },
     "vine|mickleover|de3 0da": {
       "audit_reason": "existing_pin_over_50m_from_matching_venue",
@@ -3505,16 +3498,16 @@
       "source_url": "https://camra.org.uk/pubs/131517"
     },
     "ye old elm tree|durham|dh1 4ps": {
-      "audit_reason": "postcode_fallback_replaced",
-      "checked_at": "2026-09-11",
-      "lat": 54.775832,
-      "lng": -1.5815745,
-      "previous_difference_metres": 56.4,
-      "previous_lat": 54.775454,
-      "previous_lng": -1.582161,
-      "previous_source": "postcode",
-      "source": "camra-pubs-location-audit",
-      "source_url": "https://camra.org.uk/pubs/186936"
+      "audit_reason": "The venue address is 12 Crossgate. Its mapped address and reviewed premises identify this building; the former point was outside it.",
+      "checked_at": "2026-11-26",
+      "lat": 54.7757387,
+      "lng": -1.58159656,
+      "previous_difference_metres": 10.5,
+      "previous_lat": 54.775832,
+      "previous_lng": -1.5815745,
+      "previous_source": "camra-pubs-location-audit",
+      "source": "reviewed-premises-location",
+      "source_url": "https://www.openstreetmap.org/way/108746240"
     },
     "ye olde butchers arms|reapsmoor|sk17 0ll": {
       "audit_reason": "manual_named_place_address_and_map_check",

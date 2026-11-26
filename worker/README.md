@@ -39,3 +39,7 @@ contains no secret. Browser cross-origin access is restricted to
 Origin still require a valid Turnstile token. A separately authorized report
 test must confirm Resend acceptance and receipt at `REPORT_TO`; a successful
 config GET alone does not establish delivery.
+
+Run the send-free endpoint and visitor-form contract tests from the repository
+root with `node --test tests/worker_report_endpoint.test.mjs`. The accepted
+report path mocks both Turnstile and Resend; it does not send a report email.

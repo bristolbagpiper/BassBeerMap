@@ -1,13 +1,10 @@
 import json
-import shutil
-import subprocess
 import tempfile
-import textwrap
 import unittest
 from pathlib import Path
 from unittest.mock import patch
 
-from audit_map_health import health_audit, main, write_health_status
+from audit_map_health import health_audit, integrity_check, main, write_health_status
 from directory_release import read_json, write_json, write_release
 from location_review import with_health
 from tests.test_directory_release import pin, registry_for, row
@@ -40,6 +37,26 @@ class MapHealthTests(unittest.TestCase):
         self.assertEqual(read_json(self.stage / 'venue-registry.json')['venues'], self.registry['venues'])
         with patch('audit_map_health.health_audit', return_value=report), patch('builtins.print'):
             self.assertEqual(main([]), 1)
+
+    def test_integrity_check_is_read_only_and_never_rechecks_source_evidence(self):
+        live = read_json(self.root / 'directory-release.json')
+        with patch('audit_map_health.fetch_text', return_value=json.dumps(live)), patch(
+                'audit_map_health.recheck_pin', side_effect=AssertionError('source checks are out of scope')):
+            report = integrity_check(self.root)
+            self.assertEqual(main(['--root', str(self.root), '--staging', str(self.stage), '--integrity-only']), 0)
+        self.assertTrue(report['healthy'], report)
+        self.assertEqual({path.name: path.read_bytes() for path in self.root.iterdir()}, self.before)
+        self.assertFalse(self.stage.exists())
+
+    def test_integrity_check_fails_on_live_release_mismatch_or_unreachable_endpoint(self):
+        live = read_json(self.root / 'directory-release.json')
+        live['release_id'] = 'old-release'
+        with patch('audit_map_health.fetch_text', return_value=json.dumps(live)):
+            report = integrity_check(self.root)
+        self.assertFalse(report['healthy'])
+        self.assertIn('not serving the committed release', report['live_issues'][0])
+        with patch('audit_map_health.fetch_text', side_effect=TimeoutError()):
+            self.assertFalse(integrity_check(self.root)['healthy'])
 
     def test_live_unreachable_and_invalid_schema_are_actionable(self):
         report = self.audit(TimeoutError())
@@ -120,75 +137,34 @@ class MapHealthTests(unittest.TestCase):
         self.assertEqual(report['issues'], [])
         self.assertFalse(report['notify'])
 
-    def test_workflows_persist_before_artifact_and_use_current_notification_snapshot(self):
+    def test_workflows_keep_health_audit_separate_from_owner_question_notifications(self):
         workflows = Path(__file__).resolve().parents[1] / '.github/workflows'
         health = (workflows / 'weekly-map-validation.yml').read_text()
         notifications = (workflows / 'location-alerts.yml').read_text()
-        self.assertIn('if: always() && steps.audit.outcome', health)
-        self.assertLess(health.index('write_health_status('), health.index('actions/upload-artifact'))
-        self.assertNotIn('issues.update', health)
+        self.assertIn('python audit_map_health.py --integrity-only', health)
+        self.assertIn('contents: read', health)
+        self.assertNotIn('workflow_run:', health)
+        self.assertNotIn('audit_google_comparisons.py', health)
+        self.assertNotIn('full_location_audit.py', health)
+        self.assertNotIn('git add', health)
+        self.assertNotIn('git push', health)
+        self.assertNotIn('coordinate-health-state.json', health)
+        self.assertNotIn('map-health-status.json', health)
         self.assertIn("ref: main", notifications)
-        self.assertIn("load_health_status('map-health-status.json')", notifications)
-        self.assertIn('--report notification-report.json --failure-url "$FAILURE_URL"', notifications)
+        self.assertNotIn('load_health_status', notifications)
+        self.assertIn('trading-notices.json', notifications)
+        self.assertNotIn('--failure-url', notifications)
+        self.assertNotIn('FAILURE_URL', notifications)
+        self.assertNotIn('Weekly map validation', notifications)
 
-    @unittest.skipUnless(shutil.which('node'), 'Node is needed to execute the GitHub notification script')
-    def test_notification_workflow_uses_latest_health_and_keeps_unrecorded_failures_visible(self):
+    def test_notification_workflow_skips_rejected_imports_and_keeps_their_issue_route(self):
         workflow = (Path(__file__).resolve().parents[1] / '.github/workflows/location-alerts.yml').read_text()
-        script = textwrap.dedent(workflow.split('      - name: Update the persistent GitHub review issue', 1)[1]
-                                 .split('          script: |', 1)[1].split('      - name:', 1)[0])
-        # Execute the actual workflow script with mocked GitHub/FS interfaces.
-        cases = [
-            ({'health_run_id': '11', 'health_count': 1}, {'id': 11}, '', 'open'),
-            ({'health_run_id': '12', 'health_count': 0, 'health_checked_at': '2026-10-31T11:00:00Z'},
-             {'id': 11, 'updated_at': '2026-10-31T10:00:00Z'}, '', 'closed'),
-            ({'health_run_id': '11', 'health_run_attempt': 2, 'health_count': 0},
-             {'id': 11, 'run_attempt': 1}, '', 'closed'),
-            ({'health_run_id': '11', 'health_count': 0}, {'id': 11}, 'https://example.test/run', 'open'),
-            ({'health_run_id': '10', 'health_count': 0}, {'id': 11}, 'https://example.test/run', 'open'),
-            # A fresh rerun of an older ID supersedes a delayed higher-ID event.
-            ({'health_run_id': '10', 'health_count': 0, 'health_checked_at': '2026-10-31T11:00:00Z'},
-             {'id': 11, 'updated_at': '2026-10-31T10:00:00Z'}, '', 'closed'),
-            # A newer actual failure of an older run must remain visible.
-            ({'health_run_id': '11', 'health_count': 0, 'health_checked_at': '2026-10-31T10:00:00Z'},
-             {'id': 10, 'run_attempt': 2, 'updated_at': '2026-10-31T11:00:00Z'}, 'https://example.test/run', 'open'),
-            # Missing/invalid timestamps cannot prove cross-run supersession.
-            ({'health_run_id': '12', 'health_count': 0, 'health_checked_at': 'invalid'},
-             {'id': 11, 'updated_at': '2026-10-31T11:00:00Z'}, 'https://example.test/run', 'open'),
-            ({'health_run_id': '12', 'health_count': 0},
-             {'id': 11}, 'https://example.test/run', 'open'),
-            # Same-ID ordering uses attempts even when timestamps suggest otherwise.
-            ({'health_run_id': '11', 'health_run_attempt': 2, 'health_count': 0, 'health_checked_at': '2026-10-31T10:00:00Z'},
-             {'id': 11, 'run_attempt': 1, 'updated_at': '2026-10-31T11:00:00Z'}, '', 'closed'),
-            ({'health_run_id': '11', 'health_run_attempt': 1, 'health_count': 1},
-             {'id': 11, 'run_attempt': 2}, 'https://example.test/run', 'open'),
-        ]
-        harness = '''
-        const {script, cases} = JSON.parse(require('fs').readFileSync(0, 'utf8'));
-        const AsyncFunction = Object.getPrototypeOf(async function(){}).constructor;
-        (async () => {
-          const outputs = [];
-          for (const [snapshot, event] of cases) {
-            const updates = [], exported = {};
-            const report = {...snapshot, active_count: 0};
-            const fs = {readFileSync: path => path.endsWith('.json') ? JSON.stringify(report) : 'Current report'};
-            const github = {rest: {issues: {
-              get: async () => ({data: {number: 5, state: 'open', body: 'Old'}}),
-              update: async args => updates.push(args)
-            }}};
-            const context = {repo: {owner: 'test', repo: 'test'}, payload: {workflow_run: {
-              name: 'Daily map validation', conclusion: 'failure', html_url: 'https://example.test/run', ...event
-            }}};
-            await new AsyncFunction('require', 'github', 'context', 'core', script)(
-              () => fs, github, context, {exportVariable: (key, value) => exported[key] = value});
-            outputs.push([exported.FAILURE_URL, updates[0].state]);
-          }
-          process.stdout.write(JSON.stringify(outputs));
-        })().catch(error => { console.error(error); process.exit(1); });
-        '''
-        result = subprocess.run([shutil.which('node'), '-e', harness], input=json.dumps(
-            dict(script=script, cases=[[snapshot, event] for snapshot, event, _, _ in cases])),
-            text=True, capture_output=True, check=True)
-        self.assertEqual(json.loads(result.stdout), [[url, state] for _, _, url, state in cases])
+        self.assertIn("workflows: ['Update CSV From PDF', 'Apply reviewed location']", workflow)
+        self.assertIn("github.event.workflow_run.conclusion == 'success'", workflow)
+        self.assertNotIn('actions.listJobsForWorkflowRunAttempt', workflow)
+        import_workflow = (Path(__file__).resolve().parents[1] / '.github/workflows/update-csv-from-pdf.yml').read_text()
+        self.assertIn("const title = 'BassBeerMap update rejected'", import_workflow)
+        self.assertIn('The previous published release is retained.', import_workflow)
 
 
 if __name__ == '__main__':

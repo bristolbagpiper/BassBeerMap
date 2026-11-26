@@ -88,13 +88,19 @@ class ValidationTests(unittest.TestCase):
         self.assertEqual(match["source"], "openstreetmap-gb-extract")
         self.assertAlmostEqual(match["lat"], 51.451)
 
-    def test_offline_osm_reader_uses_the_centroid_of_a_mapped_pub_building(self):
-        xml = """<osm version=\"0.6\"><node id=\"1\" lat=\"51.0\" lon=\"-2.0\"/><node id=\"2\" lat=\"51.002\" lon=\"-2.002\"/><way id=\"3\"><nd ref=\"1\"/><nd ref=\"2\"/><tag k=\"amenity\" v=\"pub\"/><tag k=\"name\" v=\"Outline Inn\"/></way></osm>"""
+    def test_osm_reader_places_closed_pub_outlines_and_skips_open_ways(self):
+        xml = """<osm version="0.6">
+            <node id="1" lat="51" lon="-2"/><node id="2" lat="51" lon="-2.002"/>
+            <node id="3" lat="51.002" lon="-2.002"/><node id="4" lat="51.002" lon="-2"/>
+            <way id="5"><nd ref="1"/><nd ref="2"/><nd ref="3"/><nd ref="4"/><nd ref="1"/>
+                <tag k="amenity" v="pub"/><tag k="name" v="Outline Inn"/></way>
+            <way id="6"><nd ref="1"/><nd ref="2"/>
+                <tag k="amenity" v="pub"/><tag k="name" v="Incomplete outline"/></way></osm>"""
         with tempfile.TemporaryDirectory() as directory:
             path = Path(directory) / "mini.osm"
             path.write_text(xml, encoding="utf-8")
             venues = read_osm_venues(path)
-        self.assertEqual(venues[0]["name"], "Outline Inn")
+        self.assertEqual([v["name"] for v in venues], ["Outline Inn"])
         self.assertAlmostEqual(venues[0]["lat"], 51.001)
         self.assertAlmostEqual(venues[0]["lng"], -2.001)
 

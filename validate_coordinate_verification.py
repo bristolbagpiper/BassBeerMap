@@ -1,4 +1,4 @@
-"""Fail CI when the map could show an unverified coordinate as a blue pin."""
+"""Fail CI when the map could show an unverified coordinate as a accepted reference point."""
 import argparse
 import csv
 import json
@@ -55,14 +55,14 @@ def validate(root=ROOT, require_all_verified=False, max_evidence_age_days=None):
         if status not in ALLOWED_STATUSES:
             errors.append(f"{key}: invalid status {status!r}")
             continue
-        if require_all_verified and status != "verified_venue":
-            errors.append(f"{key}: full-audit mode requires a verified venue coordinate")
+        if require_all_verified and record.get("premises_precision") != "building":
+            errors.append(f"{key}: full-audit mode requires a point supported by identified building evidence")
         coordinate = overrides.get(key) or venues.get(key)
         if record.get("display_precision") == "venue":
             if status != "verified_venue" or not coordinate:
-                errors.append(f"{key}: blue pin is not a verified stored venue coordinate")
+                errors.append(f"{key}: accepted reference point is not a verified stored venue coordinate")
             if not record.get("evidence"):
-                errors.append(f"{key}: blue pin has no recorded evidence")
+                errors.append(f"{key}: accepted reference point has no recorded evidence")
             if coordinate and (
                 float(record.get("lat", 999)) != float(coordinate["lat"])
                 or float(record.get("lng", 999)) != float(coordinate["lng"])
@@ -73,7 +73,7 @@ def validate(root=ROOT, require_all_verified=False, max_evidence_age_days=None):
                     errors.append(f"{key}: incomplete evidence record")
             dated_evidence = [item.get("checked_at") for item in record.get("evidence", []) if item.get("checked_at")]
             if not dated_evidence:
-                errors.append(f"{key}: blue pin has no dated evidence")
+                errors.append(f"{key}: accepted reference point has no dated evidence")
             elif max_evidence_age_days is not None:
                 newest = max(date.fromisoformat(value) for value in dated_evidence)
                 if (date.today() - newest).days > max_evidence_age_days:
@@ -131,4 +131,4 @@ if __name__ == "__main__":
         for problem in problems:
             print(f"- {problem}")
         raise SystemExit(1)
-    print("Coordinate verification passed")
+    print("Coordinate file integrity passed")

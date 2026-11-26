@@ -2,7 +2,7 @@ name: Update CSV From PDF
 
 on:
   schedule:
-    - cron: "17 6 1 * *"
+    - cron: "17 6 * * 1"
   workflow_dispatch:
     inputs:
       allow_reindex:
@@ -43,6 +43,7 @@ on:
 
 permissions:
   contents: write
+  pages: write
   issues: write
 
 concurrency:
@@ -68,17 +69,6 @@ jobs:
         uses: actions/setup-python@v5
         with:
           python-version: "3.13"
-
-      - name: Install dependencies
-        run: pip install -r requirements.txt
-
-      - name: Run data pipeline tests
-        run: python -m unittest discover -s tests -v
-
-      - name: Run browser smoke test
-        env:
-          RUN_BROWSER_TESTS: "1"
-        run: python -m unittest discover -s tests -p "test_frontend_smoke.py" -v
 
       - name: Resolve latest PDF source
         id: pdf_source
@@ -138,7 +128,47 @@ jobs:
             fi
           done
 
+      - name: Compare scheduled PDF with the published source
+        id: source_fingerprint
+        if: github.event_name == 'schedule' && steps.pdf_source.outputs.mode == 'wordpress'
+        run: |
+          python - <<'PY'
+          import hashlib, os, subprocess
+          from pathlib import Path
+          previous = subprocess.run(['git', 'show', 'HEAD:latest-bass-directory.pdf'], check=True,
+                                    stdout=subprocess.PIPE).stdout
+          downloaded = Path('latest-bass-directory.pdf').read_bytes()
+          previous_hash = hashlib.sha256(previous).hexdigest()
+          downloaded_hash = hashlib.sha256(downloaded).hexdigest()
+          unchanged = previous_hash == downloaded_hash
+          with open(os.environ['GITHUB_OUTPUT'], 'a', encoding='utf-8') as output:
+              output.write(f"unchanged={str(unchanged).lower()}\n")
+          with open(os.environ['GITHUB_STEP_SUMMARY'], 'a', encoding='utf-8') as summary:
+              summary.write('## Scheduled source check\n\n')
+              summary.write(f'- Published PDF SHA-256: `{previous_hash}`\n')
+              summary.write(f'- Downloaded PDF SHA-256: `{downloaded_hash}`\n')
+              summary.write(f'- Source unchanged: `{str(unchanged).lower()}`\n')
+              if unchanged:
+                  summary.write('- Pipeline, browser and publication checks skipped; current Pages integrity schedule remains independent.\n')
+          print(f"Source PDF SHA-256: {downloaded_hash}; unchanged={str(unchanged).lower()}")
+          PY
+
+      - name: Install dependencies
+        if: steps.source_fingerprint.outputs.unchanged != 'true'
+        run: pip install -r requirements.txt
+
+      - name: Run data pipeline tests
+        if: steps.source_fingerprint.outputs.unchanged != 'true'
+        run: python -m unittest discover -s tests -v
+
+      - name: Run browser smoke test on the current release
+        if: steps.source_fingerprint.outputs.unchanged != 'true'
+        env:
+          RUN_BROWSER_TESTS: "1"
+        run: python -m unittest discover -s tests -p "test_frontend_smoke.py" -v
+
       - name: Generate candidate CSV
+        if: steps.source_fingerprint.outputs.unchanged != 'true'
         shell: bash
         run: |
           if [ "${{ steps.pdf_source.outputs.mode }}" = "uploaded" ] && [ -n "${{ steps.pdf_source.outputs.uploaded_pdf }}" ]; then
@@ -149,13 +179,16 @@ jobs:
 
       - name: Reconcile, enrich and validate the complete candidate release
         id: candidate
+        if: steps.source_fingerprint.outputs.unchanged != 'true'
         run: python ingest_directory.py candidate-pubs.csv --staging candidate-release
 
       - name: Validate candidate files again before publication
         id: candidate_validation
+        if: steps.source_fingerprint.outputs.unchanged != 'true'
         run: python validate_directory_release.py --root candidate-release --previous . --check-pdf
 
       - name: Guard against unexpected changes from an unchanged PDF
+        if: steps.source_fingerprint.outputs.unchanged != 'true'
         env:
           ALLOW_REINDEX: ${{ inputs.allow_reindex }}
         run: |
@@ -166,13 +199,14 @@ jobs:
           fi
 
       - name: Run browser smoke test against the candidate release
+        if: steps.source_fingerprint.outputs.unchanged != 'true'
         env:
           RUN_BROWSER_TESTS: "1"
           DIRECTORY_TEST_ROOT: candidate-release
         run: python -m unittest discover -s tests -p "test_frontend_smoke.py" -v
 
       - name: Upload candidate validation and review artifacts
-        if: always()
+        if: always() && steps.source_fingerprint.outputs.unchanged != 'true'
         uses: actions/upload-artifact@v4
         with:
           name: directory-import-review
@@ -181,6 +215,7 @@ jobs:
 
       - name: Publish the complete validated release
         id: publication
+        if: steps.source_fingerprint.outputs.unchanged != 'true'
         run: |
           python validate_directory_release.py --root candidate-release --previous .
           python -c "from pathlib import Path; from shutil import copyfile; from directory_release import RELEASE_FILES; [copyfile(Path('candidate-release') / name, name) for name in RELEASE_FILES]"
@@ -196,13 +231,45 @@ jobs:
           git commit -m "Publish validated directory release"
           git push
           echo "state=published" >> "$GITHUB_OUTPUT"
+          echo "commit=$(git rev-parse HEAD)" >> "$GITHUB_OUTPUT"
+
+      - name: Deploy and verify GitHub Pages release
+        id: pages_release
+        if: steps.publication.outputs.state == 'published'
+        env:
+          GH_TOKEN: ${{ github.token }}
+          GITHUB_REPOSITORY: ${{ github.repository }}
+          EXPECTED_PAGES_COMMIT: ${{ steps.publication.outputs.commit }}
+        run: python request_pages_release.py
+
+      - name: Report Pages deployment failure
+        if: failure() && steps.pages_release.outcome == 'failure'
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const title = 'BassBeerMap Pages deployment failed';
+            const body = [`The validated directory release was committed, but the GitHub Pages deployment/readback did not complete for commit ${{ steps.publication.outputs.commit }}.`, '', `Run: https://github.com/${context.repo.owner}/${context.repo.repo}/actions/runs/${context.runId}`].join('\n');
+            const { data: issues } = await github.rest.issues.listForRepo({...context.repo, state: 'open'});
+            const existing = issues.find(i => i.title === title);
+            if (existing) await github.rest.issues.update({...context.repo, issue_number: existing.number, body});
+            else await github.rest.issues.create({...context.repo, title, body});
+
+      - name: Close recovered Pages deployment failures
+        if: steps.pages_release.outcome == 'success'
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const { data: issues } = await github.rest.issues.listForRepo({...context.repo, state: 'open'});
+            for (const issue of issues.filter(i => i.title === 'BassBeerMap Pages deployment failed')) {
+              await github.rest.issues.update({...context.repo, issue_number: issue.number, state: 'closed', state_reason: 'completed'});
+            }
 
       - name: Email the validated change report when configured
         id: change_report_email
         # A mail failure has its own visible outcome and issue below. The data
         # workflow must still trigger post-import validation after publication.
         continue-on-error: true
-        if: always() && steps.candidate_validation.outcome == 'success' && steps.publication.outcome == 'success'
+        if: always() && steps.candidate_validation.outcome == 'success' && steps.publication.outcome == 'success' && steps.pages_release.outcome != 'failure'
         env:
           SMTP_HOST: ${{ secrets.SMTP_HOST }}
           SMTP_PORT: ${{ secrets.SMTP_PORT }}
@@ -217,7 +284,7 @@ jobs:
             exit 0
           fi
           has_changes=$(python -c "import json; print(str(bool(json.load(open('candidate-release/change-report.json'))['summary']['has_changes'])).lower())")
-          if [ "$has_changes" != "true" ] && [ "${{ github.event_name }}" != "workflow_dispatch" ]; then
+          if [ "$has_changes" != "true" ]; then
             echo "state=suppressed_no_changes" >> "$GITHUB_OUTPUT"
             echo "Import email: no listing changes; notification suppressed." >> "$GITHUB_STEP_SUMMARY"
             exit 0
@@ -228,7 +295,7 @@ jobs:
           echo "Import email: accepted by the configured SMTP server." >> "$GITHUB_STEP_SUMMARY"
 
       - name: Close resolved import alerts
-        if: always() && steps.candidate_validation.outcome == 'success' && steps.publication.outcome == 'success'
+        if: always() && steps.candidate_validation.outcome == 'success' && steps.publication.outcome == 'success' && steps.pages_release.outcome != 'failure'
         uses: actions/github-script@v7
         with:
           script: |
@@ -238,7 +305,7 @@ jobs:
             }
 
       - name: Report rejected import
-        if: failure() && steps.change_report_email.outcome != 'failure' && (steps.candidate_validation.outcome != 'success' || steps.publication.outcome != 'success')
+        if: failure() && steps.source_fingerprint.outputs.unchanged != 'true' && steps.publication.outcome != 'success'
         uses: actions/github-script@v7
         with:
           script: |
@@ -282,6 +349,7 @@ jobs:
           CANDIDATE_VALIDATION_OUTCOME: ${{ steps.candidate_validation.outcome }}
           PUBLICATION_OUTCOME: ${{ steps.publication.outcome }}
           PUBLICATION_STATE: ${{ steps.publication.outputs.state }}
+          PAGES_OUTCOME: ${{ steps.pages_release.outcome }}
           EMAIL_OUTCOME: ${{ steps.change_report_email.outcome }}
           EMAIL_STATE: ${{ steps.change_report_email.outputs.state }}
         run: |
@@ -290,6 +358,7 @@ jobs:
             echo "- Candidate ingestion: ${CANDIDATE_INGEST_OUTCOME:-not reached}"
             echo "- Candidate validation: ${CANDIDATE_VALIDATION_OUTCOME:-not reached}"
             echo "- Repository publication: ${PUBLICATION_STATE:-${PUBLICATION_OUTCOME:-not reached}}"
+            echo "- GitHub Pages deployment/readback: ${PAGES_OUTCOME:-not reached}"
             echo "- Change-report email: ${EMAIL_STATE:-${EMAIL_OUTCOME:-not reached}}"
           } >> "$GITHUB_STEP_SUMMARY"
 

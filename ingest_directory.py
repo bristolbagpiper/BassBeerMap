@@ -47,9 +47,10 @@ def stage_import(candidate, root, staging, check_sources=True):
         if reconciliation['errors']:
             report['errors'].extend(reconciliation['errors'])
             return report
+        metadata = read_json(root / 'candidate-directory-meta.json', read_json(root / 'directory-meta.json', {}))
         pdf = root / 'latest-bass-directory.pdf'
         if pdf.exists():
-            report['errors'].extend(validate_pdf_listings(pdf, rows))
+            report['errors'].extend(validate_pdf_listings(pdf, rows, metadata))
             if report['errors']:
                 return report
         # Validate listing content before spending time on external enrichment.
@@ -97,8 +98,7 @@ def stage_import(candidate, root, staging, check_sources=True):
                 for warning in attempt.get('source_warnings', []):
                     report['source_warnings'].append(f'{venue_key(row)}: {warning}')
                 entry['verification_attempt'] = attempt
-        metadata = read_json(root / 'candidate-directory-meta.json', read_json(root / 'directory-meta.json', {}))
-        ledger = write_release(staging, rows, registry, metadata, coordinates)
+        ledger = write_release(staging, rows, registry, metadata, coordinates, source_root=root)
         if pdf.exists():
             shutil.copyfile(pdf, staging / pdf.name)
         change_report = build_report(previous, rows)
@@ -111,7 +111,7 @@ def stage_import(candidate, root, staging, check_sources=True):
             writer.writeheader()
             writer.writerows(queue)
         report['errors'].extend(validate_release(staging, root))
-        report['summary'] = dict(change_report['summary'], verified_pins=len(verified), approximate_pins=len(queue))
+        report['summary'] = dict(change_report['summary'], accepted_reference_points=len(verified), postcode_fallbacks=len(queue), premises_counts=ledger['premises_counts'])
         report['valid'] = not report['errors']
         return report
     except Exception as error:

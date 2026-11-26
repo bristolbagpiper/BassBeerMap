@@ -46,6 +46,13 @@ class CoordinateVerificationTests(unittest.TestCase):
         self.assertEqual(records[key]["status"], "verified_venue")
         self.assertEqual(records[key]["metadata_issue"]["reference"], "DE11 0YY")
 
+    def test_ci_keeps_source_and_release_checks_without_an_age_only_blocker(self):
+        workflow = (Path(__file__).resolve().parents[1] / ".github/workflows/validate-coordinates.yml").read_text(encoding="utf-8")
+        self.assertIn("python validate_directory_release.py", workflow)
+        self.assertIn("python validate_coordinate_verification.py\n", workflow)
+        self.assertIn("git diff --exit-code -- coordinate-verification.json", workflow)
+        self.assertNotIn("--max-evidence-age-days", workflow)
+
 
 if __name__ == "__main__":
     unittest.main()

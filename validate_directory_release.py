@@ -1,7 +1,7 @@
 """Validate every map asset against its permanent identity and pin evidence."""
 import argparse
 from pathlib import Path
-from directory_release import read_rows, validate_pdf_listings, validate_release, write_json
+from directory_release import read_json, read_rows, validate_pdf_listings, validate_release, write_json
 
 
 if __name__ == '__main__':
@@ -16,7 +16,7 @@ if __name__ == '__main__':
     try:
         errors = validate_release(args.root, args.previous, args.allow_review_downgrades, args.allow_expired_evidence)
         if args.check_pdf:
-            errors.extend(validate_pdf_listings(args.root / 'latest-bass-directory.pdf', read_rows(args.root / 'pubs.csv')))
+            errors.extend(validate_pdf_listings(args.root / 'latest-bass-directory.pdf', read_rows(args.root / 'pubs.csv'), read_json(args.root / 'directory-meta.json', {})))
     except Exception as error:
         errors = [f'{type(error).__name__}: {error}']
     if args.report:

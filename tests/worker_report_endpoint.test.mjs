@@ -1,5 +1,6 @@
 import assert from 'node:assert/strict';
 import {afterEach, test} from 'node:test';
+import {readFile} from 'node:fs/promises';
 import {pathToFileURL} from 'node:url';
 import {resolve} from 'node:path';
 
@@ -90,4 +91,34 @@ test('Resend outage returns a bounded error without exposing credentials', async
   assert.equal(calls[1].authorization, 'Bearer private-resend-secret');
   assert.equal(responseBody.includes(env.RESEND_API_KEY), false);
   assert.equal(responseBody.includes('private upstream diagnostic'), false);
+});
+
+test('visitor feedback form payload is accepted through the endpoint with Resend mocked', async () => {
+  const html = await readFile('index.html', 'utf8');
+  for (const expected of ['id="problemReportForm"', 'name="venue"', 'name="message"',
+    'name="contact"', 'name="website"', 'REPORT_PROBLEM_ENDPOINT']) {
+    assert.ok(html.includes(expected), `visitor form missing ${expected}`);
+  }
+  const publicEnv = {...env, ALLOWED_ORIGIN: 'https://bassbeermap.com'};
+  const calls = [];
+  globalThis.fetch = async (url, options) => {
+    calls.push({url: String(url), options});
+    if (String(url).includes('/siteverify')) return Response.json({success: true});
+    return Response.json({id: 'mock-resend-id'}, {status: 200});
+  };
+  const body = JSON.stringify({venue: 'The Example', message: '<script>alert("x")</script>\nWrong entrance',
+    contact: 'visitor@example.test', website: '', turnstileToken: 'test-token',
+    page: 'https://bassbeermap.com/#example'});
+  const result = await worker.fetch(request('POST', {origin: 'https://bassbeermap.com', body}), publicEnv);
+  assert.equal(result.status, 200);
+  assert.deepEqual(await result.json(), {ok: true});
+  assert.deepEqual(calls.map(call => call.url), [
+    'https://challenges.cloudflare.com/turnstile/v0/siteverify', 'https://api.resend.com/emails'
+  ]);
+  const email = JSON.parse(calls[1].options.body);
+  assert.deepEqual(email.to, ['reports@example.test']);
+  assert.equal(email.reply_to, 'visitor@example.test');
+  assert.ok(email.html.includes('&lt;script&gt;alert(&quot;x&quot;)&lt;/script&gt;'));
+  assert.equal(email.html.includes('<script>alert'), false);
+  assert.equal(calls[1].options.headers.Authorization, 'Bearer private-resend-secret');
 });

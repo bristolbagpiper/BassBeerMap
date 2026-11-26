@@ -107,7 +107,7 @@ def research(root, staging, limit=30):
         report['checked'].append(identifier)
         time.sleep(1)
     staging.mkdir(parents=True, exist_ok=True)
-    write_release(staging, rows, registry, read_json(root / 'directory-meta.json'), postcodes)
+    write_release(staging, rows, registry, read_json(root / 'directory-meta.json'), postcodes, source_root=root)
     shutil.copyfile(root / 'latest-bass-directory.pdf', staging / 'latest-bass-directory.pdf')
     errors = validate_release(staging, root)
     report.update(valid=not errors, errors=errors)

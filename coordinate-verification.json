@@ -8,9 +8,9 @@
     "venue_pin": "Building, site and reference positions have separate precision labels. Missing positions use the listed postcode."
   },
   "premises_counts": {
-    "building": 885,
-    "reference": 134,
-    "site": 69
+    "building": 887,
+    "reference": 130,
+    "site": 71
   },
   "records": {
     "1852 brewery co|leicester: south wigston|le18 2dh": {
@@ -2288,10 +2288,11 @@
       "lng": -2.21073847,
       "place_name": "Astbury",
       "postcode": "CW12 4RE",
-      "premises_precision": "reference",
+      "premises_precision": "building",
       "pub_name": "Astbury Golf Club",
       "status": "verified_venue",
-      "venue_id": "v-0043695f-006e-58fe-adc2-894e5500b940"
+      "venue_id": "v-0043695f-006e-58fe-adc2-894e5500b940",
+      "visitor_hint": "The club recommends CW12 3NQ for satnav. Follow Peel Lane across the canal bridge, then turn left for the clubhouse."
     },
     "auctioneers arms|caverswall|st11 9eq": {
       "coordinate_source": "openstreetmap-gb-extract",
@@ -3620,12 +3621,13 @@
       "venue_id": "v-010d8a48-af7d-53c4-ab1b-ad68ad7c1c1c"
     },
     "barton rovers social (pmc)|barton le clay|mk45 4sd": {
-      "coordinate_source": "google-maps-named-place",
+      "coordinate_source": "reviewed-premises-location",
       "display_precision": "venue",
       "evidence": [
         {
           "checked_at": "2026-09-13",
           "difference_metres": 0,
+          "disposition": "superseded_by_premises_review",
           "match": "manual_named_place_address_and_map_check",
           "reference_coordinate": {
             "lat": 51.9648174,
@@ -3634,16 +3636,29 @@
           "reference_postcode": "MK45 4SD",
           "source": "google-maps-named-place",
           "url": "https://www.google.com/maps/search/?api=1&query=Barton+Rovers+FC+MK45+4SD"
+        },
+        {
+          "checked_at": "2026-11-26",
+          "match": "named_venue_visitor_position",
+          "reference_coordinate": {
+            "lat": 51.9648063,
+            "lng": -0.4287881
+          },
+          "reference_name": "Barton Rovers Social (PMC)",
+          "reference_postcode": "MK45 4SD",
+          "source": "reviewed-premises-location",
+          "url": "https://www.bartonrovers.com/the-bar"
         }
       ],
-      "lat": 51.9648174,
-      "lng": -0.4295876,
+      "lat": 51.9648063,
+      "lng": -0.4287881,
       "place_name": "Barton le Clay",
       "postcode": "MK45 4SD",
-      "premises_precision": "reference",
+      "premises_precision": "site",
       "pub_name": "Barton Rovers Social (PMC)",
       "status": "verified_venue",
-      "venue_id": "v-1dd21f62-1893-575a-bdad-15ce9c50ac90"
+      "venue_id": "v-1dd21f62-1893-575a-bdad-15ce9c50ac90",
+      "visitor_hint": "Use the football clubhouse behind the main stand, beside the car park. The neighbouring bowls pavilion is a separate building."
     },
     "bay horse|manchester: central|m4 1na": {
       "coordinate_source": "food-standards-agency-fhrs",
@@ -9902,10 +9917,11 @@
       "lng": -1.6526,
       "place_name": "Burton U-T: Branston",
       "postcode": "DE14 3DP",
-      "premises_precision": "reference",
+      "premises_precision": "site",
       "pub_name": "Branston Golf & Country Club",
       "status": "verified_venue",
-      "venue_id": "v-2bf5d12b-3027-5159-b3c2-4d2a1a8bd1ec"
+      "venue_id": "v-2bf5d12b-3027-5159-b3c2-4d2a1a8bd1ec",
+      "visitor_hint": "Follow signs for the Clubhouse Bar & Restaurant overlooking the 18th green. The Pavilion is the separate events venue."
     },
     "brass button|ashbourne|de6 1eu": {
       "coordinate_source": "openstreetmap-gb-extract",
@@ -39930,10 +39946,11 @@
       "lng": -2.02248863,
       "place_name": "Leek",
       "postcode": "ST13 5RE",
-      "premises_precision": "reference",
+      "premises_precision": "building",
       "pub_name": "Leek Golf Club",
       "status": "verified_venue",
-      "venue_id": "v-d53ed861-78a3-55b6-8298-dc271b602e13"
+      "venue_id": "v-d53ed861-78a3-55b6-8298-dc271b602e13",
+      "visitor_hint": "Baileys is in the clubhouse at Big Birchall, beside the greens and car park."
     },
     "leopard|doncaster|dn1 3aa": {
       "coordinate_source": "openstreetmap-gb-extract",

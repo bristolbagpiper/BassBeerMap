@@ -20036,8 +20036,10 @@
           ]
         },
         "premises_review": {
-          "basis": "The available evidence does not identify an individual building at this point.",
+          "basis": "The club identifies its clubhouse north of Peel Lane beside the first tee. The point is in the mapped clubhouse (UPRN 100012599251), separate from the neighbouring house and barn. Aerial imagery shows the parking and roof by the tee; the distant course catalogue point is 602 m away.",
+          "building_url": "https://www.openstreetmap.org/way/538454213",
           "checked_at": "2026-11-26",
+          "geometry_feature": "way/538454213",
           "os_openmap_buildings": [
             "SJ_BUILDING.SHP#642250"
           ],
@@ -20045,12 +20047,18 @@
             "lat": 53.14802203,
             "lng": -2.21073847
           },
-          "precision": "reference",
+          "precision": "building",
           "sources": [
+            "https://astburygolfclub.com/how-to-find-us",
+            "https://astburygolfclub.com/Page/CustomPage?pageId=12179",
+            "https://astburygolfclub.com/Page/CustomPage?pageId=11710",
+            "https://www.openstreetmap.org/way/538454213",
+            "https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/export?bbox=-246338.2807575007%2C7010185.062451793%2C-245858.2807575007%2C7010665.062451793&bboxSR=3857&imageSR=3857&size=480%2C480&format=jpg&f=image",
             "https://camra.org.uk/pubs/173370",
             "https://osdatahub.os.uk/downloads/open/OpenMapLocal"
           ],
-          "venue_key": "astbury golf club|astbury|cw12 4re"
+          "venue_key": "astbury golf club|astbury|cw12 4re",
+          "visitor_hint": "The club recommends CW12 3NQ for satnav. Follow Peel Lane across the canal bridge, then turn left for the clubhouse."
         },
         "source": "camra-primary"
       }
@@ -47124,8 +47132,8 @@
         "owner_pin_confirmed": false,
         "owner_reviewed": false,
         "pin": {
-          "lat": 51.9648174,
-          "lng": -0.4295876
+          "lat": 51.9648063,
+          "lng": -0.4287881
         },
         "priority": 2,
         "reasons": [],
@@ -47168,6 +47176,7 @@
           {
             "checked_at": "2026-09-13",
             "difference_metres": 0,
+            "disposition": "superseded_by_premises_review",
             "match": "manual_named_place_address_and_map_check",
             "reference_coordinate": {
               "lat": 51.9648174,
@@ -47176,24 +47185,47 @@
             "reference_postcode": "MK45 4SD",
             "source": "google-maps-named-place",
             "url": "https://www.google.com/maps/search/?api=1&query=Barton+Rovers+FC+MK45+4SD"
+          },
+          {
+            "checked_at": "2026-11-26",
+            "match": "named_venue_visitor_position",
+            "reference_coordinate": {
+              "lat": 51.9648063,
+              "lng": -0.4287881
+            },
+            "reference_name": "Barton Rovers Social (PMC)",
+            "reference_postcode": "MK45 4SD",
+            "source": "reviewed-premises-location",
+            "url": "https://www.bartonrovers.com/the-bar"
           }
         ],
-        "lat": 51.9648174,
-        "lng": -0.4295876,
+        "lat": 51.9648063,
+        "lng": -0.4287881,
         "premises_review": {
-          "basis": "The available evidence does not identify an individual building at this point.",
+          "basis": "Two visitors put the clubhouse and bar behind the main stand. The parish council distinguishes the bowls pavilion from the football club bar. The club emergency plan identifies the changing facilities beside the car park and pitch. Aerial imagery and mapped outlines distinguish the building complex behind the seated stand from the former point on the car park approach. The bar room and public door have no separate mapped outline.",
           "checked_at": "2026-11-26",
           "point": {
+            "lat": 51.9648063,
+            "lng": -0.4287881
+          },
+          "precision": "site",
+          "previous_point": {
             "lat": 51.9648174,
             "lng": -0.4295876
           },
-          "precision": "reference",
           "sources": [
-            "https://www.google.com/maps/search/?api=1&query=Barton+Rovers+FC+MK45+4SD"
+            "https://www.bartonrovers.com/the-bar",
+            "https://www.bartonrovers.com/_files/ugd/41ade9_7aa38248f3bc4a6aaa2332e6e9b121f9.pdf",
+            "https://www.botp.co.uk/blog/greenbacks-return-to-winning-ways",
+            "https://thetortoisetravels.blogspot.com/2018/12/barton-rovers-sharpenhoe-road.html",
+            "https://bartonleclay-pc.gov.uk/wp-content/uploads/simple-file-list/Policies/Barton-le-Clay-Leisure-Strategy-2021.pdf",
+            "https://www.openstreetmap.org/way/1205866369",
+            "https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/export?bbox=-48246.47288310449%2C6793336.487280754%2C-47396.47288310449%2C6794186.487280754&bboxSR=3857&imageSR=3857&size=850%2C850&format=jpg&f=image"
           ],
-          "venue_key": "barton rovers social (pmc)|barton le clay|mk45 4sd"
+          "venue_key": "barton rovers social (pmc)|barton le clay|mk45 4sd",
+          "visitor_hint": "Use the football clubhouse behind the main stand, beside the car park. The neighbouring bowls pavilion is a separate building."
         },
-        "source": "google-maps-named-place"
+        "source": "reviewed-premises-location"
       }
     },
     "v-1e4b39d1-61ae-5122-89a7-1ad6e5dde26e": {
@@ -56741,7 +56773,7 @@
         "lat": 52.783,
         "lng": -1.6526,
         "premises_review": {
-          "basis": "The available evidence does not identify an individual building at this point.",
+          "basis": "The operator and CAMRA distinguish the Clubhouse Bar & Restaurant from the separate Pavilion. The venue point lies in the golf facilities beside the car park. Independent imagery shows more than one building, and the other catalogue point is 482 m away. The reviewed material does not identify the individual bar building conclusively.",
           "checked_at": "2026-11-26",
           "os_openmap_buildings": [
             "SK_BUILDING.SHP#1098517"
@@ -56750,12 +56782,19 @@
             "lat": 52.783,
             "lng": -1.6526
           },
-          "precision": "reference",
+          "precision": "site",
           "sources": [
+            "https://branstonclub.co.uk/bar-restaurant/",
+            "https://branstonclub.co.uk/golf/courses/championship-course/",
+            "https://camra.org.uk/pubs/branston-golf-country-club-burton-upon-trent-124077",
+            "https://branstonclub.co.uk/weddings/",
+            "https://www.openstreetmap.org/way/1207954580",
+            "https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/export?bbox=-184206.5904849639%2C6942719.23122802%2C-183726.5904849639%2C6943199.23122802&bboxSR=3857&imageSR=3857&size=480%2C480&format=jpg&f=image",
             "https://camra.org.uk/pubs/124077",
             "https://osdatahub.os.uk/downloads/open/OpenMapLocal"
           ],
-          "venue_key": "branston golf & country club|burton u-t: branston|de14 3dp"
+          "venue_key": "branston golf & country club|burton u-t: branston|de14 3dp",
+          "visitor_hint": "Follow signs for the Clubhouse Bar & Restaurant overlooking the 18th green. The Pavilion is the separate events venue."
         },
         "source": "camra-pubs-location-audit"
       }
@@ -195729,8 +195768,10 @@
         "lat": 53.09031222,
         "lng": -2.02248863,
         "premises_review": {
-          "basis": "The available evidence does not identify an individual building at this point.",
+          "basis": "The club identifies its public bar in the clubhouse at Big Birchall. Its published photograph shows the building immediately overlooking a putting green. Aerial imagery and the mapped golf sports-centre outline place the point in that building beside the greens and car park, rather than at the course reference 739 m away.",
+          "building_url": "https://www.openstreetmap.org/way/429722895",
           "checked_at": "2026-11-26",
+          "geometry_feature": "way/429722895",
           "os_openmap_buildings": [
             "SJ_BUILDING.SHP#604334"
           ],
@@ -195738,12 +195779,17 @@
             "lat": 53.09031222,
             "lng": -2.02248863
           },
-          "precision": "reference",
+          "precision": "building",
           "sources": [
+            "https://www.leekgolfclub.co.uk/baileys-leek-golf-club",
+            "https://www.leekgolfclub.co.uk/map-directions",
+            "https://www.leekgolfclub.co.uk/assets/files/Leek_sward_imp_report_-_20-09-10.pdf",
             "https://www.openstreetmap.org/way/429722895",
+            "https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/export?bbox=-225382.40442678548%2C6999480.739733403%2C-224902.40442678548%2C6999960.739733403&bboxSR=3857&imageSR=3857&size=480%2C480&format=jpg&f=image",
             "https://osdatahub.os.uk/downloads/open/OpenMapLocal"
           ],
-          "venue_key": "leek golf club|leek|st13 5re"
+          "venue_key": "leek golf club|leek|st13 5re",
+          "visitor_hint": "Baileys is in the clubhouse at Big Birchall, beside the greens and car park."
         },
         "source": "reviewed-named-building"
       }

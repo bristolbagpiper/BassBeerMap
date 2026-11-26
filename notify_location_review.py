@@ -1,13 +1,14 @@
 """Deliver changed owner questions with durable per-item reservations."""
 import argparse
 import base64
+import hashlib
 import json
 import os
 import re
 import smtplib
 import urllib.error
 import urllib.request
-import uuid
+import zlib
 from datetime import datetime, timezone
 from email.message import EmailMessage
 from pathlib import Path
@@ -17,8 +18,21 @@ from location_review import (format_notification, format_report, legacy_notifica
                              notification_items)
 
 
-STATE_MARKER = re.compile(r'<!-- bassbeermap-notification-state:v1:([A-Za-z0-9_-]+) -->')
+STATE_MARKER = re.compile(r'<!-- bassbeermap-notification-state:v([12]):([A-Za-z0-9_-]+) -->')
 UNCERTAIN_RESOLUTIONS = {'none', 'confirm_sent', 'confirm_not_sent'}
+MAX_ISSUE_BODY_CHARS = 64000
+
+
+def item_fingerprint(item):
+    # 96 bits distinguish individual notification contents at directory scale.
+    if isinstance(item, str) and re.fullmatch(r'h:[A-Za-z0-9_-]{16}', item):
+        return item
+    if isinstance(item, str) and re.fullmatch(r'sha256:[0-9a-f]{64}', item):
+        digest = bytes.fromhex(item[7:])
+    else:
+        encoded = json.dumps(item, sort_keys=True, separators=(',', ':'), ensure_ascii=True).encode('utf-8')
+        digest = hashlib.sha256(encoded).digest()
+    return 'h:' + base64.urlsafe_b64encode(digest[:12]).decode('ascii').rstrip('=')
 
 
 def set_workflow_result(value):
@@ -34,11 +48,22 @@ def normalize_state(state):
     if not legacy and state.get('email_fingerprint'):
         legacy = {'email_fingerprint': state['email_fingerprint'],
                   'emailed_at': state.get('emailed_at')}
-    result = {
-        'schema_version': 3,
-        'items': state.get('items', {}) if isinstance(state.get('items', {}), dict) else {},
-        'pending': state.get('pending', {}) if isinstance(state.get('pending', {}), dict) else {},
-    }
+    old_items = state.get('items', {}) if isinstance(state.get('items', {}), dict) else {}
+    items = {key: item_fingerprint(value) for key, value in old_items.items()}
+    old_pending = state.get('pending', {}) if isinstance(state.get('pending', {}), dict) else {}
+    pending = {}
+    for reservation_id, reservation in old_pending.items():
+        if not isinstance(reservation, dict):
+            continue
+        key = reservation.get('key') or reservation_id
+        entry = {'status': reservation.get('status', 'reserved'),
+                 'reserved_at': reservation.get('reserved_at', ''), 'run_id': reservation.get('run_id', '')}
+        if 'item' in reservation:
+            entry['item_hash'] = item_fingerprint(reservation['item'])
+        elif reservation.get('item_hash'):
+            entry['item_hash'] = item_fingerprint(reservation['item_hash'])
+        pending[key] = entry
+    result = {'schema_version': 4, 'items': items, 'pending': pending}
     if legacy:
         result['legacy_ack'] = legacy
     if state.get('emailed_at'):
@@ -48,26 +73,29 @@ def normalize_state(state):
 
 def encode_state(state):
     raw = json.dumps(state, sort_keys=True, separators=(',', ':'), ensure_ascii=True).encode('utf-8')
-    return base64.urlsafe_b64encode(raw).decode('ascii').rstrip('=')
+    return base64.urlsafe_b64encode(zlib.compress(raw, 9)).decode('ascii').rstrip('=')
 
 
 def decode_state(body):
     match = STATE_MARKER.search(body or '')
     if not match:
         return None
-    token = match.group(1)
+    version, token = match.groups()
     token += '=' * (-len(token) % 4)
-    value = json.loads(base64.urlsafe_b64decode(token).decode('utf-8'))
-    if not isinstance(value, dict) or value.get('schema_version') != 3:
+    raw = base64.urlsafe_b64decode(token)
+    if version == '1':
+        value = json.loads(raw.decode('utf-8'))
+    else:
+        value = json.loads(zlib.decompress(raw).decode('utf-8'))
+    if not isinstance(value, dict) or value.get('schema_version') not in (3, 4):
         raise ValueError('Issue #5 notification state is malformed or unsupported.')
     return normalize_state(value)
 
 
 def issue_body(report_text, state):
+    state = normalize_state(state)
     pending = state.get('pending', {})
-    body = report_text.rstrip()
-    if len(body) > 50000:
-        body = body[:50000].rstrip() + '\n\n_Report shortened to preserve the notification receipt marker._'
+    report = report_text.rstrip()
     if pending:
         uncertain = sum(value.get('status') == 'uncertain' for value in pending.values())
         reserved = len(pending) - uncertain
@@ -78,8 +106,20 @@ def issue_body(report_text, state):
             status.append(f'{reserved} item(s) were reserved before a notification attempt; automatic resend is suppressed.')
         status += ['', 'After checking the mail outcome, manually dispatch the notification workflow with '
                    '`confirm_sent` or `confirm_not_sent` to resolve the held item(s).']
-        body += '\n\n' + '\n'.join(status)
-    return body + '\n\n<!-- bassbeermap-notification-state:v1:' + encode_state(state) + ' -->'
+        status_text = '\n\n' + '\n'.join(status)
+    else:
+        status_text = ''
+    marker = '\n\n<!-- bassbeermap-notification-state:v2:' + encode_state(state) + ' -->'
+    available = MAX_ISSUE_BODY_CHARS - len(status_text) - len(marker)
+    if available < 0:
+        raise RuntimeError('Notification receipt state exceeds the safe GitHub issue-body limit.')
+    if len(report) > available:
+        suffix = '\n\n_Report shortened to preserve the complete notification receipt state._'
+        report = (report[:available - len(suffix)].rstrip() + suffix) if available >= len(suffix) else ''
+    body = report + status_text + marker
+    if len(body) > MAX_ISSUE_BODY_CHARS:
+        raise RuntimeError('Notification issue body exceeds the safe GitHub issue-body limit.')
+    return body
 
 
 class GitHubIssueStateStore:
@@ -136,6 +176,7 @@ def _read_state(state_path, state_store):
 
 
 def _persist(state, report, state_path, state_store):
+    state = normalize_state(state)
     if state_store:
         due_notices = report.get('trading_notice_reviews', [])
         current = notification_items(report)
@@ -147,11 +188,6 @@ def _persist(state, report, state_path, state_store):
         write_json(state_path, state)
 
 
-def _pending_matches(state, key, item):
-    return any(reservation.get('key') == key and reservation.get('item') == item
-               for reservation in state.get('pending', {}).values())
-
-
 def _resolve_pending(state, current, resolution):
     if resolution not in UNCERTAIN_RESOLUTIONS:
         raise ValueError(f'Unknown notification resolution: {resolution}')
@@ -160,10 +196,9 @@ def _resolve_pending(state, current, resolution):
     pending = state.get('pending', {})
     resolved = len(pending)
     if resolution == 'confirm_sent':
-        for reservation in pending.values():
-            key, item = reservation.get('key'), reservation.get('item')
-            if key and current.get(key) == item:
-                state['items'][key] = item
+        for key, reservation in pending.items():
+            if key in current and reservation.get('item_hash') == item_fingerprint(current[key]):
+                state['items'][key] = reservation['item_hash']
     state['pending'] = {}
     return resolved
 
@@ -191,14 +226,14 @@ def notify(report, state_path=None, failure_url='', smtp_factory=smtplib.SMTP,
     if not state.get('items') and not state.get('pending') and state.get('legacy_ack'):
         legacy_hash = state['legacy_ack'].get('email_fingerprint')
         if legacy_hash and legacy_hash == legacy_notification_fingerprint(report):
-            state['items'] = current
+            state['items'] = {key: item_fingerprint(item) for key, item in current.items()}
             _persist(state, report, state_path, state_store)
             set_workflow_result('quiet')
             print('Exact legacy acknowledgement migrated into per-item issue state.')
             return False
 
     changed = {key:item for key,item in current.items()
-               if state['items'].get(key) != item and not _pending_matches(state, key, item)}
+               if state['items'].get(key) != item_fingerprint(item) and key not in state['pending']}
     if not changed:
         _persist(state, report, state_path, state_store)
         if state.get('pending'):
@@ -227,11 +262,11 @@ def notify(report, state_path=None, failure_url='', smtp_factory=smtplib.SMTP,
     now = datetime.now(timezone.utc).isoformat()
     run_id = environ.get('GITHUB_RUN_ID', '')
     for key, item in changed.items():
-        reservation_id = uuid.uuid4().hex
-        state['pending'][reservation_id] = {
-            'key':key, 'item':item, 'status':'reserved', 'reserved_at':now, 'run_id':run_id,
-        }
-        reservation_ids.append(reservation_id)
+        # The prior question for this venue has changed. Its receipt no longer
+        # represents the current question, which now has its own reservation.
+        state['items'].pop(key, None)
+        state['pending'][key] = {'item_hash':item_fingerprint(item), 'status':'reserved', 'reserved_at':now, 'run_id':run_id}
+        reservation_ids.append(key)
     # The issue write is the send boundary: no SMTP operation happens until the
     # reservation has been read back successfully.
     _persist(state, report, state_path, state_store)
@@ -283,7 +318,7 @@ def notify(report, state_path=None, failure_url='', smtp_factory=smtplib.SMTP,
             raise RuntimeError('SMTP outcome is uncertain; automatic resend is suppressed until manually resolved.')
 
     for key, item in changed.items():
-        state['items'][key] = item
+        state['items'][key] = item_fingerprint(item)
     for reservation_id in reservation_ids:
         state['pending'].pop(reservation_id, None)
     state['emailed_at'] = datetime.now(timezone.utc).isoformat()

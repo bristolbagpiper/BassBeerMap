@@ -2,6 +2,7 @@ import copy
 import os
 import tempfile
 import unittest
+import uuid
 from pathlib import Path
 from unittest.mock import MagicMock, patch
 
@@ -9,7 +10,7 @@ from coordinate_sources import camra_reference, resolve_new_pin
 from directory_release import build_ledger, permanent_id, read_json, venue_key
 from location_review import (build_review, fingerprint, format_report, legacy_notification_fingerprint,
                              load_health_status, notification_items, with_health)
-from notify_location_review import (GitHubIssueStateStore, decode_state, issue_body, normalize_state, notify)
+from notify_location_review import (GitHubIssueStateStore, decode_state, issue_body, item_fingerprint, normalize_state, notify)
 from tests.test_directory_release import row, pin
 
 
@@ -212,7 +213,8 @@ class LocationTrackingTests(unittest.TestCase):
             working = MagicMock()
             working.return_value.__enter__.return_value.send_message.return_value = {}
             self.assertTrue(notify(review, state, smtp_factory=working))
-            self.assertEqual(read_json(state)['items']['venue:' + identifier]['pub_name'], review['records'][identifier]['pub_name'])
+            self.assertEqual(read_json(state)['items']['venue:' + identifier],
+                             item_fingerprint(notification_items(review)['venue:' + identifier]))
             self.assertFalse(notify(review, state, smtp_factory=working))
             self.assertEqual(working.call_count, 1)
 
@@ -235,7 +237,8 @@ class LocationTrackingTests(unittest.TestCase):
             self.assertTrue(notify(review, state, smtp_factory=confirmed_not_sent, resolution='confirm_not_sent'))
             saved = read_json(state)
             self.assertEqual(saved['pending'], {})
-            self.assertEqual(saved['items']['venue:' + identifier]['pub_name'], review['records'][identifier]['pub_name'])
+            self.assertEqual(saved['items']['venue:' + identifier],
+                             item_fingerprint(notification_items(review)['venue:' + identifier]))
 
     def test_issue_reservation_survives_failure_to_persist_post_acceptance(self):
         listing, registry, _ = self.fixture()
@@ -284,6 +287,53 @@ class LocationTrackingTests(unittest.TestCase):
         self.assertEqual(decode_state(issue['body']), state)
         self.assertNotIn('mock-token-never-sent', issue['body'])
 
+    def test_large_1088_venue_edition_keeps_receipts_under_github_body_limit(self):
+        report = {'records': {f'v-{uuid.uuid5(uuid.NAMESPACE_DNS, str(i))}': {
+            'active': True, 'manual_action_required': True, 'pub_name': f'Example Pub {i:04d}',
+            'place_name': f'Town {i % 75}', 'postcode': f'AA{i % 10} {i % 10}AA',
+            'review_category': 'needs_verification', 'first_seen': '2026-11-01', 'unverified': True,
+            'reasons': ['Location has not been independently verified.'],
+            'next_action': 'Confirm the entrance using current evidence.'}
+            for i in range(1088)}}
+
+        class BoundedIssueStore(MemoryIssueStore):
+            def __init__(self):
+                super().__init__()
+                self.bodies = []
+            def save(self, report_text, state, should_open):
+                body = issue_body(report_text, state)
+                self.bodies.append(body)
+                self.assert_limit(body)
+                super().save(report_text, state, should_open)
+            @staticmethod
+            def assert_limit(body):
+                if len(body) > 64000:
+                    raise AssertionError(f'issue body exceeded limit: {len(body)}')
+
+        store = BoundedIssueStore()
+        smtp = MagicMock()
+        smtp.return_value.__enter__.return_value.send_message.return_value = {}
+        result = notify(report, state_store=store, smtp_factory=smtp,
+                        environ={'SMTP_HOST':'smtp.example.test','SMTP_USERNAME':'test',
+                                 'SMTP_PASSWORD':'test','ALERT_TO':'test@example.test'})
+        self.assertTrue(result)
+        self.assertEqual(len(store.bodies), 2)
+        reserved = decode_state(store.bodies[0])
+        accepted = decode_state(store.bodies[1])
+        self.assertEqual(len(reserved['pending']), 1088)
+        self.assertEqual(len(accepted['items']), 1088)
+        self.assertEqual(accepted['pending'], {})
+        self.assertIn('Report shortened to preserve the complete notification receipt state.', store.bodies[1])
+
+    def test_real_historical_seed_is_compact_and_preserves_legacy_receipt(self):
+        seed = read_json(Path(__file__).resolve().parents[1] / 'location-alert-state.json')
+        normalized = normalize_state(seed)
+        body = issue_body('Current owner queue', normalized)
+        self.assertLessEqual(len(body), 64000)
+        self.assertEqual(decode_state(body), normalized)
+        self.assertEqual(normalized['legacy_ack']['email_fingerprint'], seed['email_fingerprint'])
+        self.assertEqual(normalized['emailed_at'], seed['emailed_at'])
+
     def test_missing_email_configuration_is_visible_and_retryable(self):
         listing, registry, _ = self.fixture()
         review = build_review([listing], registry, build_ledger([listing], registry))
@@ -306,7 +356,7 @@ class LocationTrackingTests(unittest.TestCase):
             smtp = MagicMock()
             self.assertFalse(notify(replay, state, failure_url='https://example.test/rejected-import', smtp_factory=smtp))
             self.assertEqual(smtp.call_count, 0)
-            self.assertEqual(read_json(state)['items'], notification_items(replay))
+            self.assertEqual(read_json(state)['items'], {key: item_fingerprint(value) for key, value in notification_items(replay).items()})
 
     def test_seeded_historical_receipt_stays_quiet_and_preserves_original_receipt(self):
         current = {'records': {}}

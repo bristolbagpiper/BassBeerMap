@@ -16,12 +16,33 @@ registry, coordinates, evidence ledger, metadata and PDF are committed together.
 The browser consumes `directory-release.json` alone, so cached versions of
 separate CSV/coordinate files cannot be combined into an incorrect pin.
 
+The listing change report is attached to the workflow run. A manual import
+can request an emailed copy. Scheduled imports leave the digest in the artifact.
+
+The import workflow runs for a root-level PDF push, not ordinary code pushes.
+It selects the single PDF changed by that exact push commit. A non-canonical
+PDF is staged as an incoming source without replacing or deleting other PDFs;
+multiple changed PDFs are rejected as ambiguous. A changed
+`latest-bass-directory.pdf` is treated as an already-canonical release and
+receives the same full PDF-to-CSV validation. The workflow bot does not retrigger
+itself. Code and canonical PDF changes also pass through the read-only
+`Validate coordinates` PR/main checks, including `--check-pdf`.
+
+For unattended releases, `promote_checked_commit.py` places the single data
+commit on a temporary branch and dispatches the existing validation workflow.
+It verifies the GitHub run ID, commit and result and then fast-forwards
+`main` from the expected parent. A failed check or advanced parent stops
+promotion. The importer and owner approval workflow request a Pages build
+and check its commit and the public HTML, PDF, CSV and bundle bytes.
+The branch rule uses the GitHub Actions `coordinate-audit` check and allows
+no bypass actors. Its production activation requires the cutover trial.
+
 The gate rejects conflicting duplicates, unresolved identity changes, invalid
 coordinates, missing coverage, evidence/coordinate mismatches and loss or
 movement over 50 metres of previously verified pins. Existing reviewed locations
 are preserved rather than replaced with a new automatic geocode. Unknown venues
 require one unambiguous same-name, full-postcode CAMRA venue with a checked
-named-page address and coordinate to get a precise pin. Discovery uses the
+named-page address and coordinate to get a reference pin. Discovery uses the
 postcode search area, independently of FSA. Incomplete CAMRA coverage, different
 postcodes, ambiguous venues and fuzzy names remain review candidates. FSA is an
 additional address/coordinate comparison: missing records, outages and coordinate
@@ -78,79 +99,20 @@ coordinate data or trigger a venue email. A genuinely rejected import creates
 its own durable `BassBeerMap update rejected` issue while retaining the
 previously published release.
 
-The `hermes-browser` provider combines the Windows Hermes Google checks with
-the existing GitHub location review. Hermes records browser evidence locally.
-GitHub validates the derived report against its current directory and sends
-the consolidated alert through `Location review notifications`.
-Hermes compares the visible named business, full postcode and actual place marker
-with the saved pin. It rotates the oldest exact-bound attempts, up to 45 per run.
-Up to five slots go to outstanding closure flags due for a follow-up after
-three days. A newer conclusive comparison without a closure flag returns the
-venue to the ordinary rotation.
-A marker more than 50 metres away, conflicting identity or possible closure is
-flagged separately for review. A failed browser or consent/CAPTCHA block stops
-the batch and leaves untouched venues unchecked. It never bypasses challenges.
+### Optional Google research
 
-Private receipts contain venue IDs, binding signatures, dated categories and
-source links. Google checks expire after 30 days. The local report separates
-the selected, attempted, checked, ambiguous and unavailable counts for the
-execution from current coverage and prior unresolved attempts. Findings require
-review before any listing or pin changes. The public map only displays possible
-closure warnings with explicit dated evidence for the same venue and displayed
-point. Legacy snapshots lack these fields.
+The legacy Hermes browser comparison and its local evidence remain available
+for targeted investigation. Run `hermes_google_runner.py --local-only` with
+a separate state directory for diagnostics. Compare the named venue, full
+address and marker with independent premises evidence before changing a pin or
+writing a dated trading notice. Google search results and coverage statistics
+do not publish visitor information or generate owner emails.
 
-The alternative `places-api` provider remains available but is not enabled by
-this route. It requires both `GOOGLE_PLACES_ENABLED=true` and
-`GOOGLE_PLACES_API_KEY`, plus a Google Places project with billing. Its request
-limits remain 45 per day and 1,400 per month. The Hermes browser route uses no
-Google API key or API billing and depends on the local computer being available.
-
-The installed native Hermes job `1353548e1bb7` runs daily at 07:40 Europe/London,
-using a separate clean local browser and a script-only job (no model calls).
-The standard Hermes `default` profile owns the job. State, observation history,
-private receipts and publication credentials live under
-`%LOCALAPPDATA%\hermes\bass-map-google`. McJeeves is reserved for piping and
-pipe-band responsibilities.
-Use the scheduled job's Python to run `install_hermes_google.py --revision
-<commit> --state-dir <state-directory> --launcher <existing-cron-script>
---scheduler-jobs <Hermes-home>/cron/jobs.json`. The installer checks the live
-job, stages and hashes committed files, then switches the launcher under the
-native job lock. Add `--check` and use the full installed commit to verify the
-scheduler, launcher and code without changes. The production launcher accepts
-no arguments.
-
-Read `last-run.json` for the fetched data commit, installed code commit, batch
-outcome and local report hash. After the browser finishes, the same native job
-uses `hermes_google_publish.py` to rebuild the filtered report against the
-current GitHub release. It publishes only `hermes-google-status.json`. The push
-requires the exact expected parent. If `main` advances, the publisher checks
-the new release and rebuilds the report before retrying.
-The native execution succeeds only when the browser batch completes and the
-publication attempt records the same execution, outcome and verified GitHub
-commit. `review_pending` records a verified push while Actions confirmation
-is still pending.
-
-The publisher uses a BassBeerMap-only SSH deploy key. The private key and pinned
-GitHub host configuration are stored under `publication-ssh` in the local
-state directory with Windows permissions restricted to the scheduled account.
-`publication-auth.json` refers to the SSH configuration and contains no key
-material. `publication-repo.git` caches the public Git objects used for validation.
-
-`publication-attempt.json` records the last attempt, including a safe failure
-reason. `publication-receipt.json` records the verified push and any observed
-GitHub review run. Run `hermes_google_runner.py --state-dir <state-directory>
---publish-only` outside the scheduler to retry a saved execution. Keep
-`--local-only` diagnostics in a separate state directory. Repeated
-evidence is published only when the bindings, findings or coverage change or
-the GitHub report needs a freshness update. GitHub records SMTP acceptance
-separately from inbox delivery. The scheduled map integrity check does not
-depend on receipt of this local browser execution.
-
-Keep the local observation journal and source URLs outside Git. The handoff
-publishes directory fields, derived review reasons and binding metadata.
-Visitor-visible closure warnings require a separate dated finding for the
-exact displayed venue and pin. Hermes review findings require corroboration
-before any public listing or coordinate change.
+The previous daily 07:40 Europe/London job is `1353548e1bb7` under the
+standard Hermes `default` profile. The cutover pauses that job using its
+per-job scheduler lock. Its previous observations, receipts and credentials
+are retained under `%LOCALAPPDATA%\hermes\bass-map-google`. The scheduled
+directory import and live map check run on GitHub independently of this machine.
 
 ## Acceptance evidence after changes
 
@@ -191,12 +153,23 @@ questions. A changed venue is sent by itself; unrelated venue changes do not
 repeat already acknowledged questions. Clearing a decision prunes its email
 acknowledgement so a future recurrence can be sent again.
 
-`location-alert-state.json` records each question after successful SMTP server
-acceptance only; an exception or refused recipient leaves it unacknowledged for
-retry. A quiet run still records current cleared state but sends nothing.
-Notification failures fail visibly and open a separate GitHub issue. Successful
-delivery of a changed question closes that issue. SMTP acceptance does not
-prove inbox delivery. The daily map check keeps its read-only integrity schedule, while
+Issue #5 holds the current review queue and the notification receipt marker. The
+committed `location-alert-state.json` is only a bootstrap seed for historical
+SMTP receipts; ongoing acknowledgements do not write to protected `main`. Each
+changed question is reserved on issue #5 before SMTP is attempted. Known
+pre-send failures release the reservation when the issue update succeeds. A
+timeout, refusal, or other failure during SMTP is treated as ambiguous and held
+from automatic resend. Failure to record a later receipt also leaves the
+pre-send reservation in place, preventing a duplicate.
+
+The workflow reports SMTP acceptance, not inbox delivery or human use. For a
+held item, check the actual mailbox outcome and manually dispatch the workflow
+with `confirm_sent` or `confirm_not_sent`; the former records the receipt and
+the latter releases the reservation for a new attempt. There is no automatic
+retry claim for ambiguous outcomes. A quiet run still prunes cleared questions
+from active receipt state, so a genuinely reappearing question can be sent
+again. Notification failures fail visibly and open a separate GitHub issue.
+The daily map check keeps its read-only integrity schedule, while
 Google comparisons and the full independent FSA audit remain manually usable;
 weekly research is manual-only.
 
@@ -222,14 +195,11 @@ evidence in `ingestion-decisions.json` and the registry. Trading notices use
 `trading-notices.json`. Investigate discrepancies when they affect the identity
 of the mapped building or the accuracy of its pin.
 
-`Research unverified locations` runs Tuesdays at 08:17 UTC and supports manual
-dispatch. It retries CAMRA-primary verification, records supporting FSA checks and searches
-CAMRA around the listed postcode even when FSA matching fails. It rotates through
-up to 30 unverified venues, retaining up to three possible named-address matches
-per venue. Name variants and spelling similarities are suggestions only. Source
-outages retain earlier candidates; incomplete searches are explicitly marked.
-Research results and candidate changes appear in the existing review issue and
-email alerts. No AI model or API key is used.
+`Research unverified locations` runs on request. Supply a venue ID to investigate
+one location, or leave it blank to check up to 30 postcode, reference and site
+pins. The workflow saves candidates and source warnings as a review artifact.
+Existing pins stay in place. A newly discovered named CAMRA point is a reference
+location until the premises are identified.
 
 For an exception, the repository owner checks the candidate's named address and
 map, then posts the report's `/verify-location <venue-id> <CAMRA-url>` command in

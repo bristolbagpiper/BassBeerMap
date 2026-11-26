@@ -6,6 +6,12 @@ on:
     types: [completed]
     branches: [main]
   workflow_dispatch:
+    inputs:
+      uncertain_resolution:
+        description: Resolve held delivery only after checking the mail outcome
+        type: choice
+        options: [none, confirm_sent, confirm_not_sent]
+        default: none
   push:
     branches: [main]
     paths:
@@ -16,8 +22,7 @@ on:
       - 'trading-notices.json'
 
 permissions:
-  # Write permission is limited to this workflow's own SMTP acknowledgement.
-  contents: write
+  contents: read
   issues: write
 
 concurrency:
@@ -31,7 +36,7 @@ jobs:
     # into a location email retry loop or mix failure diagnostics into questions.
     if: github.event_name != 'workflow_run' || github.event.workflow_run.conclusion == 'success'
     runs-on: ubuntu-latest
-    timeout-minutes: 10
+    timeout-minutes: 35
     steps:
       - uses: actions/checkout@v4
         with:
@@ -53,21 +58,6 @@ jobs:
           write_json('notification-report.json', report)
           Path('location-review-report.md').write_text(format_report(report), encoding='utf-8')
           PY
-      - name: Update the persistent GitHub review issue
-        uses: actions/github-script@v7
-        with:
-          script: |
-            const fs = require('fs');
-            const report = JSON.parse(fs.readFileSync('notification-report.json', 'utf8'));
-            const body = fs.readFileSync('location-review-report.md', 'utf8').slice(0, 60000);
-            const existing = (await github.rest.issues.get({...context.repo, issue_number:5})).data;
-            if (report.actionable_count || report.trading_notice_reviews?.length) {
-              if (existing.state !== 'open' || existing.body !== body) {
-                await github.rest.issues.update({...context.repo, issue_number:existing.number, state:'open', body});
-              }
-            } else if (existing.state !== 'closed' || existing.body !== body) {
-              await github.rest.issues.update({...context.repo, issue_number:existing.number, body, state:'closed', state_reason:'completed'});
-            }
       - name: Email changed owner questions
         id: email
         env:
@@ -77,38 +67,30 @@ jobs:
           SMTP_PASSWORD: ${{ secrets.SMTP_PASSWORD }}
           ALERT_TO: ${{ secrets.ALERT_TO }}
           ALERT_FROM: ${{ secrets.ALERT_FROM }}
-        run: python notify_location_review.py --report notification-report.json
-      - name: Commit notification acknowledgement
-        run: |
-          if [ ! -f location-alert-state.json ]; then exit 0; fi
-          git add location-alert-state.json
-          if git diff --cached --quiet; then exit 0; fi
-          git config user.name 'github-actions[bot]'
-          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
-          git commit -m 'Record current location notification state'
-          if ! git push; then
-            git pull --rebase origin main
-            git push
-          fi
+          GH_TOKEN: ${{ github.token }}
+          GITHUB_REPOSITORY: ${{ github.repository }}
+          UNCERTAIN_RESOLUTION: ${{ inputs.uncertain_resolution || 'none' }}
+        run: python notify_location_review.py --report notification-report.json --state-seed location-alert-state.json --resolution "$UNCERTAIN_RESOLUTION"
       - name: Upload review report
         if: always()
         uses: actions/upload-artifact@v4
         with:
           name: location-review-report
-          path: location-review-report.md
+          path: |
+            location-review-report.md
       - name: Make notification failures visible
         if: failure()
         uses: actions/github-script@v7
         with:
           script: |
             const title = 'BassBeerMap location notification failed';
-            const body = `Changed owner questions could not be processed or accepted by SMTP. The acknowledgement was not advanced, so the next successful notification run will retry.\n\nRun: https://github.com/${context.repo.owner}/${context.repo.repo}/actions/runs/${context.runId}`;
+            const body = `The location notification workflow did not complete. Check the delivery status on issue #5. If it shows a reserved or uncertain item, automatic resend is suppressed; check the actual mail outcome before resolving it with a manual dispatch using confirm_sent or confirm_not_sent. If no item is held, fix the reported workflow failure before dispatching again.\n\nRun: https://github.com/${context.repo.owner}/${context.repo.repo}/actions/runs/${context.runId}`;
             const issues = await github.paginate(github.rest.issues.listForRepo, {...context.repo, state:'open'});
             const existing = issues.find(i => i.title === title);
             if (existing) await github.rest.issues.update({...context.repo, issue_number:existing.number, body});
             else await github.rest.issues.create({...context.repo, title, body});
       - name: Close recovered notification failures
-        if: success() && steps.email.outputs.result == 'accepted'
+        if: success() && steps.email.outputs.result != 'uncertain'
         uses: actions/github-script@v7
         with:
           script: |

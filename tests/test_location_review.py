@@ -9,8 +9,28 @@ from coordinate_sources import camra_reference, resolve_new_pin
 from directory_release import build_ledger, permanent_id, read_json, venue_key
 from location_review import (build_review, fingerprint, format_report, legacy_notification_fingerprint,
                              load_health_status, notification_items, with_health)
-from notify_location_review import notify
+from notify_location_review import (GitHubIssueStateStore, decode_state, issue_body, normalize_state, notify)
 from tests.test_directory_release import row, pin
+
+
+class MemoryIssueStore:
+    def __init__(self, fail_on_save=None):
+        self.state = None
+        self.report_text = None
+        self.should_open = None
+        self.saves = 0
+        self.fail_on_save = fail_on_save
+
+    def load(self, seed):
+        return copy.deepcopy(self.state if self.state is not None else seed)
+
+    def save(self, report_text, state, should_open):
+        self.saves += 1
+        if self.saves == self.fail_on_save:
+            raise RuntimeError('simulated issue persistence failure')
+        self.report_text = report_text
+        self.state = copy.deepcopy(state)
+        self.should_open = should_open
 
 
 class LocationTrackingTests(unittest.TestCase):
@@ -178,23 +198,91 @@ class LocationTrackingTests(unittest.TestCase):
         self.assertEqual(fetch.call_count, 5)
         self.assertEqual(diagnostics['sources']['camra']['status'], 'incomplete')
 
-    def test_email_failure_is_not_acknowledged_and_success_is_deduplicated(self):
+    def test_known_pre_send_failure_releases_reservation_and_success_is_deduplicated(self):
         listing, registry, identifier = self.fixture()
         review = build_review([listing], registry, build_ledger([listing], registry))
         settings = dict(SMTP_HOST='smtp.example.test', SMTP_USERNAME='test', SMTP_PASSWORD='test', ALERT_TO='test@example.test')
         with tempfile.TemporaryDirectory() as directory, patch.dict(os.environ, settings):
             state = Path(directory) / 'delivery.json'
             failing = MagicMock()
-            failing.return_value.__enter__.return_value.send_message.side_effect = TimeoutError()
+            failing.return_value.__enter__.return_value.login.side_effect = TimeoutError()
             with self.assertRaises(TimeoutError):
                 notify(review, state, smtp_factory=failing)
-            self.assertFalse(state.exists())
+            self.assertEqual(read_json(state)['pending'], {})
             working = MagicMock()
             working.return_value.__enter__.return_value.send_message.return_value = {}
             self.assertTrue(notify(review, state, smtp_factory=working))
             self.assertEqual(read_json(state)['items']['venue:' + identifier]['pub_name'], review['records'][identifier]['pub_name'])
             self.assertFalse(notify(review, state, smtp_factory=working))
             self.assertEqual(working.call_count, 1)
+
+    def test_ambiguous_smtp_result_is_reserved_and_requires_manual_resolution(self):
+        listing, registry, identifier = self.fixture()
+        review = build_review([listing], registry, build_ledger([listing], registry))
+        settings = dict(SMTP_HOST='smtp.example.test', SMTP_USERNAME='test', SMTP_PASSWORD='test', ALERT_TO='test@example.test')
+        with tempfile.TemporaryDirectory() as directory, patch.dict(os.environ, settings):
+            state = Path(directory) / 'delivery.json'
+            uncertain = MagicMock()
+            uncertain.return_value.__enter__.return_value.send_message.side_effect = TimeoutError('connection lost after DATA')
+            with self.assertRaisesRegex(RuntimeError, 'outcome is uncertain'):
+                notify(review, state, smtp_factory=uncertain)
+            self.assertEqual(len(read_json(state)['pending']), 1)
+            held = MagicMock()
+            self.assertFalse(notify(review, state, smtp_factory=held))
+            self.assertEqual(held.call_count, 0)
+            confirmed_not_sent = MagicMock()
+            confirmed_not_sent.return_value.__enter__.return_value.send_message.return_value = {}
+            self.assertTrue(notify(review, state, smtp_factory=confirmed_not_sent, resolution='confirm_not_sent'))
+            saved = read_json(state)
+            self.assertEqual(saved['pending'], {})
+            self.assertEqual(saved['items']['venue:' + identifier]['pub_name'], review['records'][identifier]['pub_name'])
+
+    def test_issue_reservation_survives_failure_to_persist_post_acceptance(self):
+        listing, registry, _ = self.fixture()
+        review = build_review([listing], registry, build_ledger([listing], registry))
+        store = MemoryIssueStore(fail_on_save=2)
+        smtp = MagicMock()
+        smtp.return_value.__enter__.return_value.send_message.return_value = {}
+        with patch.dict(os.environ, {'SMTP_HOST':'smtp.example.test','SMTP_USERNAME':'test',
+                                     'SMTP_PASSWORD':'test','ALERT_TO':'test@example.test'}):
+            with self.assertRaisesRegex(RuntimeError, 'persistence failure'):
+                notify(review, state_store=store, smtp_factory=smtp)
+            self.assertEqual(len(store.state['pending']), 1)
+            self.assertEqual(store.state['items'], {})
+            later_smtp = MagicMock()
+            self.assertFalse(notify(review, state_store=store, smtp_factory=later_smtp))
+            self.assertEqual(later_smtp.call_count, 0)
+            self.assertEqual(len(store.state['pending']), 1)
+            self.assertFalse(notify(review, state_store=store, smtp_factory=later_smtp, resolution='confirm_sent'))
+            self.assertEqual(store.state['pending'], {})
+            self.assertEqual(later_smtp.call_count, 0)
+
+    def test_github_issue_state_store_round_trips_only_machine_receipt_marker(self):
+        issue = {'body':'Existing review queue', 'state':'open'}
+
+        class Response:
+            def __init__(self, value): self.value = value
+            def __enter__(self): return self
+            def __exit__(self, *args): return False
+            def read(self): return __import__('json').dumps(self.value).encode()
+
+        def opener(request, timeout):
+            self.assertEqual(timeout, 20)
+            if request.get_method() == 'PATCH':
+                issue.update(__import__('json').loads(request.data))
+            return Response(dict(issue, number=5))
+
+        store = GitHubIssueStateStore('owner/repo', 'mock-token-never-sent', opener=opener)
+        seed = {'schema_version':2,'items':{'venue:old':{'pub_name':'Previously emailed'}}}
+        self.assertEqual(store.load(seed), normalize_state(seed))
+        report_text = 'Current owner review questions'
+        state = normalize_state(dict(seed, pending={'r1':{'key':'venue:new','item':{'pub_name':'New'},
+                                                         'status':'reserved'}}))
+        store.save(report_text, state, True)
+        self.assertTrue(issue['body'].startswith(report_text))
+        self.assertIn('automatic resend is suppressed', issue['body'])
+        self.assertEqual(decode_state(issue['body']), state)
+        self.assertNotIn('mock-token-never-sent', issue['body'])
 
     def test_missing_email_configuration_is_visible_and_retryable(self):
         listing, registry, _ = self.fixture()
@@ -205,19 +293,13 @@ class LocationTrackingTests(unittest.TestCase):
                 notify(review, state)
             self.assertFalse(state.exists())
 
-    def test_real_committed_snapshot_and_legacy_ack_replay_stays_quiet_for_diagnostics(self):
-        root = Path(__file__).resolve().parents[1]
-        report = read_json(root / 'location-review.json')
-        legacy = read_json(root / 'location-alert-state.json')
-        self.assertIn('email_fingerprint', legacy)
-        legacy.pop('items', None)
-        legacy.pop('schema_version', None)
+    def test_legacy_ack_replay_stays_quiet_for_diagnostics(self):
+        report = {'records': {}}
         replay = dict(report, health_issues=['Live release unreachable: TimeoutError'],
                       google_issues=['Google comparison status is missing or stale'],
                       google_findings=[], google_count=2, google_actionable_count=0,
                       pipeline_failure=True)
-        legacy.pop('items', None)  # Reproduce the pre-migration aggregate-only receipt.
-        legacy['email_fingerprint'] = legacy_notification_fingerprint(replay)
+        legacy = {'email_fingerprint': legacy_notification_fingerprint(replay), 'emailed_at': '2026-11-26T07:44:36Z'}
         with tempfile.TemporaryDirectory() as directory:
             state = Path(directory) / 'state.json'
             state.write_text(__import__('json').dumps(legacy), encoding='utf-8')
@@ -227,16 +309,10 @@ class LocationTrackingTests(unittest.TestCase):
             self.assertEqual(read_json(state)['items'], notification_items(replay))
 
     def test_seeded_historical_receipt_stays_quiet_and_preserves_original_receipt(self):
-        root = Path(__file__).resolve().parents[1]
-        current = read_json(root / 'location-review.json')
-        bundle = read_json(root / 'directory-release.json')
-        from location_review import with_trading_notice_reviews
-        current = with_trading_notice_reviews(current, read_json(root / 'trading-notices.json'), bundle)
-        state_snapshot = read_json(root / 'location-alert-state.json')
-        self.assertEqual(len(state_snapshot['items']), 12)
-        current_items = notification_items(current)
-        self.assertEqual(len(current_items), 0)
-        self.assertFalse(set(state_snapshot['items']) & set(current_items))
+        current = {'records': {}}
+        state_snapshot = {'email_fingerprint': 'acknowledged-legacy-digest',
+                          'emailed_at': '2026-11-26T07:44:36Z',
+                          'items': {'venue:former-question': {'question': 'A resolved question'}}}
         smtp = MagicMock()
         with tempfile.TemporaryDirectory() as directory:
             state = Path(directory) / 'state.json'

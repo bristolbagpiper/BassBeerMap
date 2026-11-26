@@ -137,6 +137,18 @@ class ReleaseGateTests(unittest.TestCase):
     def test_complete_consistent_release_passes(self):
         self.assertEqual(validate_release(self.root), [])
 
+    def test_malformed_trading_notice_cannot_enter_a_release(self):
+        identifier = self.rows[0]['venue_id']
+        notice = {'venue_id': identifier, 'text': 'Operator update', 'published_at': '2026-11-25'}
+        manifest = {'schema_version': 1, 'manual_hides': [], 'notices': [notice]}
+        ledger = build_ledger(self.rows, self.registry)
+        for change in [{'published_at': None}, {'published_at': '20261125'}, {'review_by': '2027-02-30'},
+                       {'review_by': '2026-11-24'}]:
+            with self.subTest(change=change):
+                manifest['notices'] = [dict(notice, **change)]
+                with self.assertRaisesRegex(ValueError, '[Tt]rading notice'):
+                    build_bundle(self.rows, self.metadata, self.postcodes, ledger, manifest)
+
     def test_same_exact_point_cannot_be_reused_for_different_postcodes(self):
         rows = copy.deepcopy(self.rows)
         rows[-1]['postcode'] = 'BS1 1AB'

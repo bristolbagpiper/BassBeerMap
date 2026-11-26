@@ -2206,18 +2206,26 @@
       return `<a href="${escapeHtml(url)}" target="_blank" rel="noopener noreferrer" aria-label="${label}, ${escapeHtml(venueLabel(item))}">${label}</a>`;
     }
 
-    function tradingNotice(item) {
+    function noticeDate(value) {
+      if (typeof value !== 'string' || !/^\d{4}-\d{2}-\d{2}$/.test(value)) return NaN;
+      const time = Date.parse(value + 'T00:00:00Z');
+      return Number.isFinite(time) && new Date(time).toISOString().slice(0, 10) === value ? time : NaN;
+    }
+
+    function tradingNotice(item, now = Date.now()) {
       if (hiddenTradingNoticeVenueIds.has(item.venue_id)) return '';
       const notice = tradingNoticeEntries.get(item.venue_id);
-      if (notice) {
-        const reviewBy = typeof notice.review_by === 'string' && /^\d{4}-\d{2}-\d{2}$/.test(notice.review_by)
-          ? Date.parse(`${notice.review_by}T00:00:00Z`) : NaN;
-        if (Number.isFinite(reviewBy) && Date.now() >= reviewBy + 86400000) {
+      if (!notice || notice.venue_id !== item.venue_id || typeof notice.text !== 'string') return '';
+      const published = noticeDate(notice.published_at);
+      if (!Number.isFinite(published) || published > now) return '';
+      if (notice.review_by !== undefined) {
+        const reviewBy = noticeDate(notice.review_by);
+        if (!Number.isFinite(reviewBy) || reviewBy < published) return '';
+        if (now >= reviewBy + 86400000) {
           return 'This trading status notice is due for review. Check before travelling.';
         }
-        return notice.text;
       }
-      return '';
+      return notice.text;
     }
 
     function noticeMarkup(item) {

@@ -356,6 +356,18 @@ def build_bundle(rows, metadata, postcodes, ledger, notices=None):
             identifier = notice['venue_id']
             if identifier in seen or not isinstance(notice.get('text'), str) or not notice['text'].strip():
                 raise ValueError(f'Invalid or duplicate trading notice: {identifier}')
+            for field in ('published_at', 'review_by'):
+                if field == 'review_by' and field not in notice:
+                    continue
+                value = notice.get(field)
+                try:
+                    valid_date = isinstance(value, str) and date.fromisoformat(value).isoformat() == value
+                except ValueError:
+                    valid_date = False
+                if not valid_date:
+                    raise ValueError(f'Invalid trading notice {field}: {identifier}')
+            if 'review_by' in notice and notice['review_by'] < notice['published_at']:
+                raise ValueError(f'Trading notice review precedes publication: {identifier}')
             seen.add(identifier)
             if identifier in locations and identifier not in hidden:
                 visible[identifier] = notice

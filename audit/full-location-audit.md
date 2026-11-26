@@ -16,9 +16,9 @@ Locations with informational observations: 660 (may also have an actionable find
 
 ## Confidence
 
-- existing_evidence_needs_corroboration: 747
+- existing_evidence_needs_corroboration: 898
 - owner_reviewed: 19
-- different_source_coordinates_agree: 322
+- different_source_coordinates_agree: 171
 
 ## Limits
 

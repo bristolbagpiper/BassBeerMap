@@ -3661,7 +3661,7 @@
       "comparisons": [
         {
           "address": "10 Woodgate, Helpston, Peterborough",
-          "difference_metres": 52.1,
+          "difference_metres": 51.9,
           "lat": 52.63382,
           "lng": -0.34434,
           "name": "The Bluebell",
@@ -3674,7 +3674,7 @@
       "confidence": "existing_evidence_needs_corroboration",
       "country": "England",
       "dispense": "H",
-      "independent_of_pin": false,
+      "independent_of_pin": true,
       "last": "2026 Q2",
       "listing": {
         "postcode": "PE6 7ED",
@@ -3687,8 +3687,8 @@
       "owner_reviewed": false,
       "pg": "Guest",
       "pin": {
-        "lat": 52.63425105555555,
-        "lng": -0.3446435555555556
+        "lat": 52.6342775,
+        "lng": -0.3444915
       },
       "place_name": "Helpston",
       "postcode": "PE6 7ED",
@@ -3697,7 +3697,7 @@
       "reasons": [],
       "reference": {
         "address": "10 Woodgate, Helpston, Peterborough",
-        "difference_metres": 52.1,
+        "difference_metres": 51.9,
         "lat": 52.63382,
         "lng": -0.34434,
         "name": "The Bluebell",
@@ -3710,7 +3710,7 @@
       "status": "coordinate_disagreement",
       "venue_id": "v-532b1388-63e1-5b1d-b72b-8f72b038b744",
       "warnings": [
-        "FSA coordinate is 52.1m from the accepted pin; informational only because the FSA geocode may be approximate"
+        "FSA coordinate is 51.9m from the accepted pin; informational only because the FSA geocode may be approximate"
       ]
     },
     {
@@ -3726,7 +3726,7 @@
         },
         {
           "address": "46 Main Street, Sewstern, Grantham",
-          "difference_metres": 19.4,
+          "difference_metres": 3.2,
           "lat": 52.7863375,
           "lng": -0.6838626,
           "name": "The Blue Dog Inn",
@@ -3736,10 +3736,10 @@
           "url": "https://ratings.food.gov.uk/business/1681293"
         }
       ],
-      "confidence": "different_source_coordinates_agree",
+      "confidence": "existing_evidence_needs_corroboration",
       "country": "England",
       "dispense": "H",
-      "independent_of_pin": true,
+      "independent_of_pin": false,
       "last": "2026 Q3",
       "listing": {
         "postcode": "NG33 5RG",
@@ -3752,8 +3752,8 @@
       "owner_reviewed": false,
       "pg": "Perm",
       "pin": {
-        "lat": 52.7862037,
-        "lng": -0.6840474
+        "lat": 52.786328,
+        "lng": -0.683818
       },
       "place_name": "Sewstern",
       "postcode": "NG33 5RG",
@@ -3762,7 +3762,7 @@
       "reasons": [],
       "reference": {
         "address": "46 Main Street, Sewstern, Grantham",
-        "difference_metres": 19.4,
+        "difference_metres": 3.2,
         "lat": 52.7863375,
         "lng": -0.6838626,
         "name": "The Blue Dog Inn",
@@ -8593,24 +8593,24 @@
           "status": "ambiguous_or_missing_coordinates"
         }
       ],
-      "confidence": "owner_reviewed",
+      "confidence": "existing_evidence_needs_corroboration",
       "country": "England",
       "dispense": "H",
-      "independent_of_pin": false,
+      "independent_of_pin": true,
       "last": "2026 Q4",
       "listing": {
         "postcode": "KT18 7SR",
         "pub_name": "Cricketers"
       },
       "manual_action_required": false,
-      "next_action": "Owner confirmed this exact pin; no pin check requested.",
+      "next_action": "No pin check requested.",
       "notes": "",
-      "owner_pin_confirmed": true,
-      "owner_reviewed": true,
+      "owner_pin_confirmed": false,
+      "owner_reviewed": false,
       "pg": "Guest",
       "pin": {
-        "lat": 51.33328,
-        "lng": -0.28195
+        "lat": 51.3332062,
+        "lng": -0.2819988
       },
       "place_name": "Epsom",
       "postcode": "KT18 7SR",
@@ -8623,7 +8623,7 @@
         "queried_postcode": "KT18 7SR",
         "status": "ambiguous_or_missing_coordinates"
       },
-      "review_category": "owner_confirmed",
+      "review_category": "informational",
       "status": "ambiguous_or_missing_coordinates",
       "venue_id": "v-904f3702-2d9f-5a94-9a08-766db95b67b3",
       "warnings": [
@@ -8825,8 +8825,8 @@
       "owner_reviewed": false,
       "pg": "Guest",
       "pin": {
-        "lat": 51.992637,
-        "lng": -2.1576628
+        "lat": 51.99263,
+        "lng": -2.1577387
       },
       "place_name": "Tewkesbury",
       "postcode": "GL20 5AB",
@@ -10920,7 +10920,7 @@
       "comparisons": [
         {
           "address": "The Dolphin Inn, 14 The Barbican, Plymouth",
-          "difference_metres": 32.3,
+          "difference_metres": 30.3,
           "lat": 50.3669090270996,
           "lng": -4.13472509384155,
           "name": "The Dolphin Hotel",
@@ -10933,7 +10933,7 @@
       "confidence": "existing_evidence_needs_corroboration",
       "country": "England",
       "dispense": "G",
-      "independent_of_pin": false,
+      "independent_of_pin": true,
       "last": "2026 Q4",
       "listing": {
         "postcode": "PL1 2LS",
@@ -10946,8 +10946,8 @@
       "owner_reviewed": false,
       "pg": "Perm",
       "pin": {
-        "lat": 50.36717515,
-        "lng": -4.13490714
+        "lat": 50.3671682,
+        "lng": -4.1348592
       },
       "place_name": "Plymouth: Barbican",
       "postcode": "PL1 2LS",
@@ -10956,7 +10956,7 @@
       "reasons": [],
       "reference": {
         "address": "The Dolphin Inn, 14 The Barbican, Plymouth",
-        "difference_metres": 32.3,
+        "difference_metres": 30.3,
         "lat": 50.3669090270996,
         "lng": -4.13472509384155,
         "name": "The Dolphin Hotel",
@@ -12727,7 +12727,7 @@
       "confidence": "existing_evidence_needs_corroboration",
       "country": "England",
       "dispense": "H",
-      "independent_of_pin": true,
+      "independent_of_pin": false,
       "last": "2026 Q3",
       "listing": {
         "postcode": "SK11 7NE",
@@ -29534,6 +29534,65 @@
       "checked_at": "2026-11-26",
       "comparisons": [
         {
+          "address": "13 Hill Street, Stoke, Stoke-On-Trent",
+          "difference_metres": 44.4,
+          "lat": 53.003861,
+          "lng": -2.187139,
+          "name": "Staff of Life",
+          "postcode": "ST4 1NL",
+          "queried_postcode": "ST4 1NL",
+          "status": "nearby",
+          "url": "https://ratings.food.gov.uk/business/1532242"
+        }
+      ],
+      "confidence": "existing_evidence_needs_corroboration",
+      "country": "England",
+      "dispense": "H",
+      "independent_of_pin": false,
+      "last": "2026 Q3",
+      "listing": {
+        "postcode": "ST4 1NL",
+        "pub_name": "Staff of Life"
+      },
+      "manual_action_required": false,
+      "next_action": "No pin check requested.",
+      "notes": "",
+      "owner_pin_confirmed": false,
+      "owner_reviewed": false,
+      "pg": "Perm",
+      "pin": {
+        "lat": 53.004047,
+        "lng": -2.186552
+      },
+      "place_name": "Stoke: Central",
+      "postcode": "ST4 1NL",
+      "priority": 2,
+      "pub_name": "Staff of Life",
+      "reasons": [],
+      "reference": {
+        "address": "13 Hill Street, Stoke, Stoke-On-Trent",
+        "difference_metres": 44.4,
+        "lat": 53.003861,
+        "lng": -2.187139,
+        "name": "Staff of Life",
+        "postcode": "ST4 1NL",
+        "queried_postcode": "ST4 1NL",
+        "status": "nearby",
+        "url": "https://ratings.food.gov.uk/business/1532242"
+      },
+      "review_category": "informational",
+      "status": "nearby",
+      "venue_id": "v-f796da6f-951a-52ac-a180-bd9f2f16efea",
+      "warnings": [
+        "FSA coordinate is 25-50m away; informational only"
+      ]
+    },
+    {
+      "actionable": false,
+      "area": "Staffordshire",
+      "checked_at": "2026-11-26",
+      "comparisons": [
+        {
           "address": "The Green, Bagnall, Stoke On Trent Staffordshire",
           "difference_metres": 73.8,
           "lat": 53.0550077,
@@ -30711,6 +30770,65 @@
       "venue_id": "v-927da231-9c90-5941-8718-aa8869aade0a",
       "warnings": [
         "FSA comparison is inconclusive; absence of a match does not contradict accepted evidence"
+      ]
+    },
+    {
+      "actionable": false,
+      "area": "Lancashire",
+      "checked_at": "2026-11-26",
+      "comparisons": [
+        {
+          "address": "88 Bolton Street, Blackpool",
+          "difference_metres": 37.0,
+          "lat": 53.799326,
+          "lng": -3.054237,
+          "name": "Sun Inn",
+          "postcode": "FY1 6AA",
+          "queried_postcode": "FY1 6AA",
+          "status": "nearby",
+          "url": "https://ratings.food.gov.uk/business/836476"
+        }
+      ],
+      "confidence": "existing_evidence_needs_corroboration",
+      "country": "England",
+      "dispense": "H",
+      "independent_of_pin": false,
+      "last": "2026 Q2",
+      "listing": {
+        "postcode": "FY1 6AA",
+        "pub_name": "Sun Inn"
+      },
+      "manual_action_required": false,
+      "next_action": "No pin check requested.",
+      "notes": "",
+      "owner_pin_confirmed": false,
+      "owner_reviewed": false,
+      "pg": "Perm",
+      "pin": {
+        "lat": 53.799657,
+        "lng": -3.054293
+      },
+      "place_name": "Blackpool: South Shore",
+      "postcode": "FY1 6AA",
+      "priority": 2,
+      "pub_name": "Sun Inn",
+      "reasons": [],
+      "reference": {
+        "address": "88 Bolton Street, Blackpool",
+        "difference_metres": 37.0,
+        "lat": 53.799326,
+        "lng": -3.054237,
+        "name": "Sun Inn",
+        "postcode": "FY1 6AA",
+        "queried_postcode": "FY1 6AA",
+        "status": "nearby",
+        "url": "https://ratings.food.gov.uk/business/836476"
+      },
+      "review_category": "informational",
+      "status": "nearby",
+      "venue_id": "v-c13ddfa5-e07c-5ada-be8a-58b49b43b4a1",
+      "warnings": [
+        "FSA coordinate is 25-50m away; informational only"
       ]
     },
     {
@@ -31917,65 +32035,6 @@
       "venue_id": "v-3d5087bc-6b35-594c-9de7-5c3bb759802e",
       "warnings": [
         "FSA coordinate is 62.0m from the accepted pin; informational only because the FSA geocode may be approximate"
-      ]
-    },
-    {
-      "actionable": false,
-      "area": "Staffordshire",
-      "checked_at": "2026-11-26",
-      "comparisons": [
-        {
-          "address": "Three Crowns, Lichfield Road, Stone, Staffordshire",
-          "difference_metres": 27.2,
-          "lat": 52.8909861,
-          "lng": -2.1260243,
-          "name": "The Three Crowns",
-          "postcode": "ST15 8QU",
-          "queried_postcode": "ST15 8QU",
-          "status": "nearby",
-          "url": "https://ratings.food.gov.uk/business/1195454"
-        }
-      ],
-      "confidence": "existing_evidence_needs_corroboration",
-      "country": "England",
-      "dispense": "H",
-      "independent_of_pin": true,
-      "last": "2026 Q1",
-      "listing": {
-        "postcode": "ST15 8QU",
-        "pub_name": "Three Crowns"
-      },
-      "manual_action_required": false,
-      "next_action": "No pin check requested.",
-      "notes": "",
-      "owner_pin_confirmed": false,
-      "owner_reviewed": false,
-      "pg": "Guest",
-      "pin": {
-        "lat": 52.8908058,
-        "lng": -2.1257502
-      },
-      "place_name": "Stone: Little Stoke",
-      "postcode": "ST15 8QU",
-      "priority": 2,
-      "pub_name": "Three Crowns",
-      "reasons": [],
-      "reference": {
-        "address": "Three Crowns, Lichfield Road, Stone, Staffordshire",
-        "difference_metres": 27.2,
-        "lat": 52.8909861,
-        "lng": -2.1260243,
-        "name": "The Three Crowns",
-        "postcode": "ST15 8QU",
-        "queried_postcode": "ST15 8QU",
-        "status": "nearby",
-        "url": "https://ratings.food.gov.uk/business/1195454"
-      },
-      "review_category": "informational",
-      "status": "nearby",
-      "venue_id": "v-d2bd535c-fb6c-5918-839a-3c7130ca80dc",
-      "warnings": [
-        "FSA coordinate is 25-50m away; informational only"
       ]
     },
     {
@@ -33469,6 +33528,65 @@
       "venue_id": "v-5b09269f-2a90-5c3d-91a7-30a9f7ab7ab4",
       "warnings": [
         "FSA coordinate is 130.2m from the accepted pin; informational only because the FSA geocode may be approximate"
+      ]
+    },
+    {
+      "actionable": false,
+      "area": "Staffordshire",
+      "checked_at": "2026-11-26",
+      "comparisons": [
+        {
+          "address": "13 Naylor Street, Pittshill, Stoke-On-Trent",
+          "difference_metres": 26.7,
+          "lat": 53.067672,
+          "lng": -2.199713,
+          "name": "The Vine",
+          "postcode": "ST6 6LS",
+          "queried_postcode": "ST6 6LS",
+          "status": "nearby",
+          "url": "https://ratings.food.gov.uk/business/1889233"
+        }
+      ],
+      "confidence": "existing_evidence_needs_corroboration",
+      "country": "England",
+      "dispense": "H",
+      "independent_of_pin": true,
+      "last": "2026 Q1",
+      "listing": {
+        "postcode": "ST6 6LS",
+        "pub_name": "Vine"
+      },
+      "manual_action_required": false,
+      "next_action": "No pin check requested.",
+      "notes": "",
+      "owner_pin_confirmed": false,
+      "owner_reviewed": false,
+      "pg": "Perm",
+      "pin": {
+        "lat": 53.0678898,
+        "lng": -2.1995445
+      },
+      "place_name": "Stoke: Pittshill",
+      "postcode": "ST6 6LS",
+      "priority": 2,
+      "pub_name": "Vine",
+      "reasons": [],
+      "reference": {
+        "address": "13 Naylor Street, Pittshill, Stoke-On-Trent",
+        "difference_metres": 26.7,
+        "lat": 53.067672,
+        "lng": -2.199713,
+        "name": "The Vine",
+        "postcode": "ST6 6LS",
+        "queried_postcode": "ST6 6LS",
+        "status": "nearby",
+        "url": "https://ratings.food.gov.uk/business/1889233"
+      },
+      "review_category": "informational",
+      "status": "nearby",
+      "venue_id": "v-ff9ea973-8df7-54af-b666-28cdc61239cf",
+      "warnings": [
+        "FSA coordinate is 25-50m away; informational only"
       ]
     },
     {
@@ -36003,8 +36121,8 @@
       "owner_reviewed": false,
       "pg": "Perm",
       "pin": {
-        "lat": 53.3374119,
-        "lng": -0.5623709
+        "lat": 53.337789,
+        "lng": -0.5630489
       },
       "place_name": "Ingham",
       "postcode": "LN1 2YQ",
@@ -38536,7 +38654,7 @@
       "comparisons": [
         {
           "address": "Blackfriars Tavern, 174 Queen Victoria Street, London",
-          "difference_metres": 8.1,
+          "difference_metres": 4.4,
           "lat": 51.512131,
           "lng": -0.103764,
           "name": "The Blackfriar",
@@ -38546,10 +38664,10 @@
           "url": "https://ratings.food.gov.uk/business/295254"
         }
       ],
-      "confidence": "existing_evidence_needs_corroboration",
+      "confidence": "different_source_coordinates_agree",
       "country": "England",
       "dispense": "H",
-      "independent_of_pin": false,
+      "independent_of_pin": true,
       "last": "2026 Q2",
       "listing": {
         "postcode": "EC4V 4EG",
@@ -38562,8 +38680,8 @@
       "owner_reviewed": false,
       "pg": "Perm",
       "pin": {
-        "lat": 51.51214830714286,
-        "lng": -0.10364971428571428
+        "lat": 51.5121225,
+        "lng": -0.1037015
       },
       "place_name": "Blackfriars EC4V",
       "postcode": "EC4V 4EG",
@@ -38572,7 +38690,7 @@
       "reasons": [],
       "reference": {
         "address": "Blackfriars Tavern, 174 Queen Victoria Street, London",
-        "difference_metres": 8.1,
+        "difference_metres": 4.4,
         "lat": 51.512131,
         "lng": -0.103764,
         "name": "The Blackfriar",
@@ -39572,10 +39690,10 @@
           "url": "https://ratings.food.gov.uk/business/1824161"
         }
       ],
-      "confidence": "different_source_coordinates_agree",
+      "confidence": "existing_evidence_needs_corroboration",
       "country": "England",
       "dispense": "H",
-      "independent_of_pin": true,
+      "independent_of_pin": false,
       "last": "2026 Q2",
       "listing": {
         "postcode": "KT12 5LS",
@@ -41329,7 +41447,7 @@
       "comparisons": [
         {
           "address": "131A High Street, Oxford, Oxfordshire",
-          "difference_metres": 21.4,
+          "difference_metres": 15.5,
           "lat": 51.752034,
           "lng": -1.256529,
           "name": "The Chequers",
@@ -41355,8 +41473,8 @@
       "owner_reviewed": false,
       "pg": "Guest",
       "pin": {
-        "lat": 51.75184286818182,
-        "lng": -1.2565633
+        "lat": 51.7519277,
+        "lng": -1.2566747
       },
       "place_name": "Oxford: Central",
       "postcode": "OX1 4DH",
@@ -41365,7 +41483,7 @@
       "reasons": [],
       "reference": {
         "address": "131A High Street, Oxford, Oxfordshire",
-        "difference_metres": 21.4,
+        "difference_metres": 15.5,
         "lat": 51.752034,
         "lng": -1.256529,
         "name": "The Chequers",
@@ -42640,7 +42758,7 @@
       "comparisons": [
         {
           "address": "Cross House Inn, High Street, Doynton, South Gloucestershire",
-          "difference_metres": 8.4,
+          "difference_metres": 6.9,
           "lat": 51.464499,
           "lng": -2.4051651,
           "name": "The Cross House Inn",
@@ -42666,8 +42784,8 @@
       "owner_reviewed": false,
       "pg": "Perm",
       "pin": {
-        "lat": 51.464514785714286,
-        "lng": -2.405283092857143
+        "lat": 51.46444,
+        "lng": -2.4051947
       },
       "place_name": "Doynton",
       "postcode": "BS30 5TF",
@@ -42676,7 +42794,7 @@
       "reasons": [],
       "reference": {
         "address": "Cross House Inn, High Street, Doynton, South Gloucestershire",
-        "difference_metres": 8.4,
+        "difference_metres": 6.9,
         "lat": 51.464499,
         "lng": -2.4051651,
         "name": "The Cross House Inn",
@@ -51542,10 +51660,10 @@
           "url": "https://ratings.food.gov.uk/business/236709"
         }
       ],
-      "confidence": "different_source_coordinates_agree",
+      "confidence": "existing_evidence_needs_corroboration",
       "country": "England",
       "dispense": "H",
-      "independent_of_pin": true,
+      "independent_of_pin": false,
       "last": "2026 Q2",
       "listing": {
         "postcode": "NE1 1EZ",
@@ -53812,7 +53930,7 @@
       "comparisons": [
         {
           "address": "High Street, Earl Shilton, Leicester, Leicestershire",
-          "difference_metres": 1.7,
+          "difference_metres": 14.2,
           "lat": 52.576009,
           "lng": -1.313521,
           "name": "Red Lion",
@@ -53838,8 +53956,8 @@
       "owner_reviewed": false,
       "pg": "Perm",
       "pin": {
-        "lat": 52.576,
-        "lng": -1.3135
+        "lat": 52.5759,
+        "lng": -1.31363
       },
       "place_name": "Earl Shilton",
       "postcode": "LE9 7LQ",
@@ -53848,7 +53966,7 @@
       "reasons": [],
       "reference": {
         "address": "High Street, Earl Shilton, Leicester, Leicestershire",
-        "difference_metres": 1.7,
+        "difference_metres": 14.2,
         "lat": 52.576009,
         "lng": -1.313521,
         "name": "Red Lion",
@@ -56262,63 +56380,6 @@
       "checked_at": "2026-11-26",
       "comparisons": [
         {
-          "address": "13 Hill Street, Stoke, Stoke-On-Trent",
-          "difference_metres": 0.0,
-          "lat": 53.003861,
-          "lng": -2.187139,
-          "name": "Staff of Life",
-          "postcode": "ST4 1NL",
-          "queried_postcode": "ST4 1NL",
-          "status": "coordinate_agreement",
-          "url": "https://ratings.food.gov.uk/business/1532242"
-        }
-      ],
-      "confidence": "existing_evidence_needs_corroboration",
-      "country": "England",
-      "dispense": "H",
-      "independent_of_pin": false,
-      "last": "2026 Q3",
-      "listing": {
-        "postcode": "ST4 1NL",
-        "pub_name": "Staff of Life"
-      },
-      "manual_action_required": false,
-      "next_action": "No pin check requested.",
-      "notes": "",
-      "owner_pin_confirmed": false,
-      "owner_reviewed": false,
-      "pg": "Perm",
-      "pin": {
-        "lat": 53.003861,
-        "lng": -2.187139
-      },
-      "place_name": "Stoke: Central",
-      "postcode": "ST4 1NL",
-      "priority": 3,
-      "pub_name": "Staff of Life",
-      "reasons": [],
-      "reference": {
-        "address": "13 Hill Street, Stoke, Stoke-On-Trent",
-        "difference_metres": 0.0,
-        "lat": 53.003861,
-        "lng": -2.187139,
-        "name": "Staff of Life",
-        "postcode": "ST4 1NL",
-        "queried_postcode": "ST4 1NL",
-        "status": "coordinate_agreement",
-        "url": "https://ratings.food.gov.uk/business/1532242"
-      },
-      "review_category": "informational",
-      "status": "coordinate_agreement",
-      "venue_id": "v-f796da6f-951a-52ac-a180-bd9f2f16efea",
-      "warnings": []
-    },
-    {
-      "actionable": false,
-      "area": "Staffordshire",
-      "checked_at": "2026-11-26",
-      "comparisons": [
-        {
           "address": "Marshfield Lane, Biddulph, Stoke On Trent Staffordshire",
           "difference_metres": 3.0,
           "lat": 53.1267299,
@@ -56999,63 +57060,6 @@
     },
     {
       "actionable": false,
-      "area": "Lancashire",
-      "checked_at": "2026-11-26",
-      "comparisons": [
-        {
-          "address": "88 Bolton Street, Blackpool",
-          "difference_metres": 0.0,
-          "lat": 53.799326,
-          "lng": -3.054237,
-          "name": "Sun Inn",
-          "postcode": "FY1 6AA",
-          "queried_postcode": "FY1 6AA",
-          "status": "coordinate_agreement",
-          "url": "https://ratings.food.gov.uk/business/836476"
-        }
-      ],
-      "confidence": "existing_evidence_needs_corroboration",
-      "country": "England",
-      "dispense": "H",
-      "independent_of_pin": false,
-      "last": "2026 Q2",
-      "listing": {
-        "postcode": "FY1 6AA",
-        "pub_name": "Sun Inn"
-      },
-      "manual_action_required": false,
-      "next_action": "No pin check requested.",
-      "notes": "",
-      "owner_pin_confirmed": false,
-      "owner_reviewed": false,
-      "pg": "Perm",
-      "pin": {
-        "lat": 53.799326,
-        "lng": -3.054237
-      },
-      "place_name": "Blackpool: South Shore",
-      "postcode": "FY1 6AA",
-      "priority": 3,
-      "pub_name": "Sun Inn",
-      "reasons": [],
-      "reference": {
-        "address": "88 Bolton Street, Blackpool",
-        "difference_metres": 0.0,
-        "lat": 53.799326,
-        "lng": -3.054237,
-        "name": "Sun Inn",
-        "postcode": "FY1 6AA",
-        "queried_postcode": "FY1 6AA",
-        "status": "coordinate_agreement",
-        "url": "https://ratings.food.gov.uk/business/836476"
-      },
-      "review_category": "informational",
-      "status": "coordinate_agreement",
-      "venue_id": "v-c13ddfa5-e07c-5ada-be8a-58b49b43b4a1",
-      "warnings": []
-    },
-    {
-      "actionable": false,
       "area": "Staffordshire",
       "checked_at": "2026-11-26",
       "comparisons": [
@@ -57622,6 +57626,63 @@
       "review_category": "informational",
       "status": "coordinate_agreement",
       "venue_id": "v-eb5b7af9-8129-5b24-a189-76342f7025ca",
+      "warnings": []
+    },
+    {
+      "actionable": false,
+      "area": "Staffordshire",
+      "checked_at": "2026-11-26",
+      "comparisons": [
+        {
+          "address": "Three Crowns, Lichfield Road, Stone, Staffordshire",
+          "difference_metres": 0.1,
+          "lat": 52.8909861,
+          "lng": -2.1260243,
+          "name": "The Three Crowns",
+          "postcode": "ST15 8QU",
+          "queried_postcode": "ST15 8QU",
+          "status": "coordinate_agreement",
+          "url": "https://ratings.food.gov.uk/business/1195454"
+        }
+      ],
+      "confidence": "existing_evidence_needs_corroboration",
+      "country": "England",
+      "dispense": "H",
+      "independent_of_pin": false,
+      "last": "2026 Q1",
+      "listing": {
+        "postcode": "ST15 8QU",
+        "pub_name": "Three Crowns"
+      },
+      "manual_action_required": false,
+      "next_action": "No pin check requested.",
+      "notes": "",
+      "owner_pin_confirmed": false,
+      "owner_reviewed": false,
+      "pg": "Guest",
+      "pin": {
+        "lat": 52.8909862,
+        "lng": -2.1260221
+      },
+      "place_name": "Stone: Little Stoke",
+      "postcode": "ST15 8QU",
+      "priority": 3,
+      "pub_name": "Three Crowns",
+      "reasons": [],
+      "reference": {
+        "address": "Three Crowns, Lichfield Road, Stone, Staffordshire",
+        "difference_metres": 0.1,
+        "lat": 52.8909861,
+        "lng": -2.1260243,
+        "name": "The Three Crowns",
+        "postcode": "ST15 8QU",
+        "queried_postcode": "ST15 8QU",
+        "status": "coordinate_agreement",
+        "url": "https://ratings.food.gov.uk/business/1195454"
+      },
+      "review_category": "informational",
+      "status": "coordinate_agreement",
+      "venue_id": "v-d2bd535c-fb6c-5918-839a-3c7130ca80dc",
       "warnings": []
     },
     {
@@ -59218,63 +59279,6 @@
       "review_category": "informational",
       "status": "coordinate_agreement",
       "venue_id": "v-b1ed2bf8-2858-5ace-80c6-3c5ae0e5d74c",
-      "warnings": []
-    },
-    {
-      "actionable": false,
-      "area": "Staffordshire",
-      "checked_at": "2026-11-26",
-      "comparisons": [
-        {
-          "address": "13 Naylor Street, Pittshill, Stoke-On-Trent",
-          "difference_metres": 0.0,
-          "lat": 53.067672,
-          "lng": -2.199713,
-          "name": "The Vine",
-          "postcode": "ST6 6LS",
-          "queried_postcode": "ST6 6LS",
-          "status": "coordinate_agreement",
-          "url": "https://ratings.food.gov.uk/business/1889233"
-        }
-      ],
-      "confidence": "existing_evidence_needs_corroboration",
-      "country": "England",
-      "dispense": "H",
-      "independent_of_pin": false,
-      "last": "2026 Q1",
-      "listing": {
-        "postcode": "ST6 6LS",
-        "pub_name": "Vine"
-      },
-      "manual_action_required": false,
-      "next_action": "No pin check requested.",
-      "notes": "",
-      "owner_pin_confirmed": false,
-      "owner_reviewed": false,
-      "pg": "Perm",
-      "pin": {
-        "lat": 53.067672,
-        "lng": -2.199713
-      },
-      "place_name": "Stoke: Pittshill",
-      "postcode": "ST6 6LS",
-      "priority": 3,
-      "pub_name": "Vine",
-      "reasons": [],
-      "reference": {
-        "address": "13 Naylor Street, Pittshill, Stoke-On-Trent",
-        "difference_metres": 0.0,
-        "lat": 53.067672,
-        "lng": -2.199713,
-        "name": "The Vine",
-        "postcode": "ST6 6LS",
-        "queried_postcode": "ST6 6LS",
-        "status": "coordinate_agreement",
-        "url": "https://ratings.food.gov.uk/business/1889233"
-      },
-      "review_category": "informational",
-      "status": "coordinate_agreement",
-      "venue_id": "v-ff9ea973-8df7-54af-b666-28cdc61239cf",
       "warnings": []
     },
     {
@@ -61164,19 +61168,19 @@
     "action_required_count": 0,
     "actionable_count": 0,
     "confidence_counts": {
-      "different_source_coordinates_agree": 166,
-      "existing_evidence_needs_corroboration": 903,
-      "owner_reviewed": 19
+      "different_source_coordinates_agree": 164,
+      "existing_evidence_needs_corroboration": 906,
+      "owner_reviewed": 18
     },
     "counts": {
       "ambiguous_or_missing_coordinates": 69,
-      "coordinate_agreement": 443,
+      "coordinate_agreement": 441,
       "coordinate_disagreement": 283,
-      "nearby": 112,
+      "nearby": 114,
       "no_name_match": 181
     },
     "information_no_pin_check_count": 1088,
-    "informational_count": 661,
+    "informational_count": 663,
     "limitations": [
       "Different-source agreement means nearby published coordinates. The geocoding origin can still be shared.",
       "Owner-approved coordinates take priority; CAMRA remains the primary automated reference.",

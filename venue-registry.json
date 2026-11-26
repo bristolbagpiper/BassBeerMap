@@ -18720,24 +18720,6 @@
         "reference": {
           "field": "postcode",
           "listed": "NG33 5RG",
-          "owner_review": {
-            "approved_coordinate": {
-              "lat": 52.7862037,
-              "lng": -0.6840474
-            },
-            "checked_at": "2026-10-13",
-            "conclusion": "Owner visually confirmed the current Blue Dog building at 46 Main Street, Sewstern. Retain the pin. CAMRA and the FSA named address use NG33 5RQ; preserve PDF postcode NG33 5RG as source data. Location discrepancy reviewed; postal delivery postcode not independently proven.",
-            "listed": "NG33 5RG",
-            "owner_instruction": "yes",
-            "pub_name": "Blue Dog",
-            "reference": "NG33 5RQ",
-            "review_map_url": "https://www.google.com/maps/search/?api=1&query=52.7862037%2C-0.6840474",
-            "reviewed_by": "bristolbagpiper",
-            "source_url": "https://www.google.com/maps/search/?api=1&query=Blue+Dog+Sewstern",
-            "supporting_address_urls": [
-              "https://camra.org.uk/pubs/blue-dog-sewstern-192236"
-            ]
-          },
           "reference": "NG33 5RQ",
           "source_url": "https://www.google.com/maps/search/?api=1&query=Blue+Dog+Sewstern"
         },
@@ -25575,6 +25557,9 @@
           "building_url": "https://www.openstreetmap.org/way/279397319",
           "checked_at": "2026-11-26",
           "external_premises_checks": {
+            "council_premises_outline": [
+              "https://www.planning.data.gov.uk/entity/42161516"
+            ],
             "government_business_point": [
               "https://ratings.food.gov.uk/business/1733605"
             ],
@@ -25600,6 +25585,7 @@
             "https://www.monroliverpool.co.uk/",
             "https://historicengland.org.uk/listing/the-list/list-entry/1068257",
             "https://ratings.food.gov.uk/business/1733605",
+            "https://www.planning.data.gov.uk/entity/42161516",
             "https://osdatahub.os.uk/downloads/open/OpenMapLocal"
           ],
           "venue_key": "monro|liverpool: central|l1 5ag"
@@ -27416,8 +27402,18 @@
         "lat": 53.655144,
         "lng": -0.5973679,
         "premises_review": {
-          "basis": "The available evidence does not identify an individual building at this point.",
+          "basis": "The operator and the Historic England entry identify the George Inn on Market Street. The saved point lies in both the council pub outline and the image-derived roof.",
+          "building_url": "https://www.planning.data.gov.uk/entity/42126566",
           "checked_at": "2026-11-26",
+          "external_premises_checks": {
+            "council_premises_outline": [
+              "https://www.planning.data.gov.uk/entity/42126566"
+            ],
+            "named_heritage_point": [
+              "https://historicengland.org.uk/listing/the-list/list-entry/1116934"
+            ]
+          },
+          "geometry_feature": "planning-data/42126566",
           "os_openmap_buildings": [
             "SE_BUILDING.SHP#493854"
           ],
@@ -27425,9 +27421,12 @@
             "lat": 53.655144,
             "lng": -0.5973679
           },
-          "precision": "reference",
+          "precision": "building",
           "sources": [
-            "https://camra.org.uk/pubs/150815",
+            "https://www.planning.data.gov.uk/entity/42126566",
+            "https://historicengland.org.uk/listing/the-list/list-entry/1116934",
+            "https://www.thegeorgeinnwinterton.co.uk/",
+            "https://minedbuildings.z5.web.core.windows.net/global-buildings/2026-02-03/global-buildings.geojsonl/RegionName=UnitedKingdom/quadkey=031311313/part-00012-4feead82-d499-422b-94cb-c036c212127a.c000.csv.gz",
             "https://osdatahub.os.uk/downloads/open/OpenMapLocal"
           ],
           "venue_key": "george inn|winterton|dn15 9pt"
@@ -35646,6 +35645,9 @@
           "building_url": "https://www.openstreetmap.org/way/262464610",
           "checked_at": "2026-11-26",
           "external_premises_checks": {
+            "council_premises_outline": [
+              "https://www.planning.data.gov.uk/entity/42132155"
+            ],
             "named_heritage_point": [
               "https://historicengland.org.uk/listing/the-list/list-entry/1208519"
             ]
@@ -35665,6 +35667,7 @@
           "sources": [
             "https://www.openstreetmap.org/way/262464610",
             "https://historicengland.org.uk/listing/the-list/list-entry/1208519",
+            "https://www.planning.data.gov.uk/entity/42132155",
             "https://docs.overturemaps.org/blog/2026/11/18/release-notes/",
             "https://osdatahub.os.uk/downloads/open/OpenMapLocal"
           ],
@@ -37790,7 +37793,7 @@
         "comparisons": [
           {
             "address": "Blackfriars Tavern, 174 Queen Victoria Street, London",
-            "difference_metres": 8.1,
+            "difference_metres": 4.4,
             "lat": 51.512131,
             "lng": -0.103764,
             "name": "The Blackfriar",
@@ -37800,8 +37803,8 @@
             "url": "https://ratings.food.gov.uk/business/295254"
           }
         ],
-        "confidence": "existing_evidence_needs_corroboration",
-        "independent_of_pin": false,
+        "confidence": "different_source_coordinates_agree",
+        "independent_of_pin": true,
         "listing": {
           "postcode": "EC4V 4EG",
           "pub_name": "Black Friar"
@@ -37811,14 +37814,14 @@
         "owner_pin_confirmed": false,
         "owner_reviewed": false,
         "pin": {
-          "lat": 51.51214830714286,
-          "lng": -0.10364971428571428
+          "lat": 51.5121225,
+          "lng": -0.1037015
         },
         "priority": 3,
         "reasons": [],
         "reference": {
           "address": "Blackfriars Tavern, 174 Queen Victoria Street, London",
-          "difference_metres": 8.1,
+          "difference_metres": 4.4,
           "lat": 51.512131,
           "lng": -0.103764,
           "name": "The Blackfriar",
@@ -37931,6 +37934,7 @@
           {
             "checked_at": "2026-11-26",
             "difference_metres": 6.3,
+            "disposition": "superseded_by_premises_review",
             "match": "venue_name_and_full_postcode",
             "reference_address": "174 Queen Victoria Street",
             "reference_coordinate": {
@@ -37941,46 +37945,52 @@
             "reference_postcode": "EC4V 4EG",
             "source": "camra",
             "url": "https://camra.org.uk/pubs/156696"
+          },
+          {
+            "checked_at": "2026-11-26",
+            "match": "reviewed_mapped_premises",
+            "reference_coordinate": {
+              "lat": 51.5121225,
+              "lng": -0.1037015
+            },
+            "reference_name": "Black Friar",
+            "reference_postcode": "EC4V 4EG",
+            "source": "reviewed-premises-location",
+            "url": "https://www.planning.data.gov.uk/entity/42136119"
           }
         ],
-        "lat": 51.51214830714286,
-        "lng": -0.10364971428571428,
+        "lat": 51.5121225,
+        "lng": -0.1037015,
         "premises_review": {
-          "basis": "Published point is inside the named building or shares its footprint with the mapped venue feature.",
-          "building_url": "https://www.openstreetmap.org/way/166320158",
+          "basis": "The original building identification is supported by the named council and OpenStreetMap outlines. Their edges differ near the original marker. The corrected point lies inside both.",
+          "building_url": "https://www.planning.data.gov.uk/entity/42136119",
           "checked_at": "2026-11-26",
           "external_premises_checks": {
+            "council_premises_outline": [
+              "https://www.planning.data.gov.uk/entity/42136119"
+            ],
             "named_heritage_point": [
               "https://historicengland.org.uk/listing/the-list/list-entry/1285723"
-            ],
-            "numbered_address": [
-              "https://camra.org.uk/pubs/156696",
-              "https://ratings.food.gov.uk/business/295254"
             ]
           },
-          "geometry_feature": "way/166320158",
-          "os_openmap_buildings": [
-            "TQ_BUILDING.SHP#431852"
-          ],
+          "geometry_feature": "planning-data/42136119",
           "point": {
+            "lat": 51.5121225,
+            "lng": -0.1037015
+          },
+          "precision": "building",
+          "previous_point": {
             "lat": 51.51214830714286,
             "lng": -0.10364971428571428
           },
-          "precision": "building",
-          "secondary_place_ids": [
-            "7dfe37e0-a514-4ad1-bca6-15f4e7752b51"
-          ],
           "sources": [
-            "https://www.openstreetmap.org/way/166320158",
+            "https://www.planning.data.gov.uk/entity/42136119",
             "https://historicengland.org.uk/listing/the-list/list-entry/1285723",
-            "https://camra.org.uk/pubs/156696",
-            "https://ratings.food.gov.uk/business/295254",
-            "https://docs.overturemaps.org/blog/2026/11/18/release-notes/",
-            "https://osdatahub.os.uk/downloads/open/OpenMapLocal"
+            "https://www.openstreetmap.org/way/166320158"
           ],
           "venue_key": "black friar|blackfriars ec4v|ec4v 4eg"
         },
-        "source": "openstreetmap-gb-extract"
+        "source": "reviewed-premises-location"
       }
     },
     "v-13a2ad1c-e050-5c7a-944e-064bff66e040": {
@@ -40268,6 +40278,9 @@
           "building_url": "https://www.openstreetmap.org/way/731835288",
           "checked_at": "2026-11-26",
           "external_premises_checks": {
+            "council_premises_outline": [
+              "https://www.planning.data.gov.uk/entity/42159561"
+            ],
             "named_heritage_point": [
               "https://historicengland.org.uk/listing/the-list/list-entry/1331491"
             ]
@@ -40288,6 +40301,7 @@
             "https://www.openstreetmap.org/way/731835288",
             "https://www.openstreetmap.org/node/288967102",
             "https://historicengland.org.uk/listing/the-list/list-entry/1331491",
+            "https://www.planning.data.gov.uk/entity/42159561",
             "https://docs.overturemaps.org/blog/2026/11/18/release-notes/",
             "https://osdatahub.os.uk/downloads/open/OpenMapLocal"
           ],
@@ -40481,6 +40495,9 @@
           "building_url": "https://www.openstreetmap.org/way/463071555",
           "checked_at": "2026-11-26",
           "external_premises_checks": {
+            "council_premises_outline": [
+              "https://www.planning.data.gov.uk/entity/42135738"
+            ],
             "numbered_address": [
               "https://camra.org.uk/pubs/114335",
               "https://ratings.food.gov.uk/business/818339"
@@ -40508,6 +40525,7 @@
             "https://www.banktavern.com/contact-us/",
             "https://ratings.food.gov.uk/business/818339",
             "https://camra.org.uk/pubs/114335",
+            "https://www.planning.data.gov.uk/entity/42135738",
             "https://docs.overturemaps.org/blog/2026/11/18/release-notes/",
             "https://osdatahub.os.uk/downloads/open/OpenMapLocal"
           ],
@@ -45196,6 +45214,9 @@
           "building_url": "https://www.openstreetmap.org/way/951932123",
           "checked_at": "2026-11-26",
           "external_premises_checks": {
+            "council_premises_outline": [
+              "https://www.planning.data.gov.uk/entity/42146877"
+            ],
             "named_heritage_point": [
               "https://historicengland.org.uk/listing/the-list/list-entry/1130040"
             ],
@@ -45221,6 +45242,7 @@
             "https://camra.org.uk/pubs/154352",
             "https://ratings.food.gov.uk/business/522247",
             "https://historicengland.org.uk/listing/the-list/list-entry/1130040",
+            "https://www.planning.data.gov.uk/entity/42146877",
             "https://docs.overturemaps.org/blog/2026/11/18/release-notes/",
             "https://osdatahub.os.uk/downloads/open/OpenMapLocal"
           ],
@@ -47356,7 +47378,7 @@
         "comparisons": [
           {
             "address": "High Street, Earl Shilton, Leicester, Leicestershire",
-            "difference_metres": 1.7,
+            "difference_metres": 14.2,
             "lat": 52.576009,
             "lng": -1.313521,
             "name": "Red Lion",
@@ -47377,14 +47399,14 @@
         "owner_pin_confirmed": false,
         "owner_reviewed": false,
         "pin": {
-          "lat": 52.576,
-          "lng": -1.3135
+          "lat": 52.5759,
+          "lng": -1.31363
         },
         "priority": 3,
         "reasons": [],
         "reference": {
           "address": "High Street, Earl Shilton, Leicester, Leicestershire",
-          "difference_metres": 1.7,
+          "difference_metres": 14.2,
           "lat": 52.576009,
           "lng": -1.313521,
           "name": "Red Lion",
@@ -47482,6 +47504,7 @@
           {
             "checked_at": "2026-11-13",
             "difference_metres": 0.0,
+            "disposition": "superseded_by_premises_review",
             "match": "venue_name_and_full_postcode",
             "reference_address": "High Street",
             "reference_coordinate": {
@@ -47492,28 +47515,50 @@
             "reference_postcode": "LE9 7LQ",
             "source": "camra",
             "url": "https://camra.org.uk/pubs/181796"
+          },
+          {
+            "checked_at": "2026-11-26",
+            "match": "reviewed_mapped_premises",
+            "reference_coordinate": {
+              "lat": 52.5759,
+              "lng": -1.31363
+            },
+            "reference_name": "Red Lion",
+            "reference_postcode": "LE9 7LQ",
+            "source": "reviewed-premises-location",
+            "url": "https://minedbuildings.z5.web.core.windows.net/global-buildings/2026-02-03/global-buildings.geojsonl/RegionName=UnitedKingdom/quadkey=031311332/part-00012-4feead82-d499-422b-94cb-c036c212127a.c000.csv.gz"
           }
         ],
-        "lat": 52.576,
-        "lng": -1.3135,
+        "lat": 52.5759,
+        "lng": -1.31363,
         "premises_review": {
-          "basis": "The available evidence does not identify an individual building at this point.",
+          "basis": "The district council explicitly links 168 High Street to list entry 1074232, resolving inconsistent street numbers on the national record. The saved point was outside the imaged roof containing the named statutory point.",
+          "building_url": "https://minedbuildings.z5.web.core.windows.net/global-buildings/2026-02-03/global-buildings.geojsonl/RegionName=UnitedKingdom/quadkey=031311332/part-00012-4feead82-d499-422b-94cb-c036c212127a.c000.csv.gz",
           "checked_at": "2026-11-26",
-          "os_openmap_buildings": [
-            "SP_BUILDING.SHP#436610"
-          ],
+          "external_premises_checks": {
+            "named_heritage_point": [
+              "https://historicengland.org.uk/listing/the-list/list-entry/1074232"
+            ]
+          },
+          "geometry_feature": "031311332/203561",
           "point": {
+            "lat": 52.5759,
+            "lng": -1.31363
+          },
+          "precision": "building",
+          "previous_point": {
             "lat": 52.576,
             "lng": -1.3135
           },
-          "precision": "reference",
           "sources": [
-            "https://camra.org.uk/pubs/181796",
-            "https://osdatahub.os.uk/downloads/open/OpenMapLocal"
+            "https://minedbuildings.z5.web.core.windows.net/global-buildings/2026-02-03/global-buildings.geojsonl/RegionName=UnitedKingdom/quadkey=031311332/part-00012-4feead82-d499-422b-94cb-c036c212127a.c000.csv.gz",
+            "https://historicengland.org.uk/listing/the-list/list-entry/1074232",
+            "https://www.hinckley-bosworth.gov.uk/download/downloads/id/6232/listed_buildings_pdf.pdf",
+            "https://camra.org.uk/pubs/red-lion-earl-shilton-181796"
           ],
           "venue_key": "red lion|earl shilton|le9 7lq"
         },
-        "source": "camra-pubs-location-audit"
+        "source": "reviewed-premises-location"
       }
     },
     "v-1eeb9ca3-ff17-56b1-8201-b90e0123d8d2": {
@@ -52671,6 +52716,9 @@
           "building_url": "https://www.openstreetmap.org/way/414874002",
           "checked_at": "2026-11-26",
           "external_premises_checks": {
+            "council_premises_outline": [
+              "https://www.planning.data.gov.uk/entity/42248165"
+            ],
             "named_heritage_point": [
               "https://historicengland.org.uk/listing/the-list/list-entry/1370145"
             ]
@@ -52687,6 +52735,7 @@
           "sources": [
             "https://www.openstreetmap.org/way/414874002",
             "https://historicengland.org.uk/listing/the-list/list-entry/1370145",
+            "https://www.planning.data.gov.uk/entity/42248165",
             "https://osdatahub.os.uk/downloads/open/OpenMapLocal"
           ],
           "venue_key": "martins arms|colston bassett|ng12 3fd"
@@ -56323,6 +56372,9 @@
           "building_url": "https://www.openstreetmap.org/way/599789259",
           "checked_at": "2026-11-26",
           "external_premises_checks": {
+            "council_premises_outline": [
+              "https://www.planning.data.gov.uk/entity/42176937"
+            ],
             "named_heritage_point": [
               "https://historicengland.org.uk/listing/the-list/list-entry/1320161"
             ],
@@ -56346,6 +56398,7 @@
             "https://historicengland.org.uk/listing/the-list/list-entry/1320161",
             "https://camra.org.uk/pubs/130636",
             "https://ratings.food.gov.uk/business/131449",
+            "https://www.planning.data.gov.uk/entity/42176937",
             "https://osdatahub.os.uk/downloads/open/OpenMapLocal"
           ],
           "venue_key": "bell and bear|emberton|mk46 5dh"
@@ -57658,6 +57711,9 @@
           "building_url": "https://www.openstreetmap.org/way/430448024",
           "checked_at": "2026-11-26",
           "external_premises_checks": {
+            "council_premises_outline": [
+              "https://www.planning.data.gov.uk/entity/42136533"
+            ],
             "named_heritage_point": [
               "https://historicengland.org.uk/listing/the-list/list-entry/1193734"
             ],
@@ -57681,6 +57737,7 @@
             "https://www.openstreetmap.org/way/430448024",
             "https://historicengland.org.uk/listing/the-list/list-entry/1193734",
             "https://camra.org.uk/pubs/156248",
+            "https://www.planning.data.gov.uk/entity/42136533",
             "https://docs.overturemaps.org/blog/2026/11/18/release-notes/",
             "https://osdatahub.os.uk/downloads/open/OpenMapLocal"
           ],
@@ -60721,6 +60778,11 @@
           "basis": "Published point is inside the named building or shares its footprint with the mapped venue feature.",
           "building_url": "https://www.openstreetmap.org/way/316578191",
           "checked_at": "2026-11-26",
+          "external_premises_checks": {
+            "council_premises_outline": [
+              "https://www.planning.data.gov.uk/entity/42250159"
+            ]
+          },
           "geometry_feature": "way/316578191",
           "os_openmap_buildings": [
             "TA_BUILDING.SHP#105892"
@@ -60736,6 +60798,7 @@
           "sources": [
             "https://www.openstreetmap.org/way/316578191",
             "https://www.openstreetmap.org/node/190705561",
+            "https://www.planning.data.gov.uk/entity/42250159",
             "https://docs.overturemaps.org/blog/2026/11/18/release-notes/",
             "https://osdatahub.os.uk/downloads/open/OpenMapLocal"
           ],
@@ -62317,6 +62380,9 @@
           "building_url": "https://www.openstreetmap.org/way/139578855",
           "checked_at": "2026-11-26",
           "external_premises_checks": {
+            "council_premises_outline": [
+              "https://www.planning.data.gov.uk/entity/42164333"
+            ],
             "named_heritage_point": [
               "https://historicengland.org.uk/listing/the-list/list-entry/1321412"
             ],
@@ -62343,6 +62409,7 @@
             "https://camra.org.uk/pubs/118743",
             "https://ratings.food.gov.uk/business/450733",
             "https://historicengland.org.uk/listing/the-list/list-entry/1321412",
+            "https://www.planning.data.gov.uk/entity/42164333",
             "https://osdatahub.os.uk/downloads/open/OpenMapLocal"
           ],
           "venue_key": "black lion|leighton buzzard|lu7 1ea"
@@ -67099,6 +67166,9 @@
           "building_url": "https://www.openstreetmap.org/way/229904888",
           "checked_at": "2026-11-26",
           "external_premises_checks": {
+            "council_premises_outline": [
+              "https://www.planning.data.gov.uk/entity/42213649"
+            ],
             "named_heritage_point": [
               "https://historicengland.org.uk/listing/the-list/list-entry/1330679"
             ],
@@ -67119,6 +67189,7 @@
             "https://www.openstreetmap.org/way/229904888",
             "https://historicengland.org.uk/listing/the-list/list-entry/1330679",
             "https://camra.org.uk/pubs/143203",
+            "https://www.planning.data.gov.uk/entity/42213649",
             "https://osdatahub.os.uk/downloads/open/OpenMapLocal"
           ],
           "venue_key": "black bull|godmanchester|pe29 2aq"
@@ -67338,6 +67409,9 @@
           "building_url": "https://www.openstreetmap.org/way/148011247",
           "checked_at": "2026-11-26",
           "external_premises_checks": {
+            "council_premises_outline": [
+              "https://www.planning.data.gov.uk/entity/42167826"
+            ],
             "named_heritage_point": [
               "https://historicengland.org.uk/listing/the-list/list-entry/1381201"
             ],
@@ -67361,6 +67435,7 @@
             "https://www.openstreetmap.org/way/148011247",
             "https://historicengland.org.uk/listing/the-list/list-entry/1381201",
             "https://camra.org.uk/pubs/129395",
+            "https://www.planning.data.gov.uk/entity/42167826",
             "https://docs.overturemaps.org/blog/2026/11/18/release-notes/",
             "https://osdatahub.os.uk/downloads/open/OpenMapLocal"
           ],
@@ -67887,6 +67962,11 @@
           "basis": "Published point is inside the named building or shares its footprint with the mapped venue feature.",
           "building_url": "https://www.openstreetmap.org/way/75121198",
           "checked_at": "2026-11-26",
+          "external_premises_checks": {
+            "council_premises_outline": [
+              "https://www.planning.data.gov.uk/entity/42237609"
+            ]
+          },
           "geometry_feature": "way/75121198",
           "os_openmap_buildings": [
             "SK_BUILDING.SHP#45338"
@@ -67899,6 +67979,7 @@
           "sources": [
             "https://www.openstreetmap.org/way/75121198",
             "https://www.openstreetmap.org/node/245808217",
+            "https://www.planning.data.gov.uk/entity/42237609",
             "https://osdatahub.os.uk/downloads/open/OpenMapLocal"
           ],
           "venue_key": "castle|castleton|s33 8wg"
@@ -68062,6 +68143,9 @@
           "building_url": "https://www.openstreetmap.org/way/214818625",
           "checked_at": "2026-11-26",
           "external_premises_checks": {
+            "council_premises_outline": [
+              "https://www.planning.data.gov.uk/entity/42183630"
+            ],
             "government_business_point": [
               "https://ratings.food.gov.uk/business/498801"
             ],
@@ -68086,6 +68170,7 @@
             "https://ratings.food.gov.uk/business/498801",
             "https://historicengland.org.uk/listing/the-list/list-entry/1207638",
             "https://camra.org.uk/pubs/165633",
+            "https://www.planning.data.gov.uk/entity/42183630",
             "https://osdatahub.os.uk/downloads/open/OpenMapLocal"
           ],
           "venue_key": "philharmonic dining rooms|liverpool: central|l1 9bx"
@@ -73389,8 +73474,8 @@
             "url": "https://ratings.food.gov.uk/business/1824161"
           }
         ],
-        "confidence": "different_source_coordinates_agree",
-        "independent_of_pin": true,
+        "confidence": "existing_evidence_needs_corroboration",
+        "independent_of_pin": false,
         "listing": {
           "postcode": "KT12 5LS",
           "pub_name": "Bricklayers Arms"
@@ -73520,7 +73605,7 @@
         "lat": 51.3663194,
         "lng": -0.4021628,
         "premises_review": {
-          "basis": "The available evidence does not identify an individual building at this point.",
+          "basis": "The operator, food register and CAMRA identify 6–8 Queens Road. The CAMRA visitor point lies within seven metres of the saved marker. An identically named secondary place point is over 420 metres away.",
           "checked_at": "2026-11-26",
           "os_openmap_buildings": [
             "TQ_BUILDING.SHP#1595284"
@@ -73529,12 +73614,15 @@
             "lat": 51.3663194,
             "lng": -0.4021628
           },
-          "precision": "reference",
+          "precision": "site",
           "sources": [
-            "https://camra.org.uk/pubs/179729",
+            "https://www.thebricklayersarmshersham.co.uk/contact",
+            "https://camra.org.uk/pubs/bricklayers-arms-hersham-179729",
+            "https://ratings.food.gov.uk/business/1824161",
             "https://osdatahub.os.uk/downloads/open/OpenMapLocal"
           ],
-          "venue_key": "bricklayers arms|hersham|kt12 5ls"
+          "venue_key": "bricklayers arms|hersham|kt12 5ls",
+          "visitor_hint": "Use the Bricklayers Arms at 6–8 Queens Road."
         },
         "source": "openstreetmap-gb-extract"
       }
@@ -77880,6 +77968,9 @@
           "building_url": "https://www.openstreetmap.org/way/979785514",
           "checked_at": "2026-11-26",
           "external_premises_checks": {
+            "council_premises_outline": [
+              "https://www.planning.data.gov.uk/entity/42168960"
+            ],
             "numbered_address": [
               "https://camra.org.uk/pubs/167794"
             ]
@@ -77898,6 +77989,7 @@
             "https://ratings.food.gov.uk/business/1749859/the-white-lion-coaching-house-stockport",
             "https://www.stockport.gov.uk/market-place-and-underbanks/white-lion",
             "https://camra.org.uk/pubs/167794",
+            "https://www.planning.data.gov.uk/entity/42168960",
             "https://osdatahub.os.uk/downloads/open/OpenMapLocal"
           ],
           "venue_key": "white lion|stockport|sk1 1lw"
@@ -82066,6 +82158,11 @@
           "basis": "Published point is inside the named building or shares its footprint with the mapped venue feature.",
           "building_url": "https://www.openstreetmap.org/way/169021815",
           "checked_at": "2026-11-26",
+          "external_premises_checks": {
+            "council_premises_outline": [
+              "https://www.planning.data.gov.uk/entity/42147990"
+            ]
+          },
           "geometry_feature": "way/169021815",
           "os_openmap_buildings": [
             "SX_BUILDING.SHP#43716"
@@ -82077,6 +82174,7 @@
           "precision": "building",
           "sources": [
             "https://www.openstreetmap.org/way/169021815",
+            "https://www.planning.data.gov.uk/entity/42147990",
             "https://osdatahub.os.uk/downloads/open/OpenMapLocal"
           ],
           "venue_key": "drum inn|cockington|tq2 6xa"
@@ -85369,7 +85467,7 @@
         "comparisons": [
           {
             "address": "10 Woodgate, Helpston, Peterborough",
-            "difference_metres": 52.1,
+            "difference_metres": 51.9,
             "lat": 52.63382,
             "lng": -0.34434,
             "name": "The Bluebell",
@@ -85380,7 +85478,7 @@
           }
         ],
         "confidence": "existing_evidence_needs_corroboration",
-        "independent_of_pin": false,
+        "independent_of_pin": true,
         "listing": {
           "postcode": "PE6 7ED",
           "pub_name": "Blue Bell"
@@ -85390,14 +85488,14 @@
         "owner_pin_confirmed": false,
         "owner_reviewed": false,
         "pin": {
-          "lat": 52.63425105555555,
-          "lng": -0.3446435555555556
+          "lat": 52.6342775,
+          "lng": -0.3444915
         },
         "priority": 2,
         "reasons": [],
         "reference": {
           "address": "10 Woodgate, Helpston, Peterborough",
-          "difference_metres": 52.1,
+          "difference_metres": 51.9,
           "lat": 52.63382,
           "lng": -0.34434,
           "name": "The Bluebell",
@@ -85409,7 +85507,7 @@
         "review_category": "informational",
         "status": "coordinate_disagreement",
         "warnings": [
-          "FSA coordinate is 52.1m from the accepted pin; informational only because the FSA geocode may be approximate"
+          "FSA coordinate is 51.9m from the accepted pin; informational only because the FSA geocode may be approximate"
         ]
       },
       "listing": {
@@ -85497,6 +85595,7 @@
           {
             "checked_at": "2026-11-14",
             "difference_metres": 26.6,
+            "disposition": "superseded_by_premises_review",
             "match": "venue_name_and_full_postcode",
             "reference_address": "10 Woodgate",
             "reference_coordinate": {
@@ -85507,38 +85606,52 @@
             "reference_postcode": "PE6 7ED",
             "source": "camra",
             "url": "https://camra.org.uk/pubs/157787"
+          },
+          {
+            "checked_at": "2026-11-26",
+            "match": "reviewed_mapped_premises",
+            "reference_coordinate": {
+              "lat": 52.6342775,
+              "lng": -0.3444915
+            },
+            "reference_name": "Blue Bell",
+            "reference_postcode": "PE6 7ED",
+            "source": "reviewed-premises-location",
+            "url": "https://www.planning.data.gov.uk/entity/42159106"
           }
         ],
-        "lat": 52.63425105555555,
-        "lng": -0.3446435555555556,
+        "lat": 52.6342775,
+        "lng": -0.3444915,
         "premises_review": {
-          "basis": "Published point is inside the named building or shares its footprint with the mapped venue feature.",
-          "building_url": "https://www.openstreetmap.org/way/375419267",
+          "basis": "The original building identification is supported by the named council and OpenStreetMap outlines. Their edges differ near the original marker. The corrected point lies inside both.",
+          "building_url": "https://www.planning.data.gov.uk/entity/42159106",
           "checked_at": "2026-11-26",
           "external_premises_checks": {
+            "council_premises_outline": [
+              "https://www.planning.data.gov.uk/entity/42159106"
+            ],
             "named_heritage_point": [
               "https://historicengland.org.uk/listing/the-list/list-entry/1126740"
-            ],
-            "numbered_address": [
-              "https://camra.org.uk/pubs/157787",
-              "https://ratings.food.gov.uk/business/712252"
             ]
           },
-          "geometry_feature": "way/375419267",
+          "geometry_feature": "planning-data/42159106",
           "point": {
+            "lat": 52.6342775,
+            "lng": -0.3444915
+          },
+          "precision": "building",
+          "previous_point": {
             "lat": 52.63425105555555,
             "lng": -0.3446435555555556
           },
-          "precision": "building",
           "sources": [
-            "https://www.openstreetmap.org/way/375419267",
+            "https://www.planning.data.gov.uk/entity/42159106",
             "https://historicengland.org.uk/listing/the-list/list-entry/1126740",
-            "https://camra.org.uk/pubs/157787",
-            "https://ratings.food.gov.uk/business/712252"
+            "https://www.openstreetmap.org/way/375419267"
           ],
           "venue_key": "blue bell|helpston|pe6 7ed"
         },
-        "source": "openstreetmap-gb-extract"
+        "source": "reviewed-premises-location"
       }
     },
     "v-534bfc5b-7a14-54d0-a235-c918231eb243": {
@@ -85949,6 +86062,9 @@
           "building_url": "https://www.openstreetmap.org/way/73028934",
           "checked_at": "2026-11-26",
           "external_premises_checks": {
+            "council_premises_outline": [
+              "https://www.planning.data.gov.uk/entity/42130638"
+            ],
             "named_heritage_point": [
               "https://historicengland.org.uk/listing/the-list/list-entry/1276272"
             ]
@@ -85968,6 +86084,7 @@
           "sources": [
             "https://www.openstreetmap.org/way/73028934",
             "https://historicengland.org.uk/listing/the-list/list-entry/1276272",
+            "https://www.planning.data.gov.uk/entity/42130638",
             "https://docs.overturemaps.org/blog/2026/11/18/release-notes/",
             "https://osdatahub.os.uk/downloads/open/OpenMapLocal"
           ],
@@ -89248,6 +89365,9 @@
           "building_url": "https://www.openstreetmap.org/way/1210629850",
           "checked_at": "2026-11-26",
           "external_premises_checks": {
+            "council_premises_outline": [
+              "https://www.planning.data.gov.uk/entity/42250672"
+            ],
             "named_heritage_point": [
               "https://historicengland.org.uk/listing/the-list/list-entry/1346325"
             ],
@@ -89274,6 +89394,7 @@
             "https://historicengland.org.uk/listing/the-list/list-entry/1346325",
             "https://ratings.food.gov.uk/business/439746",
             "https://camra.org.uk/pubs/180778",
+            "https://www.planning.data.gov.uk/entity/42250672",
             "https://osdatahub.os.uk/downloads/open/OpenMapLocal"
           ],
           "venue_key": "lord nelson|beverley|hu17 0np"
@@ -89512,7 +89633,7 @@
           }
         ],
         "confidence": "existing_evidence_needs_corroboration",
-        "independent_of_pin": true,
+        "independent_of_pin": false,
         "listing": {
           "postcode": "SK11 7NE",
           "pub_name": "GJ Muckers"
@@ -89704,7 +89825,7 @@
           "source_url": "https://camra.org.uk/pubs/gj-muckers-macclesfield-197659"
         },
         "premises_review": {
-          "basis": "The available evidence does not identify an individual building at this point.",
+          "basis": "The owner-confirmed point agrees with the pub exterior photograph position and multiple records for 36–38 Sunderland Street. The unit boundary is unconfirmed.",
           "checked_at": "2026-11-26",
           "os_openmap_buildings": [
             "SJ_BUILDING.SHP#575595"
@@ -89713,13 +89834,15 @@
             "lat": 53.25777,
             "lng": -2.12237
           },
-          "precision": "reference",
+          "precision": "site",
           "sources": [
-            "https://www.google.com/maps/search/?api=1&query=53.25777%2C-2.12237",
             "https://camra.org.uk/pubs/gj-muckers-macclesfield-197659",
+            "https://ratings.food.gov.uk/business/1902826/gj-muckers",
+            "https://commons.wikimedia.org/wiki/File:Macclesfield_-_G%26J_Muckers_Bar_%26_Kitchen_-_May_2025.jpg",
             "https://osdatahub.os.uk/downloads/open/OpenMapLocal"
           ],
-          "venue_key": "gj muckers|macclesfield|sk11 7ne"
+          "venue_key": "gj muckers|macclesfield|sk11 7ne",
+          "visitor_hint": "Look for G&J Muckers at 36–38 Sunderland Street."
         },
         "source": "manual-camra-review"
       }
@@ -92887,6 +93010,9 @@
           "building_url": "https://www.openstreetmap.org/way/99869588",
           "checked_at": "2026-11-26",
           "external_premises_checks": {
+            "council_premises_outline": [
+              "https://www.planning.data.gov.uk/entity/42115835"
+            ],
             "government_business_point": [
               "https://ratings.food.gov.uk/business/1227117"
             ],
@@ -92910,6 +93036,7 @@
             "https://www.openstreetmap.org/way/99869588",
             "https://ratings.food.gov.uk/business/1227117",
             "https://historicengland.org.uk/listing/the-list/list-entry/1393946",
+            "https://www.planning.data.gov.uk/entity/42115835",
             "https://docs.overturemaps.org/blog/2026/11/18/release-notes/",
             "https://osdatahub.os.uk/downloads/open/OpenMapLocal"
           ],
@@ -94752,7 +94879,7 @@
         "comparisons": [
           {
             "address": "Cross House Inn, High Street, Doynton, South Gloucestershire",
-            "difference_metres": 8.4,
+            "difference_metres": 6.9,
             "lat": 51.464499,
             "lng": -2.4051651,
             "name": "The Cross House Inn",
@@ -94773,14 +94900,14 @@
         "owner_pin_confirmed": false,
         "owner_reviewed": false,
         "pin": {
-          "lat": 51.464514785714286,
-          "lng": -2.405283092857143
+          "lat": 51.46444,
+          "lng": -2.4051947
         },
         "priority": 3,
         "reasons": [],
         "reference": {
           "address": "Cross House Inn, High Street, Doynton, South Gloucestershire",
-          "difference_metres": 8.4,
+          "difference_metres": 6.9,
           "lat": 51.464499,
           "lng": -2.4051651,
           "name": "The Cross House Inn",
@@ -94878,6 +95005,7 @@
           {
             "checked_at": "2026-11-15",
             "difference_metres": 17.0,
+            "disposition": "superseded_by_premises_review",
             "match": "venue_name_and_full_postcode",
             "reference_address": "High Street",
             "reference_coordinate": {
@@ -94888,24 +95016,48 @@
             "reference_postcode": "BS30 5TF",
             "source": "camra",
             "url": "https://camra.org.uk/pubs/114280"
+          },
+          {
+            "checked_at": "2026-11-26",
+            "match": "reviewed_mapped_premises",
+            "reference_coordinate": {
+              "lat": 51.46444,
+              "lng": -2.4051947
+            },
+            "reference_name": "Cross House",
+            "reference_postcode": "BS30 5TF",
+            "source": "reviewed-premises-location",
+            "url": "https://www.planning.data.gov.uk/entity/42152213"
           }
         ],
-        "lat": 51.464514785714286,
-        "lng": -2.405283092857143,
+        "lat": 51.46444,
+        "lng": -2.4051947,
         "premises_review": {
-          "basis": "The available evidence does not identify an individual building at this point.",
+          "basis": "The operator identifies the Cross House on the Doynton crossroads. The previously published point was just beyond the named council footprint.",
+          "building_url": "https://www.planning.data.gov.uk/entity/42152213",
           "checked_at": "2026-11-26",
+          "external_premises_checks": {
+            "council_premises_outline": [
+              "https://www.planning.data.gov.uk/entity/42152213"
+            ]
+          },
+          "geometry_feature": "planning-data/42152213",
           "point": {
+            "lat": 51.46444,
+            "lng": -2.4051947
+          },
+          "precision": "building",
+          "previous_point": {
             "lat": 51.464514785714286,
             "lng": -2.405283092857143
           },
-          "precision": "reference",
           "sources": [
-            "https://camra.org.uk/pubs/114280"
+            "https://www.planning.data.gov.uk/entity/42152213",
+            "https://www.crosshousedoynton.com/"
           ],
           "venue_key": "cross house|doynton|bs30 5tf"
         },
-        "source": "openstreetmap-gb-extract"
+        "source": "reviewed-premises-location"
       }
     },
     "v-5ca777eb-7c87-5fbe-bcc1-3c2512fc29ac": {
@@ -98394,6 +98546,9 @@
           "building_url": "https://www.openstreetmap.org/way/771685007",
           "checked_at": "2026-11-26",
           "external_premises_checks": {
+            "council_premises_outline": [
+              "https://www.planning.data.gov.uk/entity/42151612"
+            ],
             "numbered_address": [
               "https://camra.org.uk/pubs/114240"
             ]
@@ -98410,6 +98565,7 @@
           "sources": [
             "https://www.openstreetmap.org/way/771685007",
             "https://camra.org.uk/pubs/114240",
+            "https://www.planning.data.gov.uk/entity/42151612",
             "https://osdatahub.os.uk/downloads/open/OpenMapLocal"
           ],
           "venue_key": "grapes|chipping sodbury|bs37 6as"
@@ -99423,6 +99579,9 @@
           "building_url": "https://www.openstreetmap.org/way/272198116",
           "checked_at": "2026-11-26",
           "external_premises_checks": {
+            "council_premises_outline": [
+              "https://www.planning.data.gov.uk/entity/42164637"
+            ],
             "named_heritage_point": [
               "https://historicengland.org.uk/listing/the-list/list-entry/1061360"
             ],
@@ -99447,6 +99606,7 @@
             "https://www.openstreetmap.org/node/14178896074",
             "https://historicengland.org.uk/listing/the-list/list-entry/1061360",
             "https://camra.org.uk/pubs/128748",
+            "https://www.planning.data.gov.uk/entity/42164637",
             "https://docs.overturemaps.org/blog/2026/11/18/release-notes/",
             "https://osdatahub.os.uk/downloads/open/OpenMapLocal"
           ],
@@ -104459,6 +104619,9 @@
           "building_url": "https://www.openstreetmap.org/way/83537352",
           "checked_at": "2026-11-26",
           "external_premises_checks": {
+            "council_premises_outline": [
+              "https://www.planning.data.gov.uk/entity/42133274"
+            ],
             "numbered_address": [
               "https://camra.org.uk/pubs/114064"
             ]
@@ -104475,6 +104638,7 @@
           "sources": [
             "https://www.openstreetmap.org/way/83537352",
             "https://camra.org.uk/pubs/114064",
+            "https://www.planning.data.gov.uk/entity/42133274",
             "https://osdatahub.os.uk/downloads/open/OpenMapLocal"
           ],
           "venue_key": "nova scotia|bristol: cumberland basin|bs1 6xj"
@@ -106202,6 +106366,9 @@
           "building_url": "https://www.openstreetmap.org/way/409316355",
           "checked_at": "2026-11-26",
           "external_premises_checks": {
+            "council_premises_outline": [
+              "https://www.planning.data.gov.uk/entity/42115961"
+            ],
             "government_business_point": [
               "https://ratings.food.gov.uk/business/425038"
             ],
@@ -106230,6 +106397,7 @@
             "https://ratings.food.gov.uk/business/425038",
             "https://historicengland.org.uk/listing/the-list/list-entry/1078300",
             "https://camra.org.uk/pubs/125284",
+            "https://www.planning.data.gov.uk/entity/42115961",
             "https://docs.overturemaps.org/blog/2026/11/18/release-notes/",
             "https://osdatahub.os.uk/downloads/open/OpenMapLocal"
           ],
@@ -108571,6 +108739,9 @@
           "building_url": "https://www.openstreetmap.org/way/240817547",
           "checked_at": "2026-11-26",
           "external_premises_checks": {
+            "council_premises_outline": [
+              "https://www.planning.data.gov.uk/entity/42146916"
+            ],
             "named_heritage_point": [
               "https://historicengland.org.uk/listing/the-list/list-entry/1130057"
             ]
@@ -108590,6 +108761,7 @@
           "sources": [
             "https://www.openstreetmap.org/way/240817547",
             "https://historicengland.org.uk/listing/the-list/list-entry/1130057",
+            "https://www.planning.data.gov.uk/entity/42146916",
             "https://docs.overturemaps.org/blog/2026/11/18/release-notes/",
             "https://osdatahub.os.uk/downloads/open/OpenMapLocal"
           ],
@@ -108796,8 +108968,8 @@
         "owner_pin_confirmed": false,
         "owner_reviewed": false,
         "pin": {
-          "lat": 51.992637,
-          "lng": -2.1576628
+          "lat": 51.99263,
+          "lng": -2.1577387
         },
         "priority": 2,
         "reasons": [],
@@ -108898,6 +109070,7 @@
           {
             "checked_at": "2026-11-16",
             "difference_metres": 1.5,
+            "disposition": "superseded_by_premises_review",
             "match": "venue_name_and_full_postcode",
             "reference_address": "108 Church Street",
             "reference_coordinate": {
@@ -108908,27 +109081,50 @@
             "reference_postcode": "GL20 5AB",
             "source": "camra",
             "url": "https://camra.org.uk/pubs/130896"
+          },
+          {
+            "checked_at": "2026-11-26",
+            "match": "reviewed_mapped_premises",
+            "reference_coordinate": {
+              "lat": 51.99263,
+              "lng": -2.1577387
+            },
+            "reference_name": "Cross House Tavern",
+            "reference_postcode": "GL20 5AB",
+            "source": "reviewed-premises-location",
+            "url": "https://www.planning.data.gov.uk/entity/42124418"
           }
         ],
-        "lat": 51.992637,
-        "lng": -2.1576628,
+        "lat": 51.99263,
+        "lng": -2.1577387,
         "premises_review": {
-          "basis": "Published point is inside the named building or shares its footprint with the mapped venue feature.",
-          "building_url": "https://www.openstreetmap.org/way/685240000",
+          "basis": "The local CAMRA branch documents conversion of the former mobile phone shop into the Cross House Tavern. Its adjoining council records name Cross House and the former Get Connected shop.",
+          "building_url": "https://www.planning.data.gov.uk/entity/42124418",
           "checked_at": "2026-11-26",
-          "geometry_feature": "way/685240000",
+          "external_premises_checks": {
+            "council_premises_outline": [
+              "https://www.planning.data.gov.uk/entity/42124418"
+            ]
+          },
+          "geometry_feature": "planning-data/42124418",
           "point": {
+            "lat": 51.99263,
+            "lng": -2.1577387
+          },
+          "precision": "building",
+          "previous_point": {
             "lat": 51.992637,
             "lng": -2.1576628
           },
-          "precision": "building",
           "sources": [
+            "https://www.planning.data.gov.uk/entity/42124418",
+            "https://www.gloucestershire.camra.org.uk/WP25/Tippler/The_Tippler_Autumn_25.pdf",
             "https://www.openstreetmap.org/way/685240000",
-            "https://www.openstreetmap.org/node/3838901996"
+            "https://www.planning.data.gov.uk/entity/42124947"
           ],
           "venue_key": "cross house tavern|tewkesbury|gl20 5ab"
         },
-        "source": "openstreetmap-gb-extract"
+        "source": "reviewed-premises-location"
       }
     },
     "v-6d80852f-ae91-5cd5-b2f0-5d93e9943bb2": {
@@ -122106,6 +122302,9 @@
           "building_url": "https://www.openstreetmap.org/way/299828652",
           "checked_at": "2026-11-26",
           "external_premises_checks": {
+            "council_premises_outline": [
+              "https://www.planning.data.gov.uk/entity/42187457"
+            ],
             "government_business_point": [
               "https://ratings.food.gov.uk/business/241116"
             ],
@@ -122129,6 +122328,7 @@
             "https://www.openstreetmap.org/way/299828652",
             "https://ratings.food.gov.uk/business/241116",
             "https://camra.org.uk/pubs/140568",
+            "https://www.planning.data.gov.uk/entity/42187457",
             "https://docs.overturemaps.org/blog/2026/11/18/release-notes/",
             "https://osdatahub.os.uk/downloads/open/OpenMapLocal"
           ],
@@ -122365,6 +122565,9 @@
           "building_url": "https://www.openstreetmap.org/way/372310681",
           "checked_at": "2026-11-26",
           "external_premises_checks": {
+            "council_premises_outline": [
+              "https://www.planning.data.gov.uk/entity/42187068"
+            ],
             "named_heritage_point": [
               "https://historicengland.org.uk/listing/the-list/list-entry/1426314"
             ]
@@ -122382,6 +122585,7 @@
             "https://www.openstreetmap.org/way/372310681",
             "https://www.openstreetmap.org/node/1035979851",
             "https://historicengland.org.uk/listing/the-list/list-entry/1426314",
+            "https://www.planning.data.gov.uk/entity/42187068",
             "https://osdatahub.os.uk/downloads/open/OpenMapLocal"
           ],
           "venue_key": "guest house|southport: central|pr9 0qf"
@@ -132973,8 +133177,18 @@
         "lat": 51.7545954,
         "lng": -1.2556627,
         "premises_review": {
-          "basis": "Named venue point and pin share an imaged roof and generalised OS building. Individual occupancy is unconfirmed.",
+          "basis": "The identified 52 Broad Street pub occupies a narrow building between two Blackwell’s shops. The current marker lies within the separate statutory outline of the White Horse.",
+          "building_url": "https://www.planning.data.gov.uk/entity/42227816",
           "checked_at": "2026-11-26",
+          "external_premises_checks": {
+            "council_premises_outline": [
+              "https://www.planning.data.gov.uk/entity/42227816"
+            ],
+            "named_heritage_point": [
+              "https://historicengland.org.uk/listing/the-list/list-entry/1185470"
+            ]
+          },
+          "geometry_feature": "planning-data/42227816",
           "os_openmap_buildings": [
             "SP_BUILDING.SHP#980662"
           ],
@@ -132982,11 +133196,12 @@
             "lat": 51.7545954,
             "lng": -1.2556627
           },
-          "precision": "site",
+          "precision": "building",
           "sources": [
-            "https://www.openstreetmap.org/node/175683866",
-            "https://osdatahub.os.uk/downloads/open/OpenMapLocal",
-            "https://minedbuildings.z5.web.core.windows.net/global-buildings/2026-02-03/global-buildings.geojsonl/RegionName=UnitedKingdom/quadkey=031313112/part-00139-4feead82-d499-422b-94cb-c036c212127a.c000.csv.gz"
+            "https://www.planning.data.gov.uk/entity/42227816",
+            "https://historicengland.org.uk/listing/the-list/list-entry/1185470",
+            "https://oxfordhistory.org.uk/broad/buildings/north/52.html",
+            "https://osdatahub.os.uk/downloads/open/OpenMapLocal"
           ],
           "venue_key": "white horse|oxford: central|ox1 3bb"
         },
@@ -133709,6 +133924,9 @@
           "building_url": "https://www.openstreetmap.org/way/548260570",
           "checked_at": "2026-11-26",
           "external_premises_checks": {
+            "council_premises_outline": [
+              "https://www.planning.data.gov.uk/entity/42169795"
+            ],
             "named_heritage_point": [
               "https://historicengland.org.uk/listing/the-list/list-entry/1331118"
             ]
@@ -133721,7 +133939,8 @@
           "precision": "building",
           "sources": [
             "https://www.openstreetmap.org/way/548260570",
-            "https://historicengland.org.uk/listing/the-list/list-entry/1331118"
+            "https://historicengland.org.uk/listing/the-list/list-entry/1331118",
+            "https://www.planning.data.gov.uk/entity/42169795"
           ],
           "venue_key": "hare and hounds|harlton|cb23 1es"
         },
@@ -134533,6 +134752,11 @@
           "basis": "Published point is inside the named building or shares its footprint with the mapped venue feature.",
           "building_url": "https://www.openstreetmap.org/way/251225556",
           "checked_at": "2026-11-26",
+          "external_premises_checks": {
+            "council_premises_outline": [
+              "https://www.planning.data.gov.uk/entity/42238366"
+            ]
+          },
           "geometry_feature": "way/251225556",
           "os_openmap_buildings": [
             "SK_BUILDING.SHP#412457"
@@ -134545,6 +134769,7 @@
           "sources": [
             "https://www.openstreetmap.org/way/251225556",
             "https://www.openstreetmap.org/node/422649680",
+            "https://www.planning.data.gov.uk/entity/42238366",
             "https://osdatahub.os.uk/downloads/open/OpenMapLocal"
           ],
           "venue_key": "flying childers|stanton in peak|de4 2lw"
@@ -136921,6 +137146,9 @@
           "building_url": "https://www.openstreetmap.org/way/353727729",
           "checked_at": "2026-11-26",
           "external_premises_checks": {
+            "council_premises_outline": [
+              "https://www.planning.data.gov.uk/entity/42121489"
+            ],
             "numbered_address": [
               "https://camra.org.uk/pubs/192499",
               "https://ratings.food.gov.uk/business/305791"
@@ -136942,6 +137170,7 @@
             "https://www.openstreetmap.org/way/353727729",
             "https://camra.org.uk/pubs/192499",
             "https://ratings.food.gov.uk/business/305791",
+            "https://www.planning.data.gov.uk/entity/42121489",
             "https://docs.overturemaps.org/blog/2026/11/18/release-notes/",
             "https://osdatahub.os.uk/downloads/open/OpenMapLocal"
           ],
@@ -138895,19 +139124,19 @@
             "status": "ambiguous_or_missing_coordinates"
           }
         ],
-        "confidence": "owner_reviewed",
-        "independent_of_pin": false,
+        "confidence": "existing_evidence_needs_corroboration",
+        "independent_of_pin": true,
         "listing": {
           "postcode": "KT18 7SR",
           "pub_name": "Cricketers"
         },
         "manual_action_required": false,
-        "next_action": "Owner confirmed this exact pin; no pin check requested.",
-        "owner_pin_confirmed": true,
-        "owner_reviewed": true,
+        "next_action": "No pin check requested.",
+        "owner_pin_confirmed": false,
+        "owner_reviewed": false,
         "pin": {
-          "lat": 51.33328,
-          "lng": -0.28195
+          "lat": 51.3332062,
+          "lng": -0.2819988
         },
         "priority": 2,
         "reasons": [],
@@ -138917,7 +139146,7 @@
           "queried_postcode": "KT18 7SR",
           "status": "ambiguous_or_missing_coordinates"
         },
-        "review_category": "owner_confirmed",
+        "review_category": "informational",
         "status": "ambiguous_or_missing_coordinates",
         "warnings": [
           "FSA comparison is inconclusive; absence of a match does not contradict accepted evidence"
@@ -138934,6 +139163,37 @@
         "postcode": "KT18 7SR",
         "pub_name": "Cricketers"
       },
+      "previous_owner_confirmations": [
+        {
+          "approved_coordinate": {
+            "lat": 51.33328,
+            "lng": -0.28195
+          },
+          "bass_availability_verified": false,
+          "checked_at": "2026-11-03",
+          "listing": {
+            "area": "Surrey",
+            "country": "England",
+            "place_name": "Epsom",
+            "postcode": "KT18 7SR",
+            "pub_name": "Cricketers",
+            "venue_id": "v-904f3702-2d9f-5a94-9a08-766db95b67b3"
+          },
+          "owner_instruction": "those all look correct, give me a few of the trickier matches to check",
+          "postal_delivery_verified": false,
+          "reviewed_by": "repository owner in Codex chat",
+          "schema_version": 1,
+          "scope": "displayed_venue_building",
+          "source_snapshots": [
+            {
+              "address": "1 Stamford Green Road",
+              "name": "Cricketers, Epsom - Pub by the Cricket Green",
+              "postcode": "KT18 7SR",
+              "url": "https://camra.org.uk/pubs/179753"
+            }
+          ]
+        }
+      ],
       "verification_attempt": {
         "checked_at": "2026-11-18",
         "evidence": {
@@ -139000,6 +139260,7 @@
           },
           {
             "checked_at": "2026-11-18",
+            "disposition": "superseded_by_premises_review",
             "match": "primary_named_venue_full_postcode_and_address",
             "reference_address": "1 Stamford Green Road",
             "reference_coordinate": {
@@ -139011,67 +139272,52 @@
             "reference_postcode": "KT18 7SR",
             "source": "camra",
             "url": "https://camra.org.uk/pubs/179753"
+          },
+          {
+            "checked_at": "2026-11-26",
+            "match": "reviewed_mapped_premises",
+            "reference_coordinate": {
+              "lat": 51.3332062,
+              "lng": -0.2819988
+            },
+            "reference_name": "Cricketers",
+            "reference_postcode": "KT18 7SR",
+            "source": "reviewed-premises-location",
+            "url": "https://www.planning.data.gov.uk/entity/42121454"
           }
         ],
-        "lat": 51.33328,
-        "lng": -0.28195,
-        "owner_confirmation": {
-          "approved_coordinate": {
-            "lat": 51.33328,
-            "lng": -0.28195
-          },
-          "bass_availability_verified": false,
-          "checked_at": "2026-11-03",
-          "listing": {
-            "area": "Surrey",
-            "country": "England",
-            "place_name": "Epsom",
-            "postcode": "KT18 7SR",
-            "pub_name": "Cricketers",
-            "venue_id": "v-904f3702-2d9f-5a94-9a08-766db95b67b3"
-          },
-          "owner_instruction": "those all look correct, give me a few of the trickier matches to check",
-          "postal_delivery_verified": false,
-          "reviewed_by": "repository owner in Codex chat",
-          "schema_version": 1,
-          "scope": "displayed_venue_building",
-          "source_snapshots": [
-            {
-              "address": "1 Stamford Green Road",
-              "name": "Cricketers, Epsom - Pub by the Cricket Green",
-              "postcode": "KT18 7SR",
-              "url": "https://camra.org.uk/pubs/179753"
-            }
-          ]
-        },
+        "lat": 51.3332062,
+        "lng": -0.2819988,
         "premises_review": {
-          "basis": "Published point is inside the named building or shares its footprint with the mapped venue feature.",
-          "building_url": "https://www.openstreetmap.org/way/288700260",
+          "basis": "The original building identification is supported by the named council and OpenStreetMap outlines. Their edges differ near the original marker. The corrected point lies inside both.",
+          "building_url": "https://www.planning.data.gov.uk/entity/42121454",
           "checked_at": "2026-11-26",
           "external_premises_checks": {
+            "council_premises_outline": [
+              "https://www.planning.data.gov.uk/entity/42121454"
+            ],
             "named_heritage_point": [
               "https://historicengland.org.uk/listing/the-list/list-entry/1213777"
-            ],
-            "numbered_address": [
-              "https://camra.org.uk/pubs/179753",
-              "https://ratings.food.gov.uk/business/1872994"
             ]
           },
-          "geometry_feature": "way/288700260",
+          "geometry_feature": "planning-data/42121454",
           "point": {
+            "lat": 51.3332062,
+            "lng": -0.2819988
+          },
+          "precision": "building",
+          "previous_point": {
             "lat": 51.33328,
             "lng": -0.28195
           },
-          "precision": "building",
           "sources": [
-            "https://www.openstreetmap.org/way/288700260",
+            "https://www.planning.data.gov.uk/entity/42121454",
             "https://historicengland.org.uk/listing/the-list/list-entry/1213777",
-            "https://camra.org.uk/pubs/179753",
-            "https://ratings.food.gov.uk/business/1872994"
+            "https://www.openstreetmap.org/way/288700260"
           ],
           "venue_key": "cricketers|epsom|kt18 7sr"
         },
-        "source": "camra-primary"
+        "source": "reviewed-premises-location"
       }
     },
     "v-907056b1-7744-5174-8871-52dc93927a88": {
@@ -152751,7 +152997,7 @@
         "lat": 52.8273361,
         "lng": -1.584018,
         "premises_review": {
-          "basis": "The available evidence does not identify an individual building at this point.",
+          "basis": "Historic England puts the pub within two metres of the saved point. The council describes an attached terrace of cottages and the OS outline spans that terrace.",
           "checked_at": "2026-11-26",
           "os_openmap_buildings": [
             "SK_BUILDING.SHP#895330"
@@ -152760,12 +153006,16 @@
             "lat": 52.8273361,
             "lng": -1.584018
           },
-          "precision": "reference",
+          "precision": "site",
           "sources": [
-            "https://camra.org.uk/pubs/124024",
+            "https://www.brickmakersarms.co.uk/index",
+            "https://historicengland.org.uk/listing/the-list/list-entry/1096462",
+            "https://www.southderbyshire.gov.uk/assets/attach/1912/Newton-Solney-Statement-adopted-2011.pdf",
+            "https://www.openstreetmap.org/node/379017151",
             "https://osdatahub.os.uk/downloads/open/OpenMapLocal"
           ],
-          "venue_key": "brickmakers arms|newton solney|de15 0sj"
+          "venue_key": "brickmakers arms|newton solney|de15 0sj",
+          "visitor_hint": "Look for the Brickmakers Arms at 9–11 Main Street. The cottages adjoin the pub."
         },
         "source": "openstreetmap-gb-extract"
       }
@@ -154246,6 +154496,9 @@
           "building_url": "https://www.openstreetmap.org/way/243482505",
           "checked_at": "2026-11-26",
           "external_premises_checks": {
+            "council_premises_outline": [
+              "https://www.planning.data.gov.uk/entity/42130378"
+            ],
             "government_business_point": [
               "https://ratings.food.gov.uk/business/149446"
             ],
@@ -154269,6 +154522,7 @@
             "https://www.openstreetmap.org/way/243482505",
             "https://ratings.food.gov.uk/business/149446",
             "https://historicengland.org.uk/listing/the-list/list-entry/1245715",
+            "https://www.planning.data.gov.uk/entity/42130378",
             "https://osdatahub.os.uk/downloads/open/OpenMapLocal"
           ],
           "venue_key": "imperial inn|gloucester|gl1 2ag"
@@ -158696,6 +158950,9 @@
           "building_url": "https://www.openstreetmap.org/way/255162267",
           "checked_at": "2026-11-26",
           "external_premises_checks": {
+            "council_premises_outline": [
+              "https://www.planning.data.gov.uk/entity/42189062"
+            ],
             "named_heritage_point": [
               "https://historicengland.org.uk/listing/the-list/list-entry/1392575"
             ],
@@ -158718,6 +158975,7 @@
             "https://historicengland.org.uk/listing/the-list/list-entry/1392575",
             "https://camra.org.uk/pubs/122913",
             "https://ratings.food.gov.uk/business/1601178",
+            "https://www.planning.data.gov.uk/entity/42189062",
             "https://osdatahub.os.uk/downloads/open/OpenMapLocal"
           ],
           "venue_key": "golden cup|stoke: hanley|st1 2js"
@@ -164338,8 +164596,8 @@
         "owner_pin_confirmed": false,
         "owner_reviewed": false,
         "pin": {
-          "lat": 53.3374119,
-          "lng": -0.5623709
+          "lat": 53.337789,
+          "lng": -0.5630489
         },
         "priority": 2,
         "reasons": [],
@@ -164484,6 +164742,7 @@
           {
             "address_source_url": "https://camra.org.uk/pubs/191962",
             "checked_at": "2026-11-04",
+            "disposition": "superseded_by_premises_review",
             "match": "reviewed_named_building_and_camra_address",
             "reference_address": "The Cliff, Middle Street",
             "reference_coordinate": {
@@ -164494,24 +164753,46 @@
             "reference_postcode": "LN1 2YQ",
             "source": "openstreetmap-named-venue",
             "url": "https://www.openstreetmap.org/node/597413100"
+          },
+          {
+            "checked_at": "2026-11-26",
+            "match": "named_venue_visitor_position",
+            "reference_coordinate": {
+              "lat": 53.337789,
+              "lng": -0.5630489
+            },
+            "reference_name": "Windmill Inn",
+            "reference_postcode": "LN1 2YQ",
+            "source": "reviewed-premises-location",
+            "url": "https://camra.org.uk/pubs/windmill-inn-ingham-191962"
           }
         ],
-        "lat": 53.3374119,
-        "lng": -0.5623709,
+        "lat": 53.337789,
+        "lng": -0.5630489,
         "premises_review": {
-          "basis": "The available evidence does not identify an individual building at this point.",
+          "basis": "The former OSM point falls in trees away from any visible building. The CAMRA visitor point is at the roadside pub and its gravel forecourt on the east side of the B1398. The venue photograph shows its gabled roof, entrance porch, trees and gravel forecourt. Satellite imagery distinguishes this building and access from the former pin. The licence drawing confirms the internal entrance but has no geographic grid. The nearby secondary place point supports the site.",
           "checked_at": "2026-11-26",
+          "overture_feature_id": "f4d2f262-5d54-41b7-9e65-9a6d310ccd03",
           "point": {
+            "lat": 53.337789,
+            "lng": -0.5630489
+          },
+          "precision": "site",
+          "previous_point": {
             "lat": 53.3374119,
             "lng": -0.5623709
           },
-          "precision": "reference",
           "sources": [
-            "https://www.openstreetmap.org/node/597413100"
+            "https://camra.org.uk/pubs/windmill-inn-ingham-191962",
+            "https://democracy.west-lindsey.gov.uk/ieListDocuments.aspx?MId=4249",
+            "https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/18/84983/130662",
+            "https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/18/84984/130662",
+            "https://docs.overturemaps.org/blog/2026/11/18/release-notes/"
           ],
-          "venue_key": "windmill inn|ingham|ln1 2yq"
+          "venue_key": "windmill inn|ingham|ln1 2yq",
+          "visitor_hint": "Use the roadside pub and gravel forecourt on the east side of Middle Street (B1398)."
         },
-        "source": "reviewed-named-building"
+        "source": "reviewed-premises-location"
       }
     },
     "v-ac778227-1ccd-5f63-98cd-f4744b9915cf": {
@@ -166244,7 +166525,7 @@
         "comparisons": [
           {
             "address": "131A High Street, Oxford, Oxfordshire",
-            "difference_metres": 21.4,
+            "difference_metres": 15.5,
             "lat": 51.752034,
             "lng": -1.256529,
             "name": "The Chequers",
@@ -166265,14 +166546,14 @@
         "owner_pin_confirmed": false,
         "owner_reviewed": false,
         "pin": {
-          "lat": 51.75184286818182,
-          "lng": -1.2565633
+          "lat": 51.7519277,
+          "lng": -1.2566747
         },
         "priority": 3,
         "reasons": [],
         "reference": {
           "address": "131A High Street, Oxford, Oxfordshire",
-          "difference_metres": 21.4,
+          "difference_metres": 15.5,
           "lat": 51.752034,
           "lng": -1.256529,
           "name": "The Chequers",
@@ -166370,6 +166651,7 @@
           {
             "checked_at": "2026-11-22",
             "difference_metres": 11.4,
+            "disposition": "superseded_by_premises_review",
             "match": "venue_name_and_full_postcode",
             "reference_address": "131 High Street",
             "reference_coordinate": {
@@ -166380,28 +166662,48 @@
             "reference_postcode": "OX1 4DH",
             "source": "camra",
             "url": "https://camra.org.uk/pubs/156964"
+          },
+          {
+            "checked_at": "2026-11-26",
+            "match": "reviewed_mapped_premises",
+            "reference_coordinate": {
+              "lat": 51.7519277,
+              "lng": -1.2566747
+            },
+            "reference_name": "Chequers",
+            "reference_postcode": "OX1 4DH",
+            "source": "reviewed-premises-location",
+            "url": "https://www.planning.data.gov.uk/entity/42227920"
           }
         ],
-        "lat": 51.75184286818182,
-        "lng": -1.2565633,
+        "lat": 51.7519277,
+        "lng": -1.2566747,
         "premises_review": {
-          "basis": "The named site is established. Nearby units use conflicting or overlapping street addresses; exact occupancy remains unresolved.",
+          "basis": "The operator identifies The Chequers in the lane off the High Street. The council maps the Chequers Inn behind the street frontage. The marker is placed inside that premises.",
+          "building_url": "https://www.planning.data.gov.uk/entity/42227920",
           "checked_at": "2026-11-26",
-          "os_openmap_buildings": [
-            "SP_BUILDING.SHP#983698"
-          ],
+          "external_premises_checks": {
+            "council_premises_outline": [
+              "https://www.planning.data.gov.uk/entity/42227920"
+            ]
+          },
+          "geometry_feature": "planning-data/42227920",
           "point": {
+            "lat": 51.7519277,
+            "lng": -1.2566747
+          },
+          "precision": "building",
+          "previous_point": {
             "lat": 51.75184286818182,
             "lng": -1.2565633
           },
-          "precision": "site",
           "sources": [
-            "https://camra.org.uk/pubs/156964",
-            "https://osdatahub.os.uk/downloads/open/OpenMapLocal"
+            "https://www.planning.data.gov.uk/entity/42227920",
+            "https://www.nicholsonspubs.co.uk/restaurants/southeast/thechequersoxford"
           ],
           "venue_key": "chequers|oxford: central|ox1 4dh"
         },
-        "source": "openstreetmap-gb-extract"
+        "source": "reviewed-premises-location"
       }
     },
     "v-af18b197-586e-5323-8171-e7f9e58f5ec9": {
@@ -172629,6 +172931,9 @@
           "building_url": "https://www.openstreetmap.org/way/670571171",
           "checked_at": "2026-11-26",
           "external_premises_checks": {
+            "council_premises_outline": [
+              "https://www.planning.data.gov.uk/entity/42163184"
+            ],
             "numbered_address": [
               "https://www.google.com/maps/place/Golden+Pheasant/@52.0869663,-0.2627139,21z/data=!3m5!1s0x4877cc3fb633d10d:0xd232de50860f8ee8!8m2!3d52.0870521!4d-0.2626077!16s%2Fg%2F1tgps3s3"
             ]
@@ -172646,6 +172951,7 @@
           "sources": [
             "https://www.openstreetmap.org/way/670571171",
             "https://www.google.com/maps/place/Golden+Pheasant/@52.0869663,-0.2627139,21z/data=!3m5!1s0x4877cc3fb633d10d:0xd232de50860f8ee8!8m2!3d52.0870521!4d-0.2626077!16s%2Fg%2F1tgps3s3",
+            "https://www.planning.data.gov.uk/entity/42163184",
             "https://docs.overturemaps.org/blog/2026/11/18/release-notes/"
           ],
           "venue_key": "golden pheasant|biggleswade|sg18 0jh"
@@ -178745,13 +179051,13 @@
         "comparisons": [
           {
             "address": "88 Bolton Street, Blackpool",
-            "difference_metres": 0.0,
+            "difference_metres": 37.0,
             "lat": 53.799326,
             "lng": -3.054237,
             "name": "Sun Inn",
             "postcode": "FY1 6AA",
             "queried_postcode": "FY1 6AA",
-            "status": "coordinate_agreement",
+            "status": "nearby",
             "url": "https://ratings.food.gov.uk/business/836476"
           }
         ],
@@ -178766,25 +179072,27 @@
         "owner_pin_confirmed": false,
         "owner_reviewed": false,
         "pin": {
-          "lat": 53.799326,
-          "lng": -3.054237
+          "lat": 53.799657,
+          "lng": -3.054293
         },
-        "priority": 3,
+        "priority": 2,
         "reasons": [],
         "reference": {
           "address": "88 Bolton Street, Blackpool",
-          "difference_metres": 0.0,
+          "difference_metres": 37.0,
           "lat": 53.799326,
           "lng": -3.054237,
           "name": "Sun Inn",
           "postcode": "FY1 6AA",
           "queried_postcode": "FY1 6AA",
-          "status": "coordinate_agreement",
+          "status": "nearby",
           "url": "https://ratings.food.gov.uk/business/836476"
         },
         "review_category": "informational",
-        "status": "coordinate_agreement",
-        "warnings": []
+        "status": "nearby",
+        "warnings": [
+          "FSA coordinate is 25-50m away; informational only"
+        ]
       },
       "listing": {
         "area": "Lancashire",
@@ -178871,6 +179179,7 @@
           {
             "checked_at": "2026-11-23",
             "difference_metres": 37.0,
+            "disposition": "superseded_by_premises_review",
             "match": "venue_name_and_full_postcode",
             "reference_address": "88 Bolton Street",
             "reference_coordinate": {
@@ -178881,28 +179190,47 @@
             "reference_postcode": "FY1 6AA",
             "source": "camra",
             "url": "https://camra.org.uk/pubs/120087"
+          },
+          {
+            "checked_at": "2026-11-26",
+            "match": "named_venue_visitor_position",
+            "reference_coordinate": {
+              "lat": 53.799657,
+              "lng": -3.054293
+            },
+            "reference_name": "Sun Inn",
+            "reference_postcode": "FY1 6AA",
+            "source": "reviewed-premises-location",
+            "url": "https://camra.org.uk/pubs/sun-inn-blackpool-120087"
           }
         ],
-        "lat": 53.799326,
-        "lng": -3.054237,
+        "lat": 53.799657,
+        "lng": -3.054293,
         "premises_review": {
-          "basis": "The available evidence does not identify an individual building at this point.",
+          "basis": "Blackpool Council identifies the Sun Inn at 88 Bolton Street. The CAMRA visitor point, food register and close secondary place point are inside the same mapped title parcel. The former pin is 37 metres south in a separate parcel. The council website links a drawing for another property, so that drawing was excluded.",
           "checked_at": "2026-11-26",
-          "os_openmap_buildings": [
-            "SD_BUILDING.SHP#641523"
-          ],
+          "overture_feature_id": "26086a5a-c5b9-47e0-8478-2075175aa064",
           "point": {
+            "lat": 53.799657,
+            "lng": -3.054293
+          },
+          "precision": "site",
+          "previous_point": {
             "lat": 53.799326,
             "lng": -3.054237
           },
-          "precision": "reference",
           "sources": [
-            "https://camra.org.uk/pubs/120087",
-            "https://osdatahub.os.uk/downloads/open/OpenMapLocal"
+            "https://camra.org.uk/pubs/sun-inn-blackpool-120087",
+            "https://www.blackpool.gov.uk/Residents/Planning-environment-and-community/Planning/Article-4-directions/Locally-listed-article-4-direction-order/Locally-listed-article-4-direction.aspx",
+            "https://docs.overturemaps.org/blog/2026/11/18/release-notes/",
+            "https://ratings.food.gov.uk/business/836476",
+            "https://www.planning.data.gov.uk/entity/17483187",
+            "https://www.planning.data.gov.uk/entity/17483511"
           ],
-          "venue_key": "sun inn|blackpool: south shore|fy1 6aa"
+          "venue_key": "sun inn|blackpool: south shore|fy1 6aa",
+          "visitor_hint": "Look for the Sun Inn at 88 Bolton Street."
         },
-        "source": "food-standards-agency-fhrs"
+        "source": "reviewed-premises-location"
       }
     },
     "v-c186678b-ce65-5ecd-9370-60ce0be133c5": {
@@ -178926,8 +179254,8 @@
             "url": "https://ratings.food.gov.uk/business/236709"
           }
         ],
-        "confidence": "different_source_coordinates_agree",
-        "independent_of_pin": true,
+        "confidence": "existing_evidence_needs_corroboration",
+        "independent_of_pin": false,
         "listing": {
           "postcode": "NE1 1EZ",
           "pub_name": "Old George"
@@ -179057,8 +179385,21 @@
         "lat": 54.9713633,
         "lng": -1.6128381,
         "premises_review": {
-          "basis": "The venue operator maps the same site. An individual building or unit has not been distinguished.",
+          "basis": "The name and address at 1 Old George Yard identify the pub within the council’s Old George Public House outline.",
+          "building_url": "https://www.planning.data.gov.uk/entity/42112383",
           "checked_at": "2026-11-26",
+          "external_premises_checks": {
+            "council_premises_outline": [
+              "https://www.planning.data.gov.uk/entity/42112383"
+            ],
+            "government_business_point": [
+              "https://ratings.food.gov.uk/business/236709"
+            ],
+            "named_heritage_point": [
+              "https://historicengland.org.uk/listing/the-list/list-entry/1024823"
+            ]
+          },
+          "geometry_feature": "planning-data/42112383",
           "os_openmap_buildings": [
             "NZ_BUILDING.SHP#310278"
           ],
@@ -179066,10 +179407,11 @@
             "lat": 54.9713633,
             "lng": -1.6128381
           },
-          "precision": "site",
+          "precision": "building",
           "sources": [
-            "https://www.socialpubandkitchen.co.uk/pubs/old-george-inn-newcastle?utm_source=facebook&utm_medium=organicsocial&utm_campaign=homepage%2F",
-            "https://www.socialpubandkitchen.co.uk/pubs/old-george-inn-newcastle",
+            "https://www.planning.data.gov.uk/entity/42112383",
+            "https://historicengland.org.uk/listing/the-list/list-entry/1024823",
+            "https://ratings.food.gov.uk/business/236709",
             "https://osdatahub.os.uk/downloads/open/OpenMapLocal"
           ],
           "venue_key": "old george|newcastle: central|ne1 1ez"
@@ -180164,6 +180506,11 @@
           "basis": "Published point is inside the named building or shares its footprint with the mapped venue feature.",
           "building_url": "https://www.openstreetmap.org/way/249621497",
           "checked_at": "2026-11-26",
+          "external_premises_checks": {
+            "council_premises_outline": [
+              "https://www.planning.data.gov.uk/entity/42237757"
+            ]
+          },
           "geometry_feature": "way/249621497",
           "os_openmap_buildings": [
             "SK_BUILDING.SHP#467967"
@@ -180175,6 +180522,7 @@
           "precision": "building",
           "sources": [
             "https://www.openstreetmap.org/way/249621497",
+            "https://www.planning.data.gov.uk/entity/42237757",
             "https://osdatahub.os.uk/downloads/open/OpenMapLocal"
           ],
           "venue_key": "devonshire arms|hartington|sk17 0al"
@@ -188680,6 +189028,11 @@
           "basis": "Published point is inside the named building or shares its footprint with the mapped venue feature.",
           "building_url": "https://www.openstreetmap.org/way/325208661",
           "checked_at": "2026-11-26",
+          "external_premises_checks": {
+            "council_premises_outline": [
+              "https://www.planning.data.gov.uk/entity/42238432"
+            ]
+          },
           "geometry_feature": "way/325208661",
           "os_openmap_buildings": [
             "SK_BUILDING.SHP#409244"
@@ -188692,6 +189045,7 @@
           "sources": [
             "https://www.openstreetmap.org/way/325208661",
             "https://www.openstreetmap.org/node/390376128",
+            "https://www.planning.data.gov.uk/entity/42238432",
             "https://osdatahub.os.uk/downloads/open/OpenMapLocal"
           ],
           "venue_key": "bulls head|youlgrave|de45 1ur"
@@ -191901,18 +192255,18 @@
         "comparisons": [
           {
             "address": "Three Crowns, Lichfield Road, Stone, Staffordshire",
-            "difference_metres": 27.2,
+            "difference_metres": 0.1,
             "lat": 52.8909861,
             "lng": -2.1260243,
             "name": "The Three Crowns",
             "postcode": "ST15 8QU",
             "queried_postcode": "ST15 8QU",
-            "status": "nearby",
+            "status": "coordinate_agreement",
             "url": "https://ratings.food.gov.uk/business/1195454"
           }
         ],
         "confidence": "existing_evidence_needs_corroboration",
-        "independent_of_pin": true,
+        "independent_of_pin": false,
         "listing": {
           "postcode": "ST15 8QU",
           "pub_name": "Three Crowns"
@@ -191922,27 +192276,25 @@
         "owner_pin_confirmed": false,
         "owner_reviewed": false,
         "pin": {
-          "lat": 52.8908058,
-          "lng": -2.1257502
+          "lat": 52.8909862,
+          "lng": -2.1260221
         },
-        "priority": 2,
+        "priority": 3,
         "reasons": [],
         "reference": {
           "address": "Three Crowns, Lichfield Road, Stone, Staffordshire",
-          "difference_metres": 27.2,
+          "difference_metres": 0.1,
           "lat": 52.8909861,
           "lng": -2.1260243,
           "name": "The Three Crowns",
           "postcode": "ST15 8QU",
           "queried_postcode": "ST15 8QU",
-          "status": "nearby",
+          "status": "coordinate_agreement",
           "url": "https://ratings.food.gov.uk/business/1195454"
         },
         "review_category": "informational",
-        "status": "nearby",
-        "warnings": [
-          "FSA coordinate is 25-50m away; informational only"
-        ]
+        "status": "coordinate_agreement",
+        "warnings": []
       },
       "listing": {
         "area": "Staffordshire",
@@ -192029,6 +192381,7 @@
           {
             "checked_at": "2026-11-23",
             "difference_metres": 17.2,
+            "disposition": "superseded_by_premises_review",
             "match": "venue_name_and_full_postcode",
             "reference_address": "Lichfield Road",
             "reference_coordinate": {
@@ -192039,24 +192392,57 @@
             "reference_postcode": "ST15 8QU",
             "source": "camra",
             "url": "https://camra.org.uk/pubs/145832"
+          },
+          {
+            "checked_at": "2026-11-26",
+            "match": "reviewed_mapped_premises",
+            "reference_coordinate": {
+              "lat": 52.8909862,
+              "lng": -2.1260221
+            },
+            "reference_name": "Three Crowns",
+            "reference_postcode": "ST15 8QU",
+            "source": "reviewed-premises-location",
+            "url": "https://www.planning.data.gov.uk/entity/42240623"
           }
         ],
-        "lat": 52.8908058,
-        "lng": -2.1257502,
+        "lat": 52.8909862,
+        "lng": -2.1260221,
         "premises_review": {
-          "basis": "The available evidence does not identify an individual building at this point.",
+          "basis": "The operator identifies its thatched former coaching inn on Lichfield Road. The council outline, heritage point, food register point and image-derived roof identify the inn. The former map point fell outside its footprint.",
+          "building_url": "https://www.planning.data.gov.uk/entity/42240623",
           "checked_at": "2026-11-26",
+          "external_premises_checks": {
+            "council_premises_outline": [
+              "https://www.planning.data.gov.uk/entity/42240623"
+            ],
+            "government_business_point": [
+              "https://ratings.food.gov.uk/business/1195454"
+            ],
+            "named_heritage_point": [
+              "https://historicengland.org.uk/listing/the-list/list-entry/1219124"
+            ]
+          },
+          "geometry_feature": "planning-data/42240623",
           "point": {
+            "lat": 52.8909862,
+            "lng": -2.1260221
+          },
+          "precision": "building",
+          "previous_point": {
             "lat": 52.8908058,
             "lng": -2.1257502
           },
-          "precision": "reference",
           "sources": [
-            "https://camra.org.uk/pubs/145832"
+            "https://www.planning.data.gov.uk/entity/42240623",
+            "https://historicengland.org.uk/listing/the-list/list-entry/1219124",
+            "https://www.vintageinn.co.uk/restaurants/midlands/thethreecrownsstone/",
+            "https://minedbuildings.z5.web.core.windows.net/global-buildings/2026-02-03/global-buildings.geojsonl/RegionName=UnitedKingdom/quadkey=031311322/part-00024-4feead82-d499-422b-94cb-c036c212127a.c000.csv.gz",
+            "https://ratings.food.gov.uk/business/1195454"
           ],
           "venue_key": "three crowns|stone: little stoke|st15 8qu"
         },
-        "source": "openstreetmap-gb-extract"
+        "source": "reviewed-premises-location"
       }
     },
     "v-d2c84af5-63d1-5de3-a31a-3d0d10be4494": {
@@ -198422,6 +198808,9 @@
           "building_url": "https://www.openstreetmap.org/way/1117631272",
           "checked_at": "2026-11-26",
           "external_premises_checks": {
+            "council_premises_outline": [
+              "https://www.planning.data.gov.uk/entity/42183636"
+            ],
             "government_business_point": [
               "https://ratings.food.gov.uk/business/498233"
             ],
@@ -198448,6 +198837,7 @@
             "https://www.openstreetmap.org/way/1117631272",
             "https://ratings.food.gov.uk/business/498233",
             "https://historicengland.org.uk/listing/the-list/list-entry/1208085",
+            "https://www.planning.data.gov.uk/entity/42183636",
             "https://docs.overturemaps.org/blog/2026/11/18/release-notes/",
             "https://osdatahub.os.uk/downloads/open/OpenMapLocal"
           ],
@@ -203163,6 +203553,9 @@
           "building_url": "https://www.openstreetmap.org/way/518782866",
           "checked_at": "2026-11-26",
           "external_premises_checks": {
+            "council_premises_outline": [
+              "https://www.planning.data.gov.uk/entity/42202038"
+            ],
             "named_heritage_point": [
               "https://historicengland.org.uk/listing/the-list/list-entry/1119018"
             ]
@@ -203186,6 +203579,7 @@
             "https://docs.overturemaps.org/blog/2026/11/18/release-notes/",
             "https://minedbuildings.z5.web.core.windows.net/global-buildings/2026-02-03/global-buildings.geojsonl/RegionName=UnitedKingdom/quadkey=031313300/part-00028-4feead82-d499-422b-94cb-c036c212127a.c000.csv.gz",
             "https://historicengland.org.uk/listing/the-list/list-entry/1119018",
+            "https://www.planning.data.gov.uk/entity/42202038",
             "https://osdatahub.os.uk/downloads/open/OpenMapLocal"
           ],
           "venue_key": "tiger|bridport|dt6 3ly"
@@ -204639,7 +205033,7 @@
         "comparisons": [
           {
             "address": "The Dolphin Inn, 14 The Barbican, Plymouth",
-            "difference_metres": 32.3,
+            "difference_metres": 30.3,
             "lat": 50.3669090270996,
             "lng": -4.13472509384155,
             "name": "The Dolphin Hotel",
@@ -204650,7 +205044,7 @@
           }
         ],
         "confidence": "existing_evidence_needs_corroboration",
-        "independent_of_pin": false,
+        "independent_of_pin": true,
         "listing": {
           "postcode": "PL1 2LS",
           "pub_name": "Dolphin Hotel"
@@ -204660,14 +205054,14 @@
         "owner_pin_confirmed": false,
         "owner_reviewed": false,
         "pin": {
-          "lat": 50.36717515,
-          "lng": -4.13490714
+          "lat": 50.3671682,
+          "lng": -4.1348592
         },
         "priority": 2,
         "reasons": [],
         "reference": {
           "address": "The Dolphin Inn, 14 The Barbican, Plymouth",
-          "difference_metres": 32.3,
+          "difference_metres": 30.3,
           "lat": 50.3669090270996,
           "lng": -4.13472509384155,
           "name": "The Dolphin Hotel",
@@ -204782,39 +205176,34 @@
           {
             "checked_at": "2026-11-26",
             "match": "reviewed_mapped_premises",
-            "reference_address": "14 The Barbican",
             "reference_coordinate": {
-              "lat": 50.36717515,
-              "lng": -4.13490714
+              "lat": 50.3671682,
+              "lng": -4.1348592
             },
             "reference_name": "Dolphin Hotel",
             "reference_postcode": "PL1 2LS",
             "source": "reviewed-premises-location",
-            "url": "https://www.openstreetmap.org/way/1042625704"
+            "url": "https://www.planning.data.gov.uk/entity/42147325"
           }
         ],
-        "lat": 50.36717515,
-        "lng": -4.13490714,
+        "lat": 50.3671682,
+        "lng": -4.1348592,
         "premises_review": {
-          "basis": "The FSA record identifies the mapped venue as The Dolphin Inn, 14 The Barbican, and Historic England independently lists The Dolphin Hotel at that address. The published point is inside the separate Crown & Anchor footprint: Plymouth Council licensing and Visit Plymouth identify Crown & Anchor at 10/11 The Barbican. The distinct listed premises and mapped building make this a wrong-premises location, not a small entrance offset.",
-          "building_url": "https://www.openstreetmap.org/way/1042625704",
+          "basis": "The original building identification is supported by the named council and OpenStreetMap outlines. Their edges differ near the original marker. The corrected point lies inside both.",
+          "building_url": "https://www.planning.data.gov.uk/entity/42147325",
           "checked_at": "2026-11-26",
           "external_premises_checks": {
+            "council_premises_outline": [
+              "https://www.planning.data.gov.uk/entity/42147325"
+            ],
             "named_heritage_point": [
               "https://historicengland.org.uk/listing/the-list/list-entry/1386442"
-            ],
-            "numbered_address": [
-              "https://camra.org.uk/pubs/154304",
-              "https://ratings.food.gov.uk/business/984432"
             ]
           },
-          "geometry_feature": "way/1042625704",
-          "os_openmap_buildings": [
-            "SX_BUILDING.SHP#212506"
-          ],
+          "geometry_feature": "planning-data/42147325",
           "point": {
-            "lat": 50.36717515,
-            "lng": -4.13490714
+            "lat": 50.3671682,
+            "lng": -4.1348592
           },
           "precision": "building",
           "previous_point": {
@@ -204825,15 +205214,10 @@
             "96395f29-953b-456c-9b59-ee39938a0835"
           ],
           "sources": [
+            "https://www.planning.data.gov.uk/entity/42147325",
             "https://www.openstreetmap.org/way/1042625704",
-            "https://ratings.food.gov.uk/business/984432",
             "https://historicengland.org.uk/listing/the-list/list-entry/1386442",
-            "https://licensing.plymouth.gov.uk/1/LicensingActPremises/Search/327",
-            "https://www.visitplymouth.co.uk/food-and-drink/crown-and-anchor-p1420943",
-            "https://www.openstreetmap.org/way/1042625703",
-            "https://camra.org.uk/pubs/154304",
-            "https://docs.overturemaps.org/blog/2026/11/18/release-notes/",
-            "https://osdatahub.os.uk/downloads/open/OpenMapLocal"
+            "https://docs.overturemaps.org/blog/2026/11/18/release-notes/"
           ],
           "venue_key": "dolphin hotel|plymouth: barbican|pl1 2ls"
         },
@@ -209137,6 +209521,11 @@
           "basis": "Published point is inside the named building or shares its footprint with the mapped venue feature.",
           "building_url": "https://www.openstreetmap.org/way/166188031",
           "checked_at": "2026-11-26",
+          "external_premises_checks": {
+            "council_premises_outline": [
+              "https://www.planning.data.gov.uk/entity/42239040"
+            ]
+          },
           "geometry_feature": "way/166188031",
           "os_openmap_buildings": [
             "SK_BUILDING.SHP#303377"
@@ -209152,6 +209541,7 @@
           "sources": [
             "https://www.openstreetmap.org/way/166188031",
             "https://www.openstreetmap.org/node/414097700",
+            "https://www.planning.data.gov.uk/entity/42239040",
             "https://docs.overturemaps.org/blog/2026/11/18/release-notes/",
             "https://osdatahub.os.uk/downloads/open/OpenMapLocal"
           ],
@@ -210450,8 +210840,15 @@
         "lat": 53.398583,
         "lng": -2.91763,
         "premises_review": {
-          "basis": "The available evidence does not identify an individual building at this point.",
+          "basis": "The operator identifies the restored Wavertree Town Hall as the pub. The saved point lies inside the mapped former town hall.",
+          "building_url": "https://www.planning.data.gov.uk/entity/42183483",
           "checked_at": "2026-11-26",
+          "external_premises_checks": {
+            "council_premises_outline": [
+              "https://www.planning.data.gov.uk/entity/42183483"
+            ]
+          },
+          "geometry_feature": "planning-data/42183483",
           "os_openmap_buildings": [
             "SJ_BUILDING.SHP#459191"
           ],
@@ -210459,9 +210856,10 @@
             "lat": 53.398583,
             "lng": -2.91763
           },
-          "precision": "reference",
+          "precision": "building",
           "sources": [
-            "https://camra.org.uk/pubs/200314",
+            "https://www.planning.data.gov.uk/entity/42183483",
+            "https://thetownhallwavertree.co.uk/",
             "https://osdatahub.os.uk/downloads/open/OpenMapLocal"
           ],
           "venue_key": "town hall|liverpool: wavertree|l15 8hf"
@@ -213787,6 +214185,9 @@
           "building_url": "https://www.openstreetmap.org/way/810586750",
           "checked_at": "2026-11-26",
           "external_premises_checks": {
+            "council_premises_outline": [
+              "https://www.planning.data.gov.uk/entity/42152666"
+            ],
             "named_heritage_point": [
               "https://historicengland.org.uk/listing/the-list/list-entry/1312680"
             ]
@@ -213803,6 +214204,7 @@
           "sources": [
             "https://www.openstreetmap.org/way/810586750",
             "https://historicengland.org.uk/listing/the-list/list-entry/1312680",
+            "https://www.planning.data.gov.uk/entity/42152666",
             "https://osdatahub.os.uk/downloads/open/OpenMapLocal"
           ],
           "venue_key": "anchor inn|oldbury-on-severn|bs35 1qa"
@@ -217571,6 +217973,11 @@
           "basis": "Published point is inside the named building or shares its footprint with the mapped venue feature.",
           "building_url": "https://www.openstreetmap.org/way/243715184",
           "checked_at": "2026-11-26",
+          "external_premises_checks": {
+            "council_premises_outline": [
+              "https://www.planning.data.gov.uk/entity/42219551"
+            ]
+          },
           "geometry_feature": "way/243715184",
           "os_openmap_buildings": [
             "TA_BUILDING.SHP#137894"
@@ -217582,6 +217989,7 @@
           "precision": "building",
           "sources": [
             "https://www.openstreetmap.org/way/243715184",
+            "https://www.planning.data.gov.uk/entity/42219551",
             "https://osdatahub.os.uk/downloads/open/OpenMapLocal"
           ],
           "venue_key": "minerva|hull|hu1 1xe"
@@ -217756,6 +218164,9 @@
           "building_url": "https://www.openstreetmap.org/way/178831286",
           "checked_at": "2026-11-26",
           "external_premises_checks": {
+            "council_premises_outline": [
+              "https://www.planning.data.gov.uk/entity/42171486"
+            ],
             "government_business_point": [
               "https://ratings.food.gov.uk/business/1473247"
             ]
@@ -217773,6 +218184,7 @@
             "https://www.openstreetmap.org/way/178831286",
             "https://www.openstreetmap.org/node/21642213",
             "https://ratings.food.gov.uk/business/1473247",
+            "https://www.planning.data.gov.uk/entity/42171486",
             "https://osdatahub.os.uk/downloads/open/OpenMapLocal"
           ],
           "venue_key": "green man|trumpington|cb2 9hz"
@@ -220097,7 +220509,7 @@
           },
           {
             "address": "46 Main Street, Sewstern, Grantham",
-            "difference_metres": 19.4,
+            "difference_metres": 3.2,
             "lat": 52.7863375,
             "lng": -0.6838626,
             "name": "The Blue Dog Inn",
@@ -220107,8 +220519,8 @@
             "url": "https://ratings.food.gov.uk/business/1681293"
           }
         ],
-        "confidence": "different_source_coordinates_agree",
-        "independent_of_pin": true,
+        "confidence": "existing_evidence_needs_corroboration",
+        "independent_of_pin": false,
         "listing": {
           "postcode": "NG33 5RG",
           "pub_name": "Blue Dog"
@@ -220118,14 +220530,14 @@
         "owner_pin_confirmed": false,
         "owner_reviewed": false,
         "pin": {
-          "lat": 52.7862037,
-          "lng": -0.6840474
+          "lat": 52.786328,
+          "lng": -0.683818
         },
         "priority": 2,
         "reasons": [],
         "reference": {
           "address": "46 Main Street, Sewstern, Grantham",
-          "difference_metres": 19.4,
+          "difference_metres": 3.2,
           "lat": 52.7863375,
           "lng": -0.6838626,
           "name": "The Blue Dog Inn",
@@ -220171,6 +220583,26 @@
           ]
         }
       ],
+      "previous_postcode_reviews": [
+        {
+          "approved_coordinate": {
+            "lat": 52.7862037,
+            "lng": -0.6840474
+          },
+          "checked_at": "2026-10-13",
+          "conclusion": "Owner visually confirmed the current Blue Dog building at 46 Main Street, Sewstern. Retain the pin. CAMRA and the FSA named address use NG33 5RQ; preserve PDF postcode NG33 5RG as source data. Location discrepancy reviewed; postal delivery postcode not independently proven.",
+          "listed": "NG33 5RG",
+          "owner_instruction": "yes",
+          "pub_name": "Blue Dog",
+          "reference": "NG33 5RQ",
+          "review_map_url": "https://www.google.com/maps/search/?api=1&query=52.7862037%2C-0.6840474",
+          "reviewed_by": "bristolbagpiper",
+          "source_url": "https://www.google.com/maps/search/?api=1&query=Blue+Dog+Sewstern",
+          "supporting_address_urls": [
+            "https://camra.org.uk/pubs/blue-dog-sewstern-192236"
+          ]
+        }
+      ],
       "verification_attempt": {
         "checked_at": "2026-11-24",
         "reason": "Manual map evidence needs a fresh human address/map check",
@@ -220191,6 +220623,7 @@
           {
             "checked_at": "2026-09-13",
             "difference_metres": 0,
+            "disposition": "superseded_by_premises_review",
             "match": "manual_named_place_address_and_map_check",
             "reference_coordinate": {
               "lat": 52.7862037,
@@ -220202,6 +220635,7 @@
           },
           {
             "checked_at": "2026-10-13",
+            "disposition": "superseded_by_premises_review",
             "match": "owner_confirmed_existing_pub_building",
             "reference_coordinate": {
               "lat": 52.7862037,
@@ -220215,49 +220649,69 @@
               "https://camra.org.uk/pubs/blue-dog-sewstern-192236"
             ],
             "url": "https://www.google.com/maps/search/?api=1&query=52.7862037%2C-0.6840474"
+          },
+          {
+            "checked_at": "2026-11-26",
+            "match": "reviewed_mapped_premises",
+            "reference_coordinate": {
+              "lat": 52.786328,
+              "lng": -0.683818
+            },
+            "reference_name": "Blue Dog",
+            "reference_postcode": "NG33 5RQ",
+            "source": "reviewed-premises-location",
+            "url": "https://minedbuildings.z5.web.core.windows.net/global-buildings/2026-02-03/global-buildings.geojsonl/RegionName=UnitedKingdom/quadkey=031311333/part-00052-4feead82-d499-422b-94cb-c036c212127a.c000.csv.gz"
           }
         ],
-        "lat": 52.7862037,
-        "lng": -0.6840474,
+        "lat": 52.786328,
+        "lng": -0.683818,
         "metadata_issue": {
           "field": "postcode",
           "listed": "NG33 5RG",
-          "owner_review": {
-            "approved_coordinate": {
-              "lat": 52.7862037,
-              "lng": -0.6840474
-            },
-            "checked_at": "2026-10-13",
-            "conclusion": "Owner visually confirmed the current Blue Dog building at 46 Main Street, Sewstern. Retain the pin. CAMRA and the FSA named address use NG33 5RQ; preserve PDF postcode NG33 5RG as source data. Location discrepancy reviewed; postal delivery postcode not independently proven.",
-            "listed": "NG33 5RG",
-            "owner_instruction": "yes",
-            "pub_name": "Blue Dog",
-            "reference": "NG33 5RQ",
-            "review_map_url": "https://www.google.com/maps/search/?api=1&query=52.7862037%2C-0.6840474",
-            "reviewed_by": "bristolbagpiper",
-            "source_url": "https://www.google.com/maps/search/?api=1&query=Blue+Dog+Sewstern",
-            "supporting_address_urls": [
-              "https://camra.org.uk/pubs/blue-dog-sewstern-192236"
-            ]
-          },
           "reference": "NG33 5RQ",
           "source_url": "https://www.google.com/maps/search/?api=1&query=Blue+Dog+Sewstern"
         },
         "premises_review": {
-          "basis": "The available evidence does not identify an individual building at this point.",
+          "basis": "The listed Blue Dog is the Main Street pub. Its named map feature and the statutory location both fall inside the same imaged roof. The former pin lay outside it.",
+          "building_url": "https://minedbuildings.z5.web.core.windows.net/global-buildings/2026-02-03/global-buildings.geojsonl/RegionName=UnitedKingdom/quadkey=031311333/part-00052-4feead82-d499-422b-94cb-c036c212127a.c000.csv.gz",
           "checked_at": "2026-11-26",
+          "external_premises_checks": {
+            "named_heritage_point": [
+              "https://historicengland.org.uk/listing/the-list/list-entry/1360832"
+            ]
+          },
+          "geometry_feature": "031311333/114111",
           "point": {
+            "lat": 52.786328,
+            "lng": -0.683818
+          },
+          "postal_address": {
+            "listed": "NG33 5RG",
+            "reference": "NG33 5RQ",
+            "source_url": "https://www.google.com/maps/search/?api=1&query=Blue+Dog+Sewstern",
+            "sources": [
+              "https://licensing.melton.gov.uk/PAforLalpacLIVE/1/LicensingActPremises/Search/35/Detail?APP_ID=723",
+              "https://find-and-update.company-information.service.gov.uk/company/09442583/persons-with-significant-control",
+              "https://ratings.food.gov.uk/business/1681293"
+            ]
+          },
+          "precision": "building",
+          "previous_point": {
             "lat": 52.7862037,
             "lng": -0.6840474
           },
-          "precision": "reference",
           "sources": [
-            "https://www.google.com/maps/search/?api=1&query=Blue+Dog+Sewstern",
-            "https://www.google.com/maps/search/?api=1&query=52.7862037%2C-0.6840474"
+            "https://minedbuildings.z5.web.core.windows.net/global-buildings/2026-02-03/global-buildings.geojsonl/RegionName=UnitedKingdom/quadkey=031311333/part-00052-4feead82-d499-422b-94cb-c036c212127a.c000.csv.gz",
+            "https://historicengland.org.uk/listing/the-list/list-entry/1360832",
+            "https://camra.org.uk/pubs/blue-dog-sewstern-192236",
+            "https://www.openstreetmap.org/node/7741866088",
+            "https://licensing.melton.gov.uk/PAforLalpacLIVE/1/LicensingActPremises/Search/35/Detail?APP_ID=723",
+            "https://find-and-update.company-information.service.gov.uk/company/09442583/persons-with-significant-control",
+            "https://ratings.food.gov.uk/business/1681293"
           ],
           "venue_key": "blue dog|sewstern|ng33 5rg"
         },
-        "source": "google-maps-named-place"
+        "source": "reviewed-premises-location"
       }
     },
     "v-f418e771-24bc-5543-a2b6-1293dbce7ce8": {
@@ -222169,6 +222623,9 @@
           "building_url": "https://www.openstreetmap.org/way/1093768718",
           "checked_at": "2026-11-26",
           "external_premises_checks": {
+            "council_premises_outline": [
+              "https://www.planning.data.gov.uk/entity/42189925"
+            ],
             "named_heritage_point": [
               "https://historicengland.org.uk/listing/the-list/list-entry/1355019"
             ]
@@ -222185,6 +222642,7 @@
           "sources": [
             "https://www.openstreetmap.org/way/1093768718",
             "https://historicengland.org.uk/listing/the-list/list-entry/1355019",
+            "https://www.planning.data.gov.uk/entity/42189925",
             "https://osdatahub.os.uk/downloads/open/OpenMapLocal"
           ],
           "venue_key": "low lights tavern|north shields|ne30 1ll"
@@ -223164,13 +223622,13 @@
         "comparisons": [
           {
             "address": "13 Hill Street, Stoke, Stoke-On-Trent",
-            "difference_metres": 0.0,
+            "difference_metres": 44.4,
             "lat": 53.003861,
             "lng": -2.187139,
             "name": "Staff of Life",
             "postcode": "ST4 1NL",
             "queried_postcode": "ST4 1NL",
-            "status": "coordinate_agreement",
+            "status": "nearby",
             "url": "https://ratings.food.gov.uk/business/1532242"
           }
         ],
@@ -223185,25 +223643,27 @@
         "owner_pin_confirmed": false,
         "owner_reviewed": false,
         "pin": {
-          "lat": 53.003861,
-          "lng": -2.187139
+          "lat": 53.004047,
+          "lng": -2.186552
         },
-        "priority": 3,
+        "priority": 2,
         "reasons": [],
         "reference": {
           "address": "13 Hill Street, Stoke, Stoke-On-Trent",
-          "difference_metres": 0.0,
+          "difference_metres": 44.4,
           "lat": 53.003861,
           "lng": -2.187139,
           "name": "Staff of Life",
           "postcode": "ST4 1NL",
           "queried_postcode": "ST4 1NL",
-          "status": "coordinate_agreement",
+          "status": "nearby",
           "url": "https://ratings.food.gov.uk/business/1532242"
         },
         "review_category": "informational",
-        "status": "coordinate_agreement",
-        "warnings": []
+        "status": "nearby",
+        "warnings": [
+          "FSA coordinate is 25-50m away; informational only"
+        ]
       },
       "listing": {
         "area": "Staffordshire",
@@ -223290,6 +223750,7 @@
           {
             "checked_at": "2026-11-24",
             "difference_metres": 44.4,
+            "disposition": "superseded_by_premises_review",
             "match": "venue_name_and_full_postcode",
             "reference_address": "13 Hill Street",
             "reference_coordinate": {
@@ -223300,24 +223761,44 @@
             "reference_postcode": "ST4 1NL",
             "source": "camra",
             "url": "https://camra.org.uk/pubs/122985"
+          },
+          {
+            "checked_at": "2026-11-26",
+            "match": "named_venue_visitor_position",
+            "reference_coordinate": {
+              "lat": 53.004047,
+              "lng": -2.186552
+            },
+            "reference_name": "Staff of Life",
+            "reference_postcode": "ST4 1NL",
+            "source": "reviewed-premises-location",
+            "url": "https://camra.org.uk/pubs/staff-of-life-stoke-on-trent-122985"
           }
         ],
-        "lat": 53.003861,
-        "lng": -2.187139,
+        "lat": 53.004047,
+        "lng": -2.186552,
         "premises_review": {
-          "basis": "The available evidence does not identify an individual building at this point.",
+          "basis": "The CAMRA directions point at 13 Hill Street and a separate named catalogue entry for that address lie within eight metres. The saved point was 49 metres from the visitor directions.",
           "checked_at": "2026-11-26",
+          "overture_feature_id": "7bb05242-ec6a-4d07-a420-d9a61b40ffff",
           "point": {
+            "lat": 53.004047,
+            "lng": -2.186552
+          },
+          "precision": "site",
+          "previous_point": {
             "lat": 53.003861,
             "lng": -2.187139
           },
-          "precision": "reference",
           "sources": [
-            "https://camra.org.uk/pubs/122985"
+            "https://camra.org.uk/pubs/staff-of-life-stoke-on-trent-122985",
+            "https://ratings.food.gov.uk/business/1532242",
+            "https://docs.overturemaps.org/blog/2026/11/18/release-notes/"
           ],
-          "venue_key": "staff of life|stoke: central|st4 1nl"
+          "venue_key": "staff of life|stoke: central|st4 1nl",
+          "visitor_hint": "Look for the Staff of Life at 13 Hill Street."
         },
-        "source": "food-standards-agency-fhrs"
+        "source": "reviewed-premises-location"
       }
     },
     "v-f797074d-acfe-51e1-b5b4-4aa1f314785b": {
@@ -230778,18 +231259,18 @@
         "comparisons": [
           {
             "address": "13 Naylor Street, Pittshill, Stoke-On-Trent",
-            "difference_metres": 0.0,
+            "difference_metres": 26.7,
             "lat": 53.067672,
             "lng": -2.199713,
             "name": "The Vine",
             "postcode": "ST6 6LS",
             "queried_postcode": "ST6 6LS",
-            "status": "coordinate_agreement",
+            "status": "nearby",
             "url": "https://ratings.food.gov.uk/business/1889233"
           }
         ],
         "confidence": "existing_evidence_needs_corroboration",
-        "independent_of_pin": false,
+        "independent_of_pin": true,
         "listing": {
           "postcode": "ST6 6LS",
           "pub_name": "Vine"
@@ -230799,25 +231280,27 @@
         "owner_pin_confirmed": false,
         "owner_reviewed": false,
         "pin": {
-          "lat": 53.067672,
-          "lng": -2.199713
+          "lat": 53.0678898,
+          "lng": -2.1995445
         },
-        "priority": 3,
+        "priority": 2,
         "reasons": [],
         "reference": {
           "address": "13 Naylor Street, Pittshill, Stoke-On-Trent",
-          "difference_metres": 0.0,
+          "difference_metres": 26.7,
           "lat": 53.067672,
           "lng": -2.199713,
           "name": "The Vine",
           "postcode": "ST6 6LS",
           "queried_postcode": "ST6 6LS",
-          "status": "coordinate_agreement",
+          "status": "nearby",
           "url": "https://ratings.food.gov.uk/business/1889233"
         },
         "review_category": "informational",
-        "status": "coordinate_agreement",
-        "warnings": []
+        "status": "nearby",
+        "warnings": [
+          "FSA coordinate is 25-50m away; informational only"
+        ]
       },
       "listing": {
         "area": "Staffordshire",
@@ -230904,6 +231387,7 @@
           {
             "checked_at": "2026-11-24",
             "difference_metres": 26.6,
+            "disposition": "superseded_by_premises_review",
             "match": "venue_name_and_full_postcode",
             "reference_address": "13 Naylor Street",
             "reference_coordinate": {
@@ -230914,28 +231398,53 @@
             "reference_postcode": "ST6 6LS",
             "source": "camra",
             "url": "https://camra.org.uk/pubs/123167"
+          },
+          {
+            "checked_at": "2026-11-26",
+            "match": "reviewed_mapped_premises",
+            "reference_coordinate": {
+              "lat": 53.0678898,
+              "lng": -2.1995445
+            },
+            "reference_name": "Vine",
+            "reference_postcode": "ST6 6LS",
+            "source": "reviewed-premises-location",
+            "url": "https://www.planning.data.gov.uk/entity/42188910"
           }
         ],
-        "lat": 53.067672,
-        "lng": -2.199713,
+        "lat": 53.0678898,
+        "lng": -2.1995445,
         "premises_review": {
-          "basis": "The available evidence does not identify an individual building at this point.",
+          "basis": "The operator locates the Vine on Naylor Street. The previous map and FSA points were in a separate roof 22 metres outside the named statutory pub outline. The corrected point lies in the Naylor Street building recorded by Historic England and the council.",
+          "building_url": "https://www.planning.data.gov.uk/entity/42188910",
           "checked_at": "2026-11-26",
-          "os_openmap_buildings": [
-            "SJ_BUILDING.SHP#621717"
-          ],
+          "external_premises_checks": {
+            "council_premises_outline": [
+              "https://www.planning.data.gov.uk/entity/42188910"
+            ],
+            "named_heritage_point": [
+              "https://historicengland.org.uk/listing/the-list/list-entry/1061402"
+            ]
+          },
+          "geometry_feature": "planning-data/42188910",
           "point": {
+            "lat": 53.0678898,
+            "lng": -2.1995445
+          },
+          "precision": "building",
+          "previous_point": {
             "lat": 53.067672,
             "lng": -2.199713
           },
-          "precision": "reference",
           "sources": [
-            "https://camra.org.uk/pubs/123167",
-            "https://osdatahub.os.uk/downloads/open/OpenMapLocal"
+            "https://www.planning.data.gov.uk/entity/42188910",
+            "https://historicengland.org.uk/listing/the-list/list-entry/1061402",
+            "https://www.thevinepittshill.co.uk/",
+            "https://minedbuildings.z5.web.core.windows.net/global-buildings/2026-02-03/global-buildings.geojsonl/RegionName=UnitedKingdom/quadkey=031311320/part-00066-4feead82-d499-422b-94cb-c036c212127a.c000.csv.gz"
           ],
           "venue_key": "vine|stoke: pittshill|st6 6ls"
         },
-        "source": "food-standards-agency-fhrs"
+        "source": "reviewed-premises-location"
       }
     }
   }

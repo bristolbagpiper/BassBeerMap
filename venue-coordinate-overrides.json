@@ -305,19 +305,16 @@
       "source_url": "https://www.google.com/maps/place/The+Blacksmiths+Arms/@52.7875072,-1.6704757,644m/data=!3m2!1e3!4b1!4m6!3m5!1s0x487a03dd3530bd51:0xbe48c24df7ac7a9d!8m2!3d52.7875072!4d-1.6704757!16s%2Fg%2F1tfvgr7h?entry=ttu&g_ep=EgoyMDI2MTAyMC4wIKXMDSoASAFQAw%3D%3D"
     },
     "blue dog|sewstern|ng33 5rg": {
-      "audit_reason": "manual_named_place_address_and_map_check",
-      "checked_at": "2026-09-13",
-      "lat": 52.7862037,
-      "lng": -0.6840474,
-      "previous_difference_metres": 21.8,
-      "previous_lat": 52.7863173,
-      "previous_lng": -0.6837836,
-      "previous_source": "openstreetmap-gb-extract",
-      "reference_address": "46 Main St, Sewstern NG33 5RQ",
-      "reference_name": "The Blue Dog",
-      "review_note": "listing postcode conflicts; venue name and village agree",
-      "source": "google-maps-named-place",
-      "source_url": "https://www.google.com/maps/search/?api=1&query=Blue+Dog+Sewstern"
+      "audit_reason": "The listed Blue Dog is the Main Street pub. Its named map feature and the statutory location both fall inside the same imaged roof. The former pin lay outside it.",
+      "checked_at": "2026-11-26",
+      "lat": 52.786328,
+      "lng": -0.683818,
+      "previous_difference_metres": 20.7,
+      "previous_lat": 52.7862037,
+      "previous_lng": -0.6840474,
+      "previous_source": "google-maps-named-place",
+      "source": "reviewed-premises-location",
+      "source_url": "https://minedbuildings.z5.web.core.windows.net/global-buildings/2026-02-03/global-buildings.geojsonl/RegionName=UnitedKingdom/quadkey=031311333/part-00052-4feead82-d499-422b-94cb-c036c212127a.c000.csv.gz"
     },
     "bmi club|upton st leonards|gl4 8ag": {
       "audit_reason": "postcode_fallback_replaced",
@@ -2433,16 +2430,16 @@
       "source_url": "https://www.openstreetmap.org/way/670443753"
     },
     "red lion|earl shilton|le9 7lq": {
-      "audit_reason": "existing_pin_over_250m_from_matching_venue",
-      "checked_at": "2026-09-11",
-      "lat": 52.576,
-      "lng": -1.3135,
-      "previous_difference_metres": 2792.1,
-      "previous_lat": 52.5638136,
-      "previous_lng": -1.3496218,
-      "previous_source": "openstreetmap-gb-extract",
-      "source": "camra-pubs-location-audit",
-      "source_url": "https://camra.org.uk/pubs/181796"
+      "audit_reason": "The district council explicitly links 168 High Street to list entry 1074232, resolving inconsistent street numbers on the national record. The saved point was outside the imaged roof containing the named statutory point.",
+      "checked_at": "2026-11-26",
+      "lat": 52.5759,
+      "lng": -1.31363,
+      "previous_difference_metres": 14.2,
+      "previous_lat": 52.576,
+      "previous_lng": -1.3135,
+      "previous_source": "camra-pubs-location-audit",
+      "source": "reviewed-premises-location",
+      "source_url": "https://minedbuildings.z5.web.core.windows.net/global-buildings/2026-02-03/global-buildings.geojsonl/RegionName=UnitedKingdom/quadkey=031311332/part-00012-4feead82-d499-422b-94cb-c036c212127a.c000.csv.gz"
     },
     "red lion|great chatwell|tf10 9bj": {
       "audit_reason": "postcode_fallback_replaced",

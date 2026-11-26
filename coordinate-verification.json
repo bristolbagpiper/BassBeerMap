@@ -8,9 +8,9 @@
     "venue_pin": "Building, site and reference positions have separate precision labels. Missing positions use the listed postcode."
   },
   "premises_counts": {
-    "building": 875,
-    "reference": 147,
-    "site": 66
+    "building": 885,
+    "reference": 134,
+    "site": 69
   },
   "records": {
     "1852 brewery co|leicester: south wigston|le18 2dh": {
@@ -6178,7 +6178,7 @@
       "venue_id": "v-60414af9-54e3-5075-b0a3-e31c8c5e73a3"
     },
     "black friar|blackfriars ec4v|ec4v 4eg": {
-      "coordinate_source": "openstreetmap-gb-extract",
+      "coordinate_source": "reviewed-premises-location",
       "display_precision": "venue",
       "evidence": [
         {
@@ -6244,6 +6244,7 @@
         {
           "checked_at": "2026-11-26",
           "difference_metres": 6.3,
+          "disposition": "superseded_by_premises_review",
           "match": "venue_name_and_full_postcode",
           "reference_address": "174 Queen Victoria Street",
           "reference_coordinate": {
@@ -6254,10 +6255,22 @@
           "reference_postcode": "EC4V 4EG",
           "source": "camra",
           "url": "https://camra.org.uk/pubs/156696"
+        },
+        {
+          "checked_at": "2026-11-26",
+          "match": "reviewed_mapped_premises",
+          "reference_coordinate": {
+            "lat": 51.5121225,
+            "lng": -0.1037015
+          },
+          "reference_name": "Black Friar",
+          "reference_postcode": "EC4V 4EG",
+          "source": "reviewed-premises-location",
+          "url": "https://www.planning.data.gov.uk/entity/42136119"
         }
       ],
-      "lat": 51.51214830714286,
-      "lng": -0.10364971428571428,
+      "lat": 51.5121225,
+      "lng": -0.1037015,
       "place_name": "Blackfriars EC4V",
       "postcode": "EC4V 4EG",
       "premises_precision": "building",
@@ -8015,7 +8028,7 @@
       "venue_id": "v-4e4ef468-6834-5d3a-930b-829b6e75d91a"
     },
     "blue bell|helpston|pe6 7ed": {
-      "coordinate_source": "openstreetmap-gb-extract",
+      "coordinate_source": "reviewed-premises-location",
       "display_precision": "venue",
       "evidence": [
         {
@@ -8066,6 +8079,7 @@
         {
           "checked_at": "2026-11-14",
           "difference_metres": 26.6,
+          "disposition": "superseded_by_premises_review",
           "match": "venue_name_and_full_postcode",
           "reference_address": "10 Woodgate",
           "reference_coordinate": {
@@ -8076,10 +8090,22 @@
           "reference_postcode": "PE6 7ED",
           "source": "camra",
           "url": "https://camra.org.uk/pubs/157787"
+        },
+        {
+          "checked_at": "2026-11-26",
+          "match": "reviewed_mapped_premises",
+          "reference_coordinate": {
+            "lat": 52.6342775,
+            "lng": -0.3444915
+          },
+          "reference_name": "Blue Bell",
+          "reference_postcode": "PE6 7ED",
+          "source": "reviewed-premises-location",
+          "url": "https://www.planning.data.gov.uk/entity/42159106"
         }
       ],
-      "lat": 52.63425105555555,
-      "lng": -0.3446435555555556,
+      "lat": 52.6342775,
+      "lng": -0.3444915,
       "place_name": "Helpston",
       "postcode": "PE6 7ED",
       "premises_precision": "building",
@@ -8161,12 +8187,13 @@
       "venue_id": "v-2d4ccddd-3368-5ba5-9bca-109bb030fc98"
     },
     "blue dog|sewstern|ng33 5rg": {
-      "coordinate_source": "google-maps-named-place",
+      "coordinate_source": "reviewed-premises-location",
       "display_precision": "venue",
       "evidence": [
         {
           "checked_at": "2026-09-13",
           "difference_metres": 0,
+          "disposition": "superseded_by_premises_review",
           "match": "manual_named_place_address_and_map_check",
           "reference_coordinate": {
             "lat": 52.7862037,
@@ -8178,6 +8205,7 @@
         },
         {
           "checked_at": "2026-10-13",
+          "disposition": "superseded_by_premises_review",
           "match": "owner_confirmed_existing_pub_building",
           "reference_coordinate": {
             "lat": 52.7862037,
@@ -8191,37 +8219,31 @@
             "https://camra.org.uk/pubs/blue-dog-sewstern-192236"
           ],
           "url": "https://www.google.com/maps/search/?api=1&query=52.7862037%2C-0.6840474"
+        },
+        {
+          "checked_at": "2026-11-26",
+          "match": "reviewed_mapped_premises",
+          "reference_coordinate": {
+            "lat": 52.786328,
+            "lng": -0.683818
+          },
+          "reference_name": "Blue Dog",
+          "reference_postcode": "NG33 5RQ",
+          "source": "reviewed-premises-location",
+          "url": "https://minedbuildings.z5.web.core.windows.net/global-buildings/2026-02-03/global-buildings.geojsonl/RegionName=UnitedKingdom/quadkey=031311333/part-00052-4feead82-d499-422b-94cb-c036c212127a.c000.csv.gz"
         }
       ],
-      "lat": 52.7862037,
-      "lng": -0.6840474,
+      "lat": 52.786328,
+      "lng": -0.683818,
       "metadata_issue": {
         "field": "postcode",
         "listed": "NG33 5RG",
-        "owner_review": {
-          "approved_coordinate": {
-            "lat": 52.7862037,
-            "lng": -0.6840474
-          },
-          "checked_at": "2026-10-13",
-          "conclusion": "Owner visually confirmed the current Blue Dog building at 46 Main Street, Sewstern. Retain the pin. CAMRA and the FSA named address use NG33 5RQ; preserve PDF postcode NG33 5RG as source data. Location discrepancy reviewed; postal delivery postcode not independently proven.",
-          "listed": "NG33 5RG",
-          "owner_instruction": "yes",
-          "pub_name": "Blue Dog",
-          "reference": "NG33 5RQ",
-          "review_map_url": "https://www.google.com/maps/search/?api=1&query=52.7862037%2C-0.6840474",
-          "reviewed_by": "bristolbagpiper",
-          "source_url": "https://www.google.com/maps/search/?api=1&query=Blue+Dog+Sewstern",
-          "supporting_address_urls": [
-            "https://camra.org.uk/pubs/blue-dog-sewstern-192236"
-          ]
-        },
         "reference": "NG33 5RQ",
         "source_url": "https://www.google.com/maps/search/?api=1&query=Blue+Dog+Sewstern"
       },
       "place_name": "Sewstern",
       "postcode": "NG33 5RG",
-      "premises_precision": "reference",
+      "premises_precision": "building",
       "pub_name": "Blue Dog",
       "status": "verified_venue",
       "venue_id": "v-f3fbb260-c795-5928-b0fe-47d33f48ea87"
@@ -10211,10 +10233,11 @@
       "lng": -0.4021628,
       "place_name": "Hersham",
       "postcode": "KT12 5LS",
-      "premises_precision": "reference",
+      "premises_precision": "site",
       "pub_name": "Bricklayers Arms",
       "status": "verified_venue",
-      "venue_id": "v-4378d05f-df3a-5091-ae9f-389ee0c857f5"
+      "venue_id": "v-4378d05f-df3a-5091-ae9f-389ee0c857f5",
+      "visitor_hint": "Use the Bricklayers Arms at 6–8 Queens Road."
     },
     "bricklayers arms|luton|lu2 0dd": {
       "coordinate_source": "openstreetmap-gb-extract",
@@ -10357,10 +10380,11 @@
       "lng": -1.584018,
       "place_name": "Newton Solney",
       "postcode": "DE15 0SJ",
-      "premises_precision": "reference",
+      "premises_precision": "site",
       "pub_name": "Brickmakers Arms",
       "status": "verified_venue",
-      "venue_id": "v-a00eabec-0246-562d-9640-f31752f67b33"
+      "venue_id": "v-a00eabec-0246-562d-9640-f31752f67b33",
+      "visitor_hint": "Look for the Brickmakers Arms at 9–11 Main Street. The cottages adjoin the pub."
     },
     "bridford inn|bridford|ex6 7ht": {
       "coordinate_source": "openstreetmap-gb-extract",
@@ -14672,7 +14696,7 @@
       "venue_id": "v-04a60775-79f9-599b-beec-0caebb09b25b"
     },
     "chequers|oxford: central|ox1 4dh": {
-      "coordinate_source": "openstreetmap-gb-extract",
+      "coordinate_source": "reviewed-premises-location",
       "display_precision": "venue",
       "evidence": [
         {
@@ -14723,6 +14747,7 @@
         {
           "checked_at": "2026-11-22",
           "difference_metres": 11.4,
+          "disposition": "superseded_by_premises_review",
           "match": "venue_name_and_full_postcode",
           "reference_address": "131 High Street",
           "reference_coordinate": {
@@ -14733,13 +14758,25 @@
           "reference_postcode": "OX1 4DH",
           "source": "camra",
           "url": "https://camra.org.uk/pubs/156964"
+        },
+        {
+          "checked_at": "2026-11-26",
+          "match": "reviewed_mapped_premises",
+          "reference_coordinate": {
+            "lat": 51.7519277,
+            "lng": -1.2566747
+          },
+          "reference_name": "Chequers",
+          "reference_postcode": "OX1 4DH",
+          "source": "reviewed-premises-location",
+          "url": "https://www.planning.data.gov.uk/entity/42227920"
         }
       ],
-      "lat": 51.75184286818182,
-      "lng": -1.2565633,
+      "lat": 51.7519277,
+      "lng": -1.2566747,
       "place_name": "Oxford: Central",
       "postcode": "OX1 4DH",
-      "premises_precision": "site",
+      "premises_precision": "building",
       "pub_name": "Chequers",
       "status": "verified_venue",
       "venue_id": "v-aeb9d9e6-0cae-54ac-9e8c-eaac2a085f36"
@@ -19234,7 +19271,7 @@
       "venue_id": "v-697d698b-e30c-5f9b-a384-573dc1dfa1ad"
     },
     "cricketers|epsom|kt18 7sr": {
-      "coordinate_source": "camra-primary",
+      "coordinate_source": "reviewed-premises-location",
       "display_precision": "venue",
       "evidence": [
         {
@@ -19269,6 +19306,7 @@
         },
         {
           "checked_at": "2026-11-18",
+          "disposition": "superseded_by_premises_review",
           "match": "primary_named_venue_full_postcode_and_address",
           "reference_address": "1 Stamford Green Road",
           "reference_coordinate": {
@@ -19280,10 +19318,22 @@
           "reference_postcode": "KT18 7SR",
           "source": "camra",
           "url": "https://camra.org.uk/pubs/179753"
+        },
+        {
+          "checked_at": "2026-11-26",
+          "match": "reviewed_mapped_premises",
+          "reference_coordinate": {
+            "lat": 51.3332062,
+            "lng": -0.2819988
+          },
+          "reference_name": "Cricketers",
+          "reference_postcode": "KT18 7SR",
+          "source": "reviewed-premises-location",
+          "url": "https://www.planning.data.gov.uk/entity/42121454"
         }
       ],
-      "lat": 51.33328,
-      "lng": -0.28195,
+      "lat": 51.3332062,
+      "lng": -0.2819988,
       "place_name": "Epsom",
       "postcode": "KT18 7SR",
       "premises_precision": "building",
@@ -19584,7 +19634,7 @@
       "venue_id": "v-9548329c-9cf1-5d75-9fab-f9f59760c502"
     },
     "cross house tavern|tewkesbury|gl20 5ab": {
-      "coordinate_source": "openstreetmap-gb-extract",
+      "coordinate_source": "reviewed-premises-location",
       "display_precision": "venue",
       "evidence": [
         {
@@ -19635,6 +19685,7 @@
         {
           "checked_at": "2026-11-16",
           "difference_metres": 1.5,
+          "disposition": "superseded_by_premises_review",
           "match": "venue_name_and_full_postcode",
           "reference_address": "108 Church Street",
           "reference_coordinate": {
@@ -19645,10 +19696,22 @@
           "reference_postcode": "GL20 5AB",
           "source": "camra",
           "url": "https://camra.org.uk/pubs/130896"
+        },
+        {
+          "checked_at": "2026-11-26",
+          "match": "reviewed_mapped_premises",
+          "reference_coordinate": {
+            "lat": 51.99263,
+            "lng": -2.1577387
+          },
+          "reference_name": "Cross House Tavern",
+          "reference_postcode": "GL20 5AB",
+          "source": "reviewed-premises-location",
+          "url": "https://www.planning.data.gov.uk/entity/42124418"
         }
       ],
-      "lat": 51.992637,
-      "lng": -2.1576628,
+      "lat": 51.99263,
+      "lng": -2.1577387,
       "place_name": "Tewkesbury",
       "postcode": "GL20 5AB",
       "premises_precision": "building",
@@ -19657,7 +19720,7 @@
       "venue_id": "v-6d104889-387c-5da6-bcf2-f6ad2052f64a"
     },
     "cross house|doynton|bs30 5tf": {
-      "coordinate_source": "openstreetmap-gb-extract",
+      "coordinate_source": "reviewed-premises-location",
       "display_precision": "venue",
       "evidence": [
         {
@@ -19708,6 +19771,7 @@
         {
           "checked_at": "2026-11-15",
           "difference_metres": 17.0,
+          "disposition": "superseded_by_premises_review",
           "match": "venue_name_and_full_postcode",
           "reference_address": "High Street",
           "reference_coordinate": {
@@ -19718,13 +19782,25 @@
           "reference_postcode": "BS30 5TF",
           "source": "camra",
           "url": "https://camra.org.uk/pubs/114280"
+        },
+        {
+          "checked_at": "2026-11-26",
+          "match": "reviewed_mapped_premises",
+          "reference_coordinate": {
+            "lat": 51.46444,
+            "lng": -2.4051947
+          },
+          "reference_name": "Cross House",
+          "reference_postcode": "BS30 5TF",
+          "source": "reviewed-premises-location",
+          "url": "https://www.planning.data.gov.uk/entity/42152213"
         }
       ],
-      "lat": 51.464514785714286,
-      "lng": -2.405283092857143,
+      "lat": 51.46444,
+      "lng": -2.4051947,
       "place_name": "Doynton",
       "postcode": "BS30 5TF",
-      "premises_precision": "reference",
+      "premises_precision": "building",
       "pub_name": "Cross House",
       "status": "verified_venue",
       "venue_id": "v-5c982fb1-848c-5b01-ba8e-e86d8420002f"
@@ -24073,19 +24149,18 @@
         {
           "checked_at": "2026-11-26",
           "match": "reviewed_mapped_premises",
-          "reference_address": "14 The Barbican",
           "reference_coordinate": {
-            "lat": 50.36717515,
-            "lng": -4.13490714
+            "lat": 50.3671682,
+            "lng": -4.1348592
           },
           "reference_name": "Dolphin Hotel",
           "reference_postcode": "PL1 2LS",
           "source": "reviewed-premises-location",
-          "url": "https://www.openstreetmap.org/way/1042625704"
+          "url": "https://www.planning.data.gov.uk/entity/42147325"
         }
       ],
-      "lat": 50.36717515,
-      "lng": -4.13490714,
+      "lat": 50.3671682,
+      "lng": -4.1348592,
       "place_name": "Plymouth: Barbican",
       "postcode": "PL1 2LS",
       "premises_precision": "building",
@@ -29473,7 +29548,7 @@
       "lng": -0.5973679,
       "place_name": "Winterton",
       "postcode": "DN15 9PT",
-      "premises_precision": "reference",
+      "premises_precision": "building",
       "pub_name": "George Inn",
       "status": "verified_venue",
       "venue_id": "v-08e8080f-42e8-57dd-99c8-1d37f71e26cc"
@@ -30004,10 +30079,11 @@
       },
       "place_name": "Macclesfield",
       "postcode": "SK11 7NE",
-      "premises_precision": "reference",
+      "premises_precision": "site",
       "pub_name": "GJ Muckers",
       "status": "verified_venue",
-      "venue_id": "v-573bbf31-9cce-52ea-aac7-85a05e14a682"
+      "venue_id": "v-573bbf31-9cce-52ea-aac7-85a05e14a682",
+      "visitor_hint": "Look for G&J Muckers at 36–38 Sunderland Street."
     },
     "glenhills sports and social club (pmc)|glen parva|le2 9jb": {
       "coordinate_source": "openstreetmap-gb-extract",
@@ -49082,7 +49158,7 @@
       "lng": -1.6128381,
       "place_name": "Newcastle: Central",
       "postcode": "NE1 1EZ",
-      "premises_precision": "site",
+      "premises_precision": "building",
       "pub_name": "Old George",
       "status": "verified_venue",
       "venue_id": "v-c186678b-ce65-5ecd-9370-60ce0be133c5"
@@ -56328,7 +56404,7 @@
       "venue_id": "v-bd6c2b23-d51b-50bd-9f02-0fe7f42fd53a"
     },
     "red lion|earl shilton|le9 7lq": {
-      "coordinate_source": "camra-pubs-location-audit",
+      "coordinate_source": "reviewed-premises-location",
       "display_precision": "venue",
       "evidence": [
         {
@@ -56379,6 +56455,7 @@
         {
           "checked_at": "2026-11-13",
           "difference_metres": 0.0,
+          "disposition": "superseded_by_premises_review",
           "match": "venue_name_and_full_postcode",
           "reference_address": "High Street",
           "reference_coordinate": {
@@ -56389,13 +56466,25 @@
           "reference_postcode": "LE9 7LQ",
           "source": "camra",
           "url": "https://camra.org.uk/pubs/181796"
+        },
+        {
+          "checked_at": "2026-11-26",
+          "match": "reviewed_mapped_premises",
+          "reference_coordinate": {
+            "lat": 52.5759,
+            "lng": -1.31363
+          },
+          "reference_name": "Red Lion",
+          "reference_postcode": "LE9 7LQ",
+          "source": "reviewed-premises-location",
+          "url": "https://minedbuildings.z5.web.core.windows.net/global-buildings/2026-02-03/global-buildings.geojsonl/RegionName=UnitedKingdom/quadkey=031311332/part-00012-4feead82-d499-422b-94cb-c036c212127a.c000.csv.gz"
         }
       ],
-      "lat": 52.576,
-      "lng": -1.3135,
+      "lat": 52.5759,
+      "lng": -1.31363,
       "place_name": "Earl Shilton",
       "postcode": "LE9 7LQ",
-      "premises_precision": "reference",
+      "premises_precision": "building",
       "pub_name": "Red Lion",
       "status": "verified_venue",
       "venue_id": "v-1e6c0956-c0d8-5c42-9da0-9cf6b803f949"
@@ -64729,7 +64818,7 @@
       "venue_id": "v-851df8e3-dfd8-5a84-9b07-6c94e5f85d8f"
     },
     "staff of life|stoke: central|st4 1nl": {
-      "coordinate_source": "food-standards-agency-fhrs",
+      "coordinate_source": "reviewed-premises-location",
       "display_precision": "venue",
       "evidence": [
         {
@@ -64780,6 +64869,7 @@
         {
           "checked_at": "2026-11-24",
           "difference_metres": 44.4,
+          "disposition": "superseded_by_premises_review",
           "match": "venue_name_and_full_postcode",
           "reference_address": "13 Hill Street",
           "reference_coordinate": {
@@ -64790,16 +64880,29 @@
           "reference_postcode": "ST4 1NL",
           "source": "camra",
           "url": "https://camra.org.uk/pubs/122985"
+        },
+        {
+          "checked_at": "2026-11-26",
+          "match": "named_venue_visitor_position",
+          "reference_coordinate": {
+            "lat": 53.004047,
+            "lng": -2.186552
+          },
+          "reference_name": "Staff of Life",
+          "reference_postcode": "ST4 1NL",
+          "source": "reviewed-premises-location",
+          "url": "https://camra.org.uk/pubs/staff-of-life-stoke-on-trent-122985"
         }
       ],
-      "lat": 53.003861,
-      "lng": -2.187139,
+      "lat": 53.004047,
+      "lng": -2.186552,
       "place_name": "Stoke: Central",
       "postcode": "ST4 1NL",
-      "premises_precision": "reference",
+      "premises_precision": "site",
       "pub_name": "Staff of Life",
       "status": "verified_venue",
-      "venue_id": "v-f796da6f-951a-52ac-a180-bd9f2f16efea"
+      "venue_id": "v-f796da6f-951a-52ac-a180-bd9f2f16efea",
+      "visitor_hint": "Look for the Staff of Life at 13 Hill Street."
     },
     "stafford arms|bagnall|st9 9jr": {
       "coordinate_source": "camra-pubs-location-audit",
@@ -67180,7 +67283,7 @@
       "venue_id": "v-77964dfc-3493-5149-a22c-df0ac085d1cf"
     },
     "sun inn|blackpool: south shore|fy1 6aa": {
-      "coordinate_source": "food-standards-agency-fhrs",
+      "coordinate_source": "reviewed-premises-location",
       "display_precision": "venue",
       "evidence": [
         {
@@ -67231,6 +67334,7 @@
         {
           "checked_at": "2026-11-23",
           "difference_metres": 37.0,
+          "disposition": "superseded_by_premises_review",
           "match": "venue_name_and_full_postcode",
           "reference_address": "88 Bolton Street",
           "reference_coordinate": {
@@ -67241,16 +67345,29 @@
           "reference_postcode": "FY1 6AA",
           "source": "camra",
           "url": "https://camra.org.uk/pubs/120087"
+        },
+        {
+          "checked_at": "2026-11-26",
+          "match": "named_venue_visitor_position",
+          "reference_coordinate": {
+            "lat": 53.799657,
+            "lng": -3.054293
+          },
+          "reference_name": "Sun Inn",
+          "reference_postcode": "FY1 6AA",
+          "source": "reviewed-premises-location",
+          "url": "https://camra.org.uk/pubs/sun-inn-blackpool-120087"
         }
       ],
-      "lat": 53.799326,
-      "lng": -3.054237,
+      "lat": 53.799657,
+      "lng": -3.054293,
       "place_name": "Blackpool: South Shore",
       "postcode": "FY1 6AA",
-      "premises_precision": "reference",
+      "premises_precision": "site",
       "pub_name": "Sun Inn",
       "status": "verified_venue",
-      "venue_id": "v-c13ddfa5-e07c-5ada-be8a-58b49b43b4a1"
+      "venue_id": "v-c13ddfa5-e07c-5ada-be8a-58b49b43b4a1",
+      "visitor_hint": "Look for the Sun Inn at 88 Bolton Street."
     },
     "sun inn|eryrys|ch7 4bx": {
       "coordinate_source": "openstreetmap-gb-extract",
@@ -69684,7 +69801,7 @@
       "venue_id": "v-3d5087bc-6b35-594c-9de7-5c3bb759802e"
     },
     "three crowns|stone: little stoke|st15 8qu": {
-      "coordinate_source": "openstreetmap-gb-extract",
+      "coordinate_source": "reviewed-premises-location",
       "display_precision": "venue",
       "evidence": [
         {
@@ -69735,6 +69852,7 @@
         {
           "checked_at": "2026-11-23",
           "difference_metres": 17.2,
+          "disposition": "superseded_by_premises_review",
           "match": "venue_name_and_full_postcode",
           "reference_address": "Lichfield Road",
           "reference_coordinate": {
@@ -69745,13 +69863,25 @@
           "reference_postcode": "ST15 8QU",
           "source": "camra",
           "url": "https://camra.org.uk/pubs/145832"
+        },
+        {
+          "checked_at": "2026-11-26",
+          "match": "reviewed_mapped_premises",
+          "reference_coordinate": {
+            "lat": 52.8909862,
+            "lng": -2.1260221
+          },
+          "reference_name": "Three Crowns",
+          "reference_postcode": "ST15 8QU",
+          "source": "reviewed-premises-location",
+          "url": "https://www.planning.data.gov.uk/entity/42240623"
         }
       ],
-      "lat": 52.8908058,
-      "lng": -2.1257502,
+      "lat": 52.8909862,
+      "lng": -2.1260221,
       "place_name": "Stone: Little Stoke",
       "postcode": "ST15 8QU",
-      "premises_precision": "reference",
+      "premises_precision": "building",
       "pub_name": "Three Crowns",
       "status": "verified_venue",
       "venue_id": "v-d2bd535c-fb6c-5918-839a-3c7130ca80dc"
@@ -71134,7 +71264,7 @@
       "lng": -2.91763,
       "place_name": "Liverpool: Wavertree",
       "postcode": "L15 8HF",
-      "premises_precision": "reference",
+      "premises_precision": "building",
       "pub_name": "Town Hall",
       "status": "verified_venue",
       "venue_id": "v-e7bad941-21fe-54ea-ac10-8e31c62bd593"
@@ -74404,7 +74534,7 @@
       "venue_id": "v-b1ed2bf8-2858-5ace-80c6-3c5ae0e5d74c"
     },
     "vine|stoke: pittshill|st6 6ls": {
-      "coordinate_source": "food-standards-agency-fhrs",
+      "coordinate_source": "reviewed-premises-location",
       "display_precision": "venue",
       "evidence": [
         {
@@ -74455,6 +74585,7 @@
         {
           "checked_at": "2026-11-24",
           "difference_metres": 26.6,
+          "disposition": "superseded_by_premises_review",
           "match": "venue_name_and_full_postcode",
           "reference_address": "13 Naylor Street",
           "reference_coordinate": {
@@ -74465,13 +74596,25 @@
           "reference_postcode": "ST6 6LS",
           "source": "camra",
           "url": "https://camra.org.uk/pubs/123167"
+        },
+        {
+          "checked_at": "2026-11-26",
+          "match": "reviewed_mapped_premises",
+          "reference_coordinate": {
+            "lat": 53.0678898,
+            "lng": -2.1995445
+          },
+          "reference_name": "Vine",
+          "reference_postcode": "ST6 6LS",
+          "source": "reviewed-premises-location",
+          "url": "https://www.planning.data.gov.uk/entity/42188910"
         }
       ],
-      "lat": 53.067672,
-      "lng": -2.199713,
+      "lat": 53.0678898,
+      "lng": -2.1995445,
       "place_name": "Stoke: Pittshill",
       "postcode": "ST6 6LS",
-      "premises_precision": "reference",
+      "premises_precision": "building",
       "pub_name": "Vine",
       "status": "verified_venue",
       "venue_id": "v-ff9ea973-8df7-54af-b666-28cdc61239cf"
@@ -78068,7 +78211,7 @@
       "lng": -1.2556627,
       "place_name": "Oxford: Central",
       "postcode": "OX1 3BB",
-      "premises_precision": "site",
+      "premises_precision": "building",
       "pub_name": "White Horse",
       "status": "verified_venue",
       "venue_id": "v-8802e318-5783-5125-b7fb-eba44264f1dc"
@@ -79362,7 +79505,7 @@
       "venue_id": "v-32292597-5327-5dc9-8b92-c9d1f100e51a"
     },
     "windmill inn|ingham|ln1 2yq": {
-      "coordinate_source": "reviewed-named-building",
+      "coordinate_source": "reviewed-premises-location",
       "display_precision": "venue",
       "evidence": [
         {
@@ -79383,6 +79526,7 @@
         {
           "address_source_url": "https://camra.org.uk/pubs/191962",
           "checked_at": "2026-11-04",
+          "disposition": "superseded_by_premises_review",
           "match": "reviewed_named_building_and_camra_address",
           "reference_address": "The Cliff, Middle Street",
           "reference_coordinate": {
@@ -79393,16 +79537,29 @@
           "reference_postcode": "LN1 2YQ",
           "source": "openstreetmap-named-venue",
           "url": "https://www.openstreetmap.org/node/597413100"
+        },
+        {
+          "checked_at": "2026-11-26",
+          "match": "named_venue_visitor_position",
+          "reference_coordinate": {
+            "lat": 53.337789,
+            "lng": -0.5630489
+          },
+          "reference_name": "Windmill Inn",
+          "reference_postcode": "LN1 2YQ",
+          "source": "reviewed-premises-location",
+          "url": "https://camra.org.uk/pubs/windmill-inn-ingham-191962"
         }
       ],
-      "lat": 53.3374119,
-      "lng": -0.5623709,
+      "lat": 53.337789,
+      "lng": -0.5630489,
       "place_name": "Ingham",
       "postcode": "LN1 2YQ",
-      "premises_precision": "reference",
+      "premises_precision": "site",
       "pub_name": "Windmill Inn",
       "status": "verified_venue",
-      "venue_id": "v-ac3d5f12-6e5e-5205-b8e0-74f09dfa9e6c"
+      "venue_id": "v-ac3d5f12-6e5e-5205-b8e0-74f09dfa9e6c",
+      "visitor_hint": "Use the roadside pub and gravel forecourt on the east side of Middle Street (B1398)."
     },
     "windmill|breadsall|de21 4fy": {
       "coordinate_source": "openstreetmap-gb-extract",

@@ -4,21 +4,21 @@ Locations: 1088
 
 Action required: 0
 Information — no pin check requested: 1088
-Locations with informational observations: 661 (may also have an actionable finding)
+Locations with informational observations: 663 (may also have an actionable finding)
 
 ## Results
 
 - no_name_match: 181
 - coordinate_disagreement: 283
 - ambiguous_or_missing_coordinates: 69
-- nearby: 112
-- coordinate_agreement: 443
+- nearby: 114
+- coordinate_agreement: 441
 
 ## Confidence
 
-- existing_evidence_needs_corroboration: 903
-- owner_reviewed: 19
-- different_source_coordinates_agree: 166
+- existing_evidence_needs_corroboration: 906
+- owner_reviewed: 18
+- different_source_coordinates_agree: 164
 
 ## Limits
 
@@ -103,7 +103,7 @@ Locations with informational observations: 661 (may also have an actionable find
 | Blackbird | Leicester: Abbey Park | LE4 0FW | coordinate_disagreement | FSA coordinate is 117.2m from the accepted pin; informational only because the FSA geocode may be approximate |
 | Blacksmiths | Burton U-T: Branston | DE14 3EY | coordinate_disagreement | FSA coordinate is 232.2m from the accepted pin; informational only because the FSA geocode may be approximate |
 | Blue Bell | Sandiacre | NG10 5DF | coordinate_disagreement | FSA coordinate is 120.3m from the accepted pin; informational only because the FSA geocode may be approximate |
-| Blue Bell | Helpston | PE6 7ED | coordinate_disagreement | FSA coordinate is 52.1m from the accepted pin; informational only because the FSA geocode may be approximate |
+| Blue Bell | Helpston | PE6 7ED | coordinate_disagreement | FSA coordinate is 51.9m from the accepted pin; informational only because the FSA geocode may be approximate |
 | Blue Dog | Sewstern | NG33 5RG | coordinate_agreement | Owner reviewed this postcode discrepancy and confirmed the displayed pub building; listing postcode retained for provenance |
 | Bluebell | Farnah Green | DE56 2UP | no_name_match | FSA comparison is inconclusive; absence of a match does not contradict accepted evidence |
 | Boar | Moddershall | ST15 8TG | coordinate_disagreement | FSA coordinate is 158.1m from the accepted pin; informational only because the FSA geocode may be approximate |
@@ -567,6 +567,7 @@ Locations with informational observations: 661 (may also have an actionable find
 | Spread Eagle | Rolleston-on-Dove | DE13 9BE | coordinate_disagreement | FSA coordinate is 217.9m from the accepted pin; informational only because the FSA geocode may be approximate |
 | Spread Eagle | Polesworth | B78 1DX | ambiguous_or_missing_coordinates | FSA comparison is inconclusive; absence of a match does not contradict accepted evidence |
 | St John Inn | St John | PL11 3AW | no_name_match | FSA comparison is inconclusive; absence of a match does not contradict accepted evidence |
+| Staff of Life | Stoke: Central | ST4 1NL | nearby | FSA coordinate is 25-50m away; informational only |
 | Stafford Arms | Bagnall | ST9 9JR | coordinate_disagreement | FSA coordinate is 73.8m from the accepted pin; informational only because the FSA geocode may be approximate |
 | Stag | Rotherham: Broom | S60 4JN | no_name_match | FSA comparison is inconclusive; absence of a match does not contradict accepted evidence |
 | Stag and Hounds | Burrough on the Hill | LE14 2JQ | coordinate_disagreement | FSA coordinate is 123.3m from the accepted pin; informational only because the FSA geocode may be approximate |
@@ -588,6 +589,7 @@ Locations with informational observations: 661 (may also have an actionable find
 | Stratford Haven | Nottingham: West Bridgford | NG2 6BA | coordinate_disagreement | FSA coordinate is 269.4m from the accepted pin; informational only because the FSA geocode may be approximate |
 | Stretton Social Club (PMC) | Stretton | DE13 0DU | coordinate_disagreement | FSA coordinate is 90.2m from the accepted pin; informational only because the FSA geocode may be approximate |
 | Sun Inn | Eryrys | CH7 4BX | no_name_match | FSA comparison is inconclusive; absence of a match does not contradict accepted evidence |
+| Sun Inn | Blackpool: South Shore | FY1 6AA | nearby | FSA coordinate is 25-50m away; informational only |
 | Sutton Social Club (PMC) | Sutton-on-Sea | LN12 2LT | coordinate_disagreement | FSA coordinate is 198.3m from the accepted pin; informational only because the FSA geocode may be approximate |
 | Swan | Betley | CW3 9AB | coordinate_disagreement | FSA coordinate is 130.4m from the accepted pin; informational only because the FSA geocode may be approximate |
 | Swan | Bignall End | ST7 8QD | nearby | FSA coordinate is 25-50m away; informational only |
@@ -609,7 +611,6 @@ Locations with informational observations: 661 (may also have an actionable find
 | Three Bulls Heads | Newcastle: Central | NE1 7RN | no_name_match | FSA comparison is inconclusive; absence of a match does not contradict accepted evidence |
 | Three Crowns | Wymeswold | LE12 6TZ | nearby | FSA coordinate is 25-50m away; informational only |
 | Three Crowns | Nottingham: Central | NG1 6LD | coordinate_disagreement | FSA coordinate is 62.0m from the accepted pin; informational only because the FSA geocode may be approximate |
-| Three Crowns | Stone: Little Stoke | ST15 8QU | nearby | FSA coordinate is 25-50m away; informational only |
 | Three Cups | Stamford Bridge | YO41 1AX | ambiguous_or_missing_coordinates | FSA comparison is inconclusive; absence of a match does not contradict accepted evidence |
 | Three Horseshoes | Barton-under-Needwood | DE13 8DR | coordinate_disagreement | FSA coordinate is 87.9m from the accepted pin; informational only because the FSA geocode may be approximate |
 | Three Horseshoes | Fazeley | B78 3RD | coordinate_disagreement | FSA coordinate is 51.4m from the accepted pin; informational only because the FSA geocode may be approximate |
@@ -638,6 +639,7 @@ Locations with informational observations: 661 (may also have an actionable find
 | Village Inn | Thurlestone | TQ7 3NN | ambiguous_or_missing_coordinates | FSA comparison is inconclusive; absence of a match does not contradict accepted evidence |
 | Village/Conservative Club (PMC) | Derby: Spondon | DE21 7JP | no_name_match | FSA comparison is inconclusive; absence of a match does not contradict accepted evidence |
 | Vine | Market Deeping | PE6 8AN | coordinate_disagreement | FSA coordinate is 130.2m from the accepted pin; informational only because the FSA geocode may be approximate |
+| Vine | Stoke: Pittshill | ST6 6LS | nearby | FSA coordinate is 25-50m away; informational only |
 | Vine Inn | Newcastle-U-L: Silverdale | ST5 6LX | nearby | FSA coordinate is 25-50m away; informational only |
 | Vine Inn | Silverdale | ST5 6LX | nearby | FSA coordinate is 25-50m away; informational only |
 | Volunteer Rifleman's Arms | Bath | BA1 1BH | no_name_match | FSA comparison is inconclusive; absence of a match does not contradict accepted evidence |
@@ -1039,7 +1041,6 @@ Locations with informational observations: 661 (may also have an actionable find
 | Spanker | Nether Heage | DE56 2AT | coordinate_agreement | No pin check requested. |
 | Spread Eagle | Etwall | DE65 6LP | coordinate_agreement | No pin check requested. |
 | St Levan Inn | Plymouth: Dockyard | PL2 1JJ | coordinate_agreement | No pin check requested. |
-| Staff of Life | Stoke: Central | ST4 1NL | coordinate_agreement | No pin check requested. |
 | Staffordshire Knot | Gillow Heath | ST8 6RG | coordinate_agreement | No pin check requested. |
 | Staffordshire Knot | Biddulph | ST8 6RG | coordinate_agreement | No pin check requested. |
 | Stag and Scotch | Newport | TF10 7AU | coordinate_agreement | No pin check requested. |
@@ -1052,7 +1053,6 @@ Locations with informational observations: 661 (may also have an actionable find
 | Station House | Durham | DH1 4SE | coordinate_agreement | No pin check requested. |
 | Stretton Fox | Stretton | WA4 4NU | coordinate_agreement | No pin check requested. |
 | Sun | Stockton-on-Tees | TS18 1SU | coordinate_agreement | No pin check requested. |
-| Sun Inn | Blackpool: South Shore | FY1 6AA | coordinate_agreement | No pin check requested. |
 | Sutherland Arms | Stoke: Central | ST4 5RW | coordinate_agreement | No pin check requested. |
 | Swan | Buxton | SK17 6HB | coordinate_agreement | No pin check requested. |
 | Swan Inn | Milton | DE65 6EF | coordinate_agreement | No pin check requested. |
@@ -1063,6 +1063,7 @@ Locations with informational observations: 661 (may also have an actionable find
 | Thorn Tree | Newhall | DE11 0LL | coordinate_agreement | No pin check requested. |
 | Thorn Tree | Matlock | DE4 3JQ | coordinate_agreement | No pin check requested. |
 | Three Brewers | Corsham | SN13 0AS | coordinate_agreement | No pin check requested. |
+| Three Crowns | Stone: Little Stoke | ST15 8QU | coordinate_agreement | No pin check requested. |
 | Three Pigeons | Banbury | OX16 2ED | coordinate_agreement | No pin check requested. |
 | Throstles Nest | Congleton | CW12 2DW | coordinate_agreement | No pin check requested. |
 | Tiger | Bridport | DT6 3LY | coordinate_agreement | No pin check requested. |
@@ -1091,7 +1092,6 @@ Locations with informational observations: 661 (may also have an actionable find
 | Victoria Tavern | Ruddington | NG11 6EQ | coordinate_agreement | No pin check requested. |
 | Village Tavern | Newcastle-U-L: Wolstanton | ST5 0EP | coordinate_agreement | No pin check requested. |
 | Vine | Mickleover | DE3 0DA | coordinate_agreement | No pin check requested. |
-| Vine | Stoke: Pittshill | ST6 6LS | coordinate_agreement | No pin check requested. |
 | Vintage Inn | Wellington | TA21 8AQ | coordinate_agreement | No pin check requested. |
 | Waggon and Horses | York: Central | YO10 3BP | coordinate_agreement | No pin check requested. |
 | Washington | Belsize Park NW3 | NW3 4UE | coordinate_agreement | No pin check requested. |

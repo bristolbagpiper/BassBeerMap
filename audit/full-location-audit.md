@@ -8,10 +8,10 @@ Locations with informational observations: 655 (may also have an actionable find
 
 ## Results
 
-- no_name_match: 180
+- no_name_match: 181
 - coordinate_disagreement: 283
-- ambiguous_or_missing_coordinates: 66
-- nearby: 109
+- ambiguous_or_missing_coordinates: 67
+- nearby: 107
 - coordinate_agreement: 450
 
 ## Confidence
@@ -129,7 +129,7 @@ Locations with informational observations: 655 (may also have an actionable find
 | Brothers Arms | Sheffield: Heeley | S8 9TZ | coordinate_disagreement | FSA coordinate is 68.7m from the accepted pin; informational only because the FSA geocode may be approximate |
 | Brownlow Inn | Congleton | CW12 4TH | ambiguous_or_missing_coordinates | FSA comparison is inconclusive; absence of a match does not contradict accepted evidence |
 | Brushmakers Arms | Oulton | ST15 8UW | nearby | FSA coordinate is 25-50m away; informational only |
-| Bubble Inn | Stenson | DE73 7HL | nearby | FSA coordinate is 25-50m away; informational only |
+| Bubble Inn | Stenson | DE73 7HL | no_name_match | FSA comparison is inconclusive; absence of a match does not contradict accepted evidence |
 | Bucknall Bowling & Recreation Club | Stoke: Bucknall | ST2 7AB | no_name_match | Owner reviewed this postcode discrepancy and confirmed the displayed pub building; listing postcode retained for provenance; FSA comparison is inconclusive; absence of a match does not contradict accepted evidence |
 | Bull | Poulton-le-Fylde | FY6 7DH | coordinate_disagreement | FSA coordinate is 93.7m from the accepted pin; informational only because the FSA geocode may be approximate |
 | Bull and Butcher | Corley Moor | CV7 8AQ | ambiguous_or_missing_coordinates | FSA comparison is inconclusive; absence of a match does not contradict accepted evidence |
@@ -464,7 +464,7 @@ Locations with informational observations: 655 (may also have an actionable find
 | Plough and Harrow | Fazeley | B78 3RF | coordinate_disagreement | FSA coordinate is 321.0m from the accepted pin; informational only because the FSA geocode may be approximate |
 | Plum Pudding | Armitage | WS15 4AZ | coordinate_disagreement | FSA coordinate is 364.2m from the accepted pin; informational only because the FSA geocode may be approximate |
 | Post Office Tavern | Westbury on Trym | BS9 3AG | coordinate_disagreement | FSA coordinate is 73.0m from the accepted pin; informational only because the FSA geocode may be approximate |
-| Prince of Wales | Sheffield: Ecclesall Road | S11 9PH | nearby | FSA coordinate is 25-50m away; informational only |
+| Prince of Wales | Sheffield: Ecclesall Road | S11 9PH | ambiguous_or_missing_coordinates | FSA comparison is inconclusive; absence of a match does not contradict accepted evidence |
 | Quarry | Cullercoats | NE25 8PL | coordinate_disagreement | FSA coordinate is 78.9m from the accepted pin; informational only because the FSA geocode may be approximate |
 | Quarryman | Wirksworth | DE4 4ET | nearby | FSA coordinate is 25-50m away; informational only |
 | Queens Arms | Bakewell | DE45 1DS | ambiguous_or_missing_coordinates | FSA comparison is inconclusive; absence of a match does not contradict accepted evidence |

@@ -166,12 +166,12 @@ class PagesReleaseTests(unittest.TestCase):
                 self.assertIn('BassBeerMap Pages deployment failed', source)
         self.assertNotIn('request_pages_release.py', (workflows / 'weekly-map-validation.yml').read_text(encoding='utf-8'))
 
-    def test_unchanged_schedule_compares_source_before_expensive_steps_and_short_circuits_only_it(self):
+    def test_default_wordpress_checks_skip_unchanged_bytes_but_explicit_imports_run_in_full(self):
         source = (Path(__file__).resolve().parents[1] / '.github' / 'workflows' / 'update-csv-from-pdf.yml').read_text(encoding='utf-8')
         fingerprint = source.index('id: source_fingerprint')
         self.assertLess(source.index('name: Download latest PDF from WordPress'), fingerprint)
         self.assertLess(source.index('id: source_fingerprint'), source.index('name: Install dependencies'))
-        self.assertIn("if: github.event_name == 'schedule' && steps.pdf_source.outputs.mode == 'wordpress'", source)
+        self.assertIn("if: steps.pdf_source.outputs.mode == 'wordpress' && !inputs.allow_reindex && !inputs.email_change_report", source)
         self.assertIn("if: steps.pdf_source.outputs.mode != 'skip' && steps.source_fingerprint.outputs.unchanged != 'true'", source)
         for step in ('Install dependencies',
                      'Generate candidate CSV', 'Reconcile, enrich and validate the complete candidate release',

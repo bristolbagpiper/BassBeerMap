@@ -63,9 +63,9 @@ jobs:
         if: steps.pdf_source.outputs.mode == 'wordpress'
         run: python fetch_latest_pdf.py latest-bass-directory.pdf
 
-      - name: Compare scheduled PDF with the published source
+      - name: Compare upstream PDF with the published source
         id: source_fingerprint
-        if: github.event_name == 'schedule' && steps.pdf_source.outputs.mode == 'wordpress'
+        if: steps.pdf_source.outputs.mode == 'wordpress' && !inputs.allow_reindex && !inputs.email_change_report
         run: |
           python - <<'PY'
           import hashlib, os, subprocess
@@ -79,7 +79,7 @@ jobs:
           with open(os.environ['GITHUB_OUTPUT'], 'a', encoding='utf-8') as output:
               output.write(f"unchanged={str(unchanged).lower()}\n")
           with open(os.environ['GITHUB_STEP_SUMMARY'], 'a', encoding='utf-8') as summary:
-              summary.write('## Scheduled source check\n\n')
+              summary.write('## Directory source check\n\n')
               summary.write(f'- Published PDF SHA-256: `{previous_hash}`\n')
               summary.write(f'- Downloaded PDF SHA-256: `{downloaded_hash}`\n')
               summary.write(f'- Source unchanged: `{str(unchanged).lower()}`\n')

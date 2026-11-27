@@ -2198,14 +2198,15 @@
       const placeId = /^[A-Za-z0-9_-]{10,256}$/.test(listing.place_id || '') ? listing.place_id : '';
       const label = direct || placeId ? 'Open in Google Maps' : 'Find in Google Maps';
       const searchPostcode = item.locationIssue?.use_reference_for_directions || item.postcodeIssueReviewed ? item.locationIssue.reference : item.postcode;
-      let query = [item.alternateName || item.pub_name, item.place_name, searchPostcode].filter(Boolean).join(', ');
+      const name = (item.alternateName || item.pub_name).replace(/\s+\(PMC\)$/i, '');
+      let query = [name, item.place_name, searchPostcode].filter(Boolean).join(', ');
       if (item.directionsStreet) {
         const locality = item.place_name.split(':')[0].trim();
         const hasPostcode = item.directionsStreet.toUpperCase().includes(item.directionsPostcode.toUpperCase());
         const hasLocality = item.directionsStreet.split(',').some(part => part.trim().toLowerCase() === locality.toLowerCase());
         const address = hasPostcode ? item.directionsStreet
           : [item.directionsStreet, hasLocality ? '' : locality, item.directionsPostcode].filter(Boolean).join(', ');
-        query = `${item.alternateName || item.pub_name}, ${address}`;
+        query = `${name}, ${address}`;
       }
       const params = new URLSearchParams({api: '1', query});
       if (placeId) params.set('query_place_id', placeId);

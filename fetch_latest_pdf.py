@@ -92,15 +92,20 @@ def fetch_bytes(url: str) -> bytes:
 
 
 def edition_key(title):
-    match = EDITION_RE.fullmatch(' '.join(html.unescape(title).split()))
+    match = EDITION_RE.fullmatch(edition_heading(title))
     if not match:
         return None
     return (int(match.group(2)), MONTHS[match.group(1)[:3].lower()], match.group(1).title(), match.group(2))
 
 
+def edition_heading(title):
+    title = ' '.join(html.unescape(title).split())
+    return re.sub(r'\s*\(([^()]*)\)$', r' \1', title)
+
+
 def edition_revision(title):
     """Return an explicit numeric in-month revision, or None if unnumbered."""
-    title = ' '.join(html.unescape(title).split())
+    title = edition_heading(title)
     match = EDITION_RE.fullmatch(title)
     if not match:
         return None

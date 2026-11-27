@@ -24,7 +24,8 @@ def public_link(row, record):
 
 
 def norm(name):
-    return re.sub(r'[\W_]+', '', re.sub(r'^the\s+', '', name.casefold().strip()).replace('&', 'and'))
+    name = name.casefold().strip().removesuffix(' (pmc)')
+    return re.sub(r'[\W_]+', '', re.sub(r'^the\s+', '', name).replace('&', 'and'))
 
 
 def same_premises(left, right):
@@ -90,7 +91,7 @@ def identify(row, pin, page):
 
 
 def observe(driver, row, pin, listing=None):
-    name = pin.get('alternate_name') or row['pub_name']
+    name = (pin.get('alternate_name') or row['pub_name']).removesuffix(' (PMC)')
     town = row['place_name'].split(':', 1)[0].strip()
     issue = pin.get('metadata_issue') or {}
     postcode = row['postcode']

@@ -157,6 +157,8 @@ class PdfSourceSelectorTests(unittest.TestCase):
         self.assertEqual(find_latest_post(home), (
             'National Bass Directory November 2026 revision 2',
             'https://nationalbassdirectory.wordpress.com/2026/11/12/revision-2/'))
+        parenthesized = home.replace('2026 revision 2</a>', '2026 (revision 2)</a>')
+        self.assertTrue(find_latest_post(parenthesized)[1].endswith('/revision-2/'))
 
     def test_wordpress_accepts_edition_with_unversioned_version_suffix(self):
         title = 'National Bass Directory March 2025 Version'

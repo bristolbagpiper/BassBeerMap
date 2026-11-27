@@ -36,6 +36,46 @@ class ReviewReportSectionTests(unittest.TestCase):
                                             {'rows':[listing]}, date(2026,1,2))
         self.assertNotIn('notice:b', notification_items(hidden))
 
+    def test_due_notice_shares_receipts_between_daily_review_and_publication(self):
+        listing = {'venue_id': 'venue', 'pub_name': 'Example Pub', 'place_name': 'Town'}
+        notice = dict(venue_id='venue', review_by='2026-11-20', text='Check local opening hours.')
+        publication = dict(commit='a' * 40, edition='November revision')
+        env = dict(SMTP_HOST='smtp.example.test', SMTP_USERNAME='test', SMTP_PASSWORD='test',
+                   ALERT_TO='test@example.test')
+
+        def report_for(day):
+            return with_trading_notice_reviews({'records': {}}, {'notices': [notice]},
+                                               {'rows': [listing]}, date(2026, 11, day))
+
+        for publication_first in (False, True):
+            with self.subTest(publication_first=publication_first), tempfile.TemporaryDirectory() as directory:
+                state = Path(directory) / 'state.json'
+                smtp = MagicMock()
+                send = smtp.return_value.__enter__.return_value.send_message
+                send.return_value = {}
+
+                def deliver(day, revision=None):
+                    return notify(report_for(day), state, smtp_factory=smtp, environ=env, publication=revision)
+
+                self.assertFalse(deliver(20))
+                if publication_first:
+                    self.assertTrue(deliver(21, publication))
+                else:
+                    self.assertTrue(deliver(21))
+                    self.assertFalse(deliver(21))
+                    self.assertTrue(deliver(22, publication))
+                self.assertFalse(deliver(22))
+                self.assertFalse(deliver(22, publication))
+                self.assertFalse(deliver(23))
+
+                subjects = [call.args[0]['Subject'] for call in send.call_args_list]
+                expected = ['BassBeerMap: November revision published']
+                if not publication_first:
+                    expected.insert(0, 'BassBeerMap: 1 changed review question')
+                self.assertEqual(subjects, expected)
+                self.assertIn('Outstanding owner decisions', send.call_args.args[0].get_content())
+                self.assertIn(notice['text'], send.call_args.args[0].get_content())
+
     def test_active_source_outage_is_warning_while_identity_and_trading_are_actions(self):
         records = {
             'source': dict(pub_name='Source Pub', place_name='Town', postcode='BS1', active=True,

@@ -278,8 +278,28 @@ jobs:
               await github.rest.issues.update({...context.repo, issue_number: issue.number, state: 'closed', state_reason: 'completed'});
             }
 
-      - name: Dispatch changed review queue after same-source publication
-        if: steps.publication.outputs.state == 'published' && steps.source_fingerprint.outputs.unchanged == 'true' && steps.publication.outputs.review_changed == 'true'
+      - name: Inspect trading notices for owner review
+        id: notice_review
+        if: steps.source_fingerprint.outputs.unchanged == 'true'
+        run: |
+          python - <<'PY'
+          import os
+          from directory_release import read_json
+          from location_review import with_trading_notice_reviews
+
+          report = with_trading_notice_reviews({}, read_json('trading-notices.json'),
+                                               read_json('directory-release.json'))
+          due = report['trading_notice_reviews']
+          with open(os.environ['GITHUB_OUTPUT'], 'a', encoding='utf-8') as output:
+              output.write(f'due={str(bool(due)).lower()}\n')
+          print(f'Trading notices due for owner review: {len(due)}')
+          PY
+
+      - name: Dispatch owner review after same-source check
+        if: >-
+          steps.source_fingerprint.outputs.unchanged == 'true' &&
+          (steps.notice_review.outputs.due == 'true' ||
+           (steps.publication.outputs.state == 'published' && steps.publication.outputs.review_changed == 'true'))
         uses: actions/github-script@v7
         with:
           script: |

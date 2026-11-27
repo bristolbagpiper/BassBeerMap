@@ -120,8 +120,9 @@ An approved location change checks only affected venues.
 
 The registry retains unfinished priority checks. If Google limits access or
 the browser runs out of time, the existing daily PDF workflow resumes those
-checks, including on an unchanged PDF. With an empty backlog, an unchanged
-download ends before Google, publication and email. Google never moves a pin.
+checks, including on an unchanged PDF. An unchanged download with an empty
+backlog skips Google and publication. The same check inspects trading notices
+for owner review. Google never moves a pin.
 
 A named business at the expected postcode can raise a location question when
 it disagrees with an independently supported building pin by at least 250 m,
@@ -169,7 +170,8 @@ directory import and live map check run on GitHub independently of this machine.
 
 Trading notices are maintained in `trading-notices.json`. Dated notices show
 through `review_by` in UTC and then become a neutral prompt to check before
-travelling. The same review workflow lists due notices in issue #5. Review
+travelling. The first UTC day after `review_by` also makes a visible notice
+eligible for owner review. Review
 new Google findings and corroborating evidence, then edit or remove the notice
 and check the deployed map. An inconclusive or missing Google result does not
 establish reopening, and a property sale or closed kitchen does not establish
@@ -184,13 +186,17 @@ in the register. The candidate gate requires every approximate pin to appear in
 the active register. Lookup failures never mean a source has no listing unless
 that source was actually searched.
 
-`Location review notifications` runs after a changed import reaches Pages and after successful owner
-approvals, on relevant source pushes (including notice-only changes), and can be
-dispatched manually. Rejected imports keep their separate `BassBeerMap update
+`Location review notifications` runs after a changed import reaches Pages,
+after successful owner approvals, and on relevant source pushes. It can also
+be dispatched manually. An unchanged PDF check dispatches it when public
+notices need review or a same-source publication changes the review queue.
+Rejected imports keep their separate `BassBeerMap update
 rejected` issue and do not enter the location-email loop. The notification run
 updates issue #5 with the current review queue. PDF publication emails include
-the outstanding decisions. In between publications it emails newly changed
-owner questions or newly due public notices. Source outages, map-health and
+the outstanding decisions, including due notices. The same item receipts
+suppress follow-up alerts on repeat runs while those notices are unchanged.
+Between publications it emails newly changed owner questions or newly due
+public notices. Source outages, map-health and
 Google diagnostics, old history and cleared decisions do not create email
 questions. A changed venue is sent by itself; unrelated venue changes do not
 repeat already acknowledged questions. Clearing a decision prunes its email

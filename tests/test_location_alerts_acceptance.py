@@ -72,6 +72,20 @@ class WorkflowStructureTests(unittest.TestCase):
         self.assertIn('name: Report rejected import', source)
         self.assertIn("if: failure() && steps.canonical_event.outputs.current != 'false'", source)
 
+    def test_unchanged_source_routes_due_notices_to_the_existing_notifier(self):
+        source = self.read('update-csv-from-pdf.yml')
+        scan = source.split('id: notice_review', 1)[1].split('\n      - name:', 1)[0]
+        dispatch = source.split('name: Dispatch owner review after same-source check', 1)[1].split('\n      - name:', 1)[0]
+        self.assertIn("if: steps.source_fingerprint.outputs.unchanged == 'true'", scan)
+        self.assertIn("with_trading_notice_reviews({}, read_json('trading-notices.json'),", scan)
+        self.assertIn("read_json('directory-release.json')", scan)
+        self.assertIn("steps.source_fingerprint.outputs.unchanged == 'true' &&", dispatch)
+        self.assertIn("steps.notice_review.outputs.due == 'true' ||", dispatch)
+        self.assertIn("steps.publication.outputs.review_changed == 'true'", dispatch)
+        self.assertIn("workflow_id: 'location-alerts.yml'", dispatch)
+        self.assertIn("needs.update-csv.outputs.new_pdf == 'true'", source)
+        self.assertNotIn('  schedule:', self.read('location-alerts.yml'))
+
     def test_normal_release_publish_paths_are_import_and_reviewed_correction_only(self):
         import_workflow = self.read('update-csv-from-pdf.yml')
         correction_workflow = self.read('approve-location.yml')

@@ -236,6 +236,9 @@ def find_pdf_url(post_html: str, post_url: str, edition_title: str = '') -> str:
         if matching_or_unlabelled:
             official = matching_or_unlabelled
     if len(official) > 1:
+        series = {re.sub(r'[-_ ]+', ' ', OFFICIAL_PDF_RE.search(item[1]).group().lower()) for item in official}
+        if len(series) != 1:
+            raise RuntimeError('The edition post links multiple plausible directory PDF series.')
         revisions = [(attachment_revision(item), item) for item in official]
         plain = [item for revision, item in revisions if revision is None]
         if (len(plain) > 1 or (plain and (not re.search(r'20\d{2}\.pdf$', plain[0][1], re.I)

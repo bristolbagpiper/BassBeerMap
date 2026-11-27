@@ -171,7 +171,9 @@ class PagesReleaseTests(unittest.TestCase):
         fingerprint = source.index('id: source_fingerprint')
         self.assertLess(source.index('name: Download latest PDF from WordPress'), fingerprint)
         self.assertLess(source.index('id: source_fingerprint'), source.index('name: Install dependencies'))
-        self.assertIn("if: steps.pdf_source.outputs.mode == 'wordpress' && !inputs.allow_reindex && !inputs.email_change_report", source)
+        self.assertIn("if: steps.pdf_source.outputs.mode != 'skip' && !inputs.allow_reindex", source)
+        self.assertIn("steps.pdf_source.outputs.mode == 'canonical_release' && github.event.before || 'HEAD'", source)
+        self.assertIn("Path(os.environ['SELECTED_PDF']).read_bytes()", source)
         self.assertIn("if: steps.pdf_source.outputs.mode != 'skip' && steps.source_fingerprint.outputs.unchanged != 'true'", source)
         for step in ('Install dependencies',
                      'Generate candidate CSV', 'Reconcile, enrich and validate the complete candidate release',

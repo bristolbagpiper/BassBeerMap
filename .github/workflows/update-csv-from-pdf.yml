@@ -65,14 +65,17 @@ jobs:
 
       - name: Compare upstream PDF with the published source
         id: source_fingerprint
-        if: steps.pdf_source.outputs.mode == 'wordpress' && !inputs.allow_reindex && !inputs.email_change_report
+        if: steps.pdf_source.outputs.mode != 'skip' && !inputs.allow_reindex
+        env:
+          SELECTED_PDF: ${{ steps.pdf_source.outputs.source_pdf }}
+          BASELINE_REF: ${{ steps.pdf_source.outputs.mode == 'canonical_release' && github.event.before || 'HEAD' }}
         run: |
           python - <<'PY'
           import hashlib, os, subprocess
           from pathlib import Path
-          previous = subprocess.run(['git', 'show', 'HEAD:latest-bass-directory.pdf'], check=True,
+          previous = subprocess.run(['git', 'show', os.environ['BASELINE_REF'] + ':latest-bass-directory.pdf'], check=True,
                                     stdout=subprocess.PIPE).stdout
-          downloaded = Path('latest-bass-directory.pdf').read_bytes()
+          downloaded = Path(os.environ['SELECTED_PDF']).read_bytes()
           previous_hash = hashlib.sha256(previous).hexdigest()
           downloaded_hash = hashlib.sha256(downloaded).hexdigest()
           unchanged = previous_hash == downloaded_hash

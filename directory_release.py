@@ -351,7 +351,7 @@ def directions_address(record):
 
 
 def build_bundle(rows, metadata, postcodes, ledger, notices=None, registry=None):
-    from google_listings import public_link
+    from google_listings import public_link, same_premises
     locations = {}
     business_owners = {}
     highlighted = set(metadata.get('new_or_returning', []))
@@ -363,14 +363,12 @@ def build_bundle(rows, metadata, postcodes, ledger, notices=None, registry=None)
             raise ValueError(f'{venue_key(row)}: no usable {precision} location')
         locations[row['venue_id']] = {'lat': point['lat'], 'lng': point['lng'], 'precision': precision}
         if registry:
-            link = public_link(row, registry['venues'][row['venue_id']].get('google_listing'))
+            listing = registry['venues'][row['venue_id']].get('google_listing')
+            link = public_link(row, listing)
             if link:
-                identifier = tuple(link.items())
-                if identifier in business_owners:
-                    locations[business_owners[identifier]].pop('google_listing', None)
-                else:
-                    business_owners[identifier] = row['venue_id']
-                    locations[row['venue_id']]['google_listing'] = link
+                identifier = listing.get('maps_url') or link['place_id']
+                business_owners.setdefault(identifier, []).append(row['venue_id'])
+                locations[row['venue_id']]['google_listing'] = link
         if venue_key(row) in highlighted:
             locations[row['venue_id']]['new_or_returning'] = True
         fallback = postcodes.get(row['postcode'])
@@ -389,6 +387,10 @@ def build_bundle(rows, metadata, postcodes, ledger, notices=None, registry=None)
             locations[row['venue_id']]['metadata_issue'] = record['metadata_issue']
         if record.get('alternate_name'):
             locations[row['venue_id']]['alternate_name'] = record['alternate_name']
+    for owners in business_owners.values():
+        if any(not same_premises(registry['venues'][owners[0]], registry['venues'][key]) for key in owners[1:]):
+            for key in owners:
+                locations[key].pop('google_listing', None)
     payload = {'schema_version': 1, 'metadata': metadata, 'rows': rows, 'locations': locations,
                'max_evidence_age_days': MAX_EVIDENCE_AGE_DAYS}
     if notices is not None:

@@ -27,6 +27,20 @@ def norm(name):
     return re.sub(r'[\W_]+', '', re.sub(r'^the\s+', '', name.casefold().strip()).replace('&', 'and'))
 
 
+def same_premises(left, right):
+    """Allow separate PDF rows to share a listing only with corroborated premises identity."""
+    first, second = (entry.get('listing', {}) for entry in (left, right))
+    if not first.get('pub_name') or any(first.get(k) != second.get(k) for k in ('pub_name', 'postcode')):
+        return False
+    a, b = (entry.get('verified_pin') or {} for entry in (left, right))
+    if not (point_valid(a) and point_valid(b) and distance_metres(a, b) <= 3):
+        return False
+    def camra_ids(pin):
+        return {e['url'] for e in pin.get('evidence', []) if e.get('source') == 'camra' and
+                re.fullmatch(r'https://camra\.org\.uk/pubs/(?:[\w-]*-)?\d+/?', e.get('url', ''))}
+    return bool(camra_ids(a) & camra_ids(b))
+
+
 def business_profile(page):
     category = (page.get('category') or '').strip().lower()
     return (category not in ('building', 'address', 'street', 'road', 'intersection', 'bus stop', 'postal code')
@@ -45,12 +59,17 @@ def identify(row, pin, page):
     names = {norm(row['pub_name'])}
     if pin.get('alternate_name'):
         names.add(norm(pin['alternate_name']))
+    if pin.get('confirmed_google_name'):
+        names.add(norm(pin['confirmed_google_name']))
     postcodes = [row['postcode']]
     issue = pin.get('metadata_issue') or {}
     if issue.get('listed') == row['postcode'] and issue.get('source_url'):
         postcodes.append(issue.get('reference', ''))
-    if norm(title[0]) not in names or not any(_postcode_in_text(pc.replace(' ', ''), addresses[0].get('label', ''))
-                                              for pc in postcodes):
+    address = addresses[0].get('label', '')
+    short_name, comma, locality = title[0].partition(',')
+    name_ok = norm(title[0]) in names or (comma and norm(short_name) in names and
+                                         norm(locality) in norm(row['place_name'] + ' ' + address))
+    if not name_ok or not any(_postcode_in_text(pc.replace(' ', ''), address) for pc in postcodes):
         return 'identity_conflict', None
     point = _point_from_url(url)
     if point_valid(pin) and not point:
@@ -61,13 +80,23 @@ def identify(row, pin, page):
     if len(tokens) != 1 or not int(next(iter(tokens)), 16):
         return 'ambiguous', None
     cid = int(next(iter(tokens)), 16)
-    return 'named_listing', {**{k: row[k] for k in IDENTITY}, 'maps_url': f'https://www.google.com/maps?cid={cid}'}
+    listing = {**{k: row[k] for k in IDENTITY}, 'maps_url': f'https://www.google.com/maps?cid={cid}'}
+    if norm(title[0]) != norm(row['pub_name']):
+        listing['matched_name'] = title[0]
+    explicit = set(re.findall(r'!(?:1|19)s(ChIJ[A-Za-z0-9_-]{10,250})(?=!|/|$)', unquote(parsed.path)))
+    if len(explicit) == 1:
+        listing['place_id'] = explicit.pop()
+    return 'named_listing', listing
 
 
 def observe(driver, row, pin, listing=None):
     name = pin.get('alternate_name') or row['pub_name']
     town = row['place_name'].split(':', 1)[0].strip()
-    query = ', '.join([name, town, row['postcode'], 'United Kingdom'])
+    issue = pin.get('metadata_issue') or {}
+    postcode = row['postcode']
+    if issue.get('listed') == postcode and issue.get('use_reference_for_directions') and issue.get('source_url'):
+        postcode = issue.get('reference') or postcode
+    query = ', '.join([name, town, postcode, 'United Kingdom'])
     params = {'api': 1, 'query': query, 'hl': 'en'}
     if listing and listing.get('place_id'):
         params['query_place_id'] = listing['place_id']
@@ -86,7 +115,7 @@ def observe(driver, row, pin, listing=None):
             if button:
                 button.click()
                 rejected = True
-        if page.get('placeLinks') and not followed:
+        if not listing and page.get('placeLinks') and not followed:
             matches = {link['href'] for link in page['placeLinks'] if norm(link['text']) == norm(name)
                        and urlsplit(link['href']).netloc == 'www.google.com' and '/maps/place/' in link['href']}
             if len(matches) == 1:
@@ -140,20 +169,23 @@ def check_google(rows, registry, previous_rows, today=None, only=None):
             driver.set_page_load_timeout(24)
             for _, _, _, key, row, binding in queue:
                 entry = registry['venues'][key]
-                previous_link = public_link(row, entry.get('google_listing'))
-                outcome, listing = observe(driver, row, entry.get('verified_pin') or {}, previous_link)
+                previous = entry.get('google_listing') or {}
+                previous_link = public_link(row, previous)
+                pin = entry.get('verified_pin') or {}
+                bound_pin = dict(pin, confirmed_google_name=previous.get('matched_name')) if previous_link else pin
+                outcome, listing = observe(driver, row, bound_pin, previous_link)
                 if previous_link and outcome not in ('named_listing', 'unavailable'):
-                    outcome, listing = observe(driver, row, entry.get('verified_pin') or {})
+                    outcome, listing = observe(driver, row, pin)
                     previous_link = None
+                    bound_pin = pin
                     if outcome == 'ambiguous':
                         entry.pop('google_listing', None)
-                if listing and (not previous_link or (previous_link.get('maps_url') and
-                                                       previous_link['maps_url'] != listing['maps_url'])):
+                if listing and not (previous_link or {}).get('place_id') and public_link(row, listing) != previous_link:
                     # Maps can identify a building and its tenant separately.
                     # Open the exact visitor URL before saving a newly found ID.
                     candidate = public_link(row, listing)
-                    outcome, verified = observe(driver, row, entry.get('verified_pin') or {}, candidate)
-                    if not verified or public_link(row, verified) != candidate:
+                    outcome, verified = observe(driver, row, bound_pin, candidate)
+                    if not verified or verified['maps_url'] != listing['maps_url']:
                         listing = None
                         if outcome != 'unavailable':
                             outcome = 'destination_conflict'
@@ -162,8 +194,9 @@ def check_google(rows, registry, previous_rows, today=None, only=None):
                     break
                 entry['google_check'] = {'binding': binding, 'date': today.isoformat(), 'outcome': outcome}
                 if listing:
-                    others = (other.get('google_listing') or {} for vid, other in registry['venues'].items() if vid != key)
-                    if any(other.get('maps_url') == listing['maps_url'] for other in others):
+                    others = (other for vid, other in registry['venues'].items() if vid != key and
+                              (other.get('google_listing') or {}).get('maps_url') == listing['maps_url'])
+                    if any(not same_premises(entry, other) for other in others):
                         entry['google_check']['outcome'] = results[key] = 'shared_listing'
                     elif not previous_link or not previous_link.get('place_id'):
                         entry['google_listing'] = listing

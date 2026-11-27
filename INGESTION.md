@@ -121,7 +121,10 @@ Google results are advisory and never move coordinates.
 The durable record lives with the venue ID in `venue-registry.json`.
 The release embeds a business link only for its bound name, place and postcode.
 The visitor link opens the identified Google business or searches by name
-and address. The importer records conflicting and inconclusive results in its
+and address. Before storing a new ID, the lookup opens the exact outgoing link
+and checks the business profile. Two directory rows may share that link when
+their pub name, postcode, physical point and CAMRA premises record agree.
+The importer records conflicting and inconclusive results in its
 existing validation artifact. The directory requires no Places API credential.
 
 ### Optional Google research
@@ -167,7 +170,7 @@ in the register. The candidate gate requires every approximate pin to appear in
 the active register. Lookup failures never mean a source has no listing unless
 that source was actually searched.
 
-`Location review notifications` runs after successful imports and owner
+`Location review notifications` runs after a changed import reaches Pages and after successful owner
 approvals, on relevant source pushes (including notice-only changes), and can be
 dispatched manually. Rejected imports keep their separate `BassBeerMap update
 rejected` issue and do not enter the location-email loop. The notification run

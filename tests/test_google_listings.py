@@ -2,7 +2,7 @@ import unittest
 from datetime import date
 from unittest.mock import patch
 
-from google_listings import check_google, identify, public_link, targets
+from google_listings import check_google, identify, public_link, same_premises, targets
 
 
 class ListingTests(unittest.TestCase):
@@ -24,6 +24,18 @@ class ListingTests(unittest.TestCase):
             with self.subTest(changes=changes):
                 self.assertIsNone(identify(self.row, self.pin, dict(self.page, **changes))[1])
 
+    def test_literal_place_id_upgrade_opens_the_new_visitor_url(self):
+        place_id = 'ChIJabcdefghijklmnopqrstuvwxyz'
+        page = dict(self.page, url=self.page['url'] + '!19s' + place_id + '!')
+        _, listing = identify(self.row, self.pin, page)
+        _, original = identify(self.row, self.pin, self.page)
+        entry = {'verified_pin': self.pin, 'google_listing': original}
+        with patch('selenium.webdriver.Chrome'), patch('google_listings.observe',
+                side_effect=[('named_listing', listing), ('named_listing', listing)]) as observe:
+            check_google([self.row], {'venues': {'one': entry}}, [])
+        self.assertEqual(observe.call_args.args[-1], {'place_id': place_id})
+        self.assertEqual(public_link(self.row, entry['google_listing']), {'place_id': place_id})
+
     def test_named_search_that_links_to_a_building_is_withheld(self):
         registry = {'venues': {'one': {'verified_pin': self.pin}}}
         link = dict(self.row, maps_url='https://www.google.com/maps?cid=123')
@@ -32,6 +44,25 @@ class ListingTests(unittest.TestCase):
             self.assertEqual(check_google([self.row], registry, []), {'one':'destination_conflict'})
         self.assertEqual(observe.call_count, 2)
         self.assertNotIn('google_listing', registry['venues']['one'])
+
+    def test_two_directory_localities_may_share_one_corroborated_business(self):
+        pin = dict(self.pin, evidence=[{'source':'camra','url':'https://camra.org.uk/pubs/123054'}])
+        a = {'listing':self.row, 'verified_pin':pin}
+        b = {'listing':dict(self.row, place_name='Town: District'), 'verified_pin':dict(pin)}
+        self.assertTrue(same_premises(a, b))
+        b['verified_pin']['evidence'] = [{'source':'camra','url':'https://camra.org.uk/pubs/999'}]
+        self.assertFalse(same_premises(a, b))
+
+    def test_confirmed_trading_name_is_only_used_for_the_existing_listing(self):
+        alias = 'The Crown Coaching Inn'
+        entry = {'verified_pin': self.pin, 'google_listing': dict(self.row, matched_name=alias,
+                 maps_url='https://www.google.com/maps?cid=171')}
+        with patch('selenium.webdriver.Chrome'), patch('google_listings.observe',
+                side_effect=[('identity_conflict', None), ('ambiguous', None)]) as observe:
+            check_google([self.row], {'venues': {'one': entry}}, [])
+        self.assertEqual(observe.call_args_list[0].args[2]['confirmed_google_name'], alias)
+        self.assertNotIn('confirmed_google_name', observe.call_args_list[1].args[2])
+        self.assertNotIn('google_listing', entry)
 
     def test_selection_uses_changed_identity_and_rechecks_unresolved_on_cooldown(self):
         entry = {'verified_pin':self.pin, 'google_listing':dict(self.row, place_id='ChIJ123456789')}

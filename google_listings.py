@@ -142,11 +142,21 @@ def check_google(rows, registry, previous_rows, today=None, only=None):
                 entry = registry['venues'][key]
                 previous_link = public_link(row, entry.get('google_listing'))
                 outcome, listing = observe(driver, row, entry.get('verified_pin') or {}, previous_link)
-                if previous_link and outcome == 'ambiguous':
+                if previous_link and outcome not in ('named_listing', 'unavailable'):
                     outcome, listing = observe(driver, row, entry.get('verified_pin') or {})
                     previous_link = None
                     if outcome == 'ambiguous':
                         entry.pop('google_listing', None)
+                if listing and (not previous_link or (previous_link.get('maps_url') and
+                                                       previous_link['maps_url'] != listing['maps_url'])):
+                    # Maps can identify a building and its tenant separately.
+                    # Open the exact visitor URL before saving a newly found ID.
+                    candidate = public_link(row, listing)
+                    outcome, verified = observe(driver, row, entry.get('verified_pin') or {}, candidate)
+                    if not verified or public_link(row, verified) != candidate:
+                        listing = None
+                        if outcome != 'unavailable':
+                            outcome = 'destination_conflict'
                 results[key] = outcome
                 if outcome == 'unavailable':
                     break
@@ -157,7 +167,7 @@ def check_google(rows, registry, previous_rows, today=None, only=None):
                         entry['google_check']['outcome'] = results[key] = 'shared_listing'
                     elif not previous_link or not previous_link.get('place_id'):
                         entry['google_listing'] = listing
-                elif outcome in ('identity_conflict', 'pin_conflict'):
+                elif outcome in ('identity_conflict', 'pin_conflict', 'destination_conflict'):
                     entry.pop('google_listing', None)
     except (WebDriverException, TimeoutError, json.JSONDecodeError) as error:
         results['browser'] = 'unavailable: ' + type(error).__name__

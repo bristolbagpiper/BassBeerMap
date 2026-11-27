@@ -1,7 +1,8 @@
 import unittest
 from datetime import date
+from unittest.mock import patch
 
-from google_listings import identify, public_link, targets
+from google_listings import check_google, identify, public_link, targets
 
 
 class ListingTests(unittest.TestCase):
@@ -22,6 +23,15 @@ class ListingTests(unittest.TestCase):
                         {'url':'https://www.google.com/maps/place/Crown/@52,-1,17z'}):
             with self.subTest(changes=changes):
                 self.assertIsNone(identify(self.row, self.pin, dict(self.page, **changes))[1])
+
+    def test_named_search_that_links_to_a_building_is_withheld(self):
+        registry = {'venues': {'one': {'verified_pin': self.pin}}}
+        link = dict(self.row, maps_url='https://www.google.com/maps?cid=123')
+        with patch('selenium.webdriver.Chrome'), patch('google_listings.observe',
+                side_effect=[('named_listing', link), ('ambiguous', None)]) as observe:
+            self.assertEqual(check_google([self.row], registry, []), {'one':'destination_conflict'})
+        self.assertEqual(observe.call_count, 2)
+        self.assertNotIn('google_listing', registry['venues']['one'])
 
     def test_selection_uses_changed_identity_and_rechecks_unresolved_on_cooldown(self):
         entry = {'verified_pin':self.pin, 'google_listing':dict(self.row, place_id='ChIJ123456789')}

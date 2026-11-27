@@ -1,6 +1,6 @@
 """Create an auditable worklist for venues which need a human-verified pin.
 
-Automated matching is intentionally conservative: a wrong blue pin is worse
+Automated matching is intentionally conservative: a wrong venue pin is worse
 than a postcode-area pin.  This script lists only the remaining listings,
 excludes already-reviewed overrides, and gives each entry its stable key so a
 verified coordinate can be added to venue-coordinate-overrides.json.

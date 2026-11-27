@@ -517,22 +517,25 @@
         transform: none;
       }
     }
-    .approximate-marker {
+    .building-pin { --pin-colour: #258344; }
+    .site-reference-pin { --pin-colour: #246db2; }
+    .postcode-pin { --pin-colour: #8a641f; }
+    .venue-pin {
       background: transparent;
       border: 0;
     }
-    .approximate-marker span {
+    .venue-pin span {
       display: block;
       width: 18px;
       height: 18px;
       box-sizing: border-box;
       border: 2px solid #ffffff;
       border-radius: 50% 50% 50% 0;
-      background: #8a641f;
+      background: var(--pin-colour);
       box-shadow: 0 2px 7px rgba(58,34,25,0.42);
       transform: rotate(-45deg);
     }
-    .approximate-marker span::after {
+    .venue-pin span::after {
       content: '';
       display: block;
       width: 6px;
@@ -559,6 +562,16 @@
     .legend-header { display: flex; align-items: start; justify-content: space-between; gap: 10px; margin-bottom: 6px; }
     .legend strong { display: block; margin: 0; }
     .legend .tiny { color: var(--muted); line-height: 1.4; }
+    .pin-key { list-style: none; padding: 0; margin: 0 0 6px; }
+    .pin-key li::before {
+      content: '';
+      display: inline-block;
+      width: 0.7em;
+      height: 0.7em;
+      margin-right: 0.45em;
+      border-radius: 50%;
+      background: var(--pin-colour);
+    }
     .legend-close {
       width: auto;
       min-width: 34px;
@@ -1725,7 +1738,12 @@
           <strong>How to use</strong>
           <button id="hideHelpBtn" class="legend-close" type="button" aria-label="Hide help">×</button>
         </div>
-        <div class="tiny">Blue pins fall within identified buildings. Brown pins show sites, reference locations or postcode areas. Guest means Bass is occasional, not guaranteed today. The directory assumes handpump when no method was reported. Check before travelling.</div>
+        <ul class="pin-key tiny" aria-label="Pin colours">
+          <li class="building-pin">Green — identified building</li>
+          <li class="site-reference-pin">Blue — site or reference location</li>
+          <li class="postcode-pin">Brown — approximate postcode area</li>
+        </ul>
+        <div class="tiny">Guest means Bass is occasional, not guaranteed today. The directory assumes handpump when no method was reported. Check before travelling.</div>
         <div class="tiny">Premises checks use © OpenStreetMap contributors and contain OS data © Crown copyright and database right 2026. Additional checks use <a href="https://github.com/microsoft/GlobalMLBuildingFootprints">Microsoft building footprints</a> and <a href="https://docs.overturemaps.org/attribution/">Overture Maps and its contributors</a>.</div>
       </div>
       <button id="showHelpBtn" class="help-reopen-btn" type="button">Show help</button>
@@ -1797,13 +1815,22 @@
       crossOrigin: true,
       attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
     }).addTo(map);
-    const approximatePostcodeIcon = L.divIcon({
-      className: 'approximate-marker',
-      html: '<span aria-hidden="true"></span>',
-      iconSize: [22, 26],
-      iconAnchor: [11, 25],
-      popupAnchor: [0, -24]
-    });
+    function venuePin(colourClass) {
+      return L.divIcon({
+        className: 'venue-pin ' + colourClass,
+        html: '<span aria-hidden="true"></span>',
+        iconSize: [18, 22],
+        iconAnchor: [9, 22],
+        popupAnchor: [0, -22]
+      });
+    }
+    const siteReferencePin = venuePin('site-reference-pin');
+    const pinsByPrecision = {
+      building: venuePin('building-pin'),
+      site: siteReferencePin,
+      reference: siteReferencePin,
+      postcode: venuePin('postcode-pin')
+    };
 
     const markerLayer = L.markerClusterGroup({
       maxClusterRadius: 50,
@@ -2110,9 +2137,9 @@
           item.newOrReturning = location.new_or_returning === true;
           item.visitorHint = typeof location.visitor_hint === 'string' ? location.visitor_hint : '';
           const label = venueLabel(item) + ', ' + locationLabel(item);
-          item.marker = L.marker([item.lat, item.lng], item.premisesPrecision === 'building'
-            ? { alt: label, title: label }
-            : { icon: approximatePostcodeIcon, alt: label, title: label });
+          item.marker = L.marker([item.lat, item.lng], {
+            icon: pinsByPrecision[item.premisesPrecision], alt: label, title: label
+          });
           item.marker.on('add', () => item.marker.getElement().setAttribute('aria-label', label));
           configureVenuePopup(item);
           item.marker.on('popupopen', ({ popup }) => {

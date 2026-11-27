@@ -94,7 +94,8 @@ class FrontendSmokeTests(unittest.TestCase):
         actual = self.driver.execute_script("""
             return pubData.map(item => {
               const point = item.marker.getLatLng();
-              return [item.venue_id, point.lat, point.lng, item.premisesPrecision, item.newOrReturning];
+              return [item.venue_id, point.lat, point.lng, item.premisesPrecision, item.newOrReturning,
+                      item.marker.options.icon.options.className];
             });
         """)
         expected = []
@@ -103,15 +104,35 @@ class FrontendSmokeTests(unittest.TestCase):
             location = release['locations'][identifier]
             point = location if location['precision'] == 'venue' else location['postcode_location']
             grade = location.get('premises_precision', 'reference') if location['precision'] == 'venue' else 'postcode'
-            expected.append([identifier, point['lat'], point['lng'], grade, location.get('new_or_returning', False)])
+            colour_class = {'building': 'building-pin', 'site': 'site-reference-pin',
+                            'reference': 'site-reference-pin', 'postcode': 'postcode-pin'}[grade]
+            expected.append([identifier, point['lat'], point['lng'], grade, location.get('new_or_returning', False),
+                             'venue-pin ' + colour_class])
         self.assertEqual(sorted(actual), sorted(expected))
+        colours = self.driver.execute_script("""
+            return Object.fromEntries(Object.entries(pinsByPrecision).map(([precision, icon]) => {
+              const pin = icon.createIcon();
+              document.querySelector('.leaflet-marker-pane').append(pin);
+              const colour = getComputedStyle(pin.firstElementChild).backgroundColor;
+              pin.remove();
+              const key = [...document.querySelectorAll('.pin-key li')].find(li =>
+                getComputedStyle(li, '::before').backgroundColor === colour);
+              return [precision, [colour, key?.textContent]];
+            }));
+        """)
+        blue = ['rgb(36, 109, 178)', 'Blue — site or reference location']
+        self.assertEqual(colours, {
+            'building': ['rgb(37, 131, 68)', 'Green — identified building'],
+            'site': blue, 'reference': blue,
+            'postcode': ['rgb(138, 100, 31)', 'Brown — approximate postcode area']
+        })
 
     def test_legacy_named_pin_keeps_its_location_as_a_reference(self):
         release = json.loads((self.data_root / 'directory-release.json').read_text(encoding='utf-8'))
         identifier = release['rows'][0]['venue_id']
         location = release['locations'][identifier]
         location.update(precision='venue', checked_at='2000-01-01')
-        for key in ('premises_precision', 'visitor_hint', 'metadata_issue', 'directions_address'):
+        for key in ('premises_precision', 'visitor_hint', 'metadata_issue', 'directions_address', 'google_listing'):
             location.pop(key, None)
         type(self).release_override = release
         self.load_directory()
@@ -123,7 +144,7 @@ class FrontendSmokeTests(unittest.TestCase):
                     new URL(box.firstElementChild.href).searchParams.get('query')];
         """, identifier)
         self.assertEqual((grade, lat, lng), ('reference', location['lat'], location['lng']))
-        self.assertIn(release['rows'][0]['pub_name'], query)
+        self.assertIn(release['rows'][0]['pub_name'].removesuffix(' (PMC)'), query)
 
     def test_dated_trading_notices_expire_to_review_prompt_and_manual_hides_remain(self):
         release = json.loads((self.data_root / 'directory-release.json').read_text(encoding='utf-8'))
@@ -891,7 +912,9 @@ class FrontendSmokeTests(unittest.TestCase):
         self.driver.find_element(By.ID, 'searchBox').send_keys('Bank Tavern')
         wait = WebDriverWait(self.driver, 10)
         wait.until(lambda d: d.find_element(By.ID, 'resultCount').text == '1 match')
-        pin = self.driver.find_element(By.CSS_SELECTOR, '#map .approximate-marker')
+        pin = self.driver.find_element(By.CSS_SELECTOR, '#map .postcode-pin')
+        self.assertEqual(pin.find_element(By.TAG_NAME, 'span').value_of_css_property('background-color'),
+                         'rgba(138, 100, 31, 1)')
         self.assertIn('Bank Tavern', pin.accessible_name)
         self.assertIn('postcode area', pin.accessible_name)
         card = self.driver.find_element(By.CSS_SELECTOR, '#results .card')

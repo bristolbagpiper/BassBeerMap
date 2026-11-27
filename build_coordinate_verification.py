@@ -1,7 +1,7 @@
 """Build the production coordinate-verification ledger.
 
-Only venue coordinates corroborated by the audit data are allowed to render as
-blue pins. Everything else deliberately falls back to its postcode point.
+Only venue coordinates corroborated by the audit data are displayed as venue
+locations. Other entries use their postcode point.
 """
 import argparse
 import csv

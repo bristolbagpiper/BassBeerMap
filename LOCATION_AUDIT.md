@@ -1,6 +1,6 @@
 # Location audit and confidence
 
-A blue pin has accepted evidence. It does not guarantee the exact building or that Bass is currently on sale.
+Green pins fall within an identified building. Blue pins mark a site or reference location. Brown pins mark an approximate postcode area. The popup explains the location precision for each establishment.
 
 ## What the job asks you to check
 

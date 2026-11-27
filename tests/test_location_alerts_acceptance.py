@@ -40,7 +40,8 @@ class WorkflowStructureTests(unittest.TestCase):
         source = self.read('location-alerts.yml')
         self.assertIn("workflows: ['Apply reviewed location']", source)
         update = (ROOT / '.github/workflows/update-csv-from-pdf.yml').read_text(encoding='utf-8')
-        self.assertIn("if: steps.publication.outputs.state == 'published' && steps.pages_release.outcome == 'success'", update)
+        self.assertIn("needs.update-csv.outputs.published_on != ''", update)
+        self.assertIn("steps.pages_release.outcome == 'success'", update)
         self.assertIn("workflow_id: 'location-alerts.yml'", update)
         self.assertIn('  workflow_dispatch:', source)
         paths = source.split('    paths:', 1)[1].split('\n\npermissions:', 1)[0]
@@ -69,7 +70,7 @@ class WorkflowStructureTests(unittest.TestCase):
         self.assertIn("const title = 'BassBeerMap update rejected'", source)
         self.assertIn('The previous published release is retained.', source)
         self.assertIn('name: Report rejected import', source)
-        self.assertIn("if: failure() && steps.source_fingerprint.outputs.unchanged != 'true' && steps.publication.outcome != 'success'", source)
+        self.assertIn("if: failure() && steps.canonical_event.outputs.current != 'false'", source)
 
     def test_normal_release_publish_paths_are_import_and_reviewed_correction_only(self):
         import_workflow = self.read('update-csv-from-pdf.yml')

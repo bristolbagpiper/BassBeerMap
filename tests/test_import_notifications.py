@@ -62,7 +62,7 @@ class ImportNotificationTests(unittest.TestCase):
         with self.assertRaises(TimeoutError):
             send_report(REPORT, smtp_factory=smtp, environ=ENV)
 
-    def test_workflow_keeps_validation_publication_and_delivery_separate(self):
+    def test_workflow_dispatches_verified_pdf_publication_to_consolidated_notifier(self):
         from pathlib import Path
 
         workflow = Path(__file__).resolve().parents[1] / ".github" / "workflows" / "update-csv-from-pdf.yml"
@@ -72,20 +72,21 @@ class ImportNotificationTests(unittest.TestCase):
         self.assertIn("id: publication", text)
         self.assertIn("state=published", text)
         self.assertIn("state=unchanged", text)
-        self.assertIn("id: change_report_email", text)
-        self.assertIn("github.event_name == 'workflow_dispatch' && inputs.email_change_report", text)
-        self.assertIn("state=not_configured", text)
-        self.assertIn("state=suppressed_no_changes", text)
-        self.assertIn("state=accepted", text)
+        self.assertIn("notify-published-pdf:", text)
+        self.assertIn("needs.update-csv.outputs.new_pdf == 'true'", text)
+        self.assertIn("workflow_id: 'location-alerts.yml'", text)
+        self.assertIn("inputs: { publication_commit, previous_commit, published_on }", text)
+        self.assertIn("steps.pages_release.outcome == 'success'", text)
+        self.assertIn("steps.source_fingerprint.outputs.unchanged == 'true'", text)
+        self.assertNotIn("email_change_report", text)
+        self.assertNotIn("send_change_report_email.py", text)
         self.assertIn('cron: "17 6 * * *"', text)
-        self.assertIn("if: failure() && steps.source_fingerprint.outputs.unchanged != 'true' && steps.publication.outcome != 'success'", text)
-        self.assertIn('if [ "$has_changes" != "true" ]; then', text)
+        self.assertIn("if: failure() && steps.canonical_event.outputs.current != 'false'", text)
         self.assertNotIn('github.event_name != "workflow_dispatch"', text)
         self.assertIn("const title = 'BassBeerMap update rejected'", text)
-        self.assertIn("Report import email delivery failure", text)
-        self.assertIn("continue-on-error: true", text)
-        self.assertIn("steps.change_report_email.outcome == 'failure'", text)
-        self.assertNotIn("|| exit 0", text)
+        self.assertIn("Report dispatch failure", text)
+        self.assertIn("publication_commit", text)
+        self.assertIn("Re-run the notify-published-pdf job", text)
 
 
 if __name__ == "__main__":

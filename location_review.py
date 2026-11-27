@@ -83,6 +83,13 @@ def build_review(rows, registry, ledger):
         trading_acknowledged = acknowledged.get('snapshot') == trading_snapshot
         if trading.get('status') == 'needs_review' and not trading_acknowledged:
             reasons.append('Trading status needs review: ' + trading.get('reason', 'conflicting opening or closure information'))
+        google = entry.get('google_conflict') or {}
+        if google:
+            from google_listings import material_identity
+            if google.get('anchor') == material_identity(row, entry) and google != (entry.get('acknowledged_google_conflict') or {}).get('snapshot'):
+                reasons.append(f"Google {google['kind']} conflict: {google['detail']}")
+            else:
+                google = {}
         active = bool(reasons)
         if not active and not trading_acknowledged and identifier not in records:
             continue
@@ -103,6 +110,11 @@ def build_review(rows, registry, ledger):
         else:
             records[identifier].pop('manual_review_request', None)
         records[identifier].update(classify_review(records[identifier]))
+        if google:
+            records[identifier]['google_conflict'] = dict(google)
+            if not records[identifier]['manual_action_required']:
+                records[identifier].update(manual_action_required=True, review_category='location_check',
+                                           next_action=google['detail'])
         if trading:
             records[identifier]['trading_status_review'] = copy.deepcopy(trading)
         if trading_acknowledged and acknowledged.get('google_finding'):
@@ -396,6 +408,9 @@ def notification_items(report):
                            if r.startswith('Trading status needs review: ')), '')
             if reason:
                 item['context'] = reason
+        google = record.get('google_conflict')
+        if google:
+            item['context'] += f" {google['detail']} Google address: {google['address']}. Business: {google['maps_url']} Directory location: {google['pin_url']}"
         items['venue:' + identifier] = item
     for review in report.get('trading_notice_reviews', []):
         identifier = str(review.get('venue_id', ''))
@@ -513,6 +528,8 @@ def format_report(report, include_google_source_details=False):
         lines.append(f"- Next action: {record.get('next_action', classify_review(record)['next_action'])}")
         if record.get('manual_review_request'):
             lines.append('- Manual comparison source: ' + record['manual_review_request']['source_url'])
+        if conflict := record.get('google_conflict'):
+            lines.append(f"- Google business: {conflict['address']} {conflict['maps_url']} | Directory location: {conflict['pin_url']}")
         for source, check in record.get('source_checks', {}).items():
             lines.append(f"- Last recorded automatic verification {source.upper()}: {check.get('status', 'unknown')} {check.get('url', '')}".strip())
         trading = record.get('trading_status_review', {})

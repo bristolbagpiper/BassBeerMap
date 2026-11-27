@@ -171,15 +171,28 @@ class PagesReleaseTests(unittest.TestCase):
         fingerprint = source.index('id: source_fingerprint')
         self.assertLess(source.index('name: Download latest PDF from WordPress'), fingerprint)
         self.assertLess(source.index('id: source_fingerprint'), source.index('name: Install dependencies'))
-        self.assertIn("if: steps.pdf_source.outputs.mode != 'skip' && !inputs.allow_reindex", source)
+        self.assertIn("if: steps.pdf_source.outputs.mode != 'skip'", source)
         self.assertIn("steps.pdf_source.outputs.mode == 'canonical_release' && github.event.before || 'HEAD'", source)
         self.assertIn("Path(os.environ['SELECTED_PDF']).read_bytes()", source)
-        self.assertIn("if: steps.pdf_source.outputs.mode != 'skip' && steps.source_fingerprint.outputs.unchanged != 'true'", source)
-        for step in ('Install dependencies',
-                     'Generate candidate CSV', 'Reconcile, enrich and validate the complete candidate release',
+        self.assertIn("steps.source_fingerprint.outputs.unchanged != 'true' || inputs.allow_reindex", source)
+        install = source.split('name: Install dependencies', 1)[1].split('\n      - name:', 1)[0]
+        self.assertIn("steps.google_pending.outputs.pending == 'true'", install)
+        self.assertIn("steps.source_fingerprint.outputs.unchanged != 'true'", install)
+        for step in ('Generate candidate CSV', 'Reconcile, enrich and validate the complete candidate release',
                      'Run browser smoke test against the candidate release', 'Publish the complete validated release'):
             block = source.split(f'name: {step}', 1)[1].split('\n      - name:', 1)[0]
-            self.assertIn("steps.pdf_source.outputs.mode != 'skip' && steps.source_fingerprint.outputs.unchanged != 'true'", block, step)
+            self.assertIn("steps.source_fingerprint.outputs.unchanged != 'true' || inputs.allow_reindex", block, step)
+        self.assertIn('name: Inspect pending Google work for unchanged source', source)
+        self.assertIn('run: python resume_google.py', source)
+        self.assertIn("steps.google_resume.outputs.visitor_changed == 'true'", source)
+        self.assertIn("steps.publication.outputs.review_changed == 'true'", source)
+        self.assertIn("registry.get(row.get('venue_id'), {}).get('google_priority_pending') is True", source)
+        self.assertIn('git merge-base --is-ancestor "$EVENT_AFTER" HEAD', source)
+        self.assertIn('git log -1 --format=%H HEAD -- latest-bass-directory.pdf', source)
+        self.assertIn("The validated canonical PDF is already present in the current main commit", source)
+        self.assertIn("always() && needs.update-csv.outputs.new_pdf == 'true'", source)
+        self.assertIn("PUBLISHED_ON: ${{ needs.update-csv.outputs.published_on }}", source)
+        self.assertIn('date -u +%Y-%m-%d', source)
 
 if __name__ == '__main__':
     unittest.main()

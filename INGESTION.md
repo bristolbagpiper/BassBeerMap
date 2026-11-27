@@ -22,8 +22,11 @@ registry, coordinates, evidence ledger, metadata and PDF are committed together.
 The browser consumes `directory-release.json` alone, so cached versions of
 separate CSV/coordinate files cannot be combined into an incorrect pin.
 
-The listing change report is attached to the workflow run. A manual import
-can request an emailed copy. Scheduled imports leave the digest in the artifact.
+Each published PDF edition or revision generates one owner email after live
+readback. It compares the two published directories by permanent venue ID and
+includes open owner questions, even when the revised PDF has identical listings.
+The notification workflow reserves the publication commit and changed questions
+on issue #5 before sending. A retry uses the original commit pair.
 
 The import workflow runs for a root-level PDF push, not ordinary code pushes.
 It selects the single PDF changed by that exact push commit. A non-canonical
@@ -109,14 +112,25 @@ previously published release.
 
 ### Google business listings
 
-The PDF import checks the upstream bytes daily. An identical download skips
-Google, publication and the owner notification workflow. On a changed import,
-the existing Chrome runner checks up to 20 venues, prioritising new names,
-address changes and changed pin bindings. The remaining budget goes to
-unresolved venues and approximate pins, oldest unchecked first. A completed
-check of unchanged details has a 90-day cooldown. An approved location change
-can trigger a check of the affected venue. Provider challenges stop the batch.
-Google results are advisory and never move coordinates.
+Every new venue and every material change to a venue's identity, supported
+address or coordinates takes priority. After those checks, a changed import
+can check up to 20 further unresolved venues, oldest first, subject to a
+90-day cooldown. Unchanged venues with a verified business link are skipped.
+An approved location change checks only affected venues.
+
+The registry retains unfinished priority checks. If Google limits access or
+the browser runs out of time, the existing daily PDF workflow resumes those
+checks, including on an unchanged PDF. With an empty backlog, an unchanged
+download ends before Google, publication and email. Google never moves a pin.
+
+A named business at the expected postcode can raise a location question when
+it disagrees with an independently supported building pin by at least 250 m,
+or another supported site or reference pin by at least 500 m. An established
+business link pointing to a different identity at the premises, or two
+distinct venues claiming the same confirmed business, can also require review.
+The owner sees the conflicting address and both map links. An owner decision
+can acknowledge the exact finding under `google_conflicts` in
+`audit/closed-review-decisions.json` with venue ID, snapshot, reviewer and reason.
 
 The durable record lives with the venue ID in `venue-registry.json`.
 The release embeds a business link only for its bound name, place and postcode.
@@ -174,7 +188,8 @@ that source was actually searched.
 approvals, on relevant source pushes (including notice-only changes), and can be
 dispatched manually. Rejected imports keep their separate `BassBeerMap update
 rejected` issue and do not enter the location-email loop. The notification run
-updates issue #5 with the current review queue and emails only newly changed
+updates issue #5 with the current review queue. PDF publication emails include
+the outstanding decisions. In between publications it emails newly changed
 owner questions or newly due public notices. Source outages, map-health and
 Google diagnostics, old history and cleared decisions do not create email
 questions. A changed venue is sent by itself; unrelated venue changes do not

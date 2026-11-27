@@ -42,7 +42,8 @@ def stage_import(candidate, root, staging, check_sources=True, source_pdf=None, 
         raw = read_rows(candidate)
         previous = read_rows(root / 'pubs.csv')
         decisions = read_json(root / 'ingestion-decisions.json', {})
-        rows, registry, reconciliation = reconcile(raw, bootstrap_registry(root), decisions)
+        previous_registry = bootstrap_registry(root)
+        rows, registry, reconciliation = reconcile(raw, previous_registry, decisions)
         write_json(staging / 'reconciliation-report.json', reconciliation)
         if reconciliation['errors']:
             report['errors'].extend(reconciliation['errors'])
@@ -100,7 +101,7 @@ def stage_import(candidate, root, staging, check_sources=True, source_pdf=None, 
                 entry['verification_attempt'] = attempt
         if google and check_sources:
             from google_listings import check_google
-            report['google_checks'] = check_google(rows, registry, previous)
+            report['google_checks'] = check_google(rows, registry, previous, previous_registry=previous_registry)
         ledger = write_release(staging, rows, registry, metadata, coordinates, source_root=root)
         if pdf.exists():
             shutil.copyfile(pdf, staging / 'latest-bass-directory.pdf')

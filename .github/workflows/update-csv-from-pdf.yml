@@ -5,10 +5,6 @@ on:
     - cron: "17 6 * * *"
   workflow_dispatch:
     inputs:
-      email_change_report:
-        description: Email the listing change report after this manual import
-        type: boolean
-        default: false
       allow_reindex:
         description: Allow reviewed listing changes from an unchanged PDF
         type: boolean
@@ -35,6 +31,11 @@ jobs:
     if: github.actor != 'github-actions[bot]'
     runs-on: ubuntu-latest
     timeout-minutes: 65
+    outputs:
+      publication_commit: ${{ steps.publication.outputs.commit }}
+      previous_commit: ${{ steps.source_fingerprint.outputs.baseline_commit }}
+      published_on: ${{ steps.readback_stamp.outputs.published_on }}
+      new_pdf: ${{ steps.source_fingerprint.outputs.unchanged == 'false' }}
     steps:
       - name: Check out repository
         uses: actions/checkout@v4
@@ -58,6 +59,24 @@ jobs:
           RUNNER_TEMP: ${{ runner.temp }}
         run: python pdf_source_selector.py
 
+      - name: Check canonical PDF push freshness
+        id: canonical_event
+        if: steps.pdf_source.outputs.mode == 'canonical_release'
+        env:
+          EVENT_AFTER: ${{ github.event.after }}
+        run: |
+          current=false
+          if git merge-base --is-ancestor "$EVENT_AFTER" HEAD; then
+            event_pdf_commit=$(git log -1 --format=%H "$EVENT_AFTER" -- latest-bass-directory.pdf)
+            current_pdf_commit=$(git log -1 --format=%H HEAD -- latest-bass-directory.pdf)
+            if [ -n "$event_pdf_commit" ] && [ "$event_pdf_commit" = "$current_pdf_commit" ]; then current=true; fi
+          fi
+          echo "current=$current" >> "$GITHUB_OUTPUT"
+          echo "Canonical PDF event has not been superseded by a newer PDF: $current"
+          if [ "$current" != "true" ]; then
+            echo "The event is not an ancestor of main or a newer canonical PDF superseded it; this queued import will skip." >> "$GITHUB_STEP_SUMMARY"
+          fi
+
       - name: Download latest PDF from WordPress
         id: wordpress_download
         if: steps.pdf_source.outputs.mode == 'wordpress'
@@ -65,7 +84,7 @@ jobs:
 
       - name: Compare upstream PDF with the published source
         id: source_fingerprint
-        if: steps.pdf_source.outputs.mode != 'skip' && !inputs.allow_reindex
+        if: steps.pdf_source.outputs.mode != 'skip' && (steps.pdf_source.outputs.mode != 'canonical_release' || steps.canonical_event.outputs.current == 'true')
         env:
           SELECTED_PDF: ${{ steps.pdf_source.outputs.source_pdf }}
           BASELINE_REF: ${{ steps.pdf_source.outputs.mode == 'canonical_release' && github.event.before || 'HEAD' }}
@@ -78,25 +97,48 @@ jobs:
           downloaded = Path(os.environ['SELECTED_PDF']).read_bytes()
           previous_hash = hashlib.sha256(previous).hexdigest()
           downloaded_hash = hashlib.sha256(downloaded).hexdigest()
+          baseline_commit = subprocess.run(['git', 'rev-parse', os.environ['BASELINE_REF']], check=True,
+                                           stdout=subprocess.PIPE, text=True).stdout.strip()
           unchanged = previous_hash == downloaded_hash
           with open(os.environ['GITHUB_OUTPUT'], 'a', encoding='utf-8') as output:
               output.write(f"unchanged={str(unchanged).lower()}\n")
+              output.write(f"baseline_commit={baseline_commit}\n")
+              output.write('eligible=true\n')
           with open(os.environ['GITHUB_STEP_SUMMARY'], 'a', encoding='utf-8') as summary:
               summary.write('## Directory source check\n\n')
               summary.write(f'- Published PDF SHA-256: `{previous_hash}`\n')
               summary.write(f'- Downloaded PDF SHA-256: `{downloaded_hash}`\n')
               summary.write(f'- Source unchanged: `{str(unchanged).lower()}`\n')
               if unchanged:
-                  summary.write('- Pipeline, browser and publication checks skipped; current Pages integrity schedule remains independent.\n')
+                  summary.write('- Import and enrichment remain skipped; pending priority Google work is checked from the current registry and CSV.\n')
           print(f"Source PDF SHA-256: {downloaded_hash}; unchanged={str(unchanged).lower()}")
           PY
 
+      - name: Inspect pending Google work for unchanged source
+        id: google_pending
+        if: steps.source_fingerprint.outputs.eligible == 'true' && steps.source_fingerprint.outputs.unchanged == 'true' && !inputs.allow_reindex
+        run: |
+          python - <<'PY'
+          import csv, json, os
+          rows = list(csv.DictReader(open('pubs.csv', encoding='utf-8-sig', newline='')))
+          registry = json.load(open('venue-registry.json', encoding='utf-8'))['venues']
+          pending = any(registry.get(row.get('venue_id'), {}).get('google_priority_pending') is True for row in rows)
+          with open(os.environ['GITHUB_OUTPUT'], 'a', encoding='utf-8') as output:
+              output.write(f'pending={str(pending).lower()}\n')
+          print(f'Pending priority Google checks: {pending}')
+          PY
+
       - name: Install dependencies
-        if: steps.pdf_source.outputs.mode != 'skip' && steps.source_fingerprint.outputs.unchanged != 'true'
+        if: steps.source_fingerprint.outputs.eligible == 'true' && (steps.source_fingerprint.outputs.unchanged != 'true' || inputs.allow_reindex || steps.google_pending.outputs.pending == 'true')
         run: pip install -r requirements.txt
 
+      - name: Resume priority Google checks
+        id: google_resume
+        if: steps.source_fingerprint.outputs.eligible == 'true' && steps.source_fingerprint.outputs.unchanged == 'true' && !inputs.allow_reindex && steps.google_pending.outputs.pending == 'true'
+        run: python resume_google.py
+
       - name: Generate candidate CSV
-        if: steps.pdf_source.outputs.mode != 'skip' && steps.source_fingerprint.outputs.unchanged != 'true'
+        if: steps.source_fingerprint.outputs.eligible == 'true' && (steps.source_fingerprint.outputs.unchanged != 'true' || inputs.allow_reindex)
         env:
           PDF_SOURCE_PATH: ${{ steps.pdf_source.outputs.source_pdf }}
           PDF_SOURCE_NAME_FILE: ${{ steps.pdf_source.outputs.source_name_file }}
@@ -116,18 +158,18 @@ jobs:
 
       - name: Reconcile, enrich and validate the complete candidate release
         id: candidate
-        if: steps.pdf_source.outputs.mode != 'skip' && steps.source_fingerprint.outputs.unchanged != 'true'
+        if: steps.source_fingerprint.outputs.eligible == 'true' && (steps.source_fingerprint.outputs.unchanged != 'true' || inputs.allow_reindex)
         env:
           PDF_SOURCE_PATH: ${{ steps.pdf_source.outputs.source_pdf }}
         run: python ingest_directory.py candidate-pubs.csv --staging candidate-release --source-pdf "$PDF_SOURCE_PATH" --google
 
       - name: Validate candidate files again before publication
         id: candidate_validation
-        if: steps.pdf_source.outputs.mode != 'skip' && steps.source_fingerprint.outputs.unchanged != 'true'
+        if: steps.source_fingerprint.outputs.eligible == 'true' && (steps.source_fingerprint.outputs.unchanged != 'true' || inputs.allow_reindex)
         run: python validate_directory_release.py --root candidate-release --previous . --check-pdf
 
       - name: Guard against unexpected changes from an unchanged PDF
-        if: steps.pdf_source.outputs.mode != 'skip' && steps.source_fingerprint.outputs.unchanged != 'true'
+        if: steps.source_fingerprint.outputs.eligible == 'true' && (steps.source_fingerprint.outputs.unchanged != 'true' || inputs.allow_reindex)
         env:
           ALLOW_REINDEX: ${{ inputs.allow_reindex }}
           PDF_SOURCE_PATH: ${{ steps.pdf_source.outputs.source_pdf }}
@@ -140,14 +182,14 @@ jobs:
           python guard_unchanged_pdf.py "${args[@]}"
 
       - name: Run browser smoke test against the candidate release
-        if: steps.pdf_source.outputs.mode != 'skip' && steps.source_fingerprint.outputs.unchanged != 'true'
+        if: steps.source_fingerprint.outputs.eligible == 'true' && (steps.source_fingerprint.outputs.unchanged != 'true' || inputs.allow_reindex)
         env:
           RUN_BROWSER_TESTS: "1"
           DIRECTORY_TEST_ROOT: candidate-release
         run: python -m unittest discover -s tests -p "test_frontend_smoke.py" -v
 
       - name: Upload candidate validation and review artifacts
-        if: always() && steps.pdf_source.outputs.mode != 'skip' && steps.source_fingerprint.outputs.unchanged != 'true'
+        if: always() && steps.source_fingerprint.outputs.eligible == 'true' && (steps.source_fingerprint.outputs.unchanged != 'true' || inputs.allow_reindex)
         uses: actions/upload-artifact@v4
         with:
           name: directory-import-review
@@ -158,32 +200,61 @@ jobs:
         id: publication
         env:
           GH_TOKEN: ${{ github.token }}
-        if: steps.pdf_source.outputs.mode != 'skip' && steps.source_fingerprint.outputs.unchanged != 'true'
+          GOOGLE_RESUME: ${{ steps.google_resume.outputs.progress }}
+          PDF_SOURCE_MODE: ${{ steps.pdf_source.outputs.mode }}
+          NEW_PDF: ${{ steps.source_fingerprint.outputs.unchanged == 'false' }}
+        if: steps.source_fingerprint.outputs.eligible == 'true' && (steps.source_fingerprint.outputs.unchanged != 'true' || inputs.allow_reindex || steps.google_resume.outputs.progress == 'true')
         run: |
-          python validate_directory_release.py --root candidate-release --previous .
-          python -c "from pathlib import Path; from shutil import copyfile; from directory_release import RELEASE_FILES; [copyfile(Path('candidate-release') / name, name) for name in RELEASE_FILES]"
+          if [ "$GOOGLE_RESUME" != "true" ]; then
+            python validate_directory_release.py --root candidate-release --previous .
+            python -c "from pathlib import Path; from shutil import copyfile; from directory_release import RELEASE_FILES; [copyfile(Path('candidate-release') / name, name) for name in RELEASE_FILES]"
+          fi
           python validate_directory_release.py
-          if git diff --quiet -- latest-bass-directory.pdf pubs.csv directory-meta.json pub-coordinates.json venue-coordinates.json coordinate-verification.json venue-registry.json directory-release.json location-review.json; then
+          if [ "$GOOGLE_RESUME" = "true" ]; then
+            changed_files=(venue-registry.json directory-release.json location-review.json)
+          else
+            changed_files=(latest-bass-directory.pdf pubs.csv directory-meta.json pub-coordinates.json venue-coordinates.json coordinate-verification.json venue-registry.json directory-release.json location-review.json)
+          fi
+          if ! git diff --quiet -- location-review.json; then
+            echo "review_changed=true" >> "$GITHUB_OUTPUT"
+          fi
+          if git diff --quiet -- "${changed_files[@]}"; then
             echo "No directory changes detected."
+            if [ "$GOOGLE_RESUME" != "true" ] && [ "$PDF_SOURCE_MODE" = "canonical_release" ] && [ "$NEW_PDF" = "true" ]; then
+              echo "The validated canonical PDF is already present in the current main commit; verify its live Pages release."
+              echo "state=published" >> "$GITHUB_OUTPUT"
+              echo "commit=$(git rev-parse HEAD)" >> "$GITHUB_OUTPUT"
+              exit 0
+            fi
             echo "state=unchanged" >> "$GITHUB_OUTPUT"
             exit 0
           fi
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add -- latest-bass-directory.pdf pubs.csv directory-meta.json pub-coordinates.json venue-coordinates.json coordinate-verification.json venue-registry.json directory-release.json location-review.json
-          git commit -m "Publish validated directory release"
+          git add -- "${changed_files[@]}"
+          if [ "$GOOGLE_RESUME" = "true" ]; then
+            git commit -m "Resume priority Google checks"
+            echo "google_resume=true" >> "$GITHUB_OUTPUT"
+          else
+            git commit -m "Publish validated directory release"
+          fi
           python promote_checked_commit.py
           echo "state=published" >> "$GITHUB_OUTPUT"
           echo "commit=$(git rev-parse HEAD)" >> "$GITHUB_OUTPUT"
 
       - name: Deploy and verify GitHub Pages release
         id: pages_release
-        if: steps.publication.outputs.state == 'published'
+        if: steps.publication.outputs.state == 'published' && (steps.publication.outputs.google_resume != 'true' || steps.google_resume.outputs.visitor_changed == 'true')
         env:
           GH_TOKEN: ${{ github.token }}
           GITHUB_REPOSITORY: ${{ github.repository }}
           EXPECTED_PAGES_COMMIT: ${{ steps.publication.outputs.commit }}
         run: python request_pages_release.py
+
+      - name: Record verified visitor readback time
+        id: readback_stamp
+        if: steps.pages_release.outcome == 'success'
+        run: echo "published_on=$(date -u +%Y-%m-%d)" >> "$GITHUB_OUTPUT"
 
       - name: Report Pages deployment failure
         if: failure() && steps.pages_release.outcome == 'failure'
@@ -207,44 +278,14 @@ jobs:
               await github.rest.issues.update({...context.repo, issue_number: issue.number, state: 'closed', state_reason: 'completed'});
             }
 
-      - name: Check owner questions for the newly published directory
-        if: steps.publication.outputs.state == 'published' && steps.pages_release.outcome == 'success'
+      - name: Dispatch changed review queue after same-source publication
+        if: steps.publication.outputs.state == 'published' && steps.source_fingerprint.outputs.unchanged == 'true' && steps.publication.outputs.review_changed == 'true'
         uses: actions/github-script@v7
         with:
           script: |
             await github.rest.actions.createWorkflowDispatch({
               ...context.repo, workflow_id: 'location-alerts.yml', ref: 'main'
             });
-
-      - name: Email the validated change report when manually requested
-        id: change_report_email
-        # A mail failure has its own visible outcome and issue below. The data
-        # workflow must still trigger post-import validation after publication.
-        continue-on-error: true
-        if: always() && github.event_name == 'workflow_dispatch' && inputs.email_change_report && steps.candidate_validation.outcome == 'success' && steps.publication.outcome == 'success' && steps.pages_release.outcome != 'failure'
-        env:
-          SMTP_HOST: ${{ secrets.SMTP_HOST }}
-          SMTP_PORT: ${{ secrets.SMTP_PORT }}
-          SMTP_USERNAME: ${{ secrets.SMTP_USERNAME }}
-          SMTP_PASSWORD: ${{ secrets.SMTP_PASSWORD }}
-          CHANGE_REPORT_TO: ${{ secrets.CHANGE_REPORT_TO }}
-          ALERT_FROM: ${{ secrets.ALERT_FROM }}
-        run: |
-          if [ -z "$SMTP_HOST" ] || [ -z "$SMTP_USERNAME" ] || [ -z "$SMTP_PASSWORD" ] || [ -z "$CHANGE_REPORT_TO" ]; then
-            echo "state=not_configured" >> "$GITHUB_OUTPUT"
-            echo "Import email: not configured; validated release processing continues without a change-report email." >> "$GITHUB_STEP_SUMMARY"
-            exit 0
-          fi
-          has_changes=$(python -c "import json; print(str(bool(json.load(open('candidate-release/change-report.json'))['summary']['has_changes'])).lower())")
-          if [ "$has_changes" != "true" ]; then
-            echo "state=suppressed_no_changes" >> "$GITHUB_OUTPUT"
-            echo "Import email: no listing changes; notification suppressed." >> "$GITHUB_STEP_SUMMARY"
-            exit 0
-          fi
-          echo "state=attempted" >> "$GITHUB_OUTPUT"
-          python send_change_report_email.py --report candidate-release/change-report.json
-          echo "state=accepted" >> "$GITHUB_OUTPUT"
-          echo "Import email: accepted by the configured SMTP server." >> "$GITHUB_STEP_SUMMARY"
 
       - name: Close resolved import alerts
         if: always() && steps.candidate_validation.outcome == 'success' && steps.publication.outcome == 'success' && steps.pages_release.outcome != 'failure'
@@ -257,7 +298,7 @@ jobs:
             }
 
       - name: Report rejected import
-        if: failure() && steps.source_fingerprint.outputs.unchanged != 'true' && steps.publication.outcome != 'success'
+        if: failure() && steps.canonical_event.outputs.current != 'false' && (steps.source_fingerprint.outputs.unchanged != 'true' || inputs.allow_reindex || steps.google_resume.outcome == 'failure') && steps.publication.outcome != 'success'
         uses: actions/github-script@v7
         with:
           script: |
@@ -272,29 +313,7 @@ jobs:
             if (existing) await github.rest.issues.createComment({...context.repo, issue_number: existing.number, body});
             else await github.rest.issues.create({...context.repo, title, body});
 
-      - name: Report import email delivery failure
-        if: always() && steps.change_report_email.outcome == 'failure'
-        uses: actions/github-script@v7
-        with:
-          script: |
-            const title = 'BassBeerMap import email delivery failed';
-            const body = ['The import candidate was validated and the repository publication step completed, but change-report email delivery was not acknowledged by SMTP.', '', 'Check the failed email step and SMTP configuration. This records server acceptance only; it does not prove inbox delivery.', '', `Run: https://github.com/${context.repo.owner}/${context.repo.repo}/actions/runs/${context.runId}`].join('\n');
-            const { data: issues } = await github.rest.issues.listForRepo({...context.repo, state: 'open'});
-            const existing = issues.find(i => i.title === title);
-            if (existing) await github.rest.issues.update({...context.repo, issue_number: existing.number, body});
-            else await github.rest.issues.create({...context.repo, title, body});
-
-      - name: Close recovered import email failures
-        if: success() && steps.change_report_email.outputs.state == 'accepted'
-        uses: actions/github-script@v7
-        with:
-          script: |
-            const issues = await github.paginate(github.rest.issues.listForRepo, {...context.repo, state: 'open'});
-            for (const issue of issues.filter(i => i.title === 'BassBeerMap import email delivery failed')) {
-              await github.rest.issues.update({...context.repo, issue_number: issue.number, state: 'closed', state_reason: 'completed'});
-            }
-
-      - name: Summarize import, publication and email states
+      - name: Summarize import and publication states
         if: always()
         env:
           CANDIDATE_INGEST_OUTCOME: ${{ steps.candidate.outcome }}
@@ -302,8 +321,6 @@ jobs:
           PUBLICATION_OUTCOME: ${{ steps.publication.outcome }}
           PUBLICATION_STATE: ${{ steps.publication.outputs.state }}
           PAGES_OUTCOME: ${{ steps.pages_release.outcome }}
-          EMAIL_OUTCOME: ${{ steps.change_report_email.outcome }}
-          EMAIL_STATE: ${{ steps.change_report_email.outputs.state }}
         run: |
           {
             echo "## Import outcome"
@@ -311,6 +328,52 @@ jobs:
             echo "- Candidate validation: ${CANDIDATE_VALIDATION_OUTCOME:-not reached}"
             echo "- Repository publication: ${PUBLICATION_STATE:-${PUBLICATION_OUTCOME:-not reached}}"
             echo "- GitHub Pages deployment/readback: ${PAGES_OUTCOME:-not reached}"
-            echo "- Change-report email: ${EMAIL_STATE:-${EMAIL_OUTCOME:-not reached}}"
           } >> "$GITHUB_STEP_SUMMARY"
+
+  notify-published-pdf:
+    needs: update-csv
+    if: always() && needs.update-csv.outputs.new_pdf == 'true' && needs.update-csv.outputs.publication_commit != '' && needs.update-csv.outputs.previous_commit != '' && needs.update-csv.outputs.published_on != ''
+    runs-on: ubuntu-latest
+    steps:
+      - name: Dispatch consolidated publication notification
+        uses: actions/github-script@v7
+        env:
+          PUBLICATION_COMMIT: ${{ needs.update-csv.outputs.publication_commit }}
+          PREVIOUS_COMMIT: ${{ needs.update-csv.outputs.previous_commit }}
+          PUBLISHED_ON: ${{ needs.update-csv.outputs.published_on }}
+        with:
+          script: |
+            const publication_commit = process.env.PUBLICATION_COMMIT;
+            const previous_commit = process.env.PREVIOUS_COMMIT;
+            const published_on = process.env.PUBLISHED_ON;
+            if (!/^[0-9a-f]{40}$/.test(publication_commit) || !/^[0-9a-f]{40}$/.test(previous_commit) || !/^\d{4}-\d{2}-\d{2}$/.test(published_on)) {
+              core.setFailed('Publication notification metadata failed validation.');
+              return;
+            }
+            await github.rest.actions.createWorkflowDispatch({
+              ...context.repo,
+              workflow_id: 'location-alerts.yml',
+              ref: 'main',
+              inputs: { publication_commit, previous_commit, published_on }
+            });
+      - name: Report dispatch failure
+        if: failure()
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const title = 'BassBeerMap publication notification dispatch failed';
+            const body = [`The PDF was published and verified, but the consolidated location notification was not dispatched for commit ${{ needs.update-csv.outputs.publication_commit }}. Re-run the notify-published-pdf job to retry with the same publication details.`, '', `Run: https://github.com/${context.repo.owner}/${context.repo.repo}/actions/runs/${context.runId}`].join('\n');
+            const { data: issues } = await github.rest.issues.listForRepo({...context.repo, state: 'open'});
+            const existing = issues.find(i => i.title === title);
+            if (existing) await github.rest.issues.update({...context.repo, issue_number: existing.number, body});
+            else await github.rest.issues.create({...context.repo, title, body});
+      - name: Close recovered dispatch failures
+        if: success()
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const { data: issues } = await github.rest.issues.listForRepo({...context.repo, state: 'open'});
+            for (const issue of issues.filter(i => i.title === 'BassBeerMap publication notification dispatch failed')) {
+              await github.rest.issues.update({...context.repo, issue_number: issue.number, state: 'closed', state_reason: 'completed'});
+            }
 

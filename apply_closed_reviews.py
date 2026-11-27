@@ -6,6 +6,13 @@ from directory_release import read_json, read_rows, write_release
 
 def apply_decisions(registry, decisions):
     changed = False
+    for decision in decisions.get('google_conflicts', []):
+        entry = registry.get('venues', {}).get(decision['venue_id'])
+        if (entry and entry.get('google_conflict') and entry['google_conflict'] == decision.get('snapshot')
+                and decision.get('reviewed_by') and decision.get('reason')):
+            if entry.get('acknowledged_google_conflict') != decision:
+                entry['acknowledged_google_conflict'] = copy.deepcopy(decision)
+                changed = True
     for decision in decisions.get('postcode_reviews', []):
         entry = registry.get('venues', {}).get(decision['venue_id']) or {}
         pin = entry.get('verified_pin') or {}

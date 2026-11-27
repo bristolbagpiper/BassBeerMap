@@ -280,4 +280,4 @@ class GoogleJobIntegrationTests(unittest.TestCase):
         self.assertIn("const title = 'BassBeerMap update rejected'", import_workflow)
         self.assertIn('The previous published release is retained.', import_workflow)
         self.assertIn('name: Report rejected import', import_workflow)
-        self.assertIn("if: failure() && steps.source_fingerprint.outputs.unchanged != 'true' && steps.publication.outcome != 'success'", import_workflow)
+        self.assertIn("if: failure() && steps.canonical_event.outputs.current != 'false'", import_workflow)

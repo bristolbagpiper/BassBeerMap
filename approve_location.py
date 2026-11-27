@@ -501,7 +501,8 @@ def approve(root, staging, event, owner, google=False):
         raise ValueError("; ".join(errors))
     rows = read_rows(root / "pubs.csv")
     active = {r["venue_id"]: r for r in rows}
-    registry = copy.deepcopy(read_json(root / "venue-registry.json"))
+    previous_registry = read_json(root / "venue-registry.json")
+    registry = copy.deepcopy(previous_registry)
     ledger = read_json(root / "coordinate-verification.json")
     manual_reviews = []
     changed_ids = set()
@@ -660,7 +661,8 @@ def approve(root, staging, event, owner, google=False):
     staging.mkdir(parents=True, exist_ok=True)
     if google and changed_ids:
         from google_listings import check_google
-        print('Google listing checks:', check_google(rows, registry, [], only=changed_ids))
+        print('Google listing checks:', check_google(rows, registry, rows, only=changed_ids,
+                                                    previous_registry=previous_registry))
     write_release(staging, rows, registry, read_json(root / "directory-meta.json"), read_json(root / "pub-coordinates.json")["coordinates"], source_root=root)
     # Keep non-release audit inputs available to the candidate validators.
     overrides_path = root / "venue-coordinate-overrides.json"

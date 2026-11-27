@@ -286,6 +286,15 @@ def premises_review_valid(row, pin):
             and (review['precision'] != 'building' or building_identity_documented(review, sources)))
 
 
+def reviewed_trading_name(row, entry):
+    for review in entry.get('listing_reviews', []):
+        if review.get('kind') == 'correction' and review.get('original_key') == venue_key(row):
+            name = review.get('decision', {}).get('changes', {}).get('pub_name')
+            if name and name != row['pub_name']:
+                return name
+    return None
+
+
 def build_ledger(rows, registry, allow_expired=False):
     records = {}
     for row in rows:
@@ -310,12 +319,9 @@ def build_ledger(rows, registry, allow_expired=False):
                     record['visitor_hint'] = review['visitor_hint']
             if pin.get('metadata_issue'):
                 record['metadata_issue'] = dict(pin['metadata_issue'], listed=row['postcode'])
-        for review in entry.get('listing_reviews', []):
-            if review.get('kind') == 'correction' and review.get('original_key') == venue_key(row):
-                name = review.get('decision', {}).get('changes', {}).get('pub_name')
-                if name and name != row['pub_name']:
-                    record['alternate_name'] = name
-                    break
+        alternate_name = reviewed_trading_name(row, entry)
+        if alternate_name:
+            record['alternate_name'] = alternate_name
         records[venue_key(row)] = record
     evidence_dates = [e['checked_at'] for r in records.values() for e in active_evidence(r) if e.get('checked_at')]
     return {

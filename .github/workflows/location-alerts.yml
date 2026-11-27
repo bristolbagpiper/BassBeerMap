@@ -7,6 +7,15 @@ on:
     branches: [main]
   workflow_dispatch:
     inputs:
+      publication_commit:
+        description: Published directory commit for a consolidated PDF report
+        type: string
+      previous_commit:
+        description: Previous published directory for the comparison
+        type: string
+      published_on:
+        description: UTC time of successful live readback
+        type: string
       uncertain_resolution:
         description: Resolve held delivery only after checking the mail outcome
         type: choice
@@ -23,6 +32,8 @@ on:
 
 permissions:
   contents: read
+  deployments: read
+  pages: read
   issues: write
 
 concurrency:
@@ -41,6 +52,7 @@ jobs:
       - uses: actions/checkout@v4
         with:
           ref: main
+          fetch-depth: 0
       - uses: actions/setup-python@v5
         with:
           python-version: '3.13'
@@ -70,6 +82,9 @@ jobs:
           GH_TOKEN: ${{ github.token }}
           GITHUB_REPOSITORY: ${{ github.repository }}
           UNCERTAIN_RESOLUTION: ${{ inputs.uncertain_resolution || 'none' }}
+          PUBLICATION_COMMIT: ${{ inputs.publication_commit }}
+          PREVIOUS_COMMIT: ${{ inputs.previous_commit }}
+          PUBLISHED_ON: ${{ inputs.published_on }}
         run: python notify_location_review.py --report notification-report.json --state-seed location-alert-state.json --resolution "$UNCERTAIN_RESOLUTION"
       - name: Upload review report
         if: always()

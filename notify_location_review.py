@@ -6,10 +6,11 @@ import json
 import os
 import re
 import smtplib
+import subprocess
 import urllib.error
 import urllib.request
 import zlib
-from datetime import datetime, timezone
+from datetime import date, datetime, timezone
 from email.message import EmailMessage
 from pathlib import Path
 
@@ -197,33 +198,44 @@ def _resolve_pending(state, current, resolution):
     resolved = len(pending)
     if resolution == 'confirm_sent':
         for key, reservation in pending.items():
-            if key in current and reservation.get('item_hash') == item_fingerprint(current[key]):
+            if key.startswith('pdf:') or (key in current and reservation.get('item_hash') == item_fingerprint(current[key])):
                 state['items'][key] = reservation['item_hash']
     state['pending'] = {}
     return resolved
 
 
-def _message_for(changed, smtp_env):
+def _message_for(changed, smtp_env, publication=None, questions=None):
     message = EmailMessage()
     count = len(changed)
-    message['Subject'] = f"BassBeerMap: {count} changed review question{'s' if count != 1 else ''}"
     message['From'] = smtp_env.get('ALERT_FROM') or smtp_env['SMTP_USERNAME']
     message['To'] = smtp_env['ALERT_TO']
-    message.set_content(format_notification(changed))
+    if publication is None:
+        message['Subject'] = f"BassBeerMap: {count} changed review question{'s' if count != 1 else ''}"
+        message.set_content(format_notification(changed))
+    else:
+        from send_change_report_email import format_publication
+        message['Subject'] = f"BassBeerMap: {publication['edition']} published"
+        message.set_content(format_publication(publication, questions))
     return message
 
 
 def notify(report, state_path=None, failure_url='', smtp_factory=smtplib.SMTP,
-           state_store=None, resolution='none', environ=None):
+           state_store=None, resolution='none', environ=None, publication=None):
     """Send changed questions once; uncertain sends are held for human resolution."""
     del failure_url  # Rejected imports have their own source workflow issue.
     environ = os.environ if environ is None else environ
     state = _read_state(state_path, state_store)
-    current = notification_items(report)
-    state['items'] = {key: item for key, item in state['items'].items() if key in current}
+    questions = notification_items(report)
+    current = dict(questions)
+    release_key = None
+    if publication is not None:
+        revision = publication.get('pdf_revision', publication['commit'])
+        release_key = 'pdf:' + revision
+        current[release_key] = revision
+    state['items'] = {key: item for key, item in state['items'].items() if key in current or key.startswith('pdf:')}
 
     resolved = _resolve_pending(state, current, resolution)
-    if not state.get('items') and not state.get('pending') and state.get('legacy_ack'):
+    if publication is None and not state.get('items') and not state.get('pending') and state.get('legacy_ack'):
         legacy_hash = state['legacy_ack'].get('email_fingerprint')
         if legacy_hash and legacy_hash == legacy_notification_fingerprint(report):
             state['items'] = {key: item_fingerprint(item) for key, item in current.items()}
@@ -257,7 +269,7 @@ def notify(report, state_path=None, failure_url='', smtp_factory=smtplib.SMTP,
     smtp_env = {key:environ[key] for key in required}
     smtp_env['SMTP_PORT'] = environ.get('SMTP_PORT') or '587'
     smtp_env['ALERT_FROM'] = environ.get('ALERT_FROM')
-    message = _message_for(changed, smtp_env)
+    message = _message_for(changed, smtp_env, publication if release_key in changed else None, questions)
     reservation_ids = []
     now = datetime.now(timezone.utc).isoformat()
     run_id = environ.get('GITHUB_RUN_ID', '')
@@ -332,6 +344,50 @@ def notify(report, state_path=None, failure_url='', smtp_factory=smtplib.SMTP,
     return True
 
 
+def read_publication(commit, previous, published_on, repository, token):
+    """Bind a dispatched report to exact source bytes and a successful Pages deployment."""
+    from build_change_report import published_report
+    from request_pages_release import ASSET_PATHS, _check_public_assets, _git_bytes, _json_request
+    if not all(re.fullmatch(r'[0-9a-f]{40}', sha) for sha in (commit, previous)):
+        raise ValueError('Both publication references must be full Git commit IDs')
+    publication_date = date.fromisoformat(published_on).isoformat()
+    subprocess.run(['git','merge-base','--is-ancestor',commit,'HEAD'],check=True)
+    revision = subprocess.check_output(['git','log','-1','--format=%H',commit,'--','latest-bass-directory.pdf'],
+                                       text=True).strip()
+    subprocess.run(['git','merge-base','--is-ancestor',previous,revision+'^'],check=True)
+    def blob(rev):
+        return subprocess.check_output(['git','rev-parse',rev+':latest-bass-directory.pdf']).strip()
+    if blob(commit) == blob(previous):
+        raise ValueError('Published and previous PDF bytes are identical')
+    # The import workflow dispatches from its repo token only after matching
+    # the live PDF, CSV, HTML and directory bundle to this exact commit.
+    if (os.environ.get('GITHUB_EVENT_NAME') == 'workflow_dispatch'
+            and os.environ.get('GITHUB_ACTOR') == 'github-actions[bot]'):
+        return dict(published_report(commit, previous, publication_date), pdf_revision=revision)
+    # An operator can also replay a publication explicitly. Check an actual
+    # successful deployment before treating manual inputs as a release.
+    api = f'https://api.github.com/repos/{repository}/deployments'
+    for deployment in _json_request(f'{api}?environment=github-pages&sha={commit}', token=token):
+        if deployment.get('sha') != commit:
+            continue
+        statuses = _json_request(f"{api}/{deployment['id']}/statuses",token=token)
+        for status in statuses:
+            if status['state'] == 'success':
+                report = published_report(commit, previous, status['created_at'])
+                # A canonical upload can already be on main when its import is
+                # validated. Replaying it after an unrelated commit is one delivery.
+                report['pdf_revision'] = revision
+                return report
+    # Some branch-based Pages builds have no Deployments API record.
+    build = _json_request(f'https://api.github.com/repos/{repository}/pages/builds/latest', token=token)
+    if (build.get('commit'), build.get('status')) == (commit, 'built'):
+        expected = {path: _git_bytes(commit, path) for path in ASSET_PATHS}
+        matches, _ = _check_public_assets(expected, base_url='https://bassbeermap.com',opener=urllib.request.urlopen)
+        if matches:
+            return dict(published_report(commit, previous, build['updated_at']), pdf_revision=revision)
+    raise ValueError('Cannot verify live publication of the requested commit')
+
+
 if __name__ == '__main__':
     parser = argparse.ArgumentParser()
     parser.add_argument('--report', default='notification-report.json')
@@ -341,5 +397,7 @@ if __name__ == '__main__':
     args = parser.parse_args()
     store = GitHubIssueStateStore(os.environ.get('GITHUB_REPOSITORY', ''),
                                   os.environ.get('GH_TOKEN', ''), args.issue)
+    refs = [os.environ.get(k,'') for k in ('PUBLICATION_COMMIT','PREVIOUS_COMMIT','PUBLISHED_ON')]
+    publication = read_publication(*refs, store.repository, store.token) if any(refs) else None
     notify(read_json(args.report), Path(args.state_seed), state_store=store,
-           resolution=args.resolution)
+           resolution=args.resolution, publication=publication)

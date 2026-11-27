@@ -414,7 +414,7 @@ Locations with informational observations: 663 (may also have an actionable find
 | Mushroom Hall | Albert Village | DE11 8EN | coordinate_disagreement | FSA coordinate is 216.5m from the accepted pin; informational only because the FSA geocode may be approximate |
 | Nags Head | East Leake | LE12 6PG | no_name_match | FSA comparison is inconclusive; absence of a match does not contradict accepted evidence |
 | Nags Head | Henley-in-Arden | B95 5BA | coordinate_disagreement | FSA coordinate is 57.8m from the accepted pin; informational only because the FSA geocode may be approximate |
-| Navigation | Burton U-T: Horninglow | DE14 2PT | coordinate_disagreement | FSA coordinate is 103.5m from the accepted pin; informational only because the FSA geocode may be approximate |
+| Navigation | Burton U-T: Horninglow | DE14 2PT | coordinate_disagreement | FSA coordinate is 140.8m from the accepted pin; informational only because the FSA geocode may be approximate |
 | Navigation | Newark | NG24 4TS | no_name_match | FSA comparison is inconclusive; absence of a match does not contradict accepted evidence |
 | Navigation | Shardlow | DE72 2WA | coordinate_agreement | Owner reviewed this postcode discrepancy and confirmed the displayed pub building; listing postcode retained for provenance |
 | Navigation | Breaston | DE72 3BP | coordinate_disagreement | FSA coordinate is 75.0m from the accepted pin; informational only because the FSA geocode may be approximate |
@@ -519,7 +519,7 @@ Locations with informational observations: 663 (may also have an actionable find
 | Rockcliffe Arms | Whitley Bay | NE26 2DT | no_name_match | FSA comparison is inconclusive; absence of a match does not contradict accepted evidence |
 | Roebuck | Silverdale | ST5 6JH | coordinate_disagreement | FSA coordinate is 95.4m from the accepted pin; informational only because the FSA geocode may be approximate |
 | Roebuck | Newcastle-U-L: Silverdale | ST5 6JH | coordinate_disagreement | FSA coordinate is 95.4m from the accepted pin; informational only because the FSA geocode may be approximate |
-| Roebuck | Burton U-T: Central | DE14 1BT | coordinate_disagreement | FSA coordinate is 144.6m from the accepted pin; informational only because the FSA geocode may be approximate |
+| Roebuck | Burton U-T: Central | DE14 1BT | coordinate_disagreement | FSA coordinate is 123.0m from the accepted pin; informational only because the FSA geocode may be approximate |
 | Roebuck Inn | Forsbrook | ST11 9BX | coordinate_disagreement | FSA coordinate is 74.7m from the accepted pin; informational only because the FSA geocode may be approximate |
 | Rose Inn | Baxterley | CV9 2LE | ambiguous_or_missing_coordinates | FSA comparison is inconclusive; absence of a match does not contradict accepted evidence |
 | Rose and Crown | Scartho | DN33 2HR | nearby | FSA coordinate is 25-50m away; informational only |

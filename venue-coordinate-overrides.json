@@ -1,8 +1,8 @@
 {
   "venues": {
     "1852 brewery co|leicester: south wigston|le18 2dh": {
-      "audit_reason": "The venue address is 2 Station Road. Its mapped address and reviewed premises identify this building; the former point was outside it.",
-      "checked_at": "2026-11-26",
+      "audit_reason": "The signed 1852 building has a projecting bay and benches in its Station Road forecourt. Aerial and street views identify the proposed building. The former CAMRA point is farther back on the adjoining part of the site.",
+      "checked_at": "2026-11-27",
       "lat": 52.5818044,
       "lng": -1.12227925,
       "previous_difference_metres": 21.7,
@@ -71,8 +71,8 @@
       "source_url": "https://www.openstreetmap.org/way/142457116"
     },
     "anchorage hotel|four mile bridge (anglesey)|ll65 2ez": {
-      "audit_reason": "The selling agent identifies the main hotel block as containing both bars. The named public house is the large detached building on Kingsland Road. The separate named hotel location falls within four metres of its outline; the previous pin was on a different small building.",
-      "checked_at": "2026-11-26",
+      "audit_reason": "The road panorama shows the building labelled Anchorage Hotel in the proposed direction and a separate small white building across the road at the original pin. The selling agent identifies both bars within the main hotel.",
+      "checked_at": "2026-11-27",
       "lat": 53.27191195,
       "lng": -4.58758839,
       "previous_difference_metres": 44.0,
@@ -239,16 +239,19 @@
       "source_url": "https://www.google.com/maps/search/?api=1&query=Binary+Mickleover+DE3+0GR"
     },
     "black cat bar|liverpool: central|l1 4jn": {
-      "audit_reason": "The venue address is 25 Parr Street. Its mapped address and reviewed premises identify this building; the former point was outside it.",
-      "checked_at": "2026-11-26",
-      "lat": 53.4017711,
-      "lng": -2.9795014,
-      "previous_difference_metres": 16.4,
-      "previous_lat": 53.4016502,
-      "previous_lng": -2.9796419,
-      "previous_source": "google-maps-named-place",
-      "source": "reviewed-premises-location",
-      "source_url": "https://www.openstreetmap.org/way/208578883"
+      "audit_reason": "manual_named_place_address_and_map_check",
+      "checked_at": "2026-10-21",
+      "lat": 53.4016502,
+      "lng": -2.9796419,
+      "previous_difference_metres": 128.1,
+      "previous_lat": 53.4022,
+      "previous_lng": -2.98134,
+      "previous_source": "camra-pubs-location-audit",
+      "reference_address": "25 Parr St, Liverpool L1 4JN",
+      "reference_name": "Black Cat Parr Street",
+      "review_note": "Repository owner confirmed the named-place marker and full address in issue #5.",
+      "source": "google-maps-named-place",
+      "source_url": "https://www.google.com/maps/place/Black+Cat+Parr+Street/@53.4016502,-2.9822168,512m/data=!3m2!1e3!4b1!4m14!1m7!3m6!1s0x487b21e290e5b141:0xf01add51fe76ea7!2sBlack+Cat+Parr+Street!8m2!3d53.4016502!4d-2.9796419!16s%2Fg%2F11zkc1n1lr!3m5!1s0x487b21e290e5b141:0xf01add51fe76ea7!8m2!3d53.4016502!4d-2.9796419!16s%2Fg%2F11zkc1n1lr?entry=ttu&g_ep=EgoyMDI2MTAxOC4wIKXMDSoASAFQAw%3D%3D"
     },
     "black horse|appleby magna|de12 7ah": {
       "audit_reason": "reviewed_named_building_and_camra_address",
@@ -1904,16 +1907,16 @@
       "source_url": "https://www.openstreetmap.org/way/136939713"
     },
     "navigation|burton u-t: horninglow|de14 2pt": {
-      "audit_reason": "Proposed point uses named pub POI coordinates (52.8180569,-1.6397123), independently checked inside the linked building outline. OSM maps the footprint as residential, so the point is a source POI location inside a linked outline; exact bar entrance remains unverified.",
-      "checked_at": "2026-11-26",
-      "lat": 52.8180569,
-      "lng": -1.6397123,
-      "previous_difference_metres": 38.2,
-      "previous_lat": 52.8184,
-      "previous_lng": -1.6397,
-      "previous_source": "camra-pubs-location-audit",
-      "source": "reviewed-premises-location",
-      "source_url": "https://www.openstreetmap.org/way/717058350"
+      "audit_reason": "existing_pin_over_50m_from_matching_venue",
+      "checked_at": "2026-09-11",
+      "lat": 52.8184,
+      "lng": -1.6397,
+      "previous_difference_metres": 140.8,
+      "previous_lat": 52.8171501159668,
+      "previous_lng": -1.63936495780945,
+      "previous_source": "food-standards-agency-fhrs",
+      "source": "camra-pubs-location-audit",
+      "source_url": "https://camra.org.uk/pubs/123939"
     },
     "navigation|shardlow|de72 2wa": {
       "audit_reason": "The venue address is 143 London Road. Its mapped address and reviewed premises identify this building; the former point was outside it.",
@@ -2427,11 +2430,11 @@
       "source_url": "https://www.openstreetmap.org/way/670443753"
     },
     "red lion|earl shilton|le9 7lq": {
-      "audit_reason": "The district council explicitly links 168 High Street to list entry 1074232, resolving inconsistent street numbers on the national record. The saved point was outside the imaged roof containing the named statutory point.",
-      "checked_at": "2026-11-26",
-      "lat": 52.5759,
-      "lng": -1.31363,
-      "previous_difference_metres": 14.2,
+      "audit_reason": "The council identifies the listed pub at 168 High Street. The initial proposal copied a heritage point close to the edge of an image-derived outline. On the aerial that point falls at the paved frontage. The revised position sits well within the principal roof behind the signed High Street façade.",
+      "checked_at": "2026-11-27",
+      "lat": 52.5759597,
+      "lng": -1.3135764,
+      "previous_difference_metres": 6.8,
       "previous_lat": 52.576,
       "previous_lng": -1.3135,
       "previous_source": "camra-pubs-location-audit",
@@ -2520,16 +2523,20 @@
       "source_url": "https://www.myhospitalitysolutions.co.uk/properties/3033/robin-hood-swannington"
     },
     "rock inn|porthcawl|cf36 3dt": {
-      "audit_reason": "The venue address is 98 John Street. Its mapped address and reviewed premises identify this building; the former point was outside it.",
-      "checked_at": "2026-11-26",
-      "lat": 51.4798301,
-      "lng": -3.70327355,
+      "audit_reason": "manual_named_place_address_and_map_check",
+      "checked_at": "2026-10-28",
+      "corroborating_source_url": "",
+      "lat": 51.4799265,
+      "lng": -3.7031654,
       "previous_difference_metres": 13.1,
-      "previous_lat": 51.4799265,
-      "previous_lng": -3.7031654,
-      "previous_source": "google-maps-named-place",
-      "source": "reviewed-premises-location",
-      "source_url": "https://www.openstreetmap.org/way/1291582855"
+      "previous_lat": 51.4798128,
+      "previous_lng": -3.7031183,
+      "previous_source": "openstreetmap-gb-extract",
+      "reference_address": "THE ROCK INN, 98 John St, Porthcawl CF36 3DT",
+      "reference_name": "The Rock Inn",
+      "review_note": "Repository owner confirmed the named-place marker and full address in issue #5.",
+      "source": "google-maps-named-place",
+      "source_url": "https://www.google.com/maps/place/The+Rock+Inn/@51.4799265,-3.7031654,535m/data=!3m2!1e3!4b1!4m6!3m5!1s0x486e65675ce64593:0xcd971b770bb4cff2!8m2!3d51.4799265!4d-3.7031654!16s%2Fg%2F1th0mb14"
     },
     "roebuck inn|forsbrook|st11 9bx": {
       "audit_reason": "existing_pin_over_50m_from_matching_venue",
@@ -2544,16 +2551,16 @@
       "source_url": "https://camra.org.uk/pubs/143885"
     },
     "roebuck|burton u-t: central|de14 1bt": {
-      "audit_reason": "The venue address is 101 Station Street. Its mapped address and reviewed premises identify this building; the former point was outside it.",
-      "checked_at": "2026-11-26",
-      "lat": 52.8058842,
-      "lng": -1.63999514,
-      "previous_difference_metres": 26.6,
-      "previous_lat": 52.805907701845,
-      "previous_lng": -1.639602011657,
-      "previous_source": "camra-pubs-location-audit",
-      "source": "reviewed-premises-location",
-      "source_url": "https://www.openstreetmap.org/way/320317638"
+      "audit_reason": "existing_pin_over_50m_from_matching_venue",
+      "checked_at": "2026-09-11",
+      "lat": 52.805907701845,
+      "lng": -1.639602011657,
+      "previous_difference_metres": 123.0,
+      "previous_lat": 52.805305480957,
+      "previous_lng": -1.63806796073914,
+      "previous_source": "food-standards-agency-fhrs",
+      "source": "camra-pubs-location-audit",
+      "source_url": "https://camra.org.uk/pubs/123922"
     },
     "royal air forces association (pmc)|yeadon|ls19 7na": {
       "audit_reason": "manual_named_place_address_and_map_check",
@@ -3090,8 +3097,8 @@
       "source_url": "https://camra.org.uk/pubs/131799"
     },
     "tides out|woolacombe|ex34 7bp": {
-      "audit_reason": "The Food Standards record identifies the Tides Inn and Tidesout on Beach Road. Its mapped pub feature falls inside the building.",
-      "checked_at": "2026-11-26",
+      "audit_reason": "The road panorama and CAMRA photograph show the signed Tides premises, white gables and the Beach Road frontage. The proposal lies on the front building. Both pins are within or beside the same complex.",
+      "checked_at": "2026-11-27",
       "lat": 51.17275745,
       "lng": -4.20557508,
       "previous_difference_metres": 11.5,
@@ -3220,8 +3227,8 @@
       "source_url": "https://camra.org.uk/pubs/victoria-inn-alfreton-113278"
     },
     "victoria inn|witton le wear|dl14 0as": {
-      "audit_reason": "Proposed point (54.67596996,-1.77125653) is the independent exact-name/postcode Overture place location checked inside way/725412142. It lies 0.65 m from the captured polygon edge. This is corroborated site location, not surveyed entrance; Overture provider is Meta.",
-      "checked_at": "2026-11-26",
+      "audit_reason": "The signed School Street building, operator location and a separate named place record support this pub roof. The proposed pin is an interior point 5.6 m from the catalogue position, which was used to check the building identity.",
+      "checked_at": "2026-11-27",
       "lat": 54.67593035,
       "lng": -1.77130955,
       "previous_difference_metres": 55.0,

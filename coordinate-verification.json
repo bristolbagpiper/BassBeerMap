@@ -2,15 +2,15 @@
   "counts": {
     "verified_venue": 1088
   },
-  "generated_at": "2026-11-26",
+  "generated_at": "2026-11-27",
   "policy": {
     "max_evidence_age_days": 400,
     "venue_pin": "Building, site and reference positions have separate precision labels. Missing positions use the listed postcode."
   },
   "premises_counts": {
-    "building": 887,
+    "building": 886,
     "reference": 130,
-    "site": 71
+    "site": 72
   },
   "records": {
     "1852 brewery co|leicester: south wigston|le18 2dh": {
@@ -78,7 +78,7 @@
           "url": "https://camra.org.uk/pubs/174102"
         },
         {
-          "checked_at": "2026-11-26",
+          "checked_at": "2026-11-27",
           "match": "reviewed_mapped_premises",
           "reference_address": "2 Station Road",
           "reference_coordinate": {
@@ -951,7 +951,7 @@
           "url": "https://camra.org.uk/pubs/146181"
         },
         {
-          "checked_at": "2026-11-26",
+          "checked_at": "2026-11-27",
           "match": "reviewed_mapped_premises",
           "reference_coordinate": {
             "lat": 53.27191195,
@@ -4602,7 +4602,7 @@
           "url": "https://camra.org.uk/pubs/171409"
         },
         {
-          "checked_at": "2026-11-26",
+          "checked_at": "2026-11-27",
           "match": "named_venue_visitor_position",
           "reference_coordinate": {
             "lat": 52.772465,
@@ -5864,12 +5864,11 @@
       "venue_id": "v-39d9e9c3-3b34-5919-84db-1301c4022b08"
     },
     "black cat bar|liverpool: central|l1 4jn": {
-      "coordinate_source": "reviewed-premises-location",
+      "coordinate_source": "owner-reviewed-google-maps",
       "display_precision": "venue",
       "evidence": [
         {
           "checked_at": "2026-10-21",
-          "disposition": "superseded_by_premises_review",
           "match": "owner_reviewed_named_place_and_full_postcode",
           "reference_address": "25 Parr St, Liverpool L1 4JN",
           "reference_coordinate": {
@@ -5882,29 +5881,17 @@
           "reviewed_by": "bristolbagpiper",
           "source": "google-maps-named-place",
           "url": "https://www.google.com/maps/place/Black+Cat+Parr+Street/@53.4016502,-2.9822168,512m/data=!3m2!1e3!4b1!4m14!1m7!3m6!1s0x487b21e290e5b141:0xf01add51fe76ea7!2sBlack+Cat+Parr+Street!8m2!3d53.4016502!4d-2.9796419!16s%2Fg%2F11zkc1n1lr!3m5!1s0x487b21e290e5b141:0xf01add51fe76ea7!8m2!3d53.4016502!4d-2.9796419!16s%2Fg%2F11zkc1n1lr?entry=ttu&g_ep=EgoyMDI2MTAxOC4wIKXMDSoASAFQAw%3D%3D"
-        },
-        {
-          "checked_at": "2026-11-26",
-          "match": "reviewed_mapped_premises",
-          "reference_address": "25 Parr Street",
-          "reference_coordinate": {
-            "lat": 53.4017711,
-            "lng": -2.9795014
-          },
-          "reference_name": "Black Cat Bar",
-          "reference_postcode": "L1 4JN",
-          "source": "reviewed-premises-location",
-          "url": "https://www.openstreetmap.org/way/208578883"
         }
       ],
-      "lat": 53.4017711,
-      "lng": -2.9795014,
+      "lat": 53.4016502,
+      "lng": -2.9796419,
       "place_name": "Liverpool: Central",
       "postcode": "L1 4JN",
-      "premises_precision": "building",
+      "premises_precision": "site",
       "pub_name": "Black Cat Bar",
       "status": "verified_venue",
-      "venue_id": "v-152d1ab1-df05-55e1-a620-e4f9d08cdfd6"
+      "venue_id": "v-152d1ab1-df05-55e1-a620-e4f9d08cdfd6",
+      "visitor_hint": "Use the signed Black Cat frontage on Parr Street."
     },
     "black cat|bristol: bedminster|bs3 3lh": {
       "coordinate_source": "reviewed-premises-location",
@@ -7481,7 +7468,7 @@
           "url": "https://camra.org.uk/pubs/113310"
         },
         {
-          "checked_at": "2026-11-26",
+          "checked_at": "2026-11-27",
           "match": "reviewed_mapped_premises",
           "reference_coordinate": {
             "lat": 53.0232034,
@@ -9497,7 +9484,7 @@
           "url": "https://camra.org.uk/pubs/171283"
         },
         {
-          "checked_at": "2026-11-26",
+          "checked_at": "2026-11-27",
           "match": "reviewed_mapped_premises",
           "reference_address": "32 Borough Street",
           "reference_coordinate": {
@@ -10540,12 +10527,12 @@
           "url": "https://camra.org.uk/pubs/113985"
         },
         {
-          "checked_at": "2026-11-26",
+          "checked_at": "2026-11-27",
           "match": "reviewed_mapped_premises",
           "reference_address": "96 Gloucester Road",
           "reference_coordinate": {
-            "lat": 51.4746721,
-            "lng": -2.59168089
+            "lat": 51.47467,
+            "lng": -2.59173
           },
           "reference_name": "Bristol Flyer",
           "reference_postcode": "BS7 8BN",
@@ -10553,8 +10540,8 @@
           "url": "https://www.openstreetmap.org/way/267330959"
         }
       ],
-      "lat": 51.4746721,
-      "lng": -2.59168089,
+      "lat": 51.47467,
+      "lng": -2.59173,
       "place_name": "Bristol: Bishopston",
       "postcode": "BS7 8BN",
       "premises_precision": "building",
@@ -18459,12 +18446,12 @@
           "url": "https://camra.org.uk/pubs/138848"
         },
         {
-          "checked_at": "2026-11-26",
+          "checked_at": "2026-11-27",
           "match": "reviewed_mapped_premises",
           "reference_address": "35 Fore Street",
           "reference_coordinate": {
-            "lat": 50.19054765,
-            "lng": -5.41011227
+            "lat": 50.1906863,
+            "lng": -5.4101412
           },
           "reference_name": "Cornubia Inn",
           "reference_postcode": "TR27 4DX",
@@ -18472,8 +18459,8 @@
           "url": "https://www.openstreetmap.org/way/406033226"
         }
       ],
-      "lat": 50.19054765,
-      "lng": -5.41011227,
+      "lat": 50.1906863,
+      "lng": -5.4101412,
       "place_name": "Hayle",
       "postcode": "TR27 4DX",
       "premises_precision": "building",
@@ -33402,7 +33389,7 @@
           "url": "https://camra.org.uk/pubs/124756"
         },
         {
-          "checked_at": "2026-11-26",
+          "checked_at": "2026-11-27",
           "match": "reviewed_mapped_premises",
           "reference_address": "33 Linton Street",
           "reference_coordinate": {
@@ -34789,7 +34776,7 @@
           "url": "https://camra.org.uk/pubs/160245"
         },
         {
-          "checked_at": "2026-11-26",
+          "checked_at": "2026-11-27",
           "match": "reviewed_mapped_premises",
           "reference_coordinate": {
             "lat": 51.11863106,
@@ -41521,7 +41508,7 @@
           "url": "https://camra.org.uk/pubs/180778"
         },
         {
-          "checked_at": "2026-11-26",
+          "checked_at": "2026-11-27",
           "match": "reviewed_mapped_premises",
           "reference_address": "13 Flemingate",
           "reference_coordinate": {
@@ -45853,7 +45840,7 @@
       "venue_id": "v-f46f3203-92c8-588b-b523-8e0a32ee1524"
     },
     "navigation|burton u-t: horninglow|de14 2pt": {
-      "coordinate_source": "reviewed-premises-location",
+      "coordinate_source": "camra-pubs-location-audit",
       "display_precision": "venue",
       "evidence": [
         {
@@ -45904,7 +45891,6 @@
         {
           "checked_at": "2026-11-16",
           "difference_metres": 0.0,
-          "disposition": "superseded_by_premises_review",
           "match": "venue_name_and_full_postcode",
           "reference_address": "120 Horninglow Road",
           "reference_coordinate": {
@@ -45915,22 +45901,10 @@
           "reference_postcode": "DE14 2PT",
           "source": "camra",
           "url": "https://camra.org.uk/pubs/123939"
-        },
-        {
-          "checked_at": "2026-11-26",
-          "match": "reviewed_mapped_premises",
-          "reference_coordinate": {
-            "lat": 52.8180569,
-            "lng": -1.6397123
-          },
-          "reference_name": "Navigation",
-          "reference_postcode": "DE14 2PT",
-          "source": "reviewed-premises-location",
-          "url": "https://www.openstreetmap.org/way/717058350"
         }
       ],
-      "lat": 52.8180569,
-      "lng": -1.6397123,
+      "lat": 52.8184,
+      "lng": -1.6397,
       "place_name": "Burton U-T: Horninglow",
       "postcode": "DE14 2PT",
       "premises_precision": "building",
@@ -55616,7 +55590,7 @@
           "url": "https://camra.org.uk/pubs/181856"
         },
         {
-          "checked_at": "2026-11-26",
+          "checked_at": "2026-11-27",
           "match": "reviewed_mapped_premises",
           "reference_address": "17 High Street",
           "reference_coordinate": {
@@ -56485,11 +56459,11 @@
           "url": "https://camra.org.uk/pubs/181796"
         },
         {
-          "checked_at": "2026-11-26",
+          "checked_at": "2026-11-27",
           "match": "reviewed_mapped_premises",
           "reference_coordinate": {
-            "lat": 52.5759,
-            "lng": -1.31363
+            "lat": 52.5759597,
+            "lng": -1.3135764
           },
           "reference_name": "Red Lion",
           "reference_postcode": "LE9 7LQ",
@@ -56497,8 +56471,8 @@
           "url": "https://minedbuildings.z5.web.core.windows.net/global-buildings/2026-02-03/global-buildings.geojsonl/RegionName=UnitedKingdom/quadkey=031311332/part-00012-4feead82-d499-422b-94cb-c036c212127a.c000.csv.gz"
         }
       ],
-      "lat": 52.5759,
-      "lng": -1.31363,
+      "lat": 52.5759597,
+      "lng": -1.3135764,
       "place_name": "Earl Shilton",
       "postcode": "LE9 7LQ",
       "premises_precision": "building",
@@ -58754,12 +58728,11 @@
       "venue_id": "v-12016874-b271-5032-9ed9-e7c2669740f3"
     },
     "rock inn|porthcawl|cf36 3dt": {
-      "coordinate_source": "reviewed-premises-location",
+      "coordinate_source": "owner-reviewed-google-maps",
       "display_precision": "venue",
       "evidence": [
         {
           "checked_at": "2026-10-28",
-          "disposition": "superseded_by_premises_review",
           "match": "owner_reviewed_named_place_and_full_postcode",
           "reference_address": "THE ROCK INN, 98 John St, Porthcawl CF36 3DT",
           "reference_coordinate": {
@@ -58772,23 +58745,10 @@
           "reviewed_by": "bristolbagpiper",
           "source": "google-maps-named-place",
           "url": "https://www.google.com/maps/place/The+Rock+Inn/@51.4799265,-3.7031654,535m/data=!3m2!1e3!4b1!4m6!3m5!1s0x486e65675ce64593:0xcd971b770bb4cff2!8m2!3d51.4799265!4d-3.7031654!16s%2Fg%2F1th0mb14"
-        },
-        {
-          "checked_at": "2026-11-26",
-          "match": "reviewed_mapped_premises",
-          "reference_address": "98 John Street",
-          "reference_coordinate": {
-            "lat": 51.4798301,
-            "lng": -3.70327355
-          },
-          "reference_name": "Rock Inn",
-          "reference_postcode": "CF36 3DT",
-          "source": "reviewed-premises-location",
-          "url": "https://www.openstreetmap.org/way/1291582855"
         }
       ],
-      "lat": 51.4798301,
-      "lng": -3.70327355,
+      "lat": 51.4799265,
+      "lng": -3.7031654,
       "place_name": "Porthcawl",
       "postcode": "CF36 3DT",
       "premises_precision": "building",
@@ -58958,7 +58918,7 @@
       "venue_id": "v-b77e6566-4f76-5238-b933-edde55b6da8a"
     },
     "roebuck|burton u-t: central|de14 1bt": {
-      "coordinate_source": "reviewed-premises-location",
+      "coordinate_source": "camra-pubs-location-audit",
       "display_precision": "venue",
       "evidence": [
         {
@@ -59009,7 +58969,6 @@
         {
           "checked_at": "2026-11-22",
           "difference_metres": 0.0,
-          "disposition": "superseded_by_premises_review",
           "match": "venue_name_and_full_postcode",
           "reference_address": "101 Station Street",
           "reference_coordinate": {
@@ -59020,23 +58979,10 @@
           "reference_postcode": "DE14 1BT",
           "source": "camra",
           "url": "https://camra.org.uk/pubs/123922"
-        },
-        {
-          "checked_at": "2026-11-26",
-          "match": "reviewed_mapped_premises",
-          "reference_address": "101 Station Street",
-          "reference_coordinate": {
-            "lat": 52.8058842,
-            "lng": -1.63999514
-          },
-          "reference_name": "Roebuck",
-          "reference_postcode": "DE14 1BT",
-          "source": "reviewed-premises-location",
-          "url": "https://www.openstreetmap.org/way/320317638"
         }
       ],
-      "lat": 52.8058842,
-      "lng": -1.63999514,
+      "lat": 52.805907701845,
+      "lng": -1.639602011657,
       "place_name": "Burton U-T: Central",
       "postcode": "DE14 1BT",
       "premises_precision": "building",
@@ -70627,7 +70573,7 @@
           "url": "https://camra.org.uk/pubs/188466"
         },
         {
-          "checked_at": "2026-11-26",
+          "checked_at": "2026-11-27",
           "match": "reviewed_mapped_premises",
           "reference_coordinate": {
             "lat": 51.17275745,
@@ -73697,7 +73643,7 @@
           "url": "https://camra.org.uk/pubs/186973"
         },
         {
-          "checked_at": "2026-11-26",
+          "checked_at": "2026-11-27",
           "match": "reviewed_mapped_premises",
           "reference_coordinate": {
             "lat": 54.67593035,

@@ -1783,7 +1783,7 @@
             "status": "resolved"
           }
         ],
-        "last_checked": "2026-11-26",
+        "last_checked": "2026-11-27",
         "manual_action_required": false,
         "next_action": "No pin check requested",
         "place_name": "Liverpool: Central",
@@ -3950,7 +3950,7 @@
             "status": "resolved"
           }
         ],
-        "last_checked": "2026-11-26",
+        "last_checked": "2026-11-27",
         "manual_action_required": false,
         "next_action": "No pin check requested",
         "place_name": "Porthcawl",
@@ -8198,7 +8198,7 @@
             "status": "resolved"
           }
         ],
-        "last_checked": "2026-11-26",
+        "last_checked": "2026-11-27",
         "manual_action_required": false,
         "next_action": "No pin check requested",
         "place_name": "Burton U-T: Horninglow",
@@ -13081,7 +13081,7 @@
             "status": "resolved"
           }
         ],
-        "last_checked": "2026-11-26",
+        "last_checked": "2026-11-27",
         "manual_action_required": false,
         "next_action": "No pin check requested",
         "place_name": "Burton U-T: Central",
@@ -13859,7 +13859,7 @@
             "status": "resolved"
           }
         ],
-        "last_checked": "2026-11-26",
+        "last_checked": "2026-11-27",
         "manual_action_required": false,
         "next_action": "No pin check requested",
         "place_name": "Woolacombe",
@@ -18345,7 +18345,7 @@
             "status": "resolved"
           }
         ],
-        "last_checked": "2026-11-26",
+        "last_checked": "2026-11-27",
         "manual_action_required": false,
         "next_action": "No pin check requested",
         "place_name": "Castle Donington",
@@ -40761,7 +40761,7 @@
       "current_key": "black cat bar|liverpool: central|l1 4jn",
       "independent_location_check": {
         "actionable": false,
-        "checked_at": "2026-11-26",
+        "checked_at": "2026-11-27",
         "comparisons": [
           {
             "name_matches": 1,
@@ -40781,8 +40781,8 @@
         "owner_pin_confirmed": false,
         "owner_reviewed": false,
         "pin": {
-          "lat": 53.4017711,
-          "lng": -2.9795014
+          "lat": 53.4016502,
+          "lng": -2.9796419
         },
         "priority": 2,
         "reasons": [],
@@ -40876,7 +40876,6 @@
         "evidence": [
           {
             "checked_at": "2026-10-21",
-            "disposition": "superseded_by_premises_review",
             "match": "owner_reviewed_named_place_and_full_postcode",
             "reference_address": "25 Parr St, Liverpool L1 4JN",
             "reference_coordinate": {
@@ -40889,53 +40888,34 @@
             "reviewed_by": "bristolbagpiper",
             "source": "google-maps-named-place",
             "url": "https://www.google.com/maps/place/Black+Cat+Parr+Street/@53.4016502,-2.9822168,512m/data=!3m2!1e3!4b1!4m14!1m7!3m6!1s0x487b21e290e5b141:0xf01add51fe76ea7!2sBlack+Cat+Parr+Street!8m2!3d53.4016502!4d-2.9796419!16s%2Fg%2F11zkc1n1lr!3m5!1s0x487b21e290e5b141:0xf01add51fe76ea7!8m2!3d53.4016502!4d-2.9796419!16s%2Fg%2F11zkc1n1lr?entry=ttu&g_ep=EgoyMDI2MTAxOC4wIKXMDSoASAFQAw%3D%3D"
-          },
-          {
-            "checked_at": "2026-11-26",
-            "match": "reviewed_mapped_premises",
-            "reference_address": "25 Parr Street",
-            "reference_coordinate": {
-              "lat": 53.4017711,
-              "lng": -2.9795014
-            },
-            "reference_name": "Black Cat Bar",
-            "reference_postcode": "L1 4JN",
-            "source": "reviewed-premises-location",
-            "url": "https://www.openstreetmap.org/way/208578883"
           }
         ],
-        "lat": 53.4017711,
-        "lng": -2.9795014,
+        "lat": 53.4016502,
+        "lng": -2.9796419,
         "premises_review": {
-          "basis": "The venue address is 25 Parr Street. Its mapped address and reviewed premises identify this building; the former point was outside it.",
-          "building_url": "https://www.openstreetmap.org/way/208578883",
-          "checked_at": "2026-11-26",
-          "external_premises_checks": {
-            "numbered_address": [
-              "https://www.google.com/maps/place/Black+Cat+Parr+Street/@53.4016502,-2.9822168,512m/data=!3m2!1e3!4b1!4m14!1m7!3m6!1s0x487b21e290e5b141:0xf01add51fe76ea7!2sBlack+Cat+Parr+Street!8m2!3d53.4016502!4d-2.9796419!16s%2Fg%2F11zkc1n1lr!3m5!1s0x487b21e290e5b141:0xf01add51fe76ea7!8m2!3d53.4016502!4d-2.9796419!16s%2Fg%2F11zkc1n1lr?entry=ttu&g_ep=EgoyMDI2MTAxOC4wIKXMDSoASAFQAw%3D%3D"
-            ]
-          },
-          "geometry_feature": "way/208578883",
+          "basis": "The original owner-reviewed position is at the Parr Street frontage. CAMRA’s Black Cat photograph shows the same gate, high mesh fence and terrace as the street panorama under the previous Crazy Pedro’s signage. Liverpool’s licence identifies 25 Parr Street. The proposal moved 16.4 m behind the gate into the block without locating the visitor entrance more accurately.",
+          "checked_at": "2026-11-27",
           "os_openmap_buildings": [
             "SJ_BUILDING.SHP#471164"
           ],
           "point": {
-            "lat": 53.4017711,
-            "lng": -2.9795014
-          },
-          "precision": "building",
-          "previous_point": {
             "lat": 53.4016502,
             "lng": -2.9796419
           },
+          "precision": "site",
           "sources": [
-            "https://www.openstreetmap.org/way/208578883",
-            "https://www.google.com/maps/place/Black+Cat+Parr+Street/@53.4016502,-2.9822168,512m/data=!3m2!1e3!4b1!4m14!1m7!3m6!1s0x487b21e290e5b141:0xf01add51fe76ea7!2sBlack+Cat+Parr+Street!8m2!3d53.4016502!4d-2.9796419!16s%2Fg%2F11zkc1n1lr!3m5!1s0x487b21e290e5b141:0xf01add51fe76ea7!8m2!3d53.4016502!4d-2.9796419!16s%2Fg%2F11zkc1n1lr?entry=ttu&g_ep=EgoyMDI2MTAxOC4wIKXMDSoASAFQAw%3D%3D",
+            "https://www.google.com/maps/@?api=1&map_action=pano&pano=FGftnRT9483-pEg9lX1Gzg&heading=20&pitch=0&fov=75",
+            "https://www.blackcatbar.co.uk/",
+            "https://licensing.liverpool.gov.uk/PAforLalpacLIVE/1/LicensingActPremises/Search/3860/Detail?APP_ID=230840",
+            "https://camra.org.uk/pubs/black-cat-parr-street-liverpool-199423",
+            "https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/19/169811/257804",
+            "https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/19/169810/257804",
             "https://osdatahub.os.uk/downloads/open/OpenMapLocal"
           ],
-          "venue_key": "black cat bar|liverpool: central|l1 4jn"
+          "venue_key": "black cat bar|liverpool: central|l1 4jn",
+          "visitor_hint": "Use the signed Black Cat frontage on Parr Street."
         },
-        "source": "reviewed-premises-location"
+        "source": "owner-reviewed-google-maps"
       }
     },
     "v-1536960d-c0c6-5571-b3f2-64947d2c6adf": {
@@ -47406,11 +47386,11 @@
       "current_key": "red lion|earl shilton|le9 7lq",
       "independent_location_check": {
         "actionable": false,
-        "checked_at": "2026-11-26",
+        "checked_at": "2026-11-27",
         "comparisons": [
           {
             "address": "High Street, Earl Shilton, Leicester, Leicestershire",
-            "difference_metres": 14.2,
+            "difference_metres": 6.6,
             "lat": 52.576009,
             "lng": -1.313521,
             "name": "Red Lion",
@@ -47431,14 +47411,14 @@
         "owner_pin_confirmed": false,
         "owner_reviewed": false,
         "pin": {
-          "lat": 52.5759,
-          "lng": -1.31363
+          "lat": 52.5759597,
+          "lng": -1.3135764
         },
         "priority": 3,
         "reasons": [],
         "reference": {
           "address": "High Street, Earl Shilton, Leicester, Leicestershire",
-          "difference_metres": 14.2,
+          "difference_metres": 6.6,
           "lat": 52.576009,
           "lng": -1.313521,
           "name": "Red Lion",
@@ -47549,11 +47529,11 @@
             "url": "https://camra.org.uk/pubs/181796"
           },
           {
-            "checked_at": "2026-11-26",
+            "checked_at": "2026-11-27",
             "match": "reviewed_mapped_premises",
             "reference_coordinate": {
-              "lat": 52.5759,
-              "lng": -1.31363
+              "lat": 52.5759597,
+              "lng": -1.3135764
             },
             "reference_name": "Red Lion",
             "reference_postcode": "LE9 7LQ",
@@ -47561,12 +47541,12 @@
             "url": "https://minedbuildings.z5.web.core.windows.net/global-buildings/2026-02-03/global-buildings.geojsonl/RegionName=UnitedKingdom/quadkey=031311332/part-00012-4feead82-d499-422b-94cb-c036c212127a.c000.csv.gz"
           }
         ],
-        "lat": 52.5759,
-        "lng": -1.31363,
+        "lat": 52.5759597,
+        "lng": -1.3135764,
         "premises_review": {
-          "basis": "The district council explicitly links 168 High Street to list entry 1074232, resolving inconsistent street numbers on the national record. The saved point was outside the imaged roof containing the named statutory point.",
+          "basis": "The council identifies the listed pub at 168 High Street. The initial proposal copied a heritage point close to the edge of an image-derived outline. On the aerial that point falls at the paved frontage. The revised position sits well within the principal roof behind the signed High Street façade.",
           "building_url": "https://minedbuildings.z5.web.core.windows.net/global-buildings/2026-02-03/global-buildings.geojsonl/RegionName=UnitedKingdom/quadkey=031311332/part-00012-4feead82-d499-422b-94cb-c036c212127a.c000.csv.gz",
-          "checked_at": "2026-11-26",
+          "checked_at": "2026-11-27",
           "external_premises_checks": {
             "named_heritage_point": [
               "https://historicengland.org.uk/listing/the-list/list-entry/1074232"
@@ -47574,8 +47554,8 @@
           },
           "geometry_feature": "031311332/203561",
           "point": {
-            "lat": 52.5759,
-            "lng": -1.31363
+            "lat": 52.5759597,
+            "lng": -1.3135764
           },
           "precision": "building",
           "previous_point": {
@@ -47586,7 +47566,11 @@
             "https://minedbuildings.z5.web.core.windows.net/global-buildings/2026-02-03/global-buildings.geojsonl/RegionName=UnitedKingdom/quadkey=031311332/part-00012-4feead82-d499-422b-94cb-c036c212127a.c000.csv.gz",
             "https://historicengland.org.uk/listing/the-list/list-entry/1074232",
             "https://www.hinckley-bosworth.gov.uk/download/downloads/id/6232/listed_buildings_pdf.pdf",
-            "https://camra.org.uk/pubs/red-lion-earl-shilton-181796"
+            "https://camra.org.uk/pubs/red-lion-earl-shilton-181796",
+            "https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/19/171808/260230",
+            "https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/19/171809/260230",
+            "https://www.google.com/maps/@?api=1&map_action=pano&pano=69U1SajBCv16FLIIUxBYlA&heading=20&pitch=0&fov=75",
+            "https://www.google.com/maps/@?api=1&map_action=pano&pano=69U1SajBCv16FLIIUxBYlA&heading=345&pitch=0&fov=75"
           ],
           "venue_key": "red lion|earl shilton|le9 7lq"
         },
@@ -64882,7 +64866,7 @@
       "current_key": "black swan|belper: central|de56 1fz",
       "independent_location_check": {
         "actionable": false,
-        "checked_at": "2026-11-26",
+        "checked_at": "2026-11-27",
         "comparisons": [
           {
             "address": "44 Market Place Belper Derbyshire",
@@ -65035,7 +65019,7 @@
             "url": "https://camra.org.uk/pubs/113310"
           },
           {
-            "checked_at": "2026-11-26",
+            "checked_at": "2026-11-27",
             "match": "reviewed_mapped_premises",
             "reference_coordinate": {
               "lat": 53.0232034,
@@ -65050,9 +65034,9 @@
         "lat": 53.0232034,
         "lng": -1.4790048,
         "premises_review": {
-          "basis": "The pub feature is explicitly numbered 44 Market Place. The visitor guide and FSA confirm number 44. The agent’s particulars distinguish Fishers at number 32 within the same mapped block. The pin uses the numbered pub feature rather than the centre of this mixed block.",
+          "basis": "Street View shows the Black Swan sign on the red-brick premises at the edge of the market place. The original CAMRA coordinate is at the market-place frontage. The named proposal is within the corresponding part of this shared block.",
           "building_url": "https://www.openstreetmap.org/way/337375790",
-          "checked_at": "2026-11-26",
+          "checked_at": "2026-11-27",
           "geometry_feature": "way/337375790",
           "os_openmap_buildings": [
             "SK_BUILDING.SHP#699652"
@@ -65072,7 +65056,11 @@
             "https://www.visitbelper.co.uk/food-and-drink/the-black-swan/",
             "https://ratings.food.gov.uk/business/1135",
             "https://www.filepicker.io/api/file/imVPg26BQmSjacGjltEC",
-            "https://osdatahub.os.uk/downloads/open/OpenMapLocal"
+            "https://osdatahub.os.uk/downloads/open/OpenMapLocal",
+            "https://camra.org.uk/pubs/black-swan-ale-house-belper-113310",
+            "https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/19/170731/259990",
+            "https://www.google.com/maps/@?api=1&map_action=pano&pano=toyBayW_SB3LKgyr8-w5IA&heading=126&pitch=0&fov=75",
+            "https://www.google.com/maps/@?api=1&map_action=pano&pano=toyBayW_SB3LKgyr8-w5IA&heading=156&pitch=0&fov=75"
           ],
           "venue_key": "black swan|belper: central|de56 1fz"
         },
@@ -68941,11 +68929,11 @@
       "current_key": "rock inn|porthcawl|cf36 3dt",
       "independent_location_check": {
         "actionable": false,
-        "checked_at": "2026-11-26",
+        "checked_at": "2026-11-27",
         "comparisons": [
           {
             "address": "Rock Inn 98 John Street, , Porthcawl, Bridgend",
-            "difference_metres": 6.6,
+            "difference_metres": 18.8,
             "lat": 51.4797706604004,
             "lng": -3.70326900482178,
             "name": "The Rock Inn",
@@ -68966,14 +68954,14 @@
         "owner_pin_confirmed": false,
         "owner_reviewed": false,
         "pin": {
-          "lat": 51.4798301,
-          "lng": -3.70327355
+          "lat": 51.4799265,
+          "lng": -3.7031654
         },
         "priority": 3,
         "reasons": [],
         "reference": {
           "address": "Rock Inn 98 John Street, , Porthcawl, Bridgend",
-          "difference_metres": 6.6,
+          "difference_metres": 18.8,
           "lat": 51.4797706604004,
           "lng": -3.70326900482178,
           "name": "The Rock Inn",
@@ -69052,7 +69040,6 @@
         "evidence": [
           {
             "checked_at": "2026-10-28",
-            "disposition": "superseded_by_premises_review",
             "match": "owner_reviewed_named_place_and_full_postcode",
             "reference_address": "THE ROCK INN, 98 John St, Porthcawl CF36 3DT",
             "reference_coordinate": {
@@ -69065,55 +69052,36 @@
             "reviewed_by": "bristolbagpiper",
             "source": "google-maps-named-place",
             "url": "https://www.google.com/maps/place/The+Rock+Inn/@51.4799265,-3.7031654,535m/data=!3m2!1e3!4b1!4m6!3m5!1s0x486e65675ce64593:0xcd971b770bb4cff2!8m2!3d51.4799265!4d-3.7031654!16s%2Fg%2F1th0mb14"
-          },
-          {
-            "checked_at": "2026-11-26",
-            "match": "reviewed_mapped_premises",
-            "reference_address": "98 John Street",
-            "reference_coordinate": {
-              "lat": 51.4798301,
-              "lng": -3.70327355
-            },
-            "reference_name": "Rock Inn",
-            "reference_postcode": "CF36 3DT",
-            "source": "reviewed-premises-location",
-            "url": "https://www.openstreetmap.org/way/1291582855"
           }
         ],
-        "lat": 51.4798301,
-        "lng": -3.70327355,
+        "lat": 51.4799265,
+        "lng": -3.7031654,
         "premises_review": {
-          "basis": "The venue address is 98 John Street. Its mapped address and reviewed premises identify this building; the former point was outside it.",
-          "building_url": "https://www.openstreetmap.org/way/1291582855",
-          "checked_at": "2026-11-26",
-          "external_premises_checks": {
-            "numbered_address": [
-              "https://www.google.com/maps/place/The+Rock+Inn/@51.4799265,-3.7031654,535m/data=!3m2!1e3!4b1!4m6!3m5!1s0x486e65675ce64593:0xcd971b770bb4cff2!8m2!3d51.4799265!4d-3.7031654!16s%2Fg%2F1th0mb14"
-            ]
-          },
-          "geometry_feature": "way/1291582855",
-          "os_openmap_buildings": [
-            "SS_BUILDING.SHP#211257"
-          ],
+          "basis": "The pub sign, John Street doorway and Victoria Avenue street plate identify the corner building in Street View. The original Google pin sits just inside that corner footprint. The 13.1 m proposal moves south into the adjoining mapped footprint. The separately catalogued Rock Inn position also lies within the original corner outline.",
+          "building_url": "https://www.openstreetmap.org/way/1291582854",
+          "checked_at": "2026-11-27",
+          "geometry_feature": "way/1291582854",
+          "overture_feature_id": "16dff199-f0b0-41d3-9d19-539d38c8d996",
           "point": {
-            "lat": 51.4798301,
-            "lng": -3.70327355
-          },
-          "precision": "building",
-          "previous_point": {
             "lat": 51.4799265,
             "lng": -3.7031654
           },
+          "precision": "building",
+          "secondary_place_ids": [
+            "16dff199-f0b0-41d3-9d19-539d38c8d996"
+          ],
           "sources": [
-            "https://www.openstreetmap.org/way/1291582855",
-            "https://www.openstreetmap.org/node/701832214",
-            "https://www.google.com/maps/place/The+Rock+Inn/@51.4799265,-3.7031654,535m/data=!3m2!1e3!4b1!4m6!3m5!1s0x486e65675ce64593:0xcd971b770bb4cff2!8m2!3d51.4799265!4d-3.7031654!16s%2Fg%2F1th0mb14",
-            "https://www.bridgend.gov.uk/media/qb4gflwv/jan-2024-premises-report.pdf",
-            "https://osdatahub.os.uk/downloads/open/OpenMapLocal"
+            "https://www.openstreetmap.org/way/1291582854",
+            "https://www.google.com/maps/@?api=1&map_action=pano&pano=YS4bMw5WWluiIhvJCWBC-A&heading=239&pitch=0&fov=75",
+            "https://www.geograph.org.uk/photo/2885906",
+            "https://www.rockinnporthcawl.co.uk/",
+            "https://docs.overturemaps.org/blog/2026/11/18/release-notes/",
+            "https://camra.org.uk/pubs/rock-hotel-porthcawl-127895",
+            "https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/19/174403/256750"
           ],
           "venue_key": "rock inn|porthcawl|cf36 3dt"
         },
-        "source": "reviewed-premises-location"
+        "source": "owner-reviewed-google-maps"
       }
     },
     "v-3c337e87-db42-5575-afd6-6260ea59ee83": {
@@ -89231,7 +89199,7 @@
       "current_key": "lord nelson|beverley|hu17 0np",
       "independent_location_check": {
         "actionable": false,
-        "checked_at": "2026-11-26",
+        "checked_at": "2026-11-27",
         "comparisons": [
           {
             "address": "13 Flemingate, Beverley, East Riding Of Yorkshire",
@@ -89384,7 +89352,7 @@
             "url": "https://camra.org.uk/pubs/180778"
           },
           {
-            "checked_at": "2026-11-26",
+            "checked_at": "2026-11-27",
             "match": "reviewed_mapped_premises",
             "reference_address": "13 Flemingate",
             "reference_coordinate": {
@@ -89400,9 +89368,9 @@
         "lat": 53.839304,
         "lng": -0.422834,
         "premises_review": {
-          "basis": "Heritage and FSA points identify the alternative outline 12.9 m from the pin. The listed complex comprises both Nos 13 and 15 Flemingate and has multiple doors.",
+          "basis": "The street panorama shows the Lord Nelson name above its Flemingate frontage in the proposed direction. The former pin was east along the street. The proposed building includes numbers 13 and 15, and the photograph identifies the pub frontage within the row.",
           "building_url": "https://www.openstreetmap.org/way/1210629850",
-          "checked_at": "2026-11-26",
+          "checked_at": "2026-11-27",
           "external_premises_checks": {
             "council_premises_outline": [
               "https://www.planning.data.gov.uk/entity/42250672"
@@ -89434,7 +89402,11 @@
             "https://ratings.food.gov.uk/business/439746",
             "https://camra.org.uk/pubs/180778",
             "https://www.planning.data.gov.uk/entity/42250672",
-            "https://osdatahub.os.uk/downloads/open/OpenMapLocal"
+            "https://osdatahub.os.uk/downloads/open/OpenMapLocal",
+            "https://camra.org.uk/pubs/lord-nelson-beverley-180778",
+            "https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/19/168736/261528",
+            "https://www.google.com/maps/@?api=1&map_action=pano&pano=o6c6vthr_FClrRgZ9hYF5w&heading=91&pitch=0&fov=75",
+            "https://www.google.com/maps/@?api=1&map_action=pano&pano=o6c6vthr_FClrRgZ9hYF5w&heading=8&pitch=0&fov=75"
           ],
           "venue_key": "lord nelson|beverley|hu17 0np"
         },
@@ -97402,7 +97374,7 @@
       "current_key": "anchorage hotel|four mile bridge (anglesey)|ll65 2ez",
       "independent_location_check": {
         "actionable": false,
-        "checked_at": "2026-11-26",
+        "checked_at": "2026-11-27",
         "comparisons": [
           {
             "name_matches": 1,
@@ -97537,7 +97509,7 @@
             "url": "https://camra.org.uk/pubs/146181"
           },
           {
-            "checked_at": "2026-11-26",
+            "checked_at": "2026-11-27",
             "match": "reviewed_mapped_premises",
             "reference_coordinate": {
               "lat": 53.27191195,
@@ -97552,9 +97524,9 @@
         "lat": 53.27191195,
         "lng": -4.58758839,
         "premises_review": {
-          "basis": "The selling agent identifies the main hotel block as containing both bars. The named public house is the large detached building on Kingsland Road. The separate named hotel location falls within four metres of its outline; the previous pin was on a different small building.",
+          "basis": "The road panorama shows the building labelled Anchorage Hotel in the proposed direction and a separate small white building across the road at the original pin. The selling agent identifies both bars within the main hotel.",
           "building_url": "https://www.openstreetmap.org/way/518866363",
-          "checked_at": "2026-11-26",
+          "checked_at": "2026-11-27",
           "geometry_feature": "way/518866363",
           "os_openmap_buildings": [
             "SH_BUILDING.SHP#46344"
@@ -97576,7 +97548,11 @@
             "https://osdatahub.os.uk/downloads/open/OpenMapLocal",
             "https://the-anchorage-hotel.com/contact/",
             "https://ratings.food.gov.uk/business/92167",
-            "https://www.google.com/maps?q=53.2723,-4.58746"
+            "https://www.google.com/maps?q=53.2723,-4.58746",
+            "https://camra.org.uk/pubs/anchorage-hotel-four-mile-bridge-146181",
+            "https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/19/170127/255462",
+            "https://www.google.com/maps/@?api=1&map_action=pano&pano=LFq_etvq78zpzlIu-dW1Gw&heading=32&pitch=0&fov=75",
+            "https://www.google.com/maps/@?api=1&map_action=pano&pano=LFq_etvq78zpzlIu-dW1Gw&heading=169&pitch=0&fov=75"
           ],
           "venue_key": "anchorage hotel|four mile bridge (anglesey)|ll65 2ez"
         },
@@ -108434,11 +108410,11 @@
       "current_key": "navigation|burton u-t: horninglow|de14 2pt",
       "independent_location_check": {
         "actionable": false,
-        "checked_at": "2026-11-26",
+        "checked_at": "2026-11-27",
         "comparisons": [
           {
             "address": "Navigation Inn, 120 Horninglow Road, Burton upon Trent",
-            "difference_metres": 103.5,
+            "difference_metres": 140.8,
             "lat": 52.8171501159668,
             "lng": -1.63936495780945,
             "name": "The Navigation Inn",
@@ -108449,7 +108425,7 @@
           }
         ],
         "confidence": "existing_evidence_needs_corroboration",
-        "independent_of_pin": false,
+        "independent_of_pin": true,
         "listing": {
           "postcode": "DE14 2PT",
           "pub_name": "Navigation"
@@ -108459,14 +108435,14 @@
         "owner_pin_confirmed": false,
         "owner_reviewed": false,
         "pin": {
-          "lat": 52.8180569,
-          "lng": -1.6397123
+          "lat": 52.8184,
+          "lng": -1.6397
         },
         "priority": 2,
         "reasons": [],
         "reference": {
           "address": "Navigation Inn, 120 Horninglow Road, Burton upon Trent",
-          "difference_metres": 103.5,
+          "difference_metres": 140.8,
           "lat": 52.8171501159668,
           "lng": -1.63936495780945,
           "name": "The Navigation Inn",
@@ -108478,7 +108454,7 @@
         "review_category": "informational",
         "status": "coordinate_disagreement",
         "warnings": [
-          "FSA coordinate is 103.5m from the accepted pin; informational only because the FSA geocode may be approximate"
+          "FSA coordinate is 140.8m from the accepted pin; informational only because the FSA geocode may be approximate"
         ]
       },
       "listing": {
@@ -108566,7 +108542,6 @@
           {
             "checked_at": "2026-11-16",
             "difference_metres": 0.0,
-            "disposition": "superseded_by_premises_review",
             "match": "venue_name_and_full_postcode",
             "reference_address": "120 Horninglow Road",
             "reference_coordinate": {
@@ -108577,49 +108552,37 @@
             "reference_postcode": "DE14 2PT",
             "source": "camra",
             "url": "https://camra.org.uk/pubs/123939"
-          },
-          {
-            "checked_at": "2026-11-26",
-            "match": "reviewed_mapped_premises",
-            "reference_coordinate": {
-              "lat": 52.8180569,
-              "lng": -1.6397123
-            },
-            "reference_name": "Navigation",
-            "reference_postcode": "DE14 2PT",
-            "source": "reviewed-premises-location",
-            "url": "https://www.openstreetmap.org/way/717058350"
           }
         ],
-        "lat": 52.8180569,
-        "lng": -1.6397123,
+        "lat": 52.8184,
+        "lng": -1.6397,
         "premises_review": {
-          "basis": "Proposed point uses named pub POI coordinates (52.8180569,-1.6397123), independently checked inside the linked building outline. OSM maps the footprint as residential, so the point is a source POI location inside a linked outline; exact bar entrance remains unverified.",
-          "building_url": "https://www.openstreetmap.org/way/717058350",
-          "checked_at": "2026-11-26",
-          "geometry_feature": "way/717058350",
+          "basis": "The original pin is at the signed Navigation frontage at 120 Horninglow Road. From the September 2025 road panorama, 301° faces that façade and 195° faces the housing under the proposed pin 38.2 m south. Aerial imagery distinguishes the two roofs. The original pin falls within the independently mapped roof of the pub.",
+          "building_url": "https://minedbuildings.z5.web.core.windows.net/global-buildings/2026-02-03/global-buildings.geojsonl/RegionName=UnitedKingdom/quadkey=031311323/part-00109-4feead82-d499-422b-94cb-c036c212127a.c000.csv.gz",
+          "checked_at": "2026-11-27",
+          "geometry_feature": "031311323/86945",
           "os_openmap_buildings": [
-            "SK_BUILDING.SHP#890976"
+            "SK_BUILDING.SHP#890980"
           ],
           "point": {
-            "lat": 52.8180569,
-            "lng": -1.6397123
-          },
-          "precision": "building",
-          "previous_point": {
             "lat": 52.8184,
             "lng": -1.6397
           },
+          "precision": "building",
           "sources": [
-            "https://www.openstreetmap.org/way/717058350",
+            "https://minedbuildings.z5.web.core.windows.net/global-buildings/2026-02-03/global-buildings.geojsonl/RegionName=UnitedKingdom/quadkey=031311323/part-00109-4feead82-d499-422b-94cb-c036c212127a.c000.csv.gz",
+            "https://www.google.com/maps/@?api=1&map_action=pano&pano=wOojuPdZkOcqQVRByD8zkw&heading=301&pitch=0&fov=75",
+            "https://www.google.com/maps/@?api=1&map_action=pano&pano=wOojuPdZkOcqQVRByD8zkw&heading=195&pitch=0&fov=75",
             "https://www.dorbiere.co.uk/the-navigation/",
-            "https://ratings.food.gov.uk/business/1945672",
-            "https://www.openstreetmap.org/node/320919322",
+            "https://www.geograph.org.uk/photo/1644311",
+            "https://camra.org.uk/pubs/navigation-burton-upon-trent-123939",
+            "https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/19/171226/259756",
+            "https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/19/171227/259755",
             "https://osdatahub.os.uk/downloads/open/OpenMapLocal"
           ],
           "venue_key": "navigation|burton u-t: horninglow|de14 2pt"
         },
-        "source": "reviewed-premises-location"
+        "source": "camra-pubs-location-audit"
       }
     },
     "v-6cf25b1c-c028-5b56-8074-1b6c1a910a77": {
@@ -113287,7 +113250,7 @@
       "current_key": "hillside|crawley: pund hill|rh10 7sx",
       "independent_location_check": {
         "actionable": false,
-        "checked_at": "2026-11-26",
+        "checked_at": "2026-11-27",
         "comparisons": [
           {
             "address": "Balcombe Road, Pound Hill, Crawley, West Sussex",
@@ -113432,7 +113395,7 @@
             "url": "https://camra.org.uk/pubs/160245"
           },
           {
-            "checked_at": "2026-11-26",
+            "checked_at": "2026-11-27",
             "match": "reviewed_mapped_premises",
             "reference_coordinate": {
               "lat": 51.11863106,
@@ -113447,9 +113410,9 @@
         "lat": 51.11863106,
         "lng": -0.14765648,
         "premises_review": {
-          "basis": "Current point is inside a distinct building tagged Oakfield Cottage; the operator-addressed pub is separately mapped as The Hillside Inn and amenity=pub. Proposed point is a maximum-clearance interior point in that mapped pub outline. The heritage listing confirms a multi-range complex but does not independently distinguish each range or the pub entrance.",
+          "basis": "The road panorama shows the signed brick Hillside Inn and its terrace directly in the proposed direction. Aerial imagery separates this building from the cottage and garden at the former pin.",
           "building_url": "https://www.openstreetmap.org/way/1155776949",
-          "checked_at": "2026-11-26",
+          "checked_at": "2026-11-27",
           "geometry_feature": "way/1155776949",
           "os_openmap_buildings": [
             "TQ_BUILDING.SHP#1134535"
@@ -113469,7 +113432,11 @@
             "https://ratings.food.gov.uk/business/190236",
             "https://historicengland.org.uk/listing/the-list/list-entry/1298870",
             "https://www.openstreetmap.org/way/1305515405",
-            "https://osdatahub.os.uk/downloads/open/OpenMapLocal"
+            "https://osdatahub.os.uk/downloads/open/OpenMapLocal",
+            "https://camra.org.uk/pubs/hillside-inn-crawley-160245",
+            "https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/19/175244/261928",
+            "https://www.google.com/maps/@?api=1&map_action=pano&pano=Dzkm5s3FPyVvzOVF9qy_HQ&heading=144&pitch=0&fov=75",
+            "https://www.google.com/maps/@?api=1&map_action=pano&pano=Dzkm5s3FPyVvzOVF9qy_HQ&heading=77&pitch=0&fov=75"
           ],
           "venue_key": "hillside|crawley: pund hill|rh10 7sx"
         },
@@ -114209,7 +114176,7 @@
       "current_key": "bell foundry|loughborough|le11 5bl",
       "independent_location_check": {
         "actionable": false,
-        "checked_at": "2026-11-26",
+        "checked_at": "2026-11-27",
         "comparisons": [
           {
             "address": "18-21 Swan Street, , Loughborough",
@@ -114364,7 +114331,7 @@
             "url": "https://camra.org.uk/pubs/171409"
           },
           {
-            "checked_at": "2026-11-26",
+            "checked_at": "2026-11-27",
             "match": "named_venue_visitor_position",
             "reference_coordinate": {
               "lat": 52.772465,
@@ -114379,8 +114346,8 @@
         "lat": 52.772465,
         "lng": -1.2074296,
         "premises_review": {
-          "basis": "Moved the shared-block position to the named Bell Foundry feature on Swan Street. The operator gives number 20 and the food register gives 18–21. A separate bar in the same footprint gives Clay Pipe Jitty as its address.",
-          "checked_at": "2026-11-26",
+          "basis": "The Swan Street photograph and panorama identify the Bell Foundry frontage in this shared block. The proposed pin is also within four metres of the separately catalogued pub at number 20. It is a frontage reference for visitors.",
+          "checked_at": "2026-11-27",
           "point": {
             "lat": 52.772465,
             "lng": -1.2074296
@@ -114396,7 +114363,10 @@
             "https://ratings.food.gov.uk/business/75556/bell-foundry",
             "https://camra.org.uk/pubs/bell-foundry-loughborough-171409",
             "https://www.openstreetmap.org/way/59046817",
-            "https://soakcocktailco.co.uk/"
+            "https://soakcocktailco.co.uk/",
+            "https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/19/171336/260385",
+            "https://www.google.com/maps/@?api=1&map_action=pano&pano=bBmQfqXJoxVLMv_6vHu9bw&heading=324&pitch=0&fov=75",
+            "https://www.google.com/maps/@?api=1&map_action=pano&pano=bBmQfqXJoxVLMv_6vHu9bw&heading=31&pitch=0&fov=75"
           ],
           "venue_key": "bell foundry|loughborough|le11 5bl",
           "visitor_hint": "Use the Bell Foundry frontage at 20 Swan Street."
@@ -136636,7 +136606,7 @@
       "current_key": "hanbury|islington n1|n1 7du",
       "independent_location_check": {
         "actionable": false,
-        "checked_at": "2026-11-26",
+        "checked_at": "2026-11-27",
         "comparisons": [
           {
             "address": "The Hanbury Arms, 33 Linton Street, London",
@@ -136789,7 +136759,7 @@
             "url": "https://camra.org.uk/pubs/124756"
           },
           {
-            "checked_at": "2026-11-26",
+            "checked_at": "2026-11-27",
             "match": "reviewed_mapped_premises",
             "reference_address": "33 Linton Street",
             "reference_coordinate": {
@@ -136805,9 +136775,9 @@
         "lat": 51.5361093,
         "lng": -0.0934055,
         "premises_review": {
-          "basis": "The exact 33 Linton Street footprint is linked to The Hanbury POI and CAMRA address. Proposed point uses the mapped pub POI coordinate (51.5361093,-0.0934055), verified inside that building; it is not a survey of the bar interior or entrance.",
+          "basis": "Street View and the CAMRA photograph identify the red-brick corner pub on Linton Street. The original point was along the adjoining terrace of houses. The proposed pin sits on the corner premises.",
           "building_url": "https://www.openstreetmap.org/way/1102919200",
-          "checked_at": "2026-11-26",
+          "checked_at": "2026-11-27",
           "external_premises_checks": {
             "numbered_address": [
               "https://camra.org.uk/pubs/124756"
@@ -136835,7 +136805,10 @@
             "https://camra.org.uk/pubs/124756",
             "https://ratings.food.gov.uk/business/",
             "https://www.openstreetmap.org/node/10092511647",
-            "https://osdatahub.os.uk/downloads/open/OpenMapLocal"
+            "https://osdatahub.os.uk/downloads/open/OpenMapLocal",
+            "https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/19/174271/262007",
+            "https://www.google.com/maps/@?api=1&map_action=pano&pano=Gy0OOaAj-SuBXUZQq5ME-Q&heading=266&pitch=0&fov=75",
+            "https://www.google.com/maps/@?api=1&map_action=pano&pano=Gy0OOaAj-SuBXUZQq5ME-Q&heading=325&pitch=0&fov=75"
           ],
           "venue_key": "hanbury|islington n1|n1 7du"
         },
@@ -157115,7 +157088,7 @@
       },
       "independent_location_check": {
         "actionable": false,
-        "checked_at": "2026-11-26",
+        "checked_at": "2026-11-27",
         "comparisons": [
           {
             "name_matches": 0,
@@ -157250,7 +157223,7 @@
             "url": "https://camra.org.uk/pubs/174102"
           },
           {
-            "checked_at": "2026-11-26",
+            "checked_at": "2026-11-27",
             "match": "reviewed_mapped_premises",
             "reference_address": "2 Station Road",
             "reference_coordinate": {
@@ -157266,9 +157239,9 @@
         "lat": 52.5818044,
         "lng": -1.12227925,
         "premises_review": {
-          "basis": "The venue address is 2 Station Road. Its mapped address and reviewed premises identify this building; the former point was outside it.",
+          "basis": "The signed 1852 building has a projecting bay and benches in its Station Road forecourt. Aerial and street views identify the proposed building. The former CAMRA point is farther back on the adjoining part of the site.",
           "building_url": "https://www.openstreetmap.org/way/490291463",
-          "checked_at": "2026-11-26",
+          "checked_at": "2026-11-27",
           "external_premises_checks": {
             "numbered_address": [
               "https://camra.org.uk/pubs/174102"
@@ -157291,7 +157264,11 @@
             "https://www.openstreetmap.org/way/490291463",
             "https://camra.org.uk/pubs/174102",
             "https://1852-brewery-company.takeawaytech.co.uk/",
-            "https://osdatahub.os.uk/downloads/open/OpenMapLocal"
+            "https://osdatahub.os.uk/downloads/open/OpenMapLocal",
+            "https://camra.org.uk/pubs/1852-brewery-co-wigston-174102",
+            "https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/19/171794/260509",
+            "https://www.google.com/maps/@?api=1&map_action=pano&pano=jDe6tlyHAhqJDasIHdlqXQ&heading=15&pitch=0&fov=75",
+            "https://www.google.com/maps/@?api=1&map_action=pano&pano=jDe6tlyHAhqJDasIHdlqXQ&heading=346&pitch=0&fov=75"
           ],
           "venue_key": "1852 brewery co|leicester: south wigston|le18 2dh"
         },
@@ -161611,11 +161588,11 @@
       "current_key": "roebuck|burton u-t: central|de14 1bt",
       "independent_location_check": {
         "actionable": false,
-        "checked_at": "2026-11-26",
+        "checked_at": "2026-11-27",
         "comparisons": [
           {
             "address": "Roebuck Hotel, 101 Station Street, Burton upon Trent",
-            "difference_metres": 144.6,
+            "difference_metres": 123.0,
             "lat": 52.805305480957,
             "lng": -1.63806796073914,
             "name": "The Roebuck Inn",
@@ -161636,14 +161613,14 @@
         "owner_pin_confirmed": false,
         "owner_reviewed": false,
         "pin": {
-          "lat": 52.8058842,
-          "lng": -1.63999514
+          "lat": 52.805907701845,
+          "lng": -1.639602011657
         },
         "priority": 2,
         "reasons": [],
         "reference": {
           "address": "Roebuck Hotel, 101 Station Street, Burton upon Trent",
-          "difference_metres": 144.6,
+          "difference_metres": 123.0,
           "lat": 52.805305480957,
           "lng": -1.63806796073914,
           "name": "The Roebuck Inn",
@@ -161655,7 +161632,7 @@
         "review_category": "informational",
         "status": "coordinate_disagreement",
         "warnings": [
-          "FSA coordinate is 144.6m from the accepted pin; informational only because the FSA geocode may be approximate"
+          "FSA coordinate is 123.0m from the accepted pin; informational only because the FSA geocode may be approximate"
         ]
       },
       "listing": {
@@ -161743,7 +161720,6 @@
           {
             "checked_at": "2026-11-22",
             "difference_metres": 0.0,
-            "disposition": "superseded_by_premises_review",
             "match": "venue_name_and_full_postcode",
             "reference_address": "101 Station Street",
             "reference_coordinate": {
@@ -161754,53 +161730,37 @@
             "reference_postcode": "DE14 1BT",
             "source": "camra",
             "url": "https://camra.org.uk/pubs/123922"
-          },
-          {
-            "checked_at": "2026-11-26",
-            "match": "reviewed_mapped_premises",
-            "reference_address": "101 Station Street",
-            "reference_coordinate": {
-              "lat": 52.8058842,
-              "lng": -1.63999514
-            },
-            "reference_name": "Roebuck",
-            "reference_postcode": "DE14 1BT",
-            "source": "reviewed-premises-location",
-            "url": "https://www.openstreetmap.org/way/320317638"
           }
         ],
-        "lat": 52.8058842,
-        "lng": -1.63999514,
+        "lat": 52.805907701845,
+        "lng": -1.639602011657,
         "premises_review": {
-          "basis": "The venue address is 101 Station Street. Its mapped address and reviewed premises identify this building; the former point was outside it.",
-          "building_url": "https://www.openstreetmap.org/way/320317638",
-          "checked_at": "2026-11-26",
-          "external_premises_checks": {
-            "numbered_address": [
-              "https://camra.org.uk/pubs/123922"
-            ]
-          },
-          "geometry_feature": "way/320317638",
+          "basis": "The signed Roebuck stands on the east side of Mosley Street at its junction with Station Street. The public road panorama distinguishes its rounded cream frontage from the separate brick building opposite, where the 26.6 m move would have placed it. The original pin is inside the east-side building. The geotagged photograph independently places the pub on this side of the street.",
+          "building_url": "https://www.openstreetmap.org/way/274912186",
+          "checked_at": "2026-11-27",
+          "geometry_feature": "way/274912186",
           "os_openmap_buildings": [
-            "SK_BUILDING.SHP#898738"
+            "SK_BUILDING.SHP#898743"
           ],
           "point": {
-            "lat": 52.8058842,
-            "lng": -1.63999514
-          },
-          "precision": "building",
-          "previous_point": {
             "lat": 52.805907701845,
             "lng": -1.639602011657
           },
+          "precision": "building",
           "sources": [
-            "https://www.openstreetmap.org/way/320317638",
-            "https://camra.org.uk/pubs/123922",
+            "https://www.openstreetmap.org/way/274912186",
+            "https://www.google.com/maps/@?api=1&map_action=pano&pano=dQFUhf90fbY_fiqO5VQyKQ&heading=157&pitch=0&fov=75",
+            "https://www.google.com/maps/@?api=1&map_action=pano&pano=dQFUhf90fbY_fiqO5VQyKQ&heading=223&pitch=0&fov=75",
+            "https://www.geograph.org.uk/photo/3556990",
+            "https://www.roe-buck-inn.co.uk/",
+            "https://camra.org.uk/pubs/roebuck-inn-burton-upon-trent-123922",
+            "https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/19/171256/259756",
+            "https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/19/171256/259755",
             "https://osdatahub.os.uk/downloads/open/OpenMapLocal"
           ],
           "venue_key": "roebuck|burton u-t: central|de14 1bt"
         },
-        "source": "reviewed-premises-location"
+        "source": "camra-pubs-location-audit"
       }
     },
     "v-a8fae68c-ef98-5209-9725-d3954024f006": {
@@ -168681,7 +168641,7 @@
       "current_key": "tides out|woolacombe|ex34 7bp",
       "independent_location_check": {
         "actionable": false,
-        "checked_at": "2026-11-26",
+        "checked_at": "2026-11-27",
         "comparisons": [
           {
             "name_matches": 0,
@@ -168921,7 +168881,7 @@
             "url": "https://camra.org.uk/pubs/188466"
           },
           {
-            "checked_at": "2026-11-26",
+            "checked_at": "2026-11-27",
             "match": "reviewed_mapped_premises",
             "reference_coordinate": {
               "lat": 51.17275745,
@@ -168950,9 +168910,9 @@
           "url": "https://ratings.food.gov.uk/business/178413"
         },
         "premises_review": {
-          "basis": "The Food Standards record identifies the Tides Inn and Tidesout on Beach Road. Its mapped pub feature falls inside the building.",
+          "basis": "The road panorama and CAMRA photograph show the signed Tides premises, white gables and the Beach Road frontage. The proposal lies on the front building. Both pins are within or beside the same complex.",
           "building_url": "https://www.openstreetmap.org/way/993607344",
-          "checked_at": "2026-11-26",
+          "checked_at": "2026-11-27",
           "geometry_feature": "way/993607344",
           "os_openmap_buildings": [
             "SS_BUILDING.SHP#237498"
@@ -168980,7 +168940,11 @@
             "https://ratings.food.gov.uk/business/178413",
             "https://www.tidesoutwoolacombe.co.uk/",
             "https://camra.org.uk/pubs/188466",
-            "https://osdatahub.os.uk/downloads/open/OpenMapLocal"
+            "https://osdatahub.os.uk/downloads/open/OpenMapLocal",
+            "https://camra.org.uk/pubs/tides-inn-woolacombe-188466",
+            "https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/19/175119/256019",
+            "https://www.google.com/maps/@?api=1&map_action=pano&pano=mlPR_ePpSV67wC1emKNqZw&heading=158&pitch=0&fov=75",
+            "https://www.google.com/maps/@?api=1&map_action=pano&pano=mlPR_ePpSV67wC1emKNqZw&heading=177&pitch=0&fov=75"
           ],
           "venue_key": "tides out|woolacombe|ex34 7bp"
         },
@@ -173736,7 +173700,7 @@
       "current_key": "cornubia inn|hayle|tr27 4dx",
       "independent_location_check": {
         "actionable": false,
-        "checked_at": "2026-11-26",
+        "checked_at": "2026-11-27",
         "comparisons": [
           {
             "name_matches": 1,
@@ -173756,8 +173720,8 @@
         "owner_pin_confirmed": false,
         "owner_reviewed": false,
         "pin": {
-          "lat": 50.19054765,
-          "lng": -5.41011227
+          "lat": 50.1906863,
+          "lng": -5.4101412
         },
         "priority": 2,
         "reasons": [],
@@ -173871,12 +173835,12 @@
             "url": "https://camra.org.uk/pubs/138848"
           },
           {
-            "checked_at": "2026-11-26",
+            "checked_at": "2026-11-27",
             "match": "reviewed_mapped_premises",
             "reference_address": "35 Fore Street",
             "reference_coordinate": {
-              "lat": 50.19054765,
-              "lng": -5.41011227
+              "lat": 50.1906863,
+              "lng": -5.4101412
             },
             "reference_name": "Cornubia Inn",
             "reference_postcode": "TR27 4DX",
@@ -173884,12 +173848,12 @@
             "url": "https://www.openstreetmap.org/way/406033226"
           }
         ],
-        "lat": 50.19054765,
-        "lng": -5.41011227,
+        "lat": 50.1906863,
+        "lng": -5.4101412,
         "premises_review": {
-          "basis": "The venue address is 35 Fore Street. Its mapped address and reviewed premises identify this building; the former point was outside it.",
+          "basis": "Historic England identifies three principal rooms behind the Fore Street frontage and a service wing at right angles behind them. Its published grid reference SW 56688 37863 falls on the main hipped roof visible in the aerial and operator photographs. The revised pin uses that reference. The first proposal was farther down the rear wing.",
           "building_url": "https://www.openstreetmap.org/way/406033226",
-          "checked_at": "2026-11-26",
+          "checked_at": "2026-11-27",
           "external_premises_checks": {
             "numbered_address": [
               "https://camra.org.uk/pubs/138848"
@@ -173897,8 +173861,8 @@
           },
           "geometry_feature": "way/406033226",
           "point": {
-            "lat": 50.19054765,
-            "lng": -5.41011227
+            "lat": 50.1906863,
+            "lng": -5.4101412
           },
           "precision": "building",
           "previous_point": {
@@ -173907,7 +173871,13 @@
           },
           "sources": [
             "https://www.openstreetmap.org/way/406033226",
-            "https://camra.org.uk/pubs/138848"
+            "https://historicengland.org.uk/listing/the-list/list-entry/1143678",
+            "https://www.thecornubiainn.co.uk/",
+            "https://camra.org.uk/pubs/138848",
+            "https://camra.org.uk/pubs/cornubia-inn-hayle-138848",
+            "https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/19/177376/254264",
+            "https://www.google.com/maps/@?api=1&map_action=pano&pano=9YFwgITSJpATIMSIeXL1ng&heading=289&pitch=0&fov=75",
+            "https://www.google.com/maps/@?api=1&map_action=pano&pano=9YFwgITSJpATIMSIeXL1ng&heading=254&pitch=0&fov=75"
           ],
           "venue_key": "cornubia inn|hayle|tr27 4dx"
         },
@@ -184596,11 +184566,11 @@
       "current_key": "bristol flyer|bristol: bishopston|bs7 8bn",
       "independent_location_check": {
         "actionable": false,
-        "checked_at": "2026-11-26",
+        "checked_at": "2026-11-27",
         "comparisons": [
           {
             "address": "96 Gloucester Road, Bishopston, Bristol",
-            "difference_metres": 39.5,
+            "difference_metres": 38.3,
             "lat": 51.474337,
             "lng": -2.59187,
             "name": "The Bristol Flyer",
@@ -184621,14 +184591,14 @@
         "owner_pin_confirmed": false,
         "owner_reviewed": false,
         "pin": {
-          "lat": 51.4746721,
-          "lng": -2.59168089
+          "lat": 51.47467,
+          "lng": -2.59173
         },
         "priority": 2,
         "reasons": [],
         "reference": {
           "address": "96 Gloucester Road, Bishopston, Bristol",
-          "difference_metres": 39.5,
+          "difference_metres": 38.3,
           "lat": 51.474337,
           "lng": -2.59187,
           "name": "The Bristol Flyer",
@@ -184741,12 +184711,12 @@
             "url": "https://camra.org.uk/pubs/113985"
           },
           {
-            "checked_at": "2026-11-26",
+            "checked_at": "2026-11-27",
             "match": "reviewed_mapped_premises",
             "reference_address": "96 Gloucester Road",
             "reference_coordinate": {
-              "lat": 51.4746721,
-              "lng": -2.59168089
+              "lat": 51.47467,
+              "lng": -2.59173
             },
             "reference_name": "Bristol Flyer",
             "reference_postcode": "BS7 8BN",
@@ -184754,12 +184724,12 @@
             "url": "https://www.openstreetmap.org/way/267330959"
           }
         ],
-        "lat": 51.4746721,
-        "lng": -2.59168089,
+        "lat": 51.47467,
+        "lng": -2.59173,
         "premises_review": {
-          "basis": "The venue address is 96 Gloucester Road. Its mapped address and reviewed premises identify this building; the former point was outside it.",
+          "basis": "The Gloucester Road photograph shows the pub behind its enclosed outdoor seating. The initial proposal was at the roof and terrace edge. The independently catalogued exact-name, exact-address BrightQuery point lies farther back on the visible main roof and inside the mapped building. The revised pin uses that point.",
           "building_url": "https://www.openstreetmap.org/way/267330959",
-          "checked_at": "2026-11-26",
+          "checked_at": "2026-11-27",
           "external_premises_checks": {
             "numbered_address": [
               "https://camra.org.uk/pubs/113985",
@@ -184770,9 +184740,10 @@
           "os_openmap_buildings": [
             "ST_BUILDING.SHP#209544"
           ],
+          "overture_feature_id": "c4065eb9-dc2a-43ee-baf2-16d88e9a2f10",
           "point": {
-            "lat": 51.4746721,
-            "lng": -2.59168089
+            "lat": 51.47467,
+            "lng": -2.59173
           },
           "precision": "building",
           "previous_point": {
@@ -184784,10 +184755,15 @@
           ],
           "sources": [
             "https://www.openstreetmap.org/way/267330959",
+            "https://www.theflyerbristol.co.uk/",
+            "https://docs.overturemaps.org/blog/2026/11/18/release-notes/",
             "https://camra.org.uk/pubs/113985",
             "https://ratings.food.gov.uk/business/312082",
-            "https://docs.overturemaps.org/blog/2026/11/18/release-notes/",
-            "https://osdatahub.os.uk/downloads/open/OpenMapLocal"
+            "https://osdatahub.os.uk/downloads/open/OpenMapLocal",
+            "https://camra.org.uk/pubs/bristol-flyer-bristol-113985",
+            "https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/19/174415/258369",
+            "https://www.google.com/maps/@?api=1&map_action=pano&pano=almqg2bJ1ZZTudYy96O1xg&heading=317&pitch=0&fov=75",
+            "https://www.google.com/maps/@?api=1&map_action=pano&pano=almqg2bJ1ZZTudYy96O1xg&heading=340&pitch=0&fov=75"
           ],
           "venue_key": "bristol flyer|bristol: bishopston|bs7 8bn"
         },
@@ -189532,7 +189508,7 @@
       "current_key": "ram|ibstock|le67 6lg",
       "independent_location_check": {
         "actionable": false,
-        "checked_at": "2026-11-26",
+        "checked_at": "2026-11-27",
         "comparisons": [
           {
             "address": "17 High Street, Ibstock, Coalville, Leicestershire",
@@ -189677,7 +189653,7 @@
             "url": "https://camra.org.uk/pubs/181856"
           },
           {
-            "checked_at": "2026-11-26",
+            "checked_at": "2026-11-27",
             "match": "reviewed_mapped_premises",
             "reference_address": "17 High Street",
             "reference_coordinate": {
@@ -189693,9 +189669,9 @@
         "lat": 52.6877855,
         "lng": -1.39712669,
         "premises_review": {
-          "basis": "The corroborated exact-name/postcode place point (52.68788632,-1.39708577) is inside the mapped Ram Inn polygon, though only 0.08 m from its captured boundary; record it as the source place point rather than a surveyed interior. Its near-edge location and non-primary source are limitations.",
+          "basis": "The proposed pin is inside the Ram Inn at 17 High Street. CAMRA’s visitor coordinate is 6.3 m away and the signed frontage and aerial place the earlier pin across High Street. The separate catalogue point is 11.5 m from the proposed pin and was corroboration for the building. It was not the coordinate used.",
           "building_url": "https://www.openstreetmap.org/way/551482557",
-          "checked_at": "2026-11-26",
+          "checked_at": "2026-11-27",
           "geometry_feature": "way/551482557",
           "os_openmap_buildings": [
             "SK_BUILDING.SHP#1079206"
@@ -189715,7 +189691,9 @@
             "https://ratings.food.gov.uk/business/1225991",
             "https://overturemaps.org/",
             "https://www.the-ram-inn-ibstock.co.uk/",
-            "https://osdatahub.os.uk/downloads/open/OpenMapLocal"
+            "https://osdatahub.os.uk/downloads/open/OpenMapLocal",
+            "https://camra.org.uk/pubs/ram-inn-ibstock-181856",
+            "https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/19/171540/260109"
           ],
           "venue_key": "ram|ibstock|le67 6lg"
         },
@@ -191237,7 +191215,7 @@
       "current_key": "victoria inn|witton le wear|dl14 0as",
       "independent_location_check": {
         "actionable": false,
-        "checked_at": "2026-11-26",
+        "checked_at": "2026-11-27",
         "comparisons": [
           {
             "name_matches": 1,
@@ -191372,7 +191350,7 @@
             "url": "https://camra.org.uk/pubs/186973"
           },
           {
-            "checked_at": "2026-11-26",
+            "checked_at": "2026-11-27",
             "match": "reviewed_mapped_premises",
             "reference_coordinate": {
               "lat": 54.67593035,
@@ -191387,9 +191365,9 @@
         "lat": 54.67593035,
         "lng": -1.77130955,
         "premises_review": {
-          "basis": "Proposed point (54.67596996,-1.77125653) is the independent exact-name/postcode Overture place location checked inside way/725412142. It lies 0.65 m from the captured polygon edge. This is corroborated site location, not surveyed entrance; Overture provider is Meta.",
+          "basis": "The signed School Street building, operator location and a separate named place record support this pub roof. The proposed pin is an interior point 5.6 m from the catalogue position, which was used to check the building identity.",
           "building_url": "https://www.openstreetmap.org/way/725412142",
-          "checked_at": "2026-11-26",
+          "checked_at": "2026-11-27",
           "external_premises_checks": {
             "operator_point": [
               "https://www.thevicwlw.co.uk/"
@@ -191399,6 +191377,7 @@
           "os_openmap_buildings": [
             "NZ_BUILDING.SHP#493836"
           ],
+          "overture_feature_id": "812999ae-f5ba-4968-9fec-ff54604ab916",
           "point": {
             "lat": 54.67593035,
             "lng": -1.77130955
@@ -191418,7 +191397,9 @@
             "https://ratings.food.gov.uk/business/",
             "https://overturemaps.org/",
             "https://docs.overturemaps.org/blog/2026/11/18/release-notes/",
-            "https://osdatahub.os.uk/downloads/open/OpenMapLocal"
+            "https://osdatahub.os.uk/downloads/open/OpenMapLocal",
+            "https://camra.org.uk/pubs/victoria-witton-le-wear-186973",
+            "https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/19/166650/259564"
           ],
           "venue_key": "victoria inn|witton le wear|dl14 0as"
         },
@@ -215212,7 +215193,7 @@
       "current_key": "borough street bar|castle donington|de74 2la",
       "independent_location_check": {
         "actionable": false,
-        "checked_at": "2026-11-26",
+        "checked_at": "2026-11-27",
         "comparisons": [
           {
             "address": "32 Borough Street, Castle Donington, Derby",
@@ -215391,7 +215372,7 @@
             "url": "https://camra.org.uk/pubs/171283"
           },
           {
-            "checked_at": "2026-11-26",
+            "checked_at": "2026-11-27",
             "match": "reviewed_mapped_premises",
             "reference_address": "32 Borough Street",
             "reference_coordinate": {
@@ -215407,9 +215388,9 @@
         "lat": 52.84219705,
         "lng": -1.33786497,
         "premises_review": {
-          "basis": "The venue address is 32 Borough Street. Its mapped address and reviewed premises identify this building; the former point was outside it.",
+          "basis": "The blue Borough Street Bar frontage and its neighbouring pink shop are visible from Borough Street and in the CAMRA photograph. The proposal is on the matching unit at number 32, several frontages from the old pin.",
           "building_url": "https://www.openstreetmap.org/way/320753976",
-          "checked_at": "2026-11-26",
+          "checked_at": "2026-11-27",
           "external_premises_checks": {
             "numbered_address": [
               "https://camra.org.uk/pubs/171283",
@@ -215434,7 +215415,11 @@
             "https://camra.org.uk/pubs/171283",
             "https://ratings.food.gov.uk/business/1765840",
             "https://minutes-1.nwleics.gov.uk/documents/s47862/Additional%20information%20from%20the%20applicant.pdf",
-            "https://osdatahub.os.uk/downloads/open/OpenMapLocal"
+            "https://osdatahub.os.uk/downloads/open/OpenMapLocal",
+            "https://camra.org.uk/pubs/borough-street-bar-castle-donington-171283",
+            "https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/19/171168/260195",
+            "https://www.google.com/maps/@?api=1&map_action=pano&pano=3LYf1gs_NAjlCEkwoJwHjw&heading=212&pitch=0&fov=75",
+            "https://www.google.com/maps/@?api=1&map_action=pano&pano=3LYf1gs_NAjlCEkwoJwHjw&heading=183&pitch=0&fov=75"
           ],
           "venue_key": "borough street bar|castle donington|de74 2la"
         },

@@ -34,8 +34,10 @@ It verifies the GitHub run ID, commit and result and then fast-forwards
 `main` from the expected parent. A failed check or advanced parent stops
 promotion. The importer and owner approval workflow request a Pages build
 and check its commit and the public HTML, PDF, CSV and bundle bytes.
-The branch rule uses the GitHub Actions `coordinate-audit` check and allows
-no bypass actors. Its production activation requires the cutover trial.
+The branch rule requires the GitHub Actions `validated-directory` commit
+status and has no bypass actors. A separate job records the tested SHA and
+links the run only after `coordinate-audit` succeeds. This lets the same
+validation protect both manual and unattended releases.
 
 The gate rejects conflicting duplicates, unresolved identity changes, invalid
 coordinates, missing coverage, evidence/coordinate mismatches and loss or

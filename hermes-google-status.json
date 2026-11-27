@@ -1,19 +1,19 @@
 {
   "batch": {
-    "ambiguous": 38,
+    "ambiguous": 1,
     "attempted": 45,
-    "checked": 43,
+    "checked": 45,
     "selected": 45,
-    "unavailable": 2
+    "unavailable": 0
   },
-  "checked_at": "2026-11-26T07:44:13.386351+00:00",
+  "checked_at": "2026-11-27T07:44:20.185991+00:00",
   "configured": true,
   "counts": {
     "attempted_venue_count": 1088,
-    "checked_this_run": 43,
+    "checked_this_run": 45,
     "current": 1083,
     "retained_unavailable": 3,
-    "review_count": 185,
+    "review_count": 183,
     "total": 1088,
     "unchecked_or_stale": 5
   },
@@ -568,15 +568,6 @@
       "reason": "Google results are incomplete or ambiguous; no unique place accepted",
       "status": "review_needed",
       "venue_id": "v-4ac64929-0f37-5395-9fa7-4c90d72fda85"
-    },
-    {
-      "binding_signature": "9f8ea0655169f56b7e7de44b58e621d201424d21d8a7a2a780350b1bd560b74d",
-      "place_name": "Leek",
-      "postcode": "ST13 6LJ",
-      "pub_name": "Blue Mugge",
-      "reason": "Google results are incomplete or ambiguous; no unique place accepted",
-      "status": "review_needed",
-      "venue_id": "v-4acb6f16-6372-5492-adaa-19dc33655733"
     },
     {
       "binding_signature": "383725ec6de8bf02974e40a73c7e05ec0f3fad47c5be47a6786709efd8f5b9c7",
@@ -1407,15 +1398,6 @@
       "venue_id": "v-cacf3fb6-4c21-5cfc-a537-056e0f6876b4"
     },
     {
-      "binding_signature": "0efc82905974ede44fe2e8ea66cceb0a1dfd2509011470446fbdd08a2844a26e",
-      "place_name": "Burton U-T: Branston",
-      "postcode": "DE14 3EY",
-      "pub_name": "Blacksmiths",
-      "reason": "Google results are incomplete or ambiguous; no unique place accepted",
-      "status": "review_needed",
-      "venue_id": "v-cbc4b5d0-edd1-5be4-b287-9b1646ae7624"
-    },
-    {
       "binding_signature": "85fb55d395ac0c98617a1f8580449ebee3a98051f14600ef8c4afac04322fec2",
       "place_name": "Spalding",
       "postcode": "PE11 1SU",
@@ -1688,16 +1670,15 @@
   ],
   "hard_failure": false,
   "issues": [
-    "Google Maps could not be read for one or more venues in this batch",
     "Google comparison coverage is incomplete; untested, stale or inconclusive pubs remain"
   ],
   "provider": "hermes-browser",
   "run_attempt": 1,
-  "run_id": "d98907f99b474877bdc6736ee45f4a13",
+  "run_id": "c52519bf064d4aecb2beba673f581fac",
   "schema_version": 1,
-  "source_commit": "606e47f89dc207d0230a970e0afb6c7ad28449ac",
-  "source_execution_finished_at": "2026-11-26T07:44:13.668596+00:00",
-  "source_release_id": "356a24c6938e8990fb24ac4a887e6de5f764921d49c53d20dde124a3b4f4c558",
-  "source_status_sha256": "2e8ae1e099172b6a8b9d80770cbde53039162b598b4ba76495563a3635b8dd26",
-  "validated_release_id": "356a24c6938e8990fb24ac4a887e6de5f764921d49c53d20dde124a3b4f4c558"
+  "source_commit": "4105ed6b5a2d8ed4606a5a5edbab975bb5e8cc5e",
+  "source_execution_finished_at": "2026-11-27T07:44:20.464696+00:00",
+  "source_release_id": "24941d48f8c8dc2b5668c28975790371bc94d66b83f5025d9a18670c66c5943f",
+  "source_status_sha256": "046aa0b86672440fff5566917adcc8ff5bda0494e26853723cf712df8721f010",
+  "validated_release_id": "24941d48f8c8dc2b5668c28975790371bc94d66b83f5025d9a18670c66c5943f"
 }

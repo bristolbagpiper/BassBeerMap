@@ -18,16 +18,20 @@ def needs_approval(old_pdf, new_pdf, old_csv, new_csv):
             and listing_counts(old_csv) != listing_counts(new_csv))
 
 
-def main():
+def main(argv=None):
     parser = argparse.ArgumentParser()
     parser.add_argument('--allow-reindex', action='store_true')
-    args = parser.parse_args()
-    previous = subprocess.run(['git', 'show', 'HEAD:latest-bass-directory.pdf'],
+    parser.add_argument('--source-pdf', type=Path, default=Path('latest-bass-directory.pdf'))
+    parser.add_argument('--baseline-ref', default='HEAD')
+    parser.add_argument('--candidate-csv', type=Path, default=Path('candidate-release/pubs.csv'))
+    parser.add_argument('--published-csv', type=Path, default=Path('pubs.csv'))
+    args = parser.parse_args(argv)
+    previous = subprocess.run(['git', 'show', f'{args.baseline_ref}:latest-bass-directory.pdf'],
                               capture_output=True, check=False)
     if previous.returncode:
         raise SystemExit('Cannot read the previously published PDF; refusing to publish.')
-    if needs_approval(previous.stdout, Path('latest-bass-directory.pdf').read_bytes(),
-                      'pubs.csv', 'candidate-release/pubs.csv') and not args.allow_reindex:
+    if needs_approval(previous.stdout, args.source_pdf.read_bytes(),
+                      args.published_csv, args.candidate_csv) and not args.allow_reindex:
         raise SystemExit('Unchanged PDF produced listing changes. Review the candidate and explicitly run the workflow with reindex approval.')
     print('Unchanged PDF publication guard passed.')
 

@@ -1,88 +1,345 @@
-"""Deliver changed location alerts; acknowledge delivery only after SMTP succeeds."""
+"""Deliver changed owner questions with durable per-item reservations."""
 import argparse
+import base64
+import hashlib
 import json
 import os
+import re
 import smtplib
+import urllib.error
+import urllib.request
+import zlib
 from datetime import datetime, timezone
 from email.message import EmailMessage
 from pathlib import Path
 
 from directory_release import read_json, write_json
-from location_review import fingerprint, format_report, load_google_status, load_health_status, with_google, with_health
+from location_review import (format_notification, format_report, legacy_notification_fingerprint,
+                             notification_items)
 
 
-def notify(report, state_path, failure_url='', smtp_factory=smtplib.SMTP):
-    if os.environ.get('SOURCE_CONCLUSION') == 'cancelled':
-        failure_url = ''  # A deliberately/superseded canceled run is not a failed import.
-    state = read_json(state_path, {})
-    digest = fingerprint(report, pipeline_failure=bool(failure_url))
-    if state.get('email_fingerprint') == digest or (
-            not failure_url and not report['active_count'] and not report.get('health_count')
-            and not report.get('google_count') and not report.get('trading_notice_reviews') and not state):
-        print('No changed actionable location report; email remains quiet.')
-        return False
-    required = ('SMTP_HOST', 'SMTP_USERNAME', 'SMTP_PASSWORD', 'ALERT_TO')
-    missing = [key for key in required if not os.environ.get(key)]
-    if missing:
-        raise RuntimeError('Location alerts cannot be delivered: missing ' + ', '.join(missing))
+STATE_MARKER = re.compile(r'<!-- bassbeermap-notification-state:v([12]):([A-Za-z0-9_-]+) -->')
+UNCERTAIN_RESOLUTIONS = {'none', 'confirm_sent', 'confirm_not_sent'}
+MAX_ISSUE_BODY_CHARS = 64000
+
+
+def item_fingerprint(item):
+    # 96 bits distinguish individual notification contents at directory scale.
+    if isinstance(item, str) and re.fullmatch(r'h:[A-Za-z0-9_-]{16}', item):
+        return item
+    if isinstance(item, str) and re.fullmatch(r'sha256:[0-9a-f]{64}', item):
+        digest = bytes.fromhex(item[7:])
+    else:
+        encoded = json.dumps(item, sort_keys=True, separators=(',', ':'), ensure_ascii=True).encode('utf-8')
+        digest = hashlib.sha256(encoded).digest()
+    return 'h:' + base64.urlsafe_b64encode(digest[:12]).decode('ascii').rstrip('=')
+
+
+def set_workflow_result(value):
+    output = os.environ.get('GITHUB_OUTPUT')
+    if output:
+        with open(output, 'a', encoding='utf-8') as stream:
+            stream.write(f'result={value}\n')
+
+
+def normalize_state(state):
+    state = dict(state) if isinstance(state, dict) else {}
+    legacy = state.get('legacy_ack')
+    if not legacy and state.get('email_fingerprint'):
+        legacy = {'email_fingerprint': state['email_fingerprint'],
+                  'emailed_at': state.get('emailed_at')}
+    old_items = state.get('items', {}) if isinstance(state.get('items', {}), dict) else {}
+    items = {key: item_fingerprint(value) for key, value in old_items.items()}
+    old_pending = state.get('pending', {}) if isinstance(state.get('pending', {}), dict) else {}
+    pending = {}
+    for reservation_id, reservation in old_pending.items():
+        if not isinstance(reservation, dict):
+            continue
+        key = reservation.get('key') or reservation_id
+        entry = {'status': reservation.get('status', 'reserved'),
+                 'reserved_at': reservation.get('reserved_at', ''), 'run_id': reservation.get('run_id', '')}
+        if 'item' in reservation:
+            entry['item_hash'] = item_fingerprint(reservation['item'])
+        elif reservation.get('item_hash'):
+            entry['item_hash'] = item_fingerprint(reservation['item_hash'])
+        pending[key] = entry
+    result = {'schema_version': 4, 'items': items, 'pending': pending}
+    if legacy:
+        result['legacy_ack'] = legacy
+    if state.get('emailed_at'):
+        result['emailed_at'] = state['emailed_at']
+    return result
+
+
+def encode_state(state):
+    raw = json.dumps(state, sort_keys=True, separators=(',', ':'), ensure_ascii=True).encode('utf-8')
+    return base64.urlsafe_b64encode(zlib.compress(raw, 9)).decode('ascii').rstrip('=')
+
+
+def decode_state(body):
+    match = STATE_MARKER.search(body or '')
+    if not match:
+        return None
+    version, token = match.groups()
+    token += '=' * (-len(token) % 4)
+    raw = base64.urlsafe_b64decode(token)
+    if version == '1':
+        value = json.loads(raw.decode('utf-8'))
+    else:
+        value = json.loads(zlib.decompress(raw).decode('utf-8'))
+    if not isinstance(value, dict) or value.get('schema_version') not in (3, 4):
+        raise ValueError('Issue #5 notification state is malformed or unsupported.')
+    return normalize_state(value)
+
+
+def issue_body(report_text, state):
+    state = normalize_state(state)
+    pending = state.get('pending', {})
+    report = report_text.rstrip()
+    if pending:
+        uncertain = sum(value.get('status') == 'uncertain' for value in pending.values())
+        reserved = len(pending) - uncertain
+        status = ['## Notification delivery status', '']
+        if uncertain:
+            status.append(f'{uncertain} item(s) have an uncertain SMTP outcome. Automatic resend is suppressed.')
+        if reserved:
+            status.append(f'{reserved} item(s) were reserved before a notification attempt; automatic resend is suppressed.')
+        status += ['', 'After checking the mail outcome, manually dispatch the notification workflow with '
+                   '`confirm_sent` or `confirm_not_sent` to resolve the held item(s).']
+        status_text = '\n\n' + '\n'.join(status)
+    else:
+        status_text = ''
+    marker = '\n\n<!-- bassbeermap-notification-state:v2:' + encode_state(state) + ' -->'
+    available = MAX_ISSUE_BODY_CHARS - len(status_text) - len(marker)
+    if available < 0:
+        raise RuntimeError('Notification receipt state exceeds the safe GitHub issue-body limit.')
+    if len(report) > available:
+        suffix = '\n\n_Report shortened to preserve the complete notification receipt state._'
+        report = (report[:available - len(suffix)].rstrip() + suffix) if available >= len(suffix) else ''
+    body = report + status_text + marker
+    if len(body) > MAX_ISSUE_BODY_CHARS:
+        raise RuntimeError('Notification issue body exceeds the safe GitHub issue-body limit.')
+    return body
+
+
+class GitHubIssueStateStore:
+    """Persist reservations and acknowledgements in the existing review issue."""
+
+    def __init__(self, repository, token, issue_number=5, opener=urllib.request.urlopen):
+        if not repository or not token:
+            raise RuntimeError('GitHub issue state requires repository and workflow-token context.')
+        self.repository = repository
+        self.token = token
+        self.issue_number = int(issue_number)
+        self.opener = opener
+        self.base_url = f'https://api.github.com/repos/{repository}/issues/{self.issue_number}'
+
+    def _request(self, method, payload=None):
+        data = json.dumps(payload).encode('utf-8') if payload is not None else None
+        request = urllib.request.Request(
+            self.base_url, data=data, method=method,
+            headers={'Accept':'application/vnd.github+json', 'Authorization':f'Bearer {self.token}',
+                     'X-GitHub-Api-Version':'2022-11-28', 'User-Agent':'BassBeerMap-notification-state',
+                     'Content-Type':'application/json'})
+        try:
+            with self.opener(request, timeout=20) as response:
+                return json.loads(response.read().decode('utf-8'))
+        except urllib.error.HTTPError as error:
+            raise RuntimeError(f'GitHub issue state request failed with HTTP {error.code}.') from error
+
+    def load(self, seed):
+        issue = self._request('GET')
+        body = issue.get('body') or ''
+        stored = decode_state(body)
+        return normalize_state(seed if stored is None else stored)
+
+    def save(self, report_text, state, should_open):
+        # Read again immediately before the update so an unrelated issue edit is
+        # not silently overwritten with a stale body snapshot.
+        latest = self._request('GET')
+        rendered = issue_body(report_text, state)
+        desired_state = 'open' if should_open else 'closed'
+        if latest.get('body') != rendered or latest.get('state') != desired_state:
+            saved = self._request('PATCH', {'body':rendered, 'state':desired_state})
+        else:
+            saved = latest
+        if decode_state(saved.get('body') or '') != normalize_state(state):
+            raise RuntimeError('GitHub did not persist the notification receipt state on issue #5.')
+        return saved
+
+
+def _read_state(state_path, state_store):
+    seed = read_json(state_path, {}) if state_path else {}
+    if state_store:
+        return normalize_state(state_store.load(seed))
+    return normalize_state(seed)
+
+
+def _persist(state, report, state_path, state_store):
+    state = normalize_state(state)
+    if state_store:
+        due_notices = report.get('trading_notice_reviews', [])
+        current = notification_items(report)
+        state_store.save(format_report(report), state,
+                         bool(current or due_notices or state.get('pending')))
+    else:
+        if not state_path:
+            raise RuntimeError('Notification state path is required for local state storage.')
+        write_json(state_path, state)
+
+
+def _resolve_pending(state, current, resolution):
+    if resolution not in UNCERTAIN_RESOLUTIONS:
+        raise ValueError(f'Unknown notification resolution: {resolution}')
+    if resolution == 'none':
+        return 0
+    pending = state.get('pending', {})
+    resolved = len(pending)
+    if resolution == 'confirm_sent':
+        for key, reservation in pending.items():
+            if key in current and reservation.get('item_hash') == item_fingerprint(current[key]):
+                state['items'][key] = reservation['item_hash']
+    state['pending'] = {}
+    return resolved
+
+
+def _message_for(changed, smtp_env):
     message = EmailMessage()
-    actionable_count = report.get('actionable_count', report['active_count'])
-    source_warning_count = report.get('source_warning_count', 0)
-    message['Subject'] = f"BassBeerMap: {report['unverified_count']} unverified locations, {actionable_count} actions"
-    if source_warning_count:
-        message.replace_header('Subject', message['Subject'] + f", {source_warning_count} source warnings")
-    if report.get('health_count'):
-        message.replace_header('Subject', message['Subject'] + f", {report['health_count']} map health checks")
-    if report.get('trading_notice_reviews'):
-        count = len(report['trading_notice_reviews'])
-        message.replace_header('Subject', message['Subject'] + f", {count} trading notices due for review")
-    google_actionable_count = report.get('google_actionable_count')
-    if google_actionable_count is None:
-        from owner_location_review import google_finding_assessment
-        google_actionable_count = sum(google_finding_assessment(finding)['manual_action_required']
-                                      for finding in report.get('google_findings', []))
-    if google_actionable_count:
-        message.replace_header('Subject', message['Subject'] + f", {google_actionable_count} Google pub actions")
-    google_source_warning_count = report.get('google_source_warning_count')
-    if google_source_warning_count is None:
-        from owner_location_review import google_finding_assessment
-        google_source_warning_count = sum(not google_finding_assessment(finding)['manual_action_required']
-                                          for finding in report.get('google_findings', []))
-    if google_source_warning_count:
-        message.replace_header('Subject', message['Subject'] + f", {google_source_warning_count} Google source warnings")
-    message['From'] = os.environ.get('ALERT_FROM') or os.environ['SMTP_USERNAME']
-    message['To'] = os.environ['ALERT_TO']
-    body = format_report(report)
-    if failure_url:
-        body = 'A directory import or weekly audit failed. Inspect its validation report:\n' + failure_url + '\n\n' + body
-    message.set_content(body)
+    count = len(changed)
+    message['Subject'] = f"BassBeerMap: {count} changed review question{'s' if count != 1 else ''}"
+    message['From'] = smtp_env.get('ALERT_FROM') or smtp_env['SMTP_USERNAME']
+    message['To'] = smtp_env['ALERT_TO']
+    message.set_content(format_notification(changed))
+    return message
+
+
+def notify(report, state_path=None, failure_url='', smtp_factory=smtplib.SMTP,
+           state_store=None, resolution='none', environ=None):
+    """Send changed questions once; uncertain sends are held for human resolution."""
+    del failure_url  # Rejected imports have their own source workflow issue.
+    environ = os.environ if environ is None else environ
+    state = _read_state(state_path, state_store)
+    current = notification_items(report)
+    state['items'] = {key: item for key, item in state['items'].items() if key in current}
+
+    resolved = _resolve_pending(state, current, resolution)
+    if not state.get('items') and not state.get('pending') and state.get('legacy_ack'):
+        legacy_hash = state['legacy_ack'].get('email_fingerprint')
+        if legacy_hash and legacy_hash == legacy_notification_fingerprint(report):
+            state['items'] = {key: item_fingerprint(item) for key, item in current.items()}
+            _persist(state, report, state_path, state_store)
+            set_workflow_result('quiet')
+            print('Exact legacy acknowledgement migrated into per-item issue state.')
+            return False
+
+    changed = {key:item for key,item in current.items()
+               if state['items'].get(key) != item_fingerprint(item) and key not in state['pending']}
+    if not changed:
+        _persist(state, report, state_path, state_store)
+        if state.get('pending'):
+            set_workflow_result('uncertain')
+            print('Held notification reservation remains unresolved; no email was attempted.')
+        elif resolved:
+            set_workflow_result('resolved_sent' if resolution == 'confirm_sent' else 'resolved_not_sent')
+            print(f'Resolved {resolved} held notification item(s) by explicit manual choice.')
+        else:
+            set_workflow_result('quiet')
+            print('No changed actionable owner question; email remains quiet.')
+        return False
+
+    required = ('SMTP_HOST', 'SMTP_USERNAME', 'SMTP_PASSWORD', 'ALERT_TO')
+    missing = [key for key in required if not environ.get(key)]
+    if missing:
+        if state_store:
+            _persist(state, report, state_path, state_store)
+        raise RuntimeError('Location alerts cannot be delivered: missing ' + ', '.join(missing))
+
+    smtp_env = {key:environ[key] for key in required}
+    smtp_env['SMTP_PORT'] = environ.get('SMTP_PORT') or '587'
+    smtp_env['ALERT_FROM'] = environ.get('ALERT_FROM')
+    message = _message_for(changed, smtp_env)
+    reservation_ids = []
+    now = datetime.now(timezone.utc).isoformat()
+    run_id = environ.get('GITHUB_RUN_ID', '')
+    for key, item in changed.items():
+        # The prior question for this venue has changed. Its receipt no longer
+        # represents the current question, which now has its own reservation.
+        state['items'].pop(key, None)
+        state['pending'][key] = {'item_hash':item_fingerprint(item), 'status':'reserved', 'reserved_at':now, 'run_id':run_id}
+        reservation_ids.append(key)
+    # The issue write is the send boundary: no SMTP operation happens until the
+    # reservation has been read back successfully.
+    _persist(state, report, state_path, state_store)
+
+    stage = 'pre_send'
     accepted = False
     try:
-        with smtp_factory(os.environ['SMTP_HOST'], int(os.environ.get('SMTP_PORT') or '587'), timeout=30) as server:
+        with smtp_factory(smtp_env['SMTP_HOST'], int(smtp_env['SMTP_PORT']), timeout=30) as server:
             server.starttls()
-            server.login(os.environ['SMTP_USERNAME'], os.environ['SMTP_PASSWORD'])
+            server.login(smtp_env['SMTP_USERNAME'], smtp_env['SMTP_PASSWORD'])
+            stage = 'sending'
             refused = server.send_message(message)
             if refused:
-                raise RuntimeError('SMTP refused an alert recipient; delivery has not been acknowledged')
+                raise RuntimeError('SMTP reported recipient refusal; delivery may be partial, so resend is held for review.')
             accepted = True
     except OSError:
-        if not accepted:
+        if accepted:
+            print('SMTP connection closed after accepting the notification.')
+        elif stage == 'pre_send':
+            for reservation_id in reservation_ids:
+                state['pending'].pop(reservation_id, None)
+            _persist(state, report, state_path, state_store)
+            set_workflow_result('failed_pre_send')
             raise
-        print('The SMTP connection closed after accepting the alert.')
-    write_json(state_path, dict(email_fingerprint=digest, emailed_at=datetime.now(timezone.utc).isoformat()))
-    print('Location alert accepted by configured SMTP server; inbox delivery is not confirmed.')
+        else:
+            for reservation_id in reservation_ids:
+                if reservation_id in state['pending']:
+                    state['pending'][reservation_id]['status'] = 'uncertain'
+            try:
+                _persist(state, report, state_path, state_store)
+            finally:
+                set_workflow_result('uncertain')
+            raise RuntimeError('SMTP outcome is uncertain; automatic resend is suppressed until manually resolved.')
+    except Exception:
+        if stage == 'pre_send':
+            for reservation_id in reservation_ids:
+                state['pending'].pop(reservation_id, None)
+            _persist(state, report, state_path, state_store)
+            set_workflow_result('failed_pre_send')
+            raise
+        if not accepted:
+            for reservation_id in reservation_ids:
+                if reservation_id in state['pending']:
+                    state['pending'][reservation_id]['status'] = 'uncertain'
+            try:
+                _persist(state, report, state_path, state_store)
+            finally:
+                set_workflow_result('uncertain')
+            raise RuntimeError('SMTP outcome is uncertain; automatic resend is suppressed until manually resolved.')
+
+    for key, item in changed.items():
+        state['items'][key] = item_fingerprint(item)
+    for reservation_id in reservation_ids:
+        state['pending'].pop(reservation_id, None)
+    state['emailed_at'] = datetime.now(timezone.utc).isoformat()
+    _persist(state, report, state_path, state_store)
+    if state.get('pending'):
+        set_workflow_result('uncertain')
+        print('SMTP accepted new questions; older held reservations still need manual resolution.')
+    else:
+        set_workflow_result('accepted')
+        print('SMTP accepted changed questions; inbox delivery is not confirmed.')
     return True
 
 
 if __name__ == '__main__':
     parser = argparse.ArgumentParser()
-    parser.add_argument('--report', default='location-review.json')
-    parser.add_argument('--state', default='location-alert-state.json')
-    parser.add_argument('--failure-url', default='')
-    parser.add_argument('--health-status', default='map-health-status.json')
-    parser.add_argument('--google-status', default='google-places-status.json')
-    parser.add_argument('--directory-release', default='directory-release.json')
+    parser.add_argument('--report', default='notification-report.json')
+    parser.add_argument('--state-seed', default='location-alert-state.json')
+    parser.add_argument('--resolution', choices=sorted(UNCERTAIN_RESOLUTIONS), default='none')
+    parser.add_argument('--issue', type=int, default=5)
     args = parser.parse_args()
-    report = with_google(with_health(read_json(args.report), load_health_status(args.health_status)),
-                         load_google_status(args.google_status), read_json(args.directory_release))
-    notify(report, Path(args.state), args.failure_url)
+    store = GitHubIssueStateStore(os.environ.get('GITHUB_REPOSITORY', ''),
+                                  os.environ.get('GH_TOKEN', ''), args.issue)
+    notify(read_json(args.report), Path(args.state_seed), state_store=store,
+           resolution=args.resolution)

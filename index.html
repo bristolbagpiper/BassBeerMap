@@ -1598,6 +1598,7 @@
       <div class="splash-kicker">Bass Directory Map</div>
       <h2>Loading the latest listings</h2>
       <div class="splash-copy">The map is loading the directory and its saved locations. The first load can take a few seconds.</div>
+      <p><a href="./latest-bass-directory.pdf">Read the source PDF</a> · <a href="./pubs.csv">Download the directory CSV</a></p>
       <div id="splashStatusText" class="status splash-status">Loading the directory…</div>
       <div class="loading-bar"><div id="splashLoadingFill"></div></div>
     </div>
@@ -1724,7 +1725,8 @@
           <strong>How to use</strong>
           <button id="hideHelpBtn" class="legend-close" type="button" aria-label="Hide help">×</button>
         </div>
-        <div class="tiny">Blue pins are verified venue locations. Brown pins mark approximate postcode areas. Guest means Bass is occasional, not guaranteed today. Check before travelling.</div>
+        <div class="tiny">Blue pins fall within identified buildings. Brown pins show sites, reference locations or postcode areas. Guest means Bass is occasional, not guaranteed today. The directory assumes handpump when no method was reported. Check before travelling.</div>
+        <div class="tiny">Premises checks use © OpenStreetMap contributors and contain OS data © Crown copyright and database right 2026. Additional checks use <a href="https://github.com/microsoft/GlobalMLBuildingFootprints">Microsoft building footprints</a> and <a href="https://docs.overturemaps.org/attribution/">Overture Maps and its contributors</a>.</div>
       </div>
       <button id="showHelpBtn" class="help-reopen-btn" type="button">Show help</button>
       <dialog id="mobileVenue" class="mobile-venue" aria-labelledby="mobileVenueTitle">
@@ -1769,7 +1771,6 @@
   <script>
     let pubData = [];
     let directoryRelease = null;
-    let possibleClosureFindings = new Map();
     let countryCounts = {};
     let latestVerificationQuarter = 0;
     let userLocation = null;
@@ -1781,7 +1782,6 @@
     const VENUE_COORDINATE_OVERRIDES_URL = './venue-coordinate-overrides.json';
     const COORDINATE_VERIFICATION_URL = './coordinate-verification.json';
     const DIRECTORY_RELEASE_URL = './directory-release.json';
-    const GOOGLE_REVIEW_URL = './hermes-google-status.json';
     const TRADING_NOTICES_URL = './trading-notices.json';
     const APPROXIMATE_MAP_NOTE = 'The pin shows the postcode area. Confirm the pub’s exact location before travelling.';
     let tradingNoticeEntries = new Map();
@@ -1893,7 +1893,6 @@
     };
 
     const MAX_RESULT_CARDS = 100;
-    const MAX_PUBLIC_CLOSURE_AGE_MS = 30 * 24 * 60 * 60 * 1000;
     const HELP_HIDDEN_KEY = 'bass_directory_help_hidden_v1';
     const REPORT_PROBLEM_ENDPOINT = 'https://bassbeermap.bristolbagpiper.workers.dev/api/report-problem';
     let problemReportTurnstileToken = '';
@@ -2019,42 +2018,6 @@
       els.directoryLabel.textContent = label;
     }
 
-    function isCurrentPublicClosureEvidence(finding, now = Date.now()) {
-      if (finding?.status !== 'review_needed'
-        || !['CLOSED_TEMPORARILY', 'CLOSED_PERMANENTLY'].includes(finding.business_status)
-        || typeof finding.binding_signature !== 'string' || !/^[a-f0-9]{64}$/i.test(finding.binding_signature)
-        || !finding.current_pin || !Number.isFinite(finding.current_pin.lat) || !Number.isFinite(finding.current_pin.lng)
-        || finding.current_pin.lat < 49 || finding.current_pin.lat > 61
-        || finding.current_pin.lng < -9 || finding.current_pin.lng > 3
-        || typeof finding.checked_at !== 'string' || !/T.*(?:Z|[+-]\d{2}:\d{2})$/i.test(finding.checked_at)) return false;
-      const checkedAt = Date.parse(finding.checked_at);
-      return Number.isFinite(checkedAt) && checkedAt <= now && now - checkedAt <= MAX_PUBLIC_CLOSURE_AGE_MS;
-    }
-
-    function closureEvidenceMatchesVenue(finding, item) {
-      return Boolean(finding && item?.locationPrecision === 'venue' && finding.venue_id === item.venue_id
-        && finding.pub_name === item.pub_name
-        && finding.place_name === item.place_name
-        && finding.postcode === item.postcode
-        && finding.current_pin?.lat === item.lat && finding.current_pin?.lng === item.lng);
-    }
-
-    async function loadPossibleClosures() {
-      try {
-        const response = await fetch(GOOGLE_REVIEW_URL, {
-          ...DATA_FETCH_OPTIONS, signal: AbortSignal.timeout(3000)
-        });
-        if (!response.ok) return new Map();
-        const report = await response.json();
-        if (report?.schema_version !== 1 || !report.configured || !Array.isArray(report.findings)) return new Map();
-        const now = Date.now();
-        return new Map(report.findings.filter(finding => isCurrentPublicClosureEvidence(finding, now))
-          .map(finding => [finding.venue_id, finding]));
-      } catch {
-        return new Map();
-      }
-    }
-
     async function loadTradingNotices() {
       try {
         const response = await fetch(TRADING_NOTICES_URL, {
@@ -2076,8 +2039,6 @@
     async function loadPubData() {
       setStatus('Loading the directory...', 6);
 
-      const possibleClosures = loadPossibleClosures();
-      const tradingNotices = loadTradingNotices();
       const response = await fetch(DIRECTORY_RELEASE_URL, DATA_FETCH_OPTIONS);
       if (!response.ok) {
         throw new Error(`Directory release load failed with status ${response.status}`);
@@ -2102,22 +2063,20 @@
       applyDirectoryMetadata(release.metadata);
 
       preparePubData(release.rows);
-      await tradingNotices;
-      possibleClosureFindings = await possibleClosures;
+      if (release.trading_notices) {
+        tradingNoticeEntries = new Map(Object.entries(release.trading_notices));
+      } else {
+        await loadTradingNotices();
+      }
       updateCountryCounts();
       updateStats();
-    }
-
-    function freshLocationEvidence(checkedAt) {
-      const age = (Date.now() - Date.parse(checkedAt || '')) / 86400000;
-      return Number.isFinite(age) && age >= -1 && age <= directoryRelease.max_evidence_age_days;
     }
 
     async function loadCoordinates() {
       setStatus('Loading venue locations…', 35);
       pubData.forEach(item => {
         const location = directoryRelease.locations[item.venue_id];
-        const precise = location.precision === 'venue' && freshLocationEvidence(location.checked_at);
+        const precise = location.precision === 'venue';
         const coords = precise ? location : location.postcode_location;
         item.locationIssue = location.metadata_issue || null;
         const issue = item.locationIssue;
@@ -2131,7 +2090,7 @@
         item.searchText = [item.searchText, ...searchAliases].join(' ');
         if (precise && typeof address?.street === 'string' && address.street.trim()
           && compact(address.postcode) === compact(issue?.use_reference_for_directions ? referencePostcode : item.postcode)
-          && freshLocationEvidence(address.checked_at)) {
+          && Number.isFinite(Date.parse(address.checked_at))) {
           item.directionsStreet = address.street;
           item.directionsPostcode = address.postcode;
         }
@@ -2146,13 +2105,13 @@
           item.lat = coords.lat;
           item.lng = coords.lng;
           item.locationPrecision = precise ? 'venue' : 'postcode';
-          const closure = possibleClosureFindings.get(item.venue_id);
-          item.possibleClosure = closureEvidenceMatchesVenue(closure, item);
-          const label = `${venueLabel(item)}${precise ? '' : ', approximate postcode location'}`;
-          item.marker = L.marker([item.lat, item.lng], item.locationPrecision === 'postcode'
-            ? { icon: approximatePostcodeIcon, title: 'Approximate postcode location' }
-            : { alt: label }
-          );
+          item.premisesPrecision = precise ? (location.premises_precision || 'reference') : 'postcode';
+          item.newOrReturning = location.new_or_returning === true;
+          item.visitorHint = typeof location.visitor_hint === 'string' ? location.visitor_hint : '';
+          const label = venueLabel(item) + ', ' + locationLabel(item);
+          item.marker = L.marker([item.lat, item.lng], item.premisesPrecision === 'building'
+            ? { alt: label, title: label }
+            : { icon: approximatePostcodeIcon, alt: label, title: label });
           item.marker.on('add', () => item.marker.getElement().setAttribute('aria-label', label));
           configureVenuePopup(item);
           item.marker.on('popupopen', ({ popup }) => {
@@ -2180,7 +2139,6 @@
           item.lat = null;
           item.lng = null;
           item.locationPrecision = null;
-          item.possibleClosure = false;
           item.marker = null;
         }
       });
@@ -2194,6 +2152,7 @@
     }
 
     function setSplashVisible(visible) {
+      els.splash.inert = !visible;
       els.splash.classList.toggle('hidden', !visible);
     }
 
@@ -2222,11 +2181,23 @@
         .replaceAll("'", '&#39;');
     }
 
+    function locationLabel(item) {
+      if (item.visitorHint) {
+        if (item.premisesPrecision === 'site') return 'Approximate site pin. ' + item.visitorHint;
+        if (item.premisesPrecision === 'reference') return 'Reference pin. ' + item.visitorHint;
+        return item.visitorHint;
+      }
+      return { building: 'Pin within the identified building', site: 'Site location. The serving point is unconfirmed.',
+        reference: 'Reference location. The exact premises are unconfirmed.', postcode: APPROXIMATE_MAP_NOTE }[item.premisesPrecision] || APPROXIMATE_MAP_NOTE;
+    }
+
     function venueMapsLink(item) {
-      const precise = item.locationPrecision === 'venue' && hasCoordinates(item);
-      const label = precise ? 'Open in Google Maps' : 'Find in Google Maps';
-      let query = precise ? `${item.lat},${item.lng}` : [item.pub_name, item.place_name, item.postcode].filter(Boolean).join(', ');
-      if (item.directionsStreet) {
+      const precise = item.premisesPrecision === 'building' && hasCoordinates(item);
+      const usePin = hasCoordinates(item) && (precise || item.premisesPrecision === 'site' || item.postcodeIssueReviewed);
+      const label = usePin ? 'Open in Google Maps' : 'Find in Google Maps';
+      const searchPostcode = item.locationIssue?.use_reference_for_directions ? item.locationIssue.reference : item.postcode;
+      let query = usePin ? `${item.lat},${item.lng}` : [item.alternateName || item.pub_name, item.place_name, searchPostcode].filter(Boolean).join(', ');
+      if (!precise && item.directionsStreet) {
         const locality = item.place_name.split(':')[0].trim();
         const hasPostcode = item.directionsStreet.toUpperCase().includes(item.directionsPostcode.toUpperCase());
         const hasLocality = item.directionsStreet.split(',').some(part => part.trim().toLowerCase() === locality.toLowerCase());
@@ -2239,18 +2210,36 @@
       return `<a href="${escapeHtml(url)}" target="_blank" rel="noopener noreferrer" aria-label="${label}, ${escapeHtml(venueLabel(item))}">${label}</a>`;
     }
 
-    function tradingNotice(item) {
+    function noticeDate(value) {
+      if (typeof value !== 'string' || !/^\d{4}-\d{2}-\d{2}$/.test(value)) return NaN;
+      const time = Date.parse(value + 'T00:00:00Z');
+      return Number.isFinite(time) && new Date(time).toISOString().slice(0, 10) === value ? time : NaN;
+    }
+
+    function tradingNotice(item, now = Date.now()) {
       if (hiddenTradingNoticeVenueIds.has(item.venue_id)) return '';
       const notice = tradingNoticeEntries.get(item.venue_id);
-      if (notice) {
-        const reviewBy = typeof notice.review_by === 'string' && /^\d{4}-\d{2}-\d{2}$/.test(notice.review_by)
-          ? Date.parse(`${notice.review_by}T00:00:00Z`) : NaN;
-        if (Number.isFinite(reviewBy) && Date.now() >= reviewBy + 86400000) {
+      if (!notice || notice.venue_id !== item.venue_id || typeof notice.text !== 'string') return '';
+      const published = noticeDate(notice.published_at);
+      if (!Number.isFinite(published) || published > now) return '';
+      if (notice.review_by !== undefined) {
+        const reviewBy = noticeDate(notice.review_by);
+        if (!Number.isFinite(reviewBy) || reviewBy < published) return '';
+        if (now >= reviewBy + 86400000) {
           return 'This trading status notice is due for review. Check before travelling.';
         }
-        return notice.text;
       }
-      return item.possibleClosure ? 'Possible closure. Check opening and Bass availability before travelling.' : '';
+      return notice.text;
+    }
+
+    function noticeMarkup(item) {
+      const text = tradingNotice(item);
+      if (!text) return '';
+      const notice = tradingNoticeEntries.get(item.venue_id);
+      const date = /^\d{4}-\d{2}-\d{2}$/.test(notice.published_at) ? ' (' + notice.published_at + ')' : '';
+      const link = /^https:\/\/[^\s/]+\//i.test(notice.source_url || '')
+        ? ' <a target="_blank" rel="noopener noreferrer" href="' + escapeHtml(notice.source_url) + '">' + escapeHtml(notice.source || 'Source') + escapeHtml(date) + '</a>' : '';
+      return escapeHtml(text) + link;
     }
 
     function venueLabel(item) {
@@ -2279,12 +2268,13 @@
 
     function makeVenueDetails(item) {
       return `
-          ${tradingNotice(item) ? `<p class="trading-notice">${escapeHtml(tradingNotice(item))}</p>` : ''}
+          ${tradingNotice(item) ? `<p class="trading-notice">${noticeMarkup(item)}</p>` : ''}
           <p><strong>Place:</strong> ${escapeHtml(item.place_name)} · <strong>Postcode:</strong> ${escapeHtml(item.postcode)}</p>
-          ${item.locationPrecision === 'postcode' ? `<p class="approximate-location"><strong>Map location:</strong> ${APPROXIMATE_MAP_NOTE}</p>` : ''}
-          ${!item.postcodeIssueReviewed && item.locationIssue ? `<p class="approximate-location">The directory postcode differs from the reference address (${escapeHtml(item.locationIssue.reference)}). ${item.locationPrecision === 'venue' ? 'The pin marks the verified venue.' : 'The precise venue location needs review.'}</p>` : ''}
+          <p class="approximate-location"><strong>Map location:</strong> ${escapeHtml(locationLabel(item))}</p>
+          ${!item.postcodeIssueReviewed && item.locationIssue ? `<p class="approximate-location">The directory postcode differs from the reference address (${escapeHtml(item.locationIssue.reference)}).</p>` : ''}
+          ${item.newOrReturning ? '<p><strong>New or returning in this directory edition</strong></p>' : ''}
           <p><strong>Availability:</strong> ${availabilityLabel(item)} · <strong>Dispense:</strong> ${escapeHtml(dispenseLabel(item.dispense))}</p>
-          <p class="venue-confirmation"><strong>Last confirmed:</strong> ${escapeHtml(confirmationPeriod(item.last))}</p>
+          <p class="venue-confirmation"><strong>Last directory sighting:</strong> ${escapeHtml(confirmationPeriod(item.last))}</p>
           <p><strong>Area:</strong> ${escapeHtml(item.area || '—')} | <strong>Country:</strong> ${escapeHtml(item.country)}</p>
           ${item.notes ? `<p><strong>Notes:</strong> ${escapeHtml(item.notes)}</p>` : ''}
       `;
@@ -2484,15 +2474,15 @@
       card.className = 'card';
       card.innerHTML = `
         <div class="card-title">${escapeHtml(item.pub_name)}</div>
-        ${tradingNotice(item) ? `<div class="footer-note trading-notice">${escapeHtml(tradingNotice(item))}</div>` : ''}
+        ${tradingNotice(item) ? `<div class="footer-note trading-notice">${noticeMarkup(item)}</div>` : ''}
         <div class="meta">${escapeHtml(item.place_name)} · ${escapeHtml(item.postcode)}<br>${escapeHtml(item.area || '—')} · ${escapeHtml(item.country)}</div>
         <div class="chips">
+          ${item.newOrReturning ? '<span class="chip">New or returning this edition</span>' : ''}
           <span class="chip ${item.pg === 'Perm' ? 'perm' : 'guest'}">${availabilityLabel(item)}</span>
           <span class="chip">${escapeHtml(dispenseLabel(item.dispense))}</span>
         </div>
-        <div class="card-confirmation${isOlderListing(item) ? ' older' : ''}"><strong>Last confirmed:</strong> ${escapeHtml(confirmationPeriod(item.last))}</div>
+        <div class="card-confirmation${isOlderListing(item) ? ' older' : ''}"><strong>Last directory sighting:</strong> ${escapeHtml(confirmationPeriod(item.last))}</div>
         ${distanceMiles(item) !== null ? `<div class="footer-note">${distanceMiles(item).toFixed(1)} miles away</div>` : ''}
-        ${item.locationPrecision === 'postcode' ? `<div class="footer-note">${APPROXIMATE_MAP_NOTE}</div>` : ''}
         ${!item.postcodeIssueReviewed && item.locationIssue ? `<div class="footer-note">Reference address postcode: ${escapeHtml(item.locationIssue.reference)}. The directory lists a different postcode.</div>` : ''}
         ${!item.marker ? '<div class="footer-note">Location unavailable on the map.</div>' : ''}
         ${item.notes ? `<div class="footer-note">${escapeHtml(item.notes)}</div>` : ''}
@@ -2500,6 +2490,7 @@
           ${item.marker ? `<button class="secondary card-map-button" type="button" aria-label="View on map, ${label}">View on map</button>` : ''}
           ${venueMapsLink(item)}
         </div>
+        <div class="footer-note">${escapeHtml(locationLabel(item))}</div>
         <div class="footer-note">${venueReportButton(item)}</div>
       `;
       bindVenueReport(card, item);

@@ -13,6 +13,7 @@ import uuid
 from collections import Counter
 from datetime import date
 from pathlib import Path
+from urllib.parse import parse_qs, urlsplit
 
 from build_coordinate_verification import venue_key
 from validate_csv import validate as validate_csv
@@ -45,14 +46,17 @@ def write_rows(path, rows):
         writer.writerows(rows)
 
 
-def validate_pdf_listings(pdf, rows):
+def validate_pdf_listings(pdf, rows, metadata=None):
     """Compare every source field and retain the count of repeated rows."""
     from convert_pdf_to_csv import PdfReader, parse_pdf_rows
 
     def listing_counts(listings):
         return Counter(tuple(row[field] for field in FIELDS) for row in listings)
 
-    source = listing_counts(parse_pdf_rows(PdfReader(str(pdf))))
+    highlights = [] if metadata is not None else None
+    source = listing_counts(parse_pdf_rows(PdfReader(str(pdf)), highlights))
+    if metadata is not None and sorted(highlights) != sorted(metadata.get("new_or_returning", [])):
+        return ["New or returning listings disagree with PDF highlighting"]
     published = listing_counts(rows)
     if source == published:
         return []
@@ -231,21 +235,79 @@ def reconcile(rows, registry, decisions):
     return selected, registry, {'errors': errors, 'changes': changes}
 
 
+def building_identity_documented(review, sources):
+    """Require a cited occupancy check in addition to the building geometry."""
+    identity = review.get('identity_sources')
+    if not (review.get('building_url') in sources and review.get('geometry_feature')
+            and isinstance(identity, list) and identity):
+        return False
+    geometry_domains = ('openstreetmap.org', 'osm.org', 'osdatahub.os.uk',
+                        'minedbuildings.z5.web.core.windows.net', 'overturemaps.org')
+    for url in identity:
+        if not isinstance(url, str) or url not in sources:
+            return False
+        parsed = urlsplit(url)
+        host = (parsed.hostname or '').lower().rstrip('.')
+        if any(host == domain or host.endswith('.' + domain) for domain in geometry_domains):
+            return False
+        if url == review['building_url']:
+            checks = review.get('external_premises_checks')
+            outlines = checks.get('council_premises_outline') if isinstance(checks, dict) else None
+            if not isinstance(outlines, list) or url not in outlines:
+                return False
+        if host.endswith('.arcgisonline.com') and '/world_imagery/' in parsed.path.lower():
+            return False
+        if host in ('maps.app.goo.gl', 'goo.gl'):
+            return False
+        if (host.startswith('maps.google.') or
+                (host in ('google.co.uk', 'www.google.co.uk', 'google.com', 'www.google.com')
+                 and parsed.path.startswith('/maps'))):
+            query = parse_qs(parsed.query)
+            if query.get('map_action') != ['pano'] or not query.get('pano'):
+                return False
+    return True
+
+
+def premises_review_valid(row, pin):
+    review = pin.get('premises_review')
+    if not isinstance(review, dict):
+        return False
+    try:
+        dated = date.fromisoformat(review['checked_at']) <= date.today()
+    except (KeyError, ValueError, TypeError):
+        return False
+    sources = review.get('sources')
+    return (dated and review.get('venue_key') == venue_key(row)
+            and review.get('point') == {k: pin.get(k) for k in ('lat', 'lng')}
+            and review.get('precision') in ('building', 'site', 'reference')
+            and isinstance(review.get('basis'), str) and bool(review['basis'].strip())
+            and isinstance(sources, list) and bool(sources)
+            and all(isinstance(url, str) and re.fullmatch(r'https://[A-Za-z0-9.-]+(?::[0-9]+)?(?:[/?#][^\s]*)?', url) for url in sources)
+            and (review['precision'] != 'building' or building_identity_documented(review, sources)))
+
+
 def build_ledger(rows, registry, allow_expired=False):
     records = {}
     for row in rows:
         entry = registry['venues'][row['venue_id']]
         pin = entry.get('verified_pin')
-        verified = bool(pin and evidence_valid(pin, allow_expired=allow_expired))
+        # Ageing a source does not move a physical building to its postcode.
+        verified = bool(pin and evidence_valid(pin, allow_expired=True))
         record = {
             'venue_id': row['venue_id'], 'pub_name': row['pub_name'], 'place_name': row['place_name'], 'postcode': row['postcode'],
             'status': 'verified_venue' if verified else 'venue_coordinate_requires_review' if pin else 'postcode_approximate',
             'display_precision': 'venue' if verified else 'postcode',
+            'premises_precision': 'reference' if verified else 'postcode',
             'coordinate_source': pin.get('source', '') if pin else 'postcode',
             'evidence': copy.deepcopy(pin.get('evidence', [])) if pin else [],
         }
         if pin:
             record.update(lat=pin['lat'], lng=pin['lng'])
+            review = pin.get('premises_review', {})
+            if verified and premises_review_valid(row, pin):
+                record['premises_precision'] = review['precision']
+                if review.get('visitor_hint'):
+                    record['visitor_hint'] = review['visitor_hint']
             if pin.get('metadata_issue'):
                 record['metadata_issue'] = dict(pin['metadata_issue'], listed=row['postcode'])
         for review in entry.get('listing_reviews', []):
@@ -258,8 +320,9 @@ def build_ledger(rows, registry, allow_expired=False):
     evidence_dates = [e['checked_at'] for r in records.values() for e in active_evidence(r) if e.get('checked_at')]
     return {
         'schema_version': 2, 'generated_at': max(evidence_dates, default=''),
-        'policy': {'max_evidence_age_days': MAX_EVIDENCE_AGE_DAYS, 'venue_pin': 'Evidence-backed venue coordinates; unresolved venues use explicitly approximate postcode pins.'},
-        'counts': dict(Counter(r['status'] for r in records.values())), 'records': records,
+        'policy': {'max_evidence_age_days': MAX_EVIDENCE_AGE_DAYS, 'venue_pin': 'Building, site and reference positions have separate precision labels. Missing positions use the listed postcode.'},
+        'counts': dict(Counter(r['status'] for r in records.values())),
+        'premises_counts': dict(Counter(r['premises_precision'] for r in records.values())), 'records': records,
     }
 
 
@@ -287,8 +350,9 @@ def directions_address(record):
     return max(candidates, key=lambda address: address['checked_at'], default=None)
 
 
-def build_bundle(rows, metadata, postcodes, ledger):
+def build_bundle(rows, metadata, postcodes, ledger, notices=None):
     locations = {}
+    highlighted = set(metadata.get('new_or_returning', []))
     for row in rows:
         record = ledger['records'][venue_key(row)]
         precision = record['display_precision']
@@ -296,11 +360,16 @@ def build_bundle(rows, metadata, postcodes, ledger):
         if not point_valid(point or {}):
             raise ValueError(f'{venue_key(row)}: no usable {precision} location')
         locations[row['venue_id']] = {'lat': point['lat'], 'lng': point['lng'], 'precision': precision}
+        if venue_key(row) in highlighted:
+            locations[row['venue_id']]['new_or_returning'] = True
         fallback = postcodes.get(row['postcode'])
         if not point_valid(fallback or {}):
             raise ValueError(f'{venue_key(row)}: postcode fallback is invalid or unavailable')
         locations[row['venue_id']]['postcode_location'] = fallback
         if precision == 'venue':
+            locations[row['venue_id']]['premises_precision'] = record.get('premises_precision', 'reference')
+            if record.get('visitor_hint'):
+                locations[row['venue_id']]['visitor_hint'] = record['visitor_hint']
             locations[row['venue_id']]['checked_at'] = max(e['checked_at'] for e in active_evidence(record))
             address = directions_address(record)
             if address:
@@ -311,13 +380,46 @@ def build_bundle(rows, metadata, postcodes, ledger):
             locations[row['venue_id']]['alternate_name'] = record['alternate_name']
     payload = {'schema_version': 1, 'metadata': metadata, 'rows': rows, 'locations': locations,
                'max_evidence_age_days': MAX_EVIDENCE_AGE_DAYS}
+    if notices is not None:
+        if notices.get('schema_version') != 1 or not isinstance(notices.get('notices'), list) or not isinstance(notices.get('manual_hides'), list):
+            raise ValueError('Invalid curated trading notice manifest')
+        hidden = set(notices['manual_hides'])
+        visible = {}
+        seen = set()
+        for notice in notices['notices']:
+            identifier = notice['venue_id']
+            if identifier in seen or not isinstance(notice.get('text'), str) or not notice['text'].strip():
+                raise ValueError(f'Invalid or duplicate trading notice: {identifier}')
+            for field in ('published_at', 'review_by'):
+                if field == 'review_by' and field not in notice:
+                    continue
+                value = notice.get(field)
+                try:
+                    valid_date = isinstance(value, str) and date.fromisoformat(value).isoformat() == value
+                except ValueError:
+                    valid_date = False
+                if not valid_date:
+                    raise ValueError(f'Invalid trading notice {field}: {identifier}')
+            if 'review_by' in notice and notice['review_by'] < notice['published_at']:
+                raise ValueError(f'Trading notice review precedes publication: {identifier}')
+            seen.add(identifier)
+            if identifier in locations and identifier not in hidden:
+                visible[identifier] = notice
+        payload['trading_notices'] = visible
     payload['release_id'] = hashlib.sha256(json.dumps(payload, sort_keys=True, separators=(',', ':')).encode()).hexdigest()
     return payload
 
 
-def write_release(root, rows, registry, metadata, postcodes):
+def write_release(root, rows, registry, metadata, postcodes, *, source_root=None):
     root = Path(root)
     root.mkdir(parents=True, exist_ok=True)
+    source_notices = Path(source_root or root) / 'trading-notices.json'
+    notices = read_json(source_notices)
+    if source_root and source_notices.exists() and source_notices.resolve() != (root / source_notices.name).resolve():
+        (root / source_notices.name).write_bytes(source_notices.read_bytes())
+    from apply_closed_reviews import apply_decisions
+    decisions = read_json(Path(source_root or root) / 'audit/closed-review-decisions.json', {})
+    apply_decisions(registry, decisions)
     ledger = build_ledger(rows, registry)
     from location_review import build_review
     registry['location_review'] = build_review(rows, registry, ledger)
@@ -330,7 +432,7 @@ def write_release(root, rows, registry, metadata, postcodes):
     write_json(root / 'pub-coordinates.json', {'coordinates': postcodes, 'unmapped_postcodes': []})
     write_json(root / 'venue-coordinates.json', {'venues': venues, 'unresolved_venues': [k for k, r in ledger['records'].items() if r['display_precision'] != 'venue']})
     write_json(root / 'coordinate-verification.json', ledger)
-    write_json(root / 'directory-release.json', build_bundle(rows, metadata, postcodes, ledger))
+    write_json(root / 'directory-release.json', build_bundle(rows, metadata, postcodes, ledger, notices))
     return ledger
 
 
@@ -378,6 +480,12 @@ def validate_release(root, previous_root=None, allow_review_downgrades=False, al
         errors.append('Verification ledger does not match the candidate registry and listings')
     venues = read_json(root / 'venue-coordinates.json', {'venues': {}})['venues']
     overrides = read_json(root / 'venue-coordinate-overrides.json', {'venues': {}})['venues']
+    for row in rows:
+        pin = registry['venues'][row['venue_id']].get('verified_pin') or {}
+        review = pin.get('premises_review')
+        if review is not None and (not isinstance(review, dict) or
+                (review.get('venue_key') == venue_key(row) and not premises_review_valid(row, pin))):
+            errors.append(f"{row['venue_id']}: incomplete or stale evidence for reviewed premises")
     for key, record in expected['records'].items():
         if record['display_precision'] == 'venue':
             rendered = overrides.get(key) or venues.get(key)
@@ -391,7 +499,7 @@ def validate_release(root, previous_root=None, allow_review_downgrades=False, al
             if not any(any(postcodes_match(e.get('reference_postcode'), pc) for pc in accepted_postcodes) for e in active_evidence(record)):
                 errors.append(f'{key}: coordinate evidence belongs to a different address')
     try:
-        if bundle != build_bundle(rows, metadata, postcodes, expected):
+        if bundle != build_bundle(rows, metadata, postcodes, expected, read_json(root / 'trading-notices.json')):
             errors.append('Map release does not match candidate listings, evidence and coordinates')
     except ValueError as error:
         errors.append(str(error))
@@ -399,7 +507,7 @@ def validate_release(root, previous_root=None, allow_review_downgrades=False, al
     valid, csv_errors, _ = validate_csv(previous_rows, rows)
     errors.extend(csv_errors)
     from validate_coordinate_verification import validate as validate_coordinate_files
-    errors.extend(validate_coordinate_files(root, max_evidence_age_days=None if allow_expired else MAX_EVIDENCE_AGE_DAYS))
+    errors.extend(validate_coordinate_files(root))
     if previous_root:
         old = bootstrap_registry(previous_root)
         previously_published = {row.get('venue_id') for row in previous_rows}
@@ -407,12 +515,23 @@ def validate_release(root, previous_root=None, allow_review_downgrades=False, al
             identifier = row['venue_id']
             old_pin = old['venues'].get(identifier, {}).get('verified_pin')
             new_pin = registry['venues'][identifier].get('verified_pin')
-            if old_pin and evidence_valid(old_pin):
-                if not new_pin or not evidence_valid(new_pin):
+            if old_pin and evidence_valid(old_pin, allow_expired=True):
+                if not new_pin or not evidence_valid(new_pin, allow_expired=True):
                     reviewed = bool(new_pin and new_pin.get('review_required') and new_pin.get('review_reason'))
                     may_downgrade = allow_review_downgrades or identifier not in previously_published
                     if not may_downgrade or not reviewed:
                         errors.append(f'{identifier}: previously verified pin lost verification')
-                elif distance_metres(old_pin, new_pin) > 50:
-                    errors.append(f'{identifier}: previously verified pin moved more than 50 metres; review required')
+                elif (distance_metres(old_pin, new_pin) > 50 or
+                      (old_pin.get('premises_review') and any(old_pin[k] != new_pin[k] for k in ('lat', 'lng')))):
+                    review = new_pin.get('premises_review') or {}
+                    previous = {k: old_pin[k] for k in ('lat', 'lng')}
+                    latest = (registry['venues'][identifier].get('location_approvals') or [{}])[-1]
+                    explicit = (latest.get('previous_pin') == old_pin and latest.get('venue_key') == venue_key(row)
+                                and latest.get('approved_point') == {k: new_pin[k] for k in ('lat', 'lng')}
+                                and bool(latest.get('reviewed_by') and latest.get('comment_id'))
+                                and str(latest.get('review_url', '')).startswith('https://github.com/')
+                                and any(e.get('url') == latest.get('source_url') for e in active_evidence(new_pin)))
+                    if not explicit and not (premises_review_valid(row, new_pin) and review.get('precision') in ('building', 'site')
+                            and review.get('previous_point') == previous and len({url.split('/')[2] for url in review['sources']}) >= 2):
+                        errors.append(f'{identifier}: previously verified pin moved more than 50 metres or changed a premises-reviewed point; review required')
     return errors

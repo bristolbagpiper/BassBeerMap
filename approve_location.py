@@ -642,6 +642,8 @@ def approve(root, staging, event, owner):
             })
 
         previous = copy.deepcopy(entry.get("verified_pin"))
+        if previous and previous.get('premises_review') and all(pin[k] == previous[k] for k in ('lat', 'lng')):
+            pin['premises_review'] = copy.deepcopy(previous['premises_review'])
         entry["verified_pin"] = pin
         entry.setdefault("location_approvals", []).append(dict(
             comment_id=event["comment"]["id"],
@@ -650,10 +652,11 @@ def approve(root, staging, event, owner):
             checked_at=date.today().isoformat(),
             source_url=approval_url,
             previous_pin=previous,
+            approved_point={k: pin[k] for k in ("lat", "lng")}, venue_key=venue_key(row),
         ))
 
     staging.mkdir(parents=True, exist_ok=True)
-    write_release(staging, rows, registry, read_json(root / "directory-meta.json"), read_json(root / "pub-coordinates.json")["coordinates"])
+    write_release(staging, rows, registry, read_json(root / "directory-meta.json"), read_json(root / "pub-coordinates.json")["coordinates"], source_root=root)
     # Keep non-release audit inputs available to the candidate validators.
     overrides_path = root / "venue-coordinate-overrides.json"
     if overrides_path.exists():

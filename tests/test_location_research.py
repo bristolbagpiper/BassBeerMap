@@ -29,6 +29,17 @@ class ResearchAndApprovalTests(unittest.TestCase):
                                                        'html_url': 'https://github.com/example/repo/issues/5#issuecomment-123'}}
         self.source = dict(lat=51.45, lng=-2.59, name='Example Inn, Bristol', postcode='BS1 1AA', address='1 High Street')
 
+    def test_targeted_research_preserves_existing_reference_coordinates(self):
+        from tests.test_directory_release import pin
+        ref = pin()
+        self.registry['venues'][self.identifier]['verified_pin'] = ref
+        write_release(self.root, [self.listing], self.registry, {}, {'BS1 1AA': {'lat': 51.45, 'lng': -2.59}})
+        with patch('research_locations.discover', return_value=([], {})), patch('research_locations.resolve_new_pin') as resolve:
+            result = research(self.root, self.stage, venue_id=self.identifier)
+        self.assertEqual(result['checked'], [self.identifier])
+        self.assertEqual(read_json(self.stage / 'venue-registry.json')['venues'][self.identifier]['verified_pin'], ref)
+        resolve.assert_not_called()
+
     def test_only_owner_human_commands_are_accepted(self):
         self.assertEqual(approved_commands(self.event, 'owner'), [{'kind': 'camra', 'venue_id': self.identifier, 'url': self.url}])
         for field, value in [('login', 'outsider'), ('type', 'Bot')]:
@@ -106,7 +117,7 @@ class ResearchAndApprovalTests(unittest.TestCase):
             report = research(self.root, self.stage)
         lookup.assert_called_once()
         self.assertTrue(report['valid'])
-        self.assertEqual(report['automatically_verified'], [])
+        self.assertEqual(report['new_reference_points'], [])
         entry = read_json(self.stage / 'venue-registry.json')['venues'][self.identifier]
         self.assertNotIn('verified_pin', entry)
         self.assertEqual(entry['location_research']['proposals'][0]['url'], self.url)

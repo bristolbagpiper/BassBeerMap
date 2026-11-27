@@ -65,7 +65,7 @@ def discover(row, centre):
                            'complete': result.get('total', len(result['venues'])) <= len(result['venues'])}
 
 
-def research(root, staging, limit=30):
+def research(root, staging, limit=30, venue_id=None):
     root, staging = Path(root), Path(staging)
     errors = validate_release(root)
     if errors:
@@ -74,9 +74,19 @@ def research(root, staging, limit=30):
     registry = copy.deepcopy(read_json(root / 'venue-registry.json'))
     ledger = read_json(root / 'coordinate-verification.json')
     postcodes = read_json(root / 'pub-coordinates.json')['coordinates']
-    unresolved = [r for r in rows if ledger['records'][registry['venues'][r['venue_id']]['current_key']]['display_precision'] != 'venue']
-    unresolved.sort(key=lambda r: (registry['venues'][r['venue_id']].get('location_research', {}).get('checked_at', ''), r['venue_id']))
-    report = {'checked': [], 'automatically_verified': [], 'warnings': []}
+    if venue_id and venue_id not in {row['venue_id'] for row in rows}:
+        raise ValueError('Unknown current directory venue ID')
+    candidates = []
+    for row in rows:
+        identifier = row['venue_id']
+        entry = registry['venues'][identifier]
+        record = ledger['records'][entry['current_key']]
+        precision = record.get('premises_precision', 'reference')
+        if precision != 'building' and (not venue_id or identifier == venue_id):
+            candidates.append(({'postcode': 0, 'reference': 1, 'site': 2}.get(precision, 1),
+                               entry.get('location_research', {}).get('checked_at', ''), identifier, row))
+    unresolved = [item[-1] for item in sorted(candidates)]
+    report = {'checked': [], 'new_reference_points': [], 'warnings': []}
     for row in unresolved[:limit]:
         identifier = row['venue_id']
         entry = registry['venues'][identifier]
@@ -88,13 +98,13 @@ def research(root, staging, limit=30):
                 pin = resolve_new_pin(row, attempt, centre=postcodes.get(row['postcode']))
                 if pin:
                     entry['verified_pin'] = pin
-                    report['automatically_verified'].append(identifier)
+                    report['new_reference_points'].append(identifier)
             except Exception as error:
                 attempt['error'] = type(error).__name__
             entry['verification_attempt'] = attempt
             for warning in attempt.get('source_warnings', []):
                 report.setdefault('source_warnings', []).append(f'{identifier}: {warning}')
-        if identifier not in report['automatically_verified']:
+        if identifier not in report['new_reference_points']:
             try:
                 proposals, coverage = discover(row, postcodes[row['postcode']])
                 entry['location_research'] = dict(checked_at=date.today().isoformat(), status='candidates_found' if proposals else 'no_candidate',
@@ -107,7 +117,7 @@ def research(root, staging, limit=30):
         report['checked'].append(identifier)
         time.sleep(1)
     staging.mkdir(parents=True, exist_ok=True)
-    write_release(staging, rows, registry, read_json(root / 'directory-meta.json'), postcodes)
+    write_release(staging, rows, registry, read_json(root / 'directory-meta.json'), postcodes, source_root=root)
     shutil.copyfile(root / 'latest-bass-directory.pdf', staging / 'latest-bass-directory.pdf')
     errors = validate_release(staging, root)
     report.update(valid=not errors, errors=errors)
@@ -120,9 +130,10 @@ if __name__ == '__main__':
     parser.add_argument('--root', default='.')
     parser.add_argument('--staging', default='candidate-research')
     parser.add_argument('--limit', type=int, default=30)
+    parser.add_argument('--venue-id', help='Restrict research to this current directory venue')
     args = parser.parse_args()
-    report = research(args.root, args.staging, args.limit)
-    print(f"Researched {len(report['checked'])}; automatically verified {len(report['automatically_verified'])}; warnings {len(report['warnings'])}")
+    report = research(args.root, args.staging, args.limit, args.venue_id)
+    print(f"Researched {len(report['checked'])}; new reference positions {len(report['new_reference_points'])}; warnings {len(report['warnings'])}")
     if report['errors']:
         print(report['errors'])
     raise SystemExit(not report['valid'])

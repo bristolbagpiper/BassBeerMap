@@ -91,16 +91,52 @@ SKIP_CONTAINS = ("facebook.com/groups/nationalbassday",)
 SKIP_EXACT = {"not"}
 
 
-def parse_pdf_rows(reader: PdfReader) -> list[dict[str, str]]:
+def gold_cells(page):
+    """Gold table cells in PDF page space, including the producer's transform."""
+    from pypdf import Transformation
+    bounds = []
+    transform, color = Transformation(), ()
+    stack, path = [], []
+    for values, op in page.get_contents().operations:
+        if op == b'q':
+            stack.append((transform, color))
+        elif op == b'Q':
+            transform, color = stack.pop()
+        elif op == b'cm':
+            transform = Transformation(tuple(map(float, values))).transform(transform)
+        elif op in (b'rg', b'g', b'k', b'scn', b'sc'):
+            color = tuple(values)
+        elif op in (b'm', b'l'):
+            path.append(transform.apply_on(tuple(map(float, values))))
+        elif op == b're':
+            x, y, w, h = map(float, values)
+            path.extend(transform.apply_on(pt) for pt in ((x,y),(x+w,y),(x+w,y+h),(x,y+h)))
+        elif op in (b'f', b'f*', b'F', b'B', b'B*', b'b', b'b*', b'S', b's', b'n'):
+            if path and op not in (b'n', b'S', b's') and len(color) == 3 and all(abs(float(a)-b)<0.002 for a,b in zip(color,(1,0.75294,0))):
+                xs, ys = zip(*path)
+                bounds.append((min(xs),min(ys),max(xs),max(ys)))
+            path.clear()
+    return bounds
+
+
+def parse_pdf_rows(reader: PdfReader, highlighted=None) -> list[dict[str, str]]:
     items: list[dict[str, float | str]] = []
 
     for page_number, page in enumerate(reader.pages, start=1):
+      cells = gold_cells(page) if highlighted is not None else []
       def visitor(text, cm, tm, font_dict, font_size):
           if text.strip():
+              highlighted_cell = False
+              if cells:
+                  page_x = cm[0] * tm[4] + cm[2] * tm[5] + cm[4]
+                  page_y = cm[1] * tm[4] + cm[3] * tm[5] + cm[5]
+                  highlighted_cell = any(left <= page_x <= right and bottom <= page_y <= top
+                                         for left, bottom, right, top in cells)
               items.append(
                   {
                       "page": page_number,
                       "text": text,
+                      "gold": highlighted_cell,
                       "x": tm[4],
                       "y": tm[5],
                   }
@@ -126,6 +162,7 @@ def parse_pdf_rows(reader: PdfReader) -> list[dict[str, str]]:
     current_area = ""
     current_row: dict[str, str] | None = None
     started = False
+    current_gold = False
 
     def finish_row() -> None:
         nonlocal current_row
@@ -133,6 +170,9 @@ def parse_pdf_rows(reader: PdfReader) -> list[dict[str, str]]:
             if not current_row["dispense"]:
                 current_row["dispense"] = "H"
             rows.append(current_row)
+            if highlighted is not None and current_gold:
+                from build_coordinate_verification import venue_key
+                highlighted.append(venue_key(current_row))
         current_row = None
 
     for index, item in enumerate(items):
@@ -194,6 +234,7 @@ def parse_pdf_rows(reader: PdfReader) -> list[dict[str, str]]:
         if current_row is None:
             if is_postcode or is_status or is_last or is_dispense:
                 continue
+            current_gold = item["gold"]
             current_row = {
                 "country": current_country,
                 "area": current_area,
@@ -227,6 +268,7 @@ def parse_pdf_rows(reader: PdfReader) -> list[dict[str, str]]:
             continue
         if current_row["pg"] and current_row["last"] and positioned:
             finish_row()
+            current_gold = item["gold"]
             current_row = {
                 "country": current_country,
                 "area": current_area,
@@ -339,8 +381,10 @@ def main() -> None:
     metadata_path = Path(args.metadata)
 
     reader = PdfReader(str(pdf_path))
-    rows = parse_pdf_rows(reader)
+    highlighted = []
+    rows = parse_pdf_rows(reader, highlighted)
     metadata = extract_directory_metadata(pdf_path, reader, args.source_name or None)
+    metadata["new_or_returning"] = sorted(highlighted)
     write_csv(rows, csv_path)
     write_metadata(metadata, metadata_path)
     print(f"Wrote {len(rows):,} rows to {csv_path}")

@@ -1,4 +1,4 @@
-"""Audit the live release and rotate fresh source checks without guessing pins."""
+"""Validate the published release; run source refreshes only on explicit audit calls."""
 import argparse
 import copy
 import hashlib
@@ -26,6 +26,24 @@ def select_batch(rows, registry, state, limit):
     first = unresolved[:min(10, limit)]
     selected = first + verified[:limit - len(first)]
     return selected + unresolved[len(first):len(first) + limit - len(selected)]
+
+
+def integrity_check(root=Path('.'), live_url='https://bassbeermap.com/directory-release.json'):
+    """Read-only integrity and visitor-endpoint check; never stages or writes state."""
+    root = Path(root)
+    errors = validate_release(root, allow_expired=True)
+    live_issues = []
+    try:
+        live = json.loads(fetch_text(live_url))
+        committed = read_json(root / 'directory-release.json')
+        if not isinstance(live, dict) or live.get('schema_version') != 1:
+            live_issues.append('The live map release schema is invalid')
+        elif live != committed:
+            live_issues.append('The live map is not serving the committed release')
+    except Exception as error:
+        live_issues.append(f'The live map release could not be checked: {type(error).__name__}')
+    return dict(valid=not errors, healthy=not errors and not live_issues,
+                errors=errors, live_issues=live_issues)
 
 
 def apply_check(entry, result):
@@ -68,10 +86,10 @@ def health_audit(root, staging, limit=30, check_live=True):
     if check_live:
         try:
             live = json.loads(fetch_text('https://bassbeermap.com/directory-release.json'))
-            if live.get('release_id') != read_json(root / 'directory-release.json')['release_id']:
-                report['live_issues'].append('The live map is not serving the committed release')
-            if live.get('schema_version') != 1:
+            if not isinstance(live, dict) or live.get('schema_version') != 1:
                 report['live_issues'].append('The live map release schema is invalid')
+            elif live != read_json(root / 'directory-release.json'):
+                report['live_issues'].append('The live map is not serving the committed release')
         except Exception as error:
             report['live_issues'].append(f'The live map release could not be checked: {type(error).__name__}')
     for row in select_batch(rows, registry, state, limit):
@@ -116,10 +134,10 @@ def health_audit(root, staging, limit=30, check_live=True):
     for row in rows:
         identifier = row['venue_id']
         pin = registry['venues'][identifier].get('verified_pin')
-        if pin and not pin.get('review_required') and not evidence_valid(pin):
+        if pin and not pin.get('review_required') and not evidence_valid(pin, allow_expired=True):
             pin['review_required'] = True
             pin['review_reason'] = 'Coordinate evidence expired or is incomplete'
-    write_release(staging, rows, registry, read_json(root / 'directory-meta.json'), postcode_coordinates)
+    write_release(staging, rows, registry, read_json(root / 'directory-meta.json'), postcode_coordinates, source_root=root)
     # Share the queue's human-review rules; accepted postcode and FSA differences
     # must not turn into a second, inconsistent set of health alerts.
     review = read_json(staging / 'location-review.json')
@@ -163,10 +181,16 @@ def write_health_status(staging, destination, run_id='', run_url='', pipeline_fa
 def main(argv=None):
     parser = argparse.ArgumentParser()
     parser.add_argument('--root', type=Path, default=Path('.'))
+    parser.add_argument('--integrity-only', action='store_true',
+                        help='validate committed assets and read back the visitor-facing release without auditing sources')
     parser.add_argument('--staging', type=Path, default=Path('candidate-health'))
     parser.add_argument('--limit', type=int, default=30)
     parser.add_argument('--skip-live', action='store_true')
     args = parser.parse_args(argv)
+    if args.integrity_only:
+        report = integrity_check(args.root)
+        print(json.dumps(report, indent=2))
+        return int(not report['healthy'])
     report = health_audit(args.root, args.staging, args.limit, not args.skip_live)
     print(json.dumps(report, indent=2))
     return int(not report['healthy'])

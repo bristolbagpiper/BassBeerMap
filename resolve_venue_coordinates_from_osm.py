@@ -40,6 +40,27 @@ def distance_km(left, right):
     )
 
 
+def interior_point(points):
+    """Place a marker inside a complete, simple, closed OSM way."""
+    if len(points) < 4 or points[0] != points[-1]:
+        return None
+    levels = sorted({lat for lat, _ in points})
+    if len(levels) < 2:
+        return None
+    # Avoid vertices and horizontal edges. The two nearest distinct vertex
+    # levels around the ring's midpoint define a non-degenerate scan line.
+    middle = (levels[0] + levels[-1]) / 2
+    lower, upper = min(zip(levels, levels[1:]), key=lambda pair: abs((pair[0] + pair[1]) / 2 - middle))
+    lat = (lower + upper) / 2
+    crossings = sorted(x + (lat - y) * (xx - x) / (yy - y)
+                       for (y, x), (yy, xx) in zip(points, points[1:])
+                       if min(y, yy) < lat < max(y, yy))
+    if len(crossings) < 2 or len(crossings) % 2:
+        return None
+    left, right = max(zip(crossings[::2], crossings[1::2]), key=lambda pair: pair[1] - pair[0])
+    return (lat, (left + right) / 2) if right > left else None
+
+
 def read_osm_venues(path):
     """Return mapped venue points and building outlines from an OSM PBF.
 
@@ -85,7 +106,7 @@ def read_osm_venues(path):
         def way(self, way):
             venue = metadata(way.tags)
             refs = [int(node.ref) for node in way.nodes]
-            if venue and refs:
+            if venue and len(refs) >= 4 and refs[0] == refs[-1]:
                 venue_ways.append((venue, refs))
 
     handler = Handler()
@@ -107,12 +128,11 @@ def read_osm_venues(path):
         wanted_filter = osmium.filter.IdFilter(wanted_node_ids).enable_for(osmium.osm.NODE)
         osmium.apply(reader, wanted_filter, LocationHandler())
     for venue, refs in venue_ways:
-        points = [locations[ref] for ref in refs if ref in locations]
-        if points:
-            venue.update({
-                "lat": sum(point[0] for point in points) / len(points),
-                "lng": sum(point[1] for point in points) / len(points),
-            })
+        if not all(ref in locations for ref in refs):
+            continue
+        position = interior_point([locations[ref] for ref in refs])
+        if position is not None:
+            venue.update(lat=position[0], lng=position[1])
             venues.append(venue)
     return venues
 

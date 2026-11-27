@@ -137,6 +137,18 @@ class ReleaseGateTests(unittest.TestCase):
     def test_complete_consistent_release_passes(self):
         self.assertEqual(validate_release(self.root), [])
 
+    def test_malformed_trading_notice_cannot_enter_a_release(self):
+        identifier = self.rows[0]['venue_id']
+        notice = {'venue_id': identifier, 'text': 'Operator update', 'published_at': '2026-11-25'}
+        manifest = {'schema_version': 1, 'manual_hides': [], 'notices': [notice]}
+        ledger = build_ledger(self.rows, self.registry)
+        for change in [{'published_at': None}, {'published_at': '20261125'}, {'review_by': '2027-02-30'},
+                       {'review_by': '2026-11-24'}]:
+            with self.subTest(change=change):
+                manifest['notices'] = [dict(notice, **change)]
+                with self.assertRaisesRegex(ValueError, '[Tt]rading notice'):
+                    build_bundle(self.rows, self.metadata, self.postcodes, ledger, manifest)
+
     def test_same_exact_point_cannot_be_reused_for_different_postcodes(self):
         rows = copy.deepcopy(self.rows)
         rows[-1]['postcode'] = 'BS1 1AB'
@@ -204,9 +216,26 @@ class ReleaseGateTests(unittest.TestCase):
         self.assertEqual(discovered_row['pub_name'], 'New Inn')
         self.assertEqual(discovered_centre, self.postcodes['BS1 1AA'])
         self.assertTrue(report['valid'], report['errors'])
-        self.assertEqual(report['summary']['approximate_pins'], 1)
+        self.assertEqual(report['summary']['postcode_fallbacks'], 1)
         self.assertEqual(report['summary']['added_count'], 1)
         self.assertEqual((self.root / 'directory-release.json').read_bytes(), before)
+
+    def test_selected_upload_pdf_is_staged_as_canonical_without_replacing_other_files(self):
+        candidate = Path(self.temporary.name) / 'raw.csv'
+        write_rows(candidate, self.rows)
+        uploaded = Path(self.temporary.name) / 'source upload.pdf'
+        uploaded.write_bytes(b'%PDF-upload')
+        unrelated = self.root / 'reference.pdf'
+        unrelated.write_bytes(b'%PDF-reference')
+        canonical = self.root / 'latest-bass-directory.pdf'
+        canonical.write_bytes(b'%PDF-old-canonical')
+        before = {path.name: path.read_bytes() for path in self.root.iterdir()}
+        with patch('ingest_directory.validate_pdf_listings', return_value=[]):
+            report = stage_import(candidate, self.root, self.stage, check_sources=False, source_pdf=uploaded)
+        self.assertTrue(report['valid'], report['errors'])
+        self.assertEqual((self.stage / 'latest-bass-directory.pdf').read_bytes(), b'%PDF-upload')
+        self.assertEqual({path.name: path.read_bytes() for path in self.root.iterdir()}, before)
+        self.assertEqual(uploaded.read_bytes(), b'%PDF-upload')
 
     def test_failed_import_leaves_published_release_untouched(self):
         candidate = Path(self.temporary.name) / 'raw.csv'
@@ -246,8 +275,8 @@ class ReleaseGateTests(unittest.TestCase):
         published = {p.name: p.read_bytes() for p in self.root.iterdir()}
         report = stage_import(candidate, self.root, self.stage, check_sources=False)
         self.assertTrue(report['valid'], report['errors'])
-        self.assertEqual(report['summary']['verified_pins'], len(rows))
-        self.assertEqual(report['summary']['approximate_pins'], 0)
+        self.assertEqual(report['summary']['accepted_reference_points'], len(rows))
+        self.assertEqual(report['summary']['postcode_fallbacks'], 0)
         staged = read_json(self.stage / 'venue-registry.json')
         identifier = before['venue_id']
         self.assertEqual(staged['venues'][identifier]['current_key'], venue_key(rows[0]))
@@ -263,11 +292,49 @@ class ReleaseGateTests(unittest.TestCase):
         self.assertTrue(any('previously verified pin lost verification' in error
                             for error in validate_release(self.stage, self.root)))
 
-    def test_expired_evidence_never_produces_a_precise_pin(self):
+    def test_old_reference_retains_best_point_without_claiming_building_precision(self):
         registry = copy.deepcopy(self.registry)
         registry['venues'][self.rows[0]['venue_id']]['verified_pin']['evidence'][0]['checked_at'] = (date.today() - timedelta(days=401)).isoformat()
         ledger = build_ledger(self.rows, registry)
-        self.assertEqual(ledger['records'][venue_key(self.rows[0])]['display_precision'], 'postcode')
+        self.assertEqual(ledger['records'][venue_key(self.rows[0])]['display_precision'], 'venue')
+        self.assertEqual(build_bundle(self.rows, self.metadata, self.postcodes, ledger)['locations'][self.rows[0]['venue_id']]['premises_precision'], 'reference')
+
+    def test_reviewed_move_is_bound_to_original_location_venue_and_new_building(self):
+        rows = self.rows
+        identifier = rows[0]['venue_id']
+        registry = copy.deepcopy(self.registry)
+        position = registry['venues'][identifier]['verified_pin']
+        previous = {k: position[k] for k in ('lat', 'lng')}
+        position['lat'] += .002
+        point = {k: position[k] for k in ('lat', 'lng')}
+        position['evidence'][0]['reference_coordinate'] = point
+        shape = 'https://www.openstreetmap.org/way/123'
+        position['premises_review'] = dict(venue_key=venue_key(rows[0]), previous_point=previous,
+            point=point, precision='building', sources=[shape, 'https://example.org/operator'],
+            building_url=shape, geometry_feature='way/123', identity_sources=['https://example.org/operator'],
+            checked_at=date.today().isoformat(), basis='Named and numbered building')
+        from directory_release import premises_review_valid
+        basemap = 'https://osdatahub.os.uk/downloads/open/OpenMapLocal'
+        point_link = 'https://www.google.com/maps?q=51.1,-2.5'
+        for invalid in ([], [shape], ['https://operator.invalid/unrecorded'], [basemap], [point_link]):
+            review = dict(position['premises_review'], identity_sources=invalid)
+            review['sources'] = review['sources'] + [basemap, point_link]
+            self.assertFalse(premises_review_valid(rows[0], dict(position, premises_review=review)))
+        council = 'https://www.planning.data.gov.uk/entity/123'
+        outline_review = dict(position['premises_review'], sources=[council],
+                              building_url=council, identity_sources=[council])
+        self.assertFalse(premises_review_valid(rows[0], dict(position, premises_review=outline_review)))
+        outline_review['external_premises_checks'] = {'council_premises_outline': [council]}
+        self.assertTrue(premises_review_valid(rows[0], dict(position, premises_review=outline_review)))
+        write_release(self.stage, rows, registry, self.metadata, self.postcodes)
+        self.assertEqual(validate_release(self.stage, self.root), [])
+        position['premises_review']['previous_point'] = point
+        write_release(self.stage, rows, registry, self.metadata, self.postcodes)
+        self.assertTrue(any('moved' in err for err in validate_release(self.stage, self.root)))
+        position['premises_review']['previous_point'] = previous
+        position['premises_review']['point'] = previous
+        write_release(self.stage, rows, registry, self.metadata, self.postcodes)
+        self.assertTrue(any('stale evidence' in err for err in validate_release(self.stage, self.root)))
 
     def test_weekly_confirmed_source_conflict_quarantines_pin_without_guessing_a_move(self):
         with patch('audit_map_health.recheck_pin', return_value={'status': 'conflict', 'reason': 'Source moved by 400 metres'}), patch('audit_map_health.time.sleep'):
@@ -319,15 +386,14 @@ class SourceEvidenceTests(unittest.TestCase):
         self.assertTrue(name_matches('Bell', 'Bell at Standerwick, Standerwick - Quiz & Live Music', 'Standerwick'))
         self.assertFalse(name_matches('Bell', 'Bell at Rode, Rode', 'Standerwick'))
 
-    def test_aged_evidence_can_be_audited_and_quarantined_without_blocking_recovery(self):
+    def test_aged_evidence_and_source_outage_preserve_position(self):
         rows = [row()]
         registry = registry_for(rows)
         with tempfile.TemporaryDirectory() as directory:
             root, stage = Path(directory) / 'root', Path(directory) / 'stage'
             write_release(root, rows, registry, {}, {'BS1 1AA': {'lat': 51.46, 'lng': -2.58}})
             old_date = (date.today() - timedelta(days=401)).isoformat()
-            # Simulate a release ageing in place; its stored blue status was
-            # valid when published. Its browser independently falls back now.
+            # Ageing and an unreachable source cannot establish a physical move.
             registry['venues'][rows[0]['venue_id']]['verified_pin']['evidence'][0]['checked_at'] = old_date
             ledger = build_ledger(rows, registry, allow_expired=True)
             write_json(root / 'venue-registry.json', registry)
@@ -337,7 +403,7 @@ class SourceEvidenceTests(unittest.TestCase):
             with patch('audit_map_health.recheck_pin', side_effect=TimeoutError()), patch('audit_map_health.time.sleep'):
                 report = health_audit(root, stage, limit=1, check_live=False)
             self.assertTrue(report['valid'], report['errors'])
-            self.assertEqual(read_json(stage / 'directory-release.json')['locations'][rows[0]['venue_id']]['precision'], 'postcode')
+            self.assertEqual(read_json(stage / 'directory-release.json')['locations'][rows[0]['venue_id']]['precision'], 'venue')
 
     def test_new_pin_requires_independent_agreement(self):
         match = {'lat': 51.45, 'lng': -2.59, 'fhrs_id': 123}

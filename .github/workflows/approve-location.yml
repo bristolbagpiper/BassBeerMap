@@ -5,7 +5,9 @@ on:
     types: [created]
 
 permissions:
+  actions: write
   contents: write
+  pages: write
   issues: write
 
 jobs:
@@ -16,7 +18,7 @@ jobs:
       queue: max
       cancel-in-progress: false
     runs-on: ubuntu-latest
-    timeout-minutes: 15
+    timeout-minutes: 45
     steps:
       - uses: actions/checkout@v4
         with:
@@ -34,23 +36,61 @@ jobs:
           DIRECTORY_TEST_ROOT: candidate-approval
         run: python -m unittest discover -s tests -p test_frontend_smoke.py -v
       - name: Publish the validated review
+        id: publication
+        env:
+          GH_TOKEN: ${{ github.token }}
         run: |
           python validate_directory_release.py --root candidate-approval --previous .
           python -c "from pathlib import Path; from shutil import copyfile; from directory_release import RELEASE_FILES; [copyfile(Path('candidate-approval') / name, name) for name in RELEASE_FILES]"
           python -c "from pathlib import Path; from shutil import copyfile; [copyfile(Path('candidate-approval') / name, name) for name in ('venue-coordinate-overrides.json', 'audit/manual-place-checks.csv')]"
           python validate_directory_release.py
           git add pubs.csv directory-meta.json pub-coordinates.json venue-coordinates.json coordinate-verification.json venue-registry.json directory-release.json location-review.json venue-coordinate-overrides.json audit/manual-place-checks.csv
-          if git diff --cached --quiet; then exit 0; fi
+          if git diff --cached --quiet; then
+            echo "state=unchanged" >> "$GITHUB_OUTPUT"
+            exit 0
+          fi
           git config user.name 'github-actions[bot]'
           git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
           git commit -m 'Publish owner-reviewed venue location'
-          git push
+          python promote_checked_commit.py
+          echo "state=published" >> "$GITHUB_OUTPUT"
+          echo "commit=$(git rev-parse HEAD)" >> "$GITHUB_OUTPUT"
+      - name: Deploy and verify GitHub Pages release
+        id: pages_release
+        if: steps.publication.outputs.state == 'published'
+        env:
+          GH_TOKEN: ${{ github.token }}
+          GITHUB_REPOSITORY: ${{ github.repository }}
+          EXPECTED_PAGES_COMMIT: ${{ steps.publication.outputs.commit }}
+        run: python request_pages_release.py
+      - name: Report Pages deployment failure
+        if: failure() && steps.pages_release.outcome == 'failure'
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const title = 'BassBeerMap Pages deployment failed';
+            const body = [`The reviewed location release was committed, but the GitHub Pages deployment/readback did not complete for commit ${{ steps.publication.outputs.commit }}.`, '', `Run: https://github.com/${context.repo.owner}/${context.repo.repo}/actions/runs/${context.runId}`].join('\n');
+            const { data: issues } = await github.rest.issues.listForRepo({...context.repo, state: 'open'});
+            const existing = issues.find(i => i.title === title);
+            if (existing) await github.rest.issues.update({...context.repo, issue_number: existing.number, body});
+            else await github.rest.issues.create({...context.repo, title, body});
+      - name: Close recovered Pages deployment failures
+        if: steps.pages_release.outcome == 'success'
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const { data: issues } = await github.rest.issues.listForRepo({...context.repo, state: 'open'});
+            for (const issue of issues.filter(i => i.title === 'BassBeerMap Pages deployment failed')) {
+              await github.rest.issues.update({...context.repo, issue_number: issue.number, state: 'closed', state_reason: 'completed'});
+            }
       - name: Report approval result in the review issue
         if: always()
         uses: actions/github-script@v7
         with:
           script: |
-            const result = '${{ job.status }}' === 'success' ? 'Approved location published after fresh evidence checks and browser tests.' : 'Approval rejected; the existing published map was retained. Inspect the failed step for the reason.';
+            const published = '${{ steps.publication.outputs.state }}' === 'published';
+            const pagesFailed = '${{ steps.pages_release.outcome }}' === 'failure';
+            const result = pagesFailed ? `The reviewed location was committed to main, but Pages deployment/readback failed for ${{ steps.publication.outputs.commit }}; inspect the workflow run and deployment issue.` : '${{ job.status }}' === 'success' ? 'Approved location published after fresh evidence checks and browser tests.' : published ? 'The repository correction was committed, but the release workflow failed after publication. Inspect the workflow run.' : 'Approval rejected before publication; the existing published map was retained. Inspect the failed step for the reason.';
             await github.rest.issues.createComment({...context.repo, issue_number:5, body:`${result}\n\nRun: https://github.com/${context.repo.owner}/${context.repo.repo}/actions/runs/${context.runId}`});
       - name: Retain approval evidence
         if: always()

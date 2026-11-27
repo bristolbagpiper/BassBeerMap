@@ -1,8 +1,6 @@
 name: Independent location audit
 
 on:
-  schedule:
-    - cron: '17 4 * * *'
   workflow_dispatch:
     inputs:
       full:
@@ -11,7 +9,7 @@ on:
         default: false
 
 permissions:
-  contents: write
+  contents: read
 
 concurrency:
   group: directory-data
@@ -34,9 +32,9 @@ jobs:
           FULL_AUDIT: ${{ inputs.full }}
         run: |
           if [ "$FULL_AUDIT" = 'true' ]; then
-            python -u full_location_audit.py --publish
+            python -u full_location_audit.py
           else
-            python -u full_location_audit.py --limit 45 --publish
+            python -u full_location_audit.py --limit 45
           fi
       - name: Upload complete audit and review ordering
         if: always()
@@ -45,12 +43,3 @@ jobs:
           name: independent-location-audit
           path: candidate-independent/
           if-no-files-found: warn
-      - name: Publish report and review flags
-        run: |
-          python validate_directory_release.py
-          git add venue-registry.json location-review.json independent-audit-state.json audit/full-location-audit.json audit/full-location-audit.csv audit/full-location-audit.md
-          if git diff --cached --quiet; then exit 0; fi
-          git config user.name 'github-actions[bot]'
-          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
-          git commit -m 'Refresh independent location audit and review queue'
-          git push

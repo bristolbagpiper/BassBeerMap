@@ -2,9 +2,13 @@ name: Update CSV From PDF
 
 on:
   schedule:
-    - cron: "17 6 1 * *"
+    - cron: "17 6 * * 1"
   workflow_dispatch:
     inputs:
+      email_change_report:
+        description: Email the listing change report after this manual import
+        type: boolean
+        default: false
       allow_reindex:
         description: Allow reviewed listing changes from an unchanged PDF
         type: boolean
@@ -12,56 +16,32 @@ on:
   push:
     branches:
       - main
-    paths:
-      - "*.pdf"
-      - ".github/workflows/update-csv-from-pdf.yml"
-      - "convert_pdf_to_csv.py"
-      - "fetch_latest_pdf.py"
-      - "guard_unchanged_pdf.py"
-      - "send_alert_email.py"
-      - "validate_csv.py"
-      - "build_coordinates.py"
-      - "build_change_report.py"
-      - "build_coordinate_review_queue.py"
-      - "resolve_venue_coordinates.py"
-      - "resolve_venue_coordinates_from_osm.py"
-      - "resolve_venue_coordinates_from_fhrs.py"
-      - "send_change_report_email.py"
-      - "postcode-overrides.json"
-      - "venue-coordinates.json"
-      - "venue-coordinate-overrides.json"
-      - "directory_release.py"
-      - "location_review.py"
-      - "ingest_directory.py"
-      - "coordinate_sources.py"
-      - "audit_google_comparisons.py"
-      - "google-review-provider.json"
-      - "validate_directory_release.py"
-      - "ingestion-decisions.json"
-      - "requirements.txt"
-      - "tests/**"
+    paths: ["*.pdf"]
 
 permissions:
+  actions: write
   contents: write
+  pages: write
   issues: write
 
 concurrency:
   group: directory-data
   queue: max
-  # Imports and health checks publish the same release assets. Queue them
-  # so their commits cannot overwrite one another.
+  # Owner-approved corrections and imports can update the same directory.
   cancel-in-progress: false
 
 jobs:
   update-csv:
     if: github.actor != 'github-actions[bot]'
     runs-on: ubuntu-latest
-    timeout-minutes: 50
+    timeout-minutes: 65
     steps:
       - name: Check out repository
         uses: actions/checkout@v4
         with:
-          # Queued jobs must include preceding health/notification bot commits.
+          fetch-depth: 0
+          # Queued jobs validate/publish against the latest main data, while
+          # the selector extracts uploads from the exact push event commit.
           ref: main
 
       - name: Set up Python
@@ -69,110 +49,102 @@ jobs:
         with:
           python-version: "3.13"
 
-      - name: Install dependencies
-        run: pip install -r requirements.txt
-
-      - name: Run data pipeline tests
-        run: python -m unittest discover -s tests -v
-
-      - name: Run browser smoke test
-        env:
-          RUN_BROWSER_TESTS: "1"
-        run: python -m unittest discover -s tests -p "test_frontend_smoke.py" -v
-
       - name: Resolve latest PDF source
         id: pdf_source
-        shell: bash
-        run: |
-          shopt -s nullglob
-          latest_pdf=""
-          echo "GitHub event: ${{ github.event_name }}"
-          echo "PDF files currently in repo root:"
-          ls -1 *.pdf 2>/dev/null || echo "None"
-
-          if [ "${{ github.event_name }}" = "push" ]; then
-            uploaded_pdfs=( )
-            for pdf in *.pdf; do
-              if [ "$pdf" != "latest-bass-directory.pdf" ]; then
-                uploaded_pdfs+=( "$pdf" )
-              fi
-            done
-
-            echo "Candidate uploaded PDFs:"
-            printf '%s\n' "${uploaded_pdfs[@]}"
-
-            if [ "${#uploaded_pdfs[@]}" -gt 0 ]; then
-              latest_pdf="${uploaded_pdfs[-1]}"
-            fi
-          fi
-
-          if [ -n "$latest_pdf" ]; then
-            echo "mode=uploaded" >> "$GITHUB_OUTPUT"
-            echo "uploaded_pdf=$latest_pdf" >> "$GITHUB_OUTPUT"
-            exit 0
-          fi
-
-          echo "mode=wordpress" >> "$GITHUB_OUTPUT"
+        env:
+          GITHUB_EVENT_NAME: ${{ github.event_name }}
+          GITHUB_EVENT_PATH: ${{ github.event_path }}
+          GITHUB_WORKSPACE: ${{ github.workspace }}
+          RUNNER_TEMP: ${{ runner.temp }}
+        run: python pdf_source_selector.py
 
       - name: Download latest PDF from WordPress
+        id: wordpress_download
         if: steps.pdf_source.outputs.mode == 'wordpress'
         run: python fetch_latest_pdf.py latest-bass-directory.pdf
 
-      - name: Normalise uploaded PDF
-        if: steps.pdf_source.outputs.mode == 'uploaded'
-        shell: bash
+      - name: Compare scheduled PDF with the published source
+        id: source_fingerprint
+        if: github.event_name == 'schedule' && steps.pdf_source.outputs.mode == 'wordpress'
         run: |
-          uploaded_pdf="${{ steps.pdf_source.outputs.uploaded_pdf }}"
-          if [ "$uploaded_pdf" != "latest-bass-directory.pdf" ]; then
-            rm -f latest-bass-directory.pdf
-            mv "$uploaded_pdf" latest-bass-directory.pdf
-          fi
+          python - <<'PY'
+          import hashlib, os, subprocess
+          from pathlib import Path
+          previous = subprocess.run(['git', 'show', 'HEAD:latest-bass-directory.pdf'], check=True,
+                                    stdout=subprocess.PIPE).stdout
+          downloaded = Path('latest-bass-directory.pdf').read_bytes()
+          previous_hash = hashlib.sha256(previous).hexdigest()
+          downloaded_hash = hashlib.sha256(downloaded).hexdigest()
+          unchanged = previous_hash == downloaded_hash
+          with open(os.environ['GITHUB_OUTPUT'], 'a', encoding='utf-8') as output:
+              output.write(f"unchanged={str(unchanged).lower()}\n")
+          with open(os.environ['GITHUB_STEP_SUMMARY'], 'a', encoding='utf-8') as summary:
+              summary.write('## Scheduled source check\n\n')
+              summary.write(f'- Published PDF SHA-256: `{previous_hash}`\n')
+              summary.write(f'- Downloaded PDF SHA-256: `{downloaded_hash}`\n')
+              summary.write(f'- Source unchanged: `{str(unchanged).lower()}`\n')
+              if unchanged:
+                  summary.write('- Pipeline, browser and publication checks skipped; current Pages integrity schedule remains independent.\n')
+          print(f"Source PDF SHA-256: {downloaded_hash}; unchanged={str(unchanged).lower()}")
+          PY
 
-      - name: Remove older PDF files
-        shell: bash
-        run: |
-          shopt -s nullglob
-          for pdf in *.pdf; do
-            if [ "$pdf" != "latest-bass-directory.pdf" ]; then
-              rm -f "$pdf"
-            fi
-          done
+      - name: Install dependencies
+        if: steps.pdf_source.outputs.mode != 'skip' && steps.source_fingerprint.outputs.unchanged != 'true'
+        run: pip install -r requirements.txt
 
       - name: Generate candidate CSV
-        shell: bash
+        if: steps.pdf_source.outputs.mode != 'skip' && steps.source_fingerprint.outputs.unchanged != 'true'
+        env:
+          PDF_SOURCE_PATH: ${{ steps.pdf_source.outputs.source_pdf }}
+          PDF_SOURCE_NAME_FILE: ${{ steps.pdf_source.outputs.source_name_file }}
+          PDF_SOURCE_MODE: ${{ steps.pdf_source.outputs.mode }}
         run: |
-          if [ "${{ steps.pdf_source.outputs.mode }}" = "uploaded" ] && [ -n "${{ steps.pdf_source.outputs.uploaded_pdf }}" ]; then
-            python convert_pdf_to_csv.py latest-bass-directory.pdf candidate-pubs.csv --metadata candidate-directory-meta.json --source-name "${{ steps.pdf_source.outputs.uploaded_pdf }}"
-          else
-            python convert_pdf_to_csv.py latest-bass-directory.pdf candidate-pubs.csv --metadata candidate-directory-meta.json
-          fi
+          python - <<'PY'
+          import json, os, subprocess, sys
+          source = os.environ['PDF_SOURCE_PATH']
+          args = [sys.executable, 'convert_pdf_to_csv.py', source, 'candidate-pubs.csv',
+                  '--metadata', 'candidate-directory-meta.json']
+          name_file = os.environ.get('PDF_SOURCE_NAME_FILE', '')
+          if name_file:
+              with open(name_file, encoding='utf-8') as handle:
+                  args += ['--source-name', json.load(handle)]
+          subprocess.run(args, check=True)
+          PY
 
       - name: Reconcile, enrich and validate the complete candidate release
         id: candidate
-        run: python ingest_directory.py candidate-pubs.csv --staging candidate-release
+        if: steps.pdf_source.outputs.mode != 'skip' && steps.source_fingerprint.outputs.unchanged != 'true'
+        env:
+          PDF_SOURCE_PATH: ${{ steps.pdf_source.outputs.source_pdf }}
+        run: python ingest_directory.py candidate-pubs.csv --staging candidate-release --source-pdf "$PDF_SOURCE_PATH"
 
       - name: Validate candidate files again before publication
         id: candidate_validation
+        if: steps.pdf_source.outputs.mode != 'skip' && steps.source_fingerprint.outputs.unchanged != 'true'
         run: python validate_directory_release.py --root candidate-release --previous . --check-pdf
 
       - name: Guard against unexpected changes from an unchanged PDF
+        if: steps.pdf_source.outputs.mode != 'skip' && steps.source_fingerprint.outputs.unchanged != 'true'
         env:
           ALLOW_REINDEX: ${{ inputs.allow_reindex }}
+          PDF_SOURCE_PATH: ${{ steps.pdf_source.outputs.source_pdf }}
+          PDF_BASELINE_REF: ${{ github.event.before || 'HEAD' }}
         run: |
+          args=(--source-pdf "$PDF_SOURCE_PATH" --baseline-ref "$PDF_BASELINE_REF")
           if [ "$ALLOW_REINDEX" = "true" ]; then
-            python guard_unchanged_pdf.py --allow-reindex
-          else
-            python guard_unchanged_pdf.py
+            args+=(--allow-reindex)
           fi
+          python guard_unchanged_pdf.py "${args[@]}"
 
       - name: Run browser smoke test against the candidate release
+        if: steps.pdf_source.outputs.mode != 'skip' && steps.source_fingerprint.outputs.unchanged != 'true'
         env:
           RUN_BROWSER_TESTS: "1"
           DIRECTORY_TEST_ROOT: candidate-release
         run: python -m unittest discover -s tests -p "test_frontend_smoke.py" -v
 
       - name: Upload candidate validation and review artifacts
-        if: always()
+        if: always() && steps.pdf_source.outputs.mode != 'skip' && steps.source_fingerprint.outputs.unchanged != 'true'
         uses: actions/upload-artifact@v4
         with:
           name: directory-import-review
@@ -181,28 +153,63 @@ jobs:
 
       - name: Publish the complete validated release
         id: publication
+        env:
+          GH_TOKEN: ${{ github.token }}
+        if: steps.pdf_source.outputs.mode != 'skip' && steps.source_fingerprint.outputs.unchanged != 'true'
         run: |
           python validate_directory_release.py --root candidate-release --previous .
           python -c "from pathlib import Path; from shutil import copyfile; from directory_release import RELEASE_FILES; [copyfile(Path('candidate-release') / name, name) for name in RELEASE_FILES]"
           python validate_directory_release.py
-          if git diff --quiet -- '*.pdf' pubs.csv directory-meta.json pub-coordinates.json venue-coordinates.json coordinate-verification.json venue-registry.json directory-release.json location-review.json; then
+          if git diff --quiet -- latest-bass-directory.pdf pubs.csv directory-meta.json pub-coordinates.json venue-coordinates.json coordinate-verification.json venue-registry.json directory-release.json location-review.json; then
             echo "No directory changes detected."
             echo "state=unchanged" >> "$GITHUB_OUTPUT"
             exit 0
           fi
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add -A '*.pdf' pubs.csv directory-meta.json pub-coordinates.json venue-coordinates.json coordinate-verification.json venue-registry.json directory-release.json location-review.json
+          git add -- latest-bass-directory.pdf pubs.csv directory-meta.json pub-coordinates.json venue-coordinates.json coordinate-verification.json venue-registry.json directory-release.json location-review.json
           git commit -m "Publish validated directory release"
-          git push
+          python promote_checked_commit.py
           echo "state=published" >> "$GITHUB_OUTPUT"
+          echo "commit=$(git rev-parse HEAD)" >> "$GITHUB_OUTPUT"
 
-      - name: Email the validated change report when configured
+      - name: Deploy and verify GitHub Pages release
+        id: pages_release
+        if: steps.publication.outputs.state == 'published'
+        env:
+          GH_TOKEN: ${{ github.token }}
+          GITHUB_REPOSITORY: ${{ github.repository }}
+          EXPECTED_PAGES_COMMIT: ${{ steps.publication.outputs.commit }}
+        run: python request_pages_release.py
+
+      - name: Report Pages deployment failure
+        if: failure() && steps.pages_release.outcome == 'failure'
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const title = 'BassBeerMap Pages deployment failed';
+            const body = [`The validated directory release was committed, but the GitHub Pages deployment/readback did not complete for commit ${{ steps.publication.outputs.commit }}.`, '', `Run: https://github.com/${context.repo.owner}/${context.repo.repo}/actions/runs/${context.runId}`].join('\n');
+            const { data: issues } = await github.rest.issues.listForRepo({...context.repo, state: 'open'});
+            const existing = issues.find(i => i.title === title);
+            if (existing) await github.rest.issues.update({...context.repo, issue_number: existing.number, body});
+            else await github.rest.issues.create({...context.repo, title, body});
+
+      - name: Close recovered Pages deployment failures
+        if: steps.pages_release.outcome == 'success'
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const { data: issues } = await github.rest.issues.listForRepo({...context.repo, state: 'open'});
+            for (const issue of issues.filter(i => i.title === 'BassBeerMap Pages deployment failed')) {
+              await github.rest.issues.update({...context.repo, issue_number: issue.number, state: 'closed', state_reason: 'completed'});
+            }
+
+      - name: Email the validated change report when manually requested
         id: change_report_email
         # A mail failure has its own visible outcome and issue below. The data
         # workflow must still trigger post-import validation after publication.
         continue-on-error: true
-        if: always() && steps.candidate_validation.outcome == 'success' && steps.publication.outcome == 'success'
+        if: always() && github.event_name == 'workflow_dispatch' && inputs.email_change_report && steps.candidate_validation.outcome == 'success' && steps.publication.outcome == 'success' && steps.pages_release.outcome != 'failure'
         env:
           SMTP_HOST: ${{ secrets.SMTP_HOST }}
           SMTP_PORT: ${{ secrets.SMTP_PORT }}
@@ -217,7 +224,7 @@ jobs:
             exit 0
           fi
           has_changes=$(python -c "import json; print(str(bool(json.load(open('candidate-release/change-report.json'))['summary']['has_changes'])).lower())")
-          if [ "$has_changes" != "true" ] && [ "${{ github.event_name }}" != "workflow_dispatch" ]; then
+          if [ "$has_changes" != "true" ]; then
             echo "state=suppressed_no_changes" >> "$GITHUB_OUTPUT"
             echo "Import email: no listing changes; notification suppressed." >> "$GITHUB_STEP_SUMMARY"
             exit 0
@@ -228,7 +235,7 @@ jobs:
           echo "Import email: accepted by the configured SMTP server." >> "$GITHUB_STEP_SUMMARY"
 
       - name: Close resolved import alerts
-        if: always() && steps.candidate_validation.outcome == 'success' && steps.publication.outcome == 'success'
+        if: always() && steps.candidate_validation.outcome == 'success' && steps.publication.outcome == 'success' && steps.pages_release.outcome != 'failure'
         uses: actions/github-script@v7
         with:
           script: |
@@ -238,7 +245,7 @@ jobs:
             }
 
       - name: Report rejected import
-        if: failure() && steps.change_report_email.outcome != 'failure' && (steps.candidate_validation.outcome != 'success' || steps.publication.outcome != 'success')
+        if: failure() && steps.source_fingerprint.outputs.unchanged != 'true' && steps.publication.outcome != 'success'
         uses: actions/github-script@v7
         with:
           script: |
@@ -282,6 +289,7 @@ jobs:
           CANDIDATE_VALIDATION_OUTCOME: ${{ steps.candidate_validation.outcome }}
           PUBLICATION_OUTCOME: ${{ steps.publication.outcome }}
           PUBLICATION_STATE: ${{ steps.publication.outputs.state }}
+          PAGES_OUTCOME: ${{ steps.pages_release.outcome }}
           EMAIL_OUTCOME: ${{ steps.change_report_email.outcome }}
           EMAIL_STATE: ${{ steps.change_report_email.outputs.state }}
         run: |
@@ -290,6 +298,7 @@ jobs:
             echo "- Candidate ingestion: ${CANDIDATE_INGEST_OUTCOME:-not reached}"
             echo "- Candidate validation: ${CANDIDATE_VALIDATION_OUTCOME:-not reached}"
             echo "- Repository publication: ${PUBLICATION_STATE:-${PUBLICATION_OUTCOME:-not reached}}"
+            echo "- GitHub Pages deployment/readback: ${PAGES_OUTCOME:-not reached}"
             echo "- Change-report email: ${EMAIL_STATE:-${EMAIL_OUTCOME:-not reached}}"
           } >> "$GITHUB_STEP_SUMMARY"
 

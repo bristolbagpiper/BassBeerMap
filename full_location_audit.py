@@ -7,6 +7,7 @@ import shutil
 from collections import Counter
 from datetime import date
 from pathlib import Path
+from urllib.parse import urlsplit
 
 from directory_release import RELEASE_FILES, distance_metres, point_valid, read_json, read_rows, validate_release, write_json, write_release
 from resolve_venue_coordinates_from_fhrs import search, choose_match, names_match
@@ -26,6 +27,28 @@ def listing_signature(row):
 
 def pin_signature(pin):
     return {key: pin.get(key) for key in ('lat', 'lng')}
+
+
+def fsa_independent(pin):
+    """The comparison cannot independently verify coordinates supplied by FSA."""
+    origin = str(pin.get('source', '')).lower().replace('_', '-')
+    def uses_fsa(source):
+        return any(word in source for word in ('food-standards', 'foodstandards', 'fhrs', 'fsa'))
+    if not origin or uses_fsa(origin.replace(' ', '-')):
+        return False
+    review_urls = (pin.get('premises_review') or {}).get('sources', [])
+    if any(((urlsplit(url).hostname or '') == 'food.gov.uk' or (urlsplit(url).hostname or '').endswith('.food.gov.uk')) for url in review_urls):
+        return False
+    urls = []
+    for item in pin.get('evidence', []):
+        if not isinstance(item, dict):
+            continue
+        host = urlsplit(str(item.get('url', ''))).hostname or ''
+        if host == 'food.gov.uk' or host.endswith('.food.gov.uk') or uses_fsa(str(item.get('source', '')).lower().replace('_', '-').replace(' ', '-')):
+            return False
+        if 'disposition' not in item and host:
+            urls.append(host)
+    return bool(urls)
 
 
 def compare(row, pin, candidates):
@@ -48,7 +71,7 @@ def assess(row, entry, lookup=search):
     if not point_valid(pin):
         return classify(dict(checked_at=date.today().isoformat(), pin=pin_signature(pin), listing=listing_signature(row),
                     status='no_accepted_pin', confidence='existing_evidence_needs_corroboration',
-                    owner_reviewed=bool(entry.get('location_approvals')), independent_of_pin=False,
+                    owner_reviewed=False, independent_of_pin=False,
                     comparisons=[], reference={}, priority=0,
                     reasons=['No accepted venue coordinate yet; postcode pin remains approximate']), pin)
     reference = pin.get('metadata_issue', {}).get('reference')
@@ -63,26 +86,24 @@ def assess(row, entry, lookup=search):
     # An agreeing reference-postcode result must not erase a listed-postcode conflict.
     usable = [c for c in comparisons if 'difference_metres' in c]
     result = min(usable, key=lambda c: c['difference_metres']) if usable else comparisons[0]
-    source_urls = [e.get('url', '') for e in pin.get('evidence', [])]
-    independent_of_pin = any(url and 'ratings.food.gov.uk' not in url for url in source_urls) and not any('ratings.food.gov.uk' in url for url in source_urls)
-    owner_reviewed = (bool(current_confirmation(row, pin)) if 'owner_confirmation' in pin
-                      else bool(entry.get('location_approvals')))
+    independent_of_pin = fsa_independent(pin)
+    owner_reviewed = bool(current_confirmation(row, pin))
     confidence = ('owner_reviewed' if owner_reviewed else
-                  'independent_coordinate_agreement' if result['status'] == 'coordinate_agreement' and independent_of_pin else
+                  'different_source_coordinates_agree' if result['status'] == 'coordinate_agreement' and independent_of_pin else
                   'existing_evidence_needs_corroboration')
     check = dict(checked_at=date.today().isoformat(), pin=pin_signature(pin), listing=listing_signature(row), status=result['status'],
                  confidence=confidence, owner_reviewed=owner_reviewed, independent_of_pin=independent_of_pin,
                  comparisons=comparisons, reference=result)
     check['owner_pin_confirmed'] = bool(current_confirmation(row, pin))
-    return classify(check, pin)
+    return classify(check, pin, row)
 
 
-def classify(check, pin):
+def classify(check, pin, row=None):
     """Reclassify stored observations without querying or changing source evidence."""
     reasons, warnings = [], []
     issue = pin.get('metadata_issue', {})
     if issue.get('reference'):
-        if postcode_issue_reviewed(issue, pin, check.get('listing', {}).get('pub_name')):
+        if postcode_issue_reviewed(issue, pin, check.get('listing', {}).get('pub_name'), row):
             warnings.append('Owner reviewed this postcode discrepancy and confirmed the displayed pub building; listing postcode retained for provenance')
         else:
             reasons.append('Directory postcode differs from reviewed reference postcode')
@@ -98,7 +119,7 @@ def classify(check, pin):
     elif status != 'coordinate_agreement':
         warnings.append('FSA comparison is inconclusive; absence of a match does not contradict accepted evidence')
     manual_action_required = bool(reasons)
-    if issue.get('reference') and not postcode_issue_reviewed(issue, pin, check.get('listing', {}).get('pub_name')):
+    if issue.get('reference') and not postcode_issue_reviewed(issue, pin, check.get('listing', {}).get('pub_name'), row):
         review_category = 'address_metadata'
         next_action = 'Check the listing address and postcode against the reviewed reference postcode.'
     elif status == 'no_accepted_pin':
@@ -150,7 +171,7 @@ def report(rows, registry, checks, output):
                    informational_count=sum(bool(r.get('warnings')) for r in records),
                    action_required_count=sum(bool(r.get('manual_action_required')) for r in records),
                    information_no_pin_check_count=sum(not r.get('manual_action_required') for r in records),
-                   limitations=['Coordinate agreement does not prove the correct building or current Bass availability.',
+                   limitations=['Different-source agreement means nearby published coordinates. The geocoding origin can still be shared.',
                                 'Owner-approved coordinates take priority; CAMRA remains the primary automated reference.',
                                 'FSA coordinate differences alone are informational and do not create location review alerts.',
                                 'FSA geocodes may be postcode centres. Missing matches and outages are inconclusive.',
@@ -187,15 +208,15 @@ def reclassify_checks(rows, registry, checks):
         if not check:
             continue
         entry = registry['venues'][identifier]
+        if check.get('pin') != pin_signature(entry.get('verified_pin') or {}) or check.get('listing') != listing_signature(row):
+            continue
         check['owner_pin_confirmed'] = bool(current_confirmation(row, entry.get('verified_pin') or {}))
-        urls = [e.get('url', '') for e in (entry.get('verified_pin') or {}).get('evidence', [])]
-        independent = any(url and 'ratings.food.gov.uk' not in url for url in urls) and not any('ratings.food.gov.uk' in url for url in urls)
+        independent = fsa_independent(entry.get('verified_pin') or {})
         check['independent_of_pin'] = independent
         pin = entry.get('verified_pin') or {}
-        check['owner_reviewed'] = (bool(current_confirmation(row, pin)) if 'owner_confirmation' in pin
-                                   else bool(entry.get('location_approvals')))
-        check['confidence'] = ('owner_reviewed' if check['owner_reviewed'] else 'independent_coordinate_agreement' if check['status'] == 'coordinate_agreement' and independent else 'existing_evidence_needs_corroboration')
-        classify(check, entry.get('verified_pin') or {})
+        check['owner_reviewed'] = check['owner_pin_confirmed']
+        check['confidence'] = ('owner_reviewed' if check['owner_reviewed'] else 'different_source_coordinates_agree' if check['status'] == 'coordinate_agreement' and independent else 'existing_evidence_needs_corroboration')
+        classify(check, entry.get('verified_pin') or {}, row)
 
 
 def refresh_saved_reports(root):
@@ -242,7 +263,7 @@ def run(root, output, limit=0, publish=False, resume=False, reports_only=False):
             if check:
                 registry['venues'][row['venue_id']]['independent_location_check'] = copy.deepcopy(check)
         before = read_json(root / 'directory-release.json')
-        write_release(output, rows, registry, read_json(root / 'directory-meta.json'), read_json(root / 'pub-coordinates.json')['coordinates'])
+        write_release(output, rows, registry, read_json(root / 'directory-meta.json'), read_json(root / 'pub-coordinates.json')['coordinates'], source_root=root)
         for name in ('latest-bass-directory.pdf', 'venue-coordinate-overrides.json'):
             if (root / name).exists():
                 shutil.copyfile(root / name, output / name)

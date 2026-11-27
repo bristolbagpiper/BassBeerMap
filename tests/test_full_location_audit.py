@@ -55,7 +55,8 @@ class IndependentAuditTests(unittest.TestCase):
         before = copy.deepcopy(entry)
         check = assess(listing, entry, lookup=lambda *a, **k: [business(lat=51.46)])
         self.assertEqual(check['status'], 'coordinate_disagreement')
-        self.assertEqual(check['confidence'], 'owner_reviewed')
+        self.assertEqual(check['confidence'], 'existing_evidence_needs_corroboration')
+        self.assertFalse(check['owner_reviewed'])
         self.assertEqual(before, entry)
         entry['independent_location_check'] = check
         review = build_review([listing], registry, build_ledger([listing], registry))

@@ -80,7 +80,7 @@ class GoogleJobIntegrationTests(unittest.TestCase):
         self.assertEqual(report['google_actionable_count'], 0)
         self.assertEqual(set(report['google_issues']), {GOOGLE_COVERAGE_ISSUE, GOOGLE_STALE_STATUS_ISSUE})
         self.assertIn(GOOGLE_STALE_STATUS_ISSUE, format_report(report))
-        self.assertNotEqual(fingerprint(report), fingerprint(self.report()))
+        self.assertEqual(fingerprint(report), fingerprint(self.report()))
 
     def test_malformed_snapshot_fails_closed(self):
         malformed = [[], {}, self.status(schema_version=2), self.status(schema_version=True),
@@ -143,7 +143,7 @@ class GoogleJobIntegrationTests(unittest.TestCase):
         self.assertEqual(fingerprint(attached), fingerprint(self.report()))
         self.assertNotIn('Google', format_report(attached))
 
-    def test_google_changes_send_once_and_recovery_once_with_mock_smtp(self):
+    def test_google_diagnostics_do_not_create_owner_question_emails(self):
         healthy = self.attach(self.report(), self.status())
         failed = self.attach(self.report(), self.status(findings=[self.finding()]))
         settings = dict(SMTP_HOST='smtp.example.test', SMTP_USERNAME='test', SMTP_PASSWORD='test',
@@ -153,18 +153,16 @@ class GoogleJobIntegrationTests(unittest.TestCase):
             smtp = MagicMock()
             smtp.return_value.__enter__.return_value.send_message.return_value = {}
             self.assertFalse(notify(healthy, state, smtp_factory=smtp))
-            self.assertTrue(notify(failed, state, smtp_factory=smtp))
-            message = smtp.return_value.__enter__.return_value.send_message.call_args.args[0]
-            self.assertIn('1 Google pub actions', message['Subject'])
+            self.assertFalse(notify(failed, state, smtp_factory=smtp))
             later = self.attach(self.report(), self.status(findings=[self.finding()], run_id='11',
                                 checked_at='2026-11-02T11:00:00Z', source_execution_finished_at='2026-11-02T11:00:00Z',
                                 run_url='https://example.test/run/11'))
             self.assertFalse(notify(later, state, smtp_factory=smtp))
             changed = self.attach(self.report(), self.status(findings=[self.finding(reason='New review reason')]))
-            self.assertTrue(notify(changed, state, smtp_factory=smtp))
-            self.assertTrue(notify(healthy, state, smtp_factory=smtp))
+            self.assertFalse(notify(changed, state, smtp_factory=smtp))
             self.assertFalse(notify(healthy, state, smtp_factory=smtp))
-            self.assertEqual(smtp.call_count, 3)
+            self.assertFalse(notify(healthy, state, smtp_factory=smtp))
+            self.assertEqual(smtp.call_count, 0)
 
     def test_pipeline_failure_suppression_is_stable_and_recovery_is_one_transition(self):
         report = self.attach(self.report(), self.status())
@@ -174,11 +172,11 @@ class GoogleJobIntegrationTests(unittest.TestCase):
             state = Path(directory) / 'delivery.json'
             smtp = MagicMock()
             smtp.return_value.__enter__.return_value.send_message.return_value = {}
-            self.assertTrue(notify(report, state, 'https://example.test/run/1', smtp_factory=smtp))
+            self.assertFalse(notify(report, state, 'https://example.test/run/1', smtp_factory=smtp))
             self.assertFalse(notify(report, state, 'https://example.test/run/2', smtp_factory=smtp))
-            self.assertTrue(notify(report, state, smtp_factory=smtp))
             self.assertFalse(notify(report, state, smtp_factory=smtp))
-            self.assertEqual(smtp.call_count, 2)
+            self.assertFalse(notify(report, state, smtp_factory=smtp))
+            self.assertEqual(smtp.call_count, 0)
 
     def test_configuration_issue_alerts_without_active_venue_or_health_reviews(self):
         issue = GOOGLE_CONFIGURATION_ISSUE
@@ -188,7 +186,7 @@ class GoogleJobIntegrationTests(unittest.TestCase):
         later = copy.deepcopy(report)
         later.update(google_run_id='15', google_checked_at='2026-11-04')
         self.assertEqual(fingerprint(report), fingerprint(later))
-        self.assertNotEqual(fingerprint(report), fingerprint(self.report()))
+        self.assertEqual(fingerprint(report), fingerprint(self.report()))
 
     def test_disabled_snapshot_cannot_claim_complete_google_coverage(self):
         report = self.attach(self.report(), self.status(configured=False, issues=[],
@@ -251,141 +249,35 @@ class GoogleJobIntegrationTests(unittest.TestCase):
             with self.subTest(status=status), self.assertRaises(ValueError):
                 self.attach(self.report(), status)
 
-    def test_scheduled_job_publishes_camra_then_google_and_persists_failed_google(self):
+    def test_scheduled_map_check_is_read_only_and_does_not_run_google_research(self):
         workflow = (ROOT / '.github/workflows/weekly-map-validation.yml').read_text()
-        self.assertIn("workflows: ['Update CSV From PDF']", workflow)
-        self.assertIn('types: [completed]', workflow)
-        self.assertIn("if: github.event_name != 'workflow_run' || github.event.workflow_run.conclusion == 'success'", workflow)
-        google = workflow.index('      - name: Rotate Google Places comparisons')
-        persisted = workflow.index('      - name: Persist Google comparison status')
-        self.assertLess(workflow.index("git commit -m 'Refresh coordinate evidence and map health'"), google)
-        self.assertLess(workflow.index('write_health_status('), google)
-        self.assertLess(google, persisted)
-        self.assertLess(persisted, workflow.index('actions/upload-artifact'))
-        self.assertIn('timeout-minutes: 40', workflow)
-        self.assertIn("id: google_provider", workflow)
-        self.assertIn("steps.google_provider.outputs.provider != 'hermes-local'", workflow)
-        self.assertIn("if: always() && steps.google.outcome != 'skipped'", workflow)
-        self.assertIn('python audit_google_comparisons.py --root . --state google-places-state.json --status google-places-status.json --limit 45', workflow)
-        self.assertIn('GOOGLE_PLACES_ENABLED: ${{ vars.GOOGLE_PLACES_ENABLED }}', workflow)
-        self.assertIn('GOOGLE_PLACES_API_KEY: ${{ secrets.GOOGLE_PLACES_API_KEY }}', workflow)
-        self.assertIn('files=(google-places-status.json)', workflow)
-        self.assertIn('if [ -f google-places-state.json ]; then files+=(google-places-state.json); fi', workflow)
-        self.assertIn('git add -- "${files[@]}"', workflow)
-        artifacts = workflow.split('      - name: Upload Google comparison artifacts', 1)[1]
-        self.assertIn('google-places-state.json', artifacts)
-        self.assertIn('google-places-status.json', artifacts)
-        self.assertIn("if: always() && steps.google.outcome != 'skipped'", artifacts)
-        self.assertIn('retention-days: 7', artifacts)
-        self.assertNotIn('google-places-state.json', workflow.split('      - name: Upload health report and candidate artifacts', 1)[1].split('      - name:', 1)[0])
+        self.assertIn('  schedule:', workflow)
+        self.assertIn('  workflow_dispatch:', workflow)
+        self.assertNotIn('  workflow_run:', workflow)
+        self.assertIn('python audit_map_health.py --integrity-only', workflow)
+        self.assertIn('contents: read', workflow)
+        for removed in ('audit_google_comparisons.py', 'google-places-state.json', 'map-health-status.json',
+                        'git add', 'git commit', 'git push', 'actions/upload-artifact'):
+            self.assertNotIn(removed, workflow)
         notifications = (ROOT / '.github/workflows/location-alerts.yml').read_text()
-        self.assertIn("load_google_status('google-places-status.json')", notifications)
-        self.assertIn('expected_google_run_id', notifications)
-        self.assertIn('str(status.get(\'run_id\')) != expected', notifications)
-        self.assertIn('hermes-google-status.json', notifications.split('paths:', 1)[1].split('\n', 1)[0])
-        self.assertIn('GITHUB_STEP_SUMMARY', notifications)
+        self.assertNotIn('load_google_status', notifications)
+        self.assertNotIn('expected_google_run_id', notifications)
+        self.assertNotIn('hermes-google-status.json', notifications)
         self.assertIn('ALERT_TO: ${{ secrets.ALERT_TO }}', notifications)
 
-    @unittest.skipUnless(GIT and BASH, 'Git and Bash execute the actual persistence step offline')
-    def test_persistence_step_commits_status_even_when_failure_precedes_state_creation(self):
+    def test_google_status_rotation_is_not_part_of_map_integrity_schedule(self):
         workflow = (ROOT / '.github/workflows/weekly-map-validation.yml').read_text()
-        script = textwrap.dedent(workflow.split('      - name: Persist Google comparison status', 1)[1]
-                                 .split('        run: |', 1)[1].split('      - name:', 1)[0])
-        for state_exists in (False, True):
-            with self.subTest(state_exists=state_exists), tempfile.TemporaryDirectory() as directory:
-                repo = Path(directory) / 'checkout'
-                remote = Path(directory) / 'local-remote.git'
-                repo.mkdir()
-                # The push target is a temporary local bare repository; no network.
-                def git(*args, cwd=repo):
-                    return subprocess.run([GIT, *args], cwd=cwd, text=True, capture_output=True, check=True)
-                git('init', '--quiet')
-                git('init', '--bare', '--quiet', str(remote))
-                git('remote', 'add', 'origin', str(remote))
-                git('config', 'remote.origin.push', 'HEAD:refs/heads/main')
-                (repo / 'google-places-status.json').write_text(json.dumps(self.status(hard_failure=True)))
-                if state_exists:
-                    (repo / 'google-places-state.json').write_text('{"schema_version": 1}')
-                subprocess.run([BASH, '-e', '-c', script], cwd=repo, text=True, capture_output=True, check=True)
-                files = git('ls-tree', '--name-only', 'HEAD').stdout.splitlines()
-                self.assertIn('google-places-status.json', files)
-                self.assertEqual('google-places-state.json' in files, state_exists)
+        self.assertNotIn('Rotate Google Places comparisons', workflow)
+        self.assertNotIn('Persist Google comparison status', workflow)
+        self.assertNotIn('GOOGLE_PLACES_API_KEY', workflow)
 
-    @unittest.skipUnless(shutil.which('node'), 'Node executes the actual GitHub notification script')
-    def test_issue_state_and_saved_failures_in_the_notification_script(self):
+    def test_import_failure_reporting_is_separate_from_location_notifications(self):
         workflow = (ROOT / '.github/workflows/location-alerts.yml').read_text()
-        script = textwrap.dedent(workflow.split('      - name: Update the persistent GitHub review issue', 1)[1]
-                                 .split('          script: |', 1)[1].split('      - name:', 1)[0])
-        receipt = dict(google_count=1, google_hard_failure=True, google_run_id='10', google_run_attempt=1,
-                       health_run_id='10', health_run_attempt=1)
-        google_step = dict(name='Rotate Google Places comparisons', status='completed', conclusion='failure')
-        def evidence(steps=None, **changes):
-            return dict(dict(total_count=1, jobs=[dict(status='completed', conclusion='failure',
-                         steps=steps if steps is not None else [google_step])]), **changes)
-        cases = [
-            # Each source can keep the persistent issue open on its own.
-            ({'google_count': 1}, {'conclusion': 'success'}, None, '', 'open'),
-            ({'trading_notice_reviews': [{}]}, {'conclusion': 'success'}, None, '', 'open'),
-            ({'health_count': 1}, {'conclusion': 'success'}, None, '', 'open'),
-            ({'active_count': 1}, {'conclusion': 'success'}, None, '', 'open'),
-            ({}, {}, None, 'https://example.test/run', 'open'),
-            # Matching receipts plus execution-linked Google-only failure evidence deduplicate.
-            (receipt, {}, evidence(), '', 'open'),
-            (receipt, {}, evidence([dict(google_step, conclusion='timed_out')]), '', 'open'),
-            # Additional failed upload or persistence steps remain pipeline failures.
-            (receipt, {}, evidence([google_step, dict(name='Upload health report and candidate artifacts',
-              status='completed', conclusion='failure')]), 'https://example.test/run', 'open'),
-            (receipt, {}, evidence([google_step, dict(name='Persist Google comparison status and rotation, including partial failures',
-              status='completed', conclusion='failure')]), 'https://example.test/run', 'open'),
-            # Missing, unavailable, incomplete or unknown evidence is inconclusive.
-            (receipt, {}, None, 'https://example.test/run', 'open'),
-            (receipt, {}, {}, 'https://example.test/run', 'open'),
-            (receipt, {}, evidence([]), 'https://example.test/run', 'open'),
-            (receipt, {}, evidence(total_count=2), 'https://example.test/run', 'open'),
-            (receipt, {}, evidence(jobs=[dict(status='completed', conclusion='failure')]), 'https://example.test/run', 'open'),
-            (receipt, {}, evidence([dict(google_step, conclusion=None)]), 'https://example.test/run', 'open'),
-            (receipt, {}, evidence([dict(google_step, conclusion='success')]), 'https://example.test/run', 'open'),
-            (receipt, {}, evidence([dict(google_step, name='Unknown failed step')]), 'https://example.test/run', 'open'),
-            # A configuration limitation does not disguise unrelated workflow failures.
-            ({'google_count': 1, 'google_hard_failure': False, 'google_run_id': '10', 'google_run_attempt': 1,
-              'health_run_id': '10', 'health_run_attempt': 1}, {}, None, 'https://example.test/run', 'open'),
-            # A prior attempt or missing health receipt cannot hide a new pipeline failure.
-            ({'google_count': 1, 'google_run_id': '10', 'google_run_attempt': 1,
-              'health_run_id': '10', 'health_run_attempt': 1}, {'run_attempt': 2}, evidence(), 'https://example.test/run', 'open'),
-            ({'google_count': 1, 'google_run_id': '10'}, {}, evidence(), 'https://example.test/run', 'open'),
-            ({'google_count': 0, 'trading_notice_reviews': [], 'health_count': 0},
-             {'conclusion': 'success'}, None, '', 'closed'),
-        ]
-        harness = '''
-        const {script, cases} = JSON.parse(require('fs').readFileSync(0, 'utf8'));
-        const AsyncFunction = Object.getPrototypeOf(async function(){}).constructor;
-        (async () => {
-          const outputs = [];
-          for (const [snapshot, event, evidence] of cases) {
-            const updates = [], exported = {};
-            const report = {active_count: 0, ...snapshot};
-            const fs = {readFileSync: path => path.endsWith('.json') ? JSON.stringify(report) : 'Current report'};
-            const github = {rest: {issues: {
-              get: async () => ({data: {number: 5, state: 'open', body: 'Old'}}),
-              update: async args => updates.push(args)
-            }, actions: {listJobsForWorkflowRunAttempt: async args => {
-              if (!evidence) throw new Error('Job evidence unavailable');
-              if (args.run_id !== 10 || args.attempt_number !== 1 || args.per_page !== 100)
-                throw new Error('Wrong execution requested');
-              return {data: evidence};
-            }}}};
-            const context = {repo: {owner: 'test', repo: 'test'}, payload: {workflow_run: {
-              id: 10, run_attempt: 1, name: 'Daily map validation', conclusion: 'failure',
-              html_url: 'https://example.test/run', ...event
-            }}};
-            await new AsyncFunction('require', 'github', 'context', 'core', script)(
-              () => fs, github, context, {exportVariable: (key, value) => exported[key] = value});
-            outputs.push([exported.FAILURE_URL, updates[0].state]);
-          }
-          process.stdout.write(JSON.stringify(outputs));
-        })().catch(error => { console.error(error); process.exit(1); });
-        '''
-        result = subprocess.run([shutil.which('node'), '-e', harness], input=json.dumps(
-            dict(script=script, cases=[[snapshot, event, evidence] for snapshot, event, evidence, _, _ in cases])),
-            text=True, capture_output=True, check=True)
-        self.assertEqual(json.loads(result.stdout), [[url, state] for _, _, _, url, state in cases])
+        self.assertNotIn('FAILURE_URL', workflow)
+        self.assertNotIn('actions.listJobsForWorkflowRunAttempt', workflow)
+        self.assertIn("github.event.workflow_run.conclusion == 'success'", workflow)
+        import_workflow = (ROOT / '.github/workflows/update-csv-from-pdf.yml').read_text()
+        self.assertIn("const title = 'BassBeerMap update rejected'", import_workflow)
+        self.assertIn('The previous published release is retained.', import_workflow)
+        self.assertIn('name: Report rejected import', import_workflow)
+        self.assertIn("if: failure() && steps.source_fingerprint.outputs.unchanged != 'true' && steps.publication.outcome != 'success'", import_workflow)

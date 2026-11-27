@@ -1,6 +1,17 @@
 import unittest
 from resolve_venue_coordinates_from_osm import choose_match
 
+class ConcaveBuildingTests(unittest.TestCase):
+    def test_closed_way_marker_is_in_the_building(self):
+        from resolve_venue_coordinates_from_osm import interior_point
+        # The vertex mean of this U-shaped pub falls in its open courtyard.
+        ring = [(0,0),(0,6),(4,6),(4,5),(1,5),(1,1),(4,1),(4,0),(0,0)]
+        y, x = interior_point(ring)
+        self.assertTrue(0 < y < 4 and 0 < x < 6 and (y < 1 or x < 1 or x > 5))
+        self.assertIsNone(interior_point(ring[:-1]))
+        self.assertIsNone(interior_point([(1,1)] * 4))
+
+
 class CoordinateAuditRegressionTests(unittest.TestCase):
     def setUp(self):
         self.row={'pub_name':'Crown','place_name':'Example Village','postcode':'AA1 1AA'}

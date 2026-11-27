@@ -13,6 +13,7 @@ import uuid
 from collections import Counter
 from datetime import date
 from pathlib import Path
+from urllib.parse import parse_qs, urlsplit
 
 from build_coordinate_verification import venue_key
 from validate_csv import validate as validate_csv
@@ -234,6 +235,39 @@ def reconcile(rows, registry, decisions):
     return selected, registry, {'errors': errors, 'changes': changes}
 
 
+def building_identity_documented(review, sources):
+    """Require a cited occupancy check in addition to the building geometry."""
+    identity = review.get('identity_sources')
+    if not (review.get('building_url') in sources and review.get('geometry_feature')
+            and isinstance(identity, list) and identity):
+        return False
+    geometry_domains = ('openstreetmap.org', 'osm.org', 'osdatahub.os.uk',
+                        'minedbuildings.z5.web.core.windows.net', 'overturemaps.org')
+    for url in identity:
+        if not isinstance(url, str) or url not in sources:
+            return False
+        parsed = urlsplit(url)
+        host = (parsed.hostname or '').lower().rstrip('.')
+        if any(host == domain or host.endswith('.' + domain) for domain in geometry_domains):
+            return False
+        if url == review['building_url']:
+            checks = review.get('external_premises_checks')
+            outlines = checks.get('council_premises_outline') if isinstance(checks, dict) else None
+            if not isinstance(outlines, list) or url not in outlines:
+                return False
+        if host.endswith('.arcgisonline.com') and '/world_imagery/' in parsed.path.lower():
+            return False
+        if host in ('maps.app.goo.gl', 'goo.gl'):
+            return False
+        if (host.startswith('maps.google.') or
+                (host in ('google.co.uk', 'www.google.co.uk', 'google.com', 'www.google.com')
+                 and parsed.path.startswith('/maps'))):
+            query = parse_qs(parsed.query)
+            if query.get('map_action') != ['pano'] or not query.get('pano'):
+                return False
+    return True
+
+
 def premises_review_valid(row, pin):
     review = pin.get('premises_review')
     if not isinstance(review, dict):
@@ -248,8 +282,8 @@ def premises_review_valid(row, pin):
             and review.get('precision') in ('building', 'site', 'reference')
             and isinstance(review.get('basis'), str) and bool(review['basis'].strip())
             and isinstance(sources, list) and bool(sources)
-            and (review['precision'] != 'building' or (review.get('building_url') in sources and review.get('geometry_feature')))
-            and all(isinstance(url, str) and re.fullmatch(r'https://[A-Za-z0-9.-]+(?::[0-9]+)?(?:[/?#][^\s]*)?', url) for url in sources))
+            and all(isinstance(url, str) and re.fullmatch(r'https://[A-Za-z0-9.-]+(?::[0-9]+)?(?:[/?#][^\s]*)?', url) for url in sources)
+            and (review['precision'] != 'building' or building_identity_documented(review, sources)))
 
 
 def build_ledger(rows, registry, allow_expired=False):

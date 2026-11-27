@@ -615,20 +615,16 @@
       "source_url": "https://www.google.com/maps/place/The+Chestnuts+Club+Ltd/@52.5275151,-1.4611907,523m/data=!3m2!1e3!4b1!4m6!3m5!1s0x487751e124b0bc97:0x1cdbf37c64785b16!8m2!3d52.5275151!4d-1.4611907!16s%2Fg%2F1thhj_zs"
     },
     "coach and horses|horsley|de21 5bq": {
-      "audit_reason": "manual_named_place_address_and_map_check",
-      "checked_at": "2026-10-19",
-      "corroborating_source_url": "https://www.google.com/maps/place/The+Coach+%26+Horses/@52.9963759,-1.4333382,517m/data=!3m2!1e3!4b1!4m6!3m5!1s0x4879f2f5cf82ff31:0xc54d4449a53181f1!8m2!3d52.9963759!4d-1.4333382!16s%2Fg%2F1tdfsny1",
-      "lat": 52.9965278,
-      "lng": -1.4333222,
-      "previous_difference_metres": 0.4,
-      "previous_lat": 52.99653110833333,
-      "previous_lng": -1.4333234500000003,
-      "previous_source": "openstreetmap-gb-extract",
-      "reference_address": "47 Church St, Horsley, Derby DE21 5BQ",
-      "reference_name": "The Coach & Horses",
-      "review_note": "Owner accepted this selected map point; 0.4m from existing saved candidate and 17.3m from Google's named-place marker, both on same pub. FSA coordinate is 165.4m away and informational.",
-      "source": "google-maps-named-place",
-      "source_url": "https://www.google.com/maps/place/52%C2%B059'47.5%22N+1%C2%B025'60.0%22W/@52.9964376,-1.4336631,106m/data=!3m1!1e3!4m4!3m3!8m2!3d52.9965278!4d-1.4333222?entry=ttu&g_ep=EgoyMDI2MTAxMy4wIKXMDSoASAFQAw%3D%3D"
+      "audit_reason": "The original pin is at the edge of the car park. The photographed double-gabled Coach and Horses at 47 Church Street matches the signed frontage in Street View; the catalogue and CAMRA place it in the same detached building.",
+      "checked_at": "2026-11-27",
+      "lat": 52.99642256197949,
+      "lng": -1.4333724975585938,
+      "previous_difference_metres": 12.2,
+      "previous_lat": 52.9965278,
+      "previous_lng": -1.4333222,
+      "previous_source": "google-maps-named-place",
+      "source": "reviewed-premises-location",
+      "source_url": "https://www.openstreetmap.org/way/256599724"
     },
     "coach and horses|timbersbrook|cw12 3pl": {
       "audit_reason": "postcode_fallback_replaced",
@@ -991,16 +987,16 @@
       "source_url": "https://www.openstreetmap.org/way/1290900779"
     },
     "dead dove|worcester: central|wr1 2lt": {
-      "audit_reason": "manual_named_place_address_and_map_check",
-      "checked_at": "2026-09-13",
-      "lat": 52.1886066,
-      "lng": -2.2190526,
-      "previous_source": "postcode",
-      "reference_address": "College St, Worcester WR1 2LT",
-      "reference_name": "The Dead Dove",
-      "review_note": "name place and full postcode agree",
-      "source": "google-maps-named-place",
-      "source_url": "https://www.google.com/maps/search/?api=1&query=The+Dead+Dove+Worcester+WR1+2LT"
+      "audit_reason": "The earlier point is at the red-brick Sidbury House frontage. The pub is in the adjoining black modern building farther south. Two close road views show the signed Hand in Glove doorway; the 2026 exterior photograph identifies this as the Dead Dove. Bearings to that doorway locate the frontage independently of both competing pins.",
+      "checked_at": "2026-11-27",
+      "lat": 52.188432,
+      "lng": -2.218878,
+      "previous_difference_metres": 22.8,
+      "previous_lat": 52.1886066,
+      "previous_lng": -2.2190526,
+      "previous_source": "google-maps-named-place",
+      "source": "reviewed-premises-location",
+      "source_url": "https://www.openstreetmap.org/way/266147111"
     },
     "dew drop inn|hathern|le12 5hy": {
       "audit_reason": "existing_pin_over_50m_from_matching_venue",
@@ -1276,19 +1272,16 @@
       "source_url": "https://www.openstreetmap.org/node/158697593"
     },
     "great western|deppers bridge|cv47 2st": {
-      "audit_reason": "manual_named_place_address_and_map_check",
-      "checked_at": "2026-09-13",
-      "lat": 52.2339159,
-      "lng": -1.4323514,
-      "previous_difference_metres": 41.3,
-      "previous_lat": 52.23426893333333,
-      "previous_lng": -1.4325412666666668,
-      "previous_source": "openstreetmap-gb-extract",
-      "reference_address": "Deppers Bridge, Southam CV47 2ST",
-      "reference_name": "Great Western",
-      "review_note": "official venue map link and full postcode",
-      "source": "official-venue-map-link",
-      "source_url": "https://thegreatwestern.pub/find-us/"
+      "audit_reason": "The operator’s directions lead to a roadside reference. From that position the alternate bearing visibly faces the pub across the approach; the frontage and public address identify the building. The revised point is inside the main pub.",
+      "checked_at": "2026-11-27",
+      "lat": 52.23418932,
+      "lng": -1.43258627,
+      "previous_difference_metres": 34.4,
+      "previous_lat": 52.2339159,
+      "previous_lng": -1.4323514,
+      "previous_source": "official-venue-map-link",
+      "source": "reviewed-premises-location",
+      "source_url": "https://www.openstreetmap.org/way/671595545"
     },
     "greyhound|woodville|de11 7bu": {
       "audit_reason": "manual_named_place_address_and_map_check",
@@ -2628,15 +2621,16 @@
       "source_url": "https://www.google.com/maps/place/Royal+Oak+-+The+Tiddly+Weds/@52.7995576,-2.5902823,519m/data=!3m2!1e3!4b1!4m6!3m5!1s0x487a84e3c066a67d:0xe544c25788012f2c!8m2!3d52.7995576!4d-2.5902823!16s%2Fg%2F1tfz9qrb?entry=ttu&g_ep=EgoyMDI2MTAyMC4wIKXMDSoASAFQAw%3D%3D"
     },
     "royal oak|attleborough|cv11 4jy": {
-      "audit_reason": "reviewed_named_building_and_camra_address",
-      "checked_at": "2026-11-04",
-      "lat": 52.51376172,
-      "lng": -1.45568405,
-      "reference_address": "The Square",
-      "reference_name": "Royal Oak",
-      "review_note": "The current CAMRA listing and local branch page identify the Royal Oak on The Square; CAMRA's exterior photograph and the Heineken/Star Pubs property photograph both show the signed Royal Oak frontage. Star Pubs' property report is explicitly for CV11 4JY. The saved point sits in the square by the mapped Green/bus-stop feature, while the Google alternative falls inside the only nearby mapped building footprint north of the square (8.1 m from its representative point). The venue's frontage and address correspond to that building, so replace the square-center pin with the footprint centroid. The FSA geocode is address-level support for the saved location and does not locate the pub frontage.",
-      "source": "reviewed-named-building",
-      "source_url": "https://www.openstreetmap.org/way/636918057"
+      "audit_reason": "Street views from two positions distinguish the Royal Oak entrance from Brierley Windows. Their bearings locate the public frontage at 4 The Square.",
+      "checked_at": "2026-11-27",
+      "lat": 52.513704,
+      "lng": -1.455534,
+      "previous_difference_metres": 12.0,
+      "previous_lat": 52.51376172,
+      "previous_lng": -1.45568405,
+      "previous_source": "reviewed-named-building",
+      "source": "reviewed-premises-location",
+      "source_url": "https://ratings.food.gov.uk/business/362180"
     },
     "royal oak|little cawthorpe|ln11 8lz": {
       "audit_reason": "manual_named_place_address_and_map_check",

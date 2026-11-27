@@ -513,17 +513,17 @@
     },
     "v-0297064d-8ae0-5c01-9881-6b2612c57382": {
       "actionable": false,
-      "checked_at": "2026-11-26",
+      "checked_at": "2026-11-27",
       "comparisons": [
         {
           "address": "29 George Street, Newcastle Under Lyme, Staffordshire",
-          "difference_metres": 0.0,
+          "difference_metres": 45.2,
           "lat": 53.012404,
           "lng": -2.216598,
           "name": "MUSEUM",
           "postcode": "ST5 1JU",
           "queried_postcode": "ST5 1JU",
-          "status": "coordinate_agreement",
+          "status": "nearby",
           "url": "https://ratings.food.gov.uk/business/638455"
         }
       ],
@@ -538,25 +538,27 @@
       "owner_pin_confirmed": false,
       "owner_reviewed": false,
       "pin": {
-        "lat": 53.012404,
-        "lng": -2.216598
+        "lat": 53.012405648055,
+        "lng": -2.21727335103
       },
-      "priority": 3,
+      "priority": 2,
       "reasons": [],
       "reference": {
         "address": "29 George Street, Newcastle Under Lyme, Staffordshire",
-        "difference_metres": 0.0,
+        "difference_metres": 45.2,
         "lat": 53.012404,
         "lng": -2.216598,
         "name": "MUSEUM",
         "postcode": "ST5 1JU",
         "queried_postcode": "ST5 1JU",
-        "status": "coordinate_agreement",
+        "status": "nearby",
         "url": "https://ratings.food.gov.uk/business/638455"
       },
       "review_category": "informational",
-      "status": "coordinate_agreement",
-      "warnings": []
+      "status": "nearby",
+      "warnings": [
+        "FSA coordinate is 25-50m away; informational only"
+      ]
     },
     "v-02b75231-eb50-56ba-a3fc-58acca81eead": {
       "actionable": false,
@@ -1071,11 +1073,11 @@
     },
     "v-051ceacd-e5d7-58d1-81ce-dec99892c1e7": {
       "actionable": false,
-      "checked_at": "2026-11-26",
+      "checked_at": "2026-11-27",
       "comparisons": [
         {
           "address": "The Alfred Alehouse, 51 Derby Street, Burton upon Trent",
-          "difference_metres": 0.0,
+          "difference_metres": 17.9,
           "lat": 52.809398651123,
           "lng": -1.64131295681,
           "name": "THE ALFRED",
@@ -1096,14 +1098,14 @@
       "owner_pin_confirmed": false,
       "owner_reviewed": false,
       "pin": {
-        "lat": 52.809398651123,
-        "lng": -1.64131295681
+        "lat": 52.80950203,
+        "lng": -1.64110872
       },
       "priority": 3,
       "reasons": [],
       "reference": {
         "address": "The Alfred Alehouse, 51 Derby Street, Burton upon Trent",
-        "difference_metres": 0.0,
+        "difference_metres": 17.9,
         "lat": 52.809398651123,
         "lng": -1.64131295681,
         "name": "THE ALFRED",
@@ -2697,11 +2699,11 @@
     },
     "v-0ccc8e04-08da-58a5-a6b5-293d225871db": {
       "actionable": false,
-      "checked_at": "2026-11-26",
+      "checked_at": "2026-11-27",
       "comparisons": [
         {
           "address": "38 Queens Road, , Nuneaton",
-          "difference_metres": 15.4,
+          "difference_metres": 23.7,
           "lat": 52.522429,
           "lng": -1.471365,
           "name": "Lord Hop",
@@ -2711,8 +2713,8 @@
           "url": "https://ratings.food.gov.uk/business/812330"
         }
       ],
-      "confidence": "different_source_coordinates_agree",
-      "independent_of_pin": true,
+      "confidence": "existing_evidence_needs_corroboration",
+      "independent_of_pin": false,
       "listing": {
         "postcode": "CV11 5JX",
         "pub_name": "Lord Hop"
@@ -2722,14 +2724,14 @@
       "owner_pin_confirmed": false,
       "owner_reviewed": false,
       "pin": {
-        "lat": 52.5224532,
-        "lng": -1.4711416
+        "lat": 52.522533,
+        "lng": -1.471059
       },
       "priority": 3,
       "reasons": [],
       "reference": {
         "address": "38 Queens Road, , Nuneaton",
-        "difference_metres": 15.4,
+        "difference_metres": 23.7,
         "lat": 52.522429,
         "lng": -1.471365,
         "name": "Lord Hop",
@@ -4711,11 +4713,11 @@
     },
     "v-1536960d-c0c6-5571-b3f2-64947d2c6adf": {
       "actionable": false,
-      "checked_at": "2026-11-26",
+      "checked_at": "2026-11-27",
       "comparisons": [
         {
           "address": "29 Main Street, Worthington, Ashby-De-La-Zouch, Leicestershire",
-          "difference_metres": 86.7,
+          "difference_metres": 80.9,
           "lat": 52.780089,
           "lng": -1.394953,
           "name": "The Malt Shovel",
@@ -4736,14 +4738,14 @@
       "owner_pin_confirmed": false,
       "owner_reviewed": false,
       "pin": {
-        "lat": 52.7793138,
-        "lng": -1.3950916
+        "lat": 52.77939652,
+        "lng": -1.39532085
       },
       "priority": 2,
       "reasons": [],
       "reference": {
         "address": "29 Main Street, Worthington, Ashby-De-La-Zouch, Leicestershire",
-        "difference_metres": 86.7,
+        "difference_metres": 80.9,
         "lat": 52.780089,
         "lng": -1.394953,
         "name": "The Malt Shovel",
@@ -4755,7 +4757,7 @@
       "review_category": "informational",
       "status": "coordinate_disagreement",
       "warnings": [
-        "FSA coordinate is 86.7m from the accepted pin; informational only because the FSA geocode may be approximate"
+        "FSA coordinate is 80.9m from the accepted pin; informational only because the FSA geocode may be approximate"
       ]
     },
     "v-1554353b-6a48-561c-9f59-331364ce09dd": {
@@ -7038,11 +7040,11 @@
     },
     "v-2464a15c-36d6-5352-a32a-fb781a6437e5": {
       "actionable": false,
-      "checked_at": "2026-11-26",
+      "checked_at": "2026-11-27",
       "comparisons": [
         {
           "address": "Keyworth Road, Wysall, Nottinghamshire",
-          "difference_metres": 161.4,
+          "difference_metres": 174.0,
           "lat": 52.842082,
           "lng": -1.1035,
           "name": "The Plough Inn",
@@ -7063,14 +7065,14 @@
       "owner_pin_confirmed": false,
       "owner_reviewed": false,
       "pin": {
-        "lat": 52.8406739,
-        "lng": -1.1040813
+        "lat": 52.840552,
+        "lng": -1.104041
       },
       "priority": 2,
       "reasons": [],
       "reference": {
         "address": "Keyworth Road, Wysall, Nottinghamshire",
-        "difference_metres": 161.4,
+        "difference_metres": 174.0,
         "lat": 52.842082,
         "lng": -1.1035,
         "name": "The Plough Inn",
@@ -7082,7 +7084,7 @@
       "review_category": "informational",
       "status": "coordinate_disagreement",
       "warnings": [
-        "FSA coordinate is 161.4m from the accepted pin; informational only because the FSA geocode may be approximate"
+        "FSA coordinate is 174.0m from the accepted pin; informational only because the FSA geocode may be approximate"
       ]
     },
     "v-247c2ae3-3a7a-579e-bd0a-00f8fdb9d461": {
@@ -7480,7 +7482,7 @@
     },
     "v-2674af55-eb10-5ee5-bac1-3c7bf1bf37ac": {
       "actionable": false,
-      "checked_at": "2026-11-26",
+      "checked_at": "2026-11-27",
       "comparisons": [
         {
           "name_matches": 0,
@@ -7500,8 +7502,8 @@
       "owner_pin_confirmed": false,
       "owner_reviewed": false,
       "pin": {
-        "lat": 52.8576544,
-        "lng": -1.6878554
+        "lat": 52.85745989,
+        "lng": -1.68801914
       },
       "priority": 2,
       "reasons": [],
@@ -9137,22 +9139,22 @@
     },
     "v-2fb083b1-287a-500c-a101-a30a716d112d": {
       "actionable": false,
-      "checked_at": "2026-11-26",
+      "checked_at": "2026-11-27",
       "comparisons": [
         {
           "address": "1903 Leek Road, Stoke-On-Trent",
-          "difference_metres": 11.4,
+          "difference_metres": 30.2,
           "lat": 53.049212,
           "lng": -2.140301,
           "name": "The Travellers Rest",
           "postcode": "ST2 7AQ",
           "queried_postcode": "ST2 7AQ",
-          "status": "coordinate_agreement",
+          "status": "nearby",
           "url": "https://ratings.food.gov.uk/business/1563774"
         }
       ],
-      "confidence": "different_source_coordinates_agree",
-      "independent_of_pin": true,
+      "confidence": "existing_evidence_needs_corroboration",
+      "independent_of_pin": false,
       "listing": {
         "postcode": "ST2 7AQ",
         "pub_name": "Travellers Rest"
@@ -9162,25 +9164,27 @@
       "owner_pin_confirmed": false,
       "owner_reviewed": false,
       "pin": {
-        "lat": 53.0492981,
-        "lng": -2.140209
+        "lat": 53.04946281,
+        "lng": -2.14012589
       },
-      "priority": 3,
+      "priority": 2,
       "reasons": [],
       "reference": {
         "address": "1903 Leek Road, Stoke-On-Trent",
-        "difference_metres": 11.4,
+        "difference_metres": 30.2,
         "lat": 53.049212,
         "lng": -2.140301,
         "name": "The Travellers Rest",
         "postcode": "ST2 7AQ",
         "queried_postcode": "ST2 7AQ",
-        "status": "coordinate_agreement",
+        "status": "nearby",
         "url": "https://ratings.food.gov.uk/business/1563774"
       },
       "review_category": "informational",
-      "status": "coordinate_agreement",
-      "warnings": []
+      "status": "nearby",
+      "warnings": [
+        "FSA coordinate is 25-50m away; informational only"
+      ]
     },
     "v-300cdecf-0171-5ebf-8123-5fb33d0783cb": {
       "actionable": false,
@@ -9900,11 +9904,11 @@
     },
     "v-3375da23-2d63-5732-b095-f6e42255f12d": {
       "actionable": false,
-      "checked_at": "2026-11-26",
+      "checked_at": "2026-11-27",
       "comparisons": [
         {
           "address": "The Royal Oak, 4 The Square, , Nuneaton",
-          "difference_metres": 54.9,
+          "difference_metres": 52.0,
           "lat": 52.513279,
           "lng": -1.455855,
           "name": "The Royal Oak",
@@ -9915,7 +9919,7 @@
         }
       ],
       "confidence": "existing_evidence_needs_corroboration",
-      "independent_of_pin": true,
+      "independent_of_pin": false,
       "listing": {
         "postcode": "CV11 4JY",
         "pub_name": "Royal Oak"
@@ -9925,14 +9929,14 @@
       "owner_pin_confirmed": false,
       "owner_reviewed": false,
       "pin": {
-        "lat": 52.51376172,
-        "lng": -1.45568405
+        "lat": 52.513704,
+        "lng": -1.455534
       },
       "priority": 2,
       "reasons": [],
       "reference": {
         "address": "The Royal Oak, 4 The Square, , Nuneaton",
-        "difference_metres": 54.9,
+        "difference_metres": 52.0,
         "lat": 52.513279,
         "lng": -1.455855,
         "name": "The Royal Oak",
@@ -9944,16 +9948,16 @@
       "review_category": "informational",
       "status": "coordinate_disagreement",
       "warnings": [
-        "FSA coordinate is 54.9m from the accepted pin; informational only because the FSA geocode may be approximate"
+        "FSA coordinate is 52.0m from the accepted pin; informational only because the FSA geocode may be approximate"
       ]
     },
     "v-33da9387-2aa7-5bdf-b0bb-3e369659eb47": {
       "actionable": false,
-      "checked_at": "2026-11-26",
+      "checked_at": "2026-11-27",
       "comparisons": [
         {
           "address": "Great Western Hotel, Bishops Itchington, Southam",
-          "difference_metres": 114.8,
+          "difference_metres": 80.5,
           "lat": 52.234808,
           "lng": -1.433201,
           "name": "The Great Western",
@@ -9974,14 +9978,14 @@
       "owner_pin_confirmed": false,
       "owner_reviewed": false,
       "pin": {
-        "lat": 52.2339159,
-        "lng": -1.4323514
+        "lat": 52.23418932,
+        "lng": -1.43258627
       },
       "priority": 2,
       "reasons": [],
       "reference": {
         "address": "Great Western Hotel, Bishops Itchington, Southam",
-        "difference_metres": 114.8,
+        "difference_metres": 80.5,
         "lat": 52.234808,
         "lng": -1.433201,
         "name": "The Great Western",
@@ -9993,7 +9997,7 @@
       "review_category": "informational",
       "status": "coordinate_disagreement",
       "warnings": [
-        "FSA coordinate is 114.8m from the accepted pin; informational only because the FSA geocode may be approximate"
+        "FSA coordinate is 80.5m from the accepted pin; informational only because the FSA geocode may be approximate"
       ]
     },
     "v-3475b2ff-bed7-56ce-88ef-d024ff70524b": {
@@ -10740,11 +10744,11 @@
     },
     "v-38368b12-74dc-52f8-811e-567982334cbd": {
       "actionable": false,
-      "checked_at": "2026-11-26",
+      "checked_at": "2026-11-27",
       "comparisons": [
         {
           "address": "Coopers Tavern, 43 Cross Street, Burton upon Trent",
-          "difference_metres": 12.3,
+          "difference_metres": 2.8,
           "lat": 52.8046933,
           "lng": -1.6376432,
           "name": "COOPERS TAVERN",
@@ -10754,8 +10758,8 @@
           "url": "https://ratings.food.gov.uk/business/1910214"
         }
       ],
-      "confidence": "different_source_coordinates_agree",
-      "independent_of_pin": true,
+      "confidence": "existing_evidence_needs_corroboration",
+      "independent_of_pin": false,
       "listing": {
         "postcode": "DE14 1EG",
         "pub_name": "Coopers Tavern"
@@ -10765,14 +10769,14 @@
       "owner_pin_confirmed": false,
       "owner_reviewed": false,
       "pin": {
-        "lat": 52.8047746,
-        "lng": -1.6377677
+        "lat": 52.80467076,
+        "lng": -1.63766161
       },
       "priority": 3,
       "reasons": [],
       "reference": {
         "address": "Coopers Tavern, 43 Cross Street, Burton upon Trent",
-        "difference_metres": 12.3,
+        "difference_metres": 2.8,
         "lat": 52.8046933,
         "lng": -1.6376432,
         "name": "COOPERS TAVERN",
@@ -10928,7 +10932,7 @@
     },
     "v-399d86f9-f10f-51a5-aca2-2a7d139ed2ca": {
       "actionable": false,
-      "checked_at": "2026-11-26",
+      "checked_at": "2026-11-27",
       "comparisons": [
         {
           "name_matches": 0,
@@ -10948,8 +10952,8 @@
       "owner_pin_confirmed": false,
       "owner_reviewed": false,
       "pin": {
-        "lat": 51.4678495,
-        "lng": -2.6052992125000003
+        "lat": 51.4679175,
+        "lng": -2.6053443
       },
       "priority": 2,
       "reasons": [],
@@ -11809,11 +11813,11 @@
     },
     "v-3dbfba46-80e3-56c7-81e7-9e3e0dad505a": {
       "actionable": false,
-      "checked_at": "2026-11-26",
+      "checked_at": "2026-11-27",
       "comparisons": [
         {
           "address": "237A Nottingham Road, Eastwood, Nottinghamshire",
-          "difference_metres": 4.9,
+          "difference_metres": 4.2,
           "lat": 53.0139906,
           "lng": -1.2929534,
           "name": "Pick And Davy Limited",
@@ -11834,14 +11838,14 @@
       "owner_pin_confirmed": false,
       "owner_reviewed": false,
       "pin": {
-        "lat": 53.01394725,
-        "lng": -1.29293784
+        "lat": 53.01401,
+        "lng": -1.2929
       },
       "priority": 3,
       "reasons": [],
       "reference": {
         "address": "237A Nottingham Road, Eastwood, Nottinghamshire",
-        "difference_metres": 4.9,
+        "difference_metres": 4.2,
         "lat": 53.0139906,
         "lng": -1.2929534,
         "name": "Pick And Davy Limited",
@@ -12247,11 +12251,11 @@
     },
     "v-423a9f7e-cbe1-5e5c-b38a-8e9f0ea9fd3c": {
       "actionable": false,
-      "checked_at": "2026-11-26",
+      "checked_at": "2026-11-27",
       "comparisons": [
         {
           "address": "24 Bridge Street, Burton upon Trent",
-          "difference_metres": 3.1,
+          "difference_metres": 7.8,
           "lat": 52.806777,
           "lng": -1.6254768,
           "name": "BURTON BRIDGE BREWERY LTD",
@@ -12272,14 +12276,14 @@
       "owner_pin_confirmed": false,
       "owner_reviewed": false,
       "pin": {
-        "lat": 52.8067729,
-        "lng": -1.625431
+        "lat": 52.80684673,
+        "lng": -1.62549172
       },
       "priority": 3,
       "reasons": [],
       "reference": {
         "address": "24 Bridge Street, Burton upon Trent",
-        "difference_metres": 3.1,
+        "difference_metres": 7.8,
         "lat": 52.806777,
         "lng": -1.6254768,
         "name": "BURTON BRIDGE BREWERY LTD",
@@ -12382,7 +12386,7 @@
     },
     "v-42916c51-c65c-5cc0-b28c-d514db7e5790": {
       "actionable": false,
-      "checked_at": "2026-11-26",
+      "checked_at": "2026-11-27",
       "comparisons": [
         {
           "name_matches": 1,
@@ -12392,7 +12396,7 @@
         }
       ],
       "confidence": "existing_evidence_needs_corroboration",
-      "independent_of_pin": true,
+      "independent_of_pin": false,
       "listing": {
         "postcode": "CW12 3LP",
         "pub_name": "Castle Inn"
@@ -12402,8 +12406,8 @@
       "owner_pin_confirmed": false,
       "owner_reviewed": false,
       "pin": {
-        "lat": 53.14921062,
-        "lng": -2.1763252299999998
+        "lat": 53.14912687,
+        "lng": -2.17611631
       },
       "priority": 2,
       "reasons": [],
@@ -16448,11 +16452,11 @@
     },
     "v-5743485b-71dc-57b2-a6be-e986697bd4cd": {
       "actionable": false,
-      "checked_at": "2026-11-26",
+      "checked_at": "2026-11-27",
       "comparisons": [
         {
           "address": "47 Church Street Horsley Derby Derbyshire",
-          "difference_metres": 165.4,
+          "difference_metres": 160.9,
           "lat": 52.996325,
           "lng": -1.435771,
           "name": "The Coach And Horses",
@@ -16463,7 +16467,7 @@
         }
       ],
       "confidence": "existing_evidence_needs_corroboration",
-      "independent_of_pin": true,
+      "independent_of_pin": false,
       "listing": {
         "postcode": "DE21 5BQ",
         "pub_name": "Coach and Horses"
@@ -16473,14 +16477,14 @@
       "owner_pin_confirmed": false,
       "owner_reviewed": false,
       "pin": {
-        "lat": 52.9965278,
-        "lng": -1.4333222
+        "lat": 52.99642256197949,
+        "lng": -1.4333724975585938
       },
       "priority": 2,
       "reasons": [],
       "reference": {
         "address": "47 Church Street Horsley Derby Derbyshire",
-        "difference_metres": 165.4,
+        "difference_metres": 160.9,
         "lat": 52.996325,
         "lng": -1.435771,
         "name": "The Coach And Horses",
@@ -16492,7 +16496,7 @@
       "review_category": "informational",
       "status": "coordinate_disagreement",
       "warnings": [
-        "FSA coordinate is 165.4m from the accepted pin; informational only because the FSA geocode may be approximate"
+        "FSA coordinate is 160.9m from the accepted pin; informational only because the FSA geocode may be approximate"
       ]
     },
     "v-57e603be-1c07-568c-90c0-396a69c29929": {
@@ -20012,7 +20016,7 @@
         }
       ],
       "confidence": "existing_evidence_needs_corroboration",
-      "independent_of_pin": true,
+      "independent_of_pin": false,
       "listing": {
         "postcode": "DE11 8EN",
         "pub_name": "Mushroom Hall"
@@ -22932,22 +22936,22 @@
     },
     "v-77056a66-be9a-52b4-9bbe-fadd4e67fa6f": {
       "actionable": false,
-      "checked_at": "2026-11-26",
+      "checked_at": "2026-11-27",
       "comparisons": [
         {
           "address": "57 Burton Street, Melton Mowbray",
-          "difference_metres": 43.0,
+          "difference_metres": 51.3,
           "lat": 52.762617,
           "lng": -0.884524,
           "name": "The Boat Inn",
           "postcode": "LE13 1AF",
           "queried_postcode": "LE13 1AF",
-          "status": "nearby",
+          "status": "coordinate_disagreement",
           "url": "https://ratings.food.gov.uk/business/4754"
         }
       ],
       "confidence": "existing_evidence_needs_corroboration",
-      "independent_of_pin": true,
+      "independent_of_pin": false,
       "listing": {
         "postcode": "LE13 1AF",
         "pub_name": "Boat Inn"
@@ -22957,26 +22961,26 @@
       "owner_pin_confirmed": false,
       "owner_reviewed": false,
       "pin": {
-        "lat": 52.7622607,
-        "lng": -0.8842746
+        "lat": 52.76217668,
+        "lng": -0.88429744
       },
       "priority": 2,
       "reasons": [],
       "reference": {
         "address": "57 Burton Street, Melton Mowbray",
-        "difference_metres": 43.0,
+        "difference_metres": 51.3,
         "lat": 52.762617,
         "lng": -0.884524,
         "name": "The Boat Inn",
         "postcode": "LE13 1AF",
         "queried_postcode": "LE13 1AF",
-        "status": "nearby",
+        "status": "coordinate_disagreement",
         "url": "https://ratings.food.gov.uk/business/4754"
       },
       "review_category": "informational",
-      "status": "nearby",
+      "status": "coordinate_disagreement",
       "warnings": [
-        "FSA coordinate is 25-50m away; informational only"
+        "FSA coordinate is 51.3m from the accepted pin; informational only because the FSA geocode may be approximate"
       ]
     },
     "v-77092c69-962d-5c97-94aa-77f46ca88e4f": {
@@ -24854,17 +24858,17 @@
     },
     "v-7f5d556a-433d-5732-af75-9cee3078da77": {
       "actionable": false,
-      "checked_at": "2026-11-26",
+      "checked_at": "2026-11-27",
       "comparisons": [
         {
           "address": "11 Percy Street, Hanley, Stoke-On-Trent",
-          "difference_metres": 0.0,
+          "difference_metres": 36.5,
           "lat": 53.025219,
           "lng": -2.175439,
           "name": "Market Tavern",
           "postcode": "ST1 1NA",
           "queried_postcode": "ST1 1NA",
-          "status": "coordinate_agreement",
+          "status": "nearby",
           "url": "https://ratings.food.gov.uk/business/776375"
         }
       ],
@@ -24879,25 +24883,27 @@
       "owner_pin_confirmed": false,
       "owner_reviewed": false,
       "pin": {
-        "lat": 53.025219,
-        "lng": -2.175439
+        "lat": 53.025181,
+        "lng": -2.174897
       },
-      "priority": 3,
+      "priority": 2,
       "reasons": [],
       "reference": {
         "address": "11 Percy Street, Hanley, Stoke-On-Trent",
-        "difference_metres": 0.0,
+        "difference_metres": 36.5,
         "lat": 53.025219,
         "lng": -2.175439,
         "name": "Market Tavern",
         "postcode": "ST1 1NA",
         "queried_postcode": "ST1 1NA",
-        "status": "coordinate_agreement",
+        "status": "nearby",
         "url": "https://ratings.food.gov.uk/business/776375"
       },
       "review_category": "informational",
-      "status": "coordinate_agreement",
-      "warnings": []
+      "status": "nearby",
+      "warnings": [
+        "FSA coordinate is 25-50m away; informational only"
+      ]
     },
     "v-7f64dd0a-d18a-5285-83fe-52741ba89a21": {
       "actionable": false,
@@ -35144,22 +35150,22 @@
     },
     "v-af9dc0fc-3a8a-50ea-b904-00ad2e7e51de": {
       "actionable": false,
-      "checked_at": "2026-11-26",
+      "checked_at": "2026-11-27",
       "comparisons": [
         {
           "address": "81 Mount Road, Hinckley, Leicestershire",
-          "difference_metres": 0.0,
+          "difference_metres": 27.3,
           "lat": 52.539313,
           "lng": -1.366936,
           "name": "Citizens Club Limited",
           "postcode": "LE10 1AE",
           "queried_postcode": "LE10 1AE",
-          "status": "coordinate_agreement",
+          "status": "nearby",
           "url": "https://ratings.food.gov.uk/business/225392"
         }
       ],
       "confidence": "existing_evidence_needs_corroboration",
-      "independent_of_pin": false,
+      "independent_of_pin": true,
       "listing": {
         "postcode": "LE10 1AE",
         "pub_name": "Citizens Club (PMC)"
@@ -35169,25 +35175,27 @@
       "owner_pin_confirmed": false,
       "owner_reviewed": false,
       "pin": {
-        "lat": 52.539313,
-        "lng": -1.366936
+        "lat": 52.53955785,
+        "lng": -1.36697412
       },
-      "priority": 3,
+      "priority": 2,
       "reasons": [],
       "reference": {
         "address": "81 Mount Road, Hinckley, Leicestershire",
-        "difference_metres": 0.0,
+        "difference_metres": 27.3,
         "lat": 52.539313,
         "lng": -1.366936,
         "name": "Citizens Club Limited",
         "postcode": "LE10 1AE",
         "queried_postcode": "LE10 1AE",
-        "status": "coordinate_agreement",
+        "status": "nearby",
         "url": "https://ratings.food.gov.uk/business/225392"
       },
       "review_category": "informational",
-      "status": "coordinate_agreement",
-      "warnings": []
+      "status": "nearby",
+      "warnings": [
+        "FSA coordinate is 25-50m away; informational only"
+      ]
     },
     "v-b0609207-be43-5211-b898-e320bafe5410": {
       "actionable": false,
@@ -42028,7 +42036,7 @@
     },
     "v-d63ce0bc-e06c-5cae-a586-ef5e0978d05a": {
       "actionable": false,
-      "checked_at": "2026-11-26",
+      "checked_at": "2026-11-27",
       "comparisons": [
         {
           "name_matches": 0,
@@ -42048,8 +42056,8 @@
       "owner_pin_confirmed": false,
       "owner_reviewed": false,
       "pin": {
-        "lat": 52.5353167,
-        "lng": -1.3955219
+        "lat": 52.53543896942747,
+        "lng": -1.3955981019686279
       },
       "priority": 2,
       "reasons": [],
@@ -42896,7 +42904,7 @@
         }
       ],
       "confidence": "existing_evidence_needs_corroboration",
-      "independent_of_pin": true,
+      "independent_of_pin": false,
       "listing": {
         "postcode": "DE56 1EY",
         "pub_name": "Belper House"
@@ -46647,22 +46655,22 @@
     },
     "v-efaae2bc-47a6-51d0-b153-1da28cc90bc9": {
       "actionable": false,
-      "checked_at": "2026-11-26",
+      "checked_at": "2026-11-27",
       "comparisons": [
         {
           "address": "Lower Lane, Chorley, Lichfield, Staffordshire",
-          "difference_metres": 57.1,
+          "difference_metres": 37.9,
           "lat": 52.6977920532227,
           "lng": -1.89744997024536,
           "name": "The Malt Shovel",
           "postcode": "WS13 8DD",
           "queried_postcode": "WS13 8DD",
-          "status": "coordinate_disagreement",
+          "status": "nearby",
           "url": "https://ratings.food.gov.uk/business/1828240"
         }
       ],
       "confidence": "existing_evidence_needs_corroboration",
-      "independent_of_pin": true,
+      "independent_of_pin": false,
       "listing": {
         "postcode": "WS13 8DD",
         "pub_name": "Malt Shovel"
@@ -46672,26 +46680,26 @@
       "owner_pin_confirmed": false,
       "owner_reviewed": false,
       "pin": {
-        "lat": 52.69815029230769,
-        "lng": -1.8980569384615384
+        "lat": 52.69812469,
+        "lng": -1.89757049
       },
       "priority": 2,
       "reasons": [],
       "reference": {
         "address": "Lower Lane, Chorley, Lichfield, Staffordshire",
-        "difference_metres": 57.1,
+        "difference_metres": 37.9,
         "lat": 52.6977920532227,
         "lng": -1.89744997024536,
         "name": "The Malt Shovel",
         "postcode": "WS13 8DD",
         "queried_postcode": "WS13 8DD",
-        "status": "coordinate_disagreement",
+        "status": "nearby",
         "url": "https://ratings.food.gov.uk/business/1828240"
       },
       "review_category": "informational",
-      "status": "coordinate_disagreement",
+      "status": "nearby",
       "warnings": [
-        "FSA coordinate is 57.1m from the accepted pin; informational only because the FSA geocode may be approximate"
+        "FSA coordinate is 25-50m away; informational only"
       ]
     },
     "v-efc2da67-492d-5b1d-a964-d773328a09df": {
@@ -46868,11 +46876,11 @@
     },
     "v-f1c9a984-7cec-51a0-ba02-1041b5f3a7c5": {
       "actionable": false,
-      "checked_at": "2026-11-26",
+      "checked_at": "2026-11-27",
       "comparisons": [
         {
           "address": "63 Kingsway, Stoke, Stoke-On-Trent",
-          "difference_metres": 14.9,
+          "difference_metres": 5.7,
           "lat": 53.0039269,
           "lng": -2.1842375,
           "name": "Kings Way",
@@ -46893,14 +46901,14 @@
       "owner_pin_confirmed": false,
       "owner_reviewed": false,
       "pin": {
-        "lat": 53.0038306,
-        "lng": -2.1843932
+        "lat": 53.003941561221,
+        "lng": -2.184319597553
       },
       "priority": 3,
       "reasons": [],
       "reference": {
         "address": "63 Kingsway, Stoke, Stoke-On-Trent",
-        "difference_metres": 14.9,
+        "difference_metres": 5.7,
         "lat": 53.0039269,
         "lng": -2.1842375,
         "name": "Kings Way",
@@ -47702,22 +47710,22 @@
     },
     "v-f418e771-24bc-5543-a2b6-1293dbce7ce8": {
       "actionable": false,
-      "checked_at": "2026-11-26",
+      "checked_at": "2026-11-27",
       "comparisons": [
         {
           "address": "The Old Star Inn, Queen Street, Uttoxeter",
-          "difference_metres": 56.5,
+          "difference_metres": 45.8,
           "lat": 52.8976211547852,
           "lng": -1.86331403255463,
           "name": "The Old Star",
           "postcode": "ST14 8HJ",
           "queried_postcode": "ST14 8HJ",
-          "status": "coordinate_disagreement",
+          "status": "nearby",
           "url": "https://ratings.food.gov.uk/business/1247694"
         }
       ],
       "confidence": "existing_evidence_needs_corroboration",
-      "independent_of_pin": true,
+      "independent_of_pin": false,
       "listing": {
         "postcode": "ST14 8HJ",
         "pub_name": "Old Star"
@@ -47727,26 +47735,26 @@
       "owner_pin_confirmed": false,
       "owner_reviewed": false,
       "pin": {
-        "lat": 52.8976422,
-        "lng": -1.8641563
+        "lat": 52.897792,
+        "lng": -1.863935
       },
       "priority": 2,
       "reasons": [],
       "reference": {
         "address": "The Old Star Inn, Queen Street, Uttoxeter",
-        "difference_metres": 56.5,
+        "difference_metres": 45.8,
         "lat": 52.8976211547852,
         "lng": -1.86331403255463,
         "name": "The Old Star",
         "postcode": "ST14 8HJ",
         "queried_postcode": "ST14 8HJ",
-        "status": "coordinate_disagreement",
+        "status": "nearby",
         "url": "https://ratings.food.gov.uk/business/1247694"
       },
       "review_category": "informational",
-      "status": "coordinate_disagreement",
+      "status": "nearby",
       "warnings": [
-        "FSA coordinate is 56.5m from the accepted pin; informational only because the FSA geocode may be approximate"
+        "FSA coordinate is 25-50m away; informational only"
       ]
     },
     "v-f4485d10-20f9-5178-a539-cbade7e5b9a3": {
@@ -48834,7 +48842,7 @@
     },
     "v-f92270dc-d910-5cd5-bb78-2607ed97659b": {
       "actionable": false,
-      "checked_at": "2026-11-26",
+      "checked_at": "2026-11-27",
       "comparisons": [
         {
           "name_matches": 0,
@@ -48860,8 +48868,8 @@
       "owner_pin_confirmed": false,
       "owner_reviewed": false,
       "pin": {
-        "lat": 52.1886066,
-        "lng": -2.2190526
+        "lat": 52.188432,
+        "lng": -2.218878
       },
       "priority": 2,
       "reasons": [],
@@ -49438,11 +49446,11 @@
     },
     "v-fb4e1ce7-078c-526a-a178-169f016e741f": {
       "actionable": false,
-      "checked_at": "2026-11-26",
+      "checked_at": "2026-11-27",
       "comparisons": [
         {
           "address": "102 Albert Street, Newcastle Under Lyme, Staffordshire",
-          "difference_metres": 123.4,
+          "difference_metres": 115.2,
           "lat": 53.013601,
           "lng": -2.215963,
           "name": "HOP INN",
@@ -49453,7 +49461,7 @@
         }
       ],
       "confidence": "existing_evidence_needs_corroboration",
-      "independent_of_pin": true,
+      "independent_of_pin": false,
       "listing": {
         "postcode": "ST5 1JR",
         "pub_name": "Hopinn"
@@ -49463,14 +49471,14 @@
       "owner_pin_confirmed": false,
       "owner_reviewed": false,
       "pin": {
-        "lat": 53.0146665,
-        "lng": -2.2164794
+        "lat": 53.014608541448,
+        "lng": -2.216365742397
       },
       "priority": 2,
       "reasons": [],
       "reference": {
         "address": "102 Albert Street, Newcastle Under Lyme, Staffordshire",
-        "difference_metres": 123.4,
+        "difference_metres": 115.2,
         "lat": 53.013601,
         "lng": -2.215963,
         "name": "HOP INN",
@@ -49482,7 +49490,7 @@
       "review_category": "informational",
       "status": "coordinate_disagreement",
       "warnings": [
-        "FSA coordinate is 123.4m from the accepted pin; informational only because the FSA geocode may be approximate"
+        "FSA coordinate is 115.2m from the accepted pin; informational only because the FSA geocode may be approximate"
       ]
     },
     "v-fb5ddb66-cc8e-53b3-bed6-c35c165091be": {

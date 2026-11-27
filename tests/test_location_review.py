@@ -44,7 +44,7 @@ class LocationTrackingTests(unittest.TestCase):
         checked['premises_review'] = {'venue_key': venue_key(venue), 'point': {k: checked[k] for k in ('lat', 'lng')},
                                       'precision': 'building', 'checked_at': '2026-01-01', 'basis': 'Numbered pub building',
                                       'building_url': 'https://www.openstreetmap.org/way/123', 'geometry_feature': 'way/123',
-                                      'sources': urls + ['https://www.openstreetmap.org/way/123'],
+                                      'sources': urls + ['https://www.openstreetmap.org/way/123'], 'identity_sources': [urls[0]],
                                       'postal_address': dict(issue, sources=urls)}
         self.assertTrue(postcode_issue_reviewed(issue, checked, venue['pub_name'], venue))
         self.assertFalse(postcode_issue_reviewed(dict(issue, reference='BS1 1ZZ'), checked, venue['pub_name'], venue))

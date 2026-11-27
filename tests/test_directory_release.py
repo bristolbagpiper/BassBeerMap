@@ -311,7 +311,21 @@ class ReleaseGateTests(unittest.TestCase):
         shape = 'https://www.openstreetmap.org/way/123'
         position['premises_review'] = dict(venue_key=venue_key(rows[0]), previous_point=previous,
             point=point, precision='building', sources=[shape, 'https://example.org/operator'],
-            building_url=shape, geometry_feature='way/123', checked_at=date.today().isoformat(), basis='Named and numbered building')
+            building_url=shape, geometry_feature='way/123', identity_sources=['https://example.org/operator'],
+            checked_at=date.today().isoformat(), basis='Named and numbered building')
+        from directory_release import premises_review_valid
+        basemap = 'https://osdatahub.os.uk/downloads/open/OpenMapLocal'
+        point_link = 'https://www.google.com/maps?q=51.1,-2.5'
+        for invalid in ([], [shape], ['https://operator.invalid/unrecorded'], [basemap], [point_link]):
+            review = dict(position['premises_review'], identity_sources=invalid)
+            review['sources'] = review['sources'] + [basemap, point_link]
+            self.assertFalse(premises_review_valid(rows[0], dict(position, premises_review=review)))
+        council = 'https://www.planning.data.gov.uk/entity/123'
+        outline_review = dict(position['premises_review'], sources=[council],
+                              building_url=council, identity_sources=[council])
+        self.assertFalse(premises_review_valid(rows[0], dict(position, premises_review=outline_review)))
+        outline_review['external_premises_checks'] = {'council_premises_outline': [council]}
+        self.assertTrue(premises_review_valid(rows[0], dict(position, premises_review=outline_review)))
         write_release(self.stage, rows, registry, self.metadata, self.postcodes)
         self.assertEqual(validate_release(self.stage, self.root), [])
         position['premises_review']['previous_point'] = point

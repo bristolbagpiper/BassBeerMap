@@ -224,7 +224,7 @@ class FrontendSmokeTests(unittest.TestCase):
         wait.until(EC.visibility_of_element_located((By.ID, 'mobileVenue')))
         return wait.until(EC.visibility_of_element_located((By.CSS_SELECTOR, '#map .leaflet-marker-icon[role="button"]')))
 
-    def test_muckers_opens_verified_pin_despite_postcode_conflict(self):
+    def test_muckers_finds_named_business_at_reviewed_postcode(self):
         from selenium.webdriver.common.by import By
         from selenium.webdriver.support.ui import WebDriverWait
 
@@ -238,10 +238,10 @@ class FrontendSmokeTests(unittest.TestCase):
         WebDriverWait(self.driver, 10).until(lambda d: d.find_element(By.ID, 'resultCount').text == '1 match')
         card = self.driver.find_element(By.CSS_SELECTOR, '#results .card')
         links = card.find_elements(By.TAG_NAME, 'a')
-        self.assertEqual([link.text for link in links], ['Open in Google Maps'])
+        self.assertEqual([link.text for link in links], ['Find in Google Maps'])
         pin_url = urlsplit(links[0].get_attribute('href'))
         self.assertEqual(pin_url.path, '/maps/search/')
-        self.assertEqual(parse_qs(pin_url.query), {'api': ['1'], 'query': ['53.25777,-2.12237']})
+        self.assertEqual(parse_qs(pin_url.query), {'api': ['1'], 'query': ['GJ Muckers, Macclesfield, SK11 6JL']})
 
     def test_one_google_maps_link_uses_verified_address_in_results_and_popups(self):
         from selenium.webdriver.common.by import By
@@ -264,18 +264,30 @@ class FrontendSmokeTests(unittest.TestCase):
                 wait.until(lambda d: d.find_element(By.ID, 'resultCount').text == '1 match')
                 card = driver.find_element(By.CSS_SELECTOR, '#results .card')
                 links = card.find_elements(By.TAG_NAME, 'a')
-                self.assertEqual([link.text for link in links], ['Open in Google Maps'])
+                self.assertEqual([link.text for link in links], ['Find in Google Maps'])
                 url = links[0].get_attribute('href')
                 parts = urlsplit(url)
                 self.assertEqual((parts.scheme, parts.netloc, parts.path), ('https', 'www.google.com', '/maps/search/'))
-                location = driver.execute_script("return directoryRelease.locations[pubData.find(p => matchesFilters(p)).venue_id]")
-                expected = (f"{location['lat']},{location['lng']}" if location.get('premises_precision') == 'building' else address)
-                self.assertEqual(parse_qs(parts.query), {'api': ['1'], 'query': [expected]})
+                self.assertEqual(parse_qs(parts.query), {'api': ['1'], 'query': [address]})
                 self.open_result_pin_details()
                 popup = wait.until(EC.visibility_of_element_located((By.ID, 'mobileVenue')))
                 popup_links = popup.find_elements(By.TAG_NAME, 'a')
-                self.assertEqual([link.text for link in popup_links], ['Open in Google Maps'])
+                self.assertEqual([link.text for link in popup_links], ['Find in Google Maps'])
                 self.assertEqual(popup_links[0].get_attribute('href'), url)
+
+    def test_verified_google_identifiers_open_business_listings(self):
+        self.load_example_venues()
+        links = self.driver.execute_script("""
+            const pub = pubData.find(p => p.pub_name === 'Bank Tavern');
+            return [{maps_url:'https://www.google.com/maps?cid=12345'}, {place_id:'ChIJ123456789'}].map(link => {
+                const box = document.createElement('div');
+                box.innerHTML = venueMapsLink({...pub, googleListing:link});
+                return [box.firstElementChild.href, box.firstElementChild.textContent];
+            });
+        """)
+        self.assertEqual(links[0], ['https://www.google.com/maps?cid=12345', 'Open in Google Maps'])
+        self.assertEqual(parse_qs(urlsplit(links[1][0]).query)['query_place_id'], ['ChIJ123456789'])
+        self.assertIn('Bank Tavern', parse_qs(urlsplit(links[1][0]).query)['query'][0])
 
     def test_black_lion_is_one_listing(self):
         self.load_example_venues()
@@ -674,7 +686,7 @@ class FrontendSmokeTests(unittest.TestCase):
         dialog = driver.find_element(By.ID, 'mobileVenue')
         wait.until(EC.visibility_of(dialog))
         close = dialog.find_element(By.ID, 'closeMobileVenueBtn')
-        maps_link = dialog.find_element(By.LINK_TEXT, 'Open in Google Maps')
+        maps_link = dialog.find_element(By.LINK_TEXT, 'Find in Google Maps')
         href = maps_link.get_attribute('href')
         close.send_keys(Keys.TAB, Keys.TAB)
         self.assertEqual(driver.switch_to.active_element, maps_link)
@@ -711,11 +723,11 @@ class FrontendSmokeTests(unittest.TestCase):
         heading = wait.until(EC.visibility_of_element_located(desktop_title))
         self.assertEqual(heading.text, 'Bank Tavern')
         heading.send_keys(Keys.TAB)
-        self.assertEqual(driver.switch_to.active_element.text, 'Open in Google Maps')
+        self.assertEqual(driver.switch_to.active_element.text, 'Find in Google Maps')
         self.resize_viewport(768, 1024)
         wait.until(EC.visibility_of(dialog))
         self.assertEqual(dialog.find_element(By.TAG_NAME, 'h2').text, 'Bank Tavern')
-        compact_maps_link = dialog.find_element(By.LINK_TEXT, 'Open in Google Maps')
+        compact_maps_link = dialog.find_element(By.LINK_TEXT, 'Find in Google Maps')
         self.assertEqual(compact_maps_link.get_attribute('href'), href)
         self.assertEqual(driver.switch_to.active_element, compact_maps_link)
         close.click()
@@ -835,8 +847,8 @@ class FrontendSmokeTests(unittest.TestCase):
         press(Keys.TAB)
         result = driver.switch_to.active_element
         self.assertEqual(result.accessible_name, 'View on map, Bank Tavern, Bristol: Central')
-        maps_accessible_name = 'Open in Google Maps, Bank Tavern, Bristol: Central'
-        self.assertEqual(driver.find_element(By.LINK_TEXT, 'Open in Google Maps').accessible_name,
+        maps_accessible_name = 'Find in Google Maps, Bank Tavern, Bristol: Central'
+        self.assertEqual(driver.find_element(By.LINK_TEXT, 'Find in Google Maps').accessible_name,
                          maps_accessible_name)
         press(Keys.ENTER)
         wait.until(EC.visibility_of_element_located((By.ID, 'mobileVenue')))

@@ -350,8 +350,10 @@ def directions_address(record):
     return max(candidates, key=lambda address: address['checked_at'], default=None)
 
 
-def build_bundle(rows, metadata, postcodes, ledger, notices=None):
+def build_bundle(rows, metadata, postcodes, ledger, notices=None, registry=None):
+    from google_listings import public_link
     locations = {}
+    business_owners = {}
     highlighted = set(metadata.get('new_or_returning', []))
     for row in rows:
         record = ledger['records'][venue_key(row)]
@@ -360,6 +362,15 @@ def build_bundle(rows, metadata, postcodes, ledger, notices=None):
         if not point_valid(point or {}):
             raise ValueError(f'{venue_key(row)}: no usable {precision} location')
         locations[row['venue_id']] = {'lat': point['lat'], 'lng': point['lng'], 'precision': precision}
+        if registry:
+            link = public_link(row, registry['venues'][row['venue_id']].get('google_listing'))
+            if link:
+                identifier = tuple(link.items())
+                if identifier in business_owners:
+                    locations[business_owners[identifier]].pop('google_listing', None)
+                else:
+                    business_owners[identifier] = row['venue_id']
+                    locations[row['venue_id']]['google_listing'] = link
         if venue_key(row) in highlighted:
             locations[row['venue_id']]['new_or_returning'] = True
         fallback = postcodes.get(row['postcode'])
@@ -432,7 +443,7 @@ def write_release(root, rows, registry, metadata, postcodes, *, source_root=None
     write_json(root / 'pub-coordinates.json', {'coordinates': postcodes, 'unmapped_postcodes': []})
     write_json(root / 'venue-coordinates.json', {'venues': venues, 'unresolved_venues': [k for k, r in ledger['records'].items() if r['display_precision'] != 'venue']})
     write_json(root / 'coordinate-verification.json', ledger)
-    write_json(root / 'directory-release.json', build_bundle(rows, metadata, postcodes, ledger, notices))
+    write_json(root / 'directory-release.json', build_bundle(rows, metadata, postcodes, ledger, notices, registry))
     return ledger
 
 
@@ -499,7 +510,7 @@ def validate_release(root, previous_root=None, allow_review_downgrades=False, al
             if not any(any(postcodes_match(e.get('reference_postcode'), pc) for pc in accepted_postcodes) for e in active_evidence(record)):
                 errors.append(f'{key}: coordinate evidence belongs to a different address')
     try:
-        if bundle != build_bundle(rows, metadata, postcodes, expected, read_json(root / 'trading-notices.json')):
+        if bundle != build_bundle(rows, metadata, postcodes, expected, read_json(root / 'trading-notices.json'), registry):
             errors.append('Map release does not match candidate listings, evidence and coordinates')
     except ValueError as error:
         errors.append(str(error))

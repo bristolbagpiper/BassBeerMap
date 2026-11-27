@@ -166,7 +166,7 @@ class MapHealthTests(unittest.TestCase):
 
     def test_notification_workflow_skips_rejected_imports_and_keeps_their_issue_route(self):
         workflow = (Path(__file__).resolve().parents[1] / '.github/workflows/location-alerts.yml').read_text()
-        self.assertIn("workflows: ['Update CSV From PDF', 'Apply reviewed location']", workflow)
+        self.assertIn("workflows: ['Apply reviewed location']", workflow)
         self.assertIn("github.event.workflow_run.conclusion == 'success'", workflow)
         self.assertNotIn('actions.listJobsForWorkflowRunAttempt', workflow)
         import_workflow = (Path(__file__).resolve().parents[1] / '.github/workflows/update-csv-from-pdf.yml').read_text()

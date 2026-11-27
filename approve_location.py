@@ -493,7 +493,7 @@ def stage_manual_checks(root, staging, reviews):
         writer.writerows(rows)
 
 
-def approve(root, staging, event, owner):
+def approve(root, staging, event, owner, google=False):
     commands = approved_commands(event, owner)
     root, staging = Path(root), Path(staging)
     errors = validate_release(root)
@@ -504,6 +504,7 @@ def approve(root, staging, event, owner):
     registry = copy.deepcopy(read_json(root / "venue-registry.json"))
     ledger = read_json(root / "coordinate-verification.json")
     manual_reviews = []
+    changed_ids = set()
 
     for command in commands:
         identifier = command["venue_id"]
@@ -512,6 +513,7 @@ def approve(root, staging, event, owner):
         row, entry = active[identifier], registry["venues"][identifier]
         if any(r.get("comment_id") == event["comment"]["id"] for r in entry.get("location_approvals", [])):
             continue
+        changed_ids.add(identifier)
         if ledger["records"][entry["current_key"]]["display_precision"] == "venue":
             raise ValueError("Only an unverified location can be approved; verified relocations require a dedicated review")
         centre = read_json(root / "pub-coordinates.json")["coordinates"][row["postcode"]]
@@ -656,6 +658,9 @@ def approve(root, staging, event, owner):
         ))
 
     staging.mkdir(parents=True, exist_ok=True)
+    if google and changed_ids:
+        from google_listings import check_google
+        print('Google listing checks:', check_google(rows, registry, [], only=changed_ids))
     write_release(staging, rows, registry, read_json(root / "directory-meta.json"), read_json(root / "pub-coordinates.json")["coordinates"], source_root=root)
     # Keep non-release audit inputs available to the candidate validators.
     overrides_path = root / "venue-coordinate-overrides.json"
@@ -685,6 +690,6 @@ if __name__ == "__main__":
     parser.add_argument("--staging", default="candidate-approval")
     args = parser.parse_args()
     event = json.loads(Path(os.environ["GITHUB_EVENT_PATH"]).read_text())
-    approve(args.root, args.staging, event, os.environ["GITHUB_REPOSITORY_OWNER"])
+    approve(args.root, args.staging, event, os.environ["GITHUB_REPOSITORY_OWNER"], google=True)
 
 

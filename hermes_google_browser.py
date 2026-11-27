@@ -81,6 +81,9 @@ _DOM_READ = r"""JSON.stringify((() => {
         h1: (detail ? [detail.heading] : headings).map(text),
         addressButtons: (detail ? [detail.button] : allAddresses).map(e => ({label: label(e), text: text(e)})),
         addressOnly,
+        namedBusinessPanel: Boolean(detail),
+        category: detail?.panel.querySelector('button[jsaction*="category"]')?.innerText?.trim() || '',
+        businessControls: Boolean(detail && detail.panel.querySelector('[data-item-id="authority"], [role="tab"][aria-label*="Reviews"], button[jsaction*="pane.rating"]')),
         consentButtons: pick(document, 'button').filter(e => /reject\s+all/i.test(label(e) + ' ' + text(e)))
             .map(e => ({label: label(e), text: text(e), inViewport: inView(e)})),
         placeLinks: pick(document, 'a[href*="/maps/place/"]').slice(0, 30).map(e => ({href: e.href, text: text(e)})),

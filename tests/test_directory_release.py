@@ -134,6 +134,19 @@ class ReleaseGateTests(unittest.TestCase):
     def tearDown(self):
         self.temporary.cleanup()
 
+    def test_offline_reimport_preserves_bound_business_listing_after_dispense_change(self):
+        listing = self.rows[0]
+        key = listing['venue_id']
+        self.registry['venues'][key]['google_listing'] = dict(listing, maps_url='https://www.google.com/maps?cid=123')
+        write_release(self.root, self.rows, self.registry, self.metadata, self.postcodes)
+        candidate = self.root / 'input.csv'
+        revised = [dict(r, notes='Updated dispense note') if r['venue_id'] == key else r for r in self.rows]
+        write_rows(candidate, revised)
+        result = stage_import(candidate, self.root, self.stage, check_sources=False)
+        self.assertTrue(result['valid'], result['errors'])
+        link = read_json(self.stage / 'directory-release.json')['locations'][key]['google_listing']
+        self.assertEqual(link, {'maps_url': 'https://www.google.com/maps?cid=123'})
+
     def test_complete_consistent_release_passes(self):
         self.assertEqual(validate_release(self.root), [])
 

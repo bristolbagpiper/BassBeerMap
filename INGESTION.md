@@ -6,9 +6,15 @@ Link a reviewed name or postcode change to the existing venue ID.
 
 ## Import gate
 
-The weekly source-check/upload workflow downloads the source PDF before running
-the import pipeline; identical scheduled PDFs skip conversion and tests, while
-later source changes are picked up within a week. Uploads and deliberate
+The daily source-check/upload workflow downloads the current source PDF before
+running the import pipeline; identical scheduled PDFs skip conversion and
+tests, while upstream changes are picked up on the next daily check. The
+fetcher follows the newest homepage edition, uses the WordPress post date to
+order same-month corrections (including collision slugs such as `-1`), and
+uses explicit numeric revisions to resolve same-date revisions. It fails
+closed when competing current-month posts or attachment links cannot be
+ordered safely. It checks the PDF bytes on every run, so a revised file at the
+same URL is still detected. Uploads and deliberate
 manual reindex requests still run the release gate. The workflow then runs
 `ingest_directory.py` into `candidate-release/`. It never changes production
 data until candidate validation and candidate browser tests pass. CSV, venue
@@ -100,6 +106,23 @@ invalid live release fails the integrity run, but it does not re-publish
 coordinate data or trigger a venue email. A genuinely rejected import creates
 its own durable `BassBeerMap update rejected` issue while retaining the
 previously published release.
+
+### Google business listings
+
+The PDF import checks the upstream bytes daily. An identical download skips
+Google, publication and the owner notification workflow. On a changed import,
+the existing Chrome runner checks up to 20 venues, prioritising new names,
+address changes and changed pin bindings. The remaining budget goes to
+unresolved venues and approximate pins, oldest unchecked first. A completed
+check of unchanged details has a 90-day cooldown. An approved location change
+can trigger a check of the affected venue. Provider challenges stop the batch.
+Google results are advisory and never move coordinates.
+
+The durable record lives with the venue ID in `venue-registry.json`.
+The release embeds a business link only for its bound name, place and postcode.
+The visitor link opens the identified Google business or searches by name
+and address. The importer records conflicting and inconclusive results in its
+existing validation artifact. The directory requires no Places API credential.
 
 ### Optional Google research
 

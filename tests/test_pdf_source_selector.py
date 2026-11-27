@@ -87,6 +87,8 @@ class PdfSourceSelectorTests(unittest.TestCase):
         self.assertRegex((repo / 'requirements.txt').read_text(encoding='utf-8'),
                          r'(?m)^pypdf==[0-9]+(?:\.[0-9]+)+$')
         self.assertIn('python validate_directory_release.py --check-pdf', ci)
+        self.assertIn('cron: "17 6 * * *"', importer)
+        self.assertIn('--source-pdf "$PDF_SOURCE_PATH" --google', importer)
 
     def test_unchanged_source_guard_uses_event_baseline_and_selected_upload(self):
         uploaded = self.root / 'upload.pdf'
@@ -126,6 +128,86 @@ class PdfSourceSelectorTests(unittest.TestCase):
                     patch('fetch_latest_pdf.fetch_bytes', return_value=b'%PDF-test'):
                 download_latest_pdf(destination)
             self.assertEqual(destination.read_bytes(), b'%PDF-test')
+
+    def test_wordpress_selects_highest_explicit_revision_across_directory_attachment_links(self):
+        post_url = 'https://example.test/2026/11/post/'
+        title = 'National Bass Directory November 2026'
+        old = 'https://example.test/files/bass-master-directory-november-2026-v1.pdf'
+        current = 'https://example.test/files/bass-master-directory-november-2026-revision-2.pdf'
+        post = f'<a href="{old}">Download v1</a><a href="{current}">Download revision 2</a>'
+        self.assertEqual(find_pdf_url(post, post_url, title), current)
+        original = 'https://example.test/files/bass-master-directory-november-2026.pdf'
+        revised = current.replace('revision-2','revision-2.1')
+        links = f'<a href="{original}">Original</a><a href="{current}">v2</a><a href="{revised}">v2.1</a>'
+        self.assertEqual(find_pdf_url(links, post_url, title), revised)
+
+    def test_wordpress_ignores_older_edition_attachment_when_current_month_match_exists(self):
+        post_url = 'https://example.test/2026/11/post/'
+        title = 'National Bass Directory November 2026'
+        old = 'https://example.test/files/bass-master-directory-october-2026.pdf'
+        current = 'https://example.test/files/bass-master-directory-november-2026.pdf'
+        post = f'<a href="{old}">Previous edition</a><a href="{current}">Current edition</a>'
+        self.assertEqual(find_pdf_url(post, post_url, title), current)
+
+    def test_wordpress_selects_highest_explicit_in_month_revision(self):
+        home = '''<h2><a href="/2026/11/01/original/">National Bass Directory November 2026</a></h2>
+                  <h2><a href="/2026/11/12/revision-2/">National Bass Directory November 2026 revision 2</a></h2>
+                  <h2><a href="/2026/11/08/revision-1/">National Bass Directory November 2026 v1</a></h2>
+                  <h2><a href="/2026/10/01/old/">National Bass Directory October 2026</a></h2>'''
+        self.assertEqual(find_latest_post(home), (
+            'National Bass Directory November 2026 revision 2',
+            'https://nationalbassdirectory.wordpress.com/2026/11/12/revision-2/'))
+
+    def test_wordpress_accepts_edition_with_unversioned_version_suffix(self):
+        title = 'National Bass Directory March 2025 Version'
+        home = f'<h2><a href="/2025/03/04/march-version/">{title}</a></h2>'
+        self.assertEqual(find_latest_post(home)[0], title)
+
+    def test_wordpress_uses_published_date_for_same_month_updated_post_with_collision_slug(self):
+        home = '''<ul>
+          <li class="wp-block-post post-1"><div>1st Nov 2026</div>
+            <h2><a href="/2026/11/01/national-bass-directory-november-2026/">National Bass Directory November 2026</a></h2>
+          </li>
+          <li class="wp-block-post post-2"><div>12th Nov 2026</div>
+            <h2><a href="/2026/11/01/national-bass-directory-november-2026-1/">National Bass Directory November 2026 – Updated</a></h2>
+          </li>
+        </ul>'''
+        title, url = find_latest_post(home)
+        self.assertEqual(title, 'National Bass Directory November 2026 – Updated')
+        self.assertTrue(url.endswith('national-bass-directory-november-2026-1/'))
+
+    def test_wordpress_same_month_posts_with_same_publish_date_remain_ambiguous(self):
+        home = '''<ul>
+          <li class="wp-block-post post-1"><time datetime="2026-11-12">12th Nov 2026</time>
+            <h2><a href="/2026/11/01/first/">National Bass Directory November 2026</a></h2>
+          </li>
+          <li class="wp-block-post post-2"><time datetime="2026-11-12">12th Nov 2026</time>
+            <h2><a href="/2026/11/01/second-1/">National Bass Directory November 2026 – Updated</a></h2>
+          </li>
+        </ul>'''
+        with self.assertRaisesRegex(RuntimeError, 'without a unique published date'):
+            find_latest_post(home)
+
+    def test_wordpress_ambiguous_same_month_posts_without_ordered_revisions_fail_closed(self):
+        home = '''<h2><a href="/2026/11/01/first/">National Bass Directory November 2026</a></h2>
+                  <h2><a href="/2026/11/12/second/">National Bass Directory November 2026 revised</a></h2>'''
+        with self.assertRaisesRegex(RuntimeError, 'without a unique published date'):
+            find_latest_post(home)
+
+    def test_same_upstream_url_with_changed_pdf_bytes_is_observed_as_changed_source(self):
+        title = 'National Bass Directory November 2026'
+        post_url = 'https://example.test/2026/11/post/'
+        home = f'<h2><a href="{post_url}">{title}</a></h2>'
+        post = '<a href="https://example.test/files/bass-master-directory-november-2026.pdf">Download</a>'
+        with tempfile.TemporaryDirectory() as directory:
+            destination = Path(directory) / 'latest-bass-directory.pdf'
+            with patch('fetch_latest_pdf.fetch_text', side_effect=[home, post, home, post]), \
+                 patch('fetch_latest_pdf.fetch_bytes', side_effect=[b'%PDF-original', b'%PDF-revised']) as fetch:
+                download_latest_pdf(destination)
+                original = destination.read_bytes()
+                download_latest_pdf(destination)
+            self.assertEqual(fetch.call_args_list[0].args[0], fetch.call_args_list[1].args[0])
+            self.assertNotEqual(original, destination.read_bytes())
 
     def test_wordpress_distinct_directory_pdfs_or_mismatched_edition_fail_closed(self):
         title = 'National Bass Directory November 2026'

@@ -2,7 +2,7 @@ name: Update CSV From PDF
 
 on:
   schedule:
-    - cron: "17 6 * * 1"
+    - cron: "17 6 * * *"
   workflow_dispatch:
     inputs:
       email_change_report:
@@ -116,7 +116,7 @@ jobs:
         if: steps.pdf_source.outputs.mode != 'skip' && steps.source_fingerprint.outputs.unchanged != 'true'
         env:
           PDF_SOURCE_PATH: ${{ steps.pdf_source.outputs.source_pdf }}
-        run: python ingest_directory.py candidate-pubs.csv --staging candidate-release --source-pdf "$PDF_SOURCE_PATH"
+        run: python ingest_directory.py candidate-pubs.csv --staging candidate-release --source-pdf "$PDF_SOURCE_PATH" --google
 
       - name: Validate candidate files again before publication
         id: candidate_validation
@@ -203,6 +203,15 @@ jobs:
             for (const issue of issues.filter(i => i.title === 'BassBeerMap Pages deployment failed')) {
               await github.rest.issues.update({...context.repo, issue_number: issue.number, state: 'closed', state_reason: 'completed'});
             }
+
+      - name: Check owner questions for the newly published directory
+        if: steps.publication.outputs.state == 'published' && steps.pages_release.outcome == 'success'
+        uses: actions/github-script@v7
+        with:
+          script: |
+            await github.rest.actions.createWorkflowDispatch({
+              ...context.repo, workflow_id: 'location-alerts.yml', ref: 'main'
+            });
 
       - name: Email the validated change report when manually requested
         id: change_report_email

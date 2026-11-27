@@ -38,7 +38,10 @@ class WorkflowStructureTests(unittest.TestCase):
 
     def test_alert_routes_preserve_notice_and_approved_correction_updates(self):
         source = self.read('location-alerts.yml')
-        self.assertIn("workflows: ['Update CSV From PDF', 'Apply reviewed location']", source)
+        self.assertIn("workflows: ['Apply reviewed location']", source)
+        update = (ROOT / '.github/workflows/update-csv-from-pdf.yml').read_text(encoding='utf-8')
+        self.assertIn("if: steps.publication.outputs.state == 'published' && steps.pages_release.outcome == 'success'", update)
+        self.assertIn("workflow_id: 'location-alerts.yml'", update)
         self.assertIn('  workflow_dispatch:', source)
         paths = source.split('    paths:', 1)[1].split('\n\npermissions:', 1)[0]
         for path in ('trading-notices.json', 'directory-release.json'):

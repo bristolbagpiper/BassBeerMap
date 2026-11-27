@@ -34,7 +34,7 @@ def postcode_coordinates(rows, existing, overrides=None):
             for postcode, query in lookups.items() if postcode in coordinates or query in coordinates}
 
 
-def stage_import(candidate, root, staging, check_sources=True, source_pdf=None):
+def stage_import(candidate, root, staging, check_sources=True, source_pdf=None, google=False):
     root, staging = Path(root), Path(staging)
     staging.mkdir(parents=True, exist_ok=True)
     report = {'valid': False, 'errors': [], 'source_warnings': []}
@@ -98,6 +98,9 @@ def stage_import(candidate, root, staging, check_sources=True, source_pdf=None):
                 for warning in attempt.get('source_warnings', []):
                     report['source_warnings'].append(f'{venue_key(row)}: {warning}')
                 entry['verification_attempt'] = attempt
+        if google and check_sources:
+            from google_listings import check_google
+            report['google_checks'] = check_google(rows, registry, previous)
         ledger = write_release(staging, rows, registry, metadata, coordinates, source_root=root)
         if pdf.exists():
             shutil.copyfile(pdf, staging / 'latest-bass-directory.pdf')
@@ -128,7 +131,8 @@ if __name__ == '__main__':
     parser.add_argument('--staging', type=Path, default=Path('candidate-release'))
     parser.add_argument('--source-pdf', type=Path, help='Exact selected PDF to validate and include in the candidate release.')
     parser.add_argument('--offline', action='store_true')
+    parser.add_argument('--google', action='store_true', help='Check a bounded set of changed or unresolved business listings')
     args = parser.parse_args()
-    report = stage_import(args.candidate, args.root, args.staging, not args.offline, args.source_pdf)
+    report = stage_import(args.candidate, args.root, args.staging, not args.offline, args.source_pdf, args.google)
     print(json.dumps(report, indent=2))
     raise SystemExit(not report['valid'])

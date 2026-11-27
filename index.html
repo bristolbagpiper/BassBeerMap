@@ -2085,6 +2085,7 @@
         const address = location.directions_address;
         const referencePostcode = issue?.listed === item.postcode ? issue.reference : item.postcode;
         item.alternateName = location.alternate_name;
+        item.googleListing = location.google_listing;
         const searchAliases = [item.alternateName, referencePostcode].filter(Boolean)
           .map(value => value.toLowerCase().replace(/[^a-z0-9]/g, ''));
         item.searchText = [item.searchText, ...searchAliases].join(' ');
@@ -2192,12 +2193,13 @@
     }
 
     function venueMapsLink(item) {
-      const precise = item.premisesPrecision === 'building' && hasCoordinates(item);
-      const usePin = hasCoordinates(item) && (precise || item.premisesPrecision === 'site' || item.postcodeIssueReviewed);
-      const label = usePin ? 'Open in Google Maps' : 'Find in Google Maps';
-      const searchPostcode = item.locationIssue?.use_reference_for_directions ? item.locationIssue.reference : item.postcode;
-      let query = usePin ? `${item.lat},${item.lng}` : [item.alternateName || item.pub_name, item.place_name, searchPostcode].filter(Boolean).join(', ');
-      if (!precise && item.directionsStreet) {
+      const listing = item.googleListing || {};
+      const direct = /^https:\/\/www\.google\.com\/maps\?cid=[1-9]\d{0,19}$/.test(listing.maps_url || '');
+      const placeId = /^[A-Za-z0-9_-]{10,256}$/.test(listing.place_id || '') ? listing.place_id : '';
+      const label = direct || placeId ? 'Open in Google Maps' : 'Find in Google Maps';
+      const searchPostcode = item.locationIssue?.use_reference_for_directions || item.postcodeIssueReviewed ? item.locationIssue.reference : item.postcode;
+      let query = [item.alternateName || item.pub_name, item.place_name, searchPostcode].filter(Boolean).join(', ');
+      if (item.directionsStreet) {
         const locality = item.place_name.split(':')[0].trim();
         const hasPostcode = item.directionsStreet.toUpperCase().includes(item.directionsPostcode.toUpperCase());
         const hasLocality = item.directionsStreet.split(',').some(part => part.trim().toLowerCase() === locality.toLowerCase());
@@ -2206,7 +2208,8 @@
         query = `${item.alternateName || item.pub_name}, ${address}`;
       }
       const params = new URLSearchParams({api: '1', query});
-      const url = `https://www.google.com/maps/search/?${params}`;
+      if (placeId) params.set('query_place_id', placeId);
+      const url = direct && !placeId ? listing.maps_url : `https://www.google.com/maps/search/?${params}`;
       return `<a href="${escapeHtml(url)}" target="_blank" rel="noopener noreferrer" aria-label="${label}, ${escapeHtml(venueLabel(item))}">${label}</a>`;
     }
 

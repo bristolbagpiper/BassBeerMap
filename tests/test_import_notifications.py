@@ -77,7 +77,7 @@ class ImportNotificationTests(unittest.TestCase):
         self.assertIn("state=not_configured", text)
         self.assertIn("state=suppressed_no_changes", text)
         self.assertIn("state=accepted", text)
-        self.assertIn('cron: "17 6 * * 1"', text)
+        self.assertIn('cron: "17 6 * * *"', text)
         self.assertIn("if: failure() && steps.source_fingerprint.outputs.unchanged != 'true' && steps.publication.outcome != 'success'", text)
         self.assertIn('if [ "$has_changes" != "true" ]; then', text)
         self.assertNotIn('github.event_name != "workflow_dispatch"', text)
